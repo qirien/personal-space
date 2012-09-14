@@ -4,30 +4,78 @@
 # eg. image eileen happy = "eileen_happy.png"
 
 image bg stars = "starscape.png"
+image bg earth = "earth.jpg"
 image him normal = "him.png"
 image her normal = "her.png"
 
 # Declare characters used by this game .
 define her = DynamicCharacter("her_name", color="#c8ffc8")
-define him = DynamicCharacter("his_name", color="ff0000")
+define him = DynamicCharacter("his_name", color="990000")
 
+define his_name = "Jack"
+define her_name = "Mary"
+define profession = "Layabout"
 
 # The game starts here.
 label start:
 
     scene bg stars
     play music "void.ogg"
-    $ her_name = renpy.input("What is your name?", "Mary", length=20)
+
+    "I thought I knew what love was."
+
+    show her normal at center with moveinleft
+
+    "After all, that's why I married..."
     $ his_name = renpy.input("What is your husband's name?", "Jack", length=20)
+    "After all, that's why I married [his_name]."
 
-    her "You thought you knew what love was."
+    show him normal at right with moveinright
 
-    show him normal at right
-    show her normal at center
-    her "After all, that's why you married [his_name]."
-    her "There's no way you could have known what the two of you would go through."
-    her "This whole journey has been nothing like you could have imagined."
+    "There's no way I could have known what the two of us would go through."
+    "This whole journey has been nothing like I could have imagined."
+
+    jump choose_career
 
     stop music
+
+    return
+
+label choose_career:
+    scene bg earth
+    "It all started back on Earth, when I was working at..."
+
+menu:
+    "The hospital":
+        jump doctor
+
+    "The car repair shop":
+        jump mechanic
+
+    "The high school":
+        jump teacher
+
+label doctor:
+    $ profession = "Doctor"
+    "He had broken his arm..."
+    jump first_date
+
+label mechanic:
+    $ profession = "Auto Mechanic"
+    "He only needed an oil change..."
+    jump first_date
+
+label teacher:
+    $ profession = "Teacher"
+    "He had come to tell the kindergartners about life on a farm..."
+    jump first_date
+
+label first_date:
+    "But it wasn't until he first said my name that I knew I wanted to know more about him."
+    $ her_name = renpy.input("What is your name?", "Mary", length=20)
+    show him normal at right with moveinright
+    him "[her_name]..."
+
+    "For our first date, we..."
 
     return
