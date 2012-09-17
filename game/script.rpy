@@ -9,8 +9,8 @@ image him normal = "him.png"
 image her normal = "her.png"
 
 # Declare characters used by this game .
-define her = DynamicCharacter("her_name", color="#c8ffc8")
-define him = DynamicCharacter("his_name", color="990000")
+define her = DynamicCharacter("her_name", color="#8a00ff")
+define him = DynamicCharacter("his_name", color="#ed0303")
 
 define his_name = "???"
 define her_name = "Me"

@@ -1,6 +1,9 @@
 # Introduction
 # Choose profession, hobby, and some character dynamics.
 
+# Images
+image female_child normal = "female-child.png"
+
 # Doctor; scene at hospital
 label doctor:
     $ profession = "doctor"
@@ -36,20 +39,31 @@ label mechanic:
 label teacher:
     $ profession = "teacher"
     "...the elementary school. He had come to tell all the kindergartners about life on a farm."
+    show him normal at right
+    him "And do you know where eggs come from?"
+    show female_child normal at center
+    "Kid" "Chickens!"
+    him "Right!"
+    "Kid" "But where do the chickens get the eggs?"
+    him "They make them! Underneath those cute fluffy feathers, these birds are hard-working egg-making machines!"
+    "Kid" "Really? Like a robot?!"
+    him "Yes! A robot made of meat!"
+    #show her laughing at left
     jump first_date
 
 
 # No matter what profession you choose, the first date is the same
 
 label first_date:
+    scene bg earth
     "Afterwards, he asked me if I wanted to come to a barbeque at his house that evening. I thought there was going to be a lot of people, but it ended up being just him and his parents."
     "It wasn't too awkward, though - we all pitched in to make dinner and then sat on the porch swing and talked and watched the stars come out."
     "But it wasn't until he first said my name that I knew I wanted to know more about him."
     $ her_name = renpy.input("What is your name?", "Mary", length=20)
 
     scene bg stars
-    show her normal at center with moveinleft
-    show him normal at right with moveinright
+    show her normal at left
+    show him normal at center
     him "[her_name], have you ever thought about what's out there?"
     her "Out . . . where?"
     him "In space! So many stars, so many worlds... Did you know they are sending colonists to Talam?"
@@ -69,6 +83,7 @@ label first_date:
     him "What a challenge it would be! Different animals, plants, even different seasons..."
     "He really was excited about it. As we grew closer, I could tell there was a lot of things about him I liked: he was funny, kind, and hardworking. I wasn't thinking about the future yet, but he was..."
 
+label marriage_proposal:
     him "I'm going, [her_name]. To Talam."
     #show her laughing
     her "Oh really? I didn't know you were an astronaut, [his_name]."
