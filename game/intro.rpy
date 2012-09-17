@@ -3,7 +3,7 @@
 
 # Doctor; scene at hospital
 label doctor:
-    $ profession = "Doctor"
+    $ profession = "doctor"
     "...the hospital. He thought he had broken his wrist, but when we the x-rays came back it turned out it was only sprained. I could feel his eyes on me as I helped him with the sling."
     show her normal at left
     show him normal at right
@@ -20,7 +20,7 @@ label doctor:
 
 # Mechanic; scene at auto shop
 label mechanic:
-    $ profession = "Auto Mechanic"
+    $ profession = "auto mechanic"
     "...the car repair shop. His engine wasn't working right, and after I fixed them he wanted me to show him everything I'd done."
     #show her angry at left
     her "You don't think I fixed it right, do you?"
@@ -34,7 +34,7 @@ label mechanic:
 
 # Teacher; scene at school
 label teacher:
-    $ profession = "Teacher"
+    $ profession = "teacher"
     "...the elementary school. He had come to tell all the kindergartners about life on a farm."
     jump first_date
 
@@ -46,20 +46,54 @@ label first_date:
     "It wasn't too awkward, though - we all pitched in to make dinner and then sat on the porch swing and talked and watched the stars come out."
     "But it wasn't until he first said my name that I knew I wanted to know more about him."
     $ her_name = renpy.input("What is your name?", "Mary", length=20)
+
+    scene bg stars
     show her normal at center with moveinleft
     show him normal at right with moveinright
-    him "Thanks for coming, [her_name]..."
-
-    jump later_date
-
-label later_date:
-    "We dated for several months; long enough to feel comfortable around each other, but not long enough that I was thinking too much about the future. He was, though."
     him "[her_name], have you ever thought about what's out there?"
     her "Out . . . where?"
-    him "In space! Did you know they have found a garden planet?"
-    her "Is that a planet that's kind of like Earth?"
-    him "Yes! People could breathe there, grow things, live there!"
-    her "Theoretically, but why would they want to?"
+    him "In space! So many stars, so many worlds... Did you know they are sending colonists to Talam?"
+    her "That's the garden planet they found, right?"
+    him "Yes! It's only 4.3 light years away. People could breathe there, grow things, live there!"
+
+# What do you think about the new planet?
+    menu:
+        "I thought,"
+        "Why?":
+            her "Theoretically, but why would they want to?"
+        "Cool!":
+            her "Really?! That would be so exciting!"
+        "Maybe...":
+            her "It seems like it would be a lot of hard work."
+
     him "What a challenge it would be! Different animals, plants, even different seasons..."
+    "He really was excited about it. As we grew closer, I could tell there was a lot of things about him I liked: he was funny, kind, and hardworking. I wasn't thinking about the future yet, but he was..."
+
+    him "I'm going, [her_name]. To Talam."
+    #show her laughing
+    her "Oh really? I didn't know you were an astronaut, [his_name]."
+    him "..."
+    her "You're serious, aren't you?!"
+    him "They need farmers to come start the colony, and I want to go."
+    #show her sad
+    her "..."
+    him "I want you to come with me."
+    her "?"
+    him "As my wife. You're a great [profession], they'll need those there."
+    menu:
+        "I felt..."
+        "Shocked":
+            her "Did you... did you just ask me to marry you?!"
+            him "Sorry, I should have made that part more obvious. [her_name], will you marry me!"
+        "Excited":
+            her "Oh [his_name], I can't think of anything that would make me happier!"
+        "Worried":
+            her "[his_name], I love you, but are you sure you want to go to an entirely new planet? So many things could go wrong..."
+            him "I'm sure they will, [her_name], but I know it will be worth it. And when thing's do go wrong, I want you by my side."
+        "Annoyed":
+            her "Oh, so you only want me along because I'm such a good [profession]?"
+            him "Of course not. I want you along because I'm madly in love with you, and I want to show you that every day, forever."
+
+    "And so we got married."
 
     return
