@@ -2,6 +2,8 @@
 # Choose profession, hobby, and some character dynamics.
 
 # Images
+image bg porch = "farm-porch.png"
+image bg wedding = "wedding.png"
 image female_child normal = "female-child.png"
 
 # Doctor; scene at hospital
@@ -55,7 +57,7 @@ label teacher:
 # No matter what profession you choose, the first date is the same
 
 label first_date:
-    scene bg earth
+    scene bg porch
     "Afterwards, he asked me if I wanted to come to a barbeque at his house that evening. I thought there was going to be a lot of people, but it ended up being just him and his parents."
     "It wasn't too awkward, though - we all pitched in to make dinner and then sat on the porch swing and talked and watched the stars come out."
     "But it wasn't until he first said my name that I knew I wanted to know more about him."
@@ -109,6 +111,7 @@ label marriage_proposal:
             her "Oh, so you only want me along because I'm such a good [profession]?"
             him "Of course not. I want you along because I'm madly in love with you, and I want to show you that every day, forever."
 
+    scene bg wedding
     "And so we got married."
 
     return
