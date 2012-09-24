@@ -44,9 +44,6 @@ label choose_career:
     "It all started back on Earth, when I was working at..."
 
 menu:
-    "The craft store":
-        jump crafter
-        
     "The hospital":
         jump doctor
 
@@ -54,4 +51,4 @@ menu:
         jump mechanic
 
     "The elementary school":
-        jump teacher        
+        jump teacher
