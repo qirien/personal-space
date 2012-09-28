@@ -169,7 +169,7 @@ init -1 python hide:
 
     ## Set this to False if the game does not have voicing.
 
-    config.has_voice = True
+    config.has_voice = False
 
     ## Sounds that are used when button and imagemaps are clicked.
 
@@ -187,7 +187,7 @@ init -1 python hide:
 
     ## Music that is played while the user is at the main menu.
 
-    # config.main_menu_music = "main_menu_theme.ogg"
+    config.main_menu_music = "LinesBuildWalls.ogg"
 
 
     #########################################

@@ -1,7 +1,6 @@
 ﻿# Love in Space
 
 # Declare images below this line, using the image statement.
-# eg. image eileen happy = "eileen_happy.png"
 
 image bg stars = "starscape.png"
 image bg earth = "earth.jpg"
@@ -14,7 +13,12 @@ define him = DynamicCharacter("his_name", color="#ed0303")
 
 define his_name = "???"
 define her_name = "Me"
-define profession = "Layabout"
+
+# Variables about our characters and their relationship
+define profession = ""
+define father_attitude = ""
+define favorite_wedding_gift = ""
+define want_kids = False
 
 # The game starts here.
 label start:
@@ -23,9 +27,7 @@ label start:
     play music "void.ogg"
     show her normal at center with moveinleft
 
-    "I thought I knew what love was."
-
-    "After all, that's why I married..."
+    "I thought I knew what love was. After all, that's why I married..."
     $ his_name = renpy.input("What is his name?", "Jack", length=20)
     "After all, that's why I married [his_name]."
 
@@ -35,12 +37,11 @@ label start:
 
     jump choose_career
 
-    stop music
-
     return
 
 label choose_career:
     scene bg earth with fade
+    play music "Amnesia.ogg" fadeout 1.0
     "It all started back on Earth, when I was working at..."
 
 menu:

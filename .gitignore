@@ -1,0 +1,7 @@
+# Compiled files
+*.rpyc
+*.rpyb
+*.pyc
+
+# Text
+errors.txt
