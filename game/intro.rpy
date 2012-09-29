@@ -74,7 +74,7 @@ label first_date:
     "But it wasn't until he first said my name that I knew I wanted to know more about him."
     $ her_name = renpy.input("What is your name?", "Mary", length=20)
 
-    scene bg stars
+    show bg stars with moveintop
     show her normal at left
     show him normal at center
     him "[her_name], have you ever thought about what's out there?"
@@ -159,6 +159,8 @@ label marriage_proposal:
 
 # After they get married, they board the colony ship
 label colony_ship:
+
+    play music "Amnesia.ogg" fadeout 1.0
     "What a honeymoon -- on board a cramped space shuttle with a hundred other people for a month. Of course, back on Earth four years had passed, since we were travelling so close to light speed. We spent a lot of it talking about the future..."
     him "What do you think about having kids?"
     her "In general, or us specifically?"

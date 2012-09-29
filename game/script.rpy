@@ -14,6 +14,21 @@ define him = DynamicCharacter("his_name", color="#ed0303")
 define his_name = "???"
 define her_name = "Me"
 
+# Variables about emotional state.  -100 is minimum, 100 is maximum
+define relaxed = 0
+define energized = 0
+define loved = 0
+define inspired = 0
+
+# Variables about skills.  On a scale from 0-100, how skilled is the character?
+define skill_domestic = 0
+define skill_creative = 0
+define skill_technical = 0
+define skill_spiritual = 0
+define skill_social = 0
+define skill_knowledge = 0
+define skill_physical = 0
+
 # Variables about our characters and their relationship
 define profession = ""
 define father_attitude = ""
@@ -24,7 +39,6 @@ define want_kids = False
 label start:
 
     scene bg stars
-    play music "void.ogg"
     show her normal at center with moveinleft
 
     "I thought I knew what love was. After all, that's why I married..."
@@ -41,18 +55,21 @@ label start:
 
 label choose_career:
     scene bg earth with fade
-    play music "Amnesia.ogg" fadeout 1.0
     "It all started back on Earth, when I was working at..."
 
 menu:
     "The craft store":
+        $ skill_creative += 20
         jump crafter
         
     "The hospital":
+        $ skill_knowledge += 20
         jump doctor
 
     "The car repair shop":
+        $ skill_technical += 20
         jump mechanic
 
     "The elementary school":
+        $ skill_social += 20
         jump teacher        
