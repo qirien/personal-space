@@ -2,11 +2,11 @@
 # Choose profession, hobby, and some character dynamics.
 
 # Background Images
-image bg porch = "farm-porch.png"
-image bg wedding = "wedding.png"
+image bg porch = "bg/farm-porch.png"
+image bg wedding = "bg/wedding.png"
 
 # Sprites
-image female_child normal = "female-child.png"
+image female_child normal = "sprites/female-child.png"
 
 # Crafter; scene at craft store
 label crafter:
@@ -76,16 +76,17 @@ label first_date:
     "But it wasn't until he first said my name that I knew I wanted to know more about him."
     $ her_name = renpy.input("What is your name?", "Mary", length=20)
 
-    show bg stars with moveintop
     show her normal at left
     show him normal at center
     him "[her_name], have you ever thought about what's out there?"
     her "Out . . . where?"
+    show bg stars with moveintop
     him "In space! So many stars, so many worlds... Did you know they are sending colonists to Talam?"
     her "That's the garden planet they found, right?"
     him "Yes! It's only about four light years away. People could breathe there, grow things, live there!"
 
 # What do you think about the new planet?
+# TODO: Make these choices actually affect something.
     menu:
         "I thought,"
         "Why?":
@@ -98,9 +99,10 @@ label first_date:
     him "What a challenge it would be! Different animals, plants, even different seasons..."
     "He really was excited about it. As we grew closer, I could tell there was a lot of things about him I liked: he was funny, kind, and hardworking. I wasn't thinking about the future yet, but he was..."
 
-# We need another date in here to show how much they love each other before the marriage proposal
+# TODO: We need another date in here to show how much they love each other before the marriage proposal
 
 label marriage_proposal:
+    # TODO: Different BG here. 
     scene bg earth
     him "I'm going, [her_name]. To Talam."
     #show her laughing
@@ -113,6 +115,9 @@ label marriage_proposal:
     him "I want you to come with me."
     her "?"
     him "As my wife. You're a great [profession], they'll need those there."
+
+    # How does she feel about getting married and going to new planet?
+    # TODO: Make these choices affect variables
     menu:
         "I felt..."
         "Shocked":

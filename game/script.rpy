@@ -2,10 +2,10 @@
 
 # Declare images below this line, using the image statement.
 
-image bg stars = "starscape.png"
-image bg earth = "earth.jpg"
-image him normal = "him.png"
-image her normal = "her.png"
+image bg stars = "bg/starscape.png"
+image bg earth = "bg/earth.jpg"
+image him normal = "sprites/him.png"
+image her normal = "sprites/her.png"
 
 # Declare characters used by this game .
 define her = DynamicCharacter("her_name", color="#8a00ff")
@@ -41,6 +41,7 @@ label start:
     scene bg stars
     show her normal at center with moveinleft
 
+    # TODO: Stronger beginning
     "I thought I knew what love was. After all, that's why I married..."
     $ his_name = renpy.input("What is his name?", "Jack", length=20)
     "After all, that's why I married [his_name]."
