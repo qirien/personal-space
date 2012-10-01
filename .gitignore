@@ -3,5 +3,8 @@
 *.rpyb
 *.pyc
 
+# Temporary files
+*~
+
 # Text
 errors.txt

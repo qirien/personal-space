@@ -40,11 +40,31 @@ label colony_ship:
             him "You don't think so? Can't you just picture me on my horse with a kid in my lap? Maybe a little girl?"
             her "She would probably fall off."
             him "No way! Lettie would never let anyone fall off her."
-            # TODO: maybe give some more choices here
-            her "It's not Lettie I'm worried about."
-            him "You don't trust me?"
-            her "No, I'm more worried about me - I don't think I'd be a good mom."
-            him "Oh. Well, for what it's worth, I disagree with you. But, we've got plenty of time. No need to worry about it now."
+
+            # Why doesn't she want kids?
+            menu: 
+                "I thought..."
+                "It's not Lettie I'm worried about.":
+                    her "It's not Lettie I'm worried about!"
+                    him "You don't trust me?"
+                    menu:
+                        "\"You don't trust me?\""
+                        "That's right":
+                            her "Sorry, I just can't picture you as a father."
+                            #show him sad
+                            him "Oh..."
+                            #show him laughing
+                            him "I get it, it's hard to believe someone as good-looking as me could ever be a father."
+                            her "Yes, that's exactly right."
+                        "I don't trust myself":
+                            her "No, I'm more worried about me - I don't think I'd be a good mom."
+                            him "Oh. Well, for what it's worth, I disagree with you. But, we've got plenty of time. No need to worry about it now."
+                        "I don't want to share you":
+                            her "I don't want to share you with anyone else just yet."
+                            him "Yeah...that makes sense. I'm not sure how I feel about sharing you with a baby, either."
+                "What about you?":
+                    her "What about that time you fell off and sprained your wrist?"
+                    him "That was completely my fault! Lettie had nothing to do with it."
 
     "We talked about lots of other things, of course."
 

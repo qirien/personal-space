@@ -15,10 +15,10 @@ define his_name = "???"
 define her_name = "Me"
 
 # Variables about emotional state.  -100 is minimum, 100 is maximum
-define relaxed = 0
-define energized = 0
-define loved = 0
-define inspired = 0
+define relaxed = 0    # negative = stressed
+define energized = 0  # negative = exhausted
+define loved = 0      # negative = neglected
+define inspired = 0   # negative = depressed
 
 # Variables about skills.  On a scale from 0-100, how skilled is the character?
 define skill_domestic = 0
