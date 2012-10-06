@@ -41,7 +41,7 @@ label start:
     scene bg stars
     show her normal at center with moveinleft
 
-    # TODO: Stronger beginning
+    # TODO: Stronger beginning    
     "I thought I knew what love was. After all, that's why I married..."
     $ his_name = renpy.input("What is his name?", "Jack", length=20)
     "After all, that's why I married [his_name]."
