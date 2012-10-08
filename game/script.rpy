@@ -20,14 +20,14 @@ define energized = 0  # negative = exhausted
 define loved = 0      # negative = neglected
 define inspired = 0   # negative = depressed
 
-# Variables about skills.  On a scale from 0-100, how skilled is the character?
-define skill_domestic = 0
-define skill_creative = 0
-define skill_technical = 0
-define skill_spiritual = 0
-define skill_social = 0
-define skill_knowledge = 0
-define skill_physical = 0
+# Variables about skills.  On a scale from 0-100, how skilled is the character?  These are now defined in dse.rpy
+# define skill_domestic = 0
+# define skill_creative = 0
+# define skill_technical = 0
+# define skill_spiritual = 0
+# define skill_social = 0
+# define skill_knowledge = 0
+# define skill_physical = 0
 
 # Variables about our characters and their relationship
 define profession = ""
@@ -42,6 +42,13 @@ label start:
     show her normal at center with moveinleft
 
     # TODO: Stronger beginning    
+    menu:
+        "Do I want to remember how it all began?"
+        "Yes":
+            "Of course."
+        "No":
+            jump month01
+
     "I thought I knew what love was. After all, that's why I married..."
     $ his_name = renpy.input("What is his name?", "Jack", length=20)
     "After all, that's why I married [his_name]."

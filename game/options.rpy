@@ -54,7 +54,7 @@ init -1 python hide:
 
         ## The color of the text in a selected widget. (For
         ## example, the current value of a preference.)
-        widget_selected = "#f2edc4",
+        widget_selected = "#000000",
 
         ## The color of a disabled widget face. 
         disabled = "#12612f",

@@ -2,6 +2,7 @@
 
 # Backgrounds
 image bg colony_ship_bunk = "bg/colony-ship-bunk.png"
+image bg talam = "bg/talam.png"
 
 # After they get married, they board the colony ship
 label colony_ship:
@@ -83,12 +84,17 @@ label colony_ship:
 # After talking about having kids
 # Background about Talam
     "We talked about lots of other things, of course. We talked about space, about what we would miss from Earth, about what our families were probably doing.  We studied what the pre-colonization team of scientists had reported so far."
+    scene bg talam
     "Even though Talam was technically a \"garden planet\", meaning humans could breathe and there were plants and animals, it wasn't very much like modern Earth.  There were a lot of sandy areas with little vegetation, and there were reports of some large, dangerous creatures that lived in the water."
     # TODO: Would this be more exciting with some dialogue?
     "The planet was also a lot less protected from its small Sun, since it was a lot closer.  The building materials we'd brought along would help protect us from solar flares and radiation, but only if we were inside. They taught us about the early-warning system they put in place so people would know when it was not safe to be outdoors."
 
     # He remembers her birthday
-    # TODO: Add fun music
+    scene bg colony_ship_bunk
+    show him normal at center
+    show her normal at right
+    play music "music/Prelude22.ogg" fadeout 1.0
+
     "Time felt strange on the ship, too. Though there was no sunrise or sunset, they did dim the lights for ten hours every night. One night I came back to our room and found a surprise waiting for me."
 
     him "Happy Birthday, [her_name]."
@@ -168,6 +174,7 @@ label colony_ship:
     him "[her_name]..."
             
 
-# When we want to start with the daily schedule, we will run:
-#    jump day
+# After we land on the planet, we start the next month
+    stop music
+    jump month01
     return

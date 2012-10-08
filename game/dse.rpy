@@ -2,38 +2,55 @@
 # customize it for your program... But remember what you do, so you
 # can integrate with a new version of DSE when it comes out.
 
-# Set up a default theme.
+# Set up our daily schedule
 init python:
-    register_stat("Strength", "strength", 10, 100)
-    register_stat("Intelligence", "intelligence", 10, 100)
+    register_stat("Domestic", "skill_domestic", 0, 100)
+    register_stat("Creative", "skill_creative", 0, 100)
+    register_stat("Technical", "skill_technical", 0, 100)
+    register_stat("Spiritual", "skill_spiritual", 0, 100)
+    register_stat("Social", "skill_social", 0, 100)
+    register_stat("Knowledge", "skill_knowledge", 0, 100)
+    register_stat("Physical", "skill_physical", 0, 100)
 
     dp_period("Morning", "morning_act")
-    dp_choice("Attend Class", "class")
-    dp_choice("Cut Class", "cut")
+    dp_choice("Go to Work", "act_work")
+    dp_choice("Stay Home", "act_skip_work")
 
     dp_period("Afternoon", "afternoon_act")
-    dp_choice("Study", "study")
-    dp_choice("Hang Out", "hang")
+    dp_choice("Housekeeping", "act_domestic")
+    dp_choice("Crafting", "act_creative")
+    dp_choice("Repairs", "act_technical")
+    dp_choice("Meditation", "act_spiritual")
+    dp_choice("Volunteer", "act_social")
+    dp_choice("Research", "act_knowledge")
+    dp_choice("Exercise", "act_physical")
 
     dp_period("Evening", "evening_act")
-    dp_choice("Exercise", "exercise")
-    dp_choice("Play Games", "play")
+    dp_choice("Do something with [his_name]", "act_relax_together")
+    dp_choice("Do something alone", "act_relax_alone")
 
     
 # This is the entry point into the game.
 # jump day when you want to start the schedule.
+label month01:
+    $ day = 0
+    
+    scene black
+    "Once we arrived, we soon settled into a routine. Every day he would work on the farm while I worked as a [profession]. I had a little free time after work, and then I came home and we ate dinner together."
 
+    jump day
 
 # This is the label that is jumped to at the start of a day.
 label day:
 
     # Increment the day it is.
     $ day += 1
+    stop music
 
     # We may also want to compute the name for the day here, but
     # right now we don't bother.
 
-    "It's day %(day)d."
+    "It's month %(day)d."
 
     # Here, we want to set up some of the default values for the
     # day planner. In a more complicated game, we would probably
