@@ -2,7 +2,7 @@
 # customize it for your program... But remember what you do, so you
 # can integrate with a new version of DSE when it comes out.
 
-# Set up our daily schedule
+# Set up our daily schedule options
 init python:
     register_stat("Domestic", "skill_domestic", 0, 100)
     register_stat("Creative", "skill_creative", 0, 100)
@@ -31,7 +31,7 @@ init python:
 
     
 # This is the entry point into the game.
-# jump day when you want to start the schedule.
+# jump month01 when you want to start the schedule.
 label month01:
     $ day = 0
     
@@ -132,7 +132,7 @@ label night:
 
     centered "Night"
 
-    "It's getting late, so I decide to go to sleep."
+    "We kissed good night, and turned out the light."
 
     # We call events_end_day to let it know that the day is done.
     call events_end_day
