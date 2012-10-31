@@ -18,6 +18,11 @@ label social_2:
 
     return
 
+label social_3:
+
+    $ skill_social += 10
+    return
+
 label social_4:
 
     $ skill_social += 10

@@ -18,6 +18,11 @@ label physical_2:
 
     return
 
+label physical_3:
+    $ skill_physical += 10
+
+    return
+
 label physical_4:
 
     $ skill_physical += 10

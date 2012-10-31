@@ -21,19 +21,13 @@ define loved = 0      # negative = neglected
 define inspired = 0   # negative = depressed
 
 # Variables about skills.  On a scale from 0-100, how skilled is the character?  These are now defined in dse.rpy
-# define skill_domestic = 0
-# define skill_creative = 0
-# define skill_technical = 0
-# define skill_spiritual = 0
-# define skill_social = 0
-# define skill_knowledge = 0
-# define skill_physical = 0
 
 # Variables about our characters and their relationship
 define profession = ""
 define father_attitude = ""
 define favorite_wedding_gift = ""
 define want_kids = False
+define have_goat = False
 
 # The game starts here.
 label start:

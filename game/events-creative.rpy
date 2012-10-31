@@ -9,13 +9,19 @@ label creative_0:
     return
 
 label creative_1:
-
+    "Creative 1"
     $ skill_creative += 10
     return
 
 label creative_2:
+    "Creative 2"
     $ skill_creative += 10
 
+    return
+
+label creative_3:
+
+    $ skill_creative += 10
     return
 
 label creative_4:

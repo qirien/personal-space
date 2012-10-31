@@ -17,7 +17,7 @@ init python:
     dp_choice("Stay Home", "act_skip_work")
 
     dp_period("Afternoon", "afternoon_act")
-    dp_choice("Housekeeping", "act_domestic")
+    dp_choice("Farm/Home", "act_domestic")
     dp_choice("Crafting", "act_creative")
     dp_choice("Repairs", "act_technical")
     dp_choice("Meditation", "act_spiritual")

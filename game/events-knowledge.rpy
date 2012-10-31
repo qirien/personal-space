@@ -18,6 +18,11 @@ label knowledge_2:
 
     return
 
+label knowledge_3:
+    $ skill_knowledge += 10
+
+    return
+
 label knowledge_4:
 
     $ skill_knowledge += 10

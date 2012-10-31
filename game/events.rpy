@@ -6,8 +6,6 @@
 # appropriate content in event-whatever
   
 
-# TODO: How should these affect stats and/or emotional state?
-
 # "init python" tells renpy this whole next thing is python code. 
 # That means we don't need the '$' that we usually use for python code.
 init python:
@@ -32,10 +30,10 @@ init python:
         # Add special events that only happen once when you first get to a certain
         # skill level in that skill type.
         for i in range(1,10):
-            event("domestic_" + `i`,
-                  "act == 'act_domestic' and skill_domestic >= " + `i*10`,
+            event(skill_type + "_" + `i`,
+                  "act == 'act_" + skill_type + "' and skill_" + skill_type + " >= " + `i*10`,
                   event.once(),
-                  event.depends("domestic_" + `i-1`))
+                  event.depends(skill_type + "_" + `i-1`))
 
         # This event happens every time we work on a skill when it is already maxed
         event(skill_type + "_master",

@@ -18,6 +18,12 @@ label technical_2:
 
     return
 
+label technical_3:
+
+    $ skill_technical += 10
+    return
+
+
 label technical_4:
 
     $ skill_technical += 10

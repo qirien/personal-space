@@ -18,6 +18,12 @@ label spiritual_2:
 
     return
 
+label spiritual_3:
+    $ skill_spiritual += 10
+
+    return
+
+
 label spiritual_4:
 
     $ skill_spiritual += 10
