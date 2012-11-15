@@ -23,12 +23,12 @@ init -1 python hide:
     ## This controls the title of the window, when Ren'Py is
     ## running in a window.
 
-    config.window_title = u"A Ren'Py Game"
+    config.window_title = "Love in Space"
 
     # These control the name and version of the game, that are reported
     # with tracebacks and other debugging logs.
-    config.name = "A Ren'Py Game"
-    config.version = "0.0"
+    config.name = "Love in Space"
+    config.version = "0.1"
 
     #########################################
     # Themes
@@ -117,7 +117,8 @@ init -1 python hide:
     ## This is the minimum height of the window, including the margins
     ## and padding.
 
-    # style.window.yminimum = 250
+    # Changed this to be smaller to work better with the DSE
+    style.window.yminimum = 130
 
 
     #########################################

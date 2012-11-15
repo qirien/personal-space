@@ -8,7 +8,7 @@ init python:
     style.dp_frame.xalign = 0.5
 
     # Spacing betweeen the choices and the done button.
-    style.dp_vbox.box_spacing = 20
+    style.dp_vbox.box_spacing = 10
 
     # Spacing between the choice columns.
     style.dp_hbox.box_spacing = 20
@@ -39,7 +39,7 @@ init python:
     # Put blank space around each stat name, and right-justify.
     style.stat_label.xminimum = 140
     style.stat_label_text.xalign = 1.0
-    style.stat_label_text.yalign = 0.5
+    style.stat_label_text.yalign = 1.0
     style.stat_label.xmargin = 5
     style.stat_label_text.size = 16
     

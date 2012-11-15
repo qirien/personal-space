@@ -80,6 +80,7 @@ label domestic_3:
     "I took a break for a snack and thought about it. I decided to try wetting the dirt first.  Then I was able to pound in the corners and finish my fence."
     #show her happy
     her "Whew! It's done!"
+    "I watched, and sure enough, my fence kept out the creature.  Good to know my herbs were safe."
     $ skill_domestic += 10
 
     return
@@ -112,6 +113,19 @@ label domestic_4:
                 "You're right.":
                     her "You're right, I'm sorry."
                     him "Sorry for yelling at you - it's not worth getting upset over."
+                    menu:
+                        "I hate it when we fight":
+                            her "I hate it when we fight."
+                            "He came over and held me close."
+                            him "I'm sorry, [her_name]. You do a lot around here that I don't always see or appreciate."
+                            her "I know you work hard every day, too. I don't want to ask you to do any more than you already do."
+                            "We didn't need to say anything more."
+                        "I have to get out of here":
+                            her "I'm going out."
+                            #TODO: have a solar flare happen? something exciting?
+                        "(Give him a hug)":
+                            "I hugged him. It took a few seconds for him to hug me back, but then I knew that everything would be all right."
+                            
                 "What's the point?":
                     her "What would be the point of asking you? You don't have time to take care of goats, either."
                     him "The point is that we're a team. We need to make big decisions like this as a team."
@@ -133,7 +147,7 @@ label domestic_4:
 
 label domestic_5:
     show him at left
-    him "Here's some more radishes, love"
+    him "Here's some more radishes, love."
     show her at center
     her "Thanks, they look great!"
     hide him
@@ -151,17 +165,94 @@ label domestic_5:
         "I sliced them really thin and spread them with cheese and some herbs from the garden."
         her "They hardly taste like radishes anymore...much better!"
 
+    $ skill_domestic += 10
     return
 
 label domestic_6:
-
+    "Domestic 6"
+    $ skill_domestic += 10
     return
 
 label domestic_7:
-
+    "Domestic 7"
+    $ skill_domestic += 10
     return
 
 label domestic_8:
+    "One day, I came home from work to find a dead monster on the kitchen table."
+    her "What is THAT?!"
+    him "There was a herd of them eating some of the vegetables on the north side. I was watching them, because they're so strange, you know, and I just thought they looked really tasty."
+    her "Tasty?! They look like fish with long legs!"
+    him "It's been a really long time since we had any fresh meat! They made me think of salmon... so I lassoed one."
+    her "What happened next?"
+    him "Well, it started to run. Luckily I was on Lettie at the time, so she started running, too. We had quite a chase through the woods before the creature tired out."
+    him "When it finally slowed down, I jumped off and attacked it."
+    menu:
+        her "That's..."
+        "Barbaric":
+            her "Barbaric! What did that monster ever to do you?"
+            him "Ate my plants, that's what. Well, you don't have to have any; I guess I'll just cook it myself."
+            her "Yeah, please get that thing out of here."
+            "He roasted it outside over a fire. He didn't tell me how it tasted, which was fine - I didn't want to know, anyway."
+            $loved -= 10
+            return
+        "Awesome":
+            her "That's awesome! You're like my very own mountain man."
+            $loved += 10
+        "Strange":
+            her "That's...not something I'm used to. Can you really eat it?"
+            him "The scientists here haven't detected anything toxic or unusual in the animal life here - I think as long as we cook it well and don't eat the organs it should be fine."
+    
+    her "This is going to be a lot of meat..."
+    him "Yes, any ideas what we should do with it?"
+    
+    menu:
+        her "How about..."
+        "Giving it away":
+            her "We could give some away to our neighbors."
+            him "Yeah, there's plenty here, if they'd want some."
+            if skill_technical >= 20:
+                her "I'll ask around."
+                "I got on the radio and asked around town -- turns out a lot of people felt like [his_name] and thought some fresh meat would be delicious, even if it was alien meat."
+                "It felt good to share with our neighbors."
+                $skill_social += 5
+            elif skill_social >= 20:
+                "I know just who would want some."
+                "The Blair family had seven kids and I knew some of their crops hadn't made it. There were plenty of rations in the storehouse, so they weren't starving or anything, but I thought they'd like some real food."
+                "When I took it to them, they didn't care that it came from an alien monster; they just thanked me and gave me some eggs from their chickens to take home with me."
+                $skill_social += 5
+        "Drying it":
+            her "We could dehydrate it and make jerky."
+            him "Do you know how to do that?"
+            her "Theoretically...we'll need to smoke and salt it...We can adapt a recipe for fish jerky, I think."
+            him "OK, I'll skin and cut up this sucker while you're figuring that out."
+            if skill_technical >= 40:
+                "I rigged up a smoker with some old scrap metal and put some screens above it for the meat"
+                $skill_technical += 5
+            else:
+                "We soaked the meat in brine, and then I setup some racks where the fish could dry in the sun and wind."
+                her "If it rains we'll need to bring everything inside..."
+                him "Let's hope it doesn't rain, then!"
+                her "It took several days longer to dry than I had planned, and we did have to bring it the house once, but when we were done we had some jerky that would last a long time, and actually tasted pretty good."
+        "Composting it":
+            her "Should we just compost what we can't eat?"
+            him "I guess..."
+            "We cooked and ate quite a bit, but we didn't have a way to freeze or refrigerate so we just tossed the leftovers into the compost pile. Probably some scavenging animals will enjoy a nice feast..."
+
+        "Having a meat party":
+            her "Let's cook it all up, invite our friends over, and have a meat party!"
+            him "All right! We can try cooking it several different ways and see what tastes best!"
+            her "A meat-tasting party!"
+            if skill_social >= 90:
+                "We invited the whole town for a giant potluck celebration. People brought salads and fresh bread and rice and spicy beans and there was even a little fruit for everyone."
+                "Our little colony had never had such a celebration before; even though there wasn't really enough meat for everyone to have much, since we all brought something it worked out. We felt like a real community."
+                $skill_social += 5
+            elif skill_social >=40:
+                "We invited a large group of friends and we ate almost all of it. I think they appreciated that we shared it with them. It felt good to help out our friends."
+            else:
+                "We invited a few friends over and we ate and ate and ate as much as we could. I wondered if we might get sick, but other than feeling full all the next day, nothing bad happened."
+            
+    $ skill_domestic += 10
     return
 
 label domestic_9:
