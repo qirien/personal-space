@@ -1,16 +1,22 @@
 # Afternoon Events
 # Domestic
 
+# Variables
+image bg farm_exterior = "bg/farm-exterior.png"
+image bg farm_interior = "bg/farm-interior.png"
+image bg fields = "bg/fields.png"
+
 # Intro Event and the default
 label domestic_0:
+    scene bg farm_interior
     "I did some extra cleaning and organizing, and put in some extra work for a great dinner."
     $ skill_domestic += 10
 
     return
 
 # Cellar Event
-# TODO: Right now this has an infinite loop -- why?
 label domestic_1:
+    scene bg farm_exterior
     show him normal at left
     him "It'll sure be nice when we have some fresh food to eat."
     show her normal at center
@@ -48,6 +54,7 @@ label domestic_1:
             #show her laughing at center
             her "Wow, you're trusting me with your favorite horse? I'm touched."
             him "I wouldn't trust anyone else."
+            scene bg fields
             "I rode Lettie around, scouting the fields for weeds. I had never noticed how big the farm was before -- [his_name] takes care of a lot of plants!"
             "It took longer than I thought, and I ended up helping him haul out a lot of the dirt, but then we had our very own cellar!"
             $ skill_domestic += 10
@@ -59,8 +66,9 @@ label domestic_1:
 
 
 label domestic_2:
+    scene bg farm_interior
     show her normal
-    her "I've got to do something about these windows. They are too bright when the sun is low. But it's not as if I can just buy some cloth..."
+    her "I've got to do something about these windows. They are too bright when the suns are low. But it's not as if I can just buy some cloth..."
     if (skill_social >= 10):
         her "I'll ask around for everyone's scraps of cloth, and sew them together to make some curtains"
     else:
@@ -70,6 +78,8 @@ label domestic_2:
     return
 
 label domestic_3:
+    scene bg fields
+    show her normal at center
     "I planted an herb garden when we first arrived, and the plants are just starting to get big enough for me to use. I think I'll make some tea..."
     #show her worried at center
     her "Something's been nibbling at my herbs...!"
@@ -86,6 +96,7 @@ label domestic_3:
     return
 
 label domestic_4:
+    scene bg farm_exterior
     "Thuc Nguyen" "Hello? Anybody home?"
     her "Thuc! Good to see you! How are the baby goats?"
     "Thuc Nguyen" "Doing well!  There's so many of them, though, I don't think we'll have room for them all!"
@@ -105,6 +116,10 @@ label domestic_4:
             her "Thanks for offering, but I don't think we want to do that right now."
             "Thuc Nguyen" "I understand."
             "But [his_name] wasn't so understanding."
+            scene bg farm_interior
+            show her normal at left
+            #show him angry at center
+            show him normal at center 
             him "Free goats? Why did you turn him down!"
             her "I don't know anything about goats! I have enough to do as it is!"
             her "Besides, goat milk tastes gross."
@@ -146,8 +161,9 @@ label domestic_4:
     return
 
 label domestic_5:
+    scene bg farm_interior
     show him at left
-    him "Here's some more radishes, love."
+    him "Here's some more radishes from the fields, love."
     show her at center
     her "Thanks, they look great!"
     hide him
@@ -179,8 +195,12 @@ label domestic_7:
     return
 
 label domestic_8:
+    scene bg farm_interior
     "One day, I came home from work to find a dead monster on the kitchen table."
+    #show her surprised at center
+    show her normal at center
     her "What is THAT?!"
+    show him normal at left
     him "There was a herd of them eating some of the vegetables on the north side. I was watching them, because they're so strange, you know, and I just thought they looked really tasty."
     her "Tasty?! They look like fish with long legs!"
     him "It's been a really long time since we had any fresh meat! They made me think of salmon... so I lassoed one."
@@ -256,9 +276,11 @@ label domestic_8:
     return
 
 label domestic_9:
+    "Domestic 9"
     return
 
 label domestic_master:
+    "I AM A DOMESTIC GODDESS!!!"
     return
 
 return
