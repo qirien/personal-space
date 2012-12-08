@@ -19,7 +19,6 @@ init python:
     event("work_intro", "act == 'act_work'", event.once(), event.only())
 
 
-
     # AFTERNOON EVENTS
     # For each type of skill, we have 10 special events that happen when your skill
     # reaches a certain level.  There is also an intro event and a master event.
@@ -45,5 +44,17 @@ init python:
 
     # EVENING EVENTS
     # Evening Events
-    event("act_relax_together", "act == 'act_relax_together'", event.solo(), priority=200)
-    event("act_relax_alone", "act == 'act_relax_alone'", event.solo(), priority=200)
+    # Default Events
+    event("relax_together_0", "act == 'act_relax_together'", event.solo(), priority=200)
+    event("relax_alone_0", "act == 'act_relax_alone'", event.solo(), priority=200)
+
+    # Scripted Events that happen once
+    for i in range(1,24):
+        event ("relax_together_" + `i`, 
+               "act == 'act_relax_together'", 
+               event.once(), 
+               event.depends("relax_together_" + `i-1`))
+        event ("relax_alone_" + `i`, 
+               "act == 'act_relax_alone'", 
+               event.once(), 
+               event.depends("relax_alone_" + `i-1`))

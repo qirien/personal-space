@@ -36,7 +36,7 @@ label month01:
     $ day = 0
     
     scene black
-    "Once we arrived, we soon settled into a routine. Every day he would work on the farm while I worked as a [profession]. I had a little free time after work, and then I came home and we ate dinner together."
+    "Once we arrived, we soon settled into a routine. Every day he would work on the farm while I worked as a [profession]. I had a little free time after work, and then we ate dinner together."
 
     jump day
 

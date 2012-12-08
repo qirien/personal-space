@@ -174,12 +174,16 @@ label domestic_5:
         #show her excited at center
         her "Radish pickles?! That sounds fun!"
         "They had plenty of vinegar and salt at the storehouse, and I used some of the herbs and spices from the garden to make a few batches of pickled radishes."
+        $skill_knowledge += 5
     elif (skill_social >= 20):
         her "I bet I could trade these with the Peron's for some eggs from their chickens..."
         "Sure enough, Natalia was delighted to have some fresh vegetables, and I made a souffle instead."
-    else:
-        "I sliced them really thin and spread them with cheese and some herbs from the garden."
+        $skill_social += 5
+    elif have_goat:
+        "I sliced them really thin and spread them with goat cheese and some herbs from the garden."
         her "They hardly taste like radishes anymore...much better!"
+    else:
+        "I couldn't think of anything else, so I cut them into pretty rose shapes and drizzled oil and vinegar on them. They still tasted like radishes, but at least it was something a little different."
 
     $ skill_domestic += 10
     return
