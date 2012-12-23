@@ -12,11 +12,11 @@ init python:
     register_stat("Knowledge", "skill_knowledge", 0, 100)
     register_stat("Physical", "skill_physical", 0, 100)
 
-    dp_period("Morning", "morning_act")
-    dp_choice("Go to Work", "act_work")
-    dp_choice("Stay Home", "act_skip_work")
+    dp_period("Job Focus", "job_focus_act")
+    dp_choice("Focus on Work", "act_work")
+    dp_choice("Take it Easy", "act_skip_work")
 
-    dp_period("Afternoon", "afternoon_act")
+    dp_period("Skill Focus", "skill_focus_act")
     dp_choice("Farm/Home", "act_domestic")
     dp_choice("Crafting", "act_creative")
     dp_choice("Repairs", "act_technical")
@@ -25,9 +25,12 @@ init python:
     dp_choice("Research", "act_knowledge")
     dp_choice("Exercise", "act_physical")
 
-    dp_period("Evening", "evening_act")
+    dp_period("Relationship Focus", "relationship_focus_act")
     dp_choice("Do something with [his_name]", "act_relax_together")
     dp_choice("Do something alone", "act_relax_alone")
+
+    dp_period("Monthly Event", "monthly_event_act")
+    dp_choice("No Actual Choices", "act_monthly", False)
 
     
 # This is the entry point into the game.
@@ -58,81 +61,94 @@ label day:
     # (especially dp_period_acts) to reflect the choices the
     # user has available to him.
 
-    $ morning_act = None
-    $ afternoon_act = None
-    $ evening_act = None
+    $ job_focus_act = None
+    $ skill_focus_act = None
+    $ relationship_focus_act = None
+    $ monthly_event_act = None
 
     # Now, we call the day planner, which may set the act variables
     # to new values. We call it with a list of periods that we want
     # to compute the values for.
-    call day_planner(["Morning", "Afternoon", "Evening"])
+    call day_planner(["Job Focus", "Skill Focus", "Relationship Focus"])
 
     
     # We process each of the three periods of the day, in turn.
-label morning:
+label job_focus:
 
     # Tell the user what period it is.
-    centered "Morning"
+    centered "Job Focus"
 
     # Set these variables to appropriate values, so they can be
     # picked up by the expression in the various events defined below. 
-    $ period = "morning"
-    $ act = morning_act
+    $ period = "job_focus"
+    $ act = job_focus_act
 
     # Ensure that the stats are in the proper range.
     $ normalize_stats()
     
-    # Execute the events for the morning.
+    # Execute the events for the job_focus.
     call events_run_period
 
-    # That's it for the morning, so we fall through to the
-    # afternoon.
+    # That's it for the job_focus, so we fall through to the
+    # skill_focus.
 
-label afternoon:
+label skill_focus:
 
-    # It's possible that we will be skipping the afternoon, if one
-    # of the events in the morning jumped to skip_next_period. If
-    # so, we should skip the afternoon.
+    # It's possible that we will be skipping the skill_focus, if one
+    # of the events in the job_focus jumped to skip_next_period. If
+    # so, we should skip the skill_focus.
     if check_skip_period():
-        jump evening
+        jump relationship_focus
 
-    # The rest of this is the same as for the morning.
+    # The rest of this is the same as for the job_focus.
 
-    centered "Afternoon"
+    centered "Skill Focus"
 
-    $ period = "afternoon"
-    $ act = afternoon_act
+    $ period = "skill_focus"
+    $ act = skill_focus_act
 
     $ normalize_stats()
     
     call events_run_period
 
 
-label evening:
+label relationship_focus:
     
-    # The evening is the same as the afternoon.
+    # The relationship_focus is the same as the skill_focus.
     if check_skip_period():
-        jump night
+        jump monthly_event
 
-    centered "Evening"
+    centered "Relationship Focus"
 
-    $ period = "evening"
-    $ act = evening_act
+    $ period = "relationship_focus"
+    $ act = relationship_focus_act
 
     $ normalize_stats()
     
     call events_run_period
 
+label monthly_event:
+    if check_skip_period():
+        jump end_of_month
+    
+    centered "Event!"
 
-label night:
+    $ period = "monthly_event"
+    $ act = monthly_event_act
+    
+    $ normalize_stats()
+
+    call events_run_period
+
+label end_of_month:
 
     # This is now the end of the day, and not a period in which
     # events can be run. We put some boilerplate end-of-day text
     # in here.
 
-    centered "Night"
+    centered "End of the Month"
 
-    "We kissed good night, and turned out the light."
+    "We made it through another month on Talaam..."
 
     # We call events_end_day to let it know that the day is done.
     call events_end_day
@@ -148,7 +164,7 @@ label dp_callback:
 
     # Add in a line of dialogue asking the question that's on
     # everybody's mind.
-    $ narrator("What should I do today?", interact=False)
+    $ narrator("What should I focus on this month?", interact=False)
     $ display_stats()
 
     return

@@ -1,14 +1,23 @@
 # Event content for all the events that can happen in the evening,
-# where we relax for a while.
+# where we relax together
 
-# Together Evening Events
+# Relationship Focus Events
 # TODO; Have them talk about missing (or not) families on Earth.
 # TODO: Have them tour the farm and talk about progress/problems
 # TODO: Sunset on the new planet
 
 
 label relax_together_0:
-    "We watched a movie together and talked."
+    "We watched a movie together. It was pretty good, but the ending was terrible."
+    him "See, what they needed was to have the girlfriend show back up at the end--"
+    her "--leading a horde of zombie warriors! Oh, that would have been so much better!"
+    him "And what about the pterodactyl? They didn't do anything with that."
+    her "I know, I kept thinking someone was going to ride it."
+    him "I thought it was going to turn out to be a cyborg pterodactyl."
+    her "That would have been awesome!"
+    "Sometimes talking about the movie is more fun than the actual movie itself..."
+    $relaxed += 5
+    $loved += 5
     return
 
 label relax_together_1:

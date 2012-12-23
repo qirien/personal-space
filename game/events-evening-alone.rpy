@@ -2,20 +2,28 @@
 # where we relax for a while.
 
 # Basic Alone Evening Events
+# These don't all have to be big events -- we could randomize between a few
+# different things.
 
 
 label relax_alone_0:
     "I curled up with a good book."
-
+    $relaxed += 10
     return
 
 label relax_alone_1:
+    "I felt so tired, I decided to just go to bed early."
+    $relaxed += 10
     return
 
 label relax_alone_2:
+    "I sat out on the porch and gazed at the stars."
+    $relaxed += 10
     return
 
 label relax_alone_3:
+    "I listend to some of my favorite songs and reminisced about past experiences."
+    $relaxed += 10
     return
 
 label relax_alone_4:

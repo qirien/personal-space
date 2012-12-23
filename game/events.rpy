@@ -9,7 +9,7 @@
 # "init python" tells renpy this whole next thing is python code. 
 # That means we don't need the '$' that we usually use for python code.
 init python:
-    # MORNING EVENTS
+    # JOB FOCUS EVENTS
     # Default events if nothing else is going on at work
     event("act_work", "act == 'act_work'", event.solo(), priority=200)
     event("act_skip_work", "act == 'act_skip_work'", event.solo(), priority=200)
@@ -19,7 +19,7 @@ init python:
     event("work_intro", "act == 'act_work'", event.once(), event.only())
 
 
-    # AFTERNOON EVENTS
+    # SKILL FOCUS EVENTS
     # For each type of skill, we have 10 special events that happen when your skill
     # reaches a certain level.  There is also an intro event and a master event.
     for skill_type in ["domestic", "creative", "technical", "spiritual", "social", "knowledge", "physical"]:
@@ -32,18 +32,17 @@ init python:
             event(skill_type + "_" + `i`,
                   "act == 'act_" + skill_type + "' and skill_" + skill_type + " >= " + `i*10`,
                   event.once(),
-                  event.depends(skill_type + "_" + `i-1`))
+                  event.happened(skill_type + "_" + `i-1`))
 
         # This event happens every time we work on a skill when it is already maxed
         event(skill_type + "_master",
               "act == 'act_" + skill_type + "' and skill_" + skill_type + " >= 100",
               event.solo(),
-              event.depends(skill_type + "_10"))
+              event.happened(skill_type + "_10"))
 
 
 
-    # EVENING EVENTS
-    # Evening Events
+    # RELATIONSHIP EVENTS
     # Default Events
     event("relax_together_0", "act == 'act_relax_together'", event.solo(), priority=200)
     event("relax_alone_0", "act == 'act_relax_alone'", event.solo(), priority=200)
@@ -53,8 +52,19 @@ init python:
         event ("relax_together_" + `i`, 
                "act == 'act_relax_together'", 
                event.once(), 
-               event.depends("relax_together_" + `i-1`))
+               event.happened("relax_together_" + `i-1`))
         event ("relax_alone_" + `i`, 
                "act == 'act_relax_alone'", 
                event.once(), 
-               event.depends("relax_alone_" + `i-1`))
+               event.happened("relax_alone_" + `i-1`))
+
+
+    # MONTHLY SPECIAL EVENTS
+    event("monthly_event_0", "period == 'monthly_event'", event.solo(), priority=200)
+
+    # Scripted Events that happen once
+    for i in range(1,24):
+        event ("monthly_event_" + `i`,  
+               "period == 'monthly_event'", 
+               event.once(), 
+               event.happened("monthly_event_" + `i-1`))
