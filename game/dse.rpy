@@ -148,7 +148,7 @@ label end_of_month:
 
     centered "End of the Month"
 
-    "We made it through another month on Talaam..."
+    "We made it through another month on Talam..."
 
     # We call events_end_day to let it know that the day is done.
     call events_end_day

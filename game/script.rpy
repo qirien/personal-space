@@ -11,6 +11,8 @@ image her normal = "sprites/her.png"
 define her = DynamicCharacter("her_name", color="#8a00ff")
 define him = DynamicCharacter("his_name", color="#ed0303")
 
+define naomi = Character("Sister Naomi", color="#cccccc")
+
 define his_name = "???"
 define her_name = "Me"
 

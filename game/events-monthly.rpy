@@ -1,51 +1,63 @@
 # Event content for all the important monthly events
 
 label monthly_event_0:
-    "Monthly Event 0"
+    "Settling in to House"
     return
 
 label monthly_event_1:
-    "Monthly Event 1"
+    "Division of Labor"
     return
 
 label monthly_event_2:
-    "Monthly Event 2"
+    "Place in Community"
     return
 
 label monthly_event_3:
+    "His Birthday/Food"
     return
 
 label monthly_event_4:
+    "Are Hobbies Waste of Time"    
     return
 
 label monthly_event_5:
+    "Differing Value of Items"
     return
 
 label monthly_event_6:
+    "Alien Pests"
     return
 
 label monthly_event_7:
+    "How Honest Should You Be?"
     return
 
 label monthly_event_8:
+    "Conflict of Interest: Community vs. Spouse"
     return
 
 label monthly_event_9:
+    "Different Date Ideas"
     return
 
 label monthly_event_10:
+    "Something Bothering Him - What To Do?"
     return
 
 label monthly_event_11:
+    "Jealous of New Friend"
     return
 
 label monthly_event_12:
+    "Frustration with Work"
     return
 
 label monthly_event_13:
+    "Monthly 13"
     return
 
 label monthly_event_14:
+    "Pregnancy/ Tired And Emotional"
     return
 
 label monthly_event_15:
