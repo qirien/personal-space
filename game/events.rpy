@@ -18,6 +18,7 @@ init python:
     # to work. 
     event("work_intro", "act == 'act_work'", event.once(), event.only())
 
+    # TODO: add more work events
 
     # SKILL FOCUS EVENTS
     # For each type of skill, we have 10 special events that happen when your skill

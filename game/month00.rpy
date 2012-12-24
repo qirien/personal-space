@@ -146,6 +146,7 @@ label colony_ship:
     menu:
         her "(It look like chocolate, but...)"
         "Try it":
+            #TODO is this second-person instead of first-person awkward?
             "(It tastes like bread with sugar and chocolate on it. In fact, on closer inspection, you can see that it {b}is{/b} a piece of bread, sprinkled with sugar, and with pieces of chocolate pressed into it.)"
             her "This is actually kind of good. Here, try some."
             him "Oh, thanks."

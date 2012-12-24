@@ -36,7 +36,7 @@ init python:
 # This is the entry point into the game.
 # jump month01 when you want to start the schedule.
 label month01:
-    $ day = 0
+    $ month = 0
     
     scene black
     "Once we arrived, we soon settled into a routine. Every day he would work on the farm while I worked as a [profession]. I had a little free time after work, and then we ate dinner together."
@@ -46,14 +46,14 @@ label month01:
 # This is the label that is jumped to at the start of a day.
 label day:
 
-    # Increment the day it is.
-    $ day += 1
+    # Increment the month it is.
+    $ month += 1
     stop music
 
-    # We may also want to compute the name for the day here, but
+    # We may also want to compute the name for the month here, but
     # right now we don't bother.
 
-    "It's month %(day)d."
+    "It's month %(month)d."
 
     # Here, we want to set up some of the default values for the
     # day planner. In a more complicated game, we would probably

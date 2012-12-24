@@ -30,6 +30,7 @@ define father_attitude = ""
 define favorite_wedding_gift = ""
 define want_kids = False
 define have_goat = False
+define is_pregnant = False
 
 # The game starts here.
 label start:
