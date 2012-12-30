@@ -32,6 +32,7 @@ label physical_1:
 
     if (skill_technical >= 20):
         "Luckily, I brought my radio with me and was able to call for help."
+        him "You're over the south ridge? I'll be right there!"
     elif (profession == "doctor"):
         "An adrenaline rush might help counteract the leeches' natural anesthetic..."
         "I don't have any medications with me, but I might be able to get my body to release adrenaline on its own."
@@ -65,6 +66,7 @@ label physical_1:
             him "Dammit, [her_name], I need you! I need you alive, here with me, not as a carcass torn apart by some alien beast!"
             her "I need you to trust me to make my own decisions."
             him "I...do trust you. Please, be more careful, [her_name]"
+            $ loved -= 5
         "Want to come next time?":
             her "Want to come with me next time? We can take a picnic."
             him "Sure, just as long as I don't have to share you with the pond creatures."
@@ -81,7 +83,10 @@ label physical_1:
                 "That's the fun":
                     her "That's the fun of it! It wouldn't be an adventure if it wasn't just a little bit dangerous, would it?"
                     him "You're not indestructible, like some action hero. If you die out there, you can't just load your game and try again."
-                    her ""
+                    her "You're right; it's not a game. We can't just follow some mini-map to the next plot point; there could be something we need just minutes away from our house that we didn't find because we were too afraid to look."
+                    him "I'm not against exploring; I just think we should do it more carefully."
+                    her "I'll be careful, but you have to accept that bad things might happen. There are no guarantees that we're the heroes of this story and everything will turn out well for us."
+                    him "No, that's true..."
                 "Come with me, then.":
                     her "Why don't you come with me next time, then? You can protect me from all the scary monsters out there."
                     him "I...sure. That's a good idea. Just, don't go alone, okay?"
@@ -93,22 +98,60 @@ label physical_1:
                 "Whatever.":
                     her "Whatever. It's not that bad."
                     him "I guess there's no point in trying to convince you, is there? You're never going to listen."
-                    $ loved -= 10
+                    $ loved -= 15
         "Maybe you're right.":
             her "Maybe you're right. Don't worry, I'm not planning on any more blood-donation excursions anytime soon."
             him "Thank you, [her_name]. I...need you."
             
-    jump events_skip_period
     $ loved += 5
     $ skill_physical += 10
+    jump events_skip_period
     return
 
 label physical_2:
+    "We needed firewood to burn for cooking and heating. I got an axe and split logs to build up a huge supply for later."
+    menu:
+        him "Wow, I didn't know I married a lumberjack."
+        "You're lucky.":
+            her "Lucky thing for you, huh? Now you don't have to chop the wood."
+            him "Nope, instead I just get to watch you work that beautiful body and get all hot and sweaty."
+            her "Hmm, maybe you should chop the wood next time."
+            him "No chance! I could sit here and watch you all day."
+            her "No, I'm done! Your turn!"
+            "He took the axe from me and setup a log. Even though it was getting cold, he took his shirt off and threw it at me."
+            her "Ew! I don't want your sweaty shirt!"
+            "He flexed his muscles exaggeratedly before setting up a log. I laughed."
+            her "Putting on quite the show, aren't you?"
+            him "You're my only audience."
+            "It was sort of mesmerizing, watching the axe rise with smooth grace and fall with brutal finality. He was quite practiced at chopping wood."
+            her "You're pretty good at that."
+            him "I'm good at a lot of things."
+            her "Mmmm, maybe after dinner you'll show me some more of your...talents."
+            him "Only if you show me yours."
+            $ loved += 5
+        "Are you disappointed?":
+            her "I hope you're not disappointed. I could put on an apron and go fuss around in the kitchen instead."
+            him "No, no! Chop away! I'll get dinner ready."
+            "Chopping required a surprising amount of concentration. Balance the log at the optimum angle, bring up the axe, aim at the middle of the log, let it down, repeat again."
+            "I chopped and chopped until I heard him call,"
+            him "Dinner's ready!"
+            her "Great! Thanks for cooking."
+            him "Thanks for chopping. That'll help us stay warm for quite a while."
+            her "You'll keep me warm for quite a while."
+            him "Only forever."
+            $ loved += 5
+        "This is your job.":
+            her "Well, {b}somebody{/b} had to chop wood for the stove, or we'll be having a cold dinner tonight."
+            him "Sorry I didn't get around to it earlier. I can finish up, if you like."
+            her "No, I'm almost done anyway."
+
     $ skill_physical += 10
 
     return
 
 label physical_3:
+    
+
     $ skill_physical += 10
 
     return

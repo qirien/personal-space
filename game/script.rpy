@@ -12,6 +12,7 @@ define her = DynamicCharacter("her_name", color="#8a00ff")
 define him = DynamicCharacter("his_name", color="#ed0303")
 
 define naomi = Character("Sister Naomi", color="#cccccc")
+define boss = Character("Boss", color="#0000cc")
 
 define his_name = "???"
 define her_name = "Me"
@@ -31,6 +32,7 @@ define favorite_wedding_gift = ""
 define want_kids = False
 define have_goat = False
 define is_pregnant = False
+define slacked_off = 0  #number of times slacked off at work
 
 # The game starts here.
 label start:
