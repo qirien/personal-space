@@ -48,23 +48,8 @@ label spiritual_2:
     return
 
 label spiritual_3:
-    "Sister Naomi also leads worship services once a week. I decided to go see what it was like."
-    naomi "...and all are alike unto God. He invites all to come unto him and partake of his goodness. Do you think it matters what planet we are on?  Of course it doesn't. We all have the same access to divine inspiration and guidance, no matter where we are."
-    naomi "Now let us pray."
-    "I thought she was going to pray for us, but instead we had a few minutes of silence where everyone could pray on their own."
-    menu:
-        "I..."
-        "Didn't know what to say.":
-            "I didn't know what to say, so I just kind of sat there. I guess it was peaceful."
-        "Poured out my heart to God.":
-            "I poured out my heart to God. I told Him everything that was bothering me, everything that made me happy, and asked for His help. Praying about all that helped me feel at peace."
-        "Prayed for peace and understanding.":
-            "I wished for an increase in love, peace, and understanding in the  people of Talam -- and Earth. I also prayed for peace in my own heart, and began to feel it even as the services ended."
-
-    "Every week she had different things to say, but she always ended with about ten minutes of just quiet, where people could pray or meditate or just think. I didn't always make time for quiet moments in my everyday life, so I enjoyed this bit of peace."
+    "I watched the sun set while flying creatures gathered in the sky."
     $ skill_spiritual += 10
-    $ relaxed += 5
-
     return
 
 
@@ -204,6 +189,22 @@ label spiritual_8:
     return
 
 label spiritual_9:
+    "Sometimes I went to the worship services that Sister Naomi led."
+    naomi "...and all are alike unto God. He invites all to come unto him and partake of his goodness. Do you think it matters what planet we are on?  Of course it doesn't. We all have the same access to divine inspiration and guidance, no matter where we are."
+    naomi "Now let us pray."
+    "I thought she was going to pray for us, but instead we had a few minutes of silence where everyone could pray on their own."
+    menu:
+        "I..."
+        "Didn't know what to say.":
+            "I didn't know what to say, so I just kind of sat there. I guess it was peaceful."
+        "Poured out my heart to God.":
+            "I poured out my heart to God. I told Him everything that was bothering me, everything that made me happy, and asked for His help. Praying about all that helped me feel at peace."
+        "Prayed for peace and understanding.":
+            "I wished for an increase in love, peace, and understanding in the  people of Talam -- and Earth. I also prayed for peace in my own heart, and began to feel it even as the services ended."
+
+    "Every week she had different things to say, but she always ended with about ten minutes of just quiet, where people could pray or meditate or just think. I didn't always make time for quiet moments in my everyday life, so I enjoyed this bit of peace."
+    $ skill_spiritual += 10
+    $ relaxed += 5
 
     $ skill_spiritual += 10
     return

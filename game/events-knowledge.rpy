@@ -9,14 +9,18 @@ label knowledge_0:
     return
 
 label knowledge_1:
-    "I went to town and helped out at the library."
-    "They don't have a lot of physical books there, but there are printouts of Talam and pad computers people can use if they don't have one of their own. Even though there's not lots of shelving to do, people can also put in data requests for librarians to research and things still need to be organized."
-    "I was able to help with some obscure requests the colonists had posted by reading some recently published research papers."
-    
-    $ skill_knowledge += 10
-    return
+    "I went to a workshop at the laboratory about how to use a spectrometer to determine whether or not a food is edible." 
+    teacher "And in some cases, you'll just have to test a little on an Earth creature. If you spectrize something and can't tell if it's safe, bring it into the lab."
+    her "Do you have a list of plants you've already tested?" 
+    teacher "Oh, right. Well, of course there's the ones you're planting, but in addition to those we've discovered a few that contain relevant nutrients. I'll have my assistant send out a guide." 
+    $ skill_knowledge  += 10 
+    return 
 
 label knowledge_2:
+    "I went to town and helped out at the library."
+    "They don't have a lot of physical books there, but there are printouts of Talam and pad computers people can use if they don't have one of their own. Even though there's not lots of shelving to do, people can also put in data requests for librarians to research and things still need to be organized."
+    "I was able to help with some obscure requests the colonists had posted by reading some recently published research papers."    
+
     $ skill_knowledge += 10
 
     return

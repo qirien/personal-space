@@ -9,7 +9,7 @@ label social_0:
     return
 
 label social_1:
-    
+    "I helped Natalia Peron cut and dry the fruits she found on an exploratory hike."
     $ skill_social += 10
     return
 
