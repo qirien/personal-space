@@ -9,7 +9,10 @@ label knowledge_0:
     return
 
 label knowledge_1:
-
+    "I went to town and helped out at the library."
+    "They don't have a lot of physical books there, but there are printouts of Talam and pad computers people can use if they don't have one of their own. Even though there's not lots of shelving to do, people can also put in data requests for librarians to research and things still need to be organized."
+    "I was able to help with some obscure requests the colonists had posted by reading some recently published research papers."
+    
     $ skill_knowledge += 10
     return
 

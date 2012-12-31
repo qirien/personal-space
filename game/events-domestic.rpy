@@ -1,11 +1,6 @@
 # Afternoon Events
 # Domestic
 
-# Variables
-image bg farm_exterior = "bg/farm-exterior.png"
-image bg farm_interior = "bg/farm-interior.png"
-image bg fields = "bg/fields.png"
-
 # Intro Event and the default
 label domestic_0:
     scene bg farm_interior

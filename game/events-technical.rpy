@@ -14,15 +14,14 @@ label technical_1:
     return
 
 label technical_2:
-    #TODO: Is "tablet" the right word to use for futuristic computers?  "Datapad"? "Notepad"? "Laptop"?
-    "Even though we have a solar panel to run our tablets, the lights, and a few other things, we do most work the old-fashioned way, without electricity."
+    "Even though we have a solar panel to run our pad computers, the lights, and a few other things, we do most work the old-fashioned way, without electricity."
     "And did I mention there's no running water? We have a well and a pump, but we're always fetching water with buckets...Well, mostly I fetch water with buckets, since [his_name] has a bunch of pipes and canals setup for watering the farm."
     her "Washing dishes by hand is bad enough, but to also have to fetch and heat the water? There's got to be a better way..."
     him "Here, I'll do the dishes tonight."
     her "No, it's my turn, I'll just do it."
     him "No, really. I'll do the dishes, and while I'm washing them, maybe you can think of a better system that would make it easier."
     her "That...is a really good idea."
-    "I got out my tablet and started sketching some ideas. What could we use for pipes? How could I pump the water out of the well automatically? I did some research on early plumbing systems."
+    "I got out my pad and started sketching some ideas. What could we use for pipes? How could I pump the water out of the well automatically? I did some research on early plumbing systems."
     "[his_name] did the dishes every night for a week while I worked on the plans, and then we spent a day together building it."
     her "OK, so if we turn this crank here, that turns the screw that pulls up the water. Try it!"
     him "Nothing's happening."

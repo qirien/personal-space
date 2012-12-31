@@ -21,6 +21,34 @@ label relax_together_0:
     return
 
 label relax_together_1:
+    "One of the things I missed most about Earth was having my own shower and bath. While we washed up well enough with water from the well, we still enjoyed going to the community bath once a week or so to really get clean."
+    her "I really need a bath."
+    him "Really? You smell great to me."
+    her "Ick, you need a bath, too! Let's go tonight."
+    him "Sure, after dinner and...dessert."
+    her "You made dessert?! What kind?"
+    him "I was thinking we'd make some dessert...together."
+    her "Ohhh, {b]that{/b} kind of dessert. The kind you don't need to use up your sugar ration for..."
+    him "Yes...though we could have dessert first, you know. Sometimes it's fun to break the rules."
+    menu:
+        "\"Dessert\" first?"
+        "Dinner first.":
+            her "How about dinner first? You can think of it as an appetizer..."
+            him "Hmmm, you're very appetizing."
+            "We played footsie under the table while we ate and gave each other suggestive looks. Dinner didn't last very long..."
+            $ loved += 5
+            $ made_love += 1
+        "Dessert first.":
+            her "Life is short; eat dessert first!"
+            "And what a dessert it was..."
+            $ loved += 5
+            $ made_love += 1
+        "No dessert tonight.":
+            her "I think I'd rather skip dessert tonight..."
+            him "Oh...okay. Sure, let's just eat dinner."
+            $ loved -= 2
+    "Afterwards, we packed up our towels and toiletries and headed down to the bathhouse."
+    "We built a fire to heat up one of the tubs of water, and took turns washing off and then soaking in the small tub."
     return
 
 label relax_together_2:

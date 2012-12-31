@@ -61,10 +61,12 @@ init python:
 
 
     # MONTHLY SPECIAL EVENTS
+    # Default event that we shouldn't ever see....
     event("monthly_event_0", "period == 'monthly_event'", event.solo(), priority=200)
 
     # Scripted Events that happen once
-    for i in range(1,24):
+    event("monthly_event_1", "period == 'monthly_event'", event.once())
+    for i in range(2,24):
         event ("monthly_event_" + `i`,  
                "period == 'monthly_event'", 
                event.once(), 

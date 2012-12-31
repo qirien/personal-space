@@ -13,20 +13,25 @@ label relax_alone_0:
 
 label relax_alone_1:
     "I felt so tired, I decided to just go to bed early."
-    $relaxed += 10
+    $relaxed += 5
     return
 
 label relax_alone_2:
     "I sat out on the porch and gazed at the stars."
-    $relaxed += 10
+    $relaxed += 5
     return
 
 label relax_alone_3:
     "I listend to some of my favorite songs and reminisced about past experiences."
-    $relaxed += 10
+    $relaxed += 5
+
     return
 
 label relax_alone_4:
+    "I got a message from my mother. It was one she sent about a month ago, but she told me all about my siblings, and how the neighbors were doing, and I better take good care of [his_name] and is he taking care of me, that sort of thing."
+    "Even though I knew it would take a month for my letter to cross the vast space between our planets, I wrote back. I told her all about the farm and [his_name] and the town and my job. I wonder how much she could understand; our life was so different here..."
+    "Still, it felt good to be connected to Earth."
+    $ relaxed += 10
     return
 
 label relax_alone_5:

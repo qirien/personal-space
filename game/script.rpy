@@ -2,8 +2,16 @@
 
 # Declare images below this line, using the image statement.
 
+# BACKGROUNDS
 image bg stars = "bg/starscape.png"
 image bg earth = "bg/earth.jpg"
+image bg farm_exterior = "bg/farm-exterior.png"
+image bg farm_interior = "bg/farm-interior.png"
+image bg fields = "bg/fields.png"
+image bg colony_ship_bunk = "bg/colony-ship-bunk.png"
+image bg talam = "bg/talam.png"
+
+# SPRITES
 image him normal = "sprites/him.png"
 image her normal = "sprites/her.png"
 
@@ -19,9 +27,8 @@ define her_name = "Me"
 
 # Variables about emotional state.  -100 is minimum, 100 is maximum
 define relaxed = 0    # negative = stressed
-define energized = 0  # negative = exhausted
 define loved = 0      # negative = neglected
-define inspired = 0   # negative = depressed
+define made_love = 0  # Counter of lovemaking, used for pregnancy calculation
 
 # Variables about skills.  On a scale from 0-100, how skilled is the character?  These are now defined in dse.rpy
 

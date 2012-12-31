@@ -133,36 +133,66 @@ label physical_2:
             her "I hope you're not disappointed. I could put on an apron and go fuss around in the kitchen instead."
             him "No, no! Chop away! I'll get dinner ready."
             "Chopping required a surprising amount of concentration. Balance the log at the optimum angle, bring up the axe, aim at the middle of the log, let it down, repeat again."
-            "I chopped and chopped until I heard him call,"
-            him "Dinner's ready!"
-            her "Great! Thanks for cooking."
+            "I chopped and chopped until I felt that someone was watching me."
+            her "How long have you been watching me?"
+            him "Only a few minutes. I was going to tell you that dinner was ready, but I was mesmerized by your hot moves."
+            her "I'm chopping wood, not pole dancing!"
+            him "That could be good, too."
+            her "Well, anyway, thanks for cooking."
             him "Thanks for chopping. That'll help us stay warm for quite a while."
             her "You'll keep me warm for quite a while."
             him "Only forever."
             $ loved += 5
         "This is your job.":
             her "Well, {b}somebody{/b} had to chop wood for the stove, or we'll be having a cold dinner tonight."
-            him "Sorry I didn't get around to it earlier. I can finish up, if you like."
-            her "No, I'm almost done anyway."
+            him "Sorry, I've been working on the fields all day."
+            her "Firewood is important, too."
+            him "Not as important as not starving."
+            her "I think we will both starve if we have to eat everything raw. Anyway, I'm almost done."
+            him "Speaking of not starving, what's for dinner?"
+            menu:
+                "What's for dinner?"
+                "You're asking {b}me{/b}?!":
+                    her "I hadn't gotten to that yet because I had to chop up all this stupid wood!"
+                    "I threw the axe on the ground in a way that probably wasn't good for the axe or the ground, but it felt good."
+                    him "I just asked a question, you don't have to throw things around."
+                "You tell me.":
+                    her "Why don't you tell me?"
+                    him "Well, I picked some chard and thought maybe we could add a little salt pork, if that's not too much trouble for you."
+                "Sorry, I don't know.":
+                    her "I'm sorry, [his_name], I was going to make it earlier, but then I found out we needed more wood, and now it's getting late..."
+                    him "Want me to make something? I picked chard today..."
+                    her "Oh, that would be great. Thank you, [his_name]."
+                    $ loved += 5
+                "Get your own dinner.":
+                    her "Well, I'm having some leftovers. You can make your own dinner."
+                    "I stomped away in a huff and ate by myself. It didn't taste as good as it should have, though."
+                    
 
     $ skill_physical += 10
 
     return
 
 label physical_3:
-    
+    "[his_name] needed a ditch dug for the new field, so I volunteered to help. We dug and dug and dug, and finally, the ditch was finished."
+    him "Thanks for your help, [her_name]. You are actually pretty good at shovelling."
+    her "Me and my hidden talents..."
+    him "Yes, I wonder what else you are hiding?"
+    her "Come and find out."
+    $ loved += 2
 
     $ skill_physical += 10
 
     return
 
 label physical_4:
+    #Learn how to ride a horse?
 
     $ skill_physical += 10
     return
 
 label physical_5:
-
+    #Yoga?
     $ skill_physical += 10
     return
 
