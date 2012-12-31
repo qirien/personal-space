@@ -13,7 +13,9 @@ init -100 python:
     style.stat_bar = Style(style.bar)
     style.stat_value_label = Style(style.label)
     style.stat_value_label_text = Style(style.label_text)
-        
+
+    style.stat_grid = Style(style.grid)
+
     __dse_stats = [ ]
 
     class __Stat(object):
@@ -51,9 +53,12 @@ init -100 python:
         normalize_stats()
         
         ui.window(style=style.stats_frame)
-        ui.vbox(style=style.stats_vbox)
+        #ui.vbox(style=style.stats_vbox)
+        # TODO: get a grid working so we can display stats better (including loved & relaxed?)
+        ui.grid(2, len(__dse_stats)//2 + 1, 2, style=style.stat_grid)
             
         layout.label("Statistics", "stats")
+        layout.label("", "stats")
         
         for s in __dse_stats:
             v = getattr(store, s.var)

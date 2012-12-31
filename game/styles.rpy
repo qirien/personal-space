@@ -3,7 +3,7 @@
 init python:
 
     # Place the day planner.
-    style.dp_frame.ypos = 230
+    style.dp_frame.ypos = 200
     style.dp_frame.yanchor = 0.0
     style.dp_frame.xalign = 0.5
 
@@ -37,18 +37,22 @@ init python:
     style.stats_vbox.box_first_spacing = 10
 
     # Put blank space around each stat name, and right-justify.
-    style.stat_label.xminimum = 140
+    style.stat_label.xminimum = 100
+    style.stat_label.xmaximum = 110
     style.stat_label_text.xalign = 1.0
-    style.stat_label_text.yalign = 1.0
+    style.stat_label_text.yalign = 0.5
     style.stat_label.xmargin = 5
     style.stat_label_text.size = 16
     
     # Put blank space around each stat value, and right-justify.
-    style.stat_value_label.xminimum = 100
-    style.stat_value_label_text.xalign = 1.0
+    style.stat_value_label.xminimum = 80
+    style.stat_value_label.xmaximum = 100
+    style.stat_value_label_text.yalign = 0.5
+    style.stat_value_label_text.xalign = 0.0
     style.stat_value_label_text.size = 16
     
     
     # Center the stat bar vertically.
     style.stat_bar.yalign = 0.5
-
+    style.stat_bar.xminimum = 200
+    style.stat_bar.xmaximum = 200
