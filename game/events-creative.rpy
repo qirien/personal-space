@@ -9,7 +9,7 @@ label creative_0:
     return
 
 label creative_1:
-    "Creative 1"
+    "On my way back from work, I found some tall, wide weeds that had grown very quickly. I wanted to work on some weaving, so I took some home and made two placemats with it."
     $ skill_creative += 10
     return
 
