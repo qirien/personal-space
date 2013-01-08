@@ -9,54 +9,8 @@ label domestic_0:
 
     return
 
-# Cellar Event
+# Cellar Event moved to monthly; need new exciting event here.
 label domestic_1:
-    scene bg farm_exterior
-    show him normal at left
-    him "It'll sure be nice when we have some fresh food to eat."
-    show her normal at center
-    her "I know; I'm so tired of MREs!"
-    him "It won't take too long until the radishes, spinach, and maybe even carrots are ready."
-    #show her worried at center
-    her "We don't have a refrigerator..."
-    him "No, I was thinking of digging a cellar, but I just haven't had time...preparing the fields has taken longer than I thought."
-    menu:
-        "The cellar...?"
-        "I'll do it!":
-            her "Don't worry about the cellar; I'll take care of it!"
-            him "Whoa, whoa, that's a big job - why don't we work on it together?"
-            "We dug and hauled out dirt and dug and hauled until finally we had a small cellar to store food in! We were exhausted, but it felt good to get it done together."
-            $ loved += 5
-            $ skill_domestic += 10
-
-        "I'll surprise him...":
-            her "We have time; don't worry about it yet."
-            "I started digging after work, thinking I could get a lot dug before he came home, but..."
-            him "Nice hole. Are you going to plant something in it?"
-            her "No, it's going to be our cellar."
-            him "Oh."
-            her "..."
-            him "Why don't we work on it together?"
-            "We dug and hauled out dirt and dug and hauled until finally we had a small cellar to store food in! We were exhausted, but it felt good to get it done together."
-            $ loved += 5
-            $ skill_domestic += 10
-
-        "I want to help, but...":
-            her "Why don't you let me take care of the farm while you dig it?"
-            him "Well...That could work. There's a lot of weeds that need pulling; I'll show you how to do the watering with the irrigation ditches I have set up."
-            her "I can do that."
-            him "You can even...you can take Lettie if you want to."
-            #show her laughing at center
-            her "Wow, you're trusting me with your favorite horse? I'm touched."
-            him "I wouldn't trust anyone else."
-            scene bg fields
-            "I rode Lettie around, scouting the fields for weeds. I had never noticed how big the farm was before -- [his_name] takes care of a lot of plants!"
-            "It took longer than I thought, and I ended up helping him haul out a lot of the dirt, but then we had our very own cellar!"
-            $ skill_domestic += 10
-            $ loved += 5
-
-        "I don't want to help.":
-            her "I'm sure you'll find the time."
     return
 
 
