@@ -6,6 +6,7 @@ label monthly_event_0:
     "Nothing happened this month."
     return
 
+# MONTH 1 - Chore allocation
 label monthly_event_1:
     "Our first month living on our own together, we had to work a lot of things out."
     menu:
@@ -100,7 +101,7 @@ label monthly_event_1:
             him "Hey, hey, it's okay, here, I'll take care of it."
             $relaxed -= 5
         "Laughed":
-            her "Who invited the millipede to breakfast?"
+            her "Ha ha ha ha ha ha...\nWho invited the millipede to breakfast?"
             him "Sorry about that. He seemed like such a nice fellow last night..."
             her "I'm afraid he's worn out his welcome. Perhaps you could gently escort him off the premises?"
             him "It would be my pleasure."
@@ -115,9 +116,12 @@ label monthly_event_1:
     her "George?! You're giving this thing a name?"
     him "Doesn't he look like a George to you? Besides, I accidentally invited him in with my mess, so I guess he's my pet."
     her "As long as he's an outside pet."
+
+    #TODO: But who actually ended up doing the dishes?!
     "The dishes were never left undone after that."
     return
 
+# MONTH 2 - The Cellar
 label monthly_event_2:
     # Cellar Event
     scene bg farm_exterior
@@ -187,6 +191,7 @@ label monthly_event_2:
 
     return
 
+# MONTH 3 - His Birthday
 label monthly_event_3:
     "Even though we were on a new planet, we still kept track of what day it was on the Earth calendar. The seasons didn't match up or anything, but it helped us feel like we were still a part of things back home."
     her "It's his birthday this month!"
@@ -231,8 +236,72 @@ label monthly_event_3:
     $ loved += 5
     return
 
+#helper function for month 4 for a commonly used conversation tree
+label unappreciated:
+    her "I can't believe you don't appreciate me and what I do"
+    him "Well, it just seems kind of like a waste of time when there's so much real work to be done."
+    her "Real work?! You don't think I do real work?!"
+    him "Real work provides food, clothing, shelter. The necessities. We don't have extra time for anything else in order for the colony to survive."
+    her "If it's just about survival, life isn't worth living."
+    him "Well, you don't even get a choice if you don't survive. If something goes wrong, who's going to help us out here? There's no food stamps, no Red Cross, no emergency rooms - just us."
+    $ relaxed -= 10
+    $ loved -= 10
+    menu:
+        "You're freaking me out":
+            her "[his_name], you're freaking me out. Are we going to die out here?"
+            him "Maybe. But, live or die, it's up to us. Our hard work, or lack of it, will determine our fate."
+            her "That's so scary."
+            him "At least we are in control."
+        "We can't focus on that all the time":
+            her "That's true, but we can't be working on food, clothes, and shelter twenty-four hours a day. If you don't take a break and think about other things once in a while, you'll go insane."
+            him "Survival is mostly what I'm thinking about. Every day."
+            her "Well, I can't live that way."
+            him "Well, hopefully you won't die that way."
+        "I can't talk about this anymore":
+            her "Stop it, I can't talk about this anymore."
+            him "Well, just think about what I said. Are we going to live or die?"
+            her "I don't want to die..."
+            him "Then you need to choose to live."
+    return
+
+# MONTH 4 - Are Hobbies a Waste of Time?
 label monthly_event_4:
-    "Are Hobbies Waste of Time"    
+    $ highest_skill = highest_stat()
+    if (highest_skill == "Domestic"):
+        him "You spend a lot of time around the house; what exactly do you do?"
+        menu:
+            "What do I do?"
+            "You really don't know?":
+                her "What do I do?! You really haven't noticed?"
+                him "I don't know; I'm sure you're doing something useful, I'm just not sure what."
+                her "Well, I made the curtains over there."
+                him "Oh, yeah, those are nice. Very insulating."
+                her "And I've planted an herb garden out front to add flavor to our meals, and for herbal teas and things."
+                him "Okay, that will be good. Sorry, I didn't meant to accuse, I just really was curious what projects you've been working on."
+            "What do {b}you{/b} do?":
+                her "What have {b}you{/b} been doing lately? You've been reading a lot."
+                him "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they will grow."
+                her "Okay, well, that sounds very... necessary."
+                her "I've made some curtains and planted an herb garden, in addition to keeping the house pretty spotless."
+                him "Oh, is that what those plants are? The house is really clean, too; thank you."
+            "I can't believe you don't appreciate me":
+                jump unappreciated
+
+    elif (highest_skill == "Creative"):
+        him "You spend a lot of time on your art, don't you?"
+    elif (highest_skill == "Technical"):
+        him "You spend a lot of time tinkering with things, don't you?"
+    elif (highest_skill == "Spiritual"):
+        him "You spend a lot of time just thinking about stuff, don't you?"
+    elif (highest_skill == "Social"):
+        him "You spend a lot of time just hanging out, don't you?"
+    elif (highest_skill == "Knowledge"):
+        him "You spend a lot of time reading, don't you?"
+    elif (highest_skill == "Physical"):
+        him "You spend a lot of time exercising, don't you?"
+    else:
+        "You spend a lot of time on your hobbies, don't you?"
+
     return
 
 label monthly_event_5:

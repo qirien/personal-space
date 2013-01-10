@@ -47,6 +47,19 @@ init -100 python:
 
             setattr(store, s.var, v)
 
+    # Function to return the name of the highest stat
+    def highest_stat():
+        normalize_stats()
+        
+        highest_stat = 0
+        highest_stat_name = ""
+
+        for curr_stat in __dse_stats:
+            stat_value = getattr(store, curr_stat.var)
+            if (stat_value >= highest_stat):
+                highest_stat_name = curr_stat.name
+                highest_stat = stat_value
+        return highest_stat_name
 
     def display_stats(name=True, bar=True, value=True, max=True):
 
@@ -54,7 +67,7 @@ init -100 python:
         
         ui.window(style=style.stats_frame)
         #ui.vbox(style=style.stats_vbox)
-        # TODO: get a grid working so we can display stats better (including loved & relaxed?)
+        # Instead of a vertical box, use a grid to display our many stats
         ui.grid(2, len(__dse_stats)//2 + 1, 2, style=style.stat_grid)
             
         layout.label("Statistics", "stats")
