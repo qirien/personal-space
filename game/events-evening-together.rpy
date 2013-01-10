@@ -28,7 +28,7 @@ label relax_together_1:
     him "Sure, after dinner and...dessert."
     her "You made dessert?! What kind?"
     him "I was thinking we'd make some dessert...together."
-    her "Ohhh, {b]that{/b} kind of dessert. The kind you don't need to use up your sugar ration for..."
+    her "Ohhh, {b}that{/b} kind of dessert. The kind you don't need to use up your sugar ration for..."
     him "Yes...though we could have dessert first, you know. Sometimes it's fun to break the rules."
     menu:
         "\"Dessert\" first?"
