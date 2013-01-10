@@ -55,10 +55,12 @@ init -100 python:
         highest_stat_name = ""
 
         for curr_stat in __dse_stats:
-            stat_value = getattr(store, curr_stat.var)
-            if (stat_value >= highest_stat):
-                highest_stat_name = curr_stat.name
-                highest_stat = stat_value
+            # TODO remove this when we hide these stats.
+            if ((curr_stat.name != "Relaxation") and (curr_stat.name != "Loved") and (curr_stat.name != "Made Love")):
+                stat_value = getattr(store, curr_stat.var)
+                if (stat_value >= highest_stat):
+                    highest_stat_name = curr_stat.name
+                    highest_stat = stat_value
         return highest_stat_name
 
     def display_stats(name=True, bar=True, value=True, max=True):

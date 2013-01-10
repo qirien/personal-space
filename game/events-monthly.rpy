@@ -238,7 +238,7 @@ label monthly_event_3:
 
 #helper function for month 4 for a commonly used conversation tree
 label unappreciated:
-    her "I can't believe you don't appreciate me and what I do"
+    her "I can't believe you don't appreciate me and what I do."
     him "Well, it just seems kind of like a waste of time when there's so much real work to be done."
     her "Real work?! You don't think I do real work?!"
     him "Real work provides food, clothing, shelter. The necessities. We don't have extra time for anything else in order for the colony to survive."

@@ -95,7 +95,7 @@ label act_work:
 
     else:
         "I worked hard at work as usual."
-        $ relaxed -= 2
+        $ relaxed -= 5
 
     return
 
