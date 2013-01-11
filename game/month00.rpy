@@ -36,7 +36,6 @@ label colony_ship:
                 her "Don't forget this..."
                 him "Ohhh. Wow, I will never forget that."
                 $ made_love += 1
-                # TODO: is this TMI?
 
         # Definitely no kids
         "Really crazy.":
@@ -143,8 +142,7 @@ label colony_ship:
     menu:
         her "(It look like chocolate, but...)"
         "Try it":
-            #TODO is this second-person instead of first-person awkward?
-            "(It tastes like bread with sugar and chocolate on it. In fact, on closer inspection, you can see that it {b}is{/b} a piece of bread, sprinkled with sugar, and with pieces of chocolate pressed into it.)"
+            "(It tastes like bread with sugar and chocolate on it. In fact, on closer inspection, I can see that it {b}is{/b} a piece of bread, sprinkled with sugar, and with pieces of chocolate pressed into it.)"
             her "This is actually kind of good. Here, try some."
             him "Oh, thanks."
         "Don't try it.":

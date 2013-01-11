@@ -8,7 +8,7 @@
 
 label relax_alone_0:
     "I curled up with a good book."
-    $relaxed += 10
+    $relaxed += 5
     return
 
 label relax_alone_1:
@@ -35,6 +35,19 @@ label relax_alone_4:
     return
 
 label relax_alone_5:
+    "There are some movies that I love that [his_name] just doesn't like. That's fine; we don't have to do things together all the time. So one night, I watched..."
+    menu:
+        "I watched:"
+        "A musical":
+            "A musical. It was cheesy, of course, but the dancing was good and the songs were moving. Something about music just communicates in a way nothing else can..."
+        "A romantic comedy":
+            "A romantic comedy. I was struck by how silly their disagreements were. Here we were, wondering if we were going to survive, and they were hiding petty secrets from each other. Who has time for that?"
+        "A historical drama":
+            "A historical drama. The situation of the immigrants in the movie reminded me a little bit of us, except instead of learning how to get along with hostile foreign people we were trying to get along with hostile natural forces."
+        "A documentary":
+            "A documentary. It felt kind of irrelevant now that we weren't even living in the same country, but also nostalgic. Ahh, the days back when we lived on Earth..."
+                
+    $ relaxed += 5
     return
 
 label relax_alone_6:

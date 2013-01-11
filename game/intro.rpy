@@ -125,13 +125,16 @@ label marriage_proposal:
             him "Sorry, I should have made that part more obvious. [her_name], will you marry me!"
         "Excited":
             her "Oh [his_name], I can't think of anything that would make me happier!"
+            $ loved += 5
         "Worried":
             her "[his_name], I love you, but are you sure you want to go to an entirely new planet? So many things could go wrong..."
             him "I'm sure they will, [her_name], but I know it will be worth it. And when thing's do go wrong, I want you by my side."
+            $ loved += 5
         "Annoyed":
             her "Oh, so you only want me along because I'm such a good [profession]?"
             him "Of course not. I want you along because I'm madly in love with you, and I want to show you that every day, forever."
 
+    her "[his_name]...I would love to create a new life together, even if it is on a different planet."
     scene bg wedding
     "And so we got married."
     "My mother cried; she knew we were going to space and she would probably never see me again (or any grandkids). My father..."

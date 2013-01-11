@@ -10,6 +10,8 @@ image bg farm_interior = "bg/farm-interior.png"
 image bg fields = "bg/fields.png"
 image bg colony_ship_bunk = "bg/colony-ship-bunk.png"
 image bg talam = "bg/talam.png"
+image bg pond = "bg/pond.png"
+image bg path = "bg/path.png"
 
 # SPRITES
 image him normal = "sprites/him.png"

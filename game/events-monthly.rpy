@@ -1,5 +1,6 @@
 # Event content for all the important monthly events
 
+# TODO Make some calm conversation options dependent on relaxed
 # You shouldn't ever see this. This is just a fall through in case something happens
 # and there's no event for this month.
 label monthly_event_0:
@@ -8,6 +9,10 @@ label monthly_event_0:
 
 # MONTH 1 - Chore allocation
 label monthly_event_1:
+    scene bg farm_interior
+    show her normal at center
+    show him normal at right
+    play music "music/You.ogg" fadeout 1.0
     "Our first month living on our own together, we had to work a lot of things out."
     menu:
         "It's breakfast time."
@@ -81,9 +86,14 @@ label monthly_event_1:
             $loved += 5
             return
 
+    scene black
     #if nobody did the dishes, pest problems!
+    #show her upset at center
+    #show him upset at right
+    play music "music/Prelude02.ogg" fadeout 1.0
     her "AAAAAAAAAAAAAAAHHHHHH!!!!"
     him "What is it?! What's wrong?"
+    scene bg farm_interior
     "I just pointed to the dirty dishes. Coiled around his mess kit, happily nibbling on bits of leftover food, was a long, flat, segmented creature with innumerable legs and dangerous-looking claws. It was at least as long as my arm."
     him "Whoa!"
 
@@ -100,13 +110,13 @@ label monthly_event_1:
             her "This would have never happened if you hadn't left out those dirty dishes!"
             him "Hey, hey, it's okay, here, I'll take care of it."
             $relaxed -= 5
-        "Laughed":
+        "Laughed" if (relaxed >= 10):
             her "Ha ha ha ha ha ha...\nWho invited the millipede to breakfast?"
             him "Sorry about that. He seemed like such a nice fellow last night..."
             her "I'm afraid he's worn out his welcome. Perhaps you could gently escort him off the premises?"
             him "It would be my pleasure."
             
-        "Analyzed":
+        "Analyzed" if (skill_knowledge >= 10):
             her "Interesting. It's legs are jointed like an arthropod, but those claws look more crustacean ... of course, arthropods and crustaceans are not that far apart from each other... how did it get inside, anyway?"
             him "I think it crawled under the front door. There's quite a gap there."
             her "Huh. Looks like it's an omnivore; it ate the protein and the vegetables..."
@@ -189,21 +199,27 @@ label monthly_event_2:
             her "(All the farm stuff is his responsibility, anyway)"
             "It took him two weeks of digging and hauling dirt every second he wasn't caring for the plants. He fell asleep right after dinner, but in the morning he was back digging again, until finally, it was finished."
 
+    "Later in the month, he harvested some radishes, spinach, and carrots, and we were able to store them safely in the cellar."
     return
 
 # MONTH 3 - His Birthday
 label monthly_event_3:
     "Even though we were on a new planet, we still kept track of what day it was on the Earth calendar. The seasons didn't match up or anything, but it helped us feel like we were still a part of things back home."
+    scene bg farm_interior
+    show her normal at center
+
     her "It's his birthday this month!"
     menu:
         "Maybe I should do something for him..."
         "Have a party" if (skill_social >= 20):
             "I invited some friends over and we ate dinner together and played games together until late. We sang Happy Birthday to [his_name]."
-            him "Thanks, [her_name] - what a great birthday."
+            show him normal at right
+            him "Thanks, [her_name] - what a great birthday!"
         "Make delicious food" if (skill_domestic >= 20):
             "I couldn't really copy his bread-cake that he made on the shuttle for my birthday, but I was determined to make him something tasty."
             "I found some berries that I had tried before, and combined them with some biscuits from our rations to make a sort of berry shortcake. We had some candles in our emergency case, so I lit one of those for him, too."
-            her "Happy birthday, [his_name]"
+            show him normal at right
+            her "Happy birthday, [his_name]"            
             him "Wow! Thank you! This looks great!"
             "It didn't taste anything like strawberry shortcake, but it was still good, and [his_name] seemed to like it."
             
@@ -212,12 +228,14 @@ label monthly_event_3:
             "I finally decided I would make him a hat."
             "I could only work on it when he wasn't paying attention, so it went pretty slowly. But finally I was able to finish it."
             "I hoped he would actually like it, and not just pretend like he liked it."
+            show him normal at right
             her "Happy birthday, [his_name]. This is for you."
             him "A birthday present?! Wow, thanks!"
             him "This hat is perfect! It will keep the sun off my neck and will be warm in the cold wind, too!"
             her "I'm so glad you like it."
         "Make him a card":
             "I made him a nice card and gave it to him on his birthday."
+            show him normal at right
             him "What's this for?"
             her "Today's your birthday! On the Earth calendar."
             him "Oh! I hadn't thought about the Earth calendar for a while! I forgot; thank you!"
@@ -226,6 +244,7 @@ label monthly_event_3:
             
         "Just tell him happy birthday":
             "I figured it'd be a waste of resources to make him anything special. We had what we needed. But I did tell him happy birthday, and he seemed to like that."
+            show him normal at right
             him "Thanks for remembering my birthday."
         "I'm not doing anything":
             "He probably didn't even remember his birthday. Birthdays are dumb, anyway."
@@ -238,6 +257,7 @@ label monthly_event_3:
 
 #helper function for month 4 for a commonly used conversation tree
 label unappreciated:
+    play music "music/Prelude02.ogg" fadeout 1.0
     her "I can't believe you don't appreciate me and what I do."
     him "Well, it just seems kind of like a waste of time when there's so much real work to be done."
     her "Real work?! You don't think I do real work?!"
@@ -266,6 +286,10 @@ label unappreciated:
 
 # MONTH 4 - Are Hobbies a Waste of Time?
 label monthly_event_4:
+    scene bg farm_interior
+    show her normal at center
+    show him normal at right
+
     $ highest_skill = highest_stat()
     if (highest_skill == "Domestic"):
         him "You spend a lot of time around the house; what exactly do you do?"
@@ -287,8 +311,9 @@ label monthly_event_4:
             "I can't believe you don't appreciate me":
                 jump unappreciated
 
+    #TODO fill these in when we have more skill events written.
     elif (highest_skill == "Creative"):
-        him "You spend a lot of time on your art, don't you?"
+        him "You spend a lot of time making crafts, don't you?"
     elif (highest_skill == "Technical"):
         him "You spend a lot of time tinkering with things, don't you?"
     elif (highest_skill == "Spiritual"):

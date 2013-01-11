@@ -14,7 +14,7 @@ label creative_1:
     return
 
 label creative_2:
-    "I was weeding in the backyard when I found some wildflowers. They reminded me of clover, so I made a daisy-chain circlet out of them. I was fun."
+    "I was weeding in the backyard when I found some wildflowers. They reminded me of clover, so I made a daisy-chain circlet out of them. It was fun."
     menu:
         "Make one for [his_name] too.":
             him "It looks like you had some fun this afternoon."
@@ -32,6 +32,7 @@ label creative_2:
             him "Ooo, harsh. But being with you is like a dream come true, so does that mean you'll fulfill my wishes here?"
             "You get in a tickle fight, and one of your flower bracelets falls off. It was fun while it lasted."
             $loved += 5
+            $ made_love += 1
                 
     $ skill_creative += 10
 
@@ -57,6 +58,7 @@ label creative_5:
         her "Yeah! I can think of a few things I'd like to use it for too, like giving some of our livestock a leash or making a backpack."
         him "Oh, are you going to make a leash for me too?"
         her "Only if you want one."
+        $ loved += 2
     else:
         "I tried to make rope out of my own hair but it didn't work very well, since I wasn't willing to chop off all my hair to make a tiny amount of rope. I tried using some hair from brushing Lettie, but I only had enough hair to make a short, thin rope."
         him "Oh, you made rope with horsehair? I think I've heard of that before. It won't be strong enough for a ladder, but we can make some reins out of it."

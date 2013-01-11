@@ -9,23 +9,28 @@ label physical_0:
     return
 
 label physical_1:
+    scene bg talam
     "I decided to do some exploring. Here I was, living on a completely new planet, and all I had ever seen was the town and my own little farm. There was a ridge to the south, so I decided to hike over the top and see what was there."
     "The ridge was steeper than it looked, but I was able to scramble up to the top. From the top of the ridge I could see all the way to town to the north, and to the south was a vast expanse of wild rolling hills with sparse shrubs, a few of the taller plants we called trees, and over all the ground the blue-green lichen that seemed to live everywhere on Talam."
-    "And, as the ridge descended before me, at its base I could see a grove of trees that looked out-of-place, telling me there was wa"
+    scene bg pond
+    "And, as the ridge descended before me, at its base I could see a grove of trees that looked out-of-place."
+    show her normal at right
     her "There must be water there!"
     "Sure enough, the stream that ran through the valley formed a pond that the trees drew water from. As I descended the slope, the fragrant smell of new plants reached me. At the bottom, the shade and cool water looked inviting and calm."
     her "Whew...I've been hiking for almost two hours now -- time for a break!"
     "I took off my shoes and socks and dipped my feet in the water. The rocks at the bottom were a little slimy with a strange magenta substance that I assumed was algae, but it still felt good.  I sat down on a rock and took a long drink from the water I brought."
     if (skill_creative >= 20):
         "The pond was so familiar, and yet so distinct from anything I'd seen on Earth, I felt like I had to draw it, so I took out my sketchpad and got to work."
-    if (skill_domestic >= 40):
+    if (skill_domestic >= 30):
         "I decided to bring some of the sweet-smelling herbs back to the house and see if the scientists had tested their edibility."
 
     "When I had rested long enough, I started to bring my legs out of the water. However, they were completely numb! They weren't just cold; and they weren't tingly like they had fallen asleep - it felt more like some kind of anaesthesia."
     "I had to use my hands to pull my legs out of the water. I noticed some black spots on them, but when I tried to wipe off the spots..."
     her "It's not mud...are these some kind of leech?!"
+    play music "music/Prelude02.ogg" fadeout 1.0
+
     "I was able to pry it off, and, sure enough, they were attached to my skin with little jaws just like leeches. They must secrete some kind of anesthetic..."
-    if (skill_knowledge >= 40):
+    if (skill_knowledge >= 20):
         "I thought I would bring one back for the scientists to analyze, so after removing it I stuck it in my now-empty water bottle."
     "There must have been twenty or thirty on my legs, and by the time I had removed them all, the sun was setting. When I tried to stand up, my legs wobbled and I splashed back in the pond."
     her "My legs are too numb to walk..."
@@ -47,6 +52,7 @@ label physical_1:
     him "Keep talking to me, I'm coming!"
     her "I can't move very well."
     him "It's okay, I'll get you home."
+    play music "music/You.ogg" fadeout 1.0
     "I saw [his_name] appear on the top of the ridge. He was riding Lettie, his eyes scanning the landscape fiercely, until he finally saw me."
     "Before I could even explain what had happened, he had picked me up and was holding me close. I rested my head on his chest."
     him "You're safe..."

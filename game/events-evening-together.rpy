@@ -49,6 +49,7 @@ label relax_together_1:
             $ loved -= 2
     "Afterwards, we packed up our towels and toiletries and headed down to the bathhouse."
     "We built a fire to heat up one of the tubs of water, and took turns washing off and then soaking in the small tub."
+    $ relaxed += 5
     return
 
 label relax_together_2:
