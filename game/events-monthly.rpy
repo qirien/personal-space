@@ -345,7 +345,75 @@ label monthly_event_4:
     return
 
 label monthly_event_5:
-    "Differing Value of Items"
+    "The village council asked us to do a waste assessment to see how much and what kind of materials we needed to permanently dispose of. If the amount of waste was too high, they told us that future colonists would be limited."
+    "Our waste pile was fairly small, as we'd already composted any organic material that we didn't eat. Still, there was things like packaging from the MREs, a broken dish, and a pair of worn-out socks."
+    her "You threw away a perfectly good pair of socks?"
+    him "Well, they have holes in the heels, and the rest of the material is getting thin. I wasn't sure if they were compostable."
+    her "We can't just throw things away when they break like on Earth. We need to take care of this planet for future colonists and the life forms that are already here."
+    him "Well, what should we do with them then?"
+    menu:
+        "I could see if any of our neighbors could use the fabric." if (skill_social >= 20):
+            her "One of my friends is making a quilt, and I think she could cut it up and use it for part of the batting."
+            him "Someone will have my skin cells in their quilt! I'm grossed out just thinking about it."
+            her "Oh, get over it. We'll wash them real good."
+            him "Well, as long as she's okay with it."
+        "I could use the broken dish in an artwork." if (skill_creative >= 20):
+            her "If I crushed the dish pieces even further, I could make a mosaic with it."
+            him "Well, mosaics are great and all, but that's not very practical."
+            her "Maybe you could use them at the bottom of potted plants to help them drain better."
+            him "Okay, okay, maybe there's a way I could use that."
+        "I could mend this sock." if (skill_domestic >= 20):
+            her "I've been practicing some sewing and I could darn these socks."
+            him "Can this kind of sock even be darned?"
+            her "I want to at least try."
+            him "Okay, but we might have to think of another use for them if the darning doesn't work out."
+            her "I could keep sock after sock until eventually I can make... a sock quilt!"
+            him "..."
+            her "Think of how fun it would be to put all the weird sock shapes together in a rectangle!"
+            him "Um, well, I hope the darning works out."
+        "Let's think of a solution together." if (skill_spiritual >= 20):
+            her "It might be difficult, but I think if we work together we can think of some way to use these objects."
+            him "Hmmm. I might be able to use the packaging from the MREs to separate small rows of crops."
+            her "And maybe I could turn these pieces of plate into labels for the crop."
+            him "Oh, that would actually be really nice for next year."
+        "I could dig a deep hole for them." if (skill_physical >= 30):
+            her "If I dig deep enough, we can just get rid of this stuff and no one will know that we couldn't think of a way to reuse them."
+            him "It could be our little secret."
+            "I dug and dug and dug. After I buried the items, it was nice to not have it cluttering up the house. And I didn't have to feel guilty about preventing other people from starting a new life here."
+            "Still, I couldn't help feeling like I might have done better."
+            $relaxed -= 5
+            return
+        "I'm sick of making all the decisions.":
+            her "Why do I have to decide? You're just as much a part of this household."
+            him "Well if it's up to me, then let's just throw it all out."
+            menu:
+                "Fine.":
+                    her "Fine. Then it'll be partly your fault if our colony is making too much waste for more colonists to come."
+                    him "Good riddance! I came here to get away from them."
+                    "It took me several trips to get our trash to the designated area. Someone there said they were trying to recycle as much as possible, but I felt bad for not even trying."
+                    $relaxed -= 10
+                    $loved -= 5
+                    return
+                "I don't want to throw it all out.":
+                    her "I'll think of something on my own if that's how you feel."
+                    him "Okay then."
+                    "Over the next few days I tried to recycle the items I had, but nothing worked out. I ended up taking most of it to the designated dump. Someone there said they were trying to recycle as much as possible. At least I tried."
+                    $relaxed -= 10
+                    $loved -= 3
+                    return
+        "Let's compromise.":
+            her "We could throw away half of this stuff, and then try to think of uses for what we keep over the next few days."
+            him "Okay."
+            her "Can you help me sort it?"
+            him "Sure."
+            "We sorted through our trash and decided to throw most of it away. [his_name] made a box for fresh produce out of some of the old packaging."
+            "I was glad we could use some of it, but I felt bad that I didn't come up with anything."
+            $relaxed -= 5
+            return
+            
+    "We ended up throwing some of the waste items away, but I felt good about the effort I put it."
+    $relaxed += 5
+
     return
 
 label monthly_event_6:
@@ -410,4 +478,3 @@ label monthly_event_22:
 
 label monthly_event_23:
     return
-
