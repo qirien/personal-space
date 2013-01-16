@@ -12,8 +12,8 @@ label physical_1:
     scene bg talam
     "I decided to do some exploring. Here I was, living on a completely new planet, and all I had ever seen was the town and my own little farm. There was a ridge to the south, so I decided to hike over the top and see what was there."
     "The ridge was steeper than it looked, but I was able to scramble up to the top. From the top of the ridge I could see all the way to town to the north, and to the south was a vast expanse of wild rolling hills with sparse shrubs, a few of the taller plants we called trees, and over all the ground the blue-green lichen that seemed to live everywhere on Talam."
-    scene bg pond
     "And, as the ridge descended before me, at its base I could see a grove of trees that looked out-of-place."
+    scene bg pond
     show her normal at right
     her "There must be water there!"
     "Sure enough, the stream that ran through the valley formed a pond that the trees drew water from. As I descended the slope, the fragrant smell of new plants reached me. At the bottom, the shade and cool water looked inviting and calm."
@@ -60,7 +60,8 @@ label physical_1:
     him "Don't worry, [her_name], I'm the only one that will be gobbling you up now."
     "He nibbled on my ear playfully, and set me on Lettie. He held my hand all the way home."
 
-    "After I had cleaned up and my legs were functioning again, I fell asleep. But [his_name] wanted to talk."
+    scene farm_interior
+    "After I had cleaned up and my legs were functioning again, I fell asleep. But the next morning, [his_name] wanted to talk."
     menu:
         him "I don't think it's a good idea for you to go hiking by yourself."
         "Don't tell me what to do.":
@@ -115,6 +116,7 @@ label physical_1:
     return
 
 label physical_2:
+    scene fields
     "We needed firewood to burn for cooking and heating. I got an axe and split logs to build up a huge supply for later."
     menu:
         him "Wow, I didn't know I married a lumberjack."
@@ -158,14 +160,20 @@ label physical_2:
             him "Speaking of not starving, what's for dinner?"
             menu:
                 "What's for dinner?"
-                "You're asking {b}me{/b}?!":
+                "You're asking {b}me{/b}?!" if (relaxed < 10):
                     her "I hadn't gotten to that yet because I had to chop up all this stupid wood!"
                     "I threw the axe on the ground in a way that probably wasn't good for the axe or the ground, but it felt good."
                     him "I just asked a question, you don't have to throw things around."
+                    her "You implied that I should have already started on dinner."
+                    him "Well, maybe if you had chopped this wood earlier, you could have."
+                    her "Or if {b}you{/b} had done it earlier!"
+                    him "You know what? Never mind; I'll just make myself something."
+                    $ loved -= 5
                 "You tell me.":
                     her "Why don't you tell me?"
                     him "Well, I picked some chard and thought maybe we could add a little salt pork, if that's not too much trouble for you."
-                "Sorry, I don't know.":
+                    her "Oh, [his_name], that sounds great, actually.  Thank you."
+                "Sorry, I don't know." if (relaxed >= 10):
                     her "I'm sorry, [his_name], I was going to make it earlier, but then I found out we needed more wood, and now it's getting late..."
                     him "Want me to make something? I picked chard today..."
                     her "Oh, that would be great. Thank you, [his_name]."
@@ -173,6 +181,7 @@ label physical_2:
                 "Get your own dinner.":
                     her "Well, I'm having some leftovers. You can make your own dinner."
                     "I stomped away in a huff and ate by myself. It didn't taste as good as it should have, though."
+                    $ loved -= 5
                     
 
     $ skill_physical += 10

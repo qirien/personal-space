@@ -19,7 +19,7 @@ label knowledge_1:
 label knowledge_2:
     "I went to town and helped out at the library."
     "They don't have a lot of physical books there, but there are printouts of Talam and pad computers people can use if they don't have one of their own. Even though there's not lots of shelving to do, people can also put in data requests for librarians to research and things still need to be organized."
-    "I was able to help with some obscure requests the colonists had posted by reading some recently published research papers."    
+    "I was able to help with some obscure requests the colonists had posted by reading some recently published research papers."
     $ skill_knowledge += 10
 
     return
@@ -38,11 +38,13 @@ label knowledge_3:
     return
 
 label knowledge_4:
+    scene bg path
     "Lily organized a nature hike to tell us more about the local plants, and I went along."
     Lily "As far as I can tell, this plant, which I call Bulbosa, isn't edible. Its bright orange flowers make a good dye though."
     Lily "Alright, take a good look at this next plant and its surroundings. What can you tell me about it?"
     "Lily pointed to a tall flower with what looked like a tongue sticking out of its flower. Its leaves looked furry like ferns, but were hairier than an Earth fern. There no other plants around it, besides a few trees."
     menu:
+        Lily "Do you have any questions?"
         "Is it poisonous?":
             Lily "It's poisonous to certain kinds of seeds. Its roots make the soil around it very acidic, so new flowers won't germinate near it. The tongue-like projection both attracts and detains nearby flying insects. While the insect is stuck on its tongue, the plant sucks out its innards, much like an Earth spider. If you look closely at the tongue-like area, it has multiple spikey projections for this purpose."
         "Is it carnivorous?":

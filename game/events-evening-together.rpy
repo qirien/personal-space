@@ -28,7 +28,7 @@ label relax_together_1:
     him "Sure, after dinner and...dessert."
     her "You made dessert?! What kind?"
     him "I was thinking we'd make some dessert...together."
-    her "Ohhh, {b}that{/b} kind of dessert. The kind you don't need to use up your sugar ration for..."
+    her "Ohhh, {b}that{/b} kind of dessert. The kind we don't need to use sugar rations for..."
     him "Yes...though we could have dessert first, you know. Sometimes it's fun to break the rules."
     menu:
         "\"Dessert\" first?"
@@ -49,6 +49,7 @@ label relax_together_1:
             $ loved -= 2
     "Afterwards, we packed up our towels and toiletries and headed down to the bathhouse."
     "We built a fire to heat up one of the tubs of water, and took turns washing off and then soaking in the small tub."
+    "It felt so good to soak and relax together."
     $ relaxed += 5
     return
 

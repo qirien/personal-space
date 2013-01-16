@@ -12,13 +12,14 @@ label monthly_event_1:
     scene bg farm_interior
     show her normal at center
     show him normal at right
-    play music "music/You.ogg" fadeout 1.0
+    play music "music/You.ogg" fadeout 2.0
     "Our first month living on our own together, we had to work a lot of things out."
     menu:
         "It's breakfast time."
         "Make some for [his_name]":
             her "Here, [his_name], I made you some breakfast."
             him "Oh, thank you. I could just make it myself, you know."
+            her "I don't mind making breakfast."
         "Ask if he wants some":
             her "So, I'm making breakfast...do you want some?"
             him "Oh, that'd be great, thanks."
@@ -103,7 +104,7 @@ label monthly_event_1:
             her "THAT is why you don't leave dirty dishes out overnight!!!"
             him "Okay! How was I supposed to know this planet had giant leftover-eating millipedes?"
             her "It's pretty obvious! Every planet has its scavengers!"
-            him "Calm down, I'll take care of it."
+            him "Calm down, [her_name]. I'll take care of it."
             $relaxed -= 5
         "Cried":
             "I started sobbing."
@@ -133,7 +134,7 @@ label monthly_event_1:
 
 # MONTH 2 - The Cellar
 label monthly_event_2:
-    # Cellar Event
+    play music "music/You.ogg" fadeout 2.0
     scene bg farm_exterior
     show him normal at left
     him "It'll sure be nice when we have some fresh food to eat."
@@ -148,6 +149,7 @@ label monthly_event_2:
         "I'll do it!":
             her "Don't worry about the cellar; I'll take care of it!"
             him "Whoa, whoa, that's a big job - why don't we work on it together?"
+            her "That does sound better, actually."
             "We dug and hauled out dirt and dug and hauled until finally we had a small cellar to store food in! We were exhausted, but it felt good to get it done together."
             $ loved += 5
             $ skill_physical += 5
@@ -204,6 +206,7 @@ label monthly_event_2:
 
 # MONTH 3 - His Birthday
 label monthly_event_3:
+    play music "music/Prelude22.ogg" fadeout 2.0
     "Even though we were on a new planet, we still kept track of what day it was on the Earth calendar. The seasons didn't match up or anything, but it helped us feel like we were still a part of things back home."
     scene bg farm_interior
     show her normal at center
@@ -257,7 +260,7 @@ label monthly_event_3:
 
 #helper function for month 4 for a commonly used conversation tree
 label unappreciated:
-    play music "music/Prelude02.ogg" fadeout 1.0
+    play music "music/Prelude02.ogg" fadeout 2.0
     her "I can't believe you don't appreciate me and what I do."
     him "Well, it just seems kind of like a waste of time when there's so much real work to be done."
     her "Real work?! You don't think I do real work?!"
@@ -314,6 +317,18 @@ label monthly_event_4:
     #TODO fill these in when we have more skill events written.
     elif (highest_skill == "Creative"):
         him "You spend a lot of time making crafts, don't you?"
+        menu:
+            "Do I?"
+            "It's important.":
+                her "I think it's important to know how to make things with what we have on this new planet."
+            "{b}You{/b} spend a lot of time reading":
+                her "What about you? You've been reading a lot lately."
+                him "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they will grow."
+                her "That sounds useful."
+                # TODO What has she been doing?
+                her "I've been "
+            "I can't believe you don't appreciate me":
+                jump unappreciated
     elif (highest_skill == "Technical"):
         him "You spend a lot of time tinkering with things, don't you?"
     elif (highest_skill == "Spiritual"):

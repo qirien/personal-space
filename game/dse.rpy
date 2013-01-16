@@ -53,7 +53,7 @@ label day:
 
     # Increment the month it is.
     $ month += 1
-    stop music
+    stop music fadeout 5.0
     scene black
 
     # We may also want to compute the name for the month here, but

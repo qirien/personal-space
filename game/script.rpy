@@ -1,4 +1,6 @@
 ﻿# Love in Space
+# MAIN
+# Declare global variables, images, characters, etc.
 
 # Declare images below this line, using the image statement.
 
@@ -22,7 +24,8 @@ define her = DynamicCharacter("her_name", color="#8a00ff")
 define him = DynamicCharacter("his_name", color="#ed0303")
 
 define naomi = Character("Sister Naomi", color="#cccccc")
-define boss = Character("Boss", color="#0000cc")
+define boss = Character("Mayor Grayson", color="#0000cc")
+define Lily = Character("Lily", color="#dddd00")
 
 define his_name = "???"
 define her_name = "Me"
@@ -56,6 +59,10 @@ label start:
         "Yes":
             "Of course."
         "No":
+            $ his_name = "Jack"
+            $ her_name = "Jill"
+            $ profession = "doctor"
+            $ want_kids = True
             jump month01
 
     "I thought I knew what love was. After all, that's why I married..."
