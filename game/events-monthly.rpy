@@ -376,6 +376,15 @@ label monthly_event_5:
             him "Hmmm. I might be able to use the packaging from the MREs to separate small rows of crops."
             her "And maybe I could turn these pieces of plate into labels for the crop."
             him "Oh, that would actually be really nice for next year."
+        "This stuff is actually compostable." if ((skill_knowledge >= 30) or (skill_technical >= 30)):
+            her "Actually, we can just compost all these things. They may take a long time to break down, but they will eventually. We can speed the process by breaking them up and spreading them throughout the pile."
+            him "OK, I'll cut up the socks."
+            her "I'll smash the plate. That sounds satisfying, anyway."
+            him "I guess this packaging we can tear into pieces like cave men?"
+            her "You mean Paleolithic humans?"
+            him "Rawr, rawr."
+            her "Wow, you're so paleolithic."
+            him "I'll take that as a compliment."
         "I could dig a deep hole for them." if (skill_physical >= 30):
             her "If I dig deep enough, we can just get rid of this stuff and no one will know that we couldn't think of a way to reuse them."
             him "It could be our little secret."
@@ -411,7 +420,7 @@ label monthly_event_5:
             $relaxed -= 5
             return
             
-    "We ended up throwing some of the waste items away, but I felt good about the effort I put it."
+    "We ended up throwing some of waste items away, but I felt good about the effort I put it."
     $relaxed += 5
 
     return
