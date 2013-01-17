@@ -63,6 +63,38 @@ label relax_together_4:
     return
 
 label relax_together_5:
+    "One day after dinner I noticed [his_name] rubbing his shoulders and grimacing."
+    her "Are you okay?"
+    him "Yeah, I'm just really sore from all the digging I've been doing lately."
+    if (relaxed < 5):
+        her "Yeah, I feel pretty tense, too."
+        "I could have rubbed his shoulders, I guess, but I was just too tired."
+
+    elif (loved >= 10):
+        her "Want me to rub your shoulders?"
+        him "I would love that!"
+        "I started off gently. His muscles were so tight, I was amazed he could move at all. I gradually kneaded harder, trying to tell what sorts of massage he liked."
+        him "Ohhh, that feels so good."
+        "Sometimes he would make sort of painful grunt that let me know he didn't like what I was doing. But he would also sigh with content when I hit a particularly tense spot."
+        if (relaxed >= 10 && skill_physical >= 10):
+            "After his shoulders, I massaged his arms and hands."
+            
+            if (skill_physical >= 30):
+                "My hands were starting to get a little tired, but I didn't want to stop yet, so I rubbed his legs and feet, too."
+
+        "To finish off I massaged his neck and head. I could tell he really enjoyed it."
+
+        if (loved >= 20):
+            him "Now it's your turn to get massaged."
+            her "Mmmm, really? Are you talking about shoulders, or...?"
+            him "I'll massage anything you like."
+            her "Why don't you start with the shoulders, and then we'll see what happens?"
+            "He copied what I had done earlier, and gave me quite the massage, too. It was so relaxing to just sit and do nothing while he took care of all my tense muscles."
+            $ made_love += 1
+            $ relaxed += 5
+
+        $ loved += 5
+
     return
 
 label relax_together_6:
