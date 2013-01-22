@@ -63,7 +63,11 @@ label relax_together_4:
     return
 
 label relax_together_5:
+    scene bg farm_interior
+    play music "music/Will.ogg" fadeout 2.0
     "One day after dinner I noticed [his_name] rubbing his shoulders and grimacing."
+    show him normal at center
+    show her normal at right
     her "Are you okay?"
     him "Yeah, I'm just really sore from all the digging I've been doing lately."
     if (relaxed < 5):
@@ -77,7 +81,7 @@ label relax_together_5:
         him "Ohhh, that feels so good."
         "Sometimes he would make sort of painful grunt that let me know he didn't like what I was doing. But he would also sigh with content when I hit a particularly tense spot."
         if (relaxed >= 10 && skill_physical >= 10):
-            "After his shoulders, I massaged his arms and hands."
+            "After his shoulders, I massaged his arms and hands. It made me think of how hard he had been working all day."
             
             if (skill_physical >= 30):
                 "My hands were starting to get a little tired, but I didn't want to stop yet, so I rubbed his legs and feet, too."
@@ -97,7 +101,9 @@ label relax_together_5:
 
     return
 
+# go "out" to eat on a picnic
 label relax_together_6:
+
     return
 
 label relax_together_7:

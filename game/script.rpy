@@ -26,6 +26,7 @@ define him = DynamicCharacter("his_name", color="#ed0303")
 define naomi = Character("Sister Naomi", color="#cccccc")
 define boss = Character("Mayor Grayson", color="#0000cc")
 define Lily = Character("Lily", color="#dddd00")
+define sara = Character("Sara", color="#551177")
 
 define his_name = "???"
 define her_name = "Me"

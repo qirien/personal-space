@@ -5,6 +5,7 @@
 label act_work:
 
     #Have events every three months or so
+    # TODO: mention that the mayor's favorite song is "It's the End of the World"
     # Emergency where she can't help everyone in time, leading to 
     # the mayor offering to find her some help.
     if (month == 3):

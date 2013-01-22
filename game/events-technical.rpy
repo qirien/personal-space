@@ -33,6 +33,7 @@ label technical_2:
 
     return
 
+# setup alarm system for solar flares
 label technical_3:
 
     $ skill_technical += 10
@@ -68,6 +69,7 @@ label technical_5:
     $ skill_technical += 10
     return
 
+# scavenge electronics, etc from shuttle. Every family gets some seats from the shuttle for a couch!
 label technical_6:
 
     $ skill_technical += 10

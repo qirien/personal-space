@@ -58,21 +58,25 @@ label knowledge_4:
     $ skill_knowledge += 10
     return
 
+# Research geology, geography of planet
 label knowledge_5:
 
     $ skill_knowledge += 10
     return
 
+# Research nutrition theories for colonization, write article about nutritional value of native plants
 label knowledge_6:
 
     $ skill_knowledge += 10
     return
 
+# Research psychology of the frontier, gain insight into something?
 label knowledge_7:
 
     $ skill_knowledge += 10
     return
 
+# Learn about new medical treatment for skin cancer, can help one of the colonists?
 label knowledge_8:
 
     $ skill_knowledge += 10

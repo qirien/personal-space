@@ -10,6 +10,7 @@ label domestic_0:
     return
 
 # Cellar Event moved to monthly; need new exciting event here.
+# Laundry by hand is tough?
 label domestic_1:
     return
 

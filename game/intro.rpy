@@ -122,14 +122,16 @@ label marriage_proposal:
         "I felt..."
         "Shocked":
             her "Did you... did you just ask me to marry you?!"
-            him "Sorry, I should have made that part more obvious. [her_name], will you marry me!"
+            him "Sorry, I should have made that part more obvious. [her_name], will you marry me?!"
         "Excited":
             her "Oh [his_name], I can't think of anything that would make me happier!"
             $ loved += 5
+            $ relaxed += 5
         "Worried":
             her "[his_name], I love you, but are you sure you want to go to an entirely new planet? So many things could go wrong..."
             him "I'm sure they will, [her_name], but I know it will be worth it. And when thing's do go wrong, I want you by my side."
             $ loved += 5
+            $ relaxed -= 5
         "Annoyed":
             her "Oh, so you only want me along because I'm such a good [profession]?"
             him "Of course not. I want you along because I'm madly in love with you, and I want to show you that every day, forever."
@@ -149,6 +151,7 @@ label marriage_proposal:
         "Just grinned.":
             $ father_attitude = "grinning"
             "...just grinned. I felt good knowing he was so happy for me."
+            $ relaxed += 5
     
     "My mind was so full of thoughts of the future, I almost didn't notice when it was my turn to say \"I do.\" It felt like a dream..."
     "You could tell from the wedding presents that people were thinking about how we'd never see Earth again. We got a lot of survival gear, but we couldn't bring most of it and stay under the baggage quota for the colony ship."
@@ -160,7 +163,7 @@ label marriage_proposal:
             "The music player. My friends all pitched in and bought a really nice one. They fit all our favorite songs on there."
         "A Swiss Army knife":
             $ favorite_wedding_gift = "Swiss army knife"
-            "The Swiss Army knife. It had so many gadgets on it, it could probably bake bread. We couldn't take a lot with us, so I thought all its little tools would be handy."
+            "The Swiss Army knife. It had so many gadgets on it, it could practically bake bread. We couldn't take a lot with us, so I thought all its little tools would be handy."
         "A locket with [his_name]'s picture":
             $ favorite_wedding_gift = "locket with your photo in it"
             "A locket with [his_name]'s picture. I thought it was kind of weird at first that his mom gave it to me, but now I understand she was sharing with me her most precious posession of all - her son."

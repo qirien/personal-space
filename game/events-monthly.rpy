@@ -1,6 +1,5 @@
 # Event content for all the important monthly events
 
-# TODO Make some calm conversation options dependent on relaxed
 # You shouldn't ever see this. This is just a fall through in case something happens
 # and there's no event for this month.
 label monthly_event_0:

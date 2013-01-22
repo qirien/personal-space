@@ -3,11 +3,11 @@
 # After they get married, they board the colony ship
 label colony_ship:
 
-    play music "music/Amnesia.ogg" fadeout 1.0
     scene bg colony_ship_bunk
     show him normal at center
     show her normal at right
     "What a honeymoon -- on board a cramped space shuttle with a hundred other people for a month. Of course, back on Earth four years had passed, since we were travelling so close to light speed. We spent a lot of it talking about the future..."
+    play music "music/Amnesia.ogg" fadeout 1.0
     him "What do you think about having kids?"
     her "In general, or us specifically?"
     him "You and me, becoming parents. Sounds kind of crazy, doesn't it?"
@@ -24,6 +24,8 @@ label colony_ship:
             her "You will be a wonderful father, as long as you don't treat the kids the way you treat your horse."
             him "Hey! I'm good to Lettie!"
             her "Too good! You'll spoil the kids with treats!"
+            $ loved += 5
+            $ relaxed += 5
 
         # Not sure about kids
         "I don't know.":
@@ -35,6 +37,7 @@ label colony_ship:
                 him "I think...this part right here. Mmmm...this part is good, too."
                 her "Don't forget this..."
                 him "Ohhh. Wow, I will never forget that."
+                scene bg stars with fade
                 $ made_love += 1
 
         # Definitely no kids
@@ -62,6 +65,7 @@ label colony_ship:
                         "\"You don't trust me?\""
                         "That's right":
                             her "Sorry, I just can't picture you as a father."
+                            $ loved -= 5
                             #show him sad
                             him "Oh..."
                             #show him laughing
@@ -73,7 +77,8 @@ label colony_ship:
                         "I don't want to share you":
                             her "I don't want to share you with anyone else just yet."
                             him "Yeah...that makes sense. I'm not sure how I feel about sharing you with a baby, either."
-                "What about you?":
+                            $ loved += 5
+                "You've fallen off before":
                     her "What about that time you fell off and sprained your wrist?"
                     him "That was completely my fault! Lettie had nothing to do with it."
 
@@ -161,14 +166,22 @@ label colony_ship:
     menu:
         "Thank you, [his_name]":
             her "Thank you, [his_name]...it's the best space birthday I've ever had."
+            him "You're welcome."
         "Happy birthday to you.":
             her "Happy birthday to you, too, [his_name]. Now I feel bad I didn't get you anything."
+            him "Don't feel bad. You're the only present I need."
         "What's the point?":
             her "What's the point of celebrating birthdays? One year older, one year closer to dying...that's not a cause to party."
             him "It is if it means it's one more year I've been able to spend with you."
+    scene black with fade
     "He pulls you close in a gentle hug, then holds you tightly, as if you would drift off into space without him."
+    $ loved += 5
+    $ made_love += 1
+    $ relaxed += 5
     him "[her_name]..."
-            
+    jump settling_in
+
+label settling_in:         
     # Land on the planet and get settled
     play music "music/You.ogg" fadeout 1.0
     scene bg talam
@@ -232,7 +245,7 @@ label colony_ship:
                             him "Okay, well, you're my family, but they still are, too, even if I never see them again."
                             her "Okay."
                             
-            return
+                    jump end_settling_in
             
         "When was this taken?":
             her "When was this taken?"
@@ -246,7 +259,9 @@ label colony_ship:
     him "It's all right. They're important to me, but you're my family now."
     "We kissed, and looked out the window at the alien hills surrounding our little cabin. It felt surreal, like I was in a movie theatre and any minute the lights would come up and the credits would roll. I held [his_name] tightly; he was here; he was real."
     $ loved += 5
+    jump end_settling_in
 
+label end_settling_in:
     # After we land on the planet, we start the monthly routines
     stop music
     jump month01

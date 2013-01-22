@@ -137,6 +137,7 @@ label physical_2:
             her "Mmmm, maybe after dinner you'll show me some more of your...talents."
             him "Only if you show me yours."
             $ loved += 5
+            $ made_love += 1
         "Are you disappointed?":
             her "I hope you're not disappointed. I could put on an apron and go fuss around in the kitchen instead."
             him "No, no! Chop away! I'll get dinner ready."
@@ -211,11 +212,13 @@ label physical_5:
     $ skill_physical += 10
     return
 
+# Go hiking again. Find a hot spring. If you bring him, you both enjoy a long soak and feel invigorated. If you don't bring him, you have to decide if you will tell him about it (even though you sort of promised not to hike alone)
 label physical_6:
 
     $ skill_physical += 10
     return
 
+# Go hunting and bring back some meat
 label physical_7:
 
     $ skill_physical += 10

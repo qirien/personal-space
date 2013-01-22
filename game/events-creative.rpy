@@ -38,11 +38,13 @@ label creative_2:
 
     return
 
+# Crochet something new using goat's hair?
 label creative_3:
-
+    
     $ skill_creative += 10
     return
 
+# Woodworking - make vegetable crate/barrel or clothes drying rack out of local wood 
 label creative_4:
 
     $ skill_creative += 10
@@ -67,16 +69,19 @@ label creative_5:
     $ skill_creative += 10
     return
 
+# Patch his favorite jeans with fabric from space shuttle seats
 label creative_6:
 
     $ skill_creative += 10
     return
 
+# Play some music (on the recorder?)
 label creative_7:
 
     $ skill_creative += 10
     return
 
+# Make some dishes out of local clay, fire them
 label creative_8:
 
     $ skill_creative += 10
