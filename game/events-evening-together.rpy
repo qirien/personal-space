@@ -21,6 +21,8 @@ label relax_together_0:
     return
 
 label relax_together_1:
+    play music "music/Will.ogg" fadeout 2.0
+        
     "One of the things I missed most about Earth was having my own shower and bath. While we washed up well enough with water from the well, we still enjoyed going to the community bath once a week or so to really get clean."
     her "I really need a bath."
     him "Really? You smell great to me."
@@ -46,7 +48,7 @@ label relax_together_1:
         "No dessert tonight.":
             her "I think I'd rather skip dessert tonight..."
             him "Oh...okay. Sure, let's just eat dinner."
-            $ loved -= 2
+            $ loved -= 5
     "Afterwards, we packed up our towels and toiletries and headed down to the bathhouse."
     "We built a fire to heat up one of the tubs of water, and took turns washing off and then soaking in the small tub."
     "It felt so good to soak and relax together."
@@ -54,9 +56,111 @@ label relax_together_1:
     return
 
 label relax_together_2:
+    scene bg stars with fade
+    play music "music/Will.ogg" fadeout 2.0
+    "We went for a walk together under the stars. I brought my computer pad so we could find which one was our old Sun. I didn't see any constellations I recognized, so it was hard to find any reference points, but we finally found which one we thought it was."
+    her "It looks so small..."
+    him "Remember how small Talam's sun looked from Earth?"
+    her "That seems so long ago..."
+    $ relaxed += 5
     return
 
 label relax_together_3:
+    scene bg farm_interior with fade
+    "The library had a huge collection of Earth media that colonists could check out. They even received new things from Earth sometimes, though they only had enough bandwidth to receive the most popular things."
+    "One day I noticed they had a new movie about space colonists. I was curious to see how people on Earth saw people like us, so I checked it out."
+    her "What do you want to do tonight? I checked out a movie that looks fun..."
+    him "Oh, sorry, I told Thuc I'd help him build a fence tonight. He helped me build ours to keep the animals out of the crops, so I said I'd help with his."
+    menu:
+        "I was disappointed, but..."
+
+        "Can't you do it another night?":
+            her "Can't you help him another night? I was really looking forward to watching this with you."
+            him "No, sorry, it has to be tonight."
+            her "Okay, see you later."
+            him "Bye, lovebug."
+            "The house suddenly seemed so quiet. I usually didn't mind being alone, but I had really been looking forward to this. The wind whistled mournfully through the cracks in the walls."
+            menu:
+                "What should I do?"
+                "Watch it without him":
+                    her "Forget it, I'm watching it without him!"
+                    "It was full of drama, comedy, and funny inaccuracies about space colonies, but I didn't really enjoy it..."
+                    $ relaxed -= 5
+                "Do something else":
+                    "I tried to distract myself with a book, but I wasn't really having fun."
+                    $ relaxed -= 5
+                "...":
+                    "All I could think about was how he abandoned me. It wasn't every night I asked him to do something fun with me; why couldn't he put me first instead of his other plans?"
+                    "I worried that maybe I was not good enough - not pretty enough, not smart enough, not strong enough - not just for him, but for this planet. What was I even doing here?"
+                    "I trudged in circles through these depressing thoughts for hours."
+                    $ relaxed = 0
+            "Finally, I just went to bed."
+
+        "I'll help, too.":
+            her "I'll help too!"
+            him "Do you really want to?"
+            her "Yes, we all need to work together to succeed. Plus, I'll get to be with you."
+            him "All right, let's go!"
+            "Thuc had already cut some logs and branches for us to tie up, but we still had to dig holes for posts."
+            if (skill_physical >= 20):
+                "It was a good thing I came, because there was a lot of hard work to do."
+            elif (skill_technical >= 20):
+                "It was a good thing I came, because I pointed out a better way we could make the fence that would be really sturdy."
+            else:
+                "I'm not sure I was much help, but I worked hard and did my best."
+            "We worked hard in the gathering darkness, until the moons rose and gave us their wan light. We worked on and on, until finally it was done."
+            Thuc Nguyen "Thank you so much, both of you."
+            him "Glad we could help. I hope this fence holds up for you."
+            Thuc Nguyen "Well, you can count on my help anytime, if you need it."
+            her "Thanks, I'm sure we will."
+            "We walked home by moonlight.  The two moons cast opposing shadows from the shrubs and trees, making a maze of light for us to follow. [his_name] reached for my hand."
+            him "Thanks for coming. Everything's better with you."
+            her "Even putting up fences is not too bad when it's with you."
+            $ loved += 5
+            $ skill_physical += 5
+            scene black with fade
+  
+        "Want to watch it another night?":
+            her "No problem, we'll just watch it another night."
+            him "Thanks for understanding. I'll see you later, lovebug."
+            "It was a little lonely, especially since I was really looking forward to watching the movie with him, but I soon was absorbed in a good book and then went to bed."
+            "We watched the movie the next night. Even though they got a lot of things wrong about space colonization, we really got into the drama and tension. We both cried a little at the end."
+            $ relaxed += 10
+            $ loved += 5
+  
+        "You're never here when I need you!":
+            her "You're never here when I need you!"
+            him "What are you talking about? I'm home almost every night."
+            her "But you're always on your computer pad; I wanted to do something together tonight."
+            him "Well, I can't. I promised Thuc I'd come tonight."
+            her "I'm not really important to you, am I?"
+            him "What?! Of course you are!"
+            her "Then stay home with me!"
+            him "No, I'm not going to break my promise. Now I have to go, we want to get this done before the moons set."
+            menu:
+                "He's leaving..."
+                "Fine, just leave me here.":
+                    her "Fine, just leave me here."
+                    "He didn't say anything, just shook his head. I watched him leave, feeling hurt and lonely."
+                    "All I could think about was how he abandoned me. It wasn't every night I asked him to do something fun with me; why couldn't he put me first instead of his other plans?"
+                    "I worried that maybe I was not good enough - not pretty enough, not smart enough, not strong enough - not just for him, but for this planet. What was I even doing here?"
+                    "I trudged in circles through these depressing thoughts for hours."
+                    $ relaxed = 0
+                    "Finally, I just went to bed."
+                "...":
+                    "I didn't say anything; just watched him leave, feeling hurt and lonely."
+                    "All I could think about was how he abandoned me. It wasn't every night I asked him to do something fun with me; why couldn't he put me first instead of his other plans?"
+                    "I worried that maybe I was not good enough - not pretty enough, not smart enough, not strong enough - not just for him, but for this planet. What was I even doing here?"
+                    "I trudged in circles through these depressing thoughts for hours."
+                    $ relaxed = 0
+                    "Finally, I just went to bed."
+                "Sorry":
+                    her "Sorry, [his_name]. I'm being selfish."
+                    him "It's all right, lovebug. Let's do something together tomorrow night, okay?"
+                    her "Okay, [his_name]."
+                    "We watched the movie the next night. Even though they got a lot of things wrong about space colonization, we really got into the drama and tension. We both cried a little at the end."
+                    $ relaxed += 5
+                    $ loved += 5
     return
 
 label relax_together_4:
@@ -124,35 +228,41 @@ label relax_together_11:
 label relax_together_12:
     return
 
-label relax_together_13:
+
+# Random events that can happen multiple times
+
+label relax_together_a:
+    "Random A"
+    $ relaxed += 5
+    $ loved += 2
     return
 
-label relax_together_14:
+label relax_together_b:
+    "Random B"
+    $ relaxed += 5
+    $ loved += 2
     return
 
-label relax_together_15:
+label relax_together_c:
+    "Random C"
+    $ relaxed += 5
+    $ loved += 2
     return
 
-label relax_together_16:
+label relax_together_d:
+    "We were both reading on our computer pads, sitting near each other. We didn't talk much, but everyone once in a while we would look up and smile at each other."
+    $ relaxed += 5
+    $ loved += 2
     return
 
-label relax_together_17:
+label relax_together_e:
+    "We played video games together on our computer pads. We liked to play on the same team."
+    $ relaxed += 5
+    $ loved += 2
     return
 
-label relax_together_18:
-    return
-
-label relax_together_19:
-    return
-
-label relax_together_20:
-    return
-
-label relax_together_21:
-    return
-
-label relax_together_22:
-    return
-
-label relax_together_23:
+label relax_together_f:
+    "We made a nice dinner together, and talked while we ate slowly, watching the sun go down."
+    $ relaxed += 5
+    $ loved += 2
     return

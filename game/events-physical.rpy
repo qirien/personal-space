@@ -224,6 +224,7 @@ label physical_7:
     $ skill_physical += 10
     return
 
+# Participate in community soccer team
 label physical_8:
 
     $ skill_physical += 10

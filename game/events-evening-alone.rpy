@@ -7,23 +7,17 @@
 
 
 label relax_alone_0:
-    "I curled up with a good book."
-    $relaxed += 5
     return
 
 label relax_alone_1:
-    "I felt so tired, I decided to just go to bed early."
-    $relaxed += 5
     return
 
 label relax_alone_2:
-    "I sat out on the porch and gazed at the stars."
+    "I sat out on the porch and gazed at the stars. They were so different from Earth, I had to make my own constellations."
     $relaxed += 5
     return
 
 label relax_alone_3:
-    "I listend to some of my favorite songs and reminisced about past experiences."
-    $relaxed += 5
 
     return
 
@@ -45,7 +39,7 @@ label relax_alone_5:
         "A historical drama":
             "A historical drama. The situation of the immigrants in the movie reminded me a little bit of us, except instead of learning how to get along with hostile foreign people we were trying to get along with hostile natural forces."
         "A documentary":
-            "A documentary. It felt kind of irrelevant now that we weren't even living in the same country, but also nostalgic. Ahh, the days back when we lived on Earth..."
+            "A documentary. It felt kind of irrelevant now that we weren't even living on the same planet, but also nostalgic. Ahh, the days back when we lived on Earth..."
                 
     $ relaxed += 5
     return
@@ -71,35 +65,34 @@ label relax_alone_11:
 label relax_alone_12:
     return
 
-label relax_alone_13:
+# Random events that can happen more than once
+
+label relax_alone_a:
+    "I listend to some of my favorite songs and reminisced about past experiences."
+    $ relaxed += 5
     return
 
-label relax_alone_14:
+label relax_alone_b:
+    "I curled up with a good book."
+    $ relaxed += 5
     return
 
-label relax_alone_15:
+label relax_alone_c:
+    "I felt so tired, I decided to just go to bed early."
+    $ relaxed += 7
     return
 
-label relax_alone_16:
+label relax_alone_d:
+    "I wrote a letter to my family, telling them all about what happened this month."
+    $ relaxed += 7
     return
 
-label relax_alone_17:
+label relax_alone_e:
+    "I played some video games that I enjoyed."
+    $ relaxed += 5
     return
 
-label relax_alone_18:
-    return
-
-label relax_alone_19:
-    return
-
-label relax_alone_20:
-    return
-
-label relax_alone_21:
-    return
-
-label relax_alone_22:
-    return
-
-label relax_alone_23:
+label relax_alone_f:
+    "I took a walk and thought about the future."
+    $ relaxed += 5
     return

@@ -30,7 +30,7 @@ init python:
     dp_choice("Knowledge", "act_knowledge")
     dp_choice("Physical", "act_physical")
 
-    dp_period("Relationship Focus", "relationship_focus_act")
+    dp_period("Relaxation Focus", "relaxation_focus_act")
     dp_choice("Do something with [his_name]", "act_relax_together")
     dp_choice("Do something alone", "act_relax_alone")
 
@@ -41,10 +41,10 @@ init python:
 # This is the entry point into the game.
 # jump month01 when you want to start the schedule.
 label month01:
-    $ month = 0
     
-    scene black
-    "Once we arrived, we soon settled into a routine. Every day he would work on the farm while I worked as a [profession]. I had a little free time after work, and then we ate dinner together."
+    $ month = 0
+    scene black with fade
+    "Once we arrived, we soon settled into a routine. Every day he would work on the farm while I worked as a [profession]. I had a little free time after work, and then we ate dinner together. In the evenings we tried to relax, mostly."
 
     jump day
 
@@ -69,13 +69,13 @@ label day:
 
     $ job_focus_act = None
     $ skill_focus_act = None
-    $ relationship_focus_act = None
+    $ relaxation_focus_act = None
     $ monthly_event_act = None
 
     # Now, we call the day planner, which may set the act variables
     # to new values. We call it with a list of periods that we want
     # to compute the values for.
-    call day_planner(["Job Focus", "Skill Focus", "Relationship Focus"])
+    call day_planner(["Job Focus", "Skill Focus", "Relaxation Focus"])
 
     
     # We process each of the three periods of the day, in turn.
@@ -104,7 +104,7 @@ label skill_focus:
     # of the events in the job_focus jumped to skip_next_period. If
     # so, we should skip the skill_focus.
     if check_skip_period():
-        jump relationship_focus
+        jump relaxation_focus
 
     # The rest of this is the same as for the job_focus.
 
@@ -118,16 +118,16 @@ label skill_focus:
     call events_run_period
 
 
-label relationship_focus:
+label relaxation_focus:
     
-    # The relationship_focus is the same as the skill_focus.
+    # The relaxation_focus is the same as the skill_focus.
     if check_skip_period():
         jump monthly_event
 
-    centered "Relationship Focus"
+    centered "Relaxation Focus"
 
-    $ period = "relationship_focus"
-    $ act = relationship_focus_act
+    $ period = "relaxation_focus"
+    $ act = relaxation_focus_act
 
     $ normalize_stats()
     

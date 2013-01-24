@@ -18,8 +18,6 @@ init python:
     # to work. 
     event("work_intro", "act == 'act_work'", event.once(), event.only())
 
-    # TODO: add more work events
-
     # SKILL FOCUS EVENTS
     # For each type of skill, we have 10 special events that happen when your skill
     # reaches a certain level.  There is also an intro event and a master event.
@@ -48,16 +46,29 @@ init python:
     event("relax_together_0", "act == 'act_relax_together'", event.solo(), priority=200)
     event("relax_alone_0", "act == 'act_relax_alone'", event.solo(), priority=200)
 
+    # TODO: Randomize this somehow. Add a function to event such as is_odd_month and is_even_month instead of using 'month' since that is not defined yet.
     # Scripted Events that happen once
-    for i in range(1,24):
+    for i in range(1,12):
         event ("relax_together_" + `i`, 
                "act == 'act_relax_together'", 
                event.once(), 
-               event.happened("relax_together_" + `i-1`))
+               event.happened("relax_together_" + `i-1`),
+               event.is_month_odd()) # odd months only
         event ("relax_alone_" + `i`, 
                "act == 'act_relax_alone'", 
                event.once(), 
-               event.happened("relax_alone_" + `i-1`))
+               event.happened("relax_alone_" + `i-1`),
+               event.is_month_odd()) #odd months only
+
+    for letter in range(ord('a'),ord('f')):
+        event ("relax_together_" + unichr(letter),
+               "act == 'act_relax_together'",
+               event.choose_one("relax_together_random"),
+               event.is_month_even()) #even months only
+        event ("relax_alone_" + unichr(letter),
+               "act == 'act_relax_alone'",
+               event.choose_one("relax_alone_random"),
+               event.is_month_even()) #even months only
 
 
     # MONTHLY SPECIAL EVENTS

@@ -12,7 +12,7 @@ label social_1:
     "One day I was at the Peron's house. Natalia had found some fruits while hiking that the scientists deemed edible. She had picked so many; her table was covered with them."
     her "These look really good!"
     "Natalia" "Here, try one."
-    her "Oh!"
+    her "Thanks...Oh!"
     "They tasted sweet and juicy, but they were full of hard, bitter seeds."
     "Natalia" "I'm going to cut them in half, and then scrape out the seeds and dry them. Want to help? You can take some home with you."
     her "Sure!"
@@ -37,8 +37,67 @@ label social_2:
 
 # Invite family over for dinner
 label social_3:
+    "Even though we had all lived together for months, there were some people in the community we didn't know very well."
+    scene bg farm_interior with fade
+    her "I invited the Blairs over for dinner tomorrow night."
+    him "Are they the ones that have, like, ten kids?"
+    her "Yes..."
+    him "Okay, that will be interesting...where are we all going to sit?"
+    her "I thought we'd just sit outside. I guess I should make some food that kids like, too."
+    him "Maybe some fruit?"
+    her "Yeah, I'll figure it out, don't worry."
+    "I worked hard on the food, and spread out some blankets to sit on, even though it meant I'd have more laundry to do to get all the dust out."
+    scene bg farm_exterior with fade
+    "Mrs. Blair" "Thanks so much for having us over for dinner. That doesn't happen very often, you know, since we have such a large family."
+    her "Well, hopefully I made enough food! Let's eat!"
+    if (skill_domestic >= 10):
+        "I served make-your-own-wraps, where you could put in beans or cheese or vegetables or whatever you wanted. I had some salsa or salad dressing that people could put on, too. They were delicious, and the kids liked them too."
+    else:
+        "I just put out a bunch of beans, rice, fruit, and vegetables, and let people choose what they wanted. It tasted a little bland, but the kids seemed to like it."
+    "Then the kids all played hide-and-seek around the farm while we talked with the Blairs."
+    if (profession == "teacher"):
+        her "The kids are doing great in school."
+        "Mrs. Blair" "I'm glad to hear that! They look forward to it; they say you are a wonderful teacher."
+        her "That's nice to hear. Joanna is about ready to graduate, I think. She knows way more than I do about geology and physics already."
+        "Mrs. Blair" "Yes, it's too bad there's no university here, but I think she will do fine studying with the scientists here."
+    if (is_pregnant):
+        "Mrs. Blair" "I hear you are expecting a baby, congratulations!"
+        her "Thank you! So many new things keep happening; sometimes it's a little overwhelming."
+        "Mrs. Blair" "Yes, that's true. But mostly babies just need love. Everything else you can figure out as you go."
+        her "But...what if I don't love the baby right away?"
+        "Mrs. Blair" "You want to love the baby, don't you?"
+        her "Yes, of course!"
+        "Mrs. Blair" "Well, that's enough love to start with. Do you have someone to deliver the baby yet?"
+        her "I guess I assumed someone at the clinic would do it?"
+        "Mrs. Blair" "Let me help you, too. Call me on the radio when it's time, and I'll meet you at the clinic or wherever you are."
+        her "Really? That would be great; you seem to be an expert on having kids, but I'm not sure if anyone at the clinic knows much about babies."
+        "Mrs. Blair" "I'd be happy to help."
+    elif (want_kids):
+        her "So...Mrs. Blair, you seem like an expert on kids."
+        "Mrs. Blair" "You could say that. Besides my own ten, I've been at twenty deliveries or so, helping the mother through labor."
+        her "Really? We want to have kids, sometime..."
+        "Mrs. Blair" "Well, I hope you'll let me help you. There's a lot that the doctors don't know about babies and new mothers."
+        if (profession == "doctor"):
+            her "Yes, I know about all the medical conditions and treatments, but not very much about the actual babies themselves."
+        else:
+            her "That's probably true..."
+    else:
+        "[his_name] and I talked to the Blairs about our farms and crops, and what things seemed to help the crops grow better, and what the kids were doing."
 
+    "We talked and talked, until finally, it got dark. One of the moons was shining brightly; the other was dark."
+    "Mrs. Blair" "Thanks so much for having us over, [her_name]. I'm glad we got to know you a little better."
+    her "Thanks for coming, we enjoyed your company."
+    "[his_name] and I watched them start walking for home."
+    him "I wonder what our family will look like in a few years?"
+    if (want_kids or is_pregnant):
+        her "It will be different, won't it?"
+    elif (loved >= 10):
+        her "As long as you and me are in it, it will be just fine."
+    else:
+        her "Who knows?"
 
+    scene black with fade
+    
     $ skill_social += 10
     return
 
@@ -201,7 +260,7 @@ label done_party_menu:
         "We also played a game called 'Mafia' where we had to guess who in our group was secretly a bad guy, and also a game called 'Unfortunately' where each person told one sentence of a story, starting with the words 'Fortunately' or 'Unfortunately'."
         "It was fun to get to know our neighbors better and relax for a bit."
 
-    elif (party_entertainment == "talent_show"):
+    elif (party_entertainment == "talent show"):
         "We had a few entries in the talent show, but not a lot. The Mayor got up and told jokes, some of which were even funny. Some of the Blair children sang a silly song about a goat, and Thuc Nguyen juggled knives. We had no idea he could do that!"
         "But I was even more surprised when [his_name] took the stage. I whispered to Sara,"
         her "You didn't tell me he had an act!"

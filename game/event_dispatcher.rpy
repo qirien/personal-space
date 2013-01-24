@@ -11,6 +11,7 @@ init -100 python:
     # A list of all of the events that the system knowns about,
     # it's filtered to determine which events should run when.
     all_events = [ ]
+    this_month = 0
 
     # The base class for events. When constructed, an event
     # automatically adds itself to all_events.
@@ -97,6 +98,17 @@ init -100 python:
 
             def eval(self, name, valid):
                 return eval(self.expr)
+
+
+        # Return true if the current month is odd
+        class is_month_odd(event_check):
+            def eval(self, name, valid):
+                return (this_month % 2 == 1)
+
+        # Return true if the current month is even
+        class is_month_even(event_check):
+            def eval(self, name, valid):
+                return (this_month % 2 == 0)
 
         # If present as a condition to an event, an object of this
         # type ensures that the event will only execute once.
@@ -235,6 +247,7 @@ init -100 python:
 label events_end_day:
 
     $ skip_periods = 0
+    $ this_month += 1
 
     python hide:
 
