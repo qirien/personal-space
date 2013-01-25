@@ -1,0 +1,177 @@
+Thu Jan 24 20:06:54 2013
+Windows-post2008Server-6.2.9200
+Ren'Py 6.14.1.366
+Love in Space 0.1
+
+
+Windowed mode.
+Screen sizes: virtual=(800, 600) physical=(800, 600)
+Vendor: 'Intel'
+Renderer: 'Intel(R) HD Graphics 4000'
+Version: '4.0.0 - Build 9.17.10.2867'
+Display Info: <VideoInfo(hw = 0, wm = 1,video_mem = 0
+	     blit_hw = 0, blit_hw_CC = 0, blit_hw_A = 0,
+	     blit_sw = 0, blit_sw_CC = 0, blit_sw_A = 0,
+	     bitsize  = 32, bytesize = 4,
+	     masks =  (16711680, 65280, 255, 0),
+	     shifts = (16, 8, 0, 0),
+	     losses =  (0, 0, 0, 8),
+	     current_w = 1366, current_h = 768
+>
+
+Fixed-function is blacklisted.
+Extensions:
+    
+    GL_3DFX_texture_compression_FXT1
+    GL_ARB_blend_func_extended
+    GL_ARB_color_buffer_float
+    GL_ARB_compatibility
+    GL_ARB_copy_buffer
+    GL_ARB_depth_buffer_float
+    GL_ARB_depth_clamp
+    GL_ARB_depth_texture
+    GL_ARB_draw_buffers
+    GL_ARB_draw_buffers_blend
+    GL_ARB_draw_elements_base_vertex
+    GL_ARB_draw_indirect
+    GL_ARB_draw_instanced
+    GL_ARB_explicit_attrib_location
+    GL_ARB_fragment_coord_conventions
+    GL_ARB_fragment_program
+    GL_ARB_fragment_program_shadow
+    GL_ARB_fragment_shader
+    GL_ARB_framebuffer_object
+    GL_ARB_framebuffer_sRGB
+    GL_ARB_geometry_shader4
+    GL_ARB_gpu_shader5
+    GL_ARB_gpu_shader_fp64
+    GL_ARB_half_float_pixel
+    GL_ARB_half_float_vertex
+    GL_ARB_instanced_arrays
+    GL_ARB_map_buffer_range
+    GL_ARB_multisample
+    GL_ARB_multitexture
+    GL_ARB_occlusion_query
+    GL_ARB_occlusion_query2
+    GL_ARB_pixel_buffer_object
+    GL_ARB_point_parameters
+    GL_ARB_point_sprite
+    GL_ARB_provoking_vertex
+    GL_ARB_sample_shading
+    GL_ARB_sampler_objects
+    GL_ARB_seamless_cube_map
+    GL_ARB_shader_bit_encoding
+    GL_ARB_shader_objects
+    GL_ARB_shader_subroutine
+    GL_ARB_shading_language_100
+    GL_ARB_shadow
+    GL_ARB_sync
+    GL_ARB_tessellation_shader
+    GL_ARB_texture_border_clamp
+    GL_ARB_texture_buffer_object_rgb32
+    GL_ARB_texture_compression
+    GL_ARB_texture_compression_rgtc
+    GL_ARB_texture_cube_map
+    GL_ARB_texture_cube_map_array
+    GL_ARB_texture_env_add
+    GL_ARB_texture_env_combine
+    GL_ARB_texture_env_crossbar
+    GL_ARB_texture_env_dot3
+    GL_ARB_texture_float
+    GL_ARB_texture_gather
+    GL_ARB_texture_multisample
+    GL_ARB_texture_non_power_of_two
+    GL_ARB_texture_query_lod
+    GL_ARB_texture_rectangle
+    GL_ARB_texture_rg
+    GL_ARB_texture_rgb10_a2ui
+    GL_ARB_timer_query
+    GL_ARB_transform_feedback2
+    GL_ARB_transform_feedback3
+    GL_ARB_transpose_matrix
+    GL_ARB_uniform_buffer_object
+    GL_ARB_vertex_array_bgra
+    GL_ARB_vertex_array_object
+    GL_ARB_vertex_buffer_object
+    GL_ARB_vertex_program
+    GL_ARB_vertex_shader
+    GL_ARB_vertex_type_2_10_10_10_rev
+    GL_ARB_window_pos
+    GL_ATI_separate_stencil
+    GL_EXT_abgr
+    GL_EXT_bgra
+    GL_EXT_blend_color
+    GL_EXT_blend_equation_separate
+    GL_EXT_blend_func_separate
+    GL_EXT_blend_minmax
+    GL_EXT_blend_subtract
+    GL_EXT_clip_volume_hint
+    GL_EXT_compiled_vertex_array
+    GL_EXT_draw_buffers2
+    GL_EXT_draw_range_elements
+    GL_EXT_fog_coord
+    GL_EXT_framebuffer_blit
+    GL_EXT_framebuffer_multisample
+    GL_EXT_framebuffer_object
+    GL_EXT_gpu_program_parameters
+    GL_EXT_multi_draw_arrays
+    GL_EXT_packed_depth_stencil
+    GL_EXT_packed_float
+    GL_EXT_packed_pixels
+    GL_EXT_rescale_normal
+    GL_EXT_secondary_color
+    GL_EXT_separate_specular_color
+    GL_EXT_shadow_funcs
+    GL_EXT_stencil_two_side
+    GL_EXT_stencil_wrap
+    GL_EXT_texture3D
+    GL_EXT_texture_array
+    GL_EXT_texture_compression_s3tc
+    GL_EXT_texture_edge_clamp
+    GL_EXT_texture_env_add
+    GL_EXT_texture_env_combine
+    GL_EXT_texture_filter_anisotropic
+    GL_EXT_texture_integer
+    GL_EXT_texture_lod_bias
+    GL_EXT_texture_rectangle
+    GL_EXT_texture_sRGB
+    GL_EXT_texture_shared_exponent
+    GL_EXT_texture_snorm
+    GL_EXT_texture_swizzle
+    GL_EXT_transform_feedback
+    GL_IBM_texture_mirrored_repeat
+    GL_INTEL_map_texture
+    GL_INTEL_performance_queries
+    GL_NV_blend_square
+    GL_NV_conditional_render
+    GL_NV_primitive_restart
+    GL_NV_texgen_reflection
+    GL_SGIS_generate_mipmap
+    GL_SGIS_texture_edge_clamp
+    GL_SGIS_texture_lod
+    GL_SUN_multi_draw_arrays
+    GL_WIN_swap_hint
+Number of texture units: 8
+Using shader environment.
+Using copy RTT.
+Using gl renderer.
+Texture testing:
+- Hardware max texture size: 8192
+- 64px textures work.
+- 128px textures work.
+- 256px textures work.
+- 512px textures work.
+- 1024px textures work.
+- 2048px textures work.
+Performance test:
+- Target is 5 frames in 0.333333333333 seconds.
+- Frame drawn at 0.000000 seconds.
+- Frame drawn at 0.011000 seconds.
+- Frame drawn at 0.019000 seconds.
+- Frame drawn at 0.020000 seconds.
+- Frame drawn at 0.021000 seconds.
+- 0.021000 seconds to render 5 frames.
+Deallocating textures.
+Done deallocating textures.
+About to quit GL.
+Finished quit GL.

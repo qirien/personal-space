@@ -40,7 +40,12 @@ label creative_2:
 
 # Crochet something new using goat's hair?
 label creative_3:
-    
+    "One of the villagers was able to spin yarn out of goat hair. I took a skein and promised I'd try to make something with it."
+    "Luckily, I was able to borrow a crochet needle from the library. I looked up how to crochet on my computer pad, and started making a simple potholder."
+    her "Oh no! Each row is just getting more and more narrow."
+    "Luckily I figured out that I needed to add an extra stitch at the end of each row before I finished, but I ended up with an hourglass-shaped potholder."
+    him "Wow, you made an abnormally-shaped potholder on your first try crocheting? I would have just stuck with something safe, you're really ambitious!"
+    her "Yes, it's so it won't flop around in your hand as much when you go to pick something up!"
     $ skill_creative += 10
     return
 
