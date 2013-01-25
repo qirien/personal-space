@@ -9,7 +9,6 @@ label domestic_0:
 
     return
 
-# Cellar Event moved to monthly; need new exciting event here.
 # Laundry by hand is tough?
 label domestic_1:
     return
@@ -18,7 +17,7 @@ label domestic_1:
 label domestic_2:
     scene bg farm_interior
     show her normal
-    her "I've got to do something about these windows. They are too bright when the suns are low. But it's not as if I can just buy some cloth..."
+    her "I've got to do something about these windows. They are too bright when the sun is low. But it's not as if I can just buy some cloth..."
     if (skill_social >= 10):
         her "I'll ask around for everyone's scraps of cloth, and sew them together to make some curtains"
     else:
@@ -60,6 +59,7 @@ label domestic_4:
             "[his_name] and I talked it over, and we decided to fence in a part of the wild area not too far from the house for the goats."
             "There were three of them, two males and a female, and I became remarkably attached to them. [his_name] used the manure for fertilizer, and they worked hard eating the strange plants from this planet."
             $ skill_domestic += 10
+            $ community_level += 5
             $ have_goat = True
         "No, thanks.":
             her "(I don't think I have time to take care of goats right now!)"
@@ -124,11 +124,12 @@ label domestic_5:
         #show her excited at center
         her "Radish pickles?! That sounds fun!"
         "They had plenty of vinegar and salt at the storehouse, and I used some of the herbs and spices from the garden to make a few batches of pickled radishes."
-        $skill_knowledge += 5
+        $ skill_knowledge += 5
     elif (skill_social >= 20):
         her "I bet I could trade these with the Peron's for some eggs from their chickens..."
         "Sure enough, Natalia was delighted to have some fresh vegetables, and I made a souffle instead."
-        $skill_social += 5
+        $ community_level += 5
+        $ skill_social += 5
     elif have_goat:
         "I sliced them really thin and spread them with goat cheese and some herbs from the garden."
         her "They hardly taste like radishes anymore...much better!"
@@ -189,20 +190,22 @@ label domestic_8:
                 her "I'll ask around."
                 "I got on the radio and asked around town -- turns out a lot of people felt like [his_name] and thought some fresh meat would be delicious, even if it was alien meat."
                 "It felt good to share with our neighbors."
-                $skill_social += 5
+                $ skill_social += 5
+                $ community_level += 5
             elif skill_social >= 20:
                 "I know just who would want some."
                 "The Blair family had seven kids and I knew some of their crops hadn't made it. There were plenty of rations in the storehouse, so they weren't starving or anything, but I thought they'd like some real food."
                 "When I took it to them, they didn't care that it came from an alien monster; they just thanked me and gave me some eggs from their chickens to take home with me."
-                $skill_social += 5
+                $ community_level += 5
+                $ skill_social += 5
         "Drying it":
             her "We could dehydrate it and make jerky."
             him "Do you know how to do that?"
             her "Theoretically...we'll need to smoke and salt it...We can adapt a recipe for fish jerky, I think."
             him "OK, I'll skin and cut up this sucker while you're figuring that out."
-            if skill_technical >= 40:
+            if (skill_technical >= 40:)
                 "I rigged up a smoker with some old scrap metal and put some screens above it for the meat"
-                $skill_technical += 5
+                $ skill_technical += 5
             else:
                 "We soaked the meat in brine, and then I setup some racks where the fish could dry in the sun and wind."
                 her "If it rains we'll need to bring everything inside..."
@@ -219,10 +222,12 @@ label domestic_8:
             her "A meat-tasting party!"
             if skill_social >= 90:
                 "We invited the whole town for a giant potluck celebration. People brought salads and fresh bread and rice and spicy beans and there was even a little fruit for everyone."
-                "Our little colony had never had such a celebration before; even though there wasn't really enough meat for everyone to have much, since we all brought something it worked out. We felt like a real community."
-                $skill_social += 5
-            elif skill_social >=40:
+                "Our little colony didn't have many celebrations; even though there wasn't really enough meat for everyone to have much, since we all brought something it worked out. We felt like a real community."
+                $ skill_social += 5
+                $ community_level += 10
+            elif skill_social >=30:
                 "We invited a large group of friends and we ate almost all of it. I think they appreciated that we shared it with them. It felt good to help out our friends."
+                $ community_level += 5
             else:
                 "We invited a few friends over and we ate and ate and ate as much as we could. I wondered if we might get sick, but other than feeling full all the next day, nothing bad happened."
             

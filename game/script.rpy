@@ -24,9 +24,9 @@ define her = DynamicCharacter("her_name", color="#8a00ff")
 define him = DynamicCharacter("his_name", color="#ed0303")
 
 define naomi = Character("Sister Naomi", color="#cccccc")
-define boss = Character("Mayor Grayson", color="#0000cc")
+define boss = Character("Mayor Grayson", color="#0033dd")
 define Lily = Character("Lily", color="#dddd00")
-define sara = Character("Sara", color="#551177")
+define sara = Character("Sara", color="#771199")
 
 define his_name = "???"
 define her_name = "Me"
@@ -35,6 +35,7 @@ define her_name = "Me"
 define relaxed = 0    # negative = stressed
 define loved = 0      # negative = neglected
 define made_love = 0  # Counter of lovemaking, used for pregnancy calculation
+define community_level = 0 # how successful is the colony?
 
 # Variables about skills.  On a scale from 0-100, how skilled is the character?  These are now defined in dse.rpy
 

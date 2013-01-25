@@ -69,7 +69,7 @@ label creative_5:
     $ skill_creative += 10
     return
 
-# Patch his favorite jeans with fabric from space shuttle seats
+# Recover space shuttle seats to make a couch?
 label creative_6:
 
     $ skill_creative += 10

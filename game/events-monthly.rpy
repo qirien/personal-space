@@ -110,7 +110,7 @@ label monthly_event_1:
             her "This would have never happened if you hadn't left out those dirty dishes!"
             him "Hey, hey, it's okay, here, I'll take care of it."
             $relaxed -= 5
-        "Laughed" if (relaxed >= 10):
+        "Laughed" if (relaxed >= 5):
             her "Ha ha ha ha ha ha...\nWho invited the millipede to breakfast?"
             him "Sorry about that. He seemed like such a nice fellow last night..."
             her "I'm afraid he's worn out his welcome. Perhaps you could gently escort him off the premises?"
@@ -194,6 +194,7 @@ label monthly_event_2:
             him "That would be great; it'll be more efficient with a few more people."
             "I talked to the Peron's and they thought that sounded great, so we were able to help each other have a cellar to store food in. They also gave us some eggs from their chickens, who were acclimatizing to Talam nicely."
             $ skill_social += 5
+            $ community_level += 5
 
         "I don't want to help.":
             her "I'm sure you'll find the time."
@@ -268,6 +269,7 @@ label unappreciated:
     him "Well, you don't even get a choice if you don't survive. If something goes wrong, who's going to help us out here? There's no food stamps, no Red Cross, no emergency rooms - just us."
     $ relaxed -= 10
     $ loved -= 10
+    $ community_level -= 10
     menu:
         "You're freaking me out":
             her "[his_name], you're freaking me out. Are we going to die out here?"
@@ -389,7 +391,7 @@ label monthly_event_5:
             him "It could be our little secret."
             "I dug and dug and dug. After I buried the items, it was nice to not have it cluttering up the house. And I didn't have to feel guilty about preventing other people from starting a new life here."
             "Still, I couldn't help feeling like I might have done better."
-            $relaxed -= 5
+            $ relaxed -= 5
             return
         "I'm sick of making all the decisions.":
             her "Why do I have to decide? You're just as much a part of this household."
@@ -399,15 +401,17 @@ label monthly_event_5:
                     her "Fine. Then it'll be partly your fault if our colony is making too much waste for more colonists to come."
                     him "Good riddance! I came here to get away from them."
                     "It took me several trips to get our trash to the designated area. Someone there said they were trying to recycle as much as possible, but I felt bad for not even trying."
-                    $relaxed -= 10
-                    $loved -= 5
+                    $ relaxed -= 10
+                    $ loved -= 5
+                    $ community_level -= 5
                     return
                 "I don't want to throw it all out.":
                     her "I'll think of something on my own if that's how you feel."
                     him "Okay then."
                     "Over the next few days I tried to recycle the items I had, but nothing worked out. I ended up taking most of it to the designated dump. Someone there said they were trying to recycle as much as possible. At least I tried."
-                    $relaxed -= 10
-                    $loved -= 3
+                    $ relaxed -= 10
+                    $ loved -= 3
+                    $ community_level -= 5
                     return
         "Let's compromise.":
             her "We could throw away half of this stuff, and then try to think of uses for what we keep over the next few days."

@@ -27,7 +27,7 @@ label technical_2:
     him "Nothing's happening."
     her "Be patient! Keep turning!"
     him "I will...I trust you."
-    "It was nothing like a faucet of instant hot water like on Earth, but it was much better than running out to the well all the time!"
+    "The cold trickle was nothing like a faucet of instant hot water like on Earth, but it was much better than running out to the well all the time!"
     
     $ skill_technical += 10
 

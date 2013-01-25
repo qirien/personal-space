@@ -8,6 +8,7 @@ label knowledge_0:
 
     return
 
+# Learning about edible plants
 label knowledge_1:
     "I went to a workshop at the laboratory about how to use a spectrometer to determine whether or not a food is edible." 
     Lily "And in some cases, you'll just have to test a little on an Earth creature. If you spectrize something and can't tell if it's safe, bring it into the lab."
@@ -16,6 +17,7 @@ label knowledge_1:
     $ skill_knowledge  += 10 
     return 
 
+# Volunteering to do research at library
 label knowledge_2:
     "I went to town and helped out at the library."
     "They don't have a lot of physical books there, but there are printouts of Talam and pad computers people can use if they don't have one of their own. Even though there's not lots of shelving to do, people can also put in data requests for librarians to research and things still need to be organized."
@@ -24,6 +26,7 @@ label knowledge_2:
 
     return
 
+# Finding fiber crops
 label knowledge_3:
     "I studied the guide to edible plants the scientists sent out. It included information about other uses for plants. Some plants, called fiber crops, have the potential to be made into cloth or paper."
     her "I'm looking for plants to make into cloth, have you seen any plants that are fluffy-looking?"
@@ -34,9 +37,11 @@ label knowledge_3:
     "I told her it grew near our riverbed, and she promised to update the useful plants list."
     define has_grass = True
     $ skill_knowledge += 10
+    $ community_level += 5
     
     return
 
+# Nature hike for edible plants
 label knowledge_4:
     scene bg path
     "Lily organized a nature hike to tell us more about the local plants, and I went along."

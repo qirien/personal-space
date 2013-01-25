@@ -41,13 +41,12 @@ init python:
 
 
 
-    # RELATIONSHIP EVENTS
+    # RELAXATION EVENTS
     # Default Events
     event("relax_together_0", "act == 'act_relax_together'", event.solo(), priority=200)
     event("relax_alone_0", "act == 'act_relax_alone'", event.solo(), priority=200)
 
-    # TODO: Randomize this somehow. Add a function to event such as is_odd_month and is_even_month instead of using 'month' since that is not defined yet.
-    # Scripted Events that happen once
+    # One-time Relaxation events; choose next one in sequence every odd month
     for i in range(1,12):
         event ("relax_together_" + `i`, 
                "act == 'act_relax_together'", 
@@ -60,7 +59,8 @@ init python:
                event.happened("relax_alone_" + `i-1`),
                event.is_month_odd()) #odd months only
 
-    for letter in range(ord('a'),ord('f')):
+    # Default relaxation events; choose one of these randomly every even month
+    for letter in range(ord('a'),ord('f')+1):
         event ("relax_together_" + unichr(letter),
                "act == 'act_relax_together'",
                event.choose_one("relax_together_random"),

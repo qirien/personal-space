@@ -161,7 +161,7 @@ label physical_2:
             him "Speaking of not starving, what's for dinner?"
             menu:
                 "What's for dinner?"
-                "You're asking {b}me{/b}?!" if (relaxed < 10):
+                "You're asking {b}me{/b}?!" if (relaxed < 5):
                     her "I hadn't gotten to that yet because I had to chop up all this stupid wood!"
                     "I threw the axe on the ground in a way that probably wasn't good for the axe or the ground, but it felt good."
                     him "I just asked a question, you don't have to throw things around."
@@ -174,7 +174,7 @@ label physical_2:
                     her "Why don't you tell me?"
                     him "Well, I picked some chard and thought maybe we could add a little salt pork, if that's not too much trouble for you."
                     her "Oh, [his_name], that sounds great, actually.  Thank you."
-                "Sorry, I don't know." if (relaxed >= 10):
+                "Sorry, I don't know." if (relaxed >= 5):
                     her "I'm sorry, [his_name], I was going to make it earlier, but then I found out we needed more wood, and now it's getting late..."
                     him "Want me to make something? I picked chard today..."
                     her "Oh, that would be great. Thank you, [his_name]."
@@ -196,6 +196,7 @@ label physical_3:
     him "Yes, I wonder what else you are hiding?"
     her "Come and find out."
     $ loved += 2
+    $ made_love += 1
 
     $ skill_physical += 10
 

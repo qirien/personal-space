@@ -55,12 +55,10 @@ init -100 python:
         highest_stat_name = ""
 
         for curr_stat in __dse_stats:
-            # TODO remove this when we hide these stats.
-            if ((curr_stat.name != "Relaxation") and (curr_stat.name != "Loved") and (curr_stat.name != "Made Love")):
-                stat_value = getattr(store, curr_stat.var)
-                if (stat_value >= highest_stat):
-                    highest_stat_name = curr_stat.name
-                    highest_stat = stat_value
+            stat_value = getattr(store, curr_stat.var)
+            if (stat_value >= highest_stat):
+                highest_stat_name = curr_stat.name
+                highest_stat = stat_value
         return highest_stat_name
 
     def display_stats(name=True, bar=True, value=True, max=True):
@@ -71,9 +69,9 @@ init -100 python:
         #ui.vbox(style=style.stats_vbox)
         # Instead of a vertical box, use a grid to display our many stats
         ui.grid(2, len(__dse_stats)//2 + 1, 2, style=style.stat_grid)
-            
-        layout.label("Statistics", "stats")
-        layout.label("", "stats")
+
+        layout.label("Statistics", "stats")            
+        #layout.label("", "stats")
         
         for s in __dse_stats:
             v = getattr(store, s.var)

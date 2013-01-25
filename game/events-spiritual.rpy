@@ -83,7 +83,8 @@ label spiritual_5:
         "Ponder":
             "As I walked I pondered. I thought about the stars; how many trillions of stars were there, and how small our one little planet was. I marvelled at how many living things there were, just on our own little farm, not to mention in the universe."
             "I was just one of those little lives. Could I make a difference? What was the point of my life, unless I made things better for at least some other little lives near mine?"
-
+            "I felt inspired to do better, and be better."
+  
     $ relaxed += 5
     $ skill_spiritual += 10
     return
@@ -116,7 +117,7 @@ label spiritual_6:
             her "I think the hat looks fine. It's not like the baby's going to care if it's a little crooked; he'll just be happy to have a mom who loves him enough to make him a hat at all."
             "She laughed"
             "Helen" "You have a point there. Hopefully it will at least stay on."
-        "The problem is with this row of stitches here." if skill_creative >= 60 :
+        "The problem is with this row of stitches here." if (skill_creative >= 60) :
             her "The problem is with this row of stitches here. See?"
             "Helen" "Oh, you're right! I'll have to redo these last six rows..."
             her "The rest of it looks great; do you like knitting?"
@@ -168,9 +169,10 @@ label spiritual_6:
     her "Well...Helen gave up a lot of what she loves - freedom, feeling useful, getting things done."
     naomi "You gave up something today, too."
     her "I did?"
-    naomi "You gave of your time and of yourself. Thank you, [her_name]."
+    naomi "You gave of your time, and of yourself. Thank you, [her_name]."
     
     $ skill_spiritual += 10
+    $ community_level += 2
     return
 
 label spiritual_7:
@@ -212,6 +214,7 @@ label spiritual_9:
     "Every week she had different things to say, but she always ended with about ten minutes of just quiet, where people could pray or meditate or just think. I didn't always make time for quiet moments in my everyday life, so I enjoyed this bit of peace."
     $ skill_spiritual += 10
     $ relaxed += 5
+    $ community_level += 2
 
     return
 

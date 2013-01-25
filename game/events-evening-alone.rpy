@@ -25,7 +25,10 @@ label relax_alone_4:
     "I got a message from my mother. It was one she sent about a month ago, but she told me all about my siblings, and how the neighbors were doing, and I better take good care of [his_name] and is he taking care of me, that sort of thing."
     "Even though I knew it would take a month for my letter to cross the vast space between our planets, I wrote back. I told her all about the farm and [his_name] and the town and my job. I wonder how much she could understand; our life was so different here..."
     "Still, it felt good to be connected to Earth."
-    $ relaxed += 10
+    if (relaxed < 0):
+        $ relaxed = 0
+    else:
+        $ relaxed += 5
     return
 
 label relax_alone_5:
@@ -68,7 +71,7 @@ label relax_alone_12:
 # Random events that can happen more than once
 
 label relax_alone_a:
-    "I listend to some of my favorite songs and reminisced about past experiences."
+    "I listened to some of my favorite songs and reminisced."
     $ relaxed += 5
     return
 

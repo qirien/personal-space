@@ -16,8 +16,8 @@ label relax_together_0:
     him "I thought it was going to turn out to be a cyborg pterodactyl."
     her "That would have been awesome!"
     "Sometimes talking about the movie is more fun than the actual movie itself..."
-    $relaxed += 5
-    $loved += 5
+    $ relaxed += 5
+    $ loved += 5
     return
 
 label relax_together_1:
@@ -52,7 +52,10 @@ label relax_together_1:
     "Afterwards, we packed up our towels and toiletries and headed down to the bathhouse."
     "We built a fire to heat up one of the tubs of water, and took turns washing off and then soaking in the small tub."
     "It felt so good to soak and relax together."
-    $ relaxed += 5
+    if (relaxed < 0):
+        $ relaxed = 0
+    else:
+        $ relaxed += 5
     return
 
 label relax_together_2:
@@ -93,7 +96,7 @@ label relax_together_3:
                     "All I could think about was how he abandoned me. It wasn't every night I asked him to do something fun with me; why couldn't he put me first instead of his other plans?"
                     "I worried that maybe I was not good enough - not pretty enough, not smart enough, not strong enough - not just for him, but for this planet. What was I even doing here?"
                     "I trudged in circles through these depressing thoughts for hours."
-                    $ relaxed = 0
+                    $ relaxed -= 10
             "Finally, I just went to bed."
 
         "I'll help, too.":
@@ -118,6 +121,7 @@ label relax_together_3:
             her "Even putting up fences is not too bad when it's with you."
             $ loved += 5
             $ skill_physical += 5
+            $ community_level += 5
             scene black with fade
   
         "Want to watch it another night?":
@@ -125,7 +129,7 @@ label relax_together_3:
             him "Thanks for understanding. I'll see you later, lovebug."
             "It was a little lonely, especially since I was really looking forward to watching the movie with him, but I soon was absorbed in a good book and then went to bed."
             "We watched the movie the next night. Even though they got a lot of things wrong about space colonization, we really got into the drama and tension. We both cried a little at the end."
-            $ relaxed += 10
+            $ relaxed += 5
             $ loved += 5
   
         "You're never here when I need you!":
@@ -145,14 +149,14 @@ label relax_together_3:
                     "All I could think about was how he abandoned me. It wasn't every night I asked him to do something fun with me; why couldn't he put me first instead of his other plans?"
                     "I worried that maybe I was not good enough - not pretty enough, not smart enough, not strong enough - not just for him, but for this planet. What was I even doing here?"
                     "I trudged in circles through these depressing thoughts for hours."
-                    $ relaxed = 0
+                    $ relaxed -= 5
                     "Finally, I just went to bed."
                 "...":
                     "I didn't say anything; just watched him leave, feeling hurt and lonely."
                     "All I could think about was how he abandoned me. It wasn't every night I asked him to do something fun with me; why couldn't he put me first instead of his other plans?"
                     "I worried that maybe I was not good enough - not pretty enough, not smart enough, not strong enough - not just for him, but for this planet. What was I even doing here?"
                     "I trudged in circles through these depressing thoughts for hours."
-                    $ relaxed = 0
+                    $ relaxed -= 5
                     "Finally, I just went to bed."
                 "Sorry":
                     her "Sorry, [his_name]. I'm being selfish."
@@ -174,17 +178,17 @@ label relax_together_5:
     show her normal at right
     her "Are you okay?"
     him "Yeah, I'm just really sore from all the digging I've been doing lately."
-    if (relaxed < 5):
+    if (relaxed < 0):
         her "Yeah, I feel pretty tense, too."
         "I could have rubbed his shoulders, I guess, but I was just too tired."
 
-    elif (loved >= 10):
+    elif (loved >= 0):
         her "Want me to rub your shoulders?"
         him "I would love that!"
         "I started off gently. His muscles were so tight, I was amazed he could move at all. I gradually kneaded harder, trying to tell what sorts of massage he liked."
         him "Ohhh, that feels so good."
         "Sometimes he would make sort of painful grunt that let me know he didn't like what I was doing. But he would also sigh with content when I hit a particularly tense spot."
-        if (relaxed >= 10 && skill_physical >= 10):
+        if (relaxed >= 5 && skill_physical >= 10):
             "After his shoulders, I massaged his arms and hands. It made me think of how hard he had been working all day."
             
             if (skill_physical >= 30):
@@ -192,7 +196,7 @@ label relax_together_5:
 
         "To finish off I massaged his neck and head. I could tell he really enjoyed it."
 
-        if (loved >= 20):
+        if (loved >= 5):
             him "Now it's your turn to get massaged."
             her "Mmmm, really? Are you talking about shoulders, or...?"
             him "I'll massage anything you like."

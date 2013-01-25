@@ -18,6 +18,7 @@ label social_1:
     her "Sure!"
     "We cut and scraped and talked together all afternoon."
     $ skill_social += 10
+    $ community_level += 2
     return
 
 # Convert shuttle into community center
@@ -32,7 +33,7 @@ label social_2:
     "Once the construction group figured out how to convert the shuttle, the mayor asked everyone who could to come help work on the new community center."
     
     $ skill_social += 10
-
+    $ community_level += 2
     return
 
 # Invite family over for dinner
@@ -91,7 +92,7 @@ label social_3:
     him "I wonder what our family will look like in a few years?"
     if (want_kids or is_pregnant):
         her "It will be different, won't it?"
-    elif (loved >= 10):
+    elif (loved >= 0):
         her "As long as you and me are in it, it will be just fine."
     else:
         her "Who knows?"
@@ -99,18 +100,21 @@ label social_3:
     scene black with fade
     
     $ skill_social += 10
+    $ community_level += 2
     return
 
 # Organize community movie night!
 label social_4:
 
     $ skill_social += 10
+    $ community_level += 2
     return
 
 # Watch a neighbor's kids; think about having own kids
 label social_5:
 
     $ skill_social += 10
+    $ community_level += 2
     return
 
 # What to do about some gossip? If true, action should be taken, but if not, person could be damaged
@@ -310,7 +314,7 @@ label done_party_menu:
                 "[his_name] and I rummaged through the box. Sara had gathered trash from everyone and cleaned it off so we could use it on our creation."
                 him "Let's make the box the body of the spaceship."
                 her "OK, we'll also need some wings..."
-                if (loved < 10):
+                if (loved <= 0):
                     him "Why are you putting that tin foil there?"
                     her "It's reflective, like a solar panel."
                     him "Solar panels aren't reflective."
@@ -318,7 +322,7 @@ label done_party_menu:
                 else:
                     "We worked together fluidly, like dancers, attaching a piece here and wrapping a piece there, not needing to talk much."
                 "We finished just as the time was up."
-                if (loved >= 10):
+                if (loved > 0):
                     if (skill_creative >= 70):
                         "Ours didn't have the best landing, but it looked so artistic and sleek that they gave it the best score anyway. We won the contest!"
                     elif (skill_technical >= 70)):
@@ -402,7 +406,9 @@ label done_party_menu:
     "I was relieved to hear that, and even more relieved to see that a lot of people stayed to help clean up. Not just one person from each family, either - entire families got to work clearing plates, putting away chairs, mopping up spills, and doing dishes."
     her "Thanks, Mayor Grayson."
     boss "Thank you! I think the party was a success."
+
     $ skill_social += 10
+    $ community_level += 5
     return
 
 # Teach 'enrichment' class on [profession]
@@ -420,4 +426,5 @@ label social_9:
 label social_master:
 
     $ skill_social += 10
+    $ community_level += 10
     return

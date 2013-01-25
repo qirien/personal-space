@@ -101,6 +101,7 @@ label act_work:
     else:
         "I worked hard at work as usual."
         $ relaxed -= 5
+        $ community_level += 1
 
     return
 
@@ -127,6 +128,7 @@ label act_skip_work:
         her "All right, thanks for understanding."
         $ slacked_off = 0
         $ relaxed -= 5
+        $ community_level -= 10
     else:
         "I took a little time off work and didn't push myself this month."
         $ relaxed += 5

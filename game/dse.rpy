@@ -13,9 +13,9 @@ init python:
     register_stat("Physical", "skill_physical", 0, 100)
 
     # TODO Make some or all of these invisible during the actual game.
-    register_stat("Relaxation", "relaxed", 0, 100)
-    register_stat("Loved", "loved", 0, 100)
-    register_stat("Made Love", "made_love", 0, 100)
+    #register_stat("Relaxation", "relaxed", 0, 100)
+    #register_stat("Loved", "loved", 0, 100)
+    #register_stat("Made Love", "made_love", 0, 100)
 
     dp_period("Job Focus", "job_focus_act")
     dp_choice("Focus on Work", "act_work")
@@ -60,6 +60,8 @@ label day:
     # right now we don't bother.
 
     "It's month %(month)d."
+    # TODO: comment out this debugging code
+    #"Loved = [loved], Relaxed = [relaxed], community_level = [community_level], Made_love = [made_love]"
 
     # Here, we want to set up some of the default values for the
     # day planner. In a more complicated game, we would probably
@@ -174,4 +176,3 @@ label dp_callback:
     $ display_stats()
 
     return
-
