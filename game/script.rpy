@@ -14,6 +14,7 @@ image bg colony_ship_bunk = "bg/colony-ship-bunk.png"
 image bg talam = "bg/talam.png"
 image bg pond = "bg/pond.png"
 image bg path = "bg/path.png"
+image bg laundry = "bg/laundry.png"
 
 # SPRITES
 image him normal = "sprites/him.png"

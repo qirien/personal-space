@@ -11,6 +11,8 @@ label domestic_0:
 
 # Laundry by hand is tough?
 label domestic_1:
+    scene bg laundry
+    show her normal
     her "Washing these clothes by hand is taking forever. I wonder how I could speed it up."
     "Currently you're agitating the clothes in soapy water to clean them."
     menu:
@@ -26,6 +28,7 @@ label domestic_1:
     $ skill_domestic += 10
     return
 
+# make curtains for windows
 label domestic_2:
     scene bg farm_interior
     show her normal
@@ -38,6 +41,7 @@ label domestic_2:
     $ skill_domestic += 10
     return
 
+# fence to keep out herb garden pests
 label domestic_3:
     scene bg fields
     show her normal at center
@@ -56,6 +60,7 @@ label domestic_3:
 
     return
 
+# Who wants a goat?
 label domestic_4:
     scene bg farm_exterior
     "Thuc Nguyen" "Hello? Anybody home?"
@@ -99,7 +104,7 @@ label domestic_4:
                             "We didn't need to say anything more."
                         "I have to get out of here":
                             her "I'm going out."
-                            #TODO: have a solar flare happen? something exciting?
+                            "I went on a walk until I had cooled off. When I came back, we didn't talk about it anymore, and eventually we were back to normal."
                         "(Give him a hug)":
                             "I hugged him. It took a few seconds for him to hug me back, but then I knew that everything would be all right."
                             

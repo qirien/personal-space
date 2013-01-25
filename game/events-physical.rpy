@@ -8,6 +8,7 @@ label physical_0:
 
     return
 
+# hike to pond with leeches
 label physical_1:
     scene bg talam
     "I decided to do some exploring. Here I was, living on a completely new planet, and all I had ever seen was the town and my own little farm. There was a ridge to the south, so I decided to hike over the top and see what was there."
@@ -115,6 +116,7 @@ label physical_1:
     jump events_skip_period
     return
 
+# chopping wood
 label physical_2:
     scene fields
     "We needed firewood to burn for cooking and heating. I got an axe and split logs to build up a huge supply for later."
@@ -189,6 +191,7 @@ label physical_2:
 
     return
 
+# ditch digging
 label physical_3:
     "[his_name] needed a ditch dug for the new field, so I volunteered to help. We dug and dug and dug, and finally, the ditch was finished."
     him "Thanks for your help, [her_name]. You are actually pretty good at shovelling."
@@ -202,14 +205,21 @@ label physical_3:
 
     return
 
+#Learn how to ride a horse
 label physical_4:
-    #Learn how to ride a horse?
+    her "[his_name], will you teach me to ride a horse?"
+    him "You don't know how?"
+    her "I assume there's more to it than just sit and hold the reins."
+    him "Well, yeah! There's a lot, actually. But I'd be happy to teach you."
+    "We decided that every weekend this month we'd have a riding lesson."
+    "I enjoyed learning more about horses and riding Lettie."
 
     $ skill_physical += 10
     return
 
+#Yoga
 label physical_5:
-    #Yoga?
+    
     $ skill_physical += 10
     return
 

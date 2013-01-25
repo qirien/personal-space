@@ -7,6 +7,8 @@
 *~
 tmp/*
 
-# Text
+# Local-only files
 errors.txt
 log.txt
+game/saves
+art/

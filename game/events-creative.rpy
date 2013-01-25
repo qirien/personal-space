@@ -14,6 +14,7 @@ label creative_1:
     return
 
 label creative_2:
+    scene bg fields
     "I was weeding in the backyard when I found some wildflowers. They reminded me of clover, so I made a daisy-chain circlet out of them. It was fun."
     menu:
         "Make one for [his_name] too.":
@@ -40,6 +41,7 @@ label creative_2:
 
 # Crochet something new using goat's hair?
 label creative_3:
+    scene bg farm_interior
     "One of the villagers was able to spin yarn out of goat hair. I took a skein and promised I'd try to make something with it."
     "Luckily, I was able to borrow a crochet needle from the library. I looked up how to crochet on my computer pad, and started making a simple potholder."
     her "Oh no! Each row is just getting more and more narrow."
