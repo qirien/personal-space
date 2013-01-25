@@ -17,3 +17,9 @@ Crops not behaving well leads to huge amounts of stress
 Money? Invested?
 Something happens to Lettie
 He has a bad day on farm, she has worked hard on a meal and he doesn't want it.
+
+Pet names for each other?
+
+TODO: should relaxed be allowed to be negative, to represent stressed? Can't do this with register_stat
+
+Should we have a community_status variable that increases as the player makes choices to help the colony succeed (helping people, working hard), and decreases as the player makes lazy/unhelpful choices (staying home from work, not helping people, etc)?  Then at the end there's sort of a matrix of 4 endings: community & marriage succeed, community fails but marriage succeeds (they go back to Earth together), community succeeds and marriage fails (she lives somewhere else in the colony), and community and marriage fail (everybody dies?). This gives more incentive for people to go to work (right now it mostly just gives you stress).  That could also be an incentive to Master a skill, as it will give you a big bonus to community.
