@@ -30,7 +30,7 @@ label relax_together_1:
     him "Sure, after dinner and...dessert."
     her "You made dessert?! What kind?"
     him "I was thinking we'd make some dessert...together."
-    her "Ohhh, {b}that{/b} kind of dessert. The kind we don't need to use sugar rations for..."
+    her "Ohhh, {b}that{/b} kind of dessert."
     him "Yes...though we could have dessert first, you know. Sometimes it's fun to break the rules."
     menu:
         "\"Dessert\" first?"
@@ -135,7 +135,7 @@ label relax_together_3:
         "You're never here when I need you!":
             her "You're never here when I need you!"
             him "What are you talking about? I'm home almost every night."
-            her "But you're always on your computer pad; I wanted to do something together tonight."
+            her "But you're always on your computer; I wanted to do something together tonight."
             him "Well, I can't. I promised Thuc I'd come tonight."
             her "I'm not really important to you, am I?"
             him "What?! Of course you are!"
@@ -171,7 +171,7 @@ label relax_together_4:
     return
 
 label relax_together_5:
-    scene bg farm_interior
+    scene bg farm_interior with fade
     play music "music/Will.ogg" fadeout 2.0
     "One day after dinner I noticed [his_name] rubbing his shoulders and grimacing."
     show him normal at center

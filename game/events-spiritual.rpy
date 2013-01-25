@@ -3,14 +3,14 @@
 
 # Intro Event and the default
 label spiritual_0:
-    scene bg path
+    scene bg path with fade
     "I took a walk and spent some time just thinking."
     $ skill_spiritual += 10
 
     return
 
 label spiritual_1:
-    scene bg path
+    scene bg path with fade
     "I went to the colony's spiritual leader, just to talk. I'd been thinking a lot about what makes us human, and what there may be that we cannot see."
     "Naomi Takahara" "Welcome, [her_name]. How can I help you?"
     her "Hi...uh, What should I call you, anyway? Pastor? Reverend?"
@@ -50,7 +50,7 @@ label spiritual_2:
     return
 
 label spiritual_3:
-    scene bg talam
+    scene bg talam with fade
     "I watched the sun set while flying creatures gathered in the sky."
     $ skill_spiritual += 10
     return
@@ -69,7 +69,7 @@ label spiritual_4:
     return
 
 label spiritual_5:
-    scene bg path
+    scene bg path with fade
     "I decided to take a break from reading for a while...I wanted to experience some of the things I read about for myself."
     menu:
         "I decided to:"
@@ -93,12 +93,12 @@ label spiritual_6:
     "In the Koran I read:"
     "\"You will not attain piety until you expend of what you love; and whatever thing you expend, God knows of it.\""
     her "What is piety, anyway? Maybe I'll ask Sister Naomi..."
-    scene bg path
+    scene bg path with fade
     naomi "What is piety? Come with me, and I will show you."
     "I followed her across town, and she still kept walking. I started to feel impatient."
     her "Where are we going?"
     naomi "We are needed."
-    scene bg talam
+    scene bg talam with fade
     "We walked past one farm, and then another. We had been walking for almost an hour. Finally, we reached the farthest farm from town. It belonged to the Engels - they were newlyweds like [his_name] and me. They were the farthest farm for a reason; they seemed to like to be by themselves."
     if (profession == "doctor"):
         "I had seen her at the clinic; she was expecting a baby, but due to some complications she had to be on bed rest most of the time."
@@ -197,7 +197,7 @@ label spiritual_8:
     return
 
 label spiritual_9:
-    scene bg wedding
+    scene bg wedding with fade
     "Sometimes I went to the worship services that Sister Naomi led."
     naomi "...and all are alike unto God. He invites all to come unto him and partake of his goodness. Do you think it matters what planet we are on?  Of course it doesn't. We all have the same access to divine inspiration and guidance, no matter where we are."
     naomi "Now let us pray."

@@ -3,7 +3,7 @@
 
 # Intro Event and the default
 label domestic_0:
-    scene bg farm_interior
+    scene bg farm_interior with fade
     "I did some extra cleaning and organizing, and put in some extra work for a great dinner."
     $ skill_domestic += 10
 
@@ -11,7 +11,7 @@ label domestic_0:
 
 # Laundry by hand is tough?
 label domestic_1:
-    scene bg laundry
+    scene bg laundry with fade
     show her normal
     her "Washing these clothes by hand is taking forever. I wonder how I could speed it up."
     "Currently you're agitating the clothes in soapy water to clean them."
@@ -30,7 +30,7 @@ label domestic_1:
 
 # make curtains for windows
 label domestic_2:
-    scene bg farm_interior
+    scene bg farm_interior with fade
     show her normal
     her "I've got to do something about these windows. They are too bright when the sun is low. But it's not as if I can just buy some cloth..."
     if (skill_social >= 10):
@@ -43,7 +43,7 @@ label domestic_2:
 
 # fence to keep out herb garden pests
 label domestic_3:
-    scene bg fields
+    scene bg fields with fade
     show her normal at center
     "I planted an herb garden when we first arrived, and the plants are just starting to get big enough for me to use. I think I'll make some tea..."
     #show her worried at center
@@ -62,7 +62,7 @@ label domestic_3:
 
 # Who wants a goat?
 label domestic_4:
-    scene bg farm_exterior
+    scene bg farm_exterior with fade
     "Thuc Nguyen" "Hello? Anybody home?"
     her "Thuc! Good to see you! How are the baby goats?"
     "Thuc Nguyen" "Doing well!  There's so many of them, though, I don't think we'll have room for them all!"
@@ -83,7 +83,7 @@ label domestic_4:
             her "Thanks for offering, but I don't think we want to do that right now."
             "Thuc Nguyen" "I understand."
             "But [his_name] wasn't so understanding."
-            scene bg farm_interior
+            scene bg farm_interior with fade
             show her normal at left
             #show him angry at center
             show him normal at center 
@@ -128,7 +128,7 @@ label domestic_4:
     return
 
 label domestic_5:
-    scene bg farm_interior
+    scene bg farm_interior with fade
     show him at left
     him "Here's some more radishes from the fields, love."
     show her at center
@@ -167,7 +167,7 @@ label domestic_7:
     return
 
 label domestic_8:
-    scene bg farm_interior
+    scene bg farm_interior with fade
     "One day, I came home from work to find a dead monster on the kitchen table."
     #show her surprised at center
     show her normal at center
@@ -220,7 +220,7 @@ label domestic_8:
             him "Do you know how to do that?"
             her "Theoretically...we'll need to smoke and salt it...We can adapt a recipe for fish jerky, I think."
             him "OK, I'll skin and cut up this sucker while you're figuring that out."
-            if (skill_technical >= 40:)
+            if (skill_technical >= 40):
                 "I rigged up a smoker with some old scrap metal and put some screens above it for the meat"
                 $ skill_technical += 5
             else:

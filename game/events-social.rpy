@@ -125,7 +125,7 @@ label social_6:
 
 # Community Shindig
 label social_7:
-    scene bg path
+    scene bg path with fade
     play music "music/Prelude22.ogg" fadeout 3.0
 
     "One day Sara and I took a walk together."
@@ -214,6 +214,7 @@ label social_7:
 
 label done_party_menu:
     "Sara and I worked hard for two weeks getting everything ready. Finally, the night of the party came..."
+    scene black with fade
     "As people started to arrive, they seemed to brighten when they saw the community center ready for a party."
     if (party_decorations == "flowers"):
         "The flowers we picked looked nice. Even though they were nothing like Earth flowers, they had their own beauty. And Sara had programmed some of the lights to glow softly blue and green, like an ocean."

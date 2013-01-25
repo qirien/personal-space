@@ -16,7 +16,7 @@ label technical_1:
 label technical_2:
     "Even though we have a solar panel to run our pad computers, the lights, and a few other things, we do most work the old-fashioned way, without electricity."
     "And did I mention there's no running water? We have a well and a pump, but we're always fetching water with buckets...Well, mostly I fetch water with buckets, since [his_name] has a bunch of pipes and canals setup for watering the farm."
-    scene bg farm_interior
+    scene bg farm_interior with fade
     her "Washing dishes by hand is bad enough, but to also have to fetch and heat the water? There's got to be a better way..."
     him "Here, I'll do the dishes tonight."
     her "No, it's my turn, I'll just do it."
@@ -42,7 +42,7 @@ label technical_3:
 
 
 label technical_4:
-    scene bg laundry
+    scene bg laundry with fade
     #show her angry at center
     her "These clothes still aren't dry?! It's so humid here, it takes forever..."
     show her normal at center
@@ -52,7 +52,7 @@ label technical_4:
     show her normal with dissolve
     her "Why won't these two parts fit together?! Ohhh, one is imperial and one is metric! Stupid nonstandard parts!"
     "Finally, it was finished. It squeaked and rattled and if I had to do it again I would make some changes to the design, but it works."
-    her "The clothes dry about 50% faster now."
+    her "The clothes dry about 50 percent faster now."
     him "Huh? Really?"
     her "Yeah, come see what I made!"
     him "You made this?! This is so awesome!\n...\n What is it?"

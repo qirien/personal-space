@@ -70,7 +70,7 @@ label teacher:
 # No matter what profession you choose, the first date is the same
 
 label first_date:
-    scene bg porch
+    scene bg porch with fade
     "Afterwards, he asked me if I wanted to come to a barbeque at his house that evening. I thought there was going to be a lot of people, but it ended up being just him and his parents."
     "It wasn't too awkward, though - we all pitched in to make dinner and then sat on the porch swing and talked and watched the stars come out."
     "But it wasn't until he first said my name that I knew I wanted to know more about him."
@@ -102,8 +102,7 @@ label first_date:
 # TODO: We need another date in here to show how much they love each other before the marriage proposal
 
 label marriage_proposal:
-    # TODO: Different BG here. 
-    scene bg earth
+    scene bg porch with fade
     him "I'm going, [her_name]. To Talam."
     #show her laughing
     her "Oh really? I didn't know you were an astronaut, [his_name]."
@@ -137,7 +136,7 @@ label marriage_proposal:
             him "Of course not. I want you along because I'm madly in love with you, and I want to show you that every day, forever."
 
     her "[his_name]...I would love to create a new life together, even if it is on a different planet."
-    scene bg wedding
+    scene bg wedding with fade
     "And so we got married."
     "My mother cried; she knew we were going to space and she would probably never see me again (or any grandkids). My father..."
     menu:

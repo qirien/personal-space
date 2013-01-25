@@ -3,7 +3,7 @@
 # After they get married, they board the colony ship
 label colony_ship:
 
-    scene bg colony_ship_bunk
+    scene bg colony_ship_bunk with fade
     show him normal at center
     show her normal at right
     "What a honeymoon -- on board a cramped space shuttle with a hundred other people for a month. Of course, back on Earth four years had passed, since we were travelling so close to light speed. We spent a lot of it talking about the future..."
@@ -85,13 +85,13 @@ label colony_ship:
 # After talking about having kids
 # Background about Talam
     "We talked about lots of other things, of course. We talked about space, about what we would miss from Earth, about what our families were probably doing.  We studied what the pre-colonization team of scientists had reported so far."
-    scene bg talam
+    scene bg talam with fade
     "Even though Talam was technically a \"garden planet\", meaning humans could breathe and there were plants and animals, it wasn't very much like modern Earth.  There were a lot of sandy areas with little vegetation, and there were reports of some large, dangerous creatures that lived in the water."
     # TODO: Would this be more exciting with some dialogue?
     "The planet was also a lot less protected from its small Sun, since it was a lot closer.  The building materials we'd brought along would help protect us from solar flares and radiation, but only if we were inside. They taught us about the early-warning system they put in place so people would know when it was not safe to be outdoors."
 
     # He remembers her birthday
-    scene bg colony_ship_bunk
+    scene bg colony_ship_bunk with fade
     show him normal at center
     show her normal at right
     play music "music/Prelude22.ogg" fadeout 1.0
@@ -184,10 +184,10 @@ label colony_ship:
 label settling_in:         
     # Land on the planet and get settled
     play music "music/You.ogg" fadeout 1.0
-    scene bg talam
+    scene bg talam with fade
     "The first month on Talam was really busy. Luckily, we arrived in the dry season, so the weather was sunny and clear and the nights were not too cold. We all worked together to get everyone's houses up right away. The first one took the longest, as we had to figure out how to put all the pieces together."
     "Finally, our house was put up. We were so glad to stop sleeping in the shuttle and have our own space."
-    scene bg farm_interior
+    scene bg farm_interior with fade
     show her normal at right
     her "Well, now instead of feeling like we're sleeping on a train, it will be like camping! Where do you think we should put our sleeping bags?"
     show him normal at left

@@ -10,11 +10,11 @@ label physical_0:
 
 # hike to pond with leeches
 label physical_1:
-    scene bg talam
+    scene bg talam with fade
     "I decided to do some exploring. Here I was, living on a completely new planet, and all I had ever seen was the town and my own little farm. There was a ridge to the south, so I decided to hike over the top and see what was there."
     "The ridge was steeper than it looked, but I was able to scramble up to the top. From the top of the ridge I could see all the way to town to the north, and to the south was a vast expanse of wild rolling hills with sparse shrubs, a few of the taller plants we called trees, and over all the ground the blue-green lichen that seemed to live everywhere on Talam."
     "And, as the ridge descended before me, at its base I could see a grove of trees that looked out-of-place."
-    scene bg pond
+    scene bg pond with fade
     show her normal at right
     her "There must be water there!"
     "Sure enough, the stream that ran through the valley formed a pond that the trees drew water from. As I descended the slope, the fragrant smell of new plants reached me. At the bottom, the shade and cool water looked inviting and calm."
@@ -61,7 +61,7 @@ label physical_1:
     him "Don't worry, [her_name], I'm the only one that will be gobbling you up now."
     "He nibbled on my ear playfully, and set me on Lettie. He held my hand all the way home."
 
-    scene farm_interior
+    scene bg farm_interior with fade
     "After I had cleaned up and my legs were functioning again, I fell asleep. But the next morning, [his_name] wanted to talk."
     menu:
         him "I don't think it's a good idea for you to go hiking by yourself."
@@ -118,7 +118,7 @@ label physical_1:
 
 # chopping wood
 label physical_2:
-    scene fields
+    scene bg fields with fade
     "We needed firewood to burn for cooking and heating. I got an axe and split logs to build up a huge supply for later."
     menu:
         him "Wow, I didn't know I married a lumberjack."

@@ -8,7 +8,7 @@ label monthly_event_0:
 
 # MONTH 1 - Chore allocation
 label monthly_event_1:
-    scene bg farm_interior
+    scene bg farm_interior with fade
     show her normal at center
     show him normal at right
     play music "music/You.ogg" fadeout 2.0
@@ -86,14 +86,14 @@ label monthly_event_1:
             $loved += 5
             return
 
-    scene black
+    scene black with fade
     #if nobody did the dishes, pest problems!
     #show her upset at center
     #show him upset at right
     play music "music/Prelude02.ogg" fadeout 1.0
     her "AAAAAAAAAAAAAAAHHHHHH!!!!"
     him "What is it?! What's wrong?"
-    scene bg farm_interior
+    scene bg farm_interior with fade
     "I just pointed to the dirty dishes. Coiled around his mess kit, happily nibbling on bits of leftover food, was a long, flat, segmented creature with innumerable legs and dangerous-looking claws. It was at least as long as my arm."
     him "Whoa!"
 
@@ -134,7 +134,7 @@ label monthly_event_1:
 # MONTH 2 - The Cellar
 label monthly_event_2:
     play music "music/You.ogg" fadeout 2.0
-    scene bg farm_exterior
+    scene bg farm_exterior with fade
     show him normal at left
     him "It'll sure be nice when we have some fresh food to eat."
     show her normal at center
@@ -173,7 +173,7 @@ label monthly_event_2:
             #show her laughing at center
             her "Wow, you're trusting me with your favorite horse? I'm touched."
             him "I wouldn't trust anyone else."
-            scene bg fields
+            scene bg fields with fade
             "I rode Lettie around, scouting the fields for weeds. I had never noticed how big the farm was before -- [his_name] takes care of a lot of plants!"
             "It took longer than I thought, and I ended up helping him haul out a lot of the dirt, but then we had our very own cellar!"
             $ skill_domestic += 5
@@ -208,7 +208,7 @@ label monthly_event_2:
 label monthly_event_3:
     play music "music/Prelude22.ogg" fadeout 2.0
     "Even though we were on a new planet, we still kept track of what day it was on the Earth calendar. The seasons didn't match up or anything, but it helped us feel like we were still a part of things back home."
-    scene bg farm_interior
+    scene bg farm_interior with fade
     show her normal at center
 
     her "It's his birthday this month!"
@@ -290,7 +290,7 @@ label unappreciated:
 
 # MONTH 4 - Are Hobbies a Waste of Time?
 label monthly_event_4:
-    scene bg farm_interior
+    scene bg farm_interior with fade
     show her normal at center
     show him normal at right
 

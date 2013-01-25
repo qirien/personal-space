@@ -53,7 +53,7 @@ define has_grass = False
 # The game starts here.
 label start:
 
-    scene bg stars
+    scene bg stars with fade
     show her normal at center with moveinleft
 
     # TODO: Stronger beginning    
