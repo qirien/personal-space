@@ -11,8 +11,20 @@ label domestic_0:
 
 # Laundry by hand is tough?
 label domestic_1:
-    return
+    her "Washing these clothes by hand is taking forever. I wonder how I could speed it up."
+    "Currently you're agitating the clothes in soapy water to clean them."
+    menu:
+        "Leave the clothes soaking while you finish doing the dishes.":
+                her "Maybe I just need to let the soap do my work for me."
+                "Twenty minutes later..."
+                her "That helped a bit! I should leave clothes soaking more often."
+                $relaxed +=5
 
+        "Just keep doing it the same way.":
+                her "Well, I guess there's no getting around hard work."
+        
+    $ skill_domestic += 10
+    return
 
 label domestic_2:
     scene bg farm_interior

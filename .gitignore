@@ -5,6 +5,8 @@
 
 # Temporary files
 *~
+tmp/*
 
 # Text
 errors.txt
+log.txt
