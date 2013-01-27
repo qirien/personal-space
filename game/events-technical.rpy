@@ -34,9 +34,27 @@ label technical_2:
 
     return
 
-# setup alarm system for solar flares
+# setup alarm system for solar flares. see http://www.spaceweather.com/glossary/srs.html for information on solar flare radiation storms. Help with technical details appreciated.
 label technical_3:
-
+    "We knew that solar flares were probably happening, since our electronics were sometimes unreliable, but we didn't know when they were."
+    her "If I adjust this radio to receive AM signals, it can tell me when frequency gets around 20 mHz, which would indicate a solar flare is on its way."
+    her "I can attach it to a beeper, so when I hear it I'll have about 13 minutes to assess the size of the flares and take down the solar panels if necessary."
+    "I tested my solar flare detector that week. It worked for two of the bigger flares, but the beeper wouldn't stop until the flare was over."
+    "There must be some way to make this work."
+    menu:
+        "Search the local database for a solution":
+            "The wireless was down because of the most recent solar flare, but I was able to download a circuitry manual at the library. I learned about a multivibrator, or one-shot circuit that would only make the buzzer beep once."
+            "I had to borrow a few more circuits while I was at the library, and while I was there I told Sven about my project."
+            Sven "We're working on an intercom system with metal tubes, which wouldn't be affected by the solar flares. When I'm done could we use your flare sensor to tell everyone when to take cover?"
+            menu:
+                "Of course.":
+                    "It's part of my duty as a colonist to help the others. Of course I'll donate my radio."
+                    $ community_level += 5
+                "I'd like to keep it for myself.":
+                    her "I didn't trust Sven's system to reach me out in the fields, so I told him I'd rather keep my radio."
+        "Just unplug it during the rest of the flare":
+            "I figured that I could keep the buzzer on until a flare occured, and then I could unplug it, checking the radio frequencies before going out again."
+            
     $ skill_technical += 10
     return
 
@@ -76,6 +94,7 @@ label technical_6:
     $ skill_technical += 10
     return
 
+# build a water wheel to power a grinding mechanism?
 label technical_7:
 
     $ skill_technical += 10
