@@ -211,7 +211,77 @@ label relax_together_5:
 
 # go "out" to eat on a picnic
 label relax_together_6:
+    him "Put on your fancy clothes, lovebug, because we are going OUT tonight!"
+    her "Out where? And I don't have any fancy clothes..."
+    him "Any clothes look fancy on you! But I can't tell you where we're going; it's a suprise."
+    her "Okay, let me get ready, then. I can at least brush my hair."
+    "(Where can we be going?)"
+    him "Now put this blindfold on"
+    her "You're not serious, are you?!"
+    him "I'm totally serious!"
+    "I let him blindfold me and we left the house.  He spun me around so I couldn't tell which direction we were going, and then we hiked for about twenty minutes or so. He held my hand so I didn't trip."
+    her "It's a good thing I didn't actually put on fancy clothes, since this isn't exactly level terrain."
+    him "We're almost there."
+    "Finally, he took off the blindfold."
+    "He had setup a small table and two chairs with dishes and utensils. I sat down at the table and he lit the candles.  Then he got some food out of his backpack."
+    menu:
+        "It's..."
+        "So cool!":
+            her "It's...so romantic! Wow, I didn't know you were planning this!"
+            him "I'm glad you like it! I just really missed taking you out to eat, so I thought this would be as close as we could get."
+        "A lot of trouble.":
+            her "Wow, you went to a lot of trouble to set this all up. I feel bad..."
+            him "Don't feel bad; just enjoy it!"
+        "A waste.":
+            her "This is really pretty, but isn't it kind of a waste?"
+            him "My time is never wasted when it's spent on you."
+    "We ate our candlelight dinner and watched the sun setting over the hills. I couldn't even see our house or the town or anything."
+    her "It's like we're the only two people in the whole universe."
+    him "Then we have quite a job ahead of us, don't we?"
+    her "A job?"
+    him "Repopulating the entire universe. We better get started now, don't you think?"
+    menu:
+        "He's so..."
+        "Funny":
+            her "Oh, you...! You always make me laugh."
+            him "I like it when you laugh."
+        "Sexy":
+            her "Should we get started like this...?"
+            him "Maybe a little bit of this?"
+        "Exasperating":
+            her "Oh, you...!"
+            him "Ha ha, I'm just kidding."
 
+    her "It's too bad there's so many rocks here..."
+    him "Come over here, it's softer."
+    her "Is this our mattress?! You were planning this all along!"
+    him "It never hurts to be prepared..."
+    menu:
+        "That's..."
+        "Romantic":
+            her "You're so romantic."
+            him "I love you, [her_name]."
+            $ made_love += 1
+        "Logical":
+            her "Yeah, that makes sense."
+            him "I love you, [her_name]."
+            $ made_love += 1
+        "Presumptuous":
+            her "That's pretty presumptuous. You think that just because you setup some fancy dinner that you're automatically going to get some?"
+            him "No! I mean, I was thinking it would be a nice end to the evening, but we don't have to. I just thought it might be romantic."
+            her "Well, it's not. You can't just assume things like that."
+            him "Sorry for assuming my own wife would want to make love to me."
+            "I tried to storm off, but I didn't know which way was home."
+            her "Which way back home?"
+            him "That way."
+            "I stomped off towards home, leaving him to carry everything back to the house himself. It wasn't that I didn't appreciate what he did; I just didn't like feeling manipulated."
+            $ loved -= 5
+            return
+
+    $ relaxed += 5
+    $ loved += 5
+    scene bg black with fade
+    "We lay there for a long time...In the morning, it felt so good to wake up next to him, watching the sky lighten. With one final kiss, we got up and carried everything back to the house together."
     return
 
 label relax_together_7:
