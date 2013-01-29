@@ -31,15 +31,15 @@ label doctor:
 
     #show him laughing at right
     him "No, I actually just fell off my horse.  A snake spooked him."
-    her "A horse?"
-    him "Yes, I live on a farm outside of town. Kinda old-fashioned, but I like it."
-    "I didn't know what to think about that."
+    her "Is your horse okay?"
+    him "Oh yeah, Lettie's fine. She seemed like she was almost laughing at me.
+"
     jump first_date
 
 # Mechanic; scene at auto shop
 label mechanic:
     $ profession = "auto mechanic"
-    "...the car repair shop. His engine wasn't working right, and after I fixed them he wanted me to show him everything I'd done."
+    "...the car repair shop. His engine wasn't working right, and after I fixed it he wanted me to show him everything I'd done."
     #show her angry at left
     her "You don't think I fixed it right, do you?"
     show him normal at right
@@ -71,9 +71,9 @@ label teacher:
 
 label first_date:
     scene bg porch with fade
-    "Afterwards, he asked me if I wanted to come to a barbeque at his house that evening. I thought there was going to be a lot of people, but it ended up being just him and his parents."
+    "Afterwards, he asked me if I would come to a barbeque at his house that evening. I thought there was going to be a lot of people, but it ended up being just him and his parents."
     "It wasn't too awkward, though - we all pitched in to make dinner and then sat on the porch swing and talked and watched the stars come out."
-    "But it wasn't until he first said my name that I knew I wanted to know more about him."
+    "Something about the way he said my name gave me shivers - the good kind."
     $ her_name = renpy.input("What is your name?", "Mary", length=20)
 
     show her normal at left
@@ -97,7 +97,8 @@ label first_date:
             her "It seems like it would be a lot of hard work."
 
     him "What a challenge it would be! Different animals, plants, even different seasons..."
-    "He really was excited about it. As we grew closer, I could tell there was a lot of things about him I liked: he was funny, kind, and hardworking. I wasn't thinking about the future yet, but he was..."
+    her "Why are you so interested in this planet all of a sudden?"
+    jump marriage_proposal
 
 # TODO: We need another date in here to show how much they love each other before the marriage proposal
 
@@ -116,7 +117,6 @@ label marriage_proposal:
     him "As my wife. You're a great [profession], they'll need those there."
 
     # How does she feel about getting married and going to new planet?
-    # TODO: Make these choices affect variables
     menu:
         "I felt..."
         "Shocked":

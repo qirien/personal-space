@@ -4,10 +4,10 @@
 label colony_ship:
 
     scene bg colony_ship_bunk with fade
-    show him normal at center
-    show her normal at right
     "What a honeymoon -- on board a cramped space shuttle with a hundred other people for a month. Of course, back on Earth four years had passed, since we were travelling so close to light speed. We spent a lot of it talking about the future..."
     play music "music/Amnesia.ogg" fadeout 1.0
+    show him normal at center
+    show her normal at right
     him "What do you think about having kids?"
     her "In general, or us specifically?"
     him "You and me, becoming parents. Sounds kind of crazy, doesn't it?"
@@ -88,7 +88,9 @@ label colony_ship:
     scene bg talam with fade
     "Even though Talam was technically a \"garden planet\", meaning humans could breathe and there were plants and animals, it wasn't very much like modern Earth.  There were a lot of sandy areas with little vegetation, and there were reports of some large, dangerous creatures that lived in the water."
     # TODO: Would this be more exciting with some dialogue?
-    "The planet was also a lot less protected from its small Sun, since it was a lot closer.  The building materials we'd brought along would help protect us from solar flares and radiation, but only if we were inside. They taught us about the early-warning system they put in place so people would know when it was not safe to be outdoors."
+    "The planet was also a lot less protected from its small Sun, since it was a lot closer.  The building materials we'd brought along would help protect us from solar flares and radiation, but only if we were inside."
+    # TODO: Maybe she builds this?
+    #"They taught us about the early-warning system they put in place so people would know when it was not safe to be outdoors."
 
     # He remembers her birthday
     scene bg colony_ship_bunk with fade

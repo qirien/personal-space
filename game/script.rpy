@@ -41,6 +41,7 @@ define community_level = 0 # how successful is the colony?
 # Variables about skills.  On a scale from 0-100, how skilled is the character?  These are now defined in dse.rpy
 
 # Variables about our characters and their relationship
+define known_each_other = ""
 define profession = ""
 define father_attitude = ""
 define favorite_wedding_gift = ""
@@ -66,6 +67,7 @@ label start:
             $ her_name = "Jill"
             $ profession = "doctor"
             $ want_kids = True
+            $ known_each_other = "six months"
             jump month01
 
     "I thought I knew what love was. After all, that's why I married..."
@@ -74,17 +76,28 @@ label start:
 
     show him normal at right with moveinright
 
-    "There's no way I could have known what the two of us would go through."
-
+    "We had known each other..."
+    menu:
+        "How long had we known each other?"
+        "Since we were kids":
+            "We had known each other since we were kids. He pulled my hair in first grade; I chased him and tried to kiss him. Then in high school we became best friends. It wasn't until recently that we had begun to think about each other romantically."
+            $ known_each_other = "since we were kids"
+        "For three years":
+            "We had known each other for three years. We started out as friends, then pretty soon we were hanging out all the time, and lately we had begun to think about each other as more than friends."
+            $ known_each_other = "three years"
+        "For just six months":
+            "We had known each other for just six months, but we spent almost all our free time together. Though we started out as just friends, lately there was a romantic tension that hadn't been there before."
+            $ known_each_other = "six months"
     jump choose_career
 
     return
 
 label choose_career:
-    scene bg earth with fade
-    "It all started back on Earth, when I was working at..."
+
+    "One day [his_name] came to my work at..."
 
 menu:
+    "Where do I work?"
     "The craft store":
         $ skill_creative += 20
         jump crafter
