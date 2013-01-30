@@ -50,6 +50,7 @@ define have_goat = False
 define is_pregnant = False
 define slacked_off = 0  #number of times slacked off at work
 define has_grass = False
+define met_Lily = False
 
 # The game starts here.
 label start:

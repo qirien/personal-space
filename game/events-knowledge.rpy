@@ -15,6 +15,7 @@ label knowledge_1:
     her "Do you have a list of plants you've already tested?" 
     Lily "Oh, right. Well, of course there's the ones you're planting, but in addition to those we've discovered a few that contain relevant nutrients. I'll have my assistant send out a guide." 
     $ skill_knowledge  += 10 
+    $ met_Lily = True
     return 
 
 # Volunteering to do research at library
