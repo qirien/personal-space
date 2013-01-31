@@ -145,7 +145,12 @@ label act_work:
             "Teacher Month 24"
 
     else:
-        "I worked hard at work as usual."
+        if (relaxed <= 10):
+            "I worked hard at work. I was starting to feel burned out, though."
+        elif (relaxed >= 10):
+            "I breezed through work. Everything seemed easy."
+        else:
+            "I worked hard at work as usual."
         $ relaxed -= 5
         $ community_level += 1
 

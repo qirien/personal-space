@@ -12,11 +12,6 @@ init python:
     register_stat("Knowledge", "skill_knowledge", 0, 100)
     register_stat("Physical", "skill_physical", 0, 100)
 
-    # TODO Make some or all of these invisible during the actual game.
-    #register_stat("Relaxation", "relaxed", 0, 100)
-    #register_stat("Loved", "loved", 0, 100)
-    #register_stat("Made Love", "made_love", 0, 100)
-
     dp_period("Job Focus", "job_focus_act")
     dp_choice("Focus on Work", "act_work")
     dp_choice("Take it Easy", "act_skip_work")
