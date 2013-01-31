@@ -112,9 +112,9 @@ label relax_together_3:
             else:
                 "I'm not sure I was much help, but I worked hard and did my best."
             "We worked hard in the gathering darkness, until the moons rose and gave us their wan light. We worked on and on, until finally it was done."
-            Thuc Nguyen "Thank you so much, both of you."
+            thuc "Thank you so much, both of you."
             him "Glad we could help. I hope this fence holds up for you."
-            Thuc Nguyen "Well, you can count on my help anytime, if you need it."
+            thuc "Well, you can count on my help anytime, if you need it."
             her "Thanks, I'm sure we will."
             "We walked home by moonlight.  The two moons cast opposing shadows from the shrubs and trees, making a maze of light for us to follow. [his_name] reached for my hand."
             him "Thanks for coming. Everything's better with you."

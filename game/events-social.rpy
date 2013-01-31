@@ -105,29 +105,31 @@ label social_3:
 
 #organize lunch group
 label social_4:
-"Sara and I met for lunch every week to chat and take a break."
-Sara "How are your neighbors doing?"
-her "We ate with the Blairs a while back and they were healthy! We're all starting to live off the land; it's kind of exciting."
-Sara "I know! Hopefully we won't starve or anything. But along with eating, we should be sure to keep ourselves socially healthy too."
-menu:
-    "I should get out more.":
-        her "Yeah, we should see if we can get a lunch group going! Lots of people are on break now; let's ask around."
-        "We found a few other people who seemed interested in gathering at the community center for lunch every Friday."
-    "I'm not worried.":
-        her "I feel pretty socially healthy now. I see you, my boss, and my husband pretty regularly."
-        Sara "But we're going to be here the rest of our lives! Shouldn't we get to know everyone?"
-        menu:
-            "I don't want to meet everyone.":
-                her "Sometimes I feel like it's easier to like people when I don't know them."
-                Sara "True. And if everyone knew each other we'd be more likely to gossip and get all drama-y."
-                her "Maybe I could stand to meet a few new people though."
-                Sara "Look, there's someone else on her lunch break, let's introduce ourselves."
-                if $met_Lily = False: "We met Lily, one of the workers in the science lab. She invited us to come visit her to learn more about alien botany."
-                if $met_Lily = True: "I had already met Lily, but I introduced her to Sara and we had an enjoyable lunch together."
-            "I guess.":
-                her "Well, if I'm going to meet them all eventually I might as well get to know them sooner rather than later."
-                Sara "Exactly. Look, some other people are taking their breaks now too, let's ask them if they want to have lunch with us."
-                "We interrupted a few conversations, but luckily everyone was in a good mood and seemed happy to meet us. We decided to meet every Friday for lunch in the community center."
+    "Sara and I met for lunch every week to chat and take a break."
+    sara "How are your neighbors doing?"
+    her "We ate with the Blairs a while back and they were healthy! We're all starting to live off the land; it's kind of exciting."
+    sara "I know! Hopefully we won't starve or anything. But along with eating, we should be sure to keep ourselves socially healthy too."
+    menu:
+        "I should get out more.":
+            her "Yeah, we should see if we can get a lunch group going! Lots of people are on break now; let's ask around."
+            "We found a few other people who seemed interested in gathering at the community center for lunch every Friday."
+        "I'm not worried.":
+            her "I feel pretty socially healthy now. I see you, my boss, and my husband pretty regularly."
+            sara "But we're going to be here the rest of our lives! Shouldn't we get to know everyone?"
+            menu:
+                "I don't want to meet everyone.":
+                    her "Sometimes I feel like it's easier to like people when I don't know them."
+                    sara "True. And if everyone knew each other we'd be more likely to gossip and get all drama-y."
+                    her "Maybe I could stand to meet a few new people though."
+                    sara "Look, there's someone else on her lunch break, let's introduce ourselves."
+                    if (not met_Lily):
+                        "We met Lily, one of the workers in the science lab. She invited us to come visit her to learn more about alien botany."
+                    elif (met_Lily):
+                        "I had already met Lily, but I introduced her to Sara and we had an enjoyable lunch together."
+                "I guess.":
+                    her "Well, if I'm going to meet them all eventually I might as well get to know them sooner rather than later."
+                    sara "Exactly. Look, some other people are taking their breaks now too, let's ask them if they want to have lunch with us."
+                    "We interrupted a few conversations, but luckily everyone was in a good mood and seemed happy to meet us. We decided to meet every Friday for lunch in the community center."
             
     $ skill_social += 10
     $ community_level += 2

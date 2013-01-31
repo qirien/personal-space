@@ -28,6 +28,7 @@ define naomi = Character("Sister Naomi", color="#cccccc")
 define boss = Character("Mayor Grayson", color="#0033dd")
 define Lily = Character("Lily", color="#dddd00")
 define sara = Character("Sara", color="#771199")
+define thuc = Character("Thuc Nguyen", color="66ff22")
 
 define his_name = "???"
 define her_name = "Me"

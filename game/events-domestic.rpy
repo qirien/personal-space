@@ -63,16 +63,16 @@ label domestic_3:
 # Who wants a goat?
 label domestic_4:
     scene bg farm_exterior with fade
-    "Thuc Nguyen" "Hello? Anybody home?"
+    thuc "Hello? Anybody home?"
     her "Thuc! Good to see you! How are the baby goats?"
-    "Thuc Nguyen" "Doing well!  There's so many of them, though, I don't think we'll have room for them all!"
+    thuc "Doing well!  There's so many of them, though, I don't think we'll have room for them all!"
     her "Are they hard to take care of?"
-    "Thuc Nguyen" "Not at all! They can eat almost any plants, and are pretty hardy. Are you interested in taking care of some goats?"
+    thuc "Not at all! They can eat almost any plants, and are pretty hardy. Are you interested in taking care of some goats?"
     menu:
         "Goats...?"
         "Yes!":
             her "I would love to! But I've never taken care of goats before, so would you help me if I run into trouble?"
-            "Thuc Nguyen" "Of course! Why don't you let me know when you have a spot fenced off for them? They are able to eat the native vegetation here, so you could even use them to help clear space for fields."
+            thuc "Of course! Why don't you let me know when you have a spot fenced off for them? They are able to eat the native vegetation here, so you could even use them to help clear space for fields."
             "[his_name] and I talked it over, and we decided to fence in a part of the wild area not too far from the house for the goats."
             "There were three of them, two males and a female, and I became remarkably attached to them. [his_name] used the manure for fertilizer, and they worked hard eating the strange plants from this planet."
             $ skill_domestic += 10
@@ -81,13 +81,13 @@ label domestic_4:
         "No, thanks.":
             her "(I don't think I have time to take care of goats right now!)"
             her "Thanks for offering, but I don't think we want to do that right now."
-            "Thuc Nguyen" "I understand."
+            thuc "I understand."
             "But [his_name] wasn't so understanding."
             scene bg farm_interior with fade
             show her normal at left
             #show him angry at center
             show him normal at center 
-            him "Free goats? Why did you turn him down!"
+            him "Free goats? Why did you turn him down?!"
             her "I don't know anything about goats! I have enough to do as it is!"
             her "Besides, goat milk tastes gross."
             menu:
