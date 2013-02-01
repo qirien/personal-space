@@ -32,6 +32,8 @@ define thuc = Character("Thuc Nguyen", color="66ff22")
 
 define his_name = "???"
 define her_name = "Me"
+define his_nickname = "dear"
+define her_nickname = "lover"
 
 # Variables about emotional state.  -100 is minimum, 100 is maximum
 define relaxed = 0    # negative = stressed

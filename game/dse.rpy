@@ -4,6 +4,8 @@
 
 # Set up our daily schedule options
 init python:
+
+    # TODO: Have a stress/love meter?
     register_stat("Domestic", "skill_domestic", 0, 100)
     register_stat("Creative", "skill_creative", 0, 100)
     register_stat("Technical", "skill_technical", 0, 100)

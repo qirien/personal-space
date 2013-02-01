@@ -81,7 +81,7 @@ label relax_together_3:
             her "Can't you help him another night? I was really looking forward to watching this with you."
             him "No, sorry, it has to be tonight."
             her "Okay, see you later."
-            him "Bye, lovebug."
+            him "Bye, [her_nickname]."
             "The house suddenly seemed so quiet. I usually didn't mind being alone, but I had really been looking forward to this. The wind whistled mournfully through the cracks in the walls."
             menu:
                 "What should I do?"
@@ -126,7 +126,7 @@ label relax_together_3:
   
         "Want to watch it another night?":
             her "No problem, we'll just watch it another night."
-            him "Thanks for understanding. I'll see you later, lovebug."
+            him "Thanks for understanding. I'll see you later, [her_nickname]."
             "It was a little lonely, especially since I was really looking forward to watching the movie with him, but I soon was absorbed in a good book and then went to bed."
             "We watched the movie the next night. Even though they got a lot of things wrong about space colonization, we really got into the drama and tension. We both cried a little at the end."
             $ relaxed += 5
@@ -160,7 +160,7 @@ label relax_together_3:
                     "Finally, I just went to bed."
                 "Sorry":
                     her "Sorry, [his_name]. I'm being selfish."
-                    him "It's all right, lovebug. Let's do something together tomorrow night, okay?"
+                    him "It's all right, [her_nickname]. Let's do something together tomorrow night, okay?"
                     her "Okay, [his_name]."
                     "We watched the movie the next night. Even though they got a lot of things wrong about space colonization, we really got into the drama and tension. We both cried a little at the end."
                     $ relaxed += 5
@@ -211,7 +211,7 @@ label relax_together_5:
 
 # go "out" to eat on a picnic
 label relax_together_6:
-    him "Put on your fancy clothes, lovebug, because we are going OUT tonight!"
+    him "Put on your fancy clothes, [her_nickname], because we are going OUT tonight!"
     her "Out where? And I don't have any fancy clothes..."
     him "Any clothes look fancy on you! But I can't tell you where we're going; it's a suprise."
     her "Okay, let me get ready, then. I can at least brush my hair."

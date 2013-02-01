@@ -99,7 +99,7 @@ label domestic_4:
                         "I hate it when we fight":
                             her "I hate it when we fight."
                             "He came over and held me close."
-                            him "I'm sorry, [her_name]. You do a lot around here that I don't always see or appreciate."
+                            him "I'm sorry, [her_nickname]. You do a lot around here that I don't always see or appreciate."
                             her "I know you work hard every day, too. I don't want to ask you to do any more than you already do."
                             "We didn't need to say anything more."
                         "I have to get out of here":
@@ -157,7 +157,28 @@ label domestic_5:
     return
 
 label domestic_6:
-    "Domestic 6"
+    "One day, [his_name] brought home some pumpkins he had planted."
+    menu:
+        him "Look how well these pumpkins turned out!"
+        "They look good!":
+            her "They look good! What a deep orange color. Are they supposed to be so...bumpy?"
+            him "Yeah, they grew bumps to protect themselves from the critters here."
+        "They look deformed...":
+            her "They look a little strange- are they supposed to be so bumpy?"
+            him "Yeah, they grew bumps to protect themselves from the critters here."
+        "They look useless.":
+            her "Pumpkins? What am I supposed to do with those?"
+            him "I don't know; make pumpkin pie?"
+     
+    menu:
+        "What shall I do with the pumpkins?"
+        "Make pumpkin pie":
+            "I made pumpkin pie. I didn't have much sugar to put in it, but it tasted pretty good, anyway."
+        "Make pumpkin goulash":
+            "I made a pumpkin goulash with other vegetables and baked it inside the pumpkin. It tasted pretty good!"
+        "Make jack-o-lanterns":
+            "I made some jack-o-lanterns and put flashlights in them. They grinned saucily at us at night, until they started rotting and I had to throw them away."
+
     $ skill_domestic += 10
     return
 
@@ -215,6 +236,9 @@ label domestic_8:
                 "When I took it to them, they didn't care that it came from an alien monster; they just thanked me and gave me some eggs from their chickens to take home with me."
                 $ community_level += 5
                 $ skill_social += 5
+            else:
+                "I wanted to share, but I didn't really know who to ask. I gave some to the Mayor, and some to Sara, but there was still a fair amount left over."
+                $ community_level += 2
         "Drying it":
             her "We could dehydrate it and make jerky."
             him "Do you know how to do that?"
@@ -247,6 +271,7 @@ label domestic_8:
                 $ community_level += 5
             else:
                 "We invited a few friends over and we ate and ate and ate as much as we could. I wondered if we might get sick, but other than feeling full all the next day, nothing bad happened."
+                $ community_level += 2
             
     $ skill_domestic += 10
     return

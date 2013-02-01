@@ -78,8 +78,8 @@ label first_date:
 
     show her normal at left
     show him normal at center
-    him "[her_name], have you ever thought about what's out there?"
-    her "Out . . . where?"
+    him "[her_name]... have you ever thought about what's out there?"
+    her "Out... where?"
     show bg stars with moveintop
     him "In space! So many stars, so many worlds... Did you know they are sending colonists to Talam?"
     her "That's the garden planet they found, right?"
@@ -169,5 +169,37 @@ label marriage_proposal:
         "My mom's recipe book":
             $ favorite_wedding_gift = "my mother's recipe book"
             "My mom's recipe book. She's not that great of a cook, but she put in recipes for all the foods she regularly cooks. Those foods bring back so many childhood memories."
+
+    menu:
+        "It's funny; since we got married, [his_name] sometimes calls me:"
+        "Sweetie":
+            $ her_nickname = "sweetie"
+            "He calls me '[her_nickname]'."
+        "Lovebug":
+            $ her_nickname = "lovebug"
+            "He calls me '[her_nickname]'."
+        "Sugar":
+            $ her_nickname = "sugar"
+            "He calls me '[her_nickname]'."
+        "Something else":
+            $ her_nickname = renpy.input("He calls me:", "sweetie", length=20)
+
+    him "Ready to blast off into space, [her_nickname]?"
+    menu:
+        "I realized I didn't have a name for him. I thought fast and decided to call him:"
+        "Dear":
+            $ his_nickname = "dear"
+            "I call him '[his_nickname]'."
+        "Lover":
+            $ his_nickname = "lover"
+            "I call him '[his_nickname]'."
+        "Honey":
+            $ his_nickname = "honey"
+            "I call him '[his_nickname]'."
+        "Something else":
+            $ his_nickname = renpy.input("I call him:", "honey", length=20)
+
+    her "You sound ready to blast off, [his_nickname]."
+    him "Huh, [his_nickname]? I like hearing you call me that. Well, the ship's waiting for us; let's go!"
 
     jump colony_ship
