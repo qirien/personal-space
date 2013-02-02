@@ -69,9 +69,10 @@ label relax_together_2:
     return
 
 label relax_together_3:
-    scene bg farm_interior with fade
+    scene bg library with fade
     "The library had a huge collection of Earth media that colonists could check out. They only had enough space for the most popular things, but it was still more media than anyone could experience in a lifetime."
     "One day I noticed they had a movie about space colonists. I was curious to see how people on Earth saw people like us, so I checked it out."
+    scene bg farm_interior with fade
     her "What do you want to do tonight? I checked out a movie that looks fun..."
     him "Oh, sorry, I told Thuc I'd help him build a fence tonight. He helped me build ours to keep the animals out of the crops, so I said I'd help with his."
     menu:
@@ -306,12 +307,14 @@ label relax_together_12:
 # Random events that can happen multiple times
 
 label relax_together_a:
+    scene bg bedroom with fade
     "We cuddled together while we watched an episode of an old TV show."
     $ relaxed += 5
     $ loved += 2
     return
 
 label relax_together_b:
+    scene bg bedroom with fade
     "We snuggled together in bed and talked softly together."
     $ relaxed += 5
     $ loved += 2
@@ -324,18 +327,21 @@ label relax_together_c:
     return
 
 label relax_together_d:
+    scene bg farm_interior with fade
     "We were both reading on our computer pads, sitting near each other. We didn't talk much, but everyone once in a while we would look up and smile at each other."
     $ relaxed += 5
     $ loved += 2
     return
 
 label relax_together_e:
+    scene bg farm_interior with fade
     "We played video games together on our computer pads. We liked to play on the same team."
     $ relaxed += 5
     $ loved += 2
     return
 
 label relax_together_f:
+    scene bg farm_interior with fade
     "We made a nice dinner together, and talked while we ate slowly, watching the sun go down."
     $ relaxed += 5
     $ loved += 2

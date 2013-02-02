@@ -5,6 +5,7 @@
 
 
 label relax_alone_0:
+    scene bg bedroom
     "I read a funny book my friend Sara recommended. Sometimes it was so funny I laughed out loud."
     "Laughing felt good. Sometimes I worried about if we would make it, but I forgot all about it when I could laugh."
     $ relaxed += 5
@@ -12,11 +13,15 @@ label relax_alone_0:
     return
 
 label relax_alone_1:
-
+    scene bg farm_interior
+    "I was all set to spend the evening by myself when Sara sent me a message on my computer."
+    sara "Are you still up? Can you please come over, [her_name]?"
+    
     $ relaxed += 5
     return
 
 label relax_alone_2:
+    scene bg stars
     "I sat out on the porch and gazed at the stars. They were so different from Earth, I had to make my own constellations."
     $relaxed += 5
     return
@@ -26,8 +31,9 @@ label relax_alone_3:
     return
 
 label relax_alone_4:
-    "I got a message from my mother. It was one she sent about a month ago, but she told me all about my siblings, and how the neighbors were doing, and I better take good care of [his_name] and is he taking care of me, that sort of thing."
-    "Even though I knew it would take a month for my letter to cross the vast space between our planets, I wrote back. I told her all about the farm and [his_name] and the town and my job. I wonder how much she could understand; our life was so different here..."
+    scene bg farm_interior
+    "I got a message from my mother. It was one she sent several years ago, but she told me all about my siblings, and how the neighbors were doing, and I better take good care of [his_name] and is he taking care of me, that sort of thing."
+    "Even though I knew it would take four years for my letter to cross the vast space between our planets, I wrote back. I told her all about the farm and [his_name] and the town and my job. I wonder how much she could understand; our life was so different here..."
     "Still, it felt good to be connected to Earth."
     if (relaxed < 0):
         $ relaxed = 0
@@ -36,6 +42,7 @@ label relax_alone_4:
     return
 
 label relax_alone_5:
+    scene bg bedroom
     "There are some movies that I love that [his_name] just doesn't like. That's fine; we don't have to do things together all the time. So one night, I watched..."
     menu:
         "I watched:"
@@ -68,6 +75,9 @@ label relax_alone_9:
     return
 
 label relax_alone_10:
+    scene bg farm_interior
+    "I looked through some old photos of my family. The places, the people - they all felt so unreal. I'd probably never see them again."
+    "It was kind of sad, but at the same time it made me appreciate even more the good times we had had together."
     $ relaxed += 5
     return
 
@@ -82,31 +92,37 @@ label relax_alone_12:
 # Random events that can happen more than once
 
 label relax_alone_a:
+    scene bg farm_interior
     "I listened to some of my favorite songs and reminisced."
     $ relaxed += 5
     return
 
 label relax_alone_b:
+    scene bg bedroom
     "I curled up with a good book."
     $ relaxed += 5
     return
 
 label relax_alone_c:
+    scene bg bedroom
     "I felt so tired, I decided to just go to bed early."
     $ relaxed += 7
     return
 
 label relax_alone_d:
+    scene bg farm_interior
     "I wrote a letter to my family, telling them all about what happened this month."
     $ relaxed += 7
     return
 
 label relax_alone_e:
+    scene bg farm_interior
     "I played some video games that I enjoyed."
     $ relaxed += 5
     return
 
 label relax_alone_f:
+    scene bg path
     "I took a walk and thought about the future."
     $ relaxed += 5
     return

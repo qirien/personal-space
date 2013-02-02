@@ -15,6 +15,10 @@ image bg talam = "bg/talam.png"
 image bg pond = "bg/pond.png"
 image bg path = "bg/path.png"
 image bg laundry = "bg/laundry.png"
+image bg library = "bg/library.png"
+image bg classroom = "bg/classroom.png"
+image bg clinic = "bg/clinic.png"
+image bg bedroom = "bg/bedroom.png"
 
 # SPRITES
 image him normal = "sprites/him.png"

@@ -381,7 +381,7 @@ label done_party_menu:
                     "\"It's the End of the World\"":
                         her "\"It's the End of the World\" is his favorite song."
                         sara "That's right! [her_name], you are the winner!"
-                        "It was fun win, and also to learn more about everyone."
+                        "It was fun to win, and also to learn more about everyone."
             "Adamantium Chef":
                 "I decided to enter the Adamantium Chef contest."
                 $ party_meat = False

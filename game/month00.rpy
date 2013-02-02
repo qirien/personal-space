@@ -197,6 +197,7 @@ label settling_in:
     her "How about the end with the stove can be the kitchen, and the other end can be the bedroom?"
     him "Sounds fine to me."
     "The house really was pretty small- just one room. One end had a wood-burning/electric hybrid stove/heater as well as a battery that the solar panels could charge, and the other end had a window. No plumbing, electricity only when it was sunny or while our battery lasted, and no furniture other than our sleeping bags and a folding table."
+    scene bg bedroom with fade
     "As soon as we got the house up, [his_name] started putting up a piece of paper he unfolded from his bag. When I got closer, I could see it was a picture of his family. I realized I hadn't brought any pictures of my family."
     menu:
         "He's putting up a picture of our family. It's right by our bed."

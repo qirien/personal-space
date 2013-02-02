@@ -52,6 +52,7 @@ label mechanic:
 
 # Teacher; scene at school
 label teacher:
+    scene bg classroom with fade
     $ profession = "teacher"
     "...the elementary school. He had come to tell all the kindergartners about life on a farm."
     show him normal at right

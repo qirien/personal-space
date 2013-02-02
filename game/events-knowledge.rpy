@@ -3,6 +3,7 @@
 
 # Intro Event and the default
 label knowledge_0:
+    scene bg library
     "I read up on the latest science research."
     $ skill_knowledge += 10
 
@@ -20,6 +21,7 @@ label knowledge_1:
 
 # Volunteering to do research at library
 label knowledge_2:
+    scene bg library with fade
     "I went to town and helped out at the library."
     "They don't have a lot of physical books there, but there are printouts of Talam and pad computers people can use if they don't have one of their own. Even though there's not lots of shelving to do, people can also put in data requests for librarians to research and things still need to be organized."
     "I was able to help with some obscure requests the colonists had posted by reading some recently published research papers."
@@ -29,6 +31,7 @@ label knowledge_2:
 
 # Finding fiber crops
 label knowledge_3:
+    scene bg path with fade
     "I studied the guide to edible plants the scientists sent out. It included information about other uses for plants. Some plants, called fiber crops, have the potential to be made into cloth or paper."
     her "I'm looking for plants to make into cloth, have you seen any plants that are fluffy-looking?"
     him "Hmm, not fluffy-looking, but I have seen some really tall grasses out past the riverbed. I can bring you some tomorrow if you'd like."
@@ -66,7 +69,7 @@ label knowledge_4:
 
 # Research geology, geography of planet
 label knowledge_5:
-
+    scene bg library with fade
     $ skill_knowledge += 10
     return
 

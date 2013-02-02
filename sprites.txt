@@ -1,0 +1,27 @@
+SPRITES
+-------
+
+* Her
+  - normal
+  - worried
+  - angry
+  - flirty
+
+* Him
+  - normal
+  - worried
+  - angry
+  - flirty
+
+* Him/Her embrace?
+
+* Sara
+* Mayor Pavel Grayson
+* Thuc Nguyen
+* Natalia Peron
+* Mrs. Blair
+* Brennan Callahan
+* Sister Naomi Takahara
+* Dr. Lily (scientist)
+* Sven (librarian)
+* Helen Engel

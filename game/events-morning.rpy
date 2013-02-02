@@ -11,6 +11,7 @@ label act_work:
     if (month == 3):
         #Different event for each profession
         if (profession == "doctor"):
+            scene bg clinic with fade
             "Usually things were pretty quiet at the clinic. I made an appointment with each colonist to learn about each person's medical conditions, and sometimes made suggestions for how to deal with chronic problems. We had a few minor injuries setting up, but nothing serious."
             "But one day in particular was extremely busy."
             her "Oh! What happened?"
@@ -67,6 +68,7 @@ label act_work:
         elif (profession == "auto mechanic"):
             "Mechanic Month 3"
         elif (profession == "teacher"):
+            scene bg classroom with fade
             "Teacher Month 3"
 
     # Introduce co-worker Brennan Callahan
@@ -206,6 +208,7 @@ label work_intro:
 
     #Different event for each profession
     if (profession == "doctor"):
+        scene bg clinic with fade
         boss "All right! This is the clinic where people will come in if they get sick. I don't just want us to react to injuries and illness, though - we need to be proactive, and help promote good health."
         her "I helped some people out on the ship on the way here, so this should be similar. I will need some more supplies, though."
         boss "That's fine, just write up a list and give it to me to approve. Then you can go on over to the storehouse and take what you need."
@@ -220,6 +223,7 @@ label work_intro:
         boss "Yes, it will! Perhaps you can start by helping me with my datapad? It always freezes up when I try to access my calendar..."
         her "Sure, let me take a look at it..."
     elif (profession == "teacher"):
+        scene bg classroom with fade
         boss "All right! This is the schoolhouse. There's not a lot of kids in the community yet, so we just have them all in one room with you as their teacher. Please consider what they'll need to learn in addition to the standard curriculum, and try to be flexible if kids are needed to help out back at home."
         her "I guess the kids are going to have to work hard, too..."
         boss "Yes, but they need to learn a lot, too! It will take a lot of effort to see that they don't forget about Earth, and all the things humanity has managed to learn there."
