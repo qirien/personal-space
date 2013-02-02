@@ -65,7 +65,7 @@ label monthly_event_1:
             her "(If he gets hungry he can make his own dinner.)"
             "I fell asleep early, and awoke the next morning to find..."
                 
-        "I'll be in charge of dishes" if (skill_domestic >= 10):
+        "{i}I'll be in charge of dishes{/i}" if (skill_domestic >= 10):
             her "Promptly cleaned dishes are really important to me, so why don't I be in charge of that? We can either take turns cooking, or cook together."
             him "Thanks, I really can't stand doing dishes. I'd rather do almost anything else."
             her "Like getting the water for our breakfast?"
@@ -75,7 +75,7 @@ label monthly_event_1:
             $loved += 5
             return
 
-        "Let's take turns fairly" if (skill_knowledge >= 10):
+        "{i}Let's take turns fairly{/i}" if (skill_knowledge >= 10):
             her "Did you know that men who do more housework are generally happier in their marriages?"
             him "According to who?"
             her "There's also a study correlating amount of housework done with frequency of sex."
@@ -119,12 +119,12 @@ label monthly_event_1:
             her "I'm afraid he's worn out his welcome. Perhaps you could gently escort him off the premises?"
             him "It would be my pleasure."
             
-        "Analyzed" if (skill_knowledge >= 10):
+        "{i}Analyzed{/i}" if (skill_knowledge >= 10):
             her "Interesting. It's legs are jointed like an arthropod, but those claws look more crustacean ... of course, arthropods and crustaceans are not that far apart from each other... how did it get inside, anyway?"
             him "I think it crawled under the front door. There's quite a gap there."
             her "Huh. Looks like it's an omnivore; it ate the protein and the vegetables..."
             him "Well, whatever it is, we should put it back outside."
-        "Stayed calm" if (skill_spiritual >= 10):
+        "{i}Stayed calm{/i}" if (skill_spiritual >= 10):
             her "Oh...my. That is...gigantic."
             him "No kidding. Hold on, I'll get him out of here."
     "He put on his work gloves and picked up the mess kit by the handle. I opened the door so he could take it outside."
@@ -159,7 +159,7 @@ label monthly_event_2:
             $ loved += 5
             $ skill_physical += 5
 
-        "I'll surprise him..." if (skill_physical >= 10):
+        "{i}I'll surprise him...{/i}" if (skill_physical >= 10):
             her "We have time; don't worry about it yet."
             "I started digging after work, thinking I could get a lot dug before he came home, but..."
             him "Nice hole. Are you going to plant something in it?"
@@ -171,7 +171,7 @@ label monthly_event_2:
             $ loved += 5
             $ skill_physical += 5
 
-        "I'll help with the farm while you dig" if (skill_domestic >=10):
+        "{i}I'll help with the farm while you dig.{/i}" if (skill_domestic >=10):
             her "Why don't you let me take care of the farm while you dig it?"
             him "Well...That could work. There's a lot of weeds that need pulling; I'll show you how to do the watering with the irrigation ditches I have set up."
             her "I can do that."
@@ -185,7 +185,7 @@ label monthly_event_2:
             $ skill_domestic += 5
             $ loved += 5
 
-        "Maybe I could build something to help" if (skill_technical >= 10):
+        "{i}Maybe I could build something to help.{/i}" if (skill_technical >= 10):
             her "Maybe I could build something to help dig the cellar?"
             him "Really? That would be cool."
             "I researched and designed a simple machine with buckets and pulleys for getting the dirt up out of the hole. I was able to take one of the solar panels from the roof and power it with electricity."
@@ -195,7 +195,7 @@ label monthly_event_2:
             $ loved += 5
             $ skill_technical += 5
 
-        "Maybe the Peron's would help us dig it?" if (skill_social >= 10):
+        "{i}Maybe the Peron's would help us dig it?{/i}" if (skill_social >= 10):
             her "Maybe the Peron's would help us dig ours, and we could help them dig a cellar, too?"
             him "That would be great; it'll be more efficient with a few more people."
             "I talked to the Peron's and they thought that sounded great, so we were able to help each other have a cellar to store food in. They also gave us some eggs from their chickens, who were acclimatizing to Talam nicely."
@@ -221,11 +221,11 @@ label monthly_event_3:
     her "It's his birthday this month!"
     menu:
         "Maybe I should do something for him..."
-        "Have a party" if (skill_social >= 20):
+        "{i}Have a party{/i}" if (skill_social >= 20):
             "I invited some friends over and we ate dinner together and played games together until late. We sang Happy Birthday to [his_name]."
             show him normal at right
             him "Thanks, [her_name] - what a great birthday!"
-        "Make delicious food" if (skill_domestic >= 20):
+        "{i}Make delicious food{/i}" if (skill_domestic >= 20):
             "I couldn't really copy his bread-cake that he made on the shuttle for my birthday, but I was determined to make him something tasty."
             "I found some berries that I had tried before, and combined them with some biscuits from our rations to make a sort of berry shortcake. We had some candles in our emergency case, so I lit one of those for him, too."
             show him normal at right
@@ -233,7 +233,7 @@ label monthly_event_3:
             him "Wow! Thank you! This looks great!"
             "It didn't taste anything like strawberry shortcake, but it was still good, and [his_name] seemed to like it."
             
-        "Make him a present" if (skill_creative >= 20):
+        "{i}Make him a present{/i}" if (skill_creative >= 20):
             "I thought and thought about what I could make him that he would like."
             "I finally decided I would make him a hat."
             "I could only work on it when he wasn't paying attention, so it went pretty slowly. But finally I was able to finish it."
@@ -451,17 +451,17 @@ label monthly_event_5:
     her "We can't just throw things away when they break like on Earth. We need to take care of this planet for future colonists and the life forms that are already here."
     him "Well, what should we do with them then?"
     menu:
-        "I could see if any of our neighbors could use the fabric." if (skill_social >= 20):
+        "{i}I could see if any of our neighbors could use the fabric.{/i}" if (skill_social >= 20):
             her "One of my friends is making a quilt, and I think she could cut it up and use it for part of the batting."
             him "Someone will have my skin cells in their quilt! I'm grossed out just thinking about it."
             her "Oh, get over it. We'll wash them real good."
             him "Well, as long as she's okay with it."
-        "I could use the broken dish in an artwork." if (skill_creative >= 20):
+        "{i}I could use the broken dish in an artwork.{/i}" if (skill_creative >= 20):
             her "If I crushed the dish pieces even further, I could make a mosaic with it."
             him "Well, mosaics are great and all, but that's not very practical."
             her "Maybe you could use them at the bottom of potted plants to help them drain better."
             him "Okay, okay, maybe there's a way I could use that."
-        "I could mend this sock." if (skill_domestic >= 20):
+        "{i}I could mend this sock.{/i}" if (skill_domestic >= 20):
             her "I've been practicing some sewing and I could darn these socks."
             him "Can this kind of sock even be darned?"
             her "I want to at least try."
@@ -470,12 +470,12 @@ label monthly_event_5:
             him "..."
             her "Think of how fun it would be to put all the weird sock shapes together in a rectangle!"
             him "Um, well, I hope the darning works out."
-        "Let's think of a solution together." if (skill_spiritual >= 20):
+        "{i}Let's think of a solution together.{/i}" if (skill_spiritual >= 20):
             her "It might be difficult, but I think if we work together we can think of some way to use these objects."
             him "Hmmm. I might be able to use the packaging from the MREs to separate small rows of crops."
             her "And maybe I could turn these pieces of plate into labels for the crop."
             him "Oh, that would actually be really nice for next year."
-        "This stuff is actually compostable." if ((skill_knowledge >= 30) or (skill_technical >= 30)):
+        "{i}This stuff is actually compostable.{/i}" if ((skill_knowledge >= 30) or (skill_technical >= 30)):
             her "Actually, we can just compost all these things. They may take a long time to break down, but they will eventually. We can speed the process by breaking them up and spreading them throughout the pile."
             him "OK, I'll cut up the socks."
             her "I'll smash the plate. That sounds satisfying, anyway."
@@ -484,7 +484,7 @@ label monthly_event_5:
             him "Rawr, rawr."
             her "Wow, you're so paleolithic."
             him "I'll take that as a compliment."
-        "I could dig a deep hole for them." if (skill_physical >= 30):
+        "{i}I could dig a deep hole for them.{/i}" if (skill_physical >= 30):
             her "If I dig deep enough, we can just get rid of this stuff and no one will know that we couldn't think of a way to reuse them."
             him "It could be our little secret."
             "I dug and dug and dug. After I buried the items, it was nice to not have it cluttering up the house. And I didn't have to feel guilty about preventing other people from starting a new life here."
