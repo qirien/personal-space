@@ -70,8 +70,8 @@ label relax_together_2:
 
 label relax_together_3:
     scene bg farm_interior with fade
-    "The library had a huge collection of Earth media that colonists could check out. They even received new things from Earth sometimes, though they only had enough bandwidth to receive the most popular things."
-    "One day I noticed they had a new movie about space colonists. I was curious to see how people on Earth saw people like us, so I checked it out."
+    "The library had a huge collection of Earth media that colonists could check out. They only had enough space for the most popular things, but it was still more media than anyone could experience in a lifetime."
+    "One day I noticed they had a movie about space colonists. I was curious to see how people on Earth saw people like us, so I checked it out."
     her "What do you want to do tonight? I checked out a movie that looks fun..."
     him "Oh, sorry, I told Thuc I'd help him build a fence tonight. He helped me build ours to keep the animals out of the crops, so I said I'd help with his."
     menu:
@@ -306,19 +306,19 @@ label relax_together_12:
 # Random events that can happen multiple times
 
 label relax_together_a:
-    "Random A"
+    "We cuddled together while we watched an episode of an old TV show."
     $ relaxed += 5
     $ loved += 2
     return
 
 label relax_together_b:
-    "Random B"
+    "We snuggled together in bed and talked softly together."
     $ relaxed += 5
     $ loved += 2
     return
 
 label relax_together_c:
-    "Random C"
+    "We played card games and flirted shamelessly. Sometimes I even let him win."
     $ relaxed += 5
     $ loved += 2
     return

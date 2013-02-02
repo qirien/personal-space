@@ -123,8 +123,11 @@ label monthly_event_1:
             her "Interesting. It's legs are jointed like an arthropod, but those claws look more crustacean ... of course, arthropods and crustaceans are not that far apart from each other... how did it get inside, anyway?"
             him "I think it crawled under the front door. There's quite a gap there."
             her "Huh. Looks like it's an omnivore; it ate the protein and the vegetables..."
-            him "Well, whatever it is, we should put it back outside."                 
-    "He put on his work gloves and picked up the mess kit by the handle. I opened the door so he could take it outside."             
+            him "Well, whatever it is, we should put it back outside."
+        "Stayed calm" if (skill_spiritual >= 10):
+            her "Oh...my. That is...gigantic."
+            him "No kidding. Hold on, I'll get him out of here."
+    "He put on his work gloves and picked up the mess kit by the handle. I opened the door so he could take it outside."
     him "C'mon, George, time to take a hike."
     her "George?! You're giving this thing a name?"
     him "Doesn't he look like a George to you? Besides, I accidentally invited him in with my mess, so I guess he's my pet."
@@ -202,6 +205,7 @@ label monthly_event_2:
         "I don't want to help.":
             her "I'm sure you'll find the time."
             her "(All the farm stuff is his responsibility, anyway)"
+            $ loved -= 5
             "It took him two weeks of digging and hauling dirt every second he wasn't caring for the plants. He fell asleep right after dinner, but in the morning he was back digging again, until finally, it was finished."
 
     "Later in the month, he harvested some radishes, spinach, and carrots, and we were able to store them safely in the cellar."
@@ -255,6 +259,7 @@ label monthly_event_3:
         "I'm not doing anything":
             "He probably didn't even remember his birthday. Birthdays are dumb, anyway."
             "When his birthday came around, he didn't say anything about it, so I guess I was right."
+            $ loved -= 5
             return
 
     "I was happy I could show him I cared by remembering his birthday."
@@ -325,29 +330,119 @@ label monthly_event_4:
             "Do I?"
             "It's important.":
                 her "I think it's important to know how to make things with what we have on this new planet."
+                him "Like what kinds of things?"
+                her "I made those placemats that keep our table clean, and I'm learning how to crochet. When our warm clothes from Earth wear out, we'll need to know how to make new ones with the resources we have."
+                him "That's true...we can't just go to the store and buy stuff anymore, can we? Sorry, I didn't meant to accuse, I just really was curious what projects you've been working on."
             "{b}You{/b} spend a lot of time reading":
                 her "What about you? You've been reading a lot lately."
                 him "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they will grow."
                 her "That sounds useful."
-                # TODO What has she been doing?
-                her "I've been "
+                her "I've been learning how to make things out of native materials, like these placemats."
+                him "Oh, that's good. I want us to be independent from Earth; that's important."
             "I can't believe you don't appreciate me":
                 jump unappreciated
     elif (highest_skill == "Technical"):
         him "You spend a lot of time tinkering with things, don't you?"
+        menu:
+            "Do I?"
+            "It's important":
+                her "When things break, we can't just take them to a repair shop. I try and keep everything in good condition so it won't break."
+                him "Like what?"
+                her "Well, I installed the antenna that lets us communicate with the town, and the screw that brings water into the house."
+                him "Yeah, I'm really glad to have those. Sorry, I didn't meant to accuse, I just really was curious what projects you've been working on."
+            "What do {b}you{/b} do?":
+                her "What have {b}you{/b} been doing lately? You've been reading a lot."
+                him "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they will grow."
+                her "Okay, well, that sounds very... necessary."
+                her "I installed the antenna that lets us talk with the village, and the device that brings water into the house."
+                him "I love those; thank you."
+            "I can't believe you don't appreciate me":
+                jump unappreciated
+
     elif (highest_skill == "Spiritual"):
         him "You spend a lot of time just thinking about stuff, don't you?"
+        menu:
+            "Do I?"
+            "It's important":
+                her "So many things have changed, I think it's important to have a reason to work hard and help each other out."
+                him "Like what?"
+                her "Well, from my studies I've learned how important it is to answer someone with love, even if they are being insensitive or unappreciative."
+                him "...You probably have a lot of opportunities to practice that, don't you?"
+                her "Well...yes. I think studying this principles helps me to get along better with others and work unselfishly."
+                him "That is important. Sorry, I didn't meant to accuse, I just really was curious what you've been learning."
+            "What do {b}you{/b} do?":
+                her "What have {b}you{/b} been doing lately? You've been reading a lot."
+                him "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they will grow."
+                her "Okay, well, that sounds very... necessary."
+                her "I've been learning about how important it is to answer someone with love, even if they are being insensitive or unappreciative."
+                him "That {b}is{/b} important."
+                her "I'm not that good at it yet, though."
+                him "I could probably use some reminders of that, too. Want to show me what you've been reading?"
+                her "Sure, let's read together."
+            "I can't believe you don't appreciate me":
+                jump unappreciated
+
     elif (highest_skill == "Social"):
         him "You spend a lot of time just hanging out, don't you?"
+        menu:
+            "Do I?"
+            "It's important":
+                her "We need our connections with other people if we're going to survive as a community."
+                him "Does that really do any good?"
+                her "Well, remember those delicious dried fruits we got from the Peron's? We were \"just hanging out\" when we prepared them."
+                him "Yeah, those are good."
+                her "We can't survive by ourselves out here - we need the community."
+                him "You're right; I don't like to depend on others, but we do need to work together."
+            "What do {b}you{/b} do?":
+                her "What have {b}you{/b} been doing lately? You've been reading a lot."
+                him "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they will grow."
+                her "Okay, well, that sounds very... necessary."
+                her "I'm not just \"hanging out\", you know. I'm building relationships in the community that we are going to need if we are to survive. We can't make it alone here."
+                him "You're right; I wish I didn't need anyone else, but I can't do everything."
+            "I can't believe you don't appreciate me":
+                jump unappreciated
+
     elif (highest_skill == "Knowledge"):
         him "You spend a lot of time reading, don't you?"
+        menu:
+            "Do I?"
+            "It's important":
+                her "I've been researching native plants that we can use when our reserves from Earth run out."
+                him "Like what?"
+                her "Well, we are working together on a list of edible plants, and I helped one of the families research how far their outhouse needed to be from the river."
+                him "Oh yeah, that is important. Sorry, I didn't mean to accuse, I just was curious about what you're learning."
+            "So do you":
+                her "You read a lot, too."
+                him "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they will grow."
+                her "Okay, well, that sounds very... necessary."
+                her "I've been researching native plants, and helping the other colonists with their research. One family was going to build their outhouse just 15 meters from the river, but after I did some research I convinced them to build it at least 75 meters away."
+                him "That is really important. Thank you for doing that, [her_name]."
+            "I can't believe you don't appreciate me":
+                jump unappreciated
+
     elif (highest_skill == "Physical"):
         him "You spend a lot of time exercising, don't you?"
-    else:
-        "You spend a lot of time on your hobbies, don't you?"
+        menu:
+            "Do I?"
+            "It's important":
+                her "I need to keep my body in good condition."
+                him "For what?"
+                her "Well, did you know that I can run to town in five minutes? And I am getting pretty good at chopping wood, which we'll need when the cold season starts and our solar panels don't work."
+                him "Oh yeah, that is important. Sorry, I didn't mean to accuse, I just was curious about what you've been doing."
+            "What do {b}you{/b} do?":
+                her "What have {b}you{/b} been doing lately? You've been reading a lot."
+                him "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they will grow."
+                her "Okay, well, that sounds very... necessary."
+                her "On that hike I found out about a new water source, and I can run to town in five minutes in case there's an emergency."
+                him "Five minutes?! That's pretty fast. You must have been training a lot. I guess I haven't thought about doing that because I usually ride Lettie around."
+                her "Well, not all of us have horses, so we have to make do with the legs we have."
+                him "And what nice legs they are..."
+            "I can't believe you don't appreciate me":
+                jump unappreciated
 
     return
 
+# MONTH 5 - What to do with trash
 label monthly_event_5:
     "The village council asked us to do a waste assessment to see how much and what kind of materials we needed to permanently dispose of. If the amount of waste was too high, they told us that future colonists would be limited."
     "Our waste pile was fairly small, as we'd already composted any organic material that we didn't eat. Still, there was things like packaging from the MREs, a broken dish, and a pair of worn-out socks."

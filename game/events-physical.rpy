@@ -230,7 +230,8 @@ label physical_6:
         "Should I tell [his_name] about it? He might want to come, too."
         "Tell him":
             her "Hey, [his_nickname], I'm going hiking tomorrow; want to come?"
-        "Don't tell him"
+        "Don't tell him":
+            "I didn't tell him; he'd just worry. But I left a note saying where I went. If something went wrong, he'd find the note and know where I went. But if nothing went wrong, I'd be home before him and I could throw the note away before he found it."
         
     $ skill_physical += 10
     return

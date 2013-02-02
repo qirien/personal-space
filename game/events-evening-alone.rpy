@@ -2,14 +2,18 @@
 # where we relax for a while.
 
 # Basic Alone Evening Events
-# These don't all have to be big events -- we could randomize between a few
-# different things.
 
 
 label relax_alone_0:
+    "I read a funny book my friend Sara recommended. Sometimes it was so funny I laughed out loud."
+    "Laughing felt good. Sometimes I worried about if we would make it, but I forgot all about it when I could laugh."
+    $ relaxed += 5
+    
     return
 
 label relax_alone_1:
+
+    $ relaxed += 5
     return
 
 label relax_alone_2:
@@ -18,7 +22,7 @@ label relax_alone_2:
     return
 
 label relax_alone_3:
-
+    $ relaxed += 5
     return
 
 label relax_alone_4:
@@ -48,24 +52,31 @@ label relax_alone_5:
     return
 
 label relax_alone_6:
+    $ relaxed += 5
     return
 
 label relax_alone_7:
+    $ relaxed += 5
     return
 
 label relax_alone_8:
+    $ relaxed += 5
     return
 
 label relax_alone_9:
+    $ relaxed += 5
     return
 
 label relax_alone_10:
+    $ relaxed += 5
     return
 
 label relax_alone_11:
+    $ relaxed += 5
     return
 
 label relax_alone_12:
+    $ relaxed += 5
     return
 
 # Random events that can happen more than once
