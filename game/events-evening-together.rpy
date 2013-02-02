@@ -118,7 +118,7 @@ label relax_together_3:
             her "Thanks, I'm sure we will."
             "We walked home by moonlight.  The two moons cast opposing shadows from the shrubs and trees, making a maze of light for us to follow. [his_name] reached for my hand."
             him "Thanks for coming. Everything's better with you."
-            her "Even putting up fences is not too bad when it's with you."
+            her "Even putting up fences is not too bad when we're together."
             $ loved += 5
             $ skill_physical += 5
             $ community_level += 5

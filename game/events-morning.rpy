@@ -33,14 +33,18 @@ label act_work:
             her "Keep trying! Then use your finger to sweep through his mouth to see if you can dislodge anything."
             "Sara on the radio" "Hurry, [her_name], he's starting to turn blue!"
             "By the time I got there, the little boy was unconscious."
-            "I moved quickly. I was able to get the peanut out of his throat, and performed CPR. His mom was crying into Sara's shoulder."
+            "I moved quickly. I was able to get the peanut out of his throat, and performed CPR. Mrs. Blair watched me grimly."
             "I was tired from running all the way over there, but I did the best I could."
             "Finally, he coughed and started to breathe."
             "Mrs. Blair" "Sasha! Oh, my boy!"
             "I didn't have time to stick around for adulation, though - James was still waiting for me to help his leg in the clinic."
-            her "Sorry to leave you waiting so long; I know you're hurting."
+            her "Sorry to leave you waiting so long; I know you're hurting- oh!"
+            "I had bandaged up his leg, but the wound had reopened and he was bleeding a lot."
+            "James" "I tried to, to, stop the bleeding..."
+            her "It's okay, I'm here now. You're going to be just fine..."
+            "I took care of his leg, and several hours later, James woke up."
             "James" "Hey, is Sasha okay?"
-            her "Oh! Yes, I got there just in time."
+            her "Sasha? Oh, yes, I got there just in time."
             "James" "They really ought to have someone in here helping you out. I mean, what if you were in the middle of surgery or something?"
             menu:
                 "Do I need help?"
@@ -49,7 +53,7 @@ label act_work:
                 "I can do it myself":
                     her "It's not a problem most of the time. I can handle it."
 
-            "But word got around about our two close calls in one day."
+            "Word got around about my two close calls in one day."
             boss "Doctor, I'm so sorry about what happened today."
             her "It's not your fault, Mayor Grayson."
             boss "Well, it partly is my fault. It's obvious you need an assistant. Perhaps not full-time, but someone who can come quickly and help out during busy times."
@@ -145,7 +149,7 @@ label act_work:
             "Teacher Month 24"
 
     else:
-        if (relaxed <= 10):
+        if (relaxed <= -10):
             "I worked hard at work. I was starting to feel burned out, though."
         elif (relaxed >= 10):
             "I breezed through work. Everything seemed easy."

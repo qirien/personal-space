@@ -19,15 +19,18 @@ label monthly_event_1:
             her "Here, [his_name], I made you some breakfast."
             him "Oh, thank you. I could just make it myself, you know."
             her "I don't mind making breakfast."
+            $ loved += 2
         "Ask if he wants some":
             her "So, I'm making breakfast...do you want some?"
             him "Oh, that'd be great, thanks."
             her "Still just meal rations, until the crops start coming in."
             him "Yeah, it will be a while still."
+            $ loved += 2
         "Don't make him any":
             him "Oh, you made breakfast?"
             her "Sorry, I just made some for me."
             him "Okay, I can get my own."
+            $ loved -= 2
     
     "That set the pattern for our mornings. Some things weren't as easy to work out, though."
     her "Thanks for making dinner, but you left the dirty dishes on the stove."
@@ -65,7 +68,7 @@ label monthly_event_1:
         "I'll be in charge of dishes" if (skill_domestic >= 10):
             her "Promptly cleaned dishes are really important to me, so why don't I be in charge of that? We can either take turns cooking, or cook together."
             him "Thanks, I really can't stand doing dishes. I'd rather do almost anything else."
-            her "Like getting the water for our morning coffee?"
+            her "Like getting the water for our breakfast?"
             him "Yeah, I'll do that."
             her "Thank you; I hate going outside first thing in the morning."
             "So that worked out pretty well."

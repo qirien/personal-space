@@ -127,11 +127,12 @@ label domestic_4:
             
     return
 
+# Too many radishes!
 label domestic_5:
     scene bg farm_interior with fade
-    show him at left
+    show him normal at left
     him "Here's some more radishes from the fields, love."
-    show her at center
+    show her normal at center
     her "Thanks, they look great!"
     hide him
     #show her worried at center
@@ -156,6 +157,7 @@ label domestic_5:
     $ skill_domestic += 10
     return
 
+# Pumpkins and Halloween!
 label domestic_6:
     "One day, [his_name] brought home some pumpkins he had planted."
     menu:
@@ -163,12 +165,14 @@ label domestic_6:
         "They look good!":
             her "They look good! What a deep orange color. Are they supposed to be so...bumpy?"
             him "Yeah, they grew bumps to protect themselves from the critters here."
+            $ loved += 2
         "They look deformed...":
             her "They look a little strange- are they supposed to be so bumpy?"
             him "Yeah, they grew bumps to protect themselves from the critters here."
         "They look useless.":
             her "Pumpkins? What am I supposed to do with those?"
             him "I don't know; make pumpkin pie?"
+            $ loved -= 2
      
     menu:
         "What shall I do with the pumpkins?"
@@ -179,15 +183,30 @@ label domestic_6:
         "Make jack-o-lanterns":
             "I made some jack-o-lanterns and put flashlights in them. They grinned saucily at us at night, until they started rotting and I had to throw them away."
 
+    "Even though it wasn't anywhere near Halloween going by the Earth calendar, the colonists all thought that if we had pumpkins, we should celebrate it now!"
+    menu:
+        "I thought:"
+        "How fun!":
+            "We didn't have any candy, of course, but I decided to try to make some. The main problem was that we didn't have any sugar left."
+            if (skill_knowledge >= 40):
+                "In my studies with Lily, we had found a plant whose sap had a high sugar content. I boiled it, and then dipped sticks into it. After two days, small crystals started to form on the sticks, and after a week, each stick had a nice cluster of rock candy crystals on it."
+            else:
+                "I made some cookies using smashed fruit as a sweetener.  They weren't very sweet, but I added some spices and nuts so they had lots of interesting flavors."
+            "The kids made costumes out of scraps and household items, and they went around trick-or-treating to all the farms and houses."
+            if (want_kids):
+                "I wondered what it would be like to have our own child and take them trick-or-treating and celebrate holidays together. What will our kids be like?"
+            else:
+                "They were cute, but I was kind of glad when they were gone. I'm not used to being around kids so much."
+            $ skill_social += 5
+            $ community_level += 1
+        "How annoying.":
+            "I made sure everyone knew that we wouldn't be giving out any goodies at our house, and turned off all the lights early."
+
     $ skill_domestic += 10
     return
 
+# what to do with local meat
 label domestic_7:
-    "Domestic 7"
-    $ skill_domestic += 10
-    return
-
-label domestic_8:
     scene bg farm_interior with fade
     "One day, I came home from work to find a dead monster on the kitchen table."
     #show her surprised at center
@@ -275,6 +294,72 @@ label domestic_8:
             
     $ skill_domestic += 10
     return
+
+# running out of soap; must make own soap with ash, fat, etc
+label domestic_8:
+    boss "One last item of business for the community meeting-"
+    boss "Our soap supply is running low. If anyone can make some soap and put the extra in the storehouse, that will help everyone to stay clean and healthy."
+    him "I bet you could make some soap, [her_nickname]."
+    her "I bet I could. But I bet we could make even better soap together."
+    if (loved >= 5):
+        him "Everything we make together is good."
+    else:
+        him "Sorry, [her_nickname], I don't have time right now."
+    
+    "Making soap from scratch wasn't something I had ever done before. On Earth soap was so cheap there was no reason to make your own. But I used my computer pad to look up instructions."
+    "It looked like it would probably take at least a month to make the soap...better start on it now!"
+    "First, I put on gloves and goggles. We needed to make lye, which is very caustic. I got some ashes from our stove and added boiling water, and let it sit overnight."
+    "Meanwhile, I needed to get some fat."
+    if (loved >= 5):
+        her "Hey, [his_nickname], we need some fat for the soap. Any ideas?"
+        him "I could hunt down another one of those creatures that are always nosing around the farm."
+        menu:
+            "Should he hunt?"
+            "Yes":
+                her "That would work. We could use the meat and hide, too, for other things."
+                him "All right, I'll bring home the bacon for you, [her_nickname]."
+                "It was a lot of work separating the fat from the meat, and rendering and cleaning the fat, but I was glad we could make it using only things we found on this planet."
+                him "It feels good to be more independent from Earth."
+                her "Yeah, who needs Earth, anyway!"
+                him "Doesn't mean I won't be glad to see the supply ships, though."
+            "No":
+                her "No, why don't you just see if the storehouse still has oil?"
+                him "Okay, but we should start saving fat for next time."
+                her "Good idea."
+    else:
+        "I got some shortening from the storehouse."
+   
+    "I heated the grease in one pot, and heated the lye in another pot to the right temperatures. Then I added a little of each to another pot several times until I had the right amount."
+    if (loved >= 5):
+        her "Would you stir that for me, please?"
+        him "No problem."
+        "It helped to have him stirring while I added the lye and grease."
+    else:
+        "I stirred it and stirred it."
+    "I tried to balance the amount of lye and grease to make a soap that was not too greasy and not too caustic. Then I let it cool."
+    "I poured off some of it for liquid soap that we could use right away, and saved the rest for hard soap. Adding salt and skimming off the soap on top got some of the liquid out for the hard soap."
+    if (skill_creative >= 40):
+        "I melted it again and added some flowers for scent and color."
+    if (skill_technical >= 40):
+        "I used some of the cans and boxes to make soap molds and poured it in."
+    else:
+        "I poured all the soap in a box and let it cool."
+    "After the hard soap cooled, I cut it up and set it out to dry and air out. After a few weeks, it was ready to use!"
+    "My first batch was very drying and hard on the skin, but it did get things clean. I decided to start saving ashes and fat to use so I could get better at making soap."
+    menu:
+        her "Now, after all this hard work, should I share some with everyone else? I do have some extra..."
+        "Share it":
+            "I took what we couldn't use right away to the storehouse."
+            boss "This looks wonderful! Thank you, [her_name]."
+            $ community_level += 1
+        "Keep it":
+            "I worked so hard on this soap, I couldn't bear to give it away to just anyone."
+
+    "I would never take soap for granted again."
+    
+    $ skill_domestic += 10
+    return
+
 
 label domestic_9:
     "Domestic 9"

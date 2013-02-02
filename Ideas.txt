@@ -18,3 +18,5 @@ TODO: Help section that explains visual novels, and how concentrating on one or 
 TODO: Does she have a pet name for him? We can ask the player...
 
 TODO: Differentiate between regular options, and options that exist because of stats.
+
+TODO: Have a "scene" statement at the beginning of every scene, even if it's just black

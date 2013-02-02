@@ -225,7 +225,13 @@ label physical_5:
 
 # Go hiking again. Find a hot spring. If you bring him, you both enjoy a long soak and feel invigorated. If you don't bring him, you have to decide if you will tell him about it (even though you sort of promised not to hike alone)
 label physical_6:
-
+    "I wanted to go hiking again. I just knew there were all sorts of interesting and useful places out there, if only we could find them."
+    menu:
+        "Should I tell [his_name] about it? He might want to come, too."
+        "Tell him":
+            her "Hey, [his_nickname], I'm going hiking tomorrow; want to come?"
+        "Don't tell him"
+        
     $ skill_physical += 10
     return
 

@@ -58,7 +58,7 @@ label day:
 
     "It's month %(month)d."
     # TODO: comment out this debugging code
-    #"Loved = [loved], Relaxed = [relaxed], community_level = [community_level], Made_love = [made_love]"
+    "Loved = [loved], Relaxed = [relaxed], community_level = [community_level], Made_love = [made_love]"
 
     # Here, we want to set up some of the default values for the
     # day planner. In a more complicated game, we would probably
