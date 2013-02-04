@@ -53,8 +53,26 @@ label creative_3:
 
 # Woodworking - make vegetable crate/barrel or clothes drying rack out of local wood 
 label creative_4:
+    "Our harvests were staying fairly fresh in the cellar, but I needed a way to organize which vegetables were the oldest."
+    "I wanted to make some crates out of wood, but I wasn't sure how I'd manage without nails."
+    "I went to the storehouse to get the wood I needed."
+    #TODO find a character to be the storehouse/workshop manager, or make one
+    menu:
+        "Notch the planks log-cabin style.":
+            "I tried notching the planks to help them stay in place as I stacked them into a box shape. There were some wide gaps between planks, but luckily they weren't wide enough for the vegetables to fall out."
+            $ community_level += 2
+        "{i}Ask the store manager about how to put planks together without nails.{/i}" if (skill_social > 10):
+            "The store manager told me about how he had been making pegs out of wood to help hold furniture together. Before I left, he gave me some pegs and we drilled holes in the right spots while I had access to the drill."
+            "It was tricky to make it so I didn't pull up on the pegs when I lifted the crate, but with the store manager's help, I made something that would keep a few vegetables separate from the rest."
+            $ community_level += 5
+        "{i} Learn from a woodworking manual.{/i}" if skill_technical > 20:
+            "I read up on carpentry techniques that didn't use metal. I found out that I could use wood pegs in the place of nails, or that I could cut the wood to fit together like a tight jigsaw puzzle."
+            "I was up for a challenge. I made a design that would use pegs to hold planks together, but the puzzle-piece technique on the corners."
+            "After I designed the crate, I took my plans to the workshop to use their equipment. The store manager was pretty impressed at my finished crate."   
+            $ community_level += 5
 
     $ skill_creative += 10
+    
     return
 
 label creative_5:
