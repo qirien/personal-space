@@ -527,6 +527,7 @@ label monthly_event_5:
     return
 
 label monthly_event_6:
+    #one possible branch of this could be to eat the alien pests. Insects can be ground to make flour, which is actually quite nutrient rich. But would alien pests be similarly nutrient-dense?
     "Alien Pests"
     return
 

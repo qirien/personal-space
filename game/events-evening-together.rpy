@@ -189,7 +189,7 @@ label relax_together_5:
         "I started off gently. His muscles were so tight, I was amazed he could move at all. I gradually kneaded harder, trying to tell what sorts of massage he liked."
         him "Ohhh, that feels so good."
         "Sometimes he would make sort of painful grunt that let me know he didn't like what I was doing. But he would also sigh with content when I hit a particularly tense spot."
-        if (relaxed >= 5 && skill_physical >= 10):
+        if (relaxed >= 5 and skill_physical >= 10):
             "After his shoulders, I massaged his arms and hands. It made me think of how hard he had been working all day."
             
             if (skill_physical >= 30):

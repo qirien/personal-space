@@ -219,6 +219,44 @@ label physical_4:
 
 #Yoga
 label physical_5:
+    "On mornings when we had a solar flare warning, or if it was raining, I had to stay indoors."
+    "I know Yoga is so 21rst century, but my grandma taught me some of the poses when I was young."
+    "I've warmed up. How should I do my Yoga workout?"
+    menu:
+        "Meditate in sitting and prone poses":
+            "I spent time sitting and lying down just focusing on my breathing. "
+            $ relaxed += 5 
+            $ skill_physical += 5
+            $ skill_spiritual += 5
+            return
+        "Practice balancing with long standing poses":
+            "I tried to balance on one leg with my upper body in various poses."
+            him "I didn't know you knew yoga."
+            her "It's good to practice putting your body in different positions."
+            him "You don't practice that enough with me?"
+            if (relaxed > 0):
+                her "We could practice together."
+                $ made_love += 1
+            else:
+                "Yoga is different."
+        "Do sun salutations.":
+            "I switched rapidly between several poses until I worked up a sweat."
+            him "Oh, sweaty [her_nickname], my favorite."
+            menu:
+                "I feel so gross when I'm sweaty.":
+                    her "Not my favorite. I hope I can get to the bath house tonight."
+                    him "I'll come with you."
+                    menu:
+                        "I'd prefer to go by myself tonight.":
+                            her "No need, I can take care of cleaning myself by myself."
+                        "Looking forward to it.":
+                            her "Great. We'll have dessert afterwards."
+                            him "I'll try to work up a sweat after the flare to make it worth the trip."
+                            $ made_love += 1
+                "Oh yeah?":
+                    her "You find me sexy like this?"
+                    him "Oh yeah. We're stuck inside; we might as well make the most of it."
+                    $ made_love += 1
     
     $ skill_physical += 10
     return
