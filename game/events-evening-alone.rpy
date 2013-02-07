@@ -27,6 +27,7 @@ label relax_alone_2:
     return
 
 label relax_alone_3:
+    "I went to the bath house by myself. I brought extra wood so I could have a long, hot bath, and I carried up extra water from the river to make it a deep one. All my effort just made me appreciate it all the more."
     $ relaxed += 5
     return
 
