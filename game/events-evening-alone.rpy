@@ -3,7 +3,7 @@
 
 # Basic Alone Evening Events
 
-
+# Relax with humor
 label relax_alone_0:
     scene bg bedroom
     "I read a funny book my friend Sara recommended. Sometimes it was so funny I laughed out loud."
@@ -12,11 +12,60 @@ label relax_alone_0:
     
     return
 
+# Can go help Sara or just relax at home.
 label relax_alone_1:
     scene bg farm_interior
     "I was all set to spend the evening by myself when Sara sent me a message on my computer."
     sara "Are you still up? Can you please come over, [her_name]?"
-    
+    menu:
+        "Should I go?"
+        "I'll be right over":
+            her "Sure, I'll be right there."
+            "I walked to Sara's house in the dusky evening light, wondering what it was she wanted to talk about. When I got there, I could tell she'd been crying."
+            sara "I got a message from Earth today...My mom died."
+            $ community_level += 2
+        "Can it wait?":
+            her "Can it wait? I was just about to get in bed..."
+            sara "I could...it's...my mom died."
+            her "Oh no, I'll be right over."
+            $ community_level += 1
+        "I can't come tonight":
+            her "Sorry, Sara, I can't tonight. Can we meet tomorrow at lunch?"
+            sara "Yeah, I guess."
+            $ relaxed += 2
+            "The next day at lunch, Sara told me that her mom had died."
+
+    "Since it took four years for the message to get here, her mom had actually been dead for a long time already. That didn't make it any easier for Sara, though."
+    sara "All this time - I've been thinking about what she's doing back on Earth, and imagining her playing with her grandkids, and working in the garden, but really she's just been dead."
+    menu:
+        her "Oh Sara, I'm sorry..."        
+        "How's your dad doing?":
+            her "How's your dad holding up?"
+            sara "He's strong, I'm sure he'll be fine, but I feel terrible! I've been asking him questions about mom and telling jokes about the two of them, and he's going to keep getting those messages from me for years! It'll make him sad every time he gets a message from me."
+            her "Or maybe it will make him happy to know how much you still care about her and remember her."
+            sara "Yeah, maybe so."
+        "How do you feel?":
+            her "How do you feel? Besides the obvious, I mean."
+            sara "Well, yeah, I'm sad, but I guess everyone has to die sometime, right? And it's not like I could really talk to her, anyway."
+            her "But it still feels different, somehow?"
+            sara "Yes, it does. I wish she could have seen this - this place, me, a colonist, everything."
+            her "I do, too."
+        "{i}Maybe she's closer now{/i}" if (skill_spiritual >= 20):
+            her "Maybe she's closer now."
+            sara "Huh?"
+            her "Maybe her spirit can be closer to you, now that her body has passed on."
+            sara "You mean... like if the soul could travel through space?"
+            her "Sure, why not?"
+            sara "I don't know if it's true, but... thinking that does help me to feel a little closer to her."
+        "What's the difference?":
+            her "What's the difference? You couldn't be together before, and you can't now."
+            sara "Well, the difference is now she's dead, so there's nothing there to connect with."
+            her "With four years time difference, all our families might as well be dead."
+            sara "[her_name]! You should appreciate what you still have!"
+            her "None of us have anything. The only difference is some of us realize that."
+            return
+
+    "We talked for a long time; Sara has a lot of sad days ahead, but I think I was able to help her feel a little better."
     $ relaxed += 5
     return
 

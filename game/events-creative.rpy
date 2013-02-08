@@ -94,7 +94,7 @@ label creative_5:
     $ skill_creative += 10
     return
 
-# Recover space shuttle seats to make a couch?
+# Re-cover space shuttle seats to make a couch?
 label creative_6:
 
     $ skill_creative += 10
@@ -117,6 +117,7 @@ label creative_9:
     $ skill_creative += 10
     return
 
+# Make a documentary about the colony and send it to Earth
 label creative_master:
 
     $ skill_creative += 10
