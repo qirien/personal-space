@@ -56,19 +56,19 @@ label creative_4:
     "Our harvests were staying fairly fresh in the cellar, but I needed a way to organize which vegetables were the oldest."
     "I wanted to make some crates out of wood, but I wasn't sure how I'd manage without nails."
     "I went to the storehouse to get the wood I needed."
-    #TODO find a character to be the storehouse/workshop manager, or make one
+    #TODO Ilian Andrevski is the manager dude. Still need to go through other events and make sure it's the same, if I mentioned him.
     menu:
         "Notch the planks log-cabin style.":
             "I tried notching the planks to help them stay in place as I stacked them into a box shape. There were some wide gaps between planks, but luckily they weren't wide enough for the vegetables to fall out."
             $ community_level += 2
-        "{i}Ask the store manager about how to put planks together without nails.{/i}" if (skill_social > 10):
-            "The store manager told me about how he had been making pegs out of wood to help hold furniture together. Before I left, he gave me some pegs and we drilled holes in the right spots while I had access to the drill."
-            "It was tricky to make it so I didn't pull up on the pegs when I lifted the crate, but with the store manager's help, I made something that would keep a few vegetables separate from the rest."
+        "{i}Ask the store manager, Ilian, about how to put planks together without nails.{/i}" if (skill_social > 10):
+            "Ilian told me about how he had been making pegs out of wood to help hold furniture together. Before I left, he gave me some pegs and we drilled holes in the right spots while I had access to the drill."
+            "It was tricky to make it so I didn't pull up on the pegs when I lifted the crate, but with the Ilian's help, I made something that would keep a few vegetables separate from the rest."
             $ community_level += 5
         "{i} Learn from a woodworking manual.{/i}" if skill_technical > 20:
             "I read up on carpentry techniques that didn't use metal. I found out that I could use wood pegs in the place of nails, or that I could cut the wood to fit together like a tight jigsaw puzzle."
             "I was up for a challenge. I made a design that would use pegs to hold planks together, but the puzzle-piece technique on the corners."
-            "After I designed the crate, I took my plans to the workshop to use their equipment. The store manager was pretty impressed at my finished crate."   
+            "After I designed the crate, I took my plans to the workshop to use their equipment. Ilian was pretty impressed at my finished crate."   
             $ community_level += 5
 
     $ skill_creative += 10
@@ -96,6 +96,35 @@ label creative_5:
 
 # Recover space shuttle seats to make a couch?
 label creative_6:
+    #month 5 is what to do with trash, so I'm assuming this will have to come after it (though it may be several months after it)
+    "Ever since the push to recycle or compost all our trash, I had been trying to think of other uses for shuttle parts."
+    "I went down to the storehouse to ask about how the shuttle parts were being distrubuted. I thought maybe I could make a sofa out of them"
+    manager "There was a seat for everyone on the shuttle, and as far as I'm concerned, that seat is still yours."
+    her "Great! I'll come back later with [his_name] to pick up the seats on our wagon."
+    "That night I told [his_name] about my plan."
+    him "You want a sofa?"
+    menu:
+        "Yeah.":
+            her "Yeah, I kind of miss have a sofa. Don't you?"
+            him "I do sometimes miss it. Would it have reclining seats?"
+            her "Well, considering it will be two bed-seats from the shuttle, yes."
+            him "That means it could be a sofabed too."
+            her "Our bed isn't good enough?"
+            him "Well, I'm not sure which I'd prefer. But it will be nice to have an extra bed in case someone else is stranded here."
+        "It would let us have somewhere to sit other than our bed when we watch movies.":
+            her "Watching movies from our kitchen chairs is great, but wouldn't it be nice if we had somewhere to snuggle up?"
+            him "We don't watch that many movies."
+            her "It doesn't have to be movies. When you're planning the crops, you might want to read somewhere comfortable."
+            him "Okay, okay. I just want to make sure we'll actually use a piece of furniture before bringing it into our tiny dwelling."
+        "It would increase our seating capacity.":
+            her "When we have guests over, wouldn't it be nice if we could all sit inside?"
+            him "When the weather is bad, I think people will want to be visiting, and otherwise we can sit outside."
+            her "But sometimes it might just be dark or cold, not necessarily raining."
+            him "You have a point. Plus it would be nice for reading on."
+    her "Then let's go!"
+    "[his name] brought the seats back with Lettie and our wagon. The next day, I set to work on making a loveseat."
+    "I wanted to upolster it with some fabric. I ended up weaving together long grasses into patches, which I sewed together with some goat-hair yarn. "
+    "I used more grass as extra padding between the seats. It ended up being a bit scratchy, but better than nothing."
 
     $ skill_creative += 10
     return
@@ -112,6 +141,7 @@ label creative_8:
     $ skill_creative += 10
     return
 
+#build a bridge out of braided grass rope
 label creative_9:
 
     $ skill_creative += 10

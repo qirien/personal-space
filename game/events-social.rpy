@@ -352,7 +352,7 @@ label done_party_menu:
                 if (loved > 0):
                     if (skill_creative >= 70):
                         "Ours didn't have the best landing, but it looked so artistic and sleek that they gave it the best score anyway. We won the contest!"
-                    elif (skill_technical >= 70)):
+                    elif (skill_technical >= 70):
                         "Ours didn't look the best, but it actually kind flew off the roof and glided for a bit before landing gracefully on the ground. We won the contest!"
                 else:
                     "Ours was kind of a disaster. We felt relieved when the contest was over."
