@@ -254,6 +254,7 @@ label settling_in:
             her "When was this taken?"
         "Do you miss them a lot?":
             her "Do you miss them a lot?"
+            him "A bit."
 
     him "This was taken at my parents' farm, right before I met you. My sister and her husband and their kids drove for two days to come and visit, and my little brother flew in from overseas. Good thing, too, because it was the last time we'd all be together."
     her "Have you heard from them lately?"
