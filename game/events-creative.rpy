@@ -71,6 +71,19 @@ label creative_4:
             "I was up for a challenge. I made a design that would use pegs to hold planks together, but the puzzle-piece technique on the corners."
             "After I designed the crate, I took my plans to the workshop to use their equipment. Ilian was pretty impressed at my finished crate."   
             $ community_level += 5
+        "Forage nails from trash.":
+            "I looked in the village trash heap, and I found a few nails in things people had thrown away. They didn't hold the wood together as tightly as I would have liked, but it was sturdy enough to hold some lightweight vegetables, anyway."
+            $ community_level += 2
+        "Ask [his_name] for help.":
+            her "Hey, [his_nickname], do you have any ideas for how to make a crate out of these pieces of wood? We don't have any nails..."
+            him "Any screws?"
+            her "Nope. No nuts and bolts, either."
+            him "Hmmm... how about lashing them together with some string?"
+            her "Well, I have that yarn I was using to practice crocheting with. Maybe that would work?"
+            him "Sure, let's try it."
+            "We worked together to lash the slats together and made some serviceable crates. They wouldn't hold up well to transporting vegetables, but that was okay, since they were just going to sit in our cellar."
+            $ community_level += 2
+            $ loved += 2
 
     $ skill_creative += 10
     
@@ -132,9 +145,15 @@ label creative_6:
     $ skill_creative += 10
     return
 
-# Play some music (on the recorder?)
+# Photography
 label creative_7:
-
+    "I hadn't done any photography in a long time, but the way the light was coming through the clouds really inspired me."
+    "As I set up shots- some simple landscapes, others focusing on an alien plant or insect with the clouds in the background- I felt awed. Here was this entire planet full of wonders, and only the few of us who lived here got to experience it."
+    "I decided to send some of my pictures to magazines on Earth; maybe they would be interested in doing an article on Talam and would want to use them. I just wanted to show everyone on Earth what a beautiful planet we had."
+    boss "So, you want special permission to exceed your alloted Earth-upload bandwidth to send photographs?"
+    her "Yes, they need to be large so that they will look good in print. Is that okay?"
+    boss "I think that is a worthy use of our resources. The pictures look great, [her_name], I hope people on Earth get to see them."
+    "It would take years for the photos to reach Earth, and even more years before I heard anything back, but I felt like it was worth it, anyway. I felt like an ancient explorer like Magellan, writing in his journal, not knowing if anyone from the homeland would ever read it..."
     $ skill_creative += 10
     return
 

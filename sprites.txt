@@ -3,25 +3,30 @@ SPRITES
 
 * Her
   - normal
-  - worried
+  - worried/sad
+  - surprised
   - angry
-  - flirty
+  - laughing
+  - flirty/coy
 
 * Him
   - normal
-  - worried
+  - worried/sad
+  - surprised
   - angry
-  - flirty
+  - laughing
+  - flirty/smirking
 
 * Him/Her embrace?
 
-* Sara
+* Sara (girl friend)
 * Mayor Pavel Grayson
-* Thuc Nguyen
-* Natalia Peron
-* Mrs. Blair
-* Brennan Callahan
+* Thuc Nguyen (farmer, owns goats)
+* Natalia Peron (farmer, owns chickens)
+* Mrs. Blair (mom of 10)
+* Brennan Callahan (flirtatious dramatic co-worker)
 * Sister Naomi Takahara
 * Dr. Lily (scientist)
 * Sven (librarian)
-* Helen Engel
+* Helen Engel (pregnant introverted mom)
+* Ilian Andrevski (storehouse manager)

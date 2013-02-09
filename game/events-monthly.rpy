@@ -3,7 +3,7 @@
 # You shouldn't ever see this. This is just a fall through in case something happens
 # and there's no event for this month.
 label monthly_event_0:
-    "Nothing happened this month."
+    "Nothing exciting happened this month."
     return
 
 # MONTH 1 - Chore allocation
