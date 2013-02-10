@@ -51,7 +51,6 @@ label domestic_3:
     "I peeked out the window every time I passed, trying to see what it was. Finally, I saw a strange small animal that looked kind of like a cross between a frog and a rabbit. I chased it away, but what about next time?"
     her "I know!  I'll make a fence!"
     "I gathered some sticks from some of the local plants, and tied them together with vines. When I tried to pound in the corners, the sticks broke in the hard dirt."
-    #show her angry at center
     "I took a break for a snack and thought about it. I decided to try wetting the dirt first.  Then I was able to pound in the corners and finish my fence."
     #show her happy
     her "Whew! It's done!"

@@ -184,11 +184,11 @@ label act_skip_work:
         boss "I understand, but this can't happen all the time. We need you here."
         her "All right, thanks for understanding."
         $ slacked_off = 0
-        $ relaxed -= 5
+        $ relaxed -= 2  #it's stressful to get caught slacking off
         $ community_level -= 10
     else:
         "I took a little time off work and didn't push myself this month."
-        $ relaxed += 5
+        $ relaxed += 2
 
     $ slacked_off += 1
     return

@@ -9,11 +9,13 @@ label relax_alone_0:
     "I read a funny book my friend Sara recommended. Sometimes it was so funny I laughed out loud."
     "Laughing felt good. Sometimes I worried about if we would make it, but I forgot all about it when I could laugh."
     $ relaxed += 5
+    $ loved -= 2
     
     return
 
 # Can go help Sara or just relax at home.
 label relax_alone_1:
+    $ loved -= 2
     scene bg farm_interior
     "I was all set to spend the evening by myself when Sara sent me a message on my computer."
     sara "Are you still up? Can you please come over, [her_name]?"
@@ -73,11 +75,13 @@ label relax_alone_2:
     scene bg stars
     "I sat out on the porch and gazed at the stars. They were so different from Earth, I had to make my own constellations."
     $relaxed += 5
+    $ loved -= 2
     return
 
 label relax_alone_3:
     "I went to the bath house by myself. I brought extra wood so I could have a long, hot bath, and I carried up extra water from the river to make it a deep one. All my effort just made me appreciate it all the more."
     $ relaxed += 5
+    $ loved -= 2
     return
 
 label relax_alone_4:
@@ -106,22 +110,27 @@ label relax_alone_5:
             "A documentary. It felt kind of irrelevant now that we weren't even living on the same planet, but also nostalgic. Ahh, the days back when we lived on Earth..."
                 
     $ relaxed += 5
+    $ loved -= 2
     return
 
 label relax_alone_6:
     $ relaxed += 5
+    $ loved -= 2
     return
 
 label relax_alone_7:
     $ relaxed += 5
+    $ loved -= 2
     return
 
 label relax_alone_8:
     $ relaxed += 5
+    $ loved -= 2
     return
 
 label relax_alone_9:
     $ relaxed += 5
+    $ loved -= 2
     return
 
 label relax_alone_10:
@@ -129,6 +138,7 @@ label relax_alone_10:
     "I looked through some old photos of my family. The places, the people - they all felt so unreal. I'd probably never see them again."
     "It was kind of sad, but at the same time it made me appreciate even more the good times we had had together."
     $ relaxed += 5
+    $ loved -= 2
     return
 
 label relax_alone_11:
@@ -145,18 +155,21 @@ label relax_alone_a:
     scene bg farm_interior
     "I listened to some of my favorite songs and reminisced."
     $ relaxed += 5
+    $ loved -= 2
     return
 
 label relax_alone_b:
     scene bg bedroom
     "I curled up with a good book."
     $ relaxed += 5
+    $ loved -= 2
     return
 
 label relax_alone_c:
     scene bg bedroom
     "I felt so tired, I decided to just go to bed early."
     $ relaxed += 7
+    $ loved -= 2
     return
 
 label relax_alone_d:
@@ -169,10 +182,12 @@ label relax_alone_e:
     scene bg farm_interior
     "I played some video games that I enjoyed."
     $ relaxed += 5
+    $ loved -= 2
     return
 
 label relax_alone_f:
     scene bg path
     "I took a walk and thought about the future."
     $ relaxed += 5
+    $ loved -= 2
     return
