@@ -16,7 +16,13 @@ init python:
 
     # This is an introduction event, that runs once when we first go
     # to work. 
-    event("work_intro", "act == 'act_work'", event.once(), event.only())
+    event("work_0", "act == 'act_work'", event.once(), event.only())
+    
+    for i in range(1,8):
+        event("work_" + `i`,
+              "act == 'act_work' and times_worked >= " + `i*3`,
+              event.once(),
+              event.happened("work_" + `i-1`))
 
     # SKILL FOCUS EVENTS
     # For each type of skill, we have 10 special events that happen when your skill

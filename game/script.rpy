@@ -59,6 +59,7 @@ define is_pregnant = False
 define slacked_off = 0  #number of times slacked off at work
 define has_grass = False
 define met_Lily = False
+define times_worked = 0
 
 # The game starts here.
 label start:

@@ -1,165 +1,19 @@
 # Event content for all the events that can happen in the morning,
 # either at work or skipping work.
 
-# Basic Morning Events
+# Default work event if there's no special event
 label act_work:
-
-    #Have events every three months or so
     # TODO: mention that the mayor's favorite song is "It's the End of the World"
-    # Emergency where she can't help everyone in time, leading to 
-    # the mayor offering to find her some help.
-    if (month == 3):
-        #Different event for each profession
-        if (profession == "doctor"):
-            scene bg clinic with fade
-            "Usually things were pretty quiet at the clinic. I made an appointment with each colonist to learn about each person's medical conditions, and sometimes made suggestions for how to deal with chronic problems. We had a few minor injuries setting up, but nothing serious."
-            "But one day in particular was extremely busy."
-            her "Oh! What happened?"
-            "Thuc carried James in and set him in the exam table. I could tell his leg was hurt but he was not in immediate danger. I took his vitals while Thuc filled me in."
-            thuc "We were working on putting together a mill for grain. But one of the heavy cast iron rollers fell on James here. We tried not to move his leg while we carried him over."
-            her "Good, thank you. You'll be all right, James."
-            "James" "Thanks, doc. Hurts like hell, though."
-            "The x-rays showed where his femur was crushed into several pieces."
 
-            her "It's a comminuted fracture; it will take quite a while to heal."
-            "I was just about to put him under so I could put in some pins when the radio crackled and I heard Sara."
-            "Sara on the radio" "Doctor! You've gotta come right away; one of the Blair kids can't breathe! I think - I think he swallowed something."
-            "I started out the door while I talked to her on the radio. I hated to leave James alone, but this was urgent."
-            her "I'm on my way. How old is he?"
-            "Sara on the radio" "I don't know, like three years old or so!"
-            her "Do you know how to do the Heimlich?"
-            "Sara on the radio" "Yes! I mean, I've never done it before, but..."
-            her "Do it! Put your fist right above his belly button, support it with your other hand, and push in and up forcefully."
-            "Sara on the radio" "His mom is doing what you said; it's not working!!"
-            her "Keep trying! Then use your finger to sweep through his mouth to see if you can dislodge anything."
-            "Sara on the radio" "Hurry, [her_name], he's starting to turn blue!"
-            "By the time I got there, the little boy was unconscious."
-            "I moved quickly. I was able to get the peanut out of his throat, and performed CPR. Mrs. Blair watched me grimly."
-            "I was tired from running all the way over there, but I did the best I could."
-            "Finally, he coughed and started to breathe."
-            "Mrs. Blair" "Sasha! Oh, my boy!"
-            "I didn't have time to stick around for adulation, though - James was still waiting for me to help his leg in the clinic."
-            her "Sorry to leave you waiting so long; I know you're hurting- oh!"
-            "I had bandaged up his leg, but the wound had reopened and he was bleeding a lot."
-            "James" "I tried to, to, stop the bleeding..."
-            her "It's okay, I'm here now. You're going to be just fine..."
-            "I took care of his leg, and several hours later, James woke up."
-            "James" "Hey, is Sasha okay?"
-            her "Sasha? Oh, yes, I got there just in time."
-            "James" "They really ought to have someone in here helping you out. I mean, what if you were in the middle of surgery or something?"
-            menu:
-                "Do I need help?"
-                "I need help":
-                    her "You are right...I can't do this by myself. I'll ask the mayor if there's someone that could assist me."
-                "I can do it myself":
-                    her "It's not a problem most of the time. I can handle it."
-
-            "Word got around about my two close calls in one day."
-            boss "Doctor, I'm so sorry about what happened today."
-            her "It's not your fault, Mayor Grayson."
-            boss "Well, it partly is my fault. It's obvious you need an assistant. Perhaps not full-time, but someone who can come quickly and help out during busy times."
-            her "That would be helpful, actually."
-            boss "Well, I'll see who has some medical experience and get back to you about that."
-            her "Thank you."
-            $ relaxed -= 10
-            $ community_level += 2
-        elif (profession == "crafter"):
-            "Crafter Month 3"
-        elif (profession == "auto mechanic"):
-            "Mechanic Month 3"
-        elif (profession == "teacher"):
-            scene bg classroom with fade
-            "Teacher Month 3"
-
-    # Introduce co-worker Brennan Callahan
-    elif (month == 6):
-        #Different event for each profession
-        if (profession == "doctor"):
-            "Doctor Month 6"
-        elif (profession == "crafter"):
-            "Crafter Month 6"
-        elif (profession == "auto mechanic"):
-            "Mechanic Month 6"
-        elif (profession == "teacher"):
-            "Teacher Month 6"
-
-    # Something bad happens and she confides in co-worker
-    elif (month == 9):
-        #Different event for each profession
-        if (profession == "doctor"):
-            "Doctor Month 9"
-        elif (profession == "crafter"):
-            "Crafter Month 9"
-        elif (profession == "auto mechanic"):
-            "Mechanic Month 9"
-        elif (profession == "teacher"):
-            "Teacher Month 9"
-
-    elif (month == 12):
-        #Different event for each profession
-        if (profession == "doctor"):
-            "Doctor Month 12"
-        elif (profession == "crafter"):
-            "Crafter Month 12"
-        elif (profession == "auto mechanic"):
-            "Mechanic Month 12"
-        elif (profession == "teacher"):
-            "Teacher Month 12"
-
-    elif (month == 15):
-        #Different event for each profession
-        if (profession == "doctor"):
-            "Doctor Month 15"
-        elif (profession == "crafter"):
-            "Crafter Month 15"
-        elif (profession == "auto mechanic"):
-            "Mechanic Month 15"
-        elif (profession == "teacher"):
-            "Teacher Month 15"
-
-    elif (month == 18):
-        #Different event for each profession
-        if (profession == "doctor"):
-            "Doctor Month 18"
-        elif (profession == "crafter"):
-            "Crafter Month 18"
-        elif (profession == "auto mechanic"):
-            "Mechanic Month 18"
-        elif (profession == "teacher"):
-            "Teacher Month 18"
-
-    elif (month == 21):
-        #Different event for each profession
-        if (profession == "doctor"):
-            "Doctor Month 21"
-        elif (profession == "crafter"):
-            "Crafter Month 21"
-        elif (profession == "auto mechanic"):
-            "Mechanic Month 21"
-        elif (profession == "teacher"):
-            "Teacher Month 21"
-
-    elif (month == 24):
-        #Different event for each profession
-        if (profession == "doctor"):
-            "Doctor Month 24"
-        elif (profession == "crafter"):
-            "Crafter Month 24"
-        elif (profession == "auto mechanic"):
-            "Mechanic Month 24"
-        elif (profession == "teacher"):
-            "Teacher Month 24"
-
+    if (relaxed <= -10):
+        "I worked hard at work. I was starting to feel burned out, though."
+    elif (relaxed >= 10):
+        "I breezed through work. Everything seemed easy."
     else:
-        if (relaxed <= -10):
-            "I worked hard at work. I was starting to feel burned out, though."
-        elif (relaxed >= 10):
-            "I breezed through work. Everything seemed easy."
-        else:
-            "I worked hard at work as usual."
-        $ relaxed -= 5
-        $ community_level += 1
-
+        "I worked hard at work as usual."
+    $ relaxed -= 5
+    $ community_level += 1
+    $ times_worked += 1
     return
 
 label act_skip_work:
@@ -194,7 +48,7 @@ label act_skip_work:
     return
 
 # Special Morning Events
-label work_intro:
+label work_0:
     "My boss was also the leader of our little community. I guess you could call him the mayor?"
     boss "All right, [her_name], ready to get to work?"
     menu:
@@ -231,4 +85,178 @@ label work_intro:
 
     "I worked hard getting things set up, and even though the job seemed pretty big, I thought I would probably do okay."
     $ relaxed -= 5
+    $ times_worked += 1
+    return
+
+# Emergency where she can't help everyone in time, leading to 
+# the mayor offering to find her some help.
+label work_1:
+    $ times_worked += 1
+
+    # DOCTOR
+    if (profession == "doctor"):
+        scene bg clinic with fade
+        "Usually things were pretty quiet at the clinic. I made an appointment with each colonist to learn about each person's medical conditions, and sometimes made suggestions for how to deal with chronic problems. We had a few minor injuries setting up, but nothing serious."
+        "But one day in particular was extremely busy."
+        her "Oh! What happened?"
+        "Thuc carried James in and set him in the exam table. I could tell his leg was hurt but he was not in immediate danger. I took his vitals while Thuc filled me in."
+        thuc "We were working on putting together a mill for grain. But one of the heavy cast iron rollers fell on James here. We tried not to move his leg while we carried him over."
+        her "Good, thank you. You'll be all right, James."
+        "James" "Thanks, doc. Hurts like hell, though."
+        "The x-rays showed where his femur was crushed into several pieces."
+
+        her "It's a comminuted fracture; it will take quite a while to heal."
+        "I was just about to put him under so I could put in some pins when the radio crackled and I heard Sara."
+        "Sara on the radio" "Doctor! You've gotta come right away; one of the Blair kids can't breathe! I think - I think he swallowed something."
+        "I started out the door while I talked to her on the radio. I hated to leave James alone, but this was urgent."
+        her "I'm on my way. How old is he?"
+        "Sara on the radio" "I don't know, like three years old or so!"
+        her "Do you know how to do the Heimlich?"
+        "Sara on the radio" "Yes! I mean, I've never done it before, but..."
+        her "Do it! Put your fist right above his belly button, support it with your other hand, and push in and up forcefully."
+        "Sara on the radio" "His mom is doing what you said; it's not working!!"
+        her "Keep trying! Then use your finger to sweep through his mouth to see if you can dislodge anything."
+        "Sara on the radio" "Hurry, [her_name], he's starting to turn blue!"
+        "By the time I got there, the little boy was unconscious."
+        "I moved quickly. I was able to get the peanut out of his throat, and performed CPR. Mrs. Blair watched me grimly."
+        "I was tired from running all the way over there, but I did the best I could."
+        "Finally, he coughed and started to breathe."
+        "Mrs. Blair" "Sasha! Oh, my boy!"
+        "I didn't have time to stick around for adulation, though - James was still waiting for me to help his leg in the clinic."
+        her "Sorry to leave you waiting so long; I know you're hurting- oh!"
+        "I had bandaged up his leg, but the wound had reopened and he was bleeding a lot."
+        "James" "I tried to, to, stop the bleeding..."
+        her "It's okay, I'm here now. You're going to be just fine..."
+        "I took care of his leg, and several hours later, James woke up."
+        "James" "Hey, is Sasha okay?"
+        her "Sasha? Oh, yes, I got there just in time."
+        "James" "They really ought to have someone in here helping you out. I mean, what if you were in the middle of surgery or something?"
+        menu:
+            "Do I need help?"
+            "I need help":
+                her "You are right...I can't do this by myself. I'll ask the mayor if there's someone that could assist me."
+            "I can do it myself":
+                her "It's not a problem most of the time. I can handle it."
+
+        "Word got around about my two close calls in one day."
+        boss "Doctor, I'm so sorry about what happened today."
+        her "It's not your fault, Mayor Grayson."
+        boss "Well, it partly is my fault. It's obvious you need an assistant. Perhaps not full-time, but someone who can come quickly and help out during busy times."
+        her "That would be helpful, actually."
+        boss "Well, I'll see who has some medical experience and get back to you about that."
+        her "Thank you."
+        if (relaxed > 10):
+            $ relaxed = 0
+        else:
+            $ relaxed -= 10
+        $ community_level += 2
+
+    # CRAFTER
+    elif (profession == "crafter"):
+        "Crafter Month 3"
+    elif (profession == "auto mechanic"):
+        "Mechanic Month 3"
+    elif (profession == "teacher"):
+        scene bg classroom with fade
+        "Teacher Month 3"
+    return
+
+# Introduce co-worker Brennan Callahan
+label work_2:
+    $ times_worked += 1
+
+    if (profession == "doctor"):
+        "Doctor Month 6"
+    elif (profession == "crafter"):
+        "Crafter Month 6"
+    elif (profession == "auto mechanic"):
+        "Mechanic Month 6"
+    elif (profession == "teacher"):
+        "Teacher Month 6"
+        
+    return
+
+# Something bad happens and she confides in co-worker
+label work_3:
+    $ times_worked += 1
+    
+    if (profession == "doctor"):
+        "Doctor Month 9"
+    elif (profession == "crafter"):
+        "Crafter Month 9"
+    elif (profession == "auto mechanic"):
+        "Mechanic Month 9"
+    elif (profession == "teacher"):
+        "Teacher Month 9"
+
+    return
+
+label work_4:
+    $ times_worked += 1
+
+    if (profession == "doctor"):
+        "Doctor Month 12"
+    elif (profession == "crafter"):
+        "Crafter Month 12"
+    elif (profession == "auto mechanic"):
+        "Mechanic Month 12"
+    elif (profession == "teacher"):
+        "Teacher Month 12"
+
+    return
+
+label work_5:
+    $ times_worked += 1
+
+    if (profession == "doctor"):
+        "Doctor Month 12"
+    elif (profession == "crafter"):
+        "Crafter Month 12"
+    elif (profession == "auto mechanic"):
+        "Mechanic Month 12"
+    elif (profession == "teacher"):
+        "Teacher Month 12"
+
+    return
+
+label work_6:
+    $ times_worked += 1
+
+    if (profession == "doctor"):
+        "Doctor Month 12"
+    elif (profession == "crafter"):
+        "Crafter Month 12"
+    elif (profession == "auto mechanic"):
+        "Mechanic Month 12"
+    elif (profession == "teacher"):
+        "Teacher Month 12"
+
+    return
+
+label work_7:
+    $ times_worked += 1
+
+    if (profession == "doctor"):
+        "Doctor Month 12"
+    elif (profession == "crafter"):
+        "Crafter Month 12"
+    elif (profession == "auto mechanic"):
+        "Mechanic Month 12"
+    elif (profession == "teacher"):
+        "Teacher Month 12"
+
+    return
+
+label work_8:
+    $ times_worked += 1
+
+    if (profession == "doctor"):
+        "Doctor Month 12"
+    elif (profession == "crafter"):
+        "Crafter Month 12"
+    elif (profession == "auto mechanic"):
+        "Mechanic Month 12"
+    elif (profession == "teacher"):
+        "Teacher Month 12"
+
     return
