@@ -59,7 +59,7 @@ define is_pregnant = False
 define slacked_off = 0  #number of times slacked off at work
 define has_grass = False
 define met_Lily = False
-define times_worked = 0
+define times_worked = 1
 
 # The game starts here.
 label start:
@@ -75,7 +75,7 @@ label start:
         "No":
             $ his_name = "Jack"
             $ her_name = "Jill"
-            $ profession = "doctor"
+            $ profession = "auto mechanic"
             $ want_kids = True
             $ known_each_other = "six months"
             jump month01

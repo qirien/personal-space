@@ -274,7 +274,7 @@ label unappreciated:
     her "Real work?! You don't think I do real work?!"
     him "Real work provides food, clothing, shelter. The necessities. We don't have extra time for anything else in order for the colony to survive."
     her "If it's just about survival, life isn't worth living."
-    him "Well, you don't even get a choice if you don't survive. If something goes wrong, who's going to help us out here? There's no food stamps, no Red Cross, no emergency rooms - just us."
+    him "Well, you don't even get a choice if you don't survive. If something goes wrong, who's going to help us out here? There's no food banks, no Red Cross, no emergency rooms - just us."
     $ relaxed -= 10
     $ loved -= 10
     $ community_level -= 10
@@ -283,7 +283,7 @@ label unappreciated:
             her "[his_name], you're freaking me out. Are we going to die out here?"
             him "Maybe. But, live or die, it's up to us. Our hard work, or lack of it, will determine our fate."
             her "That's so scary."
-            him "At least we are in control."
+            him "At least we are in control. If we die, it's our own damn fault."
         "We can't focus on that all the time":
             her "That's true, but we can't be working on food, clothes, and shelter twenty-four hours a day. If you don't take a break and think about other things once in a while, you'll go insane."
             him "Survival is mostly what I'm thinking about. Every day."
@@ -292,6 +292,7 @@ label unappreciated:
         "I can't talk about this anymore":
             her "Stop it, I can't talk about this anymore."
             him "Well, just think about what I said. Are we going to live or die?"
+            her "I said stop it!"
             her "I don't want to die..."
             him "Then you need to choose to live."
     return

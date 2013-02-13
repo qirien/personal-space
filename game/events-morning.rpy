@@ -49,6 +49,8 @@ label act_skip_work:
 
 # Special Morning Events
 label work_0:
+    $ times_worked += 1
+
     "My boss was also the leader of our little community. I guess you could call him the mayor?"
     boss "All right, [her_name], ready to get to work?"
     menu:
@@ -85,13 +87,17 @@ label work_0:
 
     "I worked hard getting things set up, and even though the job seemed pretty big, I thought I would probably do okay."
     $ relaxed -= 5
-    $ times_worked += 1
     return
 
 # Emergency where she can't help everyone in time, leading to 
 # the mayor offering to find her some help.
 label work_1:
     $ times_worked += 1
+    if (relaxed > 10):
+        $ relaxed = 0
+    else:
+        $ relaxed -= 10
+    $ community_level += 2
 
     # DOCTOR
     if (profession == "doctor"):
@@ -145,17 +151,62 @@ label work_1:
         her "That would be helpful, actually."
         boss "Well, I'll see who has some medical experience and get back to you about that."
         her "Thank you."
-        if (relaxed > 10):
-            $ relaxed = 0
-        else:
-            $ relaxed -= 10
-        $ community_level += 2
 
     # CRAFTER
     elif (profession == "crafter"):
-        "Crafter Month 3"
+        "They kept me pretty busy making things for all the colonists. I made a lot of farm tools and fences, and started working on some woodworking tools. We didn't have a lot of metal, so I was trying to make tools out of local materials, but it wasn't going very well."
+        "Today, however, I didn't have time for any of that. I was working on a roof for a chicken coop."
+        boss "[her_name], have you finished the barrels for the storehouse yet?"
+        her "No, I thought you said you wouldn't need those for another week."
+        boss "Well, the Engel's carrots grew faster than they anticipated, and they need a place to put them."
+        her "Well, I can start on them now, but the Peron's really wanted this roof for their chicken coop - they've already lost two chickens to some nighttime predator."
+        boss "I think the chicken coop takes priority here. But you're starting to have a lot of work to do, aren't you?"
+        menu:
+            "Way too much":
+                her "I'm a little overwhelmed, honestly."
+            "Sometimes":
+                her "Sometimes. It seems like when one person needs something right away, everyone else suddenly needs something, too."
+            "No problem":
+                her "Nothing I can't handle."
+        boss "Well, I'll see if I can get someone that you can call on when you get a lot of work."
+        her "That would be great, thanks."
+        "Eventually, I got everything done, but I was looking forward to having some help sometimes."
+
+    # MECHANIC
     elif (profession == "auto mechanic"):
-        "Mechanic Month 3"
+        "Back on Earth, I only worked on cars. But here on Talam, people brought me all kinds of machines to try and fix. If it had moving parts or electricity and it broke, it came to my shop."
+        "Usually I could fix things pretty quickly, but after several months of hard farming, a lot of things were breaking down. It wouldn't have been so bad except that we had only a small reserve of spare parts, so I tried to only use them when there was no other way to fix things."
+        him "Hey, [her_nickname], is the tractor fixed yet?"
+        her "No, sorry, I've been working on the clinic's radio all afternoon."
+        him "Oh..."
+        her "..."
+        her "I'll let you know when it's done."
+        him "It just seems like tractors should be a pretty high priority, since that's how we're growing all the food we're going to live on."
+        her "Yeah, but the clinic needs the radio in case someone on one of the farms is hurt. We don't have phones, and the computer pads are unreliable."
+        him "Well, how long is it going to take?"
+        menu:
+            "A day or two":
+                her "Probably another day or two. Sorry, [his_nickname]."
+                him "All right, well, maybe I'll just hitch Lettie up to the plow and see what she can do."
+                her "Lettie can do anything!"
+            "As long as it takes":
+                her "It'll take as long as it takes, okay? It depends on whether I can make it work without putting in a new belt."
+                him "All right, I guess I'll just have to trust you."
+                her "I'll get it done."
+            "It'll go faster if you leave me alone":
+                her "It'll go faster if you leave me alone!"
+                him "Okay! I'm leaving!"
+                her "Good!"
+
+        boss "Everything all right in here?"
+        her "Yes, it's just a busy day."
+        boss "Are those all the things that need to be repaired?"
+        her "Yes, I've got quite a backlog right now."
+        boss "Seems to me like you could use a little help sometimes."
+        her "That'd be great, actually."
+        "It turned out that the radio just had a loose connection, so I soldered it back together, and then turned my attention to the tractor. I was able to get it fixed just before sundown. [his_name] would be happy, but it sure was a busy day for me. Hopefully the mayor would be able to find someone soon."
+        
+    # TEACHER
     elif (profession == "teacher"):
         scene bg classroom with fade
         "Teacher Month 3"
