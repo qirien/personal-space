@@ -241,12 +241,14 @@ label settling_in:
                             "I cried harder."
                             him "[her_name]...look, I'm sorry, okay? It's not worth fighting over."
                             her "That's true...I'm sorry."
+                            $ relaxed -= 2
                         "Why did you even marry me?":
                             her "Do you really think that? Why would you have married me if you thought that?"
                             him "No, I don't really think that, I just- sometimes it seems like other things are more important to you."
                             her "Well, they're not. You're my family now."
                             him "Okay, well, you're my family, but they still are, too, even if I never see them again."
                             her "Okay."
+                            $ relaxed -= 2
                             
                     jump end_settling_in
             

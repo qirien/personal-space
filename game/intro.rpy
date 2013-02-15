@@ -171,36 +171,40 @@ label marriage_proposal:
             $ favorite_wedding_gift = "my mother's recipe book"
             "My mom's recipe book. She's not that great of a cook, but she put in recipes for all the foods she regularly cooks. Those foods bring back so many childhood memories."
 
+    scene bg black with fade
+
+    him "Today's the day, lovebug."
+    her "Lovebug?"
+    him "Don't you like it? I thought it was cute."
+    
     menu:
-        "It's funny; since we got married, [his_name] sometimes calls me:"
-        "Sweetie":
-            $ her_nickname = "sweetie"
-            "He calls me '[her_nickname]'."
+        "What should he call you?"
         "Lovebug":
             $ her_nickname = "lovebug"
-            "He calls me '[her_nickname]'."
+            her "You can call me '[her_nickname]'; that's cute."
+        "Sweetie":
+            $ her_nickname = "sweetie"
+            her "You could call me '[her_nickname]'."
         "Sugar":
             $ her_nickname = "sugar"
-            "He calls me '[her_nickname]'."
+            her "You could call me '[her_nickname]'."
         "Something else":
             $ her_nickname = renpy.input("He calls me:", "sweetie", length=20)
+            her "You could call me '[her_nickname]'."
+    him "Hey, I like that. You're my [her_nickname]."
 
-    him "Ready to blast off into space, [her_nickname]?"
     menu:
         "I realized I didn't have a name for him. I thought fast and decided to call him:"
         "Dear":
             $ his_nickname = "dear"
-            "I call him '[his_nickname]'."
         "Lover":
             $ his_nickname = "lover"
-            "I call him '[his_nickname]'."
         "Honey":
             $ his_nickname = "honey"
-            "I call him '[his_nickname]'."
         "Something else":
             $ his_nickname = renpy.input("I call him:", "honey", length=20)
 
-    her "You sound ready to blast off, [his_nickname]."
-    him "Huh, [his_nickname]? I like hearing you call me that. Well, the ship's waiting for us; let's go!"
+    her "And you're my '[his_nickname]'."
+    him "You're calling me [his_nickname]? Well, okay. You can call me whatever you want as long as you come with me on the shuttle today!"
 
     jump colony_ship
