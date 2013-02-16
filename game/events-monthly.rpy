@@ -529,7 +529,60 @@ label monthly_event_5:
 
 label monthly_event_6:
     #one possible branch of this could be to eat the alien pests. Insects can be ground to make flour, which is actually quite nutrient rich. But would alien pests be similarly nutrient-dense?
+    #biological pesticide--fungus
     "Alien Pests"
+    "Our crops were starting to give and abudent harvest, but unfortunately, with the rainy season starting, they were being attacked by alien insects."
+    "A small segmented insect like a sow bug but with thicker legs was our main culprit." 
+    him "[her_name], we really have to think of a way to stop these insects from eating our crops."
+    her "What have you done so far?"
+    him "Well, I've tried picking them off individually and there are just too many now to do that. I wish we could just kill them all at once."
+    her "I don't think we have the resources to do that."
+    him "Yeah, that's why I was asking you for ideas."
+    her "Well, we have a few options."
+    menu:
+        "{i}Take a sample bug in for research.{/i}" if (skill_knowledge >= 30 or skill_technical >= 30):
+            "I collected a few of the insects and brought them to Lily for examination."
+            Lily "These samples remind me of Tardigrades we have on Earth."
+            her "Tardigrades?"
+            Lily "They're an unusually hardy insect that can survive high and low temperatures as well as radiation. Because their adult forms don't increase in cell number, radiation doesn't mess their DNA like it does in animals whose cells are constantly splitting."
+            her "That's... really interesting. Is there any way we could get rid of them?"
+            Lily "I've been working on an organic pesticide made from fungus. I'm not sure sure if it will work on these insects though. May I keep your sample to test the pesticide on?"
+            her "Sure, there's plenty more where that came from."
+            "I watched as Lily sprayed the bugs with her mineral oil and fungus concoction."
+            her "Um, it looks like they're still alive."
+            Lily "Yes, if the pesticide works we will know in a few days."
+            her "A few days? Our crops will be gone by then."
+            Lily "It is a rather pressing matter. Do you have any mature garlic cloves?"
+            her "I think we do, but why?"
+            Lily "Garlic is a natural insect repellent. You'll still have to remove all the bugs, but if you can spray your plants with some diluted garlic it might stop them from returning as quickly."
+            her "Well, it's worth a shot."
+            "For the rest of the week we tried to to remove as many insects by hand as we could. Then we coated the plants with garlic juice. The work was long and hard, and we stunk afterwards."
+            if physical>20:"After a day's work in the field, I fell asleep right away, but in the morning I was ready to keep going."
+            else: "After the first day I was exhausted. I wasn't able to help as much as I would have liked."
+            him "We have baskets and baskets of these insects."
+            her "I wonder if we could use them to help us somehow."
+            him "That might work. Next time you see Lily, could you ask her about it?"
+            her "Sure. Come to think of it, we should know if her pesticide was successful or not by now."
+            "Lily's fungus experiment sucessfully killed a little over half the bugs I gave her. She lent me a sprayer and told me to bring it back as soon as possible."
+            "When I asked her about how to use the dead insects we had caught, Lily said that we could use them to feed livestock."
+            her "I'm not sure if our horse will like how they taste, but I'll try it."
+            "We sprayed our crops. Sadly, we couldn't save much of them. Luckily, our underground crops like potatoes and beets weren't attacked by the insects, so we still had something to eat while we planted new crops."
+            her "Oh, Lily told me we could use the dead insects for something..."
+            him "What is it?"
+            her "We could feed them to Lettie!"
+            him "Um... no."
+            her "I think we should at least try it out! Maybe she'll like them!"
+            him "Horses don't eat bugs!"
+            her "Well I doubt they eat hay in the wild and it hasn't hurt them."
+            him "I'll give her one, but if she gets sick or something, we are just going to crush the rest of the bugs and put them in the compost pile."
+        "{i}Use the bugs as food.{/i}" if (skill_domestic >= 30 or skill_creative >= 30):
+            her "This is going to sound a little crazy, but I read that it's possible to make flour out of certain kinds of insects."
+            him "Okay... will it actually help keep us alive?"
+            her "If these insects are anything like Earth insects, they're highly nutritious. You know, low in saturated fats and carbs and high in amino acids."
+            him "Well, can you find out if they're okay for us to eat? Because if we can somehow process them, we might not go as hungry this month."
+            ## to be continued
+        "{i}Ask if anyone else is having the same problem.{/i}" if (skill_spiritual >= 30 or skill_social >= 30):
+            
     return
 
 label monthly_event_7:
