@@ -10,18 +10,20 @@ image female_child normal = "sprites/female-child.png"
 
 # Crafter; scene at craft store
 label crafter:
-        $ profession = "crafter"
-        "...the craft store. He was looking for some elastics to braid his horse's hair for a parade."
-        show her normal at left
-        show him normal at right
-        her "You know how to braid your horse's hair?"
-        him "It's a fine art."
-        her "I'll believe it when I see it."
-        jump first_date
+    $ profession = "crafter"
+    scene bg workshop with fade
+    "...the craft store. He was looking for some elastics to braid his horse's hair for a parade."
+    show her normal at left
+    show him normal at right
+    her "You know how to braid your horse's hair?"
+    him "It's a fine art."
+    her "I'll believe it when I see it."
+    jump first_date
 
 # Doctor; scene at hospital
 label doctor:
     $ profession = "doctor"
+    scene bg clinic with fade
     "...the hospital. He thought he had broken his wrist, but when the x-rays came back it turned out it was only sprained. I could feel his eyes on me as I helped him with the sling."
     show her normal at left
     show him normal at right
@@ -39,6 +41,7 @@ label doctor:
 # Mechanic; scene at auto shop
 label mechanic:
     $ profession = "auto mechanic"
+    scene bg machine_shop with fade
     "...the car repair shop. His engine wasn't working right, and after I fixed it he wanted me to show him everything I'd done."
     #show her angry at left
     her "You don't think I fixed it right, do you?"

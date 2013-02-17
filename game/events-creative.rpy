@@ -9,6 +9,7 @@ label creative_0:
     return
 
 label creative_1:
+    scene bg path with fade
     "On my way back from work, I found some tall, wide weeds that had grown very quickly. I wanted to work on some weaving, so I took some home and made two placemats with it."
     $ skill_creative += 10
     return

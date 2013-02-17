@@ -69,11 +69,14 @@ label work_0:
         her "I helped some people out on the ship on the way here, so this should be similar. I will need some more supplies, though."
         boss "That's fine, just write up a list and give it to me to approve. Then you can go on over to the storehouse and take what you need."
     elif (profession == "crafter"):
+        scene bg workshop with fade
         boss "All right! This is the shop where people will come in if they need something made they can't make themselves. We don't have a lot of materials yet, but you can requisition some from the storehouse for important projects, and there are some materials, like wood, right here on the planet."
         her "I can see that this job is going to take a lot of creativity!"
         boss "Yes, it will! Perhaps you can start by helping me out - one of the roof pieces from the Nguyen's house broke when we were unpacking it, so they are going to need a replacement."
         her "Sure, I'll take a look at the standard roofs and see if I can make something out of the wood around here."
+
     elif (profession == "auto mechanic"):
+        scene bg machine_shop with fade
         boss "All right! This is the shop where people will bring machines that need to be fixed. You'll be responsible for any kind of machine people have, from datapads to tractors. We don't have many replacement parts, so do what you can to fix things up when they break."
         her "I can see that this will take a lot of creativity."
         boss "Yes, it will! Perhaps you can start by helping me with my datapad? It always freezes up when I try to access my calendar..."
@@ -154,6 +157,7 @@ label work_1:
 
     # CRAFTER
     elif (profession == "crafter"):
+        scene bg workshop with fade
         "They kept me pretty busy making things for all the colonists. I made a lot of farm tools and fences, and started working on some woodworking tools. We didn't have a lot of metal, so I was trying to make tools out of local materials, but it wasn't going very well."
         "Today, however, I didn't have time for any of that. I was working on a roof for a chicken coop."
         boss "[her_name], have you finished the barrels for the storehouse yet?"
@@ -174,6 +178,7 @@ label work_1:
 
     # MECHANIC
     elif (profession == "auto mechanic"):
+        scene bg machine_shop with fade
         "Back on Earth, I only worked on cars. But here on Talam, people brought me all kinds of machines to try and fix. If it had moving parts or electricity and it broke, it came to my shop."
         "Usually I could fix things pretty quickly, but after several months of hard farming, a lot of things were breaking down. It wouldn't have been so bad except that we had only a small reserve of spare parts, so I tried to only use them when there was no other way to fix things."
         him "Hey, [her_nickname], is the tractor fixed yet?"
@@ -217,12 +222,16 @@ label work_2:
     $ times_worked += 1
 
     if (profession == "doctor"):
+        scene bg clinic with fade
         "Doctor Month 6"
     elif (profession == "crafter"):
+        scene bg workshop with fade
         "Crafter Month 6"
     elif (profession == "auto mechanic"):
+        scene bg machine_shop with fade
         "Mechanic Month 6"
     elif (profession == "teacher"):
+        scene bg classroom with fade
         "Teacher Month 6"
         
     return

@@ -8,6 +8,7 @@
 
 
 label relax_together_0:
+    scene bg farm_interior with fade
     "We watched a movie together. It was pretty good, but the ending was terrible."
     him "See, what they needed was to have the girlfriend show back up at the end--"
     her "--leading a horde of zombie warriors! Oh, that would have been so much better!"
@@ -21,6 +22,7 @@ label relax_together_0:
     return
 
 label relax_together_1:
+    scene bg farm_interior with fade
     play music "music/Will.ogg" fadeout 2.0
         
     "One of the things I missed most about Earth was having my own shower and bath. While we washed up well enough with water from the well, we still enjoyed going to the community bath once a week or so to really get clean."
@@ -172,7 +174,7 @@ label relax_together_4:
     return
 
 label relax_together_5:
-    scene bg farm_interior with fade
+    scene bg bedroom with fade
     play music "music/Will.ogg" fadeout 2.0
     "One day after dinner I noticed [his_name] rubbing his shoulders and grimacing."
     show him normal at center
@@ -212,6 +214,7 @@ label relax_together_5:
 
 # go "out" to eat on a picnic
 label relax_together_6:
+    scene bg farm_interior with fade
     him "Put on your fancy clothes, [her_nickname], because we are going OUT tonight!"
     her "Out where? And I don't have any fancy clothes..."
     him "Any clothes look fancy on you! But I can't tell you where we're going; it's a suprise."
@@ -220,10 +223,12 @@ label relax_together_6:
     him "Now put this blindfold on"
     her "You're not serious, are you?!"
     him "I'm totally serious!"
+    scene bg black with fade
     "I let him blindfold me and we left the house.  He spun me around so I couldn't tell which direction we were going, and then we hiked for about twenty minutes or so. He held my hand so I didn't trip."
     her "It's a good thing I didn't actually put on fancy clothes, since this isn't exactly level terrain."
     him "We're almost there."
     "Finally, he took off the blindfold."
+    scene bg sunset with fade
     "He had setup a small table and two chairs with dishes and utensils. I sat down at the table and he lit the candles.  Then he got some food out of his backpack."
     menu:
         "It's..."

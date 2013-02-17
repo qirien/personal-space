@@ -527,11 +527,10 @@ label monthly_event_5:
 
     return
 
+# Alien Pests
 label monthly_event_6:
-    #one possible branch of this could be to eat the alien pests. Insects can be ground to make flour, which is actually quite nutrient rich. But would alien pests be similarly nutrient-dense?
     #biological pesticide--fungus
-    "Alien Pests"
-    "Our crops were starting to give and abudent harvest, but unfortunately, with the rainy season starting, they were being attacked by alien insects."
+    "Our crops were starting to give and abundant harvest, but unfortunately, with the rainy season starting, they were being attacked by alien insects."
     "A small segmented insect like a sow bug but with thicker legs was our main culprit." 
     him "[her_name], we really have to think of a way to stop these insects from eating our crops."
     her "What have you done so far?"
@@ -557,8 +556,10 @@ label monthly_event_6:
             Lily "Garlic is a natural insect repellent. You'll still have to remove all the bugs, but if you can spray your plants with some diluted garlic it might stop them from returning as quickly."
             her "Well, it's worth a shot."
             "For the rest of the week we tried to to remove as many insects by hand as we could. Then we coated the plants with garlic juice. The work was long and hard, and we stunk afterwards."
-            if physical>20:"After a day's work in the field, I fell asleep right away, but in the morning I was ready to keep going."
-            else: "After the first day I was exhausted. I wasn't able to help as much as I would have liked."
+            if (skill_physical > 20):
+                "After a day's work in the field, I fell asleep right away, but in the morning I was ready to keep going."
+            else:
+                "After the first day I was exhausted. I wasn't able to help as much as I would have liked."
             him "We have baskets and baskets of these insects."
             her "I wonder if we could use them to help us somehow."
             him "That might work. Next time you see Lily, could you ask her about it?"
@@ -580,8 +581,10 @@ label monthly_event_6:
             him "Okay... will it actually help keep us alive?"
             her "If these insects are anything like Earth insects, they're highly nutritious. You know, low in saturated fats and carbs and high in amino acids."
             him "Well, can you find out if they're okay for us to eat? Because if we can somehow process them, we might not go as hungry this month."
+            "I couldn't imagine eating them as they were, so I decided to grind them up and combine them with flour to make bread."
             ## to be continued
         "{i}Ask if anyone else is having the same problem.{/i}" if (skill_spiritual >= 30 or skill_social >= 30):
+            her "Let's ask around and see if anyone else has had problems with these pests."
             
     return
 

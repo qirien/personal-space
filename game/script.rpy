@@ -19,6 +19,9 @@ image bg library = "bg/library.png"
 image bg classroom = "bg/classroom.png"
 image bg clinic = "bg/clinic.png"
 image bg bedroom = "bg/bedroom.png"
+image bg sunset = "bg/sunset.png"
+image bg machine_shop = "bg/machine-shop.png"
+image bg workshop = "bg/workshop.png"
 
 # SPRITES
 image him normal = "sprites/him.png"
