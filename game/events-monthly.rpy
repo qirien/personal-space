@@ -441,6 +441,7 @@ label monthly_event_4:
             "I can't believe you don't appreciate me":
                 jump unappreciated
 
+    "We ended up staying up late, talking about all the things we had been doing. I felt like I understood him a little better after that, and he seemed to appreciate what I was doing more, too."
     return
 
 # MONTH 5 - What to do with trash
@@ -537,8 +538,8 @@ label monthly_event_6:
     him "Well, I've tried picking them off individually and there are just too many now to do that. I wish we could just kill them all at once."
     her "I don't think we have the resources to do that."
     him "Yeah, that's why I was asking you for ideas."
-    her "Well, we have a few options."
     menu:
+        her "Well, we have a few options."
         "{i}Take a sample bug in for research.{/i}" if (skill_knowledge >= 30 or skill_technical >= 30):
             "I collected a few of the insects and brought them to Lily for examination."
             Lily "These samples remind me of Tardigrades we have on Earth."
@@ -585,6 +586,8 @@ label monthly_event_6:
             ## to be continued
         "{i}Ask if anyone else is having the same problem.{/i}" if (skill_spiritual >= 30 or skill_social >= 30):
             her "Let's ask around and see if anyone else has had problems with these pests."
+        "I have no idea.":
+            her "I don't have any ideas...I'm sorry."
             
     return
 

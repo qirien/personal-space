@@ -37,6 +37,7 @@ define Lily = Character("Lily", color="#dddd00")
 define sara = Character("Sara", color="#771199")
 define thuc = Character("Thuc Nguyen", color="66ff22")
 define manager = Character("Ilian Andrevski")
+define brennan = Character("Brennan Callahan", color="11ee11")
 
 define his_name = "???"
 define her_name = "Me"
@@ -78,7 +79,7 @@ label start:
         "No":
             $ his_name = "Jack"
             $ her_name = "Jill"
-            $ profession = "auto mechanic"
+            $ profession = "teacher"
             $ want_kids = True
             $ known_each_other = "six months"
             jump month01

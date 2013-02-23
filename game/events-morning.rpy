@@ -214,26 +214,129 @@ label work_1:
     # TEACHER
     elif (profession == "teacher"):
         scene bg classroom with fade
-        "Teacher Month 3"
+        "Normally twenty-three students would be a nice size for a classroom. But my students are all different ages and skill levels. We have some good technology to help us out, but sometimes it's not enough..."
+        her "On your computer pad you will see that I have sent each of you some reading about ancient Rome, appropriate for your skill level. Please read the selection, and then answer the questions at the end."
+        "It took some of the kids five minutes, and others needed at least two hours. I decided to start a science experiment with the younger kids."
+        her "We're going to make some different shapes out of paper, and see which ones will fly the best."
+        "They all liked that idea, but the kids that were still reading didn't want to miss out on paper airplanes, so they ended up building those instead of doing their history work."
+
+        "At recess, one of the kids fell and got a bloody nose. While I was helping him, two of the teenage boys started arguing on the other side of the field."
+        "One of them punched the other. Soon they were wrestling and rolling on the ground yelling. I ran to try to stop them."
+        #show her angry at left
+        her "Stop! Stop it, now!"
+        "They kept fighting. The kid with the bloody nose was crying, some of the kids were screaming and some were chanting and jeering, and I was trying to pull them apart."
+        "One of the punches missed the kid and hit me in the head. I must have blacked out for a minute, because when I woke up the fight was over and all the kids were looking down at me worriedly."
+        "I separated the two fighters, and somehow I managed to make it through the rest of that day. Just as the children were all leaving, the mayor came by."
+        boss "[her_name], are you all right?"
+        her "Yes...though I may have a black eye tomorrow."
+        boss "That's terrible! You shouldn't be all by yourself here, not every day."
+        her "Well, part of it is that those boys really don't need to be here every day. They could do most of their work from home."
+        boss "That may be a good idea, but I want to find someone to help you out on the days when you have all the kids here."
+        menu:
+            "Do I need help?"
+            "I need help":
+                her "You are right...I can't do this by myself."
+                boss "I'll see what I can do to find someone to help you out some of the time."
+            "I can do it myself":
+                her "It's not a problem most of the time. I can handle it."
+                boss "I appreciate your confidence, but let me see if I can find someone, at least for part of the time."
+        her "Thanks, Mayor Grayson."
+        "That wasn't the only rough day, but it was the worst one for quite some time."
     return
 
 # Introduce co-worker Brennan Callahan
 label work_2:
     $ times_worked += 1
+    $ relaxed -= 5
 
     if (profession == "doctor"):
         scene bg clinic with fade
-        "Doctor Month 6"
     elif (profession == "crafter"):
         scene bg workshop with fade
-        "Crafter Month 6"
     elif (profession == "auto mechanic"):
         scene bg machine_shop with fade
-        "Mechanic Month 6"
     elif (profession == "teacher"):
         scene bg classroom with fade
-        "Teacher Month 6"
         
+    "I was ready for another busy day at work when the mayor walked in with someone new. I remembered seeing him on the shuttle; he had an infectious smile and just the hint of an accent."
+    boss "[her_name], I'd like you to meet Mr. Callahan. He's sort of a jack-of-all-trades here, helping out wherever we need it. He can help you out some of the time."
+    brennan "Call me Brennan. And I know we've met already; I'd never forget a pretty face like yours."
+    menu:
+        "What should I say?"
+        "Nice to meet you":
+            her "Nice to meet you, Brennan. It will be good to have some help sometimes."
+            brennan "You're quite welcome."
+        "I remember you, too.":
+            her "Yes, I remember you too, Brennan. Thanks for agreeing to help out."
+            brennan "You're quite welcome."
+        "I'm more than just a pretty face":
+            her "I'm more than just a pretty face, I hope."
+            brennan "Of course! I just meant that I remembered you. But I could understand how you might not remember me."
+        "Are you going to be helpful?":
+            her "Do you have any talents besides flattery?"
+            brennan "A few, to be sure! If you're lucky perhaps I'll show you some."
+    "He winked at me playfully. Was he...flirting with me?! I didn't have time to think about it; there was too much work to do."
+    "It was nice to have him around, especially when things got busy later in the day. He didn't wait for me to ask him to do things, but he didn't get in my way, either."
+    brennan "It was a pleasure working with you today, [her_name]."
+    "He looked into my eyes intently as he shook my hand. His gaze was direct, friendly, and...amused? I looked away."
+    her "Thanks for your help today."
+    brennan "Anytime."
+    "I walked home, trying not to think about him. When I got there, [his_name] greeted me with a kiss."
+    him "How was work today?"
+    menu:
+        "What should I say?"
+        "Great, I got some help":
+            her "Great! I got some help - the mayor sent Brennan Callahan to help me out once in a while."
+            him "Oh, well, that's good, I guess."
+            her "What, you don't think that's a good idea?"
+            him "Well, I'm just a bit suspicious of Brennan. He comes on the shuttle at the last second with no special skills, no family, and nobody else seems to think that's unusual."
+            her "I guess they did ask mostly for couples and families to come..."
+            him "He seems nice enough, but I'm just wondering what the real purpose is for him to be here."
+            her "You think he's a spy or something?"
+            him "I'm not saying that. I'm just saying that there's unanswered questions here."
+            her "Interesting. Well, I'll keep an eye out, and if I see him sending coded messages to the aliens, I will let you know."
+            "The next time Brennan helped out at work, he was as friendly as ever, but I didn't feel as uncomfortable as before. I treated him politely, but coolly, and we got a lot of work done."
+        "Nothing special.":
+            her "Just the usual. How about you?"
+            him "Had to dig out some big boulders in the new field I'm working on."
+            her "Oh, that sounds hard. Hungry for dinner?"
+            him "I'm always hungry."
+            her "Ohh, that I believe!"
+
+            $ loved -= 5
+            $ relaxed -= 5
+        "I have to work with someone obnoxious.":
+            her "Ugh, the mayor wants me to work with Brennan Callahan."
+            him "Really? What's wrong with him?"
+            her "I don't know, he's helpful enough, he's just kind of...creepy."
+            him "Like in a 'secretly-a-vampire' kind of way, or a 'socially-inept' kind of way?"
+            her "Like in a flirting-with-a-married-woman kind of way."
+            him "... He was flirting with you?"
+            her "I don't know! Maybe? Or maybe he just acts that way with everyone."
+            him "Want me to talk to him?"
+            menu:
+                "Do I want him to talk to Brennan?"
+                "No, I'll handle this":
+                    her "No thanks, I can handle him."
+                    him "That's what I'm afraid of."
+                    her "You know that's not what I meant!"
+                    him "I know, it's okay, I don't really want to have that conversation with him, anyway. But let me know if you do want me to help you out later, okay?"
+                    her "Thanks, [his_nickname]."
+                    "The next time I saw Brennan, I thanked him for his help and mentioned that I expected everyone working there to maintain a professional attitude."
+                    brennan "I'm sorry; I didn't mean to make you uncomfortable. Quite the opposite, actually."
+                    her "Right. Now we've got work to do."
+                    "Things went more smoothly after that, and we got a lot of work done."
+                "Just talk to him":
+                    her "By 'talk' you mean 'speak words with' not 'punch in the face', right?"
+                    him "Of course, what kind of barbarian do you think I am?"
+                    her "I don't know, I was just making sure!"
+                    "I didn't hear anything else about it, but the next time Brennan came to help, he acted much more professionally. That sure made things easier at work."
+                "No, I'm probably imagining things":
+                    her "No, it's not the big of a deal. He's probably just a friendly kind of guy."
+                    him "Friendly to women, you mean."
+                    her "Maybe, but, whatever. I'm not interested."
+                    "The next time Brennan helped me out, he was friendly as ever, but I didn't feel as uncomfortable as before. I treated him politely but coolly, and work went well."
+
     return
 
 # Something bad happens and she confides in co-worker
@@ -251,6 +354,7 @@ label work_3:
 
     return
 
+# Solar flare while at work that lasts all night?
 label work_4:
     $ times_worked += 1
 
