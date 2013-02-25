@@ -531,9 +531,9 @@ label monthly_event_5:
 # Alien Pests
 label monthly_event_6:
     #biological pesticide--fungus
-    "Our crops were starting to give and abundant harvest, but unfortunately, with the rainy season starting, they were being attacked by alien insects."
+    "Our crops were starting to give and abundant harvest, but unfortunately, with the rainy season starting, the corn was being attacked by alien insects."
     "A small segmented insect like a sow bug but with thicker legs was our main culprit." 
-    him "[her_name], we really have to think of a way to stop these insects from eating our crops."
+    him "[her_name], we really have to think of a way to stop these insects from eating our corn."
     her "What have you done so far?"
     him "Well, I've tried picking them off individually and there are just too many now to do that. I wish we could just kill them all at once."
     her "I don't think we have the resources to do that."
@@ -544,7 +544,7 @@ label monthly_event_6:
             "I collected a few of the insects and brought them to Lily for examination."
             Lily "These samples remind me of Tardigrades we have on Earth."
             her "Tardigrades?"
-            Lily "They're an unusually hardy insect that can survive high and low temperatures as well as radiation. Because their adult forms don't increase in cell number, radiation doesn't mess their DNA like it does in animals whose cells are constantly splitting."
+            Lily "They're an unusually hardy insect that can survive high and low temperatures as well as radiation. Because their adult forms don't increase in cell number, radiation doesn't damage their DNA like it does in animals whose cells are constantly splitting."
             her "That's... really interesting. Is there any way we could get rid of them?"
             Lily "I've been working on an organic pesticide made from fungus. I'm not sure sure if it will work on these insects though. May I keep your sample to test the pesticide on?"
             her "Sure, there's plenty more where that came from."
@@ -563,9 +563,9 @@ label monthly_event_6:
                 "After the first day I was exhausted. I wasn't able to help as much as I would have liked."
             him "We have baskets and baskets of these insects."
             her "I wonder if we could use them to help us somehow."
-            him "That might work. Next time you see Lily, could you ask her about it?"
+            him "Maybe we can. Next time you see Lily, could you ask her about it?"
             her "Sure. Come to think of it, we should know if her pesticide was successful or not by now."
-            "Lily's fungus experiment sucessfully killed a little over half the bugs I gave her. She lent me a sprayer and told me to bring it back as soon as possible."
+            "Lily's fungus experiment sucessfully killed a little over half the bugs I gave her. She lent me a sprayer and told me to bring it back as soon as possible, since some other farms had the same insects to spray."
             "When I asked her about how to use the dead insects we had caught, Lily said that we could use them to feed livestock."
             her "I'm not sure if our horse will like how they taste, but I'll try it."
             "We sprayed our crops. Sadly, we couldn't save much of them. Luckily, our underground crops like potatoes and beets weren't attacked by the insects, so we still had something to eat while we planted new crops."
@@ -577,19 +577,54 @@ label monthly_event_6:
             him "Horses don't eat bugs!"
             her "Well I doubt they eat hay in the wild and it hasn't hurt them."
             him "I'll give her one, but if she gets sick or something, we are just going to crush the rest of the bugs and put them in the compost pile."
+            "Lettie didn't seem to hate or like crushed insects, so I used them to extend her food. We still had a lot of leftover insects, so after making sure they were all dead I put them in the compost pile."
+            him "I'm glad we could use some of the bugs, but I don't think the crops they ate will last."
+            her "Why not?"
+            him "They're full of their eggs. The corn at least. Even if we pick all the infected crops off, I think it's too late to save them."
+            her "Well, even if the corn is beyond saving, we could at least keep the greens for Lettie."
+            him "And then some!"
+            "We cut off and burned all the ears of corn that had eggs in them. We cut and dried all the corn stalks to turn it into hay."
+            "[his_name] started plowing the land for a new crop."
         "{i}Use the bugs as food.{/i}" if (skill_domestic >= 30 or skill_creative >= 30):
             her "This is going to sound a little crazy, but I read that it's possible to make flour out of certain kinds of insects."
             him "Okay... will it actually help keep us alive?"
             her "If these insects are anything like Earth insects, they're highly nutritious. You know, low in saturated fats and carbs and high in amino acids."
             him "Well, can you find out if they're okay for us to eat? Because if we can somehow process them, we might not go as hungry this month."
-            "I couldn't imagine eating them as they were, so I decided to grind them up and combine them with flour to make bread."
-            ## to be continued
+            "I couldn't imagine eating them as they were, so after I boiled them, I ground them up and combined them with flour to make bread."
+            "Well... it was more like crackers than bread, since the flour was so heavy. It was a little plain, so I made some beet jam to go with it."
+            him "It tastes kind of nutty. And... gross, is this an insect leg?"
+            her "Yeah, for the next batch I'm going to try processing the flour a little differently. But for a first try it's not bad, is it?"
+            him "It's a whole lot better than nothing, that's for sure."
+            "One day I roasted them seasoned with garlic salt. They were crunchy and dry, but edible."
+            him "So, eating these insects is great and all, but we should plant something else where that infested corn is right now."
+            her "Yeah... how do we get rid of the plants that are already there?"
+            him "Well, I could burn them all, and then the ashes can fertilize the next crop."
+            her "Sounds better than nothing."
+            "We piled all the corn plants into a huge bonfire. It burned into the night and made a big plume of smoke."
+            "Our neighbors came by the see the fire, and we ate roasted insects as we watched their eggs turn to ash."
         "{i}Ask if anyone else is having the same problem.{/i}" if (skill_spiritual >= 30 or skill_social >= 30):
             her "Let's ask around and see if anyone else has had problems with these pests."
+            him "Okay. I'll take Lettie into town; can you ask our neighbors?"
+            her "Sure."
+            "I found out that the Perons had the same insect eating their corn. To prevent the insects from laying eggs in the corn, they put mineral oil on the silks."
+            "I radioed [his_name] and asked him to bring back some mineral oil from the storehouse. For the rest of the week, we put the oil on our corn silks and picked off the insects by hand."
+            "I kept in touch with the Perons for the rest of the week, and we made a huge pile of dead insects, which we ground up to extend the food we had for our livestock."
+            "We were able to preserve some of our corn until it was ready for harvest, although for most of the corn it was too late."
+            "We had a big bonfire with the Perons and burned the infested corn. Their kids danced around the fire as we roasted one of their chickens on the side."
+            ## this section could be expanded by having a dialogue with one of the Perons.
         "I have no idea.":
             her "I don't have any ideas...I'm sorry."
+            him "Well, let's try to salvage what we can."
+            "All of the above-ground crops had been partially eaten by the insects. I started trying to cut off the bitten parts, but then I found eggs laid inside some of the corn. We didn't want the insects to keep coming back, so we ended up burning our corn field."
+            him "At least our next crop will have some really rich soil to grow on."
+            her "Yeah, and at least we have some potatoes, beets and ginger to eat for the next few months."
+            him "But what if more insects destroy our crops?"
+            her "Then we might have a very limited diet. Hopefully someone will find a way to keep them at bay."
+            $ community_level -= 5
+            return
             
-    return
+$ community_level += 5
+return
 
 label monthly_event_7:
     "How Honest Should You Be?"
