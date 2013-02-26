@@ -3,7 +3,7 @@
 
 # Intro Event and the default
 label creative_0:
-    "I worked on a quilt for our bedroom."
+    "I worked on a quilt for our bedroom using scraps of fabric we didn't need. It was pretty tedious cutting out tiny squares of exactly the right size and sewing them together by hand, so I just worked on it a little at a time."
     $ skill_creative += 10
 
     return

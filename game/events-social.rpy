@@ -3,7 +3,34 @@
 
 # Intro Event and the default
 label social_0:
-    "I met up with my friend Sara and we talked together. She is a great listener and understands me so well."
+    if (skill_social <= 10):
+        "Aside from [his_name], I had one friend that I felt close to - Sara."
+        "We had met on the ship when [his_name] was meeting with the other farmers."
+        sara "I guess you're not a farmer, either, huh?"
+        her "Not really. I'm a [profession]."
+        sara "Really? That's pretty cool."
+        "We talked about my job for a while, and then she admitted,"
+        menu:
+            sara "I'm not sure why I'm here...I'm not really good at anything."
+            "That's not true!":
+                her "That's not true! I mean, I don't know you very well yet, but I can tell you're a good listener."
+                sara "Thanks..."
+            "Why are you here?":
+                her "Why {b}are{/b} you here?"
+                sara "Well..."
+            "(Change the subject)":
+                her "(I don't know what to say!)"
+                her "Well, uh, what do you like to do?"
+                sara "I like to read...I read a lot. I'm a pretty good photographer, too."
+                her "That sounds fun. What do your parents do?"
+        sara "My parents are farmers. I'm the oldest, but even though I know how to take care of cows and chickens and drive a tractor, I don't like it at all."
+        her "Well, you probably know way more about it than I do, at least!"
+        sara "Yeah...I could have stayed on Earth, you know... but I wanted to be with my family, and it sounded exciting to see a new planet. Now that we're almost there, though, I'm thinking it will probably just be a lot of work."
+        her "It probably will be."
+        "Sara and I talked almost every day after that. Even though she was only seventeen, we had a lot in common, and she had an easy laugh and an understanding smile that made her fun to be around."
+        "We tried to have lunch together at least once a week."
+    else:
+        "I met up with my friend Sara and we talked together. She is a great listener and understands me so well."
     $ skill_social += 10
 
     return

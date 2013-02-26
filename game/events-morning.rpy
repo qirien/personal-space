@@ -116,19 +116,25 @@ label work_1:
 
         her "It's a comminuted fracture; it will take quite a while to heal."
         "I was just about to put him under so I could put in some pins when the radio crackled and I heard Sara."
-        "Sara on the radio" "Doctor! You've gotta come right away; one of the Blair kids can't breathe! I think - I think he swallowed something."
+        "Sara on the radio" "Doctor! You've gotta come right away; My little brother stopped breathing - I think he swallowed something."
         "I started out the door while I talked to her on the radio. I hated to leave James alone, but this was urgent."
         her "I'm on my way. How old is he?"
-        "Sara on the radio" "I don't know, like three years old or so!"
+        "Sara on the radio" "He's three!"
         her "Do you know how to do the Heimlich?"
         "Sara on the radio" "Yes! I mean, I've never done it before, but..."
         her "Do it! Put your fist right above his belly button, support it with your other hand, and push in and up forcefully."
-        "Sara on the radio" "His mom is doing what you said; it's not working!!"
+        "Sara on the radio" "Mom's doing what you said; it's not working!!"
         her "Keep trying! Then use your finger to sweep through his mouth to see if you can dislodge anything."
         "Sara on the radio" "Hurry, [her_name], he's starting to turn blue!"
-        "By the time I got there, the little boy was unconscious."
-        "I moved quickly. I was able to get the peanut out of his throat, and performed CPR. Mrs. Blair watched me grimly."
-        "I was tired from running all the way over there, but I did the best I could."
+
+        if (skill_physical < 20):
+            "By the time I got there, the little boy was unconscious."
+            "I moved quickly. I was able to get the peanut out of his throat, and performed CPR. Mrs. Blair watched me grimly."
+            "I was tired from running all the way over there, but I did the best I could."
+        else:
+            "When I got there, he was blue but still conscious."
+            "I moved quickly. I was able to get the peanut out of his throat, and performed CPR. Mrs. Blair watched me hopefully."
+
         "Finally, he coughed and started to breathe."
         "Mrs. Blair" "Sasha! Oh, my boy!"
         "I didn't have time to stick around for adulation, though - James was still waiting for me to help his leg in the clinic."

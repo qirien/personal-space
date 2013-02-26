@@ -33,11 +33,12 @@ define him = DynamicCharacter("his_name", color="#ed0303")
 
 define naomi = Character("Sister Naomi", color="#cccccc")
 define boss = Character("Mayor Grayson", color="#0033dd")
-define Lily = Character("Lily", color="#dddd00")
+define lily = Character("Lily", color="#dddd00")
 define sara = Character("Sara", color="#771199")
 define thuc = Character("Thuc Nguyen", color="66ff22")
 define manager = Character("Ilian Andrevski")
 define brennan = Character("Brennan Callahan", color="11ee11")
+define sven = Character("Sven Engel")
 
 define his_name = "???"
 define her_name = "Me"

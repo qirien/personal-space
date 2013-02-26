@@ -204,7 +204,7 @@ label relax_together_5:
             her "Mmmm, really? Are you talking about shoulders, or...?"
             him "I'll massage anything you like."
             her "Why don't you start with the shoulders, and then we'll see what happens?"
-            "He copied what I had done earlier, and gave me quite the massage, too. It was so relaxing to just sit and do nothing while he took care of all my tense muscles."
+            "He copied what I had done earlier, and gave me quite the massage, too. It was so relaxing to just sit and do nothing while he took care of all my tense muscles. He takes such good care of me..."
             $ made_love += 1
             $ relaxed += 5
 

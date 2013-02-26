@@ -3,7 +3,11 @@
 
 # Intro Event and the default
 label technical_0:
-    "I tuned up some of the farm equipment."
+    if (skill_technical <= 0):
+        "I decided to familiarize myself with all the farm equipment so that if something broke, I would be able to understand the problem quicker. The tractors were an interesting biofuel/solar hybrid and were built in a very modular way so that pieces could easily be taken out and replaced, and it had a hitch on the back for attachments like plows, cutters, loaders, etc."
+        "I downloaded the schematics and spent some time studying them."
+    else:
+        "I tuned up some of the farm equipment."
     $ skill_technical += 10
 
     return
@@ -45,7 +49,7 @@ label technical_3:
         "Search the local database for a solution":
             "The wireless was down because of the most recent solar flare, but I was able to download a circuitry manual at the library. I learned about a multivibrator, or one-shot circuit that would only make the buzzer beep once."
             "I had to borrow a few more circuits while I was at the library, and while I was there I told Sven about my project."
-            Sven "We're working on an intercom system with metal tubes, which wouldn't be affected by the solar flares. When I'm done could we use your flare sensor to tell everyone when to take cover?"
+            sven "We're working on an intercom system with metal tubes, which wouldn't be affected by the solar flares. When I'm done could we use your flare sensor to tell everyone when to take cover?"
             menu:
                 "Of course.":
                     "It's part of my duty as a colonist to help the others. Of course I'll donate my radio."

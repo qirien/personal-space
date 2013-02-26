@@ -3,7 +3,14 @@
 
 # Intro Event and the default
 label physical_0:
-    "I went for a run around the farm."
+    if (skill_physical < 10):
+        "We lived a little farther away from the town, so that we had plenty of farmland around us. The other farms were arranged in sort of a circle around the town, too. But it meant that we were a little more isolated than the people who lived in the town."
+        "We didn't have a car; [his_name] had his horse, but he rode her around the farm most days. We wanted to save the tractor fuel for farming, so if I wanted to get to town I had to walk -- or run."
+        "I thought it would be pretty useful to be able to get to town (and work) more quickly, so I decided to jog or run when I could."
+        "For the first week I could only jog for a minute or so until I got out of breath and had to walk. But I didn't give up. I went to town all the time, so I had plenty of opportunities to practice."
+        "Slowly, my running started to improve."
+    else:
+        "I went for a run around the farm."
     $ skill_physical += 10
 
     return
