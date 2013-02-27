@@ -601,17 +601,17 @@ label monthly_event_6:
             him "Well, I could burn them all, and then the ashes can fertilize the next crop."
             her "Sounds better than nothing."
             "We piled all the corn plants into a huge bonfire. It burned into the night and made a big plume of smoke."
-            "Our neighbors came by the see the fire, and we ate roasted insects as we watched their eggs turn to ash."
+            "Our neighbors the Perons came by the see the fire, and we ate roasted insects as we watched their eggs turn to ash."
         "{i}Ask if anyone else is having the same problem.{/i}" if (skill_spiritual >= 30 or skill_social >= 30):
             her "Let's ask around and see if anyone else has had problems with these pests."
             him "Okay. I'll take Lettie into town; can you ask our neighbors?"
             her "Sure."
-            "I found out that the Perons had the same insect eating their corn. To prevent the insects from laying eggs in the corn, they put mineral oil on the silks."
+            "I found out that the Blairs had the same insect eating their corn. To prevent the insects from laying eggs in the corn, they put mineral oil on the silks."
             "I radioed [his_name] and asked him to bring back some mineral oil from the storehouse. For the rest of the week, we put the oil on our corn silks and picked off the insects by hand."
-            "I kept in touch with the Perons for the rest of the week, and we made a huge pile of dead insects, which we ground up to extend the food we had for our livestock."
+            "I kept in touch with the Blairs for the rest of the week, and we made a huge pile of dead insects, which we ground up to extend the food we had for our livestock."
             "We were able to preserve some of our corn until it was ready for harvest, although for most of the corn it was too late."
             "We had a big bonfire with the Perons and burned the infested corn. Their kids danced around the fire as we roasted one of their chickens on the side."
-            ## this section could be expanded by having a dialogue with one of the Perons.
+            ## this section could be expanded by having a dialogue with one of the Blairs.
         "I have no idea.":
             her "I don't have any ideas...I'm sorry."
             him "Well, let's try to salvage what we can."
