@@ -623,7 +623,7 @@ label monthly_event_6:
             $ community_level -= 5
             return
             
-$ community_level += 5
+    $ community_level += 5
 return
 
 label monthly_event_7:
@@ -651,11 +651,136 @@ label monthly_event_12:
     return
 
 label monthly_event_13:
-    "Monthly 13"
+    "Anniversary - Lettie is Sick"
     return
 
+# Pregnancy or not?
 label monthly_event_14:
-    "Pregnancy/ Tired And Emotional"
+    scene bg farm_interior with fade
+    if (want_kids and (made_love >= 5)):
+        her "I wonder if I'm getting sick; I've felt so tired lately."
+        him "I haven't heard of anything going around. That's one of the good things about being so far from Earth - we don't get as many of their germs."
+        her "Well, I've got something. It's not like I'd make it up!"
+        him "What? No, of course not."
+        her "Do you think I'd make that sort of thing up?!"
+        him "No, not at all!"
+        "I felt like crying. One part of my brain knew it was not a big deal, but the other part just felt so lonely and afraid all of a sudden."
+        if (loved >= 0):
+            "He came over and held me close"
+            him "It'll be okay, [her_nickname]. Why don't you get some rest?"
+            her "Maybe I will..."
+            "I fell asleep immediately..."
+        else:
+            him "You should get some rest."
+            her "Oh, suddenly you know exactly what I should do? You think I don't know how to take care of myself?!"
+            him "Hey, I'm not telling you what to do, you just seem a little tired, that's all."
+            her "Tired?! I just said I'm sick!"
+            "I went to lay down and fell asleep immediately..."
+
+        "The next morning I felt less tired, but still a little off. I went to work anyway, and had been standing up all day when I started to feel dizzy and sick to my stomach."
+        her "Excuse me, please."
+        brennan "Are you alright? You don't look so good."
+        her "I just need... to rest for a bit..."
+        menu:
+            "I sat down and put my head on my desk. Slowly, the dizziness subsided, but I didn't feel like eating."
+            "Go home":
+                her "Brennan, I'm feeling sick. Can you take care of things here for a bit; I'm going to go home."
+                brennan "Are you sure you're up to walking? Want me to call [his_name]?"
+                her "I'll be fine, thanks."
+                "The fresh air and walking seemed to help some, but I was still glad to finally get home."
+            "Try and get some work done":
+                "I went back out and was able to finish up the day's work, taking two more breaks when I started to feel too light-headed."
+                "It felt good to get home. I still wasn't feeling well so I decided to lie down."
+                him "Are you feeling any better?"
+                her "Not really."
+                him "Sorry to hear that, [her_nickname]. Do you want to stop by the clinic in the morning?"
+                menu:
+                    her "I'm not feeling {b}that{/b} bad, but..."
+                    "Go to the Clinic":
+                        her "It can't hurt to check it out."
+                        him "I'll come with you tomorrow."
+                        "We walked to the clinic holding hands, not saying anything, just watching the sun rise and feeling together."
+                        if (profession == "doctor"):
+                            "I reviewed my own symptoms in my head and decided to take a urine sample first."
+                        else:
+                            "The doctor at the clinic listened to my symptoms and had me give a urine sample."
+                        "The results said..."
+                        him "You're pregnant?!"
+                        her "Oh! I've been so busy I haven't even been thinking about that lately. But...yes, I guess I am."
+                        
+                    "Don't go":
+                        her "I'll be fine. If I don't feel better in a few days, I'll have it checked out."
+                        him "Alright."
+                        "I didn't feel better, but I didn't feel much worse, either. My chest ached, sometimes, though, and I got headaches when I never used to."
+                        "Finally it dawned on me..."
+                        her "Maybe I'm pregnant?"
+                        "Sure enough, I went to the clinic and tested positive for pregnancy."
+                
+            "Run some tests" if (profession == "doctor"):
+                her "Brennan, will you please help me get a blood sample?"
+                brennan "From who?"
+                her "From me."
+                brennan "Well, sure. That's a bit hard to do yourself, isn't it?"
+                "I started laughing, but it wasn't that funny. Somehow that just made it funnier. Brennan wasn't laughing, just looking at me quizzically."
+                "He took the blood sample and we ran the standard tests on it."
+                "Everything was normal except--"
+                brennan "You're pregnant?"
+                her "I guess...I am!"
+                "That explained everything."
+                
+            "Ask the doctor" if (profession != "doctor"):
+                "I went over to the clinic and explained my symptoms. The first thing they had me do was give them a urine sample."
+                "It turned out I was pregnant."
+
+        him "[her_name], that's great!"
+        menu:
+            "How do I feel about it?"
+            "It's awesome!":
+                her "Yeah! We're gonna be parents!"
+            "It's strange.":
+                her "I guess it is. At least I know now what was wrong with me."
+            "It's awful.":
+                her "I hope I don't feel this bad the whole time. I don't know if I can take nine months of feeling this sick."
+        him "I wish it didn't have to be so hard for you, but our little baby is worth it!"
+        her "Our little baby..."
+        "This was going to take some getting used to."
+
+    else:
+        her "[his_name], there's something we need to discuss."
+        him "Oh? What's that?"
+        her "When I went to try to get more birth control, they informed me that they only had enough for six more months. 'We need everyone to help populate the colony,' they said."
+        menu:
+            him "Six months, huh? Do you think we'll be ready by then?"
+            "No way":
+                her "No way! We can barely take care of our farm and a horse; how can we take care of a baby?!"
+                him "I think we're doing pretty good."
+                her "It just feels like one more thing to worry about; I'm already stressed out about food, work, and this whole crazy planet."
+                him "Don't worry; we'll figure something out."
+
+            "Maybe":
+                her "I guess we could be, but...I just don't feel ready yet. Maybe things will be different in six months... or we could always use other methods."
+                him "Yeah, I feel ready, but you're the one that will be carrying the baby, so we can do whatever you think is best."
+                her "Let's not worry about it now. We'll see in six months."
+                if (loved >= 0):
+                    him "Okay, [her_name]. I love you."
+                    her "I love you, too."
+                else:
+                    him "Okay."
+                    her "Yeah."
+                    "And that was that."
+ 
+            "I'm ready now":
+                her "You know, I think I'm ready now."
+                him "Yeah? You've changed your mind from last year?"
+                her "Yeah...let's stop the birth control now, and just see what happens."
+                him "Yes, momma."
+                her "Oh, ick, don't call me momma!"
+                him "You better get used to it! Someday a bunch of kids are going to call you that all the time!"
+                her "That's so weird! But at least they'll be calling you 'daddy', so I won't be alone."
+                him "You'll never be alone."
+                $want_kids = True
+                $made_love += 1   
+            
     return
 
 label monthly_event_15:

@@ -4,7 +4,7 @@
 # Intro Event and the default
 label social_0:
     if (skill_social <= 10):
-        "Aside from [his_name], I had one friend that I felt close to - Sara."
+        "Aside from [his_name], I had one other person I felt close to - Sara."
         "We had met on the ship when [his_name] was meeting with the other farmers."
         sara "I guess you're not a farmer, either, huh?"
         her "Not really. I'm a [profession]."
@@ -27,6 +27,7 @@ label social_0:
         her "Well, you probably know way more about it than I do, at least!"
         sara "Yeah...I could have stayed on Earth, you know... but I wanted to be with my family, and it sounded exciting to see a new planet. Now that we're almost there, though, I'm thinking it will probably just be a lot of work."
         her "It probably will be."
+        sara "But at least there will be lots of new things to take pictures of!"
         "Sara and I talked almost every day after that. Even though she was only seventeen, we had a lot in common, and she had an easy laugh and an understanding smile that made her fun to be around."
         "We tried to have lunch together at least once a week."
     else:
