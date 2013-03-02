@@ -64,7 +64,7 @@ label knowledge_3:
 # Nature hike for edible plants
 label knowledge_4:
     scene bg path with fade
-    "Lily organized a nature hike to tell us more about the local plants, and I went along."
+    "Lily, our resident xenobiologist, organized a nature hike to tell us more about the local plants, and I went along."
     lily "As far as I can tell, this plant, which I call Bulbosa, isn't edible. Its bright orange flowers make a good dye though."
     lily "Alright, take a good look at this next plant and its surroundings. What can you tell me about it?"
     "Lily pointed to a tall flower with what looked like a tongue sticking out of its flower. Its leaves looked furry like ferns, but were hairier than an Earth fern. There no other plants around it, besides a few trees."

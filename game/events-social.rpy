@@ -82,7 +82,7 @@ label social_3:
     if (skill_domestic >= 10):
         "I served make-your-own-wraps, where you could put in beans or cheese or vegetables or whatever you wanted. I had some salsa or salad dressing that people could put on, too. They were delicious, and the kids liked them too."
     else:
-        "I just put out a bunch of beans, rice, fruit, and vegetables, and let people choose what they wanted. It tasted a little bland, but the kids seemed to like it."
+        "I just put out a bunch of beans, crackers, fruit, and vegetables, and let people choose what they wanted. It tasted a little bland, but the kids seemed to like it."
     "Then the kids all played hide-and-seek around the farm while we talked with the Blairs."
     if (profession == "teacher"):
         her "The kids are doing great in school."
@@ -166,7 +166,77 @@ label social_4:
 # Organize community movie night!
 # Watch a neighbor's kids; think about having own kids
 label social_5:
-
+    "One week at Friday lunch group, we were all complaining about our lack of excitement."
+    lily "We all live so close to each other, but it seems like in the evening everyone just wants to go to bed early."
+    her "Well, people who aren't working in town are farming all day, which is pretty tiring."
+    sven "That's true, but don't you get tired of sitting at home all the time? I'm in the library all day for work and the last thing I want to do when I get home is sit around by myself some more."
+    her "I'm pretty busy, but I agree that it'd be fun to do something together as a community."
+    lily "Let's have a community movie night! I was just reading on how we could use a magnifying glass with our tablets to make a projector."
+    sven "Yes, this sounds perfect. A movie is low-key enough that even if you're super tired from farming you should be able to sit through it."
+    sara "And kids like to watch movies too, so we could include everyone."
+    #sven is introduced in knowledge 1, so he might appear here if the player-char hasn't yet met him. I tried to make it clear that he works in the library.
+    her "I know the perfect movie!"
+    menu:
+        "Let's watch a(n)..."
+        "sci-fi drama":
+            her "There's a space opera movie about finding the strength to persist through hardships that I think would be highly entertaining!"
+            sara "Oh gosh is it one of those Star Wars remakes?"
+            her "Well, yes, but isn't it interesting to think about what space travel will be like in the future?"
+            sara "You just like watching it for the cute guys."
+            her "I think everyone enjoys watching good-looking people do stupid things. Plus I already know we have it in the archives!"
+            sven "We do have lots of Star Wars remakes in the archives, but maybe you didn't know that we have some rarer sci-fi movies here too."
+            her "Like what?"
+            sven "So, {i}Time for no man{/i} was originally a tellanovella, but when set in space, it suddenly became a sleeper cult hit in the 2030s!"
+            her "Does it have any guys in it?"
+            sven "I think it has a few. It's not just lesbians if that's what you're asking."
+            sara "Is it appropriate for children?"
+            sven "Sure. There's some innuendo but that goes right over their heads."
+            "We decided to watch {i}Time for no man{/i} the next day in the evening. I sent out a message to the colony e-mail list, and tried to remind everyone I saw to come."
+            "The movie was kind of ridiculous. At one point two cousins realized they were actually sisters, and that their evil uncle was actually their father. Then it turned out he wasn't evil at all, but had been infected with an alien virus that made him act stupid. A feminist organization let them travel the galaxy at light speed to administer vaccines to the rest of civilization, but by the time they got anywhere everyone else had turned into jerks too."
+            him "This movie is ridiculous."
+            her "Yeah, there's no way a virus would only affect men. It's not like our immune systems are all that different."
+            him "What would you do if I turned into a jerk overnight?"
+            menu:
+                "Take you to the doctor.":
+                    her "I would take you in to have your head examined."
+                    him "Because the only way I would be mean to you is if I had brain damage, right?"
+                    her "And if you were mean to me you might get brain damage, if you know what I mean."
+                    him "Oh, you're so fiesty."
+                    menu:
+                        "You'd better believe it.":
+                            her "I know you like it like that."
+                            him "Let's take this indoors!"
+                            $ made_love += 1
+                        "Ugh, stop it.":
+                            her "Stop being so patronizing. It's like you don't take my threats seriously."
+                            him "I'm pretty sure that if we got in a fight I could win. Besides, it's not like you're doing physical labor all day like I am. I'm a lot stronger."
+                            her "Well you don't have to talk down to me like that just because you're stronger."
+                            him "Geez, sorry."
+                            $ loved -= 2
+                "You already are a jerk.":
+                    her "Too late, you're already a jerk."
+                    him "Hey, I know I tease you a lot, but that doesn't mean I'm a jerk."
+                    her "Then I guess I wouldn't notice anything was wrong!"
+                    $ loved -= 2
+            "It seemed like the other families enjoyed the movie too, even though it was pretty ridiculous."
+        "historical mystery action flick":
+            her "Sherlock Holmes would be perfect! It has mystery, suspense, romance, action, and would help educate children about the 1890s."
+            sara "Yeah, and it would encourage kids to try smoking alien weeds."
+            her "Oh come on. We grew up watching films with people drinking all the time and it didn't turn us into alcoholics."
+        "animated art film.":
+            her "Let's put on an old cartoon movie so that the kids will enjoy it too."
+            lily "Oh, let's watch {i}Wall-E{/i}, I always thought that one was cute."
+            her "I was thinking more along the lines of {i}The Old Man and the Sea{/i}."
+            sven "I think that movie would put everyone to sleep."
+            her "It's only forty minutes long!"
+            sven "Let's watch {i}Wall-E{/i}. I haven't seen it in a while and it could start some interesting conversations about what our colony should be like."
+            sara "I agree! Some of my younger siblings have never seen it, and I think they would like it."
+            "We decided to watch {i}Wall-E{/i}. I sent out a message to the colony e-mail list, and tried to remind everyone I saw to come."
+            "The kids enjoyed watching the robot's antics, and the trash-filled city reminded me of some of the things we were trying to do differently in our colony."
+            ## to be continued
+            
+        
+    
     $ skill_social += 10
     $ community_level += 2
     return
