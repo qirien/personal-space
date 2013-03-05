@@ -226,6 +226,19 @@ label social_5:
             her "Sherlock Holmes would be perfect! It has mystery, suspense, romance, action, and would help educate children about the 1890s."
             sara "Yeah, and it would encourage kids to try smoking alien weeds."
             her "Oh come on. We grew up watching films with people drinking all the time and it didn't turn us into alcoholics."
+            sara "The plot of a Sherlock Holmes mystery is also difficult to understand, so it might not hold their interest."
+            sven "Wait, I can think of a historical film with plenty of mystery that kids and adults might like."
+            her "Tell us about it."
+            sven "It's a mini-series called {i}The Adventures of Emily Thompson{/i} about a young girl living in a small town in England during the 1900s. She solves various mysteries including finding missing shoes and pets, culminating in her finding the culprit of a livestock theft."
+            her "Well, that does sound a little more child-friendly than murder mysteries."
+            sara "Let's do it."
+            "I sent out a message to the colony e-mail list, and tried to remind everyone I saw to come."
+            "We had a pretty good turnout, and the kids and adults both found things to laugh at."
+            him "So, the part where the sadistic child was killing sheep with bread-encrusted coins was a little hard for me to believe."
+            her "It could have been worse. The sadistic child could have been a werewolf who was eating them."
+            him "Yeah, but making coins out of copper is a waste of metal!"
+            her "Seriously, they should be making teapots out of them."
+            him "Or you know, wires."
         "animated art film.":
             her "Let's put on an old cartoon movie so that the kids will enjoy it too."
             lily "Oh, let's watch {i}Wall-E{/i}, I always thought that one was cute."
@@ -236,10 +249,42 @@ label social_5:
             sara "I agree! Some of my younger siblings have never seen it, and I think they would like it."
             "We decided to watch {i}Wall-E{/i}. I sent out a message to the colony e-mail list, and tried to remind everyone I saw to come."
             "The kids enjoyed watching the robot's antics, and the trash-filled city reminded me of some of the things we were trying to do differently in our colony."
-            ## to be continued
-            
+            her "I'm so glad the green revolution happened before the whole earth turned into a landfill."
+            him "Yeah, and then no one could make anything because the regulations on materials were so strict."
+            her "Aren't you glad we're here where we can decide those things for ourselves?"
+            him "Yes, I am glad. Are you?"
+            menu:
+                "Am I glad we came here?"
+                "I love it here!" if (loved > 0):
+                    her "Of course I miss my family, but I love our community and working with you to make a place for ourselves."
+                    him "Good, because we're stuck here!"
+                "I don't really like it here" if (loved <= 0): 
+                    her "I think about going home all the time. I wish I hadn't come."
+                    him "Really? I thought you were getting used to it."
+                    her "No, I'm not."
+                    him "Maybe you just need time."
+                    her "You don't wish we could go home?"
+                    him "I love it here! I love that we're going to be able to live off the fruits of our labors and have contact with the land we live on."
+                    her "But we might not survive! And I keep messing things up."
+                    him "Making mistakes is how we'll learn! And even if we end up dying young together... isn't that kind of romantic?"
+                    menu:
+                        "Is dying together romantic?"
+                        "No":
+                            her "It's not romantic. We'll be too dead to appreciate how cute our sacrifice is."
+                            him "Well, I'm happy as long as we're together."
+                        "It could be":
+                            her "If they find our skeletons embracing each other, I guess that could be romantic."
+                            him "That's the spirit!"
+                            $ loved += 5
+                "Most of the time":
+                    her "Most of the time I'm happy to be here. There are lots of things I miss, of course. But it's also exciting to start something new."
+                    him "We're living off the land! We can make our own futures!"
+                    her "Yeah, as long as that future involves farming of some kind."
+                    him "Well, you're not farming."
+                    her "True. But it's going to be a big part of our lives for the foreseeable future, is what I meant."
+                    him "That's the way I like it. There's nothing like farm-fresh food to make you healthy."
         
-    
+    "The families went home as we talked. Sven and Sara and Lily and I congratulated each other for a movie well-watched, and I went home feeling like I helped everyone feel a little closer."
     $ skill_social += 10
     $ community_level += 2
     return
