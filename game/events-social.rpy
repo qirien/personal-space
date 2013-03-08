@@ -183,14 +183,14 @@ label social_5:
         "Let's watch a(n)..."
         "sci-fi drama":
             her "There's a space opera movie about finding the strength to persist through hardships that I think would be highly entertaining!"
-            sara "Oh gosh is it one of those Star Wars remakes?"
+            sara "Oh gosh, is it one of those Star Wars remakes?"
             her "Well, yes, but isn't it interesting to think about what space travel will be like in the future?"
             sara "You just like watching it for the cute guys."
             her "I think everyone enjoys watching good-looking people do stupid things. Plus I already know we have it in the archives!"
             sven "We do have lots of Star Wars remakes in the archives, but maybe you didn't know that we have some rarer sci-fi movies here too."
             her "Like what?"
             sven "So, {i}Time for no man{/i} was originally a tellanovella, but when set in space, it suddenly became a sleeper cult hit in the 2030s!"
-            her "Does it have any guys in it?"
+            her "'No man', huh? Does it have any guys in it?"
             sven "I think it has a few. It's not just lesbians if that's what you're asking."
             sara "Is it appropriate for children?"
             sven "Sure. There's some innuendo but that goes right over their heads."
@@ -204,7 +204,7 @@ label social_5:
                     her "I would take you in to have your head examined."
                     him "Because the only way I would be mean to you is if I had brain damage, right?"
                     her "And if you were mean to me you might get brain damage, if you know what I mean."
-                    him "Oh, you're so fiesty."
+                    him "Oh, you're so feisty."
                     menu:
                         "You'd better believe it.":
                             her "I know you like it like that."
@@ -590,12 +590,14 @@ label social_8:
     $ skill_social += 10
     return
 
+# Family (appears to be?) slacking off and mooching off everyone else;
+# mayor asks [her_name] to see if she can determine what to do
 label social_9:
 
     $ skill_social += 10
     return
 
-# Fill vacancy on Community Council
+# Propose and fill seat on Community Council
 label social_master:
 
     $ skill_social += 10
