@@ -639,7 +639,10 @@ label monthly_event_9:
     return
 
 label monthly_event_10:
-    "Something Bothering Him - What To Do?"
+    her "You're home late, [his_nickname]. Is everything okay?"
+    him "Yeah."
+
+    "Something Bothering Him - Make him talk, cheer him up, or ignore?"
     return
 
 label monthly_event_11:
@@ -784,9 +787,11 @@ label monthly_event_14:
     return
 
 label monthly_event_15:
+    "if pregnant, renewed concern about quality of food and its impact on fetus... but spouse might not agree that the more expensive food is better or whatever.  if not pregnant... maybe spouse gets tired of your cooking or something"
     return
 
 label monthly_event_16:
+    "if pregnant, morning sickness and getting behind on chores; if not pregnant, get sick and get behind on chores. Either way, do you ask your spouse for help or silently take care of it later?"
     return
 
 label monthly_event_17:
@@ -808,4 +813,5 @@ label monthly_event_22:
     return
 
 label monthly_event_23:
+    "birth if pregnant, pregnant if made_love is high enough (ran out of birth control), else what to do if no more BC and still don't want kids"
     return

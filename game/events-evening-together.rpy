@@ -170,6 +170,9 @@ label relax_together_3:
                     $ loved += 5
     return
 
+# TODO: She finds out that one of the requirements for colonists without special
+# training was to be married. Did he only marry [her_name] so he could be a 
+# colonist?
 label relax_together_4:
     return
 
