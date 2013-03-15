@@ -170,12 +170,70 @@ label relax_together_3:
                     $ loved += 5
     return
 
-# TODO: She finds out that one of the requirements for colonists without special
-# training was to be married. Did he only marry [her_name] so he could be a 
-# colonist?
+# Did he only marry [her_name] so he could be a colonist?
 label relax_together_4:
+    scene bg farm_interior with fade
+    "One day [his_name] came in from the fields with a big smile on his face."
+    him "Ah, [her_nickname], you're such a great part of my life. You've brought me love, joy, and laughter. You've even brought me to new worlds, literally! There's no way I could have come here without you."
+    her "What do you mean?"
+    him "Well, I mean, it's a colony, right? They want couples, people that are going to have kids, so they can build up the colony."
+    her "You mean, you wouldn't have been able to come unless we were married."
+    him "Probably not. Farmers aren't that hard to find."
+    her "You never told me that... So part of the reason you married me was so that you could come to Talam."
+    him "No! I mean, that was part of the timing, I guess, but I would have asked you to marry me anyway! That just sort of, made it happen sooner, I guess."
+    menu:
+        her "That..."
+        "Makes sense.":
+            her "That makes sense, I guess. What would it have taken to get you to propose to me, barring extra-terrestrial colonies?"
+            him "A tax break, maybe?"
+            her "You're terrible!"
+            him "I'm kidding, I'm kidding! I guess I was waiting for everything to be just right."
+            her "Well, I'm glad you did propose, finally. I was wondering if I was going to have to do it."
+            him "Sorry it took so long - change is hard, you know?"
+            her "Speaking of which, you should change."
+            him "What? What don't you like?"
+            her "Change out of those clothes! You smell like Lettie."
+            him "What's wrong with Lettie?!"
+            her "Nothing, but I don't invite Lettie to share my bed."
+            him "I see your point."
+            $ loved += 5
+            $ made_love += 1
+            $ relaxed += 2
+
+        "Bothers me.":
+            her "That bothers me. Why didn't you tell me that was one of the factors?"
+            him "Because it's not romantic? It doesn't really sound good to say, 'Hey, I want to be a colonist, and I have to be married, and you're the person I like the most, so want to get married?'."
+            her "Wow, it sounds even worse when you put it like that."
+            him "Exactly! I wanted to get married either way; the whole colony thing just made me quit stalling and ask you."
+            her "I still wish you had told me about that earlier."
+            him "Sorry, [her_nickname]. But I love you, no matter what."
+            her "I love you, too, [his_nickname]. But, next time, please tell me, OK?"
+            him "I will."
+
+            $ loved += 2
+
+        "Is deceitful.":
+            her "That's deceitful. I feel used."
+            him "Why? It's not like I only married you so I could come be a colonist."
+            her "Really? It kind of feels like that."
+            if (not want_kids):
+                her "Also, we're not ready for kids, and who knows when we will be? You didn't promise them we'd have kids, did you?"
+                him "No! I mean, it's sort of expected, but-"
+                her "And you didn't think that was something I should know?!"
+                him "I thought it was obvious! And, anyway, who cares what they think?!"
+                her "I do! Now I feel like, if we don't have kids soon, we're not keeping up our side of the agreement. Even though it was an agreement I knew nothing about!"
+                him "Sorry, I guess I just assumed we'd have kids eventually and it wouldn't really be a big deal."
+                her "..."
+            him "I don't know what you want me to say. I just told you that I love you and everything you've brought into my life, and somehow you've turned it into a big argument."
+            her "I've turned it into an argument?! You're the one that didn't tell me this earlier!"
+            him "I'm sorry, okay?! What more can I say?!"
+            her "Nothing. Just- don't say anything more right now."
+            $ loved -= 5
+            $ relaxed -= 2
+        
     return
 
+# Massage time!
 label relax_together_5:
     scene bg bedroom with fade
     play music "music/Will.ogg" fadeout 2.0

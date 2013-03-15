@@ -601,7 +601,7 @@ label monthly_event_6:
             him "Well, I could burn them all, and then the ashes can fertilize the next crop."
             her "Sounds better than nothing."
             "We piled all the corn plants into a huge bonfire. It burned into the night and made a big plume of smoke."
-            "Our neighbors the Perons came by the see the fire, and we ate roasted insects as we watched their eggs turn to ash."
+            "Our neighbors the Perons came by the see the fire, and we ate roasted insects as we watched the egg-infested crops turn to ash."
         "{i}Ask if anyone else is having the same problem.{/i}" if (skill_spiritual >= 30 or skill_social >= 30):
             her "Let's ask around and see if anyone else has had problems with these pests."
             him "Okay. I'll take Lettie into town; can you ask our neighbors?"

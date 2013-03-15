@@ -19,17 +19,18 @@ label domestic_0:
 label domestic_1:
     scene bg laundry with fade
     show her normal
+    her "Time for laundry!"
+    "I put all the clothes in a big bucket with water and soap, and scrubbed them. Usually that worked fine, but some of the clothes were really dirty."
     her "Washing these clothes by hand is taking forever. I wonder how I could speed it up."
-    "Currently you're agitating the clothes in soapy water to clean them."
     menu:
         "Leave the clothes soaking while you finish doing the dishes.":
-                her "Maybe I just need to let the soap do my work for me."
-                "Twenty minutes later..."
-                her "That helped a bit! I should leave clothes soaking more often."
-                $relaxed +=5
+            her "Maybe I just need to let the soap do my work for me."
+            "Twenty minutes later..."
+            her "That helped a bit! I should leave clothes soaking more often."
+            $relaxed +=5
 
         "Just keep doing it the same way.":
-                her "Well, I guess there's no getting around hard work."
+            her "Well, I guess there's no getting around hard work."
         
     $ skill_domestic += 10
     return
