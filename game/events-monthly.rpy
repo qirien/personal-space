@@ -528,7 +528,7 @@ label monthly_event_5:
 
     return
 
-# Alien Pests
+# MONTH 6 - Alien Pests
 label monthly_event_6:
     #biological pesticide--fungus
     "Our crops were starting to give and abundant harvest, but unfortunately, with the rainy season starting, the corn was being attacked by alien insects."
@@ -626,8 +626,75 @@ label monthly_event_6:
     $ community_level += 5
 return
 
+# MONTH 7 - Broken computer - honesty?
 label monthly_event_7:
-    "How Honest Should You Be?"
+    "One day I was doing the dishes at breakfast. [his_name] had already started working in the fields, so I was alone. I noticed he had left his computer pad next to the wash basin."
+    her "I'll just move this out of the way so it doesn't get-- AHHH!"
+    "It slipped out of my hands right into the soapy dishwater."
+    her "Oh no!"
+    "I took it out and dried it off, but it wouldn't turn on. Water must have seeped inside."
+    $ fixed_computer = False
+    menu broken_computer_pad:
+        "What should I do?"
+        "{i}Try and fix it{/i}" if ((skill_technical >= 40) and (not fixed_computer)):
+            "I thought that if it dried out, it would probably work just fine, so I opened the cover and set it on the windowsill in the sun to dry."
+            "Sure enough, after a few hours, it turned on just fine."
+            $ fixed_computer = True
+            "But there was still the question of whether to tell him about it or not..."
+            "On the one hand, it works just fine, so he doesn't need to know about it, right?"
+            "On the other hand, I don't want to keep secrets from [his_name], even dumb secrets. I want us to be able to trust each other completely."
+            jump broken_computer_pad
+        "Put it back and pretend not to know what happened":
+            "I put it back where I found it. It was just an accident, so he doesn't need to know it was my fault, right?"
+            "Even so, I was nervous when he got home."
+            him "Hey there, [her_nickname]."
+            her "Hi."
+            "He washed his hands, and then picked up his computer pad."
+            if fixed_computer:
+                "I think he was checking his messages; it seemed to work fine. I started to feel a little less nervous."
+                "I felt kind of bad for lying to him, but I didn't want him to be mad at me or think I was incompetent...it's not like I was lying about something important, right?"
+                $ loved -= 1
+                $ relaxed -= 2
+            else:
+                him "Hey, how come this won't turn on?"
+                her "Oh, your computer's not working?"
+                him "Yeah, it was working fine this morning..."
+                her "Hmmm, I don't know."
+                him "Well, I guess I'll take it in to the tech guys tomorrow if it's still not working. Do you mind if I use yours to check my messages?"
+                her "Sure, go ahead."
+                "Hopefully they would be able to fix it... "
+                "I felt kind of bad for lying to him, but I didn't want him to be mad at me or think I was incompetent...it's not like I was lying about something important, right?"
+                "Anyway, the next day he took it in and they were able to fix it, so it didn't even matter."
+                $ loved -= 2
+                $ relaxed -= 5
+        "Leave it on the table and tell him when he gets home":
+            "I left it on the table so I would remember to tell him about it when he got home."
+            him "Hey there, [her_nickname]"
+            her "Hi."
+            "He washed his hands, and then picked up his computer pad."
+            him "Did I leave this here this morning?"
+            her "No, actually, you left it by the wash basin...and it fell in while I was washing the dishes."
+            if fixed_computer:
+                her "But I fixed it, so don't worry. It just needed to air out a little."
+                him "Okay, hopefully everything still works fine..."
+                "I waited while he logged on and checked a few things."
+                him "Seems to be fine. I probably shouldn't leave my computer pad there, huh?"
+                her "Probably not. Sorry I dropped it in the water, though."
+                him "It's okay; no harm done."
+
+            else:
+                him "That explains why it won't turn on..."
+                her "I'm really sorry; I feel so clumsy. I was trying to move it, so it wouldn't fall in, but it slipped out of my hands."
+                him "..."
+                her "I'm sorry..."
+                him "It's okay- I shouldn't have left it by the washtub. These things happen."
+                her "Maybe they can fix it in town?"
+                him "I'll check tomorrow."
+                her "In the meantime, do you want to use my computer? It's only fair."
+                him "Thanks, yeah."
+                "I could tell he was kind of disappointed, but I felt glad I wasn't hiding anything from him."
+                "And when he took it in, they were able to fix it so it worked just fine."
+                $ loved += 2
     return
 
 label monthly_event_8:
@@ -657,7 +724,7 @@ label monthly_event_13:
     "Anniversary - Lettie is Sick"
     return
 
-# Pregnancy or not?
+# MONTH 14 - Pregnancy or not?
 label monthly_event_14:
     scene bg farm_interior with fade
     if (want_kids and (made_love >= 5)):
@@ -758,7 +825,7 @@ label monthly_event_14:
                 her "No way! We can barely take care of our farm and a horse; how can we take care of a baby?!"
                 him "I think we're doing pretty good."
                 her "It just feels like one more thing to worry about; I'm already stressed out about food, work, and this whole crazy planet."
-                him "Don't worry; we'll figure something out."
+                him "Don't worry; we'll figure something out. We can always... get creative."
 
             "Maybe":
                 her "I guess we could be, but...I just don't feel ready yet. Maybe things will be different in six months... or we could always use other methods."

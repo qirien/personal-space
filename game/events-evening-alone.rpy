@@ -114,6 +114,8 @@ label relax_alone_5:
     return
 
 label relax_alone_6:
+    scene bg bedroom
+    "I didn't mean to read the whole thing, but when I picked up one of my favorite books from my childhood I just had to finish it. It wasn't as exciting and unpredictable as I remembered, but I still love the characters and the writing swept me in as I read through the whole thing."
     $ relaxed += 5
     $ loved -= 2
     return
@@ -180,7 +182,7 @@ label relax_alone_d:
 
 label relax_alone_e:
     scene bg farm_interior
-    "I played some video games that I enjoyed."
+    "I played a video game that I enjoyed."
     $ relaxed += 5
     $ loved -= 2
     return
