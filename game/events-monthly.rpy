@@ -653,8 +653,8 @@ label monthly_event_7:
             if fixed_computer:
                 "I think he was checking his messages; it seemed to work fine. I started to feel a little less nervous."
                 "I felt kind of bad for lying to him, but I didn't want him to be mad at me or think I was incompetent...it's not like I was lying about something important, right?"
-                $ loved -= 1
-                $ relaxed -= 2
+                $ loved -= 2
+                $ relaxed -= 5
             else:
                 him "Hey, how come this won't turn on?"
                 her "Oh, your computer's not working?"
@@ -664,12 +664,41 @@ label monthly_event_7:
                 her "Sure, go ahead."
                 "Hopefully they would be able to fix it... "
                 "I felt kind of bad for lying to him, but I didn't want him to be mad at me or think I was incompetent...it's not like I was lying about something important, right?"
-                "Anyway, the next day he took it in and they were able to fix it, so it didn't even matter."
-                $ loved -= 2
-                $ relaxed -= 5
+                "The next day at dinner, it looked like his computer was working."
+                her "Oh, you got your computer working?"
+                him "Yeah...I opened it up, and it was wet inside. Like someone had dropped it in some water."
+                menu:
+                    "Tell him what happened.":
+                        her "I dropped it in the sink the other day...that's why it's wet. It was an accident; I'm sorry."
+                        him "So, you lied to me."
+                        her "Yes, I'm sorry."
+                        him "Wow, I can't believe you didn't just tell me about i."
+                        her "What's the big deal? It works now, doesn't it?"
+                        him "This isn't about the computer! If you lie about something small like that, who knows what else you might lie about?"
+                        her "Hey, I told you about it eventually."
+                        him "Only when you got caught in your lie!"
+                        her "I said I was sorry, okay?!"
+                        him "...Okay."
+                        $ loved -= 2
+                        $ relaxed -= 5
+                    "{i}Apologize sincerely.{/i}" if (skill_spiritual >= 40):
+                        her "I'm sorry, [his_name]. I dropped it in the sink, and then I didn't tell you about it because I didn't want you to know how clumsy I was. But I should have told you; I'm so sorry."
+                        him "The computer's not a big deal, but we need to always be honest with each other."
+                        her "I know; it was stupid of me to lie about it."
+                        him "It's okay, [her_name]."
+                        "He hugged me and I could tell he had forgiven me."
+                    "Pretend you don't know.":
+                        her "I wonder how that happened?"
+                        him "You really don't know anything about it?"
+                        her "No, sorry. Anyway, it works now, so what does it matter?"
+                        him "..."
+                        "He dropped the subject, but I could tell he didn't believe me. Well, whatever, it's not a big deal."
+                        
+                        $ loved -= 5
+                        $ relaxed -= 10
         "Leave it on the table and tell him when he gets home":
             "I left it on the table so I would remember to tell him about it when he got home."
-            him "Hey there, [her_nickname]"
+            him "Hey there, [her_nickname]."
             her "Hi."
             "He washed his hands, and then picked up his computer pad."
             him "Did I leave this here this morning?"
@@ -694,7 +723,7 @@ label monthly_event_7:
                 him "Thanks, yeah."
                 "I could tell he was kind of disappointed, but I felt glad I wasn't hiding anything from him."
                 "And when he took it in, they were able to fix it so it worked just fine."
-                $ loved += 2
+            $ loved += 2
     return
 
 label monthly_event_8:
@@ -706,11 +735,183 @@ label monthly_event_9:
     return
 
 label monthly_event_10:
-    her "You're home late, [his_nickname]. Is everything okay?"
-    him "Yeah."
+    "It was our anniversary, according to the Earth calendar.  I think we had missed a few while we were on the shuttle? Anyway, it felt like we had been married about a year."
+    her "Happy Anniversary!"
+    him "Really? Today?"
+    her "Yeah! Well, it depends on how you calculate it, but I feel like celebrating it today!"
+    him "Great, what do you want to do?"
+    her "I'll make us a nice dinner tonight."
+    him "Okay, I'll bring home a surprise for you."
+    her "Really?"
+    him "Yeah! I mean, don't expect too much, but I've got an idea."
+    "All day long I looked forward to spending a nice evening together. I got some special ingredients at the storehouse, and made a nice dessert and everything. But [his_name] wasn't home yet."
+    her "(He knows we were going to celebrate today! Where could he be?)"
+    "I tried calling him on the radio, and messaging him on the computer, but he didn't answer."
+    "Finally, just when I was about to give up and eat without him, he stepped in."
+    menu:
+        "He's so late..."
+        "Is everything okay?":
+            her "You're home late, [his_nickname]. Is everything okay?"
+            him "Yeah."
+            $ loved += 1
+        "Did you forget about tonight?":
+            her "You're home late - did you forget about our anniversary dinner tonight?"
+            him "Yeah."
+        "Where have you been?!":
+            her "Where have you been?! I've been waiting here for an hour!"
+            $ loved -= 1
+    "He didn't look at me, just washed his hands and sat at the table. He was reading on his computer pad while we ate dinner.  We ate in silence for a few minutes. I thought maybe I'd change the subject."
+    her "Something funny happened at work today."
+    him "Yeah?"
+    her "Little Sasha, you know, the Blair's youngest, came by with his mom, and he said, 'I am an alien that looks like a kid. I really am. I'm not pretending.'"
+    him "Yeah?"
+    her "Yeah, it was funny, because he's so serious about it..."
+    him "Mmmmm."
+    menu:
+        "What should I say?"
+        "Are you listening to me?":
+            if (relaxed >= 0):
+                her "(Is he even listening to me?!)"
+                her "Also, I was thinking after dinner I'd take off all my clothes and parade downtown."
+                him "Yeah."
+                her "Why don't you come with me?"
+                him "Mmm-hmmm."
+                her "Great! What song shall we sing?"
+                him "Hmmm- what?"
+                her "What song are we going to sing as we're dancing around town naked?"
+            else:
+                "Are you even listening to me?!"
+                $ loved -= 5
+            "He just looked at me for a minute, then shook his head."
+            him "Sorry, [her_name], not right now. I've got to check on something."
+            jump follow_him
 
-    "Something Bothering Him - Make him talk, cheer him up, or ignore?"
+        "{i}What's bothering you?{/i}" if ((skill_spiritual >= 40) or (skill_knowledge >= 40)):
+            her "You seem troubled. What's bothering you, [his_nickname]?"
+            "He was quiet for a minute, finishing up his dinner. I was about to ask again, when he said,"
+            him "Sorry, [her_name]. I can't talk about it right now. I've got to go check on Lettie."
+            her "Is she okay?"
+            him "I don't know."
+            "He headed out the door."
+            jump follow_him
+
+        "(Say nothing)":
+            "I figured he would tell me what was bothering him when he was ready."
+            jump anniversary_next_day
+
+label anniversary_next_day:
+    "He didn't come home that night, just stopped in for a quick breakfast early in the morning and then left again. I didn't have a chance to talk to him again until that evening when I got home."
+    him "Hey, [her_nickname]."
+    her "Hi, are you okay?"
+    him "Huh? Yeah, everything's fine now."
+    her "What happened? Last night you were really worried about something."
+    him "Oh, it was Lettie. I think she ate something poisonous while she was grazing - she was really sick. But she's doing better today; I think she'll be fine."
+    her "Oh, I'm glad she's okay."
+    him "Yeah, me too.\n Sorry about last night - I know we were going to celebrate our anniversary and everything, but I just couldn't celebrate when I was so worried about her. But I did get you something."
+    her "What?"
+    "He pulled out some wildflowers - he must have picked them earlier today. He had put them in an old glass bottle for a vase."
+    him "The little bit of beauty these flowers bring can't compare to the joy you bring to my life. They won't last forever, but my love for you will."
+    menu:
+        "What should I say?"
+        "They're lovely!":
+            her "Oh, they're lovely! Thank you!"
+            him "Sorry it's not much..."
+            her "It's just right. I love you, too."
+        "Thank you.":
+            her "Thank you."
+            him "Sorry it's not much."
+            her "It's okay; we don't have much."
+            him "But I'm so glad I have you."
+        "At least it's not another cheesy poem.":
+            her "Ha ha, at least it's not a cheesy poem like for my birthday."
+            him "Hey! I worked hard on that poem! I poured out my heart to you!"
+            her "I know, and it was really sweet... but also really cheesy."
+            him "Well, at least I learned my lesson."
+            her "I think there's still a few things you could learn."
+            him "Are you going to teach me?"
+    "I didn't even have time to set the flowers down before he wrapped his arms around me. I kissed his chin, then his lips, and we forgot about everything else for a while..."
+    $ made_love += 1
     return
+
+label follow_him:
+    menu:
+        "Go with him.":
+            her "I'll help you."
+            him "Okay."
+            "We walked to the small barn where the animals could sleep at night, and where we could keep hay dry. Lettie was inside, twitching and breathing hard."
+        "Follow him quietly.":
+            "I waited until he left, then I silently lifted the latch and followed him out."
+            "He headed for our small barn. I followed him inside, where I saw his horse Lettie.  She was twitching and breathing hard."
+        "Let him go.":
+            "He'd tell me what was bothering him when he was ready. I decided to settle down with a book and wait until he came back."
+            jump anniversary_next_day
+
+    her "What's wrong with her?"
+    him "I think she ate something bad. Usually she's fine grazing on the things here, but maybe it was a strange plant she didn't know was poisonous?"
+    if (profession == "doctor"):
+        her "Can you induce vomiting?"
+        him "No...horses can't vomit."
+        her "I can give her some medicine to help the pain at least..."
+        him "Please do; I'm worried she's going to hurt herself."
+        "I did a quick search on my computer to see what medicines were safe for horses.  Then I got my bag and gave her an analgesic. She seemed to calm down a little."
+    else:
+        her "Oh no! What can we do?"
+    him "Maybe we can help whatever's bothering her to pass through. Do we have any mineral oil? Or milk of magnesia?"
+    if (profession == "crafter" or skill_creative >= 40):
+        her "They have some mineral oil in the workshop; I'll get it."
+    elif (profession == "doctor"):
+        her "There's some laxatives at the clinic; I'll get some."
+    else:
+        her "Somebody's got to have some! I'll ask Ilian at the storehouse."
+        "I got on my computer and sent him a message. I also sent one to the doctor and the Blairs, in case they had any ideas."
+        "Ilian got back to me pretty quick and said he could get some and he'd meet me at the storehouse."
+
+    if (skill_physical >= 40):
+        "I ran all the way there, no problem. Good thing I was in shape."
+    else:
+        "I walked and jogged as fast as I could."
+        $ relaxed -= 5
+    "I got the laxative and returned to [his_name] and Lettie."
+    "He had me hold Lettie still while he measured it out and administered it to her. I was amazed how much Lettie trusted him."
+    "She didn't seem to feel any better right away, but I knew this kind of medicine takes awhile to work."
+    him "I'm going to take her for a little walk - why don't you get some rest?"
+    menu:
+        "Should I get some rest?"
+        "I'll stay with you.":
+            her "I'll stay with you."
+            him "Okay."
+            "We walked around with Lettie for a while, and then we let her rest and have plenty of water to drink. She still didn't seem to feel better, but she wasn't getting worse, either."
+            "[his_name] sat down in some clean hay. It was a little scratchy, but I sat down next to him."
+            "I must have fallen asleep, because I woke up and it was morning. We had spent all night in the barn..."
+
+        "Okay, hope she feels better.":
+            her "I think I will. I hope she feels better, soon."
+            him "Thanks, [her_name]."
+            "I didn't sleep that well that night."
+            "The next morning, I decided to check on Lettie and [his_name]."
+
+    "[his_name] was already up, talking to Lettie in a soft voice and petting her nose. She wasn't shaking any more, and her breathing seemed more regular."
+    her "She seems better!"
+    him "Yeah, I hope so. I'll give her some really good food today and let her take it easy for a while."
+    her "Well, I have to get to work, but I'll see you this evening."
+    him "Hey, thanks for staying with us, and helping out. It was a lot better not having to wait alone."
+    her "You're welcome. I'm glad we could help her."
+    "He turned to me and wrapped his arms tight around me. His voice was a little hoarse as he whispered,"
+    menu:
+        him "Everything's so fragile...\nI love you, [her_name]."
+        "I love you, too.":
+            her "I love you too..."
+        "You owe me big time.":
+            "I pulled away enough to poke at his chest sternly."
+            her "You owe me, [his_nickname]. Last night was our anniversary dinner - I don't think you even noticed because you were so distracted - but you owe me a fabulous night tonight."
+            him "Our anniversary! I'm so sorry - but I will make it up to you tonight."
+            her "Shall I make a list for you?"
+            him "I think I know what you like."
+            $ made_love += 1
+    $ loved += 10
+    $ relaxed += 2
+    return
+
 
 label monthly_event_11:
     "Jealous of New Friend"
@@ -721,7 +922,7 @@ label monthly_event_12:
     return
 
 label monthly_event_13:
-    "Anniversary - Lettie is Sick"
+    "On the Jury for a Crime"
     return
 
 # MONTH 14 - Pregnancy or not?

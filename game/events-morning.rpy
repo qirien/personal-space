@@ -116,10 +116,10 @@ label work_1:
 
         her "It's a comminuted fracture; it will take quite a while to heal."
         "I was just about to put him under so I could put in some pins when the radio crackled and I heard Sara."
-        "Sara on the radio" "Doctor! You've gotta come right away; My little brother stopped breathing - I think he swallowed something."
+        "Sara on the radio" "Doctor! You've gotta come right away; My brother stopped breathing - I think he swallowed something."
         "I started out the door while I talked to her on the radio. I hated to leave James alone, but this was urgent."
         her "I'm on my way. How old is he?"
-        "Sara on the radio" "He's three!"
+        "Sara on the radio" "It's Sasha, he's three!"
         her "Do you know how to do the Heimlich?"
         "Sara on the radio" "Yes! I mean, I've never done it before, but..."
         her "Do it! Put your fist right above his belly button, support it with your other hand, and push in and up forcefully."
