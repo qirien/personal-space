@@ -726,14 +726,17 @@ label monthly_event_7:
             $ loved += 2
     return
 
+# MONTH 8
 label monthly_event_8:
     "Conflict of Interest: Community vs. Spouse"
     return
 
+# MONTH 9
 label monthly_event_9:
     "Different Date Ideas"
     return
 
+# MONTH 10 - Anniversary / Lettie is sick!
 label monthly_event_10:
     "It was our anniversary, according to the Earth calendar.  I think we had missed a few while we were on the shuttle? Anyway, it felt like we had been married about a year."
     her "Happy Anniversary!"
@@ -912,15 +915,17 @@ label follow_him:
     $ relaxed += 2
     return
 
-
+# MONTH 11
 label monthly_event_11:
     "Jealous of New Friend"
     return
 
+# MONTH 12
 label monthly_event_12:
     "Frustration with Work"
     return
 
+# MONTH 13
 label monthly_event_13:
     "On the Jury for a Crime"
     return
