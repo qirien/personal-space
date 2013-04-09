@@ -345,7 +345,7 @@ label work_2:
 
     return
 
-# Something bad happens and she confides in co-worker
+# Something bad happens - she can't fix an illness, thing, or kid - she confides in co-worker
 label work_3:
     $ times_worked += 1
     

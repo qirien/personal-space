@@ -39,7 +39,7 @@ label spiritual_1:
     return
 
 label spiritual_2:
-    "One of the books Naomi loaned me was the Dhammapada, a collection of sayings of the Buddha. A lot of it seemed pretty obvious, but I was struck by one part in particular..."
+    "One of the books Naomi loaned me was the Dhammapada, a collection of sayings of the Buddha. There were a lot of good teachings, but I was struck by one part in particular..."
     her "\"For hatred does not cease by hatred at any time: hatred ceases by love, this is an eternal rule.\""
     her "..."
     her "I don't really {b}hate{/b} anyone, but I think the same thing could be said for disagreements, or times when I feel mad. You don't stop arguing by arguing; you stop arguing with love and seeing the other person's point of view."
@@ -52,6 +52,7 @@ label spiritual_2:
 label spiritual_3:
     scene bg talam with fade
     "I watched the sun set while flying creatures gathered in the sky."
+    her "They seem so free and at peace... Animals never worry about what someone's saying behind their backs, or try to get other animals in trouble, or worry about their childhoods... I could probably learn a lot from them."
     $ skill_spiritual += 10
     return
 
@@ -60,10 +61,26 @@ label spiritual_4:
     "Another book Naomi loaned me was the Hindu Upanishads."
     her "\"That one, who is able to visualize the presence of Atma (the Soul) in all other moving things and even creatures and is able to visualize the presence of all such things within the Atma, never gets angry and he never hates anything in life.\""
     her "So...I should try to visualize the souls of all the living things?"
-    her "Ugh, even those nasty bugs that sneak in the cracks of our house to drink out of our wash basin?!"
+    her "Ugh, even those nasty bugs that sneak in the cracks of our house to drink out of our wash basin?! I can try..."
+    "I thought about it for a few minutes."
     her "I guess even they have a soul of sorts...they are just thirsty, aren't they? They're not {b}trying{/b} to scare the crap out of me in the morning. Poor things..."
     her "...and I guess I should try to visualize the souls of other people, too."
-    #TODO give example?
+    menu:
+        "Whom should I think about?"
+        "[his_name]":
+            her "[his_name]'s soul... Sometimes he acts kind of rude, but I think that is usually when he is worried about something. He probably feels like the whole farm is his responsibility, and if anything goes wrong he has to fix it on his own."
+            her "So instead of getting mad at him for being rude, maybe I could try and see what he's worried about."
+        "My boss":
+            her "I hate it when Mayor Grayson tells me how to do my job... but how does he see the situation?"
+            her "..."
+            her "I guess he probably is worried about the colony, and wants to make sure everything goes well so that we can all survive together."
+            her "What a huge responsibility that would be! And he actually does a good job, most of the time.  He could use my support, not my annoyance."
+        "Sara":
+            her "Sara comes to me about every little problem...sometimes it gets kind of annoying."
+            her "But I know she doesn't really have any other friends, and her husband isn't much of a talker, either."
+            her "She always seems to feel better after we talk...maybe if I can keep in mind how important it is to her I can be a better listener and friend to her."
+
+    "Thinking about another person's perspective did help me to understand them better, so maybe I wouldn't get mad at them as easily in the future."
     
     $ skill_spiritual += 10
     return
@@ -115,23 +132,23 @@ label spiritual_6:
         "What should I say?"
         "I think the hat looks fine.":
             her "I think the hat looks fine. It's not like the baby's going to care if it's a little crooked; he'll just be happy to have a mom who loves him enough to make him a hat at all."
-            "She laughed"
+            "She laughed."
             "Helen" "You have a point there. Hopefully it will at least stay on."
-        "The problem is with this row of stitches here." if (skill_creative >= 60) :
+        "{i}The problem is with this row of stitches here.{/i}" if (skill_creative >= 60) :
             her "The problem is with this row of stitches here. See?"
             "Helen" "Oh, you're right! I'll have to redo these last six rows..."
             her "The rest of it looks great; do you like knitting?"
         "It must be hard to stay in bed all day.":
             her "It must be hard to stay in bed all day."
             "Helen" "It's not that hard; all I have to do is sit here. Like a hen sitting on her eggs, keeping this baby alive is about all I'm good for these days."
-        "I'm expecting, too" if is_pregnant:
+        "{i}I'm expecting, too{/i}" if is_pregnant:
             her "I'm expecting, too."
             "Helen" "Oh? Congratulations."
             her "Thanks...It's a weird feeling, isn't it?"
             "Helen" "What is?"
             her "Knowing that someone else, a little stranger, is depending on you so much."
             "Helen" "That's true..."
-        "I wish I was expecting, too" if want_kids & (is_pregnant == False):
+        "{i}I wish I was expecting, too{/i}" if want_kids and (not is_pregnant):
             her "I wish I was expecting, too."
             "Helen" "Oh...sorry."
             her "Yeah, we really want to have kids, but who knows how long it might take?"
@@ -141,7 +158,7 @@ label spiritual_6:
     "We sat in silence for a few minutes. I didn't know what to say. I hoped Naomi would say something wise and comforting, but she didn't."
     "Helen" "The truth is, I hate knitting."
     her "You do?"
-    "Helen" "Yes! But the one thing I hate more than knitting is feeling useless! I wish I could be helping Jan with the garden, or working at the school, or {b}something{/b} other than sitting around for three more months!"
+    "Helen" "Yes! But the one thing I hate more than knitting is feeling useless! I wish I could be helping Ilian with the garden, or working at the library, or {b}something{/b} other than sitting around for three more months!"
     "Helen" "At least this way I'm accomplishing something, even if it's just embarassing myself."
     her "Helen, it's not how much we get done that counts."
     "Helen" "What does count, then?"
@@ -180,7 +197,11 @@ label spiritual_7:
     "Today I was reading part of the Tao Te Ching."
     her "\"I treat those who are good with goodness,\nAnd I also treat those who are not good with goodness.\nThus goodness is attained.\""
     her "\"I am honest with those who are honest,\nAnd I am also honest with those who are dishonest.\nThus honesty is attained.\""
-    her "I guess the only person whose goodness or honesty I have any control over is myself."
+    her "I guess the only person whose goodness or honesty I have any control over is myself. If people were only nice when other people were nice, soon no one would feel like they had to be nice."
+    her "I guess that's kind of like turning the other cheek, isn't it?"
+    "There were a lot of teachings that seemed to be in common across different religions, even if their theology and cultures were widely different."
+    her "Some of these scriptures are so old... people sacrificed a lot to make sure they were passed down to future generations... What wisdom will I pass on to future generations?"
+    "I thought about that for a long time."
 
     $ skill_spiritual += 10
     return
@@ -199,7 +220,7 @@ label spiritual_8:
 label spiritual_9:
     scene bg wedding with fade
     "Sometimes I went to the worship services that Sister Naomi led."
-    naomi "...and all are alike unto God. He invites all to come unto him and partake of his goodness. Do you think it matters what planet we are on?  Of course it doesn't. We all have the same access to divine inspiration and guidance, no matter where we are."
+    naomi "...and all are alike unto God. We are all invited to come and partake of goodness and peace. Do you think it matters what planet we are on?  Of course it doesn't. We all have the same access to divine inspiration and guidance, no matter where we are."
     naomi "Now let us pray."
     "I thought she was going to pray for us, but instead we had a few minutes of silence where everyone could pray on their own."
     menu:
