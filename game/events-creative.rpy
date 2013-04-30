@@ -8,34 +8,17 @@ label creative_0:
 
     return
 
+# Weave Placemats
 label creative_1:
     scene bg path with fade
     "On my way back from work, I found some tall, wide weeds that had grown very quickly. I wanted to work on some weaving, so I took some home and made two placemats with it."
     $ skill_creative += 10
     return
 
+# Work in the storehouse?
 label creative_2:
-    scene bg fields with fade
-    "I was weeding in the backyard when I found some wildflowers. They reminded me of clover, so I made a daisy-chain circlet out of them. It was fun."
-    menu:
-        "Make one for [his_name] too.":
-            him "It looks like you had some fun this afternoon."
-            her "I made one for you too!"
-            him "What am I, king of the faeries?"
-            her "And I'm the queen! All the insects will obey our orders!"
-            him "Maybe if those orders include eating everything in sight!"
-            $loved += 5
-            
-        "Make matching flower bracelets.":
-            him "Glad to see those weeds are getting some practical use!"
-            her "Well, jewelry isn't exactly practical, but it is fun."
-            him "Shall I address you as Queen Mab from now on?"
-            her "Yes. I'll fulfill all your wishes... in your dreams."
-            him "Ooo, harsh. But being with you is like a dream come true, so does that mean you'll fulfill my wishes here?"
-            "You get in a tickle fight, and one of your flower bracelets falls off. It was fun while it lasted."
-            $loved += 5
-            $ made_love += 1
-                
+
+
     $ skill_creative += 10
 
     return

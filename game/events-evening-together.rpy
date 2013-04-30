@@ -206,7 +206,7 @@ label relax_together_4:
             her "Wow, it sounds even worse when you put it like that."
             him "Exactly! I wanted to get married either way; the whole colony thing just made me quit stalling and ask you."
             her "I still wish you had told me about that earlier."
-            him "Sorry, [her_nickname]. But I love you, no matter what."
+            him "I'm sorry, [her_nickname]. But I do love you, no matter what."
             her "I love you, too, [his_nickname]. But, next time, please tell me, OK?"
             him "I will."
 
@@ -242,11 +242,11 @@ label relax_together_5:
     show her normal at right
     her "Are you okay?"
     him "Yeah, I'm just really sore from all the digging I've been doing lately."
-    if (relaxed < 0):
+    if ((relaxed < 0) and (loved < 0)):
         her "Yeah, I feel pretty tense, too."
         "I could have rubbed his shoulders, I guess, but I was just too tired."
 
-    elif (loved >= 0):
+    else:
         her "Want me to rub your shoulders?"
         him "I would love that!"
         "I started off gently. His muscles were so tight, I was amazed he could move at all. I gradually kneaded harder, trying to tell what sorts of massage he liked."
@@ -281,10 +281,10 @@ label relax_together_6:
     him "Any clothes look fancy on you! But I can't tell you where we're going; it's a suprise."
     her "Okay, let me get ready, then. I can at least brush my hair."
     "(Where can we be going?)"
-    him "Now put this blindfold on"
+    him "Now put this blindfold on."
     her "You're not serious, are you?!"
     him "I'm totally serious!"
-    scene bg black with fade
+    scene black with fade
     "I let him blindfold me and we left the house.  He spun me around so I couldn't tell which direction we were going, and then we hiked for about twenty minutes or so. He held my hand so I didn't trip."
     her "It's a good thing I didn't actually put on fancy clothes, since this isn't exactly level terrain."
     him "We're almost there."
@@ -312,29 +312,32 @@ label relax_together_6:
         "Funny":
             her "Oh, you...! You always make me laugh."
             him "I like it when you laugh."
+            her "It's too bad there's so many rocks here..."
         "Sexy":
             her "Should we get started like this...?"
             him "Maybe a little bit of this?"
+            her "It's too bad there's so many rocks here..."
         "Exasperating":
-            her "Oh, you...!"
-            him "Ha ha, I'm just kidding."
+            her "Is everything about sex to you?!"
+            him "Ha ha, I'm just kidding. And, anyway, it's hard to think of anything else when I'm with you."
+            her "..."
+            $ loved -= 2
 
-    her "It's too bad there's so many rocks here..."
-    him "Come over here, it's softer."
+    him "Come sit down over here, it's softer."
     her "Is this our mattress?! You were planning this all along!"
     him "It never hurts to be prepared..."
     menu:
         "That's..."
         "Romantic":
-            her "You're so romantic."
+            her "You're so romantic. You thought of everything."
             him "I love you, [her_name]."
             $ made_love += 1
         "Logical":
-            her "Yeah, that makes sense."
+            her "Yeah, that makes sense. You really planned this out, didn't you?"
             him "I love you, [her_name]."
             $ made_love += 1
         "Presumptuous":
-            her "That's pretty presumptuous. You think that just because you setup some fancy dinner that you're automatically going to get some?"
+            her "That's pretty presumptuous. You think that just because you setup a fancy dinner that you're automatically going to get some?"
             him "No! I mean, I was thinking it would be a nice end to the evening, but we don't have to. I just thought it might be romantic."
             her "Well, it's not. You can't just assume things like that."
             him "Sorry for assuming my own wife would want to make love to me."
@@ -352,10 +355,133 @@ label relax_together_6:
     return
 
 label relax_together_7:
+    scene bg fields with fade
+    "I was weeding in the backyard when I found some wildflowers. They reminded me of clover, so I made a daisy-chain circlet out of them. It was fun."
+    menu:
+        "Make one for [his_name] too.":
+            him "It looks like you had some fun this afternoon."
+            her "I made one for you too!"
+            him "What am I, king of the faeries?"
+            her "And I'm the queen! All the insects will obey our orders!"
+            him "Maybe if those orders include eating everything in sight!"
+            $loved += 5
+            
+        "Make matching flower bracelets.":
+            him "Glad to see those weeds are getting some practical use!"
+            her "Well, jewelry isn't exactly practical, but it is fun."
+            him "Shall I address you as Queen Mab from now on?"
+            her "Yes. I'll fulfill all your wishes... in your dreams."
+            him "Ooo, harsh. But being with you is like a dream come true, so does that mean you'll fulfill my wishes here?"
+            "You get in a tickle fight, and one of your flower bracelets falls off. It was fun while it lasted."
+            $loved += 5
+            $ made_love += 1
+                
+    $ skill_creative += 5
     return
 
+# He wants to go to church services, you can go with him or not.
 label relax_together_8:
+    scene bg farm_interior with fade
+    him "Hey, [her_nickname], I was going to go to church services today... do you want to come?"
+    menu:
+        "Do I want to go to church with him?"
+        "Sure":
+            if (skill_spiritual >= 30):
+                her "Yeah, I usually go anyway, but it will be nice to go with you."
+            else:
+                her "Yeah, I'll go with you."
+            jump goto_church
+        "Why?":
+            her "Why are you going?"
+            him "I thought I'd check it out. It's been a long time since I've been to church; maybe it'd be good for me."
+            menu:
+                "What do I think?"
+                "I'll go with you.":
+                    her "I'll go with you."
+                    jump goto_church
+                "What do you think about spirituality, anyway?":
+                    her "What's your position on spirituality?"
+                    him "Well, you know I used to go with my family a lot back on Earth... I went more to be with them, though, than because I really wanted to. I'm not sure what's true and what's human tradition, but if there is someone out there watching out for us, we sure could use some blessings."
+                    menu:
+                        "How do I feel?"
+                        "I agree with you":
+                            her "I feel kind of the same way... I know a lot of people that religion has helped, but sometimes God feels so far away."
+                            him "Let's go together, then, and we can talk about it afterwards."
+                            her "Sure."
+                            jump goto_church
+                        "I have no doubt God exists":
+                            her "I know someone's watching out for us."
+                            him "Maybe so. We can talk about it more after church, if you want to come with me."
+                            her "Sure."
+                            jump goto_church
+                        "I don't think about it much":
+                            her "I don't know. It's not something I think about a lot. I'd rather stay here, I guess."
+                            him "Okay, well, I'll let you know how it goes."
+                            her "Bye."
+                        "I don't think there's a God, but if it helps you, go ahead":
+                            her "God is just an idea people made up to explain things they don't understand. But you don't have to agree with me."
+                            him "Alright, well, I'll see you later, then."
+                            her "Bye."
+                            return
+                "I'm not going.":
+                    her "I'm not going."
+                    him "Alright, well, I'll see you later, then."
+                    her "Bye."
+                    return.
+        "No, thanks":
+            her "No, I'm staying here."
+            him "Okay. Are you not interested today, or would you pretty much never want to come?"
+            menu:
+                "I don't feel like it today.":
+                    her "I just don't feel like it today. Thanks for inviting me; I'm going to enjoy some peace and quiet here."
+                    him "Okay, maybe next time. I'll see you later, my sweet [her_nickname]."
+                "Church isn't my thing.":
+                    her "I probably would never go."
+                    him "Okay, no problem. I'll see you in a bit."
+                    return
+    "When he came home, he seemed thoughtful and quiet."
+    her "How was it?"
+    him "It was interesting- Sister Naomi is not like any other preacher I've listened to."
+    her "How's that?"
+    him "Well, she tries to speak to everyone, even though people here have a lot of different beliefs. So she uses a lot of stories and asks a lot of questions."
+    him "Like today, she told us the story of some seeds that fell out of a merchant's pack where there weren't any other plants like them. In most places the soil was dry and rocky."
+    him "But in one spot a gardener had cleared some soft earth, and the seeds that landed there sprouted and grew. The gardener at first thought they were weeds, but he decided to wait."
+    him "Eventually, after years and years, some of them grew to beautiful trees that gave delicious fruit."
+    her "What does that mean to you?"
+    him "A couple of things. In one way, our colony is kind of like the seeds that fell onto strange soil. Looking at the story another way, however, sometimes the strange things and opportunities that come into our lives are like the seeds. While at first they seem strange, they can sometimes become something great."
+    her "Was it helpful?"
+    him "It made me think about things, which is good... I feel a little more peaceful, optimistic... but also motivated to keep working hard. So, yeah, I guess it was helpful."
+    her "That's good."
     return
+
+label goto_church:
+    "We didn't dress up or anything - nobody here owned nice clothes. We held hands as we walked to town and entered the community center."
+    scene bg wedding with fade
+    "Probably about half the people of the colony were there. Some people were coming in from smaller rooms on the side; some denominations held their own meetings before Sister Naomi's sermon."
+    "We sang a hymn of thankfulness for blessings, and Mrs. Peron gave a prayer."
+    naomi "Today I want to share a story with you."
+    naomi "Once there was a merchant travelling to a far-off land. He carried fruits and other foods. While he was travelling, one of the fruits fell out of his pack and rolled down the hill to a gardener's house."
+    naomi "No fruit trees grew in this area; everyone thought it was too dry and rocky."
+    naomi "But this fruit landed in some soft earth that had been cleared by a man who lived nearby. Wild animals came and ate away the fruit, but the seeds nestled into the soft dirt."
+    naomi "When they sprouted, the man who lived nearby didn't know what they were. He thought about pulling them up so they wouldn't bother his garden. But he decided to wait and see what they were."
+    naomi "He waited for years and years, until a great tree grew there, and every summer it gave bushels and bushels of delicious fruit to the man, who shared it with his friends and neighbors with a heart of thanksgiving, and humility."
+    "Sister Naomi was quiet for a minute, letting us think about what she said. I wondered if we were supposed to be the merchant, or the gardener, or maybe the seeds?"
+    "She told a few more stories, but I kept thinking about those seeds."
+    "She ended with a few moments of silence for us to ponder or pray."
+    "Then there was a potluck lunch, where everyone brought some food to share, and we talked and mingled with the other colonists."
+
+    "Then we walked home."
+
+    her "What did you think about it, [his_name]?"
+    him "Oh, it was alright. Sister Naomi seems really nice."
+    her "Yeah... I keep thinking about that story about the seeds."
+    him "Yeah, me too... Like, what kind of seeds are we planting for those who will come after us?"
+    her "It made me think about how I came here, even though I had no idea what it would be like. I'm still waiting to see what sort of tree this colony will grow into..."
+    "We walked in thoughtful silence together all the way home."
+
+    return
+
+# People probably won't even see these last ones unless they always choose "Do something with [his_name]", so don't put a ton of effort into them.
 
 label relax_together_9:
     return
