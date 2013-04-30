@@ -264,6 +264,8 @@ label work_2:
     elif (profession == "teacher"):
         scene bg classroom with fade
         
+    show her normal at left
+    show brennan at right
     "I was ready for another busy day at work when the mayor walked in with someone new. I remembered seeing him on the shuttle; he had an infectious smile and just the hint of an accent."
     boss "[her_name], I'd like you to meet Mr. Callahan. He's sort of a jack-of-all-trades here, helping out wherever we need it. He can help you out some of the time."
     brennan "Call me Brennan. And I know we've met already; I'd never forget a pretty face like yours."
@@ -280,7 +282,7 @@ label work_2:
             brennan "Of course! I just meant that I remembered you. But I could understand how you might not remember me."
         "Are you going to be helpful?":
             her "Do you have any talents besides flattery?"
-            brennan "A few, to be sure! If you're lucky perhaps I'll show you some."
+            brennan "A few, to be sure! Don't worry, I'll try not to distract you too much."
     "He winked at me playfully. Was he...flirting with me?! I didn't have time to think about it; there was too much work to do."
     "It was nice to have him around, especially when things got busy later in the day. He didn't wait for me to ask him to do things, but he didn't get in my way, either."
     brennan "It was a pleasure working with you today, [her_name]."
@@ -319,13 +321,15 @@ label work_2:
             her "Like in a flirting-with-a-married-woman kind of way."
             him "... He was flirting with you?"
             her "I don't know! Maybe? Or maybe he just acts that way with everyone."
+            him "I don't know; I always thought it was a little strange how he came on the shuttle at the last minute, with no special skills and no family."
+            her "I guess that is unusual."
             him "Want me to talk to him?"
             menu:
                 "Do I want him to talk to Brennan?"
                 "No, I'll handle this":
                     her "No thanks, I can handle him."
                     him "That's what I'm afraid of."
-                    her "You know that's not what I meant!"
+                    her "You know that's not what I meant! You're the only man I want to handle, silly."
                     him "I know, it's okay, I don't really want to have that conversation with him, anyway. But let me know if you do want me to help you out later, okay?"
                     her "Thanks, [his_nickname]."
                     "The next time I saw Brennan, I thanked him for his help and mentioned that I expected everyone working there to maintain a professional attitude."
@@ -340,7 +344,7 @@ label work_2:
                 "No, I'm probably imagining things":
                     her "No, it's not the big of a deal. He's probably just a friendly kind of guy."
                     him "Friendly to women, you mean."
-                    her "Maybe, but, whatever. I'm not interested."
+                    her "Maybe, but, whatever. I'm not interested. I've got you!"
                     "The next time Brennan helped me out, he was friendly as ever, but I didn't feel as uncomfortable as before. I treated him politely but coolly, and work went well."
 
     return
@@ -348,85 +352,157 @@ label work_2:
 # Something bad happens - she can't fix an illness, thing, or kid - she confides in co-worker
 label work_3:
     $ times_worked += 1
+    $ relaxed -= 5
+    $ community_level += 2
     
+    # problems with new local bacteria (no viruses, though)
     if (profession == "doctor"):
-        "Doctor Month 9"
+        scene bg clinic with fade
+        "There were not a lot of illnesses so far - they took great pains to make sure none of the colonists were carrying infectious diseases, and the viruses here probably hadn't had time to adapt to us yet."
+        "But there were plenty of injuries, as people tried to adjust to new equipment, the different climate and atmosphere, and a new way of life."
+        "Then, we met our first big challenge - the Streaks."
+        "The first incidence was with one of the kids. She fell down, got a scrape on her hand, and kept playing. The next day, the scrape was swollen and had red streaks all around it - like a child's drawing of the Sun."
+        "Brennan and I cleaned out the wound and put a fresh bandage on it. We weren't too worried - it was a small scrape, and the kid was mostly acting fine."
+        "But the next day, she came back. She had a fever and the wound wasn't healing well."
+        her "Take a culture sample; looks like a bacterial infection."
+        brennan "Alright."
+        "I borrowed a microscope from the science lab and examined the culture. It was like no bacteria in any of the reference books."
+        her "Brennan, we need to quarantine the clinic. I'll send out a message to everyone urging them to stay away, wash wounds promptly, and watch out for these symptoms."
+        "Would this bacteria respond to traditional antibiotics? They seemed to have cell walls, just like bacteria on Earth, so we decided to give it a try."
+        "We stayed up all night with the kids, and the next day, the child was shaking, and her hand was starting to turn white around the cut. And now her brother was in the clinic with similar symptoms on his knee."
+        "We continued treatment all that day, but the wounds still didn't seem to be improving. Instead, the infection appeared to be spreading. I hoped we wouldn't have to amputate; it seemed like we had time to try one last thing."
+        menu:
+            "What should we do?"
+            "Use maggots":
+                her "Brennan, we need some maggots."
+                brennan "Maggots?! What for?"
+                her "They will eat the infected tissue but leave healthy tissue alone. We'll need a lot of them; hundreds. I'll ask around, too, and we'll see what we can find."
+                "We ended up with about a hundred maggots from local insects. I hoped they would work like the ones on Earth. I kept some for breeding, since we might need more, and disinfected the rest and applied them to the wounds."
+                "The kids were a little grossed out, but they watched intently as we applied them and wrapped them gently with gauze."
+                "Afterwards I was so tired I fell asleep at my desk."
+            "Ask Dr. Lily":
+                her "There's got to be something these bacteria are weak against. Maybe Dr. Lily can help."
+                lily "Let's try several different kinds of antibiotics on different cultures and see if we can find what works best."
+                her "Good idea."
+                "We tried a little bit of all the medicines and substances we had that we thought could possibly work. We tried different chemicals, synthetic drugs, local mold, algae - anything we could think of."
+                "The hardest part was waiting around for the results, while the kids were suffering."
+                lily "Look at the algae culture! There's hardly any bacteria left."
+                her "Hopefully the algae itself wouldn't be harmful to people..."
+                lily "I can't say for sure."
+                "We decided to try it. The kids just kept getting worse, and I was worried the bacteria would spread to vital systems."
+                "We scraped off a little of the infected tissue and put some of the algae on with a new bandage."
+                "Afterwards, I was so exhausted I fell asleep at my desk."
+            "Cut out bacteria":
+                her "We can't risk the bacteria spreading to vital systems. The antibiotics aren't working, and these kids' condition just keeps worsening. "
+                brennan "What are you going to do?"
+                her "I'm going to try to cut away the infected flesh to make it easier for the antibiocs to do their job."
+                brennan "That's going to be painful."
+                her "That's why your job is to keep the kid happy while I'm doing it."
+                brennan "You have an awfully high opinion of my ability to keep people happy."
+                her "I have local anaesthetics I can use; just help her feel better."
+                "We told her what we were going to do, and then Brennan started telling her a story about faeries and flying mushrooms while I gave her the local anaesthetic. I didn't want to take out healthy skin, but I wanted to leave as little bacteria as possible, so it was pretty tricky."
+                "We treated the boy the same way, and then I was so exhausted I fell asleep at my desk."
+        
+        "I awoke the next day in a hospital bed, disoriented. I was still in my clothes..."
+        her "The kids!"        
+        "I rushed over to check on them. For the first time, the kids seemed a little better. I don't know if it was our crazy idea, or if the antibiotics were finally working, or both, but I was so relieved that we could help them."
+        "Brennan had fallen asleep on another bed, snoring softly."
+        her "(He must have carried me in here when I fell asleep at my desk...)"
+        "On my desk, my computer pad was full of messages from everyone asking about the kids and the quarantine. There were three from [his_name]."
+        him "1) [her_nickname], I haven't heard from you since the quarantine announcement...are you okay? I missed you today, but if anyone can help those kids, you can."
+        him "2) Starting to get a little worried here - any news?"
+        him "3) [her_name], I am seriously considering breaking my own leg so that they'll let me in there with you! You better still be alive in there!"
+
+        her "(He was so worried about me...)"
+        $ loved += 2
+
+        "There were other outbreaks of the Streaks, but now that we knew how to treat it, we didn't worry quite so much."
+
+    # problems with 3d printer, running out of plastic
     elif (profession == "crafter"):
-        "Crafter Month 9"
+        scene bg workshop with fade
+    # running out of metal, need new parts
     elif (profession == "auto mechanic"):
-        "Mechanic Month 9"
+        scene bg machine_shop with fade
+    # a kid claims teacher hit them?
     elif (profession == "teacher"):
-        "Teacher Month 9"
+        scene bg classroom with fade                
 
     return
 
-# Solar flare while at work that lasts all night?
+
 label work_4:
     $ times_worked += 1
 
+    "Month 12"
     if (profession == "doctor"):
-        "Doctor Month 12"
+        scene bg clinic with fade
     elif (profession == "crafter"):
-        "Crafter Month 12"
+        scene bg workshop with fade
     elif (profession == "auto mechanic"):
-        "Mechanic Month 12"
+        scene bg machine_shop with fade
     elif (profession == "teacher"):
-        "Teacher Month 12"
+        scene bg classroom with fade
 
     return
 
+# Solar flare while at work?
 label work_5:
     $ times_worked += 1
 
+    "Month 15"
     if (profession == "doctor"):
-        "Doctor Month 12"
+        scene bg clinic with fade
     elif (profession == "crafter"):
-        "Crafter Month 12"
+        scene bg workshop with fade
     elif (profession == "auto mechanic"):
-        "Mechanic Month 12"
+        scene bg machine_shop with fade
     elif (profession == "teacher"):
-        "Teacher Month 12"
+        scene bg classroom with fade
 
     return
 
 label work_6:
     $ times_worked += 1
 
+    "Month 18"
     if (profession == "doctor"):
-        "Doctor Month 12"
+        scene bg clinic with fade
     elif (profession == "crafter"):
-        "Crafter Month 12"
+        scene bg workshop with fade
     elif (profession == "auto mechanic"):
-        "Mechanic Month 12"
+        scene bg machine_shop with fade
     elif (profession == "teacher"):
-        "Teacher Month 12"
+        scene bg classroom with fade
 
     return
 
 label work_7:
     $ times_worked += 1
 
+    "Month 21"
     if (profession == "doctor"):
-        "Doctor Month 12"
+        scene bg clinic with fade
     elif (profession == "crafter"):
-        "Crafter Month 12"
+        scene bg workshop with fade
     elif (profession == "auto mechanic"):
-        "Mechanic Month 12"
+        scene bg machine_shop with fade
     elif (profession == "teacher"):
-        "Teacher Month 12"
+        scene bg classroom with fade
 
     return
 
 label work_8:
     $ times_worked += 1
 
+    "Month 24"
     if (profession == "doctor"):
-        "Doctor Month 12"
+        scene bg clinic with fade
     elif (profession == "crafter"):
-        "Crafter Month 12"
+        scene bg workshop with fade
     elif (profession == "auto mechanic"):
-        "Mechanic Month 12"
+        scene bg machine_shop with fade
     elif (profession == "teacher"):
-        "Teacher Month 12"
+        scene bg classroom with fade
 
     return

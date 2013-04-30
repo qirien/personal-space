@@ -26,6 +26,7 @@ image bg workshop = "bg/workshop.png"
 # SPRITES
 image him normal = "sprites/him.png"
 image her normal = "sprites/her.png"
+image brennan = "sprites/brennan.png"
 
 # Declare characters used by this game .
 define her = DynamicCharacter("her_name", color="#8a00ff")
@@ -80,7 +81,7 @@ label start:
         "No":
             $ his_name = "Jack"
             $ her_name = "Jill"
-            $ profession = "teacher"
+            $ profession = "doctor"
             $ want_kids = True
             $ known_each_other = "six months"
             jump month01
