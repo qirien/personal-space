@@ -349,13 +349,14 @@ label work_2:
 
     return
 
-# Something bad happens - she can't fix an illness, thing, or kid - she confides in co-worker
+# Something bad happens - she can't fix an illness, thing, or kid - Brennan helps out.
 label work_3:
     $ times_worked += 1
     $ relaxed -= 5
     $ community_level += 2
-    
-    # problems with new local bacteria (no viruses, though)
+    play music "music/NoOneWillKnow.ogg" fadeout 2.0
+
+    # Doctor - problems with new local bacteria (no viruses, though)
     if (profession == "doctor"):
         scene bg clinic with fade
         "There were not a lot of illnesses so far - they took great pains to make sure none of the colonists were carrying infectious diseases, and the viruses here probably hadn't had time to adapt to us yet."
