@@ -283,7 +283,31 @@ label physical_6:
 
 # Go hunting and bring back some meat
 label physical_7:
-
+    "I woke up early and couldn't go back to sleep. All I could think of was how hungry I was for meat."
+    "I felt like stealing one of my neighbor's chickens and roasting it, but I knew we needed them more for their eggs."
+    "I went to the storehouse and borrowed a large net. I'd done lots of virtual practice on the way over, and I wanted to test my skills."
+    menu: 
+        "Should I wake up [his_name] to come with me?"
+        "Wake him up!":
+            her "[his_nickname], I've got a craving for meat. Want to come hunting with me?"
+            if loved > 10:
+                him "It's so early! But I'd love a change of pace. Let's go!"
+                $ he_hunts == True
+            else: 
+                him "Can I just go back to sleep?"
+                her "Yeah, that's fine. Don't worry about me, I'll be careful."
+        "Let him sleep.":
+            "I left him a message so he wouldn't worry about where I was."
+    if (he_hunts == True):
+        "We went exploring into the forest where another villager had seen groups of what we called land-lobsters."
+        "We found a group of a few of them engaging in whatever their species does instead of sleeping. [his_name] got behind them so he could try to catch one if I missed and it ran away."
+        "With [his_name]'s help, we caught five of the land-lobsters. Since they're best fresh, we gave some to our neighbors."
+    else: 
+        "I went exploring on my own to find land-lobsters."
+        "I managed to catch two of the crawly crustaceans. On the way back, I thought I heard a large animal moving in the brush, but I didn't see anything."
+        "[his_name] and I enjoyed eating the fresh land crabs as soon as I got back. They were delicious."
+        $ loved += 5
+        
     $ skill_physical += 10
     return
 

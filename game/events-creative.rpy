@@ -143,7 +143,21 @@ label creative_7:
 
 # Make some dishes out of local clay, fire them
 label creative_8:
-
+    "A rainy night made the banks of the river swell. When I was checking to make sure our plants were okay, I noticed that some of the upturned banks had a clay-like texture."
+    "I did a little digging on the other side of the river, where I found some clay."
+    "It had lots of rocks and leaves in it, so I dried it and broke it into pieces, which were easier to sort from the leaves. Then I let it sit in a bucket of water."
+    #source: http://www.kitcornellpottery.com/teaching/clay.html
+    "The next day, I put the clay through a piece of fabric to further purify it."
+    "I didn't have a potter's wheel, so I tried to make a cup without one."
+    him "This clay looks great. If you want, I could turn the wagon over, and you could use one of the wheels while I spin it."
+    her "Thanks, that would help a lot."
+    "Together we made a few more cups and water jug. We didn't have a kiln, so we went down to the research station to see if they had an oven we could use."
+    Lily "I'll check your clay for toxins, and then if it's safe I'll bake your pottery. Our oven doesn't get as hot as some kilns, but it's better than not firing it at all."
+    "I came by later and picked up the pottery, which Lily said was safe to drink from."
+    him "Wow, our own water jug! We're getting fancy around here."
+    her "If I ever figure out how to make paints, I could paint them too."
+    him "I think they look great as is."
+    her "I'm proud of our work too."
     $ skill_creative += 10
     return
 

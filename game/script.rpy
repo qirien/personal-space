@@ -66,6 +66,7 @@ define slacked_off = 0  #number of times slacked off at work
 define has_grass = False
 define met_Lily = False
 define times_worked = 1
+define he_hunts = False
 
 # The game starts here.
 label start:
