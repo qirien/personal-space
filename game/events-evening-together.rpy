@@ -2,23 +2,15 @@
 # where we relax together
 
 # Relationship Focus Events
-# TODO; Have them talk about missing (or not) families on Earth.
-# TODO: Have them tour the farm and talk about progress/problems
-# TODO: Sunset on the new planet
-
 
 label relax_together_0:
-    scene bg farm_interior with fade
-    "We watched a movie together. It was pretty good, but the ending was terrible."
-    him "See, what they needed was to have the girlfriend show back up at the end--"
-    her "--leading a horde of zombie warriors! Oh, that would have been so much better!"
-    him "And what about the pterodactyl? They didn't do anything with that."
-    her "I know, I kept thinking someone was going to ride it."
-    him "I thought it was going to turn out to be a cyborg pterodactyl."
-    her "That would have been awesome!"
-    "Sometimes talking about the movie is more fun than the actual movie itself..."
+    scene bg stars with fade
+    play music "music/Will.ogg" fadeout 2.0
+    "We went for a walk together under the stars. I brought my computer pad so we could find which one was our old Sun. I didn't see any constellations I recognized, so it was hard to find any reference points, but we finally found which one we thought it was."
+    her "It looks so small..."
+    him "Remember how small Talam's sun looked from Earth?"
+    her "That seems so long ago..."
     $ relaxed += 5
-    $ loved += 5
     return
 
 label relax_together_1:
@@ -61,13 +53,31 @@ label relax_together_1:
     return
 
 label relax_together_2:
-    scene bg stars with fade
-    play music "music/Will.ogg" fadeout 2.0
-    "We went for a walk together under the stars. I brought my computer pad so we could find which one was our old Sun. I didn't see any constellations I recognized, so it was hard to find any reference points, but we finally found which one we thought it was."
-    her "It looks so small..."
-    him "Remember how small Talam's sun looked from Earth?"
-    her "That seems so long ago..."
-    $ relaxed += 5
+    "We went on a moonlight walk to the river. We found a spot where the water was deeper and slower, and sat down. I put my head on his shoulder, breathing in the cool night air."
+    him "Want to go for a swim?"
+    her "Are you nuts?!"
+    him "Yes!"
+    "He took off his clothes - all of them - and cannonballed in, splashing me."
+    menu:
+        her "Hey!"
+        "Join him":
+            "I took of my clothes slowly. There was enough moonlight that I knew he could see me."
+            him "Whoo! Alright, [her_name]! Come on in!"
+            "I decided to get back at him by jumping in right next to him with a big splash, but he didn't seem to mind."
+            "The water was cold, but somehow that just made everything more exciting."
+            $ loved += 5
+        "Watch him":
+            her "I don't really want to get wet; I'll just watch you."
+            him "Oh yeah? I better give you a good show, then."
+            "He flexed his muscles and then tried to do a handstand on the bottom of the river."
+            her "Ha ha, not bad!"
+            "Soon he got tired of swimming and we headed home together."
+            $ loved += 5
+        "Leave":
+            her "Ugh, now I'm all wet and cold!"
+            him "I'll warm you up, [her_nickname]!"
+            her "No thanks, I'm going home."
+            $ loved -= 5
     return
 
 label relax_together_3:
@@ -492,17 +502,36 @@ label goto_church:
 
 # walk around the farm together looking at what you've created together.
 label relax_together_9:
+    "We walked around the farm together. [his_name] showed me where all the different crops were, and told me about what kind of soil they liked and what the weeds were like."
+    her "This is like your baby, isn't it?"
+    him "Yeah, it is."
+    him "Who's the cutest widdle farm on the planet, huh? You are!"
+    "I could tell it meant a lot to him to show me everything he had been working on."
+
     return
 
 label relax_together_10:
+    "We started talking, and somehow I ended up telling him all about my job. Who was hard to work with, things that seemed impossible, the people I helped... it felt good to have him know what I had been working on."
     return
 
 label relax_together_11:
+    scene bg farm_interior with fade
+    "We watched a movie together. It was pretty good, but the ending was terrible."
+    him "See, what they needed was to have the girlfriend show back up at the end--"
+    her "--leading a horde of zombie warriors! Oh, that would have been so much better!"
+    him "And what about the pterodactyl? They didn't do anything with that."
+    her "I know, I kept thinking someone was going to ride it."
+    him "I thought it was going to turn out to be a cyborg pterodactyl."
+    her "That would have been awesome!"
+    "Sometimes talking about the movie is more fun than the actual movie itself..."
+    $ relaxed += 5
+    $ loved += 5
     return
 
-label relax_together_12:
+label relax_together_11:
+    him "I'm so glad we do things together all the time."
+    her "Me, too. You're not just my [his_nickname]; you're also my best friend."
     return
-
 
 # Random events that can happen multiple times
 

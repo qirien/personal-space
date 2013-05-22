@@ -92,7 +92,7 @@ label technical_5:
     $ skill_technical += 10
     return
 
-# scavenge electronics, etc from shuttle. Every family gets some seats from the shuttle for a couch!
+# scavenge electronics, etc from shuttle to make ?
 label technical_6:
 
     $ skill_technical += 10
