@@ -1,8 +1,14 @@
 CREDITS
 -------
 
-Images
-------
+Sprites
+-------
+Original line art by Clarissa Helps
+Coloring by Lisa Horner
+Placeholder art from Manga Clip Art Image Library (c) 2006 The Ilex Press
+
+Background Images
+-----------------
 Earth image courtesy of NASA, www.nasa.gov
 Triple-star sunset courtesy of JPL at NASA, http://www.jpl.nasa.gov/
 Red dwarf sunset CREDIT: ESO/L. Calçada
