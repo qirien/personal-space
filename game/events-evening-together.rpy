@@ -528,7 +528,7 @@ label relax_together_11:
     $ loved += 5
     return
 
-label relax_together_11:
+label relax_together_12:
     him "I'm so glad we do things together all the time."
     her "Me, too. You're not just my [his_nickname]; you're also my best friend."
     return
