@@ -1,12 +1,12 @@
 label monthly_event_24:
     "It had been two years since we first arrived on Talam. In a way, it felt like we had been here forever. But sometimes I expected to find myself back on Earth, waking up from a long, long dream."
-    if ((community_level < 100) and (loved <= 0)):
+    if ((community_level < 40) and (loved <= 10)):
         jump fail_bad_ending
-    elif ((community_level >= 100) and (loved <= 0)):
+    elif ((community_level >= 40) and (loved <= 10)):
         jump succeed_bad_ending
-    elif ((community_level < 100) and (loved > 0)):
+    elif ((community_level < 40) and (loved > 10)):
         jump fail_good_ending
-    elif ((community_level >= 100) and (loved > 0)):
+    elif ((community_level >= 40) and (loved > 10)):
         jump succeeed_good_ending
 
     jump credits

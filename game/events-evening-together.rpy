@@ -101,6 +101,8 @@ label relax_together_3:
                     "I trudged in circles through these depressing thoughts for hours."
                     $ relaxed -= 10
             "Finally, I just went to bed."
+            scene black with fade
+            "Everything seemed fine the next day, but I still felt insecure."
 
         "I'll help, too.":
             her "I'll help too!"
@@ -131,6 +133,7 @@ label relax_together_3:
             her "No problem, we'll just watch it another night."
             him "Thanks for understanding. I'll see you later, [her_nickname]."
             "It was a little lonely, especially since I was really looking forward to watching the movie with him, but I soon was absorbed in a good book and then went to bed."
+            scene black with fade
             "We watched the movie the next night. Even though they got a lot of things wrong about space colonization, we really got into the drama and tension. We both cried a little at the end."
             $ relaxed += 5
             $ loved += 5
@@ -152,6 +155,8 @@ label relax_together_3:
                     "All I could think about was how he abandoned me. It wasn't every night I asked him to do something fun with me; why couldn't he put me first instead of his other plans?"
                     "I worried that maybe I was not good enough - not pretty enough, not smart enough, not strong enough - not just for him, but for this planet. What was I even doing here?"
                     "I trudged in circles through these depressing thoughts for hours."
+                    scene black with fade
+                    "I forgave him the next day, but I still felt insecure."
                     $ relaxed -= 5
                     "Finally, I just went to bed."
                 "...":
@@ -161,6 +166,8 @@ label relax_together_3:
                     "I trudged in circles through these depressing thoughts for hours."
                     $ relaxed -= 5
                     "Finally, I just went to bed."
+                    scene black with fade
+                    "I forgave him the next day, but I still felt insecure."
                 "Sorry":
                     her "Sorry, [his_name]. I'm being selfish."
                     him "It's all right, [her_nickname]. Let's do something together tomorrow night, okay?"
@@ -173,6 +180,7 @@ label relax_together_3:
 # Did he only marry [her_name] so he could be a colonist?
 label relax_together_4:
     scene bg farm_interior with fade
+    play music "music/Prelude02.ogg" fadeout 2.0
     "One day [his_name] came in from the fields with a big smile on his face."
     him "Ah, [her_nickname], you're such a great part of my life. You've brought me love, joy, and laughter. You've even brought me to new worlds, literally! There's no way I could have come here without you."
     her "What do you mean?"
@@ -207,8 +215,7 @@ label relax_together_4:
             him "Exactly! I wanted to get married either way; the whole colony thing just made me quit stalling and ask you."
             her "I still wish you had told me about that earlier."
             him "I'm sorry, [her_nickname]. But I do love you, no matter what."
-            her "I love you, too, [his_nickname]. But, next time, please tell me, OK?"
-            him "I will."
+            her "I love you, too, [his_nickname]. But I still wish you had told me."
 
             $ loved += 2
 
@@ -242,7 +249,7 @@ label relax_together_5:
     show her normal at right
     her "Are you okay?"
     him "Yeah, I'm just really sore from all the digging I've been doing lately."
-    if ((relaxed < 0) and (loved < 0)):
+    if ((relaxed < 0) or (loved < 0)):
         her "Yeah, I feel pretty tense, too."
         "I could have rubbed his shoulders, I guess, but I was just too tired."
 
@@ -350,7 +357,7 @@ label relax_together_6:
 
     $ relaxed += 5
     $ loved += 5
-    scene bg black with fade
+    scene black with fade
     "We lay there for a long time...In the morning, it felt so good to wake up next to him, watching the sky lighten. With one final kiss, we got up and carried everything back to the house together."
     return
 
@@ -483,6 +490,7 @@ label goto_church:
 
 # People probably won't even see these last ones unless they always choose "Do something with [his_name]", so don't put a ton of effort into them.
 
+# walk around the farm together looking at what you've created together.
 label relax_together_9:
     return
 

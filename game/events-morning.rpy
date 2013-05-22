@@ -409,10 +409,12 @@ label work_3:
         "I rushed over to check on them. For the first time, the kids seemed a little better. I don't know if it was our crazy idea, or if the antibiotics were finally working, or both, but I was so relieved that we could help them."
         "Brennan had fallen asleep on another bed, snoring softly."
         her "(He must have carried me in here when I fell asleep at my desk...)"
-        "On my desk, my computer pad was full of messages from everyone asking about the kids and the quarantine. There were three from [his_name]."
-        him "1) [her_nickname], I haven't heard from you since the quarantine announcement...are you okay? I missed you today, but if anyone can help those kids, you can."
-        him "2) Starting to get a little worried here - any news?"
-        him "3) [her_name], I am seriously considering breaking my own leg so that they'll let me in there with you! You better still be alive in there!"
+        "On my desk, my computer pad was full of messages from everyone asking about the kids and the quarantine. I looked for messages from [his_name]."
+        him "1) Hey, [her_nickname], I haven't heard from you since the quarantine announcement...are you okay? I missed you today, but if anyone can help those kids, you can."
+        if (loved >= 0):
+            him "2) Starting to get a little worried here - any news?"
+        if (loved >= 5):
+            him "3) [her_name], I am seriously considering breaking my own leg so that they'll let me in there with you! You better still be alive in there!"
 
         her "(He was so worried about me...)"
         $ loved += 2

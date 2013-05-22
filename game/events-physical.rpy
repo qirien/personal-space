@@ -227,7 +227,7 @@ label physical_4:
 #Yoga
 label physical_5:
     "On mornings when we had a solar flare warning, or if it was raining, I had to stay indoors."
-    "I know Yoga is so 21rst century, but my grandma taught me some of the poses when I was young."
+    "I know Yoga is so 21st century, but my grandma taught me some of the poses when I was young."
     "I've warmed up. How should I do my Yoga workout?"
     menu:
         "Meditate in sitting and prone poses":
@@ -306,15 +306,17 @@ label physical_7:
         "I went exploring on my own to find land-lobsters."
         "I managed to catch two of the crawly crustaceans. On the way back, I thought I heard a large animal moving in the brush, but I didn't see anything."
         "[his_name] and I enjoyed eating the fresh land crabs as soon as I got back. They were delicious."
-        $ loved += 5
-        
+
+    $ loved += 5    
     $ skill_physical += 10
+    $ community_level += 2
     return
 
 # Participate in community soccer team
 label physical_8:
 
     $ skill_physical += 10
+    $ community_level += 2
     return
 
 label physical_9:

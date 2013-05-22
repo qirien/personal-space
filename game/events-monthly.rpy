@@ -2,6 +2,7 @@
 
 # You shouldn't ever see this. This is just a fall through in case something happens
 # and there's no event for this month.
+# TODO: Make the ending actually happen....
 label monthly_event_0:
     "Nothing exciting happened this month."
     return
@@ -133,7 +134,6 @@ label monthly_event_1:
     him "Doesn't he look like a George to you? Besides, I accidentally invited him in with my mess, so I guess he's my pet."
     her "As long as he's an outside pet."
 
-    #TODO: But who actually ended up doing the dishes?!
     "The dishes were never left undone after that."
     return
 
@@ -324,7 +324,6 @@ label monthly_event_4:
             "I can't believe you don't appreciate me":
                 jump unappreciated
 
-    #TODO fill these in when we have more skill events written.
     elif (highest_skill == "Creative"):
         him "You spend a lot of time making crafts, don't you?"
         menu:
@@ -446,6 +445,8 @@ label monthly_event_4:
 
 # MONTH 5 - What to do with trash
 label monthly_event_5:
+    scene bg farm_interior with fade
+
     "The village council asked us to do a waste assessment to see how much and what kind of materials we needed to permanently dispose of. If the amount of waste was too high, they told us that future colonists would be limited."
     "Our waste pile was fairly small, as we'd already composted any organic material that we didn't eat. Still, there was things like packaging from the MREs, a broken dish, and a pair of worn-out socks."
     her "You threw away a perfectly good pair of socks?"
@@ -530,6 +531,7 @@ label monthly_event_5:
 
 # MONTH 6 - Alien Pests
 label monthly_event_6:
+    scene bg fields with fade
     #biological pesticide--fungus
     "Our crops were starting to give and abundant harvest, but unfortunately, with the rainy season starting, the corn was being attacked by alien insects."
     "A small segmented insect like a sow bug but with thicker legs was our main culprit." 
@@ -628,6 +630,7 @@ return
 
 # MONTH 7 - Broken computer - honesty?
 label monthly_event_7:
+    scene bg farm_interior with fade
     "One day I was doing the dishes at breakfast. [his_name] had already started working in the fields, so I was alone. I noticed he had left his computer pad next to the wash basin."
     her "I'll just move this out of the way so it doesn't get-- AHHH!"
     "It slipped out of my hands right into the soapy dishwater."
@@ -731,13 +734,178 @@ label monthly_event_8:
     "Conflict of Interest: Community vs. Spouse"
     return
 
-# MONTH 9
+# MONTH 9 - how could I do better?
 label monthly_event_9:
-    "Different Date Ideas"
+    scene bg farm_interior with fade
+    play music "music/You.ogg" fadeout 2.0
+    him "I was just thinking about you. How do you think we're doing?"
+    her "Doing what?"
+    him "You know, in our marriage. Do you feel loved, is this working for you?"
+    menu:
+        "Honestly, no" if (loved <= 0):
+            her "Honestly, no, it's not."
+        "(Lie) It's fine" if (loved <= 0):
+            her "Yeah, it's okay, I guess."
+        "It's fine":
+            her "It's fine; I haven't really had time to think about things like that."
+        "It's wonderful" if (loved >= 0):
+            her "Of course! It's great!"
+    if (loved > 0):
+        him "Is there anything I can do to be a be a better husband to you?"
+    else:
+        him "How can we make it better?"
+
+    menu:
+        "Give me stuff":
+            her "I'd like if you gave me gifts - nothing big, obviously, but just something little to show you were thinking about me."
+            him "Really? You like that sort of thing?"
+            her "Yes, it would mean a lot to me."
+            $ she_wants = "stuff"
+        "Tell me how much you love me":
+            her "I'd love it if you told me how much you love me."
+            him "Ummm... a lot?"
+            her "No! Not like that! Like, what is it you like about me, and tell me things I do that you like, stuff like that."
+            him "That's what you like? Words?"
+            her "Yeah. You have to mean it, of course."
+            $ she_wants = "saynicestuff"
+        "Do things together":
+            her "I want to do things with you more often."
+            him "What kinds of things?"
+            her "Anything - go on walks, make dinner together, play games together."
+            $ she_wants = "dostuff"
+        "Do things for me":
+            her "I'd like you to do little things for me sometimes."
+            him "Like what?"
+            her "Like, washing the dishes when it's my turn, or picking something up from the storehouse, or things like that."
+            $ she_wants = "service"
+        "Show more affection":
+            her "I'd like to hold hands more, hug more, just be close to each other more."
+            him "How about rubbing your shoulders? Like this?"
+            her "Ohhh yeah, that definitely is good."
+            $ she_wants = "affection"
+        "Nothing":
+            $ she_wants = "nothing"
+            her "You don't need to do anything differently; you're doing just fine."
+
+    menu:
+        "Thanks for asking":
+            her "Thanks for asking; that's really sweet of you."
+            $ loved += 2
+        "How about you?":
+            her "What about you? Is there something you'd like to see more of from me?"
+            him "Well..."
+            if (made_love < 2):
+                him "I'd like it if you showed more physical affection."
+                menu:
+                    "Typical man":
+                        her "Typical. That's all you men ever think about, isn't it?"
+                        him "No, sometimes we ask our wives what they would like and try to do it."
+                        $ loved -= 5
+                    "It's hard":
+                        her "That's... hard for me. I'm just so tired all the time; sometimes it feels just like another chore."
+                        him "It's a chore?"
+                        her "No! It's just... it takes work for me to be in the mood, sometimes."
+                        him "Well, you asked what I'd like."
+                    "OK, I'll try":
+                        her "OK, I'll try to do that."
+                        him "Thank you, [her_nickname]."
+                        $ loved += 5
+            elif (skill_domestic < 10):
+                him "I'd like it if you did more things around the house."
+                menu:
+                   "That's sexist.":
+                        her "That's sexist. Women belong in the house, is that it?"
+                        him "Hey, you asked what I'd like. I'd like to come home to a clean, well-organized house."
+                        menu:
+                            "If it's that important to you...":
+                                her "If it's that important to you, I could work on that."
+                                $ loved += 5
+                            "No way.":
+                                her "Sorry, that's never going to happen."
+                                him "..."
+                                $ loved -= 5
+                   "It's hard":
+                        her "That's... hard for me. With work and everything, when I come home I just want to relax."
+                        him "Well, you asked what I'd like."
+                        menu:
+                            "If it's that important to you...":
+                                her "If it's that important to you, I could work on that."
+                                $ loved += 5
+                            "No way.":
+                                her "Sorry, that's never going to happen."
+                                him "..."
+                                $ loved -= 5
+
+                   "OK, I'll try":
+                        her "OK, I'll try to do that."
+                        him "Thank you, [her_nickname]."
+                        $ loved += 5
+            elif (loved < 5):
+                him "I'd like it if we spent more time together."
+                $ loved += 5
+                menu:
+                    "Me too":
+                        her "I'd like that, too."
+                        him "Let's go on a walk together."
+                        her "Right now?"
+                        him "Right after dinner!"
+                    "Doing what?":
+                        her "Yeah, but what should we do? There's not exactly a lot going on..."
+                        him "I could read you Shakespeare."
+                        her "Ha ha ha!"
+                        him "..."
+                        her "You're serious?!"
+                        him "Well, I don't know! Doesn't it sound kind of fun to read to each other things that we like?"
+                        her "We could try it!"
+                    "We don't have time":
+                        her "That sounds good, but we don't really have much free time, do we?"
+                        him "We have been working pretty hard...but I think it's important to do things together. Even if we're just reading next to each other, that would be nice."
+                        her "OK, we can do that."
+            else:
+                him "Nothing at all. You always make me feel loved."
+
+    "I wondered if he would actually do anything based on what I said I liked. A few days passed and I figured he had forgotten all about it."
+    if (loved >= -5):
+        "But then..."
+        $ loved += 5
+        if (she_wants == "stuff"):
+            "He brought me some wild fruits he had found. He even checked with Dr. Lily to make sure they were edible first."
+            her "Thank you!"
+            him "They're just for you."
+        if (she_wants == "saynicestuff"):
+            him "Your laugh is like a supernova that blasts away my stress and makes the whole world seem like a garden."
+            her "Ha ha ha, ha ha, really?"
+            him "Yes, and I love how you're such a good [profession]. Not only do you know what you're doing, but you're nice to people about it, too."
+            her "Thank you, [his_nickname]."
+        if (she_wants == "dostuff"):
+            him "Hey, want to go fishing?"
+            her "Fishing? I didn't know there were fish here..."
+            him "Well, they're not exactly like fish, but there's plants and animals that live near the river that we can eat. Did you see Dr. Lily's email?"
+            her "I didn't read it yet... but it sound fun to do something with you!"
+            "We found some edible plants, but when we tried to catch the animals there to eat, we ended up falling in the river together. We were laughing so hard we could barely stand up."
+        if ((she_wants == "service") or (she_wants == "affection")):
+            "After dinner one night, he started rubbing my feet."
+            her "Thanks, but I really ought to do the dishes now."
+            him "No way. I'm taking over tonight. It's [her_name] night."
+            her "I've never heard of that holiday before."
+            him "That's because I just made it up."
+            "He did the dishes for me and rubbed my feet with a smile."
+            her "Thank you, [his_nickname]."
+        if (she_wants == "nothing"):
+            "I found a poem on my pillow one afternoon:"
+            "you are the sweetest thing\n not like honey or sugar"
+            "but like the nectar of a bright flower\n you sustain even the clumsy bumblebee."
+            
+    else:
+        "Of course he wasn't serious about it. I shouldn't have gotten my hopes up, I guess."
+        $ loved -= 5
+
     return
 
 # MONTH 10 - Anniversary / Lettie is sick!
 label monthly_event_10:
+    scene bg farm_interior with fade
+    play music "music/Prelude02.ogg" fadeout 2.0
     "It was our anniversary, according to the Earth calendar.  I think we had missed a few while we were on the shuttle? Anyway, it felt like we had been married about a year."
     her "Happy Anniversary!"
     him "Really? Today?"
@@ -851,6 +1019,8 @@ label follow_him:
 
     her "What's wrong with her?"
     him "I think she ate something bad. Usually she's fine grazing on the things here, but maybe it was a strange plant she didn't know was poisonous?"
+    her "Oh no! Is there a vet or someone you can call?"
+    him "I am the vet, or the closest thing we have, anyway."
     if (profession == "doctor"):
         her "Can you induce vomiting?"
         him "No...horses can't vomit."
@@ -870,11 +1040,11 @@ label follow_him:
         "Ilian got back to me pretty quick and said he could get some and he'd meet me at the storehouse."
 
     if (skill_physical >= 40):
-        "I ran all the way there, no problem. Good thing I was in shape."
+        "I ran all the way there and back. Good thing I was in shape."
     else:
-        "I walked and jogged as fast as I could."
+        "I walked and jogged as fast as I could. I was breathing so hard I thought I was going to throw up when I finally got back."
         $ relaxed -= 5
-    "I got the laxative and returned to [his_name] and Lettie."
+
     "He had me hold Lettie still while he measured it out and administered it to her. I was amazed how much Lettie trusted him."
     "She didn't seem to feel any better right away, but I knew this kind of medicine takes awhile to work."
     him "I'm going to take her for a little walk - why don't you get some rest?"
@@ -927,7 +1097,15 @@ label monthly_event_12:
 
 # MONTH 13
 label monthly_event_13:
-    "On the Jury for a Crime"
+    "I hadn't thought about it much before, but we didn't have a lot of laws here on Talaam. Some things just didn't apply (like taxes, driving laws, etc), but I remember signing something about agreeing to abide by a set of laws that sounded very reasonable."
+    "It had never seemed like something I would have to worry about.  Until I had to be on the jury for Sven's trial, that is..."
+    "We hadn't had any crime our whole first year (though we certainly had our share of arguments, accidents, and disagreements)."
+    "After all, who would hurt anyone else in our colony? We needed each other too much."
+    "But that peace couldn't last forever..."
+    # TODO: what is the crime? drunk driving? domestic violence? weapon accident? stealing from storehouse? teen dare/prank gone wrong - somebody drowned in river, poisoned by hallucinogenic substance, injured by sabotaged tractor or homemade fireworks, etc
+    boss "[her_name], you've been randomly selected to be on the jury. Is there any reason you should not do this?"
+    her "No, not that I can think of..."
+
     return
 
 # MONTH 14 - Pregnancy or not?
@@ -1032,7 +1210,7 @@ label monthly_event_14:
                 him "I think we're doing pretty good."
                 her "It just feels like one more thing to worry about; I'm already stressed out about food, work, and this whole crazy planet."
                 him "Don't worry; we'll figure something out. We can always... get creative."
-
+                her "I like it when you get creative."
             "Maybe":
                 her "I guess we could be, but...I just don't feel ready yet. Maybe things will be different in six months... or we could always use other methods."
                 him "Yeah, I feel ready, but you're the one that will be carrying the baby, so we can do whatever you think is best."
@@ -1052,7 +1230,7 @@ label monthly_event_14:
                 him "Yes, momma."
                 her "Oh, ick, don't call me momma!"
                 him "You better get used to it! Someday a bunch of kids are going to call you that all the time!"
-                her "That's so weird! But at least they'll be calling you 'daddy', so I won't be alone."
+                her "That's so... weird! But at least they'll be calling you 'daddy', so I won't be alone."
                 him "You'll never be alone."
                 $want_kids = True
                 $made_love += 1   
@@ -1070,6 +1248,7 @@ label monthly_event_16:
 label monthly_event_17:
     return
 
+# clothes don't fit anymore (bras, etc); what to do?
 label monthly_event_18:
     return
 

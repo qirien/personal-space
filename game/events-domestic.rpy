@@ -314,6 +314,7 @@ label domestic_8:
     
     "Making soap from scratch wasn't something I had ever done before. On Earth soap was so cheap there was no reason to make your own. But I used my computer pad to look up instructions."
     "It looked like it would probably take at least a month to make the soap...better start on it now!"
+    scene bg laundry with fade
     "First, I put on gloves and goggles. We needed to make lye, which is very caustic. I got some ashes from our stove and added boiling water, and let it sit overnight."
     "Meanwhile, I needed to get some fat."
     if (loved >= 5):

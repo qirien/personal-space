@@ -152,10 +152,10 @@ label creative_8:
     him "This clay looks great. If you want, I could turn the wagon over, and you could use one of the wheels while I spin it."
     her "Thanks, that would help a lot."
     "Together we made a few more cups and water jug. We didn't have a kiln, so we went down to the research station to see if they had an oven we could use."
-    Lily "I'll check your clay for toxins, and then if it's safe I'll bake your pottery. Our oven doesn't get as hot as some kilns, but it's better than not firing it at all."
+    lily "I'll check your clay for toxins, and then if it's safe I'll bake your pottery. Our oven doesn't get as hot as some kilns, but it's better than not firing it at all."
     "I came by later and picked up the pottery, which Lily said was safe to drink from."
     him "Wow, our own water jug! We're getting fancy around here."
-    her "If I ever figure out how to make paints, I could paint them too."
+    her "If I ever figure out how to make a glaze, I could paint them too."
     him "I think they look great as is."
     her "I'm proud of our work too."
     $ skill_creative += 10
