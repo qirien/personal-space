@@ -731,7 +731,112 @@ label monthly_event_7:
 
 # MONTH 8
 label monthly_event_8:
-    "Conflict of Interest: Community vs. Spouse"
+    scene bg library with fade
+    "The library had a huge collection of Earth media that colonists could check out. They only had enough space for the most popular things, but it was still more media than anyone could experience in a lifetime."
+    "One day I noticed they had a movie about space colonists. I was curious to see how people on Earth saw people like us, so I checked it out."
+    scene bg farm_interior with fade
+    her "What do you want to do tonight? I checked out a movie that looks fun..."
+    him "Oh, sorry, I told Thuc I'd help him build a fence tonight. He helped me build ours to keep the animals out of the crops, so I said I'd help with his."
+    menu:
+        "I was disappointed, but..."
+
+        "Can't you do it another night?":
+            her "Can't you help him another night? I was really looking forward to watching this with you."
+            him "No, sorry, it has to be tonight."
+            her "Okay, see you later."
+            him "Bye, [her_nickname]."
+            "The house suddenly seemed so quiet. I usually didn't mind being alone, but I had really been looking forward to this. The wind whistled mournfully through the cracks in the walls."
+            menu:
+                "What should I do?"
+                "Watch it without him":
+                    her "Forget it, I'm watching it without him!"
+                    "It was full of drama, comedy, and funny inaccuracies about space colonies, but I didn't really enjoy it..."
+                    $ relaxed -= 5
+                "Do something else":
+                    "I tried to distract myself with a book, but I wasn't really having fun."
+                    $ relaxed -= 5
+                "...":
+                    "All I could think about was how he abandoned me. It wasn't every night I asked him to do something fun with me; why couldn't he put me first instead of his other plans?"
+                    "I worried that maybe I was not good enough - not pretty enough, not smart enough, not strong enough - not just for him, but for this planet. What was I even doing here?"
+                    "I trudged in circles through these depressing thoughts for hours."
+                    $ relaxed -= 10
+            "Finally, I just went to bed."
+            scene black with fade
+            "Everything seemed fine the next day, but I still felt insecure."
+            $ loved -= 2
+
+        "I'll help, too.":
+            her "I'll help too!"
+            him "Do you really want to?"
+            her "Yes, we all need to work together to succeed. Plus, I'll get to be with you."
+            him "All right, let's go!"
+            "Thuc had already cut some logs and branches for us to tie up, but we still had to dig holes for posts."
+            if (skill_physical >= 20):
+                "It was a good thing I came, because there was a lot of hard work to do."
+            elif (skill_technical >= 20):
+                "It was a good thing I came, because I pointed out a better way we could make the fence that would be really sturdy."
+            else:
+                "I'm not sure I was much help, but I worked hard and did my best."
+            "We worked hard in the gathering darkness, until the moons rose and gave us their wan light. We worked on and on, until finally it was done."
+            thuc "Thank you so much, both of you."
+            him "Glad we could help. I hope this fence holds up for you."
+            thuc "Well, you can count on my help anytime, if you need it."
+            her "Thanks, I'm sure we will."
+            "We walked home by moonlight.  The two moons cast opposing shadows from the shrubs and trees, making a maze of light for us to follow. [his_name] reached for my hand."
+            him "Thanks for coming. Everything's better with you."
+            her "Even putting up fences is not too bad when we're together."
+            $ loved += 5
+            $ skill_physical += 5
+            $ community_level += 5
+            scene black with fade
+  
+        "Want to watch it another night?":
+            her "No problem, we'll just watch it another night."
+            him "Thanks for understanding. I'll see you later, [her_nickname]."
+            "It was a little lonely, especially since I was really looking forward to watching the movie with him, but I soon was absorbed in a good book and then went to bed."
+            scene black with fade
+            "We watched the movie the next night. Even though they got a lot of things wrong about space colonization, we really got into the drama and tension. We both cried a little at the end."
+            $ relaxed += 5
+            $ loved += 5
+  
+        "You're never here when I need you!":
+            $ loved -= 5
+            her "You're never here when I need you!"
+            him "What are you talking about? I'm home almost every night."
+            her "But you're always on your computer; I wanted to do something together tonight."
+            him "Well, I can't. I promised Thuc I'd come tonight."
+            her "I'm not really important to you, am I?"
+            him "What?! Of course you are!"
+            her "Then stay home with me!"
+            him "No, I'm not going to break my promise. Now I have to go, we want to get this done before the moons set."
+            menu:
+                "He's leaving..."
+                "Fine, just leave me here.":
+                    her "Fine, just leave me here."
+                    "He didn't say anything, just shook his head. I watched him leave, feeling hurt and lonely."
+                    "All I could think about was how he abandoned me. It wasn't every night I asked him to do something fun with me; why couldn't he put me first instead of his other plans?"
+                    "I worried that maybe I was not good enough - not pretty enough, not smart enough, not strong enough - not just for him, but for this planet. What was I even doing here?"
+                    "I trudged in circles through these depressing thoughts for hours."
+                    scene black with fade
+                    "I forgave him the next day, but I still felt insecure."
+                    $ relaxed -= 5
+                    "Finally, I just went to bed."
+                "...":
+                    "I didn't say anything; just watched him leave, feeling hurt and lonely."
+                    "All I could think about was how he abandoned me. It wasn't every night I asked him to do something fun with me; why couldn't he put me first instead of his other plans?"
+                    "I worried that maybe I was not good enough - not pretty enough, not smart enough, not strong enough - not just for him, but for this planet. What was I even doing here?"
+                    "I trudged in circles through these depressing thoughts for hours."
+                    $ relaxed -= 5
+                    "Finally, I just went to bed."
+                    scene black with fade
+                    "I forgave him the next day, but I still felt insecure."
+                "Sorry":
+                    her "Sorry, [his_name]. I'm being selfish."
+                    him "It's all right, [her_nickname]. Let's do something together tomorrow night, okay?"
+                    her "Okay, [his_name]."
+                    "We watched the movie the next night. Even though they got a lot of things wrong about space colonization, we really got into the drama and tension. We both cried a little at the end."
+                    $ relaxed += 2
+                    $ loved += 5
     return
 
 # MONTH 9 - how could I do better?
@@ -813,7 +918,7 @@ label monthly_event_9:
             elif (skill_domestic < 10):
                 him "I'd like it if you did more things around the house."
                 menu:
-                   "That's sexist.":
+                   "That's sexist":
                         her "That's sexist. Women belong in the house, is that it?"
                         him "Hey, you asked what I'd like. I'd like to come home to a clean, well-organized house."
                         menu:
@@ -1111,7 +1216,7 @@ label monthly_event_13:
 # MONTH 14 - Pregnancy or not?
 label monthly_event_14:
     scene bg farm_interior with fade
-    if (want_kids and (made_love >= 5)):
+    if (want_kids and (made_love >= 3)):
         her "I wonder if I'm getting sick; I've felt so tired lately."
         him "I haven't heard of anything going around. That's one of the good things about being so far from Earth - we don't get as many of their germs."
         her "Well, I've got something. It's not like I'd make it up!"
@@ -1144,33 +1249,39 @@ label monthly_event_14:
                 "The fresh air and walking seemed to help some, but I was still glad to finally get home."
             "Try and get some work done":
                 "I went back out and was able to finish up the day's work, taking two more breaks when I started to feel too light-headed."
-                "It felt good to get home. I still wasn't feeling well so I decided to lie down."
-                him "Are you feeling any better?"
-                her "Not really."
-                him "Sorry to hear that, [her_nickname]. Do you want to stop by the clinic in the morning?"
-                menu:
-                    her "I'm not feeling {b}that{/b} bad, but..."
-                    "Go to the Clinic":
-                        her "It can't hurt to check it out."
-                        him "I'll come with you tomorrow."
-                        "We walked to the clinic holding hands, not saying anything, just watching the sun rise and feeling together."
-                        if (profession == "doctor"):
-                            "I reviewed my own symptoms in my head and decided to take a urine sample first."
-                        else:
-                            "The doctor at the clinic listened to my symptoms and had me give a urine sample."
-                        "The results said..."
-                        him "You're pregnant?!"
-                        her "Oh! I've been so busy I haven't even been thinking about that lately. But...yes, I guess I am."
+        "It felt good to get home. I still wasn't feeling well so I decided to lie down."
+        him "Are you feeling any better?"
+        her "Not really."
+        him "Sorry to hear that, [her_nickname]. Do you want to stop by the clinic in the morning?"
+        menu:
+            her "I'm not feeling {b}that{/b} bad, but..."
+            "Go to the Clinic":
+                her "It can't hurt to check it out."
+                him "I'll come with you tomorrow."
+                "We walked to the clinic holding hands, not saying anything, just watching the sun rise and feeling together."
+                if (profession == "doctor"):
+                    "I reviewed my own symptoms in my head and decided to take a urine sample first."
+                else:
+                    "The doctor at the clinic listened to my symptoms and had me give a urine sample."
+                    "The results said..."
+                    him "You're pregnant?!"
+                    her "Oh! I've been so busy I haven't even been thinking about that lately. But...yes, I guess I am."
                         
-                    "Don't go":
-                        her "I'll be fine. If I don't feel better in a few days, I'll have it checked out."
-                        him "Alright."
-                        "I didn't feel better, but I didn't feel much worse, either. My chest ached, sometimes, though, and I got headaches when I never used to."
-                        "Finally it dawned on me..."
-                        her "Maybe I'm pregnant?"
-                        "Sure enough, I went to the clinic and tested positive for pregnancy."
+            "Don't go":
+                her "I'll be fine. If I don't feel better in a few days, I'll have it checked out."
+                him "Alright."
+                "I didn't feel better, but I didn't feel much worse, either. My chest ached, sometimes, though, and I got headaches when I never used to."
+                "Finally it dawned on me..."
+                her "Maybe I'm pregnant?"
+                "Sure enough, I went to the clinic and tested positive for pregnancy."
                 
             "Run some tests" if (profession == "doctor"):
+                her "I'll just run some tests at work today, no big deal."
+                if (loved >= 0):
+                    him "I'll come with you."
+                    "We walked to the clinic holding hands. It felt so good not to be alone right now."
+                else:
+                    him "Okay, let me know what happens."
                 her "Brennan, will you please help me get a blood sample?"
                 brennan "From who?"
                 her "From me."
@@ -1182,10 +1293,6 @@ label monthly_event_14:
                 her "I guess...I am!"
                 "That explained everything."
                 
-            "Ask the doctor" if (profession != "doctor"):
-                "I went over to the clinic and explained my symptoms. The first thing they had me do was give them a urine sample."
-                "It turned out I was pregnant."
-
         him "[her_name], that's great!"
         menu:
             "How do I feel about it?"
@@ -1198,6 +1305,40 @@ label monthly_event_14:
         him "I wish it didn't have to be so hard for you, but our little baby is worth it!"
         her "Our little baby..."
         "This was going to take some getting used to."
+        $ is_pregnant = True
+
+    # They want kids but didn't make love enough
+    elif (want_kids):
+        her "[his_name]... it's been over a year since we've been trying to have a baby."
+        him "Yeah, I guess sometimes it takes a while."
+        her "Do you think the problem might be that we haven't made love enough?"
+        him "Well, we have both been busy, and tired..."
+        menu:
+            "Should we change things?"
+            "No rush":
+                her "I guess there's no need to rush, right? In fact, it's probably good that I'm not pregnant, so we can have things setup better when it happens."
+                if (loved >= 0):
+                    him "Yeah, that's true. Come here, [her_nickname] - don't worry. It'll be okay."
+                    "He held me close for a long time, stroking my hair."
+                    $ made_love += 1
+                    $ loved += 5
+                else:
+                    him "Is that why you haven't wanted to make love lately?"
+                    her "No! That's not it at all! I'm just trying to see the bright side of things."
+                    him "The only bright side is that there's no kids to be hurt by our unstable relationship."
+                    her "Unstable?!"
+                    him "Yes. People who are married don't act this way. We never do things together; we never make love. And when I try and do things for you, it's like I can never do anything right."
+                    her "Is that really how you see us?"
+                    him "It's true, isn't it? We have to turn things around if we want this to work, and especially if we want to bring kids into this family."
+                    "We talked about it some more, and we both agreed to try and put the other person as more of a priority in our own life. But I wonder if we can actually do it... or if our marriage is already doomed."
+
+            "Let's make a baby!":
+                her "Come on over here, [his_nickname], and make me a baby!"
+                him "You want me to turn you into a baby?"
+                her "Ohhh, you!"
+                him "Sorry, I mean, 'Yes ma'am'!"
+                $ made_love += 2
+                $ loved += 5
 
     else:
         her "[his_name], there's something we need to discuss."
@@ -1237,8 +1378,106 @@ label monthly_event_14:
             
     return
 
+# MONTH 15 Fertility and Food and Community
 label monthly_event_15:
-    "if pregnant, renewed concern about quality of food and its impact on fetus... but spouse might not agree that the more expensive food is better or whatever.  if not pregnant... maybe spouse gets tired of your cooking or something"
+    if (is_pregnant):
+        him "I made you breakfast, so eat up, [her_name]! You're eating for two!"
+        her "Yeah, but one of us is the size of a pea..."
+        her "Eggs? Bacon?! Where did you get this stuff?!"
+        him "Well, when Mrs. Peron heard about your 'condition', she insisted that you needed to eat eggs to have a healthy baby. And when I told Ilian the good news, he pulled this out of some stash in the storehouse."
+        her "Wait, you told them I'm pregnant?"
+        him "Yeah, why not?"
+        her "I don't know if I'm ready for people to know, yet."
+        him "Oh... well, when I told Mrs. Peron, she posted a message about it on the colony message board..."
+        her "So everyone knows?"
+        him "Yeah, pretty much."
+        her "I haven't even told my parents yet!"
+        him "What's stopping you?"
+        her "I guess... I wanted to tell them in person, but that's just not possible, is it?"
+        him "No... but we can send them a message."
+        her "But what if something goes wrong, like a miscarriage?"
+        him "Don't say that!"
+        her "Well, it's a possibility, isn't it?!"
+        him "Yeah, but... Whatever happens, I want to face it with friends and family knowing everything."
+        menu:
+            "How do I feel?"
+            "I'd rather keep it to myself":
+                her "I disagree. I'd rather face our problems on our own, if we can."
+            "I guess you're right":
+                her "Yeah, that makes sense. Hopefully nothing bad will happen."
+            "I can't believe you did that":
+                her "I can't believe you told other people without talking to me first!"
+                him "What, so you want to decide what I can and can't tell people?"
+                her "No, but it's something important enough that we should have decided on it together!"
+                him "Sorry, I just didn't see it that way."
+                her "Well, I do. "
+                him "..."
+
+    elif (want_kids):
+        him "I made you breakfast, so eat up! Soon you might be eating for two."
+        her "Ha ha, we'll see..."
+        her "Yum, is this berries and cream?! Where did you get it?"
+        him "Well, when Mrs. Nguyen heard we were trying to have kids, she insisted that you needed to eat cream to have a healthy baby. So she gave me some from her goats."
+        her "Wait, how does she know we are trying to have a baby?"
+        him "Well, I might have mentioned it to Thuc...and I guess he told his wife?"
+        her "So basically the whole colony knows."
+        menu:
+            him "Is that a problem?"
+            "Not really":
+                her "I guess not. It's just kind of weird. As long as they don't start serenading us with fertility songs or anything it doesn't really matter."
+                him "Okay, I'll post that to the message board. Thanks for the well-wishes, but no fertility rites, please."
+                her "Shut up and try some of this."
+            "It's annoying":
+                her "That's really annoying. I don't want people to be asking me all the time if I'm pregnant yet, or giving well-meaning but idiotic advice, or looking at me like I'm a time bomb or something."
+                him "I'm not sure you can prevent that, anyway. I mean, they're going to know sooner or later, right?"
+                if (loved >= 0):
+                    her "Yes, but I wanted it to be on my terms."
+                    him "I see.  I'm sorry, [her_name], I didn't even think about it."
+                    her "It's all right; we'll deal with it. Come on and eat breakfast with me, okay?"
+                    him "No problem."
+                else:
+                    her "Yes, but I wanted to decide that! It's my body, you know!"
+                    him "It's *our* child."
+                    her "It doesn't even exist yet! What if I change my mind, or something goes wrong?"
+                    him "I thought we had already decided."
+                    her "Well, we didn't decide to tell people about it, that's for sure."
+                    him "Look, I'm sorry. I just wanted to tell somebody, and Thuc's probably the best friend I have here, except for you."
+                    her "Oh, it's all right. Just come eat some breakfast."
+                $ loved -= 2
+                $ relaxed -= 2
+            "I'm mortified":
+                her "I'm mortified! I don't want people thinking about us conceiving a baby!"
+                him "Don't you think it's pretty obvious? I mean, healthy, newly-married couple on a colony, that's kind of why we're here?"
+                her "Yeah, but... it should be more private than that."
+                him "I guess I don't see it that way."
+                her "So you're totally okay with people looking at us thinking, 'I wonder if they got it on last night?'"
+                him "I don't think anyone's thinking that. And if they are, you can't stop them."
+                her "Ugh, whatever, let's just eat breakfast."
+                $ loved -= 5
+                $ relaxed -= 5
+    else:
+        him "I made you breakfast."
+        her "Oh! Thank you!"
+        her "Wow, berries and cream, what a treat!"
+        him "Yeah, Thuc's wife gave them to me. She said they might help if you were having, uh, female problems."
+        her "What?!"
+        him "I think she was trying to help us have a baby."
+        her "Ha ha, it'll take more than berries and cream..."
+        him "Well, we can enjoy it anyway, right?"
+        her "We? She sent this for me!"
+        him "Oh, so you want me to tell her that we're not trying to have a baby?"
+        her "Don't say that! Then she won't send any more!"
+        him "Better share, then!"
+        menu:
+            "Should I share it?"
+            "Share":
+                her "Here, have some."
+                him "Mmmm, thank you."
+                $ loved += 2
+            "Don't share":
+                her "Hands off, this is mine!"
+                him "Alright, alright! Sheesh!"
+                $ loved -= 2
     return
 
 label monthly_event_16:

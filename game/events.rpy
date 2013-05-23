@@ -83,7 +83,7 @@ init python:
 
     # Scripted Events that happen once
     event("monthly_event_1", "period == 'monthly_event'", event.once())
-    for i in range(2,24):
+    for i in range(2,25):
         event ("monthly_event_" + `i`,  
                "period == 'monthly_event'", 
                event.once(), 

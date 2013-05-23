@@ -53,16 +53,21 @@ label relax_together_1:
     return
 
 label relax_together_2:
+    scene bg pond with fade
     "We went on a moonlight walk to the river. We found a spot where the water was deeper and slower, and sat down. I put my head on his shoulder, breathing in the cool night air."
+    show her normal at left
+    show him normal at center
     him "Want to go for a swim?"
     her "Are you nuts?!"
     him "Yes!"
+    show him normal at right
     "He took off his clothes - all of them - and cannonballed in, splashing me."
     menu:
         her "Hey!"
         "Join him":
-            "I took of my clothes slowly. There was enough moonlight that I knew he could see me."
+            "I undressed slowly. There was enough moonlight that I knew he could see me."
             him "Whoo! Alright, [her_name]! Come on in!"
+            show her normal at center
             "I decided to get back at him by jumping in right next to him with a big splash, but he didn't seem to mind."
             "The water was cold, but somehow that just made everything more exciting."
             $ loved += 5
@@ -78,117 +83,12 @@ label relax_together_2:
             him "I'll warm you up, [her_nickname]!"
             her "No thanks, I'm going home."
             $ loved -= 5
-    return
 
-label relax_together_3:
-    scene bg library with fade
-    "The library had a huge collection of Earth media that colonists could check out. They only had enough space for the most popular things, but it was still more media than anyone could experience in a lifetime."
-    "One day I noticed they had a movie about space colonists. I was curious to see how people on Earth saw people like us, so I checked it out."
-    scene bg farm_interior with fade
-    her "What do you want to do tonight? I checked out a movie that looks fun..."
-    him "Oh, sorry, I told Thuc I'd help him build a fence tonight. He helped me build ours to keep the animals out of the crops, so I said I'd help with his."
-    menu:
-        "I was disappointed, but..."
-
-        "Can't you do it another night?":
-            her "Can't you help him another night? I was really looking forward to watching this with you."
-            him "No, sorry, it has to be tonight."
-            her "Okay, see you later."
-            him "Bye, [her_nickname]."
-            "The house suddenly seemed so quiet. I usually didn't mind being alone, but I had really been looking forward to this. The wind whistled mournfully through the cracks in the walls."
-            menu:
-                "What should I do?"
-                "Watch it without him":
-                    her "Forget it, I'm watching it without him!"
-                    "It was full of drama, comedy, and funny inaccuracies about space colonies, but I didn't really enjoy it..."
-                    $ relaxed -= 5
-                "Do something else":
-                    "I tried to distract myself with a book, but I wasn't really having fun."
-                    $ relaxed -= 5
-                "...":
-                    "All I could think about was how he abandoned me. It wasn't every night I asked him to do something fun with me; why couldn't he put me first instead of his other plans?"
-                    "I worried that maybe I was not good enough - not pretty enough, not smart enough, not strong enough - not just for him, but for this planet. What was I even doing here?"
-                    "I trudged in circles through these depressing thoughts for hours."
-                    $ relaxed -= 10
-            "Finally, I just went to bed."
-            scene black with fade
-            "Everything seemed fine the next day, but I still felt insecure."
-
-        "I'll help, too.":
-            her "I'll help too!"
-            him "Do you really want to?"
-            her "Yes, we all need to work together to succeed. Plus, I'll get to be with you."
-            him "All right, let's go!"
-            "Thuc had already cut some logs and branches for us to tie up, but we still had to dig holes for posts."
-            if (skill_physical >= 20):
-                "It was a good thing I came, because there was a lot of hard work to do."
-            elif (skill_technical >= 20):
-                "It was a good thing I came, because I pointed out a better way we could make the fence that would be really sturdy."
-            else:
-                "I'm not sure I was much help, but I worked hard and did my best."
-            "We worked hard in the gathering darkness, until the moons rose and gave us their wan light. We worked on and on, until finally it was done."
-            thuc "Thank you so much, both of you."
-            him "Glad we could help. I hope this fence holds up for you."
-            thuc "Well, you can count on my help anytime, if you need it."
-            her "Thanks, I'm sure we will."
-            "We walked home by moonlight.  The two moons cast opposing shadows from the shrubs and trees, making a maze of light for us to follow. [his_name] reached for my hand."
-            him "Thanks for coming. Everything's better with you."
-            her "Even putting up fences is not too bad when we're together."
-            $ loved += 5
-            $ skill_physical += 5
-            $ community_level += 5
-            scene black with fade
-  
-        "Want to watch it another night?":
-            her "No problem, we'll just watch it another night."
-            him "Thanks for understanding. I'll see you later, [her_nickname]."
-            "It was a little lonely, especially since I was really looking forward to watching the movie with him, but I soon was absorbed in a good book and then went to bed."
-            scene black with fade
-            "We watched the movie the next night. Even though they got a lot of things wrong about space colonization, we really got into the drama and tension. We both cried a little at the end."
-            $ relaxed += 5
-            $ loved += 5
-  
-        "You're never here when I need you!":
-            her "You're never here when I need you!"
-            him "What are you talking about? I'm home almost every night."
-            her "But you're always on your computer; I wanted to do something together tonight."
-            him "Well, I can't. I promised Thuc I'd come tonight."
-            her "I'm not really important to you, am I?"
-            him "What?! Of course you are!"
-            her "Then stay home with me!"
-            him "No, I'm not going to break my promise. Now I have to go, we want to get this done before the moons set."
-            menu:
-                "He's leaving..."
-                "Fine, just leave me here.":
-                    her "Fine, just leave me here."
-                    "He didn't say anything, just shook his head. I watched him leave, feeling hurt and lonely."
-                    "All I could think about was how he abandoned me. It wasn't every night I asked him to do something fun with me; why couldn't he put me first instead of his other plans?"
-                    "I worried that maybe I was not good enough - not pretty enough, not smart enough, not strong enough - not just for him, but for this planet. What was I even doing here?"
-                    "I trudged in circles through these depressing thoughts for hours."
-                    scene black with fade
-                    "I forgave him the next day, but I still felt insecure."
-                    $ relaxed -= 5
-                    "Finally, I just went to bed."
-                "...":
-                    "I didn't say anything; just watched him leave, feeling hurt and lonely."
-                    "All I could think about was how he abandoned me. It wasn't every night I asked him to do something fun with me; why couldn't he put me first instead of his other plans?"
-                    "I worried that maybe I was not good enough - not pretty enough, not smart enough, not strong enough - not just for him, but for this planet. What was I even doing here?"
-                    "I trudged in circles through these depressing thoughts for hours."
-                    $ relaxed -= 5
-                    "Finally, I just went to bed."
-                    scene black with fade
-                    "I forgave him the next day, but I still felt insecure."
-                "Sorry":
-                    her "Sorry, [his_name]. I'm being selfish."
-                    him "It's all right, [her_nickname]. Let's do something together tomorrow night, okay?"
-                    her "Okay, [his_name]."
-                    "We watched the movie the next night. Even though they got a lot of things wrong about space colonization, we really got into the drama and tension. We both cried a little at the end."
-                    $ relaxed += 5
-                    $ loved += 5
+    scene black with fade
     return
 
 # Did he only marry [her_name] so he could be a colonist?
-label relax_together_4:
+label relax_together_3:
     scene bg farm_interior with fade
     play music "music/Prelude02.ogg" fadeout 2.0
     "One day [his_name] came in from the fields with a big smile on his face."
@@ -251,7 +151,7 @@ label relax_together_4:
     return
 
 # Massage time!
-label relax_together_5:
+label relax_together_4:
     scene bg bedroom with fade
     play music "music/Will.ogg" fadeout 2.0
     "One day after dinner I noticed [his_name] rubbing his shoulders and grimacing."
@@ -291,7 +191,7 @@ label relax_together_5:
     return
 
 # go "out" to eat on a picnic
-label relax_together_6:
+label relax_together_5:
     scene bg farm_interior with fade
     him "Put on your fancy clothes, [her_nickname], because we are going OUT tonight!"
     her "Out where? And I don't have any fancy clothes..."
@@ -371,7 +271,7 @@ label relax_together_6:
     "We lay there for a long time...In the morning, it felt so good to wake up next to him, watching the sky lighten. With one final kiss, we got up and carried everything back to the house together."
     return
 
-label relax_together_7:
+label relax_together_6:
     scene bg fields with fade
     "I was weeding in the backyard when I found some wildflowers. They reminded me of clover, so I made a daisy-chain circlet out of them. It was fun."
     menu:
@@ -397,7 +297,7 @@ label relax_together_7:
     return
 
 # He wants to go to church services, you can go with him or not.
-label relax_together_8:
+label relax_together_7:
     scene bg farm_interior with fade
     him "Hey, [her_nickname], I was going to go to church services today... do you want to come?"
     menu:
@@ -435,8 +335,8 @@ label relax_together_8:
                             her "I don't know. It's not something I think about a lot. I'd rather stay here, I guess."
                             him "Okay, well, I'll let you know how it goes."
                             her "Bye."
-                        "I don't think there's a God, but if it helps you, go ahead":
-                            her "God is just an idea people made up to explain things they don't understand. But you don't have to agree with me."
+                        "I don't think there's a God":
+                            her "God is just an idea people made up to explain things they don't understand. But if it helps you, go ahead and go by yourself."
                             him "Alright, well, I'll see you later, then."
                             her "Bye."
                             return
@@ -501,7 +401,7 @@ label goto_church:
 # People probably won't even see these last ones unless they always choose "Do something with [his_name]", so don't put a ton of effort into them.
 
 # walk around the farm together looking at what you've created together.
-label relax_together_9:
+label relax_together_8:
     "We walked around the farm together. [his_name] showed me where all the different crops were, and told me about what kind of soil they liked and what the weeds were like."
     her "This is like your baby, isn't it?"
     him "Yeah, it is."
@@ -510,11 +410,11 @@ label relax_together_9:
 
     return
 
-label relax_together_10:
+label relax_together_9:
     "We started talking, and somehow I ended up telling him all about my job. Who was hard to work with, things that seemed impossible, the people I helped... it felt good to have him know what I had been working on."
     return
 
-label relax_together_11:
+label relax_together_10:
     scene bg farm_interior with fade
     "We watched a movie together. It was pretty good, but the ending was terrible."
     him "See, what they needed was to have the girlfriend show back up at the end--"
@@ -524,20 +424,42 @@ label relax_together_11:
     him "I thought it was going to turn out to be a cyborg pterodactyl."
     her "That would have been awesome!"
     "Sometimes talking about the movie is more fun than the actual movie itself..."
-    $ relaxed += 5
-    $ loved += 5
+    $ relaxed += 2
+    $ loved += 2
     return
+
+label relax_together_11:
+    if (is_pregnant or want_kids):
+        "We were talking about what it would be like when we did have a baby, and soon we started talking about baby names."
+    else:
+        "Somehow, we started talking about baby names."
+
+    him "You don't like the name Ringo?"
+    her "No! It sounds like a circus master, or a cowboy, or..."
+    him "Or a totally awesome musician?"
+    her "No! It just sounds dumb!"
+    him "Well, not as dumb as Alistair. 'Hello, my name is Alistair, I'm a tap-dancing pansy who can't even button his own waistcoat."
+    her "It's refined and elegant! And there's nothing wrong with tap dancing, is there?"
+    him "No, but do you really think a kid of ours is going to be a tap dancer?"
+    her "Probably not.\nAnyway, we'll just keep looking, I bet we can find a name we both like."
+
+    $ relaxed += 2
+    $ loved += 2
+    return
+
 
 label relax_together_12:
     him "I'm so glad we do things together all the time."
     her "Me, too. You're not just my [his_nickname]; you're also my best friend."
+    $ relaxed += 5
+    $ loved += 2
     return
 
 # Random events that can happen multiple times
 
 label relax_together_a:
     scene bg bedroom with fade
-    "We cuddled together while we watched an episode of an old TV show."
+    "We cuddled together while we watched a movie."
     $ relaxed += 5
     $ loved += 2
     return

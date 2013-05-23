@@ -121,11 +121,16 @@ label relax_alone_6:
     return
 
 label relax_alone_7:
+    scene bg farm_interior
+    "I looked through some old photos of my family. The places, the people - they all felt so unreal. I'd probably never see them again."
+    "It was kind of sad, but at the same time it made me appreciate even more the good times we had had together."
     $ relaxed += 5
     $ loved -= 2
     return
 
+# These probably won't be seen, so make them simple.
 label relax_alone_8:
+    "I listened to some music - I didn't do anything else while listening, just lay back and really listened. It made me think of summer vacation back home, just lying back and reading books in the shade, going swimming, and drinking lemonade. What would our kids' summers be like?"
     $ relaxed += 5
     $ loved -= 2
     return
@@ -136,9 +141,6 @@ label relax_alone_9:
     return
 
 label relax_alone_10:
-    scene bg farm_interior
-    "I looked through some old photos of my family. The places, the people - they all felt so unreal. I'd probably never see them again."
-    "It was kind of sad, but at the same time it made me appreciate even more the good times we had had together."
     $ relaxed += 5
     $ loved -= 2
     return
