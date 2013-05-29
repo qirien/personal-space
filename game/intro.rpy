@@ -174,7 +174,7 @@ label marriage_proposal:
             $ favorite_wedding_gift = "my mother's recipe book"
             "My mom's recipe book. She's not that great of a cook, but she put in recipes for all the foods she regularly cooks. Those foods bring back so many childhood memories."
 
-    scene bg black with fade
+    scene black with fade
 
     him "Today's the day, lovebug."
     her "Lovebug?"

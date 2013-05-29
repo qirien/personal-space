@@ -727,6 +727,30 @@ label monthly_event_7:
                 "I could tell he was kind of disappointed, but I felt glad I wasn't hiding anything from him."
                 "And when he took it in, they were able to fix it so it worked just fine."
             $ loved += 2
+
+    scene black with fade
+    "A week later, I was reading my messages when I noticed that they were having a New Year's party."
+    her "Has it really been a whole year that we've been here?"
+    him "Well, a year on this planet is only seven months, but, yeah. It's good for farming to have a shorter year, especially since the winters are so mild."
+    her "Happy New Year, then!"
+    him "We should make a toast..."
+    menu:
+        "What should we toast?"
+        "To us!":
+            her "To us!"
+            if (loved >= 0):
+                him "May we have many more years together..."
+            else:
+                him "To us, then."
+        "To the colony!":
+            her "To the colony! We made it one year!"
+            him "May we all survive many more!"
+        "To humanity!":
+            her "To humanity! We're still here!"
+            him "To humanity!"
+        "To partying!":
+            her "Here's to any excuse to party!"
+            him "To partying!"
     return
 
 # MONTH 8

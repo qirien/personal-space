@@ -53,10 +53,14 @@ label day:
     stop music fadeout 5.0
     scene black
 
-    # We may also want to compute the name for the month here, but
-    # right now we don't bother.
-
-    "It's month %(month)d."
+    $ year = 1
+    $ local_month = month
+    # Compute the name for the month here
+    while (local_month > 7):
+        $ year += 1
+        $ local_month -= 7
+        
+    "It's year %(year)d, month %(local_month)d."
     # TODO: comment out this debugging code
     "Loved = [loved], Relaxed = [relaxed], community_level = [community_level], Made_love = [made_love]"
 

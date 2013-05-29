@@ -86,7 +86,8 @@ label colony_ship:
 # Background about Talam
     "We talked about lots of other things, of course. We talked about space, about what we would miss from Earth, about what our families were probably doing.  We studied what the pre-colonization team of scientists had reported so far."
     scene bg talam with fade
-    "Even though Talam was technically a \"garden planet\", meaning humans could breathe and there were plants and animals, it wasn't very much like modern Earth.  There were a lot of sandy areas with little vegetation, and there were reports of some large, dangerous creatures that lived in the water."
+    "Even though Talam was technically a \"garden planet\", meaning humans could breathe and there were plants and animals, it wasn't very much like modern Earth.  The plants were all quite different, and most of the animals were similar to amphibians or insects."
+    "Time on Talam would be different, too: days lasted longer, but a year was only about two-thirds of a year on Earth."
     # TODO: Would this be more exciting with some dialogue?
     "The planet was also a lot less protected from its small Sun, since it was a lot closer.  The building materials we'd brought along would help protect us from solar flares and radiation, but only if we were inside."
     # TODO: Maybe she builds this?
@@ -187,7 +188,7 @@ label settling_in:
     # Land on the planet and get settled
     play music "music/You.ogg" fadeout 1.0
     scene bg talam with fade
-    "The first month on Talam was really busy. Luckily, we arrived in the dry season, so the weather was sunny and clear and the nights were not too cold. We all worked together to get everyone's houses up right away. The first one took the longest, as we had to figure out how to put all the pieces together."
+    "The first month on Talam was really busy. We arrived at the end of winter, so it was still a bit cold and rainy. We all worked together to get everyone's houses up right away. The first one took the longest, as we had to figure out how to put all the pieces together."
     "Finally, our house was put up. We were so glad to stop sleeping in the shuttle and have our own space."
     scene bg farm_interior with fade
     show her normal at right
@@ -260,7 +261,7 @@ label settling_in:
 
     him "This was taken at my parents' farm, right before I met you. My sister and her husband and their kids drove for two days to come and visit, and my little brother flew in from overseas. Good thing, too, because it was the last time we'd all be together."
     her "Have you heard from them lately?"
-    him "Yeah, I had three or four emails a day when we first left, but now they write about once a month. My mom was really sick last time my dad wrote to me; she's probably better by now, but it takes a month for messages to get through, so there's no way for me to know."
+    him "Yeah, I had three or four emails a day when we first left, but now they write about once a month. My mom was really sick last time my dad wrote to me; she's probably better by now, but it takes so long for messages to get through, so there's no way for me to know."
     her "I'm sorry, [his_name], I didn't know..."
     him "It's all right. They're important to me, but you're my family now."
     "We kissed, and looked out the window at the alien hills surrounding our little cabin. It felt surreal, like I was in a movie theatre and any minute the lights would come up and the credits would roll. I held [his_name] tightly; he was here; he was real."

@@ -52,15 +52,38 @@ label work_0:
     $ times_worked += 1
 
     "My boss was also the leader of our little community. I guess you could call him the mayor?"
-    boss "All right, [her_name], ready to get to work?"
-    menu:
-        "Am I ready?"
-        "Of course!":
-            her "Of course! Where shall I start?"
-        "I guess so":
-            her "Yeah, I guess. What's first?"
-        "No, but here I am":
-            her "No, I'm pretty nervous. But I'll do my job anyway."
+    "Right after we landed, he called a meeting for everyone where he gave a speech."
+    boss "We made it this far! Now, as you know, we've arrived right at the beginning of this planet's spring, so it's time to get seeds in the ground! We would like for our colony to become self-sufficient as far as necessities are concerned."
+    boss "In two years, another colony ship will come with supplies and more colonists. So, until then, we're on our own."
+    boss "Are there any questions?"
+    menu boss_meeting:
+        "Do I have any questions?"
+        "How much food do we have?":
+            her "How much food do we have in storage now?"
+            boss "We brought enough in our storehouse for everyone for one year. It will last much longer than that unopened, so I'd like to keep it for emergencies and use the food we grow as much as possible."
+            jump boss_meeting
+        "What about medicine?":
+            her "What about medicine?"
+            boss "We have a good supply of the most common medicines, and Dr. Lily has the tools to synthesize new medicines if needed. But our supply is not unlimited, so try and use them sparingly."
+            jump boss_meeting
+        "Do we have spare parts?":
+            her "Do we have spare parts for when things break?"
+            boss "We have the 3D printers at the library for spare parts, but we have a limited supply of plastic and metal, so let's make sure we recycle and use native materials where possible."
+            jump boss_meeting
+        "Any weapons?":
+            her "Do we have any weapons?"
+            boss "We do have a few hunting weapons that you can check out from the storehouse if you would like to try your hand at hunting, though I'd check with Dr. Lily first and make sure that the animal is edible!"
+            jump boss_meeting
+        "Is the ship coming in two Earth years or Talam years?":
+            her "Is the ship coming in two Earth years or Talam years?"
+            boss "Good question; that's two Earth years, which makes about..."
+            lily "About 26 Talam months. Since there are seven months a year here, that makes a little over three Talam years."
+            boss "Right...hopefully that answers your question!"
+            jump boss_meeting
+        "No questions.":
+            her "(I don't have any questions.)"
+
+    "After the meeting, the mayor met with me to show me around where I'd work."
 
     #Different event for each profession
     if (profession == "doctor"):
