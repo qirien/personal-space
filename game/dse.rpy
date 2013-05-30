@@ -55,12 +55,21 @@ label day:
 
     $ year = 1
     $ local_month = month
-    # Compute the name for the month here
+
+    # Compute the year and what month in the year it is
     while (local_month > 7):
         $ year += 1
         $ local_month -= 7
         
-    "It's year %(year)d, month %(local_month)d."
+    $ weather = "warm during the day and cool at night"
+    if ((local_month == 1) or (local_month == 2)):
+         $ weather += ". It rains often"
+    if ((local_month == 3) or (local_month == 4)):
+        $ weather = "hot and dry."
+    if ((local_month == 6) or (local_month == 7)):
+        $ weather = "cool and rainy."
+
+    "It's year %(year)d, month %(local_month)d. The weather is [weather]."
     # TODO: comment out this debugging code
     "Loved = [loved], Relaxed = [relaxed], community_level = [community_level], Made_love = [made_love]"
 
