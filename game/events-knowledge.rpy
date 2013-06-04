@@ -86,6 +86,17 @@ label knowledge_4:
 # Research geology, geography of planet
 label knowledge_5:
     scene bg library with fade
+    "I wanted to know why Talam's climate was the way it was, and why they chose to settle here on this spot, out of the whole planet."
+    "I read a few research papers from astronomers and looked at maps of the planet. I could see that it was colder near the poles; we were closer to the equator, which made for milder temperatures and made year-round agriculture possible."
+    "Obviously the river was very useful to our settlement for irrigation, and I also noticed some mountains further to the west. I had seen them in the distance. There was much more precipitation on this side of the mountain than on the other side, which also made this area ideal for colonization."
+    "I wondered why they didn't put us near the ocean, but then I read that hurricanes were very common here. Those same mountains acted as a hurricane barrier as well."
+    "There were plans to mine the mountains later for valuable metals and minerals, but for now they mainly wanted to see if it was even possible for us to live here. Apparently they were not as confident in our chances for survival as [his_name] was."
+    "Last, I learned that the mountains were also a region of previous volcanic activity, and there might be hot springs in the area."
+    if (skill_physical >= 60):
+        "Of course, I had already found these while hiking, but it was good to know there might be more."
+    else:
+        "I might have to go check those out sometime."
+
     $ skill_knowledge += 10
     return
 

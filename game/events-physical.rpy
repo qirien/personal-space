@@ -275,9 +275,117 @@ label physical_6:
         "Should I tell [his_name] about it? He might want to come, too."
         "Tell him":
             her "Hey, [his_nickname], I'm going hiking tomorrow; want to come?"
+            him "Yeah, I'm all caught up on the farm work here, and that sounds like fun."
+            her "And if I run into any ravenous wild animals, I'll be there to protect you."
+            him "Ha ha, yeah, something like that."
+            "We set off towards the mountains to the west, and climbed and climbed all morning long."
+            him "Do you smell that?"
+            her "Yeah, it's... sulfur?"
+            him "There might be a hot spring! Let's follow it!"
+            her "Sure, but let's make sure it's not full of acid or something before we get in it."
+            him "Picky, picky."
+            "Soon we came to a rocky area by a stream. We saw steam wafting off of a pool of water."
+            him "Ow! It's [b]really[/b] hot!"
+            her "Too hot to dip our feet in?"
+            him "Yes, it's probably hot enough to boil eggs."
+            "The rocks nearby were colorful, especially near the water. We stood admiring them for a few minutes, and then we heard a puffing sound. Steam started billowing from the center of the pool."
+            if (skill_knowledge >= 50):
+                her "It's a geyser; get out of the way!"
+                "I dragged [his_name] backwards with me as a fountain of steaming hot water shot up into the air from the middle of the pool."
+            else:
+                her "What's that sound?"
+                "Steaming hot water shot upwards into the air from the middle of the pool. We started running away, but some of it landed on our backs."
+                her "Ow ow ow!"
+                him "Tch, that burns!"
+                "Luckily, we weren't burned too badly."
+            
+            her "I didn't know there were geysers here."
+            him "Well, that could explain why the soil is so good here - maybe tthis mountain used to be a volcano."
+            her "It looks really cool."
+            him "Yeah, now that we don't have to worry about getting cooked!"
+            "After a few minutes the geyser died down."
+            her "Let's look around some more."
+            him "Sure, but be careful - there might be others."
+            "We followed the stream up the mountain further, until we found a spot where the stream was deeper and no plants grew around it."
+            her "This one's not too hot; feels like a bathtub."
+            menu:
+                "What should we do?"
+                "Take a sample to Dr. Lily":
+                    her "I'll take a sample to Dr. Lily; she can make sure it'd be safe for us to bathe in."
+                    him "Good idea."
+                    "I put some of the water into an old water bottle and we brought it back with us."
+                    her "Dr. Lily, I found a hot spring up in the mountains; would you mind testing the water for us?"
+                    lily "Not a problem. Let me get my pH strips and put some under the microscope..."
+                    lily "The water is slightly alkaline, and it has several kinds of minerals in it. I do see some bacteria, however, but they are not a kind we know about, so I don't know if they are dangerous or not."
+                    her "Okay, thanks."
+                "Try it out":
+                    her "It seems fine; I'll try it out."
+                    him "I'm game!"
+                    "We stripped down and got in the warm water. The water felt soft and slippery."
+                    "There was a slight breeze whispering through the trees, but everything else was quiet."
+                    if (loved >= 0):
+                        "I pulled [his_name] close and squeezed his hand. He nuzzled my neck playfully."
+                        $ loved += 2
+                    "It was so relaxing..."
+                    if (relaxed < 0):
+                        $ relaxed = 0
+                    else:
+                        $ relaxed += 5
+                "Look around some more":
+                    her "Let's look around some more."
+                    him "Okay."
+                    "We hiked around and found a few more hot springs of different temperatures; no more geysers, though."
+    
+            "It was neat to find hot springs and geysers not too far from the house. Maybe they'd be useful to us in the future."
         "Don't tell him":
             "I didn't tell him; he'd just worry. But I left a note saying where I went. If something went wrong, he'd find the note and know where I went. But if nothing went wrong, I'd be home before him and I could throw the note away before he found it."
-        
+            "I set off west, towards the mountains, until I found a stream meandering down from them. I followed the stream up the hill until I came to a rocky area with steam coming out of it. It smelled like rotten eggs."
+            if (skill_knowledge >= 50):
+                her "Looks like there's geothermal activity in this area; I should be careful."
+                "Sure enough, as I was looking around, I heard a gurgling sound and steam billowed out of the center of the water."
+            else:
+                "I heard a gurgling sound and steam billowed out of the center of the water."
+            "A geyser erupted into the air as tall as a house. Some of the water sprayed on me."
+            her "Ahhh, it's hot!"
+            "I stood back to a safe distance and watched the water spray for a few minutes, until it died down."
+            her "I didn't know they had geysers on this planet! I wonder if there's anything else interesting nearby..."
+            "I looked around carefully and found a warm spring"
+            her "Feels about the same temperature as a bathtub..."
+            menu:
+                "Take a soak?"
+                "Sure, why not?":
+                    "The water felt soft and slippery."
+                    "There was a slight breeze whispering through the trees, but everything else was quiet."
+                    her "Ahhhhhh..."
+                    if (relaxed < 0):
+                        $ relaxed = 0
+                    else:
+                        $ relaxed += 5
+                "It could be dangerous...":
+                    her "I better not; it could be dangerous."
+
+            her "The hot spring is a neat find; maybe I should tell [his_name]? But then he'll know I went hiking without him... Maybe I'll tell Dr. Lily; she can see if it's safe for us to use."
+            menu:
+                "Whom should I tell?"
+                "Tell [his_name]":
+                    "When I got back, I told [his_name] all about what I had found."
+                    him "That sounds really cool... but I thought we agreed that we shouldn't go hiking alone here."
+                    her "You just proclaimed that; I never agreed to it!"
+                    him "What if you got burned by that geyser?"
+                    her "I left a note!"
+                    him "A note isn't going to chase away wild animals or help you if you get hurt!"
+                    her "Well, I guess we just disagree on this."
+                    him "No, you're just wrong."
+                    her "Whatever."
+                "Tell Dr. Lily":
+                    "When I got back, told Dr. Lily about the place I found. I asked her to keep it a secret that I was the one who found it."
+                    lily "This will be very useful! Not only can we harvest minerals from the springs, but the geothermal energy might be useful, too."
+                    her "(I don't think [his_name] will find out...)"
+
+                    $ relaxed -= 2
+                "Don't tell anyone":
+                    "I decided not to tell anyone about it - it would be my very own secret spot."
+                    $ loved -= 2
     $ skill_physical += 10
     return
 
