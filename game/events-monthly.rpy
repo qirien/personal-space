@@ -427,14 +427,14 @@ label monthly_event_4:
             "It's important":
                 her "I need to keep my body in good condition."
                 him "For what?"
-                her "Well, did you know that I can run to town in five minutes? And I am getting pretty good at chopping wood, which we'll need when the cold season starts and our solar panels don't work."
+                her "Well, did you know that I can run to town in six minutes? And I am getting pretty good at chopping wood, which we'll need when the cold season starts and our solar panels don't work."
                 him "Oh yeah, that is important. Sorry, I didn't mean to accuse, I just was curious about what you've been doing."
             "What do {b}you{/b} do?":
                 her "What have {b}you{/b} been doing lately? You've been reading a lot."
                 him "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they will grow."
                 her "Okay, well, that sounds very... necessary."
-                her "On that hike I found out about a new water source, and I can run to town in five minutes in case there's an emergency."
-                him "Five minutes?! That's pretty fast. You must have been training a lot. I guess I haven't thought about doing that because I usually ride Lettie around."
+                her "On that hike I found out about a new water source, and I can run to town in six minutes in case there's an emergency."
+                him "Six minutes?! That's pretty fast. You must have been training a lot. I guess I haven't thought about doing that because I usually ride Lettie around."
                 her "Well, not all of us have horses, so we have to make do with the legs we have."
                 him "And what nice legs they are..."
             "I can't believe you don't appreciate me":
@@ -478,7 +478,7 @@ label monthly_event_5:
             him "Hmmm. I might be able to use the packaging from the MREs to separate small rows of crops."
             her "And maybe I could turn these pieces of plate into labels for the crop."
             him "Oh, that would actually be really nice for next year."
-        "{i}This stuff is actually compostable.{/i}" if ((skill_knowledge >= 30) or (skill_technical >= 30)):
+        "{i}This stuff is actually compostable.{/i}" if ((skill_knowledge >= 20) or (skill_technical >= 20)):
             her "Actually, we can just compost all these things. They may take a long time to break down, but they will eventually. We can speed the process by breaking them up and spreading them throughout the pile."
             him "OK, I'll cut up the socks."
             her "I'll smash the plate. That sounds satisfying, anyway."
@@ -532,7 +532,7 @@ label monthly_event_5:
 # MONTH 6 - Alien Pests
 label monthly_event_6:
     scene bg fields with fade
-    #biological pesticide--fungus
+
     "Our crops were starting to give and abundant harvest, but unfortunately, with the rainy season starting, the corn was being attacked by alien insects."
     "A small segmented insect like a sow bug but with thicker legs was our main culprit." 
     him "[her_name], we really have to think of a way to stop these insects from eating our corn."
@@ -613,7 +613,7 @@ label monthly_event_6:
             "I kept in touch with the Blairs for the rest of the week, and we made a huge pile of dead insects, which we ground up to extend the food we had for our livestock."
             "We were able to preserve some of our corn until it was ready for harvest, although for most of the corn it was too late."
             "We had a big bonfire with the Perons and burned the infested corn. Their kids danced around the fire as we roasted one of their chickens on the side."
-            ## this section could be expanded by having a dialogue with one of the Blairs.
+            ## TODO: this section could be expanded by having a dialogue with one of the Blairs?
         "I have no idea.":
             her "I don't have any ideas...I'm sorry."
             him "Well, let's try to salvage what we can."
@@ -683,7 +683,7 @@ label monthly_event_7:
                         her "I said I was sorry, okay?!"
                         him "...Okay."
                         $ loved -= 2
-                        $ relaxed -= 5
+                        $ relaxed -= 2
                     "{i}Apologize sincerely.{/i}" if (skill_spiritual >= 40):
                         her "I'm sorry, [his_name]. I dropped it in the sink, and then I didn't tell you about it because I didn't want you to know how clumsy I was. But I should have told you; I'm so sorry."
                         him "The computer's not a big deal, but we need to always be honest with each other."
@@ -698,7 +698,7 @@ label monthly_event_7:
                         "He dropped the subject, but I could tell he didn't believe me. Well, whatever, it's not a big deal."
                         
                         $ loved -= 5
-                        $ relaxed -= 10
+                        $ relaxed -= 5
         "Leave it on the table and tell him when he gets home":
             "I left it on the table so I would remember to tell him about it when he got home."
             him "Hey there, [her_nickname]."
@@ -936,7 +936,7 @@ label monthly_event_9:
                         her "No! It's just... it takes work for me to be in the mood, sometimes."
                         him "Well, you asked what I'd like."
                     "OK, I'll try":
-                        her "OK, I'll try to do that."
+                        her "We should make love more... it's important, even if we're tired or busy."
                         him "Thank you, [her_nickname]."
                         $ loved += 5
             elif (skill_domestic < 10):
@@ -954,21 +954,26 @@ label monthly_event_9:
                                 him "..."
                                 $ loved -= 5
                    "It's hard":
-                        her "That's... hard for me. With work and everything, when I come home I just want to relax."
-                        him "Well, you asked what I'd like."
-                        menu:
-                            "If it's that important to you...":
-                                her "If it's that important to you, I could work on that."
-                                $ loved += 5
-                            "No way.":
-                                her "Sorry, that's never going to happen."
-                                him "..."
-                                $ loved -= 5
+                       her "That's... hard for me. With work and everything, when I come home I just want to relax."
+                       him "Well, you asked what I'd like."
+                       menu:
+                           "If it's that important to you...":
+                               her "If it's that important to you, I could work on that."
+                               $ loved += 5
+                           "No way.":
+                               her "Sorry, that's never going to happen."
+                               him "..."
+                               $ loved -= 5
 
                    "OK, I'll try":
-                        her "OK, I'll try to do that."
-                        him "Thank you, [her_nickname]."
-                        $ loved += 5
+                       her "It would be nice if the house was a little neater... OK, I'll try to do that."
+                       him "Thank you, [her_nickname]."
+                       $ loved += 5
+                   "Let's work on it together":
+                       her "How about if we take some time one evening and clean up the house together?"
+                       him "Yeah, I guess we could do that."
+                       $ loved += 2
+
             elif (loved < 5):
                 him "I'd like it if we spent more time together."
                 $ loved += 5
@@ -1287,9 +1292,9 @@ label monthly_event_14:
                     "I reviewed my own symptoms in my head and decided to take a urine sample first."
                 else:
                     "The doctor at the clinic listened to my symptoms and had me give a urine sample."
-                    "The results said..."
-                    him "You're pregnant?!"
-                    her "Oh! I've been so busy I haven't even been thinking about that lately. But...yes, I guess I am."
+                "The results said..."
+                him "You're pregnant?!"
+                her "Oh! I've been so busy I haven't even been thinking about that lately. But...yes, I guess I am."
                         
             "Don't go":
                 her "I'll be fine. If I don't feel better in a few days, I'll have it checked out."
@@ -1335,7 +1340,7 @@ label monthly_event_14:
     elif (want_kids):
         her "[his_name]... it's been over a year since we've been trying to have a baby."
         him "Yeah, I guess sometimes it takes a while."
-        her "Do you think the problem might be that we haven't made love enough?"
+        her "We haven't made love very often, have we?"
         him "Well, we have both been busy, and tired..."
         menu:
             "Should we change things?"
@@ -1351,7 +1356,7 @@ label monthly_event_14:
                     her "No! That's not it at all! I'm just trying to see the bright side of things."
                     him "The only bright side is that there's no kids to be hurt by our unstable relationship."
                     her "Unstable?!"
-                    him "Yes. People who are married don't act this way. We never do things together; we never make love. And when I try and do things for you, it's like I can never do anything right."
+                    him "People who are married don't act this way. We never do things together; we never make love. And when I try and do things for you, it's like I can never do anything right."
                     her "Is that really how you see us?"
                     him "It's true, isn't it? We have to turn things around if we want this to work, and especially if we want to bring kids into this family."
                     "We talked about it some more, and we both agreed to try and put the other person as more of a priority in our own life. But I wonder if we can actually do it... or if our marriage is already doomed."
@@ -1449,7 +1454,7 @@ label monthly_event_15:
             him "Is that a problem?"
             "Not really":
                 her "I guess not. It's just kind of weird. As long as they don't start serenading us with fertility songs or anything it doesn't really matter."
-                him "Okay, I'll post that to the message board. Thanks for the well-wishes, but no fertility rites, please."
+                him "Okay, I'll post that to the message board. 'Thanks for the well-wishes, but no fertility rites, please.'"
                 her "Shut up and try some of this."
             "It's annoying":
                 her "That's really annoying. I don't want people to be asking me all the time if I'm pregnant yet, or giving well-meaning but idiotic advice, or looking at me like I'm a time bomb or something."
@@ -1504,14 +1509,139 @@ label monthly_event_15:
                 $ loved -= 2
     return
 
+# MONTH 16 - Morning sickness/Illness
 label monthly_event_16:
-    "if pregnant, morning sickness and getting behind on chores; if not pregnant, get sick and get behind on chores. Either way, do you ask your spouse for help or silently take care of it later?"
+    if (is_pregnant):
+        "Being pregnant wasn't as much of a change as I thought it would be; mostly I was just more tired (and maybe a little cranky). Sometimes I even forgot about the tiny baby growing inside me; it didn't seem real."
+    else:
+        "Once nice thing about living on the colony was that we didn't usually get sick. Most of the microorganisms here seemed to ignore our strange biochemistry, and they worked hard to keep germs from Earth off the shuttle."
+    "But today I just felt awful."
+    "I tried to eat breakfast, but I didn't really feel like eating. [his_name] had already cooked it, though, so I didn't want to waste it..."
+    menu:
+        "What should I do?"
+        "Throw it away":
+            "I tossed it onto the garbage heap. Some animals would probably eat it."
+            $ community_level -= 2
+        "{i}Trick yourself{/i}" if (skill_creative >= 50):
+            "I decided to pretend I was a starving waif who had just been taken in by a rich kind stranger and this was my first real meal in months. It sort of worked; I was able to get most of it down."
+        "{i}Use acupressure{/i}" if ((skill_knowledge >= 50) and (is_pregnant)):
+            "I looked up on my computer pad and found that acupressure sometimes can help morning sickness."
+            "I rigged up some acupressure bracelets with some old buttons and elastic. I'm not sure if they helped, or if the morning sickness wore off, but soon I felt well enough to eat some."
+        "Give it to the goat." if (have_goat):
+            "I carried my leftovers over to the goat, who seemed to really enjoy them. Watching the goat eat, though, I felt like throwing up..."
+        "Give it to [his_name]" if (loved >= 0):
+            her "Do you want this? I'm not hungry..."
+            him "What? Sure, OK"
+            $ loved += 2
+
+    "I felt better at work, and lunchtime was no problem, but as I was walking home, I felt sick again. I ended up throwing up by the side of the road, which wouldn't have been too bad except some of it got on my clothes. Now I had to do laundry, and it was my turn to make dinner..."
+    menu:
+        "What should I do?"
+        "Cook something simple":
+            "I went to the cellar to look at what we had for dinner. Nothing looked good."
+            if (is_pregnant):
+                "I wanted fried chicken or ice cream or french fries or fresh rolls, but all we had was turnips and carrots and beans."
+            else:
+                "We had been eating a lot of turnips and carrots and beans lately, and I was starting to get used to them, but what I really wanted was a can of good ol' chicken noodle soup. All the foods we had took so much work..."
+            "I knew it was so silly, but I felt like crying. I remembered when if I craved a food, I'd just stop by the store on my way home from work and buy it, without thinking anything of it. I didn't even realize how decadent that was!"
+            "That's how [his_name] found me, crying in the cellar over the food he worked so hard to grow."
+        "Lie down and take a nap":
+            "I wasn't hungry; why should I make dinner? What I really needed was a nap..."
+            "I took off my dirty clothes and dozed for a while, and woke up to the sound of [his_name] opening the door."
+        "Ask [his_name] for help":
+            "I decided to ask [his_name] for help. After all, that's why we have each other, isn't it?"
+            "Finally, he came home."
+
+    menu:
+        "Hey, what's for dinner?"
+        "I'm sick":
+            her "I don't feel good..."
+            if (loved >= 0):
+                him "You don't look good. You go lie down; I'll make my own dinner."
+            else:
+                him "I thought it was your turn."
+                her "It is, but..."
+                him "OK, I'll trade you nights, since you're not feeling good."
+            $ loved += 2
+        "Make your own dinner" if (relaxed <= 0):
+            her "Make your own damn dinner, I'm not hungry!"
+            him "Hey, hey! Calm down!"
+            her "Calm down?! I don't have time to calm down! I need to wash out this vomit and make dinner out of vegetables I hate and try not to die while doing it, because everything on this planet is trying to kill us!!"
+            if (loved >= 0):
+                him "Okay, it seems like you could use a little break, so why don't you go lie down?"
+                her "I don't have time to--"
+                him "Laundry can wait, I'll make dinner, and nothing's trying to kill us at the moment, so go rest, okay?"
+            else:
+                him "Quit overreacting. You're just making excuses."
+                her "I hate this place! I hate this food! I hate not having anything when we need it! I hate the animals, I hate the plants, I hate the moons that can't make up their mind whose turn it is to be in the sky!"
+                him "Anything else?"
+                menu hate_stuff:
+                    "I hate the stupid sun":
+                        her "I hate the stupid sun and its temperamental solar flares."
+                        him "Yeah, I hate that, too."
+                        $ loved += 2
+                    "I hate you":
+                        her "Sometimes, I hate you."
+                        him "..."
+                        her "..."
+                        him "I was about to say, 'At least we'll always have each other.'  Now I don't know what to say."
+                        $ loved -= 10
+                    "I hate my job":
+                        her "I hate my job here."
+                        him "It seems pretty easy compared to mine."
+                        her "Well, not all of us are tough farmers like you!"
+                        him "Maybe you should be."
+                        $ loved -= 2
+                    "I'm sorry":
+                        her "I'm sorry; I'm sounding pretty hysterical, aren't I?"
+                        him "Yeah, but I love you anyway."
+                        $ loved += 5
+                
+        "Just a minute" if (relaxed >= 0):
+            her "I'm working on it, just a minute."
+            him "Hey, are you crying?"
+            her "Just a little."
+            him "What's wrong?"
+            menu:
+                "It's morning sickness" if (is_pregnant):
+                    her "It's morning sickness, I think."
+                    him "Aw, I hear that can be rough."
+                    her "It's not that bad, but..."
+                    him "You want me to cook tonight?"
+                    her "Yeah, thank you. I'm not even hungry."
+                    $ loved += 2
+                "I'm sick" if (not is_pregnant):
+                    her "I'm sick."
+                    him "Really? We haven't had much illness here..."
+                    her "Well, I sure didn't throw up all over myself just for fun."
+                    him "Ohh, is that what that smell is?"
+                    her "Yeah..."
+                    him "Well, you should take it easy, then, I'll make myself something."
+                    $ loved += 2
+                "It's this place":
+                    her "It's this place... I'm so sick of everything here."
+                    him "Like what?"
+                    her "I hate not having foods that I like, and feeling like there's dangerous things around every corner, and being so far away from everyone."
+                    him "Anything else?"
+                    jump hate_stuff
+
+    "I went to lie down, and he made dinner for himself."
+    if (is_pregnant):
+        "I felt better after a little rest. I felt a little sick the next morning, but that was the worst of the morning sickness."
+    else:
+        "I had to visit the outhouse several more times before my stomach finally calmed down."
+        if (loved >= 0):
+            "He made me some tea and sat by me and held my hand."
+        else:
+            "[his_name] left me alone until I was feeling better."
+                             
     return
 
 label monthly_event_17:
     return
 
-# clothes don't fit anymore (bras, etc); what to do?
+# clothes don't fit anymore (bras, etc); air drying makes they stiff and uncomfy, what to do?
+# use domestic, social, creative
 label monthly_event_18:
     return
 

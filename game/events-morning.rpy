@@ -503,6 +503,9 @@ label work_6:
 
     return
 
+# Brennan is government spy looking for lucrative resources. 
+# People find out about past crimes; chance for redemption or execution?
+# has quantum entanglement communicator for instantaneous communication with Earth
 label work_7:
     $ times_worked += 1
 

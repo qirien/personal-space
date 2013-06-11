@@ -1,0 +1,20 @@
+#!/bin/sh
+
+for filename
+do
+	echo "~~~CREATIVE~~~"
+	grep -c "skill_creative" "$filename"
+	echo "~~~DOMESTIC~~~"	
+	grep -c "skill_domestic" "$filename"
+	echo "~~~KNOWLEDGE~~~"	
+	grep -c "skill_knowledge" "$filename"
+	echo "~~~PHYSICAL~~~"	
+	grep -c "skill_physical" "$filename"
+	echo "~~~SOCIAL~~~"	
+	grep -c "skill_social" "$filename"
+	echo "~~~SPIRITUAL~~~"	
+	grep -c "skill_spiritual" "$filename"
+	echo "~~~TECHNICAL~~~"	
+	grep -c "skill_technical" "$filename"
+
+done
