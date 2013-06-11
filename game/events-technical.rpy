@@ -88,6 +88,41 @@ label technical_4:
 
 label technical_5:
     # put in hot water connected to solar
+    "One of the things I missed from Earth life was having hot water available whenever I wanted it. Of the few luxuries we enjoyed, hot water seemed like one I could improve on."
+    her "I wonder if we could make our own hot water heater."
+    him "Well, we don't exactly have a ton of gas or electricity to spare. But you might be able to use the sun to heat it up and then store it somewhere insulated so it doesn't take as long to heat up."
+    her "I'll look into it."
+    "Most water-heating designs assumed I would have access to more solar panels. I didn't, but I felt like I could at least stick a container of water in the sun to heat it. If I could make something out of metal or another material that transferred heat easily, I could get something to work."
+    "I took a trip to the storeroom to see what they had."
+    her "Hi Ilian. How are you today?"
+    "He didn't look happy to see me."
+    Ilian "I have the feeling you need more materials from me."
+    her "Well, yes, I was going to see if you had any pipes or sheets of metal or something."
+    Ilian "We don't have much left. If it's an emergency or something vital to our survival you can use it, but I'm afraid that otherwise I have to say no."
+    menu:
+        "It's not vital to my survival":
+            her "I just wanted to build a hot water heater for my house. Do you have any ideas about what kind of material I could use that would conduct heat easily?"
+            Ilian "Hmm. Well, I know we're always finding new uses for these animal skelton things."
+            her "And by always finding you mean no one has thought of anything to do with them?"
+            Ilian "They're looking pretty good in my junk pile, if I do say so myself."
+            her "I'll take a few. There has to be some way I could use them."
+            "The exoskeletons varied in texture. Some parts were brittle while others were as hard as a seashell. I felt like there was no way I could make anything useful out of them."
+            # do we have trees?
+            "I put them aside and wondered if I could make a tank out of wood."
+            her "[his_name], could you cut down a tree for me so I can make a water tank for our house?"
+            him "Well, I'm not sure, but I can try. How about you come with me to help pick out a tree?"
+            "We found a tree that was about the width I needed. [his_name] cut it down, and we brought it home on our wagon in pieces."
+            "After the wood dried out, I hollowed it out using tools at the storehouse."
+            "In the end, it just ended up being lukewarm storage for more water."
+        "I'll die if I don't get what I need":
+            her "It's for something really important. Can I please get two sheets of metal and some pipes?"
+            Ilian "What exactly is it for?"
+            her "I don't have time for your questions! This is a matter of life and death!"
+            Ilian "Alright, alright, here you go."
+            "After some careful welding, I made a tank for water with many metal arms sticking out of it to help passively heat the water."
+            "I was able to put a pipe from the tank to our house, complete with a stopper that kind of leaked."
+            $ community_level -= 5
+    
                                                  
     $ skill_technical += 10
     return
