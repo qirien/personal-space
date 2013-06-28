@@ -400,21 +400,7 @@ label goto_church:
 
 # People probably won't even see these last ones unless they always choose "Do something with [his_name]", so don't put a ton of effort into them.
 
-# walk around the farm together looking at what you've created together.
 label relax_together_8:
-    "We walked around the farm together. [his_name] showed me where all the different crops were, and told me about what kind of soil they liked and what the weeds were like."
-    her "This is like your baby, isn't it?"
-    him "Yeah, it is."
-    him "Who's the cutest widdle farm on the planet, huh? You are!"
-    "I could tell it meant a lot to him to show me everything he had been working on."
-
-    return
-
-label relax_together_9:
-    "We started talking, and somehow I ended up telling him all about my job. Who was hard to work with, things that seemed impossible, the people I helped... it felt good to have him know what I had been working on."
-    return
-
-label relax_together_10:
     scene bg farm_interior with fade
     "We watched a movie together. It was pretty good, but the ending was terrible."
     him "See, what they needed was to have the girlfriend show back up at the end--"
@@ -428,7 +414,7 @@ label relax_together_10:
     $ loved += 2
     return
 
-label relax_together_11:
+label relax_together_9:
     if (is_pregnant or want_kids):
         "We were talking about what it would be like when we did have a baby, and soon we started talking about baby names."
     else:
@@ -445,6 +431,20 @@ label relax_together_11:
 
     $ relaxed += 2
     $ loved += 2
+    return
+
+# walk around the farm together looking at what you've created together.
+label relax_together_10:
+    "We walked around the farm together. [his_name] showed me where all the different crops were, and told me about what kind of soil they liked and what the weeds were like."
+    her "This is like your baby, isn't it?"
+    him "Yeah, it is."
+    him "Who's the cutest widdle farm on the planet, huh? You are!"
+    "I could tell it meant a lot to him to show me everything he had been working on."
+
+    return
+
+label relax_together_11:
+    "We started talking, and somehow I ended up telling him all about my job. Who was hard to work with, things that seemed impossible, the people I helped... it felt good to have him know what I had been working on."
     return
 
 

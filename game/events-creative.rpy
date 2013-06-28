@@ -15,9 +15,26 @@ label creative_1:
     $ skill_creative += 10
     return
 
-# Work in the storehouse?
+# Scarecrow
 label creative_2:
-
+    scene bg farm_interior with fade
+    him "Those flying crab things are eating all the squash!"
+    her "Ohhh, I hate those! I've never been pinched, but, still - something that flies should not be allowed to have claws."
+    him "I've got to do something about them. I shoo them away when I'm there, but I can't be out there all the time."
+    her "Hmmm, how about a scarecrow?"
+    him "A scarecrow? I don't think they're instinctively scared of people; we just barely got here."
+    her "We'll make it shaped like something they are scared of, then! Like those wolfslugs that hunt near the river."
+    him "Do you think you could do that?"
+    her "Let me give it a try. You could also experiment with different strong scents that they might not like, like coffee grounds or vinegar."
+    "He placed some different scents near some of the plants, while I got to work on our 'scarecrow'."
+    "I started with bunches of sticks for the body and legs, held together with twine.  Then I covered them with algae from a pond to give it that slimy look."
+    "I rummaged through our trash pile and found some bottlecaps for eyes, and stuck in some old bones for teeth."
+    her "What do you think?"
+    him "I'm scared of that thing. The crabirds definitely will be."
+    her "Oh, is that their name?"
+    him "I'm sure they have a boring scientific name, but I'm calling them 'crabirds'."
+    "We put the fake wolf slug near one section of squash plants - he had sprayed strong smells near some of the others."
+    "The scarecrow seemed to work pretty well for a while, but then they figured out that it was fake and started nibbling on the squash again. We had to move it around every few days to try and fool them, so it was kind of a pain, but it was worth it when we finally got to eat the squash."
 
     $ skill_creative += 10
 
@@ -31,7 +48,7 @@ label creative_3:
     her "Oh no! Each row is just getting more and more narrow."
     "Luckily I figured out that I needed to add an extra stitch at the end of each row before I finished, but I ended up with an hourglass-shaped potholder."
     him "Wow, you made an abnormally-shaped potholder on your first try crocheting? I would have just stuck with something safe; you're really ambitious!"
-    her "Yes, it's so it won't flop around in your hand as much when you go to pick something up!"
+    her "Yes, I did that on purpose. It's so it won't flop around in your hand as much when you go to pick something up."
     $ skill_creative += 10
     return
 

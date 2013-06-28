@@ -318,6 +318,9 @@ label physical_6:
                     lily "Not a problem. Let me get my pH strips and put some under the microscope..."
                     lily "The water is slightly alkaline, and it has several kinds of minerals in it. I do see some bacteria, however, but they are not a kind we know about, so I don't know if they are dangerous or not."
                     her "Okay, thanks."
+                    lily "Thanks for reporting this; our initial scans showed geothermal activity in that area, but you've confirmed it. We may eventually use the springs for energy."
+                    $ community_level += 3
+
                 "Try it out":
                     her "It seems fine; I'll try it out."
                     him "I'm game!"
@@ -337,6 +340,7 @@ label physical_6:
                     "We hiked around and found a few more hot springs of different temperatures; no more geysers, though."
     
             "It was neat to find hot springs and geysers not too far from the house. Maybe they'd be useful to us in the future."
+
         "Don't tell him":
             "I didn't tell him; he'd just worry. But I left a note saying where I went. If something went wrong, he'd find the note and know where I went. But if nothing went wrong, I'd be home before him and I could throw the note away before he found it."
             "I set off west, towards the mountains, until I found a stream meandering down from them. I followed the stream up the hill until I came to a rocky area with steam coming out of it. It smelled like rotten eggs."
@@ -380,11 +384,16 @@ label physical_6:
                 "Tell Dr. Lily":
                     "When I got back, told Dr. Lily about the place I found. I asked her to keep it a secret that I was the one who found it."
                     lily "This will be very useful! Not only can we harvest minerals from the springs, but the geothermal energy might be useful, too."
+                    her "It's not dangerous, right?"
+                    lily "What? You mean to soak in? Yes, as long as the temperature is suitable."
+                    her "That's good to know."
                     her "(I don't think [his_name] will find out...)"
-
+                    $ loved -= 2
                     $ relaxed -= 2
+                    $ community_level += 3
                 "Don't tell anyone":
                     "I decided not to tell anyone about it - it would be my very own secret spot."
+                    $ community_level -= 3
                     $ loved -= 2
     $ skill_physical += 10
     return

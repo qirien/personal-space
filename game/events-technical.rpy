@@ -127,9 +127,45 @@ label technical_5:
     $ skill_technical += 10
     return
 
-# scavenge electronics, etc from shuttle to make ?
+# scavenge electronics, etc from shuttle to make blender
 label technical_6:
+    "[his_name] grew a lot of vegetables; I guess part of their farming strategy was to grow many kinds of things, so if one thing got wiped out, you still had food."
+    "But I didn't always like them."
+    $ hated_food = "kale"
+    menu:
+        her "I don't care how 'super' of a food it is, I just don't like:"
+        "Kale":
+            $ hated_food = "kale"
+        "Beets":
+            $ hated_food = "beets"
+        "Carrots":
+            $ hated_food = "carrots"
+        "Brussels sprouts":
+            $ hated_food = "brussels sprouts"
+    her "I just don't like [hated_food]."
+    him "Sorry, it grows really well here, so we have a lot of it."
+    "I had to find some way to eat it that I wouldn't hate quite so much. Something to cover up the taste?"
+    "Back on Earth I would sometimes make smoothies, but we didn't have any blenders here."
+    "I figured I would try to make one. At the very least, thinking about the plans would distract me while I was choking down [hated_food]."
+    "I would need a lot of parts, so I headed over to the storehouse."
+    Ilian "I don't have any extras of these things, but if you help us dismantle some of the shuttle's electronics, you could keep some for your project."
+    menu:
+        "Do I want a blender that badly?"
+        "Yes, I'll help him":
+            her "Sure, I'll help you out."
+            "We took out whole circuit boards, disconnected all the wires, and took some of the components off the boards. Soon we had a nice pile of resistors, capacitors, LEDs, motors, wires, and microchips."
+        "No, thanks":
+            her "No, thanks, I don't really need a blender, I guess."
+            Ilian "You want to make a blender?"
+            her "Yeah..."
+            Ilian "We could use one here at the storehouse; Sven wanted to make peanut butter."
+            her "Well, maybe he could help you dismantle parts, and I will see if there's enough to make two blenders."
 
+        "I found a fan and thought I could use that for the blades of the blender. In the fuel intake there were plenty of gaskets, though it was tough to find them in the right size."
+        "I even added a dial connected to some resistors that let you control the speed of the blender. The container wasn't transparent (I wasn't sure if the metal we used was even technically food-safe), but it fit on the blades okay."
+        "When I tried it out, it leaked -- a lot. I sealed the leaks up and played around with the speeds to get a speed that would mix and blend without foaming or stalling."
+        "Finally, I had a blender. It used so much electricity that it wouldn't run at the same time as anything else, so we had to turn off the lights when we needed to use it."
+        "I didn't mind, though. I just sat back and enjoyed my [hated_food] smoothie."
     $ skill_technical += 10
     return
 
@@ -139,6 +175,7 @@ label technical_7:
     $ skill_technical += 10
     return
 
+# make dehydrator out of scavenged parts?
 label technical_8:
 
     $ skill_technical += 10

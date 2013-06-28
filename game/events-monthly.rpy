@@ -1637,14 +1637,20 @@ label monthly_event_16:
                              
     return
 
+# MONTH 17
+# uses knowledge, technical
 label monthly_event_17:
+
     return
 
-# clothes don't fit anymore (bras, etc); air drying makes they stiff and uncomfy, what to do?
-# use domestic, social, creative
+# MONTH 18 - something bad happens where you need help (related to pests?); he doesn't want to ask for help but you think you need it.
+# uses spiritual, social, physical
 label monthly_event_18:
     return
 
+# MONTH 19 - Clothing wearing out, stiff, doesn't fit anymore if pregnant.
+# clothes don't fit anymore (bras, etc); air drying makes they stiff and uncomfy, what to do?
+# use domestic, social, creative
 label monthly_event_19:
     return
 
