@@ -1107,35 +1107,63 @@ label monthly_event_10:
 label anniversary_next_day:
     "He didn't come home that night, just stopped in for a quick breakfast early in the morning and then left again. I didn't have a chance to talk to him again until that evening when I got home."
     him "Hey, [her_nickname]."
-    her "Hi, are you okay?"
-    him "Huh? Yeah, everything's fine now."
-    her "What happened? Last night you were really worried about something."
-    him "Oh, it was Lettie. I think she ate something poisonous while she was grazing - she was really sick. But she's doing better today; I think she'll be fine."
-    her "Oh, I'm glad she's okay."
-    him "Yeah, me too.\n Sorry about last night - I know we were going to celebrate our anniversary and everything, but I just couldn't celebrate when I was so worried about her. But I did get you something."
-    her "What?"
-    "He pulled out some wildflowers - he must have picked them earlier today. He had put them in an old glass bottle for a vase."
-    him "The little bit of beauty these flowers bring can't compare to the joy you bring to my life. They won't last forever, but my love for you will."
     menu:
-        "What should I say?"
-        "They're lovely!":
-            her "Oh, they're lovely! Thank you!"
-            him "Sorry it's not much..."
-            her "It's just right. I love you, too."
-        "Thank you.":
-            her "Thank you."
-            him "Sorry it's not much."
-            her "It's okay; we don't have much."
-            him "But I'm so glad I have you."
-        "At least it's not another cheesy poem.":
-            her "Ha ha, at least it's not a cheesy poem like for my birthday."
-            him "Hey! I worked hard on that poem! I poured out my heart to you!"
-            her "I know, and it was really sweet... but also really cheesy."
-            him "Well, at least I learned my lesson."
-            her "I think there's still a few things you could learn."
-            him "Are you going to teach me?"
-    "I didn't even have time to set the flowers down before he wrapped his arms around me. I kissed his chin, then his lips, and we forgot about everything else for a while..."
-    $ made_love += 1
+        "(He's just saying hi like nothing happened!)"
+        "Ignore him":
+            her "(He ignored me all last night; let's see how he likes it.)"
+            her "..."
+            him "Hey, are you mad?"
+            menu:
+                "(Am I mad?!)"
+                "Yes!":
+                    her "Yes, I'm mad! We were supposed to have a nice dinner for our anniversary, but you just left without saying anything!"
+                    him "Lettie was sick! Really sick!"
+                    her "And you couldn't have said something like, 'Sorry, Lettie's sick, gotta go.'?"
+                    him "I'm sorry; I was too worried."
+                    her "Well, is she okay?"
+                    him "Yes, she's fine now. Um, here, I got you these."
+                    "He handed me a glass bottle with wildflowers in it."
+                    her "Oh! Thank you, [his_name]."
+                    him "Happy Anniversary."
+                    "We kissed perfunctorily. I still felt a little mad, but we'd get over it."
+                "No.":
+                    her "No, why would I be mad? Where I come from it's totally normal to ignore your wife on your anniversary."
+                    him "Lettie was-"
+                    her "Lettie?! You were thinking about your HORSE?!"
+                    him "Tch, forget it! You are obviously more interested in your own righteous anger than in knowing what actually happened. Here."
+                    "He slammed a glass bottle with some wildflowers in it on the table. Water sloshed onto the table and a few of the flowers fell out."
+                    him "Happy Anniversary."
+                    "Then he stormed out."
+                    $ loved -= 5
+        "Ask what happened":
+            her "What happened? Last night you were really worried about something."
+            him "Oh, it was Lettie. I think she ate something poisonous while she was grazing - she was really sick. But she's doing better today; I think she'll be fine."
+            her "Oh, I'm glad she's okay."
+            him "Yeah, me too.\n Sorry about last night - I know we were going to celebrate our anniversary and everything, but I just couldn't celebrate when I was so worried about her. But I did get you something."
+            her "What?"
+            "He pulled out some wildflowers - he must have picked them earlier today. He had put them in an old glass bottle for a vase."
+            him "The little bit of beauty these flowers bring can't compare to the joy you bring to my life. They won't last forever, but my love for you will."
+            menu:
+                "What should I say?"
+                "They're lovely!":
+                    her "Oh, they're lovely! Thank you!"
+                    him "Sorry it's not much..."
+                    her "It's just right. I love you, too."
+                "Thank you.":
+                    her "Thank you."
+                    him "Sorry it's not much."
+                    her "It's okay; we don't have much."
+                    him "But I'm so glad I have you."
+                "At least it's not another cheesy poem.":
+                    her "Ha ha, at least it's not a cheesy poem like for my birthday."
+                    him "Hey! I worked hard on that poem! I poured out my heart to you!"
+                    her "I know, and it was really sweet... but also really cheesy."
+                    him "Well, at least I learned my lesson."
+                    her "I think there's still a few things you could learn."
+                    him "Are you going to teach me?"
+            "I didn't even have time to set the flowers down before he wrapped his arms around me. I kissed his chin, then his lips, and we forgot about everything else for a while..."
+            $ made_love += 1
+            $ loved += 5
     return
 
 label follow_him:
