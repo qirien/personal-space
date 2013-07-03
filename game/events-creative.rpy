@@ -93,7 +93,7 @@ label creative_4:
 label creative_5:
     "[his_name] asked me if we had any rope to make a rope to get up into the loft of our barn and pull carts around. I told him I'd look at the supply center next time I went into town."
     her "Do you have any rope?"
-    manager "It looks like they didn't send much along with us. I guess they thought we'd be making our own by now."
+    ilian "It looks like they didn't send much along with us. I guess they thought we'd be making our own by now."
     if (has_grass == True):
         "I took a look at the long grasses I found and pulled it apart to get fibers, which I twisted into string. Rope is basically a bunch of strings, right? So I twisted the strings together to make a thin rope. It wasn't very long, but I made enough of them to pull a wagon with."
         him "This is great! It's amazing what you can make with the right resources."
@@ -114,7 +114,7 @@ label creative_6:
 #month 5 is what to do with trash, so I'm assuming this will have to come after it (though it may be several months after it)
     "Ever since the push to recycle or compost all our trash, I had been trying to think of other uses for shuttle parts."
     "I went down to the storehouse to ask about how the shuttle parts were being distrubuted. I thought maybe I could make a sofa out of them"
-    manager "There was a seat for everyone on the shuttle, and as far as I'm concerned, that seat is still yours."
+    ilian "There was a seat for everyone on the shuttle, and as far as I'm concerned, that seat is still yours."
     her "Great! I'll come back later with [his_name] to pick up the seats on our wagon."
     "That night I told [his_name] about my plan."
     him "You want a sofa?"

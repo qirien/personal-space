@@ -37,7 +37,7 @@ define boss = Character("Mayor Grayson", color="#0033dd")
 define lily = Character("Lily", color="#dddd00")
 define sara = Character("Sara", color="#771199")
 define thuc = Character("Thuc Nguyen", color="66ff22")
-define manager = Character("Ilian Andrevski")
+define ilian = Character("Ilian Andrevski")
 define brennan = Character("Brennan Callahan", color="11ee11")
 define sven = Character("Sven Engel")
 
@@ -67,6 +67,7 @@ define has_grass = False
 define met_Lily = False
 define times_worked = 1
 define he_hunts = False
+define brennan_relationship = 0
 
 # The game starts here.
 label start:

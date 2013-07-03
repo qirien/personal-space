@@ -7,7 +7,7 @@ label monthly_event_24:
     elif ((community_level < 40) and (loved > 10)):
         jump fail_good_ending
     elif ((community_level >= 40) and (loved > 10)):
-        jump succeeed_good_ending
+        jump succeed_good_ending
 
     jump credits
 

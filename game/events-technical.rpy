@@ -96,15 +96,15 @@ label technical_5:
     "I took a trip to the storeroom to see what they had."
     her "Hi Ilian. How are you today?"
     "He didn't look happy to see me."
-    Ilian "I have the feeling you need more materials from me."
+    ilian "I have the feeling you need more materials from me."
     her "Well, yes, I was going to see if you had any pipes or sheets of metal or something."
-    Ilian "We don't have much left. If it's an emergency or something vital to our survival you can use it, but I'm afraid that otherwise I have to say no."
+    ilian "We don't have much left. If it's an emergency or something vital to our survival you can use it, but I'm afraid that otherwise I have to say no."
     menu:
         "It's not vital to my survival":
             her "I just wanted to build a hot water heater for my house. Do you have any ideas about what kind of material I could use that would conduct heat easily?"
-            Ilian "Hmm. Well, I know we're always finding new uses for these animal skelton things."
+            ilian "Hmm. Well, I know we're always finding new uses for these animal skelton things."
             her "And by always finding you mean no one has thought of anything to do with them?"
-            Ilian "They're looking pretty good in my junk pile, if I do say so myself."
+            ilian "They're looking pretty good in my junk pile, if I do say so myself."
             her "I'll take a few. There has to be some way I could use them."
             "The exoskeletons varied in texture. Some parts were brittle while others were as hard as a seashell. I felt like there was no way I could make anything useful out of them."
             # do we have trees?
@@ -116,9 +116,9 @@ label technical_5:
             "In the end, it just ended up being lukewarm storage for more water."
         "I'll die if I don't get what I need":
             her "It's for something really important. Can I please get two sheets of metal and some pipes?"
-            Ilian "What exactly is it for?"
+            ilian "What exactly is it for?"
             her "I don't have time for your questions! This is a matter of life and death!"
-            Ilian "Alright, alright, here you go."
+            ilian "Alright, alright, here you go."
             "After some careful welding, I made a tank for water with many metal arms sticking out of it to help passively heat the water."
             "I was able to put a pipe from the tank to our house, complete with a stopper that kind of leaked."
             $ community_level -= 5
@@ -148,7 +148,7 @@ label technical_6:
     "Back on Earth I would sometimes make smoothies, but we didn't have any blenders here."
     "I figured I would try to make one. At the very least, thinking about the plans would distract me while I was choking down [hated_food]."
     "I would need a lot of parts, so I headed over to the storehouse."
-    Ilian "I don't have any extras of these things, but if you help us dismantle some of the shuttle's electronics, you could keep some for your project."
+    ilian "I don't have any extras of these things, but if you help us dismantle some of the shuttle's electronics, you could keep some for your project."
     menu:
         "Do I want a blender that badly?"
         "Yes, I'll help him":
@@ -156,9 +156,9 @@ label technical_6:
             "We took out whole circuit boards, disconnected all the wires, and took some of the components off the boards. Soon we had a nice pile of resistors, capacitors, LEDs, motors, wires, and microchips."
         "No, thanks":
             her "No, thanks, I don't really need a blender, I guess."
-            Ilian "You want to make a blender?"
+            ilian "You want to make a blender?"
             her "Yeah..."
-            Ilian "We could use one here at the storehouse; Sven wanted to make peanut butter."
+            ilian "We could use one here at the storehouse; Sven wanted to make peanut butter."
             her "Well, maybe he could help you dismantle parts, and I will see if there's enough to make two blenders."
 
         "I found a fan and thought I could use that for the blades of the blender. In the fuel intake there were plenty of gaskets, though it was tough to find them in the right size."

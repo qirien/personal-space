@@ -533,7 +533,7 @@ label monthly_event_5:
 label monthly_event_6:
     scene bg fields with fade
 
-    "Our crops were starting to give and abundant harvest, but unfortunately, with the rainy season starting, the corn was being attacked by alien insects."
+    "Our crops were starting to give an abundant harvest, but unfortunately, with the rainy season starting, the corn was being attacked by alien insects."
     "A small segmented insect like a sow bug but with thicker legs was our main culprit." 
     him "[her_name], we really have to think of a way to stop these insects from eating our corn."
     her "What have you done so far?"
@@ -1029,6 +1029,7 @@ label monthly_event_9:
             "I found a poem on my pillow one afternoon:"
             "you are the sweetest thing\n not like honey or sugar"
             "but like the nectar of a bright flower\n you sustain even the clumsy bumblebee."
+            her "(That was sweet of him...)"
             
     else:
         "Of course he wasn't serious about it. I shouldn't have gotten my hopes up, I guess."
@@ -1375,7 +1376,7 @@ label monthly_event_14:
             "No rush":
                 her "I guess there's no need to rush, right? In fact, it's probably good that I'm not pregnant, so we can have things setup better when it happens."
                 if (loved >= 0):
-                    him "Yeah, that's true. Come here, [her_nickname] - don't worry. It'll be okay."
+                    him "Yeah, that's true. Come here, [her_nickname] - we have plenty of time. Plenty of time for you, and me, and whoever else might join us in the future..."
                     "He held me close for a long time, stroking my hair."
                     $ made_love += 1
                     $ loved += 5
@@ -1688,6 +1689,7 @@ label monthly_event_20:
 label monthly_event_21:
     return
 
+# Climax - epic conflict leading to either "We'll always be together" or "I just want to get away from you!"
 label monthly_event_22:
     return
 

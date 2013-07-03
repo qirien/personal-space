@@ -112,6 +112,9 @@ label work_0:
         her "Even though it seems far away, it's still our home, isn't it?"
 
     "I worked hard getting things set up, and even though the job seemed pretty big, I thought I would probably do okay."
+
+    # TODO: Have Sara stop by and say hi? 
+
     $ relaxed -= 5
     return
 
@@ -231,6 +234,7 @@ label work_1:
                 her "It'll go faster if you leave me alone!"
                 him "Okay! I'm leaving!"
                 her "Good!"
+                $ loved -= 2
 
         boss "Everything all right in here?"
         her "Yes, it's just a busy day."
@@ -312,6 +316,7 @@ label work_2:
     "He looked into my eyes intently as he shook my hand. His gaze was direct, friendly, and...amused? I looked away."
     her "Thanks for your help today."
     brennan "Anytime."
+    scene bg farm_interior with fade
     "I walked home, trying not to think about him. When I got there, [his_name] greeted me with a kiss."
     him "How was work today?"
     menu:
@@ -372,8 +377,86 @@ label work_2:
 
     return
 
-# Something bad happens - she can't fix an illness, thing, or kid - Brennan helps out.
+# MONTH 9
+# working hard
 label work_3:
+    $ times_worked += 1
+    if (profession == "doctor"):
+        scene bg clinic with fade
+        "I worked hard all month. A new baby was born, a kid got his finger chopped off, and it looked like Mr. Peron might have cancer. In addition, we were monitoring the colonist's radiation and nutrient levels to try to keep them healthy."
+        "Brennan worked hard, too - he didn't have any formal medical training, but he learned to take vitals and organize blood samples and fetch equipment for me."
+        "It would have been impossible to do it all by myself."
+    elif (profession == "crafter"):
+        scene bg workshop with fade
+        "I worked hard all month. Now that everyone was settling in, people had a lot of things they wanted. We made towels and spoons and a cradle and pots and other things."
+        "Brennan worked hard, too - he had some woodworking skills, so he did a lot of that work so I could concentrate on other things."
+        "Together we accomplished way more than I could have on my own. Our task list never seemed to get any shorter."
+    elif (profession == "auto mechanic"):
+        scene bg machine_shop with fade
+        "I worked hard all month. People's datapads would get corrupted if they were left out during solar flares, the farm equipment needed maintenance, and sometimes homes' solar panels or stoves would break down."
+        "Some critter kept chewing through the wires at the Engels' farm, and so we were always going out there to replace those."
+        "Brennan worked hard, too - he didn't know much about electronics, but he could run wires and use ordinary tools to care of the easier things."
+        "We accomplished a lot more together than I could have on my own."
+    elif (profession == "teacher"):
+        scene bg classroom with fade
+        "I worked hard all month. We had to be a lot more flexible than at a regular school, as sometimes kids were absent if they were needed at home on the farm. I wrote up an entirely new curriculum customized for teaching all ages at once, so that all the kids could be studying the same topic but at their own level."
+        "Some of my lessons were not as interesting to the kids as I hoped they'd be, but usually they went over pretty well. I felt like the kids were learning a lot."
+        "Brennan worked hard, too - he didn't have any experience with teaching, but he was good with kids and helped keep them on task."
+        "There were times when just having another adult around was so important."
+
+    her "Good work today, Brennan. It's nice to have you around."
+    brennan "Thanks, [her_name]. I really enjoy working with you."
+    menu:
+        "What should I say?"
+        "So do I":
+            her "I like working with you too; you've been very helpful."
+            brennan "I'm glad there's something useful I can do."
+            her "You weren't doing anything useful before?"
+        "Tell me about yourself":
+            her "Thanks. So, what brings you to the colony, anyway?"
+        "Bye":
+            her "Thanks. Um, I gotta go."
+            brennan "I'll see you tomorrow, [her_name]..."
+            return
+
+    $ brennan_relationship += 1
+    brennan "Well, my skills aren't exactly in high demand here..."
+    her "What skills are those? What did you do back on Earth?"
+    brennan "I was a salesman. Not a bad one, either."
+    her "So why are you here?"
+    brennan "I was too good at my job. It became my life; trying to sell more than last month, trying to beat the other fellows. Finally I had to ask myself what was the point of it all?"
+    brennan "On a whim I applied to be a colonist, and I suppose there was something about it they liked, because I was accepted."
+    her "That's strange..."
+    brennan "What, you think it's strange they found something about me they liked?"
+    her "No, it's just - well, no offense, but we don't really need any salesmen here, especially ones with no family, and.... I'm sorry, that was rude of me--"
+    brennan "And absolutely true. It feels lonely here, sometimes. There's no bars or even any other single people to hang out with. I don't even have my own pad or anything; they put me up in the Mayor's house."
+    her "That sounds awkward."
+    brennan "He's a nice enough fellow, and his wife doesn't seem to mind having me around, but they're not family."
+    menu:
+        "What should I say?"
+        "Want to come over for dinner?":
+            her "Not family, no, but you have friends here! Why don't you come have dinner with [his_name] and me tonight? I'm sure he'd like to meet you."
+            brennan "Not bloody likely! You haven't seen the dirty looks he's been giving me?"
+            her "Really?"
+            brennan "Oh, sure! He's always looking at me like I'm a ravenous wolf."
+            her "Well, maybe we could go for lunch together sometime."
+            brennan "I'd like that, [her_name]. Thank you, for being a friend."
+        "(Give him a hug)":
+            her "I'm sorry you're so alone..."
+            "He doesn't seem at all surprised when you reach out your arms to give him a hug. He hugs you back, holding you a second longer than you meant to, and then you let go."
+            her "(This is probably the first hug he's had in months... poor guy.)"
+            brennan "Thank you, [her_name]. I'm glad you're my friend."
+        "We're all family":
+            her "We're all family here, right?"
+            brennan "I suppose so, though you're the only one I feel close enough to to call family."
+            her "Sure, I'll be your big sister."
+            brennan "Sister! Ha, that's...nice. Thank you, [her_name]."
+    
+    return
+
+# MONTH 12
+# Something bad happens - she can't fix an illness, thing, or kid - Brennan helps out.
+label work_4:
     $ times_worked += 1
     $ relaxed -= 5
     $ community_level += 2
@@ -447,6 +530,7 @@ label work_3:
     # problems with 3d printer, running out of plastic
     elif (profession == "crafter"):
         scene bg workshop with fade
+        
     # running out of metal, need new parts
     elif (profession == "auto mechanic"):
         scene bg machine_shop with fade
@@ -456,23 +540,6 @@ label work_3:
 
     return
 
-
-label work_4:
-    $ times_worked += 1
-
-    "Month 12"
-    if (profession == "doctor"):
-        scene bg clinic with fade
-    elif (profession == "crafter"):
-        scene bg workshop with fade
-    elif (profession == "auto mechanic"):
-        scene bg machine_shop with fade
-    elif (profession == "teacher"):
-        scene bg classroom with fade
-
-    return
-
-# Solar flare while at work?
 label work_5:
     $ times_worked += 1
 
@@ -488,6 +555,7 @@ label work_5:
 
     return
 
+# Solar flare while at work?
 label work_6:
     $ times_worked += 1
 
