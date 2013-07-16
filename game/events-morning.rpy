@@ -425,7 +425,7 @@ label work_3:
     brennan "I was a salesman. Not a bad one, either."
     her "So why are you here?"
     brennan "I was too good at my job. It became my life; trying to sell more than last month, trying to beat the other fellows. Finally I had to ask myself what was the point of it all?"
-    brennan "On a whim I applied to be a colonist, and I suppose there was something about it they liked, because I was accepted."
+    brennan "On a whim I applied to be a colonist, and I suppose there was something about me they liked, because I was accepted."
     her "That's strange..."
     brennan "What, you think it's strange they found something about me they liked?"
     her "No, it's just - well, no offense, but we don't really need any salesmen here, especially ones with no family, and.... I'm sorry, that was rude of me--"

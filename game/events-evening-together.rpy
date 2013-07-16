@@ -70,7 +70,9 @@ label relax_together_2:
             show her normal at center
             "I decided to get back at him by jumping in right next to him with a big splash, but he didn't seem to mind."
             "The water was cold, but somehow that just made everything more exciting."
+            "When we were done, we got dressed and raced each other home, laughing all the way."
             $ loved += 5
+            $ made_love += 1
         "Watch him":
             her "I don't really want to get wet; I'll just watch you."
             him "Oh yeah? I better give you a good show, then."
