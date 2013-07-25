@@ -370,10 +370,13 @@ label domestic_8:
 
 label domestic_9:
     "Domestic 9"
+    $ skill_domestic += 10
     return
 
 label domestic_master:
     "I AM A DOMESTIC GODDESS!!!"
+    $ skill_domestic += 10
+    $ community_level += 10
     return
 
 return

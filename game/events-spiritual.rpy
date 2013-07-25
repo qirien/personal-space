@@ -242,4 +242,5 @@ label spiritual_9:
 label spiritual_master:
 
     $ skill_spiritual += 10
+    $ community_level += 10
     return

@@ -476,6 +476,16 @@ label physical_9:
 
 # Lead a group hunt
 label physical_master:
+    "One week a huge herd of six-legged grazing animals crossed the river near our colony into some wooded scrubland. We were able to hunt some from a distance, but they kept hiding in the bushes where we couldn't see them or get clear shots."
+    "They were good to eat, partly because they tasted good dried and salted into jerky. We could always use more food, so I decided to organize a hunt."
+    boss "Let's hear [her_name]'s idea, everyone. I hope you give her your full support."
+    her "It would be much easier to catch these animals with some help. We need some people to scare the animals out of the scrub and into the open, and some people to wait on the other side and hunt them as they come out."
+    "Our brightly colored uniforms stood out clearly from the bushes, and we picked a spot where the startlers would be protected by a hillside after they scared the game."
+    "I lined the shooters up carefully so they wouldn't hit each other or anyone else."
+    "I had the startlers run up on the animals, banging pots and pans and yelling. Sure enough, the animals skittered out of the brush and into the open."
+    "There were so many animals, it was almost impossible to miss. We shot a good number of them, and then let the rest of the herd go. We wanted them to come back next year."
+    "We had a big party where we cooked up a big batch of the critters, and we all worked together to take off their shells and smoke and salt the ones we couldn't eat right away."
 
     $ skill_physical += 10
+    $ community_level += 10
     return
