@@ -218,8 +218,14 @@ label physical_4:
     him "You don't know how?"
     her "I assume there's more to it than just sit and hold the reins."
     him "Well, yeah! There's a lot, actually. But I'd be happy to teach you."
-    "We decided that every weekend this month we'd have a riding lesson."
-    "I enjoyed learning more about horses and riding Lettie."
+    "We decided that every weekend this month we'd have a riding lesson. He started at the very beginning."
+    him "Now, you can't just jump on Lettie and start riding. Approach her from the left side, and let her get to know you a bit. Try talking to her."
+    her "What should I say?"
+    him "Just like, 'Hey there, good girl' or something. The words don't matter as much as the intent behind them."
+    her "Why don't the words matter?"
+    him "Horses are smart - they know if you're scared or nervous. But if you are calm and in charge, Lettie will be calm, too."
+    "I didn't even get on Lettie the first lesson. He taught me to saddle and bridle her, and when to brush her and feed her, and what would scare her or annoy her."
+    "It was cute to see how much he loved that horse - he knew just what she liked."
 
     $ skill_physical += 10
     return
@@ -431,16 +437,44 @@ label physical_7:
 
 # Participate in community soccer team
 label physical_8:
-
+    "Some of the colonists had taken to playing soccer on Saturday mornings. I decided to join them and see if I liked playing."
+    sara "Look out, here comes [her_name]!"
+    brennan "You going to join us today?"
+    her "Yeah, if you don't mind."
+    brennan "Sure. Now we can have seven to a side."
+    "The teams were very mixed, but they seemed pretty fair, with each side having some kids, and some men and women of varying ages." 
+    "The rules were pretty standard, except they had a rule that at least three different people had to touch the ball before making a goal, to discourage one player from hogging all the goals."
+    "I hadn't played a lot of soccer, but since I was in pretty good shape I was able to do OK. Still, running up and down the field made me really tired."
+    "It was the last quarter of the game and our teams were tied. Brennan passed me the ball, and so I was taking it down towards the goal. I had to pass it to someone, but who?"
+    "Sara was really good at making goals, but Ilian hadn't had the ball much, and I was trying to help him get extra practice. They were both open."
+    menu:
+         "Who should I pass to?"
+         "Sara":
+              her "Sara! It's yours!"
+              "I passed the ball to Sara, who promptly shot it in."
+              "We won the game!"
+         "Ilian":
+              her "Ilian! Take it on down!"
+              "I passed it to Ilian. Victory was not as important as practice and team spirit."
+              "The other team won, but I could tell our team felt strong and happy about how we played."
+              $ community_level += 1
+         "Keep the ball":
+              "I decided to try and shoot it in myself. I managed to make it in, but since three people hadn't touched it yet, it didn't count, and the other team won the game."
+              $ community_level -= 1
+         
+    brennan "Good game, [her_name]"
+    "Not only was soccer good exercise, but I feel like it's good for our sense of community, too."
     $ skill_physical += 10
     $ community_level += 2
     return
 
+# Lift heavy ?
 label physical_9:
 
     $ skill_physical += 10
     return
 
+# Lead a group hunt
 label physical_master:
 
     $ skill_physical += 10
