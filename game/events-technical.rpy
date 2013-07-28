@@ -12,11 +12,13 @@ label technical_0:
 
     return
 
+# Better Radio Communication
 label technical_1:
     "I installed an antenna on the roof so that we can communicate with the town better. It took some trial and error to figure out the exact alignment and height, since this planet's atmosphere and shape are different from Earth's, but it's working with the radios pretty well."
     $ skill_technical += 10
     return
 
+# Build a water pump
 label technical_2:
     "Even though we have a solar panel to run our pad computers, the lights, and a few other things, we do most work the old-fashioned way, without electricity."
     "And did I mention there's no running water? We have a well and a pump, but we're always fetching water with buckets...Well, mostly I fetch water with buckets, since [his_name] has a bunch of pipes and canals setup for watering the farm."
@@ -41,13 +43,13 @@ label technical_2:
 # setup alarm system for solar flares. see http://www.spaceweather.com/glossary/srs.html for information on solar flare radiation storms. Help with technical details appreciated.
 label technical_3:
     "We knew that solar flares were probably happening, since our electronics were sometimes unreliable, but we didn't know when they were."
-    her "If I adjust this radio to receive AM signals, it can tell me when frequency gets around 20 mHz, which would indicate a solar flare is on its way."
+    her "If I adjust this radio to receive AM signals, it can tell me when the frequency indicates a solar flare is on its way."
     her "I can attach it to a beeper, so when I hear it I'll have about 13 minutes to assess the size of the flares and take down the solar panels if necessary."
     "I tested my solar flare detector that week. It worked for two of the bigger flares, but the beeper wouldn't stop until the flare was over."
     "There must be some way to make this work."
     menu:
         "Search the local database for a solution":
-            "The wireless was down because of the most recent solar flare, but I was able to download a circuitry manual at the library. I learned about a multivibrator, or one-shot circuit that would only make the buzzer beep once."
+            "The network at our house was down because of the most recent solar flare, but I was able to download a circuitry manual at the library. I learned about a one-shot circuit that would only make the buzzer beep once."
             "I had to borrow a few more circuits while I was at the library, and while I was there I told Sven about my project."
             sven "We're working on an intercom system with metal tubes, which wouldn't be affected by the solar flares. When I'm done could we use your flare sensor to tell everyone when to take cover?"
             menu:
@@ -62,7 +64,7 @@ label technical_3:
     $ skill_technical += 10
     return
 
-
+# Make laundry wringer
 label technical_4:
     scene bg laundry with fade
     #show her angry at center
@@ -86,6 +88,7 @@ label technical_4:
     $ skill_technical += 10
     return
 
+# Hot water heater
 label technical_5:
     # put in hot water connected to solar
     "One of the things I missed from Earth life was having hot water available whenever I wanted it. Of the few luxuries we enjoyed, hot water seemed like one I could improve on."
@@ -169,9 +172,42 @@ label technical_6:
     $ skill_technical += 10
     return
 
-# build a water wheel to power a grinding mechanism?
+# build a water wheel to augment power grid
 label technical_7:
+    "Our solar panels worked well most of the time, but sometimes it was cloudy for days and our batteries ran out. Then we had to use candles and burn wood for cooking, which made a big mess and felt wasteful."
+    "I wondered if we could use the nearby river to augment our electricity sources."
+    "I studied some diagrams on the internet and drew up some plans for a water wheel that would work with our river."
 
+    her "Do you mind if I get some more parts from the shuttle?"
+    ilian "What are you making now?"
+    her "A water wheel, for electricity."
+    ilian "That sounds great. Can you hook it up to the storehouse?"
+    her "No, it's just for our house..."
+    ilian "Maybe we should all be on the same power grid..."
+    her "Maybe so, but we're not right now. Besides, if we were, we'd have the same problems we do now on cloudy days, just everyone will blame their neighbors for using all the electricity."
+    ilian "True. Well, if you find something you can use, go ahead - you're the only one who's shown much of an interest so far."
+    her "Thanks, I will."
+    
+    "I rummaged around, but I couldn't find all the parts I needed. I probably could make some of them, but it would be a huge project..."
+    menu:
+        "What should I do?"
+        "Try and build it anyway.":
+            "I knew it was a lot of work, but I decided to build it anyway."
+            "I scavenged what I could, and shaped the rest of the pieces out of wood."
+            "Magnets were also in short supply, so I had to 'borrow' some from the store house."
+            "Finally, the water turned the wheel that turned a generator. It didn't generate a ton of current, but it was steady, which is more than I could say for the solar panels."
+            "It wouldn't charge the battery fast enough to keep up with the stove, but it would let it run a little longer."
+            $ community_level -= 1
+
+        "Publish the plans and let someone else build it":
+            "I didn't have time to waste on that. But I put my plans on the colony website, in case anyone ever did want to build one."
+            $ community_level += 1
+
+        "{i}Spearhead a community effort to build it{/i}" if (skill_social >= 30):
+            "With some help, it wouldn't be too hard to build the water wheel. I asked around, and found several people willing to help make a community water wheel that fed into the community power grid."
+            "It didn't help me personally that much, but I guess if it helped the store house and clinic have more reliable electricity, that would help us all."
+            $ community_level += 5
+    
     $ skill_technical += 10
     return
 
@@ -181,11 +217,14 @@ label technical_8:
     $ skill_technical += 10
     return
 
+# Make a tractor attachment that places seeds and fertilizer at the same time
 label technical_9:
 
     $ skill_technical += 10
     return
 
+# Make app that connects to solar flare sensor and alerts everyone on their
+# tablet computer, and also sends out radio message
 label technical_master:
 
     $ skill_technical += 10

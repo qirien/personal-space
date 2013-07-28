@@ -273,6 +273,7 @@ label relax_together_5:
     "We lay there for a long time...In the morning, it felt so good to wake up next to him, watching the sky lighten. With one final kiss, we got up and carried everything back to the house together."
     return
 
+# Daisy-chain circlet of wildflowers
 label relax_together_6:
     scene bg fields with fade
     "I was weeding in the backyard when I found some wildflowers. They reminded me of clover, so I made a daisy-chain circlet out of them. It was fun."
@@ -363,11 +364,10 @@ label relax_together_7:
     him "It was interesting- Sister Naomi is not like any other preacher I've listened to."
     her "How's that?"
     him "Well, she tries to speak to everyone, even though people here have a lot of different beliefs. So she uses a lot of stories and asks a lot of questions."
-    him "Like today, she told us the story of some seeds that fell out of a merchant's pack where there weren't any other plants like them. In most places the soil was dry and rocky."
-    him "But in one spot a gardener had cleared some soft earth, and the seeds that landed there sprouted and grew. The gardener at first thought they were weeds, but he decided to wait."
-    him "Eventually, after years and years, some of them grew to beautiful trees that gave delicious fruit."
+    him "Like today, she told us the story of some seeds that fell out of a merchant's pack where there weren't any other plants like them."
+    him "A gardener let them grow and they grew into beautiful trees with delicious fruit."
     her "What does that mean to you?"
-    him "A couple of things. In one way, our colony is kind of like the seeds that fell onto strange soil. Looking at the story another way, however, sometimes the strange things and opportunities that come into our lives are like the seeds. While at first they seem strange, they can sometimes become something great."
+    him "Hmm, well it made me think of how our colony is kind of like the seeds that fell onto strange soil. I hope we will grow into something great."
     her "Was it helpful?"
     him "It made me think about things, which is good... I feel a little more peaceful, optimistic... but also motivated to keep working hard. So, yeah, I guess it was helpful."
     her "That's good."
@@ -416,6 +416,7 @@ label relax_together_8:
     $ loved += 2
     return
 
+# Baby names
 label relax_together_9:
     if (is_pregnant or want_kids):
         "We were talking about what it would be like when we did have a baby, and soon we started talking about baby names."
@@ -448,7 +449,6 @@ label relax_together_10:
 label relax_together_11:
     "We started talking, and somehow I ended up telling him all about my job. Who was hard to work with, things that seemed impossible, the people I helped... it felt good to have him know what I had been working on."
     return
-
 
 label relax_together_12:
     him "I'm so glad we do things together all the time."

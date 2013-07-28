@@ -71,19 +71,25 @@ label relax_alone_1:
     $ relaxed += 5
     return
 
+# Stargazing alone
 label relax_alone_2:
     scene bg stars
+    her "Hey, [his_name], want to sit on the porch with me?"
+    him "Oh.... I kind of want to, but I'm so tired. I'm just going to go to bed."
     "I sat out on the porch and gazed at the stars. They were so different from Earth, I had to make my own constellations."
-    $relaxed += 5
+
+    $ relaxed += 5
     $ loved -= 2
     return
 
+# Solo trip to bath house
 label relax_alone_3:
     "I went to the bath house by myself. I brought extra wood so I could have a long, hot bath, and I carried up extra water from the river to make it a deep one. All my effort just made me appreciate it all the more."
     $ relaxed += 5
     $ loved -= 2
     return
 
+# Emails from Home
 label relax_alone_4:
     scene bg farm_interior
     "I got a message from my mother. It was one she sent several years ago, but she told me all about my siblings, and how the neighbors were doing, and I better take good care of [his_name] and is he taking care of me, that sort of thing."
@@ -95,6 +101,7 @@ label relax_alone_4:
         $ relaxed += 5
     return
 
+# Watch a movie alone
 label relax_alone_5:
     scene bg bedroom
     "There are some movies that I love that [his_name] just doesn't like. That's fine; we don't have to do things together all the time. So one night, I watched..."

@@ -599,6 +599,28 @@ label social_9:
 
 # Propose and fill seat on Community Council
 label social_master:
+    her "Mayor Grayson, can I talk to you for a moment?"
+    boss "I'd like to, [her_name], but there's too much to do. I have to decide where the new farm should be, and how to allocate the latest harvest, and which supply requests to approve, and-"
+    her "That's what I want to talk to you about."
+    boss "Oh?"
+    her "There's too much here for just one person. You need some help."
+    boss "Isn't that what I told you when we first arrived here?"
+    her "Yes, and I listened to you, so I hope you will listen to me."
+    her "You've done a great job, but the truth is there's just too much for one person. There's a lot of decisions to be made, and some of them would be made easier by someone just specializing in that one thing."
+    boss "What do you propose?"
+    menu:
+        "What do I propose?"
+        "Have a committee":
+            her "Why not have a committee? One person could be in charge of the store house, one person could be in charge of the land, one person in charge of the services like the school and library, and one person in charge of laws and safety."
+            boss "Hmmm..."
+            her "Of course, you would be on the committee as well"
+            boss "Will you serve as one of the committee members?"
+            her "If you like, though I think it would be better if they were elected."
+            boss "Very well. I am sure you will be voted on the committee."
+            "Sure enough, they voted me to be in charge of the libraries."
+
+        "I could assist you"
+        
 
     $ skill_social += 10
     $ community_level += 10
