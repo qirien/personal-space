@@ -1,4 +1,4 @@
-﻿# Love in Space
+﻿# Personal Space
 # MAIN
 # Declare global variables, images, characters, etc.
 

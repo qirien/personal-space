@@ -17,17 +17,19 @@ init -1 python hide:
 
     ## These control the width and height of the screen.
 
+#    config.screen_width = 1280
+#    config.screen_height = 720
     config.screen_width = 800
     config.screen_height = 600
 
     ## This controls the title of the window, when Ren'Py is
     ## running in a window.
 
-    config.window_title = "Love in Space"
+    config.window_title = "Personal Space"
 
     # These control the name and version of the game, that are reported
     # with tracebacks and other debugging logs.
-    config.name = "Love in Space"
+    config.name = "Personal Space"
     config.version = "0.1"
 
     #########################################
@@ -243,7 +245,7 @@ init -1 python hide:
     ## stored. (It needs to be set early, before any other init code
     ## is run, so the persisten information can be found by the init code.)
 python early:
-    config.save_directory = "Love In Space-1347408413"
+    config.save_directory = "PersonalSpace-1347408413"
 
 init -1 python hide:
     #########################################

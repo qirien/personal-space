@@ -3,4 +3,4 @@
 http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode
 
 For more information about this work, see
-https://github.com/qirien/love-in-space or contact Andrea at qirien@gmail.com
+https://github.com/qirien/personal-space or contact Andrea at qirien@gmail.com
