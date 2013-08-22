@@ -614,6 +614,19 @@ label monthly_event_6:
             "We were able to preserve some of our corn until it was ready for harvest, although for most of the corn it was too late."
             "We had a big bonfire with the Perons and burned the infested corn. Their kids danced around the fire as we roasted one of their chickens on the side."
             ## TODO: this section could be expanded by having a dialogue with one of the Blairs?
+        "Spray them with pesticide":
+            him "We have some pesticide that we used for corn pests on Earth."
+            her "Will it work on these bugs?"
+            him "I don't know. Usually you apply it before the pests start eating the corn - it works better as a preventative. I hadn't put any on here because I didn't think any of the bugs here would eat an alien plant species."
+            her "Seems like these bugs will eat anything."
+            him "Yeah, well, let's give it a try."
+            "We got some sprayers and face masks and gloves from the storehouse and got to work. Even with the face masks, the stuff smelled awful. It took all day to cover all the fields."
+            "We tried to control where we sprayed, but it was windy and it kind of got everywhere."
+            "When we were finally done, I had a terrible headache."
+            her "Are we really going to eat the corn after we sprayed this poison on it?"
+            him "If it works, yes. We don't have enough food to pick and choose."
+            "It did seem to get rid of a lot of the pests. Whenever we ate it, I washed it really well, but it always tasted a little funny to me."
+            
         "I have no idea.":
             her "I don't have any ideas...I'm sorry."
             him "Well, let's try to salvage what we can."

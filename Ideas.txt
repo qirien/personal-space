@@ -20,3 +20,5 @@ TODO: Does she have a pet name for him? We can ask the player...
 TODO: Differentiate between regular options, and options that exist because of stats.
 
 TODO: Have a "scene" statement at the beginning of every scene, even if it's just black
+
+TODO: Have this game checked over by the following people for factual errors: doctor, astronomer, Irish expert (Brennan dialogue), people of various religions, horse expert, farmer

@@ -310,7 +310,7 @@ label work_2:
         "Are you going to be helpful?":
             her "Do you have any talents besides flattery?"
             brennan "A few, to be sure! Don't worry, I'll try not to distract you too much."
-    "He winked at me playfully. Was he...flirting with me?! I didn't have time to think about it; there was too much work to do."
+    "He winked at me playfully. Was he...flirting with me? I didn't have time to think about it; there was too much work to do."
     "It was nice to have him around, especially when things got busy later in the day. He didn't wait for me to ask him to do things, but he didn't get in my way, either."
     brennan "It was a pleasure working with you today, [her_name]."
     "He looked into my eyes intently as he shook my hand. His gaze was direct, friendly, and...amused? I looked away."
@@ -390,7 +390,7 @@ label work_3:
         scene bg workshop with fade
         "I worked hard all month. Now that everyone was settling in, people had a lot of things they wanted. We made towels and spoons and a cradle and pots and other things."
         "Brennan worked hard, too - he had some woodworking skills, so he did a lot of that work so I could concentrate on other things."
-        "Together we accomplished way more than I could have on my own. Our task list never seemed to get any shorter."
+        "Together we accomplished way more than I could have on my own. Even so, our task list never seemed to get any shorter."
     elif (profession == "auto mechanic"):
         scene bg machine_shop with fade
         "I worked hard all month. People's datapads would get corrupted if they were left out during solar flares, the farm equipment needed maintenance, and sometimes homes' solar panels or stoves would break down."
@@ -429,14 +429,14 @@ label work_3:
     her "That's strange..."
     brennan "What, you think it's strange they found something about me they liked?"
     her "No, it's just - well, no offense, but we don't really need any salesmen here, especially ones with no family, and.... I'm sorry, that was rude of me--"
-    brennan "And absolutely true. It feels lonely here, sometimes. There's no bars or even any other single people to hang out with. I don't even have my own pad or anything; they put me up in the Mayor's house."
+    brennan "And absolutely true. It feels lonely here, sometimes. There's no pubs or parks or any place to meet people - there's no one to meet! I don't even have my own pad or anything; they put me up in the Mayor's house."
     her "That sounds awkward."
     brennan "He's a nice enough fellow, and his wife doesn't seem to mind having me around, but they're not family."
     menu:
         "What should I say?"
         "Want to come over for dinner?":
             her "Not family, no, but you have friends here! Why don't you come have dinner with [his_name] and me tonight? I'm sure he'd like to meet you."
-            brennan "Not bloody likely! You haven't seen the dirty looks he's been giving me?"
+            brennan "Not very likely! You haven't seen the dirty looks he's been giving me?"
             her "Really?"
             brennan "Oh, sure! He's always looking at me like I'm a ravenous wolf."
             her "Well, maybe we could go for lunch together sometime."
@@ -455,7 +455,7 @@ label work_3:
     return
 
 # MONTH 12
-# Something bad happens - she can't fix an illness, thing, or kid - Brennan helps out.
+# Something bad happens - Brennan helps out.
 label work_4:
     $ times_worked += 1
     $ relaxed -= 5
@@ -527,13 +527,41 @@ label work_4:
 
         "There were other outbreaks of the Streaks, but now that we knew how to treat it, we didn't worry quite so much."
 
-    # problems with 3d printer, running out of plastic
+    # running out of plastic & wood
     elif (profession == "crafter"):
         scene bg workshop with fade
+        "We made a lot of furniture and parts for the colonists - sometimes they made things on their own, but not everyone knew how. It was easier with the schematics we brought with us - the computer could easily cut complex shapes out of wood or metal, or print them out of plastic."
+        "But..."
+        brennan "Where's the two by fours? I wanted to start on those shelves for the school."
+        her "That pile there is all we've got. The mayor said we're going to save the rest for emergencies."
+        brennan "Well how do you like that! How are we supposed to build without materials?"
+        her "Well, there are plenty of trees by the river..."
+        brennan "We're not lumberjacks!"
+        her "No, but I have an idea."
+        "We didn't have a sawmill yet (I think that was one of the things that was supposed to come on the next ship), so we needed to make do with what we had."
+        her "Brennan, I need you to gather or saw off or whatever a bunch of small branches, as uniform in diameter as possible."
+        brennan "You're the boss..."
+        "While he was gone, I started drawing up some designs that used simpler materials. Instead of using big boards for the shelves, we could lash a bunch of medium-sized branches together."
+        her "We'll still need some thick, long branches for the posts... and then how should we attach the shelves to the posts?"
+        "I did some research and drew up some ideas when Brennan came back. He had a trailer full of branches, and he looked sweaty and miserable."
+        brennan "I hope this is enough for you."
+        her "That'll do... for today."
+        brennan "Today! You're a slave driver, you are."
+        her "I have to be to get any work out of you, Your Laziness."
+        her "Anyway, come see these plans. We'll need to strip the branches of twigs and leaves, and cut them to uniform sizes..."
+        "He stripped the branches while I attached them together. It took a few tries to attach everything so it was sturdy, and it wouldn't hold as much weight as a normal shelf, but in the end, we finished it."
+        
+        her "I might have to have the mayor emphasize to people how much work it is to build this stuff, and maybe they won't ask for so many things."
+        brennan "Or you could have them bring you the wood anytime they want you to make something."
+
+        "I was going to have to do more research on ways to build with the wood we had here on Talaam."
         
     # running out of metal, need new parts
     elif (profession == "auto mechanic"):
         scene bg machine_shop with fade
+        
+
+
     # a kid claims teacher hit them?
     elif (profession == "teacher"):
         scene bg classroom with fade                
@@ -551,6 +579,7 @@ label work_5:
     elif (profession == "auto mechanic"):
         scene bg machine_shop with fade
     elif (profession == "teacher"):
+        # a kid breaks their tablet computer; use a slate/dirt/sand
         scene bg classroom with fade
 
     return
