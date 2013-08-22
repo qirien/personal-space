@@ -559,12 +559,36 @@ label work_4:
     # running out of metal, need new parts
     elif (profession == "auto mechanic"):
         scene bg machine_shop with fade
-        
+        # Out of variable transistors for variable volume control on radio, can wire it up directly to have just on/off
 
 
-    # a kid claims teacher hit them?
+    # a kid claims teacher hit them
     elif (profession == "teacher"):
         scene bg classroom with fade                
+        "It was the end of another school day. Even though the kids went home in the afternoon, I usually stayed around for another hour or two working on lesson plans and grading papers. Sometimes Brennan stayed and worked, too."
+        "One day after school the Mayor came by to talk with me."
+        boss "So, how are things going at the school?"
+        her "Pretty good! I feel bad that the older kids have to spend so much time helping the younger kids, but it's really the only way to teach so many of different ages."
+        boss "That's good, that's good... Well, what I came to talk to you about, is that one of the parents came to me with a concern."
+        her "Oh?"
+        boss "They said that their child came up with red marks on their hands, and the child said you hit their hands with a ruler."
+        her "They said WHAT?!"
+        brennan "[her_name]'ll be stern when the kids need it, but she's never hit anyone."
+        boss "This is news to you, then."
+        her "Of course it is! I would never do such a thing. Which kid is it?"
+        boss "Gardenia."
+        her "Gardenia... Well, a few days ago we were talking about how discipline in schools has changed, and how they used to hit kids that misbehaved with rulers or make fun of them, and how we don't do that anymore."
+        brennan "I remember that. Then at recess, she was playing school with some of the other kids, and I saw them whacking each other with sticks."
+        boss "So, you think it was one of the other kids pretending to be a teacher?"
+        her "That's the only thing I can think of."
+        boss "It sounds like this was just a misunderstanding. I'll talk to Gardenia's parents and let them know what happened."
+        her "Thanks, Mayor Grayson. I wish they would have come to me about it, though."
+        boss "I'll tell them that, too. Good-bye, then."
+        her "Good-bye."
+        her "Thanks for sticking up for me."
+        brennan "Of course. I couldn't let cute little Gardenia get away with another one of her fibs."
+        her "She certainly has a good imagination..."
+        "Gardenia didn't give us any more trouble that month."
 
     return
 
