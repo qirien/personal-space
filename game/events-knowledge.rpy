@@ -161,7 +161,7 @@ label knowledge_7:
     $ skill_knowledge += 10
     return
 
-# Learn about new medical treatment for skin cancer, can help one of the colonists?
+# Learn about new medical treatment for skin cancer, can help Mr. Peron? 
 label knowledge_8:
 
     $ skill_knowledge += 10
