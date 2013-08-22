@@ -101,8 +101,57 @@ label knowledge_5:
     return
 
 # Research nutrition theories for colonization, write article about nutritional value of native plants
+#I wasn't sure what the nutrition theory was, so feel free to add that in.
 label knowledge_6:
-
+    scene bg library with fade
+    lily "Hi [her_name]. I was hoping I'd run into you this week. I'm writing an article about the edible, native plants we've found for an Earth science journal, but I'm worried that I'll miss something if I write it alone. Would you like to co-author it with me?"
+    menu:
+        "Do I want to co-author a paper on plants?"
+        "Sounds fun":
+            her "Sure, that sounds like a good way to get our knowledge out to the scientific community."
+            lily "Great! I'll send you what I have so far, and we can discuss it in the lab tomorrow."
+            "Lily's paper was very technical, getting down to how the enzymes in these plants could still be broken down by human digestion, even though they were slightly different than earth's. She also wrote about how humans wouldn't be able to live off of Telanian plants alone, since they were missing vital nutrients."
+            "I felt a little out of my league when I went in to talk to Lily."
+            her "I'm not much of a chemist, so I can't really help with checking most of your paper. I found a few typos, but you can easily fix those. Why did you want my help?"
+            lily "Oh, I have a hard time seeing the big picture with plants. I know a lot of scientists are interested in their classification, but I'm not sure where to start."
+            lily "In some ways, I think my knowledge of Earth plants might be tainting how I attempt to classify them, so I'd be interested to see how you would do that."
+            her "Well, I'm not COMPLETELY ignorant of biology, but I see what you're getting at and I'll give it shot."
+            "I spent some time gathering the edible plants Lily talked about in her paper. At first, I tried to sort them into categories based on their venation, but there were only two plants where that made a difference."
+            "I decided to write down all the ways the plants were different, and then I ranked them by order of usefulness. The flowers were the easiest to tell apart, but were only present for part of the time."
+            "I realized that Talam's plants' leaves didn't vary in size within a species. Leaf size ranged from tiny to umbrella-sized. Since I was halfway to making an identification key, I made one."
+            lily "This is perfect! For some reason whenever I tried to categorize these plants I could only think of things like leaf shape and number of petals. This is an excellent addition."
+            her "I'm glad I could help. Maybe we can distribute the key to the colonists too."
+            lily "That's a wonderful idea. You can use the photos I already have if that will help."
+            "Lily sent the paper off to Earth and I sent out an updated edible plant guide to the colonists, with guidelines on which earth plants were essential for supplementing a Talam-based diet."
+            
+            #possibly add community points in here, if it doesn't throw things off balance.
+            
+        "I want to write my own paper to publish here on Talam":
+            her "Actually, I was thinking of writing my own paper. I'd like to make a more detailed and accessible chart of edible plants with explanations my neighbors could understand."
+            lily "Oh, well, after you finish it, is it okay if I reference it in my paper?"
+            her "Yes, that's fine."
+            "I worked hard over the next week to make a digital plant reference I could send out to the other colonists. In some ways, it was more difficult than making a complete encyclopedia. I wanted a succinct, but smart way of teaching about plants."
+            "I left out all the plants that were technically edible, but weren't nutritious. I also included some poisonous plants that might otherwise be mistaken for an edible one."
+            "I made an identification key to put in the back, which helped me organize the plants into chapters."
+            "At first I tried drawing the plants, but I quickly gave up and took several photos of each instead."
+            "After I sent out the link to the guide on our intranet, [his_name] pointed out a few typos, but I was able to fix them fairly quickly."
+            "I saw Lily again that weekend."
+            lily "Thank you for making the guide and identification key! I'm not sure if I would have thought to look at leaf size first, but given the plants you described that was the quickest way to do it! I'm definitely citing this!"
+            her "Well, I'm glad it ended up being useful to you too."
+            
+            #possibly add community points in here, if it doesn't throw things off balance.
+            
+        "I don't want to write anything down.":
+            her "I don't know, that sounds like a lot of work. I've seen these plants so many times that I don't think writing down will help my memory at all. I can pass my knowledge on by you know, actually talking to my neighbors."
+            lily "Writing is a lot of work, but what if your neighbor doesn't remember what you told her correctly?"
+            her "That's your job."
+            lily "How about you tell me what you know, and I can write it down?"
+            her "Well, if it's that important to you, I can tell you what I know."
+            "I spent the afternoon with Lily in the lab, discussing which plants were most useful to eat. She told me that she was fascinated by how a human could almost live off of Talam's plants alone, except for a few missing nutrients."
+            "We both learned a lot, and I didn't have to spend any time writing aimlessly."
+            
+            #this option would not have community points added
+        
     $ skill_knowledge += 10
     return
 
