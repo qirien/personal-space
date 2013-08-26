@@ -559,8 +559,19 @@ label work_4:
     # running out of metal, need new parts
     elif (profession == "auto mechanic"):
         scene bg machine_shop with fade
-        # Out of variable transistors for variable volume control on radio, can wire it up directly to have just on/off
-
+        # Out of variable resistors for variable volume control on radio, can wire it up directly to have just on/off
+        her "This is the third one of these radios that has broken so far! I can't believe they sent such cheapo equipment on a space mission."
+        brennan "I know; you'd think it might have occurred to them that we can't order new parts on a whim."
+        her "And they didn't send us with many variable resistors, either."
+        brennan "There's plenty of these fixed resistors, though."
+        her "Well, that doesn't do us much good, unless..."
+        brennan "What?"
+        her "Well, we could just use a fixed resistor instead and turn it into an on/off switch instead of a volume control."
+        brennan "But then you couldn't control the volume."
+        her "No, but it's better than running out of variable resistors that we might need for a more vital system somewhere."
+        brennan "That's true..."
+        her "Although, we do have some resistive tape; we could probably make our own...but it would be more bulky than the original."
+        "We worked on making a small potentiometer out of resistive tape and metal rings, but we couldn't get it small enough to fit on the handheld radio. So we had to just remove the volume control. Our solutions weren't always ideal, but we did the best we could with the materials we had."
 
     # a kid claims teacher hit them
     elif (profession == "teacher"):
@@ -615,6 +626,8 @@ label work_6:
     "Month 18"
     if (profession == "doctor"):
         scene bg clinic with fade
+
+        # after a few days radiation sickness would appear: vomiting, fatigue, low blood counts. These symptoms might persist for days. Someone caught outside with severe exposure might need a bone marrow transplant
     elif (profession == "crafter"):
         scene bg workshop with fade
     elif (profession == "auto mechanic"):
