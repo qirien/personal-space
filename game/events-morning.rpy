@@ -603,23 +603,88 @@ label work_4:
 
     return
 
+# Month 12 - Solar flare while at work?
 label work_5:
     $ times_worked += 1
 
-    "Month 15"
+    "There were some days when we just had to stay inside because of strong solar flares. They had a prediction system that usually let us know a day ahead of time, so we could be prepared."
+    "But one day it didn't work..."
+
+    "It started as a normal day at work, when Dr. Lily's voice came over the radio."
+    lily "Attention all colonists! This is Dr. Lily. A strong solar flare has just started. Get inside now. I repeat, there is a solar flare in progress, please get indoors."
+    "The radio emitted a strong burst of static, and I could barely make out anything else she said."
+    lily "...close the...stay...further notice..."
+    "Our computer pads also popped up a notification from her."
+    her "That's strange; usually we have more warning than this."
+    brennan "Hopefully everyone can get inside in time."
+    "We closed the windows and turned off unecessary electronics."
+
     if (profession == "doctor"):
         scene bg clinic with fade
+        "We only had one patient at the time; Mr. Peron was being treated for basal-cell carcinoma."
+        "We had just cut a large tumor out of his face, and I was bandaging it up."
+        her "I'm afraid you're stuck here for awhile - Dr. Lily says there is a solar flare going on."
+        "Mr. Peron" "What? I haven't heard anything about that."
+        her "They just announced it on the radio; I don't know why we didn't have an early warning this time."
+        "Mr. Peron" "I can't stay here! I have to make sure my family and the animals are inside!"
+        her "Please calm down. I'm sure your family is handling it."
+        "Mr. Peron" "My wife always forgets to turn the radio on! She might not even know!"
+        "I tried contacting his family on the radio, but the radiation from the flare was interfering with our transmissions. I couldn't connect my computer pad to the wireless network, either."
+        "Mr. Peron was getting more and more distraught. I didn't want to sedate him, but if it was for his own safety..."
+        brennan "Calm down, please! Everything will be just fine."
+        "Mr. Peron" "You don't understand! If you had any family, you'd know that I have to be there!"
+        brennan "..."
+        "Brennan just looked at Mr. Peron, a curious expression on his face. Finally, he nodded."
+        brennan "I'll make sure everything's all right with your family."
+        her "You can't do that! The radiation is too strong!"
+        brennan "But he's right. I don't have a family; I don't have as much to lose."
+        
+        $ grays_absorbed = 3
+        menu:
+            "What should I do?"
+            "Try and stop him":
+                her "It's not worth sacrificing yourself over!"
+                brennan "I'll be fine. And if I'm not, well, at least I'll have done some good here."
+            "Let him go":
+                her "If you really want to go, I won't stop you."
+                brennan "Not that you could, anyway."
+            "{i}Give him a lead apron{/i}" if (skill_technical >= 40):
+                her "Here, at least wear this lead apron. It won't completely protect you, but it's better than nothing."
+                brennan "How thoughtful. Thank you, [her_name]."
+                $ grays_absorbed = 2
+
+        "I watched him leave. The weather was deceptively placid - bright sun, a cool breeze, tree branches waving... the deadly radiation was completely invisible."
+        "Neither Mr. Peron or I talked; we couldn't do anything else, either; we were too nervous."
+        "The radio crackled every ten minutes - we could just barely make out that it was Dr. Lily repeating her warning."
+        "The second time she repeated her warning, the radio came on again just minutes later."
+        brennan "[her_name]...Peron house...got everyone inside...There was...but we...anyway. Repeat, we're...okay."
+        "I let out a breath I hadn't realized I had been holding. Mr. Peron smiled and asked me to hand him the radio."
+        "Mr. Peron" "Thank you, [brennan]. Earlier, what I said...well, I was wrong. You have a family; you're part of ours."
+        "There was silence, and static."
+        brennan "That's...thank you."
+        
+        "The flare was over after a few more hours, and Mr. Peron went home, but I insisted on Brennan coming back to the clinic."
+        her "You've absorbed at least [grays_absorbed] grays of radiation..."
+        brennan "Grays of radiation? That makes it sound like I've got aliens living inside me."
+        her "Stop joking and lie down. We need to see how bad it is."
+        brennan "Hold on, I think I might--"
+        "He vomited on the floor. At least it wasn't on me."
+        her "That's exactly what I'm talking about. Now lie down!"
+        "The amount he was exposed to was more than is usually used in chemotherapy, but if he didn't get more exposure his body would probably heal it just fine."
+        "I treated his burns and gave him some medicine."
+        "I was impressed that he had risked himself for a family he wasn't particularly close to - but maybe it was that desire for closeness that led him to do such a thing in the first place."
+
     elif (profession == "crafter"):
         scene bg workshop with fade
     elif (profession == "auto mechanic"):
         scene bg machine_shop with fade
     elif (profession == "teacher"):
-        # a kid breaks their tablet computer; use a slate/dirt/sand
         scene bg classroom with fade
+
+    # after a few days radiation sickness would appear: vomiting, fatigue, low blood counts. These symptoms might persist for days. Someone caught outside with severe exposure might need a bone marrow transplant
 
     return
 
-# Solar flare while at work?
 label work_6:
     $ times_worked += 1
 
@@ -627,14 +692,38 @@ label work_6:
     if (profession == "doctor"):
         scene bg clinic with fade
 
-        # after a few days radiation sickness would appear: vomiting, fatigue, low blood counts. These symptoms might persist for days. Someone caught outside with severe exposure might need a bone marrow transplant
     elif (profession == "crafter"):
         scene bg workshop with fade
     elif (profession == "auto mechanic"):
         scene bg machine_shop with fade
     elif (profession == "teacher"):
         scene bg classroom with fade
+        # a kid breaks their tablet computer; use a slate/dirt/sand
 
+    "At lunchtime, I was about to eat my lunch when I realized I had forgotten to bring one that day."
+    her "Oh no, I forgot my lunch."
+    brennan "I was just going to go home for lunch; do you want to join me?"
+    her "No, it's okay, I can just walk home and get something."
+    brennan "That's a mile each way; you won't have any time to cook and eat anything. Come on, I'll fix you something. It's the least I can do for you, after all you've done for me."
+    her "Well..."
+    menu:
+        "What should I say?"
+        "Yes":
+            her "Thank you, I'd appreciate that."
+        "No":
+            her "No, thank you. But if you would cover for me in case I get back late, I'd appreciate that."
+            brennan "Of course."
+            "I had to rush at home, and only had time to eat some raw vegetables before it was time to walk back."
+            "But I didn't mind too much, as I got to see [his_name] while I was at home."
+            him "I'll walk halfway with you; I don't usually get to see you during the day."
+            her "Sure!"
+            "We talked and laughed together. [his_name] was going way out of his way, using up the energy he needed for farming...just to be with me."
+            "I held his hand tight, and he pulled me close. We didn't need to say anything; he knew I appreciated him, and I knew he appreciated me, too."
+            $ loved += 5
+            return
+        "{i}Let's join Sara{/i}" if (skill_social >= 30):
+            her "Hey, do you mind if I invite Sara, too? Sometimes we like to have lunch together."
+            brennan "No, that's - that would be fine. I'll cook up something for the three of us."
     return
 
 # Brennan is government spy looking for lucrative resources. 

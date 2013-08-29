@@ -269,7 +269,7 @@ label monthly_event_3:
 #helper function for month 4 for a commonly used conversation tree
 label unappreciated:
     play music "music/Prelude02.ogg" fadeout 2.0
-    her "I can't believe you don't appreciate me and what I do."
+    her "It's none of your business what I do in my spare time."
     him "Well, it just seems kind of like a waste of time when there's so much real work to be done."
     her "Real work?! You don't think I do real work?!"
     him "Real work provides food, clothing, shelter. The necessities. We don't have extra time for anything else in order for the colony to survive."
@@ -321,7 +321,7 @@ label monthly_event_4:
                 her "Okay, well, that sounds very... necessary."
                 her "I've made some curtains and planted an herb garden, in addition to keeping the house pretty spotless."
                 him "Oh, is that what those plants are? The house is really clean, too; thank you."
-            "I can't believe you don't appreciate me":
+            "It's none of your business.":
                 jump unappreciated
 
     elif (highest_skill == "Creative"):
@@ -1262,15 +1262,15 @@ label follow_him:
     return
 
 # MONTH 11
-# uses domestic, social
+# uses knowledge, physical, creative
 label monthly_event_11:
-    "Jealous of New Friend"
+    "Frustration with Work"
     return
 
 # MONTH 12
-# uses knowledge, physical, creative
+# uses domestic, social
 label monthly_event_12:
-    "Frustration with Work"
+    "Jealous of New Friend"
     return
 
 # MONTH 13 - Jury Duty
