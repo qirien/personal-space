@@ -53,6 +53,7 @@ label spiritual_3:
     scene bg talam with fade
     "I watched the sun set while flying creatures gathered in the sky."
     her "They seem so free and at peace... Animals never worry about what someone's saying behind their backs, or try to get other animals in trouble, or worry about their childhoods... I could probably learn a lot from them."
+    "I felt peaceful, while at the same time motivated to be better."
     $ skill_spiritual += 10
     return
 
@@ -212,8 +213,21 @@ label spiritual_8:
     her "Our...function? \nThat makes us sound like robots!"
     her "Well, that's a good question - if I was a robot programmed to help other humans, what would I do differently?"
 
-    #TODO give example?
+    her "Maybe I would think about other people more? What if I had sensors that could detect when people needed my help? That would sure be handy."
+    her "I suppose that getting in the habit of thinking about other people would help with that."
+    her "I do that sometimes, but how can I remember to think about others more? Just wanting to isn't going to make it happen..."
+    her "I suppose that's why mindfulness and prayer are such an important part of most religions. Without daily reminders, we forget about the little changes we want to make."
 
+    "I decided to set aside a time each day to think about how I can help all the people in my life. I would even add items to my schedule or to-do list on my computer pad if there were specific things I wanted to do that day."
+    "At first it felt a little awkward - slightly as if I was programming a robot."
+    "But I was able to think about others more and help them in specific ways."
+    her "Sara is often lonely; I should invite her to lunch this week.  Hmmm, Ms. Peron was mentioning that she loves potatoes, and I don't think they are growing any on their farm - I could give them some of ours."
+    her "[his_name] has been really stressed out lately - he'd probably like it if I rubbed his shoulders or something."
+    her "It's been really nice of Sister Naomi to lend me these books and take the time to talk to me so much lately - I should tell her thank you for that."
+    
+    "They were just little things, but I could tell they meant a lot to the people I helped."
+
+    $ community_level +=3
     $ skill_spiritual += 10
     return
 
