@@ -14,8 +14,9 @@ label monthly_event_1:
     show him normal at right
     play music "music/You.ogg" fadeout 2.0
     "Our first month living on our own together, we had to work a lot of things out."
+    "Like, do we eat breakfast together, or separately? Who should cook and clean up?"
     menu:
-        "It's breakfast time."
+        "What should I do about breakfast today?"
         "Make some for [his_name]":
             her "Here, [his_name], I made you some breakfast."
             him "Oh, thank you. I could just make it myself, you know."
@@ -339,7 +340,7 @@ label monthly_event_4:
                 her "That sounds useful."
                 her "I've been learning how to make things out of native materials, like these placemats."
                 him "Oh, that's good. I want us to be independent from Earth; that's important."
-            "I can't believe you don't appreciate me":
+            "You don't appreciate what I do":
                 jump unappreciated
     elif (highest_skill == "Technical"):
         him "You spend a lot of time tinkering with things, don't you?"
@@ -1277,7 +1278,7 @@ label monthly_event_12:
 # uses spiritual, technical
 label monthly_event_13:
     "I hadn't thought about it much before, but we didn't have a lot of laws here on Talaam. Some things just didn't apply (like taxes, driving laws, etc), but I remember signing something about agreeing to abide by a set of laws that sounded very reasonable."
-    "It had never seemed like something I would have to worry about.  Until I had to be on the jury for Sven's trial, that is..."
+    "It had never seemed like something I would have to worry about.  Until I had to be on the jury for Ilian's trial, that is..."
     "We hadn't had any crime our whole first year (though we certainly had our share of arguments, accidents, and disagreements)."
     "After all, who would hurt anyone else in our colony? We needed each other too much."
     "But that peace couldn't last forever..."
@@ -1298,40 +1299,40 @@ label monthly_event_13:
     "Finally, the mayor called a community meeting."
     boss "I know everyone is worried, and scared, but we can't stop trusting each other. We will find who's responsible for this."
     natalia "Who knows who will be next?! It clearly wasn't an accident!"
-    "Finally, Sven stepped forward."
-    sven "I'm sorry! I'm so sorry!"
+    "Finally, Ilian stepped forward."
+    ilian "I'm sorry! I'm so sorry!"
     sara "Sorry for what?!"
-    sven "I-- I'm the one that killed Josephina."
+    ilian "I-- I'm the one that killed Josephina."
     "Nobody said a word. He worked his way up to the front of the room. He brushed his hand in front of his eyes - was he crying?"
-    sven "It was late, I didn't even see her until she was right in front of me. I was driving my tractor, maybe a little fast- she jumped in front of it- I was going too fast- I didn't mean to run over anyone!"
+    ilian "It was late, I didn't even see her until she was right in front of me. I was driving my tractor, maybe a little fast- she jumped in front of it- I was going too fast- I didn't mean to run over anyone!"
     natalia "But how did her body end up in the river?!"
-    sven "It was obvious she was dead- there was so much blood- I was so horrified- I don't know why I did that- I didn't want anyone to know it was me. So I dropped her body in the river."
+    ilian "It was obvious she was dead- there was so much blood- I was so horrified- I don't know why I did that- I didn't want anyone to know it was me. So I dropped her body in the river."
     
     "Nobody knew what to say. He was really crying, now, heaving deep sobs that looked pathetic on a man his size. I looked over at his wife, Sara, who looked like she was in shock."
-    boss "Sven, I can tell you're sorry about this, and I'm glad you came forward. We will need to have a trial and decide what to do about this."
+    boss "Ilian, I can tell you're sorry about this, and I'm glad you came forward. We will need to have a trial and decide what to do about this."
     natalia "What do you need a trial for?! He just admitted he killed Josephina!"
     boss "The laws of our community, which you all signed, state that any accused shall receive a trial, administered by myself and with a jury randomly selected from the adults of the colony that are not involved in the crime."
-    "The mayor took Sven to stay at his house until the next day, when the trial started."
+    "The mayor took Ilian to stay at his house until the next day, when the trial started."
 
     boss "[her_name], you've been randomly selected to be on the jury. Is there any reason you should not do this? Any conflict of interest with either side?"
     her "No, not that I can think of..."
     boss "Very well. We will proceed with the trial at two o'clock."
     
-    "Everyone in the town turned out to see the trial. Sven repeated what happened, and Mrs. Peron repeated what she had found. It sounded like a fairly simple case of involuntary manslaughter; we mainly needed to decide upon a sentence."
+    "Everyone in the town turned out to see the trial. Ilian repeated what happened, and Mrs. Peron repeated what she had found. It sounded like a fairly simple case of involuntary manslaughter; we mainly needed to decide upon a sentence."
     boss "There is no mandatory sentencing in the laws of our colony. I am sure you will find a solution that is fair to all parties involved. In case you don't, I do have the authority to modify sentencing, but I have every confidence in this jury's abilities."
     "He left us jury members to deliberate in private."
     
     lily "He shows great remorse. I doubt he will be so careless as to repeat his mistakes."
-    ilian "It could have been any of us..."
+    sven "It could have been any of us..."
     thuc "But would one of us have dumped her body in the river and covered it up? That behavior is suspicious. He says it was an accident, but who can tell for certain?"
     her "But why would anyone kill Josephina?"
     thuc "Why does any criminal do what they do? They want to, and they don't care about other people."
-    lily "Sven has not shown any other behavior that would be cause for concern."
+    lily "Ilian has not shown any other behavior that would be cause for concern."
     thuc "But it's possible that it was not an accident. We cannot show too much mercy, or people will think they can get away with anything."
-    ilian "We don't have a jail; you're not thinking of execting him, are you?!"
+    sven "We don't have a jail; you're not thinking of execting him, are you?!"
     thuc "Of course not. I propose temporary banishment. He should have to live on his own, off the land, for a year. That will show how important our community is, both to him and any would-be criminals."
     lily "There are no would-be criminals here, Thuc. What you are proposing is a death sentence. I think he should simply provide a certain amount of free labor to the Peron family every week. Perhaps that way they can eventually forgive him."
-    ilian "I don't like either of those options, but I can't think of anything better."
+    sven "I don't like either of those options, but I can't think of anything better."
 
     menu:
         "What will you argue for?"
@@ -1339,10 +1340,10 @@ label monthly_event_13:
             her "I agree with Lily; he should have to work for the Peron's. It can't make up for the loss of a child, but it will require some sacrifice and will help him show his remorse."
             thuc "He should be their slave for a year!"
             her "Well, we don't want his farm going to waste..."
-            ilian "Maybe he could be required to work a certain number of hours? Like community service?"
+            sven "Maybe he could be required to work a certain number of hours? Like community service?"
             her "Yes, but instead of the community it will be for the Perons. Let's say eight hours a week for a year."
 
-            "The jury agreed to that, and the Mayor, Sven, and the Perons all accepted our proposal. Sara didn't seem to happy about it, though. She'd probably have to do extra work on their farm to make up for his absence."
+            "The jury agreed to that, and the Mayor, Ilian, and the Perons all accepted our proposal. Sara didn't seem to happy about it, though. She'd probably have to do extra work on their farm to make up for his absence."
 
         "Banishment":
             her "I agree with Thuc; we need to show that our community won't allow such behavior."
@@ -1354,26 +1355,26 @@ label monthly_event_13:
             thuc "Four."
             lily "I suppose that would work...as long as the resources he gathers go to help the Peron family."
             "Finally, we had come to an agreement."
-            "Sven and the Perons accepted it, but Sara and the Mayor frowned. Poor Sara... I guess in a way we were sentencing her, too."
+            "Ilian and the Perons accepted it, but Sara and the Mayor frowned. Poor Sara... I guess in a way we were sentencing her, too."
             
         "{i}Compromise{/i}" if (skill_spiritual >= 40):
             her "Those both sound like good ideas. Perhaps some of both might be appropriate?"
-            ilian "What do you propose?"
+            sven "What do you propose?"
             her "Having him work for the Perons is a good idea, but it is too soon. They would feel angry, and then he would feel like his apology was not accepted."
-            her "But a year is too long to send anyone to live outside the community. I propose Sven leave the community for two weeks. When he returns, he will have to work for the Perons one day of every week for the next half year."
+            her "But a year is too long to send anyone to live outside the community. I propose Ilian leave the community for two weeks. When he returns, he will have to work for the Perons one day of every week for the next half year."
             lily "That sounds fair for all involved."
             thuc "I think two weeks is too short, but I will agree to this plan also."
-            "Everyone agreed to my proposal. The mayor seemed happy with it, too, and both Sven and the Perons accepted it without argument."
+            "Everyone agreed to my proposal. The mayor seemed happy with it, too, and both Ilian and the Perons accepted it without argument."
         "{i}He's innocent{/i}" if (skill_technical>= 40):
             her "He should provide some reparations, but I know he didn't kill her on purpose."
             thuc "How do you know that?"
             her "Her injuries are consistent with being hit by a car and then floating down the river. She doesn't have any injuries that would come from being physically assaulted."
-            ilian "Yes, that's right!"
+            sven "Yes, that's right!"
             thuc "That's true... I guess he is still innocent unless proven guilty..."
             her "He still should provide some reparations, though. I think he should work for the Perons one day a week for a year."
             lily "I agree."
-            ilian "That sounds fair."
-            "We all agreed, and the Mayor, Sven, and the Perons seemed satisfied with our verdict also."
+            sven "That sounds fair."
+            "We all agreed, and the Mayor, Ilian, and the Perons seemed satisfied with our verdict also."
 
     "I was just glad it was over."
     "Being on a jury was so stressful; I hope I never have to do that again."
@@ -1490,7 +1491,7 @@ label monthly_event_14:
                     $ made_love += 1
                     $ loved += 5
                 else:
-                    him "Is that why you haven't wanted to make love lately?"
+                    him "Is that why you haven't wanted sex lately?"
                     her "No! That's not it at all! I'm just trying to see the bright side of things."
                     him "The only bright side is that there's no kids to be hurt by our unstable relationship."
                     her "Unstable?!"
@@ -1498,6 +1499,12 @@ label monthly_event_14:
                     her "Is that really how you see us?"
                     him "It's true, isn't it? We have to turn things around if we want this to work, and especially if we want to bring kids into this family."
                     "We talked about it some more, and we both agreed to try and put the other person as more of a priority in our own life. But I wonder if we can actually do it... or if our marriage is already doomed."
+
+                    # Reset loved a little closer to zero to give the relationship another chance
+                    if (loved < -10):
+                        $ loved = -10
+                    else:
+                        $ loved = 0
 
             "Let's make a baby!":
                 her "Come on over here, [his_nickname], and make me a baby!"
@@ -1691,7 +1698,7 @@ label monthly_event_16:
             "Finally, he came home."
 
     menu:
-        "Hey, what's for dinner?"
+        him "Hey, [her_name], what's for dinner?"
         "I'm sick":
             her "I don't feel good..."
             if (loved >= 0):
@@ -1714,7 +1721,7 @@ label monthly_event_16:
                 her "I hate this place! I hate this food! I hate not having anything when we need it! I hate the animals, I hate the plants, I hate the moons that can't make up their mind whose turn it is to be in the sky!"
                 him "Anything else?"
                 menu hate_stuff:
-                    "I hate the stupid sun":
+                    "I hate the sun":
                         her "I hate the stupid sun and its temperamental solar flares."
                         him "Yeah, I hate that, too."
                         $ loved += 2

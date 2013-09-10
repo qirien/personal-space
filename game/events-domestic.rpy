@@ -257,7 +257,7 @@ label domestic_7:
                 $ community_level += 5
             elif skill_social >= 20:
                 "I know just who would want some."
-                "The Blair family had seven kids and I knew some of their crops hadn't made it. There were plenty of rations in the storehouse, so they weren't starving or anything, but I thought they'd like some real food."
+                "The Blair family had ten kids and I knew some of their crops hadn't made it. There were plenty of rations in the storehouse, so they weren't starving or anything, but I thought they'd like some real food."
                 "When I took it to them, they didn't care that it came from an alien monster; they just thanked me and gave me some eggs from their chickens to take home with me."
                 $ community_level += 5
                 $ skill_social += 5

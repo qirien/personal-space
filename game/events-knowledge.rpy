@@ -31,6 +31,7 @@ label knowledge_1:
     lily "And in some cases, you'll just have to test a little on an Earth creature. If you spectrize something and can't tell if it's safe, bring it into the lab."
     her "Do you have a list of plants you've already tested?" 
     lily "Oh, right. Well, of course there's the ones you're planting, but in addition to those we've discovered a few that contain relevant nutrients. I'll have my assistant send out a guide." 
+    "I was excited to try out some of the edible plants here."
     $ skill_knowledge  += 10 
     $ met_Lily = True
     return 
@@ -79,7 +80,7 @@ label knowledge_4:
     lily "On Earth, the secretions from carnivorous plants had antifungal properties. I'm in the process of testing this plant's goo to see if I can find a good use for it."
     her "Hopefully athlete's foot didn't make it onto the shuttle."
     lily "Seriously. There are also a lot of plants around here that release spores, and if they make us sick, I want to have a medicine to give out. That reminds me, while we don't have any mushrooms here, we do have these cute edible plants I call ringlets..."
-    "You and the other hikers learned more about nearby plants."
+    "The other hikers and I learned more about nearby plants."
     $ skill_knowledge += 10
     return
 
@@ -123,8 +124,7 @@ label knowledge_6:
             her "I'm glad I could help. Maybe we can distribute the key to the colonists too."
             lily "That's a wonderful idea. You can use the photos I already have if that will help."
             "Lily sent the paper off to Earth and I sent out an updated edible plant guide to the colonists, with guidelines on which earth plants were essential for supplementing a Talam-based diet."
-            
-            #possibly add community points in here, if it doesn't throw things off balance.
+            $ community_level += 1
             
         "I want to write my own paper to publish here on Talam":
             her "Actually, I was thinking of writing my own paper. I'd like to make a more detailed and accessible chart of edible plants with explanations my neighbors could understand."
@@ -138,8 +138,7 @@ label knowledge_6:
             "I saw Lily again that weekend."
             lily "Thank you for making the guide and identification key! I'm not sure if I would have thought to look at leaf size first, but given the plants you described that was the quickest way to do it! I'm definitely citing this!"
             her "Well, I'm glad it ended up being useful to you too."
-            
-            #possibly add community points in here, if it doesn't throw things off balance.
+            $ community_level += 1
             
         "I don't want to write anything down.":
             her "I don't know, that sounds like a lot of work. I've seen these plants so many times that I don't think writing down will help my memory at all. I can pass my knowledge on by you know, actually talking to my neighbors."
@@ -149,9 +148,8 @@ label knowledge_6:
             her "Well, if it's that important to you, I can tell you what I know."
             "I spent the afternoon with Lily in the lab, discussing which plants were most useful to eat. She told me that she was fascinated by how a human could almost live off of Talam's plants alone, except for a few missing nutrients."
             "We both learned a lot, and I didn't have to spend any time writing aimlessly."
-            
-            #this option would not have community points added
-        
+            $ community_level -= 1
+
     $ skill_knowledge += 10
     return
 

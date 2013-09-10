@@ -138,7 +138,7 @@ label social_3:
 label social_4:
     "Sara and I met for lunch every week to chat and take a break."
     sara "How are your neighbors doing?"
-    her "We ate with the Blairs a while back and they were healthy! We're all starting to live off the land; it's kind of exciting."
+    her "We ate with the Blairs a while back and they were all doing well! We're all starting to live off the land; it's kind of exciting."
     sara "I know! Hopefully we won't starve or anything. But along with eating, we should be sure to keep ourselves socially healthy too."
     menu:
         "I should get out more.":
@@ -195,7 +195,8 @@ label social_5:
             sara "Is it appropriate for children?"
             sven "Sure. There's some innuendo but that goes right over their heads."
             "We decided to watch {i}Time for no man{/i} the next day in the evening. I sent out a message to the colony e-mail list, and tried to remind everyone I saw to come."
-            "The movie was kind of ridiculous. At one point two cousins realized they were actually sisters, and that their evil uncle was actually their father. Then it turned out he wasn't evil at all, but had been infected with an alien virus that caused him brain damage that made him act rudely. A feminist organization let the cousins/sisters travel the galaxy at light speed to administer vaccines to the rest of civilization, but by the time they got anywhere, everyone else had been infected by the virus which made them act rudely."
+            "The movie was kind of ridiculous. At one point two cousins realized they were actually sisters, and that their evil uncle was actually their father. Then it turned out he wasn't evil at all, but had been infected with an alien virus that caused him brain damage that made him act rudely."
+            "A feminist organization let the cousins/sisters travel the galaxy at light speed to administer vaccines to the rest of civilization, but by the time they got anywhere, everyone else had been infected by the virus which made them act rudely."
             him "This movie is ridiculous."
             her "Yeah, there's no way a virus would only affect men. It's not like our immune systems are all that different."
             him "What would you do if I turned into a jerk overnight?"
@@ -239,7 +240,7 @@ label social_5:
             him "Yeah, but making coins out of copper is a waste of metal!"
             her "Seriously, they should be making teapots out of them."
             him "Or you know, wires."
-        "animated art film.":
+        "animated art film":
             her "Let's put on an old cartoon movie so that the kids will enjoy it too."
             lily "Oh, let's watch {i}Wall-E{/i}, I always thought that one was cute."
             her "I was thinking more along the lines of {i}The Old Man and the Sea{/i}."
