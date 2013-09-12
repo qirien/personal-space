@@ -42,7 +42,7 @@ label act_skip_work:
         $ community_level -= 10
     else:
         "I took a little time off work and didn't push myself this month."
-        $ relaxed += 2
+        $ relaxed += 5
 
     $ slacked_off += 1
     return
@@ -86,11 +86,14 @@ label work_0:
     "After the meeting, the mayor met with me to show me around where I'd work."
 
     #Different event for each profession
+    # DOCTOR
     if (profession == "doctor"):
         scene bg clinic with fade
         boss "All right! This is the clinic where people will come in if they get sick. I don't just want us to react to injuries and illness, though - we need to be proactive, and help promote good health."
         her "I helped some people out on the ship on the way here, so this should be similar. I will need some more supplies, though."
         boss "That's fine, just write up a list and give it to me to approve. Then you can go on over to the storehouse and take what you need."
+
+    # CRAFTER
     elif (profession == "crafter"):
         scene bg workshop with fade
         boss "All right! This is the shop where people will come in if they need something made they can't make themselves. We don't have a lot of materials yet, but you can requisition some from the storehouse for important projects, and there are some materials, like wood, right here on the planet."
@@ -98,12 +101,15 @@ label work_0:
         boss "Yes, it will! Perhaps you can start by helping me out - one of the roof pieces from the Nguyen's house broke when we were unpacking it, so they are going to need a replacement."
         her "Sure, I'll take a look at the standard roofs and see if I can make something out of the wood around here."
 
-    elif (profession == "auto mechanic"):
+    # MECHANIC
+    elif (profession == "mechanic"):
         scene bg machine_shop with fade
         boss "All right! This is the shop where people will bring machines that need to be fixed. You'll be responsible for any kind of machine people have, from datapads to tractors. We don't have many replacement parts, so do what you can to fix things up when they break."
         her "I can see that this will take a lot of creativity."
         boss "Yes, it will! Perhaps you can start by helping me with my datapad? It always freezes up when I try to access my calendar..."
         her "Sure, let me take a look at it..."
+
+    # TEACHER
     elif (profession == "teacher"):
         scene bg classroom with fade
         boss "All right! This is the schoolhouse. There's not a lot of kids in the community yet, so we just have them all in one room with you as their teacher. Please consider what they'll need to learn in addition to the standard curriculum, and try to be flexible if kids are needed to help out back at home."
@@ -209,7 +215,7 @@ label work_1:
         "Eventually, I got everything done, but I was looking forward to having some help sometimes."
 
     # MECHANIC
-    elif (profession == "auto mechanic"):
+    elif (profession == "mechanic"):
         scene bg machine_shop with fade
         "Back on Earth, I only worked on cars. But here on Talam, people brought me all kinds of machines to try and fix. If it had moving parts or electricity and it broke, it came to my shop."
         "Usually I could fix things pretty quickly, but after several months of hard farming, a lot of things were breaking down. It wouldn't have been so bad except that we had only a small reserve of spare parts, so I tried to only use them when there was no other way to fix things."
@@ -286,7 +292,7 @@ label work_2:
         scene bg clinic with fade
     elif (profession == "crafter"):
         scene bg workshop with fade
-    elif (profession == "auto mechanic"):
+    elif (profession == "mechanic"):
         scene bg machine_shop with fade
     elif (profession == "teacher"):
         scene bg classroom with fade
@@ -381,22 +387,30 @@ label work_2:
 # working hard
 label work_3:
     $ times_worked += 1
+
+    # DOCTOR 
     if (profession == "doctor"):
         scene bg clinic with fade
         "I worked hard all month. A new baby was born, a kid got his finger chopped off, and it looked like Mr. Peron might have cancer. In addition, we were monitoring the colonist's radiation and nutrient levels to try to keep them healthy."
         "Brennan worked hard, too - he didn't have any formal medical training, but he learned to take vitals and organize blood samples and fetch equipment for me."
         "It would have been impossible to do it all by myself."
+
+    # CRAFTER
     elif (profession == "crafter"):
         scene bg workshop with fade
         "I worked hard all month. Now that everyone was settling in, people had a lot of things they wanted. We made towels and spoons and a cradle and pots and other things."
         "Brennan worked hard, too - he had some woodworking skills, so he did a lot of that work so I could concentrate on other things."
         "Together we accomplished way more than I could have on my own. Even so, our task list never seemed to get any shorter."
-    elif (profession == "auto mechanic"):
+
+    # MECHANIC
+    elif (profession == "mechanic"):
         scene bg machine_shop with fade
         "I worked hard all month. People's datapads would get corrupted if they were left out during solar flares, the farm equipment needed maintenance, and sometimes homes' solar panels or stoves would break down."
         "Some critter kept chewing through the wires at the Engels' farm, and so we were always going out there to replace those."
         "Brennan worked hard, too - he didn't know much about electronics, but he could run wires and use ordinary tools to care of the easier things."
         "We accomplished a lot more together than I could have on my own."
+
+    # TEACHER
     elif (profession == "teacher"):
         scene bg classroom with fade
         "I worked hard all month. We had to be a lot more flexible than at a regular school, as sometimes kids were absent if they were needed at home on the farm. I wrote up an entirely new curriculum customized for teaching all ages at once, so that all the kids could be studying the same topic but at their own level."
@@ -527,7 +541,7 @@ label work_4:
 
         "There were other outbreaks of the Streaks, but now that we knew how to treat it, we didn't worry quite so much."
 
-    # running out of plastic & wood
+    # CRAFTER - running out of plastic & wood
     elif (profession == "crafter"):
         scene bg workshop with fade
         "We made a lot of furniture and parts for the colonists - sometimes they made things on their own, but not everyone knew how. It was easier with the schematics we brought with us - the computer could easily cut complex shapes out of wood or metal, or print them out of plastic."
@@ -556,10 +570,9 @@ label work_4:
 
         "I was going to have to do more research on ways to build with the wood we had here on Talaam."
         
-    # running out of metal, need new parts
-    elif (profession == "auto mechanic"):
+    # MECHANIC
+    elif (profession == "mechanic"):
         scene bg machine_shop with fade
-        # Out of variable resistors for variable volume control on radio, can wire it up directly to have just on/off
         her "This is the third one of these radios that has broken so far! I can't believe they sent such cheapo equipment on a space mission."
         brennan "I know; you'd think it might have occurred to them that we can't order new parts on a whim."
         her "And they didn't send us with many variable resistors, either."
@@ -573,7 +586,7 @@ label work_4:
         her "Although, we do have some resistive tape; we could probably make our own...but it would be more bulky than the original."
         "We worked on making a small potentiometer out of resistive tape and metal rings, but we couldn't get it small enough to fit on the handheld radio. So we had to just remove the volume control. Our solutions weren't always ideal, but we did the best we could with the materials we had."
 
-    # a kid claims teacher hit them
+    # TEACHER a kid claims teacher hit them
     elif (profession == "teacher"):
         scene bg classroom with fade                
         "It was the end of another school day. Even though the kids went home in the afternoon, I usually stayed around for another hour or two working on lesson plans and grading papers. Sometimes Brennan stayed and worked, too."
@@ -611,7 +624,7 @@ label work_5:
         scene bg clinic with fade
     elif (profession == "crafter"):
         scene bg workshop with fade
-    elif (profession == "auto mechanic"):
+    elif (profession == "mechanic"):
         scene bg machine_shop with fade
     elif (profession == "teacher"):
         scene bg classroom with fade
@@ -633,7 +646,7 @@ label work_5:
         "We had just cut a large tumor out of his face, and I was bandaging it up."
     elif (profession == "crafter"):
         "There were just the three of us in the shop at the time - Brennan, me, and Mr. Peron, who had been explaining a farm tool he wanted us to try and make."
-    elif (profession == "auto mechanic"):
+    elif (profession == "mechanic"):
         "Brennan and I had been watching Mr. Peron show us his method for twisting wire together to use the least amount of metal possible."
     elif (profession == "teacher"):
         "Other than that, I tried to teach class as usual. We had a guest speaker today, Mr. Peron, who was teaching the kids about chickens and how to breed and feed them, and what sort of plants they liked, and what they might eat that would make them sick."
@@ -699,6 +712,7 @@ label work_5:
 
     return
 
+# MONTH 15 - lunch with Brennan
 label work_6:
     $ times_worked += 1
 
@@ -712,7 +726,7 @@ label work_6:
         "We had the kids collect supple branches from the local trees, and we made wicker crates, baskets, and chairs out of them."
         "I went to the school and taught some of the kids the weaving techniques I had learned."
         "Soon it was lunchtime, and the kids went home to eat."
-    elif (profession == "auto mechanic"):
+    elif (profession == "mechanic"):
         scene bg machine_shop with fade
         "Inspired by last month's idea of replacing complicated parts with more simple ones, I set about looking at our inventory and cataloguing how parts we had a lot of could be used to substitute for parts we were running out of."
         "Soon it was lunch time."
@@ -856,8 +870,8 @@ label work_6:
             if (brennan_relationship >= 1):
                 brennan "You helped me when I was feeling worthless; I'd do the same for you."
                 her "I--"
-            brennan "I don't want you to ever feel trapped, like no one loves you or you have nowhere to go, because it's not true."
-            her "Thanks, Brennan..."
+                brennan "I don't want you to ever feel trapped, like no one loves you or you have nowhere to go, because it's not true."
+                her "Thanks, Brennan..."
             $ brennan_relationship += 1
 
         "No":
@@ -880,24 +894,169 @@ label work_6:
             brennan "It was my pleasure to entertain you."
     return
 
+# MONTH 21
 # Brennan is government spy looking for lucrative resources. 
 # People find out about past crimes; chance for redemption or execution?
 # has quantum entanglement communicator for instantaneous communication with Earth
 label work_7:
     $ times_worked += 1
-
-    "Month 21"
     if (profession == "doctor"):
         scene bg clinic with fade
     elif (profession == "crafter"):
         scene bg workshop with fade
-    elif (profession == "auto mechanic"):
+    elif (profession == "mechanic"):
         scene bg machine_shop with fade
     elif (profession == "teacher"):
         scene bg classroom with fade
 
+
+    $ got_batteries = False
+    $ questioned_brennan = False
+    $ searched_room = False
+
+    "One day while we were cleaning up after work, Brennan came up to me."
+    brennan "[her_name], can I ask a favor of you?"
+    her "You can ask..."
+    brennan "I need batteries."
+    her "Can't you just get them from the storehouse?"
+    brennan "Normally I would, but... I've used my quota already. It's been so cloudly lately, you know, the solar panels just haven't been keeping up."
+    her "What do you need them for?"
+    brennan "Just some electronics in my room."
+    menu:
+        "What should I say?"
+        "Sure.":
+            her "Sure, Brennan, I'll get some for you."
+            brennan "Thanks so much. And, ah, I'd appreciate it if you didn't mention to Ilian that they're for me."
+            menu investigate_brennan:
+                "What should I do?"
+                "Question Brennan further" if (not questioned_brennan):
+                    $ questioned_brennan = True
+                    her "So, what kind of electronics do you have that are using so much power?"
+                    brennan "You know, razor, computer pad, blow dryer, that sort of thing."
+                    if ((skill_technical >= 60) or (profession == "mechanic")):
+                        her "Blow dryers don't even work here, they draw too much current."
+                    elif ((skill_spiritual >= 60) or (skill_social >= 60)):
+                        her "You aren't being completely honest with me."
+                    else:
+                        her "Really? That's strange..."
+
+                    if (brennan_relationship >= 2):
+                        brennan "Oh, [her_name], I should have known I couldn't hide anything from you."
+                        brennan "It's easier if I just show you. Come with me."
+                        "We walked over to his room at the Graysons'. He pointed to an electronics box under the table."
+                        jump brennan_confess
+                    else:
+                        brennan "You're right, of course, but I can't tell you what they're really for. Can you just trust me?"
+                        jump investigate_brennan
+                "Go to the store house" if (not has_batteries):
+                    "I headed over to the store house and asked Ilian for the batteries. I hadn't gone over quota, so there was no problem."
+                    $ has_batteries = True
+                    menu:
+                        "What should I do?"
+                        "Question Ilian":
+                            her "Hey, Ilian, do you know what Brennan needs all these batteries for?"
+                            ilian "Wait, these are for Brennan?!"
+                            her "Yeah, he asked me to get them for him."
+                            ilian "He's already five sets over his quota! He needs to learn to do without!"
+                            her "Do you know what they are for?"
+                            ilian "What does everyone use batteries for? Lights, computers, things around the house. They're not supposed to wear out so fast when they're charged properly."
+                            her "Hmmm, okay, thanks."
+                            ilian "What about the batteries?!"
+                            her "I might need them."
+                            ilian "Gahhh..."
+                        "Leave":
+                            "I left with the batteries."
+                                                        
+                    jump investigate_brennan
+                "Search Brennan's room" if (not searched_room):
+                    $ searched_room = True
+                    "Something wasn't right here. I sensed Brennan was hiding something important from me, and I was determined to find out what it was."
+                    "Since he said he needed the batteries for his room, I thought I would check there."
+                    "No one was home at the Grayson's house, but there were also no locks on the doors, so I just walked in."
+                    her "(Brennan will be at work for a little bit longer, if he's waiting for me to bring him the batteries...)"
+                    "His room had the same few pieces of shuttle furniture we had, with a sleeping bag on the floor and a seat and table in the corner. The walls were bare; there were no photos or posters or decorations at all."
+                    "The table had a mess kit, a few books, and a cable for charging a computer pad. There was another cable, too, though, and when I followed it, it went underneath the table where there was a strange device."
+                    "It looked a little bit like a computer, with a metal case and some LEDs lighting up every now and then. But there was no writing or labels on the case at all. It made a low humming noise."
+                    her "What is it?"
+                    "Suddenly, I heard footsteps and I jumped. Brennan was in the doorway, watching me. He seemed amused."
+                    jump brennan_confess
+                    
+                "Give him the batteries" if has_batteries:
+                    "I brought the batteries back to Brennan."
+                    brennan "Thank you so much, [her_name]. I'm completely in your debt."
+                    her "You're welcome..."
+                    return
+
+        "No, sorry.":
+            her "I'm sorry; I can't do that for you, Brennan."
+            brennan "Oh...well, I'll just make do without, then, I suppose."
+            her "Yeah, that's something we've all had to do, isn't it?"
+            return
     return
 
+label brennan_confess:
+    brennan "It's a quantum entanglement communicator."
+    her "Okay, but what does it do and why do you have one?"
+    "He sighed and entered the room, closing the door behind him."
+    brennan "I use it to send messages with Earth, instantly."
+    her "Instantly?! Faster than light speed - I thought that was impossible!"
+    brennan "The technology's quite new and expensive - this is a prototype, actually. Part of my job here was to test it."
+    her "And the other part?"
+    "He looked away and paused for a second before answering."
+    brennan "I'm to report on any resources this planet has that my employer might find profitable."
+    her "Who is your employer?"
+    brennan "Rare Earth Tech. Well, technically I'm an independent contractor for Senator Martinez, who happens to be both on the board of R.E.T. and on the Senate Energy Committee."
+    her "So you're a spy, basically."
+    brennan "You could look at it that way."
+    her "Since you've kept your employment a secret, I don't see any other way I can look at it."
+    her "How could you hide this technology? People could have been using this to talk to their families back on Earth!"
+    brennan "That's just it - there's not enough bandwidth for that. I can only send small bits of text at a time - like a telegraph. And besides, when I first came here we weren't even sure it would work."
+    her "So why did you need the extra batteries?"
+    brennan "If it ever turns off, even for a second, the connection will be broken and I'll completely lose contact."
+    if (brennan_relationship >= 1):
+        her "You were never a salesman on Earth, were you?"
+        brennan "Actually, I was. I never lied to you, [her_name] - though I hope you'll understand why there's some topics I haven't brought up."
+
+    her "So, is this the part where you turn into an evil villain and kill me because I know too much?"
+    brennan "Kill you?! Of course not. This is the part where I beg for mercy and ask you not to tell anyone else about my device here."
+    menu:
+        "What should I say?"
+        "I won't tell":
+            her "I won't tell anyone. You're not hurting anyone, and..."
+            brennan "And what?"
+            if (brennan_relationship >= 2):
+                her "I'm afraid of what they'd do to you."
+                brennan "That's much too sweet of you, [her_name]."
+            else:
+                her "I'm not sure if everyone else would be as understanding as I am."
+                brennan "That's true. Well, I trust you to keep it a secret. Thank you."
+        "They have a right to know":
+            her "The colony has a right to know, and a right to be able to use the device. Like you said, we'll need some kind of priority system and limits on messages, etc, but it's not fair for only one person to be able to communicate with Earth like that."
+            brennan "Do you think they'll forgive me?"
+            her "We'll see."
+            "Brennan and I worked out a proposed system where he would send one message a month under a certain length for each family. Then we told the colony about the device."
+            "At first they were upset with Brennan (and with me for siding with him), but they were so excited at the ability to send telegrams to Earth that they forgave him pretty quickly."
+            $ exposed_brennan = True
+        "I won't tell if...":
+            her "I won't tell if you promise to-"
+            menu:
+                "What should I say?"
+                "Get me off this planet":
+                    her "Promise to get me off this planet with the next colony ship. I know I promised to stay forever, but you have connections, you could help me."
+                    brennan "Of course I'll help you. Just leave it to me."
+                "Send a message for me":
+                    her "Promise to send some messages to Earth for me."
+                    brennan "Of course, as long as they will fit inbetween those I have to send to my employer."
+                    brennan "Thank you, [her_name]. I trust you to keep it a secret."
+                    return
+                "Kiss me" if ((brennan_relationship >= 2) and (loved <= -10)):
+                    her "Kiss me. Now."
+                    "What was I saying? What was I doing? I thought he was going to laugh, and I could pretend it was a joke, but then he stepped closer."
+                    "My heart raced and my mind shut down as there were no more words, just flesh melting into flesh with all the passion we had been holding back."
+                    "I didn't think, didn't analyze, didn't worry about [his_name]; I just existed, in that eternal moment of pleasure and mutual acceptance."
+                    $ cheated_on_him = True
+
+# MONTH 24 Resolve things at work?
 label work_8:
     $ times_worked += 1
 
@@ -906,7 +1065,7 @@ label work_8:
         scene bg clinic with fade
     elif (profession == "crafter"):
         scene bg workshop with fade
-    elif (profession == "auto mechanic"):
+    elif (profession == "mechanic"):
         scene bg machine_shop with fade
     elif (profession == "teacher"):
         scene bg classroom with fade

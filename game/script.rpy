@@ -69,6 +69,8 @@ define met_Lily = False
 define times_worked = 1
 define he_hunts = False
 define brennan_relationship = 0
+define cheated_on_him = False
+define exposed_brennan = False
 
 # The game starts here.
 label start:

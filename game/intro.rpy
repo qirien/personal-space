@@ -40,7 +40,7 @@ label doctor:
 
 # Mechanic; scene at auto shop
 label mechanic:
-    $ profession = "auto mechanic"
+    $ profession = "mechanic"
     scene bg machine_shop with fade
     "...the car repair shop. His engine wasn't working right, and after I fixed it he wanted me to show him everything I'd done."
     #show her angry at left
