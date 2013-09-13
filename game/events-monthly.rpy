@@ -449,11 +449,11 @@ label monthly_event_5:
     scene bg farm_interior with fade
 
     "The village council asked us to do a waste assessment to see how much and what kind of materials we needed to permanently dispose of. If the amount of waste was too high, they told us that future colonists would be limited."
-    "Our waste pile was fairly small, as we'd already composted any organic material that we didn't eat. Still, there was things like packaging from the MREs, a broken dish, and a pair of worn-out socks."
+    "Our waste pile was fairly small, as we'd already composted any organic material that we didn't eat. Still, there were things like packaging from the MREs, a broken dish, and a pair of worn-out socks."
     her "You threw away a perfectly good pair of socks?"
     him "Well, they have holes in the heels, and the rest of the material is getting thin. I wasn't sure if they were compostable."
     her "We can't just throw things away when they break like on Earth. We need to take care of this planet for future colonists and the life forms that are already here."
-    him "Well, what should we do with them then?"
+    him "Well, what should we do with all this stuff?"
     menu:
         "{i}I could see if any of our neighbors could use the fabric.{/i}" if (skill_social >= 20):
             her "One of my friends is making a quilt, and I think she could cut it up and use it for part of the batting."
@@ -525,7 +525,7 @@ label monthly_event_5:
             $relaxed -= 5
             return
             
-    "We ended up throwing some of waste items away, but I felt good about the effort I put it."
+    "We ended up throwing some of the waste items away, but I felt good about the effort I put it."
     $relaxed += 5
 
     return
@@ -568,10 +568,10 @@ label monthly_event_6:
             her "I wonder if we could use them to help us somehow."
             him "Maybe we can. Next time you see Lily, could you ask her about it?"
             her "Sure. Come to think of it, we should know if her pesticide was successful or not by now."
-            "Lily's fungus experiment sucessfully killed a little over half the bugs I gave her. She lent me a sprayer and told me to bring it back as soon as possible, since some other farms had the same insects to spray."
+            "Lily's fungus experiment successfully killed a little over half the bugs I gave her. She lent me a sprayer and told me to bring it back as soon as possible, since some other farms had the same insects to spray."
             "When I asked her about how to use the dead insects we had caught, Lily said that we could use them to feed livestock."
             her "I'm not sure if our horse will like how they taste, but I'll try it."
-            "We sprayed our crops. Sadly, we couldn't save much of them. Luckily, our underground crops like potatoes and beets weren't attacked by the insects, so we still had something to eat while we planted new crops."
+            "We sprayed our crops. Sadly, we couldn't save many of them. Luckily, our underground crops like potatoes and beets weren't attacked by the insects, so we still had something to eat while we planted new crops."
             her "Oh, Lily told me we could use the dead insects for something..."
             him "What is it?"
             her "We could feed them to Lettie!"
@@ -583,7 +583,7 @@ label monthly_event_6:
             "Lettie didn't seem to hate or like crushed insects, so I used them to extend her food. We still had a lot of leftover insects, so after making sure they were all dead I put them in the compost pile."
             him "I'm glad we could use some of the bugs, but I don't think the crops they ate will last."
             her "Why not?"
-            him "They're full of their eggs. The corn at least. Even if we pick all the infected crops off, I think it's too late to save them."
+            him "They're full of insect eggs. The corn at least. Even if we pick all the infected crops off, I think it's too late to save them."
             her "Well, even if the corn is beyond saving, we could at least keep the greens for Lettie."
             him "And then some!"
             "We cut off and burned all the ears of corn that had eggs in them. We cut and dried all the corn stalks to turn it into hay."
@@ -595,10 +595,10 @@ label monthly_event_6:
             him "Well, can you find out if they're okay for us to eat? Because if we can somehow process them, we might not go as hungry this month."
             "I couldn't imagine eating them as they were, so after I boiled them, I ground them up and combined them with flour to make bread."
             "Well... it was more like crackers than bread, since the flour was so heavy. It was a little plain, so I made some beet jam to go with it."
-            him "It tastes kind of nutty. And... gross, is this an insect leg?"
+            him "It tastes kind of nutty. Gross! Is this an insect leg?"
             her "Yeah, for the next batch I'm going to try processing the flour a little differently. But for a first try it's not bad, is it?"
             him "It's a whole lot better than nothing, that's for sure."
-            "One day I roasted them seasoned with garlic salt. They were crunchy and dry, but edible."
+            "One day I sprinkled them with garlic salt and roasted them. They were crunchy and dry, but edible."
             him "So, eating these insects is great and all, but we should plant something else where that infested corn is right now."
             her "Yeah... how do we get rid of the plants that are already there?"
             him "Well, I could burn them all, and then the ashes can fertilize the next crop."
@@ -612,7 +612,7 @@ label monthly_event_6:
             "I found out that the Blairs had the same insect eating their corn. To prevent the insects from laying eggs in the corn, they put mineral oil on the silks."
             "I radioed [his_name] and asked him to bring back some mineral oil from the storehouse. For the rest of the week, we put the oil on our corn silks and picked off the insects by hand."
             "I kept in touch with the Blairs for the rest of the week, and we made a huge pile of dead insects, which we ground up to extend the food we had for our livestock."
-            "We were able to preserve some of our corn until it was ready for harvest, although for most of the corn it was too late."
+            "We were able to preserve some of our corn until it was ready for harvest, although for most of the corn, it was too late."
             "We had a big bonfire with the Perons and burned the infested corn. Their kids danced around the fire as we roasted one of their chickens on the side."
             ## TODO: this section could be expanded by having a dialogue with one of the Blairs?
         "Spray them with pesticide":
@@ -634,7 +634,7 @@ label monthly_event_6:
             "All of the above-ground crops had been partially eaten by the insects. I started trying to cut off the bitten parts, but then I found eggs laid inside some of the corn. We didn't want the insects to keep coming back, so we ended up burning our corn field."
             him "At least our next crop will have some really rich soil to grow on."
             her "Yeah, and at least we have some potatoes, beets and ginger to eat for the next few months."
-            him "But what if more insects destroy our crops?"
+            him "But what if more insects destroy our existing crops?"
             her "Then we might have a very limited diet. Hopefully someone will find a way to keep them at bay."
             $ community_level -= 5
             return
