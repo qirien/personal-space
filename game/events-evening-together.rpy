@@ -418,6 +418,7 @@ label relax_together_8:
 
 # Baby names
 label relax_together_9:
+    scene bg farm_interior with fade
     if (is_pregnant or want_kids):
         "We were talking about what it would be like when we did have a baby, and soon we started talking about baby names."
     else:
@@ -438,6 +439,7 @@ label relax_together_9:
 
 # walk around the farm together looking at what you've created together.
 label relax_together_10:
+    scene bg fields with fade
     "We walked around the farm together. [his_name] showed me where all the different crops were, and told me about what kind of soil they liked and what the weeds were like."
     her "This is like your baby, isn't it?"
     him "Yeah, it is."
@@ -447,10 +449,12 @@ label relax_together_10:
     return
 
 label relax_together_11:
+    scene bg bedroom with fade
     "We started talking, and somehow I ended up telling him all about my job. Who was hard to work with, things that seemed impossible, the people I helped... it felt good to have him know what I had been working on."
     return
 
 label relax_together_12:
+    scene bg farm_interior with fade
     him "I'm so glad we do things together all the time."
     her "Me, too. You're not just my [his_nickname]; you're also my best friend."
     $ relaxed += 5
@@ -474,6 +478,7 @@ label relax_together_b:
     return
 
 label relax_together_c:
+    scene bg farm_interior with fade
     "We played card games and flirted shamelessly. Sometimes I even let him win."
     $ relaxed += 5
     $ loved += 2

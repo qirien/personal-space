@@ -4,6 +4,14 @@
 # Default work event if there's no special event
 label act_work:
     # TODO: mention that the mayor's favorite song is "It's the End of the World"
+    if (profession == "doctor"):
+        scene bg clinic with fade
+    elif (profession == "crafter"):
+        scene bg workshop with fade
+    elif (profession == "mechanic"):
+        scene bg machine_shop with fade
+    elif (profession == "teacher"):
+        scene bg classroom with fade
 
     if (relaxed <= -10):
         "I worked hard at work. I was starting to feel burned out, though."
@@ -17,6 +25,15 @@ label act_work:
     return
 
 label act_skip_work:
+    if (profession == "doctor"):
+        scene bg clinic with fade
+    elif (profession == "crafter"):
+        scene bg workshop with fade
+    elif (profession == "mechanic"):
+        scene bg machine_shop with fade
+    elif (profession == "teacher"):
+        scene bg classroom with fade
+
     if (slacked_off == 3):
         "My boss called me in to meet with him after work."
         boss "[her_name], I'm worried about you. You haven't been putting in your usual effort at work lately."
@@ -676,7 +693,7 @@ label work_5:
         "Let him go":
             her "If you really want to go, I won't stop you."
             brennan "Not that you could, anyway. But I'm glad you understand."
-        "{i}Give him a lead apron{/i}" if ((skill_technical >= 40) and (profession == "doctor")):
+        "{i}Give him a lead apron{/i}" if (profession == "doctor"):
             her "Here, at least wear this lead apron. It won't completely protect you, but it's better than nothing."
             brennan "Thank you, [her_name]."
             $ grays_absorbed = 2
@@ -746,6 +763,7 @@ label work_6:
         "What should I say?"
         "Yes":
             her "Thank you, I'd appreciate that."
+            scene bg farm_interior
             "We headed over to the mayor's house, which was as large as the Blairs', with three bedrooms and a kitchen.  I guess that's why they had Brennan staying there, too."
             "Mr. and Mrs. Grayson weren't there; it's possible they were had the community center where he had a little office."
             "Brennan pulled out a frying pan and put some oil in it, and prepared some potatoes, cabbage, eggs and spices."
@@ -910,7 +928,7 @@ label work_7:
         scene bg classroom with fade
 
 
-    $ got_batteries = False
+    $ has_batteries = False
     $ questioned_brennan = False
     $ searched_room = False
 
@@ -949,6 +967,7 @@ label work_7:
                         brennan "You're right, of course, but I can't tell you what they're really for. Can you just trust me?"
                         jump investigate_brennan
                 "Go to the store house" if (not has_batteries):
+                    #scene bg storehouse
                     "I headed over to the store house and asked Ilian for the batteries. I hadn't gone over quota, so there was no problem."
                     $ has_batteries = True
                     menu:
@@ -972,6 +991,7 @@ label work_7:
                     $ searched_room = True
                     "Something wasn't right here. I sensed Brennan was hiding something important from me, and I was determined to find out what it was."
                     "Since he said he needed the batteries for his room, I thought I would check there."
+                    scene bg bedroom
                     "No one was home at the Grayson's house, but there were also no locks on the doors, so I just walked in."
                     her "(Brennan will be at work for a little bit longer, if he's waiting for me to bring him the batteries...)"
                     "His room had the same few pieces of shuttle furniture we had, with a sleeping bag on the floor and a seat and table in the corner. The walls were bare; there were no photos or posters or decorations at all."
@@ -1046,7 +1066,7 @@ label brennan_confess:
                     brennan "Of course I'll help you. Just leave it to me."
                 "Send a message for me":
                     her "Promise to send some messages to Earth for me."
-                    brennan "Of course, as long as they will fit inbetween those I have to send to my employer."
+                    brennan "Of course, I'll do what I can."
                     brennan "Thank you, [her_name]. I trust you to keep it a secret."
                     return
                 "Kiss me" if ((brennan_relationship >= 2) and (loved <= -10)):

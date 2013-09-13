@@ -54,10 +54,11 @@ label creative_3:
 
 # Woodworking - make vegetable crate/barrel or clothes drying rack out of local wood 
 label creative_4:
+    scene bg farm_interior with fade
     "Our harvests were staying fairly fresh in the cellar, but I needed a way to organize which vegetables were the oldest."
     "I wanted to make some crates out of wood, but I wasn't sure how I'd manage without nails."
     "I went to the storehouse to get the wood I needed."
-
+    #scene bg storehouse with fade
 #TODO Ilian Andrevski is the manager dude. Still need to go through other events and make sure it's the same, if I mentioned him.
     menu:
         "Notch the planks log-cabin style.":
@@ -91,6 +92,7 @@ label creative_4:
     return
 
 label creative_5:
+    #scene bg storehouse with fade
     "[his_name] asked me if we had any rope to make a rope to get up into the loft of our barn and pull carts around. I told him I'd look at the supply center next time I went into town."
     her "Do you have any rope?"
     ilian "It looks like they didn't send much along with us. I guess they thought we'd be making our own by now."
@@ -112,6 +114,7 @@ label creative_5:
 # Re-cover space shuttle seats to make a couch?
 label creative_6:
 #month 5 is what to do with trash, so I'm assuming this will have to come after it (though it may be several months after it)
+    #scene bg storehouse with fade
     "Ever since the push to recycle or compost all our trash, I had been trying to think of other uses for shuttle parts."
     "I went down to the storehouse to ask about how the shuttle parts were being distrubuted. I thought maybe I could make a sofa out of them"
     ilian "There was a seat for everyone on the shuttle, and as far as I'm concerned, that seat is still yours."
@@ -148,6 +151,7 @@ label creative_6:
 
 # Photography
 label creative_7:
+    scene bg sunset with fade
     "I hadn't done any photography in a long time, but the way the light was coming through the clouds really inspired me."
     "As I set up shots- some simple landscapes, others focusing on an alien plant or insect with the clouds in the background- I felt awed. Here was this entire planet full of wonders, and only the few of us who lived here got to experience it."
     "I decided to send some of my pictures to magazines on Earth; maybe they would be interested in doing an article on Talam and would want to use them. I just wanted to show everyone on Earth what a beautiful planet we had."
@@ -160,6 +164,7 @@ label creative_7:
 
 # Make some dishes out of local clay, fire them
 label creative_8:
+    scene bg pond with fade
     "A rainy night made the banks of the river swell. When I was checking to make sure our plants were okay, I noticed that some of the upturned banks had a clay-like texture."
     "I did a little digging on the other side of the river, where I found some clay."
     "It had lots of rocks and leaves in it, so I dried it and broke it into pieces, which were easier to sort from the leaves. Then I let it sit in a bucket of water."

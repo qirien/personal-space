@@ -41,6 +41,7 @@ label technical_2:
     return
 
 # setup alarm system for solar flares. see http://www.spaceweather.com/glossary/srs.html for information on solar flare radiation storms. Help with technical details appreciated.
+# TODO: they would have to already have this or else everyone would be dying from radiation. Perhaps she is making a local one in case Lily's doesn't work?
 label technical_3:
     "We knew that solar flares were probably happening, since our electronics were sometimes unreliable, but we didn't know when they were."
     her "If I adjust this radio to receive AM signals, it can tell me when the frequency indicates a solar flare is on its way."

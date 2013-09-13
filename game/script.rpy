@@ -22,6 +22,8 @@ image bg bedroom = "bg/bedroom.png"
 image bg sunset = "bg/sunset.png"
 image bg machine_shop = "bg/machine-shop.png"
 image bg workshop = "bg/workshop.png"
+#image bg storehouse = "bg/storehouse.png"
+#image bg community_center = "bg/community-center.png"
 
 # SPRITES
 image him normal = "sprites/him.png"

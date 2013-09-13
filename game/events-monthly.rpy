@@ -312,8 +312,8 @@ label monthly_event_4:
             "You really don't know?":
                 her "What do I do?! You really haven't noticed?"
                 him "I don't know; I'm sure you're doing something useful, I'm just not sure what."
-                her "Well, I made the curtains over there."
-                him "Oh, yeah, those are nice. Very insulating."
+                her "Well, have you noticed those clean clothes you're wearing?"
+                him "Oh, yeah, you washed those, huh?"
                 her "And I've planted an herb garden out front to add flavor to our meals, and for herbal teas and things."
                 him "Okay, that will be good. Sorry, I didn't meant to accuse, I just really was curious what projects you've been working on."
             "What do {b}you{/b} do?":
@@ -1154,7 +1154,8 @@ label anniversary_next_day:
             her "What happened? Last night you were really worried about something."
             him "Oh, it was Lettie. I think she ate something poisonous while she was grazing - she was really sick. But she's doing better today; I think she'll be fine."
             her "Oh, I'm glad she's okay."
-            him "Yeah, me too.\n Sorry about last night - I know we were going to celebrate our anniversary and everything, but I just couldn't celebrate when I was so worried about her. But I did get you something."
+            him "Yeah, me too."
+            him "Sorry about last night - I know we were going to celebrate our anniversary and everything, but I just couldn't celebrate when I was so worried about her. But I did get you something."
             her "What?"
             "He pulled out some wildflowers - he must have picked them earlier today. He had put them in an old glass bottle for a vase."
             him "The little bit of beauty these flowers bring can't compare to the joy you bring to my life. They won't last forever, but my love for you will."
@@ -1265,23 +1266,28 @@ label follow_him:
 # MONTH 11
 # uses knowledge, physical, creative
 label monthly_event_11:
+    scene bg farm_interior with fade
     "Frustration with Work"
     return
 
 # MONTH 12
 # uses domestic, social
 label monthly_event_12:
+    scene bg farm_interior with fade
     "Jealous of New Friend"
     return
 
 # MONTH 13 - Jury Duty
 # uses spiritual, technical
 label monthly_event_13:
+    scene bg farm_interior with fade
     "I hadn't thought about it much before, but we didn't have a lot of laws here on Talaam. Some things just didn't apply (like taxes, driving laws, etc), but I remember signing something about agreeing to abide by a set of laws that sounded very reasonable."
     "It had never seemed like something I would have to worry about.  Until I had to be on the jury for Ilian's trial, that is..."
     "We hadn't had any crime our whole first year (though we certainly had our share of arguments, accidents, and disagreements)."
     "After all, who would hurt anyone else in our colony? We needed each other too much."
     "But that peace couldn't last forever..."
+
+    #scene bg community_center with fade
     "We awoke one morning to the tragic news that the Peron's four-year-old girl, Josephina, was missing."
     "Mrs. Peron was alternately furious with herself and those around her."
     natalia "Someone should have been watching her more closely!"
@@ -1351,8 +1357,8 @@ label monthly_event_13:
             her "I agree. Also, he is a healthy worker, which we can't afford to lose for that long. So I propose that he live outside the community boundaries, but close enough that we can trade with him. He can hunt or gather useful things and trade them for food or other community resources."
             thuc "That's too soft!"
             lily "I think a year is still too long."
-            her "How about three months?"
-            thuc "Four."
+            her "How about two months?"
+            thuc "Three."
             lily "I suppose that would work...as long as the resources he gathers go to help the Peron family."
             "Finally, we had come to an agreement."
             "Ilian and the Perons accepted it, but Sara and the Mayor frowned. Poor Sara... I guess in a way we were sentencing her, too."
@@ -1365,7 +1371,7 @@ label monthly_event_13:
             lily "That sounds fair for all involved."
             thuc "I think two weeks is too short, but I will agree to this plan also."
             "Everyone agreed to my proposal. The mayor seemed happy with it, too, and both Ilian and the Perons accepted it without argument."
-        "{i}He's innocent{/i}" if (skill_technical>= 40):
+        "{i}He's innocent{/i}" if ((skill_technical >= 40) or (skill_knowledge >= 40)):
             her "He should provide some reparations, but I know he didn't kill her on purpose."
             thuc "How do you know that?"
             her "Her injuries are consistent with being hit by a car and then floating down the river. She doesn't have any injuries that would come from being physically assaulted."
@@ -1554,6 +1560,7 @@ label monthly_event_14:
 
 # MONTH 15 Fertility and Food and Community
 label monthly_event_15:
+    scene bg farm_interior with fade
     if (is_pregnant):
         him "I made you breakfast, so eat up, [her_name]! You're eating for two!"
         her "Yeah, but one of us is the size of a pea..."
@@ -1583,9 +1590,13 @@ label monthly_event_15:
                 her "I can't believe you told other people without talking to me first!"
                 him "What, so you want to decide what I can and can't tell people?"
                 her "No, but it's something important enough that we should have decided on it together!"
-                him "Sorry, I just didn't see it that way."
-                her "Well, I do. "
-                him "..."
+                $ loved -= 3
+        if (loved >= 5):
+            him "I'm sorry; I probably should have talked to you about it first."
+            her "It's okay. At least I got a delicious breakfast out of it."
+        else:
+            him "Sorry, love, but at least you got a good breakfast out of it, right?"
+            her "Yeah..."
 
     elif (want_kids):
         him "I made you breakfast, so eat up! Soon you might be eating for two."
@@ -1656,6 +1667,7 @@ label monthly_event_15:
 
 # MONTH 16 - Morning sickness/Illness
 label monthly_event_16:
+    scene bg farm_interior with fade
     if (is_pregnant):
         "Being pregnant wasn't as much of a change as I thought it would be; mostly I was just more tired (and maybe a little cranky). Sometimes I even forgot about the tiny baby growing inside me; it didn't seem real."
     else:
@@ -1771,8 +1783,9 @@ label monthly_event_16:
                     jump hate_stuff
 
     "I went to lie down, and he made dinner for himself."
+    $ relaxed += 2
     if (is_pregnant):
-        "I felt better after a little rest. I felt a little sick the next morning, but that was the worst of the morning sickness."
+        "I felt better after a little rest. I felt a little sick the every morning for a few weeks, but that was the worst day."
     else:
         "I had to visit the outhouse several more times before my stomach finally calmed down."
         if (loved >= 0):
@@ -1785,28 +1798,33 @@ label monthly_event_16:
 # MONTH 17
 # uses knowledge, technical
 label monthly_event_17:
-
+    scene bg farm_interior with fade
     return
 
 # MONTH 18 - something bad happens where you need help (related to pests?); he doesn't want to ask for help but you think you need it.
 # uses spiritual, social, physical
 label monthly_event_18:
+    scene bg farm_interior with fade
     return
 
 # MONTH 19 - Clothing wearing out, stiff, doesn't fit anymore if pregnant.
 # clothes don't fit anymore (bras, etc); air drying makes they stiff and uncomfy, what to do?
 # use domestic, social, creative
 label monthly_event_19:
+    scene bg farm_interior with fade
     return
 
 label monthly_event_20:
+    scene bg farm_interior with fade
     return
 
 label monthly_event_21:
+    scene bg farm_interior with fade
     return
 
 
 label monthly_event_22:
+    scene bg farm_interior with fade
     return
 
 # Climax - epic conflict leading to either "We'll always be together" or "I just want to get away from you!"

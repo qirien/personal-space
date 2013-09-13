@@ -165,6 +165,7 @@ label domestic_5:
 
 # Pumpkins and Halloween!
 label domestic_6:
+    scene bg farm_interior with fade
     "One day, [his_name] brought home some pumpkins he had planted."
     menu:
         him "Look how well these pumpkins turned out!"
@@ -303,6 +304,7 @@ label domestic_7:
 
 # running out of soap; must make own soap with ash, fat, etc
 label domestic_8:
+    #scene bg community_center with fade
     boss "One last item of business for the community meeting-"
     boss "Our soap supply is running low. If anyone can make some soap and put the extra in the storehouse, that will help everyone to stay clean and healthy."
     him "I bet you could make some soap, [her_nickname]."
@@ -369,11 +371,13 @@ label domestic_8:
 
 
 label domestic_9:
+    scene bg farm_interior with fade
     "Domestic 9"
     $ skill_domestic += 10
     return
 
 label domestic_master:
+    scene bg farm_interior with fade
     "I AM A DOMESTIC GODDESS!!!"
     $ skill_domestic += 10
     $ community_level += 10
