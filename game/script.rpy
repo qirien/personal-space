@@ -43,6 +43,7 @@ define ilian = Character("Ilian Andrevski")
 define brennan = Character("Brennan Callahan", color="11ee11")
 define sven = Character("Sven Engel")
 define natalia = Character("Natalia Peron")
+define helen = Character("Helen Engel")
 
 define his_name = "???"
 define her_name = "Me"

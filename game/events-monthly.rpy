@@ -1812,6 +1812,71 @@ label monthly_event_18:
 # use domestic, social, creative
 label monthly_event_19:
     scene bg farm_interior with fade
+    "Fashion was one thing we never had to worry about."
+    "We mainly had our colony-issue shirts and pants, made of special durable, breathable, material, and whatever extra clothes we managed to fit in our one allotted suitcase."
+    "I did get a little tired of wearing the same thing all the time, but everyone else on the colony was in the same situation, so it wasn't something I worried about."
+    if (is_pregnant):
+        "But now that my belly was growing, the pants were starting to get uncomfortable. They weren't made to stretch this much. The shirt was getting tight, too"
+        "I had to do something about it, but what?"
+        menu maternity_clothing:
+            "What should I do?"
+            "Check the storehouse":
+                #scene bg storehouse
+                her "Hey, Ilian, do we have any extra clothes here?"
+                ilian "A few..."
+                "I found a large men's shirt that wasn't very flattering, but would fit."
+                "They had a pair of larger pants, but they were also too long. Well, I'd just have to roll them or hem them or something."
+            "{i}Modify your pants{/i}" if ((skill_domestic >= 60) or (skill_creative >= 60)):
+                "I decided to turn one of the pairs of Earth pants I had into maternity pants."
+                "After all, I wasn't going to be pregnant forever, so I didn't want to ruin my nice space uniform."
+                "So I took a pair of low-rise jeans and added a strip of stretchy material."
+                "The shirt"
+                "It was kind of tedious sewing by hand, but I got it done."
+
+            "Ask [his_name]":
+                her "Hey, [his_name], could I borrow some of your clothes?"
+                him "Only if you let me borrow some of yours."
+                her "No way! You'd stretch them out!"
+                him "I'm just kidding. I don't have a lot of clothes, but there's one pair you could have."
+                her "Thanks!"
+                "He handed me an old pair of jeans and a t-shirt. They fit okay right now, but I could tell they wouldn't fit the whole pregnancy."
+                "Well, I'd figure something else out later."
+            "Try nudity":
+                "I guess I didn't need to wear clothes around the house - it felt so good not to have that waistband constricting my growing belly!"
+                him "Hey, is it no pants day? How come I didn't get the memo?"
+                her "It just feels so much more comfortable this way..."
+                him "Good idea."
+                "Pretty soon [his_name] was walking around free as a bird, too."
+                "But I was pretty sure I had to wear clothes to work, so I needed to try something else, too"
+                jump maternity_clothing
+            "Ask around" if (skill_social >= 60):
+                "I knew Helen was also expecting, so I decided to send her a message and see what she had done."
+                her "Hey, Helen, what are you doing for maternity clothes?"
+                helen "Oh, I just made a big tent dress out of a hospital gown. It doesn't look very good, but it's very comfortable."
+                her "Do you think you could show me how?"
+                helen "Well, I'm sort of stuck in bed because of this pregnancy... but send me your measurements and I'll make you one!"
+                her "Really?!"
+                helen "Sure, I've got nothing else to do all day, and I'm sick of crocheting baby clothes..."
+                "Sure enough, it looked kind of terrible. But it fit, and was comfy, so I wore it a lot."
+
+    else:
+        "But for some reason this month it really bothered me. I was sick of the uniform's fabric, its unisex cut, and the sameness of it all."
+        "But what could I do about it?"
+        menu:
+            "Make a new accessory" if (skill_creative >= 60):
+                "I knew how to crochet, so I decided to make myself some long fingerless gloves. Luckily, someone had made some yarn from shearing their sheep and donated it to the storehouse."
+                "They color was pretty plain, but they definitely stood out and looked unique."
+            "Host a clothing swap party" if (skill_social >= 60):
+                "I figured I wasn't the only one getting tired of the same clothes every day, so I posted a message on the colony message board and invited everyone to bring one outfit to the community center, and we could all trade."
+                "Not everyone was the same size, but we also didn't have much to choose from, so we weren't picky."
+                "For some reason, it felt so good to sift through the clothes - I didn't think I'd miss shopping, but it felt so luxurious to have several different things to choose from and make my own."
+            "Decorate old clothes" if (skill_domestic >= 60):
+                "I thought I'd just decorate some of the clothes I already had to look different."
+                "I printed out a design I liked from the internet, printed it out on paper, and cut out parts of it to make a stencil. Then I sprayed bleach over the stencil until the part with the cut-outs faded. Then I dunked it in water to wash the bleach out."
+                "It was like having a whole new shirt!"
+            "Nothing. Who cares?":
+                "It was too much work. We had more important things to worry about than clothes, anyway."
+
     return
 
 label monthly_event_20:
