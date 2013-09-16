@@ -27,10 +27,11 @@ label domestic_1:
             her "Maybe I just need to let the soap do my work for me."
             "Twenty minutes later..."
             her "That helped a bit! I should leave clothes soaking more often."
-            $relaxed +=5
+            $relaxed +=2
 
-        "Just keep doing it the same way.":
-            her "Well, I guess there's no getting around hard work."
+        "Use hot water instead of cold water":
+            "It took about half an hour to go fetch enough water for the wash bin, heat it up on the stove, and pour it in the wash tub."
+            "But the hot water did seem to get dirt out faster."
         
     $ skill_domestic += 10
     return
@@ -369,17 +370,46 @@ label domestic_8:
     $ skill_domestic += 10
     return
 
-
+# Canning
 label domestic_9:
     scene bg farm_interior with fade
-    "Domestic 9"
+    "[his_name] was harvesting a lot of vegetables and fruits, and while the cellar kept some things cool and dry, other produce didn't last very long."
+    "We had so many tomatoes and zuchinnis there was no way we could possibly eat them all before they went bad. We took a bunch to the storehouse, but they told us that everyone else had all they could eat, too."
+    "I didn't want them to go to waste, and I knew we would be wishing we had some more later, so I decided to preserve them. But what should I turn them into?"
+    menu:
+        "What should I make?"
+        "Tomato sauce":
+            if (skill_technical >= 60):
+                "I used the blender I had made to puree a bunch of vegetables in a nice sauce."
+            else:
+                "I chopped up the tomatoes and zuchinnis."
+            "Then I cooked the sauce and ladled it into clean glass jars. I let the jars sit in boiling water to kill any bacteria."
+            "It took all day, but looking at the rows of jars full of food we had grown and made ourselves was very satisfying."
+        "Salsa":
+            if (skill_technical >= 60):
+                "I used the blender I had made to puree a bunch of vegetables in a nice salsa."
+            else:
+                "I chopped up the tomatoes and zuchinnis and onions and peppers."
+            "I ladled the salsa into clean glass jars. I let the jars sit in boiling water to kill any bacteria."
+            "It took all day, but looking at the rows of jars full of food we had grown and made ourselves was very satisfying."
+        "Dehydrate them":
+            "I sliced up the vegetables and set them on screens outside to dry."
+            "The texture wasn't very good, but they would be fine rehydrated in sauces and things."
+            "I sealed them up and put them in the cellar. The sight of all that food that we had grown and made ourselves was very satisfying!"
+
     $ skill_domestic += 10
     return
 
+# Start a 'No Space Like Home' blog about domestic life!
 label domestic_master:
     scene bg farm_interior with fade
-    "I AM A DOMESTIC GODDESS!!!"
+    "I had learned so much about how to keep things clean and comfortable around our house."
+    "So many people had asked me for advice that I decided to write a blog with entries relevant to domestic life on Talaam."
+    "I was surprised at the huge response. It seemed everyone in the colony was reading my 'No Space like Home' blog."
+    "I got a lot of e-mails with questions on preserving and cooking different kinds of foods, cleaning furniture, pest control - lots of people were struggling with these things, especially since we didn't have the luxury of just going to a store and buying a bottle of some new product every week."
+    "It seems I would always have something to write about."
     $ skill_domestic += 10
+    $ skill_social += 5
     $ community_level += 10
     return
 
