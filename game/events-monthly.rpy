@@ -1425,7 +1425,7 @@ label monthly_event_11:
                 elif (knowledge >= 40):
                     "Lily appeared to be temporarily paralyzed, so Brennan helped me carry her further inland."
                     "I was trying to think of what I could do to help her when she came out of her trance."
-                     lily "W-what happened? Did I fall asleep?"
+                    lily "W-what happened? Did I fall asleep?"
                     her "No, one of the purple jellies latched onto you."
                     lily "Weird. I feel like I just woke up from a dream."
                     her "Its tentacle is still on you; we should probably remove it."
@@ -1485,7 +1485,7 @@ label monthly_event_11:
                 elif (knowledge >= 40):
                     "Lily appeared to be temporarily paralyzed, so Brennan helped me carry her further inland."
                     "I was trying to think of what I could do to help her when she came out of her trance."
-                     lily "W-what happened? Did I fall asleep?"
+                    lily "W-what happened? Did I fall asleep?"
                     her "No, one of the purple jellies latched onto you."
                     lily "Weird. I feel like I just woke up from a dream."
                     her "Its tentacle is still on you; we should probably remove it."
