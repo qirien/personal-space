@@ -1361,12 +1361,24 @@ label monthly_event_11:
                 elif (knowledge >= 40):
                     "Lily appeared to be temporarily paralyzed, so I motioned to Sven to help me carry her further inland."
                     "I was trying to think of what I could do to help her when she came out of her trance."
-                     lily "W-what happened? Did I fall asleep?"
+                    lily "W-what happened? Did I fall asleep?"
                     her "No, one of the purple jellies latched onto you."
                     lily "Weird. I feel like I just woke up from a dream."
                     her "Its tentacle is still on you; we should probably remove it."
                     lily "Oh, I'll take care of that."
                     "She carefully grabbed it with her tweezers and moved it into a specimen bag. Sven and I looked at each other with exasperation. Maybe she was a little TOO dedicated."
+                else:
+                    "I had no idea what to do next. I just stood there, scared."
+                    sven "Don't just sit there, do something!"
+                    "Lily started to collapse, but luckily she fell onto me and I could support her." 
+                    her "Umm..."
+                    lily "W-what happened? Did I fall asleep?"
+                    her "No, one of the purple jellies latched onto you."
+                    lily "Weird. I feel like I just woke up from a dream."
+                    her "Its tentacle is still on you; we should probably remove it."
+                    lily "Oh, I'll take care of that."
+                    "She carefully grabbed it with her tweezers and moved it into a specimen bag. Sven and I looked at each other with exasperation. Maybe she was a little TOO dedicated."
+                    
         "Brennan, my co-worker.":
                 #change scene to work
                 "I was trying to think of who could come with us at work the next day."    
@@ -1422,6 +1434,18 @@ label monthly_event_11:
                     lily "I don't have narcolepsy, but it has been an unusually exhausting day. Maybe I overextended myself."
                     brennan "Well, let me know what you find out about that thing."
                     #debating about increasing the brennan relationship variable If I increase it here, maybe I should make the threshold in morning 16 higher. You don't really interact with him personally, so I decided not to mess with it.
+                else:
+                    "I had no idea what to do next. I just stood there, scared."
+                    "Brennan rushed over to catch Lily as she collapsed."
+                    her "Umm..."
+                    lily "W-what happened? Did I fall asleep?"
+                    her "No, one of the purple jellies latched onto you."
+                    lily "Weird. I feel like I just woke up from a dream."
+                    her "Its tentacle is still on you; we should probably remove it."
+                    lily "Oh, I'll take care of that."
+                    brennan "Did that animal make you fall asleep?"
+                    lily "I don't have narcolepsy, but it has been an unusually exhausting day. Maybe I overextended myself."
+                    brennan "Well, let me know what you find out about that thing."
         "Sara, my friend":
                 "At lunch, I asked Sarah if she was interested in going on a field trip to the ocean."
                 sara "Oh, I've been wanting to see the ocean ever since I felt so claustrophobic in that shuttle!"
@@ -1462,6 +1486,17 @@ label monthly_event_11:
                     "Lily appeared to be temporarily paralyzed, so Brennan helped me carry her further inland."
                     "I was trying to think of what I could do to help her when she came out of her trance."
                      lily "W-what happened? Did I fall asleep?"
+                    her "No, one of the purple jellies latched onto you."
+                    lily "Weird. I feel like I just woke up from a dream."
+                    her "Its tentacle is still on you; we should probably remove it."
+                    lily "Oh, I'll take care of that."
+                    sara "Don't worry, I made sure your camera was safe!"
+                    lily "Thank you! Maybe I just had a little too much sun today."
+                else:
+                    "I had no idea what to do next. I just stood there, scared."
+                    "Sara rushed over to catch Lily as she collapsed."
+                    her "Umm..."
+                    lily "W-what happened? Did I fall asleep?"
                     her "No, one of the purple jellies latched onto you."
                     lily "Weird. I feel like I just woke up from a dream."
                     her "Its tentacle is still on you; we should probably remove it."
