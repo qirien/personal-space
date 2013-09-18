@@ -1311,7 +1311,7 @@ label monthly_event_11:
     him "That sounds fun, but I'm worried that if I take a day off from farming, my plants will die."
     her "Really? They would die if you left them just one day?"
     him "Well, it's more like some of the food might get eaten by something else since it's harvest time again."
-    her "Okay. I'll try to find someone else"
+    her "Okay. I'll try to find someone else."
     menu:
         "Who should I ask to come?"
         "Sven, the librarian":
@@ -1346,7 +1346,7 @@ label monthly_event_11:
                 lily "Oh! I've got to record this."
                 sven "Be careful! Those things could be deadly for all we know!"
                 "It surprised me how quickly the tide rushed back in. Little spider-crabs rushed to dry rocks, and many got swallowed up by the waves and the purple jellies."
-                "A wave splashed under Lily's feet, and one of the purple spiny jellys grabbed at her leg"
+                "A wave splashed under Lily's feet, and one of the purple spiny jellys grabbed at her leg."
                 lily "O-oh!"
                 "Sven looked on in horror as I jabbed the animal with my shovel. As I contacted it, its arm fell off, still wrapped around Lily."
                 if (skill_physical >= 40):
@@ -1358,7 +1358,7 @@ label monthly_event_11:
                     her "Its tentacle is still on you; we should probably remove it."
                     lily "Oh, I'll take care of that."
                     "She carefully grabbed it with her tweezers and moved it into a specimen bag. Sven and I looked at each other with exasperation. Maybe she was a little TOO dedicated."
-                elif (knowledge >= 40):
+                elif (skill_knowledge >= 40):
                     "Lily appeared to be temporarily paralyzed, so I motioned to Sven to help me carry her further inland."
                     "I was trying to think of what I could do to help her when she came out of her trance."
                     lily "W-what happened? Did I fall asleep?"
@@ -1379,7 +1379,7 @@ label monthly_event_11:
                     lily "Oh, I'll take care of that."
                     "She carefully grabbed it with her tweezers and moved it into a specimen bag. Sven and I looked at each other with exasperation. Maybe she was a little TOO dedicated."
                     
-        "Brennan, my co-worker.":
+        "Brennan, my co-worker":
                 #change scene to work
                 "I was trying to think of who could come with us at work the next day."    
                 brennan "I just wish I could get away from it all, you know? I feel like I'm trapped in this tiny town!"
@@ -1407,7 +1407,7 @@ label monthly_event_11:
                 lily "Oh! I've got to record this."
                 brennan "Just be careful not to get swept away!" 
                 "We stayed up past the tidal edge. It surprised me how quickly the tide rushed back in. Little spider-crabs rushed to dry rocks, and many got swallowed up by the waves and the purple jelly-stars."
-                "A wave splashed under Lily's feet, and one of the purple spiny jellys grabbed at her leg"
+                "A wave splashed under Lily's feet, and one of the purple spiny jellys grabbed at her leg."
                 lily "O-oh!"
                 "Brennan looked on in horror as I jabbed the animal with my shovel. As I contacted it, its arm fell off, still wrapped around Lily."
                 if (skill_physical >= 40):
@@ -1422,7 +1422,7 @@ label monthly_event_11:
                     brennan "Did that animal make you fall asleep?"
                     lily "I don't have narcolepsy, but it has been an unusually exhausting day. Maybe I overextended myself."
                     brennan "Well, let me know what you find out about that thing."
-                elif (knowledge >= 40):
+                elif (skill_knowledge >= 40):
                     "Lily appeared to be temporarily paralyzed, so Brennan helped me carry her further inland."
                     "I was trying to think of what I could do to help her when she came out of her trance."
                     lily "W-what happened? Did I fall asleep?"
@@ -1468,7 +1468,7 @@ label monthly_event_11:
                 lily "Oh! I've got to record this."
                 sara "Oh, I want a picture too! I can't wait to show everyone how beautiful our planet is."
                 "We stayed by the tidal edge. It surprised me how quickly the tide rushed back in. Little spider-crabs rushed to dry rocks, and many got swallowed up by the waves and the purple jelly-stars."
-                "A wave splashed under Lily's feet, and one of the purple spiny jellys grabbed at her leg"
+                "A wave splashed under Lily's feet, and one of the purple spiny jellys grabbed at her leg."
                 lily "O-oh!"
                 "Sara looked on in horror as I jabbed the animal with my shovel. As I contacted it, its arm fell off, still wrapped around Lily."
                 if (skill_physical >= 40):
@@ -1482,7 +1482,7 @@ label monthly_event_11:
                     "She carefully grabbed it with her tweezers and moved it into a specimen bag."
                     sara "Don't worry, I made sure your camera was safe!"
                     lily "Thank you! Maybe I just had a little too much sun today."
-                elif (knowledge >= 40):
+                elif (skill_knowledge >= 40):
                     "Lily appeared to be temporarily paralyzed, so Brennan helped me carry her further inland."
                     "I was trying to think of what I could do to help her when she came out of her trance."
                     lily "W-what happened? Did I fall asleep?"
@@ -1507,13 +1507,13 @@ label monthly_event_11:
     "After Lily was got her bearings, we made the long trip back."
     her "Can you remember anything from your dream?"
     lily "My... dream?"
-    "Maybe she wasn't really dreaming."
+    "Maybe she hadn't been dreaming."
     #scene lab
-    "The next day, Lily told me where to go for the most ore-rich rocks. I followed her directions and gathered nearby rocks. I was pleasantly surprised by how little I needed my pick"
+    "The next day, Lily told me where to go for the most ore-rich rocks. I followed her directions and gathered nearby rocks. I was pleasantly surprised by how little I needed my pick."
     "I had a lot of help from Lily and Ilian in melting the rocks and using the 3D printers to make the metal can and pipes I needed."
     "I arranged the pipes around the inside of our house and covered them with mud. The rocket stove easily heated our whole home using only a few sticks."
     if (skill_creative >= 40):
-        "I made the mud on top of the pipes into a large mud bench. Since it was a little too hot, I made some cushions from dried grasses. It felt luxurious, like having a heated couch."
+        "I made the mud on top of the pipes into a large mud bench. Since it was a little too hot, I made some cushions from dried grasses. It felt luxurious, like having a heated bed."
     # I'm thinking that Lily might make gunpowder on her own. It's such a loaded (heh, sorry) technology that I felt like the implications for introducing it this soon were a little overwhelming to handle in one event.
     # I'm also thinking that some of the sea creatures can kind of communicate with humans by accessing their nervous system or maybe just making them dream. 
     # So the purple jellies are kind of like bees in a collective unconscious sort of way. Maybe that's too far out? It's a seed for something later on anyway.
@@ -1592,7 +1592,7 @@ label monthly_event_13:
     menu:
         "What will you argue for?"
         "Work for Perons":
-            her "I agree with Lily; he should have to work for the Peron's. It can't make up for the loss of a child, but it will require some sacrifice and will help him show his remorse."
+            her "I agree with Lily; he should have to work for the Perons. It can't make up for the loss of a child, but it will require some sacrifice and will help him show his remorse."
             thuc "He should be their slave for a year!"
             her "Well, we don't want his farm going to waste..."
             sven "Maybe he could be required to work a certain number of hours? Like community service?"
