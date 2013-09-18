@@ -155,7 +155,11 @@ label knowledge_6:
 
 # Research psychology of the frontier, gain insight into something?
 label knowledge_7:
-
+    "I had been doing a lot of reading lately. I read about the lives of pioneers who settled in new places, whether it was the Pilgrims in the 17th century, homesteaders in the 19th century, or refugees fleeing war and discord to start a new life in a totally unfamiliar place."
+    "I could really relate to these pioneers. While it was exciting to be experiencing new areas, it was also scary. They couldn't rely on past experience, other people, or traditional society - they could only rely on themselves."
+    "I realized how much trust we had all placed in each other, on our new colony here. Not just the lazy trust of neighbors, where you trust that your neighbor is not a killer, but the trust of pioneers, where you believe everyone is working hard and will help each other out of otherwise hopeless situations."
+    her "What will living on a different planet do to our culture...?"
+    
     $ skill_knowledge += 10
     return
 
@@ -165,6 +169,7 @@ label knowledge_8:
     $ skill_knowledge += 10
     return
 
+# Find archaelogical evidence for an ancient alien civilization?
 label knowledge_9:
 
     $ skill_knowledge += 10
