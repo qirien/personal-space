@@ -221,6 +221,7 @@ label technical_8:
     her "But then cooking won't warm our house up."
     him "Well, if I cook inside we have to open all the windows anyway since we don't have much of a chimney."
     #or maybe they do have a chimney?
+    # I was imagining that all their tech was hybrid electric/wood burning?
     her "There's got to be a better way to distribute all this energy."
     "I spent the evening researching low-power heating. Some people found that light bulbs helped heat their houses, but we had LEDs that didn't give off much heat."
     "I found a type of combustion stove called a rocket stove, which burned wood sideways very cleanly. Once again though, I'd need some metal pipes." 
@@ -372,8 +373,7 @@ label technical_9:
     $ skill_technical += 10
     return
 
-# Make app that connects to solar flare sensor and alerts everyone on their
-# tablet computer, and also sends out radio message
+# 10 - write an app that uses weather data and frost prediction and knowledge of various plants to remind you when to plant/harvest crops. Also keeps track of your fields, what's been on them, and helps you rotate them efficiently.
 label technical_master:
 
     $ skill_technical += 10
