@@ -5,25 +5,28 @@
 # Declare images below this line, using the image statement.
 
 # BACKGROUNDS
-image bg stars = "bg/starscape.png"
+image bg stars = "bg/starscape.jpg"
 image bg earth = "bg/earth.jpg"
-image bg farm_exterior = "bg/farm-exterior.png"
-image bg farm_interior = "bg/farm-interior.png"
-image bg fields = "bg/fields.png"
-image bg colony_ship_bunk = "bg/colony-ship-bunk.png"
-image bg talam = "bg/talam.png"
-image bg pond = "bg/pond.png"
-image bg path = "bg/path.png"
-image bg laundry = "bg/laundry.png"
-image bg library = "bg/library.png"
-image bg classroom = "bg/classroom.png"
-image bg clinic = "bg/clinic.png"
-image bg bedroom = "bg/bedroom.png"
-image bg sunset = "bg/sunset.png"
-image bg machine_shop = "bg/machine-shop.png"
-image bg workshop = "bg/workshop.png"
-#image bg storehouse = "bg/storehouse.png"
-#image bg community_center = "bg/community-center.png"
+image bg farm_exterior = "bg/farm-exterior.jpg"
+image bg porch = "bg/farm-porch.jpg"
+image bg wedding = "bg/wedding.jpg"
+image bg farm_interior = "bg/farm-interior.jpg"
+image bg fields = "bg/fields.jpg"
+image bg colony_ship_bunk = "bg/colony-ship-bunk.jpg"
+image bg talam = "bg/talam.jpg"
+image bg pond = "bg/pond.jpg"
+image bg path = "bg/path.jpg"
+image bg laundry = "bg/laundry.jpg"
+image bg library = "bg/library.jpg"
+image bg classroom = "bg/classroom.jpg"
+image bg clinic = "bg/clinic.jpg"
+image bg bedroom = "bg/bedroom.jpg"
+image bg sunset = "bg/sunset.jpg"
+image bg machine_shop = "bg/machine-shop.jpg"
+image bg workshop = "bg/workshop.jpg"
+image bg ocean = "bg/ocean.jpg"
+image bg storehouse = "bg/storehouse.jpg"
+image bg community_center = "bg/community-center.jpg"
 
 # SPRITES
 image him normal = "sprites/him.png"
@@ -31,15 +34,15 @@ image her normal = "sprites/her.png"
 image brennan = "sprites/brennan.png"
 
 # Declare characters used by this game .
-define her = DynamicCharacter("her_name", color="#8a00ff")
-define him = DynamicCharacter("his_name", color="#ed0303")
+define her = DynamicCharacter("her_name", color="#7264d5")
+define him = DynamicCharacter("his_name", color="#c80000")
 
-define naomi = Character("Sister Naomi", color="#cccccc")
-define boss = Character("Mayor Grayson", color="#0033dd")
-define lily = Character("Lily", color="#dddd00")
-define sara = Character("Sara", color="#771199")
-define thuc = Character("Thuc Nguyen", color="66ff22")
-define ilian = Character("Ilian Andrevski")
+define naomi = Character("Sister Naomi", color="#6500ab")
+define boss = Character("Mayor Grayson", color="#cccccc")
+define lily = Character("Lily", color="#ffe74a")
+define sara = Character("Sara", color="#c64e89")
+define thuc = Character("Thuc Nguyen", color="a9ff22")
+define ilian = Character("Ilian Andrevski", color="ffa922")
 define brennan = Character("Brennan Callahan", color="11ee11")
 define sven = Character("Sven Engel")
 define natalia = Character("Natalia Peron")
@@ -74,6 +77,7 @@ define he_hunts = False
 define brennan_relationship = 0
 define cheated_on_him = False
 define exposed_brennan = False
+define ocean_character = ""
 
 # The game starts here.
 label start:
