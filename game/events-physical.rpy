@@ -470,7 +470,51 @@ label physical_8:
 
 # Lift heavy ?
 label physical_9:
-
+    "I was rearranging the cellar storage again when [his_name] walked in."
+    him "There you are. What's for dinner? I was thinking of picking some spinach but I wanted to check if it would go with whatever we're having."
+    her "Oh, um, I guess we could have a spinach salad."
+    him "Wow, you completely rearranged everything. Some of these crates are pretty heavy."
+    her "Yeah, I know it's not much but rearranging all this food just makes me feel productive."
+    him "You're just rearranging it willy-nilly?"
+    if ((skill_domestic >=30) or (skill_knowledge >= 30)):
+        her "No, don't be silly. I put all the most perishible items in the front, so we'll use them first."
+        him "Nice."
+    else:
+        her "No, I've been putting the heavier things on the bottom shelves, where they'll be easier to get."
+        him "I guess that makes sense."
+    if is_pregnant:
+        him "You shouldn't be doing heavy lifting while you're pregnant. You've got a heavy enough load as it is."
+        menu:
+            "Oh, yeah.":
+                her "Yeah, you're right. I'll hurt my back if I do much more of this."
+                him "I'm glad you're feeling up to working though! How about that dinner?"
+                her "I'm on it."
+            "Ugh, being pregnant is such a pain.":
+                her "I can't do anything useful when I'm pregnant. What am I supposed to do, sit at home and twiddle my thumbs?"
+                him "You can still do useful things. You just can't lift heavy objects."
+                her "And I can't have raw anything anymore."
+                him "Well, you can still go for walks and cook and clean, right?"
+                her "That doesn't sound fun at all!"
+                him "I'm sure there's something fun you can do."
+                her "I guess I can still watch movies and tell jokes."
+                him "And you can still beat me at space chess!"
+                her "You bet I can!"
+            "I'm not worried.":
+                her "I read that when you're pregnant you can still exercise a little as long as you were in shape before you got pregnant."
+                him "I don't think that includes heavy lifting."
+                her "If I'm wrong, I'll strain something and have to take it easy for a few days, so what's the big deal?"
+                him "You could miscarry if you're too stressed."
+                her "Yeah, and if we keep arguing about it I will be stressed."
+                him "I just want you to be healthy and happy."
+                her "And completely bored."
+                him "You can still hunt and play soccer. I think you'll be fine."
+                her "So hunting is better than lifting heavy things?"
+                him "As long as I come with you!"
+    else:
+        him "I know the Perons just built new shelves in their cellar and want to rearrange their storage, but I haven't had time to help them. Could you do that?"
+        her "Yes, I sure can!"
+        "I spent the next day at the Peron's taking all their vegetables and fruits out of their cellar and then rearranging them. Natalia told me where to put things, and she helped with some of the smaller veggies."
+             
     $ skill_physical += 10
     return
 
