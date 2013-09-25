@@ -2,8 +2,6 @@
 # Choose profession, hobby, and some character dynamics.
 
 # Background Images
-image bg porch = "bg/farm-porch.png"
-image bg wedding = "bg/wedding.png"
 
 # Sprites
 image female_child normal = "sprites/female-child.png"
@@ -13,8 +11,8 @@ label crafter:
     $ profession = "crafter"
     scene bg workshop with fade
     "...the craft store. He was looking for some elastics to braid his horse's hair for a parade."
-    show her normal at left
-    show him normal at right
+    show her normal flip at midleft
+    show him normal at midright
     her "You know how to braid your horse's hair?"
     him "It's a fine art."
     her "I'll believe it when I see it."
@@ -25,13 +23,13 @@ label doctor:
     $ profession = "doctor"
     scene bg clinic with fade
     "...the hospital. He thought he had broken his wrist, but when the x-rays came back it turned out it was only sprained. I could feel his eyes on me as I helped him with the sling."
-    show her normal at left
-    show him normal at right
+    show her normal flip at midleft
+    show him normal at midright
     her "How did you sprain it, anyway?"
     him "You should have seen it; it was heroic. Diving through flames, rescuing small children, wrestling wolves . . ."
     her "Really? You're lucky it was just your wrist, then."
 
-    #show him laughing at right
+    #show him laughing at midright
     him "No, I actually just fell off my horse.  A snake spooked him."
     her "Is your horse okay?"
     him "Oh yeah, Lettie's fine. She seemed like she was almost laughing at me.
@@ -43,11 +41,11 @@ label mechanic:
     $ profession = "mechanic"
     scene bg machine_shop with fade
     "...the car repair shop. His engine wasn't working right, and after I fixed it he wanted me to show him everything I'd done."
-    #show her angry at left
+    #show her angry at midleft
     her "You don't think I fixed it right, do you?"
-    show him normal at right
+    show him normal at midright
     him "No! It's not that at all! I just spent two days working on it and couldn't figure it out, so I'm really curious what it was. I'm really impressed, actually."
-    show her normal at left
+    show her normal flip at midleft
     her "Well, it's something that's easy to miss. Just take a look at this connection here..."
     hide her
     hide him
@@ -58,7 +56,7 @@ label teacher:
     scene bg classroom with fade
     $ profession = "teacher"
     "...the elementary school. He had come to tell all the kindergartners about life on a farm."
-    show him normal at right
+    show him normal at midright
     him "And do you know where eggs come from?"
     show female_child normal at center
     "Kid" "Chickens!"
@@ -67,7 +65,7 @@ label teacher:
     him "They make them! Underneath those cute fluffy feathers, these birds are hard-working egg-making machines!"
     "Kid" "Really? Like a robot?!"
     him "Yes! A robot made of meat!"
-    #show her laughing at left
+    #show her laughing at midleft
     jump first_date
 
 
@@ -80,7 +78,7 @@ label first_date:
     "Something about the way he said my name gave me shivers - the good kind."
     $ her_name = renpy.input("What is your name?", "Mary", length=20)
 
-    show her normal at left
+    show her normal at midright
     show him normal at center
     him "[her_name]... have you ever thought about what's out there?"
     her "Out... where?"

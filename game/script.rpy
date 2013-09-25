@@ -28,13 +28,8 @@ image bg ocean = "bg/ocean.jpg"
 image bg storehouse = "bg/storehouse.jpg"
 image bg community_center = "bg/community-center.jpg"
 
-# SPRITES
-image him normal = "sprites/him.png"
-image her normal = "sprites/her.png"
-image brennan = "sprites/brennan.png"
-
 # Declare characters used by this game .
-define her = DynamicCharacter("her_name", color="#7264d5")
+define her = DynamicCharacter("her_name", color="#7264d5", image="her")
 define him = DynamicCharacter("his_name", color="#c80000")
 
 define naomi = Character("Sister Naomi", color="#6500ab")
@@ -47,6 +42,13 @@ define brennan = Character("Brennan Callahan", color="11ee11")
 define sven = Character("Sven Engel")
 define natalia = Character("Natalia Peron")
 define helen = Character("Helen Engel")
+
+# SPRITES
+image him normal = "sprites/him.png"
+image her normal = "sprites/her.png"
+image her normal flip = im.Flip("sprites/her.png", horizontal = True)
+image brennan = "sprites/brennan.png"
+image side her normal = "sprites/her-head.png"
 
 define his_name = "???"
 define her_name = "Me"
@@ -79,12 +81,18 @@ define cheated_on_him = False
 define exposed_brennan = False
 define ocean_character = ""
 
+
 # The game starts here.
 label start:
-
+    # Custom transitions, positions, etc.
+    $ midleft = Position(xpos=0.15,
+        xanchor=0)
+    $ midright = Position(xpos=0.65,
+        xanchor=0)
     scene bg stars with fade
     show her normal at center with moveinleft
 
+    her normal "Do I want to remember how it all began?"
     # TODO: Stronger beginning    
     menu:
         "Do I want to remember how it all began?"
@@ -102,7 +110,7 @@ label start:
     $ his_name = renpy.input("What is his name?", "Jack", length=20)
     "After all, that's why I married [his_name]."
 
-    show him normal at right with moveinright
+    show him normal at midleft with moveinleft
 
     "We had known each other..."
     menu:

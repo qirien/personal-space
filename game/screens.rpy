@@ -12,6 +12,7 @@ screen say:
     default side_image = None
     default two_window = False
 
+
     # Decide if we want to use the one-window or two-window varaint.
     if not two_window:
 
@@ -56,6 +57,28 @@ screen say:
 
     # Use the quick menu.
     use quick_menu
+
+init -1 python hide:
+    style.window.background = "GUI/textbox.png"
+
+    style.say_dialogue.color = "#000000"
+    # TODO: change font?
+    #style.say_dialogue.size = 28
+    #style.say_dialogue.font = "GUI/ERINAL__.TTF"
+    
+    ## Margin is space surrounding the window
+    style.window.left_margin = 0
+    style.window.right_margin = 0
+    style.window.top_margin = 0
+    style.window.bottom_margin = 0
+
+    ## Padding is space inside the window
+    style.window.left_padding = 180
+    style.window.right_padding = 100
+    style.window.top_padding = 460
+    style.window.bottom_padding = 6
+
+    style.window.yminimum = 600 # This is the minimum height of the window, including the margins
 
 
 ##############################################################################

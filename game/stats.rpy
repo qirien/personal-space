@@ -1,6 +1,7 @@
 init -100 python:
 
     style.stats_frame = Style(style.frame)
+    style.stats_frame.xalign = 0.5
     style.stats_vbox = Style(style.vbox)
 
     style.stats_label = Style(style.label)

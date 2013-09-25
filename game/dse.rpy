@@ -182,7 +182,7 @@ label dp_callback:
 
     # Add in a line of dialogue asking the question that's on
     # everybody's mind.
-    $ narrator("What should I focus on this month?", interact=False)
+    #$ narrator("What should I focus on this month?", interact=False)
     $ display_stats()
 
     return
