@@ -34,16 +34,16 @@ label monthly_event_1:
             him "Okay, I can get my own."
             $ loved -= 2
     
-    "That set the pattern for our mornings. Some things weren't as easy to work out, though."
+    "That set the pattern for our mornings. Dishes weren't as easy to work out, though."
     her "Thanks for making dinner, but you left the dirty dishes on the stove."
     him "I was going to do them later."
     her "You can't save them for later; they'll attract pests!"
-    him "Well, I thought since I made dinner, maybe you would do the dishes."
+    him "Well, I thought that since I made dinner, maybe you would do the dishes."
     her "In my house, whoever made the mess cleaned up the mess."
     him "Well, this is {b}our{/b} house, now."
     menu:
         "We'll do it your way":
-            her "Fine, we'll do it your way. Whoever cooks, the other person cleans up afterwards."
+            her "Okay, we'll do it your way. Whoever cooks, the other person cleans up afterwards."
             him "Great, that will work."
             "But it didn't work..."
             her "When were you going to do those dishes?"
@@ -84,7 +84,7 @@ label monthly_event_1:
             him "What exactly are you trying to say?"
             her "Just thought you might find those studies interesting. In a totally abstract way."
             him "It sounds like splitting household chores is really important to you."
-            her "It is. We both work hard all morning in different ways. We don't have to each do half of everything, but I think there will be less chance for arguments if we work out ahead of time what each person will do."
+            her "It is. We both work hard all day in different ways. We don't have to each do half of everything, but I think there will be less chance for arguments if we decide ahead of time what each person will do."
             him "All right, let's make a list, then."
             "We listed all the household chores we could think of, and then marked each one as \"hate\", \"enjoy\" or \"meh\". It turned out that he really hated doing dishes, so I agreed to do them all the time, and since I was not a morning person, he would make breakfast every morning. We worked out the other chores, too."
             "So that worked out pretty well."
@@ -182,7 +182,7 @@ label monthly_event_2:
             him "I wouldn't trust anyone else."
             scene bg fields with fade
             "I rode Lettie around, scouting the fields for weeds. I had never noticed how big the farm was before -- [his_name] takes care of a lot of plants!"
-            "It took longer than I thought, and I ended up helping him haul out a lot of the dirt, but then we had our very own cellar!"
+            "It took longer than I thought, and I ended up helping him haul out a lot of the dirt he dug, but then we had our very own cellar!"
             $ skill_domestic += 5
             $ loved += 5
 
@@ -207,7 +207,7 @@ label monthly_event_2:
             her "I'm sure you'll find the time."
             her "(All the farm stuff is his responsibility, anyway)"
             $ loved -= 5
-            "It took him two weeks of digging and hauling dirt every second he wasn't caring for the plants. He fell asleep right after dinner, but in the morning he was back digging again, until finally, it was finished."
+            "It took him two weeks of digging and hauling dirt every second he wasn't caring for the plants. He fell asleep right after dinner, but in the morning he was back to digging again. Finally, it was finished."
 
     "Later in the month, he harvested some radishes, spinach, and carrots, and we were able to store them safely in the cellar."
     return
@@ -228,7 +228,7 @@ label monthly_event_3:
             him "Thanks, [her_name] - what a great birthday!"
         "{i}Make delicious food{/i}" if (skill_domestic >= 20):
             "I couldn't really copy his bread-cake that he made on the shuttle for my birthday, but I was determined to make him something tasty."
-            "I found some berries that I had tried before, and combined them with some biscuits from our rations to make a sort of berry shortcake. We had some candles in our emergency case, so I lit one of those for him, too."
+            "I found some berries that I had eaten before, and combined them with some biscuits from our rations to make a sort of berry shortcake. We had some candles in our emergency case, so I lit one of those for him, too."
             show him normal at right
             her "Happy birthday, [his_name]"            
             him "Wow! Thank you! This looks great!"
@@ -237,12 +237,12 @@ label monthly_event_3:
         "{i}Make him a present{/i}" if (skill_creative >= 20):
             "I thought and thought about what I could make him that he would like."
             "I finally decided I would make him a hat."
-            "I could only work on it when he wasn't paying attention, so it went pretty slowly. But finally I was able to finish it."
-            "I hoped he would actually like it, and not just pretend like he liked it."
+            "I could only work on it when he wasn't paying attention, so it went pretty slowly. Finally, I was able to finish it."
+            "I hoped he would actually like it, and not just pretend that he liked it."
             show him normal at right
             her "Happy birthday, [his_name]. This is for you."
             him "A birthday present?! Wow, thanks!"
-            him "This hat is perfect! It will keep the sun off my neck and will be warm in the cold wind, too!"
+            him "This hat is perfect! It'll keep the sun off my neck and it'll be warm in the cold wind, too!"
             her "I'm so glad you like it."
         "Make him a card":
             "I made him a nice card and gave it to him on his birthday."
@@ -315,7 +315,7 @@ label monthly_event_4:
                 her "Well, have you noticed those clean clothes you're wearing?"
                 him "Oh, yeah, you washed those, huh?"
                 her "And I've planted an herb garden out front to add flavor to our meals, and for herbal teas and things."
-                him "Okay, that will be good. Sorry, I didn't meant to accuse, I just really was curious what projects you've been working on."
+                him "Okay, that sounds good. Sorry, I didn't meant to accuse, I just really was curious what projects you've been working on."
             "What do {b}you{/b} do?":
                 her "What have {b}you{/b} been doing lately? You've been reading a lot."
                 him "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they will grow."
@@ -336,7 +336,7 @@ label monthly_event_4:
                 him "That's true...we can't just go to the store and buy stuff anymore, can we? Sorry, I didn't meant to accuse, I just really was curious what projects you've been working on."
             "{b}You{/b} spend a lot of time reading":
                 her "What about you? You've been reading a lot lately."
-                him "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they will grow."
+                him "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
                 her "That sounds useful."
                 her "I've been learning how to make things out of native materials, like these placemats."
                 him "Oh, that's good. I want us to be independent from Earth; that's important."
@@ -353,7 +353,7 @@ label monthly_event_4:
                 him "Yeah, I'm really glad to have those. Sorry, I didn't meant to accuse, I just really was curious what projects you've been working on."
             "What do {b}you{/b} do?":
                 her "What have {b}you{/b} been doing lately? You've been reading a lot."
-                him "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they will grow."
+                him "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
                 her "Okay, well, that sounds very... necessary."
                 her "I installed the antenna that lets us talk with the village, and the device that brings water into the house."
                 him "I love those; thank you."
@@ -369,11 +369,11 @@ label monthly_event_4:
                 him "Like what?"
                 her "Well, from my studies I've learned how important it is to answer someone with love, even if they are being insensitive or unappreciative."
                 him "...You probably have a lot of opportunities to practice that, don't you?"
-                her "Well...yes. I think studying this principles helps me to get along better with others and work unselfishly."
+                her "Well...yes. I think studying these principles helps me to get along better with others and work unselfishly."
                 him "That is important. Sorry, I didn't meant to accuse, I just really was curious what you've been learning."
             "What do {b}you{/b} do?":
                 her "What have {b}you{/b} been doing lately? You've been reading a lot."
-                him "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they will grow."
+                him "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
                 her "Okay, well, that sounds very... necessary."
                 her "I've been learning about how important it is to answer someone with love, even if they are being insensitive or unappreciative."
                 him "That {b}is{/b} important."
@@ -384,7 +384,7 @@ label monthly_event_4:
                 jump unappreciated
 
     elif (highest_skill == "Social"):
-        him "You spend a lot of time just hanging out, don't you?"
+        him "You spend a lot of time just hanging out with friends, don't you?"
         menu:
             "Do I?"
             "It's important":
@@ -396,9 +396,9 @@ label monthly_event_4:
                 him "You're right; I don't like to depend on others, but we do need to work together."
             "What do {b}you{/b} do?":
                 her "What have {b}you{/b} been doing lately? You've been reading a lot."
-                him "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they will grow."
+                him "Yeah, I've been reading up on all the plants we're growing, and I've scheduled out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
                 her "Okay, well, that sounds very... necessary."
-                her "I'm not just \"hanging out\", you know. I'm building relationships in the community that we are going to need if we are to survive. We can't make it alone here."
+                her "I'm not just \"hanging out\", you know. I'm building relationships in the community that we're going to need if we're going to survive. We can't make it alone here."
                 him "You're right; I wish I didn't need anyone else, but I can't do everything."
             "I can't believe you don't appreciate me":
                 jump unappreciated
@@ -414,10 +414,10 @@ label monthly_event_4:
                 him "Oh yeah, that is important. Sorry, I didn't mean to accuse, I just was curious about what you're learning."
             "So do you":
                 her "You read a lot, too."
-                him "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they will grow."
+                him "Yeah, I've been reading up on all the plants we're growing, and I've scheduled out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
                 her "Okay, well, that sounds very... necessary."
                 her "I've been researching native plants, and helping the other colonists with their research. One family was going to build their outhouse just 15 meters from the river, but after I did some research I convinced them to build it at least 75 meters away."
-                him "That is really important. Thank you for doing that, [her_name]."
+                him "That's really important. Thank you for doing that, [her_name]."
             "I can't believe you don't appreciate me":
                 jump unappreciated
 
@@ -432,9 +432,9 @@ label monthly_event_4:
                 him "Oh yeah, that is important. Sorry, I didn't mean to accuse, I just was curious about what you've been doing."
             "What do {b}you{/b} do?":
                 her "What have {b}you{/b} been doing lately? You've been reading a lot."
-                him "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they will grow."
+                him "Yeah, I've been reading up on all the plants we're growing, and I've scheduled out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
                 her "Okay, well, that sounds very... necessary."
-                her "On that hike I found out about a new water source, and I can run to town in six minutes in case there's an emergency."
+                her "On that hike, I found out about a new water source, and I can run to town in six minutes in case there's an emergency."
                 him "Six minutes?! That's pretty fast. You must have been training a lot. I guess I haven't thought about doing that because I usually ride Lettie around."
                 her "Well, not all of us have horses, so we have to make do with the legs we have."
                 him "And what nice legs they are..."
