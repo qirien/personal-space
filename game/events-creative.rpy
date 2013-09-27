@@ -142,7 +142,7 @@ label creative_6:
             her "But sometimes it might just be dark or cold, not necessarily raining."
             him "You have a point. Plus it would be nice for reading on."
             her "Then let's go!"
-            "[his name] brought the seats back with Lettie and our wagon. The next day, I set to work on making a loveseat."
+            "[his_name] brought the seats back with Lettie and our wagon. The next day, I set to work on making a loveseat."
             "I wanted to upolster it with some fabric. I ended up weaving together long grasses into patches, which I sewed together with some goat-hair yarn. "
             "I used more grass as extra padding between the seats. It ended up being a bit scratchy, but better than nothing."
 
@@ -184,8 +184,34 @@ label creative_8:
     return
 
 #build a bridge out of braided grass rope
+#source: http://www.pbs.org/wgbh/nova/education/ancient/grass-bridge.html
 label creative_9:
-
+    "It was a nice day out and I went for a walk. I wanted to cross the river and continue walking, but I didn't want to get wet."
+    "I know a few other people said they would like to get more familiar with the land past the river, but they didn't want to go to the trouble of getting their boats out just for a walk."
+    "I knew that some ancient Earth civilizations used grass to form rope bridges, and I wondered if I could do the same."
+    "I found some dry grasses near the mountain and took some home with me, where I started twisting them into rope."
+    "I tried to find the part in the documentary that showed how they incoporated new strands of grass, but they didn't show it very closely. I had to kind of twist them in on my own."
+    him "Have you finally found a way to make rope?"
+    her "I hope so. I'd like to make a bridge over the river that anyone can access in any weather."
+    him "Can you spare some rope for me?"
+    her "Let me teach you how; it's not too hard."
+    "We spent the evening winding grasses into rope."
+    "The next day I walked along the river bank. I was hoping to find the narrowest place to build my bridge. I also had to find a place where a suspension bridge would fit in with the geography."
+    "I found the perfect spot just as I was about to give up and go home. Near the Engel's, the river split a large knoll into two. Water had worn away the dirt into smooth mounds on either side of the river."
+    if (skill_social >= 30) or (skill_knowledge >= 30):
+        "I talked to the Engels about building the bridge and they were excited to help. Helen especially seemed grateful for a chore she could do at home, and Sven said he'd try to spin rope during downtime at the library."
+        "After a few days we had enough rope to start making stronger rope."
+    else:     
+        if (loved >= 30):
+            "[his_name] helped me twist tons of rope every evening."
+        else:
+            "I spent a lot of time at home making the rope."
+        "After a few days I had enough rope to start making stronger rope."
+    "I twisted and tied the large rope around a tree. [his_name] helped me get it to the other side using a small rope to guide it."
+    "We tied two more ropes higher up for hand rails. At first the hand rails were too close together, so we had to tie them to some of the tree's branches."
+    "The next day, I tied the handrails to the main rope using small ropes. At first it was a little scary to be on the bridge before it was done, but it wasn't very high up."
+    "When I crossed the finished bridge, I felt a thrill of accomplishment."
+    
     $ skill_creative += 10
     return
 
