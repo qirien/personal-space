@@ -217,6 +217,22 @@ label creative_9:
 
 # Make a documentary about the colony and send it to Earth
 label creative_master:
+    "One day, as I was taking pictures of a flock of crabirds, I suddenly realized that no one on Earth had any idea what Talam was like. They had never seen a wolfslug, or the shimmering rocks by the hot springs, or the rise of twin moons at twilight."
+    "I couldn't bear it - I had to share the wild, alien beauty of this planet with everyone I had left behind back home."
+    "I wrote down all the things I wanted to show everyone, and then sorted them and connected the ideas."
+    "I made a list of footage to shoot, and wrote a script for the narrator."
+    if (skill_spiritual >= 60):
+        "The film had a lot of meaning - I wanted viewers to be able to ponder their own place in the universe and be delighted at the new things we experienced here."
+    if (skill_technical >= 60):
+        "I was able to put in great transitions and professional-looking text, and I made sure to use non-lossy compression algorithms to keep the video quality high."
+    if (skill_knowledge >= 60):
+        "I included details about the planet's geology, biology, and chemistry that I had been studying the whole time we'd been living here."
+
+    "It wasn't the most professional or polished film ever. But it was the only film about this planet I had come to call home."
+    "Before I sent it to Earth, I invited the whole colony to come and see it."
+    "They watched quietly, and laughed at the fumbling baby crab spiders, and cried at the photos of infested crops, and shouted out when they saw someone from the colony they knew."
+    "They all applauded at the end. I felt relieved, and also satisfied - I had been able to express something we had all felt."
+    "It would be a few years before the transmission would reach Earth, but it was worth the wait for us to be able to share our beautiful new home with those we loved."
 
     $ skill_creative += 10
     return
