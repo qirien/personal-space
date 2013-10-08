@@ -68,6 +68,7 @@ label act_skip_work:
 label work_0:
     $ times_worked += 1
 
+    scene bg community_center
     "My boss was also the leader of our little community. I guess you could call him the mayor?"
     "Right after we landed, he called a meeting for everyone where he gave a speech."
     boss "We made it this far! Now, as you know, we've arrived right at the beginning of this planet's spring, so it's time to get seeds in the ground! We would like for our colony to become self-sufficient as far as necessities are concerned."

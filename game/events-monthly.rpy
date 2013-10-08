@@ -1524,29 +1524,111 @@ label monthly_event_11:
 
 # MONTH 12
 # Jealous of time spent with friend
-# uses domestic, social
+# uses domestic, social, spiritual
+# TODO: Revisit this; is he too whiny?
 label monthly_event_12:
     scene bg farm_interior with fade
     him "So, how was your little vacation with [ocean_character]?"
     her "Vacation? Not really; Dr. Lily got stung by some weird jellyfish creature, and we scraped guano off the rocks for her."
     him "I don't know; it just sounds fun to get away from everything here for a change..."
-    her "Well, you should have come with us! I asked you first!"
+    her "Well, you should have come with us!"
     him "I didn't have time then, but I could have done it if you waited a few weeks until the harvest was over."
     her "Well, we can go again if you really want to. Dr. Lily could always use more guano."
     him "No, I really shouldn't leave the farm."
-    her "Well, then what's the big deal? I fixed the stove, right?"
-    him "Yeah, it's just- I feel like I never see you anymore."
+    her "Well, then what's the big deal? It's not like it was a big fun vacation; I had to go to fix the stove."
+    him "I never see you anymore. Whenever I want to talk to you, you're off somewhere else."
     her "What?! I'm home all the time! And when I am home, half the time you're doing farm stuff anyway, so I never get to talk to {b}you{/b}!"
     if (ocean_character == "Brennan"):
         him "You seem to have plenty of time to see Brennan."
         her "That's because we work at the same place!"
+        him "And go on trips together..."
+        her "What are you trying to say? This isn't really about Brennan, is it?"
     elif (ocean_character == "Sara"):
         him "You have plenty of time for Sara."
-        her "Well, she's a really good friend."
+        her "Well, she's my best friend."
+        him "{b}She's{/b} your best friend?"
+        her "What is going on with you? This isn't really about Sara, is it?"
     else:
         him "You're always hanging out at the library."
-        
-    # TODO: Finish this; I don't really like this. He seems too whiny.
+        her "The library?! I only go there if I'm doing research!"
+        him "Well, it seems like you do a lot of research."
+        her "What are you trying to say? This isn't really about the library, is it?"
+
+    if (loved >= 0):
+        him "No, it's... I missed you when you were gone."
+        her "Well, why don't you just say so, instead of turning it into an argument?"
+        him "..."
+        her "...I'm sorry; I've been stressed out, too."
+    else:
+        him "We're falling apart, [her_name]. I want to stop it."
+        her "Well, yelling at me isn't the way to go about it!"
+        him "Yeah? What should I do, then? I can't bring you flowers, or take you to a concert, or even take you out for coffee!"
+        her "What are you so mad about?!"
+
+    him "I'm sorry, [her_name]..."
+    menu:
+        "What should I say?"
+        "{i}Let's forget about it and do some work together{/i}" if (skill_domestic >= 40):
+            her "It's okay..."
+            her "Hey, let's do something together! Let's clean the kitchen!"
+            him "Wha- you want to clean the kitchen right now?"
+            her "Yeah, together! It needs to get done; we need to spend time together; we can do both at the same time!"
+            if (loved >= -5):
+                him "Okay, where should we start?"
+                her "There's some grease on the walls; let's scrub that off."
+                "We put on some energetic music and scrubbed together. It was still hard work, but soon we weren't mad at each other anymore."
+                $ loved += 5
+                
+                her "Now, do you want to talk about what's really bothering you?"
+
+            else:
+                him "I don't want to clean the kitchen. I have too much other work to do."
+                her "Fine, whatever."
+                "I cleaned it myself, while he did whatever it was that was so important he couldn't spend time with me."
+                "I got the kitchen clean, but I didn't know what I could do about [his_name]..."
+                $ loved -= 5
+                return
+        "{i}Let's forgive each other{/i}" if (skill_spiritual >= 40):
+            her "It's okay, [his_name]. I'm sorry for arguing, too."
+            him "We're both pretty stressed out, aren't we?"
+            if (stressed >= 0):
+                her "Yeah, I know I am. There's so much to do, and so much going wrong..."
+                her "But we need to help each other! How can I help you?"
+            else:
+                her "Well, the only thing I'm stressed out about right now is the fact that you seem stressed out! How can I help?"
+                
+            him "Oh, [her_name], I don't know. But I need you by my side, on my side."
+            
+        "{i}You need another friend{/i}" if (skill_social >= 40):
+            her "Don't you have any other friends you can hang out with, if I'm not around?"
+            him "Not really... well, Thuc and I help each other a lot, but we don't really talk..."
+            her "Maybe he could help you? What's wrong, anyway?"
+
+        "I'm sorry, too":
+            her "I'm sorry, too."
+            him "..."
+            her "..."
+            
+        "I can't talk to you right now":
+            her "I can't deal with this now."
+            him "Fine, do what you need to."
+            "We both dealth with our problems separately. At bedtime, we kissed goodnight, but I could tell we were both engrossed in our own worries."
+            $ loved -= 2    
+            return
+
+    him "It's just...a lot of things went wrong today..."
+    her "Like what?"
+    him "The tractor broke down today, and it took me a few hours to figure out what was wrong and fix it. That meant I didn't have time to get to clearing out the old radish and spinach field, which means I'm behind on planting the next things..."
+    him "Then the mayor wants a report on how all the crops are coming, and it's going to take a while to prepare it, when I really should be working on actually growing food!"
+    him "The fences keep breaking and there's a new pest I've found evidence of but haven't identified yet..."
+    her "You do have a lot going on. Is there someone who can help you?"
+    him "I can do it all, I just need--"
+    her "What do you need?"
+    him "I just need you."
+    
+    her "Here I am...here for you and loving you, [his_nickname]."
+    "We held each other for a long time. I felt there was so much I wanted to say, I tried to put it all into my hug and strengthen him and help him."
+    $ loved += 5
     
     return
 
@@ -2087,9 +2169,10 @@ label monthly_event_19:
     scene bg farm_interior with fade
     "Fashion was one thing we never had to worry about."
     "We mainly had our colony-issue shirts and pants, made of special durable, breathable, material, and whatever extra clothes we managed to fit in our one allotted suitcase."
+    "Since we did laundry by hand, we only did it once a week, so we ended up wearing the same clothes for several days in a row."
     "I did get a little tired of wearing the same thing all the time, but everyone else on the colony was in the same situation, so it wasn't something I worried about."
     if (is_pregnant):
-        "But now that my belly was growing, the pants were starting to get uncomfortable. They weren't made to stretch this much. The shirt was getting tight, too"
+        "But now that my belly was growing, the pants were starting to get uncomfortable. They weren't made to stretch this much. The shirt was getting tight, too."
         "I had to do something about it, but what?"
         menu maternity_clothing:
             "What should I do?"
@@ -2098,29 +2181,36 @@ label monthly_event_19:
                 her "Hey, Ilian, do we have any extra clothes here?"
                 ilian "A few..."
                 "I found a large men's shirt that wasn't very flattering, but would fit."
-                "They had a pair of larger pants, but they were also too long. Well, I'd just have to roll them or hem them or something."
+                "They had a pair of larger pants, but they were very baggy and also too long. Well, I'd just have to roll them or hem them or something."
             "{i}Modify your pants{/i}" if ((skill_domestic >= 60) or (skill_creative >= 60)):
                 "I decided to turn one of the pairs of Earth pants I had into maternity pants."
                 "After all, I wasn't going to be pregnant forever, so I didn't want to ruin my nice space uniform."
                 "So I took a pair of low-rise jeans and added a strip of stretchy material."
-                "The shirt"
+                her "(Hmmm, what should I do about the shirt?)"
+                "I found some scrap material and added some panels. I couldn't decide if it looked really good, or like I'd escaped from the circus, but either way, it would fit for the rest of my pregnancy."
                 "It was kind of tedious sewing by hand, but I got it done."
-
+                $ relaxed += 2
             "Ask [his_name]":
                 her "Hey, [his_name], could I borrow some of your clothes?"
                 him "Only if you let me borrow some of yours."
-                her "No way! You'd stretch them out!"
+                her "For what? There's no way they'd fit you..."
                 him "I'm just kidding. I don't have a lot of clothes, but there's one pair you could have."
                 her "Thanks!"
                 "He handed me an old pair of jeans and a t-shirt. They fit okay right now, but I could tell they wouldn't fit the whole pregnancy."
                 "Well, I'd figure something else out later."
+                $ relaxed -= 2
             "Try nudity":
                 "I guess I didn't need to wear clothes around the house - it felt so good not to have that waistband constricting my growing belly!"
                 him "Hey, is it no pants day? How come I didn't get the memo?"
                 her "It just feels so much more comfortable this way..."
                 him "Good idea."
                 "Pretty soon [his_name] was walking around free as a bird, too."
+                scene bg black with fade
+                "That led to some interesting results..."
+                $ made_love += 1
+                scene bg farm_interior
                 "But I was pretty sure I had to wear clothes to work, so I needed to try something else, too"
+                $ relaxed += 2
                 jump maternity_clothing
             "Ask around" if (skill_social >= 60):
                 "I knew Helen was also expecting, so I decided to send her a message and see what she had done."
@@ -2130,7 +2220,9 @@ label monthly_event_19:
                 helen "Well, I'm sort of stuck in bed because of this pregnancy... but send me your measurements and I'll make you one!"
                 her "Really?!"
                 helen "Sure, I've got nothing else to do all day, and I'm sick of crocheting baby clothes..."
+                "About a week later Sven dropped the dress off at work for me."
                 "Sure enough, it looked kind of terrible. But it fit, and was comfy, so I wore it a lot."
+                $ relaxed += 2
 
     else:
         "But for some reason this month it really bothered me. I was sick of the uniform's fabric, its unisex cut, and the sameness of it all."
@@ -2139,14 +2231,17 @@ label monthly_event_19:
             "Make a new accessory" if (skill_creative >= 60):
                 "I knew how to crochet, so I decided to make myself some long fingerless gloves. Luckily, someone had made some yarn from shearing their sheep and donated it to the storehouse."
                 "They color was pretty plain, but they definitely stood out and looked unique."
+                $ relaxed += 2
             "Host a clothing swap party" if (skill_social >= 60):
                 "I figured I wasn't the only one getting tired of the same clothes every day, so I posted a message on the colony message board and invited everyone to bring one outfit to the community center, and we could all trade."
                 "Not everyone was the same size, but we also didn't have much to choose from, so we weren't picky."
                 "For some reason, it felt so good to sift through the clothes - I didn't think I'd miss shopping, but it felt so luxurious to have several different things to choose from and make my own."
+                $ relaxed += 2
             "Decorate old clothes" if (skill_domestic >= 60):
                 "I thought I'd just decorate some of the clothes I already had to look different."
                 "I printed out a design I liked from the internet, printed it out on paper, and cut out parts of it to make a stencil. Then I sprayed bleach over the stencil until the part with the cut-outs faded. Then I dunked it in water to wash the bleach out."
-                "It was like having a whole new shirt!"
+                "It was like having a whole new shirt. It was just a little thing, but it was something I could exercise control over."
+                $ relaxed += 2
             "Nothing. Who cares?":
                 "It was too much work. We had more important things to worry about than clothes, anyway."
 
