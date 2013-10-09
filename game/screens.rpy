@@ -63,7 +63,7 @@ init -1 python hide:
 
     style.say_dialogue.color = "#000000"
     # TODO: change font?
-    #style.say_dialogue.size = 28
+    # style.say_dialogue.size = 20
     #style.say_dialogue.font = "GUI/ERINAL__.TTF"
     
     ## Margin is space surrounding the window
@@ -76,7 +76,7 @@ init -1 python hide:
     style.window.left_padding = 180
     style.window.right_padding = 100
     style.window.top_padding = 460
-    style.window.bottom_padding = 6
+    style.window.bottom_padding = 10
 
     style.window.yminimum = 600 # This is the minimum height of the window, including the margins
 

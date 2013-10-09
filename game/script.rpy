@@ -89,6 +89,8 @@ label start:
         xanchor=0)
     $ midright = Position(xpos=0.65,
         xanchor=0)
+    define fade = Fade(0.2, 0.2, 0.2)
+
     scene bg stars with fade
     show her normal at center with moveinleft
 

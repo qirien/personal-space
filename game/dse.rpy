@@ -93,8 +93,9 @@ label day:
     # We process each of the three periods of the day, in turn.
 label job_focus:
 
+    scene black
     # Tell the user what period it is.
-    centered "Job Focus"
+    centered "{color=#ffffff}Job Focus{/color}"
 
     # Set these variables to appropriate values, so they can be
     # picked up by the expression in the various events defined below. 
@@ -119,8 +120,8 @@ label skill_focus:
         jump relaxation_focus
 
     # The rest of this is the same as for the job_focus.
-
-    centered "Skill Focus"
+    scene black
+    centered "{color=#ffffff}Skill Focus{/color}"
 
     $ period = "skill_focus"
     $ act = skill_focus_act
@@ -136,7 +137,8 @@ label relaxation_focus:
     if check_skip_period():
         jump monthly_event
 
-    centered "Relaxation Focus"
+    scene black
+    centered "{color=#ffffff}Relaxation Focus{/color}"
 
     $ period = "relaxation_focus"
     $ act = relaxation_focus_act
@@ -149,7 +151,8 @@ label monthly_event:
     if check_skip_period():
         jump end_of_month
     
-    centered "Event!"
+    scene black
+    centered "{color=#ffffff}Event!{/color}"
 
     $ period = "monthly_event"
     $ act = monthly_event_act
@@ -163,8 +166,9 @@ label end_of_month:
     # This is now the end of the day, and not a period in which
     # events can be run. We put some boilerplate end-of-day text
     # in here.
-
-    centered "End of the Month"
+    
+    scene black
+    #centered "{color=#ffffff}End of the Month{/color}"
 
     "We made it through another month on Talam..."
 

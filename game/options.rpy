@@ -19,8 +19,6 @@ init -1 python hide:
 
     config.screen_width = 1024
     config.screen_height = 600
-#    config.screen_width = 800
-#    config.screen_height = 600
 
     ## This controls the title of the window, when Ren'Py is
     ## running in a window.
@@ -153,7 +151,7 @@ init -1 python hide:
 
     ## The default size of text.
 
-    # style.default.size = 22
+    style.default.size = 20
 
     ## Note that these only change the size of some of the text. Other
     ## buttons have their own styles.

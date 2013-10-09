@@ -4,7 +4,8 @@
 # Intro Event and the default
 label technical_0:
     if (skill_technical <= 0):
-        "I decided to familiarize myself with all the farm equipment so that if something broke, I would be able to understand the problem quicker. The tractors were an interesting biofuel/solar hybrid and were built in a very modular way so that pieces could easily be taken out and replaced, and it had a hitch on the back for attachments like plows, cutters, loaders, etc."
+        "I decided to familiarize myself with all the farm equipment so that if something broke, I would be able to understand the problem quicker."
+        "The tractors were an interesting biofuel/solar hybrid and were built in a very modular way so that pieces could easily be taken out and replaced, and it had a hitch on the back for attachments like plows, cutters, loaders, etc."
         "I downloaded the schematics and spent some time studying them."
     else:
         "I tuned up some of the farm equipment."
