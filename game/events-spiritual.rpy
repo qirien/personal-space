@@ -12,7 +12,7 @@ label spiritual_0:
 label spiritual_1:
     scene bg path with fade
     "I went to the colony's spiritual leader, just to talk. I'd been thinking a lot about what makes us human, and what there may be that we cannot see."
-    "Naomi Takahara" "Welcome, [her_name]. How can I help you?"
+    "Naomi Grayson" "Welcome, [her_name]. How can I help you?"
     her "Hi...uh, What should I call you, anyway? Pastor? Reverend?"
     naomi "Why don't you call me \"Sister\"? While I'm not a nun of any religion, I like to emphasize that we are all like children when it comes to matters of the spirit."
     her "OK, Sister Naomi...what exactly do you do here?"
@@ -59,6 +59,9 @@ label spiritual_3:
 
 
 label spiritual_4:
+    scene farm_interior with fade
+    show her
+
     "Another book Naomi loaned me was the Hindu Upanishads."
     her "\"That one, who is able to visualize the presence of Atma (the Soul) in all other moving things and even creatures and is able to visualize the presence of all such things within the Atma, never gets angry and he never hates anything in life.\""
     her "So...I should try to visualize the souls of all the living things?"
@@ -108,6 +111,8 @@ label spiritual_5:
     return
 
 label spiritual_6:
+    scene farm_interior with fade
+    show her
     "In the Koran I read:"
     "\"You will not attain piety until you expend of what you love; and whatever thing you expend, God knows of it.\""
     her "What is piety, anyway? Maybe I'll ask Sister Naomi..."
@@ -124,7 +129,7 @@ label spiritual_6:
         "I heard she was expecting a baby but had to stay in bed for some reason."
     "When we got there, Sister Naomi knocked on the door and called out,"
     naomi "Helen, it's Naomi. May I come in?"
-    helen "Of course, Naomi."
+    helen "Of course, Sister Naomi."
     "We entered their small cabin, not that much different from our own. Helen was in bed doing some knitting."
     her "What are you making?"
     helen "It's supposed to be a baby hat, but it isn't turning out very well. I don't think any baby's head is shaped like this!"
@@ -194,6 +199,8 @@ label spiritual_6:
     return
 
 label spiritual_7:
+    scene farm_interior with fade
+    show her
     "Naomi sure sent me a lot of books to read...but I think I'm getting something out of them."
     "Today I was reading part of the Tao Te Ching."
     her "\"I treat those who are good with goodness,\nAnd I also treat those who are not good with goodness.\nThus goodness is attained.\""
@@ -208,6 +215,9 @@ label spiritual_7:
     return
 
 label spiritual_8:
+    scene farm_interior with fade
+    show her
+
     "I read some of the Tattvartha Sutra, central to Jainism."
     "\"Rendering help to another is the function of all human beings.\""
     her "Our...function? \nThat makes us sound like robots!"
@@ -254,6 +264,59 @@ label spiritual_9:
     return
 
 label spiritual_master:
+    scene farm_interior with fade
+    show her
+
+    "I had read so many religious texts from all over the world, but last I started reading the Bible. While some of the stories were familiar, there was a lot I had never read before."
+    "I read in 1 Thessalonians in the Bible, \"In every thing give thanks.\", and it made me stop and think."
+    her "Can I really give thanks for {b}everything{/b}?"
+    "There were a lot of things I was definitely not grateful for - pests, bad weather, sickness, arguments..."
+    her "I can't give thanks for those things."
+    "But then I read it again."
+    her "It doesn't say to give thanks {b}for{/b} everything, but {b}in{/b} every thing... so I should give thanks no matter what situation I'm in?"
+    her "I guess there is always something to be grateful for, even when things are going wrong."
+    "I thought about when the bugs had destroyed most of our corn."
+    her "Even though we lost a lot of our corn, we did learn more about the planet. And our other crops haven't had many pest problems... the weather is nice, and we still have plenty of food to eat."
+    her "I like my job; I've been doing a lot of good there. And I'll always have [his_name]..."
+    her "I do have a lot to be thankful for..."
+    "I felt my attitude changing even as I recognized how many good things I had in my life."
+
+    scene wedding with fade
+    "Later, I was talking to Sister Naomi, and she mentioned that she was a little sick and hoped she would be feeling better before it was time to deliver her sermon."
+    her "You don't have anyone who can fill in for you?"
+    naomi "No, I'm the only one who works here at the chapel."
+    her "That's no good. You should be able to have a break once in a while."
+    naomi "Hmmm, I wonder who could do that..."
+    her "Why don't you let me handle things this week? Even if you're feeling better, you should take a week off."
+    naomi "Yes, I think it would be good for everyone to hear from someone new, anyway. Thank you, [her_name]."
+
+    "I was a little nervous about speaking about such important things in front of half the colony. I knew they all had different beliefs, too - I didn't want to offend anyone."
+    "But I prayed for help, and decided to prepare a sermon on gratitude, using some stories and verses from all the scriptures I had read."
+    
+    "The congregation was a little surprised to see me up at the stand instead of Sister Naomi, but we sang and prayed together like normal, and then I delivered my sermon."
+    "It wasn't too bad, but it was way too short! I was supposed to talk for another fifteen minutes!"
+    "I started to panic, but then a wave of calm swept it away. I had an idea."
+    her "Let's not wait until later to be grateful. Let's give thanks right now. If you would like, please take turns sharing with us one thing you are grateful for."
+    "I sat down. Would anyone volunteer?"
+    "The silence continued. A few people shuffled in their seats."
+    
+    ilian "I'm thankful for my wife, Sara. She never complains, and is always smiling cheerfully."
+    lily "I'm thankful for electricity."
+    thuc "I'm grateful to Mayor Grayson. He's fair and cares about everyone."
+    "Mrs. Blair" "I'm thankful for the doctor's quick care, so Sasha didn't choke to death."
+    "Even some of the kids chimed in."
+    "Mateo Peron" "No school today!"
+    "Miranda Blair" "We haven't been eaten by wolfslugs!"
+    "Sasha Blair" "Mommy and daddy."
+    
+    "They were all simple things, but thinking about them made us all feel so blessed and full of hope."
+    naomi "So, how did it go?"
+    her "It went well! I think it helped that everyone got to give their ideas at the end."
+    naomi "That's true; that probably helped make it real for them."
+    her "I love helping people feel positive and hopeful."
+    naomi "We certainly need that here, don't we?"
+    her "Yes. I'd be happy to help you anytime, Sister Naomi."
+    naomi "Thank you. I'm grateful to have you helping me, [her_name]."
 
     $ skill_spiritual += 10
     $ community_level += 10
