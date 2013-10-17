@@ -63,7 +63,7 @@ image her normal flip = im.Flip("sprites/her.png", horizontal = True)
 image her angry = "sprites/her-angry.png"
 image her annoyed = "sprites/her-annoyed.png"
 image her concerned = "sprites/her-concerned.png"
-image side her concerned = "sprites/her-concerned.png"
+image side her concerned = "sprites/her-concerned-head.png"
 image her flirt = "sprites/her-flirt.png"
 image her happy = "sprites/her-happy.png"
 image her laughing = "sprites/her-laughing.png"
@@ -138,7 +138,7 @@ label start:
     $ his_name = renpy.input("What is his name?", "Jack", length=20)
     "After all, that's why I married [his_name]."
 
-    show him normal at midleft with moveinleft
+    show him normal at right with moveinright
 
     "We had known each other..."
     menu:

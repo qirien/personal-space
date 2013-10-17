@@ -25,6 +25,7 @@ label doctor:
     "...the hospital. He thought he had broken his wrist, but when the x-rays came back it turned out it was only sprained. I could feel his eyes on me as I helped him with the sling."
     show her surprised
     her "How did you sprain it, anyway?"
+    show him happy
     him "You should have seen it; it was heroic. Diving through flames, rescuing small children, wrestling wolves . . ."
     show her annoyed
     her "Really? You're lucky it was just your wrist, then."
