@@ -44,11 +44,37 @@ define natalia = Character("Natalia Peron")
 define helen = Character("Helen Engel")
 
 # SPRITES
+
+# Him
 image him normal = "sprites/him.png"
+image him angry = "sprites/him-angry.png"
+image him annoyed = "sprites/him-annoyed.png"
+image him concerned = "sprites/him-concerned.png"
+image him flirt = "sprites/him-flirt.png"
+image him happy = "sprites/him-happy.png"
+image him laughing = "sprites/him-happy.png"
+image him sad = "sprites/him-sad.png"
+image him surprised = "sprites/him-surprised.png"
+
+# Her
 image her normal = "sprites/her.png"
 image her normal flip = im.Flip("sprites/her.png", horizontal = True)
-image brennan = "sprites/brennan.png"
+# TODO: Fix angry, annoyed, flirt when they are done.
+image her angry = "sprites/her-angry.png"
+image her annoyed = "sprites/her-annoyed.png"
+image her concerned = "sprites/her-concerned.png"
+image side her concerned = "sprites/her-concerned.png"
+image her flirt = "sprites/her-flirt.png"
+image her happy = "sprites/her-happy.png"
+image her laughing = "sprites/her-laughing.png"
+image her sad = "sprites/her-sad.png"
+image her surprised = "sprites/her-surprised.png"
+
 image side her normal = "sprites/her-head.png"
+
+# Other Characters
+image female_child = "sprites/female-child.png"
+image brennan = "sprites/brennan.png"
 
 define his_name = "???"
 define her_name = "Me"
@@ -85,9 +111,9 @@ define ocean_character = ""
 # The game starts here.
 label start:
     # Custom transitions, positions, etc.
-    $ midleft = Position(xpos=0.15,
+    $ midleft = Position(xpos=0.40,
         xanchor=0)
-    $ midright = Position(xpos=0.65,
+    $ midright = Position(xpos=0.60,
         xanchor=0)
     define fade = Fade(0.2, 0.2, 0.2)
 
