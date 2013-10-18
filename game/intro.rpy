@@ -5,13 +5,12 @@
 label crafter:
     $ profession = "crafter"
     scene bg workshop with fade
-    show her normal at midleft
-    show him normal at midright
-    with dissolve
+    show her normal at midleft with dissolve
     "...the craft store. He was looking for some elastics to braid his horse's hair for a parade."
+    show him normal at quarterright with moveinright
     show her surprised with dissolve
     her "You know how to braid your horse's hair?"
-    show him flirty with dissolve
+    show him flirt with dissolve
     him "It's a fine art."
     show her normal with dissolve
     her "I'll believe it when I see it."
@@ -22,7 +21,7 @@ label doctor:
     $ profession = "doctor"
     scene bg clinic with fade
     show her normal at midleft
-    show him normal at midright
+    show him normal at quarterright
     with dissolve
     "...the hospital. He thought he had broken his wrist, but when the x-rays came back it turned out it was only sprained. I could feel his eyes on me as I helped him with the sling."
     show her surprised with dissolve
@@ -32,7 +31,7 @@ label doctor:
     show her annoyed with dissolve
     her "Really? You're lucky it was just your wrist, then."
 
-    show him laughing at midright with dissolve
+    show him laughing with dissolve
     him "No, I actually just fell off my horse.  A snake spooked him."
     show her normal with dissolve
     her "Is your horse okay?"
@@ -45,29 +44,28 @@ label doctor:
 label mechanic:
     $ profession = "mechanic"
     scene bg machine_shop with fade
-    show her normal at midleft
-    show him normal at midright
-    with dissolve
+    show her normal at midleft with dissolve
     "...the car repair shop. His engine wasn't working right, and after I fixed it he wanted me to show him everything I'd done."
+    show him normal at quarterright with moveinright
     show her angry with dissolve
     her "You don't think I fixed it right, do you?"
     show him surprised with dissolve
     him "No! It's not that at all! I just spent two days working on it and couldn't figure it out, so I'm really curious what it was. I'm really impressed, actually."
     show her normal with dissolve
     her "Well, it's something that's easy to miss. Just take a look at this connection here..."
-
+    jump first_date
 
 # Teacher; scene at school
 label teacher:
     $ profession = "teacher"
     scene bg classroom with fade
-    show her normal at midleft
-    show him normal at midright
+    show her normal at quarterleft
+    show him normal at center
     with dissolve
     "...the elementary school. He had come to tell all the kindergartners about life on a farm."
     show him happy with dissolve
     him "And do you know where eggs come from?"
-    show female_child at center with dissolve
+    show female_child at quarterright with dissolve
     "Kid" "Chickens!"
     him "Right!"
     "Kid" "But where do the chickens get the eggs?"
@@ -83,8 +81,8 @@ label teacher:
 
 label first_date:
     scene bg porch with fade
-    show her normal at midright
-    show him normal at center
+    show her normal at midleft
+    show him normal at midright
     with dissolve
     "Afterwards, he asked me if I would come to a barbeque at his house that evening. I thought there was going to be a lot of people, but it ended up being just him and his parents."
     "It wasn't too awkward, though - we all pitched in to make dinner and then sat on the porch swing and talked and watched the stars come out."
@@ -123,8 +121,8 @@ label first_date:
 
 label marriage_proposal:
     scene bg porch with fade
-    show her normal at midright
-    show him normal at center
+    show her normal at midleft
+    show him normal at midright
     with dissolve
     him "I'm going there, [her_name]. To Talam."
     show her laughing with dissolve
@@ -204,8 +202,8 @@ label marriage_proposal:
             "My mom's recipe book. She's not that great of a cook, but she put in recipes for all the foods she regularly cooks. Those foods bring back so many childhood memories."
 
     scene bg porch with fade
-    show her normal at midright
-    show him normal at center
+    show her normal at midleft
+    show him normal at midright
     with dissolve
     
     him "Today's the day, lovebug."

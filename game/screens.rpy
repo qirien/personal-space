@@ -61,7 +61,7 @@ screen say:
 init -1 python hide:
     style.window.background = "GUI/textbox.png"
 
-    style.say_dialogue.color = "#000000"
+    style.say_dialogue.color = "#ffffff"
     # TODO: change font?
     # style.say_dialogue.size = 20
     #style.say_dialogue.font = "GUI/ERINAL__.TTF"

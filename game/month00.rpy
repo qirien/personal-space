@@ -6,8 +6,9 @@ label colony_ship:
     scene bg colony_ship_bunk with fade
     "What a honeymoon -- on board a cramped space shuttle with a hundred other people for a month. Of course, back on Earth four years had passed, since we were travelling so close to light speed. We spent a lot of it talking about the future..."
     play music "music/Amnesia.ogg" fadeout 1.0
-    show him normal at center
-    show her normal at right
+    show him normal at midright
+    show her normal at midleft
+    with dissolve
     him "What do you think about having kids?"
     her "In general, or us specifically?"
     him "You and me, becoming parents. Sounds kind of crazy, doesn't it?"

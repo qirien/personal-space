@@ -111,9 +111,13 @@ define ocean_character = ""
 # The game starts here.
 label start:
     # Custom transitions, positions, etc.
-    $ midleft = Position(xpos=0.40,
+    $ midleft = Position(xpos=0.30,
         xanchor=0)
-    $ midright = Position(xpos=0.60,
+    $ midright = Position(xpos=0.50,
+        xanchor=0)
+    $ quarterleft = Position(xpos=0.20,
+        xanchor=0)
+    $ quarterright = Position(xpos=0.60,
         xanchor=0)
     define fade = Fade(0.2, 0.2, 0.2)
 
@@ -138,7 +142,7 @@ label start:
     $ his_name = renpy.input("What is his name?", "Jack", length=20)
     "After all, that's why I married [his_name]."
 
-    show him normal at right with moveinright
+    show him normal at quarterright with moveinright
 
     "We had known each other..."
     menu:
