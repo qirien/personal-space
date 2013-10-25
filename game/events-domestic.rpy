@@ -165,6 +165,7 @@ label domestic_5:
     return
 
 # Pumpkins and Halloween!
+# TODO: Is it really Halloween time? Too America-centric? Harvest festival instead? (year-round harvest, but still!)
 label domestic_6:
     scene bg farm_interior with fade
     "One day, [his_name] brought home some pumpkins he had planted."

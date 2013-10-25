@@ -25,7 +25,7 @@ label doctor:
     him happy "You should have seen it; it was heroic. Diving through flames, rescuing small children, wrestling wolves . . ."
     her annoyed "Really? You're lucky it was just your wrist, then."
 
-    him laughing "No, I actually just fell off my horse.  A snake spooked him."
+    him laughing "No, I actually just fell off my horse.  A snake spooked her."
     her normal "Is your horse okay?"
     him normal "Oh yeah, Lettie's fine. She seemed like she was almost laughing at me.
 "

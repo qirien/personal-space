@@ -73,6 +73,8 @@ label work_0:
     "Right after we landed, he called a meeting for everyone where he gave a speech."
     boss "We made it this far! Now, as you know, we've arrived right at the beginning of this planet's spring, so it's time to get seeds in the ground! We would like for our colony to become self-sufficient as far as necessities are concerned."
     boss "In two years, another colony ship will come with supplies and more colonists. So, until then, we're on our own."
+    boss "Let me introduce some of our experts, here."
+    # TODO: introduce him as farmer and vet, Dr. Lily, Sister Naomi, Ilian, ?
     boss "Are there any questions?"
     menu boss_meeting:
         "Do I have any questions?"

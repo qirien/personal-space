@@ -2160,6 +2160,7 @@ label monthly_event_17:
 # uses spiritual, social, physical
 label monthly_event_18:
     scene bg farm_interior with fade
+    # TODO: somewhere in here, ultrasound if pregnant, find out baby is a girl
     return
 
 # MONTH 19 - Clothing wearing out, stiff, doesn't fit anymore if pregnant.
@@ -2249,10 +2250,32 @@ label monthly_event_19:
 
 label monthly_event_20:
     scene bg farm_interior with fade
+
     return
 
+# TODO: trouble sleeping?
 label monthly_event_21:
-    scene bg farm_interior with fade
+
+    scene bg bedroom with fade
+    show her at midright
+    show him at midleft
+    with dissolve
+
+    if (is_pregnant):
+        "One night I lay down for bed, and, of course, that's when the baby decides to practice martial arts in my bladder."
+        her annoyed "Not again..."
+        him surprised "Everything okay?"
+        her normal "I can't sleep while I'm being pummeled from the inside."
+        "He put his hand on my belly and felt the tiny movements."
+        him happy "Wow, that's a lot of energy!"
+        her sad "I'm just so tired..."
+        him sad "Have you not been sleeping well?"
+        her "Every time I fall asleep, something wakes me up in an hour or two. Either I have to use the bathroom, or the baby's moving, or my back hurts, or, worst of all, it's morning."
+
+    else:
+        "I'd had trouble sleeping lately."
+
+
     return
 
 
@@ -2260,15 +2283,83 @@ label monthly_event_22:
     scene bg farm_interior with fade
     return
 
-# Climax - epic conflict leading to either "We'll always be together" or "I just want to get away from you!"
+# Climax - epic conflict leading to either "We'll always be together" or "I just want to get away from you!"  Conflict: Worried about new baby, pregnant if made_love a lot or affair with Brennan, otherwise "we never make love"
 label monthly_event_23:
-    # Possible conflicts: false labor if already pregnant, pregnant if made_love high enough or affair with Brennan even if BC, or "we never make love"
     scene bg farm_interior with fade
     show her at center with dissolve
 
     if (is_pregnant):
-        # TODO: Finish this
         "I was getting huge. I felt like I couldn't eat very much at a time, not only because of the terrible heartburn, but it just didn't feel like there was any room inside me for anything else."
+        "Some days I couldn't believe that I had been pregnant for so long, and other days I wished it would last longer because I didn't feel ready yet."
+        
+        # who will take care of the baby during the day?
+        scene bg bedroom with fade
+        show her at midright
+        show him at midleft
+        with dissolve
+
+        her concerned "Do you feel ready? For the baby, I mean?"
+        him  "Well, we made a little crib, and we have plenty of rags for diapers, and I thought you said you got some clothes from the storehouse..."
+        her "No, I mean, ready to be parents. Ready to be responsible for a little helpless person twenty-four hours a day..."
+        him concerned "Ohhh...well, I figured we'll take turns taking care of her, so we can each have a break sometimes. So that's really only more like twelve hours a day, right?"
+        her angry "No! Even if someone else is taking care of the baby at the moment, you and I are still responsible - we're the parents! This isn't a job you can just do part-time!"
+        him normal "Well, yeah, of course."
+        "It was clear he was not as worried about it as I was."
+        her sad "What if I can't figure out how to nurse her, or the diapers are unsanitary and make us all sick, or I have really bad post-partum depression, or my body never recovers, or--"
+        him concerned "Hey, hey, it'll be okay."
+        her angry "It won't be okay just by saying, \"It's okay\"!"
+        him angry "All right, then, let's figure some of these things out."
+        him concerned "Mrs. Blair already is helping you with the birth, right?"
+        her concerned "Yeah..."
+        him "Well, I bet she knows a lot about nursing babies, and could help you out there. But even if something happens and you can't nurse the baby, they have some formula in the storehouse."
+        her normal "That's good to know..."
+        him normal "And we have a great doctor here, in case anything goes wrong. I don't think that will happen, but it's good to know."
+        if (profession == "doctor"):
+            her "Hey, I'm the doctor..."
+            him happy "Yeah, and you're great!"
+            her concerned "But I can't really perform surgery on myself! What if I need a C-section or something?!"
+            him concerned "I hadn't thought of that..."
+            her angry "I'll just have to teach Brennan how."
+            him angry "Brennan!"
+            her "Do you know of anyone else?!"
+            him concerned "Well...I've done a C-section on a cow before, so I could probably help out."
+            her concerned "Mrs. Blair could probably help, too...I can just use local anaesethetic, so I can stay conscious and instruct you guys... but I sure hope we never have to do that."
+            him concerned "We'll do what we have to."
+        
+        her "What are we going to do with the baby during the day?"
+        him "Well...I thought she would hang out with you."
+        her "Will that really be okay at work?"
+        "I tried to imagine going to work with a baby."
+        her surprised "I guess she could ride around with me some of the time, and maybe lie in the corner in a little bed sometimes?"
+        her angry "But why is it always the woman who takes care of the baby more?"
+        him happy "Because you're the one whose awesome body can squirt out perfect baby food?"
+        her annoyed "Well, yeah, but..."
+        him normal "Plus, it'd be dangerous around all the heavy farm equipment, wouldn't it?"
+        her "Not really any more dangerous than my work..."
+        him "Well, maybe we'll take turns, depending on what's going on at work, if you wanted to pump milk so the baby can still eat."
+        her concerned "It sounds pretty weird, but I guess we should probably save the formula for emergencies, huh?"
+        him surprised "Pumping milk is not any weirder than milking cows, right?"
+        her annoyed "...You did not just compare me, your wife, to a cow."
+        him normal "Sorry, cows are just what I know. I've never been a dad before. But people do it all the time, so how hard can it be?"
+        if (community_level >= 20):
+            her normal "You're right...and our community is so close-knit, I'm sure one of the other moms will help me out if I need it."
+        else:
+            her concerned "You're right...I just wish I felt closer to the other moms, so I would feel better asking them if I needed help."
+        
+        if (loved >= 0):
+            him annoyed "I'm right here, with you, and our love is so strong, there's nothing we can't do together."
+            her annoyed "The \"power of love\", huh?"
+            him "I'm serious! Whatever you, and the baby need, I'll do it! I'll beg from total strangers! I'll cook dinner every night! I'll do laundry!"
+            him sad "...I'd even give up Lettie, if I had to."
+            her surprised "You would?"
+            him annoyed "Of course!"
+            her "[his_name]...thank you. We'll both have to make some sacrifices and work hard, but we can do it together, can't we?"
+            "We held each other tightly, my huge belly between us, and the baby kicked."
+            him laughing "See, she agrees!"
+            show her laughing
+        else:
+            him "Well, we'll make it work somehow."
+            her "Thanks, [his_name]."
 
     #TODO: Tweak this number to a better one
     elif ((made_love >= 8) or (cheated_on_him)):
@@ -2379,13 +2470,18 @@ label monthly_event_23:
     # Didn't make love much and didn't cheat on him
     else:
         scene bg bedroom with fade
+        show her at quarterright
+        show him at midleft
+        with dissolve
+
         "I decided to surprise [his_name] with a few candles lit near our bed and some soft music playing, and I wore the sexiest thing I owned. But when he came in from working in the fields, he didn't even seem to notice."
         him "Hey, is it your turn to make dinner, [her_name]?"
         her "I'll make you something over here, [his_nickname]."
-        him "Oh! Wow, that looks really pretty, but I actually am super hungry, so do you mind if I eat first?"
-        her "Yes I mind! I've been sitting here looking pretty for an hour! Aren't you going to do anything about it?"
+        him "Oh! Wow, you looks really hot..."
+        him "...but I actually am super hungry, so do you mind if I eat first?"
+        her angry "Yes I mind! I've been sitting here looking pretty for an hour! Aren't you going to do anything about it?"
         him "I...guess we could."
-        her "Well, don't let me pressure you into anything you don't want to do."
+        her annoyed "Wow, that's romantic."
         # TODO: Finish this
     
     return
