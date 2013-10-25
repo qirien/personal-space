@@ -1558,7 +1558,7 @@ label monthly_event_12:
         him "No, it's... I missed you when you were gone."
         her "Well, why don't you just say so, instead of turning it into an argument?"
         him "..."
-        her "...I'm sorry; I've been stressed out, too."
+        her "..."
     else:
         him "We're falling apart, [her_name]. I want to stop it."
         her "Well, yelling at me isn't the way to go about it!"
@@ -2262,7 +2262,132 @@ label monthly_event_22:
 
 # Climax - epic conflict leading to either "We'll always be together" or "I just want to get away from you!"
 label monthly_event_23:
+    # Possible conflicts: false labor if already pregnant, pregnant if made_love high enough or affair with Brennan even if BC, or "we never make love"
+    scene bg farm_interior with fade
+    show her at center with dissolve
 
+    if (is_pregnant):
+        # TODO: Finish this
+        "I was getting huge. I felt like I couldn't eat very much at a time, not only because of the terrible heartburn, but it just didn't feel like there was any room inside me for anything else."
+
+    #TODO: Tweak this number to a better one
+    elif ((made_love >= 8) or (cheated_on_him)):
+        "Lately I'd been feeling a little sick. My breasts were sore (for no reason), and I had to go to the bathroom all the time."
+        her surprised "Come to think of it, shouldn't my period have started by now?"
+        if (want_kids):
+            "I felt a sudden thrill go through me. Was I pregnant?"
+        else:
+            "I had a sudden fear, right in my lower belly. I couldn't be pregnant, right? I mean, we always used birth control..."
+            if (cheated_on_him):
+                her "(Except for that one time with Brennan...)"
+        "I went to the doctor. I had to know for sure."
+        her annoyed "(They didn't have enough room for a few more condoms, but there's plenty of pregnancy tests...)"
+        "Sure enough, the test read positive."
+        her "(I can't believe this...)"
+        "I had to tell [his_name]. As soon as he came into the house, I blurted it out."
+        her "I'm pregnant!"
+        if (want_kids or (loved >= -5)):
+            him "Really? That's great!"
+            if (want_kids):
+                her "I know! I didn't think it would happen so fast..."
+            else:
+                her "..."
+                him "I mean, well, I guess we had planned on having a baby later, right? But there's no reason why it wouldn't work out now!"
+                her "I'm not ready, [his_name]!"
+                him "Can we just try it, [her_nickname]? I'll work hard with you, to take care of this little baby, and take care of you, too."
+                her "..."
+            him "Think of it as another adventure - we didn't know what this planet was really going to be like until we got here, right?"
+            him "What if we had never come here - we would have missed out on so much!"
+            her "I guess when you think about it, it's not that scary. I mean, people have been having babies since, well, forever, so it can't be too hard..."
+            him "Yeah! That's the spirit! We can do this!"
+            "Could this really work out? I guess we could try..."
+            if (cheated_on_him):
+                "He didn't need to know that the baby might be Brennan's - it would ruin what we had."
+                $ loved -= 1
+                
+            her "I never thought of myself as a mother, you know."
+            him "Doesn't mean we can't do it. Humans are made to be parents, right?"
+            her "At least I have you..."
+            "He held me tight, cradling my head in his hand. I relaxed onto his shoulder, and he placed tiny kisses on my neck."
+            "We really did need each other..."
+            $ loved += 2
+
+        # loved < -5
+        else:
+            $ loved -= 2
+            him "Oh, great, that's just what this marriage needs."
+            her "What?!"
+            him "I mean, you and I can barely get along as it is, and the last thing we need is something else to argue about."
+            her "Hey, it's not like I got pregnant by myself! You're half responsible, too!"
+            him "Yeah, probably."
+            her "What's that supposed to mean?!"
+            if (cheated_on_him):
+                him "Are you having an affair with Brennan?"
+                her "(Oh no.)"
+                menu:
+                    "What should I say?"
+                    "No":
+                        her "No."
+                        him "\"No\"? That's it?"
+                        her "That's it."
+                        him "Hmph."
+                    "Yes":
+                        her "...yes."
+                        him "What!"
+                        her "I mean, it was just that one time, but..."
+                        him "When did you- Never mind, I don't want to know."
+                        him "I can't believe this..."
+                        her "I'd say I'm sorry, but it's clear he loves me more than you ever will."
+                        him "It's clear, huh? He's that good?"
+                        her "It's not just about the sex!"
+                        him "Sure it's not."
+                        her "I mean, not just that. He listens to me! He has time for me."
+                        him "Yeah, because he's a useless prick! He doesn't even know how to do anything useful, so they had you babysitting him! Guess that's like having the sheep babysit the wolf..."
+                        her "Look, I was going to say I was sorry, but what's the point?! Clearly, you are done with this relationship."
+                        him "Clearly, there was never much of a relationship here to begin with. I'm sorry for not seeing it sooner."
+                        "We didn't talk much after that. We both knew it was over, but we kept pretending nothing had happened..."
+                                   
+                    "What about you?":
+                        her "Are {b}you{/b} having an affair with Thuc?"
+                        him "What? Of course not."
+                        her "Well, that's how ridiculous your suggestion is. So drop it."
+                        him "...Okay."
+                                   
+            # if you haven't cheated on him, just lacked sex:
+            elif (made_love < 4):
+                him "We sure haven't had a lot of sex lately. So is it really mine?"
+                her "Of course it is. It's not like I've had sex with anyone else!"
+                him "..."
+                her "Wait, you haven't-"
+                him "Haven't what?"
+                her "You haven't cheated on me, have you?"
+                him "...No."
+                her "What's with the pause there?"
+                him "I thought about it, but decided not to."
+                her "You thought about it?!"
+                him "There was an...opportunity, but I told her no."
+                her "Who was it?"
+                him "It was-"
+                her "No, no, don't tell me. I don't want to know."
+                him "I mean, I know we don't always agree, but we promised to stay together. I'm yours, [her_name]."
+                her "Show me."
+                "He approached me slowly. Had it been so long that it seemed strange? My heart beat fast like it did when we were first dating."
+                "I hadn't realized how much I missed him. I missed his touch, his need, his soft kisses on my back, everything we had ever shared together."
+                "Together, we remembered it all."
+                $ loved += 2
+                
+    # Didn't make love much and didn't cheat on him
+    else:
+        scene bg bedroom with fade
+        "I decided to surprise [his_name] with a few candles lit near our bed and some soft music playing, and I wore the sexiest thing I owned. But when he came in from working in the fields, he didn't even seem to notice."
+        him "Hey, is it your turn to make dinner, [her_name]?"
+        her "I'll make you something over here, [his_nickname]."
+        him "Oh! Wow, that looks really pretty, but I actually am super hungry, so do you mind if I eat first?"
+        her "Yes I mind! I've been sitting here looking pretty for an hour! Aren't you going to do anything about it?"
+        him "I...guess we could."
+        her "Well, don't let me pressure you into anything you don't want to do."
+        # TODO: Finish this
+    
     return
 
 label monthly_event_24:

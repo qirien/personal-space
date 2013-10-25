@@ -55,21 +55,28 @@ label day:
 
     $ year = 1
     $ local_month = month
+    $ season = ""
+    $ weather = ""
 
     # Compute the year and what month in the year it is
     while (local_month > 7):
         $ year += 1
-        $ local_month -= 7
-        
-    $ weather = "warm during the day and cool at night"
-    if ((local_month == 1) or (local_month == 2)):
-         $ weather += ". It rains often"
-    if ((local_month == 3) or (local_month == 4)):
-        $ weather = "hot and dry."
-    if ((local_month == 6) or (local_month == 7)):
-        $ weather = "cool and rainy."
+        $ local_month -= 7        
 
-    "It's year %(year)d, month %(local_month)d. The weather is [weather]."
+    if ((local_month == 1) or (local_month == 2)):
+        $ season = "spring"
+        $ weather += "warm and rainy"
+    if ((local_month == 3) or (local_month == 4)):
+        $ season = "summer"
+        $ weather = "hot and dry"
+    if (local_month == 5):
+        $ season = "fall"
+        $ weather = "warm during the day and cool at night"
+    if ((local_month == 6) or (local_month == 7)):
+        $ season = "winter"
+        $ weather = "cold and rainy"
+
+    "It's year %(year)d, month %(local_month)d. We've been here %(month)d months. It's [season]. The weather is [weather]."
     # TODO: comment out this debugging code
     "Loved = [loved], Relaxed = [relaxed], community_level = [community_level], made_love = [made_love]"
 

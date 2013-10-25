@@ -30,7 +30,7 @@ image bg community_center = "bg/community-center.jpg"
 
 # Declare characters used by this game .
 define her = DynamicCharacter("her_name", color="#7264d5", image="her")
-define him = DynamicCharacter("his_name", color="#c80000")
+define him = DynamicCharacter("his_name", color="#c80000", image="him")
 
 define naomi = Character("Sister Naomi", color="#6500ab")
 define boss = Character("Mayor Grayson", color="#cccccc")
@@ -59,6 +59,7 @@ image him surprised = "sprites/him-surprised.png"
 # Her
 image her normal = "sprites/her.png"
 image her normal flip = im.Flip("sprites/her.png", horizontal = True)
+image side her normal = "sprites/her-head.png"
 # TODO: Fix angry, annoyed, flirt when they are done.
 image her angry = "sprites/her-angry.png"
 image her annoyed = "sprites/her-annoyed.png"
@@ -70,7 +71,6 @@ image her laughing = "sprites/her-laughing.png"
 image her sad = "sprites/her-sad.png"
 image her surprised = "sprites/her-surprised.png"
 
-image side her normal = "sprites/her-head.png"
 
 # Other Characters
 image female_child = "sprites/female-child.png"
@@ -107,6 +107,8 @@ define cheated_on_him = False
 define exposed_brennan = False
 define ocean_character = ""
 
+#Technical variables used to control how the game displays
+define fade = Fade(0.2, 0.2, 0.2)
 
 # The game starts here.
 label start:
@@ -119,7 +121,9 @@ label start:
         xanchor=0)
     $ quarterright = Position(xpos=0.60,
         xanchor=0)
-    define fade = Fade(0.2, 0.2, 0.2)
+
+    $ config.say_attribute_transition = dissolve
+
 
     scene bg stars with fade
     show her normal at center with moveinleft

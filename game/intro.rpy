@@ -8,12 +8,9 @@ label crafter:
     show her normal at midleft with dissolve
     "...the craft store. He was looking for some elastics to braid his horse's hair for a parade."
     show him normal at quarterright with moveinright
-    show her surprised with dissolve
-    her "You know how to braid your horse's hair?"
-    show him flirt with dissolve
-    him "It's a fine art."
-    show her normal with dissolve
-    her "I'll believe it when I see it."
+    her surprised "You know how to braid your horse's hair?"
+    him flirt "It's a fine art."
+    her normal "I'll believe it when I see it."
     jump first_date
 
 # Doctor; scene at hospital
@@ -24,19 +21,13 @@ label doctor:
     show him normal at quarterright
     with dissolve
     "...the hospital. He thought he had broken his wrist, but when the x-rays came back it turned out it was only sprained. I could feel his eyes on me as I helped him with the sling."
-    show her surprised with dissolve
-    her "How did you sprain it, anyway?"
-    show him happy with dissolve
-    him "You should have seen it; it was heroic. Diving through flames, rescuing small children, wrestling wolves . . ."
-    show her annoyed with dissolve
-    her "Really? You're lucky it was just your wrist, then."
+    her surprised "How did you sprain it, anyway?"
+    him happy "You should have seen it; it was heroic. Diving through flames, rescuing small children, wrestling wolves . . ."
+    her annoyed "Really? You're lucky it was just your wrist, then."
 
-    show him laughing with dissolve
-    him "No, I actually just fell off my horse.  A snake spooked him."
-    show her normal with dissolve
-    her "Is your horse okay?"
-    show him normal with dissolve
-    him "Oh yeah, Lettie's fine. She seemed like she was almost laughing at me.
+    him laughing "No, I actually just fell off my horse.  A snake spooked him."
+    her normal "Is your horse okay?"
+    him normal "Oh yeah, Lettie's fine. She seemed like she was almost laughing at me.
 "
     jump first_date
 
@@ -47,12 +38,9 @@ label mechanic:
     show her normal at midleft with dissolve
     "...the car repair shop. His engine wasn't working right, and after I fixed it he wanted me to show him everything I'd done."
     show him normal at quarterright with moveinright
-    show her angry with dissolve
-    her "You don't think I fixed it right, do you?"
-    show him surprised with dissolve
-    him "No! It's not that at all! I just spent two days working on it and couldn't figure it out, so I'm really curious what it was. I'm really impressed, actually."
-    show her normal with dissolve
-    her "Well, it's something that's easy to miss. Just take a look at this connection here..."
+    her angry "You don't think I fixed it right, do you?"
+    him surprised "No! It's not that at all! I just spent two days working on it and couldn't figure it out, so I'm really curious what it was. I'm really impressed, actually."
+    her normal "Well, it's something that's easy to miss. Just take a look at this connection here..."
     jump first_date
 
 # Teacher; scene at school
@@ -63,17 +51,15 @@ label teacher:
     show him normal at center
     with dissolve
     "...the elementary school. He had come to tell all the kindergartners about life on a farm."
-    show him happy with dissolve
-    him "And do you know where eggs come from?"
+    him happy "And do you know where eggs come from?"
     show female_child at quarterright with dissolve
     "Kid" "Chickens!"
-    him "Right!"
+    him normal "Right!"
     "Kid" "But where do the chickens get the eggs?"
     him "They make them! Underneath those cute fluffy feathers, these birds are hard-working egg-making machines!"
     "Kid" "Really? Like a robot?!"
-    show him normal with dissolve
     show her laughing with dissolve
-    him "Yes! A robot made of meat!"
+    him normal "Yes! A robot made of meat!"
     jump first_date
 
 
@@ -90,13 +76,10 @@ label first_date:
     $ her_name = renpy.input("What is your name?", "Mary", length=20)
 
     him "[her_name]... have you ever thought about what's out there?"
-    show her surprised with dissolve
-    her "Out... where?"
+    her surprised "Out... where?"
     show bg stars with moveintop
-    show him happy with dissolve
-    him "In space! So many stars, so many worlds... Did you know they are sending colonists to Talam?"
-    show her normal with dissolve
-    her "That's the garden planet they found, right?"
+    him happy "In space! So many stars, so many worlds... Did you know they are sending colonists to Talam?"
+    her normal "That's the garden planet they found, right?"
     him "Yes! It's only about four light years away. People could breathe there, grow things, live there!"
 
 # What do you think about the new planet?
@@ -106,15 +89,12 @@ label first_date:
         "Why?":
             her "Theoretically, but why would they want to?"
         "Cool!":
-            show her happy with dissolve
-            her "Really?! That would be so exciting!"
+            her happy "Really?! That would be so exciting!"
         "Maybe...":
-            show her concerned with dissolve
-            her "It seems like it would be a lot of hard work."
+            her concerned "It seems like it would be a lot of hard work."
 
     him "What a challenge it would be! Different animals, plants, even different seasons..."
-    show her surprised with dissolve
-    her "Why are you so interested in this planet all of a sudden?"
+    her surprised "Why are you so interested in this planet all of a sudden?"
     jump marriage_proposal
 
 # TODO: We need another date in here to show how much they love each other before the marriage proposal
@@ -125,19 +105,13 @@ label marriage_proposal:
     show him normal at midright
     with dissolve
     him "I'm going there, [her_name]. To Talam."
-    show her laughing with dissolve
-    her "Oh really? I didn't know you were an astronaut, [his_name]."
-    show him annoyed with dissolve
-    him "..."
-    show her surprised with dissolve
-    her "You're serious, aren't you?!"
-    show him normal with dissolve
-    him "They need farmers to come start the colony, and I want to go."
-    show her sad with dissolve
-    her "..."
+    her laughing "Oh really? I didn't know you were an astronaut, [his_name]."
+    him annoyed "..."
+    her surprised "You're serious, aren't you?!"
+    him normal "They need farmers to come start the colony, and I want to go."
+    her sad "..."
     him "I want you to come with me."
-    show her surprised with dissolve
-    her "?"
+    her surprised "?"
     him "As my wife. You're a great [profession], they'll need those there."
 
     # How does she feel about getting married and going to new planet?
@@ -145,28 +119,21 @@ label marriage_proposal:
         "I felt..."
         "Shocked":
             her "Did you... did you just ask me to marry you?!"
-            show him laughing with dissolve
-            him "Sorry, I should have made that part more obvious. [her_name], will you marry me?!"
+            him laughing "Sorry, I should have made that part more obvious. [her_name], will you marry me?!"
         "Excited":
-            show her happy with dissolve
-            her "Oh [his_name], I can't think of anything that would make me happier!"
+            her happy "Oh [his_name], I can't think of anything that would make me happier!"
             $ loved += 5
             $ relaxed += 5
         "Worried":
-            show her concerned with dissolve
-            her "[his_name], I love you, but are you sure you want to go to an entirely new planet? So many things could go wrong..."
-            show him normal
-            him "I'm sure they will, [her_name], but I know it will be worth it. And when thing's do go wrong, I want you by my side."
+            her concerned "[his_name], I love you, but are you sure you want to go to an entirely new planet? So many things could go wrong..."
+            him normal "I'm sure they will, [her_name], but I know it will be worth it. And when thing's do go wrong, I want you by my side."
             $ loved += 5
             $ relaxed -= 5
         "Annoyed":
-            show her annoyed with dissolve
-            her "Oh, so you only want me along because I'm such a good [profession]?"
-            show him annoyed with dissolve
-            him "Of course not. I want you along because I'm madly in love with you, and I want to show you that every day, forever."
+            her annoyed "Oh, so you only want me along because I'm such a good [profession]?"
+            him annoyed "Of course not. I want you along because I'm madly in love with you, and I want to show you that every day, forever."
 
-    show her normal with dissolve
-    her "[his_name]...I would love to create a new life together, even if it is on a different planet."
+    her happy "[his_name]...I would love to create a new life together, even if it is on a different planet."
     scene bg wedding with fade
     "And so we got married."
     "My mother cried; she knew we were going to space and she would probably never see me again (or any grandkids). My father..."
@@ -207,9 +174,8 @@ label marriage_proposal:
     with dissolve
     
     him "Today's the day, lovebug."
-    show her surprised with dissolve
-    her "Lovebug?"
-    him "Don't you like it? I thought it was cute."
+    her surprised "\"Lovebug?\""
+    him surprised "Don't you like it? I thought it was cute."
     show her normal with dissolve
 
     menu:
@@ -226,8 +192,8 @@ label marriage_proposal:
         "Something else":
             $ her_nickname = renpy.input("He calls me:", "sweetie", length=20)
             her "You could call me '[her_nickname]'."
-    show him flirt with dissolve
-    him "Hey, I like that. You're my [her_nickname]."
+
+    him flirt "Hey, I like that. You're my [her_nickname]."
 
     menu:
         "I realized I didn't have a name for him. I thought fast and decided to call him:"
@@ -240,9 +206,8 @@ label marriage_proposal:
         "Something else":
             $ his_nickname = renpy.input("I call him:", "honey", length=20)
 
-    show her flirt with dissolve
-    her "And you're my '[his_nickname]'."
-    show him surprised with dissolve
-    him "You're calling me [his_nickname]? Well, okay. You can call me whatever you want as long as you come with me on the shuttle today!"
+    her flirt "And you're my '[his_nickname]'."
+    him surprised "You're calling me [his_nickname]?"
+    him happy "Well, okay. You can call me whatever you want as long as you come with me on the shuttle today!"
 
     jump colony_ship

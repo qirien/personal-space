@@ -9,9 +9,9 @@ label colony_ship:
     show him normal at midright
     show her normal at midleft
     with dissolve
-    him "What do you think about having kids?"
-    her "In general, or us specifically?"
-    him "You and me, becoming parents. Sounds kind of crazy, doesn't it?"
+    him surprised "What do you think about having kids?"
+    her flirt "In general, or us specifically?"
+    him concerned "You and me, becoming parents. Sounds kind of crazy, doesn't it?"
 
     # Do they want to have kids right away?
     menu:
