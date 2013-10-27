@@ -70,6 +70,7 @@ label first_date:
     show her normal at midleft
     show him normal at midright
     with dissolve
+    show overlay night
     "Afterwards, he asked me if I would come to a barbeque at his house that evening. I thought there was going to be a lot of people, but it ended up being just him and his parents."
     "It wasn't too awkward, though - we all pitched in to make dinner and then sat on the porch swing and talked and watched the stars come out."
     "Something about the way he said my name gave me shivers - the good kind."

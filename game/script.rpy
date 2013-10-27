@@ -27,6 +27,7 @@ image bg workshop = "bg/workshop.jpg"
 image bg ocean = "bg/ocean.jpg"
 image bg storehouse = "bg/storehouse.jpg"
 image bg community_center = "bg/community-center.jpg"
+image overlay night = "bg/night.png"
 
 # Declare characters used by this game .
 define her = DynamicCharacter("her_name", color="#7264d5", image="her")
