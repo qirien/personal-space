@@ -2249,7 +2249,71 @@ label monthly_event_19:
     return
 
 label monthly_event_20:
-    scene bg farm_interior with fade
+    # TODO: Would this be better as an event-evening or other monthly event?
+    scene bg bedroom with fade
+    show her at quarterright
+    with dissolve
+
+    "I decided to surprise [his_name] with a few candles lit near our bed and some soft music playing, and I wore the sexiest thing I owned. But it didn't go how I had planned..."
+    show him at midleft with moveinleft
+    him flirt "Oh! Wow, you look really hot..."
+    him sad "...but I'm kind of in a hurry, I gotta go fix something before the wind totally breaks it apart."
+    her concerned "You don't have fifteen minutes for me?"
+    him normal "Well, yeah, if you can wait until I get this done. You don't mind, do you?"
+    her angry "Yes I mind! I've been sitting here waiting for you for hour! Aren't you going to do anything about it?"
+    him angry "Look, I just can't right now! I'll be back in after I fix this!"
+    hide him
+    "He left."
+    show her concerned at center
+    "I waited."
+    show her annoyed at center
+    "And waited."
+    show her angry at center
+    "And waited."
+    scene bg black with fade
+    "Finally, I just went to sleep."
+    scene bg bedroom with fade
+    show her at midleft
+    show him at center
+    with dissolve
+    show overlay night
+    "I half awoke in the middle of the night to [his_name] snuggling up to me and nuzzling my ear."
+    her concerned "Wha-huh?"
+    him annoyed "I'm home..."
+    her "Welcome home...and good night."
+    him flirt "You don't want to stay up for just fifteen more minutes?"
+    her annoyed "I'm not up to begin with. I'm still asleep. Zzzzzz..."
+    him normal "Mmm, you're so sexy..."
+    menu:
+        "What should I do?"
+        "Wake up and snuggle":
+            her flirt "I just can't say no to you..."
+            him flirt "Why would you want to?"
+            her surprised "Did you get everything fixed up outside?"
+            him sad "Yeah, sorry it took so long; that wind is awful."
+            her flirt "You're awful, to keep me waiting so long."
+            him flirt "I know, I better be extra good to you."
+            her happy "Ohhh, you are good..."
+            "[his_name] was definitely worth waking up for."
+            $ made_love += 1
+            $ loved += 2
+            $ relaxed += 2
+        "Go back to sleep":
+            her concerned "I'm so sleepy..."
+            him sad "..."
+            her normal "But I love you."
+            him normal "I love you too, [her_name]."
+            "He kissed me one last time, and then held me close as I fell back asleep."
+            $ loved += 1
+        "Tell him off":
+            her angry "You had your chance, but you missed it. Sorry, I can't just wait around all day for you to finally decide to show up and get some action."
+            him concerned "Aww, [her_nickname]..."
+            her annoyed "Just leave me alone."
+            show him angry at midright with dissolve
+            him "Fine."
+            "We lay there, both angry, not saying anything, for a long time, before I finally got back to sleep."
+            $ loved -= 2
+            $ relaxed -= 2
 
     return
 
@@ -2283,7 +2347,7 @@ label monthly_event_22:
     scene bg farm_interior with fade
     return
 
-# Climax - epic conflict leading to either "We'll always be together" or "I just want to get away from you!"  Conflict: Worried about new baby, pregnant if made_love a lot or affair with Brennan, otherwise "we never make love"
+# Climax - epic conflict leading to either "We'll always be together" or "I just want to get away from you!"  Conflict: Worried about new baby, pregnant if made_love a lot or affair with Brennan, otherwise some other conflict?!
 label monthly_event_23:
     scene bg farm_interior with fade
     show her at center with dissolve
@@ -2323,7 +2387,8 @@ label monthly_event_23:
             him angry "Brennan!"
             her "Do you know of anyone else?!"
             him concerned "Well...I've done a C-section on a cow before, so I could probably help out."
-            her concerned "Mrs. Blair could probably help, too...I can just use local anaesethetic, so I can stay conscious and instruct you guys... but I sure hope we never have to do that."
+            her surprised "A cow? That's not very reassuring."
+            her concerned "Mrs. Blair could probably help, too...I can just use local anaesethetic, so I can stay conscious and instruct you... but I sure hope we never have to do that."
             him concerned "We'll do what we have to."
         
         her "What are we going to do with the baby during the day?"
@@ -2339,8 +2404,9 @@ label monthly_event_23:
         him "Well, maybe we'll take turns, depending on what's going on at work, if you wanted to pump milk so the baby can still eat."
         her concerned "It sounds pretty weird, but I guess we should probably save the formula for emergencies, huh?"
         him surprised "Pumping milk is not any weirder than milking cows, right?"
-        her annoyed "...You did not just compare me, your wife, to a cow."
-        him normal "Sorry, cows are just what I know. I've never been a dad before. But people do it all the time, so how hard can it be?"
+        her annoyed "...You did not just compare me to a cow."
+        him normal "Sorry, cows are just what I know. I've never been a dad before!"
+        him happy "But people do it all the time, so how hard can it be?"
         if (community_level >= 20):
             her normal "You're right...and our community is so close-knit, I'm sure one of the other moms will help me out if I need it."
         else:
@@ -2371,171 +2437,216 @@ label monthly_event_23:
             "I had a sudden fear, right in my lower belly. I couldn't be pregnant, right? I mean, we always used birth control..."
             if (cheated_on_him):
                 her "(Except for that one time with Brennan...)"
+
+        scene bg clinic
         "I went to the doctor. I had to know for sure."
-        her annoyed "(They didn't have enough room for a few more condoms, but there's plenty of pregnancy tests...)"
+        her annoyed "(They didn't have enough room to bring a long a few more condoms, but there's plenty of pregnancy tests...)"
         "Sure enough, the test read positive."
         her "(I can't believe this...)"
+
+        scene bg farm_interior
+        show her at midright
+        show him at midleft with moveinright
         "I had to tell [his_name]. As soon as he came into the house, I blurted it out."
         her "I'm pregnant!"
         if (want_kids or (loved >= -5)):
-            him "Really? That's great!"
+            him happy "Really? That's great!"
             if (want_kids):
-                her "I know! I didn't think it would happen so fast..."
+                her happy "I know! I just didn't think it would happen so fast..."
             else:
-                her "..."
-                him "I mean, well, I guess we had planned on having a baby later, right? But there's no reason why it wouldn't work out now!"
-                her "I'm not ready, [his_name]!"
+                her concerned "..."
+                him concerned "I mean, well, I guess we had planned on having a baby later, right? But there's no reason why it wouldn't work out now!"
+                her sad "I'm not ready, [his_name]!"
                 him "Can we just try it, [her_nickname]? I'll work hard with you, to take care of this little baby, and take care of you, too."
                 her "..."
-            him "Think of it as another adventure - we didn't know what this planet was really going to be like until we got here, right?"
-            him "What if we had never come here - we would have missed out on so much!"
-            her "I guess when you think about it, it's not that scary. I mean, people have been having babies since, well, forever, so it can't be too hard..."
-            him "Yeah! That's the spirit! We can do this!"
+            him normal "Think of it as another adventure - we didn't know what this planet was really going to be like until we got here, right?"
+            him surprised "What if we had never come here - we would have missed out on so much!"
+            her normal "I guess when you think about it, it's not that scary. I mean, people have been having babies since, well, forever, so it can't be too hard..."
+            him happy "Yeah! That's the spirit! We can do this!"
             "Could this really work out? I guess we could try..."
             if (cheated_on_him):
-                "He didn't need to know that the baby might be Brennan's - it would ruin what we had."
-                $ loved -= 1
+                menu:
+                    "He didn't need to know that the baby might be Brennan's, right?"
+                    "He doesn't need to know":
+                         "(He doesn't need to know; it would ruin what we have.)"
+                         $ loved -= 5
+                    "He should know":
+                        "(He should know, but... can I bring myself to tell him about it?)"
+                        her concerned "[his_name], there's something you should know..."
+                        him concerned "What is it?"
+                        her sad "I did something really stupid. I mean, it was just one mistake, but it's the kind of thing that's hard to forgive, so I just want you to know that I'm really sorry, and it's not your fault."
+                        him concerned "Just tell me, okay? Whatever it is, we'll work it out."
+                        her concerned "I...slept with Brennan. One time. It was a huge mistake, and I feel terrible about it, and I'm sure it will be hard to forgive me, but...will you please try?"
+                        him angry "..."
+                        her surprised "?"
+                        him annoyed "I'm... glad you told me."
+                        her "You're...glad?"
+                        him concerned "I mean...I'm also furious and ashamed and humiliated and annoyed, but I'm at least glad I found out from you and not someone else."
+                        her concerned "Do you think you can forgive me?"
+                        him sad "Not right now. Just...give me time."
+                        scene bg black
+                        "Things were very awkward around the house for awhile..."
+                        scene farm_interior with fade
+                        show her at midleft
+                        show him at quarterright
+                        with dissolve
+                        her surprised "Umm, [his_name], I think it's your turn to make dinner...but I could do it instead!"
+                        him sad "No, it's okay, I'll do it."
+                        her sad "..."
+                        him sad "..."
+                        him angry "How are you going to make sure it doesn't happen again?"
+                        her surprised "What?"
+                        him concerned "I mean, you guys have to work together every day, right? So how will you make sure that never happens again?"
+                        her sad "My word isn't enough?"
+                        him sad "Not anymore."
+                        her surprised "Well, I can make sure I'm not in that sort of situation again... I won't go to his house without other people around, and..."
+                        him concerned "What else?"
+                        her surprised "When we're not working, I'll make sure we're around other people...like maybe I'll see if I can have lunch with Sarah or something."
+                        him normal "That could work."
+                        her sad "..."
+                        #TODO: workplace scene where she tells Brennan about this
+                        scene bg black with fade
+                        "I thought I should talk to Brennan, too."
+                        if (profession == "doctor"):
+                            scene bg clinic with fade
+                        elif (profession == "crafter"):
+                            scene bg workshop with fade
+                        elif (profession == "mechanic"):
+                            scene bg machine_shop with fade
+                        elif (profession == "teacher"):
+                            scene bg classroom with fade
+
+                        show her at quarterleft
+                        show brennan at midright
+                        brennan "Good morning, [her_name]. Sleep well?"
+                        her "Hey, good morning..."
+                        brennan "What is it?"
+                        her concerned "It's never going to happen again."
+                        brennan "What isn't?"
+                        her "You and me... doing anything that's not work."
+                        brennan "Ah. Did your husband forbid you from being friends with me?"
+                        her surprised "What? No, {b}I{/b} decided that we should be more distant, because I don't want to make that mistake again."
+                        brennan "Oh, I see, I'm a mistake."
+                        her annoyed "Don't make this harder than it is!"
+                        brennan "I don't like how he treats you."
+                        her angry "What are you talking about?! He's forgiving me, even though I totally betrayed him and our marriage!"
+                        brennan "Don't you have any freedom? He's just being selfish, and not letting you follow your heart. You can't tell me I mean nothing to you..."
+                        her annoyed "Is that what it will take for you to believe me?"
+                        brennan "You won't say it."
+                        her angry "You. Mean. Nothing. To. Me."
+                        brennan "..."
+                        her sad "I'm sorry...but I have to do this. I can't be alone with you outside of work - even if nothing happens, I don't want it to look like something's going on between us."
+                        brennan "Sure. Fine. No problem."
+                        her concerned "Are you sure?"
+                        brennan "Just bloody drop it, all right?!"
+                        her surprised "Okay, okay."
+                        scene bg black with fade
+                        "Even after I worked things out with Brennan, I could tell [his_name] still hadn't forgiven me..."
+                        scene bedroom with fade
+                        show overlay night
+                        show her at quarterleft
+                        show him at quarterright
+                        with dissolve
+                        her normal "Good night, [his_nickname]..."
+                        him concerned "Good night."
+                        her sad "..."                 
+                        scene bg black
+                        "But finally, after about two weeks of walking on eggshells..."
+                        scene farm_exterior with fade
+                        show overlay night
+                        show her at midleft
+                        show him at quarterright
+                        her "Welcome home, [his_nickname]."
+                        him "It's good to be home, [her_nickname]."
+                        "When he hugged me, for the first time in way too long, that was when I knew everything would be okay. Things weren't back to normal; I don't know if they ever would be like they had been. But they were okay."
+                        $ loved += 5
+                        return
                 
             her "I never thought of myself as a mother, you know."
             him "Doesn't mean we can't do it. Humans are made to be parents, right?"
-            her "At least I have you..."
+            her flirt "At least I have you..."
             "He held me tight, cradling my head in his hand. I relaxed onto his shoulder, and he placed tiny kisses on my neck."
             "We really did need each other..."
             $ loved += 2
+            $ made_love += 1
 
         # loved < -5
         else:
-            $ loved -= 2
-            him "Oh, great, that's just what this marriage needs."
-            her "What?!"
-            him "I mean, you and I can barely get along as it is, and the last thing we need is something else to argue about."
-            her "Hey, it's not like I got pregnant by myself! You're half responsible, too!"
-            him "Yeah, probably."
-            her "What's that supposed to mean?!"
+            him annoyed "Oh, great, that's just what this marriage needs."
+            her annoyed "What?!"
+            him angry "I mean, you and I can barely get along as it is, and the last thing we need is something else to argue about."
+            her angry "Hey, it's not like I got pregnant by myself! You're half responsible, too!"
+            him concerned "Yeah, probably."
+            her surprised "What's that supposed to mean?!"
             if (cheated_on_him):
-                him "Are you having an affair with Brennan?"
-                her "(Oh no.)"
+                him surprised "Are you having an affair with Brennan?"
+                her surprised "(Oh no.)"
                 menu:
                     "What should I say?"
                     "No":
-                        her "No."
-                        him "\"No\"? That's it?"
+                        her annoyed "No."
+                        him annoyed "\"No\"? That's it?"
                         her "That's it."
                         him "Hmph."
+                        "I could tell he didn't believe me. And now he didn't trust me to tell the truth, either."
+                        "We didn't talk much after that. We tried to pretend nothing was wrong, but I didn't know what else to do."
+                        $ loved -= 5
                     "Yes":
-                        her "...yes."
-                        him "What!"
+                        her sad "...yes."
+                        him angry "What!"
                         her "I mean, it was just that one time, but..."
-                        him "When did you- Never mind, I don't want to know."
-                        him "I can't believe this..."
-                        her "I'd say I'm sorry, but it's clear he loves me more than you ever will."
-                        him "It's clear, huh? He's that good?"
-                        her "It's not just about the sex!"
+                        him concerned "When did you- Never mind, I don't want to know."
+                        him angry "I can't believe this..."
+                        her annoyed "I'd say I'm sorry, but it's clear he loves me more than you ever will."
+                        him annoyed "It's clear, huh? He's that good?"
+                        her angry "It's not just about the sex!"
                         him "Sure it's not."
                         her "I mean, not just that. He listens to me! He has time for me."
-                        him "Yeah, because he's a useless prick! He doesn't even know how to do anything useful, so they had you babysitting him! Guess that's like having the sheep babysit the wolf..."
-                        her "Look, I was going to say I was sorry, but what's the point?! Clearly, you are done with this relationship."
-                        him "Clearly, there was never much of a relationship here to begin with. I'm sorry for not seeing it sooner."
+                        him angry "Yeah, because he's a useless prick! He doesn't even know how to do anything useful, so they had you babysitting him! Guess that's like having the sheep babysit the wolf..."
+                        her angry "Look, I was going to say I was sorry, but what's the point?! Clearly, you are done with this relationship."
+                        him angry "Clearly, there was never much of a relationship here to begin with. I'm sorry for not seeing it sooner."
                         "We didn't talk much after that. We both knew it was over, but we kept pretending nothing had happened..."
-                                   
+
                     "What about you?":
-                        her "Are {b}you{/b} having an affair with Thuc?"
-                        him "What? Of course not."
-                        her "Well, that's how ridiculous your suggestion is. So drop it."
-                        him "...Okay."
+                        her concerned "Are {b}you{/b} having an affair with Thuc?"
+                        him surprised "What? Of course not."
+                        her normal "Well, that's how ridiculous your suggestion is. So drop it."
+                        him annoyed "...Okay."
+                        "I wasn't sure if he believed me or not. But he started acting more distant, and I felt he didn't trust me."
                                    
-            # if you haven't cheated on him, just lacked sex:
-            elif (made_love < 4):
-                him "We sure haven't had a lot of sex lately. So is it really mine?"
-                her "Of course it is. It's not like I've had sex with anyone else!"
-                him "..."
-                her "Wait, you haven't-"
-                him "Haven't what?"
+            # if you haven't cheated on him
+            else:
+                him concerned "I just know we've always been really careful. So is it really mine?"
+                her annoyed "Of course it is. It's not like I've had sex with anyone else!"
+                him sad "..."
+                her surprised "Wait, you haven't-"
+                him surprised "Haven't what?"
                 her "You haven't cheated on me, have you?"
-                him "...No."
+                him sad "...No."
                 her "What's with the pause there?"
-                him "I thought about it, but decided not to."
-                her "You thought about it?!"
+                him concerned "I thought about it, but decided not to."
+                her annoyed "You thought about it?!"
                 him "There was an...opportunity, but I told her no."
-                her "Who was it?"
-                him "It was-"
-                her "No, no, don't tell me. I don't want to know."
+                her surprised "Who was it?"
+                him annoyed "It was-"
+                her annoyed "No, no, don't tell me. I don't want to know."
                 him "I mean, I know we don't always agree, but we promised to stay together. I'm yours, [her_name]."
                 her "Show me."
                 "He approached me slowly. Had it been so long that it seemed strange? My heart beat fast like it did when we were first dating."
                 "I hadn't realized how much I missed him. I missed his touch, his need, his soft kisses on my back, everything we had ever shared together."
                 "Together, we remembered it all."
-                $ loved += 2
+                $ loved += 5
                 
-    # Didn't make love much and didn't cheat on him
+    # Not pregnant, Didn't make love much and didn't cheat on him
     else:
-        # TODO: Would this be better as an event-evening or other monthly event?
-        scene bg bedroom with fade
-        show her at quarterright
+        scene bg farm_interior
+        show her at midright
         show him at midleft
         with dissolve
 
-        "I decided to surprise [his_name] with a few candles lit near our bed and some soft music playing, and I wore the sexiest thing I owned. But it didn't go how I had planned..."
-        him flirt "Oh! Wow, you look really hot..."
-        him sad "...but I'm kind of in a hurry, I gotta go fix something before the wind totally breaks it apart."
-        her concerned "You don't have fifteen minutes for me?"
-        him normal "Well, yeah, if you can wait until I get this done. You don't mind, do you?"
-        her angry "Yes I mind! I've been sitting here waiting for you for hour! Aren't you going to do anything about it?"
-        him annoyed "I...guess we could."
-        her annoyed "Wow, that's romantic."
-        him angry "Look, I just can't right now! I'll be back in after I fix this!"
-        hide him
-        "He left."
-        show her concerned at center
-        "I waited."
-        show her annoyed at center
-        "And waited."
-        show her angry at center
-        "And waited."
-        scene bg black with fade
-        "Finally, I just went to sleep."
-        scene bg bedroom with fade
-        show her at midleft
-        show him at center
-        with dissolve
-        show overlay night
-        "I half awoke in the middle of the night to [his_name] snuggling up to me and nuzzling my ear."
-        her concerned "Wha-huh?"
-        him annoyed "I'm home..."
-        her "Welcome home...and good night."
-        him flirt "You don't want to stay up for just fifteen more minutes?"
-        her annoyed "I'm not up to begin with. I'm still asleep. Zzzzzz..."
-        him normal "Mmm, you're so sexy..."
-        menu:
-            "What should I do?"
-            "Wake up and snuggle":
-                her flirt "I just can't say no to you..."
-                him flirt "Why would you want to?"
-                her surprised "Did you get everything fixed up outside?"
-                him sad "Yeah, sorry it took so long; that wind is awful."
-                her flirt "You're awful, to keep me waiting so long."
-                him flirt "I know, I better be extra good to you."
-                her happy "Ohhh, you are good..."
-                "[his_name] was definitely worth waking up for."
-                $ made_love += 1
-                $ loved += 2
-                $ relaxed += 2
-            "Go back to sleep":
-                her concerned "I'm so sleepy..."
-                him sad "..."
-                her normal "But I love you."
-                him normal "I love you too, [his_name]."
-                "He kissed me one last time, and then held me close as I fell back asleep."
-                $ loved += 1
-            "Tell him off":
-                her angry "You had your chance, but you missed it. Sorry, I can't just wait around all day for you to finally decide to show up and get some action."
-                him concerned "Aww, [her_nickname]..."
-                her annoyed "Just leave me alone."
-                show him angry at midright with dissolve
-                him "Fine."
-                "We lay there, both angry, not saying anything, for a long time, before I finally got back to sleep."
-                $ loved -= 2
-                $ relaxed -= 2
+        him sad "There's...something I should tell you."
+        her surprised "What is it?"
+        
     
     return
 

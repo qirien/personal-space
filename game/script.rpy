@@ -91,6 +91,11 @@ define community_level = 0 # how successful is the colony?
 # Variables about skills.  On a scale from 0-100, how skilled is the character?  These are now defined in dse.rpy
 
 # Variables about our characters and their relationship
+
+# Variables that need to be initialized before anything else
+init -200:
+    define month = 0
+
 define known_each_other = ""
 define profession = ""
 define father_attitude = ""

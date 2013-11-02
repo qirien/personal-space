@@ -10,9 +10,12 @@ label relax_together_0:
     her "It looks so small..."
     him "Remember how small Talam's sun looked from Earth?"
     her "That seems so long ago..."
+    "We held hands and walked together, and though I felt so small in the universe, I knew [his_name] and I had a place with each other."
     $ relaxed += 5
+    $ loved += 1
     return
 
+# Onsen
 label relax_together_1:
     scene bg farm_interior with fade
     play music "music/Will.ogg" fadeout 2.0
@@ -32,17 +35,17 @@ label relax_together_1:
             her "How about dinner first? You can think of it as an appetizer..."
             him "Hmmm, you're very appetizing."
             "We played footsie under the table while we ate and gave each other suggestive looks. Dinner didn't last very long..."
-            $ loved += 5
+            $ loved += 3
             $ made_love += 1
         "Dessert first.":
             her "Life is short; eat dessert first!"
             "And what a dessert it was..."
-            $ loved += 5
+            $ loved += 3
             $ made_love += 1
         "No dessert tonight.":
             her "I think I'd rather skip dessert tonight..."
             him "Oh...okay. Sure, let's just eat dinner."
-            $ loved -= 5
+            $ loved -= 3
     "Afterwards, we packed up our towels and toiletries and headed down to the bathhouse."
     "We built a fire to heat up one of the tubs of water, and took turns washing off and then soaking in the small tub."
     "It felt so good to soak and relax together."
@@ -52,6 +55,7 @@ label relax_together_1:
         $ relaxed += 5
     return
 
+# Skinny dipping!
 label relax_together_2:
     scene bg pond with fade
     "We went on a moonlight walk to the river. We found a spot where the water was deeper and slower, and sat down. I put my head on his shoulder, breathing in the cool night air."
@@ -284,7 +288,7 @@ label relax_together_6:
             him "What am I, king of the faeries?"
             her "And I'm the queen! All the insects will obey our orders!"
             him "Maybe if those orders include eating everything in sight!"
-            $loved += 5
+            $ loved += 2
             
         "Make matching flower bracelets.":
             him "Glad to see those weeds are getting some practical use!"
@@ -293,7 +297,7 @@ label relax_together_6:
             her "Yes. I'll fulfill all your wishes... in your dreams."
             him "Ooo, harsh. But being with you is like a dream come true, so does that mean you'll fulfill my wishes here?"
             "You get in a tickle fight, and one of your flower bracelets falls off. It was fun while it lasted."
-            $loved += 5
+            $ loved += 2
             $ made_love += 1
                 
     $ skill_creative += 5
@@ -461,7 +465,8 @@ label relax_together_12:
     $ loved += 2
     return
 
-# Random events that can happen multiple times
+# Events that can happen in any order. 
+# TODO: Add more of these.
 
 label relax_together_a:
     scene bg bedroom with fade
@@ -501,6 +506,42 @@ label relax_together_e:
 label relax_together_f:
     scene bg farm_interior with fade
     "We made a nice dinner together, and talked while we ate slowly, watching the sun go down."
+    $ relaxed += 5
+    $ loved += 2
+    return
+
+label relax_together_g:
+
+    $ relaxed += 5
+    $ loved += 2
+    return
+
+label relax_together_h:
+
+    $ relaxed += 5
+    $ loved += 2
+    return
+
+label relax_together_i:
+
+    $ relaxed += 5
+    $ loved += 2
+    return
+
+label relax_together_j:
+
+    $ relaxed += 5
+    $ loved += 2
+    return
+
+label relax_together_k:
+
+    $ relaxed += 5
+    $ loved += 2
+    return
+
+label relax_together_l:
+
     $ relaxed += 5
     $ loved += 2
     return

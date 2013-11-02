@@ -66,14 +66,16 @@ init python:
                event.is_month_odd()) #odd months only
 
     # Default relaxation events; choose one of these randomly every even month
-    for letter in range(ord('a'),ord('f')+1):
+    for letter in range(ord('a'),ord('l')+1):
         event ("relax_together_" + unichr(letter),
                "act == 'act_relax_together'",
                event.choose_one("relax_together_random"),
+               event.once(),
                event.is_month_even()) #even months only
         event ("relax_alone_" + unichr(letter),
                "act == 'act_relax_alone'",
                event.choose_one("relax_alone_random"),
+               event.once(),
                event.is_month_even()) #even months only
 
 

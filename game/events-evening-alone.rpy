@@ -143,6 +143,22 @@ label relax_alone_8:
     return
 
 label relax_alone_9:
+    scene bg farm_interior
+    show him at midleft
+    show her at midright
+    with dissolve
+
+    him "You want to watch a movie or something?"
+    her "Nah, I think I want to do something by myself tonight."
+    him "Okay, I've got some things I want to work on, too."
+    her "You don't mind, do you?"
+    him "No, not really. But I do like when we can do things together."
+    her "I do, too, but after being around people all day, sometimes I just need to be alone."
+    him "Heh, yeah, I feel kind of the opposite. I'm usually alone all day, so at night I'd rather do something with someone..."
+    her "Maybe you could hang out with someone else sometimes?"
+    him "Yeah, maybe I'll see if Thuc wants to do something."
+    "I felt better knowing I wasn't [his_name]'s only friend..."
+
     $ relaxed += 5
     $ loved -= 2
     return
@@ -160,7 +176,8 @@ label relax_alone_12:
     $ relaxed += 5
     return
 
-# Random events that can happen more than once
+# Events that can happen in any order
+# TODO: Add more of these.
 
 label relax_alone_a:
     scene bg farm_interior
@@ -199,6 +216,42 @@ label relax_alone_e:
 label relax_alone_f:
     scene bg path
     "I took a walk and thought about the future."
+    $ relaxed += 5
+    $ loved -= 2
+    return
+
+label relax_alone_g:
+
+    $ relaxed += 5
+    $ loved -= 2
+    return
+
+label relax_alone_h:
+
+    $ relaxed += 5
+    $ loved -= 2
+    return
+
+label relax_alone_i:
+
+    $ relaxed += 5
+    $ loved -= 2
+    return
+
+label relax_alone_j:
+
+    $ relaxed += 5
+    $ loved -= 2
+    return
+
+label relax_alone_k:
+
+    $ relaxed += 5
+    $ loved -= 2
+    return
+
+label relax_alone_l:
+
     $ relaxed += 5
     $ loved -= 2
     return

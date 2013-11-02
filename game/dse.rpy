@@ -16,7 +16,7 @@ init python:
 
     dp_period("Job Focus", "job_focus_act")
     dp_choice("Focus on Work", "act_work")
-    dp_choice("Take it Easy", "act_skip_work")
+    dp_choice("Take it Easy", "act_skip_work", (month>1))
 
     dp_period("Skill Focus", "skill_focus_act")
     dp_choice("Domestic", "act_domestic")
@@ -78,6 +78,7 @@ label day:
 
     "It's year %(year)d, month %(local_month)d. We've been here %(month)d months. It's [season]. The weather is [weather]."
     # TODO: comment out this debugging code
+    # TODO: Play a season-specific sound (like rain or wind)?
     "Loved = [loved], Relaxed = [relaxed], community_level = [community_level], made_love = [made_love]"
 
     # Here, we want to set up some of the default values for the
