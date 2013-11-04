@@ -58,7 +58,7 @@ label relax_alone_1:
             her "Maybe her spirit can be closer to you, now that her body has passed on."
             sara "You mean... like if the soul could travel through space?"
             her "Sure, why not?"
-            sara "I don't know if it's true, but... thinking that does help me to feel a little closer to her."
+            sara "I don't know if it's true, but... that's cool to think about."
         "What's the difference?":
             her "What's the difference? You couldn't be together before, and you can't now."
             sara "Well, the difference is now she's dead, so there's nothing there to connect with."
@@ -120,13 +120,16 @@ label relax_alone_5:
     $ loved -= 2
     return
 
+# Re-read a childhood book
 label relax_alone_6:
     scene bg bedroom
-    "I didn't mean to read the whole thing, but when I picked up one of my favorite books from my childhood I just had to finish it. It wasn't as exciting and unpredictable as I remembered, but I still love the characters and the writing swept me in as I read through the whole thing."
+    "I didn't mean to read the whole thing, but when I started reading one of my favorite books from my childhood I just had to finish it."
+    "It wasn't as exciting and unpredictable as I remembered, but I still love the characters, and the writing swept me in as I read through the whole thing."
     $ relaxed += 5
     $ loved -= 2
     return
 
+# Family photos
 label relax_alone_7:
     scene bg farm_interior
     "I looked through some old photos of my family. The places, the people - they all felt so unreal. I'd probably never see them again."
@@ -137,11 +140,13 @@ label relax_alone_7:
 
 # These probably won't be seen, so make them simple.
 label relax_alone_8:
-    "I listened to some music - I didn't do anything else while listening, just lay back and really listened. It made me think of summer vacation back home, just lying back and reading books in the shade, going swimming, and drinking lemonade. What would our kids' summers be like?"
+    "I listened to some music - I didn't do anything else while listening, just lay back and really listened."
+    "It made me think of summer vacation when I was a teenager back home, just lying back and reading books in the shade, going swimming, and drinking lemonade. What would our kids' summers be like?"
     $ relaxed += 5
     $ loved -= 2
     return
 
+# He does things by himself sometimes, too.
 label relax_alone_9:
     scene bg farm_interior
     show him at midleft

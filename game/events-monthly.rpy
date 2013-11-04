@@ -10,80 +10,80 @@ label monthly_event_0:
 # MONTH 1 - Chore allocation
 label monthly_event_1:
     scene bg farm_interior with fade
-    show her normal at center
-    show him normal at right
+    show her normal at midleft
+    show him normal at midright
     play music "music/You.ogg" fadeout 2.0
     "Our first month living on our own together, we had to work a lot of things out."
     "Like, do we eat breakfast together, or separately? Who should cook and clean up?"
     menu:
         "What should I do about breakfast today?"
         "Make some for [his_name]":
-            her "Here, [his_name], I made you some breakfast."
-            him "Oh, thank you. I could just make it myself, you know."
-            her "I don't mind making breakfast."
+            her normal "Here, [his_name], I made you some breakfast."
+            him happy "Oh, thank you. I could just make it myself, you know."
+            her happy "I don't mind making breakfast."
             $ loved += 2
         "Ask if he wants some":
-            her "So, I'm making breakfast...do you want some?"
-            him "Oh, that'd be great, thanks."
+            her normal "So, I'm making breakfast...do you want some?"
+            him normal "Oh, that'd be great, thanks."
             her "Still just meal rations, until the crops start coming in."
             him "Yeah, it will be a while still."
             $ loved += 2
         "Don't make him any":
-            him "Oh, you made breakfast?"
+            him surprised "Oh, you made breakfast?"
             her "Sorry, I just made some for me."
-            him "Okay, I can get my own."
+            him annoyed "Okay, I can get my own."
             $ loved -= 2
     
     "That set the pattern for our mornings. Dishes weren't as easy to work out, though."
-    her "Thanks for making dinner, but you left the dirty dishes on the stove."
-    him "I was going to do them later."
-    her "You can't save them for later; they'll attract pests!"
+    her concerned "Thanks for making dinner, but you left the dirty dishes on the stove."
+    him annoyed "I was going to do them later."
+    her annoyed "You can't save them for later; they'll attract pests!"
     him "Well, I thought that since I made dinner, maybe you would do the dishes."
     her "In my house, whoever made the mess cleaned up the mess."
     him "Well, this is {b}our{/b} house, now."
     menu:
         "We'll do it your way":
-            her "Okay, we'll do it your way. Whoever cooks, the other person cleans up afterwards."
-            him "Great, that will work."
+            her normal "Okay, we'll do it your way. Whoever cooks, the other person cleans up afterwards."
+            him normal "Great, that will work."
             "But it didn't work..."
-            her "When were you going to do those dishes?"
-            him "Those? I'm getting around to it."
-            her "They're not going to clean themselves! Since I cooked, it's your turn to wash them!"
-            him "Okay, but I'm not doing it right now, I'm in the middle of something."
+            her annoyed "When were you going to do those dishes?"
+            him annoyed "Those? I'm getting around to it."
+            her angry "They're not going to clean themselves! Since I cooked, it's your turn to wash them!"
+            him angry "Okay, but I'm not doing it right now, I'm in the middle of something!"
             "When we went to bed they were still there."
-            her "Honey? You haven't done the dishes yet."
-            him "Oh, I'm too tired, I'll do it in the morning."
+            her annoyed "Hey, [his_nickname]? You haven't done the dishes yet."
+            him concerned "Oh, I'm too tired, I'll do it in the morning."
             "But the next morning, I found..."
                 
         "We'll do it my way":
-            her "Let's do it my way. Whoever cooks, cleans up afterwards."
-            him "I guess that will work."
+            her normal "Let's do it my way. Whoever cooks, cleans up afterwards."
+            him annoyed "I guess that will work."
             "But it didn't work..."
-            her "Are you going to make dinner tonight?"
-            him "What? I wasn't planning on it..."
-            her "But I made dinner last night."
-            him "I'm not that hungry."
+            her surprised "Aren't you going to make dinner tonight?"
+            him surprised "What? I wasn't planning on it..."
+            her annoyed "But I made dinner last night."
+            him annoyed "I'm not that hungry."
             "{b}I{/b} was hungry, so I just made dinner for myself. It felt a little lonely, though, eating by myself while he was poring over his charts for the farm. Still, I cleaned up and settled down to relax."
             her "(If he gets hungry he can make his own dinner.)"
             "I fell asleep early, and awoke the next morning to find..."
                 
         "{i}I'll be in charge of dishes{/i}" if (skill_domestic >= 10):
-            her "Promptly cleaned dishes are really important to me, so why don't I be in charge of that? We can either take turns cooking, or cook together."
-            him "Thanks, I really can't stand doing dishes. I'd rather do almost anything else."
-            her "Like getting the water for our breakfast?"
-            him "Yeah, I'll do that."
-            her "Thank you; I hate going outside first thing in the morning."
+            her normal "Promptly cleaned dishes are really important to me, so why don't I be in charge of that? We can either take turns cooking, or cook together."
+            him happy "Thanks, I really can't stand doing dishes. I'd rather do almost anything else."
+            her surprised "Like getting the water for our breakfast?"
+            him normal "Yeah, I'll do that."
+            her normal "Thank you; I hate going outside first thing in the morning."
             "So that worked out pretty well."
             $loved += 5
             return
 
         "{i}Let's take turns fairly{/i}" if (skill_knowledge >= 10):
-            her "Did you know that men who do more housework are generally happier in their marriages?"
-            him "According to who?"
-            her "There's also a study correlating amount of housework done with frequency of sex."
-            him "What exactly are you trying to say?"
-            her "Just thought you might find those studies interesting. In a totally abstract way."
-            him "It sounds like splitting household chores is really important to you."
+            her surprised "Did you know that men who do more housework are generally happier in their marriages?"
+            him surprised "According to who?"
+            her flirt "There's also a study correlating amount of housework done with frequency of sex."
+            him annoyed "What exactly are you trying to say?"
+            her normal "Just thought you might find those studies interesting. In a totally abstract way."
+            him normal "It sounds like splitting household chores is really important to you."
             her "It is. We both work hard all day in different ways. We don't have to each do half of everything, but I think there will be less chance for arguments if we decide ahead of time what each person will do."
             him "All right, let's make a list, then."
             "We listed all the household chores we could think of, and then marked each one as \"hate\", \"enjoy\" or \"meh\". It turned out that he really hated doing dishes, so I agreed to do them all the time, and since I was not a morning person, he would make breakfast every morning. We worked out the other chores, too."
@@ -93,10 +93,10 @@ label monthly_event_1:
 
     scene black with fade
     #if nobody did the dishes, pest problems!
-    #show her upset at center
-    #show him upset at right
     play music "music/Prelude02.ogg" fadeout 1.0
     her "AAAAAAAAAAAAAAAHHHHHH!!!!"
+    show her surprised at midleft
+    show him surprised at midright with moveinright
     him "What is it?! What's wrong?"
     scene bg farm_interior with fade
     "I just pointed to the dirty dishes. Coiled around his mess kit, happily nibbling on bits of leftover food, was a long, flat, segmented creature with innumerable legs and dangerous-looking claws. It was at least as long as my arm."
@@ -105,35 +105,35 @@ label monthly_event_1:
     menu:
         "I..."
         "Yelled":
-            her "THAT is why you don't leave dirty dishes out overnight!!!"
-            him "Okay! How was I supposed to know this planet had giant leftover-eating millipedes?"
+            her angry "THAT is why you don't leave dirty dishes out overnight!!!"
+            him angry "Okay! How was I supposed to know this planet had giant leftover-eating millipedes?"
             her "It's pretty obvious! Every planet has its scavengers!"
-            him "Calm down, [her_name]. I'll take care of it."
+            him annoyed "Calm down, [her_name]. I'll take care of it."
             $relaxed -= 5
         "Cried":
             "I started sobbing."
-            her "This would have never happened if you hadn't left out those dirty dishes!"
-            him "Hey, hey, it's okay, here, I'll take care of it."
+            her sad "This would have never happened if you hadn't left out those dirty dishes!"
+            him concerned "Hey, hey, it's okay, here, I'll take care of it."
             $relaxed -= 5
         "Laughed" if (relaxed >= 5):
-            her "Ha ha ha ha ha ha...\nWho invited the millipede to breakfast?"
-            him "Sorry about that. He seemed like such a nice fellow last night..."
-            her "I'm afraid he's worn out his welcome. Perhaps you could gently escort him off the premises?"
-            him "It would be my pleasure."
+            her laughing "Ha ha ha ha ha ha...\nWho invited the millipede to breakfast?"
+            him happy "Sorry about that. He seemed like such a nice fellow last night..."
+            her happy "I'm afraid he's worn out his welcome. Perhaps you could gently escort him off the premises?"
+            him normal "It would be my pleasure."
             
         "{i}Analyzed{/i}" if (skill_knowledge >= 10):
-            her "Interesting. It's legs are jointed like an arthropod, but those claws look more crustacean ... of course, arthropods and crustaceans are not that far apart from each other... how did it get inside, anyway?"
-            him "I think it crawled under the front door. There's quite a gap there."
+            her surprised "Interesting. It's legs are jointed like an arthropod, but those claws look more crustacean ... of course, arthropods and crustaceans are not that far apart from each other... how did it get inside, anyway?"
+            him normal "I think it crawled under the front door. There's quite a gap there."
             her "Huh. Looks like it's an omnivore; it ate the protein and the vegetables..."
             him "Well, whatever it is, we should put it back outside."
         "{i}Stayed calm{/i}" if (skill_spiritual >= 10):
-            her "Oh...my. That is...gigantic."
-            him "No kidding. Hold on, I'll get him out of here."
+            her surprised "Oh...my. That is...gigantic."
+            him concerned "No kidding. Hold on, I'll get him out of here."
     "He put on his work gloves and picked up the mess kit by the handle. I opened the door so he could take it outside."
     him "C'mon, George, time to take a hike."
-    her "George?! You're giving this thing a name?"
-    him "Doesn't he look like a George to you? Besides, I accidentally invited him in with my mess, so I guess he's my pet."
-    her "As long as he's an outside pet."
+    her surprised "George?! You're giving this thing a name?"
+    him happy "Doesn't he look like a George to you? Besides, I accidentally invited him in with my mess, so I guess he's my pet."
+    her annoyed "As long as he's an outside pet."
 
     "The dishes were never left undone after that."
     return
@@ -142,44 +142,44 @@ label monthly_event_1:
 label monthly_event_2:
     play music "music/You.ogg" fadeout 2.0
     scene bg farm_exterior with fade
-    show him normal at left
+    show him normal at midright
+    show her normal at midleft
+    with dissolve
+
     him "It'll sure be nice when we have some fresh food to eat."
-    show her normal at center
-    her "I know; I'm so tired of MREs!"
+    her annoyed "I know; I'm so tired of MREs!"
     him "It won't take too long until the radishes, spinach, and maybe even carrots are ready."
-    #show her worried at center
-    her "We don't have a refrigerator..."
+    her concerned "We don't have a refrigerator..."
     him "No, I was thinking of digging a cellar, but I just haven't had time...preparing the fields has taken longer than I thought."
     menu:
         "The cellar...?"
         "I'll do it!":
-            her "Don't worry about the cellar; I'll take care of it!"
-            him "Whoa, whoa, that's a big job - why don't we work on it together?"
-            her "That does sound better, actually."
+            her happy "Don't worry about the cellar; I'll take care of it!"
+            him concerned "Whoa, whoa, that's a big job - why don't we work on it together?"
+            her normal "That does sound better, actually."
             "We dug and hauled out dirt and dug and hauled until finally we had a small cellar to store food in! We were exhausted, but it felt good to get it done together."
             $ loved += 5
             $ skill_physical += 5
 
         "{i}I'll surprise him...{/i}" if (skill_physical >= 10):
-            her "We have time; don't worry about it yet."
+            her normal "We have time; don't worry about it yet."
             "I started digging after work, thinking I could get a lot dug before he came home, but..."
-            him "Nice hole. Are you going to plant something in it?"
-            her "No, it's going to be our cellar."
-            him "Oh."
+            him happy "Nice hole. Are you going to plant something in it?"
+            her annoyed "No, it's going to be our cellar."
+            him surprised "Oh."
             her "..."
-            him "Why don't we work on it together?"
+            him normal "Why don't we work on it together?"
             "We dug and hauled out dirt and dug and hauled until finally we had a small cellar to store food in! We were exhausted, but it felt good to get it done together."
             $ loved += 5
             $ skill_physical += 5
 
         "{i}I'll help with the farm while you dig.{/i}" if (skill_domestic >=10):
-            her "Why don't you let me take care of the farm while you dig it?"
-            him "Well...That could work. There's a lot of weeds that need pulling; I'll show you how to do the watering with the irrigation ditches I have set up."
-            her "I can do that."
+            her surprised "Why don't you let me take care of the farm while you dig it?"
+            him normal "Well...That could work. There's a lot of weeds that need pulling; I'll show you how to do the watering with the irrigation ditches I have set up."
+            her normal "I can do that."
             him "You can even...you can take Lettie if you want to."
-            #show her laughing at center
-            her "Wow, you're trusting me with your favorite horse? I'm touched."
-            him "I wouldn't trust anyone else."
+            her laughing "Wow, you're trusting me with your favorite horse? I'm touched."
+            him annoyed "I wouldn't trust anyone else."
             scene bg fields with fade
             "I rode Lettie around, scouting the fields for weeds. I had never noticed how big the farm was before -- [his_name] takes care of a lot of plants!"
             "It took longer than I thought, and I ended up helping him haul out a lot of the dirt he dug, but then we had our very own cellar!"
@@ -188,17 +188,17 @@ label monthly_event_2:
 
         "{i}Maybe I could build something to help.{/i}" if (skill_technical >= 10):
             her "Maybe I could build something to help dig the cellar?"
-            him "Really? That would be cool."
+            him surprised "Really? That would be cool."
             "I researched and designed a simple machine with buckets and pulleys for getting the dirt up out of the hole. I was able to take one of the solar panels from the roof and power it with electricity."
-            him "Oh, this will make it a lot faster!"
+            him happy "Oh, this will make it a lot faster!"
             "He dug in the hole, and I moved the dirt from where the machine dumped it to go on top of the roof of the cellar, which effectively made it deeper faster."
             "Even though it took a long time, it was kind of fun to work on it together."
             $ loved += 5
             $ skill_technical += 5
 
         "{i}Maybe the Peron's would help us dig it?{/i}" if (skill_social >= 10):
-            her "Maybe the Peron's would help us dig ours, and we could help them dig a cellar, too?"
-            him "That would be great; it'll be more efficient with a few more people."
+            her surprised "Maybe the Peron's would help us dig ours, and we could help them dig a cellar, too?"
+            him happy "That would be great; it'll be more efficient with a few more people."
             "I talked to the Peron's and they thought that sounded great, so we were able to help each other have a cellar to store food in. They also gave us some eggs from their chickens, who were acclimatizing to Talam nicely."
             $ skill_social += 5
             $ community_level += 5
@@ -217,21 +217,24 @@ label monthly_event_3:
     play music "music/Prelude22.ogg" fadeout 2.0
     "Even though we were on a new planet, we still kept track of what day it was on the Earth calendar. The seasons didn't match up or anything, but it helped us feel like we were still a part of things back home."
     scene bg farm_interior with fade
-    show her normal at center
+    show her normal at midleft with dissolve
 
     her "It's his birthday this month!"
     menu:
         "Maybe I should do something for him..."
         "{i}Have a party{/i}" if (skill_social >= 20):
+            show brennan at left
+            #show sara at right
+            #show ilian at quarterright
+            show him normal at midright
             "I invited some friends over and we ate dinner together and played games together until late. We sang Happy Birthday to [his_name]."
-            show him normal at right
-            him "Thanks, [her_name] - what a great birthday!"
+            him happy "Thanks, [her_name] - what a great birthday!"
         "{i}Make delicious food{/i}" if (skill_domestic >= 20):
             "I couldn't really copy his bread-cake that he made on the shuttle for my birthday, but I was determined to make him something tasty."
             "I found some berries that I had eaten before, and combined them with some biscuits from our rations to make a sort of berry shortcake. We had some candles in our emergency case, so I lit one of those for him, too."
-            show him normal at right
-            her "Happy birthday, [his_name]"            
-            him "Wow! Thank you! This looks great!"
+            show him normal at midright
+            her happy "Happy birthday, [his_name]"            
+            him happy "Wow! Thank you! This looks great!"
             "It didn't taste anything like strawberry shortcake, but it was still good, and [his_name] seemed to like it."
             
         "{i}Make him a present{/i}" if (skill_creative >= 20):
@@ -239,24 +242,23 @@ label monthly_event_3:
             "I finally decided I would make him a hat."
             "I could only work on it when he wasn't paying attention, so it went pretty slowly. Finally, I was able to finish it."
             "I hoped he would actually like it, and not just pretend that he liked it."
-            show him normal at right
-            her "Happy birthday, [his_name]. This is for you."
-            him "A birthday present?! Wow, thanks!"
-            him "This hat is perfect! It'll keep the sun off my neck and it'll be warm in the cold wind, too!"
-            her "I'm so glad you like it."
+            show him normal at midright
+            her normal "Happy birthday, [his_name]. This is for you."
+            him surprised "A birthday present?! Wow, thanks!"
+            him happy "This hat is perfect! It'll keep the sun off my neck and it'll be warm in the cold wind, too!"
+            her happy "I'm so glad you like it."
         "Make him a card":
             "I made him a nice card and gave it to him on his birthday."
-            show him normal at right
-            him "What's this for?"
-            her "Today's your birthday! On the Earth calendar."
-            him "Oh! I hadn't thought about the Earth calendar for a while! I forgot; thank you!"
-            her "Sorry I couldn't really get you anything."
-            him "It's okay; I have everything I need right here."
-            
+            show him normal at midright
+            him surprised "What's this for?"
+            her happy "Today's your birthday! On the Earth calendar."
+            him happy "Oh! I hadn't thought about the Earth calendar for a while! I forgot; thank you!"
+            her sad "Sorry I couldn't really get you anything."
+            him flirt "It's okay; I have everything I need right here."
         "Just tell him happy birthday":
             "I figured it'd be a waste of resources to make him anything special. We had what we needed. But I did tell him happy birthday, and he seemed to like that."
-            show him normal at right
-            him "Thanks for remembering my birthday."
+            show him at midright
+            him normal "Thanks for remembering my birthday."
         "I'm not doing anything":
             "He probably didn't even remember his birthday. Birthdays are dumb, anyway."
             "When his birthday came around, he didn't say anything about it, so I guess I was right."
@@ -270,10 +272,10 @@ label monthly_event_3:
 #helper function for month 4 for a commonly used conversation tree
 label unappreciated:
     play music "music/Prelude02.ogg" fadeout 2.0
-    her "It's none of your business what I do in my spare time."
-    him "Well, it just seems kind of like a waste of time when there's so much real work to be done."
-    her "Real work?! You don't think I do real work?!"
-    him "Real work provides food, clothing, shelter. The necessities. We don't have extra time for anything else in order for the colony to survive."
+    her annoyed "It's none of your business what I do in my spare time."
+    him annoyed "Well, it just seems kind of like a waste of time when there's so much real work to be done."
+    her angry "Real work?! You don't think I do real work?!"
+    him angry "Real work provides food, clothing, shelter. The necessities. We don't have extra time for anything else in order for the colony to survive."
     her "If it's just about survival, life isn't worth living."
     him "Well, you don't even get a choice if you don't survive. If something goes wrong, who's going to help us out here? There's no food banks, no Red Cross, no emergency rooms - just us."
     $ relaxed -= 10
@@ -281,110 +283,113 @@ label unappreciated:
     $ community_level -= 10
     menu:
         "You're freaking me out":
-            her "[his_name], you're freaking me out. Are we going to die out here?"
-            him "Maybe. But, live or die, it's up to us. Our hard work, or lack of it, will determine our fate."
-            her "That's so scary."
+            her sad "[his_name], you're freaking me out. Are we going to die out here?"
+            him annoyed "Maybe. But, live or die, it's up to us. Our hard work, or lack of it, will determine our fate."
+            her concerned "That's so scary."
             him "At least we are in control. If we die, it's our own damn fault."
         "We can't focus on that all the time":
-            her "That's true, but we can't be working on food, clothes, and shelter twenty-four hours a day. If you don't take a break and think about other things once in a while, you'll go insane."
-            him "Survival is mostly what I'm thinking about. Every day."
-            her "Well, I can't live that way."
+            her concerned "That's true, but we can't be working on food, clothes, and shelter twenty-four hours a day. If you don't take a break and think about other things once in a while, you'll go insane."
+            him annoyed "Survival is mostly what I'm thinking about. Every day."
+            her annoyed "Well, I can't live that way."
             him "Well, hopefully you won't die that way."
         "I can't talk about this anymore":
-            her "Stop it, I can't talk about this anymore."
-            him "Well, just think about what I said. Are we going to live or die?"
-            her "I said stop it!"
-            her "I don't want to die..."
-            him "Then you need to choose to live."
+            her sad "Stop it, I can't talk about this anymore."
+            him annoyed "Well, just think about what I said. Are we going to live or die?"
+            her angry "I said stop it!"
+            her sad "I don't want to die..."
+            him annoyed "Then you need to choose to live."
     return
 
 # MONTH 4 - Are Hobbies a Waste of Time?
 label monthly_event_4:
-    scene bg farm_interior with fade
-    show her normal at center
-    show him normal at right
+    scene bg farm_exterior with fade
+    show her normal at midleft
+    show him normal at midright
+    with dissolve
 
     $ highest_skill = highest_stat()
     if (highest_skill == "Domestic"):
-        him "You spend a lot of time around the house; what exactly do you do?"
+        him surprised "You spend a lot of time around the house; what exactly do you do?"
         menu:
             "What do I do?"
             "You really don't know?":
-                her "What do I do?! You really haven't noticed?"
-                him "I don't know; I'm sure you're doing something useful, I'm just not sure what."
-                her "Well, have you noticed those clean clothes you're wearing?"
-                him "Oh, yeah, you washed those, huh?"
-                her "And I've planted an herb garden out front to add flavor to our meals, and for herbal teas and things."
-                him "Okay, that sounds good. Sorry, I didn't meant to accuse, I just really was curious what projects you've been working on."
+                her annoyed "What do I do?! You really haven't noticed?"
+                him annoyed "I don't know; I'm sure you're doing something useful, I'm just not sure what."
+                her annoyed "Well, have you noticed those clean clothes you're wearing?"
+                him surprised "Oh, yeah, you washed those, huh?"
+                her normal "And I've planted an herb garden out front to add flavor to our meals, and for herbal teas and things."
+                him normal "Okay, that sounds good. Sorry, I didn't meant to accuse, I just really was curious what projects you've been working on."
             "What do {b}you{/b} do?":
-                her "What have {b}you{/b} been doing lately? You've been reading a lot."
-                him "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they will grow."
-                her "Okay, well, that sounds very... necessary."
-                her "I've made some curtains and planted an herb garden, in addition to keeping the house pretty spotless."
+                her surprised "What have {b}you{/b} been doing lately? You've been reading a lot."
+                him normal "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field."
+                him "I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they will grow."
+                her concerned "Okay, well, that sounds very... necessary."
+                her normal "I've made some curtains and planted an herb garden, in addition to keeping the house pretty spotless."
                 him "Oh, is that what those plants are? The house is really clean, too; thank you."
             "It's none of your business.":
                 jump unappreciated
 
     elif (highest_skill == "Creative"):
-        him "You spend a lot of time making crafts, don't you?"
+        him surprised "You spend a lot of time making crafts, don't you?"
         menu:
             "Do I?"
             "It's important.":
-                her "I think it's important to know how to make things with what we have on this new planet."
+                her normal "I think it's important to know how to make things with what we have on this new planet."
                 him "Like what kinds of things?"
                 her "I made those placemats that keep our table clean, and I'm learning how to crochet. When our warm clothes from Earth wear out, we'll need to know how to make new ones with the resources we have."
-                him "That's true...we can't just go to the store and buy stuff anymore, can we? Sorry, I didn't meant to accuse, I just really was curious what projects you've been working on."
+                him normal "That's true...we can't just go to the store and buy stuff anymore, can we? Sorry, I didn't meant to accuse, I just really was curious what projects you've been working on."
             "{b}You{/b} spend a lot of time reading":
-                her "What about you? You've been reading a lot lately."
-                him "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
-                her "That sounds useful."
-                her "I've been learning how to make things out of native materials, like these placemats."
-                him "Oh, that's good. I want us to be independent from Earth; that's important."
+                her surprised "What about you? You've been reading a lot lately."
+                him normal "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
+                her normal "That sounds useful."
+                her happy "I've been learning how to make things out of native materials, like these placemats."
+                him "Oh, good. It's important for us to be independent from Earth."
             "You don't appreciate what I do":
                 jump unappreciated
     elif (highest_skill == "Technical"):
-        him "You spend a lot of time tinkering with things, don't you?"
+        him surprised "You spend a lot of time tinkering with things, don't you?"
         menu:
             "Do I?"
             "It's important":
-                her "When things break, we can't just take them to a repair shop. I try and keep everything in good condition so it won't break."
-                him "Like what?"
-                her "Well, I installed the antenna that lets us communicate with the town, and the screw that brings water into the house."
-                him "Yeah, I'm really glad to have those. Sorry, I didn't meant to accuse, I just really was curious what projects you've been working on."
+                her annoyed "When things break, we can't just take them to a repair shop. I try and keep everything in good condition so it won't break."
+                him surprised "Like what?"
+                her normal "Well, I installed the antenna that lets us communicate with the town, and the screw that brings water into the house."
+                him normal "Yeah, I'm really glad to have those. Sorry, I didn't meant to accuse, I just really was curious what projects you've been working on."
             "What do {b}you{/b} do?":
-                her "What have {b}you{/b} been doing lately? You've been reading a lot."
-                him "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
-                her "Okay, well, that sounds very... necessary."
-                her "I installed the antenna that lets us talk with the village, and the device that brings water into the house."
-                him "I love those; thank you."
+                her annoyed "What have {b}you{/b} been doing lately? You've been reading a lot."
+                him normal "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
+                her concerned "Okay, well, that sounds very... necessary."
+                her normal "I installed the antenna that lets us talk with the village, and the device that brings water into the house."
+                him happy "I love those; thank you."
             "I can't believe you don't appreciate me":
                 jump unappreciated
 
     elif (highest_skill == "Spiritual"):
-        him "You spend a lot of time just thinking about stuff, don't you?"
+        him surprised "You spend a lot of time just thinking about stuff, don't you?"
         menu:
             "Do I?"
             "It's important":
-                her "So many things have changed, I think it's important to have a reason to work hard and help each other out."
-                him "Like what?"
-                her "Well, from my studies I've learned how important it is to answer someone with love, even if they are being insensitive or unappreciative."
-                him "...You probably have a lot of opportunities to practice that, don't you?"
-                her "Well...yes. I think studying these principles helps me to get along better with others and work unselfishly."
-                him "That is important. Sorry, I didn't meant to accuse, I just really was curious what you've been learning."
+                her normal "So many things have changed, I think it's important to have a reason to work hard and help each other out."
+                him surprised "Like what?"
+                her flirt "Well, from my studies I've learned how important it is to answer someone with love, even if they are being insensitive or unappreciative."
+                him flirt "...You probably have a lot of opportunities to practice that, don't you?"
+                her happy "Well...yes. I think studying these principles helps me to get along better with others and work unselfishly."
+                him normal "That is important. Sorry, I didn't meant to accuse, I just really was curious what you've been learning."
             "What do {b}you{/b} do?":
-                her "What have {b}you{/b} been doing lately? You've been reading a lot."
-                him "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
-                her "Okay, well, that sounds very... necessary."
-                her "I've been learning about how important it is to answer someone with love, even if they are being insensitive or unappreciative."
-                him "That {b}is{/b} important."
-                her "I'm not that good at it yet, though."
-                him "I could probably use some reminders of that, too. Want to show me what you've been reading?"
-                her "Sure, let's read together."
+                her surprised "What have {b}you{/b} been doing lately? You've been reading a lot."
+                him normal "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
+                her normal "Okay, well, that sounds very... necessary."
+                her flirt "I've been learning about how important it is to answer someone with love, even if they are being insensitive or unappreciative."
+                him flirt "That {b}is{/b} important."
+                her sad "I'm not that good at it yet, though."
+                him normal "I could probably use some reminders of that, too. Want to show me what you've been reading?"
+                her happy "Sure, let's read together."
             "I can't believe you don't appreciate me":
                 jump unappreciated
 
     elif (highest_skill == "Social"):
-        him "You spend a lot of time just hanging out with friends, don't you?"
+        #TODO: finish adding emotions
+        him surprised "You spend a lot of time just hanging out with friends, don't you?"
         menu:
             "Do I?"
             "It's important":
@@ -2248,90 +2253,20 @@ label monthly_event_19:
 
     return
 
-label monthly_event_20:
-    # TODO: Would this be better as an event-evening or other monthly event?
-    scene bg bedroom with fade
-    show her at quarterright
-    with dissolve
-
-    "I decided to surprise [his_name] with a few candles lit near our bed and some soft music playing, and I wore the sexiest thing I owned. But it didn't go how I had planned..."
-    show him at midleft with moveinleft
-    him flirt "Oh! Wow, you look really hot..."
-    him sad "...but I'm kind of in a hurry, I gotta go fix something before the wind totally breaks it apart."
-    her concerned "You don't have fifteen minutes for me?"
-    him normal "Well, yeah, if you can wait until I get this done. You don't mind, do you?"
-    her angry "Yes I mind! I've been sitting here waiting for you for hour! Aren't you going to do anything about it?"
-    him angry "Look, I just can't right now! I'll be back in after I fix this!"
-    hide him
-    "He left."
-    show her concerned at center
-    "I waited."
-    show her annoyed at center
-    "And waited."
-    show her angry at center
-    "And waited."
-    scene bg black with fade
-    "Finally, I just went to sleep."
-    scene bg bedroom with fade
-    show her at midleft
-    show him at center
-    with dissolve
-    show overlay night
-    "I half awoke in the middle of the night to [his_name] snuggling up to me and nuzzling my ear."
-    her concerned "Wha-huh?"
-    him annoyed "I'm home..."
-    her "Welcome home...and good night."
-    him flirt "You don't want to stay up for just fifteen more minutes?"
-    her annoyed "I'm not up to begin with. I'm still asleep. Zzzzzz..."
-    him normal "Mmm, you're so sexy..."
-    menu:
-        "What should I do?"
-        "Wake up and snuggle":
-            her flirt "I just can't say no to you..."
-            him flirt "Why would you want to?"
-            her surprised "Did you get everything fixed up outside?"
-            him sad "Yeah, sorry it took so long; that wind is awful."
-            her flirt "You're awful, to keep me waiting so long."
-            him flirt "I know, I better be extra good to you."
-            her happy "Ohhh, you are good..."
-            "[his_name] was definitely worth waking up for."
-            $ made_love += 1
-            $ loved += 2
-            $ relaxed += 2
-        "Go back to sleep":
-            her concerned "I'm so sleepy..."
-            him sad "..."
-            her normal "But I love you."
-            him normal "I love you too, [her_name]."
-            "He kissed me one last time, and then held me close as I fell back asleep."
-            $ loved += 1
-        "Tell him off":
-            her angry "You had your chance, but you missed it. Sorry, I can't just wait around all day for you to finally decide to show up and get some action."
-            him concerned "Aww, [her_nickname]..."
-            her annoyed "Just leave me alone."
-            show him angry at midright with dissolve
-            him "Fine."
-            "We lay there, both angry, not saying anything, for a long time, before I finally got back to sleep."
-            $ loved -= 2
-            $ relaxed -= 2
-
-    return
-
 # TODO: trouble sleeping?
-label monthly_event_21:
-
+label monthly_event_20:
     scene bg bedroom with fade
     show her at midright
     show him at midleft
     with dissolve
 
     if (is_pregnant):
-        "One night I lay down for bed, and, of course, that's when the baby decides to practice martial arts in my bladder."
+        "One night I lay down for bed, and, of course, that's when the baby decides to practice martial arts on my bladder."
         her annoyed "Not again..."
         him surprised "Everything okay?"
         her normal "I can't sleep while I'm being pummeled from the inside."
         "He put his hand on my belly and felt the tiny movements."
-        him happy "Wow, that's a lot of energy!"
+        him happy "Wow, that's an energetic kid!"
         her sad "I'm just so tired..."
         him sad "Have you not been sleeping well?"
         her "Every time I fall asleep, something wakes me up in an hour or two. Either I have to use the bathroom, or the baby's moving, or my back hurts, or, worst of all, it's morning."
@@ -2339,6 +2274,85 @@ label monthly_event_21:
     else:
         "I'd had trouble sleeping lately."
 
+    
+    return
+
+# Early frost kills lots of crops
+# uses knowledge, technical, social
+label monthly_event_21:
+    scene bg farm_interior with fade
+    "The weather was usually fairly mild on Talam. It didn't snow in the winter, and the summer was hot but not unbearable. It was much colder near the poles, of course, but we were near the equator and the ocean."
+    "But today was a lot colder than usual."
+    show her at midright
+    show him at midleft
+    with dissolve
+    him concerned "It was so cold today... with no clouds, either. Dr. Lily says it might freeze..."
+    her surprised "Well, we have our heater, so we'll be fine, right? Do we need to chop some more wood?"
+    him "Yeah, maybe - but it's not us I'm worried about."
+    her flirt "Oh, is it going to be too cold for Lettie? Maybe she'd like to sleep in bed with us?"
+    him annoyed "Of course not. Horses are incredibly strong and can handle the cold no problem. It's the quinoa that might not make it."
+    her surprised "The quinoa?"
+    him normal "Well, I planted it a week ago. Even though it's technically still winter here, we don't have any records of freezing weather in this area, so I thought it would be safe..."
+    her "Is there anything we can do?"
+    him "Well, that's what I'm thinking about."
+    menu:
+        "What should we do?"
+        "Cover the quinoa" if (skill_knowledge >= 60):
+            her normal "Can we cover it up with blankets or something?"
+            him normal "Yeah, that's one of the things I was thinking of, but I don't think we have enough fabric to cover very many plants."
+            her "Well, we don't have to use fabric."
+            him surprised "What do you think we should use?"
+            her "Anything insulating that breathes well - paper, cloth, wood, cardboard, baskets..."
+            him annoyed "There's tons of that stuff on Earth, but how much do we have here?"
+            if (skill_social >= 60):
+                her "The whole colony should help - I'll ask around and get everyone to give us what they can."
+                "Everyone let us use their sheets, curtains, towels, and extra clothes. I was going to have to wash them before I gave them back, but it would be worth it."
+            else:
+                her "I'll ask at the storehouse."
+                "They had some surplus fabric, clothes, blankets, and towels, and they said we could use them as long as we washed them and brought them back afterwards."
+            scene bg fields with fade
+            "We worked all afternoon covering up the acres of plants."
+            show overlay night
+            "We were still working when it started getting dark. We worked until about midnight, when we had finally covered up all the plants."
+            "We kept the covers on for several nights until the danger of freezing had passed."
+        "Build a fire near the quinoa":
+            her surprised "Could we use fire to keep it warm?"
+            him surprised "What, like have a bunch of bonfires in the fields all night long?"
+            her sad "Sorry, that's probably a dumb idea..."
+            him annoyed "No, it could work... We'll need a lot of fuel, though."
+            scene bg fields with fade
+            if (skill_social >= 60):
+                "We got some of our neighbors to help us gather wood and stacked it in piles near the crops."
+            else:
+                "We worked all afternoon gathering wood and branches and stacking them near the crops."
+            show overlay night
+            "Then we stayed up all night tending the fires."
+            "We slept all day, and did the same thing the next night, until finally the freezing weather had passed."
+            $ relaxed -= 5
+        "Make a crop heater" if (skill_technical >= 60):
+            her "I bet I could make something that would help the crops stay warm..."
+            him "Let's draw it out together."
+            "We did some research, and decided on a combination heater and blower system. We made a fan out of spare parts from the shuttle, and decided to just light a fire for the heat part."
+            scene bg fields with fade
+            "The fan blew the hot air over the crops, hopefully drying out any dew before it froze on them, and keeping the plants warm enough that their cells wouldn't freeze."
+            "But one fan wouldn't be enough... We didn't have time to build more, but I did build a rotating stand so it could rotate and blow across a wider angle of plants."
+            show overlay night
+            "I got up several times in the night to check on the fan while [his_name] tended the fire, so we were pretty tired the next day."
+            "We repeated this every night for a few days, until the danger of freezing had passed."
+        "It's not my problem":
+            her concerned "That's too bad, but it's not really my problem."
+            him angry "What, you don't want to have food to eat?"
+            her angry "That's your job."
+            him angry "You're no help at all."
+            "I felt a little bad, but what could I do? I was no farmer..."
+            "Anyway, he and Thuc figured something out, I guess, because he was gone all night and I saw the plants a little later and they looked fine."
+            $ loved -= 5
+            
+    him normal "I think the quinoa should be safe, now."
+    if (loved >= 0):
+        him happy "Thanks for all your help, [her_name]."
+        $ loved += 2
+    her concerned "Yay... now I'm going to sleep for a week."  
 
     return
 
@@ -2646,7 +2660,7 @@ label monthly_event_23:
 
         him sad "There's...something I should tell you."
         her surprised "What is it?"
-        
+        # TODO: Finish this
     
     return
 
