@@ -91,7 +91,7 @@ label physical_1:
         "I'll be more careful.":
             her "I'll be more careful next time."
             him "Next time?! Are you planning on doing that again?!"
-            her "Of course. I want to know what's out there, just a few miles from our house. Who knows, maybe I'll find something useful?"
+            her "Of course. I want to know what's out there, just a few kilometers from our house. Who knows, maybe I'll find something useful?"
             him "Maybe you'll find something lethal!"
             menu:
                 him "Maybe you'll find something lethal!"

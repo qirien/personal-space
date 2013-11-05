@@ -760,7 +760,7 @@ label work_6:
     her "Oh no, I forgot my lunch."
     brennan "I was just going to go home for lunch; do you want to join me?"
     her "No, it's okay, I can just walk home and get something."
-    brennan "That's a mile each way; you won't have any time to cook and eat anything. Come on, I'll fix you something. It's the least I can do for you, after all you've done for me."
+    brennan "That's two kilometers each way; you won't have any time to cook and eat anything. Come on, I'll fix you something. It's the least I can do for you, after all you've done for me."
     her "Well..."
     menu:
         "What should I say?"
