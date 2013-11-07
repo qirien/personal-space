@@ -182,17 +182,17 @@ label knowledge_8:
     "I also asked them to play music from a playlist that I picked to go with that artist."
     "Soon, the museum night arrived."
     scene bg community_center with fade
-    "It seemed like the whole colony had turned out for the event."
     image greatwave = "sprites/art-greatwave.png"
-    image pearlearring = "sprites/art-pearlearring.png"
+    image pearlearring = "sprites/art-girlpearlearring.png"
     image starrynight = "sprites/art-starrynight.png"
     image viewfromkremlin = "sprites/art-viewfromkremlin.png"
 
-    show greatwave at Position(xpos=100,ypos=100)
-    show pearlearring at Position(xpos=200,ypos=100)
-    show starrynight at Position(xpos=300,ypos=200)
-    show viewfromkremlin at Position(xpos=400,ypos=150)
+    show greatwave at Position(xpos=100,ypos=150)
+    show pearlearring at Position(xpos=950,ypos=250)
+    show starrynight at Position(xpos=500,ypos=150)
+    show viewfromkremlin at Position(xpos=800,ypos=150)
 
+    "It seemed like the whole colony had turned out for the event."
     show her normal at center
     "Some people contemplated and discussed the paintings, while others just chatted, and the little kids started playing under the stacks of chairs."
     "[his_name] came, too."

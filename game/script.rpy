@@ -147,6 +147,8 @@ label start:
             $ want_kids = True
             $ known_each_other = "six months"
             jump month01
+        "Skip to Debug Point":
+            jump knowledge_8
 
     "I thought I knew what love was. After all, that's why I married..."
     $ his_name = renpy.input("What is his name?", "Jack", length=20)
