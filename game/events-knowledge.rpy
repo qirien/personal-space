@@ -111,7 +111,8 @@ label knowledge_6:
         "Sounds fun":
             her "Sure, that sounds like a good way to get our knowledge out to the scientific community."
             lily "Great! I'll send you what I have so far, and we can discuss it in the lab tomorrow."
-            "Lily's paper was very technical, getting down to how the enzymes in these plants could still be broken down by human digestion, even though they were slightly different than earth's. She also wrote about how humans wouldn't be able to live off of Telanian plants alone, since they were missing vital nutrients."
+            "Lily's paper was very technical, getting down to how the enzymes in these plants could still be broken down by human digestion, even though they were slightly different than earth's."
+            "She also wrote about how humans wouldn't be able to live off of Telanian plants alone, since they were missing vital nutrients."
             "I felt a little out of my league when I went in to talk to Lily."
             her "I'm not much of a chemist, so I can't really help with checking most of your paper. I found a few typos, but you can easily fix those. Why did you want my help?"
             lily "Oh, I have a hard time seeing the big picture with plants. I know a lot of scientists are interested in their classification, but I'm not sure where to start."
@@ -165,9 +166,50 @@ label knowledge_7:
     $ skill_knowledge += 10
     return
 
-# Learn about new medical treatment for skin cancer, can help Mr. Peron? 
+# Turn the community center into an art museum!
 label knowledge_8:
+    "One of the things I missed about Earth was all the cultural events and places. We didn't have any museums or galleries or concerts here."
+    her "But we do have digital copies of lots of famous paintings and music...."
+    "I couldn't be the only one yearning for a night of culture and art."
+    scene bg community_center with fade
+    her "Is it okay if I use the community center for a night next week?"
+    boss "What for?"
+    her "I want to turn it into a museum for a night!"
+    boss "That sounds marvelous. I would certainly like to see it."
+    her "I'll be sure to invite everyone."
+    "I would need a lot of computer pads to be setup like paintings, so I posted on the colony message board asking for volunteers."
+    "I sent each person a different artist, and asked them to have their computer pad ready to slideshow that art on our museum night."
+    "I also asked them to play music from a playlist that I picked to go with that artist."
+    "Soon, the museum night arrived."
+    scene bg community_center with fade
+    "It seemed like the whole colony had turned out for the event."
+    image greatwave = "sprites/art-greatwave.png"
+    image pearlearring = "sprites/art-pearlearring.png"
+    image starrynight = "sprites/art-starrynight.png"
+    image viewfromkremlin = "sprites/art-viewfromkremlin.png"
 
+    show greatwave at Position(xpos=100,ypos=100)
+    show pearlearring at Position(xpos=200,ypos=100)
+    show starrynight at Position(xpos=300,ypos=200)
+    show viewfromkremlin at Position(xpos=400,ypos=150)
+
+    show her normal at center
+    "Some people contemplated and discussed the paintings, while others just chatted, and the little kids started playing under the stacks of chairs."
+    "[his_name] came, too."
+    show her normal at right
+    show him normal at quarterright with moveinleft
+    him annoyed "All right, so, tell me about this painting."
+    her surprised "Which one?"
+    him annoyed "The one with the wave. I've seen it before, but what's the big deal about it?"
+    her normal "Well, it's a pretty famous woodblock print from Japan around 1830."
+    him surprised "What's a woodblock print?"
+    her normal "Basically they would take a painting with simple colors and make stamps out of it, so they could just stamp each color onto a new piece of paper to make copies."
+    him annoyed "Okay, why did you choose this one?"
+    her concerned "Well, I like the power of the wave, and how helpless all the little people in boats are against its raw power."
+    him concerned "Hmmm."
+    him happy "Yeah, I see what you mean. I like it."
+
+    "It felt good to share some of what I loved with [his_name], and the colony."
     $ skill_knowledge += 10
     return
 
@@ -177,6 +219,7 @@ label knowledge_9:
     $ skill_knowledge += 10
     return
 
+# Learn about new medical treatment for skin cancer, can help Mr. Peron? 
 label knowledge_master:
 
     $ skill_knowledge += 10

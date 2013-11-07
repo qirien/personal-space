@@ -200,6 +200,7 @@ label relax_alone_b:
 
 label relax_alone_c:
     scene bg bedroom
+    show overlay night
     "I felt so tired, I decided to just go to bed early."
     $ relaxed += 7
     $ loved -= 2
@@ -220,19 +221,32 @@ label relax_alone_e:
 
 label relax_alone_f:
     scene bg path
-    "I took a walk and thought about the future."
+    "I took a walk near our house and thought about the future."
     $ relaxed += 5
     $ loved -= 2
     return
 
 label relax_alone_g:
-
+    scene bg library
+    "I invited Sara to come to the library with me to hang out."
+    sara "Why do they even have a library? Isn't everything just on computers?"
+    sven "Almost everything. Some things, like blueprints and maps, are easier to look at on huge rolls of paper."
+    sara "I guess so..."
+    her "You can even print things out here if you need to."
+    sven "But, make sure you recycle any papers you print out when you're done with them; we don't have a paper factory."
+    sara "Why did you want to come here, [her_name]?"
+    her "Well, back on Earth I used to like to go to bookstores and just flip through books... This isn't really the same, though."
+    sara "Oh, I just read this great book, you should take a look."
+    her "What's it about?"
+    sara "Well, there's these fish people and the fox people, and they have like this ancient feud, but then they hold a ball at the underwater palace, and these guys have to sneak in to get the Prince to sign a document...It's hard to explain, you just have to read it yourself."
+    her "That sounds interesting, at least!"
+    "We shared a few other book recommendations and talked for two hours. It felt good to get out of the house at night (even if it was just to the colony library)."
     $ relaxed += 5
     $ loved -= 2
     return
 
 label relax_alone_h:
-
+    #play a visual novel
     $ relaxed += 5
     $ loved -= 2
     return

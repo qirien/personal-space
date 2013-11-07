@@ -95,10 +95,10 @@ label monthly_event_1:
     #if nobody did the dishes, pest problems!
     play music "music/Prelude02.ogg" fadeout 1.0
     her "AAAAAAAAAAAAAAAHHHHHH!!!!"
+    scene bg farm_interior with fade
     show her surprised at midleft
     show him surprised at midright with moveinright
     him "What is it?! What's wrong?"
-    scene bg farm_interior with fade
     "I just pointed to the dirty dishes. Coiled around his mess kit, happily nibbling on bits of leftover food, was a long, flat, segmented creature with innumerable legs and dangerous-looking claws. It was at least as long as my arm."
     him "Whoa!"
 
