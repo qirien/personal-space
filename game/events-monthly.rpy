@@ -759,6 +759,7 @@ label monthly_event_7:
     her "Has it really been a whole year that we've been here?"
     him "Well, a year on this planet is only seven months, but, yeah. It's good for farming to have a shorter year, especially since the winters are so mild."
     her "Happy New Year, then!"
+    # TODO: have a new year's party?
     him "We should make a toast..."
     menu:
         "What should we toast?"
@@ -768,12 +769,15 @@ label monthly_event_7:
                 him "May we have many more years together..."
             else:
                 him "To us, then."
+            $ loved += 2
         "To the colony!":
             her "To the colony! We made it one year!"
             him "May we all survive many more!"
+            $ community_level += 2
         "To humanity!":
             her "To humanity! We're still here!"
             him "To humanity!"
+            $ relaxed += 2
         "To partying!":
             her "Here's to any excuse to party!"
             him "To partying!"
@@ -785,7 +789,7 @@ label monthly_event_8:
     "The library had a huge collection of Earth media that colonists could check out. They only had enough space for the most popular things, but it was still more media than anyone could experience in a lifetime."
     "One day I noticed they had a movie about space colonists. I was curious to see how people on Earth saw people like us, so I checked it out."
     scene bg farm_interior with fade
-    her "What do you want to do tonight? I checked out a movie that looks fun..."
+    her "Hey, [his_nickname], I got a movie for us to watch tonight."
     him "Oh, sorry, I told Thuc I'd help him build a fence tonight. He helped me build ours to keep the animals out of the crops, so I said I'd help with his."
     menu:
         "I was disappointed, but..."
@@ -815,7 +819,7 @@ label monthly_event_8:
             "Everything seemed fine the next day, but I still felt insecure."
             $ loved -= 2
 
-        "I'll help, too.":
+        "{i}I'll help, too.{/i}" if (relaxed>=0):
             her "I'll help too!"
             him "Do you really want to?"
             her "Yes, we all need to work together to succeed. Plus, I'll get to be with you."
@@ -853,7 +857,7 @@ label monthly_event_8:
             $ loved -= 5
             her "You're never here when I need you!"
             him "What are you talking about? I'm home almost every night."
-            her "But you're always on your computer; I wanted to do something together tonight."
+            her "But you're always reading; I wanted to do something together tonight."
             him "Well, I can't. I promised Thuc I'd come tonight."
             her "I'm not really important to you, am I?"
             him "What?! Of course you are!"
@@ -864,7 +868,7 @@ label monthly_event_8:
                 "Fine, just leave me here.":
                     her "Fine, just leave me here."
                     "He didn't say anything, just shook his head. I watched him leave, feeling hurt and lonely."
-                    "All I could think about was how he abandoned me. It wasn't every night I asked him to do something fun with me; why couldn't he put me first instead of his other plans?"
+                    "All I could think about was how he abandoned me. It wasn't every night I asked him to do something with me; why couldn't he put me first instead of his other plans?"
                     "I worried that maybe I was not good enough - not pretty enough, not smart enough, not strong enough - not just for him, but for this planet. What was I even doing here?"
                     "I trudged in circles through these depressing thoughts for hours."
                     scene black with fade
@@ -1091,6 +1095,7 @@ label monthly_event_10:
             him "Yeah."
         "Where have you been?!":
             her "Where have you been?! I've been waiting here for an hour!"
+            him "Sorry."
             $ loved -= 1
     "He didn't look at me, just washed his hands and sat at the table. He was reading on his computer pad while we ate dinner.  We ate in silence for a few minutes. I thought maybe I'd change the subject."
     her "Something funny happened at work today."
@@ -1544,7 +1549,7 @@ label monthly_event_12:
     her "Vacation? Not really; Dr. Lily got stung by some weird jellyfish creature, and we scraped guano off the rocks for her."
     him "I don't know; it just sounds fun to get away from everything here for a change..."
     her "Well, you should have come with us!"
-    him "I didn't have time then, but I could have done it if you waited a few weeks until the harvest was over."
+    him "I didn't have time then, but I could have done it if you waited a few weeks until that harvest was over."
     her "Well, we can go again if you really want to. Dr. Lily could always use more guano."
     him "No, I really shouldn't leave the farm."
     her "Well, then what's the big deal? It's not like it was a big fun vacation; I had to go to fix the stove."
@@ -1621,10 +1626,10 @@ label monthly_event_12:
             him "..."
             her "..."
             
-        "I can't talk to you right now":
+        "I can't talk to you right now" if (relaxed <= 0):
             her "I can't deal with this now."
             him "Fine, do what you need to."
-            "We both dealth with our problems separately. At bedtime, we kissed goodnight, but I could tell we were both engrossed in our own worries."
+            "We both dealt with our problems separately. At bedtime, we kissed goodnight, but I could tell we were both engrossed in our own worries."
             $ loved -= 2    
             return
 
@@ -2222,10 +2227,10 @@ label monthly_event_19:
                 "That led to some interesting results..."
                 $ made_love += 1
                 scene bg farm_interior
-                "But I was pretty sure I had to wear clothes to work, so I needed to try something else, too"
+                "But I was pretty sure I had to wear clothes to work, so I needed to try something else, too."
                 $ relaxed += 2
                 jump maternity_clothing
-            "Ask around" if (skill_social >= 60):
+            "{i}Ask around{/i}" if (skill_social >= 60):
                 "I knew Helen was also expecting, so I decided to send her a message and see what she had done."
                 her "Hey, Helen, what are you doing for maternity clothes?"
                 helen "Oh, I just made a big tent dress out of a hospital gown. It doesn't look very good, but it's very comfortable."

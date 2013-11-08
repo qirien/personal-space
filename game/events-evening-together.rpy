@@ -45,7 +45,7 @@ label relax_together_1:
         "No dessert tonight.":
             her "I think I'd rather skip dessert tonight..."
             him "Oh...okay. Sure, let's just eat dinner."
-            $ loved -= 3
+            $ loved -= 5
     "Afterwards, we packed up our towels and toiletries and headed down to the bathhouse."
     "We built a fire to heat up one of the tubs of water, and took turns washing off and then soaking in the small tub."
     "It felt so good to soak and relax together."
@@ -165,7 +165,7 @@ label relax_together_4:
     show her normal at right
     her "Are you okay?"
     him "Yeah, I'm just really sore from all the digging I've been doing lately."
-    if ((relaxed < 0) or (loved < 0)):
+    if (relaxed < 0):
         her "Yeah, I feel pretty tense, too."
         "I could have rubbed his shoulders, I guess, but I was just too tired."
 
@@ -246,6 +246,7 @@ label relax_together_5:
             her "..."
             $ loved -= 2
 
+    "The food wasn't anything special, but somehow it tasted better combined with a beautiful sunset. Afterwards he gathered up the dishes and walked a little ways away."
     him "Come sit down over here, it's softer."
     her "Is this our mattress?! You were planning this all along!"
     him "It never hurts to be prepared..."
@@ -277,34 +278,50 @@ label relax_together_5:
     "We lay there for a long time...In the morning, it felt so good to wake up next to him, watching the sky lighten. With one final kiss, we got up and carried everything back to the house together."
     return
 
-# Daisy-chain circlet of wildflowers
+# Baby names
 label relax_together_6:
-    scene bg fields with fade
-    "I was weeding in the backyard when I found some wildflowers. They reminded me of clover, so I made a daisy-chain circlet out of them. It was fun."
-    menu:
-        "Make one for [his_name] too.":
-            him "It looks like you had some fun this afternoon."
-            her "I made one for you too!"
-            him "What am I, king of the faeries?"
-            her "And I'm the queen! All the insects will obey our orders!"
-            him "Maybe if those orders include eating everything in sight!"
-            $ loved += 2
-            
-        "Make matching flower bracelets.":
-            him "Glad to see those weeds are getting some practical use!"
-            her "Well, jewelry isn't exactly practical, but it is fun."
-            him "Shall I address you as Queen Mab from now on?"
-            her "Yes. I'll fulfill all your wishes... in your dreams."
-            him "Ooo, harsh. But being with you is like a dream come true, so does that mean you'll fulfill my wishes here?"
-            "You get in a tickle fight, and one of your flower bracelets falls off. It was fun while it lasted."
-            $ loved += 2
-            $ made_love += 1
-                
-    $ skill_creative += 5
+    scene bg farm_interior with fade
+    if (is_pregnant or want_kids):
+        "We were talking about what it would be like when we did have a baby, and soon we started talking about baby names."
+    else:
+        "Somehow, we started talking about baby names."
+
+    him "You don't like the name Ringo?"
+    her "No! It sounds like a circus master, or a cowboy, or..."
+    him "Or a totally awesome musician?"
+    her "No! It just sounds dumb!"
+    him "Well, not as dumb as Alistair. 'Hello, my name is Alistair, I'm a tap-dancing pansy who can't even button his own waistcoat."
+    her "It's refined and elegant! And there's nothing wrong with tap dancing, is there?"
+    him "No, but do you really think a kid of ours is going to be a tap dancer?"
+    her "Probably not.\nAnyway, we'll just keep looking, I bet we can find a name we both like."
+
+    $ relaxed += 5
+    $ loved += 2
+
     return
 
-# He wants to go to church services, you can go with him or not.
+# generic; maybe add a specific movie?
 label relax_together_7:
+    scene bg bedroom with fade
+    "We cuddled together while we watched a movie."
+    $ relaxed += 5
+    $ loved += 2
+    return
+
+# walk around the farm together looking at what you've created together.
+label relax_together_8 :
+    scene bg fields with fade
+    "We walked around the farm together. [his_name] showed me where all the different crops were, and told me about what kind of soil they liked and what the weeds were like."
+    her "This is like your baby, isn't it?"
+    him "Yeah, it is."
+    him "Who's the cutest widdle farm on the planet, huh? You are!"
+    "I could tell it meant a lot to him to show me everything he had been working on."
+
+    return
+
+
+# He wants to go to church services, you can go with him or not.
+label relax_together_9:
     scene bg farm_interior with fade
     him "Hey, [her_nickname], I was going to go to church services today... do you want to come?"
     menu:
@@ -405,79 +422,91 @@ label goto_church:
     return
 
 # People probably won't even see these last ones unless they always choose "Do something with [his_name]", so don't put a ton of effort into them.
-
-label relax_together_8:
-    scene bg farm_interior with fade
-    "We watched a movie together. It was pretty good, but the ending was terrible."
-    him "See, what they needed was to have the girlfriend show back up at the end--"
-    her "--leading a horde of zombie warriors! Oh, that would have been so much better!"
-    him "And what about the pterodactyl? They didn't do anything with that."
-    her "I know, I kept thinking someone was going to ride it."
-    him "I thought it was going to turn out to be a cyborg pterodactyl."
-    her "That would have been awesome!"
-    "Sometimes talking about the movie is more fun than the actual movie itself..."
-    $ relaxed += 2
-    $ loved += 2
-    return
-
-# Baby names
-label relax_together_9:
-    scene bg farm_interior with fade
-    if (is_pregnant or want_kids):
-        "We were talking about what it would be like when we did have a baby, and soon we started talking about baby names."
-    else:
-        "Somehow, we started talking about baby names."
-
-    him "You don't like the name Ringo?"
-    her "No! It sounds like a circus master, or a cowboy, or..."
-    him "Or a totally awesome musician?"
-    her "No! It just sounds dumb!"
-    him "Well, not as dumb as Alistair. 'Hello, my name is Alistair, I'm a tap-dancing pansy who can't even button his own waistcoat."
-    her "It's refined and elegant! And there's nothing wrong with tap dancing, is there?"
-    him "No, but do you really think a kid of ours is going to be a tap dancer?"
-    her "Probably not.\nAnyway, we'll just keep looking, I bet we can find a name we both like."
-
-    $ relaxed += 2
-    $ loved += 2
-    return
-
-# walk around the farm together looking at what you've created together.
 label relax_together_10:
-    scene bg fields with fade
-    "We walked around the farm together. [his_name] showed me where all the different crops were, and told me about what kind of soil they liked and what the weeds were like."
-    her "This is like your baby, isn't it?"
-    him "Yeah, it is."
-    him "Who's the cutest widdle farm on the planet, huh? You are!"
-    "I could tell it meant a lot to him to show me everything he had been working on."
-
-    return
-
-label relax_together_11:
-    scene bg bedroom with fade
-    "We started talking, and somehow I ended up telling him all about my job. Who was hard to work with, things that seemed impossible, the people I helped... it felt good to have him know what I had been working on."
-    return
-
-label relax_together_12:
     scene bg farm_interior with fade
+    "We did the dishes together, and then sat together and talked while we worked on little projects."
     him "I'm so glad we do things together all the time."
     her "Me, too. You're not just my [his_nickname]; you're also my best friend."
     $ relaxed += 5
     $ loved += 2
     return
 
-# Events that can happen in any order. 
-# TODO: Add more of these.
-
-label relax_together_a:
+label relax_together_11:
     scene bg bedroom with fade
-    "We cuddled together while we watched a movie."
+    "We started talking, and somehow I ended up telling him all about my job. Who was hard to work with, things that seemed impossible, the people I helped... it felt good to have him know what I had been working on."
     $ relaxed += 5
     $ loved += 2
     return
 
-label relax_together_b:
+label relax_together_12:
     scene bg bedroom with fade
     "We snuggled together in bed and talked softly together."
+    $ relaxed += 5
+    $ loved += 2
+    return
+
+
+# Events that can happen in any order. 
+# TODO: Add more of these.
+
+# Play games with Ilian and Sara
+label relax_together_a:
+    scene bg farm_exterior with fade
+    him "Hey, [her_name], want to go into town with me?"
+    her "You're going to town? That's a rare occasion..."
+    him "I'm taking a load of extra food to the storehouse."
+    her "Sure, I'll go with you."
+
+    scene bg path with fade
+    "We walked beside Lettie, who was pulling the wagon. We talked and laughed, and when we dropped off the food we saw Ilian and Sara."
+
+    scene bg storehouse with fade
+    her "Hey, Sara!"
+    sara "Wow, you got [his_name] to come to town? Did you pretend to be sick or something?"
+    her "No, he came on his own, believe it or not."
+    him "Hey, I'm working hard on the farm, I don't have time to come to town all the time."
+    ilian "Well, since you're here, why don't you come over and see our house?"
+    sara "Yeah, because it's SOO different from all the other prefab houses..."
+    ilian "I was trying to be nice..."
+    sara "Our house is totally boring, but maybe we can play a game or something?"
+    her "Thanks, that'd be fun! Right, [his_name]?"
+    him "..."
+    if (loved >= 0):
+        him "Sure, let's go."
+        scene bg farm_interior
+        "The four of us played Robot Turtles and Machine of Death."
+        ilian "...which is why you never saw it coming when the piano crashed down ten stories onto your head."
+        him "Ohhh! You got me! That was awesome."
+        sara "That was way better than [her_name]'s poison-in-the-toothpaste attempt."
+        her "Those were just the cards I had!"
+        $ relaxed += 5
+        $ loved += 2
+        $ community_level += 2
+    else:
+        him "Sorry, I've got to do some things at home."
+        menu:
+            "What should I do?"
+            "Go with [his_name]":
+                her "Yeah, I should probably get going, too. Maybe another time, Sara?"
+                sara "Yeah, I'll see you at lunch or something."
+                "We both worked hard on our projects at home, but at least we were together."
+                $ relaxed -= 2
+                $ loved += 2
+            "Hang out with Ilian and Sara":
+                her "Well, I'll come over, if you don't mind."
+                sara "Sure, we can play with three people."
+                her "Bye, [his_name]."
+                him "Bye..."
+                "We played some games together, but I felt a little out of place without [his_name]."
+                $ loved -= 2
+                $ relaxed += 2
+    return
+    
+
+label relax_together_b:
+    scene bg farm_interior with fade
+    "We watched a sports game together. It was hard to get too excited about it, since it happened on Earth four years ago, and I didn't feel as loyal to any of the teams now that I wasn't even on the same planet as them."
+    "But it was still fun to see their skill and see how they played so hard."
     $ relaxed += 5
     $ loved += 2
     return
@@ -510,14 +539,14 @@ label relax_together_f:
     $ loved += 2
     return
 
-# Midnight lovin'?
+# Midnight lovin'
 label relax_together_g:
     scene bg bedroom with fade
-    show her at quarterright
+    show her normal at quarterright
     with dissolve
 
     "I decided to surprise [his_name] with a few candles lit near our bed and some soft music playing, and I wore the sexiest thing I owned. But it didn't go how I had planned..."
-    show him at midleft with moveinleft
+    show him normal at midleft with moveinleft
     him flirt "Oh! Wow, you look really hot..."
     him sad "...but I'm kind of in a hurry, I gotta go fix something before the wind totally breaks it apart."
     her concerned "You don't have fifteen minutes for me?"
@@ -532,7 +561,7 @@ label relax_together_g:
     "And waited."
     show her angry at center
     "And waited."
-    scene bg black with fade
+    scene black with fade
     "Finally, I just went to sleep."
     scene bg bedroom with fade
     show her at midleft
@@ -579,16 +608,45 @@ label relax_together_g:
             $ relaxed -= 2
     return
 
+# Zombie Dinosaur Movie
 label relax_together_h:
-
+    scene bg farm_interior with fade
+    "We watched a movie together. It was pretty good, but the ending was terrible."
+    him "See, what they needed was to have the girlfriend show back up at the end--"
+    her "--leading a horde of zombie warriors! Oh, that would have been so much better!"
+    him "And what about the pterodactyl? They didn't do anything with that."
+    her "I know, I kept thinking someone was going to ride it."
+    him "I thought it was going to turn out to be a cyborg pterodactyl."
+    her "That would have been awesome!"
+    "Sometimes talking about the movie is more fun than the actual movie itself..."
     $ relaxed += 5
     $ loved += 2
     return
 
+# Daisy-chain circlet of wildflowers
 label relax_together_i:
-
-    $ relaxed += 5
-    $ loved += 2
+    scene bg fields with fade
+    "I was weeding in the backyard when I found some wildflowers. They reminded me of clover, so I made a daisy-chain circlet out of them. It was fun."
+    menu:
+        "Make one for [his_name] too.":
+            him "It looks like you had some fun this afternoon."
+            her "I made one for you too!"
+            him "What am I, king of the faeries?"
+            her "And I'm the queen! All the insects will obey our orders!"
+            him "Maybe if those orders include eating everything in sight!"
+            $ loved += 2
+            
+        "Make matching flower bracelets.":
+            him "Glad to see those weeds are getting some practical use!"
+            her "Well, jewelry isn't exactly practical, but it is fun."
+            him "Shall I address you as Queen Mab from now on?"
+            her "Yes. I'll fulfill all your wishes... in your dreams."
+            him "Ooo, harsh. But being with you is like a dream come true, so does that mean you'll fulfill my wishes here?"
+            "You get in a tickle fight, and one of your flower bracelets falls off. It was fun while it lasted."
+            $ loved += 2
+            $ made_love += 1
+                
+    $ skill_creative += 5
     return
 
 label relax_together_j:
@@ -603,7 +661,18 @@ label relax_together_k:
     $ loved += 2
     return
 
+# Horror puzzle game
 label relax_together_l:
+    scene bg farm_interior with fade
+    "We played a horror puzzle game together. We were both good at different kinds of puzzles, so we made a good team."
+    "...plus I think he liked to see me jump at all the scary parts."
+    her "AHHHHHHH!"
+    him "You didn't know that was going to happen?"
+    her "Well, I knew {b}something{/b} was going to happen, but no! Clowns don't usually have fangs!"
+    him "Hehe, it's okay, we'll beat him. If we can figure out what to type on the typewriter..."
+    her "Oh, try the first letter of each word in the clue!"
+    him "Yeah!"
+    "The game was fun, but I don't think I would have played it on my own. The best part was being with [his_name]."
 
     $ relaxed += 5
     $ loved += 2

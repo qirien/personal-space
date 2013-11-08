@@ -59,8 +59,8 @@ label spiritual_3:
 
 
 label spiritual_4:
-    scene farm_interior with fade
-    show her
+    scene bg farm_interior with fade
+    show her normal at center
 
     "Another book Naomi loaned me was the Hindu Upanishads."
     her "\"That one, who is able to visualize the presence of Atma (the Soul) in all other moving things and even creatures and is able to visualize the presence of all such things within the Atma, never gets angry and he never hates anything in life.\""

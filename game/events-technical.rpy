@@ -107,7 +107,7 @@ label technical_5:
     menu:
         "It's not vital to my survival":
             her "I just wanted to build a hot water heater for my house. Do you have any ideas about what kind of material I could use that would conduct heat easily?"
-            ilian "Hmm. Well, I know we're always finding new uses for these animal skelton things."
+            ilian "Hmm. Well, I know we're always finding new uses for these animal skeleton things."
             her "And by always finding you mean no one has thought of anything to do with them?"
             ilian "They're looking pretty good in my junk pile, if I do say so myself."
             her "I'll take a few. There has to be some way I could use them."
