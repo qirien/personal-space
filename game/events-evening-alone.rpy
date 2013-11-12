@@ -120,13 +120,25 @@ label relax_alone_5:
     $ loved -= 2
     return
 
-# Re-read a childhood book
+# He does things by himself sometimes, too.
 label relax_alone_6:
-    scene bg bedroom
-    "I didn't mean to read the whole thing, but when I started reading one of my favorite books from my childhood I just had to finish it."
-    "It wasn't as exciting and unpredictable as I remembered, but I still love the characters, and the writing swept me in as I read through the whole thing."
+    scene bg farm_interior
+    show him at midleft
+    show her at midright
+    with dissolve
+
+    him "You want to watch a movie or something?"
+    her "Nah, I think I want to do something by myself tonight."
+    him "Okay, I've got some things I want to work on, too."
+    her "You don't mind, do you?"
+    him "No, not really. But I do like when we can do things together."
+    her "I do, too, but after being around people all day, sometimes I just need to be alone."
+    him "Heh, yeah, I feel kind of the opposite. I'm usually alone all day, so at night I'd rather do something with someone..."
+    her "Maybe you could hang out with someone else sometimes?"
+    him "Yeah, maybe I'll see if Thuc wants to do something."
+    "I felt better knowing I wasn't [his_name]'s only friend..."
+
     $ relaxed += 5
-    $ loved -= 2
     return
 
 # Family photos
@@ -146,54 +158,55 @@ label relax_alone_8:
     $ loved -= 2
     return
 
-# He does things by himself sometimes, too.
 label relax_alone_9:
     scene bg farm_interior
-    show him at midleft
-    show her at midright
-    with dissolve
-
-    him "You want to watch a movie or something?"
-    her "Nah, I think I want to do something by myself tonight."
-    him "Okay, I've got some things I want to work on, too."
-    her "You don't mind, do you?"
-    him "No, not really. But I do like when we can do things together."
-    her "I do, too, but after being around people all day, sometimes I just need to be alone."
-    him "Heh, yeah, I feel kind of the opposite. I'm usually alone all day, so at night I'd rather do something with someone..."
-    her "Maybe you could hang out with someone else sometimes?"
-    him "Yeah, maybe I'll see if Thuc wants to do something."
-    "I felt better knowing I wasn't [his_name]'s only friend..."
-
+    "I set some grains cooking overnight, so they would be nice and soft for our breakfast in the morning."
     $ relaxed += 5
     $ loved -= 2
+
     return
 
 label relax_alone_10:
-    $ relaxed += 5
-    $ loved -= 2
-    return
-
-label relax_alone_11:
-    $ relaxed += 5
-    return
-
-label relax_alone_12:
-    $ relaxed += 5
-    return
-
-# Events that can happen in any order
-# TODO: Add more of these.
-
-label relax_alone_a:
     scene bg farm_interior
     "I listened to some of my favorite songs and reminisced."
     $ relaxed += 5
     $ loved -= 2
     return
 
-label relax_alone_b:
+label relax_alone_11:
     scene bg bedroom
     "I curled up with a good book."
+
+    $ relaxed += 5
+    $ loved -= 2
+    return
+
+label relax_alone_12:
+    scene bg farm_interior
+    "I played a video game that I enjoyed."
+
+    $ relaxed += 5
+    $ loved -= 2
+    return
+
+# Events that can happen in any order
+# TODO: Add more of these.
+
+# Re-read childhood book
+label relax_alone_a:
+    scene bg bedroom
+    "I didn't mean to read the whole thing, but when I started reading one of my favorite books from my childhood I just had to finish it."
+    "It wasn't as exciting and unpredictable as I remembered, but I still love the characters, and the writing swept me in as I read through the whole thing."
+    $ relaxed += 5
+    $ loved -= 2
+    return
+
+# browsing wikipedia
+label relax_alone_b:
+    scene bg farm_interior
+    "I was curious about horses, so I started reading about them in the encylopedia."
+    "Reading about domestication led to Mycenaean script, and that led to morphology, and before I knew it I was reading a fascinating page about Austronesian languages."
+    "I'm not sure I will ever use that knowledge, but it was still interesting to read about."
     $ relaxed += 5
     $ loved -= 2
     return
@@ -202,6 +215,7 @@ label relax_alone_c:
     scene bg bedroom
     show overlay night
     "I felt so tired, I decided to just go to bed early."
+    scene black with fade
     $ relaxed += 7
     $ loved -= 2
     return
@@ -213,8 +227,6 @@ label relax_alone_d:
     return
 
 label relax_alone_e:
-    scene bg farm_interior
-    "I played a video game that I enjoyed."
     $ relaxed += 5
     $ loved -= 2
     return
@@ -226,6 +238,7 @@ label relax_alone_f:
     $ loved -= 2
     return
 
+# Hang out at the library!
 label relax_alone_g:
     scene bg library
     "I invited Sara to come to the library with me to hang out."
@@ -238,27 +251,58 @@ label relax_alone_g:
     her "Well, back on Earth I used to like to go to bookstores and just flip through books... This isn't really the same, though."
     sara "Oh, I just read this great book, you should take a look."
     her "What's it about?"
-    sara "Well, there's these fish people and the fox people, and they have like this ancient feud, but then they hold a ball at the underwater palace, and these guys have to sneak in to get the Prince to sign a document...It's hard to explain, you just have to read it yourself."
+    sara "Well, there's these fish people and the fox people, and they have like this ancient feud, but then they hold a ball at the underwater palace, and these guys have to sneak in to get the Fish Prince to sign a document...It's hard to explain, you just have to read it yourself."
     her "That sounds interesting, at least!"
+    sara "I'll send it to you!"
     "We shared a few other book recommendations and talked for two hours. It felt good to get out of the house at night (even if it was just to the colony library)."
     $ relaxed += 5
     $ loved -= 2
     return
 
+#play a farm game
 label relax_alone_h:
-    #play a visual novel
+    scene bg farm_interior
+    show her normal at center
+    "I found this video game about trying to get a farm up and running... It was way more fun than a real farm."
+    show him normal at quarterleft
+    show her normal at quarterright
+    him surprised "What are you doing?"
+    her happy "Feeding my horses!"
+    him surprised "You have horses now?"
+    her "In my game! I have to make sure they get exercise, and take them to the vet if they get sick! It's called Farm Life."
+    him annoyed "Farm Life?! That's nothing like real farming!"
+    her "No, it isn't. And that's why it's fun."
+    "He came over behind me and looked at my screen."
+    him happy "Those are the cutest ducks I've ever seen!"
+    her sad "I know! It's actually kind of sad when the farmer gets hungry and she eats one of them..."
+    him normal "Awww... Hey, that guy has the hearts for you!"
+    her normal "Yeah, he keeps bringing flowers, but my farmer only likes sweets! I keep trying to get her to marry him but she likes the fisherman instead."
+    him annoyed "It's too bad we can't do real farm work just by clicking on a screen."
+    her sad "I wish it was easier, too..."
+    scene black with fade
+    
     $ relaxed += 5
     $ loved -= 2
     return
 
+# cat videos on youtube!
 label relax_alone_i:
-
+    scene bg farm_interior
+    show her normal at center
+    "I was too tired to do much of anything. I didn't feel motivated to read, or play a game, or even watch a movie."
+    "So instead I found some funny, short videos that we had brought from Earth."
+    "They weren't meaningful or profound or anything, but they made me laugh."
+    her laughing "Ha ha ha! That cat... is so funny! I love cats!"
     $ relaxed += 5
     $ loved -= 2
     return
 
+# work at home
 label relax_alone_j:
-
+    scene bg farm_interior
+    show her normal at center
+    "I tried to mostly get all my work done at work, but sometimes there was things I needed to do at home."
+    "I spent the evening catching up on the latest research in my field and planning out the month at work."
     $ relaxed += 5
     $ loved -= 2
     return

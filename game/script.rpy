@@ -193,3 +193,17 @@ menu:
     "The elementary school":
         $ skill_social += 20
         jump teacher        
+
+label quick_save:   
+    python hide:
+        renpy.take_screenshot()
+        # will save the current state on the "quicksave" file. This will overwrite any previous quicksaved game, of course               
+        renpy.save("quicksave", extra_info=store.save_name)
+
+label quick_load:
+    python hide:
+        # if we have some quicksaved game, we'll load it, otherwise this will do nothing
+        if renpy.can_load("quicksave"):
+                renpy.load("quicksave")
+
+    return
