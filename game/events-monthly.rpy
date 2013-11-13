@@ -1215,8 +1215,9 @@ label follow_him:
     her "What's wrong with her?"
     him "I think she ate something bad. Usually she's fine grazing on the things here, but maybe it was a strange plant she didn't know was poisonous?"
     her "Oh no! Is there a vet or someone you can call?"
-    him "I am the vet, or the closest thing we have, anyway."
+    him "I'm the closest thing we have..."
     if (profession == "doctor"):
+        him "...aside from you, of course."
         her "Can you induce vomiting?"
         him "No...horses can't vomit."
         her "I can give her some medicine to help the pain at least..."
@@ -1333,7 +1334,7 @@ label monthly_event_11:
         "Who should I ask to come?"
         "Sven, the librarian":
             $ ocean_character = "Sven"
-            #change scene to library
+            scene bg library
             her "Hey, Sven."
             sven "Hi, how can I help you?"
             her "Want to come with Lily and me to the seashore?"
@@ -1350,6 +1351,7 @@ label monthly_event_11:
             sven "Okay, I think I can manage that."
             "There wasn't a road going out to the ocean, so we had to make our way through wild vegetation."     
             "We had some minor run-ins with small insects, but nothing too surprising." 
+            scene bg ocean
             "Arriving at the ocean was magnificent. The air was moist, and my eyes could rest on a flat plane of wetness extending to the horizon."
             sven "Wow, this beach reminds me Earth. Lots of rocks and a big blue wet thing." 
             her "I think you mean ocean. It's making me a little homesick too." 
@@ -1407,6 +1409,7 @@ label monthly_event_11:
             her "You should come to the ocean with me." 
             brennan "Seriously?"   
             her "Yes! Lily is coming too, and we need a third person so we can look like a herd and not easy pickings."   
+            #TODO: this is funny, but is it something Brennan would say?
             brennan "Count me in! But why are you going to the ocean? Have you double-handedly reinvented bathing suits?"
             her "No, but we might reinvent biology if we can gather enough specimens." 
             brennan "I don't really care what we do, as long as it's something exciting."  
@@ -1780,6 +1783,7 @@ label monthly_event_14:
             her "Oh, suddenly you know exactly what I should do? You think I don't know how to take care of myself?!"
             him "Hey, I'm not telling you what to do, you just seem a little tired, that's all."
             her "Tired?! I just said I'm sick!"
+            him "Fine, do whatever you want!"
             "I went to lay down and fell asleep immediately..."
 
         "The next morning I felt less tired, but still a little off. I went to work anyway, and had been standing up all day when I started to feel dizzy and sick to my stomach."
@@ -1865,7 +1869,7 @@ label monthly_event_14:
                 her "I guess there's no need to rush, right? In fact, it's probably good that I'm not pregnant, so we can have things setup better when it happens."
                 if (loved >= 0):
                     him "Yeah, that's true. Come here, [her_nickname] - we have plenty of time. Plenty of time for you, and me, and whoever else might join us in the future..."
-                    "He held me close for a long time, stroking my hair."
+                    "He held me close for a long time, stroking my hair. I snuggled up under his chin and just enjoyed being close to him."
                     $ made_love += 1
                     $ loved += 5
                 else:
