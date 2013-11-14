@@ -308,9 +308,64 @@ label relax_alone_j:
     return
 
 label relax_alone_k:
+    scene bg farm_interior with fade
+    "I downloaded a visual novel I found online. It looked pretty cheesy, but at least it wasn't in high school - it was about romance on a star ship."
+    "Your character was an Ensign on the ship as it explored the galaxies, and you could romance one of four characters."
+    $ starship_man = "None"
+    menu:
+        "Which guy should I pick?"
+        "The brave, heroic security officer":
+            "I picked the security officer. He seemed like he could hold his own in a fight."
+            $ starship_man = "brave"
+        "The clever engineer with a prosthetic arm":
+            "I picked the engineer. He seemed smart, and a probably had a tragic backstory where he lost his arm."
+            $ starship_man = "clever"
+        "The sardonic doctor":
+            "I picked the doctor. I bet he had a lot of funny things to say."
+            $ starship_man = "witty"
+        "The shy alien navigator":
+            "I picked the alien navigator. The fur and foreignness just made him more interesting."
+            $ starship_man = "interesting"
 
+    him "Oh, so that's the kind of guy you like?"
+    her "Wahhh! You scared me! I didn't know you were watching!"
+    him "I was just walking by when I saw all those men on your screen. I had to stop and see what was going on."
+    menu:
+        "What should I say?"
+        "It doesn't mean anything":
+            her "Well, I might play through all these and see them, so this doesn't mean as much as you might think."
+            him "That's fine, that's fine! I was just curious, don't worry."
+            her "You know you're the only man for me in real life. I just feel sorry for my character in this game that has to make do with these poor imitations."
+            him "Yeah, yeah!"
+            her "Ha ha, I love you, [his_nickname]."
+            him "I love you, too, [her_nickname]."
+            $ loved += 2
+        "He's kind of like you":
+            her "He's only my type because he's kind of like you."
+            him "Really? You see me like that?"
+            her "A little. You're both very [starship_man]."
+            him "Ha ha, if you say so, [her_nickname]."
+        "Who's {b}your{/b} type?":
+            her "So who's {b}your{/b} type of woman?"
+            him "Hmmm, what are my choices?"
+            her "Crazy and cute, shy and nerdy, or glamorous and serious."
+            him "Out of those three...probably crazy."
+            him "I mean, anyone who could tolerate me would have to be at least half crazy!"
+            her "I see your point."
+            him "And, of course, none of those cliches compares to a real woman like you."
+            her "Of course not!"
+            him "Was that the right answer?"
+            her "Ding! Your relationship with CHARACTER_NAME went up by ten points!"
+            him "All right!"
+            $ loved += 2
+        "Stop spying on me":
+            her "Can't I do something on the computer without you spying on me?"
+            him "Sorry, I just saw it while I was walking by."
+            her "Well, it's really rude to look at someone else's screen without asking."
+            him "...okay, whatever."
+            $ loved -= 2
+            
     $ relaxed += 5
-    $ loved -= 2
     return
 
 label relax_alone_l:

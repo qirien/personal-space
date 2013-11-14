@@ -564,8 +564,8 @@ label relax_together_g:
     scene black with fade
     "Finally, I just went to sleep."
     scene bg bedroom with fade
-    show her at midleft
-    show him at center
+    show her normal at midleft
+    show him normal at center
     with dissolve
     show overlay night
     "I half awoke in the middle of the night to [his_name] snuggling up to me and nuzzling my ear."
@@ -577,7 +577,7 @@ label relax_together_g:
     him normal "Mmm, you're so sexy..."
     menu:
         "What should I do?"
-        "Wake up and snuggle":
+        "Wake up for some action":
             her flirt "I just can't say no to you..."
             him flirt "Why would you want to?"
             her surprised "Did you get everything fixed up outside?"
@@ -649,8 +649,35 @@ label relax_together_i:
     $ skill_creative += 5
     return
 
+# Messages on the computer
 label relax_together_j:
-
+    scene bg farm_interior with fade
+    "I was sitting at the table, reading on my computer pad, when I got a message from [his_name]."
+    "(Why is he sending me a message? He's right there...)"
+    "I opened it."
+    him "Right now I am sitting five feet away from the hottest chick in the universe."
+    menu:
+        "What should I write back?"
+        "I'm jealous":
+            her "I'm so jealous, who is she?!"
+            him "Her name's [her_name]; you've probably heard of her. She's famous for her quick wit and good looks."
+            her "Tell me more about her."
+            him "Well, she's not conceited at all, that's one thing I like about her, and she's funny and creative, and she's got these lips that just beg to be kissed."
+            her "So kiss them already!"
+            "He sauntered over with a grin, leaned down, and kissed me like we had never kissed before."
+            $ made_love += 1
+            $ loved += 2
+        "I'm next to a hot guy":
+            her "Oh yeah, well I'm sitting right next to the sexiest man alive, or dead!"
+            him "Sexier than Clark Gable and Abraham Lincoln?!"
+            her "Definitely. He's funny, and hard-working, and when he looks at me, he's got these intense eyes-- I just melt."
+            him "What a lucky guy..."
+            "He looked over at me with what I'm sure he thought was a melting gaze, but instead it just made me laugh."
+            "Soon he was laughing, too, and we were kissing, and everything seemed just about perfect."
+            $ loved += 2
+        "Nothing":
+            "I didn't write him back. He's just being silly, to send me a message when I'm right here. I don't have time for that."
+            $ loved -= 2
     $ relaxed += 5
     $ loved += 2
     return

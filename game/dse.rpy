@@ -16,7 +16,7 @@ init python:
 
     dp_period("Job Focus", "job_focus_act")
     dp_choice("Focus on Work", "act_work")
-    dp_choice("Take it Easy", "act_skip_work", (month>1)) #TODO: now this is disabled all the time?
+    dp_choice("Take it Easy", "act_skip_work", enable="month>1")
 
     dp_period("Skill Focus", "skill_focus_act")
     dp_choice("Domestic", "act_domestic")
@@ -45,9 +45,12 @@ label month01:
 
     jump day
 
-# This is the label that is jumped to at the start of a day.
+# This is the label that is jumped to at the start of a day
+# Or, in our case, month.
 label day:
 
+    # Quicksave
+    call quick_save
     # Increment the month it is.
     $ month += 1
     stop music fadeout 5.0

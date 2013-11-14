@@ -672,7 +672,7 @@ label monthly_event_7:
             "But there was still the question of whether to tell him about it or not..."
             "On the one hand, it works just fine, so he doesn't need to know about it, right?"
             "On the other hand, I don't want to keep secrets from [his_name], even dumb secrets. I want us to be able to trust each other completely."
-            jump broken_computer_pad
+            call broken_computer_pad
         "Put it back and pretend not to know what happened":
             "I put it back where I found it. It was just an accident, so he doesn't need to know it was my fault, right?"
             "Even so, I was nervous when he got home."
@@ -2227,7 +2227,7 @@ label monthly_event_19:
                 her "It just feels so much more comfortable this way..."
                 him "Good idea."
                 "Pretty soon [his_name] was walking around free as a bird, too."
-                scene bg black with fade
+                scene black with fade
                 "That led to some interesting results..."
                 $ made_love += 1
                 scene bg farm_interior
@@ -2313,7 +2313,7 @@ label monthly_event_21:
     him "Well, that's what I'm thinking about."
     menu:
         "What should we do?"
-        "Cover the quinoa" if (skill_knowledge >= 60):
+        "{i}Cover the quinoa{/i}" if (skill_knowledge >= 60):
             her normal "Can we cover it up with blankets or something?"
             him normal "Yeah, that's one of the things I was thinking of, but I don't think we have enough fabric to cover very many plants."
             her "Well, we don't have to use fabric."
@@ -2345,7 +2345,7 @@ label monthly_event_21:
             "Then we stayed up all night tending the fires."
             "We slept all day, and did the same thing the next night, until finally the freezing weather had passed."
             $ relaxed -= 5
-        "Make a crop heater" if (skill_technical >= 60):
+        "{i}Make a crop heater{/i}" if (skill_technical >= 60):
             her "I bet I could make something that would help the crops stay warm..."
             him "Let's draw it out together."
             "We did some research, and decided on a combination heater and blower system. We made a fan out of spare parts from the shuttle, and decided to just light a fire for the heat part."
@@ -2380,7 +2380,7 @@ label monthly_event_22:
 # Climax - epic conflict leading to either "We'll always be together" or "I just want to get away from you!"  Conflict: Worried about new baby, pregnant if made_love a lot or affair with Brennan, otherwise some other conflict?!
 label monthly_event_23:
     scene bg farm_interior with fade
-    show her at center with dissolve
+    show her normal at center with dissolve
 
     if (is_pregnant):
         "I was getting huge. I felt like I couldn't eat very much at a time, not only because of the terrible heartburn, but it just didn't feel like there was any room inside me for anything else."
@@ -2514,7 +2514,7 @@ label monthly_event_23:
                         him concerned "I mean...I'm also furious and ashamed and humiliated and annoyed, but I'm at least glad I found out from you and not someone else."
                         her concerned "Do you think you can forgive me?"
                         him sad "Not right now. Just...give me time."
-                        scene bg black
+                        scene black
                         "Things were very awkward around the house for awhile..."
                         scene farm_interior with fade
                         show her concerned  at midleft
@@ -2535,7 +2535,7 @@ label monthly_event_23:
                         him normal "That could work."
                         her sad "..."
                         #TODO: workplace scene where she tells Brennan about this
-                        scene bg black with fade
+                        scene black with fade
                         "I thought I should talk to Brennan, too."
                         if (profession == "doctor"):
                             scene bg clinic with fade
@@ -2570,7 +2570,7 @@ label monthly_event_23:
                         her concerned "Are you sure?"
                         brennan "Just bloody drop it, all right?!"
                         her surprised "Okay, okay."
-                        scene bg black with fade
+                        scene black with fade
                         "Even after I worked things out with Brennan, I could tell [his_name] still hadn't forgiven me..."
                         scene bedroom with fade
                         show overlay night
@@ -2580,7 +2580,7 @@ label monthly_event_23:
                         her normal "Good night, [his_nickname]..."
                         him concerned "Good night."
                         her sad "..."                 
-                        scene bg black
+                        scene black
                         "But finally, after about two weeks of walking on eggshells..."
                         scene farm_exterior with fade
                         show overlay night

@@ -1,3 +1,3 @@
 #!/bin/sh
 
-renpy game
+~/apps/renpy-6.15.7-sdk/renpy.sh game

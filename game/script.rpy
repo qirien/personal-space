@@ -112,6 +112,7 @@ define brennan_relationship = 0
 define cheated_on_him = False
 define exposed_brennan = False
 define ocean_character = ""
+define wants_to_leave = False
 
 #Technical variables used to control how the game displays
 define fade = Fade(0.2, 0.2, 0.2)
@@ -199,6 +200,7 @@ label quick_save:
         renpy.take_screenshot()
         # will save the current state on the "quicksave" file. This will overwrite any previous quicksaved game, of course               
         renpy.save("quicksave", extra_info=store.save_name)
+    return
 
 label quick_load:
     python hide:

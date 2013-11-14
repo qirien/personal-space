@@ -116,7 +116,7 @@ label work_0:
             her "Do we have any weapons?"
             boss "We do have a few hunting weapons that you can check out from the storehouse if you would like to try your hand at hunting, though I'd check with Dr. Lily first and make sure that the animal is edible!"
             jump boss_meeting
-        "When is the colony ship coming?"
+        "When is the colony ship coming?":
             her "Is the next ship coming in two Earth years or Talam years?"
             boss "Good question; that's two Earth years, which makes about..."
             lily "About 26 Talam months. Since there are seven months a year here, that makes a little over three Talam years."
@@ -1090,6 +1090,7 @@ label brennan_confess:
                 "Get me off this planet":
                     her "Promise to get me off this planet with the next colony ship. I know I promised to stay forever, but you have connections, you could help me."
                     brennan "Of course I'll help you. Just leave it to me."
+                    $ wants_to_leave = True
                 "Send a message for me":
                     her "Promise to send some messages to Earth for me."
                     brennan "Of course, I'll do what I can."
@@ -1101,6 +1102,7 @@ label brennan_confess:
                     "My heart raced and my mind shut down as there were no more words, just flesh melting into flesh with all the passion we had been holding back."
                     "I didn't think, didn't analyze, didn't worry about [his_name]; I just existed, in that eternal moment of pleasure and mutual acceptance."
                     $ cheated_on_him = True
+    return
 
 # MONTH 24 Resolve things at work?
 label work_8:
