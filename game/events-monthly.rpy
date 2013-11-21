@@ -2457,8 +2457,8 @@ label monthly_event_23:
             him "Well, we'll make it work somehow."
             her "Thanks, [his_name]."
 
-    #TODO: Tweak this number to a better one
-    elif ((made_love >= 8) or (cheated_on_him)):
+    elif ((want_kids) or (cheated_on_him)):
+        $ is_pregnant_later = True
         "Lately I'd been feeling a little sick. My breasts were sore (for no reason), and I had to go to the bathroom all the time."
         her surprised "Come to think of it, shouldn't my period have started by now?"
         if (want_kids):
@@ -2534,7 +2534,8 @@ label monthly_event_23:
                         her surprised "When we're not working, I'll make sure we're around other people...like maybe I'll see if I can have lunch with Sarah or something."
                         him normal "That could work."
                         her sad "..."
-                        #TODO: workplace scene where she tells Brennan about this
+                        
+                        # Workplace Scene
                         scene black with fade
                         "I thought I should talk to Brennan, too."
                         if (profession == "doctor"):
@@ -2605,7 +2606,7 @@ label monthly_event_23:
             him annoyed "Oh, great, that's just what this marriage needs."
             her annoyed "What?!"
             him angry "I mean, you and I can barely get along as it is, and the last thing we need is something else to argue about."
-            her angry "Hey, it's not like I got pregnant by myself! You're half responsible, too!"
+            her angry "I thought you wanted kids! It's not like I got pregnant by myself; you're half responsible, too!"
             him concerned "Yeah, probably."
             her surprised "What's that supposed to mean?!"
             if (cheated_on_him):
@@ -2643,11 +2644,52 @@ label monthly_event_23:
                         her normal "Well, that's how ridiculous your suggestion is. So drop it."
                         him annoyed "...Okay."
                         "I wasn't sure if he believed me or not. But he started acting more distant, and I felt he didn't trust me."
-                                   
-            # if you haven't cheated on him
+
+                # Tell Brennan about the baby
+                if (cheated_on_him):
+                    "I decided to tell Brennan about the baby. I wasn't sure it was his, but part of me hoped it was."
+
+                    scene black with fade
+                    "I needed to feel like someone was on my side..."
+                    if (profession == "doctor"):
+                        scene bg clinic with fade
+                    elif (profession == "crafter"):
+                        scene bg workshop with fade
+                    elif (profession == "mechanic"):
+                        scene bg machine_shop with fade
+                    elif (profession == "teacher"):
+                        scene bg classroom with fade
+
+                    show her at quarterleft
+                    show brennan at midright
+                    brennan "What's wrong, my lovely? Did you decide you can't live another moment without me?"
+                    her "...I'm pregnant."
+                    brennan "Oh. Well, congratulations."
+                    her "I'm pretty sure it's yours. From when we...you know."
+                    brennan "...What?"
+                    her "It all happened so fast, we weren't careful- [his_name] was always very careful- I mean, the timing fits, and--"
+                    brennan "Have you told [his_name]?"
+                    her "I've told him I'm pregnant, but he doesn't know about- about us."
+                    brennan "Oh? Is there an 'us' now?"
+                    her "I wish we could be together..."
+                    brennan "Well then, let's do it!"
+                    her "What?"
+                    brennan "Get a divorce! This isn't the dark ages, where people torture themselves with unhappy marriages."
+                    her "Would you... want both of us? Me and the baby, I mean."
+                    brennan "I don't care if you bring a flock of crabirds with you. As long as I get you, I'll be happy."
+                    her "..."
+                    brennan "Although, you should know I'm planning on leaving."
+                    her "Leaving?!"
+                    brennan "On the next ship. They're dropping off more supplies, and colonists, and my orders are to report back to Earth. But you could come, too."
+                    her "Leave Talam... I'll have to think about it."
+                    brennan "You have a month or two before the ship arrives. So, let me give you a little something to think about in the meantime..."
+                    scene black with fade
+                    "He kissed me softly, not full of passion like before, but the tender kiss of a lover's promise..."
+                    
+            # if you haven't cheated on him, but want_kids and love <-5
             else:
-                him concerned "I just know we've always been really careful. So is it really mine?"
-                her annoyed "Of course it is. It's not like I've had sex with anyone else!"
+                him concerned "I just know things have been... difficult, lately."
+                her annoyed "Well, it's not like I've had sex with anyone else!"
                 him sad "..."
                 her surprised "Wait, you haven't-"
                 him surprised "Haven't what?"
@@ -2667,7 +2709,7 @@ label monthly_event_23:
                 "Together, we remembered it all."
                 $ loved += 5
                 
-    # Not pregnant, Didn't make love much and didn't cheat on him
+    # Not pregnant, don't want kids, and didn't cheat on him
     else:
         scene bg farm_interior
         show her normal at midright

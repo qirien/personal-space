@@ -80,7 +80,7 @@ label social_3:
     her "Yeah, I'll figure it out, don't worry."
     "I worked hard on the food, and spread out some blankets to sit on, even though it meant I'd have more laundry to do to get all the dust out."
     scene bg farm_exterior with fade
-    "Mrs. Blair" "Thanks so much for having us over for dinner. That doesn't happen very often, you know, since we have such a large family."
+    julia "Thanks so much for having us over for dinner. That doesn't happen very often, you know, since we have such a large family."
     her "Well, hopefully I made enough food! Let's eat!"
     if (skill_domestic >= 10):
         "I served make-your-own-wraps, where you could put in beans or cheese or vegetables or whatever you wanted. I had some salsa or salad dressing that people could put on, too. They were delicious, and the kids liked them too."
@@ -89,26 +89,26 @@ label social_3:
     "Then the kids all played hide-and-seek around the farm while we talked with the Blairs."
     if (profession == "teacher"):
         her "The kids are doing great in school."
-        "Mrs. Blair" "I'm glad to hear that! They look forward to it; they say you are a wonderful teacher."
-        her "That's nice to hear. Joanna is about ready to graduate, I think. She knows way more than I do about geology and physics already."
-        "Mrs. Blair" "Yes, it's too bad there's no university here, but I think she will do fine studying with the scientists here."
+        julia "I'm glad to hear that! They look forward to it; they say you are a wonderful teacher."
+        her "That's nice to hear. Joanna is about ready to graduate, I think. She knows way more than I do about geology and physics already. And Miranda is not far behind."
+        julia "Yes, it's too bad there's no university here, but I think she will do fine studying with the scientists here."
     if (is_pregnant):
-        "Mrs. Blair" "I hear you are expecting a baby, congratulations!"
+        julia "I hear you are expecting a baby, congratulations!"
         her "Thank you! So many new things keep happening; sometimes it's a little overwhelming."
-        "Mrs. Blair" "Yes, that's true. But mostly babies just need love. Everything else you can figure out as you go."
+        julia "Yes, that's true. But mostly babies just need love. Everything else you can figure out as you go."
         her "But...what if I don't love the baby right away?"
-        "Mrs. Blair" "You want to love the baby, don't you?"
+        julia "You want to love the baby, don't you?"
         her "Yes, of course!"
-        "Mrs. Blair" "Well, that's enough love to start with. Do you have someone to deliver the baby yet?"
+        julia "Well, that's enough love to start with. Do you have someone to deliver the baby yet?"
         her "I guess I assumed someone at the clinic would do it?"
-        "Mrs. Blair" "Let me help you, too. Call me on the radio when it's time, and I'll meet you at the clinic or wherever you are."
+        julia "Let me help you, too. Call me on the radio when it's time, and I'll meet you at the clinic or wherever you are."
         her "Really? That would be great; you seem to be an expert on having kids, but I'm not sure if anyone at the clinic knows much about babies."
-        "Mrs. Blair" "I'd be happy to help."
+        julia "I'd be happy to help."
     elif (want_kids):
         her "So...Mrs. Blair, you seem like an expert on kids."
-        "Mrs. Blair" "You could say that. Besides my own ten, I've been at twenty deliveries or so, helping the mother through labor."
+        julia "Please, call me Julia. I do have a lot of experience with children - besides my own ten, I've been at twenty deliveries or so, helping the mother through labor."
         her "Really? We want to have kids, sometime..."
-        "Mrs. Blair" "Well, I hope you'll let me help you. There's a lot that the doctors don't know about babies and new mothers."
+        julia "Well, I hope you'll let me help you. There's a lot that the doctors don't know about babies and new mothers."
         if (profession == "doctor"):
             her "Yes, I know about all the medical conditions and treatments, but not very much about the actual babies themselves."
         else:
@@ -117,7 +117,7 @@ label social_3:
         "[his_name] and I talked to the Blairs about our farms and crops, and what things seemed to help the crops grow better, and what the kids were doing."
 
     "We talked and talked, until finally, it got dark. One of the moons was shining brightly; the other was dark."
-    "Mrs. Blair" "Thanks so much for having us over, [her_name]. I'm glad we got to know you a little better."
+    julia "Thanks so much for having us over, [her_name]. I'm glad we got to know you a little better."
     her "Thanks for coming, we enjoyed your company."
     "[his_name] and I watched them start walking for home."
     him "I wonder what our family will look like in a few years?"
@@ -594,7 +594,75 @@ label social_8:
 # Family (appears to be?) slacking off and mooching off everyone else;
 # mayor asks [her_name] to see if she can determine what to do
 label social_9:
+    "I didn't see the other colonists much during the day, but I assumed they were working hard like we were."
+    "But not everyone thought that..."
+    scene bg farm_exterior
+    sara "Have you seen the Blair's farm lately?"
+    her "No, I don't know them very well."
+    sara "Well, there's nothing on it! They haven't planted anything this season!"
+    her "I'm sure there's a good reason..."
+    sara "I don't know; I see Mrs. Blair at the storehouse all the time, picking up food for their family... but it's not really fair for them to always be taking, and not contributing!"
+    her "I see your point... but is it really any of our business?"
+    sara "I'm going to tell the Mayor about it."
+    "I followed Sara over to the storehouse, where the Mayor was talking to Ilian."
+    boss "Hello, Sara, what can I do for you?"
+    sara "Mayor, it's not fair for the Blairs to always be taking food from the storehouse but not contributing anything. Their job is to be farmers, right?!"
+    boss "Yes, it is - you have reason to believe they are not doing their job?"
+    sara "Their fields are completely empty!"
+    boss "I see... [her_name], would you please go and speak to the Blairs and see if you can determine the problem?"
+    her "(Me?! Well, I guess Sara might be too upset about it, and I am on friendly terms with the Blairs...)"
+    boss "Yes, I'll do that."
+    "I headed over to their farm, and found Mrs. Blair hanging up the clothes to dry. She smiled when she saw me coming."
+    scene bg laundry
+    julia "Hello, [her_name], what can I do for you?"
+    menu:
+        "What should I say?"
+        "Ask if she is okay":
+            her "Is...everything all right with your family?"
+            "Mrs. Blair stiffened, and she suddenly became very interested in her laundry."
+            julia "Of course. Everything's fine."
+            her "I mean, if there's any problems, we're all here to help each other..."
+            julia "I will ask if we need anything."
+            "I could tell something was bothering her, but she didn't want to talk about it with me."
+            julia "Thank you for stopping by, [her_name], but I have a lot to do and shouldn't waste time chit-chatting."
+            her "I just want to help."
+            julia "Then please, leave us alone!"
+            "All I could do was leave...it was clear something was wrong, but she wouldn't tell me what it was."
+            
+        "Ask why they haven't planted anything":
+            her "Why haven't you planted anything this season?"
+            julia "You think you know all about our farm, just by looking at it?"
+            her "No, but it just looks empty, so I wondered-"
+            julia "You wondered?! If you have time to waste with wondering, then perhaps you should put it to better use than bothering people who are trying to get some work done!"
+            her "I'm sure you have a good reason--"
+            julia "Yes, but I see no reason to share our troubles with you. Thank you for stopping by, but I don't have any more time to share with you."
+            "She pinned clothes furiously, and I thought I'd better leave."
 
+        "Chat for a while":
+            her "I just came by to say hi. We don't get to see each other very often, do we?"
+            julia "No, we don't! How are things going at your farm?"
+            her "Pretty well, though we lost a lot of the corn a while back to some nasty bugs here. There's so many things you can't control on a farm, aren't there?"
+            julia "Yes, that's true."
+            "She paused for a minute. It looked like she was trying to decide whether to tell me something."
+            her "Your laundry looks so clean; how are you getting all the stains out? We don't have very good soap here..."
+            julia "Ah, you noticed! The trick is fermented urine."
+            her "Really?"
+            julia "Yes, it's a trick they used in ancient Rome. It's also good for fertilizer."
+            her "Wow! You might want to post that on the community message board; I bet everyone would like to know about it."
+            julia "Oh, I usually don't have time to go on there."
+            her "Well, if you don't mind, then, maybe I will post it on there with a note that you taught me how."
+            julia "Well, if you think it will help people."
+            her "Yes, we all need to help each other, don't you think?"
+            julia "Yes... I suppose you're right."
+            her "..."
+            julia "Did you know that blah blah blah?"
+            her "No! How are you managing?"
+            julia "We're not."
+            her "Oh...do you need help?"
+            julia ""
+
+    #TODO: FINISH THIS; why do the Blairs need help? Do they struggle with mental illness, or crop failure, or addiction, or what?
+    
     $ skill_social += 10
     return
 
@@ -620,8 +688,18 @@ label social_master:
             boss "Very well. I am sure you will be voted on the committee."
             "Sure enough, they voted me to be in charge of the libraries."
 
-        "I could assist you"
+        "I could assist you":
+            her "Maybe I could help you out with some of the more mundane things."
+            boss "Hmm, sort of like a deputy mayor?"
+            her "Yeah, you need a deputy! That would also help in case you got sick or something."
+            boss "Splendid! But... I believe our charter states that any additional officers must be elected by the adults of the colony."
+            her "That's fine; everyone will support me more if they feel like they have chosen me."
+            boss "We'll see if anyone else wants the job."
+            "The mayor announced a vacancy in the post of deputy mayor, and asked for nominations."
+            "Sara nominated me, and [his_name] nominated Ilian, but he didn't want to run. Sven nominated Sister Naomi, but she declined the position as well. Nobody else wanted to run, but we held a vote anyway."
+            boss "I guess you've got the job, [her_name]! Now, about those supply requests..."
         
+    "It was quite a lot of work to help be in charge of the colony, but the Mayor seemed much less stressed out. It felt good to be trusted, and to help everyone work together here on Talam."
 
     $ skill_social += 10
     $ community_level += 10

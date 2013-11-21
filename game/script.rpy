@@ -33,7 +33,7 @@ image overlay night = "bg/night.png"
 define her = DynamicCharacter("her_name", color="#7264d5", image="her")
 define him = DynamicCharacter("his_name", color="#c80000", image="him")
 
-define naomi = Character("Sister Naomi", color="#6500ab")
+define naomi = Character("Sister Naomi Grayson", color="#6500ab")
 define boss = Character("Mayor Grayson", color="#cccccc")
 define lily = Character("Lily", color="#ffe74a")
 define sara = Character("Sara", color="#c64e89")
@@ -43,6 +43,7 @@ define brennan = Character("Brennan Callahan", color="11ee11")
 define sven = Character("Sven Engel")
 define natalia = Character("Natalia Peron")
 define helen = Character("Helen Engel")
+define julia = DynamicCharacter("Julia Blair", color="#cc2200")
 
 # SPRITES
 
@@ -103,6 +104,7 @@ define favorite_wedding_gift = ""
 define want_kids = False
 define have_goat = False
 define is_pregnant = False
+define is_pregnant_later = False
 define slacked_off = 0  #number of times slacked off at work
 define has_grass = False
 define met_Lily = False

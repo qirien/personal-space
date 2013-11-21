@@ -810,7 +810,7 @@ label work_6:
                     her "Okay, she's really smart, and nice too, actually, but that is a lot older than you."
                     brennan "And then there's the Blair's oldest daughters, who are seventeen and sixteen."
                     her "I've seen them taking care of their little siblings, but I don't know them very well."
-                    brennan "Well, the oldest is all over that Thomas fellow who's about her age. I'm surprised they're not married yet."
+                    brennan "Well, the oldest, Joanna, is all over that Thomas fellow who's about her age. I'm surprised they're not married yet."
                     her "They're only seventeen!"
                     brennan "Well, it's old enough to get into trouble, and old enough to help propagate the species..."
                     her "What about the younger sister, Miranda?"
