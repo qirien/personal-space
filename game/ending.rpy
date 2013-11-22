@@ -86,7 +86,7 @@ label succeed_good_ending:
     her normal "[his_name]...Thank {b}you{/b}. You work so hard every day - we literally couldn't survive without you. You have loved me no matter what this whole time. And there's nowhere I'd rather be than right here with you."
     him surprised "Yeah...if someone came up to me, right now, and said 'All-expenses paid trip to wherever you want!', do you know what I'd say?"
     her surprised "What?"
-    him flirting "I'd say, 'I want to go to my house, and be in my bed, next to my wife.'"
+    him flirt "I'd say, 'I want to go to my house, and be in my bed, next to my wife.'"
     her laughing "What a waste! You should pick somewhere exotic!"
     him laughing "There is no place more exotic!"
     her happy "That's true... Good choice, then."

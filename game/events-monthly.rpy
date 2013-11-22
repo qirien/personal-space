@@ -2377,7 +2377,7 @@ label monthly_event_22:
     scene bg farm_interior with fade
     return
 
-# Climax - epic conflict leading to either "We'll always be together" or "I just want to get away from you!"  Conflict: Worried about new baby, pregnant if made_love a lot or affair with Brennan, otherwise some other conflict?!
+# Climax - epic conflict leading to either "We'll always be together" or "I just want to get away from you!"  Conflict: Worried about new baby, pregnant if made_love a lot or affair with Brennan, otherwise, discussion about quality of sex
 label monthly_event_23:
     scene bg farm_interior with fade
     show her normal at center with dissolve
@@ -2710,15 +2710,86 @@ label monthly_event_23:
                 $ loved += 5
                 
     # Not pregnant, don't want kids, and didn't cheat on him
+    # How to talk about sex
     else:
-        scene bg farm_interior
+        scene bg bedroom
         show her normal at midright
         show him normal at midleft
         with dissolve
+        show overlay night
+        
+        "[his_name] was generally a good lover, but sometimes he was finished before I was."
+        "Then he'd fall asleep, just as I was finally getting started."
+        hide overlay night
+        him happy "Mmmm, good morning, my amazing sweet bundle of loveliness."
+        her annoyed "Good morning..."
+        if (loved >= 0):
+            him surprised "Oh. Hey. Ummm, did {b}you{/b} have good sex last night?"
+        else:
+            him annoyed "What? What's with the icy glare?"
 
-        him sad "There's...something I should tell you."
-        her surprised "What is it?"
-        # TODO: Finish this
+        menu:
+            "What should I say?"
+            "You only think about yourself!" if (relaxed < 0):
+                her angry "You are a terrible lover. All you think about is your own satisfaction!"
+                him angry "Well, why didn't you say something last night!"
+                her angry "You were {b}asleep{/b}!"
+                him angry "You couldn't have been trying very hard, then!"
+                her sad "..."
+                him sad "...Sorry... Sometimes it feels kind of one-sided, so I thought I'd get it over with so you could get to sleep..."
+                
+                her annoyed "I'd rather take longer and get more out of it."
+                him annoyed "Well, okay, now I know."
+                if (loved < 0):
+                    her angry "If you really loved me, you would have asked me what was wrong last night, instead of just getting what you wanted and then dropping off to sleep!"
+                    him angry "Oh, so if I make one mistake, suddenly I don't love you anymore?"
+                    her angry "This is not the only time this has happened!"
+                    him angry "All right! Let's bring up every imperfect thing the other person has ever done, right now! Do you want to do that?!"
+                    her sad "No, I just--"
+                    him annoyed "Tch. Forget it."
+                    $ loved -= 2
+
+                "He left, closing the door behind him slightly harder than was necessary."
+                "I got dressed and fixed myself a cup of tea."
+                "It wasn't selfish to tell him how I felt, was it?"
+                "Maybe if I wasn't so stressed out about everything else, I could have communicated better..."
+                "Well, now he knew how I felt, anyway, so maybe next time would be better."
+                "It was a while before we made love again, but when we did I could tell he was working hard to make sure I felt loved, too..."
+                her happy "I love you, [his_nickname]."
+                him happy "Mmmm, my [her_nickname]..."
+                $ loved -= 2
+                
+            "Last night was not really very good for me." if (relaxed >= 0):
+                her annoyed "Well, I didn't really get to enjoy last night very much..."
+                him concerned "Oh, I'm sorry, [her_name]. I fell asleep again, huh?"
+                her concerned "It's okay, I just... it was hard for me to sleep, and then I felt all mad at you, and I don't want to feel mad at you."
+                him sad "That was pretty rotten of me. I'm sorry."
+                her surprised "No, no, it's okay, it's not that big of a deal. I just wanted to tell you how I felt."
+                him normal "Well, I'm glad you did. And I think I know just how to solve this problem."
+                her susprised "How's that?"
+                him flirt "Lots of practice!"
+                her annoyed "[his_name]..."
+                "He's kind of exasperating, but afterwards I could tell he was really trying to make sure I felt loved and appreciated, too."
+                $ loved += 2
+                $ relaxed += 2
+            "Let's slow it down next time." if (loved >= 0):
+                her flirt "As much as I love that you are like a runaway stallion, can you maybe not gallop away quite so fast next time?"
+                him oncerned "Ummm..."
+                her annoyed "You know, slow down a bit?"
+                him surprised "Oh! Yeah. Sorry, I'm still trying to wrap my head around your horse imagery."
+                her annoyed "Don't think about it too much."
+                $ loved += 2
+                $ relaxed += 2
+            "(Lie) Everything's fine.":
+                her concerned "Everything's fine."
+                him concerned "Okay, if you say so..."
+                "I just didn't want to talk about it. Maybe I could communicate to him what I wanted in some other way..."
+                $ relaxed -= 5
+            "I don't have time for this.":
+                her annoyed "I have to go to work. I'll see you later."
+                him annoyed "Okay, bye, then."
+                $ loved -= 2
+                $ relaxed -= 5
     
     return
 
