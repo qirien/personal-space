@@ -621,12 +621,12 @@ label monthly_event_6:
             her "Let's ask around and see if anyone else has had problems with these pests."
             him "Okay. I'll take Lettie into town; can you ask our neighbors?"
             her "Sure."
-            "I found out that the Blairs had the same insect eating their corn. To prevent the insects from laying eggs in the corn, they put mineral oil on the silks."
+            "I found out that the Nguyens had the same insect eating their corn. To prevent the insects from laying eggs in the corn, they put mineral oil on the silks."
             "I radioed [his_name] and asked him to bring back some mineral oil from the storehouse. For the rest of the week, we put the oil on our corn silks and picked off the insects by hand."
-            "I kept in touch with the Blairs for the rest of the week, and we made a huge pile of dead insects, which we ground up to extend the food we had for our livestock."
+            "I kept in touch with the Nguyens for the rest of the week, and we made a huge pile of dead insects, which we ground up to extend the food we had for our livestock."
             "We were able to preserve some of our corn until it was ready for harvest, although for most of the corn, it was too late."
             "We had a big bonfire with the Perons and burned the infested corn. Their kids danced around the fire as we roasted one of their chickens on the side."
-            ## TODO: this section could be expanded by having a dialogue with one of the Blairs?
+            ## TODO: this section could be expanded by having a dialogue with one of the Nguyens?
         "Spray them with pesticide":
             him "We have some pesticide that we used for corn pests on Earth."
             her "Will it work on these bugs?"
@@ -1100,7 +1100,7 @@ label monthly_event_10:
     "He didn't look at me, just washed his hands and sat at the table. He was reading on his computer pad while we ate dinner.  We ate in silence for a few minutes. I thought maybe I'd change the subject."
     her "Something funny happened at work today."
     him "Yeah?"
-    her "Little Sasha, you know, the Blair's youngest, came by with his mom, and he said, 'I am an alien that looks like a kid. I really am. I'm not pretending.'"
+    her "Little Sasha, you know, the Nguyen's youngest, came by with his mom, and he said, 'I am an alien that looks like a kid. I really am. I'm not pretending.'"
     him "Yeah?"
     her "Yeah, it was funny, because he's so serious about it..."
     him "Mmmmm."
@@ -1232,7 +1232,7 @@ label follow_him:
         her "There's some laxatives at the clinic; I'll get some."
     else:
         her "Somebody's got to have some! I'll ask Ilian at the storehouse."
-        "I got on my computer and sent him a message. I also sent one to the doctor and the Blairs, in case they had any ideas."
+        "I got on my computer and sent him a message. I also sent one to the doctor and the Nguyens, in case they had any ideas."
         "Ilian got back to me pretty quick and said he could get some and he'd meet me at the storehouse."
 
     if (skill_physical >= 40):
@@ -2403,7 +2403,7 @@ label monthly_event_23:
         him concerned "Hey, hey, it'll be okay."
         her angry "It won't be okay just by saying, \"It's okay\"!"
         him angry "All right, then, let's figure some of these things out."
-        him concerned "Mrs. Blair already is helping you with the birth, right?"
+        him concerned "Mrs. Nguyen already is helping you with the birth, right?"
         her concerned "Yeah..."
         him "Well, I bet she knows a lot about nursing babies, and could help you out there. But even if something happens and you can't nurse the baby, they have some formula in the storehouse."
         her normal "That's good to know..."
@@ -2418,7 +2418,7 @@ label monthly_event_23:
             her "Do you know of anyone else?!"
             him concerned "Well...I've done a C-section on a cow before, so I could probably help out."
             her surprised "A cow? That's not very reassuring."
-            her concerned "Mrs. Blair could probably help, too...I can just use local anaesethetic, so I can stay conscious and instruct you... but I sure hope we never have to do that."
+            her concerned "Mrs. Nguyen could probably help, too...I can just use local anaesethetic, so I can stay conscious and instruct you... but I sure hope we never have to do that."
             him concerned "We'll do what we have to."
         
         her "What are we going to do with the baby during the day?"

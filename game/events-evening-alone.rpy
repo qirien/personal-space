@@ -223,9 +223,11 @@ label relax_alone_c:
 label relax_alone_d:
     scene bg farm_interior
     "I wrote a letter to my family, telling them all about what happened this month."
+    "I knew they wouldn't get it for years, but it still helped me feel connected to them, just a little."
     $ relaxed += 7
     return
 
+# TODO: write this
 label relax_alone_e:
     $ relaxed += 5
     $ loved -= 2
@@ -279,8 +281,7 @@ label relax_alone_h:
     her normal "Yeah, he keeps bringing flowers, but my farmer only likes sweets! I keep trying to get her to marry him but she likes the fisherman instead."
     him annoyed "It's too bad we can't do real farm work just by clicking on a screen."
     her sad "I wish it was easier, too..."
-    scene black with fade
-    
+
     $ relaxed += 5
     $ loved -= 2
     return
@@ -324,52 +325,69 @@ label relax_alone_k:
             "I picked the doctor. I bet he had a lot of funny things to say."
             $ starship_man = "witty"
         "The shy alien navigator":
-            "I picked the alien navigator. The fur and foreignness just made him more interesting."
+            "I picked the alien navigator. The fur and foreignness just made him so much more interesting."
             $ starship_man = "interesting"
 
-    him "Oh, so that's the kind of guy you like?"
-    her "Wahhh! You scared me! I didn't know you were watching!"
-    him "I was just walking by when I saw all those men on your screen. I had to stop and see what was going on."
+    show him normal at center with dissolve
+    him surprised "Oh, so that's the kind of guy you like?"
+    her surprised "Wahhh! You scared me! I didn't know you were watching!"
+    him normal "I was just walking by when I saw all those men on your screen. I had to stop and see what was going on."
     menu:
         "What should I say?"
         "It doesn't mean anything":
-            her "Well, I might play through all these and see them, so this doesn't mean as much as you might think."
+            her normal "Well, I might play through all these and see them, so this doesn't mean as much as you might think."
             him "That's fine, that's fine! I was just curious, don't worry."
-            her "You know you're the only man for me in real life. I just feel sorry for my character in this game that has to make do with these poor imitations."
-            him "Yeah, yeah!"
-            her "Ha ha, I love you, [his_nickname]."
-            him "I love you, too, [her_nickname]."
+            her flirt "You know you're the only man for me in real life. I just feel sorry for my character in this game that has to make do with these poor imitations."
+            him flirt "Yeah, yeah!"
+            her happy "Ha ha, I love you, [his_nickname]."
+            him happy "I love you, too, [her_nickname]."
             $ loved += 2
         "He's kind of like you":
-            her "He's only my type because he's kind of like you."
-            him "Really? You see me like that?"
+            her normal "He's only my type because he's kind of like you."
+            him surprised "Really? You see me like that?"
             her "A little. You're both very [starship_man]."
-            him "Ha ha, if you say so, [her_nickname]."
+            him laughing "Ha ha, if you say so, [her_nickname]."
         "Who's {b}your{/b} type?":
-            her "So who's {b}your{/b} type of woman?"
-            him "Hmmm, what are my choices?"
-            her "Crazy and cute, shy and nerdy, or glamorous and serious."
-            him "Out of those three...probably crazy."
-            him "I mean, anyone who could tolerate me would have to be at least half crazy!"
-            her "I see your point."
-            him "And, of course, none of those cliches compares to a real woman like you."
-            her "Of course not!"
-            him "Was that the right answer?"
-            her "Ding! Your relationship with CHARACTER_NAME went up by ten points!"
-            him "All right!"
+            her flirt "So who's {b}your{/b} type of woman?"
+            him concerned "Hmmm, what are my choices?"
+            her normal "Crazy and cute, shy and nerdy, or glamorous and serious."
+            him normal "Out of those three...probably crazy."
+            him laughing "I mean, anyone who could tolerate me would have to be at least half crazy!"
+            her annoyed "I see your point."
+            him happy "And, of course, none of those cliches compares to a real woman like you."
+            her annoyed "Of course not!"
+            him surprised "Was that the right answer?"
+            her happy "Ding! Your relationship with \"[her_name]\" went up by ten points!"
+            him happy "All right!"
             $ loved += 2
         "Stop spying on me":
-            her "Can't I do something on the computer without you spying on me?"
-            him "Sorry, I just saw it while I was walking by."
-            her "Well, it's really rude to look at someone else's screen without asking."
-            him "...okay, whatever."
+            her annoyed "Can't I do something on the computer without you spying on me?"
+            him annoyed "Sorry, I just saw it while I was walking by."
+            her angry "Well, it's really rude to look at someone else's screen without asking."
+            him sad "...okay, whatever."
             $ loved -= 2
             
     $ relaxed += 5
     return
 
 label relax_alone_l:
+    "I chatted with Helen Engel over the network - she lived on the other side of the colony and didn't leave the house much, so we didn't get to see each other very often."
+    her "Hey, how are your cows doing?"
+    helen "Good! They have plenty of room to graze, but we had to pull out a few poisonous plants we didn't know about."
+    her "How'd you find out they were poisonous?"
+    if (skill_knowledge >= 60):
+        helen "I read your edible plants guide!"
+        her "Wow, really?"
+        helen "Yes! I was glad you put in the poisonous plant section so we could identify it."
+        $ community_level += 2
+        $ relaxed += 2
+    else:
+        helen "All the cows got sick, so we took samples of all the plants in their pasture to Dr. Lily to analyze. Luckily, they made it through, but it was a close call."
 
+    her "How is Sven?"
+    helen "Doing fine - though sometimes he's pretty busy taking care of the cows and the library!"
+    her "Yeah, [his_name] is busy a lot, too..."
+    "She was a newlywed like me and we had a lot in common, so it was fun to chat together."
     $ relaxed += 5
     $ loved -= 2
     return

@@ -43,7 +43,7 @@ define brennan = Character("Brennan Callahan", color="11ee11")
 define sven = Character("Sven Engel")
 define natalia = Character("Natalia Peron")
 define helen = Character("Helen Engel")
-define julia = DynamicCharacter("Julia Blair", color="#cc2200")
+define julia = DynamicCharacter("Julia Nguyen", color="#cc2200")
 
 # SPRITES
 

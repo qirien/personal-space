@@ -193,7 +193,7 @@ label work_1:
         "Sara on the radio" "Doctor! You've gotta come right away; one of the kids stopped breathing - I think he swallowed something."
         "I started out the door while I talked to her on the radio. I hated to leave James alone, but this was urgent."
         her "I'm on my way. How old is he?"
-        "Sara on the radio" "It's Sasha Blair, he's three!"
+        "Sara on the radio" "It's Sasha Nguyen, he's three!"
         her "Do you know how to do the Heimlich?"
         "Sara on the radio" "Yes! I mean, I've never done it before, but..."
         her "Do it! Put your fist right above his belly button, support it with your other hand, and push in and up forcefully."
@@ -203,14 +203,14 @@ label work_1:
 
         if (skill_physical < 20):
             "By the time I got there, the little boy was unconscious."
-            "I moved quickly. I was able to get the peanut out of his throat, and performed CPR. Mrs. Blair watched me grimly."
+            "I moved quickly. I was able to get the peanut out of his throat, and performed CPR. Mrs. Nguyen watched me grimly."
             "I was tired from running all the way over there, but I did the best I could."
         else:
             "When I got there, he was blue but still conscious."
-            "I moved quickly. I was able to get the peanut out of his throat, and performed CPR. Mrs. Blair watched me hopefully."
+            "I moved quickly. I was able to get the peanut out of his throat, and performed CPR. Mrs. Nguyen watched me hopefully."
 
         "Finally, he coughed and started to breathe."
-        "Mrs. Blair" "Sasha! Oh, my boy!"
+        "Mrs. Nguyen" "Sasha! Oh, my boy!"
         "I didn't have time to stick around for adulation, though - James was still waiting for me to help his leg in the clinic."
         her "Sorry to leave you waiting so long; I know you're hurting- oh!"
         "I had bandaged up his leg, but the wound had reopened and he was bleeding a lot."
@@ -699,7 +699,7 @@ label work_5:
     her "They just announced it on the radio; I don't know why we didn't have an early warning this time."
     "Mr. Peron" "I can't stay here! I have to make sure Natalia is safe!"
     her "Please calm down. I'm sure your wife knows what to do."
-    "Mr. Peron" "Natalia always forgets to turn the radio on! She might not even know there is a flare! And Raul and Josephina are at home with her."
+    "Mr. Peron" "Natalia always forgets to turn the radio on! She might not even know there is a flare! And Mateo and Josephina are at home with her."
     "I tried contacting his family on the radio, but the radiation from the flare was interfering with our transmissions. I couldn't connect my computer pad to the wireless network, either."
     "Mr. Peron was getting more and more distraught. I was worried he was going to try and leave, and I wasn't sure I could stop him."
     brennan "Calm down, please! Everything will be just fine."
@@ -789,7 +789,7 @@ label work_6:
         "Yes":
             her "Thank you, I'd appreciate that."
             scene bg farm_interior
-            "We headed over to the mayor's house, which was as large as the Blairs', with three bedrooms and a kitchen.  I guess that's why they had Brennan staying there, too."
+            "We headed over to the mayor's house, which was as large as the Nguyens', with three bedrooms and a kitchen.  I guess that's why they had Brennan staying there, too."
             "Mr. and Mrs. Grayson weren't there; it's possible they were had the community center where he had a little office."
             "Brennan pulled out a frying pan and put some oil in it, and prepared some potatoes, cabbage, eggs and spices."
             her "Do you like to cook?"
@@ -808,7 +808,7 @@ label work_6:
                     her "But what about you! Aren't there any single women on the colony you could date? Or are you not interested in women?"
                     brennan "There's nothing I'm interested in more than women! But, well, let's see, single women...There's Dr. Lily, but she's at least 45 years old."
                     her "Okay, she's really smart, and nice too, actually, but that is a lot older than you."
-                    brennan "And then there's the Blair's oldest daughters, who are seventeen and sixteen."
+                    brennan "And then there's the Nguyen's oldest daughters, who are seventeen and sixteen."
                     her "I've seen them taking care of their little siblings, but I don't know them very well."
                     brennan "Well, the oldest, Joanna, is all over that Thomas fellow who's about her age. I'm surprised they're not married yet."
                     her "They're only seventeen!"
@@ -822,7 +822,7 @@ label work_6:
                             brennan "But what?"
                             her "I want you to have a future here. I can tell you're lonely, and Miranda is old enough to make her own decisions."
                             her "I'm not saying you should sleep with her or anything, but in two years, she'll be an adult. Why not see if you can be friends, and then see what happens in the future?"
-                            brennan "She is only eight years younger than me...But there's no way Mr. Blair would allow her to date such a creepy older man as myself."
+                            brennan "She is only eight years younger than me...But there's no way Mr. Nguyen would allow her to date such a creepy older man as myself."
                             her "Don't think of it as dating! And don't, like seduce her or anything. Just... see if you could be friends."
                             brennan "I'm not very good at being 'just friends' with women, [her_name]."
                             her "Well, you and I are just friends, right?"

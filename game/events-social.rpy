@@ -71,8 +71,8 @@ label social_2:
 label social_3:
     "Even though we had all lived together for months, there were some people in the community we didn't know very well."
     scene bg farm_interior with fade
-    her "I invited the Blairs over for dinner tomorrow night."
-    him "Are they the ones that have, like, ten kids?"
+    her "I invited the Nguyens over for dinner tomorrow night."
+    him "Oh yeah, I know Thuc pretty well. Don't they have, like, ten kids?"
     her "Yes..."
     him "Okay, that will be interesting...where are we all going to sit?"
     her "I thought we'd just sit outside. I guess I should make some food that kids like, too."
@@ -86,14 +86,14 @@ label social_3:
         "I served make-your-own-wraps, where you could put in beans or cheese or vegetables or whatever you wanted. I had some salsa or salad dressing that people could put on, too. They were delicious, and the kids liked them too."
     else:
         "I just put out a bunch of beans, crackers, fruit, and vegetables, and let people choose what they wanted. It tasted a little bland, but the kids seemed to like it."
-    "Then the kids all played hide-and-seek around the farm while we talked with the Blairs."
+    "Then the kids all played hide-and-seek around the farm while we talked with the Nguyens."
     if (profession == "teacher"):
         her "The kids are doing great in school."
         julia "I'm glad to hear that! They look forward to it; they say you are a wonderful teacher."
         her "That's nice to hear. Joanna is about ready to graduate, I think. She knows way more than I do about geology and physics already. And Miranda is not far behind."
-        julia "Yes, it's too bad there's no university here, but I think she will do fine studying with the scientists here."
+        thuc "It's too bad there's no university here, but I think she will do fine studying with Dr. Lily."
     if (is_pregnant):
-        julia "I hear you are expecting a baby, congratulations!"
+        thuc "I hear you are expecting a baby, congratulations!"
         her "Thank you! So many new things keep happening; sometimes it's a little overwhelming."
         julia "Yes, that's true. But mostly babies just need love. Everything else you can figure out as you go."
         her "But...what if I don't love the baby right away?"
@@ -105,7 +105,7 @@ label social_3:
         her "Really? That would be great; you seem to be an expert on having kids, but I'm not sure if anyone at the clinic knows much about babies."
         julia "I'd be happy to help."
     elif (want_kids):
-        her "So...Mrs. Blair, you seem like an expert on kids."
+        her "So...Mrs. Nguyen, you seem like an expert on kids."
         julia "Please, call me Julia. I do have a lot of experience with children - besides my own ten, I've been at twenty deliveries or so, helping the mother through labor."
         her "Really? We want to have kids, sometime..."
         julia "Well, I hope you'll let me help you. There's a lot that the doctors don't know about babies and new mothers."
@@ -114,10 +114,11 @@ label social_3:
         else:
             her "That's probably true..."
     else:
-        "[his_name] and I talked to the Blairs about our farms and crops, and what things seemed to help the crops grow better, and what the kids were doing."
+        "[his_name] and I talked to the Nguyens about our farms and crops, and what things seemed to help the crops grow better, and what the kids were doing."
 
     "We talked and talked, until finally, it got dark. One of the moons was shining brightly; the other was dark."
     julia "Thanks so much for having us over, [her_name]. I'm glad we got to know you a little better."
+    thuc "Yes, the food was delicious!"
     her "Thanks for coming, we enjoyed your company."
     "[his_name] and I watched them start walking for home."
     him "I wonder what our family will look like in a few years?"
@@ -138,7 +139,7 @@ label social_3:
 label social_4:
     "Sara and I met for lunch every week to chat and take a break."
     sara "How are your neighbors doing?"
-    her "We ate with the Blairs a while back and they were all doing well! We're all starting to live off the land; it's kind of exciting."
+    her "We ate with the Nguyens a while back and they were all doing well! We're all starting to live off the land; it's kind of exciting."
     sara "I know! Hopefully we won't starve or anything. But along with eating, we should be sure to keep ourselves socially healthy too."
     menu:
         "I should get out more.":
@@ -439,7 +440,7 @@ label done_party_menu:
         "It was fun to get to know our neighbors better and relax for a bit."
 
     elif (party_entertainment == "talent show"):
-        "We had a few entries in the talent show, but not a lot. The Mayor got up and told jokes, some of which were even funny. Some of the Blair children sang a silly song about a goat, and Thuc Nguyen juggled knives. We had no idea he could do that!"
+        "We had a few entries in the talent show, but not a lot. The Mayor got up and told jokes, some of which were even funny. Some of the Peron children sang a silly song about a goat, and Thuc juggled knives. We had no idea he could do that!"
         "But I was even more surprised when [his_name] took the stage. I whispered to Sara,"
         her "You didn't tell me he had an act!"
         sara "I thought you'd like being surprised!  Shhh, watch."
@@ -597,29 +598,29 @@ label social_9:
     "I didn't see the other colonists much during the day, but I assumed they were working hard like we were."
     "But not everyone thought that..."
     scene bg farm_exterior
-    sara "Have you seen the Blair's farm lately?"
-    her "No, I don't know them very well."
+    sara "Have you seen the Nguyen's farm lately?"
+    her "No, I don't really get over there."
     sara "Well, there's nothing on it! They haven't planted anything this season!"
     her "I'm sure there's a good reason..."
-    sara "I don't know; I see Mrs. Blair at the storehouse all the time, picking up food for their family... but it's not really fair for them to always be taking, and not contributing!"
+    sara "I don't know; I see Mrs. Nguyen at the storehouse all the time, picking up food for their family... but it's not really fair for them to always be taking, and not contributing!"
     her "I see your point... but is it really any of our business?"
     sara "I'm going to tell the Mayor about it."
     "I followed Sara over to the storehouse, where the Mayor was talking to Ilian."
     boss "Hello, Sara, what can I do for you?"
-    sara "Mayor, it's not fair for the Blairs to always be taking food from the storehouse but not contributing anything. Their job is to be farmers, right?!"
+    sara "Mayor, it's not fair for the Nguyens to always be taking food from the storehouse but not contributing anything. Their job is to be farmers, right?!"
     boss "Yes, it is - you have reason to believe they are not doing their job?"
     sara "Their fields are completely empty!"
-    boss "I see... [her_name], would you please go and speak to the Blairs and see if you can determine the problem?"
-    her "(Me?! Well, I guess Sara might be too upset about it, and I am on friendly terms with the Blairs...)"
+    boss "I see... [her_name], would you please go and speak to the Nguyens and see if you can determine the problem?"
+    her "(Me?! Well, I guess Sara might be too upset about it, and I am on friendly terms with the Nguyens...)"
     boss "Yes, I'll do that."
-    "I headed over to their farm, and found Mrs. Blair hanging up the clothes to dry. She smiled when she saw me coming."
+    "I headed over to their farm, and found Mrs. Nguyen hanging up the clothes to dry. She smiled when she saw me coming."
     scene bg laundry
     julia "Hello, [her_name], what can I do for you?"
     menu:
         "What should I say?"
         "Ask if she is okay":
             her "Is...everything all right with your family?"
-            "Mrs. Blair stiffened, and she suddenly became very interested in her laundry."
+            "Mrs. Nguyen stiffened, and she suddenly became very interested in her laundry."
             julia "Of course. Everything's fine."
             her "I mean, if there's any problems, we're all here to help each other..."
             julia "I will ask if we need anything."
@@ -661,7 +662,7 @@ label social_9:
             her "Oh...do you need help?"
             julia ""
 
-    #TODO: FINISH THIS; why do the Blairs need help? Do they struggle with mental illness, or crop failure, or addiction, or what?
+    #TODO: FINISH THIS; why do the Nguyens need help? Julia injured while trying to get rid of sow bug pests, so Thuc has been working alone, but he is depressed and worried animals will just eat crops again
     
     $ skill_social += 10
     return
