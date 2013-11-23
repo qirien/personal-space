@@ -206,7 +206,6 @@ label domestic_6:
                 "I wondered what it would be like to have our own child and take them trick-or-treating and celebrate holidays together. What will our kids be like?"
             else:
                 "They were cute, but I was kind of glad when they were gone. I'm not used to being around kids so much."
-            $ skill_social += 5
             $ community_level += 1
         "How annoying.":
             "I made sure everyone knew that we wouldn't be giving out any goodies at our house, and turned off all the lights early."
@@ -410,7 +409,6 @@ label domestic_master:
     "I got a lot of e-mails with questions on preserving and cooking different kinds of foods, cleaning furniture, pest control - lots of people were struggling with these things, especially since we didn't have the luxury of just going to a store and buying a bottle of some new product every week."
     "It seems I would always have something to write about."
     $ skill_domestic += 10
-    $ skill_social += 5
     $ community_level += 10
     return
 

@@ -193,7 +193,7 @@ label work_1:
         "Sara on the radio" "Doctor! You've gotta come right away; one of the kids stopped breathing - I think he swallowed something."
         "I started out the door while I talked to her on the radio. I hated to leave James alone, but this was urgent."
         her "I'm on my way. How old is he?"
-        "Sara on the radio" "It's Sasha Nguyen, he's three!"
+        "Sara on the radio" "It's Van Nguyen, he's three!"
         her "Do you know how to do the Heimlich?"
         "Sara on the radio" "Yes! I mean, I've never done it before, but..."
         her "Do it! Put your fist right above his belly button, support it with your other hand, and push in and up forcefully."
@@ -210,15 +210,15 @@ label work_1:
             "I moved quickly. I was able to get the peanut out of his throat, and performed CPR. Mrs. Nguyen watched me hopefully."
 
         "Finally, he coughed and started to breathe."
-        "Mrs. Nguyen" "Sasha! Oh, my boy!"
+        "Mrs. Nguyen" "Van! Oh, my boy!"
         "I didn't have time to stick around for adulation, though - James was still waiting for me to help his leg in the clinic."
         her "Sorry to leave you waiting so long; I know you're hurting- oh!"
         "I had bandaged up his leg, but the wound had reopened and he was bleeding a lot."
         "James" "I tried to, to, stop the bleeding..."
         her "It's okay, I'm here now. You're going to be just fine..."
         "I took care of his leg, and several hours later, James woke up."
-        "James" "Hey, is Sasha okay?"
-        her "Sasha? Oh, yes, I got there just in time."
+        "James" "Hey, is Van okay?"
+        her "Van? Oh, yes, I got there just in time."
         "James" "They really ought to have someone in here helping you out. I mean, what if you were in the middle of surgery or something?"
         menu:
             "Do I need help?"
@@ -1020,7 +1020,7 @@ label work_7:
                     "No one was home at the Grayson's house, but there were also no locks on the doors, so I just walked in."
                     her "(Brennan will be at work for a little bit longer, if he's waiting for me to bring him the batteries...)"
                     "His room had the same few pieces of shuttle furniture we had, with a sleeping bag on the floor and a seat and table in the corner. The walls were bare; there were no photos or posters or decorations at all."
-                    "The table had a mess kit, a few books, and a cable for charging a computer pad. There was another cable, too, though, and when I followed it, it went underneath the table where there was a strange device."
+                    "The table had a mess kit and a cable for charging a computer pad. There was another cable, too, though, and when I followed it, it went underneath the table where there was a strange device."
                     "It looked a little bit like a computer, with a metal case and some LEDs lighting up every now and then. But there was no writing or labels on the case at all. It made a low humming noise."
                     her "What is it?"
                     "Suddenly, I heard footsteps and I jumped. Brennan was in the doorway, watching me. He seemed amused."
@@ -1034,9 +1034,16 @@ label work_7:
 
         "No, sorry.":
             her "I'm sorry; I can't do that for you, Brennan."
-            brennan "Oh...well, I'll just make do without, then, I suppose."
-            her "Yeah, that's something we've all had to do, isn't it?"
-            return
+            brennan "Please, [her_name]. I wouldn't ask you unless it was really important."
+            menu:
+                "What should I say?"
+                "I'll see what I can do":
+                    jump investigate_brennan
+                "No, sorry.":
+                    "Sorry, Brennan, I won't do that."
+                    brennan "Oh...well, I'll just make do without, then, I suppose."
+                    her "Yeah, that's something we've all had to do, isn't it?"
+                    return
     return
 
 label brennan_confess:

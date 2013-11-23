@@ -27,6 +27,7 @@ image bg workshop = "bg/workshop.jpg"
 image bg ocean = "bg/ocean.jpg"
 image bg storehouse = "bg/storehouse.jpg"
 image bg community_center = "bg/community-center.jpg"
+image bg lab = "bg/lab.jpg"
 image overlay night = "bg/night.png"
 
 # Declare characters used by this game .
@@ -43,7 +44,7 @@ define brennan = Character("Brennan Callahan", color="11ee11")
 define sven = Character("Sven Engel")
 define natalia = Character("Natalia Peron")
 define helen = Character("Helen Engel")
-define julia = DynamicCharacter("Julia Nguyen", color="#cc2200")
+define julia = Character("Julia Nguyen", color="#cc2200")
 
 # SPRITES
 

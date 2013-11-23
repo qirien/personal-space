@@ -248,7 +248,7 @@ label social_5:
             sven "I think that movie would put everyone to sleep."
             her "It's only forty minutes long!"
             sven "Let's watch {i}Wall-E{/i}. I haven't seen it in a while and it could start some interesting conversations about what our colony should be like."
-            sara "I agree! Some of my younger siblings have never seen it, and I think they would like it."
+            sara "I agree! Some of the younger kids have never seen it, and I think they would like it."
             "We decided to watch {i}Wall-E{/i}. I sent out a message to the colony e-mail list, and tried to remind everyone I saw to come."
             "The kids enjoyed watching the robot's antics, and the trash-filled city reminded me of some of the things we were trying to do differently in our colony."
             her "I'm so glad the green revolution happened before the whole earth turned into a landfill."
@@ -577,7 +577,8 @@ label done_party_menu:
 
     sara "Well, the party's almost over, guess it's time to clean up."
     her "Yeah, is that going to be just you and me?"
-    boss "Thank you, Sara and [her_name], for organizing such a wonderful celebration for us. I know you've put a lot of work into it. But, folks, I see quite a mess here in our community hall. I don't think it's fair that these two ladies should have to do all the work, so I'd like to ask one person from each family to stay and help clean up."
+    boss "Thank you, Sara and [her_name], for organizing such a wonderful celebration for us. I know you've put a lot of work into it."
+    boss "But, folks, I see quite a mess here in our community center. I don't think it's fair that these two ladies should have to do all the work, so I'd like to ask one person from each family to stay and help clean up."
     "I was relieved to hear that, and even more relieved to see that a lot of people stayed to help clean up. Not just one person from each family, either - entire families got to work clearing plates, putting away chairs, mopping up spills, and doing dishes."
     her "Thanks, Mayor Grayson."
     boss "Thank you! I think the party was a success."
@@ -606,13 +607,15 @@ label social_9:
     her "I see your point... but is it really any of our business?"
     sara "I'm going to tell the Mayor about it."
     "I followed Sara over to the storehouse, where the Mayor was talking to Ilian."
+    scene bg storehouse
     boss "Hello, Sara, what can I do for you?"
     sara "Mayor, it's not fair for the Nguyens to always be taking food from the storehouse but not contributing anything. Their job is to be farmers, right?!"
     boss "Yes, it is - you have reason to believe they are not doing their job?"
     sara "Their fields are completely empty!"
     boss "I see... [her_name], would you please go and speak to the Nguyens and see if you can determine the problem?"
     her "(Me?! Well, I guess Sara might be too upset about it, and I am on friendly terms with the Nguyens...)"
-    boss "Yes, I'll do that."
+    her "Yes, I'll do that."
+    scene black with fade
     "I headed over to their farm, and found Mrs. Nguyen hanging up the clothes to dry. She smiled when she saw me coming."
     scene bg laundry
     julia "Hello, [her_name], what can I do for you?"
@@ -629,6 +632,8 @@ label social_9:
             her "I just want to help."
             julia "Then please, leave us alone!"
             "All I could do was leave...it was clear something was wrong, but she wouldn't tell me what it was."
+            "I sent her an apology message later that day, and she wrote me back."
+            julia "Thanks for stopping by...If you really want to help, perhaps someone could help Thuc with a flooding system for the rice he wants to plant."
             
         "Ask why they haven't planted anything":
             her "Why haven't you planted anything this season?"
@@ -638,11 +643,13 @@ label social_9:
             her "I'm sure you have a good reason--"
             julia "Yes, but I see no reason to share our troubles with you. Thank you for stopping by, but I don't have any more time to share with you."
             "She pinned clothes furiously, and I thought I'd better leave."
+            "I sent her an apology message later that day, and she wrote me back."
+            julia "If you really want to help, perhaps someone could help Thuc with a flooding system for the rice he wants to plant."
 
         "Chat for a while":
             her "I just came by to say hi. We don't get to see each other very often, do we?"
             julia "No, we don't! How are things going at your farm?"
-            her "Pretty well, though we lost a lot of the corn a while back to some nasty bugs here. There's so many things you can't control on a farm, aren't there?"
+            her "Pretty well, though we lost a lot of corn a while back to some nasty bugs here. There's so many things you can't control on a farm, aren't there?"
             julia "Yes, that's true."
             "She paused for a minute. It looked like she was trying to decide whether to tell me something."
             her "Your laundry looks so clean; how are you getting all the stains out? We don't have very good soap here..."
@@ -656,13 +663,26 @@ label social_9:
             her "Yes, we all need to help each other, don't you think?"
             julia "Yes... I suppose you're right."
             her "..."
-            julia "Did you know that blah blah blah?"
-            her "No! How are you managing?"
-            julia "We're not."
-            her "Oh...do you need help?"
-            julia ""
-
-    #TODO: FINISH THIS; why do the Nguyens need help? Julia injured while trying to get rid of sow bug pests, so Thuc has been working alone, but he is depressed and worried animals will just eat crops again
+            julia "You know, we lost a lot of our corn to those bugs, too. All of it, in fact."
+            her "Oh, no! Did you have any other crops?"
+            julia "We have our vegetable garden, of course, but one day the goats got out and ate most of our plants..."
+            her "That's awful!"
+            julia "We wanted to plant rice, but we are still working on a system to flood and irrigate the fields properly. Well, Thuc {b}was{/b} working on it, but after the corn..."
+            her "It seems fruitless, doesn't it?"
+            julia "Yes! What's the point of digging and planning and planting, if some crazy critter is just going to come destroy everything we've done?!"
+            her "I know what you mean. I felt the same way, too, after the corn."
+            julia "Thuc's not one to complain about his troubles, but I can see he's taken this hard. I suppose I haven't been very encouraging, either."
+            her "It is hard... but maybe if you had some help, it'd be easier to get started?"
+            julia "Do you think people would help?"
+            her "Sure! Not only would they want rice to eat, but we all are going to need help at some point."
+            if (has_goat):
+                her "Your family has been so kind to us, giving us one of your goats, and Thuc is a good friend to [his_name]."
+            else:
+                her "Thuc is a good friend to [his_name], so I'm sure he at least would be willing to help!"
+            julia "Oh, thank you. I've fretted about this long enough, it's time we did something about it!"
+            
+    "I told the mayor what I had found out, and he agreed to find some people to help Thuc get his flooding system setup before the start of the next planting season."
+    "[his_name] and some other farmers helped, and they managed to get most of it done in a few days. I hoped their rice wouldn't face the same fate as the corn..."
     
     $ skill_social += 10
     return

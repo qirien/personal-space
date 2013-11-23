@@ -1,12 +1,12 @@
 label monthly_event_25:
     "It had been two years since we first arrived on Talam. In a way, it felt like we had been here forever. But sometimes I expected to find myself back on Earth, waking up from a long, long dream."
-    if ((community_level < 40) and (loved <= 10)):
+    if ((community_level < 50) and (loved <= 10)):
         jump fail_bad_ending
-    elif ((community_level >= 40) and (loved <= 10)):
+    elif ((community_level >= 50) and (loved <= 10)):
         jump succeed_bad_ending
-    elif ((community_level < 40) and (loved > 10)):
+    elif ((community_level < 50) and (loved > 10)):
         jump fail_good_ending
-    elif ((community_level >= 40) and (loved > 10)):
+    elif ((community_level >= 50) and (loved > 10)):
         jump succeed_good_ending
 
     jump credits
@@ -74,7 +74,7 @@ label succeed_good_ending:
 
     scene bg bedroom with fade
     show overlay night
-    show her normal at center
+    show her normal at midright
     show him normal at midleft
     with dissolve
 

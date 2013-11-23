@@ -223,9 +223,10 @@ label monthly_event_3:
     menu:
         "Maybe I should do something for him..."
         "{i}Have a party{/i}" if (skill_social >= 20):
-            show brennan at left
             #show sara at right
             #show ilian at quarterright
+            #show thuc at quarterleft
+            #show julia at left
             show him normal at midright
             "I invited some friends over and we ate dinner together and played games together until late. We sang Happy Birthday to [his_name]."
             him happy "Thanks, [her_name] - what a great birthday!"
@@ -621,12 +622,15 @@ label monthly_event_6:
             her "Let's ask around and see if anyone else has had problems with these pests."
             him "Okay. I'll take Lettie into town; can you ask our neighbors?"
             her "Sure."
-            "I found out that the Nguyens had the same insect eating their corn. To prevent the insects from laying eggs in the corn, they put mineral oil on the silks."
+            "I found out that the Perons had the same insect eating their corn. To prevent the insects from laying eggs in the corn, they put mineral oil on the silks."
             "I radioed [his_name] and asked him to bring back some mineral oil from the storehouse. For the rest of the week, we put the oil on our corn silks and picked off the insects by hand."
-            "I kept in touch with the Nguyens for the rest of the week, and we made a huge pile of dead insects, which we ground up to extend the food we had for our livestock."
+            "I kept in touch with the Perons, and we made a huge pile of dead insects, which we ground up to extend the food we had for our livestock."
             "We were able to preserve some of our corn until it was ready for harvest, although for most of the corn, it was too late."
-            "We had a big bonfire with the Perons and burned the infested corn. Their kids danced around the fire as we roasted one of their chickens on the side."
-            ## TODO: this section could be expanded by having a dialogue with one of the Nguyens?
+            "We had a big bonfire with the Perons and burned the infested corn. Their kids danced around the fire, and they brought a chicken for us to roast."
+            julia "All that work..."
+            him "I know."
+            her "..."
+            ## TODO: this section could be expanded by having a dialogue with one of the Perons?
         "Spray them with pesticide":
             him "We have some pesticide that we used for corn pests on Earth."
             her "Will it work on these bugs?"
@@ -1100,7 +1104,7 @@ label monthly_event_10:
     "He didn't look at me, just washed his hands and sat at the table. He was reading on his computer pad while we ate dinner.  We ate in silence for a few minutes. I thought maybe I'd change the subject."
     her "Something funny happened at work today."
     him "Yeah?"
-    her "Little Sasha, you know, the Nguyen's youngest, came by with his mom, and he said, 'I am an alien that looks like a kid. I really am. I'm not pretending.'"
+    her "Little Van, you know, the Nguyen's youngest, came by with his mom, and he said, 'I am an alien that looks like a kid. I really am. I'm not pretending.'"
     him "Yeah?"
     her "Yeah, it was funny, because he's so serious about it..."
     him "Mmmmm."
@@ -1300,6 +1304,7 @@ label monthly_event_11:
     her "Really? Why didn't anyone inform me?"
     him "Well, you're not digging around in the dirt during your working hours. She probably just sent it out to all the farmers."
     "I ran over to the lab the next morning, excited to help."
+    scene bg lab with fade
     her "I heard you've been gathering ore?"
     lily "Yes! Do you have some you'd like to donate?"
     her "I don't, but I'm willing to test the material's melting point!"
@@ -1323,6 +1328,10 @@ label monthly_event_11:
     lily "Well, the next low-low tide is in two days. That's when the moons should be in sync long enough to make a tide anyway."
     her "Okay, I'll talk to [his_name]."
     #change scene to home
+    scene bg farm_interior with fade
+    show him normal at midleft
+    show her normal at midright
+    with dissolve
     her "Hey, [his_name], do you want to come to the ocean with me?"
     him "Wouldn't it take half the day just to get there? Why do you want to go?"
     her "Lily said she would help me find and purify metals if I helped her collect specimens at the ocean."
@@ -1351,7 +1360,7 @@ label monthly_event_11:
             sven "Okay, I think I can manage that."
             "There wasn't a road going out to the ocean, so we had to make our way through wild vegetation."     
             "We had some minor run-ins with small insects, but nothing too surprising." 
-            scene bg ocean
+            scene bg ocean with fade
             "Arriving at the ocean was magnificent. The air was moist, and my eyes could rest on a flat plane of wetness extending to the horizon."
             sven "Wow, this beach reminds me Earth. Lots of rocks and a big blue wet thing." 
             her "I think you mean ocean. It's making me a little homesick too." 
@@ -1416,6 +1425,7 @@ label monthly_event_11:
             her "Oh, it'll be exciting."
             "There wasn't a road going out to the ocean, so we had to make our way through wild vegetation."     
             "We had some minor run-ins with small insects, but nothing too surprising." 
+            scene bg ocean with fade
             "Arriving at the ocean was magnificent. The air was moist, and my eyes could rest on a flat plane of wetness extending to the horizon."
             brennan "I didn't think there would be so many rocks at the seashore. There's barely any beach!" 
             her "Well, we're not here to swim anyway." 
@@ -1478,6 +1488,7 @@ label monthly_event_11:
             sara "Yeah, I guess it could be dangerous. I used to live by an ocean, so I kind of miss it."
             "There wasn't a road going out to the ocean, so we had to make our way through wild vegetation."     
             "We had some minor run-ins with small insects, but nothing too surprising." 
+            scene bg ocean with fade
             "Arriving at the ocean was magnificent. The air was moist, and my eyes could rest on a flat plane of wetness extending to the horizon."
             sara "It's not the kind of beach I'd want to swim on, and I'm glad I brought a sweater, but this is such a sight for sore eyes!"
             her "It's an amazing view." 
@@ -1526,12 +1537,12 @@ label monthly_event_11:
                 lily "Oh, I'll take care of that."
                 sara "Don't worry, I made sure your camera was safe!"
                 lily "Thank you! Maybe I just had a little too much sun today."
-    #scene vegetation
+    scene bg path with fade
     "After Lily got her bearings, we made the long trip back."
     her "Can you remember anything from your dream?"
     lily "My... dream?"
     "Maybe she hadn't been dreaming."
-    #scene lab
+    scene bg lab with fade
     "The next day, Lily told me where to go for the most ore-rich rocks. I followed her directions and gathered nearby rocks. I was pleasantly surprised by how little I needed my pick."
     "I had a lot of help from Lily and Ilian in melting the rocks and using the 3D printers to make the metal can and pipes I needed."
     "I arranged the pipes around the inside of our house and covered them with mud. The rocket stove easily heated our whole home using only a few sticks."
@@ -1710,7 +1721,7 @@ label monthly_event_13:
     thuc "Why does any criminal do what they do? They want to, and they don't care about other people."
     lily "Ilian has not shown any other behavior that would be cause for concern."
     thuc "But it's possible that it was not an accident. We cannot show too much mercy, or people will think they can get away with anything."
-    sven "We don't have a jail; you're not thinking of execting him, are you?!"
+    sven "We don't have a jail; you're not thinking of executing him, are you?!"
     thuc "Of course not. I propose temporary banishment. He should have to live on his own, off the land, for a year. That will show how important our community is, both to him and any would-be criminals."
     lily "There are no would-be criminals here, Thuc. What you are proposing is a death sentence. I think he should simply provide a certain amount of free labor to the Peron family every week. Perhaps that way they can eventually forgive him."
     sven "I don't like either of those options, but I can't think of anything better."
@@ -1728,7 +1739,7 @@ label monthly_event_13:
 
         "Banishment":
             her "I agree with Thuc; we need to show that our community won't allow such behavior."
-            lily "You might as well just shoot him in the head; he can't survive for a year out there!"
+            lily "It would be more humane to simply shoot him in the head; it would be impossible to survive for a year alone out there."
             her "I agree. Also, he is a healthy worker, which we can't afford to lose for that long. So I propose that he live outside the community boundaries, but close enough that we can trade with him. He can hunt or gather useful things and trade them for food or other community resources."
             thuc "That's too soft!"
             lily "I think a year is still too long."
@@ -1759,7 +1770,7 @@ label monthly_event_13:
 
     "I was just glad it was over."
     "Being on a jury was so stressful; I hope I never have to do that again."
-
+    $ relaxed -= 2
     return
 
 # MONTH 14 - Pregnancy or not?
@@ -1774,7 +1785,7 @@ label monthly_event_14:
         him "No, not at all!"
         "I felt like crying. One part of my brain knew it was not a big deal, but the other part just felt so lonely and afraid all of a sudden."
         if (loved >= 0):
-            "He came over and held me close"
+            "He came over and held me close."
             him "It'll be okay, [her_nickname]. Why don't you get some rest?"
             her "Maybe I will..."
             "I fell asleep immediately..."
@@ -1968,6 +1979,8 @@ label monthly_event_15:
                 her "No, but it's something important enough that we should have decided on it together!"
                 $ loved -= 3
         if (loved >= 5):
+            him "..."
+            her "..."
             him "I'm sorry; I probably should have talked to you about it first."
             her "It's okay. At least I got a delicious breakfast out of it."
         else:
@@ -2064,7 +2077,7 @@ label monthly_event_16:
             "I carried my leftovers over to the goat, who seemed to really enjoy them. Watching the goat eat, though, I felt like throwing up..."
         "Give it to [his_name]" if (loved >= 0):
             her "Do you want this? I'm not hungry..."
-            him "What? Sure, OK"
+            him "What? Sure, OK."
             $ loved += 2
 
     "I felt better at work, and lunchtime was no problem, but as I was walking home, I felt sick again. I ended up throwing up by the side of the road, which wouldn't have been too bad except some of it got on my clothes. Now I had to do laundry, and it was my turn to make dinner..."
@@ -2290,7 +2303,7 @@ label monthly_event_20:
     else:
         "I'd had trouble sleeping lately."
 
-    
+    #TODO: finish this event
     return
 
 # Early frost kills lots of crops

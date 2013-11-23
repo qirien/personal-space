@@ -65,8 +65,9 @@ label creative_4:
         "Notch the planks log-cabin style.":
             "I tried notching the planks to help them stay in place as I stacked them into a box shape. There were some wide gaps between planks, but luckily they weren't wide enough for the vegetables to fall out."
             $ community_level += 2
-        "{i}Ask the storehouse manager, Ilian about how to put planks together without nails.{/i}" if (skill_social > 10):
-            "Ilian told me about how he had been making pegs out of wood to help hold furniture together. Before I left, he gave me some pegs and we drilled holes in the right spots while I had access to the drill."
+        "{i}Ask around for ideas.{/i}" if (skill_social > 10):
+            "I asked the storehouse manager, Ilian, if he had any ideas."
+            "He told me about how he had been making pegs out of wood to help hold furniture together. Before I left, he gave me some pegs and we drilled holes in the right spots while I had access to the drill."
             "It was tricky to make it so I didn't pull up on the pegs when I lifted the crate, but with the Ilian's help, I made something that would keep a few vegetables separate from the rest."
             $ community_level += 5
         "{i} Learn from a woodworking manual.{/i}" if skill_technical > 20:

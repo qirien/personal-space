@@ -303,11 +303,11 @@ label spiritual_master:
     ilian "I'm thankful for my wife, Sara. She never complains, and is always smiling cheerfully."
     lily "I'm thankful for electricity."
     thuc "I'm grateful to Mayor Grayson. He's fair and cares about everyone."
-    "Mrs. Nguyen" "I'm thankful for the doctor's quick care, so Sasha didn't choke to death."
+    "Mrs. Nguyen" "I'm thankful for the doctor's quick care, so Van didn't choke to death."
     "Even some of the kids chimed in."
     "Raul Peron" "No school today!"
     "Miranda Nguyen" "We haven't been eaten by wolfslugs!"
-    "Sasha Nguyen" "Mommy and daddy."
+    "Van Nguyen" "Mommy and daddy."
     
     "They were all simple things, but thinking about them made us all feel so blessed and full of hope."
     naomi "So, how did it go?"

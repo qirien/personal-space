@@ -59,12 +59,12 @@ label relax_together_1:
 label relax_together_2:
     scene bg pond with fade
     "We went on a moonlight walk to the river. We found a spot where the water was deeper and slower, and sat down. I put my head on his shoulder, breathing in the cool night air."
-    show her normal at left
+    show her normal at midleft
     show him normal at center
     him "Want to go for a swim?"
     her "Are you nuts?!"
     him "Yes!"
-    show him normal at right
+    show him normal at quarterright
     "He took off his clothes - all of them - and cannonballed in, splashing me."
     menu:
         her "Hey!"

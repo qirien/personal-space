@@ -83,6 +83,8 @@ label day:
     # TODO: comment out this debugging code
     # TODO: Play a season-specific sound (like rain or wind)?
     "Loved = [loved], Relaxed = [relaxed], community_level = [community_level], made_love = [made_love]"
+    if (month == 25):
+        "The shuttle should be coming some time this month!"
 
     # Here, we want to set up some of the default values for the
     # day planner. In a more complicated game, we would probably

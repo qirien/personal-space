@@ -18,9 +18,10 @@ init python:
     # to work. 
     event("work_0", "act == 'act_work'", event.once(), event.only())
     
+    # Other special work events
     for i in range(1,8):
         event("work_" + `i`,
-              "act == 'act_work' and times_worked >= " + `i*3`,
+              "act == 'act_work' and month >= " + `i*3`,
               event.once(),
               event.happened("work_" + `i-1`))
 

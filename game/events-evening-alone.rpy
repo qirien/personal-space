@@ -196,7 +196,7 @@ label relax_alone_12:
 label relax_alone_a:
     scene bg bedroom
     "I didn't mean to read the whole thing, but when I started reading one of my favorite books from my childhood I just had to finish it."
-    "It wasn't as exciting and unpredictable as I remembered, but I still love the characters, and the writing swept me in as I read through the whole thing."
+    "It wasn't as exciting and unpredictable as I remembered, but I still loved the characters, and the writing swept me in as I read through the whole thing."
     $ relaxed += 5
     $ loved -= 2
     return
