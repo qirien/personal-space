@@ -30,7 +30,10 @@ init python:
     # reaches a certain level.  There is also an intro event and a master event.
     for skill_type in ["domestic", "creative", "technical", "spiritual", "social", "knowledge", "physical"]:
         # Set up default events for each type of skill
-        event (skill_type + "_0", "act == 'act_" + skill_type + "'", event.solo(), priority=200)
+        event (skill_type + "_def", "act == 'act_" + skill_type + "'", event.solo(), priority=400)
+
+        # Setup intro event
+        event (skill_type + "_0", "act == 'act_" + skill_type + "'", event.once(), priority=50)
         
         # Add special events that only happen once when you first get to a certain
         # skill level in that skill type.
@@ -40,10 +43,10 @@ init python:
                   event.once(),
                   event.happened(skill_type + "_" + `i-1`))
 
-        # This event happens every time we work on a skill when it is already maxed
+        # This event happens when a skill reaches 100.
         event(skill_type + "_master",
               "act == 'act_" + skill_type + "' and skill_" + skill_type + " >= 100",
-              event.solo(),
+              event.once(),
               event.happened(skill_type + "_10"))
 
 

@@ -1,16 +1,21 @@
 # Afternoon Events
 # Domestic
 
-# Intro Event and the default
+# Default Event
+label domestic_def:
+    scene bg farm_interior with fade
+    "I did some deep cleaning and organizing, and put in some extra work for a great dinner."
+    $ skill_domestic += 5
+    return
+
+# Intro Event
 label domestic_0:
     scene bg farm_interior with fade
-    if (skill_domestic <= 10):
-        "I setup a system for cleaning the house, with different tasks for each day of the week."
-        "Mondays I would plan meals for the week based on what food we had; Tuesdays I would do laundry; Wednesdays I would dust and wipe down the walls and furniture; Thursdays I would clean the outhouse; and Fridays I reserved for special projects."
-        "Chores like sweeping and dishes would be done every day."
-        "Having a system made it easier, because I didn't have to decide each day what I should do (though I didn't follow it every day)."
-    else:
-        "I did some deep cleaning and organizing, and put in some extra work for a great dinner."
+    "I setup a system for cleaning the house, with different tasks for each day of the week."
+    "Mondays I would plan meals for the week based on what food we had; Tuesdays I would do laundry; Wednesdays I would dust and wipe down the walls and furniture; Thursdays I would clean the outhouse; and Fridays I reserved for special projects."
+    "Chores like sweeping and dishes would be done every day."
+    "Having a system made it easier, because I didn't have to decide each day what I should do (though I didn't follow it every day)."
+
     $ skill_domestic += 10
 
     return

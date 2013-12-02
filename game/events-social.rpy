@@ -1,40 +1,42 @@
 # Afternoon Events
 # Social
 
-# Intro Event and the default
+# Default Event
+label social_def:
+    "I met up with my friend Sara and we talked together. She is a great listener and understands me so well."
+    $ skill_social += 5
+
+# Intro Event
 label social_0:
-    if (skill_social <= 10):
-        "Aside from [his_name], I had one other person I felt close to - Sara."
-        "We had met on the ship when [his_name] was meeting with the other farmers."
-        sara "I guess you're not a farmer, either, huh?"
-        her "Not really. I'm a [profession]."
-        sara "Really? That's pretty cool."
-        "We talked about my job for a while, and then she admitted,"
-        menu:
-            sara "I'm not sure why I'm here...I'm not really good at anything."
-            "That's not true!":
-                her "That's not true! I mean, I don't know you very well yet, but I can tell you're a good listener."
-                sara "Thanks..."
-            "Why are you here?":
-                her "Why {b}are{/b} you here?"
-                sara "Well..."
-            "(Change the subject)":
-                her "(I don't know what to say!)"
-                her "Well, uh, what do you like to do?"
-                sara "I like to read...I read a lot. I'm a pretty good photographer, too."
-                her "That sounds fun. Who's in your family??"
-        sara "My husband is Ilian Andrevski - he's not a farmer, either. He's a food scientist."
-        her "Really? There are food scientists?"
-        sara "Yes, they study things like nutrition and shelf-life and ways to preserve foods while maintaining lots of nutrients - things like that. I think he'll also do a lot of the inventory and distribution of food once we get there."
-        her "What about you? What's your job?"
-        sara "Breeding stock."
-        her "!"
-        sara "Ha ha ha, I'm just kidding! Though it does seem like we'll be expected to have lots of kids quickly to increase the population...but I'll be helping Ilian in the storehouse, and also helping the mayor stay organized."
-        her "Good! I bet we'll see each other a lot, then."
-        sara "Probably so. It's nice to have met you, [her_name]."
-        "Sara and I talked almost every day after that. We had a lot in common as newlywed colonists, and she had an easy laugh and an understanding smile that made her fun to be around."
-    else:
-        "I met up with my friend Sara and we talked together. She is a great listener and understands me so well."
+    "Aside from [his_name], I had one other person I felt close to - Sara."
+    "We had met on the ship when [his_name] was meeting with the other farmers."
+    sara "I guess you're not a farmer, either, huh?"
+    her "Not really. I'm a [profession]."
+    sara "Really? That's pretty cool."
+    "We talked about my job for a while, and then she admitted,"
+    menu:
+        sara "I'm not sure why I'm here...I'm not really good at anything."
+        "That's not true!":
+            her "That's not true! I mean, I don't know you very well yet, but I can tell you're a good listener."
+            sara "Thanks..."
+        "Why are you here?":
+            her "Why {b}are{/b} you here?"
+            sara "Well..."
+        "(Change the subject)":
+            her "(I don't know what to say!)"
+            her "Well, uh, what do you like to do?"
+            sara "I like to read...I read a lot. I'm a pretty good photographer, too."
+            her "That sounds fun. Who's in your family??"
+    sara "My husband is Ilian Andrevski - he's not a farmer, either. He's a food scientist."
+    her "Really? There are food scientists?"
+    sara "Yes, they study things like nutrition and shelf-life and ways to preserve foods while maintaining lots of nutrients - things like that. I think he'll also do a lot of the inventory and distribution of food once we get there."
+    her "What about you? What's your job?"
+    sara "Breeding stock."
+    her "!"
+    sara "Ha ha ha, I'm just kidding! Though it does seem like we'll be expected to have lots of kids quickly to increase the population...but I'll be helping Ilian in the storehouse, and also helping the mayor stay organized."
+    her "Good! I bet we'll see each other a lot, then."
+    sara "Probably so. It's nice to have met you, [her_name]."
+    "Sara and I talked almost every day after that. We had a lot in common as newlywed colonists, and she had an easy laugh and an understanding smile that made her fun to be around."
     $ skill_social += 10
 
     return

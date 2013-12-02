@@ -1,15 +1,16 @@
 # Afternoon Events
 # Spiritual
 
-# Intro Event and the default
-label spiritual_0:
+# the default
+label spiritual_def:
     scene bg path with fade
     "I took a walk and spent some time just thinking."
-    $ skill_spiritual += 10
+    $ skill_spiritual += 5
 
     return
 
-label spiritual_1:
+# Intro Event
+label spiritual_0:
     scene bg path with fade
     "I went to the colony's spiritual leader, just to talk. I'd been thinking a lot about what makes us human, and what there may be that we cannot see."
     "Naomi Grayson" "Welcome, [her_name]. How can I help you?"
@@ -37,6 +38,21 @@ label spiritual_1:
     naomi "I have several books you can borrow, if you would like. But as you study, listen with your heart as well as your mind. Read as if the writer is speaking to you, about your own life, and perhaps you will find some truth that you need."
     $ skill_spiritual += 10
     return
+
+label spiritual_1:
+    scene bg farm_interior with fade
+    "I downloaded some of the books Naomi sent me and took a look at them."
+    "There were books from all over the world, from all different religions."
+    "This was going to be a lot of reading."
+    "Maybe I'd start on that next time..."
+    "I mean, I should probably decide if it was even worth studying."
+    "I thought about different religious texts and how and why they were written. A lot of them had been copied by hand over hundreds or thousands of years... clearly, the people writing them had thought they were incredibly important."
+    "Even though each writer was partly a product of his or her own culture, they also each felt like they had something new to add, something so important that people passed it on for generations..."
+    her "If this is what humanity's ancestors have thought were the most important things to know about being a human, shouldn't I at least take a look?"
+    "I decided to read a little bit each day."
+    $ skill_spiritual += 10
+    return
+
 
 label spiritual_2:
     "One of the books Naomi loaned me was the Dhammapada, a collection of sayings of the Buddha. There were a lot of good teachings, but I was struck by one part in particular..."

@@ -11,7 +11,7 @@ label monthly_event_25:
 
     jump credits
 
-
+# ENDING 1 - Everything failing
 label fail_bad_ending:
     "Everything was falling apart."
     "[his_name] and I could barely speak to each other without arguing, I was swamped at work, and we were running out of materials and supplies."
@@ -33,6 +33,7 @@ label fail_bad_ending:
     jump credits
     return
 
+# ENDING 2 - Community succeeding, marriage failing
 label succeed_bad_ending:
     "The community was thriving, but my marriage was falling apart."
 
@@ -40,6 +41,7 @@ label succeed_bad_ending:
     jump credits
     return
 
+# ENDING 3 - Community failing, marriage succeeding
 label fail_good_ending:
     "Even though our colony wasn't going to make it, at least we had each other."
 
@@ -47,7 +49,52 @@ label fail_good_ending:
     jump credits
     return
 
+# ENDING 4 - Community and Marriage Thriving
 label succeed_good_ending:
+    if (profession == "doctor"):
+        scene bg clinic with fade
+        boss "[her_name], I don't know what we'd do without you. You've worked so hard to keep everyone on the colony healthy."
+    elif (profession == "crafter"):
+        scene bg workshop with fade
+        boss "[her_name], I don't know what we'd do without you. Everyone has something you've made in their house or on their farm. And you've taught others how to make useful things, too."
+    elif (profession == "mechanic"):
+        scene bg machine_shop with fade
+        boss "[her_name], I don't know what we'd do without you. All our machines would be broken and useless if not for your hard work fixing them up all the time."
+    elif (profession == "teacher"):
+        scene bg classroom with fade
+        boss "[her_name], I don't know what we'd do without you. All the kids love your enthusiasm for learning, and you've worked hard to make sure they know about Earth and learn the things they need to succeed here on Talam."
+
+    her "I do like my job..."
+    boss "I just wanted to let you know how much we all appreciate your hard work and expertise."
+    her "Thank you, that's nice to hear."
+    "Even though it sounded cheesy, it was true. I felt needed, and appreciated - there really was no one else on the colony who could do the things I could do, but people didn't resent that."
+    "They just knew that sometime I'd need them as much they needed me."
+
+    brennan "He's right, you know. We'd all be lost without you."
+    her "That's an exaggeration!"
+    if (wants_to_leave or cheated_on_him):
+        brennan "I suppose you've changed your mind about wanting to leave?"
+        her "Yes... sometimes it has seemed hopeless, but I thought about it, and I'm happy right where I am."
+    if (exposed_brennan):
+        brennan "It'll be your turn to send a message on the quantum entanglement device... what will you say?"
+        her "I'll have to think about it - there's a lot to fit into 150 characters."
+        brennan "Well, it turns out the brass in Washington want me to stay longer - since the device works, I don't have to return to Earth to make my report in person."
+        her "That's good news!"
+    else:
+        brennan "I don't think anyone will be sad to see me go."
+        if (brennan_relationship >= 2):
+            her "Of course we'll miss you! But maybe you won't miss Talam?"
+        else:
+            her "We'll miss you, Brennan. But I think it'll be good for you to do something else."
+        brennan "Yeah, I never did quite fit in here. I'm not too sad about it; there's loads more birds back home, anyway."
+        her "That's the spirit!"
+
+    "Brennan left, and I got ready to go."
+
+    if (is_pregnant):
+        "I stayed a few more minutes to feed the baby before walking home. She wasn't that heavy, yet, but she started to get heavy when I carried her all day long."
+    "I headed home, enjoying the warm sun and a light breeze."
+
     scene bg fields with fade
     show him normal at quarterright with moveinright
     show her normal at center with moveinleft
@@ -67,6 +114,30 @@ label succeed_good_ending:
         him happy "Wow, really?! Thank you!"
 
     "It wasn't much of a dinner, really. We had some beans cooked with salted meat, and some greens with vinegar."
+    
+    if (skill_domestic >= 100):
+        "I told [his_name] about my latest post on the No Space Like Home blog. I had been experimenting to see all the different kinds of vegetables you could pickle."
+    if (skill_creative >= 100):
+        "As we ate, I traced my hand around the pattern I had inlaid on the edge of the dishes we used. All around were things I had made to make our lives a little better - placemats, potholders, rope, crates - it made our little house seem more like our home."
+    if (skill_knowledge >= 100):
+        "We talked about some of the research Lily and I had been doing about pharmaceutical properties of Talam's plants. Making our own medicines would be a huge boon for us."
+    if (skill_physical >= 100):
+        "As I took another bite of beans, the juicy meat tasted so good. We'd dried it to preserve it, but when it soaked with the beans it regained some of its original texture."
+    if (skill_social >= 100):
+        her "We had a colony leadership meeting today."
+        him "Oh yeah? How'd it go?"
+        her "Pretty good. Though sometimes I wish people would just work out their own problems."
+        him "Like what?"
+        her "Oh, like \"Someone's goat is getting onto my property! Do something!\" when really they should just go tell Thuc, \"Hey, your goat came in my fields, can I help you fix your fence?\""
+        him "Ha ha, I know exactly who you're talking about."
+        her "I just have to remember that we can't make everyone be happy, and they're not going to come tell us all the good things that are going on."
+        him "Sounds like you've got a good perspective."
+    if (skill_spiritual >= 100):
+        "I looked around and saw so many things to be grateful for - loving family, fresh food, safe house, good friends - I felt so blessed."
+    if (skill_technical >= 100):
+        ""
+        #TODO WRITE THESE
+
     if (is_pregnant):
         "[his_name] joked and held the baby on his lap and tickled her chin, and then we talked and read books and went to sleep all snuggled up together."
     else:
@@ -93,7 +164,7 @@ label succeed_good_ending:
     show him happy
     "He didn't answer, just buried his face in my hair and tightened his grip around my body. I held on tight to his arms, feeling safety and love and happiness swirling around us."
     "We were home."
-
+    #TODO: Add in mentions of significant choices (skills, etc) made throughout the game.
     ".:. Ending 4/4."
     jump credits
     return

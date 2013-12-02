@@ -475,6 +475,12 @@ init -2 python:
 
     style.pref_button.size_group = "pref"
     style.pref_button.xalign = 1.0
+    # TODO: Change our buttons to use images!
+    #style.pref_button.background = Frame("menu/button_idle.png",10,10)
+    #style.pref_button.hover_background = Frame("gui/button_hover.png",10,10)
+    #style.pref_button.selected_background = Frame("gui/button_selected.png",10,10)
+    #style.pref_button.selected_hover_background = Frame("gui/button_hover.png",10,10)
+    #style.pref_button.yminimum = 40
 
     style.pref_slider.xmaximum = 192
     style.pref_slider.xalign = 1.0

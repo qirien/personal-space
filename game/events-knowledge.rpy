@@ -1,26 +1,28 @@
 # Afternoon Events
 # Knowledge
 
-# Intro Event and the default
+# Default
+label knowledge_def:
+    scene bg library
+    "I read up on the latest science research."
+    $ skill_knowledge += 5
+
+# Intro Event
 label knowledge_0:
     scene bg library
-    if (skill_knowledge <= 10):
-        "I knew there was a library here, so I decided to check it out. A young man was intently reading from his computer pad at the desk when I walked in."
-        her "Hello there, your name's Sven, right?"
-        sven "Oh! Hi there! Yes, I'm Sven, but I forgot your name."
-        her "It's okay, there's a lot of people here on the colony.  I'm [her_name]."
-        sven "That's right. Uh...what can I help you with?"
-        her "Well, I had a few minutes and I thought I'd see what sort of stuff you have here in the library."
-        sven "Well, most books you can just borrow from our online library, but we do have some high-res maps of the planet and a few printed reference books as well. We have also some tools and equipment people can borrow, like if you want to build something."
-        her "Okay, that makes sense. We didn't have room to bring drills and wrenches for everyone, huh?"
-        sven "Exactly. This is also where you can request new data from the extranet connection to Earth, though we have limited bandwidth and it will take several years to get here."
-        her "What are those machines over there?"
-        sven "Those are our printers. You can print on paper, of course, and we have a 3D printer if you need to print something out of plastic. We have limited quantities of paper and plastic, though, so please keep that in mind."
-        her "I will. Thanks for the tour, Sven."
-        sven "You're welcome."
-        
-    else:
-        "I read up on the latest science research."
+    "I knew there was a library here, so I decided to check it out. A young man was intently reading from his computer pad at the desk when I walked in."
+    her "Hello there, your name's Sven, right?"
+    sven "Oh! Hi there! Yes, I'm Sven, but I forgot your name."
+    her "It's okay, there's a lot of people here on the colony.  I'm [her_name]."
+    sven "That's right. Uh...what can I help you with?"
+    her "Well, I had a few minutes and I thought I'd see what sort of stuff you have here in the library."
+    sven "Well, most books you can just borrow from our online library, but we do have some high-res maps of the planet and a few printed reference books as well. We have also some tools and equipment people can borrow, like if you want to build something."
+    her "Okay, that makes sense. We didn't have room to bring drills and wrenches for everyone, huh?"
+    sven "Exactly. This is also where you can request new data from the extranet connection to Earth, though we have limited bandwidth and it will take several years to get here."
+    her "What are those machines over there?"
+    sven "Those are our printers. You can print on paper, of course, and we have a 3D printer if you need to print something out of plastic. We have limited quantities of paper and plastic, though, so please keep that in mind."
+    her "I will. Thanks for the tour, Sven."
+    sven "You're welcome."
     $ skill_knowledge += 10
 
     return
@@ -213,8 +215,42 @@ label knowledge_8:
     $ skill_knowledge += 10
     return
 
-# Find archaelogical evidence for an ancient alien civilization?
+# Find bacteria that produce plastic, sort of like:
+# http://www.scientificamerican.com/article.cfm?id=turning-bacteria-into-plastic-factories-replacing-fossil-fuels
 label knowledge_9:
+    "I had been working with Dr. Lily on a lot of things - not just the edible plants, but also cataloguing animal species and their behavior."
+    "We were trying to build a food web based on what the animals here ate, but we knew it was woefully incomplete."
+    scene bg pond with fade
+    show her normal at center with dissolve
+    "I decided to spend the day observing animals near the pond to see if I could discover any new species or record new behavior."
+    "I was able to find some new predators, as well as several migratory species that sometimes visited the pond. Later in the afternoon, though, a sheen on the far side of the pond caught my eye."
+    her surprised "What could that be?"
+    "I hiked over to the other side of the pond, and found a smooth, glossy crust forming on one part of the pond."
+    her "It feels like plastic!"
+    scene black with fade
+    "I took a sample back to Dr. Lily for analysis."
+    scene bg lab with fade
+    lily "It is plastic."
+    her "How is that possible?! This doesn't look like anything we brought from Earth..."
+    lily "That's because it is not from Earth. This is a naturally-formed plastic."
+    her "Naturally formed?"
+    lily "On the sample you gave me were some local bacteria. These bacteria eat organic material in the pond and excrete a chemical used to make plastic."
+    her "But how did the plastic form?"
+    lily "There must be some sort of chemical reaction... We should study it more. Will you show me where you found it?"
+    scene bg pond with fade
+    "I showed her the spot at the pond."
+    lily "Hmm, I'll need samples of this, and this...it could be due to dehydration, or high acidic content..."
+    "She took a lot of samples back to the lab."
+    lily "I'll let you know what I find out."
+    "A few weeks later, I asked her about it again."
+    her "So, did you ever find out what was making that plastic at the pond?"
+    lily "Oh! Yes. In fact, I am attempting to replicate the conditions of the pond in that tank over there to grow plastic."
+    her "It looks like it's working!"
+    lily "Yes, I believe I have managed to replicate the necessary conditions."
+    her "Great! If we can produce our own plastic, we can 3D print more things that we need."
+    lily "That's true; It would normally be at least 25 years before we could have our own plastic manufacturing facilities."
+    "How cool is that?! We could now make our own plastic with bacteria..."
+    $ community_level += 2
 
     $ skill_knowledge += 10
     return

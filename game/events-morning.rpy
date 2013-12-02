@@ -1082,6 +1082,9 @@ label brennan_confess:
             else:
                 her "I'm not sure if everyone else would be as understanding as I am."
                 brennan "That's true. Well, I trust you to keep it a secret. Thank you."
+            her "But there is one more thing..."
+            brennan "Oh? What's that?"
+            jump wants_from_brennan
         "They have a right to know":
             her "The colony has a right to know, and a right to be able to use the device. Like you said, we'll need some kind of priority system and limits on messages, etc, but it's not fair for only one person to be able to communicate with Earth like that."
             brennan "Do you think they'll forgive me?"
@@ -1092,7 +1095,7 @@ label brennan_confess:
             $ exposed_brennan = True
         "I won't tell if...":
             her "I won't tell if you promise to-"
-            menu:
+            menu wants_from_brennan:
                 "What should I say?"
                 "Get me off this planet":
                     her "Promise to get me off this planet with the next colony ship. I know I promised to stay forever, but you have connections, you could help me."
@@ -1102,13 +1105,15 @@ label brennan_confess:
                     her "Promise to send some messages to Earth for me."
                     brennan "Of course, I'll do what I can."
                     brennan "Thank you, [her_name]. I trust you to keep it a secret."
-                    return
-                "Kiss me" if ((brennan_relationship >= 2) and (loved <= -10)):
+                "Kiss me" if ((brennan_relationship >= 2) and (loved <= 0)):
                     her "Kiss me. Now."
                     "What was I saying? What was I doing? I thought he was going to laugh, and I could pretend it was a joke, but then he stepped closer."
                     "My heart raced and my mind shut down as there were no more words, just flesh melting into flesh with all the passion we had been holding back."
                     "I didn't think, didn't analyze, didn't worry about [his_name]; I just existed, in that eternal moment of pleasure and mutual acceptance."
                     $ cheated_on_him = True
+                "You owe me one":
+                    her "Never mind, just... keep in mind that you owe me one."
+                    brennan "I owe you much more than that. Thank you, [her_name]."
     return
 
 # MONTH 24 Resolve things at work?

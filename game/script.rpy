@@ -152,7 +152,7 @@ label start:
             $ known_each_other = "six months"
             jump month01
         "Skip to Debug Point":
-            jump knowledge_8
+            call screen computer_pad
 
     "I thought I knew what love was. After all, that's why I married..."
     $ his_name = renpy.input("What is his name?", "Jack", length=20)

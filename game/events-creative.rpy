@@ -1,9 +1,30 @@
 # Afternoon Events
 # Creative
 
-# Intro Event and the default
-label creative_0:
+# Default Event
+label creative_def:
+    scene bg farm_interior with fade
     "I worked on a quilt for our bedroom using scraps of fabric we didn't need. It was pretty tedious cutting out tiny squares of exactly the right size and sewing them together by hand, so I just worked on it a little at a time."
+    $ skill_creative += 5
+
+# Intro Event
+label creative_0:
+    scene bg farm_interior with fade
+    "Looking around our tiny, bare house, we had only the barest necessities. A towel, sturdy blankets and clothing, a plate, spork and knife for each of us, and a rough table and two convertible seats from the shuttle that also doubled as our bed."
+    "It was enough to survive on, but I wanted to do more than just survive."
+    "But if we wanted more, we would have to make things ourselves."
+
+    "I wanted to do something to make our one room pre-fab house seem unique."
+    "So I took a knife and carved our names above the door."
+    "I had so much fun that I started carving designs on the wall posts near the ceiling. [his_name] came in and watched me for a while."
+    him "Hmm, this is a nice house, here. Hand-carved moldings, even! I wonder who it belongs to?"
+    him "Oh, look, it's written right here above the door, [his_name] and [her_name]. One of them must be very creative."
+    her "I hear the other one's hard-working and handsome."
+    him "Really? We should go meet them sometime."
+
+    "I was a little worried he wouldn't like it, but I guess he doesn't mind."
+    "Now it felt like {b}our{/b} house."
+
     $ skill_creative += 10
 
     return
@@ -11,8 +32,8 @@ label creative_0:
 # Weave Placemats
 label creative_1:
     scene bg path with fade
-    "On my way back from work, I found some tall, wide weeds that had grown very quickly. I wanted to work on some weaving, so I took some home and made two placemats with it."
-    "Somehow just those two placemats made the whole room look more like a home."
+    "On my way back from work, I found some tall, wide weeds that had grown very quickly. I wanted to work on some weaving, so I took some home and made a door mat."
+    "Not only did it make the place look more homey, but it kept some of the dirt from outside off our floors."
     $ skill_creative += 10
     return
 
@@ -114,6 +135,7 @@ label creative_5:
     return
 
 # Re-cover space shuttle seats to make a couch?
+# TODO: wouldn't they have given everyone these way earlier?
 label creative_6:
 #month 5 is what to do with trash, so I'm assuming this will have to come after it (though it may be several months after it)
     #scene bg storehouse with fade

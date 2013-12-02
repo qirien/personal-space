@@ -2603,7 +2603,7 @@ label monthly_event_23:
                         her normal "Welcome home, [his_nickname]."
                         him normal "It's good to be home, [her_nickname]."
                         "When he hugged me, for the first time in way too long, that was when I knew everything would be okay. Things weren't back to normal; I don't know if they ever would be like they had been. But they were okay."
-                        $ loved += 5
+                        $ loved += 10
                         return
                 
             her "I never thought of myself as a mother, you know."
@@ -2721,6 +2721,7 @@ label monthly_event_23:
                 "I hadn't realized how much I missed him. I missed his touch, his need, his soft kisses on my back, everything we had ever shared together."
                 "Together, we remembered it all."
                 $ loved += 5
+                $ made_love += 1
                 
     # Not pregnant, don't want kids, and didn't cheat on him
     # How to talk about sex
@@ -2779,7 +2780,7 @@ label monthly_event_23:
                 him sad "That was pretty rotten of me. I'm sorry."
                 her surprised "No, no, it's okay, it's not that big of a deal. I just wanted to tell you how I felt."
                 him normal "Well, I'm glad you did. And I think I know just how to solve this problem."
-                her susprised "How's that?"
+                her surprised "How's that?"
                 him flirt "Lots of practice!"
                 her annoyed "[his_name]..."
                 "He's kind of exasperating, but afterwards I could tell he was really trying to make sure I felt loved and appreciated, too."
