@@ -129,19 +129,21 @@ label succeed_good_ending:
         her "Pretty good. Though sometimes I wish people would just work out their own problems."
         him "Like what?"
         her "Oh, like \"Someone's goat is getting onto my property! Do something!\" when really they should just go tell Thuc, \"Hey, your goat came in my fields, can I help you fix your fence?\""
-        him "Ha ha, I know exactly who you're talking about."
+        him "Ha ha, I know exactly what you're talking about."
         her "I just have to remember that we can't make everyone be happy, and they're not going to come tell us all the good things that are going on."
         him "Sounds like you've got a good perspective."
     if (skill_spiritual >= 100):
-        "I looked around and saw so many things to be grateful for - loving family, fresh food, safe house, good friends - I felt so blessed."
+        "I thought of all the little things that had happened to help us succeed. We had plenty of bad things, too, but somehow no matter what happened we managed to make it through."
+        "Not on our own, though - I noticed some people in the colony who were always looking out for everyone else, even at great cost to themselves."
+        "I wanted to be one of those people."
     if (skill_technical >= 100):
-        ""
-        #TODO WRITE THESE
+        "Looking around at our house, I noticed how different it was from when we first moved in."
+        "The water screw, the blender, the laundry wringer - the contraptions I built made things at home a little simpler when everything else was so much harder than back on Earth."
 
     if (is_pregnant):
-        "[his_name] joked and held the baby on his lap and tickled her chin, and then we talked and read books and went to sleep all snuggled up together."
+        "After dinner, [his_name] joked and held the baby on his lap and tickled her chin, and then we talked and read books and went to sleep all snuggled up together."
     else:
-        "[his_name] joked and we laughed and talked and read books and went to sleep curled up next to each other."
+        "After dinner, [his_name] joked and we laughed and talked and read books and went to sleep curled up next to each other."
 
     scene bg bedroom with fade
     show overlay night
@@ -164,7 +166,6 @@ label succeed_good_ending:
     show him happy
     "He didn't answer, just buried his face in my hair and tightened his grip around my body. I held on tight to his arms, feeling safety and love and happiness swirling around us."
     "We were home."
-    #TODO: Add in mentions of significant choices (skills, etc) made throughout the game.
     ".:. Ending 4/4."
     jump credits
     return

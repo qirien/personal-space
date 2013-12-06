@@ -2,7 +2,6 @@
 
 # You shouldn't ever see this. This is just a fall through in case something happens
 # and there's no event for this month.
-# TODO: Make the ending actually happen....
 label monthly_event_0:
     "Nothing exciting happened this month."
     return
