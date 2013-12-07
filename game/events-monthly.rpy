@@ -2184,16 +2184,150 @@ label monthly_event_16:
     return
 
 # MONTH 17
-# uses knowledge, technical
+# uses spiritual, creative
 label monthly_event_17:
     scene bg farm_interior with fade
     return
 
+
 # MONTH 18 - something bad happens where you need help (related to pests?); he doesn't want to ask for help but you think you need it.
-# uses spiritual, social, physical
+# uses domestic, knowledge, social, technical, physical
 label monthly_event_18:
     scene bg farm_interior with fade
     # TODO: somewhere in here, ultrasound if pregnant, find out baby is a girl
+    him "Hey, could you give me a hand for a minute?"
+    if (loved >= 0):
+        her "Sure, what for?"
+    else:
+        her "I guess. What is it?"
+
+    him "I need to jump start my tractor. Can you run these cables to the house's battery for me?"
+    her "Why do you need to jump start your tractor?"
+    him "Something wrong with the battery. It won't hold a charge for very long anymore."
+    if ((skill_technical >= 70) or (profession == "mechanic")):
+        her "Want me to take a look at it?"
+    else:
+        her "Well, shouldn't you take it in to get it fixed?"
+
+    him "Don't have time. I need to use it all day today."
+    her "Okay, if you're sure..."
+    "He hooked up the tractor's battery to the cables, and I attached the other end to our house battery."
+    her "It's hooked up!"
+    him "Okay, now turn on the tractor!"
+    "He was making sure the clamp was on the battery when I turned the tractor on. But then I heard a strange sound...and was that smoke...?"
+    him "Aaaahhhhh!"
+    "I turned it off, and as I jumped out, I could see that the engine was on fire! [his_name] was backing away, his hand charred and red."
+    her "Are you okay?!"
+    him "The fire! Put out the fire!"
+    "I ran and got our fire extinguisher from the house."
+    if ((skill_technical >= 70) or (skill_knowledge >= 70) or (profession == "mechanic")):
+        "As I was running back to the tractor, I skimmed the label."
+        "The extinguisher said it was an ABC fire extinguisher filled with monoammonium phosphate."
+        "That was the wrong type of fire extinguisher! While it might put out the fire, the tractor would be ruined!"
+        "Water would only make it worse, since there was a lot of electronics in the tractor."
+        "But I knew something that could work instead..."
+        "I ran to the cellar and pulled out a can of baking soda. Yanking the top off as I ran, I dumped it on the tractor engine fire."
+        $ community_level += 5
+    else:
+        "I pulled the trigger; why wasn't it working?! Oh yeah, the pin!"
+        "I fumbled with removing the pin; it seemed to take forever!"
+        "Finally, I sprayed it at the fire. It didn't seem to do much, but I kept at it."
+
+    "Eventually, the fire died down."
+    "Now that the fire was out, I turned to [his_name]. One of his hands and his forehead were singed and red."
+    him "You put it out..."
+    her "You're really hurt!"
+    "He started laughing. I didn't join him, though - I was too worried."
+    if (profession == "doctor"):
+        her "You're in shock; let's go to the clinic and I'll check you out."
+    else:
+        her "Let's get you to town and have the doctor check you out."
+    him "Check me out... check me out, you're always checking me out."
+    her "Alright, just don't you check out on me."
+    "He stared off into the distance, like he could barely hear me."
+    if (skill_social >= 60):
+        her "Stay here; I'm going to radio for help."
+        "I called on the radio and Thuc and Mr. Peron came over. Together, we helped [his_name] get to the town."
+    elif (skill_phyiscal >= 40):
+        her "Where's Lettie?"
+        "I found Lettie tied up near the barn."
+        her "C'mon, Lettie, [his_name] needs your help, alright?"
+        "I remembered what [his_name] had taught me and was able to lead her over to [his_name]. He couldn't ride her, not with his hands so badly burned, but I hitched her up to the cart."
+        her "Get in, [his_nickname]."
+        "He sat down, but now his laughing had turned into trembling."
+        "We set off at an easy pace."
+    else:
+        "I didn't know what to do. I didn't feel like I could call on any of our neighbors, and I didn't know how to have Lettie pull a cart or anything..."
+        "But he could still walk, so I was able to sort of guide him towards the town. I just hoped he wouldn't pass out on me or anything."
+        $ relaxed -= 2
+
+    scene bg clinic with fade
+    "Finally, we arrived at the clinic. [his_name] was shaking and breathing hard."
+    him "I don't n-n-n-need a doc-c-c-tor."
+    her "Your hands are all blistered!"
+    "He looked at his hands, but didn't appear to notice how hurt they were."
+    him "I sh-sh-sh-should just go h-h-home."
+    her "Just come in here, everything will be fine."
+    if (profession == "doctor"):
+        "I cleaned his burned skin carefully, treated his burns with ointment, and wrapped them up carefully."
+        "He gradually calmed down and stopped shaking, too."
+        her "You need to let these heal for at least two weeks. Looks like mostly a second-degree burn, so it's not too serious, but it will be painful."
+        him "I can't use my hands at all?"
+        her "Anything that hurts is off-limits."
+    else:
+        "The doctor cleaned, treated, and wrapped his burns, and [his_name] gradually calmed down and stopped shaking."
+        "He was not happy to learn that he couldn't use his hands until they had healed."
+    him "I don't have time for that! There's tomatoes and peppers to harvest!"
+    her "There must be something we can do..."
+    menu:
+        "What should I say?"
+        "{i}Let's ask for help.{/i}" if (skill_social >= 60):
+            her "I bet our neighbors would be willing to help out."
+            him "We can ask..."
+            "We asked around, and several neighbors said they would spend half a day working at our farm, or send one of their kids to work at our farm."
+            "[his_name] didn't like sitting around watching other people work on his farm, but he didn't have much of a choice."
+        "{i}I'll do the harvest!{/i}" if ((skill_domestic >= 60) or (skill_physical >= 60)):
+            her "I can do the harvesting!"
+            him "Really? I know you have plenty of your own things to do..."
+            her "It's not that hard to pick tomatoes and peppers."
+            him "Okay, awesome! If there's anything you need done that doesn't involve hands, maybe I can do that?"
+            her "Ummm... yeah, maybe you can dictate some e-mails for me?"
+            him "Sure..."
+            "(I will probably have to type them over again, anyway, but he needs something useful to do!)"
+            "I was so tired going to work and then coming home and harvesting vegetables, but at least we got them all picked."
+        "{i}The kids at school can help out!{/i}" if (profession == "teacher"):
+            her "Picking tomatoes and peppers is not that hard; why don't I have my students help out?"
+            him "The kids at school? Sure, it could be educational!"
+            her "A field trip!"
+            scene bg fields with fade
+            "[his_name] instructed the kids on how to tell when the vegetables were ripe, and how to store them so they would keep fresh longer."
+            "The little kids got tired quickly, but with everyone helping, we were able to pick all the ripe ones."
+            "It was cute to watch [his_name] explain things to the kids... they really listened to him."
+        "The farm can wait.":
+            her "The farm can wait. Your health is more important."
+            him "You can't just let the food go to waste! I worked hard growing those!"
+            her "Well, I don't have time to pick them."
+            him "Someone needs to!"
+            "In the end, [his_name] found a friend to help him pick some of the vegetables."
+            "I helped a little, but the farm was his thing, not mine."
+            $ loved -= 2
+
+    scene bg clinic with fade
+    "Finally, the bandages came off and [his_name] could use his hands again."
+    him "I know the first thing I want to touch when we get home."
+    her "Hmmm, are you talking about Lettie? I know she's missed you..."
+    if (loved >= 0):
+        him "Haven't you missed me, just a little?"
+        her "Maybe..."
+        scene bg bedroom with fade
+        "That night, he held me gently, his hands caressing my skin as if for the first time. His skin was still rough from the burns, but I didn't care."
+        him "Mmmm, the touch of your skin... I've missed {b}you{/b}, [her_nickname]."
+        her "I missed you, too..."
+        scene black with fade
+    else:
+        him "That's not what I was thinking of, but I did miss Lettie, too. I better go see how she's doing."
+        her "..."
+    
     return
 
 # MONTH 19 - Clothing wearing out, stiff, doesn't fit anymore if pregnant.
@@ -2216,6 +2350,7 @@ label monthly_event_19:
                 ilian "A few..."
                 "I found a large men's shirt that wasn't very flattering, but would fit."
                 "They had a pair of larger pants, but they were very baggy and also too long. Well, I'd just have to roll them or hem them or something."
+                "How did they expect people to grow the colony by having kids if they didn't even have maternity clothes?!"
             "{i}Modify your pants{/i}" if ((skill_domestic >= 60) or (skill_creative >= 60)):
                 "I decided to turn one of the pairs of Earth pants I had into maternity pants."
                 "After all, I wasn't going to be pregnant forever, so I didn't want to ruin my nice space uniform."
