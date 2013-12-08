@@ -152,7 +152,19 @@ label start:
             $ known_each_other = "six months"
             jump month01
         "Skip to Debug Point":
-            call screen computer_pad
+            $ his_name = "Jack"
+            $ her_name = "Jill"
+            $ profession = "teacher"
+            $ community_level = 25
+            $ loved = 60
+            $ exposed_brennan = True
+            $ skill_knowledge = 100
+            $ skill_domestic = 100
+            $ want_kids = True
+            $ known_each_other = "six months"
+
+            jump show_credits
+            #call screen computer_pad
 
     "I thought I knew what love was. After all, that's why I married..."
     $ his_name = renpy.input("What is his name?", "Jack", length=20)

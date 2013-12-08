@@ -2757,7 +2757,7 @@ label monthly_event_23:
             him concerned "Yeah, probably."
             her surprised "What's that supposed to mean?!"
             if (cheated_on_him):
-                him surprised "Are you having an affair with Brennan?"
+                him annoyed "Are you having an affair with Brennan?"
                 her surprised "(Oh no.)"
                 menu:
                     "What should I say?"
@@ -2769,6 +2769,7 @@ label monthly_event_23:
                         "I could tell he didn't believe me. And now he didn't trust me to tell the truth, either."
                         "We didn't talk much after that. We tried to pretend nothing was wrong, but I didn't know what else to do."
                         $ loved -= 5
+                        $ relaxed -= 5
                     "Yes":
                         her sad "...yes."
                         him angry "What!"
@@ -2784,6 +2785,7 @@ label monthly_event_23:
                         her angry "Look, I was going to say I was sorry, but what's the point?! Clearly, you are done with this relationship."
                         him angry "Clearly, there was never much of a relationship here to begin with. I'm sorry for not seeing it sooner."
                         "We didn't talk much after that. We both knew it was over, but we kept pretending nothing had happened..."
+                        $ loved -= 5
 
                     "What about you?":
                         her concerned "Are {b}you{/b} having an affair with Thuc?"
@@ -2791,6 +2793,7 @@ label monthly_event_23:
                         her normal "Well, that's how ridiculous your suggestion is. So drop it."
                         him annoyed "...Okay."
                         "I wasn't sure if he believed me or not. But he started acting more distant, and I felt he didn't trust me."
+                        $ loved -= 5
 
                 # Tell Brennan about the baby
                 if (cheated_on_him):

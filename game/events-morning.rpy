@@ -1116,7 +1116,7 @@ label brennan_confess:
                     brennan "I owe you much more than that. Thank you, [her_name]."
     return
 
-# MONTH 24 Resolve things at work?
+# MONTH 24 Resolve things at work? Someone you've helped says thank you?
 label work_8:
     $ times_worked += 1
 
