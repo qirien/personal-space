@@ -120,6 +120,7 @@ label mediocre_ending:
 
     her "[his_name]?"
     him "Hmmm?"
+    # TODO: Make this less cheesy: include some body language or specific details or something
     if (loved >= 0):
         her "I'm so glad to be here, with you."
         him "I'm glad to be with you, [her_nickname]!"
@@ -174,6 +175,7 @@ label skill_appreciation:
 
 # Helper function for endings 2 & 3 to show apprecation for work and say
 # goodbye to Brennan, if he's leaving.
+# TODO: Make this less cheesy by including specific people she's helped
 label work_appreciation:
     if (profession == "doctor"):
         scene bg clinic with fade
@@ -277,6 +279,16 @@ label good_ending:
 
 # Credits
 label show_credits:
+
+    "Credits"
+    scene black with dissolve
+    show text "Example 1" with dissolve
+    $renpy.pause(2.0)  #works fine
+    scene black with dissolve
+    show text "Example 2" with dissolve
+    with Pause(2.0) #doesn't pause at all, goes straight to the next thing.
+    scene black with dissolve
+    "End Credits"
 
     "Credits"
     scene black with dissolve

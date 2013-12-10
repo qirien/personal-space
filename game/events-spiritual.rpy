@@ -15,14 +15,13 @@ label spiritual_0:
     "I went to the colony's spiritual leader, just to talk. I'd been thinking a lot about what makes us human, and what there may be that we cannot see."
     "Naomi Grayson" "Welcome, [her_name]. How can I help you?"
     her "Hi...uh, What should I call you, anyway? Pastor? Reverend?"
-    naomi "Why don't you call me \"Sister\"? While I'm not a nun of any religion, I like to emphasize that we are all like children when it comes to matters of the spirit."
+    naomi "Why don't you call me \"Sister Naomi\"? While I'm not a nun of any religion, I like to emphasize that we are all like children when it comes to matters of the spirit."
     her "OK, Sister Naomi...what exactly do you do here?"
     naomi "When people have questions about what they should do, or what to believe, sometimes it is helpful for them to have a guide. Since there are people of many different faiths here on Talam, I try and guide them in a way that is helpful for their religious background."
     her "But what do you believe?"
     naomi "Is that really the question you should be asking?"
     her "Huh?"
-    naomi "Shouldn't you be asking yourself that question?"
-    her "What do {b}I{/b} believe?"
+    naomi "What do {b}you{/b} believe?"
 
     menu:
         "What do {b}I{/b} believe?"

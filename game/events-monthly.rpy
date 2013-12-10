@@ -552,105 +552,113 @@ label monthly_event_6:
     him normal "Well, I've tried picking them off individually and there are just too many now to do that. I wish we could just kill them all at once."
     her surprised "I don't think we have the resources to do that."
     him annoyed "Yeah, that's why I was asking you for ideas."
-    # TODO: finish adding emotions
     menu:
         her "Well, we have a few options."
         "{i}Take a sample bug in for research.{/i}" if (skill_knowledge >= 30 or skill_technical >= 30):
             "I collected a few of the insects and brought them to Lily for examination."
+            scene bg lab with fade
             lily "These samples remind me of Tardigrades we have on Earth."
-            her "Tardigrades?"
+            her surprised "Tardigrades?"
             lily "They're an unusually hardy insect that can survive high and low temperatures as well as radiation. Because their adult forms don't increase in cell number, radiation doesn't damage their DNA like it does in animals whose cells are constantly splitting."
-            her "That's... really interesting. Is there any way we could get rid of them?"
+            her normal "That's... really interesting. Is there any way we could get rid of them?"
             lily "I've been working on an organic pesticide made from fungus. I'm not sure sure if it will work on these insects though. May I keep your sample to test the pesticide on?"
             her "Sure, there's plenty more where that came from."
             "I watched as Lily sprayed the bugs with her mineral oil and fungus concoction."
-            her "Um, it looks like they're still alive."
+            her annoyed "Um, it looks like they're still alive."
             lily "Yes, if the pesticide works we will know in a few days."
-            her "A few days? Our crops will be gone by then."
+            her angry "A few days? Our crops will be gone by then."
             lily "It is a rather pressing matter. Do you have any mature garlic cloves?"
-            her "I think we do, but why?"
+            her surprised "I think we do, but why?"
             lily "Garlic is a natural insect repellent. You'll still have to remove all the bugs, but if you can spray your plants with some diluted garlic it might stop them from returning as quickly."
-            her "Well, it's worth a shot."
+            her normal "Well, it's worth a shot."
+            scene bg fields with fade
             "For the rest of the week we tried to to remove as many insects by hand as we could. Then we coated the plants with garlic juice. The work was long and hard, and we stunk afterwards."
             if (skill_physical > 20):
                 "After a day's work in the field, I fell asleep right away, but in the morning I was ready to keep going."
             else:
                 "After the first day I was exhausted. I wasn't able to help as much as I would have liked."
-            him "We have baskets and baskets of these insects."
-            her "I wonder if we could use them to help us somehow."
-            him "Maybe we can. Next time you see Lily, could you ask her about it?"
-            her "Sure. Come to think of it, we should know if her pesticide was successful or not by now."
+            him annoyed "We have baskets and baskets of these insects."
+            her surprised "I wonder if we could use them to help us somehow."
+            him surprised "Maybe we can. Next time you see Lily, could you ask her about it?"
+            her normal "Sure. Come to think of it, we should know if her pesticide was successful or not by now."
+            hide him
             "Lily's fungus experiment successfully killed a little over half the bugs I gave her. She lent me a sprayer and told me to bring it back as soon as possible, since some other farms had the same insects to spray."
             "When I asked her about how to use the dead insects we had caught, Lily said that we could use them to feed livestock."
             her "I'm not sure if our horse will like how they taste, but I'll try it."
             "We sprayed our crops. Sadly, we couldn't save many of them. Luckily, our underground crops like potatoes and beets weren't attacked by the insects, so we still had something to eat while we planted new crops."
-            her "Oh, Lily told me we could use the dead insects for something..."
-            him "What is it?"
-            her "We could feed them to Lettie!"
-            him "Um... no."
-            her "I think we should at least try it out! Maybe she'll like them!"
-            him "Horses don't eat bugs!"
-            her "Well I doubt they eat hay in the wild and it hasn't hurt them."
-            him "I'll give her one, but if she gets sick or something, we are just going to crush the rest of the bugs and put them in the compost pile."
+            her normal "Oh, Lily told me we could use the dead insects for something..."
+            him surprised "What is it?"
+            her happy "We could feed them to Lettie!"
+            him annoyed "Um... no."
+            her normal "I think we should at least try it out! Maybe she'll like them!"
+            him angry "Horses don't eat bugs!"
+            her annoyed "Well I doubt they eat hay in the wild and it hasn't hurt them."
+            him annoyed "I'll give her one, but if she gets sick or something, we are just going to crush the rest of the bugs and put them in the compost pile."
             "Lettie didn't seem to hate or like crushed insects, so I used them to extend her food. We still had a lot of leftover insects, so after making sure they were all dead I put them in the compost pile."
-            him "I'm glad we could use some of the bugs, but I don't think the crops they ate will last."
-            her "Why not?"
-            him "They're full of insect eggs. The corn at least. Even if we pick all the infected crops off, I think it's too late to save them."
-            her "Well, even if the corn is beyond saving, we could at least keep the greens for Lettie."
-            him "And then some!"
+            him concerned "I'm glad we could use some of the bugs, but I don't think the crops they ate will last."
+            her surprised "Why not?"
+            him sad "They're full of insect eggs. The corn at least. Even if we pick all the infected crops off, I think it's too late to save them."
+            her normal "Well, even if the corn is beyond saving, we could at least keep the greens for Lettie."
+            him normal "And then some!"
             "We cut off and burned all the ears of corn that had eggs in them. We cut and dried all the corn stalks to turn it into hay."
             "[his_name] started plowing the land for a new crop."
         "{i}Use the bugs as food.{/i}" if (skill_domestic >= 30 or skill_creative >= 30):
-            her "This is going to sound a little crazy, but I read that it's possible to make flour out of certain kinds of insects."
-            him "Okay... will it actually help keep us alive?"
-            her "If these insects are anything like Earth insects, they're highly nutritious. You know, low in saturated fats and carbs and high in amino acids."
-            him "Well, can you find out if they're okay for us to eat? Because if we can somehow process them, we might not go as hungry this month."
+            her surprised "This is going to sound a little crazy, but I read that it's possible to make flour out of certain kinds of insects."
+            him surprised "Okay... will it actually help keep us alive?"
+            her normal "If these insects are anything like Earth insects, they're highly nutritious. You know, low in saturated fats and carbs and high in amino acids."
+            him normal "Well, can you find out if they're okay for us to eat? Because if we can somehow process them, we might not go as hungry this month."
+            scene bg farm_interior with fade
             "I couldn't imagine eating them as they were, so after I boiled them, I ground them up and combined them with flour to make bread."
             "Well... it was more like crackers than bread, since the flour was so heavy. It was a little plain, so I made some beet jam to go with it."
-            him "It tastes kind of nutty. Gross! Is this an insect leg?"
-            her "Yeah, for the next batch I'm going to try processing the flour a little differently. But for a first try it's not bad, is it?"
-            him "It's a whole lot better than nothing, that's for sure."
+            him normal "It tastes kind of nutty."
+            him surprised "Gross! Is this an insect leg?"
+            her normal "Yeah, for the next batch I'm going to try processing the flour a little differently. But for a first try it's not bad, is it?"
+            him annnoyed "It's a whole lot better than nothing, that's for sure."
             "One day I sprinkled them with garlic salt and roasted them. They were crunchy and dry, but edible."
-            him "So, eating these insects is great and all, but we should plant something else where that infested corn is right now."
-            her "Yeah... how do we get rid of the plants that are already there?"
-            him "Well, I could burn them all, and then the ashes can fertilize the next crop."
-            her "Sounds better than nothing."
+            him normal "So, eating these insects is great and all, but we should plant something else where that infested corn is right now."
+            her surprised "Yeah... how do we get rid of the plants that are already there?"
+            him normal "Well, I could burn them all, and then the ashes can fertilize the next crop."
+            her concerned "Sounds better than nothing."
             "We piled all the corn plants into a huge bonfire. It burned into the night and made a big plume of smoke."
             "Our neighbors the Perons came by the see the fire, and we ate roasted insects as we watched the egg-infested crops turn to ash."
         "{i}Ask if anyone else is having the same problem.{/i}" if (skill_spiritual >= 30 or skill_social >= 30):
-            her "Let's ask around and see if anyone else has had problems with these pests."
-            him "Okay. I'll take Lettie into town; can you ask our neighbors?"
+            her normal "Let's ask around and see if anyone else has had problems with these pests."
+            him normal "Okay. I'll take Lettie into town; can you ask our neighbors?"
             her "Sure."
             "I found out that the Perons had the same insect eating their corn. To prevent the insects from laying eggs in the corn, they put mineral oil on the silks."
             "I radioed [his_name] and asked him to bring back some mineral oil from the storehouse. For the rest of the week, we put the oil on our corn silks and picked off the insects by hand."
             "I kept in touch with the Perons, and we made a huge pile of dead insects, which we ground up to extend the food we had for our livestock."
             "We were able to preserve some of our corn until it was ready for harvest, although for most of the corn, it was too late."
+            scene bg fields with fade
+            show overlay night
+            show her normal at quarterright
+            show him normal at center
             "We had a big bonfire with the Perons and burned the infested corn. Their kids danced around the fire, and they brought a chicken for us to roast."
-            julia "All that work..."
-            him "I know."
-            her "..."
+            natalia "All that work..."
+            him sad "I know."
+            her sad "..."
             ## TODO: this section could be expanded by having a dialogue with one of the Perons?
         "Spray them with pesticide":
-            him "We have some pesticide that we used for corn pests on Earth."
-            her "Will it work on these bugs?"
-            him "I don't know. Usually you apply it before the pests start eating the corn - it works better as a preventative. I hadn't put any on here because I didn't think any of the bugs here would eat an alien plant species."
-            her "Seems like these bugs will eat anything."
-            him "Yeah, well, let's give it a try."
+            him normal "We have some pesticide that we used for corn pests on Earth."
+            her surprised "Will it work on these bugs?"
+            him concerned "I don't know. Usually you apply it before the pests start eating the corn - it works better as a preventative. I hadn't put any on here because I didn't think any of the bugs here would eat an alien plant species."
+            her normal "Seems like these bugs will eat anything."
+            him normal "Yeah, well, let's give it a try."
             "We got some sprayers and face masks and gloves from the storehouse and got to work. Even with the face masks, the stuff smelled awful. It took all day to cover all the fields."
             "We tried to control where we sprayed, but it was windy and it kind of got everywhere."
             "When we were finally done, I had a terrible headache."
             her "Are we really going to eat the corn after we sprayed this poison on it?"
             him "If it works, yes. We don't have enough food to pick and choose."
             "It did seem to get rid of a lot of the pests. Whenever we ate it, I washed it really well, but it always tasted a little funny to me."
-            
+            $ relaxed -= 5
         "I have no idea.":
-            her "I don't have any ideas...I'm sorry."
-            him "Well, let's try to salvage what we can."
+            her sad "I don't have any ideas...I'm sorry."
+            him concerned "Well, let's try to salvage what we can."
             "All of the above-ground crops had been partially eaten by the insects. I started trying to cut off the bitten parts, but then I found eggs laid inside some of the corn. We didn't want the insects to keep coming back, so we ended up burning our corn field."
-            him "At least our next crop will have some really rich soil to grow on."
-            her "Yeah, and at least we have some potatoes, beets and ginger to eat for the next few months."
-            him "But what if more insects destroy our existing crops?"
-            her "Then we might have a very limited diet. Hopefully someone will find a way to keep them at bay."
+            him concerned "At least our next crop will have some really rich soil to grow on."
+            her concerned "Yeah, and at least we have some potatoes, beets and ginger to eat for the next few months."
+            him annoyed "But what if more insects destroy our existing crops?"
+            her normal "Then we might have a very limited diet. Hopefully someone will find a way to keep them at bay."
             $ community_level -= 5
             return
             
@@ -660,8 +668,10 @@ return
 # MONTH 7 - Broken computer - honesty?
 label monthly_event_7:
     scene bg farm_interior with fade
+    show her normal at center
     "One day I was doing the dishes at breakfast. [his_name] had already started working in the fields, so I was alone. I noticed he had left his computer pad next to the wash basin."
-    her "I'll just move this out of the way so it doesn't get-- AHHH!"
+    her normal "I'll just move this out of the way so it doesn't get-- AHHH!"
+    show her surprised
     "It slipped out of my hands right into the soapy dishwater."
     her "Oh no!"
     "I took it out and dried it off, but it wouldn't turn on. Water must have seeped inside."
@@ -679,7 +689,9 @@ label monthly_event_7:
         "Put it back and pretend not to know what happened":
             "I put it back where I found it. It was just an accident, so he doesn't need to know it was my fault, right?"
             "Even so, I was nervous when he got home."
-            him "Hey there, [her_nickname]."
+            show her at quarterright
+            show him at quarterleft with moveinleft
+            him happy "Hey there, [her_nickname]."
             her "Hi."
             "He washed his hands, and then picked up his computer pad."
             if fixed_computer:
@@ -688,102 +700,105 @@ label monthly_event_7:
                 $ loved -= 2
                 $ relaxed -= 5
             else:
-                him "Hey, how come this won't turn on?"
-                her "Oh, your computer's not working?"
+                him annoyed "Hey, how come this won't turn on?"
+                her surprised "Oh, your computer's not working?"
                 him "Yeah, it was working fine this morning..."
-                her "Hmmm, I don't know."
-                him "Well, I guess I'll take it in to the tech guys tomorrow if it's still not working. Do you mind if I use yours to check my messages?"
-                her "Sure, go ahead."
+                her concerned "Hmmm, I don't know."
+                him normal "Well, I guess I'll take it in to the tech guys tomorrow if it's still not working. Do you mind if I use yours to check my messages?"
+                her normal "Sure, go ahead."
                 "Hopefully they would be able to fix it... "
                 "I felt kind of bad for lying to him, but I didn't want him to be mad at me or think I was incompetent...it's not like I was lying about something important, right?"
                 "The next day at dinner, it looked like his computer was working."
-                her "Oh, you got your computer working?"
-                him "Yeah...I opened it up, and it was wet inside. Like someone had dropped it in some water."
+                her surprised "Oh, you got your computer working?"
+                him annoyed "Yeah...I opened it up, and it was wet inside. Like someone had dropped it in some water."
                 menu:
                     "Tell him what happened.":
-                        her "I dropped it in the sink the other day...that's why it's wet. It was an accident; I'm sorry."
-                        him "So, you lied to me."
-                        her "Yes, I'm sorry."
-                        him "Wow, I can't believe you didn't just tell me about i."
-                        her "What's the big deal? It works now, doesn't it?"
-                        him "This isn't about the computer! If you lie about something small like that, who knows what else you might lie about?"
-                        her "Hey, I told you about it eventually."
+                        her concerned "I dropped it in the sink the other day...that's why it's wet. It was an accident; I'm sorry."
+                        him annoyed "So, you lied to me."
+                        her concerned "Yes, I'm sorry."
+                        him annoyed "Wow, I can't believe you didn't just tell me about i."
+                        her annoyed "What's the big deal? It works now, doesn't it?"
+                        him angry "This isn't about the computer! If you lie about something small like that, who knows what else you might lie about?"
+                        her angry "Hey, I told you about it eventually."
                         him "Only when you got caught in your lie!"
                         her "I said I was sorry, okay?!"
-                        him "...Okay."
+                        him annoyed "...Okay."
                         $ loved -= 2
                         $ relaxed -= 2
                     "{i}Apologize sincerely.{/i}" if (skill_spiritual >= 40):
-                        her "I'm sorry, [his_name]. I dropped it in the sink, and then I didn't tell you about it because I didn't want you to know how clumsy I was. But I should have told you; I'm so sorry."
-                        him "The computer's not a big deal, but we need to always be honest with each other."
-                        her "I know; it was stupid of me to lie about it."
-                        him "It's okay, [her_name]."
+                        her concerned "I'm sorry, [his_name]. I dropped it in the sink, and then I didn't tell you about it because I didn't want you to know how clumsy I was. But I should have told you; I'm so sorry."
+                        him annoyed "The computer's not a big deal, but we need to always be honest with each other."
+                        her sad "I know; it was stupid of me to lie about it."
+                        him normal "It's okay, [her_name]."
                         "He hugged me and I could tell he had forgiven me."
                     "Pretend you don't know.":
-                        her "I wonder how that happened?"
-                        him "You really don't know anything about it?"
-                        her "No, sorry. Anyway, it works now, so what does it matter?"
-                        him "..."
+                        her surprised "I wonder how that happened?"
+                        him annoyed "You really don't know anything about it?"
+                        her normal "No, sorry. Anyway, it works now, so what does it matter?"
+                        him concerned "..."
                         "He dropped the subject, but I could tell he didn't believe me. Well, whatever, it's not a big deal."
                         
                         $ loved -= 5
                         $ relaxed -= 5
         "Leave it on the table and tell him when he gets home":
             "I left it on the table so I would remember to tell him about it when he got home."
-            him "Hey there, [her_nickname]."
-            her "Hi."
+            show her at quarterright
+            show him at quarterleft with moveinleft
+            him happy "Hey there, [her_nickname]."
+            her concerned "Hi."
             "He washed his hands, and then picked up his computer pad."
-            him "Did I leave this here this morning?"
+            him surprised "Did I leave this here this morning?"
             her "No, actually, you left it by the wash basin...and it fell in while I was washing the dishes."
             if fixed_computer:
-                her "But I fixed it, so don't worry. It just needed to air out a little."
-                him "Okay, hopefully everything still works fine..."
+                her happy "But I fixed it, so don't worry. It just needed to air out a little."
+                him annoyed "Okay, hopefully everything still works fine..."
                 "I waited while he logged on and checked a few things."
-                him "Seems to be fine. I probably shouldn't leave my computer pad there, huh?"
-                her "Probably not. Sorry I dropped it in the water, though."
+                him normal "Seems to be fine. I probably shouldn't leave my computer pad there, huh?"
+                her normal "Probably not. Sorry I dropped it in the water, though."
                 him "It's okay; no harm done."
 
             else:
-                him "That explains why it won't turn on..."
-                her "I'm really sorry; I feel so clumsy. I was trying to move it, so it wouldn't fall in, but it slipped out of my hands."
-                him "..."
-                her "I'm sorry..."
-                him "It's okay- I shouldn't have left it by the washtub. These things happen."
-                her "Maybe they can fix it in town?"
+                him annoyed "That explains why it won't turn on..."
+                her sad "I'm really sorry; I feel so clumsy. I was trying to move it, so it wouldn't fall in, but it slipped out of my hands."
+                him concerned "..."
+                her concerned "I'm sorry..."
+                him  "It's okay- I shouldn't have left it by the washtub. These things happen."
+                her normal "Maybe they can fix it in town?"
                 him "I'll check tomorrow."
-                her "In the meantime, do you want to use my computer? It's only fair."
-                him "Thanks, yeah."
+                her concerned "In the meantime, do you want to use my computer? It's only fair."
+                him concerned "Thanks, yeah."
                 "I could tell he was kind of disappointed, but I felt glad I wasn't hiding anything from him."
                 "And when he took it in, they were able to fix it so it worked just fine."
             $ loved += 2
 
     scene black with fade
     "A week later, I was reading my messages when I noticed that they were having a New Year's party."
-    her "Has it really been a whole year that we've been here?"
-    him "Well, a year on this planet is only seven months, but, yeah. It's good for farming to have a shorter year, especially since the winters are so mild."
-    her "Happy New Year, then!"
+    scene farm_interior with fade
+    her surprised "Has it really been a whole year that we've been here?"
+    him normal "Well, a year on this planet is only seven months, but, yeah. It's good for farming to have a shorter year, especially since the winters are so mild."
+    her happy "Happy New Year, then!"
     # TODO: have a new year's party?
-    him "We should make a toast..."
+    him happy "We should make a toast..."
     menu:
         "What should we toast?"
         "To us!":
-            her "To us!"
+            her happy "To us!"
             if (loved >= 0):
-                him "May we have many more years together..."
+                him happy "May we have many more years together..."
             else:
-                him "To us, then."
+                him normal "To us, then."
             $ loved += 2
         "To the colony!":
-            her "To the colony! We made it one year!"
-            him "May we all survive many more!"
+            her happy "To the colony! We made it one year!"
+            him happy "May we all survive many more!"
             $ community_level += 2
         "To humanity!":
-            her "To humanity! We're still here!"
-            him "To humanity!"
+            her happy "To humanity! We're still here!"
+            him happy "To humanity!"
             $ relaxed += 2
         "To partying!":
-            her "Here's to any excuse to party!"
-            him "To partying!"
+            her laughing "Here's to any excuse to party!"
+            him laughing "To partying!"
     return
 
 # MONTH 8
@@ -792,21 +807,25 @@ label monthly_event_8:
     "The library had a huge collection of Earth media that colonists could check out. They only had enough space for the most popular things, but it was still more media than anyone could experience in a lifetime."
     "One day I noticed they had a movie about space colonists. I was curious to see how people on Earth saw people like us, so I checked it out."
     scene bg farm_interior with fade
-    her "Hey, [his_nickname], I got a movie for us to watch tonight."
-    him "Oh, sorry, I told Thuc I'd help him build a fence tonight. He helped me build ours to keep the animals out of the crops, so I said I'd help with his."
+    show her normal at midleft
+    show him normal at midright
+    her happy "Hey, [his_nickname], I got a movie for us to watch tonight."
+    him concerned "Oh, sorry, I told Thuc I'd help him build a fence tonight. He helped me build ours to keep the animals out of the crops, so I said I'd help with his."
     menu:
         "I was disappointed, but..."
 
         "Can't you do it another night?":
-            her "Can't you help him another night? I was really looking forward to watching this with you."
-            him "No, sorry, it has to be tonight."
-            her "Okay, see you later."
+            her annoyed "Can't you help him another night? I was really looking forward to watching this with you."
+            him normal "No, sorry, it has to be tonight."
+            her normal "Okay, see you later."
             him "Bye, [her_nickname]."
+            show her concerned
+            hide him with moveoutright
             "The house suddenly seemed so quiet. I usually didn't mind being alone, but I had really been looking forward to this. The wind whistled mournfully through the cracks in the walls."
             menu:
                 "What should I do?"
                 "Watch it without him":
-                    her "Forget it, I'm watching it without him!"
+                    her annoyed "Forget it, I'm watching it without him!"
                     "It was full of drama, comedy, and funny inaccuracies about space colonies, but I didn't really enjoy it..."
                     $ relaxed -= 5
                 "Do something else":
@@ -823,10 +842,14 @@ label monthly_event_8:
             $ loved -= 2
 
         "{i}I'll help, too.{/i}" if (relaxed>=0):
-            her "I'll help too!"
-            him "Do you really want to?"
-            her "Yes, we all need to work together to succeed. Plus, I'll get to be with you."
-            him "All right, let's go!"
+            her happy "I'll help too!"
+            him surprised "Do you really want to?"
+            her normal "Yes, we all need to work together to succeed. Plus, I'll get to be with you."
+            him happy "All right, let's go!"
+            scene bg sunset
+            show overlay night
+            show her normal at quarterright
+            show him normal at center
             "Thuc had already cut some logs and branches for us to tie up, but we still had to dig holes for posts."
             if (skill_physical >= 20):
                 "It was a good thing I came, because there was a lot of hard work to do."
@@ -838,18 +861,18 @@ label monthly_event_8:
             thuc "Thank you so much, both of you."
             him "Glad we could help. I hope this fence holds up for you."
             thuc "Well, you can count on my help anytime, if you need it."
-            her "Thanks, I'm sure we will."
+            her happy "Thanks, I'm sure we will."
             "We walked home by moonlight.  The two moons cast opposing shadows from the shrubs and trees, making a maze of light for us to follow. [his_name] reached for my hand."
-            him "Thanks for coming. Everything's better with you."
-            her "Even putting up fences is not too bad when we're together."
+            him normal "Thanks for coming. Everything's better with you."
+            her flirt "Even putting up fences is not too bad when we're together."
             $ loved += 5
             $ skill_physical += 5
             $ community_level += 5
             scene black with fade
   
         "Want to watch it another night?":
-            her "No problem, we'll just watch it another night."
-            him "Thanks for understanding. I'll see you later, [her_nickname]."
+            her normal "No problem, we'll just watch it another night."
+            him normal "Thanks for understanding. I'll see you later, [her_nickname]."
             "It was a little lonely, especially since I was really looking forward to watching the movie with him, but I soon was absorbed in a good book and then went to bed."
             scene black with fade
             "We watched the movie the next night. Even though they got a lot of things wrong about space colonization, we really got into the drama and tension. We both cried a little at the end."
@@ -858,19 +881,21 @@ label monthly_event_8:
   
         "You're never here when I need you!":
             $ loved -= 5
-            her "You're never here when I need you!"
-            him "What are you talking about? I'm home almost every night."
+            her sad "You're never here when I need you!"
+            him annoyed "What are you talking about? I'm home almost every night."
             her "But you're always reading; I wanted to do something together tonight."
             him "Well, I can't. I promised Thuc I'd come tonight."
-            her "I'm not really important to you, am I?"
-            him "What?! Of course you are!"
-            her "Then stay home with me!"
-            him "No, I'm not going to break my promise. Now I have to go, we want to get this done before the moons set."
+            her annoyed "I'm not really important to you, am I?"
+            him annoyed "What?! Of course you are!"
+            her angry "Then stay home with me!"
+            him angry "No, I'm not going to break my promise. Now I have to go, we want to get this done before the moons set."
             menu:
                 "He's leaving..."
                 "Fine, just leave me here.":
-                    her "Fine, just leave me here."
+                    her angry "Fine, just leave me here."
                     "He didn't say anything, just shook his head. I watched him leave, feeling hurt and lonely."
+                    hide him with moveoutright
+                    show her sad at center
                     "All I could think about was how he abandoned me. It wasn't every night I asked him to do something with me; why couldn't he put me first instead of his other plans?"
                     "I worried that maybe I was not good enough - not pretty enough, not smart enough, not strong enough - not just for him, but for this planet. What was I even doing here?"
                     "I trudged in circles through these depressing thoughts for hours."
@@ -880,6 +905,8 @@ label monthly_event_8:
                     "Finally, I just went to bed."
                 "...":
                     "I didn't say anything; just watched him leave, feeling hurt and lonely."
+                    hide him with moveoutright
+                    show her sad at center
                     "All I could think about was how he abandoned me. It wasn't every night I asked him to do something fun with me; why couldn't he put me first instead of his other plans?"
                     "I worried that maybe I was not good enough - not pretty enough, not smart enough, not strong enough - not just for him, but for this planet. What was I even doing here?"
                     "I trudged in circles through these depressing thoughts for hours."
@@ -888,9 +915,10 @@ label monthly_event_8:
                     scene black with fade
                     "I forgave him the next day, but I still felt insecure."
                 "Sorry":
-                    her "Sorry, [his_name]. I'm being selfish."
-                    him "It's all right, [her_nickname]. Let's do something together tomorrow night, okay?"
-                    her "Okay, [his_name]."
+                    her sad "Sorry, [his_name]. I'm being selfish."
+                    him concerned "It's all right, [her_nickname]. Let's do something together tomorrow night, okay?"
+                    her concerned "Okay, [his_name]."
+                    scene black with fade
                     "We watched the movie the next night. Even though they got a lot of things wrong about space colonization, we really got into the drama and tension. We both cried a little at the end."
                     $ relaxed += 2
                     $ loved += 5
@@ -899,108 +927,110 @@ label monthly_event_8:
 # MONTH 9 - how could I do better?
 label monthly_event_9:
     scene bg farm_interior with fade
+    show her normal at midleft
+    show him normal at midright
     play music "music/You.ogg" fadeout 2.0
     him "I was just thinking about you. How do you think we're doing?"
-    her "Doing what?"
-    him "You know, in our marriage. Do you feel loved, is this working for you?"
+    her surprised "At what?"
+    him concerned "You know, in our marriage. Do you feel loved, is this working for you?"
     menu:
         "Honestly, no" if (loved <= 0):
-            her "Honestly, no, it's not."
+            her concerned "Honestly, no, it's not."
         "(Lie) It's fine" if (loved <= 0):
-            her "Yeah, it's okay, I guess."
+            her concerned "Yeah, it's okay, I guess."
         "It's fine":
-            her "It's fine; I haven't really had time to think about things like that."
+            her normal "It's fine; I haven't really had time to think about things like that."
         "It's wonderful" if (loved >= 0):
-            her "Of course! It's great!"
+            her happy "Of course! It's great!"
     if (loved > 0):
-        him "Is there anything I can do to be a be a better husband to you?"
+        him normal "Is there anything I can do to be a be a better husband to you?"
     else:
-        him "How can we make it better?"
+        him concerned "How can we make it better?"
 
     menu:
         "Give me stuff":
-            her "I'd like if you gave me gifts - nothing big, obviously, but just something little to show you were thinking about me."
+            her normal "I'd like if you gave me gifts - nothing big, obviously, but just something little to show you were thinking about me."
             him "Really? You like that sort of thing?"
             her "Yes, it would mean a lot to me."
             $ she_wants = "stuff"
         "Tell me how much you love me":
-            her "I'd love it if you told me how much you love me."
-            him "Ummm... a lot?"
-            her "No! Not like that! Like, what is it you like about me, and tell me things I do that you like, stuff like that."
-            him "That's what you like? Words?"
-            her "Yeah. You have to mean it, of course."
+            her normal "I'd love it if you told me how much you love me."
+            him surprised "Ummm... a lot?"
+            her annoyed "No! Not like that! Like, what is it you like about me, and tell me things I do that you like, stuff like that."
+            him surprised "That's what you like? Words?"
+            her normal "Yeah. You have to mean it, of course."
             $ she_wants = "saynicestuff"
         "Do things together":
-            her "I want to do things with you more often."
-            him "What kinds of things?"
+            her normal "I want to do things with you more often."
+            him surprised "What kinds of things?"
             her "Anything - go on walks, make dinner together, play games together."
             $ she_wants = "dostuff"
         "Do things for me":
-            her "I'd like you to do little things for me sometimes."
-            him "Like what?"
+            her normal "I'd like you to do little things for me sometimes."
+            him surprised "Like what?"
             her "Like, washing the dishes when it's my turn, or picking something up from the storehouse, or things like that."
             $ she_wants = "service"
         "Show more affection":
-            her "I'd like to hold hands more, hug more, just be close to each other more."
-            him "How about rubbing your shoulders? Like this?"
-            her "Ohhh yeah, that definitely is good."
+            her normal "I'd like to hold hands more, hug more, just be close to each other more."
+            him normal "How about rubbing your shoulders? Like this?"
+            her happy "Ohhh yeah, that definitely is good."
             $ she_wants = "affection"
         "Nothing":
             $ she_wants = "nothing"
-            her "You don't need to do anything differently; you're doing just fine."
+            her normal "You don't need to do anything differently; you're doing just fine."
 
     menu:
         "Thanks for asking":
-            her "Thanks for asking; that's really sweet of you."
+            her happy "Thanks for asking; that's really sweet of you."
             $ loved += 2
         "How about you?":
-            her "What about you? Is there something you'd like to see more of from me?"
-            him "Well..."
+            her concerned "What about you? Is there something you'd like to see more of from me?"
+            him concerned "Well..."
             if (made_love < 2):
                 him "I'd like it if you showed more physical affection."
                 menu:
                     "Typical man":
-                        her "Typical. That's all you men ever think about, isn't it?"
-                        him "No, sometimes we ask our wives what they would like and try to do it."
+                        her annoyed "Typical. That's all you men ever think about, isn't it?"
+                        him annoyed "No, sometimes we ask our wives what they would like and try to do it."
                         $ loved -= 5
                     "It's hard":
-                        her "That's... hard for me. I'm just so tired all the time; sometimes it feels just like another chore."
-                        him "It's a chore?"
-                        her "No! It's just... it takes work for me to be in the mood, sometimes."
-                        him "Well, you asked what I'd like."
+                        her concerned "That's... hard for me. I'm just so tired all the time; sometimes it feels just like another chore."
+                        him surprised "It's a chore?"
+                        her annoyed "No! It's just... it takes work for me to be in the mood, sometimes."
+                        him annoyed "Well, you asked what I'd like."
                     "OK, I'll try":
-                        her "We should make love more... it's important, even if we're tired or busy."
-                        him "Thank you, [her_nickname]."
+                        her normal "We should make love more... it's important, even if we're tired or busy."
+                        him happy "Thank you, [her_nickname]."
                         $ loved += 5
             elif (skill_domestic < 10):
                 him "I'd like it if you did more things around the house."
                 menu:
                    "That's sexist":
-                        her "That's sexist. Women belong in the house, is that it?"
-                        him "Hey, you asked what I'd like. I'd like to come home to a clean, well-organized house."
+                        her annoyed "That's sexist. Women belong in the house, is that it?"
+                        him annoyed "Hey, you asked what I'd like. I'd like to come home to a clean, well-organized house."
                         menu:
                             "If it's that important to you...":
-                                her "If it's that important to you, I could work on that."
+                                her concerned "If it's that important to you, I could work on that."
                                 $ loved += 5
                             "No way.":
-                                her "Sorry, that's never going to happen."
-                                him "..."
+                                her annoyed "Sorry, that's never going to happen."
+                                him annoyed "..."
                                 $ loved -= 5
                    "It's hard":
-                       her "That's... hard for me. With work and everything, when I come home I just want to relax."
-                       him "Well, you asked what I'd like."
+                       her concerned "That's... hard for me. With work and everything, when I come home I just want to relax."
+                       him annoyed "Well, you asked what I'd like."
                        menu:
                            "If it's that important to you...":
-                               her "If it's that important to you, I could work on that."
+                               her concerned "If it's that important to you, I could work on that."
                                $ loved += 5
                            "No way.":
-                               her "Sorry, that's never going to happen."
-                               him "..."
+                               her annoyed "Sorry, that's never going to happen."
+                               him annoyed "..."
                                $ loved -= 5
 
                    "OK, I'll try":
-                       her "It would be nice if the house was a little neater... OK, I'll try to do that."
-                       him "Thank you, [her_nickname]."
+                       her normal "It would be nice if the house was a little neater... OK, I'll try to do that."
+                       him happy "Thank you, [her_nickname]."
                        $ loved += 5
                    "Let's work on it together":
                        her "How about if we take some time one evening and clean up the house together?"
@@ -1008,61 +1038,65 @@ label monthly_event_9:
                        $ loved += 2
 
             elif (loved < 5):
-                him "I'd like it if we spent more time together."
+                him normal "I'd like it if we spent more time together."
                 $ loved += 5
                 menu:
                     "Me too":
-                        her "I'd like that, too."
-                        him "Let's go on a walk together."
-                        her "Right now?"
-                        him "Right after dinner!"
+                        her normal "I'd like that, too."
+                        him normal "Let's go on a walk together."
+                        her surprised "Right now?"
+                        him normal "Right after dinner!"
                     "Doing what?":
-                        her "Yeah, but what should we do? There's not exactly a lot going on..."
-                        him "I could read you Shakespeare."
-                        her "Ha ha ha!"
-                        him "..."
-                        her "You're serious?!"
-                        him "Well, I don't know! Doesn't it sound kind of fun to read to each other things that we like?"
-                        her "We could try it!"
+                        her concerned "Yeah, but what should we do? There's not exactly a lot going on..."
+                        him happy "I could read you Shakespeare."
+                        her laughing "Ha ha ha!"
+                        him sad "..."
+                        her surprised "You're serious?!"
+                        him annoyed "Well, I don't know! Doesn't it sound kind of fun to read to each other things that we like?"
+                        her happy "We could try it!"
                     "We don't have time":
-                        her "That sounds good, but we don't really have much free time, do we?"
-                        him "We have been working pretty hard...but I think it's important to do things together. Even if we're just reading next to each other, that would be nice."
-                        her "OK, we can do that."
+                        her concerned "That sounds good, but we don't really have much free time, do we?"
+                        him concerned "We have been working pretty hard...but I think it's important to do things together. Even if we're just reading next to each other, that would be nice."
+                        her normal "OK, we can do that."
             else:
-                him "Nothing at all. You always make me feel loved."
+                him happy "Nothing at all. You always make me feel loved."
 
+    scene black with fade
     "I wondered if he would actually do anything based on what I said I liked. A few days passed and I figured he had forgotten all about it."
     if (loved >= -5):
         "But then..."
+        scene bg farm_interior with fade
+        show her normal at midleft
+        show him normal at midright with moveinright
         $ loved += 5
         if (she_wants == "stuff"):
             "He brought me some wild fruits he had found. He even checked with Dr. Lily to make sure they were edible first."
-            her "Thank you!"
-            him "They're just for you."
+            her happy "Thank you!"
+            him happy "They're just for you."
         if (she_wants == "saynicestuff"):
-            him "Your laugh is like a supernova that blasts away my stress and makes the whole world seem like a garden."
-            her "Ha ha ha, ha ha, really?"
-            him "Yes, and I love how you're such a good [profession]. Not only do you know what you're doing, but you're nice to people about it, too."
-            her "Thank you, [his_nickname]."
+            him normal "Your laugh is like a supernova that blasts away my stress and makes the whole world seem like a garden."
+            her laughing "Ha ha ha, ha ha, really?"
+            him happy "Yes, and I love how you're such a good [profession]. Not only do you know what you're doing, but you're nice to people about it, too."
+            her happy "Thank you, [his_nickname]."
         if (she_wants == "dostuff"):
-            him "Hey, want to go fishing?"
-            her "Fishing? I didn't know there were fish here..."
-            him "Well, they're not exactly like fish, but there's plants and animals that live near the river that we can eat. Did you see Dr. Lily's email?"
-            her "I didn't read it yet... but it sound fun to do something with you!"
+            him surprised "Hey, want to go fishing?"
+            her surprised "Fishing? I didn't know there were fish here..."
+            him normal "Well, they're not exactly like fish, but there's plants and animals that live near the river that we can eat. Did you see Dr. Lily's email?"
+            her normal "I didn't read it yet... but it sounds fun to do something with you!"
             "We found some edible plants, but when we tried to catch the animals there to eat, we ended up falling in the river together. We were laughing so hard we could barely stand up."
         if ((she_wants == "service") or (she_wants == "affection")):
             "After dinner one night, he started rubbing my feet."
-            her "Thanks, but I really ought to do the dishes now."
-            him "No way. I'm taking over tonight. It's [her_name] night."
-            her "I've never heard of that holiday before."
-            him "That's because I just made it up."
+            her concerned "Thanks, but I really ought to do the dishes now."
+            him normal "No way. I'm taking over tonight. It's [her_name] night."
+            her happy "I've never heard of that holiday before."
+            him happy "That's because I just made it up."
             "He did the dishes for me and rubbed my feet with a smile."
-            her "Thank you, [his_nickname]."
+            her flirt "Thank you, [his_nickname]."
         if (she_wants == "nothing"):
             "I found a poem on my pillow one afternoon:"
             "you are the sweetest thing\n not like honey or sugar"
             "but like the nectar of a bright flower\n you sustain even the clumsy bumblebee."
-            her "(That was sweet of him...)"
+            her happy "(That was sweet of him...)"
             
     else:
         "Of course he wasn't serious about it. I shouldn't have gotten my hopes up, I guess."
@@ -1072,6 +1106,7 @@ label monthly_event_9:
 
 # MONTH 10 - Anniversary / Lettie is sick!
 label monthly_event_10:
+    # TODO: finish adding emotions
     scene bg farm_interior with fade
     play music "music/Prelude02.ogg" fadeout 2.0
     "It was our anniversary, according to the Earth calendar.  I think we had missed a few while we were on the shuttle? Anyway, it felt like we had been married about a year."
