@@ -222,10 +222,10 @@ label monthly_event_3:
     menu:
         "Maybe I should do something for him..."
         "{i}Have a party{/i}" if (skill_social >= 20):
-            #show sara at right
-            #show ilian at quarterright
-            #show thuc at quarterleft
-            #show julia at left
+            show sara at right
+            show ilian at quarterright
+            show thuc at quarterleft
+            show julia at left
             show him normal at midright
             "I invited some friends over and we ate dinner together and played games together until late. We sang Happy Birthday to [his_name]."
             him happy "Thanks, [her_name] - what a great birthday!"
@@ -557,6 +557,8 @@ label monthly_event_6:
         "{i}Take a sample bug in for research.{/i}" if (skill_knowledge >= 30 or skill_technical >= 30):
             "I collected a few of the insects and brought them to Lily for examination."
             scene bg lab with fade
+            show her normal at midleft
+            show lily at midright
             lily "These samples remind me of Tardigrades we have on Earth."
             her surprised "Tardigrades?"
             lily "They're an unusually hardy insect that can survive high and low temperatures as well as radiation. Because their adult forms don't increase in cell number, radiation doesn't damage their DNA like it does in animals whose cells are constantly splitting."
@@ -848,8 +850,9 @@ label monthly_event_8:
             him happy "All right, let's go!"
             scene bg sunset
             show overlay night
-            show her normal at quarterright
+            show her normal at midright
             show him normal at center
+            show thuc at quarterleft
             "Thuc had already cut some logs and branches for us to tie up, but we still had to dig holes for posts."
             if (skill_physical >= 20):
                 "It was a good thing I came, because there was a lot of hard work to do."

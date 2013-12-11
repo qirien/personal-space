@@ -34,17 +34,17 @@ image overlay night = "bg/night.png"
 define her = DynamicCharacter("her_name", color="#7264d5", image="her")
 define him = DynamicCharacter("his_name", color="#c80000", image="him")
 
-define naomi = Character("Sister Naomi Grayson", color="#6500ab")
-define boss = Character("Mayor Grayson", color="#cccccc")
-define lily = Character("Lily", color="#ffe74a")
-define sara = Character("Sara", color="#c64e89")
-define thuc = Character("Thuc Nguyen", color="a9ff22")
-define ilian = Character("Ilian Andrevski", color="ffa922")
-define brennan = Character("Brennan Callahan", color="11ee11")
-define sven = Character("Sven Engel")
-define natalia = Character("Natalia Peron")
-define helen = Character("Helen Engel")
-define julia = Character("Julia Nguyen", color="#cc2200")
+define naomi = Character("Sister Naomi Grayson", color="#6500ab", image="naomi")
+define boss = Character("Mayor Grayson", color="#cccccc", image="pavel")
+define lily = Character("Lily", color="#ffe74a", image="lily")
+define sara = Character("Sara", color="#c64e89", image="sara")
+define thuc = Character("Thuc Nguyen", color="a9ff22", image="thuc")
+define ilian = Character("Ilian Andrevski", color="ffa922", image="ilian")
+define brennan = Character("Brennan Callahan", color="11ee11", image="brennan")
+define sven = Character("Sven Engel", image="sven")
+define natalia = Character("Natalia Peron", image="natalia")
+define helen = Character("Helen Engel", image="helen")
+define julia = Character("Julia Nguyen", color="#cc2200", image="julia")
 
 # SPRITES
 
@@ -77,7 +77,19 @@ image her surprised = "sprites/her-surprised.png"
 
 # Other Characters
 image female_child = "sprites/female-child.png"
+image sara = "sprites/sara.png"
+image pavel = "sprites/pavel.png"
+image thuc = "sprites/thuc.png"
+image natalia = "sprites/natalia.png"
+image julia = "sprites/julia.png"
 image brennan = "sprites/brennan.png"
+image lily = "sprites/lily.png"
+image naomi = "sprites/naomi.png"
+image sven = "sprites/sven.png"
+image helen = "sprites/helen.png"
+image ilian = "sprites/ilian.png"
+image martin = "sprites/martin.png"
+image kid = "sprites/kid.png"
 
 define his_name = "???"
 define her_name = "Me"

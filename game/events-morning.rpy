@@ -36,6 +36,8 @@ label act_skip_work:
 
     if (slacked_off == 3):
         "My boss called me in to meet with him after work."
+        show pavel at midright
+        show her normal at midleft
         boss "[her_name], I'm worried about you. You haven't been putting in your usual effort at work lately."
         menu:
             "What should I say?"
@@ -71,19 +73,33 @@ label work_0:
     scene bg community_center
     "My boss was also the leader of our little community. I guess you could call him the mayor?"
     "Right after we landed, he called a meeting for everyone where he gave a speech."
+    show pavel at center
     boss "We made it this far! Now, as you know, we've arrived right at the beginning of this planet's spring, so it's time to get seeds in the ground! We would like for our colony to become self-sufficient as far as necessities are concerned."
     boss "In two years, another colony ship will come with supplies and more colonists. So, until then, we're on our own."
     boss "Let me introduce some of our experts, here."
+    show pavel at midleft with dissolve
+    show naomi at center with moveinright
     boss "First of all, there's my wife Naomi, who is our colony's chaplain. She will be holding nondenominational religious services on Sundays for any who are interested, and is also available for individual counseling."
     naomi "I look forward to learning alongside all of you."
+    hide naomi with moveoutright
+    show lily at midright with moveinright
     boss "Next is the person who has lived here the longest, astronaut and xenobiologist Dr. Lily. Any scientific inquiries should be directed her way."
     lily "Thank you, Mayor."
+    hide lily with moveoutright
+    show ilian at midright with moveinright
     boss "Ilian Andrevski is in charge of the storehouse here on the colony. That's where we keep all our extra supplies and food."
     ilian "I want to distribute things frugally and fairly. And, if you have extra goods you cannot use, please give them to the storehouse so others can use them."
-    boss "[his_name] knows a lot about caring for horses and other animals, so be sure to ask him if you have questions in that area."
+    hide ilian with moveoutright
+    show him normal at midright with moveinright
+    boss "[his_name] knows a lot about growing corn and caring for horses and other animals, so be sure to ask him if you have questions in that area."
+    him "I'll be happy to help."
+    hide him
+    show sven at midright with moveinright
     boss "Sven is in charge of the library, so if you need to research something or print something out, head over there."
     sven "I'll do my best to help you."
+    hide sven
     "The mayor introduced the rest of the people on the colony, and then..."
+    show her normal at midright with moveinright
     if (profession == "doctor"):
         boss "Last, I want to introduce you to our doctor, [her_name]. Don't wait until you're sick to stop by the clinic; go over and say hi sometime this week."
         her "Thanks, Mayor. I'll try and keep you all healthy!"
@@ -97,6 +113,7 @@ label work_0:
         boss "Last - and you kids ought to pay attention right now - I want to introduce the colony's teacher, [her_name]."
         her "Classes start next week, and I'm looking forward to meeting all you kids!"
 
+    hide her
     boss "Are there any questions?"
     menu boss_meeting:
         "Do I have any questions?"
@@ -119,6 +136,7 @@ label work_0:
         "When is the colony ship coming?":
             her "Is the next ship coming in two Earth years or Talam years?"
             boss "Good question; that's two Earth years, which makes about..."
+            show lily
             lily "About 26 Talam months. Since there are seven months a year here, that makes a little over three Talam years."
             boss "Right...hopefully that answers your question!"
             jump boss_meeting
