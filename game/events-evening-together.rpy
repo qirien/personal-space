@@ -452,15 +452,27 @@ label relax_together_12:
 # Play games with Ilian and Sara
 label relax_together_a:
     scene bg farm_exterior with fade
+    show him normal at midright
+    show her normal at midleft
+    with dissolve
     him "Hey, [her_name], want to go into town with me?"
     her "You're going to town? That's a rare occasion..."
     him "I'm taking a load of extra food to the storehouse."
     her "Sure, I'll go with you."
 
     scene bg path with fade
+    show him normal at midright
+    show her normal at midleft
+    with dissolve
     "We walked beside Lettie, who was pulling the wagon. We talked and laughed, and when we dropped off the food we saw Ilian and Sara."
 
     scene bg storehouse with fade
+    show sara at quarterright
+    show ilian at right
+    with dissolve
+    show him at left
+    show her at quarterleft
+    with moveinleft
     her "Hey, Sara!"
     sara "Wow, you got [his_name] to come to town? Did you pretend to be sick or something?"
     her "No, he came on his own, believe it or not."
@@ -474,6 +486,11 @@ label relax_together_a:
     if (loved >= 0):
         him "Sure, let's go."
         scene bg farm_interior
+        show sara at quarterright
+        show ilian at right
+        show him at left
+        show her at quarterleft
+        with dissolve
         "The four of us played Robot Turtles and Machine of Death."
         ilian "...which is why you never saw it coming when the piano crashed down ten stories onto your head."
         him "Ohhh! You got me! That was awesome."

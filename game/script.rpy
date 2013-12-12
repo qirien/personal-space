@@ -45,6 +45,8 @@ define sven = Character("Sven Engel", image="sven")
 define natalia = Character("Natalia Peron", image="natalia")
 define helen = Character("Helen Engel", image="helen")
 define julia = Character("Julia Nguyen", color="#cc2200", image="julia")
+define martin = Character("Martin Peron", color="#990011", image="martin")
+# TODO: add accent on Martin (also Peron?)
 
 # SPRITES
 
@@ -58,12 +60,13 @@ image him happy = "sprites/him-happy.png"
 image him laughing = "sprites/him-happy.png"
 image him sad = "sprites/him-sad.png"
 image him surprised = "sprites/him-surprised.png"
+image him serious = "sprites/him-serious.png"
 
 # Her
 image her normal = "sprites/her.png"
 image her normal flip = im.Flip("sprites/her.png", horizontal = True)
 image side her normal = "sprites/her-head.png"
-# TODO: Fix angry, annoyed, flirt when they are done.
+# TODO: Fix angry, annoyed, flirt, serious when they are done.
 image her angry = "sprites/her-angry.png"
 image her annoyed = "sprites/her-annoyed.png"
 image her concerned = "sprites/her-concerned.png"
@@ -73,6 +76,7 @@ image her happy = "sprites/her-happy.png"
 image her laughing = "sprites/her-laughing.png"
 image her sad = "sprites/her-sad.png"
 image her surprised = "sprites/her-surprised.png"
+image her serious = "sprites/her-serious.png"
 
 
 # Other Characters

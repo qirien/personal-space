@@ -280,33 +280,23 @@ label good_ending:
 # Credits
 label show_credits:
 
-    "Credits"
-    scene black with dissolve
-    show text "Example 1" with dissolve
-    $renpy.pause(2.0)  #works fine
-    scene black with dissolve
-    show text "Example 2" with dissolve
-    with Pause(2.0) #doesn't pause at all, goes straight to the next thing.
-    scene black with dissolve
-    "End Credits"
-
-    "Credits"
-    scene black with dissolve
-    show text "Credits" with dissolve
-    $renpy.pause(2.0)
-    scene black with dissolve
-    show text "Written, Produced, and Directed by Andrea Landaker" with Pause(2.0)
-    scene black with dissolve
-    show text "Additional Writing and Design by Rachel Helps" with dissolve
+    scene black with fade
+    hide text with fade
+    show text "Credits" with fade
     with Pause(2.0)
-    scene black with dissolve
-    show text "Sprites by Clarissa Helps" with dissolve
-    with Pause(2)
-    scene black with dissolve
-    show text "GUI Design by Luce Jumble" with dissolve 
-    with Pause(2)
-    scene black with dissolve
+    hide text with fade
+    show text "Written, Produced, and Directed by Andrea Landaker" with fade 
+    with Pause(2.0)
+    hide text with fade
+    show text "Additional Writing and Design by Rachel Helps" with fade 
+    with Pause(2.0)
+    hide text with fade
+    show text "Sprites by Clarissa Helps" with fade 
+    with Pause(2.0)
+    hide text with fade
+    show text "GUI Design by Luce Jumble" with fade 
+    with Pause(2.0)
+    hide text with fade
     #show text "Background Images\nEarth image courtesy of NASA, www.nasa.gov\nTriple-star sunset courtesy of JPL at NASA, http://www.jpl.nasa.gov/\nRed dwarf sunset CREDIT: ESO/L. Calçada\nCaledonian Sleeper Single berth by Randwick, from http://en.wikipedia.org/wiki/File:Caledonian_Sleeper_Single_berth.jpg\nFVES Classroom by Labpluto123, from http://commons.wikimedia.org/wiki/File:FVES_Classroom.jpg\nBirchip Community Library circulation desk by Wrlctech, from http://commons.wikimedia.org/wiki/File:Birchip_reno_008.jpg\nGuantanamo Captive's hospital beds in the public domain, from the U.S. Department of Defense\nKoreshan Machine Shop by Ebyabe, from http://commons.wikimedia.org/wiki/File:Koreshan_SHS_large_machine_shop_inside01.jpg\nTool Area - Workshop by Avi/Skrewtape, from http://commons.wikimedia.org/wiki/File:Tool_Area_-_Workshop.jpg\nWhite Desert Egyptian Sunset from http://www.burningwell.org\nOther photos by Wes Landaker, Andrea Landaker, Lisa Horner, and Lance Meibos" with dissolve with Pause(2.0)
-    "Credits End"
 
     $ renpy.full_restart()
