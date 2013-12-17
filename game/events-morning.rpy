@@ -232,7 +232,7 @@ label work_1:
         julia "Van! Oh, my boy!"
         "I didn't have time to stick around for adulation, though - Sven was still waiting for me to help his leg in the clinic."
         scene bg clinic with fade
-        show sven at center with dissolve
+        show sven at midleft with dissolve
         show her normal at midright with moveinleft
         her "Sorry to leave you waiting so long; I know you're hurting- oh!"
         show her surprised
@@ -255,7 +255,7 @@ label work_1:
         "Word got around about my two close calls in one day."
         scene bg clinic with fade
         show her normal at midright with dissolve
-        show pavel at midleft with moveinleft
+        show pavel at quarterleft with moveinleft
         boss "Doctor, I'm so sorry about what happened today."
         her serious "It's not your fault, Mayor Grayson."
         boss "Well, it partly is my fault. It's obvious you need an assistant. Perhaps not full-time, but someone who can come quickly and help out during busy times."

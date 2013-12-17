@@ -337,8 +337,8 @@ label relax_alone_k:
         "It doesn't mean anything":
             her normal "Well, I might play through all these and see them, so this doesn't mean as much as you might think."
             him "That's fine, that's fine! I was just curious, don't worry."
-            her flirt "You know you're the only man for me in real life. I just feel sorry for my character in this game that has to make do with these poor imitations."
-            him flirt "Yeah, yeah!"
+            her flirting "You know you're the only man for me in real life. I just feel sorry for my character in this game that has to make do with these poor imitations."
+            him flirting "Yeah, yeah!"
             her happy "Ha ha, I love you, [his_nickname]."
             him happy "I love you, too, [her_nickname]."
             $ loved += 2
@@ -348,7 +348,7 @@ label relax_alone_k:
             her "A little. You're both very [starship_man]."
             him laughing "Ha ha, if you say so, [her_nickname]."
         "Who's {b}your{/b} type?":
-            her flirt "So who's {b}your{/b} type of woman?"
+            her flirting "So who's {b}your{/b} type of woman?"
             him concerned "Hmmm, what are my choices?"
             her normal "Crazy and cute, shy and nerdy, or glamorous and serious."
             him normal "Out of those three...probably crazy."

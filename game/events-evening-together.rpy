@@ -564,7 +564,7 @@ label relax_together_g:
 
     "I decided to surprise [his_name] with a few candles lit near our bed and some soft music playing, and I wore the sexiest thing I owned. But it didn't go how I had planned..."
     show him normal at midleft with moveinleft
-    him flirt "Oh! Wow, you look really hot..."
+    him flirting "Oh! Wow, you look really hot..."
     him sad "...but I'm kind of in a hurry, I gotta go fix something before the wind totally breaks it apart."
     her concerned "You don't have fifteen minutes for me?"
     him normal "Well, yeah, if you can wait until I get this done. You don't mind, do you?"
@@ -581,26 +581,26 @@ label relax_together_g:
     scene black with fade
     "Finally, I just went to sleep."
     scene bg bedroom with fade
-    show her normal at midleft
-    show him normal at center
+    show him normal at midleft
+    show her normal at center
     with dissolve
     show overlay night
     "I half awoke in the middle of the night to [his_name] snuggling up to me and nuzzling my ear."
     her concerned "Wha-huh?"
     him annoyed "I'm home..."
     her "Welcome home...and good night."
-    him flirt "You don't want to stay up for just fifteen more minutes?"
+    him flirting "You don't want to stay up for just fifteen more minutes?"
     her annoyed "I'm not up to begin with. I'm still asleep. Zzzzzz..."
     him normal "Mmm, you're so sexy..."
     menu:
         "What should I do?"
         "Wake up for some action":
-            her flirt "I just can't say no to you..."
-            him flirt "Why would you want to?"
+            her flirting "I just can't say no to you..."
+            him flirting "Why would you want to?"
             her surprised "Did you get everything fixed up outside?"
             him sad "Yeah, sorry it took so long; that wind is awful."
-            her flirt "You're awful, to keep me waiting so long."
-            him flirt "I know, I better be extra good to you."
+            her flirting "You're awful, to keep me waiting so long."
+            him flirting "I know, I better be extra good to you."
             her happy "Ohhh, you are good..."
             "[his_name] was definitely worth waking up for."
             $ made_love += 1
@@ -618,7 +618,7 @@ label relax_together_g:
             her angry "You had your chance, but you missed it. Sorry, I can't just wait around all day for you to finally decide to show up and get some action."
             him concerned "C'mon, my [her_nickname]..."
             her annoyed "Just leave me alone."
-            show him angry at midright with dissolve
+            show him angry at quarterleft with dissolve
             him "Fine."
             "We lay there, both angry, not saying anything, for a long time, before I finally got back to sleep."
             $ loved -= 2

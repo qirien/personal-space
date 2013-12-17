@@ -23,11 +23,11 @@ init -1 python hide:
     ## This controls the title of the window, when Ren'Py is
     ## running in a window.
 
-    config.window_title = "Personal Space"
+    config.window_title = "Our Personal Space"
 
     # These control the name and version of the game, that are reported
     # with tracebacks and other debugging logs.
-    config.name = "Personal Space"
+    config.name = "Our Personal Space"
     config.version = "0.2"
 
     #########################################
@@ -275,12 +275,12 @@ init python:
     ## The name that's used for directories and archive files. For example, if
     ## this is 'mygame-1.0', the windows distribution will be in the
     ## directory 'mygame-1.0-win', in the 'mygame-1.0-win.zip' file.
-    build.directory_name = "Personal Space-1.0"
+    build.directory_name = "Our Personal Space-1.0"
     
     ## The name that's uses for executables - the program that users will run
     ## to start the game. For example, if this is 'mygame', then on Windows,
     ## users can click 'mygame.exe' to start the game.
-    build.executable_name = "Personal Space"
+    build.executable_name = "OurPersonalSpace"
     
     ## If True, Ren'Py will include update information into packages. This
     ## allows the updater to run.

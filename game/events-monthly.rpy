@@ -79,7 +79,7 @@ label monthly_event_1:
         "{i}Let's take turns fairly{/i}" if (skill_knowledge >= 10):
             her surprised "Did you know that men who do more housework are generally happier in their marriages?"
             him surprised "According to who?"
-            her flirt "There's also a study correlating amount of housework done with frequency of sex."
+            her flirting "There's also a study correlating amount of housework done with frequency of sex."
             him annoyed "What exactly are you trying to say?"
             her normal "Just thought you might find those studies interesting. In a totally abstract way."
             him normal "It sounds like splitting household chores is really important to you."
@@ -227,6 +227,8 @@ label monthly_event_3:
             show thuc at quarterleft
             show julia at left
             show him normal at midright
+            show her normal at midleft
+            with dissolve
             "I invited some friends over and we ate dinner together and played games together until late. We sang Happy Birthday to [his_name]."
             him happy "Thanks, [her_name] - what a great birthday!"
         "{i}Make delicious food{/i}" if (skill_domestic >= 20):
@@ -254,7 +256,7 @@ label monthly_event_3:
             her happy "Today's your birthday! On the Earth calendar."
             him happy "Oh! I hadn't thought about the Earth calendar for a while! I forgot; thank you!"
             her sad "Sorry I couldn't really get you anything."
-            him flirt "It's okay; I have everything I need right here."
+            him flirting "It's okay; I have everything I need right here."
         "Just tell him happy birthday":
             "I figured it'd be a waste of resources to make him anything special. We had what we needed. But I did tell him happy birthday, and he seemed to like that."
             show him normal at midright
@@ -371,16 +373,16 @@ label monthly_event_4:
             "It's important":
                 her normal "So many things have changed, I think it's important to have a reason to work hard and help each other out."
                 him surprised "Like what?"
-                her flirt "Well, from my studies I've learned how important it is to answer someone with love, even if they are being insensitive or unappreciative."
-                him flirt "...You probably have a lot of opportunities to practice that, don't you?"
+                her flirting "Well, from my studies I've learned how important it is to answer someone with love, even if they are being insensitive or unappreciative."
+                him flirting "...You probably have a lot of opportunities to practice that, don't you?"
                 her happy "Well...yes. I think studying these principles helps me to get along better with others and work unselfishly."
                 him normal "That is important. Sorry, I didn't meant to accuse, I just really was curious what you've been learning."
             "What do {b}you{/b} do?":
                 her surprised "What have {b}you{/b} been doing lately? You've been reading a lot."
                 him normal "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
                 her concerned "Okay, well, that sounds very... necessary."
-                her flirt "I've been learning about how important it is to answer someone with love, even if they are being insensitive or unappreciative."
-                him flirt "That {b}is{/b} important."
+                her flirting "I've been learning about how important it is to answer someone with love, even if they are being insensitive or unappreciative."
+                him flirting "That {b}is{/b} important."
                 her sad "I'm not that good at it yet, though."
                 him normal "I could probably use some reminders of that, too. Want to show me what you've been reading?"
                 her happy "Sure, let's read together."
@@ -440,8 +442,8 @@ label monthly_event_4:
                 her concerned "Okay, well, that sounds very... necessary."
                 her normal "On that hike, I found out about a new water source, and I can run to town in six minutes in case there's an emergency."
                 him surprised "Six minutes?! That's pretty fast. You must have been training a lot. I guess I haven't thought about doing that because I usually ride Lettie around."
-                her flirt "Well, not all of us have horses, so we have to make do with the legs we have."
-                him flirt "And what nice legs they are..."
+                her flirting "Well, not all of us have horses, so we have to make do with the legs we have."
+                him flirting "And what nice legs they are..."
             "I can't believe you don't appreciate me":
                 jump unappreciated
 
@@ -494,8 +496,8 @@ label monthly_event_5:
             him surprised "I guess this packaging we can tear into pieces like cave men?"
             her annoyed "You mean Paleolithic humans?"
             him angry "Rawr, rawr."
-            her flirt "Wow, you're so paleolithic."
-            him flirt "I'll take that as a compliment."
+            her flirting "Wow, you're so paleolithic."
+            him flirting "I'll take that as a compliment."
         "{i}I could dig a deep hole for them.{/i}" if (skill_physical >= 30):
             her normal "If I dig deep enough, we can just get rid of this stuff and no one will know that we couldn't think of a way to reuse them."
             him happy "It could be our little secret."
@@ -867,7 +869,7 @@ label monthly_event_8:
             her happy "Thanks, I'm sure we will."
             "We walked home by moonlight.  The two moons cast opposing shadows from the shrubs and trees, making a maze of light for us to follow. [his_name] reached for my hand."
             him normal "Thanks for coming. Everything's better with you."
-            her flirt "Even putting up fences is not too bad when we're together."
+            her flirting "Even putting up fences is not too bad when we're together."
             $ loved += 5
             $ skill_physical += 5
             $ community_level += 5
@@ -978,6 +980,18 @@ label monthly_event_9:
             him normal "How about rubbing your shoulders? Like this?"
             her happy "Ohhh yeah, that definitely is good."
             $ she_wants = "affection"
+        "I want you to know what I want":
+            her normal "I don't want to have to tell you what I want; you should figure it out on your own."
+            him annoyed "With what, telepathy? I thought that's what communication was for."
+            her annoyed "Well, it's not romantic if I have to tell you 'Hey, don't forget to say 'I love you'."
+            him "Okay, so you want me to say 'I love you' more often?"
+            her "No! I mean, that's fine, but I want you to do romantic things because you feel romantic, not because you feel like you're supposed to."
+            him angry "Tch, I give up. You obviously don't want to tell me what you want, and I'm not going to waste time guessing."
+            $ she_wants = "nothing"
+            $ loved -= 5
+            hide him
+            her angry "(He is not romantic at all!)"
+            return
         "Nothing":
             $ she_wants = "nothing"
             her normal "You don't need to do anything differently; you're doing just fine."
@@ -1094,7 +1108,7 @@ label monthly_event_9:
             her happy "I've never heard of that holiday before."
             him happy "That's because I just made it up."
             "He did the dishes for me and rubbed my feet with a smile."
-            her flirt "Thank you, [his_nickname]."
+            her flirting "Thank you, [his_nickname]."
         if (she_wants == "nothing"):
             "I found a poem on my pillow one afternoon:"
             "you are the sweetest thing\n not like honey or sugar"
@@ -1109,67 +1123,75 @@ label monthly_event_9:
 
 # MONTH 10 - Anniversary / Lettie is sick!
 label monthly_event_10:
-    # TODO: finish adding emotions
     scene bg farm_interior with fade
+    show him normal at midright
+    show her normal at midleft
+    with dissolve
     play music "music/Prelude02.ogg" fadeout 2.0
     "It was our anniversary, according to the Earth calendar.  I think we had missed a few while we were on the shuttle? Anyway, it felt like we had been married about a year."
-    her "Happy Anniversary!"
-    him "Really? Today?"
-    her "Yeah! Well, it depends on how you calculate it, but I feel like celebrating it today!"
-    him "Great, what do you want to do?"
-    her "I'll make us a nice dinner tonight."
-    him "Okay, I'll bring home a surprise for you."
-    her "Really?"
-    him "Yeah! I mean, don't expect too much, but I've got an idea."
-    "All day long I looked forward to spending a nice evening together. I got some special ingredients at the storehouse, and made a nice dessert and everything. But [his_name] wasn't home yet."
-    her "(He knows we were going to celebrate today! Where could he be?)"
+    her happy "Happy Anniversary!"
+    him surprised "Really? Today?"
+    her normal "Yeah! Well, it depends on how you calculate it, but I feel like celebrating it today!"
+    him happy "Great, what do you want to do?"
+    her happy "I'll make us a nice dinner tonight."
+    him normal "Okay, I'll bring home a surprise for you."
+    her surprised "Really?"
+    him normal "Yeah! I mean, don't expect too much, but I've got an idea."
+    call show_work_bg
+    "All day long I looked forward to spending a nice evening together."
+    scene bg farm_interior with fade
+    show her normal at center
+    "I got some special ingredients at the storehouse, and made a nice dessert and everything. But [his_name] wasn't home yet."
+    her annoyed "(He knows we were going to celebrate today! Where could he be?)"
     "I tried calling him on the radio, and messaging him on the computer, but he didn't answer."
     "Finally, just when I was about to give up and eat without him, he stepped in."
+    show him serious at midleft
+    show her at midright
     menu:
         "He's so late..."
         "Is everything okay?":
-            her "You're home late, [his_nickname]. Is everything okay?"
-            him "Yeah."
+            her concerned "You're home late, [his_nickname]. Is everything okay?"
+            him concerned "Yeah."
             $ loved += 1
         "Did you forget about tonight?":
-            her "You're home late - did you forget about our anniversary dinner tonight?"
-            him "Yeah."
+            her annoyed "You're home late - did you forget about our anniversary dinner tonight?"
+            him concerned "Yeah."
         "Where have you been?!":
-            her "Where have you been?! I've been waiting here for an hour!"
-            him "Sorry."
+            her angry "Where have you been?! I've been waiting here for an hour!"
+            him concerned "Sorry."
             $ loved -= 1
     "He didn't look at me, just washed his hands and sat at the table. He was reading on his computer pad while we ate dinner.  We ate in silence for a few minutes. I thought maybe I'd change the subject."
-    her "Something funny happened at work today."
-    him "Yeah?"
-    her "Little Van, you know, the Nguyen's youngest, came by with his mom, and he said, 'I am an alien that looks like a kid. I really am. I'm not pretending.'"
-    him "Yeah?"
-    her "Yeah, it was funny, because he's so serious about it..."
+    her normal "Something funny happened at work today."
+    him concerned "Yeah?"
+    her happy "Little Van, you know, the Nguyen's youngest, came by with his mom, and he said, 'I am an alien that looks like a kid. I really am. I'm not pretending.'"
+    him concerned "Yeah?"
+    her normal "Yeah, it was funny, because he's so serious about it..."
     him "Mmmmm."
     menu:
         "What should I say?"
         "Are you listening to me?":
             if (relaxed >= 0):
-                her "(Is he even listening to me?!)"
-                her "Also, I was thinking after dinner I'd take off all my clothes and parade downtown."
+                her annoyed "(Is he even listening to me?!)"
+                her happy "Also, I was thinking after dinner I'd take off all my clothes and parade downtown."
                 him "Yeah."
-                her "Why don't you come with me?"
+                her laughing "Why don't you come with me?"
                 him "Mmm-hmmm."
-                her "Great! What song shall we sing?"
-                him "Hmmm- what?"
-                her "What song are we going to sing as we're dancing around town naked?"
+                her happy "Great! What song shall we sing?"
+                him surprised "Hmmm- what?"
+                her normal "What song are we going to sing as we're dancing around town naked?"
             else:
-                "Are you even listening to me?!"
+                her annoyed "Are you even listening to me?!"
                 $ loved -= 5
             "He just looked at me for a minute, then shook his head."
-            him "Sorry, [her_name], not right now. I've got to check on something."
+            him concerned "Sorry, [her_name], not right now. I've got to check on something."
             jump follow_him
 
         "{i}What's bothering you?{/i}" if ((skill_spiritual >= 40) or (skill_knowledge >= 40)):
-            her "You seem troubled. What's bothering you, [his_nickname]?"
+            her concerned "You seem troubled. What's bothering you, [his_nickname]?"
             "He was quiet for a minute, finishing up his dinner. I was about to ask again, when he said,"
-            him "Sorry, [her_name]. I can't talk about it right now. I've got to go check on Lettie."
-            her "Is she okay?"
-            him "I don't know."
+            him serious "Sorry, [her_name]. I can't talk about it right now. I've got to go check on Lettie."
+            her surprised "Is she okay?"
+            him concerned "I don't know."
             "He headed out the door."
             jump follow_him
 
@@ -1178,63 +1200,69 @@ label monthly_event_10:
             jump anniversary_next_day
 
 label anniversary_next_day:
+    scene black with fade
     "He didn't come home that night, just stopped in for a quick breakfast early in the morning and then left again. I didn't have a chance to talk to him again until that evening when I got home."
-    him "Hey, [her_nickname]."
+    scene farm_interior with fade
+    him normal "Hey, [her_nickname]."
     menu:
         "(He's just saying hi like nothing happened!)"
         "Ignore him":
-            her "(He ignored me all last night; let's see how he likes it.)"
-            her "..."
-            him "Hey, are you mad?"
+            her annoyed "(He ignored me all last night; let's see how he likes it.)"
+            her angry "..."
+            him surprised "Hey, are you mad?"
             menu:
                 "(Am I mad?!)"
                 "Yes!":
-                    her "Yes, I'm mad! We were supposed to have a nice dinner for our anniversary, but you just left without saying anything!"
-                    him "Lettie was sick! Really sick!"
+                    her angry "Yes, I'm mad! We were supposed to have a nice dinner for our anniversary, but you just left without saying anything!"
+                    him angry "Lettie was sick! Really sick!"
                     her "And you couldn't have said something like, 'Sorry, Lettie's sick, gotta go.'?"
-                    him "I'm sorry; I was too worried."
-                    her "Well, is she okay?"
-                    him "Yes, she's fine now. Um, here, I got you these."
+                    him annoyed "I'm sorry; I was too worried."
+                    her annoyed "Well, is she okay?"
+                    him serious "Yes, she's fine now."
+                    him concerned "Um, here, I got you these."
                     "He handed me a glass bottle with wildflowers in it."
-                    her "Oh! Thank you, [his_name]."
-                    him "Happy Anniversary."
+                    her surprised "Oh! Thank you, [his_name]."
+                    him normal "Happy Anniversary."
+                    show her normal
                     "We kissed perfunctorily. I still felt a little mad, but we'd get over it."
                 "No.":
-                    her "No, why would I be mad? Where I come from it's totally normal to ignore your wife on your anniversary."
-                    him "Lettie was-"
-                    her "Lettie?! You were thinking about your HORSE?!"
-                    him "Tch, forget it! You are obviously more interested in your own righteous anger than in knowing what actually happened. Here."
+                    her annoyed "No, why would I be mad? Where I come from it's totally normal to ignore your wife on your anniversary."
+                    him normal "Lettie was-"
+                    her angry "Lettie?! You were thinking about your HORSE?!"
+                    him angry "Tch, forget it! You are obviously more interested in your own righteous anger than in knowing what actually happened. Here."
                     "He slammed a glass bottle with some wildflowers in it on the table. Water sloshed onto the table and a few of the flowers fell out."
                     him "Happy Anniversary."
                     "Then he stormed out."
                     $ loved -= 5
         "Ask what happened":
-            her "What happened? Last night you were really worried about something."
-            him "Oh, it was Lettie. I think she ate something poisonous while she was grazing - she was really sick. But she's doing better today; I think she'll be fine."
-            her "Oh, I'm glad she's okay."
-            him "Yeah, me too."
-            him "Sorry about last night - I know we were going to celebrate our anniversary and everything, but I just couldn't celebrate when I was so worried about her. But I did get you something."
-            her "What?"
+            her concerned "What happened? Last night you were really worried about something."
+            him serious "Oh, it was Lettie. I think she ate something poisonous while she was grazing - she was really sick."
+            him happy "But she's doing better today; I think she'll be fine."
+            her happy "Oh, I'm glad she's okay."
+            him normal "Yeah, me too."
+            him concerned "Sorry about last night - I know we were going to celebrate our anniversary and everything, but I just couldn't celebrate when I was so worried about her. But I did get you something."
+            her surprised "What?"
             "He pulled out some wildflowers - he must have picked them earlier today. He had put them in an old glass bottle for a vase."
-            him "The little bit of beauty these flowers bring can't compare to the joy you bring to my life. They won't last forever, but my love for you will."
+            show her normal
+            him serious "The little bit of beauty these flowers bring can't compare to the joy you bring to my life. They won't last forever, but my love for you will."
             menu:
                 "What should I say?"
                 "They're lovely!":
-                    her "Oh, they're lovely! Thank you!"
-                    him "Sorry it's not much..."
-                    her "It's just right. I love you, too."
+                    her happy "Oh, they're lovely! Thank you!"
+                    him concerned "Sorry it's not much..."
+                    her normal "It's just right. I love you, too."
                 "Thank you.":
-                    her "Thank you."
-                    him "Sorry it's not much."
-                    her "It's okay; we don't have much."
-                    him "But I'm so glad I have you."
+                    her normal "Thank you."
+                    him concerned "Sorry it's not much."
+                    her happy "It's okay; we don't have much."
+                    him happy "But I'm so glad I have you."
                 "At least it's not another cheesy poem.":
-                    her "Ha ha, at least it's not a cheesy poem like for my birthday."
-                    him "Hey! I worked hard on that poem! I poured out my heart to you!"
-                    her "I know, and it was really sweet... but also really cheesy."
-                    him "Well, at least I learned my lesson."
-                    her "I think there's still a few things you could learn."
-                    him "Are you going to teach me?"
+                    her laughing "Ha ha, at least it's not a cheesy poem like for my birthday."
+                    him annoyed "Hey! I worked hard on that poem! I poured out my heart to you!"
+                    her happy "I know, and it was really sweet... but also really cheesy."
+                    him serious "Well, at least I learned my lesson."
+                    her flirting "I think there's still a few things you could learn."
+                    him flirting "Are you going to teach me?"
             "I didn't even have time to set the flowers down before he wrapped his arms around me. I kissed his chin, then his lips, and we forgot about everything else for a while..."
             $ made_love += 1
             $ loved += 5
@@ -1243,38 +1271,53 @@ label anniversary_next_day:
 label follow_him:
     menu:
         "Go with him.":
-            her "I'll help you."
-            him "Okay."
-            "We walked to the small barn where the animals could sleep at night, and where we could keep hay dry. Lettie was inside, twitching and breathing hard."
+            her serious "I'll help you."
+            him concerned "Okay."
+            scene bg farm_exterior with fade
+            show overlay night
+            "We walked to the small barn where the animals could sleep at night, and where we could keep hay dry."
         "Follow him quietly.":
             "I waited until he left, then I silently lifted the latch and followed him out."
-            "He headed for our small barn. I followed him inside, where I saw his horse Lettie.  She was twitching and breathing hard."
+            scene bg farm_exterior with fade
+            show overlay night
+            "He headed for our small barn, and I followed him."
         "Let him go.":
             "He'd tell me what was bothering him when he was ready. I decided to settle down with a book and wait until he came back."
             jump anniversary_next_day
 
-    her "What's wrong with her?"
-    him "I think she ate something bad. Usually she's fine grazing on the things here, but maybe it was a strange plant she didn't know was poisonous?"
-    her "Oh no! Is there a vet or someone you can call?"
-    him "I'm the closest thing we have..."
+    #scene bg barn with fade
+    show him serious at midright
+    show her serious at midleft
+    with moveinleft
+    "Lettie was inside, twitching and breathing hard."
+    her surprised "What's wrong with her?"
+    him serious "I think she ate something bad. Usually she's fine grazing on the things here, but maybe it was a strange plant she didn't know was poisonous?"
+    her concerned "Oh no! Is there a vet or someone you can call?"
+    him concerned "I'm the closest thing we have..."
     if (profession == "doctor"):
-        him "...aside from you, of course."
-        her "Can you induce vomiting?"
-        him "No...horses can't vomit."
-        her "I can give her some medicine to help the pain at least..."
-        him "Please do; I'm worried she's going to hurt herself."
+        him normal "...aside from you, of course."
+        her serious "Can you induce vomiting?"
+        him serious "No...horses can't vomit."
+        her normal "I can give her some medicine to help the pain at least..."
+        him serious "Please do; I'm worried she's going to hurt herself."
         "I did a quick search on my computer to see what medicines were safe for horses.  Then I got my bag and gave her an analgesic. She seemed to calm down a little."
     else:
-        her "Oh no! What can we do?"
-    him "Maybe we can help whatever's bothering her to pass through. Do we have any mineral oil? Or milk of magnesia?"
+        her surprised "Oh no! What can we do?"
+    him serious "Maybe we can help whatever's bothering her to pass through. Do we have any mineral oil? Or milk of magnesia?"
     if (profession == "crafter" or skill_creative >= 40):
-        her "They have some mineral oil in the workshop; I'll get it."
+        her normal "They have some mineral oil in the workshop; I'll get it."
+        hide her with moveoutleft
+        scene bg workshop with fade
     elif (profession == "doctor"):
-        her "There's some laxatives at the clinic; I'll get some."
+        her normal "There's some laxatives at the clinic; I'll get some."
+        hide her with moveoutleft
+        scene bg clinic with fade
     else:
-        her "Somebody's got to have some! I'll ask Ilian at the storehouse."
+        her normal "Somebody's got to have some! I'll ask Ilian at the storehouse."       
         "I got on my computer and sent him a message. I also sent one to the doctor and the Nguyens, in case they had any ideas."
         "Ilian got back to me pretty quick and said he could get some and he'd meet me at the storehouse."
+        hide her with moveoutleft
+        scene bg storehouse with fade
 
     if (skill_physical >= 40):
         "I ran all the way there and back. Good thing I was in shape."
@@ -1282,44 +1325,140 @@ label follow_him:
         "I walked and jogged as fast as I could. I was breathing so hard I thought I was going to throw up when I finally got back."
         $ relaxed -= 5
 
+    #scene bg barn with fade
+    show him serious at quarterright
+    show her serious at midleft with moveinleft
     "He had me hold Lettie still while he measured it out and administered it to her. I was amazed how much Lettie trusted him."
     "She didn't seem to feel any better right away, but I knew this kind of medicine takes awhile to work."
-    him "I'm going to take her for a little walk - why don't you get some rest?"
+    him serious "I'm going to take her for a little walk - why don't you get some rest?"
     menu:
         "Should I get some rest?"
         "I'll stay with you.":
-            her "I'll stay with you."
-            him "Okay."
+            her normal "I'll stay with you."
+            him normal "Okay."
             "We walked around with Lettie for a while, and then we let her rest and have plenty of water to drink. She still didn't seem to feel better, but she wasn't getting worse, either."
             "[his_name] sat down in some clean hay. It was a little scratchy, but I sat down next to him."
             "I must have fallen asleep, because I woke up and it was morning. We had spent all night in the barn..."
+            $ loved += 2
 
         "Okay, hope she feels better.":
-            her "I think I will. I hope she feels better, soon."
-            him "Thanks, [her_name]."
+            her normal "I think I will. I hope she feels better, soon."
+            him serious "Thanks, [her_name]."
+            scene black with fade
             "I didn't sleep that well that night."
             "The next morning, I decided to check on Lettie and [his_name]."
 
+    #scene bg barn with fade
+    show him normal at midright
+    show her normal at midleft
+    with dissolve
     "[his_name] was already up, talking to Lettie in a soft voice and petting her nose. She wasn't shaking any more, and her breathing seemed more regular."
-    her "She seems better!"
-    him "Yeah, I hope so. I'll give her some really good food today and let her take it easy for a while."
-    her "Well, I have to get to work, but I'll see you this evening."
-    him "Hey, thanks for staying with us, and helping out. It was a lot better not having to wait alone."
-    her "You're welcome. I'm glad we could help her."
+    her happy "She seems better!"
+    him normal "Yeah, I hope so. I'll give her some really good food today and let her take it easy for a while."
+    her normal "Well, I have to get to work, but I'll see you this evening."
+    him serious "Hey, thanks for staying with us, and helping out. It was a lot better not having to wait alone."
+    her normal "You're welcome. I'm glad we could help her."
     "He turned to me and wrapped his arms tight around me. His voice was a little hoarse as he whispered,"
+    him serious "Everything's so fragile...\nI love you, [her_name]."
     menu:
-        him "Everything's so fragile...\nI love you, [her_name]."
+        "What should I say?"
         "I love you, too.":
-            her "I love you too..."
+            her serious "I love you too..."
         "You owe me big time.":
             "I pulled away enough to poke at his chest sternly."
-            her "You owe me, [his_nickname]. Last night was our anniversary dinner - I don't think you even noticed because you were so distracted - but you owe me a fabulous night tonight."
-            him "Our anniversary! I'm so sorry - but I will make it up to you tonight."
-            her "Shall I make a list for you?"
-            him "I think I know what you like."
+            her angry "You owe me, [his_nickname]. Last night was our anniversary dinner - I don't think you even noticed because you were so distracted - but you owe me a fabulous night tonight."
+            him surprised "Our anniversary! I'm so sorry - but I will make it up to you tonight."
+            her flirting "Shall I make a list for you?"
+            him flirting "I think I know what you like."
             $ made_love += 1
     $ loved += 10
     $ relaxed += 2
+    return
+
+# Helper function for month 11
+label goto_ocean:
+    "There wasn't a road going out to the ocean, so we had to make our way through wild vegetation."     
+    "We had some minor run-ins with small insects, but nothing too surprising." 
+    scene bg ocean with fade
+    "Arriving at the ocean was magnificent. The air was moist, and my eyes could rest on a flat plane of wetness extending to the horizon."
+    show lily at left
+    show her normal at midright
+    with dissolve
+    if (ocean_character == "Sven"):
+        show sven at right with dissolve
+        sven "Wow, this beach reminds me Earth. Lots of rocks and a big blue wet thing." 
+        her normal "I think you mean ocean. It's making me a little homesick too." 
+    if (ocean_character == "Brennan"):
+        show brennan at right with dissolve
+        brennan "I didn't think there would be so many rocks at the seashore. There's barely any beach!" 
+        her serious "Well, we're not here to swim anyway."
+        brennan "More's the pity."
+    if (ocean_character == "Sara"):
+        show sara at right with dissolve
+        sara "It's not the kind of beach I'd want to swim on, and I'm glad I brought a sweater, but this is such a sight for sore eyes!"
+        her happy "It's an amazing view." 
+
+    lily "I'm so glad we made it! Okay, I'd like to take samples of this crusty white stuff and any other organic material you can find."     
+
+    if (ocean_character == "Sven"):
+        sven "Okay, you guys do the stuff on the shore, and I'll help gather some of this coastal brush." 
+        lily "I'm going to take some of the smaller creatures and plants back too."
+    elif (ocean_character == "Brennan"):
+        brennan "Lovely. Is it all right if I touch the water?" 
+        lily "I would advise against it until we know what's in it. I would like to take a sample of it though, if you wouldn't mind. I'm going to take some of the smaller creatures and plants back too."
+    elif (ocean_character == "Sara"):
+        sara "Okay, I'll take samples of anything that's not moving." 
+        lily "I'll focus on some of the smaller creatures then."
+
+    her surprised "How much of this white stuff do we need?" 
+    lily "The guano? Just get as much as you can. We have an hour or two so don't feel too rushed."
+    her annoyed "Eww! It's excrement? Well, I guess if it's for science I can do it."
+    "We worked hard to get the samples we needed. We found a lot of shells and some bones. As we were getting ready to leave, the tide started to come back in."
+    "The incoming waves were purple with one kind of alien sea creature. It had six spiny or hairy arms, and floated like a jellyfish."  
+    lily "Oh! I've got to record this."
+    if (ocean_character == "Sven"):
+        sven "Be careful! Those things could be deadly for all we know!"
+    elif (ocean_character == "Brennan"):
+        brennan "Just be careful not to get swept away!" 
+    elif (ocean_character == "Sara"):
+        sara "Oh, I want a picture too! I can't wait to show everyone how beautiful our planet is."
+
+    "It surprised me how quickly the tide rushed back in. Little spider-crabs rushed to dry rocks, and many got swallowed up by the waves and the purple jellies."
+    "A wave splashed under Lily's feet, and one of the purple spiny jellys grabbed at her leg."
+    lily "O-oh!"
+    "[ocean_character] looked on in horror as I jabbed the animal with my shovel. As I contacted it, its arm fell off, still wrapped around Lily."
+    if (skill_physical >= 40):
+        "Lily had a strange look on her face, so I carried her further inland so she could sit down."
+        "She wasn't blinking, so I pinched her a few times."
+        lily "Hey, knock it off! What happened? Did I fall asleep?"
+    elif (skill_knowledge >= 40):
+        "Lily appeared to be temporarily paralyzed, so I motioned to [ocean_character] to help me carry her further inland."
+        "I was trying to think of what I could do to help her when she came out of her trance."
+        lily "W-what happened? Did I fall asleep?"
+    else:
+        "I had no idea what to do next. I just stood there, scared."
+        if (ocean_character == "Sven"):
+            sven "Don't just sit there, do something!"
+            "Lily started to collapse, but luckily she fell onto me and I could support her." 
+        else:
+            "[ocean_character] rushed over to catch Lily as she collapsed."
+        her surprised "Umm..."
+        lily "W-what happened? Did I fall asleep?"
+
+    her normal "No, one of the purple jellies latched onto you."
+    lily "Weird. I feel like I just woke up from a dream."
+    her serious "Its tentacle is still on you; we should probably remove it."
+    lily "Oh, I'll take care of that."
+    if (ocean_character == "Brennan"):
+        brennan "Did that animal make you fall asleep?"
+        lily "I don't have narcolepsy, but it has been an unusually exhausting day. Maybe I overextended myself."
+        brennan "Well, let me know what you find out about that thing."
+    elif (ocean_character == "Sven"):
+        "She carefully grabbed it with her tweezers and moved it into a specimen bag. Sven and I looked at each other with exasperation. Maybe she was a little TOO dedicated."
+    else:
+        sara "Don't worry, I made sure your camera was safe!"
+        lily "Thank you! Maybe I just had a little too much sun today."
+
     return
 
 # MONTH 11
@@ -1327,257 +1466,128 @@ label follow_him:
 #I read about rocket stoves and thought it would be fun to write an event on them http://www.richsoil.com/rocket-stove-mass-heater.jsp   
 label monthly_event_11:
     scene bg farm_interior with fade
+    show him normal at midleft
+    show her normal at midright
+    with dissolve
 #do we have a winter? I think there was a winter, but it was a mild one or something?
     "It was another cloudy day, and there wasn't enough solar power to cook and warm our house with."
-    him "I'll go get some wood. Can't we just cook inside?."
-    her "No, remember how our chimney has a huge crack in it?"
-    him "I'll cook outside then."
-    her "There's got to be a better way to distribute all this energy."
+    him serious "I'll go get some wood. Can't we just cook inside?."
+    her annoyed "No, remember how our chimney has a huge crack in it?"
+    him annoyed "I'll cook outside then."
+    hide him with moveoutleft
+    her serious "There's got to be a better way to distribute all this energy."
     "I spent the evening researching low-power heating. Some people found that light bulbs helped heat their houses, but we had LEDs that didn't give off much heat."
     "I found a type of combustion stove called a rocket stove, which burned wood sideways very cleanly. I'd need some metal pipes though." 
     "I knew we were saving a lot of the metal from the shuttle for emergencies. I wasn't sure what I would do."
-    her "If we want to advance technologically, we've got to start making our own metal. It's like, the next thing on the tech tree."
-    him "Actually, I heard that Lily is gathering ores to see if we can start making our own metal here. But I think gunpowder is next on the tech tree."
-    her "Really? Why didn't anyone inform me?"
-    him "Well, you're not digging around in the dirt during your working hours. She probably just sent it out to all the farmers."
+    show him normal with moveinleft
+    her normal "If we want to advance technologically, we've got to start making our own metal. It's like, the next thing on the tech tree."
+    him normal "I heard that Lily is gathering ores to see if we can start making our own metal here. But I think gunpowder is next on the tech tree."
+    her surprised "Really? Why didn't anyone inform me?"
+    him annoyed "Well, you're not digging around in the dirt during your working hours. She probably just sent it out to all the farmers."
+    scene black with fade
     "I ran over to the lab the next morning, excited to help."
     scene bg lab with fade
-    her "I heard you've been gathering ore?"
+    show lily at quarterright with dissolve
+    show her normal at midleft with moveinleft
+    her surprised "I heard you've been gathering ore?"
     lily "Yes! Do you have some you'd like to donate?"
-    her "I don't, but I'm willing to test the material's melting point!"
+    her happy "I don't, but I'm willing to test the material's melting point!"
     lily "Are you hoping to make something?"
-    her "Yes, I want to make a rocket stove to heat our house on cloudy days."
+    her normal "Yes, I want to make a rocket stove to heat our house on cloudy days."
     lily "I don't really have enough to make anything with it yet, but I can help you find more metal."
     lily "I've received samples of three different ores, and I think one could make the kind of metal you're looking for. You'd need to go mining for it though."
-    her "Mining, like with a pick?"
+    her surprised "Mining, like with a pick?"
     lily "Yes. I think gunpowder would help a lot too."
     her "Blowing up rocks? Is that allowed?"
     lily "Well, we are supposed to survive in a way that doesn't damage the existing ecosystem excessively."
-    her "Tell me where you think the metal is and I'll see if I can get it out using our pick. I don't think I want to think about gunpowder quite yet."
+    her normal "Tell me where you think the metal is and I'll see if I can get it out using our pick. I don't think I want to think about gunpowder quite yet."
     lily "I will tell you where the metal is, but I want your help collecting some samples from a semi-remote location first."
-    her "Don't you think metal is more important than documenting organisms?"
+    her annoyed "Don't you think metal is more important than documenting organisms?"
     lily "No, I don't. And you never know, maybe one of these creatures will have an iron lung or something."
-    her "Okay, what do I need to bring?"
+    her normal "Okay, what do I need to bring?"
     lily "Well, a backpack, food, and another person."
-    her "Another person?"
+    her surprised "Another person?"
     lily "Yes, it's much safer to travel in a group of three than a group of two. At least, that's what I believe from my observations and the small amount of anecdotal evidence on the behavior of the local carnivores."
-    her "When do you need me to be ready?"
+    her serious "When do you need me to be ready?"
     lily "Well, the next low-low tide is in two days. That's when the moons should be in sync long enough to make a tide anyway."
-    her "Okay, I'll talk to [his_name]."
-    #change scene to home
+    her normal "Okay, I'll talk to [his_name]."
     scene bg farm_interior with fade
     show him normal at midleft
     show her normal at midright
     with dissolve
-    her "Hey, [his_name], do you want to come to the ocean with me?"
-    him "Wouldn't it take half the day just to get there? Why do you want to go?"
-    her "Lily said she would help me find and purify metals if I helped her collect specimens at the ocean."
-    him "That sounds fun, but I'm worried that if I take a day off from farming, my plants will die."
-    her "Really? They would die if you left them just one day?"
-    him "Well, it's more like some of the food might get eaten by something else since it's harvest time again."
-    her "Okay. I'll try to find someone else."
+    her happy "Hey, [his_name], do you want to come to the ocean with me?"
+    him surprised "Wouldn't it take half the day just to get there? Why do you want to go?"
+    her normal "Lily said she would help me find and purify metals if I helped her collect specimens at the ocean."
+    him concerned "That sounds fun, but I'm worried that if I take a day off from farming, my plants will die."
+    her annoyed "Really? They would die if you left them just one day?"
+    him annoyed "Well, it's more like some of the food might get eaten by something else since it's harvest time again."
+    her normal "Okay. I'll try to find someone else."
+    scene black with fade
     menu:
         "Who should I ask to come?"
         "Sven, the librarian":
             $ ocean_character = "Sven"
             scene bg library
-            her "Hey, Sven."
+            show sven at quarterright with dissolve
+            show her normal at midleft with moveinleft
+            her normal "Hey, Sven."
             sven "Hi, how can I help you?"
             her "Want to come with Lily and me to the seashore?"
             sven "The seashore? The one a few kilometers away?"      
-            her "Yeah, a real beach! Bring a shovel!"
+            her happy "Yeah, a real beach! Bring a shovel!"
             sven "No thank you. Not after what I've been reading about giant sea creatures and this planet."  
-            her "What have you been reading?"  
+            her surprised "What have you been reading?"  
             sven "Well, I read that the animals in the ocean probably tolerate radiation the best, since the water can diffuse the radiation. The satellite telescope that came with us showed some strange, large shadows in a few of the oceans, and no one knows what they are."
-            her "It could be a whale or something?"
+            her serious "It could be a whale or something?"
             sven "No. These are much bigger. It kind of creeps me out."
-            her "Well, we're not going out to the middle of the ocean, just the shore. Wouldn't it be fun to get out of your stuffy library for a day?"
+            her normal "Well, we're not going out to the middle of the ocean, just the shore. Wouldn't it be fun to get out of your stuffy library for a day?"
             sven "Now that you mention it, I have been wanting to go for a hike, but I didn't want to go by myself."
-            her "Just think of it as a long hike, and if the beach scares you you can stay far away from it."
+            her happy "Just think of it as a long hike, and if the beach scares you you can stay far away from it."
             sven "Okay, I think I can manage that."
-            "There wasn't a road going out to the ocean, so we had to make our way through wild vegetation."     
-            "We had some minor run-ins with small insects, but nothing too surprising." 
-            scene bg ocean with fade
-            "Arriving at the ocean was magnificent. The air was moist, and my eyes could rest on a flat plane of wetness extending to the horizon."
-            sven "Wow, this beach reminds me Earth. Lots of rocks and a big blue wet thing." 
-            her "I think you mean ocean. It's making me a little homesick too." 
-            lily "I'm so glad we made it! Okay, I'd like to take samples of this crusty white stuff and any other organic material you can find."     
-            sven "Okay, you guys do the stuff on the shore, and I'll help gather some of this coastal brush." 
-            lily "I'm going to take some of the smaller creatures and plants back too."
-            her "How much of this white stuff do we need?" 
-            lily "The guano? Just get as much as you can. We have an hour or two so don't feel too rushed."
-            her "Eww! It's excrement? Well, I guess if it's for science I can do it."
-            "We worked hard to get the samples we needed. We found a lot of shells and some bones. As we were getting ready to leave, the tide started to come back in."
-            "The incoming waves were purple with one kind of alien sea creature. It had six spiny or hairy arms, and floated like a jellyfish."  
-            lily "Oh! I've got to record this."
-            sven "Be careful! Those things could be deadly for all we know!"
-            "It surprised me how quickly the tide rushed back in. Little spider-crabs rushed to dry rocks, and many got swallowed up by the waves and the purple jellies."
-            "A wave splashed under Lily's feet, and one of the purple spiny jellys grabbed at her leg."
-            lily "O-oh!"
-            "Sven looked on in horror as I jabbed the animal with my shovel. As I contacted it, its arm fell off, still wrapped around Lily."
-            if (skill_physical >= 40):
-                "Lily had a strange look on her face, so I carried her further inland so she could sit down."
-                "She wasn't blinking, so I pinched her a few times."
-                lily "Hey, knock it off! What happened? Did I fall asleep?"
-                her "No, one of the purple jellies latched onto you."
-                lily "Weird. I feel like I just woke up from a dream."
-                her "Its tentacle is still on you; we should probably remove it."
-                lily "Oh, I'll take care of that."
-                "She carefully grabbed it with her tweezers and moved it into a specimen bag. Sven and I looked at each other with exasperation. Maybe she was a little TOO dedicated."
-            elif (skill_knowledge >= 40):
-                "Lily appeared to be temporarily paralyzed, so I motioned to Sven to help me carry her further inland."
-                "I was trying to think of what I could do to help her when she came out of her trance."
-                lily "W-what happened? Did I fall asleep?"
-                her "No, one of the purple jellies latched onto you."
-                lily "Weird. I feel like I just woke up from a dream."
-                her "Its tentacle is still on you; we should probably remove it."
-                lily "Oh, I'll take care of that."
-                "She carefully grabbed it with her tweezers and moved it into a specimen bag. Sven and I looked at each other with exasperation. Maybe she was a little TOO dedicated."
-            else:
-                "I had no idea what to do next. I just stood there, scared."
-                sven "Don't just sit there, do something!"
-                "Lily started to collapse, but luckily she fell onto me and I could support her." 
-                her "Umm..."
-                lily "W-what happened? Did I fall asleep?"
-                her "No, one of the purple jellies latched onto you."
-                lily "Weird. I feel like I just woke up from a dream."
-                her "Its tentacle is still on you; we should probably remove it."
-                lily "Oh, I'll take care of that."
-                "She carefully grabbed it with her tweezers and moved it into a specimen bag. Sven and I looked at each other with exasperation. Maybe she was a little TOO dedicated."
+            call goto_ocean
                     
         "Brennan, my co-worker":
             $ ocean_character = "Brennan"
-            #change scene to work
+
+            call set_work_bg
+            show brennan at midright
+            show her normal at midleft
+            with dissolve
             "I was trying to think of who could come with us at work the next day."    
-            brennan "I just wish I could get away from it all, you know? I feel like I'm trapped in this tiny town!"
-            her "Did you know what you were getting into when you signed up for this?"
+            brennan "I just wish I could get away from it all! I feel like I'm trapped in this tiny town."
+            her normal "Didn't you know what you were getting into when you signed up for this?"
             brennan "Who says I signed up? Besides, I bet you're itching to have an adventure too."   
-            her "You should come to the ocean with me." 
-            brennan "Seriously?"   
-            her "Yes! Lily is coming too, and we need a third person so we can look like a herd and not easy pickings."   
+            her serious "You should come to the ocean with me." 
+            brennan "Really?"   
+            her happy "Yes! Lily is coming too, and we need a third person so we can look like a herd and not easy pickings."   
             #TODO: this is funny, but is it something Brennan would say?
-            brennan "Count me in! But why are you going to the ocean? Have you double-handedly reinvented bathing suits?"
-            her "No, but we might reinvent biology if we can gather enough specimens." 
+            brennan "Count me in! But why are you going to the ocean? Thinking of going for a swim?"
+            her normal "No, Lily wants to gather specimens."
             brennan "I don't really care what we do, as long as it's something exciting."  
-            her "Oh, it'll be exciting."
-            "There wasn't a road going out to the ocean, so we had to make our way through wild vegetation."     
-            "We had some minor run-ins with small insects, but nothing too surprising." 
-            scene bg ocean with fade
-            "Arriving at the ocean was magnificent. The air was moist, and my eyes could rest on a flat plane of wetness extending to the horizon."
-            brennan "I didn't think there would be so many rocks at the seashore. There's barely any beach!" 
-            her "Well, we're not here to swim anyway." 
-            lily "I'm so glad we made it! Okay, I'd like to take samples of this crusty white stuff and any other organic material you can find."     
-            brennan "Gross. Is it okay if I touch the water?" 
-            lily "I would advise against it until we know what's in it. I would like to take a sample of it though, if you wouldn't mind. I'm going to take some of the smaller creatures and plants back too."
-            her "How much of this excrement stuff do we need?" 
-            lily "The guano? Just get as much as you can. We have an hour or two so don't feel too rushed."
-            "We worked hard to get the samples we needed. We found a lot of shells and some bones. As we were getting ready to leave, the tide started to come back in."
-            "The incoming waves were purple with one kind of alien sea creature. It had six spiny or hairy arms, and floated like a jellyfish."  
-            lily "Oh! I've got to record this."
-            brennan "Just be careful not to get swept away!" 
-            "We stayed up past the tidal edge. It surprised me how quickly the tide rushed back in. Little spider-crabs rushed to dry rocks, and many got swallowed up by the waves and the purple jelly-stars."
-            "A wave splashed under Lily's feet, and one of the purple spiny jellys grabbed at her leg."
-            lily "O-oh!"
-            "Brennan looked on in horror as I jabbed the animal with my shovel. As I contacted it, its arm fell off, still wrapped around Lily."
-            if (skill_physical >= 40):
-                "Lily had a strange look on her face, so I carried her further inland so she could sit down."
-                "She wasn't blinking, so I pinched her a few times."
-                lily "Hey, knock it off! What happened? Did I fall asleep?"
-                her "No, one of the purple jellies latched onto you."
-                lily "Weird. I feel like I just woke up from a dream."
-                her "Its tentacle is still on you; we should probably remove it."
-                lily "Oh, I'll take care of that."
-                "She carefully grabbed it with her tweezers and moved it into a specimen bag."
-                brennan "Did that animal make you fall asleep?"
-                lily "I don't have narcolepsy, but it has been an unusually exhausting day. Maybe I overextended myself."
-                brennan "Well, let me know what you find out about that thing."
-            elif (skill_knowledge >= 40):
-                "Lily appeared to be temporarily paralyzed, so Brennan helped me carry her further inland."
-                "I was trying to think of what I could do to help her when she came out of her trance."
-                lily "W-what happened? Did I fall asleep?"
-                her "No, one of the purple jellies latched onto you."
-                lily "Weird. I feel like I just woke up from a dream."
-                her "Its tentacle is still on you; we should probably remove it."
-                lily "Oh, I'll take care of that."
-                brennan "Did that animal make you fall asleep?"
-                lily "I don't have narcolepsy, but it has been an unusually exhausting day. Maybe I overextended myself."
-                brennan "Well, let me know what you find out about that thing."
-                #debating about increasing the brennan relationship variable If I increase it here, maybe I should make the threshold in morning 16 higher. You don't really interact with him personally, so I decided not to mess with it.
-            else:
-                "I had no idea what to do next. I just stood there, scared."
-                "Brennan rushed over to catch Lily as she collapsed."
-                her "Umm..."
-                lily "W-what happened? Did I fall asleep?"
-                her "No, one of the purple jellies latched onto you."
-                lily "Weird. I feel like I just woke up from a dream."
-                her "Its tentacle is still on you; we should probably remove it."
-                lily "Oh, I'll take care of that."
-                brennan "Did that animal make you fall asleep?"
-                lily "I don't have narcolepsy, but it has been an unusually exhausting day. Maybe I overextended myself."
-                brennan "Well, let me know what you find out about that thing."
+            her happy "Oh, it'll be exciting."
+
+            call goto_ocean
+
         "Sara, my friend":
             $ ocean_character = "Sara"
+            scene bg community_center with fade
+            show sara at midright
+            show her normal at midleft
+            with dissolve
             "At lunch, I asked Sara if she was interested in going on a field trip to the ocean."
             sara "Oh, I've been wanting to see the ocean ever since I felt so claustrophobic in that shuttle!"
-            her "Really? It's kind of a long hike. Are you sure you're up for it?"
+            her surprised "Really? It's kind of a long hike. Are you sure you're up for it?"
             sara "I haven't been just sitting around all day! I'll have you know that I'm in top shape!"
-            her "Usually you're so worried about trying anything new, I'm kind of surprised that you're so excited about this."
-            sara "Yeah, I guess it could be dangerous. I used to live by an ocean, so I kind of miss it."
-            "There wasn't a road going out to the ocean, so we had to make our way through wild vegetation."     
-            "We had some minor run-ins with small insects, but nothing too surprising." 
-            scene bg ocean with fade
-            "Arriving at the ocean was magnificent. The air was moist, and my eyes could rest on a flat plane of wetness extending to the horizon."
-            sara "It's not the kind of beach I'd want to swim on, and I'm glad I brought a sweater, but this is such a sight for sore eyes!"
-            her "It's an amazing view." 
-            lily "I'm so glad we made it! Okay, I'd like to take samples of this crusty white stuff and any other organic material you can find."     
-            sara "Okay, I'll take samples of anything that's not moving." 
-            lily "I'll focus on some of the smaller creatures then."
-            her "How much of this excrement stuff do we need?" 
-            lily "The guano? Just get as much as you can. We have an hour or two so don't feel too rushed."
-            "We worked hard to get the samples we needed. We found a lot of shells and some bones. As we were getting ready to leave, the tide started to come back in."
-            "The incoming waves were purple with one kind of alien sea creature. It had six spiny or hairy arms, and floated like a jellyfish."  
-            lily "Oh! I've got to record this."
-            sara "Oh, I want a picture too! I can't wait to show everyone how beautiful our planet is."
-            "We stayed by the tidal edge. It surprised me how quickly the tide rushed back in. Little spider-crabs rushed to dry rocks, and many got swallowed up by the waves and the purple jelly-stars."
-            "A wave splashed under Lily's feet, and one of the purple spiny jellys grabbed at her leg."
-            lily "O-oh!"
-            "Sara looked on in horror as I jabbed the animal with my shovel. As I contacted it, its arm fell off, still wrapped around Lily."
-            if (skill_physical >= 40):
-                "Lily had a strange look on her face, so I carried her further inland so she could sit down."
-                "She wasn't blinking, so I pinched her a few times."
-                lily "Hey, knock it off! What happened? Did I fall asleep?"
-                her "No, one of the purple jellies latched onto you."
-                lily "Weird. I feel like I just woke up from a dream."
-                her "Its tentacle is still on you; we should probably remove it."
-                lily "Oh, I'll take care of that."
-                "She carefully grabbed it with her tweezers and moved it into a specimen bag."
-                sara "Don't worry, I made sure your camera was safe!"
-                lily "Thank you! Maybe I just had a little too much sun today."
-            elif (skill_knowledge >= 40):
-                "Lily appeared to be temporarily paralyzed, so Brennan helped me carry her further inland."
-                "I was trying to think of what I could do to help her when she came out of her trance."
-                lily "W-what happened? Did I fall asleep?"
-                her "No, one of the purple jellies latched onto you."
-                lily "Weird. I feel like I just woke up from a dream."
-                her "Its tentacle is still on you; we should probably remove it."
-                lily "Oh, I'll take care of that."
-                sara "Don't worry, I made sure your camera was safe!"
-                lily "Thank you! Maybe I just had a little too much sun today."
-            else:
-                "I had no idea what to do next. I just stood there, scared."
-                "Sara rushed over to catch Lily as she collapsed."
-                her "Umm..."
-                lily "W-what happened? Did I fall asleep?"
-                her "No, one of the purple jellies latched onto you."
-                lily "Weird. I feel like I just woke up from a dream."
-                her "Its tentacle is still on you; we should probably remove it."
-                lily "Oh, I'll take care of that."
-                sara "Don't worry, I made sure your camera was safe!"
-                lily "Thank you! Maybe I just had a little too much sun today."
+            her normal "Usually you're so worried about trying anything new, I'm kind of surprised that you're so excited about this."
+            sara "Yeah, I guess it could be dangerous. But I used to live by an ocean, so I kind of miss it."
+
+            call goto_ocean
+
     scene bg path with fade
     "After Lily got her bearings, we made the long trip back."
-    her "Can you remember anything from your dream?"
+    her surprised "Can you remember anything from your dream?"
     lily "My... dream?"
+    show her serious
     "Maybe she hadn't been dreaming."
     scene bg lab with fade
     "The next day, Lily told me where to go for the most ore-rich rocks. I followed her directions and gathered nearby rocks. I was pleasantly surprised by how little I needed my pick."
@@ -1594,6 +1604,7 @@ label monthly_event_11:
 # Jealous of time spent with friend
 # uses domestic, social, spiritual
 # TODO: Revisit this; is he too whiny?
+# TODO: Finish adding emotions
 label monthly_event_12:
     scene bg farm_interior with fade
     him "So, how was your little vacation with [ocean_character]?"
@@ -2256,7 +2267,7 @@ label monthly_event_18:
     him "Aaaahhhhh!"
     "I turned it off, and as I jumped out, I could see that the engine was on fire! [his_name] was backing away, his hand charred and red."
     her "Are you okay?!"
-    him "The fire! Put out the fire!"
+    him "The fire! Get the fire!"
     "I ran and got our fire extinguisher from the house."
     if ((skill_technical >= 70) or (skill_knowledge >= 70) or (profession == "mechanic")):
         "As I was running back to the tractor, I skimmed the label."
@@ -2315,7 +2326,54 @@ label monthly_event_18:
     else:
         "The doctor cleaned, treated, and wrapped his burns, and [his_name] gradually calmed down and stopped shaking."
         "He was not happy to learn that he couldn't use his hands until they had healed."
-    him "I don't have time for that! There's tomatoes and peppers to harvest!"
+        
+    "After a few days of reading and resting, he started pacing the house."
+    him "I should be doing something useful! I've been so lazy..."
+    her "You're supposed to take it easy."
+    him "I've healed enough; I could at least take Lettie out and look around..."
+    # TODO finish this section
+    menu:
+        "What should I say?"
+        "No way!":
+            her "There's no way I'm letting you out of the house. You'll just make your hands worse and it will take longer to heal."
+            him "What, you're my boss now?"
+            her "No, just someone who wants what's best for you."
+            him "You don't think I know what's best for me?"
+            her "Maybe not, if you're going to use your hands before they've healed."
+            him "I'm just going to look around. I need some fresh air."
+            her "But-"
+            him "Get out of the way!"
+            "He pushed past me and stormed out the house."
+            her "(What's his problem?!)"
+            "When he came back later, we were both much calmer."
+            her "Everything okay, [his_name]?"
+            $ loved -= 2
+        "It must be frustrating for you":
+            her "You sound really frustrated..."
+            him "Yeah, I'm frustrated! I'm stuck in here, while who knows what's happening to the farm outside!"
+            her "I'm sorry it happened."
+            him "Ah, it's okay. It's not your fault. I just hate sitting around doing nothing."
+            her "Yeah, that's annoying. Let's go on a walk together. That should be okay, right?"
+            him "Yeah.... I think I could use the fresh air."
+            "We walked around the farm together. I could tell he was itching to get down and get to work, but instead he just took notes."
+            $ loved += 2
+        "I'll go with you":
+            her "Alright, but only if you let me go with you. Someone's got to keep you out of trouble..."
+            him "Really? You don't trust me?"
+            her "Of course I trust you. I trust that you will do anything to take care of this farm, even if it's at the expense of your own health."
+            him "... All right, let's go."
+            "We walked around the farm together. I could tell he was itching to get down and get to work, but instead he just took notes."
+        "This is all my fault":
+            her "I'm so sorry, [his_name] - it's my fault you burned your hands!"
+            him "What? No, it's not your fault. If anything it's my fault, for trying to run the tractor instead of fixing it properly."
+            her "I just feel so terrible about it."
+            him "That's not - I don't want you to feel guilty!"
+            her "But I do..."
+            him "Maybe there's some way you could help out..."
+            her "Like what?"
+            $ relaxed -= 2
+
+    him "Most of the farm will be okay, but the tomatoes and peppers are ready to harvest right now."
     her "There must be something we can do..."
     menu:
         "What should I say?"
@@ -2490,7 +2548,7 @@ label monthly_event_21:
     him concerned "It was so cold today... with no clouds, either. Dr. Lily says it might freeze..."
     her surprised "Well, we have our heater, so we'll be fine, right? Do we need to chop some more wood?"
     him "Yeah, maybe - but it's not us I'm worried about."
-    her flirt "Oh, is it going to be too cold for Lettie? Maybe she'd like to sleep in bed with us?"
+    her flirting "Oh, is it going to be too cold for Lettie? Maybe she'd like to sleep in bed with us?"
     him annoyed "Of course not. Horses are incredibly strong and can handle the cold no problem. It's the quinoa that might not make it."
     her surprised "The quinoa?"
     him normal "Well, I planted it a week ago. Even though it's technically still winter here, we don't have any records of freezing weather in this area, so I thought it would be safe..."
@@ -2780,7 +2838,7 @@ label monthly_event_23:
                 
             her "I never thought of myself as a mother, you know."
             him "Doesn't mean we can't do it. Humans are made to be parents, right?"
-            her flirt "At least I have you..."
+            her flirting "At least I have you..."
             "He held me tight, cradling my head in his hand. I relaxed onto his shoulder, and he placed tiny kisses on my neck."
             "We really did need each other..."
             $ loved += 2
@@ -2956,13 +3014,13 @@ label monthly_event_23:
                 her surprised "No, no, it's okay, it's not that big of a deal. I just wanted to tell you how I felt."
                 him normal "Well, I'm glad you did. And I think I know just how to solve this problem."
                 her surprised "How's that?"
-                him flirt "Lots of practice!"
+                him flirting "Lots of practice!"
                 her annoyed "[his_name]..."
                 "He's kind of exasperating, but afterwards I could tell he was really trying to make sure I felt loved and appreciated, too."
                 $ loved += 2
                 $ relaxed += 2
             "Let's slow it down next time." if (loved >= 0):
-                her flirt "As much as I love that you are like a runaway stallion, can you maybe not gallop away quite so fast next time?"
+                her flirting "As much as I love that you are like a runaway stallion, can you maybe not gallop away quite so fast next time?"
                 him oncerned "Ummm..."
                 her annoyed "You know, slow down a bit?"
                 him surprised "Oh! Yeah. Sorry, I'm still trying to wrap my head around your horse imagery."

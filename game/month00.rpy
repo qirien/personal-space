@@ -10,7 +10,7 @@ label colony_ship:
     show her normal at midleft
     with dissolve
     him surprised "What do you think about having kids?"
-    her flirt "In general, or us specifically?"
+    her flirting "In general, or us specifically?"
     him concerned "You and me, becoming parents. Sounds kind of crazy, doesn't it?"
 
     # Do they want to have kids right away?
@@ -22,7 +22,7 @@ label colony_ship:
             $ want_kids = True
             her normal "I don't think that's crazy. We're both adults; we know we can provide a good home; what more is there to wait for?"
             him happy "Yeah, you're right! I think you'd be a great mom! And...well, I probably wouldn't mess the kids up too much."
-            her flirt "You will be a wonderful father, as long as you don't treat the kids the way you treat your horse."
+            her flirting "You will be a wonderful father, as long as you don't treat the kids the way you treat your horse."
             him surprised "Hey! I'm good to Lettie!"
             her happy "Too good! You'll spoil the kids with treats!"
             $ loved += 5
@@ -34,8 +34,8 @@ label colony_ship:
             label want_kids_maybe:
                 her concerned "Maybe someday, but I don't think I'm ready for that yet."
                 him normal "Someday, definitely. Let's just focus on us, for now."
-                her flirt "Oh yeah? What part of \"us\" are you focusing on?"
-                him flirt "I think...this part right here. Mmmm...this part is good, too."
+                her flirting "Oh yeah? What part of \"us\" are you focusing on?"
+                him flirting "I think...this part right here. Mmmm...this part is good, too."
                 her "Don't forget this..."
                 him surprised "Ohhh. Wow, I will never forget that."
                 scene bg stars with fade
@@ -50,7 +50,7 @@ label colony_ship:
             menu:
                 "What should I say?"
                 "She would probably fall off.":
-                    her flirt "She would probably fall off."
+                    her flirting "She would probably fall off."
                     him annoyed "No way! Lettie would never let anyone fall off her."
                 "Maybe...":
                     "(Aww, that does sound kind of cute...)"
@@ -118,7 +118,7 @@ label colony_ship:
             him annoyed "Sorry, I thought you'd think it was funny."
     him normal "Anyway, who cares about the decor? I think you need to open your present!"
     her surprised "A present? Where on earth did you find something?"
-    him flirt "Ha ha, not on Earth, that's for sure! Here."
+    him flirting "Ha ha, not on Earth, that's for sure! Here."
     her surprised "(It's wrapped in tissues...with hearts drawn on them)"
     her normal "(It looks like a poem)"
     "Surrounded by stars, in the darkness of space \nEmptiness presses; the universe waits"
@@ -157,7 +157,7 @@ label colony_ship:
         "Don't try it.":
             her concerned "I'm sorry, but I can't eat this."
             him annoyed "C'mon, are you sure? It's just bread and sugar and chocolate..."
-            her flirt "You first."
+            her flirting "You first."
             him "Okay..."
             "He takes a small bite. The texture seems chewy, like bread, and he doesn't cringe at the taste."
             him surprised "It's good! A little too sweet, maybe, but try it!"
@@ -173,7 +173,7 @@ label colony_ship:
             him happy "You're welcome."
         "Happy birthday to you.":
             her normal "Happy birthday to you, too, [his_name]. Now I feel bad I didn't get you anything."
-            him flirt "Don't feel bad. You're the only present I need."
+            him flirting "Don't feel bad. You're the only present I need."
         "What's the point?":
             her sad "What's the point of celebrating birthdays? One year older, one year closer to dying...that's not a cause to party."
             him normal "It is if it means it's one more year I've been able to spend with you."

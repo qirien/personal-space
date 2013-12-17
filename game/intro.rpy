@@ -9,7 +9,7 @@ label crafter:
     "...the craft store. He was looking for some elastics to braid his horse's hair for a parade."
     show him normal at quarterright with moveinright
     her surprised "You know how to braid your horse's hair?"
-    him flirt "It's a fine art."
+    him flirting "It's a fine art."
     her normal "I'll believe it when I see it."
     jump first_date
 
@@ -194,7 +194,7 @@ label marriage_proposal:
             $ her_nickname = renpy.input("He calls me:", "sweetie", length=20)
             her "You could call me '[her_nickname]'."
 
-    him flirt "Hey, I like that. You're my [her_nickname]."
+    him flirting "Hey, I like that. You're my [her_nickname]."
 
     menu:
         "I realized I didn't have a name for him. I thought fast and decided to call him:"
@@ -207,7 +207,7 @@ label marriage_proposal:
         "Something else":
             $ his_nickname = renpy.input("I call him:", "honey", length=20)
 
-    her flirt "And you're my '[his_nickname]'."
+    her flirting "And you're my '[his_nickname]'."
     him surprised "You're calling me [his_nickname]?"
     him happy "Well, okay. You can call me whatever you want as long as you come with me on the shuttle today!"
 
