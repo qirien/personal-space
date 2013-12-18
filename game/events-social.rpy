@@ -327,7 +327,7 @@ label social_7:
 
     "We decided to make it a potluck, so everyone could share the different foods they had grown. We also obtained some goodies from the dwindling rations in the storehouse."
     sara "Look! Potato chips! And fruit punch mix!"
-    her "Wow, I haven't had those in...a long time."
+    her "Wow, I haven't had those in months!"
     sara "OK, I think we have the food down. What else should we have?"
     menu party_menu:
         "What does the party still need?"

@@ -700,7 +700,107 @@ label relax_together_j:
     return
 
 label relax_together_k:
+    scene bg farm_interior with fade
+    show him normal at midright
+    show her normal at midleft
+    with dissolve
 
+    her surprised "Wow, your hair is getting long!"
+    him happy "Yeah, I guess I'm going for the Shaggy look..."
+    menu:
+        "What should I say?"
+        "I could cut it for you." if (skill_creative >= 10):
+            her normal "I could cut it for you."
+            him surprised "Yeah? Do you think it'd turn out okay?"
+            her annoyed "It's not that hard to just cut your hair shorter."
+            him happy "Well, I guess if it's awful I could just shave my head."
+            her annoyed "It'll look fine! Now sit outside while I get some scissors."
+            "We didn't have haircutting scissors, so I just used regular scissors and a comb."
+            if (skill_creative >= 40):
+                "I gave him a haircut kind of like what it had before. It was easier than I thought."
+                her happy "Well, what do you think?"
+                him surprised "Hey, that looks good!"
+                her annoyed "Of course it does."
+            else:
+                "I tried to give him a haircut kind of like what he had before. It was hard to get the sides even. I'd cut it shorter on one side, and then I'd have to cut the other side to match, but I'd cut a little too much..."
+                "Finally, I got it balanced, but his hair was a lot shorter than I'd ever seen it."
+                her concerned "Well, what do you think?"
+                him surprised "Hey, not bad!"
+                her happy "Oh good, I'm glad you like it."
+            him happy "Ahhh, that feels good."
+            him serious "Now it's your turn."
+            her surprised "For what?"
+            him happy "I'll cut your hair!"
+            menu:
+                "What should I say?"
+                "No way.":
+                    her annoyed "No way."
+                    him annoyed "Hey, I trusted you with my hair."
+                    her serious "My hair's different; it's not just a matter of making it shorter."
+                    him concerned "All right, whatever you want."
+                    $ loved -= 2
+                "Okay, just a trim.":
+                    her surprised "You know, the ends could definitely use a trim; just don't cut off too much!"
+                    him normal "No problem; just leave it to me."
+                    "I was a little nervous as I handed him the scissors and sat down."
+                    show him center
+                    show her midright
+                    with dissolve
+                    him serious "..."
+                    her concerned "..."
+                    show him midleft
+                    show her midright
+                    with dissolve
+                    him concerned "Okay, that should do it."
+                    "I went over to look in the mirror."
+                    "It mostly looked the same; he just cut off about an inch in the back."
+                    her happy "That's great; thank you!"
+                    him serious "Good, I was worried you wouldn't like it..."
+                    her flirting "Nope, you did a great job. As always."
+                    him happy "I wouldn't want to start a hair salon, but cutting hair is actually kind of fun..."
+                    her annoyed "Don't get too used to it!"
+                    $ loved += 2
+
+                "No, thanks.":
+                    her normal "No, thanks, I think maybe I'll grow it out."
+                    him normal "Okay, let me know if you change your mind."
+                    "I had a ton of split ends, but I'd figure something else out. I just didn't trust [his_name] with my hair..."
+        "I like it like that.":
+            her "Why cut it? I think longer hair looks good on you."
+            him flirting "Oh yeah? Should I grow my beard out long, too?"
+            her flirting "Only if you braid it like a dwarf."
+        "I think you better cut it.":
+            her concerned "Yeah, maybe you should cut it."
+            him concerned "My mom always cut my hair at home..."
+            him serious "But we're not at home anymore, are we? Guess I'll have to man up and cut my own hair."
+            show her surprised
+            hide him with moveoutright
+            show him with moveinright
+            "I watched as he got out some scissors, got his hair wet, and sat in front of the mirror. He cut the bangs and sides first, and did a decent job."
+            show her normal
+            him normal "Could you get the back for me?"
+            her normal "Okay...I guess I just match up what you did on the sides?"
+            him "Yeah, just straight across."
+            "I tried to match up what he had done, but I accidentally made it too short..."
+            menu:
+                "Tell him":
+                    her serious "Sorry, but I made it a little too short in the back... I'm just not very good at this."
+                    him serious "Where? Oh, I see. It's okay; I'll just make the sides a little shorter to match."
+                    $ loved += 2
+                "Don't tell him":
+                    him surprised "Does it look okay?"
+                    her concerned "(It's in the back; he'll never see it, anyway)"
+                    her serious "Yeah, it's fine."
+                    $ loved -= 2
+            
+        "Sara could cut your hair." if (skill_social >= 30):
+            her normal "Did you know Sara went to hair school for a while?"
+            him surprised "No, really?"
+            her happy "Yeah! Maybe she'd cut your hair, and mine."
+            him happy "Let's ask her!"
+            scene black with fade
+            "She was happy to cut our hair, and did a great job."
+            "It felt so good to have my hair neat and the way I liked it."
     $ relaxed += 5
     $ loved += 2
     return

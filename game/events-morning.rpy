@@ -470,7 +470,7 @@ label work_3:
     $ times_worked += 1
 
     call set_work_bg
-    show her normal at center with dissolve
+    show her serious at midright with dissolve
 
     # DOCTOR 
     if (profession == "doctor"):
@@ -501,8 +501,8 @@ label work_3:
         show brennan at quarterleft with dissolve
         "Brennan worked hard, too - he didn't have any experience with teaching, but he was good with kids and helped keep them on task."
         "There were times when just having another adult around was so important."
-
-    her "Good work today, Brennan."
+    show her
+    her normal "Good work today, Brennan."
     brennan "Thanks, [her_name]. I really enjoy working with you."
     menu:
         "What should I say?"
@@ -519,35 +519,35 @@ label work_3:
 
     $ brennan_relationship += 1
     brennan "Well, my skills aren't exactly in high demand here..."
-    her "What skills are those? What did you do back on Earth?"
+    her surprised "What skills are those? What did you do back on Earth?"
     brennan "I was a salesman. Not a bad one, either."
-    her "So why are you here?"
+    her normal "So why are you here?"
     brennan "I was too good at my job. It became my life; trying to sell more than last month, trying to beat the other fellows. Finally I had to ask myself what was the point of it all?"
     brennan "On a whim I applied to be a colonist, and I suppose there was something about me they liked, because I was accepted."
-    her "That's strange..."
+    her serious "That's strange..."
     brennan "What, you think it's strange they found something about me they liked?"
-    her "No, it's just - well, no offense, but we don't really need any salesmen here, especially ones with no family, and.... I'm sorry, that was rude of me--"
+    her concerned "No, it's just - well, no offense, but we don't really need any salesmen here, especially ones with no family, and.... I'm sorry, that was rude of me--"
     brennan "And absolutely true. It feels lonely here, sometimes. There's no pubs or parks or any place to meet people - there's no one to meet! I don't even have my own pad or anything; they put me up in the Mayor's house."
-    her "That sounds awkward."
+    her serious "That sounds awkward."
     brennan "He's a nice enough fellow, and his wife doesn't seem to mind having me around, but they're not family."
     menu:
         "What should I say?"
         "Want to come over for dinner?":
-            her "Not family, no, but you have friends here! Why don't you come have dinner with [his_name] and me tonight? I'm sure he'd like to meet you."
+            her normal "Not family, no, but you have friends here! Why don't you come have dinner with [his_name] and me tonight? I'm sure he'd like to meet you."
             brennan "Not very likely! You haven't seen the dirty looks he's been giving me?"
-            her "Really?"
+            her surprised "Really?"
             brennan "Oh, sure! He's always looking at me like I'm a ravenous wolf."
-            her "Well, maybe we could go for lunch together sometime."
+            her normal "Well, maybe we could go for lunch together sometime."
             brennan "I'd like that, [her_name]. Thank you, for being a friend."
         "(Give him a hug)":
-            her "I'm sorry you're so alone..."
+            her serious "I'm sorry you're so alone..."
             "He doesn't seem at all surprised when you reach out your arms to give him a hug. He hugs you back, holding you a second longer than you meant to, and then you let go."
-            her "(This is probably the first hug he's had in months... poor guy.)"
+            her concerned "(This is probably the first hug he's had in months... poor guy.)"
             brennan "Thank you, [her_name]. I'm glad you're my friend."
         "We're all family":
-            her "We're all family here, right?"
+            her normal "We're all family here, right?"
             brennan "I suppose so, though you're the only one I feel close enough to to call family."
-            her "Sure, I'll be your big sister."
+            her flirting "Sure, I'll be your big sister."
             brennan "Sister! Ha, that's...nice. Thank you, [her_name]."
     
     return
@@ -571,7 +571,7 @@ label work_4:
         "But the next day, she came back. She had a fever and the wound wasn't healing well."
         show her normal at midleft with dissolve
         show brennan at midright with dissolve
-        her "Take a culture sample; looks like a bacterial infection."
+        her serious "Take a culture sample; looks like a bacterial infection."
         brennan "Alright."
         "I borrowed a microscope from the science lab and examined the culture. It was like no bacteria in any of the reference books."
         her "Brennan, we need to quarantine the clinic. I'll send out a message to everyone urging them to stay away, wash wounds promptly, and watch out for these symptoms."
@@ -589,6 +589,10 @@ label work_4:
                 "Afterwards I was so tired I fell asleep at my desk."
             "Ask Dr. Lily":
                 her "There's got to be something these bacteria are weak against. Maybe Dr. Lily can help."
+                scene bg lab with fade
+                show lily at midright
+                show her serious at midleft
+                with dissolve
                 lily "Let's try several different kinds of antibiotics on different cultures and see if we can find what works best."
                 her "Good idea."
                 "We tried a little bit of all the medicines and substances we had that we thought could possibly work. We tried different chemicals, synthetic drugs, local mold, algae - anything we could think of."
@@ -596,6 +600,10 @@ label work_4:
                 lily "Look at the algae culture! There's hardly any bacteria left."
                 her "Hopefully the algae itself wouldn't be harmful to people..."
                 lily "I can't say for sure."
+                call set_work_bg
+                show her serious at midright
+                show brennan at midleft
+                with dissolve
                 "We decided to try it. The kids just kept getting worse, and I was worried the bacteria would spread to vital systems."
                 "We scraped off a little of the infected tissue and put some of the algae on with a new bandage."
                 "Afterwards, I was so exhausted I fell asleep at my desk."

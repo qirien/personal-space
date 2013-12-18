@@ -694,7 +694,7 @@ label monthly_event_7:
             "I put it back where I found it. It was just an accident, so he doesn't need to know it was my fault, right?"
             "Even so, I was nervous when he got home."
             show her at quarterright
-            show him at quarterleft with moveinleft
+            show him normal at quarterleft with moveinleft
             him happy "Hey there, [her_nickname]."
             her "Hi."
             "He washed his hands, and then picked up his computer pad."
@@ -747,7 +747,7 @@ label monthly_event_7:
         "Leave it on the table and tell him when he gets home":
             "I left it on the table so I would remember to tell him about it when he got home."
             show her at quarterright
-            show him at quarterleft with moveinleft
+            show him normal at quarterleft with moveinleft
             him happy "Hey there, [her_nickname]."
             her concerned "Hi."
             "He washed his hands, and then picked up his computer pad."
@@ -777,7 +777,7 @@ label monthly_event_7:
 
     scene black with fade
     "A week later, I was reading my messages when I noticed that they were having a New Year's party."
-    scene farm_interior with fade
+    scene bg farm_interior with fade
     her surprised "Has it really been a whole year that we've been here?"
     him normal "Well, a year on this planet is only seven months, but, yeah. It's good for farming to have a shorter year, especially since the winters are so mild."
     her happy "Happy New Year, then!"
@@ -820,9 +820,9 @@ label monthly_event_8:
 
         "Can't you do it another night?":
             her annoyed "Can't you help him another night? I was really looking forward to watching this with you."
-            him normal "No, sorry, it has to be tonight."
+            him serious "No, sorry, it has to be tonight."
             her normal "Okay, see you later."
-            him "Bye, [her_nickname]."
+            him normal "Bye, [her_nickname]."
             show her concerned
             hide him with moveoutright
             "The house suddenly seemed so quiet. I usually didn't mind being alone, but I had really been looking forward to this. The wind whistled mournfully through the cracks in the walls."
@@ -842,7 +842,7 @@ label monthly_event_8:
                     $ relaxed -= 10
             "Finally, I just went to bed."
             scene black with fade
-            "Everything seemed fine the next day, but I still felt insecure."
+            "Things seemed better in the morning, but I still felt uneasy."
             $ loved -= 2
 
         "{i}I'll help, too.{/i}" if (relaxed>=0):
@@ -850,7 +850,7 @@ label monthly_event_8:
             him surprised "Do you really want to?"
             her normal "Yes, we all need to work together to succeed. Plus, I'll get to be with you."
             him happy "All right, let's go!"
-            scene bg sunset
+            scene bg sunset with fade
             show overlay night
             show her normal at midright
             show him normal at center
@@ -1050,8 +1050,8 @@ label monthly_event_9:
                        him happy "Thank you, [her_nickname]."
                        $ loved += 5
                    "Let's work on it together":
-                       her "How about if we take some time one evening and clean up the house together?"
-                       him "Yeah, I guess we could do that."
+                       her normal "How about if we take some time one evening and clean up the house together?"
+                       him normal "Yeah, I guess we could do that."
                        $ loved += 2
 
             elif (loved < 5):
@@ -1137,7 +1137,7 @@ label monthly_event_10:
     him normal "Okay, I'll bring home a surprise for you."
     her surprised "Really?"
     him normal "Yeah! I mean, don't expect too much, but I've got an idea."
-    call show_work_bg
+    call set_work_bg
     "All day long I looked forward to spending a nice evening together."
     scene bg farm_interior with fade
     show her normal at center
@@ -1145,8 +1145,8 @@ label monthly_event_10:
     her annoyed "(He knows we were going to celebrate today! Where could he be?)"
     "I tried calling him on the radio, and messaging him on the computer, but he didn't answer."
     "Finally, just when I was about to give up and eat without him, he stepped in."
-    show him serious at midleft
-    show her at midright
+    show him serious at midleft with moveinleft
+    show her at midright with move
     menu:
         "He's so late..."
         "Is everything okay?":
@@ -1285,7 +1285,7 @@ label follow_him:
             "He'd tell me what was bothering him when he was ready. I decided to settle down with a book and wait until he came back."
             jump anniversary_next_day
 
-    #scene bg barn with fade
+    scene bg barn with fade
     show him serious at midright
     show her serious at midleft
     with moveinleft
@@ -1325,7 +1325,7 @@ label follow_him:
         "I walked and jogged as fast as I could. I was breathing so hard I thought I was going to throw up when I finally got back."
         $ relaxed -= 5
 
-    #scene bg barn with fade
+    scene bg barn with fade
     show him serious at quarterright
     show her serious at midleft with moveinleft
     "He had me hold Lettie still while he measured it out and administered it to her. I was amazed how much Lettie trusted him."
@@ -1348,7 +1348,7 @@ label follow_him:
             "I didn't sleep that well that night."
             "The next morning, I decided to check on Lettie and [his_name]."
 
-    #scene bg barn with fade
+    scene bg barn with fade
     show him normal at midright
     show her normal at midleft
     with dissolve
@@ -1360,6 +1360,7 @@ label follow_him:
     her normal "You're welcome. I'm glad we could help her."
     "He turned to me and wrapped his arms tight around me. His voice was a little hoarse as he whispered,"
     him serious "Everything's so fragile...\nI love you, [her_name]."
+    show her concerned
     menu:
         "What should I say?"
         "I love you, too.":
@@ -1377,6 +1378,7 @@ label follow_him:
 
 # Helper function for month 11
 label goto_ocean:
+    scene bg talam with fade
     "There wasn't a road going out to the ocean, so we had to make our way through wild vegetation."     
     "We had some minor run-ins with small insects, but nothing too surprising." 
     scene bg ocean with fade
@@ -1425,6 +1427,7 @@ label goto_ocean:
 
     "It surprised me how quickly the tide rushed back in. Little spider-crabs rushed to dry rocks, and many got swallowed up by the waves and the purple jellies."
     "A wave splashed under Lily's feet, and one of the purple spiny jellys grabbed at her leg."
+    show lily at midleft with move
     lily "O-oh!"
     "[ocean_character] looked on in horror as I jabbed the animal with my shovel. As I contacted it, its arm fell off, still wrapped around Lily."
     if (skill_physical >= 40):
@@ -1440,8 +1443,15 @@ label goto_ocean:
         if (ocean_character == "Sven"):
             sven "Don't just sit there, do something!"
             "Lily started to collapse, but luckily she fell onto me and I could support her." 
-        else:
+        elif (ocean_character == "Brennan"):
+            show her at right with move
+            show brennan at midright with move
             "[ocean_character] rushed over to catch Lily as she collapsed."
+        else:
+            show her at right with move
+            show sara at midright with move
+            "[ocean_character] rushed over to catch Lily as she collapsed."
+            
         her surprised "Umm..."
         lily "W-what happened? Did I fall asleep?"
 
@@ -1479,7 +1489,7 @@ label monthly_event_11:
     "I spent the evening researching low-power heating. Some people found that light bulbs helped heat their houses, but we had LEDs that didn't give off much heat."
     "I found a type of combustion stove called a rocket stove, which burned wood sideways very cleanly. I'd need some metal pipes though." 
     "I knew we were saving a lot of the metal from the shuttle for emergencies. I wasn't sure what I would do."
-    show him normal with moveinleft
+    show him normal at midleft with moveinleft
     her normal "If we want to advance technologically, we've got to start making our own metal. It's like, the next thing on the tech tree."
     him normal "I heard that Lily is gathering ores to see if we can start making our own metal here. But I think gunpowder is next on the tech tree."
     her surprised "Really? Why didn't anyone inform me?"
@@ -1578,12 +1588,12 @@ label monthly_event_11:
             sara "Oh, I've been wanting to see the ocean ever since I felt so claustrophobic in that shuttle!"
             her surprised "Really? It's kind of a long hike. Are you sure you're up for it?"
             sara "I haven't been just sitting around all day! I'll have you know that I'm in top shape!"
-            her normal "Usually you're so worried about trying anything new, I'm kind of surprised that you're so excited about this."
+            her concerned "Usually you're so worried about trying anything new, I'm kind of surprised that you're so excited about this."
             sara "Yeah, I guess it could be dangerous. But I used to live by an ocean, so I kind of miss it."
 
             call goto_ocean
 
-    scene bg path with fade
+    scene bg talam with fade
     "After Lily got her bearings, we made the long trip back."
     her surprised "Can you remember anything from your dream?"
     lily "My... dream?"
@@ -1604,108 +1614,110 @@ label monthly_event_11:
 # Jealous of time spent with friend
 # uses domestic, social, spiritual
 # TODO: Revisit this; is he too whiny?
-# TODO: Finish adding emotions
 label monthly_event_12:
     scene bg farm_interior with fade
-    him "So, how was your little vacation with [ocean_character]?"
-    her "Vacation? Not really; Dr. Lily got stung by some weird jellyfish creature, and we scraped guano off the rocks for her."
-    him "I don't know; it just sounds fun to get away from everything here for a change..."
-    her "Well, you should have come with us!"
-    him "I didn't have time then, but I could have done it if you waited a few weeks until that harvest was over."
-    her "Well, we can go again if you really want to. Dr. Lily could always use more guano."
-    him "No, I really shouldn't leave the farm."
-    her "Well, then what's the big deal? It's not like it was a big fun vacation; I had to go to fix the stove."
-    him "I never see you anymore. Whenever I want to talk to you, you're off somewhere else."
-    her "What?! I'm home all the time! And when I am home, half the time you're doing farm stuff anyway, so I never get to talk to {b}you{/b}!"
+    show him normal at midright
+    show her normal at midleft
+    with dissolve
+    him annoyed "So, how was your little vacation with [ocean_character]?"
+    her surprised "Vacation? Not really; Dr. Lily got stung by some weird jellyfish creature, and we scraped guano off the rocks for her."
+    him concerned "I don't know; it just sounds fun to get away from everything here for a change..."
+    her annoyed "Well, you should have come with us!"
+    him annoyed "I didn't have time then, but I could have done it if you waited a few weeks until that harvest was over."
+    her serious "Well, we can go again if you really want to. Dr. Lily could always use more guano."
+    him concerned "No, I really shouldn't leave the farm."
+    her annoyed "Well, then what's the big deal? It's not like it was a big fun vacation; I had to go to fix the stove."
+    him sad "I never see you anymore. Whenever I want to talk to you, you're off somewhere else."
+    her annoyed "What?! I'm home all the time! And when I am home, half the time you're doing farm stuff anyway, so I never get to talk to {b}you{/b}!"
     if (ocean_character == "Brennan"):
-        him "You seem to have plenty of time to see Brennan."
-        her "That's because we work at the same place!"
-        him "And go on trips together..."
-        her "What are you trying to say? This isn't really about Brennan, is it?"
+        him concerned "You seem to have plenty of time to see Brennan."
+        her annoyed "That's because we work at the same place!"
+        him annoyed "And go on trips together..."
+        her surprised "What are you trying to say? This isn't really about Brennan, is it?"
     elif (ocean_character == "Sara"):
-        him "You have plenty of time for Sara."
-        her "Well, she's my best friend."
-        him "{b}She's{/b} your best friend?"
-        her "What is going on with you? This isn't really about Sara, is it?"
+        him concerned "You have plenty of time for Sara."
+        her annoyed "Well, she's my best friend."
+        him annoyed "{b}She's{/b} your best friend?"
+        her surprised "What is going on with you? This isn't really about Sara, is it?"
     else:
-        him "You're always hanging out at the library."
-        her "The library?! I only go there if I'm doing research!"
-        him "Well, it seems like you do a lot of research."
-        her "What are you trying to say? This isn't really about the library, is it?"
+        him concerned "You're always hanging out in town, like at the storehouse or the library."
+        her annoyed "The library?! I only go there if I'm doing research!"
+        him angry "Well, it seems like you do a lot of research."
+        her surprised "What are you trying to say? This isn't really about the library, is it?"
 
     if (loved >= 0):
-        him "No, it's... I missed you when you were gone."
-        her "Well, why don't you just say so, instead of turning it into an argument?"
-        him "..."
-        her "..."
+        him concerned "No, it's... I missed you when you were gone."
+        her annoyed "Well, why don't you just say so, instead of turning it into an argument?"
+        him sad "..."
+        her sad "..."
     else:
-        him "We're falling apart, [her_name]. I want to stop it."
-        her "Well, yelling at me isn't the way to go about it!"
-        him "Yeah? What should I do, then? I can't bring you flowers, or take you to a concert, or even take you out for coffee!"
-        her "What are you so mad about?!"
+        him sad "We're falling apart, [her_name]. I want to stop it."
+        her annoyed "Well, yelling at me isn't the way to go about it!"
+        him angry "Yeah? What should I do, then? I can't bring you flowers, or take you to a concert, or even take you out for coffee!"
+        her angry "What are you so mad about?!"
 
-    him "I'm sorry, [her_name]..."
+    him concerned "I'm sorry, [her_name]..."
     menu:
         "What should I say?"
         "{i}Let's forget about it and do some work together{/i}" if (skill_domestic >= 40):
-            her "It's okay..."
-            her "Hey, let's do something together! Let's clean the kitchen!"
-            him "Wha- you want to clean the kitchen right now?"
-            her "Yeah, together! It needs to get done; we need to spend time together; we can do both at the same time!"
+            her serious "It's okay..."
+            her normal "Hey, let's do something together! Let's clean the kitchen!"
+            him surprised "Wha- you want to clean the kitchen right now?"
+            her happy "Yeah, together! It needs to get done; we need to spend time together; we can do both at the same time!"
             if (loved >= -5):
-                him "Okay, where should we start?"
-                her "There's some grease on the walls; let's scrub that off."
+                him serious "Okay, where should we start?"
+                her serious "There's some grease on the walls; let's scrub that off."
                 "We put on some energetic music and scrubbed together. It was still hard work, but soon we weren't mad at each other anymore."
                 $ loved += 5
                 
-                her "Now, do you want to talk about what's really bothering you?"
+                her serious "Now, do you want to talk about what's really bothering you?"
 
             else:
-                him "I don't want to clean the kitchen. I have too much other work to do."
-                her "Fine, whatever."
+                him annoyed "I don't want to clean the kitchen. I have too much other work to do."
+                her annoyed "Fine, whatever."
                 "I cleaned it myself, while he did whatever it was that was so important he couldn't spend time with me."
                 "I got the kitchen clean, but I didn't know what I could do about [his_name]..."
                 $ loved -= 5
                 return
         "{i}Let's forgive each other{/i}" if (skill_spiritual >= 40):
-            her "It's okay, [his_name]. I'm sorry for arguing, too."
-            him "We're both pretty stressed out, aren't we?"
+            her normal "It's okay, [his_name]. I'm sorry for arguing, too."
+            him concerned "We're both pretty stressed out, aren't we?"
             if (stressed >= 0):
-                her "Yeah, I know I am. There's so much to do, and so much going wrong..."
-                her "But we need to help each other! How can I help you?"
+                her concerned "Yeah, I know I am. There's so much to do, and so much going wrong..."
+                her serious "But we need to help each other! How can I help you?"
             else:
-                her "Well, the only thing I'm stressed out about right now is the fact that you seem stressed out! How can I help?"
+                her flirting "Well, the only thing I'm stressed out about right now is the fact that you seem stressed out! How can I help?"
                 
-            him "Oh, [her_name], I don't know. But I need you by my side, on my side."
+            him concerned "Oh, [her_name], I don't know. But I need you by my side, on my side."
             
         "{i}You need another friend{/i}" if (skill_social >= 40):
-            her "Don't you have any other friends you can hang out with, if I'm not around?"
-            him "Not really... well, Thuc and I help each other a lot, but we don't really talk..."
-            her "Maybe he could help you? What's wrong, anyway?"
+            her surprised "Don't you have any other friends you can hang out with, if I'm not around?"
+            him concerned "Not really... well, Thuc and I help each other a lot, but we don't really talk..."
+            her concerned "Maybe he could help you? What's wrong, anyway?"
 
         "I'm sorry, too":
-            her "I'm sorry, too."
-            him "..."
-            her "..."
+            her concerned "I'm sorry, too."
+            him sad "..."
+            her sad "..."
             
         "I can't talk to you right now" if (relaxed <= 0):
-            her "I can't deal with this now."
-            him "Fine, do what you need to."
+            her annoyed "I can't deal with this now."
+            him annoyed "Fine, do what you need to."
             "We both dealt with our problems separately. At bedtime, we kissed goodnight, but I could tell we were both engrossed in our own worries."
             $ loved -= 2    
             return
 
-    him "It's just...a lot of things went wrong today..."
-    her "Like what?"
-    him "The tractor broke down today, and it took me a few hours to figure out what was wrong and fix it. That meant I didn't have time to get to clearing out the old radish and spinach field, which means I'm behind on planting the next things..."
-    him "Then the mayor wants a report on how all the crops are coming, and it's going to take a while to prepare it, when I really should be working on actually growing food!"
-    him "The fences keep breaking and there's a new pest I've found evidence of but haven't identified yet..."
-    her "You do have a lot going on. Is there someone who can help you?"
-    him "I can do it all, I just need--"
-    her "What do you need?"
-    him "I just need you."
+    him concerned "It's just...a lot of things went wrong today..."
+    her surprised "Like what?"
+    him serious "The tractor broke down today, and it took me a few hours to figure out what was wrong and fix it. That meant I didn't have time to get to clearing out the old radish and spinach field, which means I'm behind on planting the next things..."
+    him annoyed "Then the mayor wants a report on how all the crops are coming, and it's going to take a while to prepare it, when I really should be working on actually growing food!"
+    him sad "The fences keep breaking and there's a new pest I've found evidence of but haven't identified yet..."
+    her surprised "You do have a lot going on. Is there someone who can help you?"
+    him serious "I can do it all, I just need--"
+    her normal "What do you need?"
+    him serious "I just need you."
     
-    her "Here I am...here for you and loving you, [his_nickname]."
+    her serious "Here I am...here for you and loving you, [his_nickname]."
     "We held each other for a long time. I felt there was so much I wanted to say, I tried to put it all into my hug and strengthen him and help him."
     $ loved += 5
     
@@ -1714,18 +1726,21 @@ label monthly_event_12:
 # MONTH 13 - Jury Duty
 # uses spiritual, technical
 label monthly_event_13:
-    scene bg farm_interior with fade
+    scene black with fade
     "I hadn't thought about it much before, but we didn't have a lot of laws here on Talaam. Some things just didn't apply (like taxes, driving laws, etc), but I remember signing something about agreeing to abide by a set of laws that sounded very reasonable."
     "It had never seemed like something I would have to worry about.  Until I had to be on the jury for Ilian's trial, that is..."
     "We hadn't had any crime our whole first year (though we certainly had our share of arguments, accidents, and disagreements)."
     "After all, who would hurt anyone else in our colony? We needed each other too much."
     "But that peace couldn't last forever..."
 
-    #scene bg community_center with fade
+    scene bg community_center with fade
     "We awoke one morning to the tragic news that the Peron's four-year-old girl, Josephina, was missing."
+    show her serious at midleft
+    show julia at midright
     "Mrs. Peron was alternately furious with herself and those around her."
     natalia "Someone should have been watching her more closely!"
     natalia "I should have been watching her more closely..."
+    scene bg talam with fade
     "Everyone searched together all day long, and finally we found her body washed up downstream of the Peron's farm."
     if (profession == "doctor"):
         "We didn't have a coroner or anything, so I took a look at the girl's body."
@@ -1737,17 +1752,22 @@ label monthly_event_13:
     "In addition, Mr. Peron found some blood on the road next to his farm that led to the river."
     "We spent a few days being suspicious of each other. [his_name] started barring our door at night."
     "Finally, the mayor called a community meeting."
+    scene bg community_center with fade
+    show pavel at center with dissolve
     boss "I know everyone is worried, and scared, but we can't stop trusting each other. We will find who's responsible for this."
+    show natalia at right with moveinright
     natalia "Who knows who will be next?! It clearly wasn't an accident!"
+    show ilian at midleft with moveinleft
     "Finally, Ilian stepped forward."
     ilian "I'm sorry! I'm so sorry!"
+    show sara at left with dissolve
     sara "Sorry for what?!"
     ilian "I-- I'm the one that killed Josephina."
     "Nobody said a word. He worked his way up to the front of the room. He brushed his hand in front of his eyes - was he crying?"
     ilian "It was late, I didn't even see her until she was right in front of me. I was driving my tractor, maybe a little fast- she jumped in front of it- I was going too fast- I didn't mean to run over anyone!"
     natalia "But how did her body end up in the river?!"
     ilian "It was obvious she was dead- there was so much blood- I was so horrified- I don't know why I did that- I didn't want anyone to know it was me. So I dropped her body in the river."
-    
+    # TODO: Finish adding emotions
     "Nobody knew what to say. He was really crying, now, heaving deep sobs that looked pathetic on a man his size. I looked over at his wife, Sara, who looked like she was in shock."
     boss "Ilian, I can tell you're sorry about this, and I'm glad you came forward. We will need to have a trial and decide what to do about this."
     natalia "What do you need a trial for?! He just admitted he killed Josephina!"

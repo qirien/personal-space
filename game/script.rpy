@@ -28,6 +28,7 @@ image bg ocean = "bg/ocean.jpg"
 image bg storehouse = "bg/storehouse.jpg"
 image bg community_center = "bg/community-center.jpg"
 image bg lab = "bg/lab.jpg"
+image bg barn = "bg/barn.jpg"
 image overlay night = "bg/night.png"
 
 # Declare characters used by this game .
