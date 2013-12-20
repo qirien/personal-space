@@ -298,14 +298,83 @@ label social_5:
     $ community_level += 2
     return
 
-# What to do about some gossip? If true, action should be taken, but if not, person could be damaged
+# Someone's house burns down; will you help?
 label social_6:
+    scene bg bedroom with fade
+    show overlay night
+    show him serious at midright
+    show her serious at midleft
+    "One good thing about being such a small community was that we all helped out when someone needed it."
+    "Like when Sara's house burned down..."
+    "It was the middle of the night when the radio crackled on."
+    "Sara on the radio" "Is anyone awake? Please, help! Our house is on fire!!!"
+    him "Let's go!"
+    "We brought buckets of water, but by the time we got there, the whole house had already burned to the ground."
+    sara "Oh, [her_name], I'm so glad you came! It's... awful."
+    menu:
+        "What should I say?"
+        "At least you and Ilian are okay.":
+            her "At least you two got out safely..."
+            sara "Yeah, that's good. We didn't have time to bring anything with us, though...It's a good thing we weren't sleeping naked."
+            her "Yeah, that's true."
+        "Did you lose much?":
+            her "Did you lose much?"
+            sara "Everything...which actually isn't that much. A few things from Earth, our computers, clothes, some tools."
+            her "That's terrible..."
+        "How did the fire start?":
+            her "How did your house catch fire?"
+            sara "I don't know! We just woke up and there was this huge fire over by the oven."
+            her "Maybe there was something wrong with the stove?"
+            sara "What does it matter?! Either way, our house just burned down! Not just the house, but our clothes, tools, computers..."
+            her "I'm so sorry..."
+    sara "I don't know where we'll stay; what we'll wear; how we'll eat..."
+    menu:
+        "Come stay at our house.":
+            her serious"You and Ilian are welcome to stay at our house if you want..."
+            sara "Really? I know your house is pretty small..."
+            her normal "It's no trouble. C'mon, it'll be fun! We can hang out every night like it's a weekend!"
+            him "Yeah, and don't worry; [her_name] doesn't snore too loudly."
+            ilian "Thanks; we really appreciate it."
+            sara "Yes, honestly, I'd rather stay with you guys than anywhere else."
+            "It was a little crowded and stressful having so many people in our one room house, but it was also fun. We really got to be good friends."
+            "Luckily, they had materials for an extra house on the shuttle, so the whole community worked together one day to put it together for them."
+            "The Blairs donated one of their computer pads for them to share, and everyone pitched in some cookware and tools to replace those that had burned."
+            him "It wasn't as bad as I thought, having Ilian and Sara stay with us for a week..."
+            him "Yeah. But now that we have the house to ourselves, we can do whatever we want, whenever we want..."
+            him "I like the way you think."
+            $ community_level += 5
+            $ relaxed -= 2
+            $ made_love += 1
+        "You can stay at the community center.":
+            her serious "You should be able to stay at the community center; there's some comfortable sleeping areas from the shuttle, and a little kitchen."
+            sara "Yeah, I guess that will work."
+            "They settled in on the floor of the community center."
+            "Luckily, there were extra materials for building another house on the shuttle, but it took Ilian and Sara a few weeks to build it by themselves."
+            "We didn't have time to help out; we were all too busy."
+            "I hoped that something like that would never happen to us."
+            $ skill_social += 5
+            return
+        "You could stay at the clinic." if (profession == "doctor"):
+            her "You could stay at the clinic; there's extra beds we're not using."
+            sara "That could work..."
+            "It was a little awkward, coming to work at the clinic when they were using it for a house. But it was good in some ways, too."
+            "Sara started watching me work and I was able to teach her more about health and medicine."
+            "Even so, we were happy to find out that there were extra materials for building another house, and we got right to work helping Ilian and Sara build it."
+            $ community_level += 2
+    "The fire was a tragedy, but it also drew us closer together."
+    $ skill_social += 10
+    return
+
+
+# Teach 'enrichment' class on [profession]
+label social_7:
 
     $ skill_social += 10
     return
 
+
 # Community Shindig
-label social_7:
+label social_8:
     scene bg path with fade
     play music "music/Prelude22.ogg" fadeout 3.0
 
@@ -369,8 +438,8 @@ label social_7:
                     her "How about a talent show? I'm sure lots of people have things they can do, even if it's just jokes or a skit or something."
                     sara "Sure! We'll just organize the performances and be the announcers."
                     $ party_entertainment = "talent show"
-                "Contest":
-                    her "Maybe some kind of contest?"
+                "Contests":
+                    her "Maybe some kind of contests?"
                     sara "Okay, this is totally redneck, but what about a wood chopping contest?"
                     her "Ha ha, that actually could be fun. We'd need some other contests, too, though..."
                     sara "Leave it to me! I'll have a bunch of fun contests."
@@ -592,12 +661,6 @@ label done_party_menu:
 
     $ skill_social += 10
     $ community_level += 5
-    return
-
-# Teach 'enrichment' class on [profession]
-label social_8:
-
-    $ skill_social += 10
     return
 
 # Family (appears to be?) slacking off and mooching off everyone else;

@@ -1570,7 +1570,6 @@ label monthly_event_11:
             her serious "You should come to the ocean with me." 
             brennan "Really?"   
             her happy "Yes! Lily is coming too, and we need a third person so we can look like a herd and not easy pickings."   
-            #TODO: this is funny, but is it something Brennan would say?
             brennan "Count me in! But why are you going to the ocean? Thinking of going for a swim?"
             her normal "No, Lily wants to gather specimens."
             brennan "I don't really care what we do, as long as it's something exciting."  
@@ -1767,26 +1766,45 @@ label monthly_event_13:
     ilian "It was late, I didn't even see her until she was right in front of me. I was driving my tractor, maybe a little fast- she jumped in front of it- I was going too fast- I didn't mean to run over anyone!"
     natalia "But how did her body end up in the river?!"
     ilian "It was obvious she was dead- there was so much blood- I was so horrified- I don't know why I did that- I didn't want anyone to know it was me. So I dropped her body in the river."
-    # TODO: Finish adding emotions
+
     "Nobody knew what to say. He was really crying, now, heaving deep sobs that looked pathetic on a man his size. I looked over at his wife, Sara, who looked like she was in shock."
     boss "Ilian, I can tell you're sorry about this, and I'm glad you came forward. We will need to have a trial and decide what to do about this."
     natalia "What do you need a trial for?! He just admitted he killed Josephina!"
     boss "The laws of our community, which you all signed, state that any accused shall receive a trial, administered by myself and with a jury randomly selected from the adults of the colony that are not involved in the crime."
+    scene black with fade
     "The mayor took Ilian to stay at his house until the next day, when the trial started."
 
+    call set_work_bg
+    show pavel at midleft
+    show her serious at midright
+    with dissolve
     boss "[her_name], you've been randomly selected to be on the jury. Is there any reason you should not do this? Any conflict of interest with either side?"
     her "No, not that I can think of..."
     boss "Very well. We will proceed with the trial at two o'clock."
     
+    scene bg community_center with fade
     "Everyone in the town turned out to see the trial. Ilian repeated what happened, and Mrs. Peron repeated what she had found. It sounded like a fairly simple case of involuntary manslaughter; we mainly needed to decide upon a sentence."
+    show pavel at midleft
+    show ilian at midright
+    with dissolve
     boss "There is no mandatory sentencing in the laws of our colony. I am sure you will find a solution that is fair to all parties involved. In case you don't, I do have the authority to modify sentencing, but I have every confidence in this jury's abilities."
     "He left us jury members to deliberate in private."
+    hide pavel
+    hide ilian
+    with moveoutleft
     
+    show lily at midright
+    show sven at midleft
+    show thuc at right
+    show her serious at left
+    with dissolve
+
     lily "He shows great remorse. I doubt he will be so careless as to repeat his mistakes."
     sven "It could have been any of us..."
     thuc "But would one of us have dumped her body in the river and covered it up? That behavior is suspicious. He says it was an accident, but who can tell for certain?"
-    her "But why would anyone kill Josephina?"
+    her surprised "But why would anyone kill Josephina?"
     thuc "Why does any criminal do what they do? They want to, and they don't care about other people."
+    show her serious
     lily "Ilian has not shown any other behavior that would be cause for concern."
     thuc "But it's possible that it was not an accident. We cannot show too much mercy, or people will think they can get away with anything."
     sven "We don't have a jail; you're not thinking of executing him, are you?!"
@@ -1797,16 +1815,16 @@ label monthly_event_13:
     menu:
         "What will you argue for?"
         "Work for Perons":
-            her "I agree with Lily; he should have to work for the Perons. It can't make up for the loss of a child, but it will require some sacrifice and will help him show his remorse."
+            her serious "I agree with Lily; he should have to work for the Perons. It can't make up for the loss of a child, but it will require some sacrifice and will help him show his remorse."
             thuc "He should be their slave for a year!"
-            her "Well, we don't want his farm going to waste..."
+            her concerned "Well, we don't want his farm going to waste..."
             sven "Maybe he could be required to work a certain number of hours? Like community service?"
-            her "Yes, but instead of the community it will be for the Perons. Let's say eight hours a week for a year."
+            her serious "Yes, but instead of the community it will be for the Perons. Let's say eight hours a week for a year."
 
             "The jury agreed to that, and the Mayor, Ilian, and the Perons all accepted our proposal. Sara didn't seem to happy about it, though. She'd probably have to do extra work on their farm to make up for his absence."
 
         "Banishment":
-            her "I agree with Thuc; we need to show that our community won't allow such behavior."
+            her serious "I agree with Thuc; we need to show that our community won't allow such behavior."
             lily "It would be more humane to simply shoot him in the head; it would be impossible to survive for a year alone out there."
             her "I agree. Also, he is a healthy worker, which we can't afford to lose for that long. So I propose that he live outside the community boundaries, but close enough that we can trade with him. He can hunt or gather useful things and trade them for food or other community resources."
             thuc "That's too soft!"
@@ -1818,15 +1836,15 @@ label monthly_event_13:
             "Ilian and the Perons accepted it, but Sara and the Mayor frowned. Poor Sara... I guess in a way we were sentencing her, too."
             
         "{i}Compromise{/i}" if (skill_spiritual >= 40):
-            her "Those both sound like good ideas. Perhaps some of both might be appropriate?"
+            her normal "Those both sound like good ideas. Perhaps some of both might be appropriate?"
             sven "What do you propose?"
-            her "Having him work for the Perons is a good idea, but it is too soon. They would feel angry, and then he would feel like his apology was not accepted."
-            her "But a year is too long to send anyone to live outside the community. I propose Ilian leave the community for two weeks. When he returns, he will have to work for the Perons one day of every week for the next half year."
+            her concerned "Having him work for the Perons is a good idea, but it is too soon. They would feel angry, and then he would feel like his apology was not accepted."
+            her serious "But a year is too long to send anyone to live outside the community. I propose Ilian leave the community for two weeks. When he returns, he will have to work for the Perons one day of every week for the next half year."
             lily "That sounds fair for all involved."
             thuc "I think two weeks is too short, but I will agree to this plan also."
             "Everyone agreed to my proposal. The mayor seemed happy with it, too, and both Ilian and the Perons accepted it without argument."
         "{i}He's innocent{/i}" if ((skill_technical >= 40) or (skill_knowledge >= 40)):
-            her "He should provide some reparations, but I know he didn't kill her on purpose."
+            her serious "He should provide some reparations, but I know he didn't kill her on purpose."
             thuc "How do you know that?"
             her "Her injuries are consistent with being hit by a car and then floating down the river. She doesn't have any injuries that would come from being physically assaulted."
             sven "Yes, that's right!"
@@ -1836,6 +1854,7 @@ label monthly_event_13:
             sven "That sounds fair."
             "We all agreed, and the Mayor, Ilian, and the Perons seemed satisfied with our verdict also."
 
+    scene black with fade
     "I was just glad it was over."
     "Being on a jury was so stressful; I hope I never have to do that again."
     $ relaxed -= 2
@@ -1844,121 +1863,138 @@ label monthly_event_13:
 # MONTH 14 - Pregnancy or not?
 label monthly_event_14:
     scene bg farm_interior with fade
+    show her normal at midleft
+    show him normal at midright
+    with dissolve
     if (want_kids and (made_love >= 3)):
-        her "I wonder if I'm getting sick; I've felt so tired lately."
-        him "I haven't heard of anything going around. That's one of the good things about being so far from Earth - we don't get as many of their germs."
-        her "Well, I've got something. It's not like I'd make it up!"
-        him "What? No, of course not."
-        her "Do you think I'd make that sort of thing up?!"
-        him "No, not at all!"
+        her concerned "I wonder if I'm getting sick; I've felt so tired lately."
+        him serious "I haven't heard of anything going around. That's one of the good things about being so far from Earth - we don't get as many of their germs."
+        her annoyed "Well, I've got something. It's not like I'd make it up!"
+        him surprised "What? No, of course not."
+        her angry "Do you think I'd make that sort of thing up?!"
+        him annoyed "No, not at all!"
         "I felt like crying. One part of my brain knew it was not a big deal, but the other part just felt so lonely and afraid all of a sudden."
         if (loved >= 0):
-            "He came over and held me close."
-            him "It'll be okay, [her_nickname]. Why don't you get some rest?"
-            her "Maybe I will..."
+            "He came over and wrapped his arms around me in a hug."
+            him serious "It'll be okay, [her_nickname]. Why don't you get some rest?"
+            her sad "Maybe I will..."
             "I fell asleep immediately..."
         else:
-            him "You should get some rest."
-            her "Oh, suddenly you know exactly what I should do? You think I don't know how to take care of myself?!"
-            him "Hey, I'm not telling you what to do, you just seem a little tired, that's all."
-            her "Tired?! I just said I'm sick!"
-            him "Fine, do whatever you want!"
+            him serious "You should get some rest."
+            her annoyed "Oh, suddenly you know exactly what I should do? You think I don't know how to take care of myself?!"
+            him annoyed "Hey, I'm not telling you what to do, you just seem a little tired, that's all."
+            her angry "Tired?! I just said I'm sick!"
+            him angry "Fine, do whatever you want!"
             "I went to lay down and fell asleep immediately..."
 
         "The next morning I felt less tired, but still a little off. I went to work anyway, and had been standing up all day when I started to feel dizzy and sick to my stomach."
-        her "Excuse me, please."
+        her concerned "Excuse me, please."
         brennan "Are you alright? You don't look so good."
-        her "I just need... to rest for a bit..."
+        her sad "I just need... to rest for a bit..."
         menu:
             "I sat down and put my head on my desk. Slowly, the dizziness subsided, but I didn't feel like eating."
             "Go home":
-                her "Brennan, I'm feeling sick. Can you take care of things here for a bit; I'm going to go home."
+                her serious "Brennan, I'm feeling sick. Can you take care of things here for a bit; I'm going to go home."
                 brennan "Are you sure you're up to walking? Want me to call [his_name]?"
-                her "I'll be fine, thanks."
+                her normal "I'll be fine, thanks."
                 "The fresh air and walking seemed to help some, but I was still glad to finally get home."
             "Try and get some work done":
                 "I went back out and was able to finish up the day's work, taking two more breaks when I started to feel too light-headed."
         "It felt good to get home. I still wasn't feeling well so I decided to lie down."
-        him "Are you feeling any better?"
-        her "Not really."
-        him "Sorry to hear that, [her_nickname]. Do you want to stop by the clinic in the morning?"
+        him surprised "Are you feeling any better?"
+        her concerned "Not really."
+        him sad "Sorry to hear that, [her_nickname]. Do you want to stop by the clinic in the morning?"
+        her serious "I'm not feeling {b}that{/b} bad, but..."
         menu:
-            her "I'm not feeling {b}that{/b} bad, but..."
+            "What should I do?"
             "Go to the Clinic":
                 her "It can't hurt to check it out."
-                him "I'll come with you tomorrow."
+                him serious "I'll come with you tomorrow."
                 "We walked to the clinic holding hands, not saying anything, just watching the sun rise and feeling together."
+                scene bg clinic with fade
+                show him serious at midleft
+                show her serious at midright
+                with moveinleft
                 if (profession == "doctor"):
                     "I reviewed my own symptoms in my head and decided to take a urine sample first."
                 else:
                     "The doctor at the clinic listened to my symptoms and had me give a urine sample."
                 "The results said..."
-                him "You're pregnant?!"
-                her "Oh! I've been so busy I haven't even been thinking about that lately. But...yes, I guess I am."
+                him surprised "You're pregnant?!"
+                her surprised "Oh! I've been so busy I haven't even been thinking about that lately. But...yes, I guess I am."
                         
             "Don't go":
-                her "I'll be fine. If I don't feel better in a few days, I'll have it checked out."
-                him "Alright."
+                her serious "I'll be fine. If I don't feel better in a few days, I'll have it checked out."
+                him normal "Alright."
                 "I didn't feel better, but I didn't feel much worse, either. My chest ached, sometimes, though, and I got headaches when I never used to."
                 "Finally it dawned on me..."
-                her "Maybe I'm pregnant?"
+                her surprised "Maybe I'm pregnant?"
                 "Sure enough, I went to the clinic and tested positive for pregnancy."
                 
             "Run some tests" if (profession == "doctor"):
-                her "I'll just run some tests at work today, no big deal."
+                her normal "I'll just run some tests at work today, no big deal."
+                scene bg clinic with fade
                 if (loved >= 0):
-                    him "I'll come with you."
+                    him normal "I'll come with you."
                     "We walked to the clinic holding hands. It felt so good not to be alone right now."
+                    show him serious at midleft
                 else:
                     him "Okay, let me know what happens."
-                her "Brennan, will you please help me get a blood sample?"
+                show her serious at midright
+                show brennan at quarterleft
+                with moveinleft
+                her serious "Brennan, will you please help me get a blood sample?"
                 brennan "From who?"
-                her "From me."
+                her normal "From me."
                 brennan "Well, sure. That's a bit hard to do yourself, isn't it?"
                 "I started laughing, but it wasn't that funny. Somehow that just made it funnier. Brennan wasn't laughing, just looking at me quizzically."
                 "He took the blood sample and we ran the standard tests on it."
                 "Everything was normal except--"
                 brennan "You're pregnant?"
-                her "I guess...I am!"
+                her surprised "I guess...I am!"
                 "That explained everything."
                 
-        him "[her_name], that's great!"
+        scene bg farm_interior with fade
+        show him normal at midright
+        show her normal at midleft
+        with dissolve
+        him happy "[her_name], that's great!"
         menu:
             "How do I feel about it?"
             "It's awesome!":
-                her "Yeah! We're gonna be parents!"
+                her happy "Yeah! We're gonna be parents!"
             "It's strange.":
-                her "I guess it is. At least I know now what was wrong with me."
+                her concerned "I guess it is. At least I know now what was wrong with me."
             "It's awful.":
-                her "I hope I don't feel this bad the whole time. I don't know if I can take nine months of feeling this sick."
-        him "I wish it didn't have to be so hard for you, but our little baby is worth it!"
-        her "Our little baby..."
+                her annoyed "I hope I don't feel this bad the whole time. I don't know if I can take nine months of feeling this sick."
+        him concerned "I wish it didn't have to be so hard for you, but our little baby is worth it!"
+        her serious "Our little baby..."
         "This was going to take some getting used to."
         $ is_pregnant = True
 
     # They want kids but didn't make love enough
     elif (want_kids):
-        her "[his_name]... it's been over a year since we've been trying to have a baby."
-        him "Yeah, I guess sometimes it takes a while."
-        her "We haven't made love very often, have we?"
-        him "Well, we have both been busy, and tired..."
+        her concerned "[his_name]... it's been over a year since we've been trying to have a baby."
+        him concerned "Yeah, I guess sometimes it takes a while."
+        her sad "We haven't made love very often, have we?"
+        him concerned "Well, we have both been busy, and tired..."
         menu:
             "Should we change things?"
             "No rush":
-                her "I guess there's no need to rush, right? In fact, it's probably good that I'm not pregnant, so we can have things setup better when it happens."
+                her normal "I guess there's no need to rush, right? In fact, it's probably good that I'm not pregnant, so we can have things setup better when it happens."
                 if (loved >= 0):
-                    him "Yeah, that's true. Come here, [her_nickname] - we have plenty of time. Plenty of time for you, and me, and whoever else might join us in the future..."
+                    him normal "Yeah, that's true. Come here, [her_nickname] - we have plenty of time. Plenty of time for you, and me, and whoever else might join us in the future..."
                     "He held me close for a long time, stroking my hair. I snuggled up under his chin and just enjoyed being close to him."
                     $ made_love += 1
                     $ loved += 5
                 else:
-                    him "Is that why you haven't wanted sex lately?"
-                    her "No! That's not it at all! I'm just trying to see the bright side of things."
-                    him "The only bright side is that there's no kids to be hurt by our unstable relationship."
-                    her "Unstable?!"
-                    him "People who are married don't act this way. We never do things together; we never make love. And when I try and do things for you, it's like I can never do anything right."
-                    her "Is that really how you see us?"
-                    him "It's true, isn't it? We have to turn things around if we want this to work, and especially if we want to bring kids into this family."
+                    him annoyed "Is that why you haven't wanted sex lately?"
+                    her surprised "No! That's not it at all! I'm just trying to see the bright side of things."
+                    him angry "The only bright side is that there's no kids to be hurt by our unstable relationship."
+                    her angry "Unstable?!"
+                    him annoyed "People who are married don't act this way. We never do things together; we never make love. And when I try and do things for you, it's like I can never do anything right."
+                    her sad "Is that really how you see us?"
+                    him sad "It's true, isn't it? We have to turn things around if we want this to work, and especially if we want to bring kids into this family."
                     "We talked about it some more, and we both agreed to try and put the other person as more of a priority in our own life. But I wonder if we can actually do it... or if our marriage is already doomed."
 
                     # Reset loved a little closer to zero to give the relationship another chance
@@ -1968,46 +2004,47 @@ label monthly_event_14:
                         $ loved = 0
 
             "Let's make a baby!":
-                her "Come on over here, [his_nickname], and make me a baby!"
-                him "You want me to turn you into a baby?"
-                her "Ohhh, you!"
-                him "Sorry, I mean, 'Yes ma'am'!"
+                her flirting "Come on over here, [his_nickname], and make me a baby!"
+                him flirting "You want me to turn you into a baby?"
+                her laughing "Ohhh, you!"
+                him laughing "Sorry, I mean, 'Yes ma'am'!"
                 $ made_love += 2
                 $ loved += 5
 
     else:
-        her "[his_name], there's something we need to discuss."
-        him "Oh? What's that?"
-        her "When I went to try to get more birth control, they informed me that they only had enough for six more months. 'We need everyone to help populate the colony,' they said."
+        her concerned "[his_name], there's something we need to discuss."
+        him surprised "Oh? What's that?"
+        her concerned "When I went to try to get more birth control, they informed me that they only had enough for us for six more months. 'We need everyone to help populate the colony,' they said."
+        him serious "Six months, huh? Do you think we'll be ready by then?"
         menu:
-            him "Six months, huh? Do you think we'll be ready by then?"
+            "What should I say?"
             "No way":
-                her "No way! We can barely take care of our farm and a horse; how can we take care of a baby?!"
-                him "I think we're doing pretty good."
-                her "It just feels like one more thing to worry about; I'm already stressed out about food, work, and this whole crazy planet."
-                him "Don't worry; we'll figure something out. We can always... get creative."
-                her "I like it when you get creative."
+                her angry "No way! We can barely take care of our farm and a horse; how can we take care of a baby?!"
+                him concerned "I think we're doing pretty good."
+                her annoyed "It just feels like one more thing to worry about; I'm already stressed out about food, work, and this whole crazy planet."
+                him normal "Don't worry; we'll figure something out. We can always... get creative."
+                her flirting "I like it when you get creative."
             "Maybe":
-                her "I guess we could be, but...I just don't feel ready yet. Maybe things will be different in six months... or we could always use other methods."
-                him "Yeah, I feel ready, but you're the one that will be carrying the baby, so we can do whatever you think is best."
-                her "Let's not worry about it now. We'll see in six months."
+                her concerned "I guess we could be, but...I just don't feel ready yet. Maybe things will be different in six months... or we could always use other methods."
+                him normal "Yeah, I feel ready, but you're the one that will be carrying the baby, so we can do whatever you think is best."
+                her serious "Let's not worry about it now. We'll see in six months."
                 if (loved >= 0):
-                    him "Okay, [her_name]. I love you."
-                    her "I love you, too."
+                    him normal "Okay, [her_name]. I love you."
+                    her normal "I love you, too."
                 else:
-                    him "Okay."
-                    her "Yeah."
+                    him serious "Okay."
+                    her serious "Yeah."
                     "And that was that."
  
             "I'm ready now":
-                her "You know, I think I'm ready now."
-                him "Yeah? You've changed your mind from last year?"
-                her "Yeah...let's stop the birth control now, and just see what happens."
-                him "Yes, momma."
-                her "Oh, ick, don't call me momma!"
-                him "You better get used to it! Someday a bunch of kids are going to call you that all the time!"
-                her "That's so... weird! But at least they'll be calling you 'daddy', so I won't be alone."
-                him "You'll never be alone."
+                her surprised "You know, I think I'm ready now."
+                him surprised "Yeah? You've changed your mind from last year?"
+                her serious "Yeah...let's stop the birth control now, and just see what happens."
+                him flirting "Yes, momma."
+                her flirting "Oh, ick, don't call me momma!"
+                him laughing "You better get used to it! Someday a bunch of kids are going to call you that all the time!"
+                her laughing "That's so... weird! But at least they'll be calling you 'daddy', so I won't be alone."
+                him serious "You'll never be alone."
                 $want_kids = True
                 $made_love += 1   
             
@@ -2017,6 +2054,7 @@ label monthly_event_14:
 label monthly_event_15:
     scene bg farm_interior with fade
     if (is_pregnant):
+        # TODO: Finish adding emotions
         him "I made you breakfast, so eat up, [her_name]! You're eating for two!"
         her "Yeah, but one of us is the size of a pea..."
         her "Eggs? Bacon?! Where did you get this stuff?!"
