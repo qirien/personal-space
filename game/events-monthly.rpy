@@ -2053,110 +2053,114 @@ label monthly_event_14:
 # MONTH 15 Fertility and Food and Community
 label monthly_event_15:
     scene bg farm_interior with fade
+    show her normal at midright
+    show him normal at midleft
+    with dissolve
     if (is_pregnant):
-        # TODO: Finish adding emotions
-        him "I made you breakfast, so eat up, [her_name]! You're eating for two!"
-        her "Yeah, but one of us is the size of a pea..."
-        her "Eggs? Bacon?! Where did you get this stuff?!"
-        him "Well, when Mrs. Peron heard about your 'condition', she insisted that you needed to eat eggs to have a healthy baby. And when I told Ilian the good news, he pulled this out of some stash in the storehouse."
-        her "Wait, you told them I'm pregnant?"
-        him "Yeah, why not?"
-        her "I don't know if I'm ready for people to know, yet."
-        him "Oh... well, when I told Mrs. Peron, she posted a message about it on the colony message board..."
-        her "So everyone knows?"
-        him "Yeah, pretty much."
-        her "I haven't even told my parents yet!"
-        him "What's stopping you?"
-        her "I guess... I wanted to tell them in person, but that's just not possible, is it?"
-        him "No... but we can send them a message."
-        her "But what if something goes wrong, like a miscarriage?"
-        him "Don't say that!"
-        her "Well, it's a possibility, isn't it?!"
-        him "Yeah, but... Whatever happens, I want to face it with friends and family knowing everything."
+        him happy "I made you breakfast, so eat up, [her_name]! You're eating for two!"
+        her flirting "Yeah, but one of us is the size of a pea..."
+        her surprised "Eggs? Bacon?! Where did you get this stuff?!"
+        him happy "Well, when Mrs. Peron heard about your 'condition', she insisted that you needed to eat eggs to have a healthy baby. And when I told Ilian the good news, he pulled this out of some stash in the storehouse."
+        her annoyed "Wait, you told them I'm pregnant?"
+        him surprised "Yeah, why not?"
+        her concerned "I don't know if I'm ready for people to know, yet."
+        him concerned "Oh... well, when I told Mrs. Peron, she posted a message about it on the colony message board..."
+        her serious "So everyone knows?"
+        him serious "Yeah, pretty much."
+        her annoyed "I haven't even told my parents yet!"
+        him surprised "What's stopping you?"
+        her concerned "I guess... I wanted to tell them in person, or at least call, but that's just not possible, is it?"
+        him serious "No... but we can send them a message."
+        her sad "But what if something goes wrong, like a miscarriage?"
+        him angry "Don't say that!"
+        her angry "Well, it's a possibility, isn't it?!"
+        him serious "Yeah, but... Whatever happens, I want to face it with friends and family knowing everything."
         menu:
             "How do I feel?"
             "I'd rather keep it to myself":
-                her "I disagree. I'd rather face our problems on our own, if we can."
+                her concerned "I disagree. I'd rather face our problems on our own, if we can."
             "I guess you're right":
-                her "Yeah, that makes sense. Hopefully nothing bad will happen."
+                her serious "Yeah, that makes sense. Hopefully nothing bad will happen."
             "I can't believe you did that":
-                her "I can't believe you told other people without talking to me first!"
-                him "What, so you want to decide what I can and can't tell people?"
+                her angry "I can't believe you told other people without talking to me first!"
+                him angry "What, so you want to decide what I can and can't tell people?"
                 her "No, but it's something important enough that we should have decided on it together!"
                 $ loved -= 3
+
+        him annoyed "..."
+        her annoyed "..."
         if (loved >= 5):
-            him "..."
-            her "..."
-            him "I'm sorry; I probably should have talked to you about it first."
-            her "It's okay. At least I got a delicious breakfast out of it."
+            him concerned "I'm sorry; I probably should have talked to you about it first."
+            her normal "It's okay. At least I got a delicious breakfast out of it."
         else:
-            him "Sorry, love, but at least you got a good breakfast out of it, right?"
-            her "Yeah..."
+            him annoyed "Sorry, love, but at least you got a good breakfast out of it, right?"
+            her annoyed "Yeah..."
 
     elif (want_kids):
-        him "I made you breakfast, so eat up! Soon you might be eating for two."
-        her "Ha ha, we'll see..."
-        her "Yum, is this berries and cream?! Where did you get it?"
-        him "Well, when Mrs. Nguyen heard we were trying to have kids, she insisted that you needed to eat cream to have a healthy baby. So she gave me some from her goats."
-        her "Wait, how does she know we are trying to have a baby?"
-        him "Well, I might have mentioned it to Thuc...and I guess he told his wife?"
-        her "So basically the whole colony knows."
+        him happy "I made you breakfast, so eat up! Soon you might be eating for two."
+        her laughing "Ha ha, we'll see..."
+        her happy "Yum, is this berries and cream?! Where did you get it?"
+        him normal "Well, when Mrs. Nguyen heard we were trying to have kids, she insisted that you needed to eat cream to have a healthy baby. So she gave me some from her goats."
+        her surprised  "Wait, how does she know we are trying to have a baby?"
+        him normal "Well, I might have mentioned it to Thuc...and I guess he told his wife?"
+        her annoyed "So basically the whole colony knows."
+        him surprised "Is that a problem?"
         menu:
-            him "Is that a problem?"
+            "What should I say?"
             "Not really":
-                her "I guess not. It's just kind of weird. As long as they don't start serenading us with fertility songs or anything it doesn't really matter."
-                him "Okay, I'll post that to the message board. 'Thanks for the well-wishes, but no fertility rites, please.'"
-                her "Shut up and try some of this."
+                her annoyed "I guess not. It's just kind of weird. As long as they don't start serenading us with fertility songs or anything it doesn't really matter."
+                him flirting "Okay, I'll post that to the message board. 'Thanks for the well-wishes, but no fertility rites, please.'"
+                her flirting "Shut up and try some of this."
             "It's annoying":
-                her "That's really annoying. I don't want people to be asking me all the time if I'm pregnant yet, or giving well-meaning but idiotic advice, or looking at me like I'm a time bomb or something."
-                him "I'm not sure you can prevent that, anyway. I mean, they're going to know sooner or later, right?"
+                her annoyed "That's really annoying. I don't want people to be asking me all the time if I'm pregnant yet, or giving well-meaning but idiotic advice, or looking at me like I'm a time bomb or something."
+                him serious "I'm not sure you can prevent that, anyway. I mean, they're going to know sooner or later, right?"
                 if (loved >= 0):
-                    her "Yes, but I wanted it to be on my terms."
-                    him "I see.  I'm sorry, [her_name], I didn't even think about it."
-                    her "It's all right; we'll deal with it. Come on and eat breakfast with me, okay?"
-                    him "No problem."
+                    her serious "Yes, but I wanted it to be on my terms."
+                    him concerned "I see.  I'm sorry, [her_name], I didn't even think about it."
+                    her normal "It's all right; we'll deal with it. Come on and eat breakfast with me, okay?"
+                    him happy "No problem."
                 else:
-                    her "Yes, but I wanted to decide that! It's my body, you know!"
-                    him "It's *our* child."
-                    her "It doesn't even exist yet! What if I change my mind, or something goes wrong?"
-                    him "I thought we had already decided."
-                    her "Well, we didn't decide to tell people about it, that's for sure."
-                    him "Look, I'm sorry. I just wanted to tell somebody, and Thuc's probably the best friend I have here, except for you."
-                    her "Oh, it's all right. Just come eat some breakfast."
+                    her angry "Yes, but I wanted to decide that! It's my body, you know!"
+                    him annoyed "It's *our* child."
+                    her angry "It doesn't even exist yet! What if I change my mind, or something goes wrong?"
+                    him angry "I thought we had already decided."
+                    her annoyed "Well, we didn't decide to tell people about it, that's for sure."
+                    him annoyed "Look, I'm sorry. I just wanted to tell somebody, and Thuc's probably the best friend I have here, except for you."
+                    her serious "Well, we can't change it now. Just come eat some breakfast."
                 $ loved -= 2
                 $ relaxed -= 2
             "I'm mortified":
-                her "I'm mortified! I don't want people thinking about us conceiving a baby!"
-                him "Don't you think it's pretty obvious? I mean, healthy, newly-married couple on a colony, that's kind of why we're here?"
-                her "Yeah, but... it should be more private than that."
-                him "I guess I don't see it that way."
-                her "So you're totally okay with people looking at us thinking, 'I wonder if they got it on last night?'"
-                him "I don't think anyone's thinking that. And if they are, you can't stop them."
-                her "Ugh, whatever, let's just eat breakfast."
+                her surprised "I'm mortified! I don't want people thinking about us conceiving a baby!"
+                him serious "Don't you think it's pretty obvious? I mean, healthy, newly-married couple on a colony, that's kind of why we're here?"
+                her sad "Yeah, but... it should be more private than that."
+                him annoyed "I guess I don't see it that way."
+                her annoyed "So you're totally okay with people looking at us thinking, 'I wonder if they got it on last night?'"
+                him serious "I don't think anyone's thinking that. And if they are, you can't stop them."
+                her annoyed "Ugh, whatever, let's just eat breakfast."
                 $ loved -= 5
                 $ relaxed -= 5
     else:
-        him "I made you breakfast."
-        her "Oh! Thank you!"
-        her "Wow, berries and cream, what a treat!"
-        him "Yeah, Thuc's wife gave them to me. She said they might help if you were having, uh, female problems."
-        her "What?!"
-        him "I think she was trying to help us have a baby."
-        her "Ha ha, it'll take more than berries and cream..."
-        him "Well, we can enjoy it anyway, right?"
-        her "We? She sent this for me!"
-        him "Oh, so you want me to tell her that we're not trying to have a baby?"
-        her "Don't say that! Then she won't send any more!"
-        him "Better share, then!"
+        him happy "I made you breakfast."
+        her surprised "Oh! Thank you!"
+        her happy "Wow, berries and cream, what a treat!"
+        him normal "Yeah, Thuc's wife gave them to me. She said they might help if you were having, uh, female problems."
+        her surprised "What?!"
+        him concerned "I think she was trying to help us have a baby."
+        her laughing "Ha ha, it'll take more than berries and cream..."
+        him happy "Well, we can enjoy the food anyway, right?"
+        her flirting "We? She sent this for me!"
+        him happy "Oh, so you want me to tell her that we're not trying to have a baby?"
+        her flirting "Don't say that! Then she won't send any more!"
+        him happy "Better share, then!"
         menu:
             "Should I share it?"
             "Share":
-                her "Here, have some."
-                him "Mmmm, thank you."
+                her happy "Here, have some."
+                him happy "Mmmm, thank you."
                 $ loved += 2
             "Don't share":
-                her "Hands off, this is mine!"
-                him "Alright, alright! Sheesh!"
+                her annoyed "Hands off, this is mine!"
+                him angry "Alright, alright! Sheesh!"
                 $ loved -= 2
     return
 
@@ -2168,6 +2172,9 @@ label monthly_event_16:
     else:
         "Once nice thing about living on the colony was that we didn't usually get sick. Most of the microorganisms here seemed to ignore our strange biochemistry, and they worked hard to keep germs from Earth off the shuttle."
     "But today I just felt awful."
+    show her normal at midright
+    show him normal at midleft
+    with dissolve
     "I tried to eat breakfast, but I didn't really feel like eating. [his_name] had already cooked it, though, so I didn't want to waste it..."
     menu:
         "What should I do?"
@@ -2186,7 +2193,10 @@ label monthly_event_16:
             him "What? Sure, OK."
             $ loved += 2
 
+    scene black with fade
     "I felt better at work, and lunchtime was no problem, but as I was walking home, I felt sick again. I ended up throwing up by the side of the road, which wouldn't have been too bad except some of it got on my clothes. Now I had to do laundry, and it was my turn to make dinner..."
+    scene bg farm_interior with fade
+    show her serious at midright with dissolve
     menu:
         "What should I do?"
         "Cook something simple":
@@ -2194,7 +2204,7 @@ label monthly_event_16:
             if (is_pregnant):
                 "I wanted fried chicken or ice cream or french fries or fresh rolls, but all we had was turnips and carrots and beans."
             else:
-                "We had been eating a lot of turnips and carrots and beans lately, and I was starting to get used to them, but what I really wanted was a can of good ol' chicken noodle soup. All the foods we had took so much work..."
+                "We had been eating a lot of soups with turnips and carrots and beans lately, and I was starting to get used to them, but what I really wanted was to just open a can and be done. All the foods we had took so much work..."
             "I knew it was so silly, but I felt like crying. I remembered when if I craved a food, I'd just stop by the store on my way home from work and buy it, without thinking anything of it. I didn't even realize how decadent that was!"
             "That's how [his_name] found me, crying in the cellar over the food he worked so hard to grow."
         "Lie down and take a nap":
@@ -2204,81 +2214,84 @@ label monthly_event_16:
             "I decided to ask [his_name] for help. After all, that's why we have each other, isn't it?"
             "Finally, he came home."
 
+    show him serious at midleft with moveinleft
+    him surprised "Hey, [her_name], what's for dinner?"
     menu:
-        him "Hey, [her_name], what's for dinner?"
+        "What should I say?"
         "I'm sick":
-            her "I don't feel good..."
+            her concerned "I don't feel good..."
             if (loved >= 0):
-                him "You don't look good. You go lie down; I'll make my own dinner."
+                him serious "You don't look good. You go lie down; I'll make my own dinner."
             else:
-                him "I thought it was your turn."
-                her "It is, but..."
-                him "OK, I'll trade you nights, since you're not feeling good."
+                him annoyed "I thought it was your turn."
+                her sad "It is, but..."
+                him serious "OK, I'll trade you nights, since you're not feeling good."
             $ loved += 2
         "Make your own dinner" if (relaxed <= 0):
-            her "Make your own damn dinner, I'm not hungry!"
-            him "Hey, hey! Calm down!"
-            her "Calm down?! I don't have time to calm down! I need to wash out this vomit and make dinner out of vegetables I hate and try not to die while doing it, because everything on this planet is trying to kill us!!"
+            her sad "Make your own damn dinner, I'm not hungry!"
+            him surprised "Hey, hey! Calm down!"
+            her angry "Calm down?! I don't have time to calm down! I need to wash out this vomit and make dinner out of vegetables I hate and try not to die while doing it, because everything on this planet is trying to kill us!!"
             if (loved >= 0):
-                him "Okay, it seems like you could use a little break, so why don't you go lie down?"
-                her "I don't have time to--"
-                him "Laundry can wait, I'll make dinner, and nothing's trying to kill us at the moment, so go rest, okay?"
+                him concerned "Okay, it seems like you could use a little break, so why don't you go lie down?"
+                her concerned "I don't have time to--"
+                him serious "Laundry can wait, I'll make dinner, and nothing's trying to kill us at the moment, so go rest, okay?"
             else:
-                him "Quit overreacting. You're just making excuses."
-                her "I hate this place! I hate this food! I hate not having anything when we need it! I hate the animals, I hate the plants, I hate the moons that can't make up their mind whose turn it is to be in the sky!"
-                him "Anything else?"
+                him annoyed "Quit overreacting. You're just making excuses."
+                her angry "I hate this place! I hate this food! I hate not having anything when we need it! I hate the animals, I hate the plants, I hate the moons that can't make up their mind whose turn it is to be in the sky!"
+                him annoyed "Anything else?"
                 menu hate_stuff:
                     "I hate the sun":
-                        her "I hate the stupid sun and its temperamental solar flares."
-                        him "Yeah, I hate that, too."
+                        her sad "I hate the stupid sun and its temperamental solar flares."
+                        him serious "Yeah, I hate that, too."
                         $ loved += 2
                     "I hate you":
                         her "Sometimes, I hate you."
-                        him "..."
-                        her "..."
-                        him "I was about to say, 'At least we'll always have each other.'  Now I don't know what to say."
+                        him surprised "..."
+                        her surprised  "..."
+                        him sad "I was about to say, 'At least we'll always have each other.'  Now I don't know what to say."
                         $ loved -= 10
                     "I hate my job":
-                        her "I hate my job here."
-                        him "It seems pretty easy compared to mine."
-                        her "Well, not all of us are tough farmers like you!"
+                        her serious "I hate my job here."
+                        him annoyed "It seems pretty easy compared to mine."
+                        her annoyed "Well, not all of us are tough farmers like you!"
                         him "Maybe you should be."
                         $ loved -= 2
                     "I'm sorry":
-                        her "I'm sorry; I'm sounding pretty hysterical, aren't I?"
-                        him "Yeah, but I love you anyway."
+                        her concerned "I'm sorry; I'm sounding pretty hysterical, aren't I?"
+                        him normal "Yeah, but I love you anyway."
                         $ loved += 5
                 
         "Just a minute" if (relaxed >= 0):
-            her "I'm working on it, just a minute."
-            him "Hey, are you crying?"
-            her "Just a little."
-            him "What's wrong?"
+            her sad "I'm working on it, just a minute."
+            him surprised "Hey, are you crying?"
+            her sad "Just a little."
+            him surprised "What's wrong?"
             menu:
                 "It's morning sickness" if (is_pregnant):
-                    her "It's morning sickness, I think."
-                    him "Aw, I hear that can be rough."
-                    her "It's not that bad, but..."
-                    him "You want me to cook tonight?"
-                    her "Yeah, thank you. I'm not even hungry."
+                    her concerned "It's morning sickness, I think."
+                    him serious "Aw, I hear that can be rough."
+                    her sad "It's not that bad, but..."
+                    him normal "You want me to cook tonight?"
+                    her normal "Yeah, thank you. I'm not even hungry."
                     $ loved += 2
                 "I'm sick" if (not is_pregnant):
-                    her "I'm sick."
-                    him "Really? We haven't had much illness here..."
-                    her "Well, I sure didn't throw up all over myself just for fun."
-                    him "Ohh, is that what that smell is?"
-                    her "Yeah..."
-                    him "Well, you should take it easy, then, I'll make myself something."
+                    her concerned "I'm sick."
+                    him surprised "Really? We haven't had much illness here..."
+                    her annoyed "Well, I sure didn't throw up all over myself just for fun."
+                    him annoyed "Ohh, is that what that smell is?"
+                    her concerned "Yeah..."
+                    him serious "Well, you should take it easy, then, I'll make myself something."
                     $ loved += 2
                 "It's this place":
-                    her "It's this place... I'm so sick of everything here."
-                    him "Like what?"
-                    her "I hate not having foods that I like, and feeling like there's dangerous things around every corner, and being so far away from everyone."
-                    him "Anything else?"
+                    her concerned "It's this place... I'm so sick of everything here."
+                    him surprised "Like what?"
+                    her sad "I hate not having foods that I like, and feeling like there's dangerous things around every corner, and being so far away from everyone."
+                    him serious "Anything else?"
                     jump hate_stuff
 
     "I went to lie down, and he made dinner for himself."
     $ relaxed += 2
+    scene bg bedroom with fade
     if (is_pregnant):
         "I felt better after a little rest. I felt a little sick the every morning for a few weeks, but that was the worst day."
     else:
@@ -2292,6 +2305,8 @@ label monthly_event_16:
 
 # MONTH 17
 # uses spiritual, creative
+# TODO: Write this
+# TODO: Finish adding emotions
 label monthly_event_17:
     scene bg farm_interior with fade
     return
@@ -2499,7 +2514,7 @@ label monthly_event_19:
         menu maternity_clothing:
             "What should I do?"
             "Check the storehouse":
-                #scene bg storehouse
+                scene bg storehouse with fade
                 her "Hey, Ilian, do we have any extra clothes here?"
                 ilian "A few..."
                 "I found a large men's shirt that wasn't very flattering, but would fit."
@@ -2570,7 +2585,7 @@ label monthly_event_19:
 
     return
 
-# TODO: trouble sleeping?
+# TODO: trouble sleeping? this seems perhaps too mundane.  Maybe trouble sleeping -> heated argument?
 label monthly_event_20:
     scene bg bedroom with fade
     show her normal at midright
@@ -2586,10 +2601,35 @@ label monthly_event_20:
         him happy "Wow, that's an energetic kid!"
         her sad "I'm just so tired..."
         him sad "Have you not been sleeping well?"
-        her "Every time I fall asleep, something wakes me up in an hour or two. Either I have to use the bathroom, or the baby's moving, or my back hurts, or, worst of all, it's morning."
+        her serious "Every time I fall asleep, something wakes me up in an hour or two. Either I have to use the bathroom, or the baby's moving, or my back hurts, or, worst of all, it's morning."
+        if (loved >= 0):
+            him serious "That sounds hard."
+            her concerned "Yeah..."
+        else:
+            him annoyed "I can't do anything about that."
+            her "You don't have to do anything about it! Can you just listen?!"
+            
+        her "And I don't want to take any medicine or herbs because I'm worried it might hurt the baby."
+
+        menu:
+            "I decided to:"
+            "Make a pillow to support my knees" if (skill_creative >= 70):
+                "After doing some research, some people said it helped their back pain to put a pillow between their knees."
+                "But how could I make a pillow?"
+                "I knew some people stuffed pillows with beans, so I got some from the storage room."
+                "But a bean pillow was way too heavy for my knees. I decided to put the bean pillow under my head, and used the other pillow between my knees. It helped my back"
+            "Ask Sister Naomi" if (skill_spiritual >= 70):
+                "I talked to Sister Naomi about my sleep problems."
+                naomi "Do you meditate before bed?"
+                her "Meditate? No, I usually just fall into bed and try and get to sleep."
+                naomi "You might want to try it. It can help put your mind at ease. If you have any problems bothering you, write them down so that you know you will remember to do something about them tomorrow. Then your meditation and your sleep can be peaceful and uninterrupted."
+                her "I can try it..."
+                #TODO: finish this
+            
 
     else:
         "I'd had trouble sleeping lately."
+           
 
     #TODO: finish this event
     return
@@ -2673,7 +2713,7 @@ label monthly_event_21:
 
     return
 
-
+# TODO: Write this event
 label monthly_event_22:
     scene bg farm_interior with fade
     return

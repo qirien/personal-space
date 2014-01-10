@@ -321,6 +321,7 @@ label relax_together_8 :
 
 
 # He wants to go to church services, you can go with him or not.
+# TODO: Would this go better in events-spiritual?
 label relax_together_9:
     scene bg farm_interior with fade
     him "Hey, [her_nickname], I was going to go to church services today... do you want to come?"
@@ -447,7 +448,6 @@ label relax_together_12:
 
 
 # Events that can happen in any order. 
-# TODO: Add more of these.
 
 # Play games with Ilian and Sara
 label relax_together_a:

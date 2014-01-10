@@ -76,14 +76,34 @@ label work_0:
     boss "Ilian Andrevski is in charge of the storehouse here on the colony. That's where we keep all our extra supplies and food."
     ilian "I want to distribute things frugally and fairly. And, if you have extra goods you cannot use, please give them to the storehouse so others can use them."
     hide ilian with moveoutright
-    show him normal at midright with moveinright
-    boss "[his_name] knows a lot about growing corn and caring for horses and other animals, so be sure to ask him if you have questions in that area."
-    him "I'll be happy to help."
-    hide him
     show sven at midright with moveinright
-    boss "Sven is in charge of the library, so if you need to research something or print something out, head over there."
+    show helen at right with moveinright
+    boss "Sven is in charge of the library, so if you need to research something or print something out, head over there. He and his wife Helen are also experts on raising cattle, and will be starting a ranch up to the north."
     sven "I'll do my best to help you."
     hide sven
+    hide helen
+    with moveoutright
+    boss "Next I want to introduce our farmers."
+    show him normal at midright with moveinright
+    boss "[his_name] knows a lot about growing vegetables and caring for horses and other animals, so be sure to ask him if you have questions in that area."
+    hide him with moveoutright
+    show julia at midright
+    show thuc at right 
+    with moveinright
+    boss "The Nguyens raise goats along with alfalfa and rice and some other crops. I'm sure their kids have names, but, honestly, I'm having trouble telling them all apart!"
+    thuc "C'mon, there's only ten of them!"
+    julia "We look forward to getting to know you all better."
+    hide julia
+    hide thuc
+    with moveoutright
+    show natalia at right
+    show martin at midright
+    with moveinright
+    boss "The Perons will be growing beans and corn, and are raising chickens and turkeys."
+    martin "They are egg-cellent animals."
+    natalia "Don't get him started!"
+    hide natalia
+    hide martin
     "The mayor introduced the rest of the people on the colony, and then..."
     show her normal at midright with moveinright
     if (profession == "doctor"):

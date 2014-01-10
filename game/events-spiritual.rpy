@@ -280,23 +280,24 @@ label spiritual_9:
 
 label spiritual_master:
     scene farm_interior with fade
-    show her
+    show her normal at center
 
     "I had read so many religious texts from all over the world, but last I started reading the Bible. While some of the stories were familiar, there was a lot I had never read before."
     "I read in 1 Thessalonians in the Bible, \"In every thing give thanks.\", and it made me stop and think."
-    her "Can I really give thanks for {b}everything{/b}?"
+    her surprised "Can I really give thanks for {b}everything{/b}?"
     "There were a lot of things I was definitely not grateful for - pests, bad weather, sickness, arguments..."
-    her "I can't give thanks for those things."
+    her concerned "I can't give thanks for those things."
     "But then I read it again."
-    her "It doesn't say to give thanks {b}for{/b} everything, but {b}in{/b} every thing... so I should give thanks no matter what situation I'm in?"
-    her "I guess there is always something to be grateful for, even when things are going wrong."
+    her normal "It doesn't say to give thanks {b}for{/b} everything, but {b}in{/b} every thing... so I should give thanks no matter what situation I'm in?"
+    her happy "I guess there is always something to be grateful for, even when things are going wrong."
     "I thought about when the bugs had destroyed most of our corn."
-    her "Even though we lost a lot of our corn, we did learn more about the planet. And our other crops haven't had many pest problems... the weather is nice, and we still have plenty of food to eat."
-    her "I like my job; I've been doing a lot of good there. And I'll always have [his_name]..."
-    her "I do have a lot to be thankful for..."
+    her serious "Even though we lost a lot of our corn, we did learn more about the planet. And our other crops haven't had many pest problems... the weather is nice, and we still have plenty of food to eat."
+    her normal "I like my job; I've been doing a lot of good there. And I'll always have [his_name]..."
+    her happy "I do have a lot to be thankful for..."
     "I felt my attitude changing even as I recognized how many good things I had in my life."
 
     scene wedding with fade
+    # TODO: I was thinking about having Sister Naomi have a stroke, and [her_name] agrees to care for her sometimes to give Pavel a break, and also takes over for her?  Maybe too much... maybe Naomi talks about her own spiritual experiences?
     "Later, I was talking to Sister Naomi, and she mentioned that she was a little sick and hoped she would be feeling better before it was time to deliver her sermon."
     her "You don't have anyone who can fill in for you?"
     naomi "No, I'm the only one who works here at the chapel."
