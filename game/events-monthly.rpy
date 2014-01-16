@@ -85,7 +85,7 @@ label monthly_event_1:
             him normal "It sounds like splitting household chores is really important to you."
             her "It is. We both work hard all day in different ways. We don't have to each do half of everything, but I think there will be less chance for arguments if we decide ahead of time what each person will do."
             him "All right, let's make a list, then."
-            "We listed all the household chores we could think of, and then marked each one as \"hate\", \"enjoy\" or \"meh\". It turned out that he really hated doing dishes, so I agreed to do them all the time, and since I was not a morning person, he would make breakfast every morning. We worked out the other chores, too."
+            "We listed all the household chores we could think of, and then marked each one as \"hate\", \"enjoy\" or \"neutral\". It turned out that he really hated doing dishes, so I agreed to do them all the time, and since I was not a morning person, he would make breakfast every morning. We worked out the other chores, too."
             "So that worked out pretty well."
             $loved += 5
             return
@@ -805,7 +805,7 @@ label monthly_event_7:
             him laughing "To partying!"
     return
 
-# MONTH 8
+# MONTH 8 Want to watch a movie, he is busy helping neighbor
 label monthly_event_8:
     scene bg library with fade
     "The library had a huge collection of Earth media that colonists could check out. They only had enough space for the most popular things, but it was still more media than anyone could experience in a lifetime."
@@ -932,8 +932,10 @@ label monthly_event_8:
 # MONTH 9 - how could I do better?
 label monthly_event_9:
     scene bg farm_interior with fade
-    show her normal at midleft
     show him normal at midright
+    with dissolve
+    show her normal at midleft
+    with moveinleft
     play music "music/You.ogg" fadeout 2.0
     him "I was just thinking about you. How do you think we're doing?"
     her surprised "At what?"
@@ -2305,6 +2307,7 @@ label monthly_event_16:
 
 # MONTH 17
 # uses spiritual, creative
+# TODO: somewhere in here, ultrasound if pregnant, find out baby is a girl
 # TODO: Write this
 # TODO: Finish adding emotions
 label monthly_event_17:
@@ -2312,11 +2315,10 @@ label monthly_event_17:
     return
 
 
-# MONTH 18 - something bad happens where you need help (related to pests?); he doesn't want to ask for help but you think you need it.
+# MONTH 18 - he burns his hand in a tractor fire
 # uses domestic, knowledge, social, technical, physical
 label monthly_event_18:
     scene bg farm_interior with fade
-    # TODO: somewhere in here, ultrasound if pregnant, find out baby is a girl
     him "Hey, could you give me a hand for a minute?"
     if (loved >= 0):
         her "Sure, what for?"
@@ -2807,7 +2809,7 @@ label monthly_event_23:
         else:
             "I had a sudden fear, right in my lower belly. I couldn't be pregnant, right? I mean, we always used birth control..."
             if (cheated_on_him):
-                her "(Except for that one time with Brennan...)"
+                her "(Except for that one time with Brennan...!)"
 
         scene bg clinic
         "I went to the doctor. I had to know for sure."
@@ -2854,7 +2856,8 @@ label monthly_event_23:
                         her "You're...glad?"
                         him concerned "I mean...I'm also furious and ashamed and humiliated and annoyed, but I'm at least glad I found out from you and not someone else."
                         her concerned "Do you think you can forgive me?"
-                        him sad "Not right now. Just...give me time."
+                        him sad "..."
+                        him serious "I can't. Not right now. Just...give me time."
                         scene black
                         "Things were very awkward around the house for awhile..."
                         scene farm_interior with fade
@@ -2879,14 +2882,7 @@ label monthly_event_23:
                         # Workplace Scene
                         scene black with fade
                         "I thought I should talk to Brennan, too."
-                        if (profession == "doctor"):
-                            scene bg clinic with fade
-                        elif (profession == "crafter"):
-                            scene bg workshop with fade
-                        elif (profession == "mechanic"):
-                            scene bg machine_shop with fade
-                        elif (profession == "teacher"):
-                            scene bg classroom with fade
+                        call show_work_bg
 
                         show her at quarterleft
                         show brennan at midright
@@ -2912,15 +2908,20 @@ label monthly_event_23:
                         her concerned "Are you sure?"
                         brennan "Just bloody drop it, all right?!"
                         her surprised "Okay, okay."
+                        hide brennan with moveoutright
+                        "Brennan kind of ignored me after that, except for when we needed to talk for work. I felt bad, because I knew he didn't have many friends... but my marriage is more important than anything else right now."
                         scene black with fade
                         "Even after I worked things out with Brennan, I could tell [his_name] still hadn't forgiven me..."
                         scene bedroom with fade
                         show overlay night
                         show her normal at quarterleft
-                        show him concerned at quarterright
+                        show him concerned at midright
                         with dissolve
                         her normal "Good night, [his_nickname]..."
+                        show her at center with moveinleft
+                        show him at quarterright with moveright
                         him concerned "Good night."
+                        show her at quarterleft with moveleft
                         her sad "..."                 
                         scene black
                         "But finally, after about two weeks of walking on eggshells..."

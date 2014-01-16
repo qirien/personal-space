@@ -201,6 +201,18 @@ label start:
         "For just six months":
             "We had known each other for just six months, but we spent almost all our free time together. Though we started out as just friends, lately there was a romantic tension that hadn't been there before."
             $ known_each_other = "six months"
+
+    "After working hard on his parents' farm all day, he'd take a shower and meet me at the cafe near my work. We'd get something to drink, and I'd tell him about work, or the latest book I was reading, or a video game he might like."
+    "He would tell me about what was going on on the farm - it was cute how serious he got about everything! One time, he was going on and on about Mathilda's hurt leg, and how she kept walking around even though she was in pain."
+    "I asked 'Is that your aunt?' and he said 'No, she's one of the horses!'. We both laughed about that one."
+    "I loved the way he said my name... like he knows everything about me and loves every bit of it."
+    $ her_name = renpy.input("What is your name?", "Mary", length=20)
+    # TODO: should this be an actual dialogue?
+    "We talked about how we both wanted an adventure. We had lived in that little town for so long... while it felt comfortable, it also so predictable. There was so much of the world, of the universe, out there to see!"
+    "But neither of us had very much money. I was still paying off my school debts, and he said his family was lucky to have enough income from the farm to repair their equipment every year."
+    "Sometimes he'd bring me fresh vegetables from the farm. It was kind of amazing how much better they were than food from the store. I couldn't believe he grew them."
+    "One time we cooked dinner together and stayed up until three in the morning, just talking... we didn't even realize how late it was!  He stayed to watch the sunrise with me, and then headed straight to work. I felt kind of guilty that I had the day off and could sleep in."
+
     jump choose_career
 
     return

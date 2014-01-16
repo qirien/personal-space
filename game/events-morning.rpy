@@ -72,10 +72,13 @@ label work_0:
     boss "Next is the person who has lived here the longest, astronaut and xenobiologist Dr. Lily. Any scientific inquiries should be directed her way."
     lily "Thank you, Mayor."
     hide lily with moveoutright
-    show ilian at midright with moveinright
-    boss "Ilian Andrevski is in charge of the storehouse here on the colony. That's where we keep all our extra supplies and food."
+    show ilian at midright
+    show sara at right with moveinright
+    boss "Ilian Andrevski is in charge of the storehouse here on the colony. That's where we keep all our extra supplies and food. His wife, Sara will be helping all of us stay organized."
     ilian "I want to distribute things frugally and fairly. And, if you have extra goods you cannot use, please give them to the storehouse so others can use them."
+    sara "Right!"
     hide ilian with moveoutright
+    hide sara with moveoutright
     show sven at midright with moveinright
     show helen at right with moveinright
     boss "Sven is in charge of the library, so if you need to research something or print something out, head over there. He and his wife Helen are also experts on raising cattle, and will be starting a ranch up to the north."
@@ -142,10 +145,10 @@ label work_0:
         "When is the colony ship coming?":
             her surprised "Is the next ship coming in two Earth years or Talam years?"
             boss "Good question; that's two Earth years, which makes about..."
-            show lily
+            show lily at midright with moveinright
             lily "About 26 Talam months. Since there are seven months a year here, that makes a little over three Talam years."
             boss "Right...hopefully that answers your question!"
-            hide lily
+            hide lily with moveoutright
             jump boss_meeting
         "No questions.":
             her "(I don't have any questions.)"

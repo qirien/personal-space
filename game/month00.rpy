@@ -94,12 +94,11 @@ label colony_ship:
 
     # He remembers her birthday
     scene bg colony_ship_bunk with fade
-    show him normal at center
-    show her normal at right
+    show him normal at midleft with dissolve
     play music "music/Prelude22.ogg" fadeout 1.0
 
     "Time felt strange on the ship, too. Though there was no sunrise or sunset, they did dim the lights for ten hours every night. One night I came back to our room and found a surprise waiting for me."
-
+    show her normal at midright with moveinright
     him happy "Happy Birthday, [her_name]."
     her surprised "What? It's not my birthday!"
     him normal "Actually, according to Earth time you've had two birthdays while we've been travelling, and it seemed sad to let them go by without any sort of celebration, so... Well, it's not much, but I wanted to make sure I didn't forget."
@@ -178,7 +177,7 @@ label colony_ship:
             her sad "What's the point of celebrating birthdays? One year older, one year closer to dying...that's not a cause to party."
             him normal "It is if it means it's one more year I've been able to spend with you."
     scene black with fade
-    "He pulls you close in a gentle hug, then holds you tightly, as if you would drift off into space without him."
+    "He pulled me close in a gentle hug, then held me tightly, as if I would drift off into space without him."
     $ loved += 5
     $ made_love += 1
     $ relaxed += 5
@@ -193,19 +192,22 @@ label settling_in:
     "Finally, our house was put up. We were so glad to stop sleeping in the shuttle and have our own space."
     scene bg farm_interior with fade
     show her normal at quarterright
-    her happy "Well, now instead of feeling like we're sleeping on a train, it will be like camping! Where do you think we should put our sleeping bags?"
     show him normal at quarterleft
+    with dissolve
+    her happy "Well, now instead of feeling like we're sleeping on a train, it will be like camping! Where do you think we should put our sleeping bags?"
     him happy "Well, there's this end- or that end."
-    her surprised "How about the end with the stove can be the kitchen, and the other end can be the bedroom?"
+    her normal "How about the end with the stove can be the kitchen, and the other end can be the bedroom?"
     him normal "Sounds fine to me."
+    scene black with fade
     "The house really was pretty small- just one room. One end had a wood-burning/electric hybrid stove/heater as well as a battery that the solar panels could charge, and the other end had a window. No plumbing, electricity only when it was sunny or while our battery lasted, and no furniture other than our sleeping bags and a folding table."
     scene bg bedroom with fade
     show him normal at quarterleft
     show her normal at quarterright
     with dissolve
     "As soon as we got the house up, [his_name] started putting up a piece of paper he unfolded from his bag. When I got closer, I could see it was a picture of his family. I realized I hadn't brought any pictures of my family."
+    "He put it right next to his side of the bed."
     menu:
-        "He's putting up a picture of our family. It's right by our bed."
+        "What should I say?"
         "Could you put that somewhere else?":
             her concerned "[his_name], do you think you could put that somewhere else? I don't really want to stare at your parents when we're making love."
             him annoyed "Where else should I put it? There's not a lot of room, and I don't want it to catch fire near the stove."
@@ -264,7 +266,7 @@ label settling_in:
             her surprised "Do you miss them a lot?"
             him sad "A bit."
 
-    him normal "This was taken at my parents' farm, right before I met you. My sister and her husband and their kids drove for two days to come and visit, and my little brother flew in from overseas"
+    him normal "This was taken at my parents' farm a few years ago. My sister and her husband and their kids drove for two days to come and visit, and my little brother flew in from overseas."
     him concerned "Good thing, too, because it was the last time we'd all be together."
     her surprised "Have you heard from them lately?"
     him normal "Yeah, they write about once a month, but now that that we've stopped travelling so fast I haven't heard from them at all."

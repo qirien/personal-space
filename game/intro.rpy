@@ -25,9 +25,9 @@ label doctor:
     him happy "You should have seen it; it was heroic. Diving through flames, rescuing small children, wrestling wolves . . ."
     her annoyed "Really? You're lucky it was just your wrist, then."
 
-    him laughing "No, I actually just fell off my horse.  A snake spooked her."
+    him normal "No, I actually just fell off my horse.  A snake spooked her."
     her normal "Is your horse okay?"
-    him normal "Oh yeah, Lettie's fine. She seemed like she was almost laughing at me.
+    him happy "Oh yeah, Lettie's fine. She seemed like she was almost laughing at me.
 "
     jump first_date
 
@@ -66,15 +66,31 @@ label teacher:
 # No matter what profession you choose, the first date is the same
 
 label first_date:
+    hide him
+    "As he was leaving, he slipped me a note."
+    # TODO: should we make a note graphic and display it?
+    "It read:"
+    "Hey there, my [her_name]!"
+    "I've been thinking a lot about us lately..."
+    "How I want to be with you all the time."
+    "How I keep thinking about you, even when I'm up to my knees in manure. \n(was that romantic or what?!)"
+    "How I can't imagine how a woman could be more perfect than you."
+    "How it's time we said goodbye to this little town and started something new on our own..."
+    "How I love you heart, body, and soul, every minute of every day..."
+    "Anyway, I want to tell you more, in person!"
+    "So come to my folks' tonight for a barbeque, okay? Right after work."
+    "-your [his_name]"
+
+    her "(That's so sweet! But I wonder what's up, he sounds so serious!)"
     scene bg porch with fade
     show her normal at midleft
     show him normal at midright
     with dissolve
     show overlay night
-    "Afterwards, he asked me if I would come to a barbeque at his house that evening. I thought there was going to be a lot of people, but it ended up being just him and his parents."
-    "It wasn't too awkward, though - we all pitched in to make dinner and then sat on the porch swing and talked and watched the stars come out."
-    "Something about the way he said my name gave me shivers - the good kind."
-    $ her_name = renpy.input("What is your name?", "Mary", length=20)
+    "At the barbeque, I thought there was going to be a lot of people, but it ended up being just him and his parents."
+    "It wasn't too awkward, though - we all pitched in to make dinner and then afterwards when I offered to help with the dishes, his parents told us to go relax outside."
+    "So we sat on the porch swing and talked and watched the stars come out."
+    "It was so relaxing to just talk with him - he was always funny and listened to me. He didn't always have the best advice, but I could tell he wanted to help."
 
     him "[her_name]... have you ever thought about what's out there?"
     her surprised "Out... where?"
@@ -105,7 +121,7 @@ label marriage_proposal:
     show her normal at midleft
     show him normal at midright
     with dissolve
-    him "I'm going there, [her_name]. To Talam."
+    him serious "I'm going there, [her_name]. To Talam."
     her laughing "Oh really? I didn't know you were an astronaut, [his_name]."
     him annoyed "..."
     her surprised "You're serious, aren't you?!"
