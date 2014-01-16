@@ -641,7 +641,6 @@ label monthly_event_6:
             natalia "All that work..."
             him sad "I know."
             her sad "..."
-            ## TODO: this section could be expanded by having a dialogue with one of the Perons?
         "Spray them with pesticide":
             him normal "We have some pesticide that we used for corn pests on Earth."
             her surprised "Will it work on these bugs?"
@@ -781,7 +780,12 @@ label monthly_event_7:
     her surprised "Has it really been a whole year that we've been here?"
     him normal "Well, a year on this planet is only seven months, but, yeah. It's good for farming to have a shorter year, especially since the winters are so mild."
     her happy "Happy New Year, then!"
-    # TODO: have a new year's party?
+    scene black with fade
+    "We all took a week off from working. People celebrated their winter holidays, worked on things at home, and visited each other. We ended the festivities with a all-night party at the community center."
+    scene bg community_center with fade
+    show him happy at midright
+    show her happy at midleft 
+    with dissolve
     him happy "We should make a toast..."
     menu:
         "What should we toast?"
@@ -803,6 +807,7 @@ label monthly_event_7:
         "To partying!":
             her laughing "Here's to any excuse to party!"
             him laughing "To partying!"
+
     return
 
 # MONTH 8 Want to watch a movie, he is busy helping neighbor
