@@ -500,8 +500,8 @@ label relax_together_10:
     show her normal at midright
     show him normal at midleft
     with dissolve
-    him "I'm so glad we do things together all the time."
-    her "Me, too. You're not just my [his_nickname]; you're also my best friend."
+    him happy "I'm so glad we do things together all the time."
+    her happy "Me, too. You're not just my [his_nickname]; you're also my best friend."
     $ relaxed += 5
     $ loved += 2
     return
@@ -547,18 +547,18 @@ label relax_together_a:
     show him at left
     show her at quarterleft
     with moveinleft
-    her "Hey, Sara!"
+    her happy "Hey, Sara!"
     sara "Wow, you got [his_name] to come to town? Did you pretend to be sick or something?"
-    her "No, he came on his own, believe it or not."
-    him "Hey, I'm working hard on the farm, I don't have time to come to town all the time."
+    her flirting "No, he came on his own, believe it or not."
+    him serious "Hey, I'm working hard on the farm, I don't have time to come to town all the time."
     ilian "Well, since you're here, why don't you come over and see our house?"
     sara "Yeah, because it's SOO different from all the other prefab houses..."
     ilian "I was trying to be nice..."
     sara "Our house is totally boring, but maybe we can play a game or something?"
-    her "Thanks, that'd be fun! Right, [his_name]?"
-    him "..."
+    her happy "Thanks, that'd be fun! Right, [his_name]?"
+    him concerned "..."
     if (loved >= 0):
-        him "Sure, let's go."
+        him normal "Sure, let's go."
         scene bg farm_interior
         show sara at quarterright
         show ilian at right
@@ -574,20 +574,20 @@ label relax_together_a:
         $ loved += 2
         $ community_level += 2
     else:
-        him "Sorry, I've got to do some things at home."
+        him concerned "Sorry, I've got to do some things at home."
         menu:
             "What should I do?"
             "Go with [his_name]":
-                her "Yeah, I should probably get going, too. Maybe another time, Sara?"
+                her normal "Yeah, I should probably get going, too. Maybe another time, Sara?"
                 sara "Yeah, I'll see you at lunch or something."
                 "We both worked hard on our projects at home, but at least we were together."
                 $ relaxed -= 2
                 $ loved += 2
             "Hang out with Ilian and Sara":
-                her "Well, I'll come over, if you don't mind."
+                her normal "Well, I'll come over, if you don't mind."
                 sara "Sure, we can play with three people."
                 her "Bye, [his_name]."
-                him "Bye..."
+                him serious "Bye..."
                 "We played some games together, but I felt a little out of place without [his_name]."
                 $ loved -= 2
                 $ relaxed += 2
@@ -642,7 +642,7 @@ label relax_together_g:
     him sad "...but I'm kind of in a hurry, I gotta go fix something before the wind totally breaks it apart."
     her concerned "You don't have fifteen minutes for me?"
     him normal "Well, yeah, if you can wait until I get this done. You don't mind, do you?"
-    her angry "Yes I mind! I've been sitting here waiting for you for hour! Aren't you going to do anything about it?"
+    her angry "Yes I mind! I've been sitting here waiting for you for hour!"
     him angry "Look, I just can't right now! I'll be back in after I fix this!"
     hide him
     "He left."
@@ -655,14 +655,14 @@ label relax_together_g:
     scene black with fade
     "Finally, I just went to sleep."
     scene bg bedroom with fade
-    show him normal at midleft
     show her normal at center
     with dissolve
     show overlay night
+    show him normal at midleft with moveinleft
     "I half awoke in the middle of the night to [his_name] snuggling up to me and nuzzling my ear."
     her concerned "Wha-huh?"
-    him annoyed "I'm home..."
-    her "Welcome home...and good night."
+    him serious "I'm home..."
+    her annoyed "Welcome home...and good night."
     him flirting "You don't want to stay up for just fifteen more minutes?"
     her annoyed "I'm not up to begin with. I'm still asleep. Zzzzzz..."
     him normal "Mmm, you're so sexy..."
@@ -692,7 +692,7 @@ label relax_together_g:
             her angry "You had your chance, but you missed it. Sorry, I can't just wait around all day for you to finally decide to show up and get some action."
             him concerned "C'mon, my [her_nickname]..."
             her annoyed "Just leave me alone."
-            show him angry at quarterleft with dissolve
+            show him angry at quarterleft with move
             him "Fine."
             "We lay there, both angry, not saying anything, for a long time, before I finally got back to sleep."
             $ loved -= 2
@@ -705,6 +705,7 @@ label relax_together_h:
     "We watched a movie together. It was pretty good, but the ending was terrible."
     show her normal at midright
     show him normal at midleft
+    with dissolve
     him happy "See, what they needed was to have the girlfriend show back up at the end--"
     her laughing "--leading a horde of zombie warriors! Oh, that would have been so much better!"
     him surprised "And what about the pterodactyl? They didn't do anything with that."

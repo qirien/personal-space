@@ -37,34 +37,40 @@ label relax_alone_1:
             $ relaxed += 2
             "The next day at lunch, Sara told me that her mom had died."
 
+    scene bg farm_interior
+    show her serious at midleft
+    show sara at midright
+    with dissolve
     "Since it took four years for the message to get here, her mom had actually been dead for a long time already. That didn't make it any easier for Sara, though."
     sara "All this time - I've been thinking about what she's doing back on Earth, and imagining her playing with her grandkids, and working in the garden, but really she's just been dead."
+    her sad "Oh Sara, I'm sorry..."
     menu:
-        her "Oh Sara, I'm sorry..."        
+        "What should I say?"
         "How's your dad doing?":
-            her "How's your dad holding up?"
+            her serious "How's your dad holding up?"
             sara "He's strong, I'm sure he'll be fine, but I feel terrible! I've been asking him questions about mom and telling jokes about the two of them, and he's going to keep getting those messages from me for years! It'll make him sad every time he gets a message from me."
-            her "Or maybe it will make him happy to know how much you still care about her and remember her."
+            her normal "Or maybe it will make him happy to know how much you still care about her and remember her."
             sara "Yeah, maybe so."
         "How do you feel?":
-            her "How do you feel? Besides the obvious, I mean."
+            her serious "How do you feel? Besides the obvious, I mean."
             sara "Well, yeah, I'm sad, but I guess everyone has to die sometime, right? And it's not like I could really talk to her, anyway."
             her "But it still feels different, somehow?"
             sara "Yes, it does. I wish she could have seen this - this place, me, a colonist, everything."
-            her "I do, too."
+            her sad "I do, too."
         "{i}Maybe she's closer now{/i}" if (skill_spiritual >= 20):
-            her "Maybe she's closer now."
+            her serious "Maybe she's closer now."
             sara "Huh?"
-            her "Maybe her spirit can be closer to you, now that her body has passed on."
+            her normal "Maybe her spirit can be closer to you, now that her body has passed on."
             sara "You mean... like if the soul could travel through space?"
             her "Sure, why not?"
             sara "I don't know if it's true, but... that's cool to think about."
         "What's the difference?":
-            her "What's the difference? You couldn't be together before, and you can't now."
+            her annoyed "What's the difference? You couldn't be together before, and you can't now."
             sara "Well, the difference is now she's dead, so there's nothing there to connect with."
-            her "With four years time difference, all our families might as well be dead."
+            her concerned "With four years time difference, all our families might as well be dead."
             sara "[her_name]! You should appreciate what you still have!"
-            her "None of us have anything. The only difference is some of us realize that."
+            her serious "None of us have anything. The only difference is some of us realize that."
+            $ community_level -= 2
             return
 
     "We talked for a long time; Sara has a lot of sad days ahead, but I think I was able to help her feel a little better."
@@ -73,9 +79,15 @@ label relax_alone_1:
 
 # Stargazing alone
 label relax_alone_2:
-    scene bg stars with fade
+    scene bg farm_interior with fade
+    show her normal at midleft
+    show him normal at midright
+    with dissolve
     her "Hey, [his_name], want to sit outside with me?"
     him "Oh.... I kind of want to, but I'm so tired. I'm just going to go to bed."
+    hide him with dissolve
+    hide her with moveoutleft
+    scene bg stars with fade
     "I sat out on the porch and gazed at the stars. They were so different from Earth, I had to make my own constellations."
 
     $ relaxed += 5
@@ -176,7 +188,7 @@ label relax_alone_10:
     return
 
 label relax_alone_11:
-    scene bg bedroom
+    scene bg bedroom with fade
     "I curled up with a good book."
 
     $ relaxed += 5
@@ -184,7 +196,7 @@ label relax_alone_11:
     return
 
 label relax_alone_12:
-    scene bg farm_interior
+    scene bg farm_interior with fade
     "I played a video game that I enjoyed."
 
     $ relaxed += 5
@@ -229,15 +241,23 @@ label relax_alone_d:
     $ relaxed += 7
     return
 
-# TODO: write this
 label relax_alone_e:
+    scene bg farm_interior with fade
+    "I read some online newspapers and magazines from Earth..."
+    "It was hard to care about what the politicians or movie stars on Earth were saying and doing. Battles and natural disasters were at least four years past already. There was no point in reading about fashion or trends - we didn't have the resources to follow them even if we had wanted to."
+    "I didn't feel depressed, though - it was kind of a relief, actually.  There was no way to keep up with everything happening on Earth when we lived there, but I could easily keep track of what was happening to everyone on Talaam."
+    "I decided to spend some time writing posts on the community message board instead. Our community here was more important than anything happening on Earth, anyway."
     $ relaxed += 5
     $ loved -= 2
+    $ community_level += 2
     return
 
 label relax_alone_f:
-    scene bg path
+    scene bg path with fade
     "I took a walk near our house and thought about the future."
+    "What would the colony look like in ten, twenty, or fifty years?"
+    "How many people would live here? Would there be plenty of food?"
+    "What would [his_name] and I be like in fifty years? Still alive, I hoped... would I be a grandma? It seemed impossible to imagine..."
     $ relaxed += 5
     $ loved -= 2
     return
@@ -278,7 +298,7 @@ label relax_alone_h:
     him surprised "What are you doing?"
     her happy "Feeding my horses!"
     him surprised "You have horses now?"
-    her "In my game! I have to make sure they get exercise, and take them to the vet if they get sick! It's called Farm Life."
+    her "In my game! I have to make sure they get exercise, and good food, and take them to the vet if they get sick! It's called Farm Life."
     him annoyed "Farm Life?! That's nothing like real farming!"
     her "No, it isn't. And that's why it's fun."
     "He came over behind me and looked at my screen."
@@ -286,7 +306,7 @@ label relax_alone_h:
     her sad "I know! It's actually kind of sad when the farmer gets hungry and she eats one of them..."
     him normal "Awww... Hey, that guy has the hearts for you!"
     her normal "Yeah, he keeps bringing flowers, but my farmer only likes sweets! I keep trying to get her to marry him but she likes the fisherman instead."
-    him annoyed "It's too bad we can't do real farm work just by clicking on a screen."
+    him serious "It's too bad we can't do real farm work just by clicking on a screen."
     her sad "I wish it was easier, too..."
 
     $ relaxed += 5
@@ -320,7 +340,7 @@ label relax_alone_k:
     scene bg farm_interior with fade
     show her at midright with dissolve
     "I downloaded a visual novel I found online. It looked pretty cheesy, but at least it wasn't in high school - it was about romance on a star ship."
-    "Your character was an Ensign on the ship as it explored the galaxies, and you could romance one of four characters."
+    "Your character was an ensign on the ship as it explored the galaxies, and you could romance one of four characters."
     $ starship_man = "None"
     menu:
         "Which guy should I pick?"
@@ -335,17 +355,17 @@ label relax_alone_k:
             $ starship_man = "witty"
         "The shy alien navigator":
             "I picked the alien navigator. The fur and foreignness just made him so much more interesting."
-            $ starship_man = "interesting"
+            $ starship_man = "intruiging"
 
     show him normal at center with moveinright
-    him surprised "Oh, so that's the kind of guy you like?"
+    him laughing "Oh, so that's the kind of guy you like?"
     her surprised "Wahhh! You scared me! I didn't know you were watching!"
-    him normal "I was just walking by when I saw all those men on your screen. I had to stop and see what was going on."
+    him happy "I was just walking by when I saw all those men on your screen. I had to stop and see what was going on."
     menu:
         "What should I say?"
         "It doesn't mean anything":
             her normal "Well, I might play through all these and see them, so this doesn't mean as much as you might think."
-            him "That's fine, that's fine! I was just curious, don't worry."
+            him normal "That's fine, that's fine! I was just curious, don't worry."
             her flirting "You know you're the only man for me in real life. I just feel sorry for my character in this game that has to make do with these poor imitations."
             him flirting "Yeah, yeah!"
             her happy "Ha ha, I love you, [his_nickname]."
@@ -359,12 +379,12 @@ label relax_alone_k:
         "Who's {b}your{/b} type?":
             her flirting "So who's {b}your{/b} type of woman?"
             him concerned "Hmmm, what are my choices?"
-            her normal "Crazy and cute, shy and nerdy, or glamorous and serious."
+            her normal "Crazy and energetic, shy and nerdy, or glamorous and serious."
             him normal "Out of those three...probably crazy."
             him laughing "I mean, anyone who could tolerate me would have to be at least half crazy!"
             her annoyed "I see your point."
             him happy "And, of course, none of those cliches compares to a real woman like you."
-            her annoyed "Of course not!"
+            her normal "Of course not!"
             him surprised "Was that the right answer?"
             her happy "Ding! Your relationship with \"[her_name]\" went up by ten points!"
             him happy "All right!"
@@ -379,6 +399,7 @@ label relax_alone_k:
     $ relaxed += 5
     return
 
+#TODO: should we have a terminal/tablet chat mode for chatting online?  Maybe use NVL mode?
 label relax_alone_l:
     scene bg farm_interior with fade
     "I chatted with Helen Engel over the network - she lived on the other side of the colony and didn't leave the house much, so we didn't get to see each other very often."
