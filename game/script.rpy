@@ -140,13 +140,13 @@ define fade = Fade(0.2, 0.2, 0.2)
 # The game starts here.
 label start:
     # Custom transitions, positions, etc.
-    $ midleft = Position(xpos=0.30,
+    $ midleft = Position(xpos=0.20,
         xanchor=0)
     $ midright = Position(xpos=0.50,
         xanchor=0)
-    $ quarterleft = Position(xpos=0.20,
+    $ quarterleft = Position(xpos=0.10,
         xanchor=0)
-    $ quarterright = Position(xpos=0.60,
+    $ quarterright = Position(xpos=0.65,
         xanchor=0)
 
     $ config.say_attribute_transition = dissolve
@@ -180,7 +180,7 @@ label start:
             $ want_kids = True
             $ known_each_other = "six months"
 
-            jump show_credits
+            jump test_positions
             #call screen computer_pad
 
     "I thought I knew what love was. After all, that's why I married..."
@@ -252,4 +252,22 @@ label quick_load:
         if renpy.can_load("quicksave"):
                 renpy.load("quicksave")
 
+    return
+
+label test_positions:
+    "left"
+    show her normal at left
+    "quarterleft"
+    show him normal at quarterleft
+    "midleft"
+    show pavel at midleft
+    "center"
+    show sara at center
+    "midright"
+    show lily at midright
+    "quarterright"
+    show him at quarterright
+    "right"
+    show her at right
+    "end test positions"
     return

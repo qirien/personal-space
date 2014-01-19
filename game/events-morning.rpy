@@ -212,7 +212,7 @@ label work_1:
         "Usually things were pretty quiet at the clinic. I made an appointment with each colonist to learn about each person's medical conditions, and sometimes made suggestions for how to deal with chronic problems. We had a few minor injuries setting up, but nothing serious."
         "But one day in particular was extremely busy."
         her surprised "Oh! What happened?"
-        show her at quarterright with dissolve
+        show her normal at quarterright with dissolve
         show him annoyed at quarterleft with moveinleft
         show sven at midleft with moveinleft
         "[his_name] carried Sven in and set him in the exam table. I could tell his leg was hurt but he was not in immediate danger. I took his vitals while Sven filled me in."
@@ -390,8 +390,8 @@ label work_2:
     call set_work_bg
     show her normal at midright with dissolve
     "I was ready for another busy day at work when the mayor walked in with someone new. I remembered seeing him on the shuttle; he had an infectious smile and just the hint of an accent."
-    show pavel at midleft with moveinleft
     show brennan at quarterleft with moveinleft
+    show pavel at midleft with moveinleft
     boss "[her_name], I'd like you to meet Mr. Callahan. He's sort of a jack-of-all-trades here, helping out wherever we need it. He can help you out some of the time."
     show pavel at quarterleft with move
     show brennan at midleft with move
@@ -434,10 +434,10 @@ label work_2:
             him serious "Well, I'm just a bit suspicious of Brennan. He comes on the shuttle at the last second with no special skills, no family, and nobody else seems to think that's unusual."
             her serious "I guess they did ask mostly for couples and families to come..."
             #TODO: finish adding emotions
-            him "He seems nice enough, but I'm just wondering what the real purpose is for him to be here."
-            her "You think he's a spy or something?"
-            him "I'm not saying that. I'm just saying that there's unanswered questions here."
-            her "Interesting. Well, I'll keep an eye out, and if I see him sending coded messages to the aliens, I will let you know."
+            him annoyed "He seems nice enough, but I'm just wondering what the real purpose is for him to be here."
+            her surprised "You think he's a spy or something?"
+            him serious "I'm not saying that. I'm just saying that there's unanswered questions here."
+            her flirting "Interesting. Well, I'll keep an eye out, and if I see him sending coded messages to the aliens, I will let you know."
             "The next time Brennan helped out at work, he was as friendly as ever, but I didn't feel as uncomfortable as before. I treated him politely, but coolly, and we got a lot of work done."
         "Nothing special.":
             her "Just the usual. How about you?"
@@ -784,7 +784,7 @@ label work_5:
     "I tried contacting his family on the radio, but the radiation from the flare was interfering with our transmissions. I couldn't connect my computer pad to the wireless network, either."
     "Mr. Peron was getting more and more distraught. I was worried he was going to try and leave, and I wasn't sure I could stop him."
     show brennan at midright
-    show her at right
+    show her serious at right
     brennan "Calm down, please! Everything will be just fine."
     martin "You don't understand! If you had any family, you'd know that I have to be there!"
     "Brennan just looked at Mr. Peron, a curious expression on his face. Finally, he nodded."
@@ -807,7 +807,7 @@ label work_5:
             $ grays_absorbed = 2
 
     hide brennan with moveoutleft
-    show her at midright with move
+    show her normal at midright with move
     "I watched him leave. The weather was deceptively placid - bright sun, a cool breeze, tree branches waving... the deadly radiation was completely invisible."
     "Neither Mr. Peron or I talked; we couldn't do anything else, either; we were too nervous."
     "The radio crackled every ten minutes - we could just barely make out that it was Dr. Lily repeating her warning."
@@ -854,7 +854,7 @@ label work_5:
 # MONTH 15 - lunch with Brennan
 label work_6:
     $ times_worked += 1
-    call show_work_bg
+    call set_work_bg
 
     if (profession == "doctor"):
         "The clinic wasn't very busy this month, so I'd been working on writing a paper about how the nutrition of crops planted here differed from the nutrition of crops grown in Earth soil, based on comparing my own blood samples."
@@ -1097,6 +1097,10 @@ label work_7:
                     if (brennan_relationship >= 2):
                         brennan "Oh, [her_name], I should have known I couldn't hide anything from you."
                         brennan "It's easier if I just show you. Come with me."
+                        scene bg farm_interior with fade
+                        show her normal at midleft
+                        show brennan at midright
+                        with moveinleft
                         "We walked over to his room at the Graysons'. He pointed to an electronics box under the table."
                         jump brennan_confess
                     else:
@@ -1105,7 +1109,7 @@ label work_7:
                 "Go to the store house" if (not has_batteries):
                     scene bg storehouse with fade
                     show ilian at midright with dissolve
-                    show her at midleft with moveinleft
+                    show her normal at midleft with moveinleft
                     "I headed over to the store house and asked Ilian for the batteries. I hadn't gone over quota, so there was no problem."
                     $ has_batteries = True
                     menu:

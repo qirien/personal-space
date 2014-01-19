@@ -85,6 +85,7 @@ label creative_3:
     him flirting "Wow, you made an abnormally-shaped potholder on your first try crocheting? I would have just stuck with something boring like a square. You're really ambitious!"
     her annoyed "Yes, I did that on purpose. It's so it won't flop around in your hand as much when you go to pick something up."
     him normal "It'll work just fine, [her_nickname]."
+    show her normal
     "My next attempt turned out much more even. But I kept that first one around anyway - for some reason I liked it."
     $ skill_creative += 10
     return
@@ -161,7 +162,7 @@ label creative_5:
         show her normal at midleft
         with dissolve
         him surprised "Oh, you made rope with horsehair? I think I've heard of that before. It won't be strong enough for a ladder, but we can make some reins out of it."
-        her annoyed "Well, I'm glad we can use it for something."
+        her concerned "Well, I'm glad we can use it for something."
 
     $ skill_creative += 10
     return
@@ -229,7 +230,7 @@ label creative_6:
     her happy "Then let's go!"
     scene black with fade
     "[his_name] brought the seats back with Lettie and our wagon. The next day, I set to work on making a loveseat."
-    "I wanted to upolster it with some fabric. I ended up weaving together long grasses into patches, which I sewed together with some goat-hair yarn. "
+    "I wanted to upholster it with some fabric. I ended up weaving together long grasses into patches, which I sewed together with some goat-hair yarn. "
     "I used more grass as extra padding between the seats. It ended up being a bit scratchy, but better than nothing."
     "A sofa was a little thing, but it made our little cabin seem so much more homey."
 
@@ -244,7 +245,7 @@ label creative_7:
     "I decided to send some of my pictures to magazines on Earth; maybe they would be interested in doing an article on Talam and would want to use them. I just wanted to show everyone on Earth what a beautiful planet we had."
     scene bg community_center with fade
     show pavel at midright with dissolve
-    show her at midleft with moveinleft
+    show her normal at midleft with moveinleft
     boss "So, you want special permission to exceed your alloted Earth-upload bandwidth to send photographs?"
     her "Yes, they need to be large so that they will look good in print. Is that okay?"
     boss "I think that is a worthy use of our resources. The pictures look great, [her_name], I hope people on Earth get to see them."
@@ -268,9 +269,9 @@ label creative_8:
     her normal "Thanks, that would help a lot."
     "Together we made a few more cups and water jug. We didn't have a kiln, so we went down to the research station to see if they had an oven we could use."
     scene bg lab with fade
-    show lily at midright with fade
-    show him at quarterleft
-    show her at midleft
+    show lily at midright with dissolve
+    show him normal at quarterleft
+    show her normal at midleft
     with moveinleft
     lily "I'll check your clay for toxins, and then if it's safe I'll bake your pottery. Our oven doesn't get as hot as some kilns, but it's better than not firing it at all."
     "I came by later and picked up the pottery, which Lily said was safe to drink from."

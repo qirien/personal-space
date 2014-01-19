@@ -33,7 +33,7 @@ init python:
         event (skill_type + "_def", "act == 'act_" + skill_type + "'", event.solo(), priority=400)
 
         # Setup intro event
-        event (skill_type + "_0", "act == 'act_" + skill_type + "'", event.once(), priority=50)
+        event (skill_type + "_0", "act == 'act_" + skill_type + "'", event.once(), priority=0)
         
         # Add special events that only happen once when you first get to a certain
         # skill level in that skill type.
@@ -41,13 +41,15 @@ init python:
             event(skill_type + "_" + `i`,
                   "act == 'act_" + skill_type + "' and skill_" + skill_type + " >= " + `i*10`,
                   event.once(),
-                  event.happened(skill_type + "_" + `i-1`))
+                  event.happened(skill_type + "_" + `i-1`), 
+                  priority=10)
 
         # This event happens when a skill reaches 100.
         event(skill_type + "_master",
               "act == 'act_" + skill_type + "' and skill_" + skill_type + " >= 100",
               event.once(),
-              event.happened(skill_type + "_10"))
+              event.happened(skill_type + "_9"),
+              priority = 10)
 
 
 

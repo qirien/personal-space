@@ -154,7 +154,7 @@ label monthly_event_2:
         "The cellar...?"
         "I'll do it!":
             her happy "Don't worry about the cellar; I'll take care of it!"
-            him concerned "Whoa, whoa, that's a big job - why don't we work on it together?"
+            him happy "Whoa, whoa, that's a big job - why don't we work on it together?"
             her normal "That does sound better, actually."
             "We dug and hauled out dirt and dug and hauled until finally we had a small cellar to store food in! We were exhausted, but it felt good to get it done together."
             $ loved += 5
@@ -304,9 +304,9 @@ label unappreciated:
 
 # MONTH 4 - Are Hobbies a Waste of Time?
 label monthly_event_4:
-    scene bg farm_exterior with fade
-    show her normal at midleft
-    show him normal at midright
+    scene bg farm_interior with fade
+    show her serious at midleft
+    show him serious at midright
     with dissolve
 
     $ highest_skill = highest_stat()
@@ -342,7 +342,8 @@ label monthly_event_4:
                 him normal "That's true...we can't just go to the store and buy stuff anymore, can we? Sorry, I didn't meant to accuse, I just really was curious what projects you've been working on."
             "{b}You{/b} spend a lot of time reading":
                 her surprised "What about you? You've been reading a lot lately."
-                him normal "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
+                him normal "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field."
+                him "I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
                 her normal "That sounds useful."
                 her happy "I've been learning how to make things out of native materials, like these placemats."
                 him "Oh, good. It's important for us to be independent from Earth."
@@ -359,7 +360,8 @@ label monthly_event_4:
                 him normal "Yeah, I'm really glad to have those. Sorry, I didn't meant to accuse, I just really was curious what projects you've been working on."
             "What do {b}you{/b} do?":
                 her annoyed "What have {b}you{/b} been doing lately? You've been reading a lot."
-                him normal "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
+                him normal "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field."
+                him "I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
                 her concerned "Okay, well, that sounds very... necessary."
                 her normal "I installed the antenna that lets us talk with the village, and the device that brings water into the house."
                 him happy "I love those; thank you."
@@ -379,7 +381,8 @@ label monthly_event_4:
                 him normal "That is important. Sorry, I didn't meant to accuse, I just really was curious what you've been learning."
             "What do {b}you{/b} do?":
                 her surprised "What have {b}you{/b} been doing lately? You've been reading a lot."
-                him normal "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
+                him normal "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field."
+                him "I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
                 her concerned "Okay, well, that sounds very... necessary."
                 her flirting "I've been learning about how important it is to answer someone with love, even if they are being insensitive or unappreciative."
                 him flirting "That {b}is{/b} important."
@@ -402,7 +405,8 @@ label monthly_event_4:
                 him normal "You're right; I don't like to depend on others, but we do need to work together."
             "What do {b}you{/b} do?":
                 her annoyed "What have {b}you{/b} been doing lately? You've been reading a lot."
-                him normal "Yeah, I've been reading up on all the plants we're growing, and I've scheduled out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
+                him normal "Yeah, I've been reading up on all the plants we're growing, and I've scheduled out what needs to be done each week for preparing, planting, tending, and harvesting each field."
+                him "I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
                 her concerned "Okay, well, that sounds very... necessary."
                 her normal "I'm not just \"hanging out\", you know. I'm building relationships in the community that we're going to need if we're going to survive. We can't make it alone here."
                 him normal "You're right; I wish I didn't need anyone else, but I can't do everything."
@@ -420,10 +424,12 @@ label monthly_event_4:
                 him normal "Oh yeah, that is important. Sorry, I didn't mean to accuse, I just was curious about what you're learning."
             "So do you":
                 her annoyed "You read a lot, too."
-                him normal "Yeah, I've been reading up on all the plants we're growing, and I've scheduled out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
+                him normal "Yeah, I've been reading up on all the plants we're growing, and I've scheduled out what needs to be done each week for preparing, planting, tending, and harvesting each field."
+                him "I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
                 her concerned "Okay, well, that sounds very... necessary."
                 her "I've been researching native plants, and helping the other colonists with their research. One family was going to build their outhouse just 15 meters from the river, but after I did some research I convinced them to build it at least 75 meters away."
                 him normal "That's really important. Thank you for doing that, [her_name]."
+                show her normal
             "I can't believe you don't appreciate me":
                 jump unappreciated
 
@@ -438,7 +444,8 @@ label monthly_event_4:
                 him normal "Oh yeah, that is important. Sorry, I didn't mean to accuse, I just was curious about what you've been doing."
             "What do {b}you{/b} do?":
                 her annoyed "What have {b}you{/b} been doing lately? You've been reading a lot."
-                him normal "Yeah, I've been reading up on all the plants we're growing, and I've scheduled out what needs to be done each week for preparing, planting, tending, and harvesting each field. I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
+                him normal "Yeah, I've been reading up on all the plants we're growing, and I've scheduled out what needs to be done each week for preparing, planting, tending, and harvesting each field."
+                him "I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
                 her concerned "Okay, well, that sounds very... necessary."
                 her normal "On that hike, I found out about a new water source, and I can run to town in six minutes in case there's an emergency."
                 him surprised "Six minutes?! That's pretty fast. You must have been training a lot. I guess I haven't thought about doing that because I usually ride Lettie around."
@@ -581,6 +588,9 @@ label monthly_event_6:
                 "After a day's work in the field, I fell asleep right away, but in the morning I was ready to keep going."
             else:
                 "After the first day I was exhausted. I wasn't able to help as much as I would have liked."
+            show him serious at midright
+            show her serious midleft
+            with dissolve
             him annoyed "We have baskets and baskets of these insects."
             her surprised "I wonder if we could use them to help us somehow."
             him surprised "Maybe we can. Next time you see Lily, could you ask her about it?"
@@ -777,6 +787,9 @@ label monthly_event_7:
     scene black with fade
     "A week later, I was reading my messages when I noticed that they were having a New Year's party."
     scene bg farm_interior with fade
+    show her normal at midleft
+    show him normal at midright
+    with dissolve
     her surprised "Has it really been a whole year that we've been here?"
     him normal "Well, a year on this planet is only seven months, but, yeah. It's good for farming to have a shorter year, especially since the winters are so mild."
     her happy "Happy New Year, then!"
@@ -1311,14 +1324,14 @@ label follow_him:
     else:
         her surprised "Oh no! What can we do?"
     him serious "Maybe we can help whatever's bothering her to pass through. Do we have any mineral oil? Or milk of magnesia?"
-    if (profession == "crafter" or skill_creative >= 40):
-        her normal "They have some mineral oil in the workshop; I'll get it."
-        hide her with moveoutleft
-        scene bg workshop with fade
-    elif (profession == "doctor"):
+    if (profession == "doctor"):
         her normal "There's some laxatives at the clinic; I'll get some."
         hide her with moveoutleft
         scene bg clinic with fade
+    elif (profession == "crafter" or skill_creative >= 40):
+        her normal "They have some mineral oil in the workshop; I'll get it."
+        hide her with moveoutleft
+        scene bg workshop with fade
     else:
         her normal "Somebody's got to have some! I'll ask Ilian at the storehouse."       
         "I got on my computer and sent him a message. I also sent one to the doctor and the Nguyens, in case they had any ideas."
@@ -1720,9 +1733,8 @@ label monthly_event_12:
     him sad "The fences keep breaking and there's a new pest I've found evidence of but haven't identified yet..."
     her surprised "You do have a lot going on. Is there someone who can help you?"
     him serious "I can do it all, I just need--"
-    her normal "What do you need?"
+    her surprised "What do you need?"
     him serious "I just need you."
-    
     her serious "Here I am...here for you and loving you, [his_nickname]."
     "We held each other for a long time. I felt there was so much I wanted to say, I tried to put it all into my hug and strengthen him and help him."
     $ loved += 5
@@ -1944,7 +1956,7 @@ label monthly_event_14:
                 if (loved >= 0):
                     him normal "I'll come with you."
                     "We walked to the clinic holding hands. It felt so good not to be alone right now."
-                    show him serious at midleft
+                    show him serious at left
                 else:
                     him "Okay, let me know what happens."
                 show her serious at midright
@@ -2179,7 +2191,7 @@ label monthly_event_16:
     else:
         "Once nice thing about living on the colony was that we didn't usually get sick. Most of the microorganisms here seemed to ignore our strange biochemistry, and they worked hard to keep germs from Earth off the shuttle."
     "But today I just felt awful."
-    show her normal at midright
+    show her serious at midright
     show him normal at midleft
     with dissolve
     "I tried to eat breakfast, but I didn't really feel like eating. [his_name] had already cooked it, though, so I didn't want to waste it..."
@@ -2196,8 +2208,8 @@ label monthly_event_16:
         "Give it to the goat." if (have_goat):
             "I carried my leftovers over to the goat, who seemed to really enjoy them. Watching the goat eat, though, I felt like throwing up..."
         "Give it to [his_name]" if (loved >= 0):
-            her "Do you want this? I'm not hungry..."
-            him "What? Sure, OK."
+            her concerned "Do you want this? I'm not hungry..."
+            him normal "What? Sure, OK."
             $ loved += 2
 
     scene black with fade
@@ -2300,7 +2312,7 @@ label monthly_event_16:
     $ relaxed += 2
     scene bg bedroom with fade
     if (is_pregnant):
-        "I felt better after a little rest. I felt a little sick the every morning for a few weeks, but that was the worst day."
+        "I felt better after a little rest. I felt a little sick almost every morning for a few weeks, but that was the worst day."
     else:
         "I had to visit the outhouse several more times before my stomach finally calmed down."
         if (loved >= 0):
@@ -2323,7 +2335,10 @@ label monthly_event_17:
 # MONTH 18 - he burns his hand in a tractor fire
 # uses domestic, knowledge, social, technical, physical
 label monthly_event_18:
-    scene bg farm_interior with fade
+    scene bg farm_exterior with fade
+    show him normal at midleft
+    show her normal at midright
+    with dissolve
     him "Hey, could you give me a hand for a minute?"
     if (loved >= 0):
         her "Sure, what for?"
@@ -2340,6 +2355,7 @@ label monthly_event_18:
 
     him "Don't have time. I need to use it all day today."
     her "Okay, if you're sure..."
+    # TODO: tractor bg?
     "He hooked up the tractor's battery to the cables, and I attached the other end to our house battery."
     her "It's hooked up!"
     him "Okay, now turn on the tractor!"
@@ -2377,7 +2393,7 @@ label monthly_event_18:
     if (skill_social >= 60):
         her "Stay here; I'm going to radio for help."
         "I called on the radio and Thuc and Mr. Peron came over. Together, we helped [his_name] get to the town."
-    elif (skill_phyiscal >= 40):
+    elif (skill_physical >= 40):
         her "Where's Lettie?"
         "I found Lettie tied up near the barn."
         her "C'mon, Lettie, [his_name] needs your help, alright?"
@@ -2391,6 +2407,9 @@ label monthly_event_18:
         $ relaxed -= 2
 
     scene bg clinic with fade
+    show him serious at midright
+    show her serious at midleft
+    with moveinleft
     "Finally, we arrived at the clinic. [his_name] was shaking and breathing hard."
     him "I don't n-n-n-need a doc-c-c-tor."
     her "Your hands are all blistered!"
@@ -2407,10 +2426,18 @@ label monthly_event_18:
         "The doctor cleaned, treated, and wrapped his burns, and [his_name] gradually calmed down and stopped shaking."
         "He was not happy to learn that he couldn't use his hands until they had healed."
         
+    scene bg farm_interior with fade
+    show her serious at midright
+    show him serious at midleft
+    with dissolve
     "After a few days of reading and resting, he started pacing the house."
+    show him annoyed at left with move
     him "I should be doing something useful! I've been so lazy..."
-    her "You're supposed to take it easy."
+    show him at center with move
+    her concerned "You're supposed to take it easy."
+    show him serious at left with move
     him "I've healed enough; I could at least take Lettie out and look around..."
+    show him at midleft with move
     # TODO finish this section
     menu:
         "What should I say?"
@@ -2427,6 +2454,7 @@ label monthly_event_18:
             her "(What's his problem?!)"
             "When he came back later, we were both much calmer."
             her "Everything okay, [his_name]?"
+            him "Yeah, I was just checking on things..."
             $ loved -= 2
         "It must be frustrating for you":
             her "You sound really frustrated..."
@@ -2443,6 +2471,7 @@ label monthly_event_18:
             her "Of course I trust you. I trust that you will do anything to take care of this farm, even if it's at the expense of your own health."
             him "... All right, let's go."
             "We walked around the farm together. I could tell he was itching to get down and get to work, but instead he just took notes."
+            $ loved += 2
         "This is all my fault":
             her "I'm so sorry, [his_name] - it's my fault you burned your hands!"
             him "What? No, it's not your fault. If anything it's my fault, for trying to run the tractor instead of fixing it properly."

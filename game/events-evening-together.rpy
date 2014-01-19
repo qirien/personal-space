@@ -544,8 +544,8 @@ label relax_together_a:
     show sara at quarterright
     show ilian at right
     with dissolve
-    show him at left
-    show her at quarterleft
+    show him normal at left
+    show her normal at quarterleft
     with moveinleft
     her happy "Hey, Sara!"
     sara "Wow, you got [his_name] to come to town? Did you pretend to be sick or something?"
@@ -593,7 +593,7 @@ label relax_together_a:
                 $ relaxed += 2
     return
     
-
+# TODO: make this a tractor race instead?
 label relax_together_b:
     scene bg farm_interior with fade
     "We watched a sports game together. It was hard to get too excited about it, since it happened on Earth four years ago, and I didn't feel as loyal to any of the teams now that I wasn't even on the same planet as them."
@@ -655,10 +655,10 @@ label relax_together_g:
     scene black with fade
     "Finally, I just went to sleep."
     scene bg bedroom with fade
-    show her normal at center
+    show her normal at midright
     with dissolve
+    show him normal at center with moveinleft
     show overlay night
-    show him normal at midleft with moveinleft
     "I half awoke in the middle of the night to [his_name] snuggling up to me and nuzzling my ear."
     her concerned "Wha-huh?"
     him serious "I'm home..."
@@ -826,13 +826,13 @@ label relax_together_k:
                     her surprised "You know, the ends could definitely use a trim; just don't cut off too much!"
                     him normal "No problem; just leave it to me."
                     "I was a little nervous as I handed him the scissors and sat down."
-                    show him center
-                    show her midright
+                    show him at center
+                    show her at midright
                     with dissolve
                     him serious "..."
                     her concerned "..."
-                    show him midleft
-                    show her midright
+                    show him at midleft
+                    show her at midright
                     with dissolve
                     him concerned "Okay, that should do it."
                     "I went over to look in the mirror."
@@ -841,7 +841,7 @@ label relax_together_k:
                     him serious "Good, I was worried you wouldn't like it..."
                     her flirting "Nope, you did a great job. As always."
                     him happy "I wouldn't want to start a hair salon, but cutting hair is actually kind of fun..."
-                    her annoyed "Don't get too used to it!"
+                    her laughing "Don't get too used to it!"
                     $ loved += 2
 
                 "No, thanks.":

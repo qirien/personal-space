@@ -24,23 +24,32 @@ label relax_alone_1:
         "I'll be right over":
             her "Sure, I'll be right there."
             "I walked to Sara's house in the dusky evening light, wondering what it was she wanted to talk about. When I got there, I could tell she'd been crying."
+            # TODO: make a mirrored/different farm interior for other people's houses
+            scene bg farm_interior
+            show her serious at midleft
+            show sara at midright
+            with dissolve
             sara "I got a message from Earth today...My mom died."
             $ community_level += 2
         "Can it wait?":
             her "Can it wait? I was just about to get in bed..."
             sara "I could...it's...my mom died."
             her "Oh no, I'll be right over."
+            scene bg farm_interior
+            show her serious at midleft
+            show sara at midright
+            with dissolve
             $ community_level += 1
         "I can't come tonight":
             her "Sorry, Sara, I can't tonight. Can we meet tomorrow at lunch?"
             sara "Yeah, I guess."
             $ relaxed += 2
+            scene bg farm_interior
+            show her serious at midleft
+            show sara at midright
+            with dissolve
             "The next day at lunch, Sara told me that her mom had died."
 
-    scene bg farm_interior
-    show her serious at midleft
-    show sara at midright
-    with dissolve
     "Since it took four years for the message to get here, her mom had actually been dead for a long time already. That didn't make it any easier for Sara, though."
     sara "All this time - I've been thinking about what she's doing back on Earth, and imagining her playing with her grandkids, and working in the garden, but really she's just been dead."
     her sad "Oh Sara, I'm sorry..."
@@ -276,6 +285,8 @@ label relax_alone_g:
     sara "I guess so..."
     her normal "You can even print things out here if you need to."
     sven "But, make sure you recycle any papers you print out when you're done with them; we don't have a paper factory."
+    hide sven
+    show sara at center
     sara "Why did you want to come here, [her_name]?"
     her serious "Well, back on Earth I used to like to go to bookstores and just flip through books... This isn't really the same, though."
     sara "Oh, I just read this great book, you should take a look."
@@ -338,7 +349,6 @@ label relax_alone_j:
 
 label relax_alone_k:
     scene bg farm_interior with fade
-    show her at midright with dissolve
     "I downloaded a visual novel I found online. It looked pretty cheesy, but at least it wasn't in high school - it was about romance on a star ship."
     "Your character was an ensign on the ship as it explored the galaxies, and you could romance one of four characters."
     $ starship_man = "None"
@@ -357,8 +367,9 @@ label relax_alone_k:
             "I picked the alien navigator. The fur and foreignness just made him so much more interesting."
             $ starship_man = "intruiging"
 
-    show him normal at center with moveinright
+    show him normal at midright with moveinright
     him laughing "Oh, so that's the kind of guy you like?"
+    show her normal at midleft with dissolve
     her surprised "Wahhh! You scared me! I didn't know you were watching!"
     him happy "I was just walking by when I saw all those men on your screen. I had to stop and see what was going on."
     menu:
