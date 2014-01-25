@@ -148,6 +148,7 @@ label start:
         xanchor=0)
     $ quarterright = Position(xpos=0.65,
         xanchor=0)
+    $ sitting = Position(ypos=0.5, yanchor=0)
 
     $ config.say_attribute_transition = dissolve
 
@@ -180,7 +181,8 @@ label start:
             $ want_kids = True
             $ known_each_other = "six months"
 
-            jump test_positions
+            #jump test_positions
+            jump physical_1
             #call screen computer_pad
 
     "I thought I knew what love was. After all, that's why I married..."

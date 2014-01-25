@@ -224,13 +224,13 @@ label technical_7:
     $ skill_technical += 10
     return
 
-# make dehydrator out of scavenged parts?
+# Help Ilian with the inventory software - build good queries, or streamline interface, etc.
 label technical_8:
 
     $ skill_technical += 10
     return
 
-# Make a tractor attachment that places seeds and fertilizer at the same time
+# Setup webcams around the farm to monitor fields/(goat)
 label technical_9:
 
     $ skill_technical += 10
