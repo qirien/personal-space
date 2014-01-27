@@ -57,10 +57,12 @@ label work_0:
     $ times_worked += 1
 
     scene bg community_center
+    play sound "sfx/people.mp3" fadein 1.0
     "My boss was also the leader of our little community. I guess you could call him the mayor?"
     "Right after we landed, he called a meeting for everyone where he gave a speech."
     show pavel at center
     boss "We made it this far! Now, as you know, we've arrived right at the beginning of this planet's spring, so it's time to get seeds in the ground! We would like for our colony to become self-sufficient as far as necessities are concerned."
+    stop sound fadeout 3.0
     boss "In two years, another colony ship will come with supplies and more colonists. So, until then, we're on our own."
     boss "Let me introduce some of our experts, here."
     show pavel at quarterleft with dissolve
@@ -226,6 +228,7 @@ label work_1:
         "The x-rays showed where his femur was crushed into several pieces."
         her serious "It's a comminuted fracture; it will take quite a while to heal."
         "I was just about to put him under so I could put in some pins when the radio crackled and I heard Sara."
+        play sound "sfx/radio.mp3"
         # TODO: should we show sara as a side image here?
         "Sara on the radio" "Doctor! You've gotta come right away; one of the kids stopped breathing - I think he swallowed something."
         "I started out the door while I talked to her on the radio. I hated to leave Sven alone, but this was urgent."
@@ -250,7 +253,8 @@ label work_1:
         else:
             "When I got there, he was blue but still conscious."
             "I moved quickly. I was able to get the peanut out of his throat, and performed CPR. Mrs. Nguyen watched me hopefully."
-
+            
+        play sound "sfx/cough.mp3"
         "Finally, he coughed and started to breathe."
         julia "Van! Oh, my boy!"
         "I didn't have time to stick around for adulation, though - Sven was still waiting for me to help his leg in the clinic."
@@ -352,6 +356,7 @@ label work_1:
     # TEACHER
     elif (profession == "teacher"):
         show her normal at midright with dissolve
+        play sound "sfx/kids.mp3"
         "Normally twenty-three students would be a nice size for a classroom. But my students are all different ages and skill levels. We have some good technology to help us out, but sometimes it's not enough..."
         her "On your computer pad you will see that I have sent each of you some reading about ancient Rome, appropriate for your skill level. Please read the selection, and then answer the questions at the end."
         "It took some of the kids five minutes, and others needed at least two hours. I decided to start a science experiment with the younger kids."
@@ -362,7 +367,9 @@ label work_1:
         "One of them punched the other. Soon they were wrestling and rolling on the ground yelling. I ran to try to stop them."
         her angry "Stop! Stop it, now!"
         "They kept fighting. The kid with the bloody nose was crying, some of the kids were screaming and some were chanting and jeering, and I was trying to pull them apart."
+        play sound "sfx/punch.mp3"
         "One of the punches missed the kid and hit me in the head. I must have blacked out for a minute, because when I woke up the fight was over and all the kids were looking down at me worriedly."
+        stop sound fadeout 3.0
         "I separated the two fighters, and somehow I managed to make it through the rest of that day. Just as the children were all leaving, the mayor came by."
         show her concerned at midright with dissolve
         show pavel at midleft with moveinleft

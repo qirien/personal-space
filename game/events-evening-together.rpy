@@ -753,6 +753,7 @@ label relax_together_j:
     show him normal at left
     with dissolve
     "I was sitting at the table, reading on my computer pad, when I got a message from [his_name]."
+    play sound "sfx/message.mp3"
     "(Why is he sending me a message? He's right there...)"
     "I opened it."
     him serious "Right now I am sitting five feet away from the hottest chick in the universe."

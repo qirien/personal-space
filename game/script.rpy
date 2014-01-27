@@ -29,6 +29,10 @@ image bg storehouse = "bg/storehouse.jpg"
 image bg community_center = "bg/community-center.jpg"
 image bg lab = "bg/lab.jpg"
 image bg barn = "bg/barn.jpg"
+image bg mountains = "bg/mountains.jpg"
+image bg stream = "bg/stream.jpg"
+image bg hotspring = "bg/hot-spring.jpg"
+image bg tractor = "bg/tractor.jpg"
 image overlay night = "bg/night.png"
 
 # Declare characters used by this game .
@@ -66,12 +70,12 @@ image him serious = "sprites/him-serious.png"
 # Her
 image her normal = "sprites/her.png"
 image her normal flip = im.Flip("sprites/her.png", horizontal = True)
-image side her normal = "sprites/her-head.png"
+#image side her normal = "sprites/her-head.png"
 # TODO: Fix angry, annoyed, flirting, serious when they are done.
 image her angry = "sprites/her-angry.png"
 image her annoyed = "sprites/her-annoyed.png"
 image her concerned = "sprites/her-concerned.png"
-image side her concerned = "sprites/her-concerned-head.png"
+#image side her concerned = "sprites/her-concerned-head.png"
 image her flirting = "sprites/her-flirt.png"
 image her happy = "sprites/her-happy.png"
 image her laughing = "sprites/her-laughing.png"

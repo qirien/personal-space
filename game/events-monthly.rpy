@@ -156,12 +156,15 @@ label monthly_event_2:
             her happy "Don't worry about the cellar; I'll take care of it!"
             him happy "Whoa, whoa, that's a big job - why don't we work on it together?"
             her normal "That does sound better, actually."
+            play sound "sfx/shovel.mp3"
             "We dug and hauled out dirt and dug and hauled until finally we had a small cellar to store food in! We were exhausted, but it felt good to get it done together."
+            stop sound fadeout 2.0
             $ loved += 5
             $ skill_physical += 5
 
         "{i}I'll surprise him...{/i}" if (skill_physical >= 10):
             her normal "We have time; don't worry about it yet."
+            play sound "sfx/shovel.mp3"
             "I started digging after work, thinking I could get a lot dug before he came home, but..."
             him happy "Nice hole. Are you going to plant something in it?"
             her annoyed "No, it's going to be our cellar."
@@ -169,6 +172,7 @@ label monthly_event_2:
             her "..."
             him normal "Why don't we work on it together?"
             "We dug and hauled out dirt and dug and hauled until finally we had a small cellar to store food in! We were exhausted, but it felt good to get it done together."
+            stop sound fadeout 2.0
             $ loved += 5
             $ skill_physical += 5
 
@@ -190,7 +194,9 @@ label monthly_event_2:
             him surprised "Really? That would be cool."
             "I researched and designed a simple machine with buckets and pulleys for getting the dirt up out of the hole. I was able to take one of the solar panels from the roof and power it with electricity."
             him happy "Oh, this will make it a lot faster!"
+            play sound "sfx/shovel.mp3"
             "He dug in the hole, and I moved the dirt from where the machine dumped it to go on top of the roof of the cellar, which effectively made it deeper faster."
+            stop sound fadeout 2.0
             "Even though it took a long time, it was kind of fun to work on it together."
             $ loved += 5
             $ skill_technical += 5
@@ -470,7 +476,7 @@ label monthly_event_5:
     her surprised "You threw away a perfectly good pair of socks?"
     him "Well, they have holes in the heels, and the rest of the material is getting thin. I wasn't sure if they were compostable."
     her concerned "We can't just throw things away when they break like on Earth. We need to take care of this planet for future colonists and the life forms that are already here."
-    him annoyed "Well, what should we do with all this stuff?"
+    him annoyed "Well, what should we do with all this junk?"
     menu:
         "{i}I could see if any of our neighbors could use the fabric.{/i}" if (skill_social >= 20):
             her normal "One of my friends is making a quilt, and I think she could cut it up and use it for part of the batting."
@@ -702,10 +708,10 @@ label monthly_event_7:
         "Put it back and pretend not to know what happened":
             "I put it back where I found it. It was just an accident, so he doesn't need to know it was my fault, right?"
             "Even so, I was nervous when he got home."
-            show her at quarterright
+            show her serious at quarterright
             show him normal at quarterleft with moveinleft
             him happy "Hey there, [her_nickname]."
-            her "Hi."
+            her concerned "Hi."
             "He washed his hands, and then picked up his computer pad."
             if fixed_computer:
                 "I think he was checking his messages; it seemed to work fine. I started to feel a little less nervous."
@@ -874,6 +880,7 @@ label monthly_event_8:
             show him normal at center
             show thuc at quarterleft
             "Thuc had already cut some logs and branches for us to tie up, but we still had to dig holes for posts."
+            play sound "sfx/shovel.mp3"
             if (skill_physical >= 20):
                 "It was a good thing I came, because there was a lot of hard work to do."
             elif (skill_technical >= 20):
@@ -881,10 +888,13 @@ label monthly_event_8:
             else:
                 "I'm not sure I was much help, but I worked hard and did my best."
             "We worked hard in the gathering darkness, until the moons rose and gave us their wan light. We worked on and on, until finally it was done."
+            stop sound
             thuc "Thank you so much, both of you."
             him "Glad we could help. I hope this fence holds up for you."
             thuc "Well, you can count on my help anytime, if you need it."
             her happy "Thanks, I'm sure we will."
+            hide thuc
+            show him at midleft with move
             "We walked home by moonlight.  The two moons cast opposing shadows from the shrubs and trees, making a maze of light for us to follow. [his_name] reached for my hand."
             him normal "Thanks for coming. Everything's better with you."
             her flirting "Even putting up fences is not too bad when we're together."
@@ -946,6 +956,89 @@ label monthly_event_8:
                     $ relaxed += 2
                     $ loved += 5
     return
+
+# Helper function for Month 9 where he tells her what he'd like her to do
+label she_can_do_better:
+    if (made_love < 2):
+        him concerned "I'd like it if you showed more physical affection."
+        menu:
+            "What should I say?"
+            "Typical man":
+                her annoyed "Typical. That's all you men ever think about, isn't it?"
+                him annoyed "No, sometimes we ask our wives what they would like and try to do it."
+                $ loved -= 5
+            "It's hard":
+                her concerned "That's... hard for me. I'm just so tired all the time; sometimes it feels just like another chore."
+                him surprised "It's a chore?"
+                her annoyed "No! It's just... it takes work for me to be in the mood, sometimes."
+                him annoyed "Well, you asked what I'd like."
+            "OK, I'll try":
+                her normal "We should make love more... it's important, even if we're tired or busy."
+                him happy "Thank you, [her_nickname]."
+                $ loved += 5
+    elif (loved < 5):
+        him normal "I'd like it if we spent more time together."
+
+        menu:
+            "Me too":
+                her normal "I'd like that, too."
+                him normal "Let's go on a walk together."
+                her surprised "Right now?"
+                him normal "Right after dinner!"
+                if (loved < -5):
+                    $ loved = 0
+                else:
+                    $ loved += 5
+            "Doing what?":
+                her concerned "Yeah, but what should we do? There's not exactly a lot going on..."
+                him happy "I could read you Shakespeare."
+                her laughing "Ha ha ha!"
+                him sad "..."
+                her surprised "You're serious?!"
+                him annoyed "Well, I don't know! Doesn't it sound kind of fun to read to each other things that we like?"
+                her happy "We could try it!"
+            "We don't have time":
+                her concerned "That sounds good, but we don't really have much free time, do we?"
+                him concerned "We have been working pretty hard...but I think it's important to do things together. Even if we're just reading next to each other, that would be nice."
+                her normal "OK, we can do that."
+    elif (skill_domestic < 10):
+        him "I'd like it if you did more things around the house."
+        menu:
+            "That's sexist":
+                her annoyed "That's sexist. Women belong in the house, is that it?"
+                him annoyed "Hey, you asked what I'd like. I'd like to come home to a clean, well-organized house."
+                menu:
+                    "If it's that important to you...":
+                        her concerned "If it's that important to you, I could work on that."
+                        $ loved += 5
+                    "No way.":
+                        her annoyed "Sorry, that's never going to happen."
+                        him annoyed "..."
+                        $ loved -= 5
+                    "It's hard":
+                       her concerned "That's... hard for me. With work and everything, when I come home I just want to relax."
+                       him annoyed "Well, you asked what I'd like."
+                       menu:
+                           "I can try.":
+                               her concerned "If it's that important to you, I could work on that."
+                               $ loved += 5
+                           "It's not going to happen.":
+                               her annoyed "Sorry, that's never going to happen."
+                               him annoyed "..."
+                               $ loved -= 5
+
+                    "OK, I'll try":
+                       her normal "It would be nice if the house was a little neater... OK, I'll try to do that."
+                       him happy "Thank you, [her_nickname]."
+                       $ loved += 5
+                    "Let's work on it together":
+                        her normal "How about if we take some time one evening and clean up the house together?"
+                        him normal "Yeah, I guess we could do that."
+                        $ loved += 2 
+    else:
+        him happy "Nothing at all. You always make me feel loved, and everything around the house is always so clean and organized, and we spend lots of time together."
+    return
+
 
 # MONTH 9 - how could I do better?
 label monthly_event_9:
@@ -1020,83 +1113,26 @@ label monthly_event_9:
         "Thanks for asking":
             her happy "Thanks for asking; that's really sweet of you."
             $ loved += 2
+        "I'm sorry":
+            her sad "I'm sorry, I'm not a very good wife to you."
+            if (loved <=0):
+                him concerned "..."
+                her surprised "What could I do better?"
+                call she_can_do_better
+            elif ((loved >= 5) and (skill_domestic >= 10) and (made_love >= 2)):
+                him surprised "What are you talking about?! You are the perfect wife!"
+                her surprised "Really?"
+                him happy "Yeah! You always spend time with me, and show me lots of lovin', and you even take care of the house and everything."
+                her flirting "There must be something I'm doing wrong."
+                him serious "I can't think of a single thing."
+            else:
+                him normal "I think you do a pretty good job."
+                her flirting "I'm sure there's something you'd like me to do differently. What is it?"
+                call she_can_do_better
         "How about you?":
             her concerned "What about you? Is there something you'd like to see more of from me?"
             him concerned "Well..."
-            if (made_love < 2):
-                him "I'd like it if you showed more physical affection."
-                menu:
-                    "Typical man":
-                        her annoyed "Typical. That's all you men ever think about, isn't it?"
-                        him annoyed "No, sometimes we ask our wives what they would like and try to do it."
-                        $ loved -= 5
-                    "It's hard":
-                        her concerned "That's... hard for me. I'm just so tired all the time; sometimes it feels just like another chore."
-                        him surprised "It's a chore?"
-                        her annoyed "No! It's just... it takes work for me to be in the mood, sometimes."
-                        him annoyed "Well, you asked what I'd like."
-                    "OK, I'll try":
-                        her normal "We should make love more... it's important, even if we're tired or busy."
-                        him happy "Thank you, [her_nickname]."
-                        $ loved += 5
-            elif (skill_domestic < 10):
-                him "I'd like it if you did more things around the house."
-                menu:
-                   "That's sexist":
-                        her annoyed "That's sexist. Women belong in the house, is that it?"
-                        him annoyed "Hey, you asked what I'd like. I'd like to come home to a clean, well-organized house."
-                        menu:
-                            "If it's that important to you...":
-                                her concerned "If it's that important to you, I could work on that."
-                                $ loved += 5
-                            "No way.":
-                                her annoyed "Sorry, that's never going to happen."
-                                him annoyed "..."
-                                $ loved -= 5
-                   "It's hard":
-                       her concerned "That's... hard for me. With work and everything, when I come home I just want to relax."
-                       him annoyed "Well, you asked what I'd like."
-                       menu:
-                           "If it's that important to you...":
-                               her concerned "If it's that important to you, I could work on that."
-                               $ loved += 5
-                           "No way.":
-                               her annoyed "Sorry, that's never going to happen."
-                               him annoyed "..."
-                               $ loved -= 5
-
-                   "OK, I'll try":
-                       her normal "It would be nice if the house was a little neater... OK, I'll try to do that."
-                       him happy "Thank you, [her_nickname]."
-                       $ loved += 5
-                   "Let's work on it together":
-                       her normal "How about if we take some time one evening and clean up the house together?"
-                       him normal "Yeah, I guess we could do that."
-                       $ loved += 2
-
-            elif (loved < 5):
-                him normal "I'd like it if we spent more time together."
-                $ loved += 5
-                menu:
-                    "Me too":
-                        her normal "I'd like that, too."
-                        him normal "Let's go on a walk together."
-                        her surprised "Right now?"
-                        him normal "Right after dinner!"
-                    "Doing what?":
-                        her concerned "Yeah, but what should we do? There's not exactly a lot going on..."
-                        him happy "I could read you Shakespeare."
-                        her laughing "Ha ha ha!"
-                        him sad "..."
-                        her surprised "You're serious?!"
-                        him annoyed "Well, I don't know! Doesn't it sound kind of fun to read to each other things that we like?"
-                        her happy "We could try it!"
-                    "We don't have time":
-                        her concerned "That sounds good, but we don't really have much free time, do we?"
-                        him concerned "We have been working pretty hard...but I think it's important to do things together. Even if we're just reading next to each other, that would be nice."
-                        her normal "OK, we can do that."
-            else:
-                him happy "Nothing at all. You always make me feel loved."
+            call she_can_do_better
 
     scene black with fade
     "I wondered if he would actually do anything based on what I said I liked. A few days passed and I figured he had forgotten all about it."
@@ -2355,7 +2391,10 @@ label monthly_event_18:
 
     him "Don't have time. I need to use it all day today."
     her "Okay, if you're sure..."
-    # TODO: tractor bg?
+    scene bg tractor with fade
+    show him normal at midleft
+    show her normal at midright
+    with moveinleft
     "He hooked up the tractor's battery to the cables, and I attached the other end to our house battery."
     her "It's hooked up!"
     him "Okay, now turn on the tractor!"

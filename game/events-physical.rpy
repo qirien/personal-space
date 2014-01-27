@@ -12,6 +12,7 @@ label physical_0:
     scene bg farm_exterior with fade
     "We lived a little farther away from the town, so that we had plenty of farmland around us. The other farms were arranged in sort of a circle around the town, too. But it meant that we were a little more isolated than the people who lived in the town."
     "We didn't have a car; [his_name] had his horse, but he rode her around the farm most days. We wanted to save the tractor fuel for farming, so if I wanted to get to town I had to walk -- or run."
+    scene bg path with fade
     "I thought it would be pretty useful to be able to get to town (and work) more quickly, so I decided to jog or run when I could."
     "For the first week I could only jog for a minute or so until I got out of breath and had to walk. But I didn't give up. I went to town all the time, so I had plenty of opportunities to practice."
     "Slowly, my running started to improve."
@@ -28,6 +29,7 @@ label physical_1:
     show her normal at center with dissolve
     her surprised "There must be water there!"
     "Sure enough, the stream that ran through the valley formed a pond that the trees drew water from. As I descended the slope, the fragrant smell of new plants reached me. At the bottom, the shade and cool water looked inviting and calm."
+    play sound "sfx/stream-3.mp3" loop
     scene bg pond with fade
     show her normal at center with dissolve
     her serious "Whew...I've been hiking for almost two hours now -- time for a break!"
@@ -73,7 +75,7 @@ label physical_1:
     else:
         her concerned "(I guess no one can hear my radio transmission...)"
         "I kept trying to move my legs, and I finally managed a slow sort of crawl away from the pond. It was impossible for me to enjoy the glowing sunset; all I could think of was getting out of there."
-
+    stop sound fadeout 3.0
     scene bg talam with fade
     show her serious at quarterleft
     him "[her_name]! [her_name]!"
@@ -147,7 +149,6 @@ label physical_1:
             
     $ loved += 5
     $ skill_physical += 10
-    jump events_skip_period
     return
 
 # chopping wood
@@ -155,6 +156,7 @@ label physical_2:
     scene bg fields with fade
     show her serious at center with dissolve
     "We needed firewood to burn for cooking and heating. I got an axe and split logs to build up a huge supply for later."
+    play sound [ "sfx/wood-logs-1.mp3", "sfx/wood-logs-2.mp3" ]
     show him normal at midleft with moveinleft
     show her at midright with move
     him happy "Wow, I didn't know I married a lumberjack."
@@ -166,12 +168,13 @@ label physical_2:
             him happy "No chance! I could sit here and watch you all day."
             her annoyed "No, I'm done! Your turn!"
             "He took the axe from me and setup a log. Even though it was getting cold, he took his shirt off and threw it at me."
-            her surprised "Ew! I don't want your sweaty shirt!"
+            her angry "Ew! I don't want your sweaty shirt!"
             show him flirting
-            show her laughing
             "He flexed his muscles exaggeratedly before setting up a log. I laughed."
+            show her laughing
             her happy "Putting on quite the show, aren't you?"
             him serious "You're my only audience."
+            play sound [ "sfx/wood-logs-1.mp3", "sfx/wood-logs-2.mp3" ]
             "It was sort of mesmerizing, watching the axe rise with smooth grace and fall with brutal finality. He was quite practiced at chopping wood."
             her normal "You're pretty good at that."
             him flirting "I'm good at a lot of things."
@@ -184,6 +187,7 @@ label physical_2:
             him happy "No, no! Chop away! I'll get dinner ready."
             hide him with moveoutleft
             "Chopping required a surprising amount of concentration. Balance the log at the optimum angle, bring up the axe, aim at the middle of the log, let it down, repeat again."
+            play sound [ "sfx/wood-logs-2.mp3", "sfx/wood-logs-1.mp3" ]
             "I chopped and chopped until I felt that someone was watching me."
             show him normal at midleft with moveinleft
             her concerned "How long have you been watching me?"
@@ -206,6 +210,8 @@ label physical_2:
                 "What should I say?"
                 "You're asking {b}me{/b}?!" if (relaxed <= 5):
                     her angry "I hadn't gotten to that yet because I had to chop up all this stupid wood!"
+                    stop sound
+                    play sound "sfx/ice-block-drop-01.mp3"
                     "I threw the axe on the ground in a way that probably wasn't good for the axe or the ground, but it felt good."
                     him annoyed "I just asked a question, you don't have to throw things around."
                     her annoyed "You implied that I should have already started on dinner."
@@ -238,7 +244,9 @@ label physical_3:
     show him serious at midright
     show her serious at midleft
     with dissolve
+    play sound "sfx/shovel.mp3"
     "[his_name] needed a ditch dug for the new field, so I volunteered to help. We dug and dug and dug, and finally, the ditch was finished."
+    stop sound fadeout 3.0
     him normal "Thanks for your help, [her_name]. You are actually pretty good at shovelling."
     her flirting "Me and my hidden talents..."
     him surprised "Yes, I wonder what else you are hiding?"
@@ -276,8 +284,9 @@ label physical_4:
 label physical_5:
     scene bg farm_interior with fade
     show her serious at center
+    play sound "sfx/rain-02.mp3" loop
     "On mornings when we had a solar flare warning, or if it was raining, I had to stay indoors."
-    "I know Yoga is so 21st century, but my grandma taught me some of the poses when I was young."
+    "I know yoga is so 21st century, but my grandma taught me some of the poses when I was young."
     "After warming up I had to decide what to do next."
     menu:
         "What should I do?"
@@ -290,7 +299,7 @@ label physical_5:
         "Practice balancing with long standing poses":
             "I tried to balance on one leg with my upper body in various poses."
             show her at midright with move
-            show him at midleft with moveinleft
+            show him normal at midleft with moveinleft
             him surprised "I didn't know you knew yoga."
             her serious "It's good to practice putting your body in different positions."
             him flirting "You don't practice that enough with me?"
@@ -298,7 +307,7 @@ label physical_5:
                 her flirting "We could practice together."
                 $ made_love += 1
             else:
-                "Yoga is different."
+                her annoyed "Yoga is different."
         "Do sun salutations.":
             "I switched rapidly between several poses until I worked up a sweat."
             show her at midright with move
@@ -322,7 +331,9 @@ label physical_5:
                     him flirting "Oh yeah. We're stuck inside; we might as well make the most of it."
                     $ made_love += 1
     
+    "It felt good to not just sit around while it was raining."
     $ skill_physical += 10
+    stop sound
     return
 
 # Go hiking again. Find a hot spring. If you bring him, you both enjoy a long soak and feel invigorated. If you don't bring him, you have to decide if you will tell him about it (even though you sort of promised not to hike alone)
@@ -353,15 +364,17 @@ label physical_6:
             hide him with moveoutright
             hide her with moveoutright
             scene bg stream with fade
+            play sound "sfx/stream-3.mp3" loop
             "Soon we came to a rocky area by a stream. We saw steam wafting off of a pool of water."
             show her normal at midleft
             show him normal at center
             with moveinleft
-            him surprised "Ow! It's [b]really[/b] hot!"
+            him surprised "Ow! It's {b}really{/b} hot!"
             her surprised "Too hot to dip our feet in?"
             him serious "Yes, it's probably hot enough to boil eggs."
             show her serious
             "The rocks nearby were colorful, especially near the water. We stood admiring them for a few minutes, and then we heard a puffing sound. Steam started billowing from the center of the pool."
+            play sound [ "sfx/puff.mp3", "sfx/geyser.mp3" ]
             if (skill_knowledge >= 50):
                 her surprised "It's a geyser; get out of the way!"
                 "I dragged [his_name] backwards with me as a fountain of steaming hot water shot up into the air from the middle of the pool."
@@ -377,10 +390,12 @@ label physical_6:
             her normal "It looks really cool."
             him normal "Yeah, now that we don't have to worry about getting cooked!"
             "After a few minutes the geyser died down."
+            stop sound fadeout 1.0
             her "Let's look around some more."
             him serious "Sure, but be careful - there might be others."
 
-            scene bg hot_spring with fade
+            scene bg hotspring with fade
+            play sound "sfx/stream-3.mp3" loop fadein 1.0
             "We followed the stream up the mountain further, until we found a spot where the stream was deeper and no plants grew around it."
             show her normal at center
             show him normal at midleft
@@ -391,6 +406,7 @@ label physical_6:
                 "Take a sample to Dr. Lily":
                     her normal "I'll take a sample to Dr. Lily; she can make sure it'd be safe for us to bathe in."
                     him serious "Good idea."
+                    stop sound fadeout 1.0
                     "I put some of the water into an old water bottle and we brought it back with us."
                     scene bg lab with fade
                     show lily at midright with dissolve
@@ -407,6 +423,7 @@ label physical_6:
                     him normal "I'm game!"
                     show her at sitting
                     show him at sitting
+                    with move
                     "We stripped down and got in the warm water. The water felt soft and slippery."
                     "There was a slight breeze whispering through the trees, but everything else was quiet."
                     if (loved >= 0):
@@ -421,7 +438,7 @@ label physical_6:
                     her "Let's look around some more."
                     him "Okay."
                     "We hiked around and found a few more hot springs of different temperatures; no more geysers, though."
-    
+            stop sound fadeout 1.0
             "It was neat to find hot springs and geysers not too far from the house. Maybe they'd be useful to us in the future."
 
         "Don't tell him":
@@ -430,7 +447,9 @@ label physical_6:
             "I set off west, towards the mountains, until I found a stream meandering down from them."
             scene bg stream with fade
             show her at center with moveinleft
+            play sound "sfx/stream-2.mp3" loop fadein 1.0
             "I followed the stream up the hill until I came to a rocky area with steam coming out of it. It smelled like rotten eggs."
+            play sound ["sfx/puff.mp3", "sfx/geyser.mp3" ]
             if (skill_knowledge >= 50):
                 her "Looks like there's geothermal activity in this area; I should be careful."
                 "Sure enough, as I was looking around, I heard a gurgling sound and steam billowed out of the center of the water."
@@ -440,12 +459,12 @@ label physical_6:
             her surprised "Ahhh, it's hot!"
             "I stood back to a safe distance and watched the water spray for a few minutes, until it died down."
             her serious "I didn't know they had geysers on this planet! I wonder if there's anything else interesting nearby..."
-            "I looked around carefully and found a warm spring"
+            "I hiked a little further and found a warm spring"
             her normal "Feels about the same temperature as a bathtub..."
             menu:
                 "Take a soak?"
                 "Sure, why not?":
-                    show her at sitting
+                    show her at sitting with move
                     "The water felt soft and slippery."
                     "There was a slight breeze whispering through the trees, but everything else was quiet."
                     her happy "Ahhhhhh..."
@@ -456,6 +475,7 @@ label physical_6:
                 "It could be dangerous...":
                     her concerned "I better not; it could be dangerous."
 
+            stop sound fadeout 1.0
             her normal "The hot spring is a neat find; maybe I should tell [his_name]? But then he'll know I went hiking without him... Maybe I'll tell Dr. Lily; she can see if it's safe for us to use."
             menu:
                 "Whom should I tell?"
@@ -507,8 +527,8 @@ label physical_7:
     menu:
         "What should I do?"
         "Wake him up!":
-            her normal "[his_nickname], I've got a craving for meat. Want to come hunting with me?"
-            if loved > 10:
+            her normal "Hey, [his_nickname], I've got a craving for meat. Want to come hunting with me?"
+            if loved >= 10:
                 him annoyed "It's so early!"
                 him normal "But I'd love a change of pace. Let's go!"
                 $ he_hunts == True
@@ -639,6 +659,7 @@ label physical_master:
     "Our brightly colored uniforms stood out clearly from the bushes, and we picked a spot where the startlers would be protected by a hillside after they scared the game."
     "I lined the shooters up carefully so they wouldn't hit each other or anyone else."
     "I had the startlers run up on the animals, banging pots and pans and yelling. Sure enough, the animals skittered out of the brush and into the open."
+    play sound "sfx/gunshots.mp3"
     "There were so many animals, it was almost impossible to miss. We shot a good number of them, and then let the rest of the herd go. We wanted them to come back next year."
     "We had a big party where we cooked up a big batch of the critters, and we all worked together to take off their shells and smoke and salt the ones we couldn't eat right away."
     "I felt reassured to know that, even if all the crops failed, we could survive off of local meat for awhile, even if it did sort of remind me of frog legs."
