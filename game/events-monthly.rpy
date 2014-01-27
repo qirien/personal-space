@@ -811,7 +811,7 @@ label monthly_event_7:
         "To us!":
             her happy "To us!"
             if (loved >= 0):
-                him happy "May we have many more years together..."
+                him happy "May we have many more years together..." #I got here while playing and it looped back to the beginning of the event. Does the if need a return after it?
             else:
                 him normal "To us, then."
             $ loved += 2
