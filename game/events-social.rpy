@@ -176,7 +176,9 @@ label social_3:
     thuc "Yes, the food was delicious!"
     her normal "Thanks for coming, we enjoyed your company."
     "[his_name] and I watched them start walking for home."
-    hide natalia, martin with moveoutleft
+    hide natalia
+    hide martin
+    with moveoutleft
     him "I wonder what our family will look like in a few years?"
     if (want_kids or is_pregnant):
         her concerned "It will be different, won't it?"
@@ -377,6 +379,7 @@ label social_5:
     $ community_level += 2
     return
 
+#TODO finish adding emotions
 # Someone's house burns down; will you help?
 label social_6:
     scene bg bedroom with fade
@@ -602,7 +605,6 @@ label done_party_menu:
             "I was a little nervous about playing music for everyone, but as soon as I started playing I lost myself in the songs."
 
         "It turned out we had a lot of musicians in our little community. Some of them played together - we had some great Irish dancing music with a fiddle and flute - but there were a lot of solos, too."
-        "TODO finish addin emotions.
 
         "Everyone brought some food from their farm to share. There were lots of different soups and salads, some strange fruits that Natalia found while hiking, some local game meat, some hearty rolls, and an egg casserole."
     if (have_goat == True):
