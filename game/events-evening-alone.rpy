@@ -93,9 +93,10 @@ label relax_alone_2:
     show her normal at midleft
     show him normal at midright
     with dissolve
-    her "Hey, [his_name], want to sit outside with me?"
-    him "Oh.... I kind of want to, but I'm so tired. I'm just going to go to bed."
-    hide him with dissolve
+    her surrpised "Hey, [his_name], want to sit outside with me?"
+    him concerned "Oh.... I kind of want to, but I'm so tired. I'm just going to go to bed."
+    her "Okay... good night, then."
+    hide him with moveoutright
     hide her with moveoutleft
     scene bg stars with fade
     "I sat out on the porch and gazed at the stars. They were so different from Earth, I had to make my own constellations."
@@ -105,9 +106,12 @@ label relax_alone_2:
     return
 
 # Solo trip to bath house
+# TODO: bath house background?
 label relax_alone_3:
     scene black with fade
     "I went to the bath house by myself. I brought extra wood so I could have a long, hot bath, and I carried up extra water from the river to make it a deep one. All my effort just made me appreciate it all the more."
+    show her serious at sitting with dissolve
+    her normal "Ahhh...."
     $ relaxed += 5
     $ loved -= 2
     return
@@ -179,7 +183,8 @@ label relax_alone_7:
 label relax_alone_8:
     scene bg bedroom with fade
     "I listened to some music - I didn't do anything else while listening, just lay back and really listened."
-    "It made me think of summer vacation when I was a teenager back home, just lying back and reading books in the shade, going swimming, and drinking lemonade. What would our kids' summers be like?"
+    "It made me think of summer vacation when I was a teenager back home, just lying back and reading books in the shade, playing video games, going swimming, and drinking lemonade."
+    "What would our kids' summers be like?"
     $ relaxed += 5
     $ loved -= 2
     return
@@ -187,6 +192,7 @@ label relax_alone_8:
 label relax_alone_9:
     scene bg farm_interior with fade
     "I set some grains cooking overnight, so they would be nice and soft for our breakfast in the morning."
+    "That way things wouldn't be rushed in the morning."
     $ relaxed += 5
     $ loved -= 2
 
@@ -216,7 +222,6 @@ label relax_alone_12:
     return
 
 # Events that can happen in any order
-# TODO: Add more of these.
 
 # Re-read childhood book
 label relax_alone_a:

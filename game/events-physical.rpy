@@ -531,7 +531,7 @@ label physical_7:
             if loved >= 10:
                 him annoyed "It's so early!"
                 him normal "But I'd love a change of pace. Let's go!"
-                $ he_hunts == True
+                $ he_hunts = True
             else: 
                 him sad "Can I just go back to sleep?"
                 her normal "Yeah, that's fine. Don't worry about me, I'll be careful."

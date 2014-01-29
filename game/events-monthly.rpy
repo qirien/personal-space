@@ -893,9 +893,10 @@ label monthly_event_8:
             him "Glad we could help. I hope this fence holds up for you."
             thuc "Well, you can count on my help anytime, if you need it."
             her happy "Thanks, I'm sure we will."
-            hide thuc
+            hide thuc with moveoutleft
             show him at midleft with move
             "We walked home by moonlight.  The two moons cast opposing shadows from the shrubs and trees, making a maze of light for us to follow. [his_name] reached for my hand."
+            show him at center with move
             him normal "Thanks for coming. Everything's better with you."
             her flirting "Even putting up fences is not too bad when we're together."
             $ loved += 5
@@ -1258,7 +1259,7 @@ label monthly_event_10:
 label anniversary_next_day:
     scene black with fade
     "He didn't come home that night, just stopped in for a quick breakfast early in the morning and then left again. I didn't have a chance to talk to him again until that evening when I got home."
-    scene farm_interior with fade
+    scene bg farm_interior with fade
     him normal "Hey, [her_nickname]."
     menu:
         "(He's just saying hi like nothing happened!)"
@@ -2066,6 +2067,7 @@ label monthly_event_14:
                 $ made_love += 2
                 $ loved += 5
 
+    # they don't want kids
     else:
         her concerned "[his_name], there's something we need to discuss."
         him surprised "Oh? What's that?"
@@ -2073,13 +2075,13 @@ label monthly_event_14:
         him serious "Six months, huh? Do you think we'll be ready by then?"
         menu:
             "What should I say?"
-            "No way":
+            "No way!":
                 her angry "No way! We can barely take care of our farm and a horse; how can we take care of a baby?!"
                 him concerned "I think we're doing pretty good."
                 her annoyed "It just feels like one more thing to worry about; I'm already stressed out about food, work, and this whole crazy planet."
                 him normal "Don't worry; we'll figure something out. We can always... get creative."
                 her flirting "I like it when you get creative."
-            "Maybe":
+            "Maybe...":
                 her concerned "I guess we could be, but...I just don't feel ready yet. Maybe things will be different in six months... or we could always use other methods."
                 him normal "Yeah, I feel ready, but you're the one that will be carrying the baby, so we can do whatever you think is best."
                 her serious "Let's not worry about it now. We'll see in six months."
@@ -2091,7 +2093,7 @@ label monthly_event_14:
                     her serious "Yeah."
                     "And that was that."
  
-            "I'm ready now":
+            "I'm ready now.":
                 her surprised "You know, I think I'm ready now."
                 him surprised "Yeah? You've changed your mind from last year?"
                 her serious "Yeah...let's stop the birth control now, and just see what happens."
@@ -2360,11 +2362,129 @@ label monthly_event_16:
 
 # MONTH 17
 # uses spiritual, creative
-# TODO: somewhere in here, ultrasound if pregnant, find out baby is a girl
-# TODO: Write this
 # TODO: Finish adding emotions
 label monthly_event_17:
     scene bg farm_interior with fade
+    "One day Sara invited me to hang out with her at the bath house. It was a lot of work to fetch and heat water for a bath, so it was more worth it to share the work and the bath."
+    #scene bg bath with fade
+    show sara at midright
+    show her normal at midleft
+    her happy "This was a good idea! I never thought taking a bath would be such a luxury..."
+    sara "It's a lot faster with you helping me haul water."
+    her normal "Is the hot water ready yet?"
+    sara "Yeah, it's boiling."
+    her "Alright, let's pour it in!"
+    show her at sitting
+    show sara at sitting
+    sara "Nice and hot! Not like our house; it's always freezing in there!"
+    her surprised "Really? It hasn't been that cold..."
+    sara "Well, Ilian never wants to use the heater. He's so stingy with everything!"
+    her normal "Like what?"
+    sara "Ohhh, like, the storehouse had some apples, right? The last ones from Earth. So I was like, 'It's our anniversary! We should eat some!' Well, apparently that wasn't a special enough occasion. So he keeps saving them."
+    her serious "Okay..."
+    sara "Then, yesterday, I was helping him sort through some stuff, and I happened to find the apples under another crate, and they're all moldy!"
+    her concerned "Oh no!"
+    sara "Since we both work in town and don't grow our own food, he's always bringing home whatever leftovers somebody else didn't want, so I can never plan anything and we're always eating the food nobody else wanted." 
+    sara "He could bring home some MREs, or something yummy that someone brought by, but no! It's eggplants and turnips, or whatever there's extra of that will go bad if no one eats it."
+    menu:
+        "What should I say?"
+        "[his_name] brings home food I hate, too.":            
+            her annoyed "Ohhh, I know what you mean. I am so sick of [hated_food], but [his_name] keeps growing it!"
+            sara "I know, right?" 
+        "He's just trying to be efficient.":
+            her concerned "He's probably just trying to be efficient with the food. It is a limited resource."
+            sara "I know... but he doesn't seem to get how much I hate those foods!"
+        "{i}That's hard...Could you get food somewhere else?{/i}" if (skill_creative >= 50):
+            her concerned "That's hard... do you think you could get food somewhere else?"
+            sara "Where?"
+            her normal "Maybe some of the other farmers? I mean, they bring their extra food to the storehouse, usually, but maybe you could ask them to let you have some first?"
+            sara "Why would they do that?"
+            her surprised "Well, maybe you could offer to do something for them in return?"
+            sara "Like what? I'm not good at anything here."
+            her happy "I bet some of them could use a babysitter for a while, or just an extra pair of hands helping sometimes."
+            sara "Ahhh, I'm scared of kids!"
+            her surprised "Really?"
+            sara "Well, I just don't have much experience with them..."
+            her happy "Maybe it would be good to start now, then!"
+            sara "Yeah, maybe so..."
+            $ community_level += 1
+        "{i}That's hard...Have you talked to him about how you feel?{/i}" if (skill_spiritual >= 50):
+            her "That's hard... Have you talked to Ilian about how you feel?"
+            sara "Yeah, but he just says 'That's what we have'."
+            her "Maybe you could help him keep track of things in the storehouse, so that if you see something you want, you could point out how long it's been there or how much of it we have?"
+            sara "That could work... at least we wouldn't let any apples go to waste if I'm keeping an eye on them!"
+            $ community_level += 1
+            
+    her concerned "Food is a lot harder here, isn't it?"
+    sara "Ohhh, what I wouldn't give for a pizza, or an ice cream bar..."
+    her serious "Or blueberry muffins!"
+    sara "Or a cheeseburger!"
+    her normal "Or nachos!"
+    sara "Ohhh..."
+    her serious "Mmmm..."
+    sara "Well, we can't have those, I guess, but I'm glad I'm not the only one suffering from processed food withdrawal."
+    her "Yeah."
+
+    sara "But, enough about me! What about you? What have you been up to lately?"
+    if (is_pregnant):
+        her normal "Well, we had an ultrasound the other day..."
+        sara "For the baby?! What is it?"
+        her flirting "We are pretty sure it is a human fetus."
+        sara "Ohhh, you know what I mean! Girl or boy?"
+        her happy "Looks like a girl!"
+        sara "Yay, how fun! Have you started getting ready yet?"
+        her surprised "Not yet, I was actually going to ask you what they have in the storehouse..."
+        sara "Ohh, they have the teensiest little shirts and pants! And little soft blankets, and diapers - all that stuff."
+        her normal "Well, that's good to know."
+        sara "Come over to the storehouse sometime and I'll show you."
+        her happy "Okay, I will!"
+        sara "Anything else going on?"
+
+    menu:
+        "What should I say?"
+        "[his_name] and I aren't getting along." if (loved < 0):
+            her concerned "[his_name] and I have been having some trouble lately..."
+            sara "Uh-oh. What's he been doing?"
+            her sad "I don't know... we're just both so stressed out all the time that it's hard to be nice to each other, let alone have any romance."
+            sara "[his_name]'s not very romantic, is he?"
+            her concerned "Not really..."
+            sara "Well, it might be up to you to make some romance happen, then!"
+            her surprised "Is it really romance if you have to make it happen?"
+            sara "Of course! What, you think roses and feathers just fall from the sky every time two people feel in love?"
+            her concerned "No, but... shouldn't it come naturally?"
+            sara "Sometimes it does, sometimes it doesn't. But you're not powerless, you know - even if you can't change what he does, you can control what you do."
+            her serious "That's true..."
+            $ loved += 2
+        "I feel so stressed out." if (relaxed < 0):
+            her concerned "Work has been tough, lately, and there's always some new problem. I feel like I can never relax."
+            sara "I know exactly what you mean."
+            her sad "..."
+            sara "... But this is is pretty relaxing, isn't it? Soaking in the hot water, looking up at the stars."
+            her surprised "Hey, there's only one moon tonight - it almost looks like Earth's sky!"
+            sara "Yeah! Don't you think that constellation is a bit like Orion?"
+            her concerned "I don't know, it looks kind of like a woman?"
+            sara "Maybe it should be Artemis, then!"
+            her serious "Yeah, Artemis. I like that."
+            sara "..."
+            her normal "Thanks, Sara - talking with you really helps."
+            sara "Anytime! You help me, too, you know!"
+            $ relaxed += 2
+        "I'm worried about the future":
+            her concerned "I'm worried about the future. Are we going to make it? Sometimes I worry we'll all get wiped out in an earthquake, or the supply ship from Earth will never come, or wild animals will rip our throats out in our sleep..."
+            sara "That last one's probably just [his_name] looking for a good time."
+            her laughing "Ha ha ha!"
+            her serious "Seriously, though, don't you worry sometimes?"
+            sara "Yeah, I worry about those things, too. But whenever I try to talk to Ilian about it, he starts getting even more worried than me. So I try and just forget about it."
+            her sad "Yeah..."
+            sara "But worrying is also kind of pointless. I mean, we're all doing the best we can, right?"
+            her concerned "I hope so..."
+            sara "So, just keep doing your best, and things will work out. That's what I believe, anyway."
+            her normal "That... makes sense. Thanks, Sara."
+        "Nothing's new.":
+            her normal "Nothing new happening at our house - just the same old routine."
+            sara "Well, thanks for listening to me, anyway. You're always such a good friend to me."
+            her serious "Thanks, Sara..."
+        
     return
 
 
@@ -2380,11 +2500,10 @@ label monthly_event_18:
         her "Sure, what for?"
     else:
         her "I guess. What is it?"
-
     him "I need to jump start my tractor. Can you run these cables to the house's battery for me?"
     her "Why do you need to jump start your tractor?"
     him "Something wrong with the battery. It won't hold a charge for very long anymore."
-    if ((skill_technical >= 70) or (profession == "mechanic")):
+    if ((skill_technical >= 60) or (profession == "mechanic")):
         her "Want me to take a look at it?"
     else:
         her "Well, shouldn't you take it in to get it fixed?"
@@ -2392,17 +2511,19 @@ label monthly_event_18:
     him "Don't have time. I need to use it all day today."
     her "Okay, if you're sure..."
     scene bg tractor with fade
-    show him normal at midleft
-    show her normal at midright
+    show him normal at quarterright
+    show her normal at quarterleft
     with moveinleft
     "He hooked up the tractor's battery to the cables, and I attached the other end to our house battery."
-    her "It's hooked up!"
-    him "Okay, now turn on the tractor!"
+    her surprised "It's hooked up!"
+    him surprised "Okay, now turn on the tractor!"
     "He was making sure the clamp was on the battery when I turned the tractor on. But then I heard a strange sound...and was that smoke...?"
-    him "Aaaahhhhh!"
+    him annoyed "Aaaahhhhh!"
     "I turned it off, and as I jumped out, I could see that the engine was on fire! [his_name] was backing away, his hand charred and red."
-    her "Are you okay?!"
-    him "The fire! Get the fire!"
+    her concerned "Are you okay?!"
+    him angry "The fire! Get the fire!"
+    show her serious
+    hide her with moveoutleft
     "I ran and got our fire extinguisher from the house."
     if ((skill_technical >= 70) or (skill_knowledge >= 70) or (profession == "mechanic")):
         "As I was running back to the tractor, I skimmed the label."
@@ -2456,7 +2577,7 @@ label monthly_event_18:
     him "I sh-sh-sh-should just go h-h-home."
     her "Just come in here, everything will be fine."
     if (profession == "doctor"):
-        "I cleaned his burned skin carefully, treated his burns with ointment, and wrapped them up carefully."
+        "I cleaned his burned skin carefully, treated his burns with ointment, and wrapped them up gently."
         "He gradually calmed down and stopped shaking, too."
         her "You need to let these heal for at least two weeks. Looks like mostly a second-degree burn, so it's not too serious, but it will be painful."
         him "I can't use my hands at all?"
@@ -2888,7 +3009,7 @@ label monthly_event_23:
         "I went to the doctor. I had to know for sure."
         her annoyed "(They didn't have enough room to bring a long a few more condoms, but there's plenty of pregnancy tests...)"
         "Sure enough, the test read positive."
-        her "(I can't believe this...)"
+        her "(I can't believe this...!)"
 
         scene bg farm_interior
         show her concerned at midright
@@ -3058,7 +3179,7 @@ label monthly_event_23:
                     "What about you?":
                         her concerned "Are {b}you{/b} having an affair with Thuc?"
                         him surprised "What? Of course not."
-                        her normal "Well, that's how ridiculous your suggestion is. So drop it."
+                        her angry "Well, that's how ridiculous your suggestion is. So drop it."
                         him annoyed "...Okay."
                         "I wasn't sure if he believed me or not. But he started acting more distant, and I felt he didn't trust me."
                         $ loved -= 5
@@ -3082,7 +3203,7 @@ label monthly_event_23:
                     show brennan at midright
                     brennan "What's wrong, my lovely? Did you decide you can't live another moment without me?"
                     her "...I'm pregnant."
-                    brennan "Oh. Well, congratulations."
+                    brennan "Oh. Well... congratulations."
                     her "I'm pretty sure it's yours. From when we...you know."
                     brennan "...What?"
                     her "It all happened so fast, we weren't careful- [his_name] was always very careful- I mean, the timing fits, and--"
@@ -3111,9 +3232,9 @@ label monthly_event_23:
                 him sad "..."
                 her surprised "Wait, you haven't-"
                 him surprised "Haven't what?"
-                her "You haven't cheated on me, have you?"
+                her concerned "You haven't cheated on me, have you?"
                 him sad "...No."
-                her "What's with the pause there?"
+                her surprised "...?"
                 him concerned "I thought about it, but decided not to."
                 her annoyed "You thought about it?!"
                 him "There was an...opportunity, but I told her no."
@@ -3123,7 +3244,7 @@ label monthly_event_23:
                 him "I mean, I know we don't always agree, but we promised to stay together. I'm yours, [her_name]."
                 her "Show me."
                 "He approached me slowly. Had it been so long that it seemed strange? My heart beat fast like it did when we were first dating."
-                "I hadn't realized how much I missed him. I missed his touch, his need, his soft kisses on my back, everything we had ever shared together."
+                "I hadn't realized how much I missed him. I missed his touch, his laugh, his soft kisses on my back, everything we had ever shared together."
                 "Together, we remembered it all."
                 $ loved += 5
                 $ made_love += 1
@@ -3138,7 +3259,7 @@ label monthly_event_23:
         show overlay night
         
         "[his_name] was generally a good lover, but sometimes he was finished before I was."
-        "Then he'd fall asleep, just as I was finally getting started."
+        "Then he'd fall asleep, just as I was finally getting in the mood."
         hide overlay night
         him happy "Mmmm, good morning, my amazing sweet bundle of loveliness."
         her annoyed "Good morning..."
@@ -3196,7 +3317,7 @@ label monthly_event_23:
                 him oncerned "Ummm..."
                 her annoyed "You know, slow down a bit?"
                 him surprised "Oh! Yeah. Sorry, I'm still trying to wrap my head around your horse imagery."
-                her annoyed "Don't think about it too much."
+                her laughing "Don't think about it too hard."
                 $ loved += 2
                 $ relaxed += 2
             "(Lie) Everything's fine.":

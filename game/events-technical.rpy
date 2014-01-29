@@ -145,7 +145,6 @@ label technical_6:
     scene bg farm_interior with fade
     "[his_name] grew a lot of vegetables; I guess part of their farming strategy was to grow many kinds of things, so if one thing got wiped out, you still had food."
     "But I didn't always like them."
-    $ hated_food = "kale"
     menu:
         her "I don't care how 'super' of a food it is, I just don't like:"
         "Kale":

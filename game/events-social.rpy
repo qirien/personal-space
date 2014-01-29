@@ -47,28 +47,64 @@ label social_0:
     return
 
 label social_1:
+    scene bg farm_exterior flip with fade
     "One day I was at the Peron's house. Natalia had found some fruits while hiking that the scientists deemed edible. She had picked so many; her table was covered with them."
-    her "These look really good!"
-    "Natalia" "Here, try one."
-    her "Thanks...Oh!"
+    show natalia at midright
+    show her normal at midleft
+    with dissolve
+    her happy "These look really good!"
+    natalia "Here, try one."
+    her surprised "Thanks...Oh!"
     "They tasted sweet and juicy, but they were full of hard, bitter seeds."
-    "Natalia" "I'm going to cut them in half, and then scrape out the seeds and dry them. Want to help? You can take some home with you."
-    her "Sure!"
+    show her normal
+    natalia "I'm going to cut them in half, and then scrape out the seeds and dry them. Want to help? You can take some home with you."
+    her happy "Sure!"
     "We cut and scraped and talked together all afternoon."
     $ skill_social += 10
     $ community_level += 2
     return
 
-# Convert shuttle into community center
-# TODO: should this be a monthly event? It would be kind of silly if you did this in month 21 or something...
+# Start a weekly game night at the community center
 label social_2:
-    her "Excuse me, Mayor Grayson?"
+    scene bg community_center with fade
+    "Soon after we arrived, the main shuttle bay was converted into a community center. It was the only building large enough for everyone to gather in at once."
+    "But other than official colony meetings, it wasn't used very much."
+    show pavel at midright with dissolve
+    show her normal at midleft with moveinleft
+
+    her serious "Excuse me, Mayor Grayson?"
     boss "Yes, [her_name]?"
-    her "What are we going to do with the shuttle? I know people are recycling a lot of the electronics and the fuel tanks already, but it seems like a waste to have such a nice space just stripped for parts."
-    boss "What did you have in mind?"
-    her "We could use it for a community center. We need a place where a large number of people can gather, whether it's for community meetings, celebrations, or emergencies."
-    boss "That's a fine idea! In fact, if I remember correctly, there were some instructions about converting the shuttle into a building. I just hadn't got around to it yet. I'll put the construction group on that as soon as possible."
-    "Once the construction group figured out how to convert the shuttle, the mayor asked everyone who could to come help work on the new community center."
+    her surprised "Can anyone use the community center?"
+    boss "Well, of course, for anything that's open to the entire colony."
+    her normal "Good, that's what I wanted to know..."
+    hide pavel
+    hide her
+    "I sent out a message inviting everyone to come to a once-a-week party. People could bring games and snacks to share, and just chat and be together."
+    "I wasn't sure anyone would show up..."
+    "But [his_name] agreed to come, and Sara and Ilian and the mayor were coming, so we could at least hang out."
+    show him normal at midleft
+    show her normal at center
+    with dissolve
+    show brennan at quarterright behind her, him
+    show pavel at right behind her, him
+    with moveinleft
+    show ilian at quarterleft behind her, him
+    show sara at left behind her, him
+    with moveinright
+    play sound "sfx/people.mp3" loop
+    "I was surprised when a lot of people showed up! I guess there's not much else to do here yet..."
+    hide pavel with moveoutleft
+    hide brennan with moveoutright
+    show natalia at left behind her, him
+    show martin at quarterleft behind her, him
+    with moveinright
+    show sara at quarterright behind her, him
+    show ilian at right behind her, him
+    with move
+    natalia "Great idea, [her_name]!"
+    sara "Yeah, it feels good to get out of the house!"
+    "Our snacks were not very tasty (mostly vegetables), and the games were not always fun, but joining together informally once a week helped us feel closer together."
+    stop sound fadeout 2.0
     
     $ skill_social += 10
     $ community_level += 2
@@ -76,68 +112,79 @@ label social_2:
 
 # Invite family over for dinner
 label social_3:
-    "Even though we had all lived together for months, there were some people in the community we didn't know very well."
     scene bg farm_interior with fade
+    "Even though we had all lived together for months, there were some people in the community we didn't know very well."
+    show her normal at midright
+    show him normal at midleft
+    with dissolve
     her "I invited the Nguyens over for dinner tomorrow night."
-    him "Oh yeah, I know Thuc pretty well. Don't they have, like, ten kids?"
-    her "Yes..."
-    him "Okay, that will be interesting...where are we all going to sit?"
-    her "I thought we'd just sit outside. I guess I should make some food that kids like, too."
-    him "Maybe some fruit?"
-    her "Yeah, I'll figure it out, don't worry."
+    him surprised "Oh yeah, I know Thuc pretty well. Don't they have, like, ten kids?"
+    her surprised "Yes..."
+    him serious "Okay, that will be interesting...where are we all going to sit?"
+    her serious "I thought we'd just sit outside. I guess I should make some food that kids like, too."
+    him normal "Maybe some fruit?"
+    her normal "Yeah, I'll figure it out, don't worry."
     "I worked hard on the food, and spread out some blankets to sit on, even though it meant I'd have more laundry to do to get all the dust out."
     scene bg farm_exterior with fade
-    julia "Thanks so much for having us over for dinner. That doesn't happen very often, you know, since we have such a large family."
-    her "Well, hopefully I made enough food! Let's eat!"
+    show him normal at right
+    show her normal at quarterright
+    with dissolve
+    show julia at center
+    show thuc at midleft
+    show kid at left
+    with moveinleft
+    julia "Thank you so much for having us over for dinner. I only hope we don't wear out your generosity by the end of the evening."
+    her happy "Well, hopefully I made enough food! Let's eat!"
     if (skill_domestic >= 10):
         "I served make-your-own-wraps, where you could put in beans or cheese or vegetables or whatever you wanted. I had some salsa or salad dressing that people could put on, too. They were delicious, and the kids liked them too."
     else:
         "I just put out a bunch of beans, crackers, fruit, and vegetables, and let people choose what they wanted. It tasted a little bland, but the kids seemed to like it."
     "Then the kids all played hide-and-seek around the farm while we talked with the Nguyens."
+    hide kid
     if (profession == "teacher"):
-        her "The kids are doing great in school."
+        her normal "The kids are doing great in school."
         julia "I'm glad to hear that! They look forward to it; they say you are a wonderful teacher."
-        her "That's nice to hear. Joanna is about ready to graduate, I think. She knows way more than I do about geology and physics already. And Miranda is not far behind."
+        her serious "That's nice to hear. Joanna is about ready to graduate, I think. She knows way more than I do about geology and physics already. And Miranda is not far behind."
         thuc "It's too bad there's no university here, but I think she will do fine studying with Dr. Lily."
     if (is_pregnant):
         thuc "I hear you are expecting a baby, congratulations!"
-        her "Thank you! So many new things keep happening; sometimes it's a little overwhelming."
+        her happy "Thank you! So many new things keep happening; sometimes it's a little overwhelming."
         julia "Yes, that's true. But mostly babies just need love. Everything else you can figure out as you go."
-        her "But...what if I don't love the baby right away?"
+        her concerned "But...what if I don't love the baby right away?"
         julia "You want to love the baby, don't you?"
-        her "Yes, of course!"
+        her serious "Yes, of course!"
         julia "Well, that's enough love to start with. Do you have someone to deliver the baby yet?"
-        her "I guess I assumed someone at the clinic would do it?"
+        her surprised "I guess I assumed someone at the clinic would do it?"
         julia "Let me help you, too. Call me on the radio when it's time, and I'll meet you at the clinic or wherever you are."
-        her "Really? That would be great; you seem to be an expert on having kids, but I'm not sure if anyone at the clinic knows much about babies."
+        her happy "Really? That would be great; you seem to be an expert on having kids, but I'm not sure if anyone at the clinic knows much about babies."
         julia "I'd be happy to help."
     elif (want_kids):
-        her "So...Mrs. Nguyen, you seem like an expert on kids."
+        her flirting "So...Mrs. Nguyen, you seem like an expert on kids."
         julia "Please, call me Julia. I do have a lot of experience with children - besides my own ten, I've been at twenty deliveries or so, helping the mother through labor."
-        her "Really? We want to have kids, sometime..."
+        her surprised "Really? We want to have kids, sometime..."
         julia "Well, I hope you'll let me help you. There's a lot that the doctors don't know about babies and new mothers."
         if (profession == "doctor"):
-            her "Yes, I know about all the medical conditions and treatments, but not very much about the actual babies themselves."
+            her serious "Yes, I know about all the medical conditions and treatments, but not very much about the actual babies themselves."
         else:
-            her "That's probably true..."
+            her surprised "That's probably true..."
     else:
         "[his_name] and I talked to the Nguyens about our farms and crops, and what things seemed to help the crops grow better, and what the kids were doing."
 
     "We talked and talked, until finally, it got dark. One of the moons was shining brightly; the other was dark."
+    show overlay night with dissolve
     julia "Thanks so much for having us over, [her_name]. I'm glad we got to know you a little better."
     thuc "Yes, the food was delicious!"
-    her "Thanks for coming, we enjoyed your company."
+    her normal "Thanks for coming, we enjoyed your company."
     "[his_name] and I watched them start walking for home."
+    hide natalia, martin with moveoutleft
     him "I wonder what our family will look like in a few years?"
     if (want_kids or is_pregnant):
-        her "It will be different, won't it?"
+        her concerned "It will be different, won't it?"
     elif (loved >= 0):
-        her "As long as you and me are in it, it will be just fine."
+        her flirting "As long as you and me are in it, it will be just fine."
     else:
-        her "Who knows?"
+        her surprised "Who knows?"
 
-    scene black with fade
-    
     $ skill_social += 10
     $ community_level += 2
     return
@@ -145,28 +192,37 @@ label social_3:
 #organize lunch group
 label social_4:
     "Sara and I met for lunch every week to chat and take a break."
+    scene bg community_center with fade
+    show sara at midright
+    show her normal at midleft
     sara "How are your neighbors doing?"
-    her "We ate with the Nguyens a while back and they were all doing well! We're all starting to live off the land; it's kind of exciting."
-    sara "I know! Hopefully we won't starve or anything. But along with eating, we should be sure to keep ourselves socially healthy too."
+    her happy "We ate with the Nguyens a while back and they were all doing well! We're all starting to live off the land; it's kind of exciting."
+    sara "I know! Hopefully we won't starve or anything."
+    her laughing "Yeah, really!"
+    sara "Sometimes it seems like the physical needs are actually the easiest... it's making social connections that's hard."
     menu:
         "I should get out more.":
-            her "Yeah, we should see if we can get a lunch group going! Lots of people are on break now; let's ask around."
+            her normal "Yeah, we should see if we can get a lunch group going! Lots of people are on break now; let's ask around."
             "We found a few other people who seemed interested in gathering at the community center for lunch every Friday."
         "I'm not worried.":
-            her "I feel pretty socially healthy now. I see you, my boss, and my husband pretty regularly."
+            her serious "I feel pretty socially healthy now. I see you, my boss, and my husband pretty regularly."
             sara "But we're going to be here the rest of our lives! Shouldn't we get to know everyone?"
             menu:
                 "I don't want to meet everyone.":
-                    her "Sometimes I feel like it's easier to like people when I don't know them."
+                    her concerned "Sometimes I feel like it's easier to like people when I don't know them."
                     sara "True. And if everyone knew each other we'd be more likely to gossip and get all drama-y."
-                    her "Maybe I could stand to meet a few new people though."
+                    her normal "Maybe I could stand to meet a few new people though."
                     sara "Look, there's someone else on her lunch break, let's introduce ourselves."
+                    show lily at quarterright with dissolve
+                    show her at center
+                    show sara at quarterleft
+                    with move
                     if (not met_Lily):
                         "We met Lily, one of the workers in the science lab. She invited us to come visit her to learn more about alien botany."
                     elif (met_Lily):
                         "I had already met Lily, but I introduced her to Sara and we had an enjoyable lunch together."
                 "I guess.":
-                    her "Well, if I'm going to meet them all eventually I might as well get to know them sooner rather than later."
+                    her serious "Well, if I'm going to meet them all eventually I might as well get to know them sooner rather than later."
                     sara "Exactly. Look, some other people are taking their breaks now too, let's ask them if they want to have lunch with us."
                     "We interrupted a few conversations, but luckily everyone was in a good mood and seemed happy to meet us. We decided to meet every Friday for lunch in the community center."
             
@@ -177,121 +233,144 @@ label social_4:
 # Organize community movie night!
 # Watch a neighbor's kids; think about having own kids
 label social_5:
+    scene bg community_center with fade
     "One week at Friday lunch group, we were all complaining about our lack of excitement."
+    show lily at quarterright
+    show sven at quarterleft
+    show sara at midleft
+    show her normal at midright
+    with dissolve
     lily "We all live so close to each other, but it seems like in the evening everyone just wants to go to bed early."
-    her "Well, people who aren't working in town are farming all day, which is pretty tiring."
+    her concerned "Well, people who aren't working in town are farming all day, which is pretty tiring."
     sven "That's true, but don't you get tired of sitting at home all the time? I'm in the library all day for work and the last thing I want to do when I get home is sit around by myself some more."
-    her "I'm pretty busy, but I agree that it'd be fun to do something together as a community."
-    lily "Let's have a community movie night! I was just reading on how we could use a magnifying glass with our tablets to make a projector."
+    her normal "I'm pretty busy, but I agree that it'd be fun to do something together as a community."
+    lily "I was just reading on how we could use a magnifying glass with our tablets to make a projector. Perhaps we could have a movie night?"
     sven "Yes, this sounds perfect. A movie is low-key enough that even if you're super tired from farming you should be able to sit through it."
     sara "And kids like to watch movies too, so we could include everyone."
-    #sven is introduced in knowledge 1, so he might appear here if the player-char hasn't yet met him. I tried to make it clear that he works in the library.
-    her "I know the perfect movie!"
+    her happy "I know the perfect movie!"
     menu:
-        "Let's watch a(n)..."
-        "sci-fi drama":
-            her "There's a space opera movie about finding the strength to persist through hardships that I think would be highly entertaining!"
-            sara "Oh gosh, is it one of those Star Wars remakes?"
-            her "Well, yes, but isn't it interesting to think about what space travel will be like in the future?"
+        "What should we watch?"
+        "A sci-fi drama":
+            her laughing "There's a space opera movie about finding the strength to persist through hardships that I think would be highly entertaining!"
+            sara "Oh no, is it one of those Star Wars remakes?"
+            her normal "Well, yes, but isn't it interesting to think about what space travel will be like in the future?"
             sara "You just like watching it for the cute guys."
-            her "I think everyone enjoys watching good-looking people do stupid things. Plus I already know we have it in the archives!"
+            her happy "I think everyone enjoys watching good-looking people do stupid things. Plus I already know we have it in the archives!"
             sven "We do have lots of Star Wars remakes in the archives, but maybe you didn't know that we have some rarer sci-fi movies here too."
-            her "Like what?"
-            sven "So, {i}Time for no man{/i} was originally a tellanovella, but when set in space, it suddenly became a sleeper cult hit in the 2030s!"
-            her "'No man', huh? Does it have any guys in it?"
+            her surprised "Like what?"
+            sven "So, {i}Time for No Man{/i} was originally a tellanovella, but when set in space, it suddenly became a sleeper cult hit in the 2030s!"
+            her flirting "'No man', huh? Does it have any guys in it?"
             sven "I think it has a few. It's not just lesbians if that's what you're asking."
             sara "Is it appropriate for children?"
             sven "Sure. There's some innuendo but that goes right over their heads."
-            "We decided to watch {i}Time for no man{/i} the next day in the evening. I sent out a message to the colony e-mail list, and tried to remind everyone I saw to come."
+            scene black with fade
+            "We decided to watch {i}Time for no man{/i} the next day in the evening. I sent out a message to the colony message board, and tried to remind everyone I saw to come."
             "The movie was kind of ridiculous. At one point two cousins realized they were actually sisters, and that their evil uncle was actually their father. Then it turned out he wasn't evil at all, but had been infected with an alien virus that caused him brain damage that made him act rudely."
             "A feminist organization let the cousins/sisters travel the galaxy at light speed to administer vaccines to the rest of civilization, but by the time they got anywhere, everyone else had been infected by the virus which made them act rudely."
-            him "This movie is ridiculous."
-            her "Yeah, there's no way a virus would only affect men. It's not like our immune systems are all that different."
-            him "What would you do if I turned into a jerk overnight?"
+            scene bg community_center with fade
+            show him normal at sitting, midleft
+            show her normal at sitting, midright
+            show overlay night
+            with dissolve
+            him annoyed "This movie is ridiculous."
+            her annoyed "Yeah, there's no way a virus would only affect men. It's not like our immune systems are all that different."
+            him surprised "What would you do if I turned into a jerk overnight?"
             menu:
                 "Take you to the doctor.":
-                    her "I would take you in to have your head examined."
-                    him "Because the only way I would be mean to you is if I had brain damage, right?"
-                    her "And if you were mean to me you might get brain damage, if you know what I mean."
-                    him "Oh, you're so feisty."
+                    her normal "I would take you in to have your head examined."
+                    him happy "Because the only way I would be mean to you is if I had brain damage, right?"
+                    her annoyed "And if you were mean to me you might get brain damage, if you know what I mean."
+                    him flirting "Oh, you're so feisty."
                     menu:
                         "You'd better believe it.":
-                            her "I know you like it like that."
+                            her flirting "I know you like it like that."
                             him "Let's take this indoors!"
                             $ made_love += 1
                         "Ugh, stop it.":
-                            her "Stop being so patronizing. It's like you don't take my threats seriously."
-                            him "I'm pretty sure that if we got in a fight I could win. Besides, it's not like you're doing physical labor all day like I am. I'm a lot stronger."
-                            her "Well you don't have to talk down to me like that just because you're stronger."
-                            him "Geez, sorry."
+                            her annoyed "Stop being so patronizing. It's like you don't take my threats seriously."
+                            him annoyed "I'm pretty sure that if we got in a fight I could win. Besides, it's not like you're doing physical labor all day like I am. I'm a lot stronger."
+                            her angry "Well you don't have to talk down to me like that just because you're stronger."
+                            him concerned "Geez, sorry."
                             $ loved -= 2
                 "You already are a jerk.":
-                    her "Too late, you're already a jerk."
-                    him "Hey, I know I tease you a lot, but that doesn't mean I'm a jerk."
-                    her "Then I guess I wouldn't notice anything was wrong!"
+                    her annoyed "Too late, you're already a jerk."
+                    him surprised "Hey, I know I tease you a lot, but that doesn't mean I'm a jerk."
+                    her angry "Then I guess I wouldn't notice anything was wrong!"
                     $ loved -= 2
             "It seemed like the other families enjoyed the movie too, even though it was pretty ridiculous."
-        "historical mystery action flick":
-            her "Sherlock Holmes would be perfect! It has mystery, suspense, romance, action, and would help educate children about the 1890s."
+        "A historical mystery action flick":
+            her happy "Sherlock Holmes would be perfect! It has mystery, suspense, romance, action, and would help educate children about the 1890s."
             sara "Yeah, and it would encourage kids to try smoking alien weeds."
-            her "Oh come on. We grew up watching films with people drinking all the time and it didn't turn us into alcoholics."
+            her annoyed "Oh come on. We grew up watching films with people drinking all the time and it didn't turn us into alcoholics."
             sara "The plot of a Sherlock Holmes mystery is also difficult to understand, so it might not hold their interest."
             sven "Wait, I can think of a historical film with plenty of mystery that kids and adults might like."
-            her "Tell us about it."
+            her normal "Tell us about it."
             sven "It's a mini-series called {i}The Adventures of Emily Thompson{/i} about a young girl living in a small town in England during the 1900s. She solves various mysteries including finding missing shoes and pets, culminating in her finding the culprit of a livestock theft."
-            her "Well, that does sound a little more child-friendly than murder mysteries."
+            her surprised "Well, that does sound a little more child-friendly than murder mysteries."
             sara "Let's do it."
+            scene black with fade
             "I sent out a message to the colony e-mail list, and tried to remind everyone I saw to come."
+            scene bg community_center with fade
+            show her normal at midright
+            show him normal at midleft
+            show overlay night
+            with dissolve
             "We had a pretty good turnout, and the kids and adults both found things to laugh at."
-            him "So, the part where the sadistic child was killing sheep with bread-encrusted coins was a little hard for me to believe."
-            her "It could have been worse. The sadistic child could have been a werewolf who was eating them."
-            him "Yeah, but making coins out of copper is a waste of metal!"
-            her "Seriously, they should be making teapots out of them."
-            him "Or you know, wires."
-        "animated art film":
-            her "Let's put on an old cartoon movie so that the kids will enjoy it too."
+            him surprised "So, the part where the sadistic child was killing sheep with bread-encrusted coins was a little hard for me to believe."
+            her flirting "It could have been worse. The sadistic child could have been a werewolf who was eating them."
+            him happy "Yeah, but making coins out of copper is a waste of metal!"
+            her happy "Seriously, they should be making teapots out of them."
+            him normal "Or you know, wires."
+        "An animated art film":
+            her normal "Let's put on an old cartoon movie so that the kids will enjoy it too."
             lily "Oh, let's watch {i}Wall-E{/i}, I always thought that one was cute."
-            her "I was thinking more along the lines of {i}The Old Man and the Sea{/i}."
+            her surprised "I was thinking more along the lines of {i}The Old Man and the Sea{/i}."
             sven "I think that movie would put everyone to sleep."
-            her "It's only forty minutes long!"
+            her normal "It's only forty minutes long!"
             sven "Let's watch {i}Wall-E{/i}. I haven't seen it in a while and it could start some interesting conversations about what our colony should be like."
             sara "I agree! Some of the younger kids have never seen it, and I think they would like it."
+            scene black with fade
             "We decided to watch {i}Wall-E{/i}. I sent out a message to the colony e-mail list, and tried to remind everyone I saw to come."
+            scene bg community_center with fade
+            show her normal at midright
+            show him normal at midleft
+            show overlay night
+            with dissolve            
             "The kids enjoyed watching the robot's antics, and the trash-filled city reminded me of some of the things we were trying to do differently in our colony."
-            her "I'm so glad the green revolution happened before the whole earth turned into a landfill."
-            him "Yeah, and then no one could make anything because the regulations on materials were so strict."
-            her "Aren't you glad we're here where we can decide those things for ourselves?"
-            him "Yes, I am glad. Are you?"
+            her concerned "I'm so glad the green revolution happened before the whole earth turned into a landfill."
+            him concerned "Yeah, and then no one could make anything because the regulations on materials were so strict."
+            her normal "Aren't you glad we're here where we can decide those things for ourselves?"
+            him normal "Yes, I am glad. Are you?"
             menu:
-                "Am I glad we came here?"
+                "What should I say?"
                 "I love it here!" if (loved > 0):
-                    her "Of course I miss my family, but I love our community and working with you to make a place for ourselves."
-                    him "Good, because we're stuck here!"
+                    her normal "Of course I miss my family, but I love our community and working with you to make a place for ourselves."
+                    him laughing "Good, because we're stuck here!"
                 "I don't really like it here" if (loved <= 0): 
-                    her "I think about going home all the time. I wish I hadn't come."
-                    him "Really? I thought you were getting used to it."
-                    her "No, I'm not."
-                    him "Maybe you just need time."
-                    her "You don't wish we could go home?"
-                    him "I love it here! I love that we're going to be able to live off the fruits of our labors and have contact with the land we live on."
-                    her "But we might not survive! And I keep messing things up."
-                    him "Making mistakes is how we'll learn! And even if we end up dying young together... isn't that kind of romantic?"
+                    her sad "I think about going home all the time. I wish I hadn't come."
+                    him surprised "Really? I thought you were getting used to it."
+                    her annoyed "No, I'm not."
+                    him concerned "Maybe you just need time."
+                    her surprised "You don't wish we could go home?"
+                    him happy "I love it here! I love that we're going to be able to live off the fruits of our labors and have contact with the land we live on."
+                    her concerned "But we might not survive! And I keep messing things up."
+                    him normal "Making mistakes is how we'll learn! And even if we end up dying young together... isn't that kind of romantic?"
                     menu:
-                        "Is dying together romantic?"
-                        "No":
-                            her "It's not romantic. We'll be too dead to appreciate how cute our sacrifice is."
-                            him "Well, I'm happy as long as we're together."
-                        "It could be":
-                            her "If they find our skeletons embracing each other, I guess that could be romantic."
-                            him "That's the spirit!"
+                        "What should I say?"
+                        "No, it's not romantic":
+                            her annoyed "It's not romantic. We'll be too dead to appreciate how cute our sacrifice is."
+                            him normal "Well, I'm happy as long as we're together."
+                        "It could be romantic":
+                            her flirting "If they find our skeletons embracing each other, I guess that could be romantic."
+                            him flirting "That's the spirit!"
                             $ loved += 5
                 "Most of the time":
-                    her "Most of the time I'm happy to be here. There are lots of things I miss, of course. But it's also exciting to start something new."
-                    him "We're living off the land! We can make our own futures!"
-                    her "Yeah, as long as that future involves farming of some kind."
-                    him "Well, you're not farming."
-                    her "True. But it's going to be a big part of our lives for the foreseeable future, is what I meant."
-                    him "That's the way I like it. There's nothing like farm-fresh food to make you healthy."
+                    her normal "Most of the time I'm happy to be here. There are lots of things I miss, of course. But it's also exciting to start something new."
+                    him happy "We're living off the land! We can make our own futures!"
+                    her flirting "Yeah, as long as that future involves farming of some kind."
+                    him annoyed "Well, you're not farming."
+                    her annoyed "True. But it's going to be a big part of our lives for the foreseeable future, is what I meant."
+                    him normal "That's the way I like it. There's nothing like farm-fresh food to make you healthy."
         
     "The families went home as we talked. Sven and Sara and Lily and I congratulated each other for a movie well-watched, and I went home feeling like I helped everyone feel a little closer."
     $ skill_social += 10
@@ -305,6 +384,7 @@ label social_6:
     show him serious at midright
     show her serious at midleft
     with dissolve
+    #TODO add images
     "One good thing about being such a small community was that we all helped out when someone needed it."
     "Like when Sara's house burned down..."
     "It was the middle of the night when the radio crackled on."
@@ -522,8 +602,9 @@ label done_party_menu:
             "I was a little nervous about playing music for everyone, but as soon as I started playing I lost myself in the songs."
 
         "It turned out we had a lot of musicians in our little community. Some of them played together - we had some great Irish dancing music with a fiddle and flute - but there were a lot of solos, too."
+        "TODO finish addin emotions.
 
-    "Everyone brought some food from their farm to share. There were lots of different soups and salads, some strange fruits that Natalia found while hiking, some local game meat, some hearty rolls, and an egg casserole."
+        "Everyone brought some food from their farm to share. There were lots of different soups and salads, some strange fruits that Natalia found while hiking, some local game meat, some hearty rolls, and an egg casserole."
     if (have_goat == True):
         "We brought some cheese we had made from our goat's milk, along with a few vegetables."
     else:

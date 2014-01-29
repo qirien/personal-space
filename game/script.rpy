@@ -8,9 +8,11 @@
 image bg stars = "bg/starscape.jpg"
 image bg earth = "bg/earth.jpg"
 image bg farm_exterior = "bg/farm-exterior.jpg"
+image bg farm_exterior flip = im.Flip("bg/farm-exterior.jpg", horizontal = True)
 image bg porch = "bg/farm-porch.jpg"
 image bg wedding = "bg/wedding.jpg"
 image bg farm_interior = "bg/farm-interior.jpg"
+image bg farm_interior flip = im.Flip("bg/farm-interior.jpg", horizontal = True)
 image bg fields = "bg/fields.jpg"
 image bg colony_ship_bunk = "bg/colony-ship-bunk.jpg"
 image bg talam = "bg/talam.jpg"
@@ -137,6 +139,7 @@ define cheated_on_him = False
 define exposed_brennan = False
 define ocean_character = ""
 define wants_to_leave = False
+define hated_food = "turnips"
 
 #Technical variables used to control how the game displays
 define fade = Fade(0.2, 0.2, 0.2)

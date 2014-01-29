@@ -536,13 +536,13 @@ label work_3:
     brennan "Thanks, [her_name]. I really enjoy working with you."
     menu:
         "What should I say?"
-        "I enjoy working with you, too":
+        "I enjoy working with you, too.":
             her "I like working with you too; you've been very helpful."
             brennan "I'm glad there's something useful I can do."
             her "You weren't doing anything useful before?"
-        "Tell me about yourself":
+        "Tell me about yourself.":
             her "Thanks. So, what brings you to the colony, anyway?"
-        "Bye":
+        "Gotta go, bye.":
             her "Thanks. Um, I gotta go."
             brennan "I'll see you tomorrow, [her_name]..."
             return
