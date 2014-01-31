@@ -152,8 +152,8 @@ label relax_alone_5:
 # He does things by himself sometimes, too.
 label relax_alone_6:
     scene bg farm_interior with fade
-    show him at midleft
-    show her at midright
+    show him normal at midleft
+    show her normal at midright
     with dissolve
 
     him surprised "You want to watch a movie or something?"

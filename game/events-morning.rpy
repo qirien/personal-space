@@ -762,7 +762,9 @@ label work_5:
     show her normal at midright with dissolve
     show brennan at right with dissolve
     "It started as a normal day at work, when Dr. Lily's voice came over the radio."
+    play sound "sfx/radio.mp3"
     lily "Attention all colonists! This is Dr. Lily. A strong solar flare has just started. Get inside now. I repeat, there is a solar flare in progress, please get indoors."
+    # TODO: play big static noise?
     "The radio emitted a strong burst of static, and I could barely make out anything else she said."
     lily "...close the...stay...further notice..."
     "Our computer pads also popped up a notification from her."
@@ -808,15 +810,16 @@ label work_5:
         "Let him go":
             her "If you really want to go, I won't stop you."
             brennan "Not that you could, anyway. But I'm glad you understand."
-        "{i}Give him a lead apron{/i}" if (profession == "doctor"):
-            her "Here, at least wear this lead apron. It won't completely protect you, but it's better than nothing."
+        "{i}Wear this blanket{/i}" if (profession == "doctor"):
+            her "Here, at least put this over your head to shield you from some of the flare's rays. It won't completely protect you, but it's better than nothing."
             brennan "Thank you, [her_name]."
             $ grays_absorbed = 2
 
     hide brennan with moveoutleft
-    show her normal at midright with move
+    show her serious at midright with move
     "I watched him leave. The weather was deceptively placid - bright sun, a cool breeze, tree branches waving... the deadly radiation was completely invisible."
     "Neither Mr. Peron or I talked; we couldn't do anything else, either; we were too nervous."
+    play sound "sfx/radio.mp3"
     "The radio crackled every ten minutes - we could just barely make out that it was Dr. Lily repeating her warning."
     "The second time she repeated her warning, the radio came on again just minutes later."
     brennan "[her_name]...Peron house...got everyone inside...There was...but we...anyway. Repeat, we're...okay."

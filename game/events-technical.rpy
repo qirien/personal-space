@@ -47,28 +47,50 @@ label technical_2:
 
     return
 
-# setup alarm system for solar flares. see http://www.spaceweather.com/glossary/srs.html for information on solar flare radiation storms. Help with technical details appreciated.
-# TODO: they would have to already have this or else everyone would be dying from radiation. Perhaps she is making a local one in case Lily's doesn't work?
+# Improve alarm system for solar flares. see http://www.spaceweather.com/glossary/srs.html for information on solar flare radiation storms. Help with technical details appreciated.
 label technical_3:
     scene bg farm_interior with fade
-    "We knew that solar flares were probably happening, since our electronics were sometimes unreliable, but we didn't know when they were."
-    her "If I adjust this radio to receive AM signals, it can tell me when the frequency indicates a solar flare is on its way."
-    her "I can attach it to a beeper, so when I hear it I'll have about 13 minutes to assess the size of the flares and take down the solar panels if necessary."
-    "I tested my solar flare detector that week. It worked for two of the bigger flares, but the beeper wouldn't stop until the flare was over."
-    "There must be some way to make this work."
-    menu:
-        "Search the local database for a solution":
-            "The network at our house was down because of the most recent solar flare, but I was able to download a circuitry manual at the library. I learned about a one-shot circuit that would only make the buzzer beep once."
-            "I had to borrow a few more circuits while I was at the library, and while I was there I told Sven about my project."
-            sven "We're working on an intercom system with metal tubes, which wouldn't be affected by the solar flares. When I'm done could we use your flare sensor to tell everyone when to take cover?"
-            menu:
-                "Of course.":
-                    "It's part of my duty as a colonist to help the others. Of course I'll donate my radio."
-                    $ community_level += 5
-                "I'd like to keep it for myself.":
-                    her "I didn't trust Sven's system to reach me out in the fields, so I told him I'd rather keep my radio."
-        "Just unplug it during the rest of the flare":
-            "I figured that I could keep the buzzer on until a flare occured, and then I could unplug it, checking the radio frequencies before going out again."
+    show her normal at midright
+    show him normal at midleft
+    with dissolve
+    #TODO: play sound "sfx/siren.mp3"
+    show him serious with dissolve
+    her serious "There goes the siren again. I guess there's another flare."
+    him serious "There goes all my chance to get anything done this morning! If I had known there was going to be a flare today, I would have worked harder yesterday and slept in this morning!"
+    her surprised "I wonder if there's a way to get more advanced notice of the flares?"
+    him happy "If there is, I bet you'll find it!"
+    "Since I couldn't go to work, either, I decided to spend the time working on a better solar flare detector."
+    # TODO: Fact check
+    "The current detector could detect flares as they started and give about an hour's notice to everyone."
+    "But I thought we could do better. I researched solar flares and detection and prediction methods, and discovered a method for predicting solar flares based on the rate of decay of radioactive materials."
+    "I didn't have any of those lying around, so I decided to ask Dr. Lily."
+    scene bg lab with fade
+    show lily at midright with dissolve
+    show her normal at midleft with moveinleft
+    her concerned "Do you have any radioactive materials I could use?"
+    lily "Yes, we have a small stockpile for use with--"
+    her surprised "What?"
+    lily "Why do you want it?"
+    her normal "I want to build a solar flare predictor instead of just a detector."
+    lily "Ah, yes, because gamma-radiation rates change slightly when exposed to solar neutrinos. Winston, one of the scientists who used to work with me was working on a similar project."
+    her surprised "Oh, I've never met him. Where is he now?"
+    lily "He died."
+    her sad "Oh, I'm sorry..."
+    lily "He failed to adequately shield himself from solar and radioactive radiation. It eventually caught up with him."
+    her serious "I won't make the same mistake. Can you show me what he was working on?"
+    lily "Yes, here is the device. It has a small amount of manganese 54 inside, and a gamma-radiation detector here. That's as far as he got."
+    her normal "This is a great start! All I need to do is hook it up to the network so it can send me the data."
+    lily "Yes. I probably should have finished this project, but... it reminded me too much of Winston."
+    her concerned "Oh...were you close?"
+    lily "He was my husband."
+    her suprised "Oh! I didn't know you were married!"
+    her sad "I'm so sorry..."
+    lily "It is not your fault. But it has considerably slowed down the research here."
+    her happy "Well, that part, at least, I can help with."
+
+    "I hooked up the radiation detector to the network and had it send the data to one of the servers in the lab. Then I wrote a program to analyze the data and detect changes."
+    "I would need to collect more data to make sure the system was really working properly, so I didn't publish the data to the colony just yet."
+    "But during the next flares, I would see how the radiation rates changed beforehand and use that data to write prediction software."
             
     $ skill_technical += 10
     return
@@ -76,7 +98,7 @@ label technical_3:
 # Make laundry wringer
 label technical_4:
     scene bg laundry with fade
-    #show her angry at center
+    show her annoyed at center
     her "These clothes still aren't dry?! It's so humid here, it takes forever..."
     show her normal at center
     her "Perhaps if I could wring out more of the water before hanging them up? Hmmm"

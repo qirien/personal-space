@@ -9,6 +9,7 @@ image bg stars = "bg/starscape.jpg"
 image bg earth = "bg/earth.jpg"
 image bg farm_exterior = "bg/farm-exterior.jpg"
 image bg farm_exterior flip = im.Flip("bg/farm-exterior.jpg", horizontal = True)
+image bg farm_exterior flip burned = "bg/farm-exterior-burned.jpg"
 image bg porch = "bg/farm-porch.jpg"
 image bg wedding = "bg/wedding.jpg"
 image bg farm_interior = "bg/farm-interior.jpg"

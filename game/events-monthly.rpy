@@ -1791,7 +1791,7 @@ label monthly_event_13:
     scene bg community_center with fade
     "We awoke one morning to the tragic news that the Peron's four-year-old girl, Josephina, was missing."
     show her serious at midleft
-    show julia at midright
+    show natalia at midright
     "Mrs. Peron was alternately furious with herself and those around her."
     natalia "Someone should have been watching her more closely!"
     natalia "I should have been watching her more closely..."
@@ -1835,8 +1835,8 @@ label monthly_event_13:
     show her serious at midright
     with dissolve
     boss "[her_name], you've been randomly selected to be on the jury. Is there any reason you should not do this? Any conflict of interest with either side?"
-    her "No, not that I can think of..."
-    boss "Very well. We will proceed with the trial at two o'clock."
+    her "I'm friends with Sara and Ilian, but, I guess everyone knows each other here."
+    boss "That's fine. We will proceed with the trial at two o'clock."
     
     scene bg community_center with fade
     "Everyone in the town turned out to see the trial. Ilian repeated what happened, and Mrs. Peron repeated what she had found. It sounded like a fairly simple case of involuntary manslaughter; we mainly needed to decide upon a sentence."
@@ -1868,6 +1868,7 @@ label monthly_event_13:
     lily "There are no would-be criminals here, Thuc. What you are proposing is a death sentence. I think he should simply provide a certain amount of free labor to the Peron family every week. Perhaps that way they can eventually forgive him."
     sven "I don't like either of those options, but I can't think of anything better."
 
+    # TODO: Make all these options work with being able to see Ilian around town still.
     menu:
         "What will you argue for?"
         "Work for Perons":
@@ -1944,6 +1945,10 @@ label monthly_event_14:
             "I went to lay down and fell asleep immediately..."
 
         "The next morning I felt less tired, but still a little off. I went to work anyway, and had been standing up all day when I started to feel dizzy and sick to my stomach."
+        call set_work_bg
+        show her serious at midright
+        show brennan at midleft
+        with dissolve
         her concerned "Excuse me, please."
         brennan "Are you alright? You don't look so good."
         her sad "I just need... to rest for a bit..."
@@ -1956,6 +1961,9 @@ label monthly_event_14:
                 "The fresh air and walking seemed to help some, but I was still glad to finally get home."
             "Try and get some work done":
                 "I went back out and was able to finish up the day's work, taking two more breaks when I started to feel too light-headed."
+        scene bg farm_interior with fade
+        show him at midright with dissolve
+        show her at midleft with moveinleft
         "It felt good to get home. I still wasn't feeling well so I decided to lie down."
         him surprised "Are you feeling any better?"
         her concerned "Not really."
@@ -2254,6 +2262,7 @@ label monthly_event_16:
     "I felt better at work, and lunchtime was no problem, but as I was walking home, I felt sick again. I ended up throwing up by the side of the road, which wouldn't have been too bad except some of it got on my clothes. Now I had to do laundry, and it was my turn to make dinner..."
     scene bg farm_interior with fade
     show her serious at midright with dissolve
+    #TODO: cellar background?
     menu:
         "What should I do?"
         "Cook something simple":
@@ -2389,7 +2398,7 @@ label monthly_event_17:
     menu:
         "What should I say?"
         "[his_name] brings home food I hate, too.":            
-            her annoyed "Ohhh, I know what you mean. I am so sick of [hated_food], but [his_name] keeps growing it!"
+            her annoyed "Ohhh, I know what you mean. I am so sick of [hated_food], but [his_name] keeps growing them!"
             sara "I know, right?" 
         "He's just trying to be efficient.":
             her concerned "He's probably just trying to be efficient with the food. It is a limited resource."

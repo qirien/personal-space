@@ -41,14 +41,14 @@ init python:
             event(skill_type + "_" + `i`,
                   "act == 'act_" + skill_type + "' and skill_" + skill_type + " >= " + `i*10`,
                   event.once(),
-                  event.happened(skill_type + "_" + `i-1`), 
+                  #event.happened(skill_type + "_" + `i-1`), 
                   priority=10)
 
         # This event happens when a skill reaches 100.
         event(skill_type + "_master",
               "act == 'act_" + skill_type + "' and skill_" + skill_type + " >= 100",
               event.once(),
-              event.happened(skill_type + "_9"),
+              #event.happened(skill_type + "_9"),
               priority = 10)
 
 
