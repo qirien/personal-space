@@ -3,13 +3,13 @@
 
 # Default Event
 label technical_def:
-    scene bg farm_exterior with fade
+    scene bg tractor with fade
     "I tuned up some of the farm equipment."
     $ skill_technical += 5
 
 # Intro Event
 label technical_0:
-    scene bg farm_exterior with fade
+    scene bg tractor with fade
     "I decided to familiarize myself with all the farm equipment so that if something broke, I would be able to understand the problem quicker."
     "The tractors were an interesting biofuel/solar hybrid and were built in a very modular way so that pieces could easily be taken out and replaced, and it had a hitch on the back for attachments like plows, cutters, loaders, etc."
     "I downloaded the schematics and spent some time studying them."
@@ -21,6 +21,7 @@ label technical_0:
 label technical_1:
     scene bg farm_exterior with fade
     "I installed an antenna on the roof so that we can communicate with the town better. It took some trial and error to figure out the exact alignment and height, since this planet's atmosphere and shape are different from Earth's, but it's working with the radios pretty well."
+    "Maybe this way we wouldn't be completely cut off during a solar flare, but could still have some communication with town."
     $ skill_technical += 10
     return
 
@@ -30,17 +31,25 @@ label technical_2:
     "Even though we have a solar panel to run our pad computers, the lights, and a few other things, we do most work the old-fashioned way, without electricity."
     "And did I mention there's no running water? We have a well and a pump, but we're always fetching water with buckets...Well, mostly I fetch water with buckets, since [his_name] has a bunch of pipes and canals setup for watering the farm."
     scene bg farm_interior with fade
-    her "Washing dishes by hand is bad enough, but to also have to fetch and heat the water? There's got to be a better way..."
-    him "Here, I'll do the dishes tonight."
-    her "No, it's my turn, I'll just do it."
-    him "No, really. I'll do the dishes, and while I'm washing them, maybe you can think of a better system that would make it easier."
-    her "That...is a really good idea."
+    show her annoyed at midright
+    show him serious at midleft
+    with dissolve
+    her annoyed "Washing dishes by hand is bad enough, but to also have to fetch and heat the water? There's got to be a better way..."
+    him normal "Here, I'll do the dishes tonight."
+    her serious "No, it's my turn, I'll just do it."
+    him serious "No, really. I'll do the dishes, and while I'm washing them, maybe you can think of a better system that would make it easier."
+    her surprised "That...is a really good idea."
+    scene black with fade
     "I got out my pad and started sketching some ideas. What could we use for pipes? How could I pump the water out of the well automatically? I did some research on early plumbing systems."
     "[his_name] did the dishes every night for a week while I worked on the plans, and then we spent a day together building it."
-    her "OK, so if we turn this crank here, that turns the screw that pulls up the water. Try it!"
-    him "Nothing's happening."
-    her "Be patient! Keep turning!"
-    him "I will...I trust you."
+    scene bg farm_interior with fade
+    show her normal at midright
+    show him normal at midleft
+    with dissolve
+    her normal "OK, so if we turn this crank here, that turns the screw that pulls up the water. Try it!"
+    him serious "Nothing's happening."
+    her happy "Be patient! Keep turning!"
+    him flirting "I will...I trust you."
     "The cold trickle was nothing like a faucet of instant hot water like on Earth, but it was much better than running out to the well all the time!"
     
     $ skill_technical += 10
@@ -100,64 +109,82 @@ label technical_4:
     scene bg laundry with fade
     show her annoyed at center
     her "These clothes still aren't dry?! It's so humid here, it takes forever..."
-    show her normal at center
-    her "Perhaps if I could wring out more of the water before hanging them up? Hmmm"
-    her "Yes! I'll need a few parts from the storehouse - wait, I should draw out the design first, so I'll know all the parts ahead of time. Some rollers, a crank, several gears..."
-    hide her with dissolve
-    show her normal with dissolve
-    her "Why won't these two parts fit together?! Ohhh, one is imperial and one is metric! Stupid nonstandard parts!"
+    her surprised "Perhaps if I could wring out more of the water before hanging them up? Hmmm..."
+    her happy "Yes! I'll need a few parts from the storehouse - wait, I should draw out the design first, so I'll know all the parts ahead of time. Some rollers, a crank, several gears..."
+    hide her with moveoutright
+    show her normal with moveinleft
+    her annoyed "Why won't these two parts fit together?!"
+    her surprised "Ohhh, one is imperial and one is metric! Stupid nonstandard parts!"
     "Finally, it was finished. It squeaked and rattled and if I had to do it again I would make some changes to the design, but it works."
-    her "The clothes dry about 50 percent faster now."
-    him "Huh? Really?"
+    scene bg farm_interior with fade
+    show her normal at midright
+    show him normal at midleft
+    with dissolve
+    her happy "The clothes dry about 50 percent faster now."
+    him surprised "Huh? Really?"
     her "Yeah, come see what I made!"
-    him "You made this?! This is so awesome!\n...\n What is it?"
-    her "It's a clothes wringer! What kind of farm boy are you, anyway?"
-    him "The kind that always had electricity."
-    her "Oh, good idea! I could hook it up to the solar and it could crank itself on sunny days...if we could get enough torque..."
-    him "Whatever you want to do, my lovely inventor."
+    scene laundry with fade
+    show her normal at midright
+    show him normal at midleft
+    with moveinleft
+    him happy "You made this?! This is so awesome!\n...\n What is it?"
+    her flirting "It's a clothes wringer! What kind of farm boy are you, anyway?"
+    him serious "The kind that always had electricity."
+    her surprised "Oh, good idea! I could hook it up to the solar and it could crank itself on sunny days...if we could get enough torque..."
+    him normal "Whatever you want to do, my lovely inventor."
     
     $ skill_technical += 10
     return
 
 # Hot water heater
+# put in hot water connected to solar
 label technical_5:
     scene bg farm_interior with fade
-    # put in hot water connected to solar
     "One of the things I missed from Earth life was having hot water available whenever I wanted it. Of the few luxuries we enjoyed, hot water seemed like one I could improve on."
-    her "I wonder if we could make our own hot water heater."
-    him "Well, we don't exactly have a ton of gas or electricity to spare. But you might be able to use the sun to heat it up and then store it somewhere insulated so it doesn't take as long to heat up."
-    her "I'll look into it."
+    show her normal at midright
+    show him normal at midleft
+    with dissolve
+    her surprised "I wonder if we could make our own hot water heater."
+    him serious "Well, we don't exactly have a ton of gas or electricity to spare. But you might be able to use the sun to heat it up and then store it somewhere insulated so it doesn't take as long to heat up."
+    her normal "I'll look into it."
     "Most water-heating designs assumed I would have access to more solar panels. I didn't, but I felt like I could at least stick a container of water in the sun to heat it. If I could make something out of metal or another material that transferred heat easily, I could get something to work."
     "I took a trip to the storeroom to see what they had."
-    her "Hi Ilian. How are you today?"
+    scene bg storehouse with fade
+    show ilian at midright with dissolve
+    show her normal at midleft with moveinleft
+    her normal "Hi Ilian. How are you today?"
     "He didn't look happy to see me."
     ilian "I have the feeling you need more materials from me."
-    her "Well, yes, I was going to see if you had any pipes or sheets of metal or something."
+    her serious "Well, yes, I was going to see if you had any pipes or sheets of metal or something."
     ilian "We don't have much left. If it's an emergency or something vital to our survival you can use it, but I'm afraid that otherwise I have to say no."
     menu:
         "It's not vital to my survival":
-            her "I just wanted to build a hot water heater for my house. Do you have any ideas about what kind of material I could use that would conduct heat easily?"
+            her serious "I just wanted to build a hot water heater for my house. Do you have any ideas about what kind of material I could use that would conduct heat easily?"
             ilian "Hmm. Well, I know we're always finding new uses for these animal skeleton things."
-            her "And by always finding you mean no one has thought of anything to do with them?"
+            her flirting "And by \"always finding\" you mean no one has thought of anything to do with them?"
             ilian "They're looking pretty good in my junk pile, if I do say so myself."
-            her "I'll take a few. There has to be some way I could use them."
+            her serious "I'll take a few. There has to be some way I could use them."
             "The exoskeletons varied in texture. Some parts were brittle while others were as hard as a seashell. I felt like there was no way I could make anything useful out of them."
-            # do we have trees?
             "I put them aside and wondered if I could make a tank out of wood."
-            her "[his_name], could you cut down a tree for me so I can make a water tank for our house?"
+            scene bg farm_exterior with fade
+            show him normal at midright with dissolve
+            show her normal at midleft with moveinleft
+            her normal "[his_name], could you cut down a tree for me so I can make a water tank for our house?"
             him "Well, I'm not sure, but I can try. How about you come with me to help pick out a tree?"
             "We found a tree that was about the width I needed. [his_name] cut it down, and we brought it home on our wagon in pieces."
             "After the wood dried out, I hollowed it out using tools at the storehouse."
             "In the end, it just ended up being lukewarm storage for more water."
         "I'll die if I don't get what I need":
-            her "It's for something really important. Can I please get two sheets of metal and some pipes?"
+            her concerned "It's for something really important. Can I please get two sheets of metal and some pipes?"
             ilian "What exactly is it for?"
-            her "I don't have time for your questions! This is a matter of life and death!"
+            her angry "I don't have time for your questions! This is a matter of life and death!"
             ilian "Alright, alright, here you go."
             "After some careful welding, I made a tank for water with many metal arms sticking out of it to help passively heat the water."
             "I was able to put a pipe from the tank to our house, complete with a stopper that kind of leaked."
+            scene bg farm_interior with fade
+            show her normal with dissolve
+            her happy "Ahhh, warm water!"
             $ community_level -= 5
-    
                                                  
     $ skill_technical += 10
     return
@@ -165,10 +192,14 @@ label technical_5:
 # scavenge electronics, etc from shuttle to make blender
 label technical_6:
     scene bg farm_interior with fade
+    show him normal at midright
+    show her normal at midleft
+    with dissolve
     "[his_name] grew a lot of vegetables; I guess part of their farming strategy was to grow many kinds of things, so if one thing got wiped out, you still had food."
     "But I didn't always like them."
+    "My least favorite was:"
     menu:
-        her "I don't care how 'super' of a food it is, I just don't like:"
+        "What was my least favorite food?"
         "Kale":
             $ hated_food = "kale"
         "Beets":
@@ -177,25 +208,30 @@ label technical_6:
             $ hated_food = "carrots"
         "Brussels sprouts":
             $ hated_food = "brussels sprouts"
-    her "I just don't like [hated_food]."
-    him "Sorry, it grows really well here, so we have a lot of it."
+    her concerned "I just don't like [hated_food]."
+    him serious "Sorry, it's nutritious and it grows really well here, so we have a lot of it."
     "I had to find some way to eat it that I wouldn't hate quite so much. Something to cover up the taste?"
     "Back on Earth I would sometimes make smoothies, but we didn't have any blenders here."
     "I figured I would try to make one. At the very least, thinking about the plans would distract me while I was choking down [hated_food]."
     "I would need a lot of parts, so I headed over to the storehouse."
+    scene bg storehouse with fade
+    show ilian at midright with dissolve
+    show her normal at midleft with moveinleft
     ilian "I don't have any extras of these things, but if you help us dismantle some of the shuttle's electronics, you could keep some for your project."
+    her surprised "(Hmmm... Do I want a blender that badly?)"
     menu:
-        "Do I want a blender that badly?"
-        "Yes, I'll help him":
-            her "Sure, I'll help you out."
+        "What should I say?"
+        "Yes, I'll help.":
+            her normal "Sure, I'll help you out."
             "We took out whole circuit boards, disconnected all the wires, and took some of the components off the boards. Soon we had a nice pile of resistors, capacitors, LEDs, motors, wires, and microchips."
-        "No, thanks":
-            her "No, thanks, I don't really need a blender, I guess."
+        "No, thanks.":
+            her concerned "No, thanks, I don't really need a blender, I guess."
             ilian "You want to make a blender?"
-            her "Yeah..."
+            her serious "Yeah..."
             ilian "We could use one here at the storehouse; Sven wanted to make peanut butter."
-            her "Well, maybe he could help you dismantle parts, and I will see if there's enough to make two blenders."
+            her normal "Well, maybe he could help you dismantle parts, and I will see if there's enough to make two blenders."
 
+    scene bg black with fade
     "I found a fan and thought I could use that for the blades of the blender. In the fuel intake there were plenty of gaskets, though it was tough to find them in the right size."
     "I even added a dial connected to some resistors that let you control the speed of the blender. The container wasn't transparent (I wasn't sure if the metal we used was even technically food-safe), but it fit on the blades okay."
     "When I tried it out, it leaked -- a lot. I sealed the leaks up and played around with the speeds to get a speed that would mix and blend without foaming or stalling."
@@ -211,17 +247,20 @@ label technical_7:
     "I wondered if we could use the nearby river to augment our electricity sources."
     "I studied some diagrams on the internet and drew up some plans for a water wheel that would work with our river."
 
-    scene bg storehouse with fade
-    her "Do you mind if I get some more parts from the shuttle?"
+    scene bg storehouse with fade4
+    show ilian at midright with dissolve
+    show her normal at midleft with moveinleft
+    her surprised "Do you mind if I get some more parts from the shuttle?"
     ilian "What are you making now?"
-    her "A water wheel, for electricity."
+    her normal "A water wheel, for electricity."
     ilian "That sounds great. Can you hook it up to the storehouse?"
-    her "No, it's just for our house..."
+    her concerned "No, it's just for our house..."
     ilian "Maybe we should all be on the same power grid..."
-    her "Maybe so, but we're not right now. Besides, if we were, we'd have the same problems we do now on cloudy days, just everyone will blame their neighbors for using all the electricity."
+    her serious "Maybe so, but we're not right now. Besides, if we were, we'd have the same problems we do now on cloudy days, just everyone will blame their neighbors for using all the electricity."
     ilian "True. Well, if you find something you can use, go ahead - you're the only one who's shown much of an interest so far."
-    her "Thanks, I will."
+    her normal "Thanks, I will."
     
+    scene black with fade
     "I rummaged around, but I couldn't find all the parts I needed. I probably could make some of them, but it would be a huge project..."
     menu:
         "What should I do?"
@@ -247,18 +286,76 @@ label technical_7:
 
 # Help Ilian with the inventory software - build good queries, or streamline interface, etc.
 label technical_8:
-
+    scene bg storehouse with fade
+    show ilian at midright with dissolve
+    show her normal at midleft with moveinleft
+    her normal "Hey, Ilian, I was wondering if we have any--"
+    ilian "No."
+    her surprised "What?"
+    ilian "I'm not giving you anything else until you help me with something. I'm always giving you materials; now it's time for you to pay up."
+    her annoyed "I help out! I'm a [profession]; what do you think I do all day?!"
+    ilian "Here's what I need. We have this database software to manage our inventory, but it takes forever to find out how much we have of something, and to change how much we have."
+    her surprised "Oh, so you want an easier interface?"
+    ilian "Yes, I do. Then I will be able to help distribute things more fairly and not rely on memory."
+    her normal "That sounds fun! Let me take a look at what you currently have..."
+    "The current inventory management system had all sorts of buttons that would be useful in a store, but had no meaning on our colony."
+    her serious "I could delete those buttons, and make it quicker to look up the things you need all the time. Will you make me a list of things that need to be easier?"
+    ilian "Yes, I will."
+    scene black with fade
+    "I worked on the inventory system every evening for a few weeks, asking Ilian for feedback after major changes."
+    "That should do it! Although, hmmm, it might be convenient to have access to this database from my computer..."
+    menu:
+        "What should I do?"
+        "Keep access private for just authorized people.":
+            "I didn't think anyone needed access except Ilian and Mayor, so I just kept that part the same."
+        "Ask Ilian about putting in a public interface.":
+            "I sent Ilian an e-mail about adding a public interface."
+            her "If we had a way for everyone to access the database, they wouldn't have to come ask you about every little thing; they could just look it up themselves."
+            ilian "I don't know if that's a good idea..."
+            her "Why not? Haven't you been distributing things fairly?"
+            ilian "For the most part... although {b}some{/b} people always seem to need more things than others."
+            her "Well, some of us make more things than others."
+            ilian "I don't think the inventory system should be public."
+            her "Okay, I guess I understand."
+        "Add in a back door for yourself.":
+            "I put in a back door so that I could access the database if I needed to. I mean, no need to bug Ilian about something when I could just look it up, right?"
+            $ community_level -= 5
+    "Finally, it had everything he needed."
+    scene bg storehouse with fade
+    show ilian at midright with dissolve
+    show her normal at midleft with moveinleft
+    her happy "It's done!"
+    ilian "Good, let me see."
+    ilian "...add item, quantity, expiration, good... move item, good... What about the current status?"
+    her normal "You can use this screen here. It shows current levels of everything, sorted by type: food, tools, electronics, etc. And you can also just type in the name of something here and it will search for all the items with that name and tell you where they are."
+    ilian "This is... much better. Thank you."
+    her "So, now that you have a perfect inventory system, can I have some more salt, please?"
+    ilian "That's all you wanted? Sure, here you go."
+    her annoyed "...You didn't even look it up!"
+    ilian "I don't have to; these barrels here are all full of salt. It's not something we're running out of."
+    her laughing "Well, how about variable-rate resistors?"
+    ilian "...Let me see... Sorry, we're out of those."
+    her normal "Okay, well, at least now we have a quick way to find out."
+    ilian "Yes, I believe I already said thank you."
+    
     $ skill_technical += 10
     return
 
+# TODO: Write this
 # Setup webcams around the farm to monitor fields/(goat)
 label technical_9:
 
     $ skill_technical += 10
     return
 
+# TODO: Finish this
 # 10 - write an app that uses weather data and frost prediction and knowledge of various plants to remind you when to plant/harvest crops. Also keeps track of your fields, what's been on them, and helps you rotate them efficiently.
 label technical_master:
-
+    scene bg farm_interior with fade
+    show him annoyed at midright with dissolve
+    him angry "I just can't remember!"
+    show her normal at midleft with moveinleft
+    her surprised "Can't remember what?"
+    him annoyed "I forgot which field I planted..."
     $ skill_technical += 10
     return

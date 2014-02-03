@@ -2371,7 +2371,6 @@ label monthly_event_16:
 
 # MONTH 17
 # uses spiritual, creative
-# TODO: Finish adding emotions
 label monthly_event_17:
     scene bg farm_interior with fade
     "One day Sara invited me to hang out with her at the bath house. It was a lot of work to fetch and heat water for a bath, so it was more worth it to share the work and the bath."
@@ -2499,26 +2498,27 @@ label monthly_event_17:
 
 # MONTH 18 - he burns his hand in a tractor fire
 # uses domestic, knowledge, social, technical, physical
+# TODO: Finish adding emotions
 label monthly_event_18:
     scene bg farm_exterior with fade
     show him normal at midleft
     show her normal at midright
     with dissolve
-    him "Hey, could you give me a hand for a minute?"
+    him surprised "Hey, could you give me a hand for a minute?"
     if (loved >= 0):
-        her "Sure, what for?"
+        her normal "Sure, what for?"
     else:
-        her "I guess. What is it?"
-    him "I need to jump start my tractor. Can you run these cables to the house's battery for me?"
-    her "Why do you need to jump start your tractor?"
-    him "Something wrong with the battery. It won't hold a charge for very long anymore."
+        her concerned "I guess. What is it?"
+    him serious "I need to jump start my tractor. Can you run these cables to the house's battery for me?"
+    her surprised "Why do you need to jump start your tractor?"
+    him serious "Something wrong with the battery. It won't hold a charge for very long anymore."
     if ((skill_technical >= 60) or (profession == "mechanic")):
-        her "Want me to take a look at it?"
+        her normal "Want me to take a look at it?"
     else:
-        her "Well, shouldn't you take it in to get it fixed?"
+        her surprised "Well, shouldn't you take it in to get it fixed?"
 
-    him "Don't have time. I need to use it all day today."
-    her "Okay, if you're sure..."
+    him serious "Don't have time. I need to use it all day today."
+    her serious "Okay, if you're sure..."
     scene bg tractor with fade
     show him normal at quarterright
     show her normal at quarterleft
@@ -2549,25 +2549,27 @@ label monthly_event_18:
 
     "Eventually, the fire died down."
     "Now that the fire was out, I turned to [his_name]. One of his hands and his forehead were singed and red."
-    him "You put it out..."
-    her "You're really hurt!"
+    him serious "You put it out..."
+    her concerned "You're really hurt!"
     "He started laughing. I didn't join him, though - I was too worried."
     if (profession == "doctor"):
-        her "You're in shock; let's go to the clinic and I'll check you out."
+        her serious "You're in shock; let's go to the clinic and I'll check you out."
     else:
-        her "Let's get you to town and have the doctor check you out."
-    him "Check me out... check me out, you're always checking me out."
-    her "Alright, just don't you check out on me."
+        her serious "Let's get you to town and have the doctor check you out."
+    him laughing "Check me out... check me out, you're always checking me out."
+    her concerned "Alright, just don't you check out on me."
+    show him concerned
     "He stared off into the distance, like he could barely hear me."
     if (skill_social >= 60):
-        her "Stay here; I'm going to radio for help."
+        her serious "Stay here; I'm going to radio for help."
         "I called on the radio and Thuc and Mr. Peron came over. Together, we helped [his_name] get to the town."
     elif (skill_physical >= 40):
-        her "Where's Lettie?"
+        her surprised "Where's Lettie?"
         "I found Lettie tied up near the barn."
-        her "C'mon, Lettie, [his_name] needs your help, alright?"
+        her serious "C'mon, Lettie, [his_name] needs your help, alright?"
         "I remembered what [his_name] had taught me and was able to lead her over to [his_name]. He couldn't ride her, not with his hands so badly burned, but I hitched her up to the cart."
-        her "Get in, [his_nickname]."
+        her serious "Get in, [his_nickname]."
+        show him sad
         "He sat down, but now his laughing had turned into trembling."
         "We set off at an easy pace."
     else:
@@ -2580,17 +2582,17 @@ label monthly_event_18:
     show her serious at midleft
     with moveinleft
     "Finally, we arrived at the clinic. [his_name] was shaking and breathing hard."
-    him "I don't n-n-n-need a doc-c-c-tor."
-    her "Your hands are all blistered!"
+    him concerned "I don't n-n-n-need a doc-c-c-tor."
+    her angry "Your hands are all blistered!"
     "He looked at his hands, but didn't appear to notice how hurt they were."
-    him "I sh-sh-sh-should just go h-h-home."
-    her "Just come in here, everything will be fine."
+    him sad "I sh-sh-sh-should just go h-h-home."
+    her serious "Just come in here, everything will be fine."
     if (profession == "doctor"):
         "I cleaned his burned skin carefully, treated his burns with ointment, and wrapped them up gently."
         "He gradually calmed down and stopped shaking, too."
-        her "You need to let these heal for at least two weeks. Looks like mostly a second-degree burn, so it's not too serious, but it will be painful."
-        him "I can't use my hands at all?"
-        her "Anything that hurts is off-limits."
+        her serious "You need to let these heal for at least two weeks. Looks like mostly a second-degree burn, so it's not too serious, but it will be painful."
+        him surprised "I can't use my hands at all?"
+        her serious "Anything that hurts is off-limits."
     else:
         "The doctor cleaned, treated, and wrapped his burns, and [his_name] gradually calmed down and stopped shaking."
         "He was not happy to learn that he couldn't use his hands until they had healed."
@@ -2607,101 +2609,110 @@ label monthly_event_18:
     show him serious at left with move
     him "I've healed enough; I could at least take Lettie out and look around..."
     show him at midleft with move
-    # TODO finish this section
+
     menu:
         "What should I say?"
         "No way!":
-            her "There's no way I'm letting you out of the house. You'll just make your hands worse and it will take longer to heal."
-            him "What, you're my boss now?"
-            her "No, just someone who wants what's best for you."
-            him "You don't think I know what's best for me?"
-            her "Maybe not, if you're going to use your hands before they've healed."
-            him "I'm just going to look around. I need some fresh air."
-            her "But-"
-            him "Get out of the way!"
+            her annoyed "There's no way I'm letting you out of the house. You'll just make your hands worse and it will take longer to heal."
+            him annoyed "What, you're my boss now?"
+            her serious "No, just someone who wants what's best for you."
+            him surprised "You don't think I know what's best for me?"
+            her annoyed "Maybe not, if you're going to use your hands before they've healed."
+            him serious "I'm just going to look around. I need some fresh air."
+            her concerned "But-"
+            him angry "Get out of the way!"
             "He pushed past me and stormed out the house."
-            her "(What's his problem?!)"
+            her annoyed "(What's his problem?!)"
             "When he came back later, we were both much calmer."
-            her "Everything okay, [his_name]?"
-            him "Yeah, I was just checking on things..."
+            her concerned "Everything okay, [his_name]?"
+            him concerned "Yeah, I was just checking on things..."
             $ loved -= 2
         "It must be frustrating for you":
-            her "You sound really frustrated..."
-            him "Yeah, I'm frustrated! I'm stuck in here, while who knows what's happening to the farm outside!"
-            her "I'm sorry it happened."
-            him "Ah, it's okay. It's not your fault. I just hate sitting around doing nothing."
-            her "Yeah, that's annoying. Let's go on a walk together. That should be okay, right?"
-            him "Yeah.... I think I could use the fresh air."
+            her concerned "You sound really frustrated..."
+            him angry "Yeah, I'm frustrated! I'm stuck in here, while who knows what's happening to the farm outside!"
+            her serious "I'm sorry it happened."
+            him serious "Ah, it's okay. It's not your fault. I just hate sitting around doing nothing."
+            her normal "Yeah, that's annoying. Let's go on a walk together. That should be okay, right?"
+            him serious "Yeah.... I think I could use the fresh air."
             "We walked around the farm together. I could tell he was itching to get down and get to work, but instead he just took notes."
             $ loved += 2
         "I'll go with you":
-            her "Alright, but only if you let me go with you. Someone's got to keep you out of trouble..."
-            him "Really? You don't trust me?"
-            her "Of course I trust you. I trust that you will do anything to take care of this farm, even if it's at the expense of your own health."
-            him "... All right, let's go."
+            her concerned "Alright, but only if you let me go with you. Someone's got to keep you out of trouble..."
+            him annoyed "Really? You don't trust me?"
+            her normal "Of course I trust you. I trust that you will do anything to take care of this farm, even if it's at the expense of your own health."
+            him concerned "... All right, let's go."
             "We walked around the farm together. I could tell he was itching to get down and get to work, but instead he just took notes."
             $ loved += 2
         "This is all my fault":
-            her "I'm so sorry, [his_name] - it's my fault you burned your hands!"
-            him "What? No, it's not your fault. If anything it's my fault, for trying to run the tractor instead of fixing it properly."
-            her "I just feel so terrible about it."
-            him "That's not - I don't want you to feel guilty!"
-            her "But I do..."
-            him "Maybe there's some way you could help out..."
-            her "Like what?"
+            her concerned "I'm so sorry, [his_name] - it's my fault you burned your hands!"
+            him surprised "What? No, it's not your fault. If anything it's my fault, for trying to run the tractor instead of fixing it properly."
+            her sad "I just feel so terrible about it."
+            him concerned "That's not - I don't want you to feel guilty!"
+            her sad "But I do..."
+            him serious "Maybe there's some way you could help out..."
+            her surprised "Like what?"
             $ relaxed -= 2
 
-    him "Most of the farm will be okay, but the tomatoes and peppers are ready to harvest right now."
-    her "There must be something we can do..."
+    him serious "Most of the farm will be okay, but the tomatoes and peppers are ready to harvest right now."
+    her surprised "There must be something we can do..."
     menu:
         "What should I say?"
         "{i}Let's ask for help.{/i}" if (skill_social >= 60):
-            her "I bet our neighbors would be willing to help out."
-            him "We can ask..."
+            her normal "I bet our neighbors would be willing to help out."
+            him normal "We can ask..."
             "We asked around, and several neighbors said they would spend half a day working at our farm, or send one of their kids to work at our farm."
             "[his_name] didn't like sitting around watching other people work on his farm, but he didn't have much of a choice."
         "{i}I'll do the harvest!{/i}" if ((skill_domestic >= 60) or (skill_physical >= 60)):
-            her "I can do the harvesting!"
-            him "Really? I know you have plenty of your own things to do..."
-            her "It's not that hard to pick tomatoes and peppers."
-            him "Okay, awesome! If there's anything you need done that doesn't involve hands, maybe I can do that?"
-            her "Ummm... yeah, maybe you can dictate some e-mails for me?"
-            him "Sure..."
+            her happy "I can do the harvesting!"
+            him surprised "Really? I know you have plenty of your own things to do..."
+            her flirting "It's not that hard to pick tomatoes and peppers."
+            him happy "Okay, awesome! If there's anything you need done that doesn't involve hands, maybe I can do that?"
+            her concerned "Ummm... yeah, maybe you can dictate some e-mails for me?"
+            him serious "Sure..."
             "(I will probably have to type them over again, anyway, but he needs something useful to do!)"
             "I was so tired going to work and then coming home and harvesting vegetables, but at least we got them all picked."
         "{i}The kids at school can help out!{/i}" if (profession == "teacher"):
-            her "Picking tomatoes and peppers is not that hard; why don't I have my students help out?"
-            him "The kids at school? Sure, it could be educational!"
-            her "A field trip!"
+            her happy "Picking tomatoes and peppers is not that hard; why don't I have my students help out?"
+            him surprised "The kids at school? Sure, it could be educational!"
+            show him happy
+            her laughing "A {b}field{/b} trip!"
             scene bg fields with fade
             "[his_name] instructed the kids on how to tell when the vegetables were ripe, and how to store them so they would keep fresh longer."
             "The little kids got tired quickly, but with everyone helping, we were able to pick all the ripe ones."
             "It was cute to watch [his_name] explain things to the kids... they really listened to him."
         "The farm can wait.":
-            her "The farm can wait. Your health is more important."
-            him "You can't just let the food go to waste! I worked hard growing those!"
-            her "Well, I don't have time to pick them."
-            him "Someone needs to!"
+            her annoyed "The farm can wait. Your health is more important."
+            him angry "You can't just let the food go to waste! I worked hard growing those!"
+            her concerned "Well, I don't have time to pick them."
+            him angry "Someone needs to!"
             "In the end, [his_name] found a friend to help him pick some of the vegetables."
             "I helped a little, but the farm was his thing, not mine."
             $ loved -= 2
 
     scene bg clinic with fade
+    show him normal at midleft
+    show her normal at midright
+    with dissolve
     "Finally, the bandages came off and [his_name] could use his hands again."
-    him "I know the first thing I want to touch when we get home."
-    her "Hmmm, are you talking about Lettie? I know she's missed you..."
+    him flirting "I know the first thing I want to touch when we get home."
+    her flirting "Hmmm, are you talking about Lettie? I know she's missed you..."
     if (loved >= 0):
-        him "Haven't you missed me, just a little?"
-        her "Maybe..."
+        him surprised "Haven't you missed me, just a little?"
+        her flirting "Maybe..."
         scene bg bedroom with fade
+        show him serious at midleft
+        show her serious at center
+        show overlay night
+        with dissolve
         "That night, he held me gently, his hands caressing my skin as if for the first time. His skin was still rough from the burns, but I didn't care."
-        him "Mmmm, the touch of your skin... I've missed {b}you{/b}, [her_nickname]."
-        her "I missed you, too..."
+        him serious "Mmmm, the touch of your skin... I've missed {b}you{/b}, [her_nickname]."
+        her concerned "I missed you, too..."
         scene black with fade
     else:
-        him "That's not what I was thinking of, but I did miss Lettie, too. I better go see how she's doing."
-        her "..."
+        him annoyed "That's not what I was thinking of, but I did miss Lettie, too. I better go see how she's doing."
+        her annoyed "..."
     
+    "I was glad [his_name] was back to normal again, though he still had to be careful with his hands for a while."
     return
 
 # MONTH 19 - Clothing wearing out, stiff, doesn't fit anymore if pregnant.
@@ -2720,7 +2731,9 @@ label monthly_event_19:
             "What should I do?"
             "Check the storehouse":
                 scene bg storehouse with fade
-                her "Hey, Ilian, do we have any extra clothes here?"
+                show ilian at midright with dissolve
+                show her normal at midleft with moveinleft
+                her surprised "Hey, Ilian, do we have any extra clothes here?"
                 ilian "A few..."
                 "I found a large men's shirt that wasn't very flattering, but would fit."
                 "They had a pair of larger pants, but they were very baggy and also too long. Well, I'd just have to roll them or hem them or something."
@@ -2729,34 +2742,44 @@ label monthly_event_19:
                 "I decided to turn one of the pairs of Earth pants I had into maternity pants."
                 "After all, I wasn't going to be pregnant forever, so I didn't want to ruin my nice space uniform."
                 "So I took a pair of low-rise jeans and added a strip of stretchy material."
-                her "(Hmmm, what should I do about the shirt?)"
+                "But what about the shirt?"
                 "I found some scrap material and added some panels. I couldn't decide if it looked really good, or like I'd escaped from the circus, but either way, it would fit for the rest of my pregnancy."
                 "It was kind of tedious sewing by hand, but I got it done."
                 $ relaxed += 2
             "Ask [his_name]":
-                her "Hey, [his_name], could I borrow some of your clothes?"
-                him "Only if you let me borrow some of yours."
-                her "For what? There's no way they'd fit you..."
-                him "I'm just kidding. I don't have a lot of clothes, but there's one pair you could have."
-                her "Thanks!"
+                show her normal at midleft
+                show him normal at midright
+                with dissolve
+                her surprised "Hey, [his_name], could I borrow some of your clothes?"
+                him flirting "Only if you let me borrow some of yours."
+                her annoyed "For what? There's no way they'd fit you..."
+                him happy "I'm just kidding. I don't have a lot of clothes, but there's one pair you could have."
+                her happy "Thanks!"
                 "He handed me an old pair of jeans and a t-shirt. They fit okay right now, but I could tell they wouldn't fit the whole pregnancy."
                 "Well, I'd figure something else out later."
                 $ relaxed -= 2
             "Try nudity":
                 "I guess I didn't need to wear clothes around the house - it felt so good not to have that waistband constricting my growing belly!"
-                him "Hey, is it no pants day? How come I didn't get the memo?"
-                her "It just feels so much more comfortable this way..."
-                him "Good idea."
+                show her normal at midleft
+                show him normal at midright
+                show her sitting
+                show him sitting
+                with dissolve
+                him flirting "Hey, is it no pants day? How come I didn't get the memo?"
+                her normal "It just feels so much more comfortable this way..."
+                him normal "Good idea."
+                play sound "sfx/cloth.mp3"
                 "Pretty soon [his_name] was walking around free as a bird, too."
                 scene black with fade
                 "That led to some interesting results..."
                 $ made_love += 1
-                scene bg farm_interior
+                scene bg farm_interior with fade
                 "But I was pretty sure I had to wear clothes to work, so I needed to try something else, too."
                 $ relaxed += 2
                 jump maternity_clothing
             "{i}Ask around{/i}" if (skill_social >= 60):
                 "I knew Helen was also expecting, so I decided to send her a message and see what she had done."
+                play sound "sfx/message.mp3"
                 her "Hey, Helen, what are you doing for maternity clothes?"
                 helen "Oh, I just made a big tent dress out of a hospital gown. It doesn't look very good, but it's very comfortable."
                 her "Do you think you could show me how?"
@@ -2791,6 +2814,7 @@ label monthly_event_19:
     return
 
 # TODO: trouble sleeping? this seems perhaps too mundane.  Maybe trouble sleeping -> heated argument?
+# TODO: finish adding emotions
 label monthly_event_20:
     scene bg bedroom with fade
     show her normal at midright
@@ -3273,7 +3297,7 @@ label monthly_event_23:
         him happy "Mmmm, good morning, my amazing sweet bundle of loveliness."
         her annoyed "Good morning..."
         if (loved >= 0):
-            him surprised "Oh. Hey. Ummm, did {b}you{/b} have good sex last night?"
+            him surprised "Oh. Hey. Ummm, did {b}you{/b} have a good time last night?"
         else:
             him annoyed "What? What's with the icy glare?"
 
@@ -3342,6 +3366,11 @@ label monthly_event_23:
     
     return
 
+# Birth or ?
 label monthly_event_24:
-    "birth if pregnant, pregnant if made_love is high enough (ran out of birth control), else what to do if no more BC and still don't want kids"
+    if (is_pregnant):
+        "I felt like a whale. No, that's not big enough. I felt like a brontosaurus."
+        "My belly had been growing larger and larger for the past few months, but it still felt foreign to me, like a mosquito bite or a new haircut."
+    else:
+        "Some Big Epic EVENT!!!"
     return
