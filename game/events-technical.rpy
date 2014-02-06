@@ -341,21 +341,94 @@ label technical_8:
     $ skill_technical += 10
     return
 
-# TODO: Write this
 # Setup webcams around the farm to monitor fields/(goat)
 label technical_9:
+    scene bg farm_interior with fade
+    show her normal at midright
+    show him normal at midleft
+    with dissolve
+    "Sometimes, I felt like we had time-traveled to the 1800s. We were so dependent on our plants and animals, and so removed from Earth."
+    "Luckily, though, we had a few things they didn't."
+    "We had a few hundred year's worth of science and engineering progress, reference materials, computers, and other electronic resources."
+    "Other people wanted to do things the old-fashioned way. But I felt it would be a waste of all this technology if we didn't put it to good use!"
+    him concerned "Guess I'll check on the north fields again. Something keeps breaking through the fence there and messing everything up."
+    her surprised "You're going to ride out there and look at it?"
+    him surprised "Well, yeah, how else am I going to know if something's out there?"
+    her normal "Go ahead and check on it, but I have a better idea for next time."
+    hide him with moveoutleft
+    scene bg storehouse with fade
+    show ilian at midright with dissolve
+    show her at midleft with moveinleft
+    "I rummaged through the broken parts bin at the storehouse until I found what I was looking for."
+    her "Aha! A broken computer pad! Let's see if there's any more..."
+    ilian "What are you going to use that for?"
+    her "A surveillance system."
+    ilian "What?! I don't think anyone's going to break into your house..."
+    her "Not for the house! For the fields!"
+    ilian "Yeah, okay, whatever."
+    "I found a bunch of security cameras from the shuttle, and some extra wires, too."
+    "I took them all home with me and started building."
 
+    scene bg farm_interior with fade
+    "I hooked up the security cameras to point at different parts of the farm. One for the barn, one for the north fields, and one for the south fields."
+    "I used mini solar chargers for power, which meant they wouldn't work at night or on very cloudy days, but they were still better than manually checking everything."
+    "I was excited to show [his_name]."
+    show her happy at midright
+    show him normal at midleft
+    her happy "Hey, [his_name], want to check on the farm?"
+    him concerned "Maybe after dinner..."
+    her normal "No, do it right now... from your computer!"
+    him surprised "What? How does that work?"
+    her laughing "Take a look!"
+    "I showed him the view from the cameras."
+    him happy "Wow, this is really cool! Hey, look, there's Lettie! Hi, girl!"
+    her happy "You like it?"
+    him concerned "Yeah, but... I still kind of want to check on things."
+    her annoyed "Why? You can see right here everything's fine!"
+    him annoyed "This is good, but sometimes I still want to see it with my own eyes."
+    her concerned "Yeah, okay."
+    him happy "Want to come with me?"
+    menu:
+        "What should I say?"
+        "Sure.":
+            her happy "Sure, I could use a walk anyway."
+            "We walked around the farm, and I showed him all the cameras and how I had anchored them in place."
+            him serious "You're amazing, you know that? I could never have built something like that."
+            her flirting "Well, I'm hopeless at growing food, so it all works out."
+            $ loved += 2
+        "No, thanks.":
+            her annoyed "No, thanks. That's why I made this whole thing, so we wouldn't have to walk around the whole farm every night."
+            him annoyed "Well, you don't have to come."
+            her serious "Okay, bye."
+            him serious "Bye."
+            "He did still use my security cameras sometimes, but I guess he actually enjoyed his nightly patrol, because he still walked around the farm almost every night."
+        "I'll just watch you from here.":
+            her flirting "I'll just watch you from here."
+            him flirting "All right, I'll try and make watching me worth your time."
+            hide him with moveoutleft
+            her happy "(Hee hee, he's visiting Lettie...)"
+            her annoyed "(Did he just give her a kiss?! Gross!)"
+            her happy "(Now he's making silly faces at me. Will he ever grow up?!)"
+            her normal "(Nice close-up of your teeth...or... what {b}is{/b} that?!)"
+            show him with moveinleft
+            him happy "I'm back!"
+            her happy "Welcome home."
+            $ loved += 1
+            
     $ skill_technical += 10
     return
 
 # TODO: Finish this
 # 10 - write an app that uses weather data and frost prediction and knowledge of various plants to remind you when to plant/harvest crops. Also keeps track of your fields, what's been on them, and helps you rotate them efficiently.
+# programmable tractor attachment?
 label technical_master:
     scene bg farm_interior with fade
     show him annoyed at midright with dissolve
     him angry "I just can't remember!"
     show her normal at midleft with moveinleft
     her surprised "Can't remember what?"
-    him annoyed "I forgot which field I planted..."
+    him annoyed "I forgot which fields I put the fertilizer on last week... I know I didn't get to one, but I can't remember which one it was!"
+    her serious "Don't you write that sort of thing down?"
+    him annoyed "...I started a map, but it was just too much trouble."
     $ skill_technical += 10
     return
