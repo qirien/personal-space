@@ -1,18 +1,19 @@
 label monthly_event_25:
-    "It had been two years since we first arrived on Talam. In a way, it felt like we had been here forever. But sometimes I expected to find myself back on Earth, waking up from a long, long dream."
+    "It had been two years since we first arrived on Talam. In a way, it felt like we had been here forever. But sometimes I still expected to find myself back on Earth, waking up from a long, long dream."
     # TODO: tweak these numbers.
-    if ((community_level >= 50) and (loved > 30)):
+    if ((community_level >= COMMUNITY_LEVEL_GOOD) and (loved > LOVED_GOOD)):
         jump good_ending
-    if ((community_level < 30) and (loved <= 0)):
+    if ((community_level < COMMUNITY_LEVEL_OK) and (loved < 0)):
         jump bad_ending
     else:
         jump mediocre_ending
 
     return
 
+# TODO: Check variable wants_to_leave for consistency
 # ENDING 1 - Everything failing
 label bad_ending:
-    "Everything was falling apart."
+    "Or, more like a nightmare."
     "[his_name] and I could barely speak to each other without arguing, I was swamped at work, and we were running out of materials and supplies."
     "I could tell this whole colony was going to end in failure."
     "I just wanted to go home. Home to Earth, where there were TV shows and stores and weekends."
@@ -21,6 +22,7 @@ label bad_ending:
         "Brennan said he was returning on the shuttle that would drop off more colonists and supplies. I decided to go with him."
     else:
         "Home, where maybe I could find someone who would appreciate me and love me no matter what."
+        "[his_name] said he would stay, no matter what. But I didn't have to do what he wanted. I needed to do what was best for me."
     "I talked with the Mayor about my situation, and he agreed that the circumstances made it possible for me to divorce [his_name] and cancel my contract as a colonist and return to Earth."
     if (is_pregnant):
         "I was taking the baby with me; I could tell Jack already loved her a lot, but we decided I should have full custody."
@@ -32,7 +34,7 @@ label bad_ending:
     him "..."
     her "..."
     if (cheated_on_him):
-        him "You can't trust him, you know."
+        him "You can't trust Brennan, you know."
         her "What would you know about trust?!"
         him "Hey, at least I never cheated on you."
         him "Any man who would sleep with another man's wife can't be trusted not to do it again."
@@ -60,7 +62,7 @@ label bad_ending:
 # OR - both mediocre
 label mediocre_ending:
     "Things were still rough on Talam. I wasn't sure they would ever get better."
-    if (community_level >= 30):
+    if (community_level >= COMMUNITY_LEVEL_OK):
         "But at least I had my friends and neighbors; we all helped each other out."
     else:
         "There was always too much work to do; not just at work, but at home, too."
@@ -70,7 +72,7 @@ label mediocre_ending:
     if (loved >= 0):
         "Like [his_name] - I wanted to be where he was. Even though he loved this place and this rustic life way more than I did, I loved him enough that I could deal with anything else."
         if (cheated_on_him):
-            "He even forgave me after I cheated on him. How many men would do that?"
+            "He even forgave me after I cheated on him. How many people would do that?!"
     else:
         "Like my job."
         if (profession == "doctor"):
@@ -87,7 +89,7 @@ label mediocre_ending:
             "Aside from their parents, the kids on the colony didn't have any other teachers. So when they finally figured out multiplication or why history was important or read their first novel, it was because of me."
         "I felt needed and appreciated at work, even if I didn't always feel that way at home."
 
-    if (community_level >= 30):
+    if (community_level >= COMMUNITY_LEVEL_OK):
         call work_appreciation
 
     scene bg fields with fade
@@ -170,7 +172,7 @@ label skill_appreciation:
         "I wanted to be one of those people."
     if (skill_technical >= 100):
         "Looking around at our house, I noticed how different it was from when we first moved in."
-        "The water screw, the blender, the laundry wringer - the contraptions I built made things at home a little simpler when everything else was so much harder than back on Earth."
+        "The water screw, the blender, the laundry wringer - the contraptions I built made things at home just a little easier when everything else was so much harder than back on Earth."
     return
 
 # Helper function for endings 2 & 3 to show apprecation for work and say
@@ -236,7 +238,7 @@ label good_ending:
         her normal "The baby's taking a nap, so I took the opportunity to make a nice dinner."
         him surprised "You sure you shouldn't be sleeping, too?"
         her annoyed "I can't sleep all the time! Besides, I feel like all I ever do is feed and change the baby and wash her diapers..."
-        him "That's how babies are, I guess. But someday she be an awesome woman like you, and so it's totally worth it."
+        him "That's how babies are, I guess. But someday she'll be an incredible woman like you, so it's totally worth it."
     elif (is_pregnant_later):
         her normal "I actually feel like eating today, so I took the opportunity to make a nice dinner."
         him happy "You don't have to do that! But thank you..."
@@ -263,8 +265,8 @@ label good_ending:
     him normal "Thank you."
     her laughing "Again? Hey, dinner wasn't that good!"
     him normal "No, not just for dinner. For taking a chance on me, and for trusting me enough to come to Talam with me. For working so hard at your job and all the things you do at home. For loving me even when I'm grouchy or make mistakes."
-    her normal "[his_name]...Thank {b}you{/b}. You work so hard every day - we literally couldn't survive without you. You have loved me no matter what this whole time. And there's nowhere I'd rather be than right here with you."
-    him surprised "Yeah...if someone came up to me, right now, and said 'All-expenses paid trip to wherever you want!', do you know what I'd say?"
+    her normal "[his_name]...I should be thanking {b}you{/b}. You work so hard every day - we literally couldn't survive without you. You have loved me no matter what this whole time. And there's nowhere I'd rather be than right here with you."
+    him happy "Yeah...if someone came up to me, right now, and said 'All-expenses paid trip to wherever you want!', do you know what I'd say?"
     her surprised "What?"
     him flirting "I'd say, 'I want to go to my house, and be in my bed, next to my wife.'"
     her laughing "What a waste! You should pick somewhere exotic!"

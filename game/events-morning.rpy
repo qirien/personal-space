@@ -1253,6 +1253,7 @@ label brennan_confess:
     return
 
 # MONTH 24 Resolve things at work? Someone you've helped says thank you?
+# Brennan says he's leaving, do you want to come
 label work_8:
     $ times_worked += 1
 

@@ -114,8 +114,6 @@ label first_date:
     her surprised "Why are you so interested in this planet all of a sudden?"
     jump marriage_proposal
 
-# TODO: We need another date in here to show how much they love each other before the marriage proposal
-
 label marriage_proposal:
     scene bg porch with fade
     show her normal at midleft
@@ -126,6 +124,7 @@ label marriage_proposal:
     him annoyed "..."
     her surprised "You're serious, aren't you?!"
     him normal "They need farmers to come start the colony, and I want to go."
+    him serious "It's a chance to leave this predictable, materialistic world behind and focus on the things that really matter in life."
     her sad "..."
     him "I want you to come with me."
     her surprised "?"

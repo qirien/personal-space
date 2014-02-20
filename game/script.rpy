@@ -141,6 +141,11 @@ define exposed_brennan = False
 define ocean_character = ""
 define wants_to_leave = False
 define hated_food = "turnips"
+define baby_name = "Gaia"
+
+define COMMUNITY_LEVEL_OK = 30
+define COMMUNITY_LEVEL_GOOD = 50
+define LOVED_GOOD = 30
 
 #Technical variables used to control how the game displays
 define fade = Fade(0.2, 0.2, 0.2)
@@ -173,7 +178,7 @@ label start:
         "No":
             $ his_name = "Jack"
             $ her_name = "Jill"
-            $ profession = "doctor"
+            $ profession = "mechanic"
             $ want_kids = True
             $ known_each_other = "six months"
             jump month01
@@ -187,10 +192,11 @@ label start:
             $ skill_knowledge = 100
             $ skill_domestic = 100
             $ want_kids = True
+            $ is_pregnant = True
             $ known_each_other = "six months"
 
             #jump test_positions
-            jump physical_1
+            jump monthly_event_24
             #call screen computer_pad
 
     "I thought I knew what love was. After all, that's why I married..."
@@ -249,20 +255,6 @@ menu:
         $ skill_social += 20
         jump teacher        
 
-label quick_save:   
-    python hide:
-        renpy.take_screenshot()
-        # will save the current state on the "quicksave" file. This will overwrite any previous quicksaved game, of course               
-        renpy.save("quicksave", extra_info=store.save_name)
-    return
-
-label quick_load:
-    python hide:
-        # if we have some quicksaved game, we'll load it, otherwise this will do nothing
-        if renpy.can_load("quicksave"):
-                renpy.load("quicksave")
-
-    return
 
 label test_positions:
     "left"

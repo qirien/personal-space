@@ -93,7 +93,7 @@ label relax_alone_2:
     show her normal at midleft
     show him normal at midright
     with dissolve
-    her surrpised "Hey, [his_name], want to sit outside with me?"
+    her surpised "Hey, [his_name], want to sit outside with me?"
     him concerned "Oh.... I kind of want to, but I'm so tired. I'm just going to go to bed."
     her "Okay... good night, then."
     hide him with moveoutright
@@ -293,8 +293,8 @@ label relax_alone_g:
     sara "I guess so..."
     her normal "You can even print things out here if you need to."
     sven "But, make sure you recycle any papers you print out when you're done with them; we don't have a paper factory."
-    hide sven
-    show sara at center
+    hide sven with moveoutright
+    show sara at center with move
     sara "Why did you want to come here, [her_name]?"
     her serious "Well, back on Earth I used to like to go to bookstores and just flip through books... This isn't really the same, though."
     sara "Oh, I just read this great book, you should take a look."

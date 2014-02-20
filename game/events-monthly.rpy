@@ -507,7 +507,7 @@ label monthly_event_5:
             him normal "OK, I'll cut up the socks."
             her "I'll smash the plate. That sounds satisfying, anyway."
             him surprised "I guess this packaging we can tear into pieces like cave men?"
-            her annoyed "You mean Paleolithic humans?"
+            her flirting "You mean Paleolithic humans?"
             him angry "Rawr, rawr."
             her flirting "Wow, you're so paleolithic."
             him flirting "I'll take that as a compliment."
@@ -595,7 +595,7 @@ label monthly_event_6:
             else:
                 "After the first day I was exhausted. I wasn't able to help as much as I would have liked."
             show him serious at midright
-            show her serious midleft
+            show her serious at midleft
             with dissolve
             him annoyed "We have baskets and baskets of these insects."
             her surprised "I wonder if we could use them to help us somehow."
@@ -894,7 +894,7 @@ label monthly_event_8:
             thuc "Well, you can count on my help anytime, if you need it."
             her happy "Thanks, I'm sure we will."
             hide thuc with moveoutleft
-            show him at midleft with move
+            show him normal at midleft with move
             "We walked home by moonlight.  The two moons cast opposing shadows from the shrubs and trees, making a maze of light for us to follow. [his_name] reached for my hand."
             show him at center with move
             him normal "Thanks for coming. Everything's better with you."
@@ -1028,14 +1028,14 @@ label she_can_do_better:
                                him annoyed "..."
                                $ loved -= 5
 
-                    "OK, I'll try":
-                       her normal "It would be nice if the house was a little neater... OK, I'll try to do that."
-                       him happy "Thank you, [her_nickname]."
-                       $ loved += 5
-                    "Let's work on it together":
-                        her normal "How about if we take some time one evening and clean up the house together?"
-                        him normal "Yeah, I guess we could do that."
-                        $ loved += 2 
+            "OK, I'll try":
+                her normal "It would be nice if the house was a little neater... OK, I'll try to do that."
+                him happy "Thank you, [her_nickname]."
+                $ loved += 5
+            "Let's work on it together":
+                her normal "How about if we take some time one evening and clean up the house together?"
+                him normal "Yeah, I guess we could do that."
+                $ loved += 2 
     else:
         him happy "Nothing at all. You always make me feel loved, and everything around the house is always so clean and organized, and we spend lots of time together."
     return
@@ -1962,8 +1962,8 @@ label monthly_event_14:
             "Try and get some work done":
                 "I went back out and was able to finish up the day's work, taking two more breaks when I started to feel too light-headed."
         scene bg farm_interior with fade
-        show him at midright with dissolve
-        show her at midleft with moveinleft
+        show him normal at midright with dissolve
+        show her serious at midleft with moveinleft
         "It felt good to get home. I still wasn't feeling well so I decided to lie down."
         him surprised "Are you feeling any better?"
         her concerned "Not really."
@@ -2446,7 +2446,13 @@ label monthly_event_17:
         her normal "Well, that's good to know."
         sara "Come over to the storehouse sometime and I'll show you."
         her happy "Okay, I will!"
-        sara "Anything else going on?"
+        her surprised "Oh! She's kicking right now, you can probably see her little foot poking through my skin..."
+        "Sara put her hand on my belly, and after a minute the baby gave her a little kick."
+        sara "Wow! There is really a baby in there!"
+        her annoyed "I hope so!"
+        sara "Awwww...."
+        her happy "..."
+        sara "So, is anything else going on?"
 
     menu:
         "What should I say?"
@@ -2525,9 +2531,10 @@ label monthly_event_18:
     with moveinleft
     "He hooked up the tractor's battery to the cables, and I attached the other end to our house battery."
     her surprised "It's hooked up!"
-    him surprised "Okay, now turn on the tractor!"
+    him serious "Okay, now turn on the tractor!"
+    show her at center with move
     "He was making sure the clamp was on the battery when I turned the tractor on. But then I heard a strange sound...and was that smoke...?"
-    him annoyed "Aaaahhhhh!"
+    him surprised "Aaaahhhhh!"
     "I turned it off, and as I jumped out, I could see that the engine was on fire! [his_name] was backing away, his hand charred and red."
     her concerned "Are you okay?!"
     him angry "The fire! Get the fire!"
@@ -2540,17 +2547,20 @@ label monthly_event_18:
         "That was the wrong type of fire extinguisher! While it might put out the fire, the tractor would be ruined!"
         "Water would only make it worse, since there was a lot of electronics in the tractor."
         "But I knew something that could work instead..."
+        show her serious at center with moveinleft
         "I ran to the cellar and pulled out a can of baking soda. Yanking the top off as I ran, I dumped it on the tractor engine fire."
         $ community_level += 5
     else:
         "I pulled the trigger; why wasn't it working?! Oh yeah, the pin!"
         "I fumbled with removing the pin; it seemed to take forever!"
+        show her serious at center with moveinleft
         "Finally, I sprayed it at the fire. It didn't seem to do much, but I kept at it."
 
     "Eventually, the fire died down."
     "Now that the fire was out, I turned to [his_name]. One of his hands and his forehead were singed and red."
     him serious "You put it out..."
     her concerned "You're really hurt!"
+    show him concerned 
     "He started laughing. I didn't join him, though - I was too worried."
     if (profession == "doctor"):
         her serious "You're in shock; let's go to the clinic and I'll check you out."
@@ -2810,7 +2820,6 @@ label monthly_event_19:
                 $ relaxed += 2
             "Nothing. Who cares?":
                 "It was too much work. We had more important things to worry about than clothes, anyway."
-
     return
 
 # TODO: trouble sleeping? this seems perhaps too mundane.  Maybe trouble sleeping -> heated argument?
@@ -2943,6 +2952,7 @@ label monthly_event_21:
     return
 
 # TODO: Write this event
+# Include name for baby?
 label monthly_event_22:
     scene bg farm_interior with fade
     return
@@ -2950,7 +2960,7 @@ label monthly_event_22:
 # Climax - epic conflict leading to either "We'll always be together" or "I just want to get away from you!"  Conflict: Worried about new baby, pregnant if made_love a lot or affair with Brennan, otherwise, discussion about quality of sex
 label monthly_event_23:
     scene bg farm_interior with fade
-    show her normal at center with dissolve
+    show her serious at center with dissolve
 
     if (is_pregnant):
         "I was getting huge. I felt like I couldn't eat very much at a time, not only because of the terrible heartburn, but it just didn't feel like there was any room inside me for anything else."
@@ -3369,8 +3379,360 @@ label monthly_event_23:
 # Birth or ?
 label monthly_event_24:
     if (is_pregnant):
+        scene bg farm_interior with fade
         "I felt like a whale. No, that's not big enough. I felt like a brontosaurus."
         "My belly had been growing larger and larger for the past few months, but it still felt foreign to me, like a mosquito bite or a new haircut."
+        "And the heartburn! It was like morning sickness's young apprentice come back for revenge every time I ate."
+        "I knew this baby had to come out sometime, but it seemed impossible. I had been pregnant for so long, I almost couldn't imagine things changing so quickly."
+        show her normal at midright with dissolve
+        show him normal at midleft with moveinleft
+        him surprised "How are you feeling today?"
+        her annoyed "The same, I guess."
+        him "Any contractions?"
+        her angry "No."
+        him concerned "Okay. Well, I'll have my radio with me, just in case."
+        her annoyed "Right."
+        him annoyed "..."
+        her sad "I'm sorry, [his_name]. It's hard not knowing when the baby will come..."
+        him happy "Well, this just means you have a few more days of carefree irresponsibility! How do you want to celebrate?!"
+        her flirting "I think we left all the carefree irresponsibility back on Earth."
+        call set_work_bg
+        show her normal at center
+        "Work wasn't much better."
+        "Everyone treated me like a ticking time bomb."
+        show her at midright with move
+        show brennan at midleft with moveinleft
+        brennan "No baby yet, eh?"
+        her annoyed "No. I'm sure everyone will know when the baby arrives."
+        brennan "Yes, well, you just let me know if you, uh, need to leave or anything."
+        her concerned "..."
+        "At last I could escape for lunch."
+        scene bg farm_interior flip
+        show sara at midright
+        show her normal at midleft
+        with dissolve
+        sara "So, how've you been feeling? You're nine months along now, huh?"
+        her angry "YES! Yes, I am nine months pregnant now, and any minute, without warning, an strange creature could come bursting out! Stand back!"
+        sara "Whoa, feeling a little sensitive?"
+        her sad "Sorry... it's just that it's all anyone ever talks to me about anymore."
+        sara "I'm sorry; do you want to talk about something else?"
+        her normal "Yes, please! Tell me you've read a good book, or found a cool new place, or something!"
+        sara "Yeah, there's this spot by the river where it's kind of like a little beach. It's great for wading and sunbathing."
+        her happy "That sounds great! Will you show me sometime?"
+        sara "Of course! Do you want to go after work today?"
+        her sad "Well... I probably shouldn't. I mean, what if we went, and I went into labor out there in the wilderness?"
+        sara "Ha ha, yeah, if this was a movie that'd totally be what would happen."
+        her normal "You know what? Let's go. I feel fine; we'll bring a radio; and I could certainly use the exercise."
+        sara "Okay, if you're sure!"
+        scene bg pond with fade
+        "After work we hiked for twenty minutes until we got to the riverside spot she mentioned. The sun shone down on us fiercely, but it was a little cooler when we finally got to the shade by the river."
+        show her normal at midright
+        show sara at midleft
+        with moveinleft
+        her happy "This is cool!"
+        sara "Yeah, I've never seen anyone else here, so I like to come here and relax, sometimes."
+        her normal "The sound of the water is so peaceful..."
+        her concerned "But I feel a little tired after walking so far. I think I'll just lie down for a minute."
+        show her at sitting
+        show sara at sitting
+        "We sat there for awhile, just enjoying the sounds of the river."
+        sara "..."
+        her normal "..."
+        sara "So, the shuttle comes next month!"
+        her happy "Yeah! That was always our goal, wasn't it? To just make it until the shuttle came with more supplies?"
+        sara "I guess they'll be bringing some more people, too..."
+        her surprised "That's true! We'll have new neighbors."
+        sara "And maybe they'll have something tasty from Earth."
+        her normal "You know, I don't miss it that much anymore."
+        sara "I do. I don't know that I'll ever get used to all the work it takes to make food here... and then it's not even very good."
+        her sad "..."
+        sara "Sorry. I should be more positive."
+        her concerned "No, it's good to be able to be honest about how you feel."
+        sara "..."
+        her flirting "Like, for example, did you know I've been having contractions this whole time?"
+        sara "What?!"
+        her serious "Just small ones. I guess they call them practice contractions. I've been getting them a lot lately whenever I exercise or get tired. That's why I wanted to lie down."
+        sara "So, we don't need to radio for help or anything?"
+        her normal "No. But we should probably head back."
+        scene bg mountains with fade
+        show sara at quarterright
+        show her normal at right
+        with moveinright
+        "We started walking back. The sun felt hotter than ever, and I started feeling really thirsty."
+        show her at midright
+        show sara at center
+        with move
+        her serious "You don't have any water, do you?"
+        sara "No, sorry. Hey, are you okay?"
+        her concerned "Yeah, let's just get back."
+        "The contractions started to get stronger. I could still walk, but I had to concentrate more on just walking and breathing. I realized Sara was saying something."
+        show her at midleft
+        show sara at left
+        with move
+        sara "-really shouldn't have said that. Don't you think?"
+        her concerned "Can't really...talk right now."
+        sara "Oh, oh, oh, are you in labor?!"
+        her serious "I don't know, I just need to get home."
+        sara "Should we go straight to the clinic? Should I radio the doctor?"
+        if (profession == "doctor"):
+            sara "What am I saying, you are the doctor!"
+        her concerned "No, just- mmmmmm-. Hmmmmm. Hmmmmm."
+        "All I could think about was breathing, and noticing the pain and pressure but keeping my distance from it. Finally, that contraction subsided."
+        her serious "Just walk with me."
+        "I didn't even really notice where we were going; I was just following Sara. She took me to the clinic."
+        
+        scene bg clinic with fade
+        show her serious at center
+        show sara at midright
+        with moveinleft
+        sara "Here's some water; drink this."
+        her concerned "Thank you."
+        show him serious at midleft with moveinleft
+        him surprised "Are you in labor?"
+        "What was he doing here? Sara must have called him..."
+        her serious "I don't know; I'm just having some contractions every now and then."
+        him happy "That's great! Hey, little baby, we're ready for you!"
+        her annoyed "Speak for yourself!"
+        "Now that I was resting and had had some water, the contractions seemed to be slowing down."
+        show julia at midleft with moveinleft
+        show him at midright with move
+        show sara at quarterright with move
+        julia "I got your message, [his_name]. Now, [her_name], tell me what's going on."
+        her serious "Well, I just went on a little walk and then started feeling some contractions on the way back... but I think they went away."
+        julia "That wouldn't surprised me at all. Shall we check and see how things are going?"
+        her serious "Yeah..."
+        "I started to take off my pants."
+        sara "Ummmm, do you want me to stay? I mean, I could, but if you want your privacy..."
+        menu:
+            "What should I say?"
+            "Please stay.":
+                her normal "I'd like you to stay, if you can. We might need help."
+                julia "Yes, I would appreciate some assistance."
+                sara "Okay, then I'll stay."
+            "You can stay if you want.":
+                her normal "I don't mind if you want to stay. It might help you when you have a baby someday."
+                julia "I could certainly use your help."
+                sara "Okay, then I'll stay."               
+            "Please leave.":
+                her normal "Thanks for your help, but you can go home now."
+                sara "Okay, I'll come check on you later!"
+                hide sara with moveoutright
+
+        "Julia put on a sterile glove and felt my cervix."
+        julia "Good. Hmmm. Well, the baby's head is engaged, and she's started working her way down... You're dilated to about 3.5cm..."
+        him surprised "That's a lot, right?"
+        julia "When she gets close to 10, it's time to start pushing."
+        him serious "Oh."
+        "We waited around in the clinic for awhile, but instead of getting stronger, the contractions got weaker and farther apart."
+        julia "I don't think you're going to have this baby tonight. Why don't you go home, and let me know when the contractions are more regular."
+        her serious "Okay. Any idea when that might be?"
+        julia "No. It could be tomorrow, it could be next week. But, perhaps you can take some comfort in the fact that your body is certainly getting ready and has started moving your baby closer to birth."
+        her concerned "Okay..."
+        hide julia with moveoutleft
+        if ( renpy.showing("sara")):
+            sara "Good luck, [her_name]. Sorry you have to wait some more."
+            hide sara with moveoutleft
+        her concerned "Sorry for all the fuss over nothing..."
+        him serious "Hey, it's okay. It's a little disappointing, but the baby has to come eventually, right?"
+        her annoyed "It feels like it's taking forever!"
+        him annoyed "Sorry, there's not much we can do about it."
+        scene bg bedroom
+        show overlay night
+        "We had dinner, and I went to bed early."
+        "I felt frustrated and tired of waiting and wished I had more control over my own body."
+        hide night
+        "I woke up in the early morning to more contractions. I didn't want to wake up [his_name] yet, so I walked around outside as the sun was just starting to come up."
+        scene bg sunset with fade
+        show her serious at center with dissolve
+        her annoyed "(It's probably just false labor again!)"
+        if (skill_spiritual >= 30):
+            her happy "(But at least I get to enjoy this beautiful sunrise...)"
+            $ relaxed += 2
+        elif (skill_knowledge >= 30):
+            her happy "(But even 'false labor' is helping the baby get closer to being born, right?)"
+            $ relaxed += 2
+
+        show him normal at midleft with moveinleft
+        him flirting "Good morning, [her_nickname]! How're you feeling?"
+        her serious "More contractions...who knows if it's really labor or not, though?"
+        him serious "Want me to time them?"
+        her normal "Sure."
+        "As he timed them, they got stronger and more uncomfortable."
+        her serious "Hmmmmmmmmmmmmmmm."
+        him surprised "Okay...They're about four minutes apart, so maybe this is really it?"
+        her annoyed "Let's go find out."
+        "He called Julia and asked her to meet us at the clinic, and grabbed a bag with a few things I had packed."
+        scene bg path with fade
+        show him serious at midright
+        show her concerned at midleft
+        with moveinleft
+        "We walked into town, just the two of us. I slowed down a little whenever the pressure made walking too uncomfortable. On the way there, I threw up by the side of the road."
+        her sad "Sorry about that."
+        him serious "No problem. Can you still walk?"
+        her serious "Yeah, yeah, just, let me stop if I need to."
+        if (loved >= 5):
+            "Once I stopped and leaned against a tree. He rubbed my back and waited patiently for me."
+        if (loved >= 15):
+            "During one of the contractions, I wrapped my arms around his neck and leaned into him while he held me. It was comforting to know I could depend on him."
+        "That mile to the clinic never felt so long as that day when I was in labor. But, finally, we arrived."
+        hide him
+        hide her
+        with moveoutright
+
+        scene bg clinic with fade
+        show julia at midright with dissolve
+        show her serious at center
+        show him serious at midleft
+        with moveinleft
+
+        "Julia checked me, pronounced me officially in labor, and then listened to the baby."
+        julia "Her heartrate sounds good. I'll keep checking, but you are doing great. She is already further down than she was last night."
+        
+        show brennan at left with moveinleft
+        brennan "[her_name]! Are you having a baby?!"
+        her serious "I'm working on it."
+        brennan "Should I go fetch a bucket of water or something?"
+        her annoyed "A bucket of water?"
+        brennan "Yeah, isn't that what people are supposed to bring you when you're in labor?"
+        him annoyed "..."
+        brennan "That's what they do in movies..."
+        julia "Yes, by all means, go boil some water. That will be all, Brennan."
+        brennan "You can count on me!"
+        hide brennan with moveoutright
+        julia "That's usually what they tell people to get them out of the way so they won't distract the laboring mother."
+        her serious "Okay, yeah, great."
+
+        scene bg clinic with fade
+        show her concerned at midright
+        show him concerned at midleft
+        "Time passed... I just tried to make it through one contraction at a time."
+        scene bg clinic with fade
+        show her sad at midleft
+        show him serious at midright
+        show julia at right
+        him surprised "Is it supposed to take this long?"
+        her angry "I'm working as hard as I can!!!"
+        julia "It may not seem like it, but she's progressing well. The body needs to gradually stretch to avoid tearing."
+        her sad "It just seems like nothing's happening..."
+        julia "You're close. You've come so far. This baby is coming out soon!"
+        him serious "You can do this..."
+        her annoyed "Of course I can do this. I'm doing it right now, aren't I?!"
+        if (loved >= 0):
+            him normal "Yes, yes you are!"
+        else:
+            him annoyed "..."
+        her serious "Ohhhh, here comes another one-"
+        her sad "Hooooooo. Hmmmmmm. Ahhhhh! AHHHHH!"
+        her angry "I feel like... I should... push!"
+        julia "Okay, your body's ready, go ahead!"
+        "I yelled and pushed through most of the next contraction. It was hurting a lot, but it felt so good to finally be getting somewhere!"
+        him surprised "What should I do?"
+        julia "See if she wants to lean on you."
+        him serious "Ummm, do you want to lean on me?"
+        "I couldn't concentrate on anything except breathing and pushing. Talking was impossible."
+        julia "Don't use words, just be there."
+        show her at center with move
+        show him at midleft with move
+        show julia at midright with move
+        "I pushed five more times. Every muscle in my body felt so tired that I started shaking all over. I felt ready to give up, but that was impossible."
+        "I managed to gasp out the one thing that was running through my head."
+        her concerned "I guess it's, too late, to, change my mind?"
+        julia "Yes, dear. But don't worry, another four or five pushes and you'll be there!"
+        "After three more pushes I felt like I was done. I had nothing left. If it was a race, I would have quit long ago."
+        her sad "Is this, even, doing anything?!"
+        julia "Yes! I can see the top of her head!"
+        "Suddenly, I felt centered. I had almost forgotten why I was going through all this pain in the first place. This wasn't about me, or about proving something, or winning, or anything stupid like that. This was about our baby, our tiny creature who needed my help just to exist!"
+        "I took a deep breath, and pushed again, stretching past fire and pain and breathing and my own body. Even that wasn't quite enough; I pushed again!"
+        him happy "Yeah! There she is!"
+        julia "One more little push, [her_name], and then you just lie back and relax a bit."
+        show her serious
+        "I closed my eyes. I think [his_name] was holding the baby while Julia cut the cord. It was finished. I did it."
+        "Something small and floppy was placed on my chest. I opened my eyes."
+        if (loved >= 0):
+            him happy "Hey, little one, this here's your momma. She is one awesome woman, but you don't need me to tell you that, right?"
+        else:
+            him normal "Here she is, our baby!"
+        
+        "I looked down at the tiny face in my arms. I couldn't even fathom that this was the same being that I had nourished for these last nine months. I guess I was supposed to feel intense love? I don't know; mostly I was just tired and in awe."
+        julia "I think she looks like you, [her_name]."
+        him surprised "Really?"
+        her normal "I think she looks more like...a baby, than either one of us. Babies all look alike to me..."
+        julia "Well, they won't so much now that you have one of your own."
+        "One of my own... that was still so strange."
+        her happy "Our little [baby_name]..."
+        
     else:
-        "Some Big Epic EVENT!!!"
+        scene bg farm_interior with fade
+        show her normal at midright
+        show him normal at midleft
+        with dissolve
+        her surprised "The shuttle from Earth is supposed to be coming soon!"
+        him happy "I know! Do you think they might have brought more chocolate?"
+        her concerned "I guess some people are taking the shuttle back to Earth..."
+        him surprised "The shuttle's not staying, like ours did?"
+        her serious "No, they're loading it up with samples and returning it to Earth."
+        him surprised "Who's going back?"
+        her concerned "The Matthew's, and Brennan..."
+        him annoyed "Don't know the Matthews very well. As for Brennan- well, good riddance."
+        her surprised "[his_name]!"
+        him annoyed "What? He's always been pretty useless around here, he never fit in, and he flirts with all the married women."
+        her annoyed "Well, I'm starting to think it's a good idea."
+        him surprised "Flirting with married women?"
+        her annoyed "No! Leaving this stupid planet behind! Going back to Earth, where there's toilets and plenty of food and stores and family and doctors and, and..."
+        if (is_pregnant_later):
+            her sad "I don't want our baby to grow up like this, [his_name]. To grow up never knowing Earth, to know only work or die every day..."
+        if (loved < 0):
+            him angry "I've been working as hard as I can! But I can't make all that stuff appear overnight!"
+            her surprised "You shouldn't have to work so hard! There's an easier way!"
+            him angry "I don't want to do things the easy way. I did that on Earth; it was boring."
+            her annoyed "I'd rather be bored and know I'll survive."
+            him annoyed "That kind of life is not even worth living. I've never felt more alive than here on Talam."
+            her angry "Really? You feel alive when you realize that bugs just ate all your food and you might starve? Or when you almost get your hands burned off?"
+            him angry "Yes! It's better than all the idiotic stuff people do on Earth."
+            him annoyed "All they care about is how to make more money so they can buy more stuff so they can distract themselves from the fact that nothing they do matters!"
+            him serious "Here, everything matters. Every day you have to get up and do your job, because if you don't, everyone will suffer."
+            if (community_level <= COMMUNITY_LEVEL_OK):
+                him annoyed "But I guess you wouldn't understand that."
+                her surprised "What do you mean?"
+                him angry "You're so lazy! You just do the bare minimum you need and that's all. Things will never get better if you don't work at them!"
+                her angry "I work plenty hard! But there's other things that are important, too!"
+                him angry "Really? Like what! What's more important than surviving, than building up our community?!"
+                her annoyed "How about my sanity?! Have you ever considered that? No! Because you don't think about how anyone else feels! You just think everyone else must feel like you do!"
+                him annoyed "I know how you feel; you're just wrong."
+                her angry "That's exactly what I'm talking about! You don't give my feelings any weight at all if they don't agree with yours!"
+            him concerned "..."
+            her concerned "..."
+        else:
+            him sad "You miss it that much? I thought we were doing pretty good here..."
+            her sad "Well... yeah, sometimes."
+            him sad "I've tried to work hard and give you everything you need..."
+            her concerned "I know you have. It's not your fault."
+            if (community_level <= COMMUNITY_LEVEL_OK):
+                him concerned "But, you know, you need to work at it, too."
+                her annoyed "What's that supposed to mean?!"
+                him concerned "If we want things to be better here, it's up to us to make it happen. We can't just do the bare minimum and hope for the best."
+                her angry "The bare minimum?! Is that what you think I've been doing?!"
+
+        him concerned "So, I guess what I'm saying is, I'm staying here. I love Talam. I love the challenge and the adventure. But if you really need to leave... I, I won't-"
+        him sad "I won't try to stop you."
+        menu:
+            "What should I say?"
+            "I'll never leave you." if (loved >= 0):
+                "He looked almost ready to cry; he really thought I might leave him. But, even so, he still wanted what was best for me."
+                her serious "Oh, [his_name], I'll never leave you!."
+                him serious "I need you, [her_name]. You're the reason I work, and the reason I come home."
+                "We held each other so tightly, as if we were made of a thousand pieces that would fall apart if the other person didn't hold them all together."
+            "I need to leave." if ((loved < 0) and (community_level < COMMUNITY_LEVEL_OK)):
+                her sad "I can't stay here, [his_name]."
+                $ wants_to_leave = True
+                him sad "..."
+                "He nodded sadly, and slowly turned away and walked out the front door."
+                "I didn't go after him."
+            "I'm not sure yet.":
+                her concerned "I just don't know..."
+                him serious "Then stay! You already know what kind of life you'll have on Earth - boring, predictable, pointless. But here - who knows what could happen?!"
+                her serious "I'll think about it..."
+                "He squeezed my hand gingerly, as if worried that if he reached for more I'd run away."
+                "I squeezed back, but I was still thinking. I couldn't just do what was best for him. I had to think about myself, too."
+
     return

@@ -190,11 +190,22 @@ label settling_in:
     scene bg talam with fade
     "The first month on Talam was really busy. We arrived at the end of winter, so it was still a bit cold and rainy. We all worked together to get everyone's houses up right away. The first one took the longest, as we had to figure out how to put all the pieces together."
     "Finally, our house was put up. We were so glad to stop sleeping in the shuttle and have our own space."
+    scene bg farm_exterior with fade
+    him happy "Here it is! Home, sweet home!"
+    her happy "This might actually work!"
+    her annoyed "But why are we so far from everyone else?"
+    him serious "I picked this spot on purpose. It's close enough that you can walk to work with no problem, but far enough away that we have plenty of room."
+    her surprised "Room for what?"
+    him normal "Room to grow! Room to breathe! Room to do whatever we want!"
+    her annoyed "Yeah, but you're not the one who has to walk two miles every day..."
+    him normal "Well, just come inside. I know you'll like it!"
     scene bg farm_interior with fade
     show her normal at quarterright
     show him normal at quarterleft
     with dissolve
-    her happy "Well, now instead of feeling like we're sleeping on a train, it will be like camping! Where do you think we should put our sleeping bags?"
+    her serious "Not bad, not bad..."
+    him happy "You like it?"
+    her normal "It'll work. Now instead of feeling like we're sleeping on a train, it will be like camping! Where do you think we should put our sleeping bags?"
     him happy "Well, there's this end- or that end."
     her normal "How about the end with the stove can be the kitchen, and the other end can be the bedroom?"
     him normal "Sounds fine to me."

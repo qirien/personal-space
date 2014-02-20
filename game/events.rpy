@@ -55,6 +55,7 @@ init python:
 
     # RELAXATION EVENTS
     # Default Events
+    # TODO: sometimes this is skipping the relaxation section?
     event("relax_together_0", "act == 'act_relax_together'", event.solo(), priority=200)
     event("relax_alone_0", "act == 'act_relax_alone'", event.solo(), priority=200)
 

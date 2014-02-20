@@ -92,7 +92,7 @@ label technical_3:
     lily "Yes. I probably should have finished this project, but... it reminded me too much of Winston."
     her concerned "Oh...were you close?"
     lily "He was my husband."
-    her suprised "Oh! I didn't know you were married!"
+    her surprised "Oh! I didn't know you were married!"
     her sad "I'm so sorry..."
     lily "It is not your fault. But it has considerably slowed down the research here."
     her happy "Well, that part, at least, I can help with."
@@ -123,7 +123,7 @@ label technical_4:
     her happy "The clothes dry about 50 percent faster now."
     him surprised "Huh? Really?"
     her "Yeah, come see what I made!"
-    scene laundry with fade
+    scene bg laundry with fade
     show her normal at midright
     show him normal at midleft
     with moveinleft
@@ -231,12 +231,12 @@ label technical_6:
             ilian "We could use one here at the storehouse; Sven wanted to make peanut butter."
             her normal "Well, maybe he could help you dismantle parts, and I will see if there's enough to make two blenders."
 
-    scene bg black with fade
+    scene black with fade
     "I found a fan and thought I could use that for the blades of the blender. In the fuel intake there were plenty of gaskets, though it was tough to find them in the right size."
     "I even added a dial connected to some resistors that let you control the speed of the blender. The container wasn't transparent (I wasn't sure if the metal we used was even technically food-safe), but it fit on the blades okay."
     "When I tried it out, it leaked -- a lot. I sealed the leaks up and played around with the speeds to get a speed that would mix and blend without foaming or stalling."
     "Finally, I had a blender. It used so much electricity that it wouldn't run at the same time as anything else, so we had to turn off the lights when we needed to use it."
-    "I didn't mind, though. I just sat back and enjoyed my [hated_food] smoothie."
+    "I didn't mind, though. I just sat back and enjoyed my smoothie full of [hated_food]."
     $ skill_technical += 10
     return
 
@@ -247,7 +247,7 @@ label technical_7:
     "I wondered if we could use the nearby river to augment our electricity sources."
     "I studied some diagrams on the internet and drew up some plans for a water wheel that would work with our river."
 
-    scene bg storehouse with fade4
+    scene bg storehouse with fade
     show ilian at midright with dissolve
     show her normal at midleft with moveinleft
     her surprised "Do you mind if I get some more parts from the shuttle?"
@@ -358,7 +358,7 @@ label technical_9:
     hide him with moveoutleft
     scene bg storehouse with fade
     show ilian at midright with dissolve
-    show her at midleft with moveinleft
+    show her normal at midleft with moveinleft
     "I rummaged through the broken parts bin at the storehouse until I found what I was looking for."
     her "Aha! A broken computer pad! Let's see if there's any more..."
     ilian "What are you going to use that for?"
@@ -410,7 +410,7 @@ label technical_9:
             her annoyed "(Did he just give her a kiss?! Gross!)"
             her happy "(Now he's making silly faces at me. Will he ever grow up?!)"
             her normal "(Nice close-up of your teeth...or... what {b}is{/b} that?!)"
-            show him with moveinleft
+            show him normal with moveinleft
             him happy "I'm back!"
             her happy "Welcome home."
             $ loved += 1

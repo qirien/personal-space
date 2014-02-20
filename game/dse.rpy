@@ -49,8 +49,6 @@ label month01:
 # Or, in our case, month.
 label day:
 
-    # Quicksave
-    call quick_save
     # Increment the month it is.
     $ month += 1
     stop music fadeout 5.0
