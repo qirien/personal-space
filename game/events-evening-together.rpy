@@ -56,6 +56,7 @@ label relax_together_1:
     "One of the things I missed most about Earth was having my own shower and bath. While we washed up well enough with water from the well, we still enjoyed going to the community bath once a week or so to really get clean."
     her concerned "I really need a bath."
     him surprised "Really? You smell great to me."
+    "I sniffed the air. All I could smell was hay and compost and sweat."
     her flirting "Ick, you need a bath, too! Let's go tonight."
     him happy "Sure, after dinner and...dessert."
     her happy "You made dessert?! What kind?"
@@ -215,6 +216,7 @@ label relax_together_4:
         "I started off gently. His muscles were so tight, I was amazed he could move at all. I gradually kneaded harder, trying to tell what sorts of massage he liked."
         him serious "Ohhh, that feels so good."
         "Sometimes he would make sort of painful grunt that let me know he didn't like what I was doing. But he would also sigh with content when I hit a particularly tense spot."
+        "I noticed his smell, too - there was a hint of horse, but mostly he smelled like fresh dirt and hard work."
         if (relaxed >= 5 and skill_physical >= 10):
             "After his shoulders, I massaged his arms and hands. It made me think of how hard he had been working all day."
             

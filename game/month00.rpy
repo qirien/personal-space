@@ -9,7 +9,7 @@ label colony_ship:
     show him normal at midright
     show her normal at midleft
     with dissolve
-    him surprised "What do you think about having kids?"
+    him surprised "So, [her_nickname], What do you think about having kids?"
     her flirting "In general, or us specifically?"
     him concerned "You and me, becoming parents. Sounds kind of crazy, doesn't it?"
 
@@ -18,7 +18,7 @@ label colony_ship:
         "What should I say?"
 
         # Want to have kids
-        "Not at all.":
+        "That doesn't sound crazy.":
             $ want_kids = True
             her normal "I don't think that's crazy. We're both adults; we know we can provide a good home; what more is there to wait for?"
             him happy "Yeah, you're right! I think you'd be a great mom! And...well, I probably wouldn't mess the kids up too much."
@@ -26,7 +26,6 @@ label colony_ship:
             him surprised "Hey! I'm good to Lettie!"
             her happy "Too good! You'll spoil the kids with treats!"
             $ loved += 5
-            $ relaxed += 5
 
         # Not sure about kids
         "I don't know.":
@@ -42,7 +41,7 @@ label colony_ship:
                 $ made_love += 1
 
         # Definitely no kids
-        "Really crazy.":
+        "That's really crazy.":
             $ want_kids = False
             her sad "I'm not sure we'd be the best parents."
             him surprised "You don't think so? Can't you just picture me on my horse with a kid in my lap? Maybe a little girl?"
@@ -52,34 +51,27 @@ label colony_ship:
                 "She would probably fall off.":
                     her flirting "She would probably fall off."
                     him annoyed "No way! Lettie would never let anyone fall off her."
-                "Maybe...":
-                    "(Aww, that does sound kind of cute...)"
-                    jump want_kids_maybe
-
-            # Why doesn't she want kids?
-            menu: 
-                "I thought..."
-                "It's not Lettie I'm worried about.":
                     her annoyed "It's not Lettie I'm worried about!"
                     him surprised "You don't trust me?"
                     menu:
-                        "\"You don't trust me?\""
-                        "That's right":
+                        "What should I say?"
+                        "That's right.":
                             her annoyed "Sorry, I just can't picture you as a father."
                             $ loved -= 5
                             him sad "Oh..."
                             him laughing "I get it, it's hard to believe someone as good-looking as me could ever be a father."
                             her annoyed "Yes, that's exactly right."
-                        "I don't trust myself":
+                        "I don't trust myself.":
                             her sad "No, I'm more worried about me - I don't think I'd be a good mom."
                             him concerned "Oh. Well, for what it's worth, I disagree with you. But, we've got plenty of time. No need to worry about it now."
-                        "I don't want to share you":
+                        "I don't want to share you.":
                             her concerned "I don't want to share you with anyone else just yet."
-                            him annoyed "Yeah...that makes sense. I'm not sure how I feel about sharing you with a baby, either."
+                            him serious "Yeah...that makes sense. I'm not sure how I feel about sharing you with a baby, either."
                             $ loved += 5
-                "You've fallen off before":
-                    her annoyed "What about that time you fell off and sprained your wrist?"
-                    him surprised "That was completely my fault! Lettie had nothing to do with it."
+
+                "That does sound kind of cute...":
+                    her normal "(That does sound kind of cute...)"
+                    jump want_kids_maybe
 
 # After talking about having kids
 # Background about Talam
@@ -89,15 +81,14 @@ label colony_ship:
     "Time on Talam would be different, too: days lasted longer, but a year was only about two-thirds of a year on Earth."
     # TODO: Would this be more exciting with some dialogue?
     "The planet was also a lot less protected from its small Sun, since it was a lot closer.  The building materials we'd brought along would help protect us from solar flares and radiation, but only if we were inside."
-    # TODO: Maybe she builds this?
-    #"They taught us about the early-warning system they put in place so people would know when it was not safe to be outdoors."
+    "They taught us about the early warning system they put in place so people would know when it was not safe to be outdoors."
 
     # He remembers her birthday
     scene bg colony_ship_bunk with fade
-    show him normal at midleft with dissolve
     play music "music/Prelude22.ogg" fadeout 1.0
 
     "Time felt strange on the ship, too. Though there was no sunrise or sunset, they did dim the lights for ten hours every night. One night I came back to our room and found a surprise waiting for me."
+    show him normal at midleft with dissolve
     show her normal at midright with moveinright
     him happy "Happy Birthday, [her_name]."
     her surprised "What? It's not my birthday!"
@@ -115,6 +106,7 @@ label colony_ship:
         "Gross":
             her annoyed "...gross. Sorry, but toilet paper hanging from the walls does not really create a festive mood."
             him annoyed "Sorry, I thought you'd think it was funny."
+            $ loved -= 2
     him normal "Anyway, who cares about the decor? I think you need to open your present!"
     her surprised "A present? Where on earth did you find something?"
     him flirting "Ha ha, not on Earth, that's for sure! Here."
@@ -131,28 +123,32 @@ label colony_ship:
             him sad "...it's not very good."
             her normal "I like it just how it is."
             him normal "I'm glad, [her_name]. I don't always tell you how much you mean to me, but I hope you know."
+            $ loved += 2
         "Sappy":
-            her normal "This is very... sweet."
+            her concerned "This is very... sweet."
             him concerned "It's too much, isn't it?"
             her happy "Yeah, but I like it anyway. Thank you, [his_name]."
             him happy "You're welcome."
-        "...":
+            $ loved += 2
+        "Awful":
             her concerned "..."
             him sad "It's bad, isn't it?"
             her normal "...thank you for thinking of me, [his_name]."
             him concerned "You're welcome. Sorry it's so bad..."
-    him surprised "Enough poetry! On to the cake!"
+            $ loved -= 2
+    him happy "Enough poetry! On to the cake!"
     her surprised "What {b}is{/b} that edible-looking thing on the table, anyway?"
     him normal "Well...it turns out that cake is considered a terrible waste of weight and space by the Food Manager. So there isn't any actual cake. But-"
     her surprised "But?"
     him happy "But I tried to make some out of what I could get. Just taste it, and tell me if it's good!"
-    show her concerned
+    her concerned "(It look like chocolate, but...)"
     menu:
-        her "(It look like chocolate, but...)"
+        "What should I do?"
         "Try it":
             "(It tastes like bread with sugar and chocolate on it. In fact, on closer inspection, I can see that it {b}is{/b} a piece of bread, sprinkled with sugar, and with pieces of chocolate pressed into it.)"
             her normal "This is actually kind of good. Here, try some."
             him normal "Oh, thanks."
+            $ loved += 2
         "Don't try it.":
             her concerned "I'm sorry, but I can't eat this."
             him annoyed "C'mon, are you sure? It's just bread and sugar and chocolate..."
@@ -162,6 +158,7 @@ label colony_ship:
             him surprised "It's good! A little too sweet, maybe, but try it!"
             "You gingerly take a bite of the strange \"cake\"."
             her surprised "It's not cake, but it's pretty good."
+            $ loved -= 2
     her surprised "Where did you get these ingredients, anyway? Usually we only get chocolate once a week."
     him normal "I've been saving them."
     her concerned "This sugar is from our coffee ration, isn't it? You went without sugar, and your weekly chocolate so you could make this for me?"
@@ -176,11 +173,12 @@ label colony_ship:
         "What's the point?":
             her sad "What's the point of celebrating birthdays? One year older, one year closer to dying...that's not a cause to party."
             him normal "It is if it means it's one more year I've been able to spend with you."
+            $ relaxed -= 5
     scene black with fade
     "He pulled me close in a gentle hug, then held me tightly, as if I would drift off into space without him."
-    $ loved += 5
     $ made_love += 1
-    $ relaxed += 5
+    $ relaxed += 2
+    $ loved += 2
     him normal "[her_name]..."
     jump settling_in
 
@@ -194,32 +192,34 @@ label settling_in:
     him happy "Here it is! Home, sweet home!"
     her happy "This might actually work!"
     her annoyed "But why are we so far from everyone else?"
-    him serious "I picked this spot on purpose. It's close enough that you can walk to work with no problem, but far enough away that we have plenty of room."
+    him serious "I picked this spot on purpose. It's close enough that you can walk to work easily, but far enough away that we have plenty of room."
     her surprised "Room for what?"
-    him normal "Room to grow! Room to breathe! Room to do whatever we want!"
+    him normal "Room to grow! Room to breathe! Room to do whatever we want! We can yodel, or have loud parties, or make love in the backyard, or do anything we want! No nosy neighbors!"
     her annoyed "Yeah, but you're not the one who has to walk two miles every day..."
-    him normal "Well, just come inside. I know you'll like it!"
+    him normal "I think you'll like it. Come on inside, let's setup our stuff."
     scene bg farm_interior with fade
     show her normal at quarterright
     show him normal at quarterleft
     with dissolve
     her serious "Not bad, not bad..."
-    him happy "You like it?"
-    her normal "It'll work. Now instead of feeling like we're sleeping on a train, it will be like camping! Where do you think we should put our sleeping bags?"
+    him happy "Isn't it awesome?! It's so small, it'll be easy to clean. And it's cozy, for just the two of us."
+    "The house really was pretty small- just one room. One end had a wood-burning/electric hybrid stove/heater as well as a battery that the solar panels could charge, and the other end had a window. No plumbing, electricity only when it was sunny or while our battery lasted, and no furniture other than our sleeping bags and a folding table."
+    her annoyed "Good thing we didn't waste any space on frivolous things like bathrooms."
+    him serious "The outhouse is not that far!"
+    her normal "It'll work. Instead of feeling like we're sleeping on a train, it will be like camping. Where do you think we should put our sleeping bags?"
     him happy "Well, there's this end- or that end."
     her normal "How about the end with the stove can be the kitchen, and the other end can be the bedroom?"
     him normal "Sounds fine to me."
-    scene black with fade
-    "The house really was pretty small- just one room. One end had a wood-burning/electric hybrid stove/heater as well as a battery that the solar panels could charge, and the other end had a window. No plumbing, electricity only when it was sunny or while our battery lasted, and no furniture other than our sleeping bags and a folding table."
     scene bg bedroom with fade
     show him normal at quarterleft
     show her normal at quarterright
     with dissolve
-    "As soon as we got the house up, [his_name] started putting up a piece of paper he unfolded from his bag. When I got closer, I could see it was a picture of his family. I realized I hadn't brought any pictures of my family."
+    "After we setup our sleeping area, [his_name] started putting up a piece of paper he unfolded from his bag. When I got closer, I could see it was a picture of his family. I realized I hadn't brought any pictures of my family."
     "He put it right next to his side of the bed."
     menu:
         "What should I say?"
         "Could you put that somewhere else?":
+            $ loved -= 2
             her concerned "[his_name], do you think you could put that somewhere else? I don't really want to stare at your parents when we're making love."
             him annoyed "Where else should I put it? There's not a lot of room, and I don't want it to catch fire near the stove."
             her annoyed "I don't know; anywhere else!"
@@ -230,6 +230,7 @@ label settling_in:
                 "Was it better?"
                 "Yes.":
                     her annoyed "Yes."
+                    him annoyed "..."
                 "Yes, thank you.":
                     her normal "Yes, thank you."
                     him normal "You're welcome."

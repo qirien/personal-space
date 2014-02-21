@@ -36,6 +36,7 @@ image bg mountains = "bg/mountains.jpg"
 image bg stream = "bg/stream.jpg"
 image bg hotspring = "bg/hot-spring.jpg"
 image bg tractor = "bg/tractor.jpg"
+image bg church = "bg/church.jpg"
 image overlay night = "bg/night.png"
 
 # Declare characters used by this game .

@@ -25,8 +25,7 @@ label relax_alone_1:
         "I'll be right over":
             her "Sure, I'll be right there."
             "I walked to Sara's house in the dusky evening light, wondering what it was she wanted to talk about. When I got there, I could tell she'd been crying."
-            # TODO: make a mirrored/different farm interior for other people's houses
-            scene bg farm_interior
+            scene bg farm_interior flip
             show her serious at midleft
             show sara at midright
             with dissolve

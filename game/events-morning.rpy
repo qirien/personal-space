@@ -171,23 +171,23 @@ label work_0:
     # CRAFTER
     elif (profession == "crafter"):
         boss "All right! This is the shop where people will come in if they need something made they can't make themselves. We don't have a lot of materials yet, but you can requisition some from the storehouse for important projects, and there are some materials, like wood, right here on the planet."
-        her "I can see that this job is going to take a lot of creativity!"
+        her happy "I can see that this job is going to take a lot of creativity!"
         boss "Yes, it will! Perhaps you can start by helping me out - one of the roof pieces from the Nguyen's house broke when we were unpacking it, so they are going to need a replacement."
-        her "Sure, I'll take a look at the standard roofs and see if I can make something out of the wood around here."
+        her normal "Sure, I'll take a look at the standard roofs and see if I can make something out of the wood around here."
 
     # MECHANIC
     elif (profession == "mechanic"):
         boss "All right! This is the shop where people will bring machines that need to be fixed. You'll be responsible for any kind of machine people have, from datapads to tractors. We don't have many replacement parts, so do what you can to fix things up when they break."
-        her "I can see that this will take a lot of creativity."
+        her concerned "I can see that this will take a lot of creativity."
         boss "Yes, it will! Perhaps you can start by helping me with my datapad? It always freezes up when I try to access my calendar..."
-        her "Sure, let me take a look at it..."
+        her normal "Sure, let me take a look at it..."
 
     # TEACHER
     elif (profession == "teacher"):
         boss "All right! This is the schoolhouse. There's not a lot of kids in the community yet, so we just have them all in one room with you as their teacher. Please consider what they'll need to learn in addition to the standard curriculum, and try to be flexible if kids are needed to help out back at home."
-        her "I guess the kids are going to have to work hard, too..."
+        her normal "I guess the kids are going to have to work hard, too..."
         boss "Yes, but they need to learn a lot, too! It will take a lot of effort to see that they don't forget about Earth, and all the things humanity has managed to learn there."
-        her "Even though it seems far away, it's still our home, isn't it?"
+        her serious "Even though it seems far away, it's still our home, isn't it?"
 
     "I worked hard getting things set up, and even though the job seemed pretty big, I thought I would probably do okay."
 
@@ -439,57 +439,56 @@ label work_2:
             him annoyed "Oh, well, that's good, I guess."
             her surprised "What, you don't think that's a good idea?"
             him serious "Well, I'm just a bit suspicious of Brennan. He comes on the shuttle at the last second with no special skills, no family, and nobody else seems to think that's unusual."
-            her serious "I guess they did ask mostly for couples and families to come..."
-            #TODO: finish adding emotions
+            her concerned "I guess they did ask mostly for couples and families to come..."
             him annoyed "He seems nice enough, but I'm just wondering what the real purpose is for him to be here."
             her surprised "You think he's a spy or something?"
             him serious "I'm not saying that. I'm just saying that there's unanswered questions here."
             her flirting "Interesting. Well, I'll keep an eye out, and if I see him sending coded messages to the aliens, I will let you know."
             "The next time Brennan helped out at work, he was as friendly as ever, but I didn't feel as uncomfortable as before. I treated him politely, but coolly, and we got a lot of work done."
         "Nothing special.":
-            her "Just the usual. How about you?"
-            him "Had to dig out some big boulders in the new field I'm working on."
-            her "Oh, that sounds hard. Hungry for dinner?"
-            him "I'm always hungry."
-            her "Ohh, that I believe!"
+            her serious "Just the usual. How about you?"
+            him serious "Had to dig out some big boulders in the new field I'm working on."
+            her normal "Oh, that sounds hard. Hungry for dinner?"
+            him flirting "Oh yeah, I'm always hungry."
+            her flirting "Ohh, that I believe!"
 
             $ loved -= 5
             $ relaxed -= 5
         "I have to work with someone obnoxious.":
-            her "Ugh, the mayor wants me to work with Brennan Callahan."
-            him "Really? What's wrong with him?"
-            her "I don't know, he's helpful enough, he's just kind of...creepy."
-            him "Like in a 'secretly-a-vampire' kind of way, or a 'socially-inept' kind of way?"
-            her "Like in a flirting-with-a-married-woman kind of way."
-            him "... He was flirting with you?"
-            her "I don't know! Maybe? Or maybe he just acts that way with everyone."
-            him "I don't know; I always thought it was a little strange how he came on the shuttle at the last minute, with no special skills and no family."
+            her annoyed "Ugh, the mayor wants me to work with Brennan Callahan."
+            him surprised "Really? What's wrong with him?"
+            her serious "I don't know, he's helpful enough, he's just kind of...creepy."
+            him normal "Like in a 'secretly-a-vampire' kind of way, or a 'socially-inept' kind of way?"
+            her concerned "Like in a flirting-with-a-married-woman kind of way."
+            him serious "... He was flirting with you?"
+            her serious "I don't know! Maybe? Or maybe he just acts that way with everyone."
+            him annoyed "I don't know; I always thought it was a little strange how he came on the shuttle at the last minute, with no special skills and no family."
             her "I guess that is unusual."
-            him "Want me to talk to him?"
+            him surprised "Want me to talk to him?"
             menu:
                 "Do I want him to talk to Brennan?"
                 "No, I'll handle this":
-                    her "No thanks, I can handle him."
-                    him "That's what I'm afraid of."
-                    her "You know that's not what I meant! You're the only man I want to handle, silly."
-                    him "I know, it's okay, I don't really want to have that conversation with him, anyway. But let me know if you do want me to help you out later, okay?"
-                    her "Thanks, [his_nickname]."
+                    her serious "No thanks, I can handle him."
+                    him annoyed "That's what I'm afraid of."
+                    her annoyed "You know that's not what I meant! You're the only man I want to handle, silly."
+                    him serious "I know, it's okay, I don't really want to have that conversation with him, anyway. But let me know if you do want me to help you out later, okay?"
+                    her normal "Thanks, [his_nickname]."
                     call set_work_bg
                     show her normal at midright with dissolve
                     show brennan at midleft with dissolve
                     "The next time I saw Brennan, I thanked him for his help and mentioned that I expected everyone working there to maintain a professional attitude."
                     brennan "I'm sorry; I didn't mean to make you uncomfortable. Quite the opposite, actually."
-                    her "Right. Now we've got work to do."
+                    her serious "Right. Now we've got work to do."
                     "Things went more smoothly after that, and we got a lot of work done."
                 "Just talk to him":
-                    her "By 'talk' you mean 'speak words with' not 'punch in the face', right?"
-                    him "Of course, what kind of barbarian do you think I am?"
-                    her "I don't know, I was just making sure!"
+                    her concerned "By 'talk' you mean 'speak words with' not 'punch in the face', right?"
+                    him annoyed "Of course, what kind of barbarian do you think I am?"
+                    her annoyed "I don't know, I was just making sure!"
                     "I didn't hear anything else about it, but the next time Brennan came to help, he acted much more professionally. That sure made things easier at work."
                 "No, I'm probably imagining things":
-                    her "No, it's not the big of a deal. He's probably just a friendly kind of guy."
-                    him "Friendly to women, you mean."
-                    her "Maybe, but, whatever. I'm not interested. I've got you!"
+                    her normal "No, it's not the big of a deal. He's probably just a friendly kind of guy."
+                    him annoyed "Friendly to women, you mean."
+                    her flirting "Maybe, but, whatever. I'm not interested. I've got you!"
                     "The next time Brennan helped me out, he was friendly as ever, but I didn't feel as uncomfortable as before. I treated him politely but coolly, and work went well."
 
     return
@@ -498,7 +497,6 @@ label work_2:
 # working hard
 label work_3:
     $ times_worked += 1
-
     call set_work_bg
     show her serious at midright with dissolve
 
@@ -506,7 +504,7 @@ label work_3:
     if (profession == "doctor"):
         "I worked hard all month. A new baby was born, a kid got his finger chopped off, and it looked like Mr. Peron might have cancer. In addition, we were monitoring the colonist's radiation and nutrient levels to try to keep them healthy."
         show brennan at quarterleft with dissolve
-        "Brennan worked hard, too - he didn't have any formal medical training, but he learned to take vitals and organize blood samples and fetch equipment for me."
+        "Brennan worked hard, too - he didn't have any formal medical training, but he learned to take vitals and log patients and fetch equipment for me."
         "It would have been impossible to do it all by myself."
 
     # CRAFTER
@@ -521,7 +519,7 @@ label work_3:
         "I worked hard all month. People's datapads would get corrupted if they were left out during solar flares, the farm equipment needed maintenance, and sometimes homes' solar panels or stoves would break down."
         "Some critter kept chewing through the wires at the Engels' farm, and so we were always going out there to replace those."
         show brennan at quarterleft with dissolve
-        "Brennan worked hard, too - he didn't know much about electronics, but he could run wires and use ordinary tools to care of the easier things."
+        "Brennan worked hard, too - he didn't know much about electronics, but he could run wires and haul materials and use ordinary tools to care of the easier things."
         "We accomplished a lot more together than I could have on my own."
 
     # TEACHER
@@ -531,7 +529,7 @@ label work_3:
         show brennan at quarterleft with dissolve
         "Brennan worked hard, too - he didn't have any experience with teaching, but he was good with kids and helped keep them on task."
         "There were times when just having another adult around was so important."
-    show her
+    show her normal
     her normal "Good work today, Brennan."
     brennan "Thanks, [her_name]. I really enjoy working with you."
     menu:
@@ -539,11 +537,11 @@ label work_3:
         "I enjoy working with you, too.":
             her "I like working with you too; you've been very helpful."
             brennan "I'm glad there's something useful I can do."
-            her "You weren't doing anything useful before?"
+            her surprised "You weren't doing anything useful before?"
         "Tell me about yourself.":
-            her "Thanks. So, what brings you to the colony, anyway?"
+            her surprised "Thanks. So, what brings you to the colony, anyway?"
         "Gotta go, bye.":
-            her "Thanks. Um, I gotta go."
+            her concerned "Thanks. Um, I gotta go."
             brennan "I'll see you tomorrow, [her_name]..."
             return
 
@@ -570,10 +568,10 @@ label work_3:
             her normal "Well, maybe we could go for lunch together sometime."
             brennan "I'd like that, [her_name]. Thank you, for being a friend."
         "(Give him a hug)":
-            her serious "I'm sorry you're so alone..."
-            "He doesn't seem at all surprised when you reach out your arms to give him a hug. He hugs you back, holding you a second longer than you meant to, and then you let go."
+            her concerned "I'm sorry you're so alone..."
+            "He didn't seem at all surprised when I reached out my arms to give him a hug. When he hugged back, he smelled clean, like soap. I pulled away."
             her concerned "(This is probably the first hug he's had in months... poor guy.)"
-            brennan "Thank you, [her_name]. I'm glad you're my friend."
+            brennan "Thank you, [her_name]. It helps having a friend like you."
         "We're all family":
             her normal "We're all family here, right?"
             brennan "I suppose so, though you're the only one I feel close enough to to call family."
@@ -603,32 +601,38 @@ label work_4:
         show brennan at midright with dissolve
         her serious "Take a culture sample; looks like a bacterial infection."
         brennan "Alright."
-        "I borrowed a microscope from the science lab and examined the culture. It was like no bacteria in any of the reference books."
+        "I borrowed a microscope from the science lab and examined the culture. It was like no bacteria I had ever seen, or any I could find in the database."
         her "Brennan, we need to quarantine the clinic. I'll send out a message to everyone urging them to stay away, wash wounds promptly, and watch out for these symptoms."
         "Would this bacteria respond to traditional antibiotics? They seemed to have cell walls, just like bacteria on Earth, so we decided to give it a try."
+        scene bg clinic with fade
         "We stayed up all night with the girl, but the next day she was shaking, and her hand was starting to turn white around the cut. And now her brother was in the clinic with similar symptoms on his knee."
-        "We continued treatment all that day, but the wounds still didn't seem to be improving. Instead, the infection appeared to be spreading. I hoped we wouldn't have to amputate; it seemed like we had time to try one last thing."
+        "We continued treatment all that day, but the wounds still didn't seem to be improving. Instead, the infection appeared to be spreading. We tried several antibiotics, but none had any effect on this strange organism."
+        show her serious at midright
+        show brennan at midleft
+        with dissolve
+        "I hoped we wouldn't have to amputate; it seemed like we had time to try one last thing."
+
         menu:
             "What should we do?"
             "Use maggots":
                 her "Brennan, we need some maggots."
                 brennan "Maggots?! What for?"
-                her "They will eat the infected tissue but leave healthy tissue alone. We'll need a lot of them; hundreds. I'll ask around, too, and we'll see what we can find."
+                her "They will eat the infected tissue but leave healthy tissue alone. We'll need a lot of them; I'll ask around, too, and we'll see what we can find."
                 "We ended up with about a hundred maggots from local insects. I hoped they would work like the ones on Earth. I kept some for breeding, since we might need more, and disinfected the rest and applied them to the wounds."
                 "The kids were a little grossed out, but they watched intently as we applied them and wrapped them gently with gauze."
-                "Afterwards I was so tired I fell asleep at my desk."
+                "Then there was nothing to do but wait... somehow, I managed to fall asleep."
             "Ask Dr. Lily":
                 her "There's got to be something these bacteria are weak against. Maybe Dr. Lily can help."
                 scene bg lab with fade
-                show lily at midright
+                show lily at midright with dissolve
                 show her serious at midleft
-                with dissolve
+                with moveinleft
                 lily "Let's try several different kinds of antibiotics on different cultures and see if we can find what works best."
                 her "Good idea."
                 "We tried a little bit of all the medicines and substances we had that we thought could possibly work. We tried different chemicals, synthetic drugs, local mold, algae - anything we could think of."
                 "The hardest part was waiting around for the results, while the kids were suffering."
                 lily "Look at the algae culture! There's hardly any bacteria left."
-                her "Hopefully the algae itself wouldn't be harmful to people..."
+                her concerned "Hopefully the algae itself wouldn't be harmful to people..."
                 lily "I can't say for sure."
                 call set_work_bg
                 show her serious at midright
@@ -636,15 +640,15 @@ label work_4:
                 with dissolve
                 "We decided to try it. The kids just kept getting worse, and I was worried the bacteria would spread to vital systems."
                 "We scraped off a little of the infected tissue and put some of the algae on with a new bandage."
-                "Afterwards, I was so exhausted I fell asleep at my desk."
+                "Then there was nothing to do but wait... somehow, I managed to fall asleep."
             "Cut out bacteria":
-                her "We can't risk the bacteria spreading to vital systems. The antibiotics aren't working, and these kids' condition just keeps worsening. "
+                her serious "We can't risk the bacteria spreading to vital systems. The antibiotics aren't working, and these kids' condition just keeps worsening. "
                 brennan "What are you going to do?"
                 her "I'm going to try to cut away the infected flesh to make it easier for the antibiocs to do their job."
                 brennan "That's going to be painful."
                 her "That's why your job is to keep the kid happy while I'm doing it."
                 brennan "You have an awfully high opinion of my ability to keep people happy."
-                her "I have local anaesthetics I can use; just help her feel better."
+                her annoyed "I have local anaesthetics I can use; just help her feel better."
                 "We told her what we were going to do, and then Brennan started telling her a story about faeries and flying mushrooms while I gave her the local anaesthetic. I didn't want to take out healthy skin, but I wanted to leave as little bacteria as possible, so it was pretty tricky."
                 "We treated the boy the same way, and then I was so exhausted I fell asleep at my desk."
 
@@ -652,18 +656,18 @@ label work_4:
         scene bg clinic with fade
         show her concerned at center
         "I awoke the next day in a hospital bed, disoriented. I was still in my clothes..."
-        her "The kids!"        
+        her surprised "The kids!"        
         "I rushed over to check on them. For the first time, the kids seemed a little better. I don't know if it was our crazy idea, or if the antibiotics were finally working, or both, but I was so relieved that we could help them."
         "Brennan had fallen asleep on another bed, snoring softly."
-        her "(He must have carried me in here when I fell asleep at my desk...)"
+        show her normal
         "On my desk, my computer pad was full of messages from everyone asking about the kids and the quarantine. I looked for messages from [his_name]."
         him "1) Hey, [her_nickname], I haven't heard from you since the quarantine announcement...are you okay? I missed you today, but if anyone can help those kids, you can."
-        if (loved >= 0):
-            him "2) Starting to get a little worried here - any news?"
         if (loved >= 5):
+            him "2) Starting to get a little worried here - any news?"
+        if (loved >= 10):
             him "3) [her_name], I am seriously considering breaking my own leg so that they'll let me in there with you! You better still be alive in there!"
 
-        her "(He was so worried about me...)"
+        her happy "(He was so worried about me...)"
         $ loved += 2
 
         "There were other outbreaks of the Streaks, but now that we knew how to treat it, we didn't worry quite so much."
@@ -675,27 +679,27 @@ label work_4:
         "But..."
         show brennan at midleft with moveinleft
         brennan "Where's the two by fours? I wanted to start on those shelves for the school."
-        her "That pile there is all we've got. The mayor said we're going to save the rest for emergencies."
+        her serious "That pile there is all we've got. The mayor said we're going to save the rest for emergencies."
         brennan "Well how do you like that! How are we supposed to build without materials?"
-        her "Well, there are plenty of trees by the river..."
+        her concerned "Well, there are plenty of trees by the river..."
         brennan "We're not lumberjacks!"
-        her "No, but I have an idea."
+        her normal "No, but I have an idea."
         "We didn't have a sawmill yet (I think that was one of the things that was supposed to come on the next ship), so we needed to make do with what we had."
         her "Brennan, I need you to gather or saw off or whatever a bunch of small branches, as uniform in diameter as possible."
         brennan "You're the boss..."
         hide brennan with moveoutleft
         "While he was gone, I started drawing up some designs that used simpler materials. Instead of using big boards for the shelves, we could lash a bunch of medium-sized branches together."
-        her "We'll still need some thick, long branches for the posts... and then how should we attach the shelves to the posts?"
+        her serious "We'll still need some thick, long branches for the posts... and then how should we attach the shelves to the posts?"
         "I did some research and drew up some ideas when Brennan came back. He had a trailer full of branches, and he looked sweaty and miserable."
         show brennan at midleft with moveinleft
         brennan "I hope this is enough for you."
-        her "That'll do... for today."
+        her normal "That'll do... for today."
         brennan "Today! You're a slave driver, you are."
-        her "I have to be to get any work out of you, Your Laziness."
-        her "Anyway, come see these plans. We'll need to strip the branches of twigs and leaves, and cut them to uniform sizes..."
+        her flirting "I have to be to get any work out of you, Your Laziness."
+        her serious "Anyway, come see these plans. We'll need to strip the branches of twigs and leaves, and cut them to uniform sizes..."
         "He stripped the branches while I attached them together. It took a few tries to attach everything so it was sturdy, and it wouldn't hold as much weight as a normal shelf, but in the end, we finished it."
         
-        her "I might have to have the mayor emphasize to people how much work it is to build this stuff, and maybe they won't ask for so many things."
+        her normal "I might have to have the mayor emphasize to people how much work it is to build this stuff, and maybe they won't ask for so many things."
         brennan "Or you could have them bring you the wood anytime they want you to make something."
 
         "I was going to have to do more research on ways to build with the wood we had here on Talaam."
@@ -704,53 +708,58 @@ label work_4:
     elif (profession == "mechanic"):
         show her normal at midright with dissolve
         show brennan at midleft with dissolve
-        her "This is the third one of these radios that has broken so far! I can't believe they sent such cheapo equipment on a space mission."
+        her annoyed "This is the third one of these radios that has broken so far! I can't believe they sent such cheapo equipment on a space mission."
         brennan "I know; you'd think it might have occurred to them that we can't order new parts on a whim."
-        her "And they didn't send us with many variable resistors, either."
+        her concerned "And they didn't send us with many variable resistors, either."
         brennan "There's plenty of these fixed resistors, though."
-        her "Well, that doesn't do us much good, unless..."
+        her serious "Well, that doesn't do us much good, unless..."
         brennan "What?"
-        her "Well, we could just use a fixed resistor instead and turn it into an on/off switch instead of a volume control."
+        her normal "Well, we could just use a fixed resistor instead and turn it into an on/off switch instead of a volume control."
         brennan "But then you couldn't control the volume."
         her "No, but it's better than running out of variable resistors that we might need for a more vital system somewhere."
         brennan "That's true..."
-        her "Although, we do have some resistive tape; we could probably make our own...but it would be more bulky than the original."
+        her serious "Although, we do have some resistive tape; we could probably make our own...but it would be more bulky than the original."
         "We worked on making a small potentiometer out of resistive tape and metal rings, but we couldn't get it small enough to fit on the handheld radio. So we had to just remove the volume control. Our solutions weren't always ideal, but we did the best we could with the materials we had."
 
     # TEACHER a kid claims teacher hit them
     elif (profession == "teacher"):
         scene bg classroom with fade 
-        show her normal at center with dissolve
-        show brennan at quarterright with dissolve
+        show her normal at midleft with dissolve
+        show brennan at midright with dissolve
         "It was the end of another school day. Even though the kids went home in the afternoon, I usually stayed around for another hour or two working on lesson plans and grading papers. Sometimes Brennan stayed and worked, too."
         "One day after school the Mayor came by to talk with me."
         show pavel at quarterleft with moveinleft
+        show her at center with move
+        show brennan at quarterright with move
         boss "So, how are things going at the school?"
-        her "Pretty good! I feel bad that the older kids have to spend so much time helping the younger kids, but it's really the only way to teach so many of different ages."
+        her normal "Pretty good! I feel bad that the older kids have to spend so much time helping the younger kids, but it's really the only way to teach so many of different ages."
         boss "That's good, that's good... Well, what I came to talk to you about, is that one of the parents came to me with a concern."
-        her "Oh?"
+        her surprised "Oh?"
         boss "They said that their child came up with red marks on their hands, and the child said you hit their hands with a ruler."
-        her "They said WHAT?!"
+        her angry "They said WHAT?!"
         brennan "[her_name]'ll be stern when the kids need it, but she's never hit anyone."
         boss "This is news to you, then."
-        her "Of course it is! I would never do such a thing. Which kid is it?"
+        her surprised "Of course it is! I would never do such a thing. Which kid is it?"
         boss "Gardenia."
-        her "Gardenia... Well, a few days ago we were talking about how discipline in schools has changed, and how they used to hit kids that misbehaved with rulers or make fun of them, and how we don't do that anymore."
+        her concerned "Gardenia... Well, a few days ago we were talking about how discipline in schools has changed, and how they used to hit kids that misbehaved with rulers or make fun of them, and how we don't do that anymore."
         brennan "I remember that. Then at recess, she was playing school with some of the other kids, and I saw them whacking each other with sticks."
         boss "So, you think it was one of the other kids pretending to be a teacher?"
-        her "That's the only thing I can think of."
+        her serious "That's the only thing I can think of."
         boss "It sounds like this was just a misunderstanding. I'll talk to Gardenia's parents and let them know what happened."
-        her "Thanks, Mayor Grayson. I wish they would have come to me about it, though."
+        her normal "Thanks, Mayor Grayson. I wish they would have come to me about it, though."
         boss "I'll tell them that, too. Good-bye, then."
         her "Good-bye."
         hide pavel with moveoutleft
-        her "Thanks for sticking up for me."
+        show her at midleft with move
+        show brennan at midright with move
+        her serious "Thanks for sticking up for me."
         brennan "Of course. I couldn't let cute little Gardenia get away with another one of her fibs."
-        her "She certainly has a good imagination..."
+        her annoyed "She certainly has a good imagination..."
         "Gardenia didn't give us any more trouble that month."
 
     return
 
+            #TODO: finish adding emotions
 # Month 12 - Solar flare while at work
 label work_5:
     $ times_worked += 1
@@ -764,7 +773,6 @@ label work_5:
     "It started as a normal day at work, when Dr. Lily's voice came over the radio."
     play sound "sfx/radio.mp3"
     lily "Attention all colonists! This is Dr. Lily. A strong solar flare has just started. Get inside now. I repeat, there is a solar flare in progress, please get indoors."
-    # TODO: play big static noise?
     "The radio emitted a strong burst of static, and I could barely make out anything else she said."
     lily "...close the...stay...further notice..."
     "Our computer pads also popped up a notification from her."
