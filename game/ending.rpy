@@ -29,29 +29,36 @@ label bad_ending:
     if (is_pregnant_later):
         "I would end up giving birth on the shuttle on the way back to Earth. Somehow I was not as worried about that as I had been about the idea of giving birth at Talaam's little clinic."
     "I didn't have much to bring with me- it reminded me again how little we had. It just wasn't enough."
-    him "I guess... this is good-bye, then."
-    her "Yeah. Sorry it didn't work out."
-    him "..."
-    her "..."
+    scene bg farm_exterior with fade
+    show him serious at midleft
+    show her serious at midright
+    with dissolve
+    him concerned "I guess... this is good-bye, then."
+    her concerned "Yeah. Sorry it didn't work out."
+    him sad "..."
+    her serious "..."
     if (cheated_on_him):
-        him "You can't trust Brennan, you know."
-        her "What would you know about trust?!"
-        him "Hey, at least I never cheated on you."
-        him "Any man who would sleep with another man's wife can't be trusted not to do it again."
-        her "You don't know anything about Brennan. Or me, either, apparently."
-        him "I guess not."
+        him annoyed "You can't trust Brennan, you know."
+        her angry "What would you know about trust?!"
+        him serious "Hey, at least I never cheated on you."
+        him annoyed "Any man who would sleep with another man's wife can't be trusted not to do it again."
+        her angry "You don't know anything about Brennan. Or me, either, apparently."
+        him annoyed "I guess not."
     else:
-        him "You don't have to go. We could... start over, try again."
-        her "Sorry, [his_name]. I can't live here... and I can't live with you."
-        him "{size=6}I don't know if I can live without you...{/size}"
-        her "What was that?"
-        him "I said, I'll be fine without you. Enjoy Earth. Goodbye."
+        him concerned "You don't have to go. We could... start over, try again."
+        her sad "Sorry, [his_name]. I can't live here... and I can't live with you."
+        him sad "{size=6}I don't know if I can live without you...{/size}"
+        her surprised "What was that?"
+        him angry "I said, I'll be fine without you. Enjoy Earth. Goodbye."
+    hide him with moveoutleft
     "He turned away and walked home, never looking back. I picked up my bag and boarded the shuttle as we got ready to lift off."
-        
+    scene bg colony_ship_bunk with fade
+    show her serious at center with dissolve
     if (cheated_on_him):
+        show brennan at midright with moveinright
         "Brennan put his arm around me and pulled me close. He whispered in my ear,"
         brennan "Just pretend it was all a bad dream..."
-    her "At least I have a chance to start over again... this time on Earth, my favorite planet in the universe."
+    her serious "At least I have a chance to start over again... this time on Earth, my favorite planet in the universe."
     
     ".:. Ending 1/3."
     jump show_credits
@@ -75,18 +82,6 @@ label mediocre_ending:
             "He even forgave me after I cheated on him. How many people would do that?"
     else:
         "Like my job."
-        if (profession == "doctor"):
-            scene bg clinic with fade
-            "As the only doctor on the colony, people came to me with all sorts of problems. Mostly medical ones, but sometimes other questions, too."
-        elif (profession == "crafter"):
-            scene bg workshop with fade
-            "Every day was a new challenge; something new to build, a new material found, or some new technique to try. And nobody could make things as well as I could."
-        elif (profession == "mechanic"):
-            scene bg machine_shop with fade
-            "When someone needed a piece of tech fixed, it wasn't just because they wanted it - they really needed it. We all needed everything to be working smoothly for the food to grow and us all to survive."
-        elif (profession == "teacher"):
-            scene bg classroom with fade
-            "Aside from their parents, the kids on the colony didn't have any other teachers. So when they finally figured out multiplication or why history was important or read their first novel, it was because of me."
         "I felt needed and appreciated at work, even if I didn't always feel that way at home."
 
     if (community_level >= COMMUNITY_LEVEL_OK):
@@ -96,19 +91,24 @@ label mediocre_ending:
     show him normal at quarterright with moveinright
     show her normal at center with moveinleft
     if (loved >= 0):
-        him "Hey, [her_nickname]! Welcome home!"
+        him happy "Hey, [her_nickname]! Welcome home!"
     else:
-        him "Hi, [her_name]."
+        him normal "Hi, [her_name]."
 
-    her "Hi, [his_name]. What's for dinner?"
-    him "Stir-fry. Lots of fresh veggies this month!"
+    show him at midright with move
+    her normal "Hi, [his_name]. What's for dinner?"
+    him serious "Stir-fry. Lots of fresh veggies this month!"
     if (loved >= 0):
-        her "Okay, well, I guess we better eat what we have."
+        her serious "Okay, well, I guess we better eat what we have."
     else:
-        her "Again?"
-        him "Yeah, that's what we have, so that's what we eat."
-        her "..."
+        her concerned "Again?"
+        him concerned "Yeah, that's what we have, so that's what we eat."
+        her serious "..."
 
+    scene bg farm_interior with fade
+    show him serious at midright
+    show her serious at midleft
+    with dissolve
     "We sat down to dinner."
     call skill_appreciation
     if (is_pregnant):
@@ -120,25 +120,25 @@ label mediocre_ending:
     show him normal at midleft
     with dissolve
 
-    her "[his_name]?"
-    him "Hmmm?"
+    her serious "[his_name]?"
+    him surprised "Hmmm?"
     # TODO: Make this less cheesy: include some body language or specific details or something
-    if (loved >= 0):
-        her "I'm so glad to be here, with you."
-        him "I'm glad to be with you, [her_nickname]!"
-        her "What an adventure we've had..."
-        him "Hmmm, I think our adventure is just beginning!"
-        her "Ha ha, yeah... I wonder what the next year will bring?"
-        him "As long as it's full of you, I'm not worried about it."
-        her "Mmm-hmmmm."
+    if (loved > 0):
+        her concerned "I'm so glad to be here, with you."
+        him normal "I'm glad to be with you, [her_nickname]!"
+        her normal "What an adventure we've had..."
+        him happy "Hmmm, I think our adventure is just beginning!"
+        her concerned "Ha ha, yeah... I wonder what the next year will bring?"
+        him flirting "As long as it's full of you, I'm not worried about it."
+        her normal "Mmm-hmmmm."
     else:
-        her "I'm sorry."
-        him "For what, now?"
-        her "I haven't always been as good to you as you deserve... "
-        him "I'm sorry, too. Sometimes I know I'm hard to deal with."
-        her "Thanks for not giving up on me."
-        him "Let's never give up on us."
-        her "Yeah."
+        her concerned "I'm sorry."
+        him surprised "For what, now?"
+        her sad "I haven't always been as good to you as you deserve... "
+        him concerned "I'm sorry, too. Sometimes I know I'm hard to deal with."
+        her normal "Thanks for not giving up on me."
+        him normal "Let's never give up on us."
+        her serious "Yeah."
         
     # TODO: is this too cheesy?
     "We kissed good night, but I lay awake for a little while, thinking a lot and worrying a little. I wanted to believe in our colony, to believe in our marriage, but I knew it took more than believing in something to make it come true."
@@ -158,14 +158,14 @@ label skill_appreciation:
     if (skill_physical >= 100):
         "As I took another bite of beans, the juicy meat tasted so good. We'd dried it to preserve it, but when it soaked with the beans it regained some of its original texture."
     if (skill_social >= 100):
-        her "We had a colony leadership meeting today."
-        him "Oh yeah? How'd it go?"
-        her "Pretty good. Though sometimes I wish people would just work out their own problems."
-        him "Like what?"
-        her "Oh, like \"Someone's goat is getting onto my property! Do something!\" when really they should just go tell Thuc, \"Hey, your goat came in my fields, can I help you fix your fence?\""
-        him "Ha ha, I know exactly what you're talking about."
-        her "I just have to remember that we can't make everyone be happy, and they're not going to come tell us all the good things that are going on."
-        him "Sounds like you've got a good perspective."
+        her normal "We had a colony leadership meeting today."
+        him surprised "Oh yeah? How'd it go?"
+        her serious "Pretty good. Though sometimes I wish people would just work out their own problems."
+        him normal "Like what?"
+        her serious "Oh, like \"Someone's goat is getting onto my property! Do something!\" when really they should just go tell Thuc, \"Hey, your goat came in my fields, can I help you fix your fence?\""
+        him normal "Ha ha, I know exactly what you're talking about."
+        her serious "I just have to remember that we can't make everyone be happy, and they're not going to come tell us all the good things that are going on."
+        him normal "Sounds like you've got a good perspective."
     if (skill_technical >= 100):
         "Looking around at our house, I noticed how different it was from when we first moved in."
         "The water screw, the blender, the laundry wringer - the contraptions I built made things at home just a little easier when everything else was so much harder than back on Earth."
@@ -183,21 +183,28 @@ label skill_appreciation:
 label work_appreciation:
     if (profession == "doctor"):
         scene bg clinic with fade
+        "As the only doctor on the colony, people came to me with all sorts of problems. Mostly medical ones, but sometimes other questions, too."
+        "It felt good to know I was the one who helped Mr. Peron overcome his cancer, and helped little Van not die from choking, and took care of everyone's health. They really needed me."
         show her normal at midright with dissolve
         show pavel at midleft with moveinleft
         boss "[her_name], I don't know what we'd do without you. You've worked so hard to keep everyone on the colony healthy."
     elif (profession == "crafter"):
         scene bg workshop with fade
+        "Every day was a new challenge; something new to build, a new material found, or some new technique to try. And nobody could make things as well as I could."
+        "Chairs, shelves, rope, clothes - you name it, I'd made it for someone this past year."
         show her normal at midright with dissolve
         show pavel at midleft with moveinleft
         boss "[her_name], I don't know what we'd do without you. Everyone has something you've made in their house or on their farm. And you've taught others how to make useful things, too."
     elif (profession == "mechanic"):
         scene bg machine_shop with fade
+        "When someone needed a piece of tech fixed, it wasn't just because they wanted it - they really needed it. We all needed everything to be working smoothly for the food to grow and us all to survive."
+        "Without our radios, computer pads, tractors, and electricity, we'd be no better off than people were three hundred years ago."
         show her normal at midright with dissolve
         show pavel at midleft with moveinleft
         boss "[her_name], I don't know what we'd do without you. All our machines would be broken and useless if not for your hard work fixing them up all the time."
     elif (profession == "teacher"):
         scene bg classroom with fade
+        "Aside from their parents, the kids on the colony didn't have any other teachers. So when they finally figured out multiplication or why history was important or read their first novel, it was because of me."
         show her normal at midright with dissolve
         show pavel at midleft with moveinleft
         boss "[her_name], I don't know what we'd do without you. All the kids love your enthusiasm for learning, and you've worked hard to make sure they know about Earth and learn the things they need to succeed here on Talam."
@@ -236,6 +243,7 @@ label work_appreciation:
 
 # ENDING 4 - Community and Marriage Thriving
 label good_ending:
+    "I was finishing up at work, thinking about how much I enjoyed my job."
     call work_appreciation
     "I headed home, enjoying the warm sun and a light breeze."
 
@@ -244,12 +252,14 @@ label good_ending:
     show her normal at center with moveinleft
 
     her surprised "There you are! How come you're so late?"
-    him "Just had to finish up out here."
+    him serious "Just had to finish up out here."
     if (is_pregnant):
         her normal "The baby's taking a nap, so I took the opportunity to make a nice dinner."
         him surprised "You sure you shouldn't be sleeping, too?"
-        her annoyed "I can't sleep all the time! Besides, I feel like all I ever do is feed and change the baby and wash her diapers..."
-        him "That's how babies are, I guess. But someday she'll be an incredible woman like you, so it's totally worth it."
+        her annoyed "I can't sleep all the time!"
+        her concerned "Besides, I feel like all I ever do is feed and change the baby and wash her diapers..."
+        him concerned "That's how babies are, I guess."
+        him happy "But someday she'll be an incredible woman like you, so it's totally worth it."
     elif (is_pregnant_later):
         her normal "I actually feel like eating today, so I took the opportunity to make a nice dinner."
         him happy "You don't have to do that! But thank you..."
@@ -273,7 +283,7 @@ label good_ending:
 
     him surprised "[her_name]?"
     her surprised "What?"
-    him normal "Thank you."
+    him serious "Thank you."
     her laughing "Again? Hey, dinner wasn't that good!"
     him normal "No, not just for dinner. For taking a chance on me, and for trusting me enough to come to Talam with me. For working so hard at your job and all the things you do at home. For loving me even when I'm grouchy or make mistakes."
     her normal "[his_name]...I should be thanking {b}you{/b}. You work so hard every day - we literally couldn't survive without you. You have loved me no matter what this whole time. And there's nowhere I'd rather be than right here with you."
