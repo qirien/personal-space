@@ -94,7 +94,7 @@ label technical_3:
     lily "He was my husband."
     her surprised "Oh! I didn't know you were married!"
     her sad "I'm so sorry..."
-    lily "It is not your fault. But it has considerably slowed down the research here."
+    lily "It's not your fault. But it has considerably slowed down the research here."
     her happy "Well, that part, at least, I can help with."
 
     "I hooked up the radiation detector to the network and had it send the data to one of the servers in the lab. Then I wrote a program to analyze the data and detect changes."
@@ -341,8 +341,28 @@ label technical_8:
     $ skill_technical += 10
     return
 
-# Setup webcams around the farm to monitor fields/(goat)
+# TODO: Finish this
+# 9 - write an app that uses weather data and frost prediction and knowledge of various plants to remind you when to plant/harvest crops. Also keeps track of your fields, what's been on them, and helps you rotate them efficiently.
+# programmable tractor attachment?
 label technical_9:
+    scene bg farm_interior with fade
+    show him annoyed at midright with dissolve
+    him angry "I just can't remember!"
+    show her normal at midleft with moveinleft
+    her surprised "Can't remember what?"
+    him annoyed "I forgot which fields I put the fertilizer on last week... I know I didn't get to one, but I can't remember which one it was!"
+    her concerned "Don't you write that sort of thing down?"
+    him annoyed "...I started a map, but it was just too much trouble."
+    
+
+
+
+    $ skill_technical += 10
+    return
+
+
+# Setup webcams around the farm to monitor fields/(goat)
+label technical_master:
     scene bg farm_interior with fade
     show her normal at midright
     show him normal at midleft
@@ -414,21 +434,21 @@ label technical_9:
             him happy "I'm back!"
             her happy "Welcome home."
             $ loved += 1
-            
+
+    "The surveillance equipment made it easier to see the farm at a glance. I decided to put instructions for them online in case anyone else wanted to make some."
+    call set_work_bg
+    show her normal at midright with dissolve
+    "The next day at work, the mayor came to see me."
+    show pavel at midleft with moveinleft
+    boss "I hear you have a great camera system setup at your farm, [her_name]."
+    her happy "Yeah, here, take a look! You can see the fields in every direction."
+    boss "Would you mind setting up something similar at a few locations around town?"
+    her surprised "Sure, I could do that."
+    "I setup some cameras; one in the storehouse, one at the river, and one overlooking the whole town, and made an interface so anyone in our community could see them and collect data from them."
+    "A couple people even asked me for more instructions like the one I had posted, so I added how-tos for the water screw, laundry wringer, and everything else I had made."
+    "Life on the colony was still hard, but some of my inventions made it easier for everyone."
+
     $ skill_technical += 10
+    $ community_level += 10
     return
 
-# TODO: Finish this
-# 10 - write an app that uses weather data and frost prediction and knowledge of various plants to remind you when to plant/harvest crops. Also keeps track of your fields, what's been on them, and helps you rotate them efficiently.
-# programmable tractor attachment?
-label technical_master:
-    scene bg farm_interior with fade
-    show him annoyed at midright with dissolve
-    him angry "I just can't remember!"
-    show her normal at midleft with moveinleft
-    her surprised "Can't remember what?"
-    him annoyed "I forgot which fields I put the fertilizer on last week... I know I didn't get to one, but I can't remember which one it was!"
-    her serious "Don't you write that sort of thing down?"
-    him annoyed "...I started a map, but it was just too much trouble."
-    $ skill_technical += 10
-    return

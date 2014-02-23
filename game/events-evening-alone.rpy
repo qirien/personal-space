@@ -92,7 +92,7 @@ label relax_alone_2:
     show her normal at midleft
     show him normal at midright
     with dissolve
-    her surpised "Hey, [his_name], want to sit outside with me?"
+    her surprised "Hey, [his_name], want to sit outside with me?"
     him concerned "Oh.... I kind of want to, but I'm so tired. I'm just going to go to bed."
     her "Okay... good night, then."
     hide him with moveoutright
@@ -396,7 +396,7 @@ label relax_alone_k:
             him laughing "Ha ha, if you say so, [her_nickname]."
         "Who's {b}your{/b} type?":
             her flirting "So who's {b}your{/b} type of woman?"
-            him concerned "Hmmm, what are my choices?"
+            him serious "Hmmm, what are my choices?"
             her normal "Crazy and energetic, shy and nerdy, or glamorous and serious."
             him normal "Out of those three...probably crazy."
             him laughing "I mean, anyone who could tolerate me would have to be at least half crazy!"

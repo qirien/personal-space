@@ -1160,6 +1160,8 @@ label work_7:
                     "It looked a little bit like a computer, with a metal case and some LEDs lighting up every now and then. But there was no writing or labels on the case at all. It made a low humming noise."
                     her "What is it?"
                     "Suddenly, I heard footsteps and I jumped. Brennan was in the doorway, watching me. He seemed amused."
+                    her surprised "I was just, ah, well..."
+                    "He entered the room, closing the door behind him."
                     show brennan at center with moveinleft
                     jump brennan_confess
                     
@@ -1191,7 +1193,6 @@ label work_7:
 label brennan_confess:
     brennan "It's a quantum entanglement communicator."
     her "Okay, but what does it do and why do you have one?"
-    "He sighed and entered the room, closing the door behind him."
     brennan "I use it to send messages with Earth, instantly."
     her "Instantly?! Faster than light speed - I thought that was impossible!"
     brennan "The technology's quite new and expensive - this is a prototype, actually. Part of my job here was to test it."

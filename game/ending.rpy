@@ -72,7 +72,7 @@ label mediocre_ending:
     if (loved >= 0):
         "Like [his_name] - I wanted to be where he was. Even though he loved this place and this rustic life way more than I did, I loved him enough that I could deal with anything else."
         if (cheated_on_him):
-            "He even forgave me after I cheated on him. How many people would do that?!"
+            "He even forgave me after I cheated on him. How many people would do that?"
     else:
         "Like my job."
         if (profession == "doctor"):
@@ -166,56 +166,67 @@ label skill_appreciation:
         him "Ha ha, I know exactly what you're talking about."
         her "I just have to remember that we can't make everyone be happy, and they're not going to come tell us all the good things that are going on."
         him "Sounds like you've got a good perspective."
-    if (skill_spiritual >= 100):
-        "I thought of all the little things that had happened to help us succeed. We had plenty of bad things, too, but somehow no matter what happened we managed to make it through."
-        "Not on our own, though - I noticed some people in the colony who were always looking out for everyone else, even at great cost to themselves."
-        "I wanted to be one of those people."
     if (skill_technical >= 100):
         "Looking around at our house, I noticed how different it was from when we first moved in."
         "The water screw, the blender, the laundry wringer - the contraptions I built made things at home just a little easier when everything else was so much harder than back on Earth."
+    if (skill_spiritual >= 100):
+        "I thought of all the little things that had happened to help us succeed. We had plenty of bad things, too, but somehow no matter what happened we managed to make it through."
+        "Not on our own, though - I noticed some people in the colony who were always looking out for everyone else, even at great cost to themselves."
+        "Like Sister Naomi, and the Mayor, and even [his_name], sometimes."
+        "I wanted to be one of those people."
+
     return
 
-# Helper function for endings 2 & 3 to show apprecation for work and say
+# Helper function for endings 2 & 3 to show appreciation for work and say
 # goodbye to Brennan, if he's leaving.
 # TODO: Make this less cheesy by including specific people she's helped
 label work_appreciation:
     if (profession == "doctor"):
         scene bg clinic with fade
+        show her normal at midright with dissolve
+        show pavel at midleft with moveinleft
         boss "[her_name], I don't know what we'd do without you. You've worked so hard to keep everyone on the colony healthy."
     elif (profession == "crafter"):
         scene bg workshop with fade
+        show her normal at midright with dissolve
+        show pavel at midleft with moveinleft
         boss "[her_name], I don't know what we'd do without you. Everyone has something you've made in their house or on their farm. And you've taught others how to make useful things, too."
     elif (profession == "mechanic"):
         scene bg machine_shop with fade
+        show her normal at midright with dissolve
+        show pavel at midleft with moveinleft
         boss "[her_name], I don't know what we'd do without you. All our machines would be broken and useless if not for your hard work fixing them up all the time."
     elif (profession == "teacher"):
         scene bg classroom with fade
+        show her normal at midright with dissolve
+        show pavel at midleft with moveinleft
         boss "[her_name], I don't know what we'd do without you. All the kids love your enthusiasm for learning, and you've worked hard to make sure they know about Earth and learn the things they need to succeed here on Talam."
 
-    her "I've just been trying to help out."
+    her serious "I've just been trying to help out."
     boss "I just wanted to let you know how much we all appreciate your hard work and expertise."
-    her "Thank you, that's nice to hear."
+    her happy "Thank you, that's nice to hear."
+    hide pavel with moveoutleft
     "Even though it sounded cheesy, it was true. I felt needed, and appreciated - there really was no one else on the colony who could do the things I could do, but people didn't resent that."
     "They just knew that sometime I'd need them as much they needed me."
-
+    show brennan at midleft with moveinleft
     brennan "He's right, you know. We'd all be lost without you."
-    her "That's an exaggeration!"
+    her flirting "That's a total exaggeration."
     if (wants_to_leave or cheated_on_him):
         brennan "I suppose you've changed your mind about wanting to leave?"
-        her "Yes... sometimes it has seemed hopeless, but I thought about it, and I'm happy right where I am."
+        her concerned "Yes... sometimes it has seemed hopeless, but I thought about it, and I'm happy right where I am."
     if (exposed_brennan):
         brennan "It'll be your turn to send a message on the quantum entanglement device... what will you say?"
-        her "I'll have to think about it - there's a lot to fit into 150 characters."
+        her surprised "I'll have to think about it - there's a lot to fit into 150 characters."
         brennan "Well, it turns out the brass in Washington want me to stay longer - since the device works, I don't have to return to Earth to make my report in person."
-        her "That's good news!"
+        her happy "That's good news!"
     else:
         brennan "I don't think anyone will be sad to see me go."
         if (brennan_relationship >= 2):
-            her "Of course we'll miss you! But maybe you won't miss Talam?"
+            her flirting "Of course we'll miss you! But maybe you won't miss Talam?"
         else:
-            her "We'll miss you, Brennan. But I think it'll be good for you to do something else."
+            her concerned "We'll miss you, Brennan. But I think it'll be good for you to do something else."
         brennan "Yeah, I never did quite fit in here. I'm not too sad about it; I missed having things to do, people to see, places to go..."
-        her "That's the spirit!"
+        her normal "That's the spirit!"
 
     "Brennan left, and I got ready to go."
 

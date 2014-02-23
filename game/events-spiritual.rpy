@@ -59,7 +59,7 @@ label spiritual_1:
 
 label spiritual_2:
     scene bg farm_interior with fade
-    show her serious at center with dissolve0
+    show her serious at center with dissolve
     "One of the books Naomi loaned me was the Dhammapada, a collection of sayings of the Buddha. There were a lot of good teachings, but I was struck by one part in particular..."
     her serious "\"For hatred does not cease by hatred at any time: hatred ceases by love, this is an eternal rule.\""
     her concerned "..."
@@ -134,7 +134,7 @@ label spiritual_5:
     return
 
 label spiritual_6:
-    scene farm_interior with fade
+    scene bg farm_interior with fade
     show her normal at center
     "In the Koran I read:"
     her serious "\"You will not attain piety until you expend of what you love; and whatever thing you expend, God knows of it.\""
@@ -235,7 +235,7 @@ label spiritual_6:
     return
 
 label spiritual_7:
-    scene farm_interior with fade
+    scene bg farm_interior with fade
     show her normal at center with dissolve
     "Naomi sure sent me a lot of books to read...but I think I'm getting something out of them."
     "Today I was reading part of the Tao Te Ching."
@@ -251,7 +251,7 @@ label spiritual_7:
     return
 
 label spiritual_8:
-    scene farm_interior with fade
+    scene bg farm_interior with fade
     show her normal at center with dissolve
 
     "I read some of the Tattvartha Sutra, central to Jainism."
@@ -301,11 +301,11 @@ label spiritual_9:
     return
 
 label spiritual_master:
-    scene farm_interior with fade
+    scene bg farm_interior with fade
     show her normal at center
 
     "I had read so many religious texts from all over the world, but last I started reading the Bible. While some of the stories were familiar, there was a lot I had never read before."
-    "I read in 1 Thessalonians in the Bible, \"In every thing give thanks.\", and it made me stop and think."
+    "I read in 1 Thessalonians in the Bible, \"In every thing give thanks,\" and it made me stop and think."
     her surprised "Can I really give thanks for {b}everything{/b}?"
     "There were a lot of things I was definitely not grateful for - pests, bad weather, sickness, arguments..."
     her concerned "I can't give thanks for those things."
@@ -342,8 +342,8 @@ label spiritual_master:
     "I started to panic, but then a wave of calm swept it away. I had an idea."
     her normal "Let's not wait until later to be grateful. Let's give thanks right now. If you would like, please take turns sharing with us one thing you are grateful for."
     "I sat down. Would anyone volunteer?"
-    "The silence continued. A few people shuffled in their seats."
     hide her
+    "The silence continued. A few people shuffled in their seats."
     show ilian at center with dissolve
     ilian "I'm thankful for my wife, Sara. She never complains, and is always smiling cheerfully."
     hide ilian

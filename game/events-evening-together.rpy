@@ -295,7 +295,7 @@ label relax_together_5:
 
     "The food wasn't anything special, but somehow it tasted better combined with a beautiful sunset. Afterwards he gathered up the dishes and walked a little ways away."
     him normal "Come sit down over here, it's softer."
-    her surprised "Is this our mattress?! You were planning this all along!"
+    her surprised "Is this our sleeping bags?! You were planning this all along!"
     him happy "It never hurts to be prepared..."
     menu:
         "That's..."
