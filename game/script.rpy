@@ -5,6 +5,7 @@
 # Declare images below this line, using the image statement.
 
 # BACKGROUNDS
+image joyous_jellyfish = "bg/joyous-jellyfish-logo.png"
 image bg stars = "bg/starscape.jpg"
 image bg earth = "bg/earth.jpg"
 image bg farm_exterior = "bg/farm-exterior.jpg"
@@ -150,6 +151,20 @@ define LOVED_GOOD = 30
 
 #Technical variables used to control how the game displays
 define fade = Fade(0.2, 0.2, 0.2)
+
+# Splashscreen before the main menu
+label splashscreen:
+    scene black
+    with Pause(1)
+
+    show joyous_jellyfish with dissolve
+    with Pause(2)
+
+    scene black
+    with Pause(1)
+
+    return
+    
 
 # The game starts here.
 label start:
