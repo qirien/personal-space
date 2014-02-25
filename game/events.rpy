@@ -19,7 +19,7 @@ init python:
     event("work_0", "act == 'act_work'", event.once(), event.only())
     
     # Other special work events
-    for i in range(1,8):
+    for i in range(1,9):
         event("work_" + `i`,
               "act == 'act_work' and month >= " + `i*3`,
               event.once(),
@@ -41,14 +41,12 @@ init python:
             event(skill_type + "_" + `i`,
                   "act == 'act_" + skill_type + "' and skill_" + skill_type + " >= " + `i*10`,
                   event.once(),
-                  #event.happened(skill_type + "_" + `i-1`), 
                   priority=10)
 
         # This event happens when a skill reaches 100.
         event(skill_type + "_master",
               "act == 'act_" + skill_type + "' and skill_" + skill_type + " >= 100",
               event.once(),
-              #event.happened(skill_type + "_9"),
               priority = 10)
 
 

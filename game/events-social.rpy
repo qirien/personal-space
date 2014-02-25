@@ -8,6 +8,8 @@ label social_def:
 
 # Intro Event
 label social_0:
+    # TODO: This doesn't make sense if you do it later in the game. 
+    # Maybe put it in events-morning one month or something
     "Aside from [his_name], I had one other person I felt close to - Sara."
     "We had met on the ship when [his_name] was meeting with the other farmers."
     scene bg community_center with fade

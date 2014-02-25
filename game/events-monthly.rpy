@@ -3128,7 +3128,7 @@ label monthly_event_23:
                 menu:
                     "He didn't need to know that the baby might be Brennan's, right?"
                     "He doesn't need to know":
-                         "(He doesn't need to know; it would ruin what we have.)"
+                         "I decided he didn't need to know; I didn't want to ruin what we had."
                          $ loved -= 5
                     "He should know":
                         "(He should know, but... can I bring myself to tell him about it?)"
@@ -3226,7 +3226,7 @@ label monthly_event_23:
                         $ loved += 10
                         return
                 
-            her surprised "I never thought of myself as a mother, you know."
+            her surprised "I never thought of myself as a parent, you know."
             him normal "Doesn't mean we can't do it. Humans are made to be parents, right?"
             her flirting "At least I have you..."
             "He held me tight, cradling my head in his hand. I relaxed onto his shoulder, and he placed tiny kisses on my neck."
@@ -3326,8 +3326,8 @@ label monthly_event_23:
                 him sad "...No."
                 her surprised "...?"
                 him concerned "I thought about it, but decided not to."
-                her annoyed "You thought about it?!"
-                him "There was an...opportunity, but I told her no."
+                her angry "You thought about it?!"
+                him concerned "There was an...opportunity, but I told her no."
                 her surprised "Who was it?"
                 him annoyed "It was-"
                 her annoyed "No, no, don't tell me. I don't want to know."
@@ -3720,12 +3720,15 @@ label monthly_event_24:
         her concerned "The Matthew's, and Brennan..."
         him annoyed "Don't know the Matthews very well. As for Brennan- well, good riddance."
         her surprised "[his_name]!"
-        him annoyed "What? He's always been pretty useless around here, he never fit in, and he flirts with all the married women."
+        $ brennan_action = "flirt"
+        if (cheated_on_him):
+            $ brennan_action = "sleep"
+        him annoyed "What? He's always been pretty useless around here, he never fit in, and he tries to [brennan_action] with all the women."
         her annoyed "Well, I'm starting to think it's a good idea."
-        him surprised "Flirting with married women?"
+        him surprised "What, [brennan_action]ing with women?"
         her annoyed "No! Leaving this stupid planet behind! Going back to Earth, where there's toilets and plenty of food and stores and family and doctors and, and..."
         if (is_pregnant_later):
-            her sad "I don't want our baby to grow up like this, [his_name]. To grow up never knowing Earth, to know only work or die every day..."
+            her sad "I don't want the baby to grow up like this, [his_name]. To grow up never knowing Earth, to know only work or die every day..."
         if (loved < 0):
             him angry "I've been working as hard as I can! But I can't make all that stuff appear overnight!"
             her surprised "You shouldn't have to work so hard! There's an easier way!"
@@ -3734,8 +3737,8 @@ label monthly_event_24:
             him annoyed "That kind of life is not even worth living. I've never felt more alive than here on Talam."
             her angry "Really? You feel alive when you realize that bugs just ate all your food and you might starve? Or when you almost get your hands burned off?"
             him angry "Yes! It's better than all the idiotic stuff people do on Earth."
-            him annoyed "All they care about is how to make more money so they can buy more stuff so they can distract themselves from the fact that nothing they do matters!"
-            him serious "Here, everything matters. Every day you have to get up and do your job, because if you don't, everyone will suffer."
+            him angry "All they care about is how to make more money so they can buy more stuff so they can distract themselves from the fact that nothing they do matters!"
+            him annoyed "Here, everything matters. Every day you have to get up and do your job, because if you don't, everyone will suffer."
             if (community_level <= COMMUNITY_LEVEL_OK):
                 him annoyed "But I guess you wouldn't understand that."
                 her surprised "What do you mean?"
@@ -3758,7 +3761,7 @@ label monthly_event_24:
                 him concerned "If we want things to be better here, it's up to us to make it happen. We can't just do the bare minimum and hope for the best."
                 her angry "The bare minimum?! Is that what you think I've been doing?!"
 
-        him concerned "So, I guess what I'm saying is, I'm staying here. I love Talam. I love the challenge and the adventure. But if you really need to leave... I, I won't-"
+                him concerned "Anyway, no matter what, I'm staying here. I love Talam. I love the challenge and the adventure. But if you really need to leave... I, I won't-"
         him sad "I won't try to stop you."
         menu:
             "What should I say?"
@@ -3767,7 +3770,7 @@ label monthly_event_24:
                 her serious "Oh, [his_name], I'll never leave you!."
                 him serious "I need you, [her_name]. You're the reason I work, and the reason I come home."
                 "We held each other so tightly, as if we were made of a thousand pieces that would fall apart if the other person didn't hold them all together."
-            "I need to leave." if ((loved < 0) and (community_level < COMMUNITY_LEVEL_OK)):
+            "I need to leave." if ((loved <= 0) and (community_level < COMMUNITY_LEVEL_OK)):
                 her sad "I can't stay here, [his_name]."
                 $ wants_to_leave = True
                 him sad "..."

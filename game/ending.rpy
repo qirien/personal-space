@@ -1,16 +1,15 @@
 label monthly_event_25:
     "It had been two years since we first arrived on Talam. In a way, it felt like we had been here forever. But sometimes I still expected to find myself back on Earth, waking up from a long, long dream."
     # TODO: tweak these numbers.
-    if ((community_level >= COMMUNITY_LEVEL_GOOD) and (loved > LOVED_GOOD)):
-        jump good_ending
-    if ((community_level < COMMUNITY_LEVEL_OK) and (loved < 0)):
+    if (((community_level < COMMUNITY_LEVEL_OK) and (loved < 0)) or wants_to_leave):
         jump bad_ending
+    elif ((community_level >= COMMUNITY_LEVEL_GOOD) and (loved > LOVED_GOOD)):
+        jump good_ending
     else:
         jump mediocre_ending
 
     return
 
-# TODO: Check variable wants_to_leave for consistency
 # ENDING 1 - Everything failing
 label bad_ending:
     "Or, more like a nightmare."
@@ -19,7 +18,7 @@ label bad_ending:
     "I just wanted to go home. Home to Earth, where there were TV shows and stores and weekends."
     "Home, where we didn't have to work so hard just to survive."
     if (cheated_on_him):
-        "Brennan said he was returning on the shuttle that would drop off more colonists and supplies. I decided to go with him."
+        "Home, where Brennan would appreciate me and not try to make me into something I'm not."
     else:
         "Home, where maybe I could find someone who would appreciate me and love me no matter what."
         "[his_name] said he would stay, no matter what. But I didn't have to do what he wanted. I needed to do what was best for me."
@@ -27,7 +26,7 @@ label bad_ending:
     if (is_pregnant):
         "I was taking the baby with me; I could tell Jack already loved her a lot, but we decided I should have full custody."
     if (is_pregnant_later):
-        "I would end up giving birth on the shuttle on the way back to Earth. Somehow I was not as worried about that as I had been about the idea of giving birth at Talaam's little clinic."
+        "Even though I might end up giving birth on the shuttle on the way back to Earth, somehow I was not as worried about that as I had been about the idea of giving birth at Talaam's little clinic."
     "I didn't have much to bring with me- it reminded me again how little we had. It just wasn't enough."
     scene bg farm_exterior with fade
     show him serious at midleft
@@ -52,6 +51,7 @@ label bad_ending:
         him angry "I said, I'll be fine without you. Enjoy Earth. Goodbye."
     hide him with moveoutleft
     "He turned away and walked home, never looking back. I picked up my bag and boarded the shuttle as we got ready to lift off."
+    hide her with moveoutright
     scene bg colony_ship_bunk with fade
     show her serious at center with dissolve
     if (cheated_on_him):
@@ -79,7 +79,7 @@ label mediocre_ending:
     if (loved >= 0):
         "Like [his_name] - I wanted to be where he was. Even though he loved this place and this rustic life way more than I did, I loved him enough that I could deal with anything else."
         if (cheated_on_him):
-            "He even forgave me after I cheated on him. How many people would do that?"
+            "Even after I cheated on him, he has always been there for me."
     else:
         "Like my job."
         "I felt needed and appreciated at work, even if I didn't always feel that way at home."
@@ -128,9 +128,13 @@ label mediocre_ending:
         him normal "I'm glad to be with you, [her_nickname]!"
         her normal "What an adventure we've had..."
         him happy "Hmmm, I think our adventure is just beginning!"
-        her concerned "Ha ha, yeah... I wonder what the next year will bring?"
+        her serious "Ha ha, yeah... I wonder what the next year will bring?"
         him flirting "As long as it's full of you, I'm not worried about it."
-        her normal "Mmm-hmmmm."
+        her serious "Mmm-hmmmm."
+        "I wasn't quite as optimistic."
+        if (is_pregnant_later):
+            "Having a baby on this strange planet would certainly be a new challenge."
+        "But, we'd come this far, hadn't we?"
     else:
         her concerned "I'm sorry."
         him surprised "For what, now?"
@@ -139,8 +143,14 @@ label mediocre_ending:
         her normal "Thanks for not giving up on me."
         him normal "Let's never give up on us."
         her serious "Yeah."
+        if (is_pregnant_later):
+            "He patted my belly gently and added,"
+            him normal "After all, this little baby's depending on us."
+            her serious "Yeah..."
         
     # TODO: is this too cheesy?
+    show him normal
+    show her normal
     "We kissed good night, but I lay awake for a little while, thinking a lot and worrying a little. I wanted to believe in our colony, to believe in our marriage, but I knew it took more than believing in something to make it come true."
     "But I had a feeling things would turn out all right."
     ".:. Ending 2/3."
@@ -219,13 +229,11 @@ label work_appreciation:
     brennan "He's right, you know. We'd all be lost without you."
     her flirting "That's a total exaggeration."
     if (wants_to_leave or cheated_on_him):
-        brennan "I suppose you've changed your mind about wanting to leave?"
+        brennan "You sure you don't want to come with me?"
         her concerned "Yes... sometimes it has seemed hopeless, but I thought about it, and I'm happy right where I am."
     if (exposed_brennan):
         brennan "It'll be your turn to send a message on the quantum entanglement device... what will you say?"
         her surprised "I'll have to think about it - there's a lot to fit into 150 characters."
-        brennan "Well, it turns out the brass in Washington want me to stay longer - since the device works, I don't have to return to Earth to make my report in person."
-        her happy "That's good news!"
     else:
         brennan "I don't think anyone will be sad to see me go."
         if (brennan_relationship >= 2):
@@ -234,6 +242,18 @@ label work_appreciation:
             her concerned "We'll miss you, Brennan. But I think it'll be good for you to do something else."
         brennan "Yeah, I never did quite fit in here. I'm not too sad about it; I missed having things to do, people to see, places to go..."
         her normal "That's the spirit!"
+    
+    brennan "Anything you want me to bring back to Earth?"
+    "I thought about it for a minute. By the time he got back to Earth, another four years would have passed there. It wouldn't be any faster than sending a message."
+    "I probably couldn't send back any plants from Talam even if I had wanted to - they wanted to make sure they didn't mess up Earth's ecosystem with alien life."
+    "Finally, I decided that anything I wanted to send, I could send electronically."
+    her serious "Just... could you tell people about how it is here? I mean, you'll probably be kind of a celebrity, right? Not everyone gets to visit another planet and come back."
+    brennan "I will. It'll be a great way to impress women, don't you think? I can tell them all about how I risked radiation burns to rescue the poor Perons during the solar flare."
+    her flirting "Only if you leave out the part where you threw up all over me."
+    brennan "Yeah, that'll have to go."
+    her serious "..."
+    brennan "Anyway, goodbye, [her_name]."
+    her normal "Goodbye, Brennan."
 
     "Brennan left, and I got ready to go."
 

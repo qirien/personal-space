@@ -140,6 +140,7 @@ define he_hunts = False
 define brennan_relationship = 0
 define cheated_on_him = False
 define exposed_brennan = False
+define discovered_qec = False
 define ocean_character = ""
 define wants_to_leave = False
 define hated_food = "turnips"

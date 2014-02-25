@@ -32,7 +32,7 @@ label act_skip_work:
             "Things are busy at home":
                 her concerned "Sorry - things have been so busy at home, trying to get the farm started and everything."
             "It won't happen again.":
-                her sad "I'm sorry - I won't let it happen again."
+                her serious "I'm sorry - I won't let it happen again."
             "Whatever.":
                 her annoyed "Whatever."
                 boss "Excuse me?"
@@ -41,7 +41,7 @@ label act_skip_work:
                 $ slacked_off = 1
                 return
         boss "I understand, but this can't happen all the time. We need you here."
-        her "All right, thanks for understanding."
+        her serious "All right, thanks for understanding."
         $ slacked_off = 0
         $ relaxed -= 2  #it's stressful to get caught slacking off
         $ community_level -= 10
@@ -130,7 +130,7 @@ label work_0:
         "Do I have any questions?"
         "How much food do we have?":
             her surprised "How much food do we have in storage now?"
-            boss "We brought enough in our storehouse for everyone for one year. It will last much longer than that unopened, so I'd like to keep it for emergencies and use the food we grow as much as possible."
+            boss "We brought enough in our storehouse for everyone for two years. It will last much longer than that unopened, so I'd like to keep it for emergencies and use the food we grow as much as possible."
             jump boss_meeting
         "What about medicine?":
             her surprised "What about medicine?"
@@ -145,7 +145,7 @@ label work_0:
             boss "We do have a few hunting weapons that you can check out from the storehouse if you would like to try your hand at hunting, though I'd check with Dr. Lily first and make sure that the animal is edible!"
             jump boss_meeting
         "When is the colony ship coming?":
-            her surprised "Is the next ship coming in two Earth years or Talam years?"
+            her surprised "You said another ship is comning? Is that in two Earth years or Talam years?"
             boss "Good question; that's two Earth years, which makes about..."
             show lily at midright with moveinright
             lily "About 26 Talam months. Since there are seven months a year here, that makes a little over three Talam years."
@@ -153,7 +153,7 @@ label work_0:
             hide lily with moveoutright
             jump boss_meeting
         "No questions.":
-            her "(I don't have any questions.)"
+            her normal "(I don't have any questions.)"
 
     "After the meeting, the mayor met with me to show me around where I'd work."
 
@@ -165,7 +165,7 @@ label work_0:
     # DOCTOR
     if (profession == "doctor"):
         boss "All right! This is the clinic where people will come in if they get sick. I don't just want us to react to injuries and illness, though - we need to be proactive, and help promote good health."
-        her "I helped some people out on the ship on the way here, so this should be similar. I will need some more supplies, though."
+        her serious "I helped some people out on the ship on the way here, so this should be similar. I will need some more supplies, though."
         boss "That's fine, just write up a list and give it to me to approve. Then you can go on over to the storehouse and take what you need."
 
     # CRAFTER
@@ -844,7 +844,7 @@ label work_5:
         brennan "Grays of radiation? That makes it sound like I've got aliens living inside me."
         her "Stop joking and lie down. We need to see how bad it is."
         brennan "Hold on, I think I might--"
-        "He vomited on the floor. At least it wasn't on me."
+        "He vomited. At least most of it went on the floor..."
         her "That's exactly what I'm talking about. Now lie down!"
         "The amount he was exposed to was more than is usually used in chemotherapy, but if he didn't get more exposure his body would probably heal it just fine."
         "I treated his burns and gave him some medicine, and warned him to be especially careful to avoid any radiation for the next few weeks while his body healed."
@@ -1151,10 +1151,13 @@ label work_7:
                     $ searched_room = True
                     "Something wasn't right here. I sensed Brennan was hiding something important from me, and I was determined to find out what it was."
                     "Since he said he needed the batteries for his room, I thought I would check there."
-                    scene bg bedroom
-                    "No one was home at the Grayson's house, but there were also no locks on the doors, so I just walked in."
+                    scene bg farm_interior flip with fade
                     show her normal at quarterright with moveinleft
+                    "No one was home at the Grayson's house, but there were also no locks on the doors, so I just walked in."
                     her "(Brennan will be at work for a little bit longer, if he's waiting for me to bring him the batteries...)"
+                    hide her with moveoutright
+                    scene bg bedroom
+                    show her normal at quarterright with moveinleft
                     "His room had the same few pieces of shuttle furniture we had, with a sleeping bag on the floor and a seat and table in the corner. The walls were bare; there were no photos or posters or decorations at all."
                     "The table had a mess kit and a cable for charging a computer pad. There was another cable, too, though, and when I followed it, it went underneath the table where there was a strange device."
                     "It looked a little bit like a computer, with a metal case and some LEDs lighting up every now and then. But there was no writing or labels on the case at all. It made a low humming noise."
@@ -1191,6 +1194,7 @@ label work_7:
     return
 
 label brennan_confess:
+    $ discovered_qec = True
     brennan "It's a quantum entanglement communicator."
     her "Okay, but what does it do and why do you have one?"
     brennan "I use it to send messages with Earth, instantly."
@@ -1233,7 +1237,7 @@ label brennan_confess:
             brennan "Do you think they'll forgive me?"
             her "We'll see."
             "Brennan and I worked out a proposed system where he would send one message a month under a certain length for each family. Then we told the colony about the device."
-            "At first they were upset with Brennan (and with me for siding with him), but they were so excited at the ability to send telegrams to Earth that they were able to let it go."
+            "At first they were upset with Brennan, and even with me, but they were so excited at the ability to send telegrams to Earth that they were able to let it go."
             "Though they never trusted him the same way, after that."
             $ exposed_brennan = True
         "I won't tell if...":
@@ -1248,7 +1252,7 @@ label brennan_confess:
                     her "Promise to send some messages to Earth for me."
                     brennan "Of course, I'll do what I can."
                     brennan "Thank you, [her_name]. I trust you to keep it a secret."
-                "Kiss me" if ((brennan_relationship >= 2) and (loved <= 0)):
+                "Kiss me" if ((brennan_relationship >= 2) and (loved <= 5)):
                     her "Kiss me. Now."
                     "What was I saying? What was I doing? I thought he was going to laugh, and I could pretend it was a joke, but then he stepped closer."
                     show her concerned at midright with move
@@ -1266,8 +1270,198 @@ label brennan_confess:
 label work_8:
     $ times_worked += 1
 
-    "Month 24"
     call set_work_bg
+    show her normal at midright with dissolve
+
+    "Most days I was able to help everyone with what they needed."
+    "But not every day was a success."
+    #TODO: have some work event in here first
+    if (profession == "doctor"):
+        # Someone has chronic pain (fibromyalgia?), don't know why
+        show julia at midleft with moveinleft
+        julia "The medicine you prescribed for me last time we met was completely ineffective."
+        her surprised "Really?"
+        julia "Yes, I'm still having pain all over, especially in my joints."
+        her serious "Well, if the ibuprofen was not effective, it's probably not arthritis..."
+        julia "Obviously."
+        her annoyed "Well, let's try something else, then."
+        julia "How shall we do that, if you don't know what is causing the pain? Shall I simply try every single drug available, and see what works?"
+        her annoyed "Of course not. We started with the most probably cause, and we will work down from there."
+        julia "How long is this list of \"probable causes\"?"
+        her serious "Well, there's lots of things that can cause joint pain. Infections, cancer, fibromyalgia, depressive disorders--"
+        julia "Enough. I won't subject my body to any more of your theories."
+        her annoyed "Look, the tests were inconclusive. The only way we'll know is by trying some different treatments!"
+        julia "My apologies for wasting your time. Goodbye, Dr. [her_name]."
+        hide julia with moveoutleft
+        her sad "..."
+        show brennan at midleft with moveinleft
+        brennan "Now there's a face that could turn wine to vinegar. What'd you say to her, [her_name]?"
+        her concerned "She doesn't think I can help her... and she may not be wrong."
+        brennan "Well, at least you're willing to give it a try!"
+        her sad "She wants me to just do some magic and make it all better, but it doesn't work like that."
+        brennan "Don't blame yourself. You can't help a crocodile with a toothache."
+        her "But isn't that my job? Why am I here if I can't even help one person feel better?"
+        brennan "Ah, sometimes I wonder the same thing."        
+
+    elif (profession == "crafter"):
+        # Someone needs glasses; can't grind glass precisely enough
+        show natalia at midleft with moveinleft
+        natalia "I hope you can do something for Raul..."
+        her surprised "What is it?"
+        natalia "He needs glasses. All this time we thought he was just a slow reader, but the doctor says it's his vision that's the problem."
+        her normal "That would make it hard to read, wouldn't it?"
+        her serious "But shouldn't the doctor have something that can help Raul?"
+        natalia "None of the glasses at the clinic worked. I brought over the closest ones, and the doctor wrote a prescription. Here it is."
+        her serious "Hmmm, astigmatism, I see. Well, I'll see what I can make for him."
+        natalia "Thank you, [her_name]. You always do such a nice job on everything you make, I'm sure you'll be able to help Raul."
+        hide natalia with moveoutleft
+        show brennan at midleft with moveinleft
+        brennan "We're making glasses, now?"
+        her concerned "I don't see how we can... I don't have tools for grinding glass precisely. And we don't have any lenses in the shape he needs."
+        brennan "I'm guessing contacts are out?"
+        her serious "Yeah, even if we could trust a six-year-old with contacts, we don't have any way to make those in the right shape, either."
+        brennan "So what are you going to do?"
+        her concerned "I don't know."
+        brennan "This was bound to happen eventually. We don't have every tool ever invented."
+        her sad "They're counting on me... but I can't help them..."
+        brennan "Don't blame yourself! They'll just have to make do with the lenses we have."
+        her serious "I guess they will..."
+        brennan "Honestly, we've done well to have built as much as we have."
+
+    elif (profession == "mechanic"):
+        # Can't fix someone's tractor/solar panels/hearing aid?
+        show natalia at midleft with moveinleft
+        natalia "[her_name], I don't know if there's anything you can do, but one of the kids' computer pads won't turn on."
+        her surprised "What happened to it?"
+        natalia "I think Raul left it out during one of the solar flares..."
+        her annoyed "(Again?! This is the fifth time she's brought Raul's computer pad in for repairs!)"
+        her normal "OK, I'll take a look at it."
+        hide natalia with moveoutleft
+        "I opened it up and got out my multimeter. Some of the circuits were completely fried."
+        show brennan at midleft with moveinleft
+        brennan "That doesn't look good."
+        her serious "No, it's totally fried."
+        brennan "You can't fix it?"
+        her concerned "These are specialized electronics components; I can't just get a new piece of the shelf and solder it in."
+        brennan "Perhaps this'll teach that naughty little tyke to take better care of things."
+        her sad "Yeah..."
+        brennan "Hey, don't blame yourself! It was bound to happen eventually."
+        her concerned "I still feel like I'm letting them down."
+        brennan "Honestly, we've done well to have fixed as much as we have."
+        
+    elif (profession == "teacher"):
+        # Trouble with student
+        show kid at midleft with dissolve
+        "I had been having some trouble with one of the students, Gardenia. I asked her to stay after school so I could talk to her about her paper."
+        "Gardenia" "Who cares if the letter's written the wrong way? You can tell what letter it is!"
+        her normal "But it doesn't look right, and it will make it harder to learn cursive later."
+        "Gardenia" "Why do I even need to learn cursive?! Everyone just types on the computer!"
+        her serious "Sometimes you still need to write things by hand. And people will need to be able to read what you write-"
+        "Gardenia" "People can read what I write!"
+        her annoyed "Let me finish. People will need to be able to read what you write quickly, not after analyzing it for an hour."
+        "Gardenia" "Well, I'm not doing it over."
+        her angry "Yes you will! You'll sit here until you've written every letter correctly!"
+        show brennan at right with moveinright
+        "Gardenia" "No, I won't."
+        hide kid with moveoutleft
+        "She got up and walked out of the school. I started to follow her, but Brennan stopped me."
+        brennan "I'll go talk with her."
+        her sad "Go for it, I'm obviously useless here."
+        hide brennan with moveoutleft
+        "Brennan got along much better with Gardenia than I did. In a few minutes she was smiling and rewriting her paper."
+        "She handed it to him, glared at me, and went home."
+        show brennan at midleft with moveinleft
+        her concerned "Thanks, Brennan."
+        brennan "Hey, don't blame yourself. That one's a little spitfire."
+        her sad "Yeah, but that doesn't excuse me yelling at her. I shouldn't have lost my temper."
+        brennan "Honestly, I'm impressed you've done as well as you have. It's tough to teach so many different ages all at once."
+
+    her surprised "We've been working here three years, now, haven't we?"
+    brennan "Three years? Isn't it two?"
+    her serious "Oh, I meant three Talam years. That's probably about two Earth years."
+    brennan "I can't get used to the different time measurements here - no matter how this planet rotates, I can't call seven months a year."
+    if (wants_to_leave):
+        her concerned "I know what you mean. This place still doesn't feel like home."
+    else:
+        her normal "Yeah, it is kind of weird. But I think I'm getting used to things here."
+
+    brennan "At least I won't have to deal with it much longer."
+
+    # TODO: make sure this isn't redundant with monthly_event 24 or ending
+    if (wants_to_leave or cheated_on_him):
+        her serious "Because you're going back to Earth."
+        brennan "Yes. You're coming too, right?"
+        her concerned "I don't know..."
+        brennan "What?! Why would you want to stay?!"
+        menu:
+            "They need me here" if (community_level >= COMMUNITY_LEVEL_OK):
+                her concerned "They need me here. There's no one else that is as good of a [profession] as I am."
+                $ community_level += 5
+            "I love the people here" if (skill_social >= 50):
+                her normal "I love the people here. They feel like family."
+                $ community_level += 5
+            "I love [his_name]" if (loved >= 0):
+                her concerned "I love [his_name] too much to leave him behind."
+                $ loved += 2
+            "Actually, I don't want to stay.":
+                $ wants_to_leave = True
+                her annoyed "Actually, I don't want to stay here. This is my last chance to leave it all behind, so better take it."
+                brennan "I'm so glad. That long shuttle trip will be much more interesting with you on board with me."
+                if (cheated_on_him):
+                    her flirting "Oh, really? What were you thinking we'd do?"
+                    brennan "You and me, in close quarters for a month with no other entertainment? What {b}won't{/b} we do?"
+                    her flirting "I can't wait..."
+                else:
+                    her flirting "Ha! We'll see about that."
+                    
+                if (is_pregnant_later):
+                    her surprised "The baby might even be born on Earth..."
+                    brennan "There's no better place."
+                    show her happy
+
+                if (community_level >= COMMUNITY_LEVEL_OK):
+                    $ community_level = COMMUNITY_LEVEL_OK - 15
+                else:
+                    $ community_level -= 15
+
+                if (loved >= 0):
+                    $ loved = -10
+                else:
+                    $ loved -= 10
+                return
+        brennan "You're lucky, [her_name]."
+        her surprised "Why?"
+        brennan "You have a place here. People who need you, depend on you, love you."
+        brennan "Of course you wouldn't want to give that up."
+        her serious "I'm glad you understand. I'll miss you, though - you've helped me a lot."
+
+    else:
+        her surprised "What? Where are you going?"
+        brennan "Back to Earth."
+        her flirting "How are you going to do that?"
+        brennan "On the shuttle that's coming in two months!"
+        her surprised "They're returning to Earth?"
+        brennan "Yeah, they're bringing back some samples of rocks and plants for the scientists on Earth to study. So I thought I'd tag along."
+        her concerned "You've never liked it here, have you?"
+        brennan "...No. If it wasn't for-"
+        her surprised "If it wasn't for what?"
+        if (discovered_qec):
+            brennan "If it wasn't for my job, I never would have come here. I'm a civilized man; I like the comforts of Earth."
+            her serious "So your new orders are to head back?"
+            brennan "They want me to bring some rock samples, too; I've found some ore they might be interested in."
+            her annoyed "They better not come ruin this planet with huge mines and factories."
+            brennan "If the minerals are worth it, they might."
+            her annoyed "..."
+        else:
+            brennan "Never mind."
+
+        her serious "Well, that's too bad. You've helped me a lot."
+
+    brennan "I'm sure I'm easily replaceable. There will be new colonists coming on the shuttle, after all."
+    her normal "That's true. But I'm sure none of them will be as...unique as you."
+    brennan "You mean none of them will be as handsome and dashing?"
+    her flirting "I meant exactly what I said."
+    
     return
 
 
