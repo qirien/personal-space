@@ -5,7 +5,7 @@
 # Declare images below this line, using the image statement.
 
 # BACKGROUNDS
-image joyous_jellyfish = "bg/joyous-jellyfish-logo.png"
+image cuttlefish = "bg/cuttlefish-logo.png"
 image bg stars = "bg/starscape.jpg"
 image bg earth = "bg/earth.jpg"
 image bg farm_exterior = "bg/farm-exterior.jpg"
@@ -158,7 +158,7 @@ label splashscreen:
     scene black
     with Pause(1)
 
-    show joyous_jellyfish with dissolve
+    show cuttlefish with dissolve
     with Pause(2)
 
     scene black
