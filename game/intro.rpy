@@ -81,12 +81,13 @@ label first_date:
     "So come to my folks' tonight for a barbeque, okay? Right after work."
     "-your [his_name]"
 
-    her "(That's so sweet! But I wonder what's up, he sounds so serious!)"
+    her surprised "(That's so sweet! But I wonder what's up, he sounds so serious!)"
     scene bg porch with fade
     show her normal at midleft
     show him normal at midright
     with dissolve
     show overlay night
+    play music "music/Run.ogg" fadeout 2.0
     "At the barbeque, I thought there was going to be a lot of people, but it ended up being just him and his parents."
     "It wasn't too awkward, though - we all pitched in to make dinner and then afterwards when I offered to help with the dishes, his parents told us to go relax outside."
     "So we sat on the porch swing and talked and watched the stars come out."
@@ -94,6 +95,7 @@ label first_date:
 
     him "[her_name]... have you ever thought about what's out there?"
     her surprised "Out... where?"
+    # TODO: this transition is awkward
     show bg stars with moveintop
     him happy "In space! So many stars, so many worlds... Did you know they are sending colonists to Talam?"
     her normal "That's the garden planet they found, right?"
@@ -124,10 +126,10 @@ label marriage_proposal:
     him annoyed "..."
     her surprised "You're serious, aren't you?!"
     him normal "They need farmers to come start the colony, and I want to go."
-    him serious "It's a chance to leave this predictable, materialistic world behind and focus on the things that really matter in life."
+    him serious "It's a chance to leave this world behind and focus on the things that really matter in life."
     her sad "..."
     him "I want you to come with me."
-    her surprised "?"
+    her surprised "...?"
     him "As my wife. You're a great [profession], they'll need those there."
 
     # How does she feel about getting married and going to new planet?
@@ -151,6 +153,7 @@ label marriage_proposal:
 
     her happy "[his_name]...I would love to create a new life together, even if it is on a different planet."
     scene bg wedding with fade
+    play music "music/Reflections.ogg" fadeout 2.0
     "And so we got married."
     "My mother cried; she knew we were going to space and she would probably never see me again (or any grandkids). My father..."
     menu:

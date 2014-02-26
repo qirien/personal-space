@@ -58,6 +58,7 @@ label work_0:
 
     scene bg community_center
     play sound "sfx/people.mp3" fadein 1.0
+    play music "music/Sojourn.ogg" fadeout 2.0
     "My boss was also the leader of our little community. I guess you could call him the mayor?"
     "Right after we landed, he called a meeting for everyone where he gave a speech."
     show pavel at center
@@ -191,7 +192,7 @@ label work_0:
 
     "I worked hard getting things set up, and even though the job seemed pretty big, I thought I would probably do okay."
 
-    # TODO: Have Sara stop by and say hi? 
+    # TODO: Have Sara stop by and say hi?  Move social 1 here?
 
     $ relaxed -= 5
     return
@@ -759,7 +760,6 @@ label work_4:
 
     return
 
-            #TODO: finish adding emotions
 # Month 12 - Solar flare while at work
 label work_5:
     $ times_worked += 1
@@ -776,8 +776,9 @@ label work_5:
     "The radio emitted a strong burst of static, and I could barely make out anything else she said."
     lily "...close the...stay...further notice..."
     "Our computer pads also popped up a notification from her."
-    her "That's strange; usually we have more warning than this."
+    her surprised "That's strange; usually we have more warning than this."
     brennan "Hopefully everyone can get inside in time."
+    show her serious
     "We closed the windows and turned off unecessary electronics."
 
     show martin at midleft with dissolve
@@ -792,34 +793,34 @@ label work_5:
         "Other than that, I tried to teach class as usual. We had a guest speaker today, Mr. Peron, who was teaching the kids about chickens and how to breed and feed them, and what sort of plants they liked, and what they might eat that would make them sick."
         "He had just finished speaking and got ready to go when I stopped him."
 
-    her "I'm afraid you're stuck here for awhile - Dr. Lily says there is a solar flare going on."
+    her serious "I'm afraid you're stuck here for awhile - Dr. Lily says there is a solar flare going on."
     martin "What? I haven't heard anything about that."
-    her "They just announced it on the radio; I don't know why we didn't have an early warning this time."
+    her serious "They just announced it on the radio; I don't know why we didn't have an earlier warning this time."
     martin "I can't stay here! I have to make sure Natalia is safe!"
-    her "Please calm down. I'm sure your wife knows what to do."
+    her concerned "Please calm down. I'm sure your wife knows what to do."
     martin "Natalia always forgets to turn the radio on! She might not even know there is a flare! And Mateo and Josephina are at home with her."
     "I tried contacting his family on the radio, but the radiation from the flare was interfering with our transmissions. I couldn't connect my computer pad to the wireless network, either."
     "Mr. Peron was getting more and more distraught. I was worried he was going to try and leave, and I wasn't sure I could stop him."
     show brennan at midright
     show her serious at right
     brennan "Calm down, please! Everything will be just fine."
-    martin "You don't understand! If you had any family, you'd know that I have to be there!"
+    martin "You can't understand! If you had any family, you'd know that I have to be there!"
     "Brennan just looked at Mr. Peron, a curious expression on his face. Finally, he nodded."
     brennan "I'll go make sure everything's all right with your family."
-    her "You can't do that! The radiation is too strong!"
+    her surprised "You can't do that! The radiation is too strong!"
     brennan "But he's right. I don't have a family; I don't have as much to lose."
         
     $ grays_absorbed = 3
     menu:
         "What should I do?"
         "Try and stop him":
-            her "It's not worth sacrificing yourself over!"
+            her angry "It's not worth sacrificing yourself over!"
             brennan "I'll be fine. And if I'm not, well, at least I'll have done some good here."
         "Let him go":
-            her "If you really want to go, I won't stop you."
+            her serious "If you really want to go, I won't stop you."
             brennan "Not that you could, anyway. But I'm glad you understand."
         "{i}Wear this blanket{/i}" if (profession == "doctor"):
-            her "Here, at least put this over your head to shield you from some of the flare's rays. It won't completely protect you, but it's better than nothing."
+            her serious "Here, at least put this over your head to shield you from some of the flare's rays. It won't completely protect you, but it's better than nothing."
             brennan "Thank you, [her_name]."
             $ grays_absorbed = 2
 
@@ -827,39 +828,46 @@ label work_5:
     show her serious at midright with move
     "I watched him leave. The weather was deceptively placid - bright sun, a cool breeze, tree branches waving... the deadly radiation was completely invisible."
     "Neither Mr. Peron or I talked; we couldn't do anything else, either; we were too nervous."
+    show her concerned
     play sound "sfx/radio.mp3"
     "The radio crackled every ten minutes - we could just barely make out that it was Dr. Lily repeating her warning."
     "The second time she repeated her warning, the radio came on again just minutes later."
+    play sound "sfx/radio.mp3"
     brennan "[her_name]...Peron house...got everyone inside...There was...but we...anyway. Repeat, we're...okay."
+    show her normal
     "I let out a breath I hadn't realized I had been holding. Mr. Peron smiled and asked me to hand him the radio."
     martin "Thank you, Brennan. Earlier, what I said...well, I was wrong. You have a family; you're part of ours."
     "There was silence, and static."
     brennan "...thank you."
-        
+    hide martin with moveoutleft
+
     if (profession == "doctor"):
-        hide martin
         show brennan at midleft with moveinleft
         "The flare was over after a few more hours, and Mr. Peron brought Natalia and the little kids to be treated for radiation sickness.  Afterwards, I insisted on Brennan being treated, too."
-        her "You've absorbed at least [grays_absorbed] grays of radiation..."
+        her serious "You've absorbed at least [grays_absorbed] grays of radiation..."
         brennan "Grays of radiation? That makes it sound like I've got aliens living inside me."
-        her "Stop joking and lie down. We need to see how bad it is."
+        her annoyed "Stop joking and lie down. We need to see how bad it is."
         brennan "Hold on, I think I might--"
         "He vomited. At least most of it went on the floor..."
-        her "That's exactly what I'm talking about. Now lie down!"
+        her angry "That's exactly what I'm talking about. Now lie down!"
         "The amount he was exposed to was more than is usually used in chemotherapy, but if he didn't get more exposure his body would probably heal it just fine."
+        show her serious
         "I treated his burns and gave him some medicine, and warned him to be especially careful to avoid any radiation for the next few weeks while his body healed."
     else:
-        hide martin
         "The flare was over after a few more hours, and Mr. Peron went home, but I insisted on Brennan going to the clinic."
         scene bg path with fade
-        show her normal at midright
+        show her serious at midright
         show brennan at midleft
-        with dissolve
+        with moveinleft
         "He threw up on the way there, and I could see some burns on his face and neck."
+        hide her
+        hide brennan
+        with moveoutright
+
         scene bg clinic with fade
-        show her normal at midright
+        show her serious at midright
         show brennan at midleft
-        with dissolve
+        with moveinleft
         "The doctor treated his burns and gave him some medicine and said he would probably be fine, as long as he was extra careful to avoid any radiation exposure in the next few weeks."
 
     scene black with fade
@@ -883,7 +891,7 @@ label work_6:
         "I went to the school and taught some of the kids the weaving techniques I had learned."
         "Soon it was lunchtime, and the kids went home to eat."
     elif (profession == "mechanic"):
-        "Inspired by last month's idea of replacing complicated parts with more simple ones, I set about looking at our inventory and cataloguing how parts we had a lot of could be used to substitute for parts we were running out of."
+        "Inspired by the idea of replacing complicated parts with more simple ones, I set about looking at our inventory and cataloguing how parts we had a lot of could be used to substitute for parts we were running out of."
         "Soon it was lunch time."
     elif (profession == "teacher"):
         her "Class, after you read your assigned section on nomads of the Great Steppe, please write about ways our colony is similar to and different from the nomad culture. Once you've done that, you can come over here and we will learn some wood carving techniques that they used to make and decorate their furnishings."
@@ -894,156 +902,156 @@ label work_6:
     show her normal at midright
     show brennan at midleft
     with dissolve
-    her "Oh no, I forgot my lunch."
+    her concerned "Oh no, I forgot my lunch."
     brennan "I was just going to go home for lunch; do you want to join me?"
-    her "No, it's okay, I can just walk home and get something."
+    her serious "No, it's okay, I can just walk home and get something."
     brennan "That's two kilometers each way; you won't have any time to cook and eat anything. Come on, I'll fix you something. It's the least I can do for you, after all you've done for me."
-    her "Well..."
+    her concerned "Well..."
     menu:
         "What should I say?"
         "Yes":
-            her "Thank you, I'd appreciate that."
-            scene bg farm_interior
+            her normal "Thank you, I'd appreciate that."
+            scene bg farm_interior flip
             show brennan at midright
             show her normal at midleft
             with moveinleft
             "We headed over to the mayor's house, which was as large as the Nguyens', with three bedrooms and a kitchen.  I guess that's why they had Brennan staying there, too."
             "Mr. and Mrs. Grayson weren't there today, though."
             "Brennan pulled out a frying pan and put some oil in it, and prepared some potatoes, cabbage, eggs and spices."
-            her "Do you like to cook?"
+            her surprised "Do you like to cook?"
             brennan "Once in a while. Usually Mrs. Grayson cooks for all four of us, but I'll take a turn, too."
-            her "What are you making?"
+            her normal "What are you making?"
             brennan "Just a little hash. Ordinarily, I'd add some sausage or bacon, but they're both in short supply these days."
-            her "That sounds delicious! It's kind of a treat to have someone else cook for me..."
+            her happy "That sounds delicious! It's kind of a treat to have someone else cook for me..."
             brennan "[his_name] doesn't cook for you?"
-            her "Oh, he does, sometimes, but we often end up just cooking together."
+            her normal "Oh, he does, sometimes, but we often end up just cooking together."
             brennan "You're lucky to have someone who loves you so much."
             menu:
                 "What should I say?"
                 "I sure am" if (loved >= 0):
-                    her "I sure am...I don't know what I'd do without him."
+                    her normal "I sure am...I don't know what I'd do without him."
                     brennan "..."
-                    her "But what about you! Aren't there any single women on the colony you could date? Or are you not interested in women?"
+                    her flirting "But what about you! Aren't there any single women on the colony you could date? Or are you not interested in women?"
                     brennan "There's nothing I'm interested in more than women! But, well, let's see, single women...There's Dr. Lily, but she's at least 45 years old."
-                    her "Okay, she's really smart, and nice too, actually, but that is a lot older than you."
+                    her surprised "Okay, she's really smart, and nice too, actually, but that is a lot older than you."
                     brennan "And then there's the Nguyen's oldest daughters, who are seventeen and sixteen."
-                    her "I've seen them taking care of their little siblings, but I don't know them very well."
+                    her normal "I've seen them taking care of their little siblings, but I don't know them very well."
                     brennan "Well, the oldest, Joanna, is all over that Thomas fellow who's about her age. I'm surprised they're not married yet."
-                    her "They're only seventeen!"
+                    her surprised "They're only seventeen!"
                     brennan "Well, it's old enough to get into trouble, and old enough to help propagate the species..."
-                    her "What about the younger sister, Miranda?"
+                    her normal "What about the younger sister, Miranda?"
                     brennan "You're not seriously suggesting I try and date a child, are you?"
                     menu:
                         "What should I say?"
                         "Yeah, things are different here":
-                            her "Normally, I wouldn't, but..."
+                            her concerned "Normally, I wouldn't, but..."
                             brennan "But what?"
-                            her "I want you to have a future here. I can tell you're lonely, and Miranda is old enough to make her own decisions."
-                            her "I'm not saying you should sleep with her or anything, but in two years, she'll be an adult. Why not see if you can be friends, and then see what happens in the future?"
+                            her serious "I want you to have a future here. I can tell you're lonely, and Miranda is old enough to make her own decisions."
+                            her normal "I'm not saying you should sleep with her or anything, but in two years, she'll be an adult. Why not see if you can be friends, and then see what happens in the future?"
                             brennan "She is only eight years younger than me...But there's no way Mr. Nguyen would allow her to date such a creepy older man as myself."
-                            her "Don't think of it as dating! And don't, like seduce her or anything. Just... see if you could be friends."
+                            her annoyed "Don't think of it as dating! And don't, like seduce her or anything. Just... see if you could be friends."
                             brennan "I'm not very good at being 'just friends' with women, [her_name]."
-                            her "Well, you and I are just friends, right?"
+                            her normal "Well, you and I are just friends, right?"
                             brennan "... Of course."
-                            her "Just like that, then."
+                            her happy "Just like that, then."
                             brennan "Sure. Just like that."
                         "No, you should date Dr. Lily":
-                            her "No, I was just kidding. Actually, I think you should reconsider Dr. Lily."
+                            her normal "No, I was just kidding. Actually, I think you should reconsider Dr. Lily."
                             brennan "Really? You don't think twenty years age difference is too much?"
-                            her "No way! I mean, she's young enough to still be good-looking, right?"
+                            her serious "No way! I mean, she's young enough to still be good-looking, right?"
                             brennan "Yeah, I suppose she does have a sort of distracted-librarian sort of beauty..."
-                            her "And, you're not the type to be intimidated by a smart woman, right?"
+                            her flirting "And, you're not the type to be intimidated by a smart woman, right?"
                             brennan "You know I'm not."
-                            her "Well, then what do you have to lose?"
+                            her surprised "Well, then what do you have to lose?"
                             brennan "I just - she's old enough to be my mother, you know!"
-                            her "She doesn't act like your mother!"
+                            her serious "She doesn't act like your mother!"
                             brennan "No, you're right... I should talk to her. There's no harm in trying, right?"
-                            her "The worst thing that could happen is she says she's not interested, and then it's awkward every time you see her for a while, and then you both forget about it."
+                            her concerned "The worst thing that could happen is she says she's not interested, and then it's awkward every time you see her for a while, and then you both forget about it."
                         "No, there's no hope for you":
-                            her "Of course not. But I didn't want to tell you to just give up."
+                            her flirting "Of course not. But I didn't want to tell you to just give up."
                             brennan "You never know, perhaps we'll find some beautiful blue alien women out here somewhere. I could be Earth's ambassador, to teach them all about the strange and wonderful ways of the human species..."
-                            her "Keep dreaming, Brennan!"
+                            her annoyed "Keep dreaming, Brennan!"
                 "I'm not so sure":
-                    her "I used to think so, but I'm not so sure."
+                    her concerned "I used to think so, but I'm not so sure."
                     brennan "Why not?"
-                    her "Things just aren't as exciting as they were when we were dating. I mean, we say 'I love you', but I don't feel it anymore. I don't think he does, either."
+                    her sad "Things just aren't as exciting as they were when we were dating. I mean, we say 'I love you', but I don't feel it anymore. I don't think he does, either."
                     brennan "Bollocks. That's completely normal in a long-term relationship."
-                    her "Is it?"
+                    her surprised "Is it?"
                     brennan "Of course! But that doesn't mean you can't have any sparks of excitement. You just have to work a little harder."
-                    her "Got any ideas?"
+                    her annoyed "Got any ideas?"
                     brennan "Hundreds! Like, when you're at dinner, play a little footsie under the table, or give him a little spank when he walks by, or go to bed naked, or grab his--"
-                    her "OK! That's enough!"
+                    her surprised "OK! That's enough!"
                     brennan "I've got plenty more..."
-                    her "It's kind of weird to have you telling me to get naked for my husband..."
+                    her concerned "It's kind of weird to have you telling me to get naked for my husband..."
                     brennan "Well, no one else is telling you, and you need to hear it!"
-                    her "Brennan, you really don't have to-"
+                    her serious "Brennan, you really don't have to-"
                     brennan "Also, you should wake him up once in a while with steamy hot kisses, nevermind how bad your breath may smell in the morning."
                     brennan "And you should work together! When you've got a job to do, ask him to help you, or help him out. Find something he likes and surprise him with it. Make his favorite food!"
                     brennan "I mean, for crying out loud, [her_name], don't you realize how lucky you are just to have someone?!"
-                    her "..."
+                    her concerned "..."
                         
                 "He doesn't love me." if (loved <= -5):
-                    her "I don't think he loves me at all."
+                    her sad "I don't think he loves me at all."
                     brennan "What?! Why do you say that?"
                     menu:
                         "What should I say?"
                         "He doesn't tell me":
-                            her "He never says 'I love you'"
+                            her sad "He never says 'I love you'"
                             brennan "Well, he should. How could he look at you every single day and not say 'I love you'? I'm sure I would."
-                            her "Would what?"
+                            her surprised "Would what?"
                             brennan "I, ah, well-- He's an arse, that's all I'm saying."
                         "We never make love":
-                            her "It seems like we never make love anymore..."
+                            her sad "It seems like we never make love anymore..."
                             brennan "Is he gay? Impotent?"
-                            her "What?! No!"
+                            her surprised "What?! No!"
                             brennan "Well, then, what's his problem?! Who could be married to you, and not want to show you some love every day?"
-                            her "I don't know; it just seems like we're always too tired or too busy by the time we go to bed."
+                            her concerned "I don't know; it just seems like we're always too tired or too busy by the time we go to bed."
                             brennan "Well, how about first thing in the morning? Or right before dinner? Or when you come home for a quick lunch break?"
-                            her "Ha ha, that's not a bad idea. We'd probably feel like it more, then."
+                            her normal "Ha ha, that's not a bad idea. We'd probably feel like it more, then."
                             brennan "I mean, don't you two realize how lucky you are to have each other?!"
-                            her "..."
+                            her concerned "..."
                         "I'm not good enough":
-                            her "I'm no good at living here; I'm not tough or hard-working enough."
+                            her sad "I'm no good at living here; I'm not tough or hard-working enough."
                             brennan "What?! That's not true at all; we'd be totally lost without you as our [profession]."
-                            her "But I'm no farmer. I hate farm food; I don't want to work hard all day; I don't want to have to do without. I just want to go to a store and buy food and soap and have hot water!"
+                            her concerned "But I'm no farmer. I hate farm food; I don't want to work hard all day; I don't want to have to do without. I just want to go to a store and buy food and soap and have hot water!"
                             brennan "It sounds like [his_name] isn't the problem."
-                            her "Maybe not. But he loves it here. I just... don't."
+                            her concerned "Maybe not. But he loves it here. I just... don't."
                             brennan "Do you love him enough to stay here with him?"
-                            her "I don't know..."
+                            her sad "I don't know..."
                             brennan "If you want out, we could leave the planet on the next colony ship. It'll be a few months, but you don't have to stay here if you're miserable."
-                            her "Brennan..."
+                            her surprised "Brennan..."
                         "Things aren't exciting":
-                            her "I don't know; it's just not the same as it was when we first got married."
+                            her concerned "I don't know; it's just not the same as it was when we first got married."
                             brennan "Of course not. Nothing exciting can last forever, or it wouldn't be exciting any more, would it?"
-                            her "But if I don't feel the love, then..."
+                            her sad "But if I don't feel the love, then..."
                             brennan "That's not the only way to feel love, right? You care about each other, want the other person to be happy?"
-                            her "I used to..."
+                            her concerned "I used to..."
                             brennan "Do you love him enough to try and make things better?"
-                            her "I don't know..."
+                            her serious "I don't know..."
                             brennan "Because if you want out, we could leave the planet on the next colony ship. It'll be a few months, but you don't have to stay here if you're miserable."
-                            her "Brennan..."
+                            her surprised "Brennan..."
 
             "Suddenly I noticed an acrid smell..."
             brennan "The hash!"
             "Luckily, it wasn't burned too badly, and we ate it together as the conversation turned to other topics."
             brennan "You know that I'm always here for you, right?"
-            her "Yeah, thanks for listening."
+            her normal "Yeah, thanks for listening."
             if (brennan_relationship >= 1):
                 brennan "You helped me when I was feeling worthless; I'd do the same for you."
-                her "I--"
+                her concerned "I--"
                 brennan "I don't want you to ever feel trapped, like no one loves you or you have nowhere to go, because it's not true."
-                her "Thanks, Brennan..."
+                her normal "Thanks, Brennan..."
             $ brennan_relationship += 1
 
         "No":
-            her "No, thank you. But if you would cover for me in case I get back late, I'd appreciate that."
+            her normal "No, thank you. But if you would cover for me in case I get back late, I'd appreciate that."
             brennan "Of course."
             scene bg farm_interior with fade
             show him normal at midright with dissolve
             show her normal at midleft with moveinleft
             "I had to rush at home, and only had time to eat some raw vegetables before it was time to walk back."
             "But I didn't mind too much, as I got to see [his_name] while I was at home."
-            him "I'll walk halfway with you; I don't usually get to see you during the day."
+            him normal "I'll walk halfway with you; I don't usually get to see you during the day."
             her "Sure!"
             scene bg path with fade
             show him normal at midright
@@ -1053,15 +1061,15 @@ label work_6:
             $ loved += 5
             return
         "{i}Let's join Sara{/i}" if (skill_social >= 30):
-            her "Hey, do you mind if I invite Sara, too? Sometimes we like to have lunch together."
+            her surprised "Hey, do you mind if I invite Sara, too? Sometimes we like to have lunch together."
             brennan "No, that's - that would be fine. I'll cook up something for the three of us."
-            scene bg farm_interior with fade
+            scene bg farm_interior flip with fade
             show sara at right
             show her normal at midright
             show brennan at midleft
             with moveinleft
             "We all went over to the Grayson's house where Brennan lived. He fried up some potatoes and cabbage and eggs for us, and we talked and laughed all together."
-            her "Oh! It's been almost an hour; we have to get back to work!"
+            her surprised "Oh! It's been almost an hour; we have to get back to work!"
             sara "Thanks for lunch, Brennan. We should do this again sometime."
             brennan "It was my pleasure to entertain you."
     return
@@ -1078,7 +1086,7 @@ label work_7:
     $ has_batteries = False
     $ questioned_brennan = False
     $ searched_room = False
-
+    # TODO: finish adding emotions
     show her normal at midright with dissolve
     show brennan at midleft with moveinleft
 
@@ -1115,7 +1123,7 @@ label work_7:
                     if (brennan_relationship >= 2):
                         brennan "Oh, [her_name], I should have known I couldn't hide anything from you."
                         brennan "It's easier if I just show you. Come with me."
-                        scene bg farm_interior with fade
+                        scene bg farm_interior flip with fade
                         show her normal at midleft
                         show brennan at midright
                         with moveinleft

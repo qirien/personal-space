@@ -5,11 +5,11 @@ label colony_ship:
 
     scene bg colony_ship_bunk with fade
     "What a honeymoon -- on board a cramped space shuttle with a hundred other people for a month. Of course, back on Earth four years had passed, since we were travelling so close to light speed. We spent a lot of it talking about the future..."
-    play music "music/Amnesia.ogg" fadeout 1.0
+    play music "music/Amnesia.ogg" fadeout 2.0
     show him normal at midright
     show her normal at midleft
     with dissolve
-    him surprised "So, [her_nickname], What do you think about having kids?"
+    him surprised "So, [her_nickname], what do you think about having kids?"
     her flirting "In general, or us specifically?"
     him concerned "You and me, becoming parents. Sounds kind of crazy, doesn't it?"
 
@@ -75,6 +75,8 @@ label colony_ship:
 
 # After talking about having kids
 # Background about Talam
+    show him normal
+    show her normal
     "We talked about lots of other things, of course. We talked about space, about what we would miss from Earth, about what our families were probably doing.  We studied what the pre-colonization team of scientists had reported so far."
     scene bg talam with fade
     "Even though Talam was technically a \"garden planet\", meaning humans could breathe and there were plants and animals, it wasn't very much like modern Earth.  The plants were all quite different, and most of the animals were similar to amphibians or insects."
@@ -85,7 +87,7 @@ label colony_ship:
 
     # He remembers her birthday
     scene bg colony_ship_bunk with fade
-    play music "music/Prelude22.ogg" fadeout 1.0
+    play music "music/Prelude22.ogg" fadeout 2.0
 
     "Time felt strange on the ship, too. Though there was no sunrise or sunset, they did dim the lights for ten hours every night. One night I came back to our room and found a surprise waiting for me."
     show him normal at midleft with dissolve
@@ -98,20 +100,20 @@ label colony_ship:
     menu:
         her "You...used toilet paper for streamers? That's very..."
         "Amazing":
-            her happy "amazing! It's so inventive, and I can tell you went to a lot of work just for me."
+            her happy "That's amazing! It's so inventive, and I can tell you went to a lot of work just for me."
             him happy "I'm glad you like it. Yeah, it's weird, but what matters is that we do something a little different to celebrate you, right?"
         "Creative":
-            her normal "creative. Definitely unexpected; it's very different."
+            her serious "That's...creative. Definitely unexpected; it's very different."
             him annoyed "You're trying to be polite, but I can tell you don't really like it. But, that's okay! What matters is that it's a fun change, right?"
         "Gross":
-            her annoyed "...gross. Sorry, but toilet paper hanging from the walls does not really create a festive mood."
+            her annoyed "That's...gross. Sorry, but toilet paper hanging from the walls does not really create a festive mood."
             him annoyed "Sorry, I thought you'd think it was funny."
             $ loved -= 2
     him normal "Anyway, who cares about the decor? I think you need to open your present!"
     her surprised "A present? Where on earth did you find something?"
     him flirting "Ha ha, not on Earth, that's for sure! Here."
     her surprised "(It's wrapped in tissues...with hearts drawn on them)"
-    her normal "(It looks like a poem)"
+    her normal "(It looks like a poem...)"
     "Surrounded by stars, in the darkness of space \nEmptiness presses; the universe waits"
     "Though silently fades the memory of time, \nThere's one special thing I won't leave behind."
     "[her_name], my sweetest lover and friend. \nI'll always be with you, till eternity ends."
@@ -189,13 +191,16 @@ label settling_in:
     "The first month on Talam was really busy. We arrived at the end of winter, so it was still a bit cold and rainy. We all worked together to get everyone's houses up right away. The first one took the longest, as we had to figure out how to put all the pieces together."
     "Finally, our house was put up. We were so glad to stop sleeping in the shuttle and have our own space."
     scene bg farm_exterior with fade
+    show her normal at midright
+    show him normal at midleft
+    with dissolve
     him happy "Here it is! Home, sweet home!"
     her happy "This might actually work!"
     her annoyed "But why are we so far from everyone else?"
     him serious "I picked this spot on purpose. It's close enough that you can walk to work easily, but far enough away that we have plenty of room."
     her surprised "Room for what?"
     him normal "Room to grow! Room to breathe! Room to do whatever we want! We can yodel, or have loud parties, or make love in the backyard, or do anything we want! No nosy neighbors!"
-    her annoyed "Yeah, but you're not the one who has to walk two miles every day..."
+    her annoyed "Yeah, but you're not the one who has to walk two miles to work every day..."
     him normal "I think you'll like it. Come on inside, let's setup our stuff."
     scene bg farm_interior with fade
     show her normal at quarterright
@@ -203,7 +208,8 @@ label settling_in:
     with dissolve
     her serious "Not bad, not bad..."
     him happy "Isn't it awesome?! It's so small, it'll be easy to clean. And it's cozy, for just the two of us."
-    "The house really was pretty small- just one room. One end had a wood-burning/electric hybrid stove/heater as well as a battery that the solar panels could charge, and the other end had a window. No plumbing, electricity only when it was sunny or while our battery lasted, and no furniture other than our sleeping bags and a folding table."
+    "The house really was pretty small- just one room. One end had a wood-burning/electric hybrid stove/heater as well as a battery that the solar panels could charge, and the other end had a window."
+    "There was no plumbing, electricity only when it was sunny or while our battery lasted, and no furniture other than our sleeping bags and a folding table."
     her annoyed "Good thing we didn't waste any space on frivolous things like bathrooms."
     him serious "The outhouse is not that far!"
     her normal "It'll work. Instead of feeling like we're sleeping on a train, it will be like camping. Where do you think we should put our sleeping bags?"
@@ -291,6 +297,6 @@ label settling_in:
 
 label end_settling_in:
     # After we land on the planet, we start the monthly routines
-    stop music
+    stop music fadeout 5.0
     jump month01
     return
