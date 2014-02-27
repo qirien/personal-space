@@ -75,10 +75,10 @@ label domestic_4:
     scene bg farm_exterior with fade
     show her normal at midright with dissolve
     show thuc at midleft with moveinleft
-    thuc "Hello? Anybody home?"
-    her normal "Thuc! Good to see you! How are the baby goats?"
-    thuc "Doing well!  There's so many of them, though, I don't think we'll have room for them all!"
-    her surprised "Are they hard to take care of?"
+    thuc "Hello? [his_name]?"
+    her normal "Thuc! Good to see you! [his_name] is out in the fields, working, if you want to go find him."
+    thuc "Maybe I'll just ask you, then. You heard about the baby goats born at our farm, right?"
+    her surprised "Yeah, how are they doing? Are they hard to take care of?"
     thuc "Not at all! They can eat almost any plants, and are pretty hardy. Are you interested in taking care of some goats?"
     menu:
         "What should I say?"
@@ -138,6 +138,26 @@ label domestic_4:
                     him serious "I was saving it for something special, too."
                     her flirting "Like what?"
                     him serious "Like you."
+        "Let me ask [his_name].":
+            her concerned "I don't know... maybe I'll ask [his_name]."
+            thuc "Sure, just let me know. See you later, [her_name]."
+            her normal "Bye!"
+            scene bg farm_interior with fade
+            show her normal at midleft
+            show him normal at midright
+            with dissolve
+            him surprised "Free goats?! Of course we want those!"
+            her surprised "Are they really that useful?"
+            him happy "Yeah! They can clear land by eating weeds, they leave fertilizer wherever they go, and you can get goat's milk from them."
+            her concerned "That's true... but I don't know anything about how to take care of them."
+            him normal "Don't worry about it; I'll take care of them."
+            her normal "Okay, great. I'll tell Thuc tomorrow."
+            "[his_name] and I talked it over, and we decided to fence in a part of the wild area not too far from the house for the goats."
+            "There were three of them, two males and a female, and I became remarkably attached to them. They worked hard eating the strange plants from this planet."            
+
+            $ skill_domestic += 10
+            $ community_level += 3
+            $ have_goat = True
             
     return
 

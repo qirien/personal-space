@@ -2404,7 +2404,9 @@ label monthly_event_17:
         "What should I say?"
         "[his_name] brings home food I hate, too.":            
             her annoyed "Ohhh, I know what you mean. I am so sick of [hated_food], but [his_name] keeps growing them!"
-            sara "I know, right?" 
+            sara "I know, right? It's better than back on Earth though; we'd argue about money all the time."
+            her normal "It's nice not to have to worry about money."
+            sara "Yeah, instead we just have to worry about food..."
         "He's just trying to be efficient.":
             her concerned "He's probably just trying to be efficient with the food. It is a limited resource."
             sara "I know... but he doesn't seem to get how much I hate those foods!"
