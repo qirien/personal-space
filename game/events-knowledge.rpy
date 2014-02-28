@@ -20,7 +20,7 @@ label knowledge_0:
     her normal "Well, I had a few minutes and I thought I'd see what sort of stuff you have here in the library."
     sven "Well, most books you can just borrow from our online library, but we do have some high-res maps of the planet and a few printed reference books.  We have also some tools and equipment people can borrow, like if you want to build something."
     her serious "Okay, that makes sense. We didn't have room to bring drills and wrenches for everyone, huh?"
-    sven "Exactly. This is also where you can request new data from the extranet connection to Earth, though we have limited bandwidth and it will take several years to get here."
+    sven "Exactly. This is also where you can get new data from the extranet connection to Earth, though we've got limited bandwidth and it'll take a couple of years to get here."
     her surprised "What are those machines over there?"
     sven "Those are our printers. You can print on paper, of course, and we have a 3D printer if you need to print something out of plastic. But we don't have a ton of either material, so you can't just print anything, and recycling's real important."
     her normal "That makes sense. Thanks for the tour, Sven."

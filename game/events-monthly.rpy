@@ -1449,7 +1449,7 @@ label goto_ocean:
     with dissolve
     if (ocean_character == "Sven"):
         show sven at right with dissolve
-        sven "Wow, this beach reminds me Earth. Lots of rocks and a big blue wet thing." 
+        sven "Whoa, this beach reminds me Earth. Lots of rocks and a big blue wet thing." 
         her normal "I think you mean ocean. It's making me a little homesick too." 
     if (ocean_character == "Brennan"):
         show brennan at right with dissolve
@@ -1464,7 +1464,7 @@ label goto_ocean:
     lily "I'm so glad we made it! Okay, I'd like to take samples of this crusty white stuff and any other organic material you can find."     
 
     if (ocean_character == "Sven"):
-        sven "Okay, you guys do the stuff on the shore, and I'll help gather some of this coastal brush." 
+        sven "Okay, you guys do the stuff on the shore, and I'll get some of this coastal brush." 
         lily "I'm going to take some of the smaller creatures and plants back too."
     elif (ocean_character == "Brennan"):
         brennan "Lovely. Is it all right if I touch the water?" 
@@ -1480,7 +1480,7 @@ label goto_ocean:
     "The incoming waves were purple with one kind of alien sea creature. It had six spiny or hairy arms, and floated like a jellyfish."  
     lily "Oh! I've got to record this."
     if (ocean_character == "Sven"):
-        sven "Be careful! Those things could be deadly for all we know!"
+        sven "Be careful! Those critters might be deadly!"
     elif (ocean_character == "Brennan"):
         brennan "Just be careful not to get swept away!" 
     elif (ocean_character == "Sara"):
@@ -1606,15 +1606,15 @@ label monthly_event_11:
             her "Want to come with Lily and me to the seashore?"
             sven "The seashore? The one a few kilometers away?"      
             her happy "Yeah, a real beach! Bring a shovel!"
-            sven "No thank you. Not after what I've been reading about giant sea creatures and this planet."  
+            sven "No way. Not after what I've been reading about giant sea creatures and this planet."  
             her surprised "What have you been reading?"  
             sven "Well, I read that the animals in the ocean probably tolerate radiation the best, since the water can diffuse the radiation. The satellite telescope that came with us showed some strange, large shadows in a few of the oceans, and no one knows what they are."
             her serious "It could be a whale or something?"
-            sven "No. These are much bigger. It kind of creeps me out."
+            sven "No. These are much bigger. Pretty darn creepy, if you ask me."
             her normal "Well, we're not going out to the middle of the ocean, just the shore. Wouldn't it be fun to get out of your stuffy library for a day?"
-            sven "Now that you mention it, I have been wanting to go for a hike, but I didn't want to go by myself."
+            sven "Now that you mention it, I have been wanting to go for a hike."
             her happy "Just think of it as a long hike, and if the beach scares you you can stay far away from it."
-            sven "Okay, I think I can manage that."
+            sven "Okay, can do."
             call goto_ocean
                     
         "Brennan, my co-worker":
@@ -1866,17 +1866,17 @@ label monthly_event_13:
     with dissolve
 
     lily "He shows great remorse. I doubt he will be so careless as to repeat his mistakes."
-    sven "It could have been any of us..."
+    sven "It coulda been any of us..."
     thuc "But would one of us have dumped her body in the river and covered it up? That behavior is suspicious. He says it was an accident, but who can tell for certain?"
     her surprised "But why would anyone kill Josephina?"
     thuc "Why does any criminal do what they do? They want to, and they don't care about other people."
     show her serious
     lily "Ilian has not shown any other behavior that would be cause for concern."
     thuc "But it's possible that it was not an accident. We cannot show too much mercy, or people will think they can get away with anything."
-    sven "We don't have a jail; you're not thinking of executing him, are you?!"
+    sven "You're not thinking of killing him, are you?!"
     thuc "Of course not. I propose temporary banishment. He should have to live on his own, off the land, for a year. That will show how important our community is, both to him and any would-be criminals."
     lily "There are no would-be criminals here, Thuc. What you are proposing is a death sentence. I think he should simply provide a certain amount of free labor to the Peron family every week. Perhaps that way they can eventually forgive him."
-    sven "I don't like either of those options, but I can't think of anything better."
+    sven "I don't much like either of those options, but I can't think of anything better."
 
     # TODO: Make all these options work with being able to see Ilian around town still.
     menu:
@@ -1885,7 +1885,7 @@ label monthly_event_13:
             her serious "I agree with Lily; he should have to work for the Perons. It can't make up for the loss of a child, but it will require some sacrifice and will help him show his remorse."
             thuc "He should be their slave for a year!"
             her concerned "Well, we don't want his farm going to waste..."
-            sven "Maybe he could be required to work a certain number of hours? Like community service?"
+            sven "We could make him work a certain number of hours? Like community service?"
             her serious "Yes, but instead of the community it will be for the Perons. Let's say eight hours a week for a year."
 
             "The jury agreed to that, and the Mayor, Ilian, and the Perons all accepted our proposal. Sara didn't seem to happy about it, though. She'd probably have to do extra work on their farm to make up for his absence."
@@ -1904,7 +1904,7 @@ label monthly_event_13:
             
         "{i}Compromise{/i}" if (skill_spiritual >= 40):
             her normal "Those both sound like good ideas. Perhaps some of both might be appropriate?"
-            sven "What do you propose?"
+            sven "What's your idea?"
             her concerned "Having him work for the Perons is a good idea, but it is too soon. They would feel angry, and then he would feel like his apology was not accepted."
             her serious "But a year is too long to send anyone to live outside the community. I propose Ilian leave the community for two weeks. When he returns, he will have to work for the Perons one day of every week for the next half year."
             lily "That sounds fair for all involved."
@@ -1918,7 +1918,7 @@ label monthly_event_13:
             thuc "That's true... I guess he is still innocent unless proven guilty..."
             her "He still should provide some reparations, though. I think he should work for the Perons one day a week for a year."
             lily "I agree."
-            sven "That sounds fair."
+            sven "That's fair."
             "We all agreed, and the Mayor, Ilian, and the Perons seemed satisfied with our verdict also."
 
     scene black with fade

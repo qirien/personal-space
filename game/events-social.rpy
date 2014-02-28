@@ -248,10 +248,10 @@ label social_5:
     with dissolve
     lily "We all live so close to each other, but it seems like in the evening everyone just wants to go to bed early."
     her concerned "Well, people who aren't working in town are farming all day, which is pretty tiring."
-    sven "That's true, but don't you get tired of sitting at home all the time? Even though I get up early to milk the cows and I'm in the library all day, the last thing I want to do when I get home is sit around by myself some more."
+    sven "That's true, but don't you get tired of sitting at home all the time? I get up early to milk the cows, and I'm in the library all day, so the last thing I want to do when I get home is sit around by myself some more."
     her normal "I'm pretty busy, but I agree that it'd be fun to do something together as a community."
     lily "I was just reading on how we could use a magnifying glass with our tablets to make a projector. Perhaps we could have a movie night?"
-    sven "Yes, this sounds perfect. A movie is low-key enough that even if you're all tuckered out from farming you should be able to sit through it."
+    sven "Yeah, a movie is low-key enough that even if you're all tuckered out from farming you should be able to sit through it."
     sara "And kids like to watch movies too, so we could include everyone."
     her happy "I know the perfect movie!"
     menu:
@@ -262,13 +262,13 @@ label social_5:
             her normal "Well, yes, but isn't it interesting to think about what space travel will be like in the future?"
             sara "You just like watching it for the cute guys."
             her happy "I think everyone enjoys watching good-looking people do stupid things. Plus I already know we have it in the archives!"
-            sven "We do have lots of Star Wars remakes in the archives, but maybe you didn't know that we have some rarer sci-fi movies here too."
+            sven "We've got lots of Star Wars remakes in the archives, but maybe you didn't know that we have some rarer sci-fi movies here too."
             her surprised "Like what?"
-            sven "So, {i}Time For No Man{/i} was originally a tellanovella, but when set in space, it suddenly became a sleeper cult hit in the 2030s!"
+            sven "{i}Time For No Man{/i} was originally a tellanovella, but when set in space, it suddenly became a sleeper cult hit in the 2030s!"
             her flirting "'No man', huh? Does it have any guys in it?"
             sven "I think it has a few. It's not just lesbians if that's what you're asking."
             sara "Is it appropriate for children?"
-            sven "Sure. There's some innuendo but that goes right over their heads."
+            sven "Sure. There's some innuendo, but that goes right over their heads."
             stop sound fadeout 2.0
             scene black with fade
             "We decided to watch {i}Time For No Man{/i} the next day in the evening. I sent out a message to the colony message board, and tried to remind everyone I saw to come."
@@ -310,9 +310,9 @@ label social_5:
             sara "Yeah, and it would encourage kids to try smoking alien weeds."
             her annoyed "Oh come on. We grew up watching films with people drinking all the time and it didn't turn us into alcoholics."
             sara "The plot of a Sherlock Holmes mystery is also difficult to understand, so it might not hold their interest."
-            sven "Wait, I can think of a historical film with plenty of mystery that kids and adults might like."
+            sven "Well, I can think of a historical film with plenty of mystery that kids and adults might like."
             her normal "Tell us about it."
-            sven "It's a mini-series called {i}The Adventures of Emily Thompson{/i} about a young girl living in a small town in England during the 1900s. She solves various mysteries including finding missing shoes and pets, culminating in her finding the culprit of a livestock theft."
+            sven "It's a mini-series called {i}The Adventures of Emily Thompson{/i}, about a young girl living in a small town in England during the 1900s. She solves various mysteries like finding missing shoes and pets, and she ends up finding the culprit of a livestock theft."
             her surprised "Well, that does sound a little more child-friendly than murder mysteries."
             sara "Let's do it."
             stop sound fadeout 2.0
@@ -335,7 +335,7 @@ label social_5:
             her surprised "I was thinking more along the lines of {i}The Old Man and the Sea{/i}."
             sven "I think that movie would put everyone to sleep."
             her normal "It's only forty minutes long!"
-            sven "Let's watch {i}Wall-E{/i}. I haven't seen it in a while and it could start some interesting conversations about what our colony should be like."
+            sven "How 'bout {i}Wall-E{/i}? I haven't seen it in a while, and it could start some conversations about the colony, and what it oughta be like."
             sara "I agree! Some of the younger kids have never seen it, and I think they would like it."
             stop sound fadeout 2.0
             scene black with fade
