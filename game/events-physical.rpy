@@ -291,7 +291,9 @@ label physical_5:
     menu:
         "What should I do?"
         "Meditate in sitting and prone poses":
+            show her sleeping at sitting with move
             "I spent time sitting and lying down just focusing on my breathing. "
+            "I felt both more energized, and more relaxed."
             $ relaxed += 5 
             $ skill_physical += 5
             $ skill_spiritual += 5
@@ -353,8 +355,8 @@ label physical_6:
             him happy "Ha ha, yeah, something like that."
             scene bg mountains with fade
             "We set off towards the mountains to the west, and climbed and climbed all morning long."
-            show him at quarterleft
-            show her at left
+            show him normal at quarterleft
+            show her normal at left
             with moveinleft
             him surprised "Do you smell that?"
             her surprised "Yeah, it's... sulfur?"
@@ -386,7 +388,7 @@ label physical_6:
                 "Luckily, we weren't burned too badly."
             
             her serious "I didn't know there were geysers here."
-            him serious "Well, that could explain why the soil is so good here - maybe tthis mountain used to be a volcano."
+            him serious "Well, that could explain why the soil is so good here - maybe this mountain used to be a volcano."
             her normal "It looks really cool."
             him normal "Yeah, now that we don't have to worry about getting cooked!"
             "After a few minutes the geyser died down."
@@ -426,6 +428,9 @@ label physical_6:
                     with move
                     "We stripped down and got in the warm water. The water felt soft and slippery."
                     "There was a slight breeze whispering through the trees, but everything else was quiet."
+                    show her sleeping
+                    show him sleeping
+                    with dissolve
                     if (loved >= 0):
                         "I pulled [his_name] close and squeezed his hand. He nuzzled my neck playfully."
                         $ loved += 2
@@ -516,7 +521,7 @@ label physical_6:
 label physical_7:
     scene bg bedroom with fade
     show her normal at midright
-    show him normal at midleft
+    show him sleeping at midleft
     with dissolve
     show overlay night
     "I woke up early and couldn't go back to sleep. All I could think of was how hungry I was for meat."
@@ -535,6 +540,7 @@ label physical_7:
             else: 
                 him sad "Can I just go back to sleep?"
                 her normal "Yeah, that's fine. Don't worry about me, I'll be careful."
+                show him sleeping with dissolve
         "Let him sleep.":
             "I left him a message so he wouldn't worry about where I was."
     scene bg stream with fade

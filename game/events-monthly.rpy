@@ -64,6 +64,7 @@ label monthly_event_1:
             him annoyed "I'm not that hungry."
             "{b}I{/b} was hungry, so I just made dinner for myself. It felt a little lonely, though, eating by myself while he was poring over his charts for the farm. Still, I cleaned up and settled down to relax."
             her "(If he gets hungry he can make his own dinner.)"
+            hide her with moveoutright
             "I fell asleep early, and awoke the next morning to find..."
                 
         "{i}I'll be in charge of dishes{/i}" if (skill_domestic >= 10):
@@ -1395,6 +1396,9 @@ label follow_him:
             him normal "Okay."
             "We walked around with Lettie for a while, and then we let her rest and have plenty of water to drink. She still didn't seem to feel better, but she wasn't getting worse, either."
             "[his_name] sat down in some clean hay. It was a little scratchy, but I sat down next to him."
+            show him sleeping
+            show her sleeping
+            with dissolve
             "I must have fallen asleep, because I woke up and it was morning. We had spent all night in the barn..."
             $ loved += 2
 
@@ -1941,7 +1945,10 @@ label monthly_event_14:
             "He came over and wrapped his arms around me in a hug."
             him serious "It'll be okay, [her_nickname]. Why don't you get some rest?"
             her sad "Maybe I will..."
+            scene bg bedroom with fade
+            show her sleeping at center
             "I fell asleep immediately..."
+            
         else:
             him serious "You should get some rest."
             her annoyed "Oh, suddenly you know exactly what I should do? You think I don't know how to take care of myself?!"
@@ -1949,7 +1956,11 @@ label monthly_event_14:
             her angry "Tired?! I just said I'm sick!"
             him angry "Fine, do whatever you want!"
             "I went to lay down and fell asleep immediately..."
+            scene bg bedroom with fade
+            show her sleeping at center
+            "I fell asleep immediately..."
 
+        scene black with fade
         "The next morning I felt less tired, but still a little off. I went to work anyway, and had been standing up all day when I started to feel dizzy and sick to my stomach."
         call set_work_bg
         show her serious at midright
@@ -2995,6 +3006,14 @@ label monthly_event_21:
 # Include name for baby?
 label monthly_event_22:
     scene bg farm_interior with fade
+    "Month 22 is not finished yet."
+    # If pregnant, work out name for baby girl
+    if (is_pregnant):
+        "We finally picked a name for the baby!"
+        
+    # Otherwise, make a plan for future?
+    else:
+        "We thought about how we wanted to live the rest of our lives?"
     return
 
 # Climax - epic conflict leading to either "We'll always be together" or "I just want to get away from you!"  Conflict: Worried about new baby, pregnant if made_love a lot or affair with Brennan, otherwise, discussion about quality of sex
@@ -3345,8 +3364,8 @@ label monthly_event_23:
     # How to talk about sex
     else:
         scene bg bedroom
-        show her normal at midright
-        show him normal at midleft
+        show her annoyed at midright
+        show him sleeping at midleft
         with dissolve
         show overlay night
         

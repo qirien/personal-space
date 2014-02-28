@@ -71,12 +71,13 @@ image him laughing = "sprites/him-happy.png"
 image him sad = "sprites/him-sad.png"
 image him surprised = "sprites/him-surprised.png"
 image him serious = "sprites/him-serious.png"
+image him sleeping = "sprites/him-sleeping.png"
 
 # Her
 image her normal = "sprites/her.png"
 image her normal flip = im.Flip("sprites/her.png", horizontal = True)
 #image side her normal = "sprites/her-head.png"
-# TODO: Fix angry, annoyed, flirting, serious when they are done.
+# TODO: Fix angry, annoyed, flirting, serious,sleeping when they are done.
 image her angry = "sprites/her-angry.png"
 image her annoyed = "sprites/her-annoyed.png"
 image her concerned = "sprites/her-concerned.png"
@@ -87,7 +88,7 @@ image her laughing = "sprites/her-laughing.png"
 image her sad = "sprites/her-sad.png"
 image her surprised = "sprites/her-surprised.png"
 image her serious = "sprites/her-serious.png"
-
+image her sleeping = "sprites/her-sleeping.png"
 
 # Other Characters
 image female_child = "sprites/female-child.png"

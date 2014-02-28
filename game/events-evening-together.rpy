@@ -321,8 +321,13 @@ label relax_together_5:
 
     $ relaxed += 5
     $ loved += 5
+    show her sleeping
+    show him sleeping
+    with dissolve
     scene black with fade
-    "We lay there for a long time...In the morning, it felt so good to wake up next to him, watching the sky lighten. With one final kiss, we got up and carried everything back to the house together."
+    "We lay there for a long time..."
+    scene bg sunset with fade
+    "In the morning, it felt so good to wake up next to him, watching the sky lighten. With one final kiss, we got up and carried everything back to the house together."
     return
 
 # Baby names
@@ -652,12 +657,12 @@ label relax_together_g:
     "I waited."
     show her annoyed at center
     "And waited."
-    show her angry at center
+    show her sleeping at center
     "And waited."
     scene black with fade
     "Finally, I just went to sleep."
     scene bg bedroom with fade
-    show her normal at midright
+    show her sleeping at midright
     with dissolve
     show him normal at center with moveinleft
     show overlay night
@@ -688,6 +693,9 @@ label relax_together_g:
             her normal "But I love you."
             him normal "I love you too, [her_name]."
             "He kissed me one last time, and then held me close as I fell back asleep."
+            show her sleeping
+            show him sleeping
+            with dissolve
             $ loved += 1
             $ relaxed -= 2
         "Tell him off":

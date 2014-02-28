@@ -314,7 +314,11 @@ label good_ending:
     him laughing "There is no place more exotic!"
     her happy "That's true... Good choice, then."
     show him happy
+    with dissolve
     "He didn't answer, just buried his face in my hair and tightened his grip around my body. I held on tight to his arms, feeling safety and love and happiness swirling around us."
+    show her sleeping
+    show him sleeping
+    with dissolve
     "We were home."
     ".:. Ending 3/3."
     jump show_credits
