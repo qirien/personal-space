@@ -2517,7 +2517,9 @@ label monthly_event_17:
             her normal "Nothing new happening at our house - just the same old routine."
             sara "Well, thanks for listening to me, anyway. You're always such a good friend to me."
             her serious "Thanks, Sara..."
-        
+
+    show her sleeping with dissolve
+    "We relaxed for a bit more in the hot bath, and then went home. It was comforting to know I could depend on Sara."
     return
 
 
@@ -3640,7 +3642,7 @@ label monthly_event_24:
             "Once I stopped and leaned against a tree. He rubbed my back and waited patiently for me."
         if (loved >= 15):
             "During one of the contractions, I wrapped my arms around his neck and leaned into him while he held me. It was comforting to know I could depend on him."
-        "That mile to the clinic never felt so long as that day when I was in labor. But, finally, we arrived."
+        "The trip to the clinic never felt so long as that day when I was in labor. But, finally, we arrived."
         hide him
         hide her
         with moveoutright

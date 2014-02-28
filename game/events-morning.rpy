@@ -191,10 +191,43 @@ label work_0:
         her serious "Even though it seems far away, it's still our home, isn't it?"
 
     "I worked hard getting things set up, and even though the job seemed pretty big, I thought I would probably do okay."
-
-    # TODO: Have Sara stop by and say hi?  Move social 1 here?
-
     $ relaxed -= 5
+
+    # Meet friend Sara
+    scene bg community_center with fade
+    "Afterwards, I stopped by the community center to see if [his_name] was done meeting with the other farmers. He wasn't, so I started talking with one of the people I had met on the ship."
+
+    show her normal at midright
+    show sara at midleft
+    with dissolve
+    sara "I guess you're not a farmer, either, huh?"
+    her "Not really. I'm a [profession]."
+    sara "Really? That's pretty cool."
+    "We talked about my job for a while, and then she admitted,"
+    menu:
+        sara "I'm not sure why I'm here...I'm not really good at anything."
+        "That's not true!":
+            her concerned "That's not true! I mean, I don't know you very well yet, but I can tell you're a good listener."
+            sara "Thanks..."
+        "Why are you here?":
+            her "Why {b}are{/b} you here?"
+            sara "Well..."
+        "(Change the subject)":
+            her surprised "(I don't know what to say!)"
+            her normal "Well, uh, what do you like to do?"
+            sara "I like to read...I read a lot. I'm a pretty good photographer, too."
+            her "That sounds fun. Who's in your family??"
+    show her normal
+    sara "My husband is Ilian Andrevski - he's not a farmer, either. He's a food scientist."
+    her surprised "Really? There are food scientists?"
+    sara "Yes, they study things like nutrition and shelf-life and ways to preserve foods while maintaining lots of nutrients - things like that. I think he'll also do a lot of the inventory and distribution of food once we get there."
+    her normal "What about you? What's your job?"
+    sara "Breeding stock."
+    her surprised "What?!"
+    sara "Ha ha ha, I'm just kidding! Though it does seem like we'll be expected to have lots of kids quickly to increase the population...but I'll be helping Ilian in the storehouse, and also helping the mayor stay organized."
+    her normal "Good! I bet we'll see each other a lot, then."
+    sara "Probably so. It's nice to have met you, [her_name]."
+    "Sara and I talked almost every day after that. We had a lot in common as newlywed colonists, and she had an easy laugh and an understanding smile that made her fun to be around."
     return
 
 # Emergency where she can't help everyone in time, leading to 

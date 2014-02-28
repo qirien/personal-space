@@ -7,47 +7,43 @@ label social_def:
     $ skill_social += 5
 
 # Intro Event
+# Community message board flame war
+# TODO: make this more dramatic?
 label social_0:
-    # TODO: This doesn't make sense if you do it later in the game. 
-    # Maybe put it in events-morning one month or something
-    "Aside from [his_name], I had one other person I felt close to - Sara."
-    "We had met on the ship when [his_name] was meeting with the other farmers."
-    scene bg community_center with fade
-    show her normal at midright
-    show sara at midleft
-    with dissolve
-    sara "I guess you're not a farmer, either, huh?"
-    her "Not really. I'm a [profession]."
-    sara "Really? That's pretty cool."
-    "We talked about my job for a while, and then she admitted,"
-    menu:
-        sara "I'm not sure why I'm here...I'm not really good at anything."
-        "That's not true!":
-            her concerned "That's not true! I mean, I don't know you very well yet, but I can tell you're a good listener."
-            sara "Thanks..."
-        "Why are you here?":
-            her "Why {b}are{/b} you here?"
-            sara "Well..."
-        "(Change the subject)":
-            her surprised "(I don't know what to say!)"
-            her normal "Well, uh, what do you like to do?"
-            sara "I like to read...I read a lot. I'm a pretty good photographer, too."
-            her "That sounds fun. Who's in your family??"
-    show her normal
-    sara "My husband is Ilian Andrevski - he's not a farmer, either. He's a food scientist."
-    her surprised "Really? There are food scientists?"
-    sara "Yes, they study things like nutrition and shelf-life and ways to preserve foods while maintaining lots of nutrients - things like that. I think he'll also do a lot of the inventory and distribution of food once we get there."
-    her normal "What about you? What's your job?"
-    sara "Breeding stock."
-    her surprised "!"
-    sara "Ha ha ha, I'm just kidding! Though it does seem like we'll be expected to have lots of kids quickly to increase the population...but I'll be helping Ilian in the storehouse, and also helping the mayor stay organized."
-    her normal "Good! I bet we'll see each other a lot, then."
-    sara "Probably so. It's nice to have met you, [her_name]."
-    "Sara and I talked almost every day after that. We had a lot in common as newlywed colonists, and she had an easy laugh and an understanding smile that made her fun to be around."
+    
+    # TODO: computer background?
+    scene bg farm_interior with fade
+    show her normal at center with dissolve
+    "We had a community message board online where we could talk to anyone else in the colony easily."
+    "But people weren't always as polite online as they were in person..."
+    julia "Can everyone please make an effort to attend the next farmer's meeting? We can't get your input if you do not attend."
+    natalia "Some of us are busy farming."
+    sven "Why're the meetings always held in the community center? That's a long ways for some of us."
+    natalia "Not such a tough cowboy now, are you? It's only two kilometers!"
+    sven "Well, it ain't fair for the meetings to always be close for some folks, and far for others. We oughta meet here sometime."
+    julia "The community center is centrally located. The meeting will be there. Everyone who comes will have input into how resources are distributed."
+    "I decided to step in and try and keep the peace."
+    her "Hey, let's all support Julia and the farmers! She's working hard to help everyone be organized and have the food they need."
+    sven "She's working hard on knowin' everyone's business."
+    julia "We will all have to cooperate to survive!"
+    sven "Speak for yourself, we're doin' just fine up here."
+    natalia "I'll remember that the next time Helen asks me for some eggs!"
+    helen "Hey, hey, don't drag me into this!"
+    sven "Yeah, well, see how you like going without milk for your kids. They're runty enough as it is."
+    "Uh-oh. Things were getting personal. Was there anything I could do?"
+    her "Hey, hey, calm down everyone. I think we're all going to need things from each other in the next couple years. We don't have to agree about everything, but let's try and be polite, okay?"
+    natalia "Tell that to Mr. Lone Ranger, who thinks he can do it all alone. Well, if he keeps this up, he may just get his wish!"
+    her "I'm telling that to everyone. It takes two to argue, right?"
+    natalia "..."
+    sven "..."
+    julia "Thank you, [her_name]. Anyway, you are all free to choose whether to attend or not, but we hope to get everyone's input at the next meeting."
+    her "(Whew! They would never say things like that in person! Hopefully everyone can think a little more before they type...)"
+    
     $ skill_social += 10
 
     return
 
+# Dry fruits with Natalia
 label social_1:
     scene bg farm_exterior flip with fade
     "One day I was at the Peron's house. Natalia had found some fruits while hiking that the scientists deemed edible. She had picked so many; her table was covered with them."
@@ -114,7 +110,7 @@ label social_2:
     $ community_level += 2
     return
 
-# Invite family over for dinner
+# Invite Nguyens over for dinner
 label social_3:
     scene bg farm_interior with fade
     "Even though we had all lived together for months, there were some people in the community we didn't know very well."
@@ -559,8 +555,115 @@ label social_7:
     return
 
 
-# Community Shindig
+# Family (appears to be?) slacking off and mooching off everyone else;
+# mayor asks [her_name] to see if she can determine what to do
 label social_8:
+    "I didn't see the other colonists much during the day, but I assumed they were working hard like we were."
+    "But not everyone thought that..."
+    scene bg community_center with fade
+    show her normal at midright
+    show sara at midleft
+    with dissolve
+    sara "Have you seen the Nguyen's farm lately?"
+    her serious "No, I don't really get over there."
+    sara "Well, there's nothing on it! They haven't planted anything this season!"
+    her surprised "Really? I wonder why?"
+    sara "I don't know; I see Mrs. Nguyen at the storehouse all the time, picking up food for their family... but it's not really fair for them to always be taking, and not contributing!"
+    her concerned "I see your point... but is it really any of our business?"
+    sara "I'm going to tell the Mayor about it."
+    "I followed Sara over to the storehouse, where the Mayor was talking to Ilian."
+    scene bg storehouse
+    show pavel at midright with dissolve
+    show her normal at quarterleft
+    show sara at midleft
+    with moveinleft
+    boss "Hello, Sara, what can I do for you?"
+    sara "Mayor, it's not fair for the Nguyens to always be taking food from the storehouse but not contributing anything. Their job is to be farmers, right?!"
+    boss "Yes, it is - do you have reason to believe they are not doing their job?"
+    sara "Their fields are completely empty!"
+    boss "I see..."
+    boss "[her_name], would you please go and speak to the Nguyens and see if you can determine the problem?"
+    her surprised "(Me?! Well, I guess Sara might be too upset about it, and I am on friendly terms with the Nguyens...)"
+    her serious "Yes, I'll do that."
+    scene bg laundry with fade
+    show julia at midright with dissolve
+    show her normal at midleft with moveinleft
+    "I headed over to their farm, and found Mrs. Nguyen hanging up the clothes to dry. She smiled when she saw me coming."
+    julia "Hello, [her_name], what can I do for you?"
+    menu:
+        "What should I say?"
+        "Ask if she is okay":
+            her concerned "Is...everything all right with your family?"
+            "Mrs. Nguyen stiffened, and she suddenly became very interested in her laundry."
+            julia "Of course. Everything's fine."
+            her serious "I mean, if there's any problems, we're all here to help each other..."
+            julia "I will ask if we need anything."
+            "I could tell something was bothering her, but she didn't want to talk about it with me."
+            julia "Thank you for stopping by, [her_name], but I have a lot to do and shouldn't waste time chit-chatting."
+            her concerned "I just want to help."
+            julia "Then please, leave us alone!"
+            show her sad
+            "All I could do was leave...it was clear something was wrong, but she wouldn't tell me what it was."
+            scene black with fade
+            "I sent her an apology message later that day, and she wrote me back."
+            julia "Thanks for stopping by...If you really want to help, perhaps someone could help Thuc with a flooding system for the rice he wants to plant."
+            
+        "Ask why they haven't planted anything":
+            her surprised "Why haven't you planted anything this season?"
+            julia "You think you know all about our farm, just by looking at it?"
+            her serious "No, but it just looks empty, so I wondered-"
+            julia "You wondered?! If you have time to waste with wondering, then perhaps you should put it to better use than bothering people who are trying to get some work done!"
+            her concerned "I'm sure you have a good reason--"
+            julia "Yes, but I see no reason to share our troubles with you. Thank you for stopping by, but I don't have any more time to share with you."
+            "She pinned clothes furiously, and I thought I'd better leave."
+            scene black with fade
+            "I sent her an apology message later that day, and she wrote me back."
+            julia "If you really want to help, perhaps someone could help Thuc with a flooding system for the rice he wants to plant."
+
+        "Chat for a while":
+            her normal "I just came by to say hi. We don't get to see each other very often, do we?"
+            julia "No, we don't! How are things going at your farm?"
+            her serious "Pretty well, though we lost a lot of corn a while back to some nasty bugs here. There's so many things you can't control on a farm, aren't there?"
+            julia "Yes, that's true."
+            "She paused for a minute. It looked like she was trying to decide whether to tell me something."
+            her normal "Your laundry looks so clean; how are you getting all the stains out? We don't have very good soap here..."
+            julia "Ah, you noticed! The trick is fermented urine."
+            her surprised "Really?"
+            julia "Yes, it's a trick they used in ancient Rome. It's also good for fertilizer."
+            her surprised "Wow! You might want to post that on the community message board; I bet everyone would like to know about it."
+            julia "Oh, I usually don't have time to go on there."
+            her normal "Well, if you don't mind, then, maybe I will post it on there with a note that you taught me how."
+            julia "Well, if you think it will help people."
+            her serious "Yes, we all need to help each other, don't you think?"
+            julia "Yes... I suppose you're right."
+            her concerned "..."
+            julia "You know, we lost a lot of our corn to those bugs, too. All of it, in fact."
+            her surprised "Oh, no! Did you have any other crops?"
+            julia "We have our vegetable garden, of course, but one day the goats got out and ate most of our plants..."
+            her sad "That's awful!"
+            julia "We wanted to plant rice, but we are still working on a system to flood and irrigate the fields properly. Well, Thuc {b}was{/b} working on it, but after the corn..."
+            her serious "It seems fruitless, doesn't it?"
+            julia "Yes! What's the point of digging and planning and planting, if some crazy critter is just going to come destroy everything we've done?!"
+            her concerned "I know what you mean. I felt the same way, too, after the corn."
+            julia "Thuc's not one to complain about his troubles, but I can see he's taken this hard. I suppose I haven't been very encouraging, either."
+            her serious "It is hard... but maybe if you had some help, it'd be easier to get started?"
+            julia "Do you think people would help?"
+            her normal "Sure! Not only would they want rice to eat, but we all are going to need help at some point."
+            if (has_goat):
+                her "Your family has been so kind to us, giving us one of your goats, and Thuc is a good friend to [his_name]. Of course we will help you."
+            else:
+                her "Thuc is a good friend to [his_name], so I'm sure he at least would be willing to help!"
+            julia "Oh, thank you. I've fretted about this long enough, it's time we did something about it!"
+            
+    scene black with fade
+    "I told the mayor what I had found out, and he agreed to find some people to help Thuc get his flooding system setup before the start of the next planting season."
+    "[his_name] and some other farmers helped, and they managed to get most of it done in a few days. I hoped their rice wouldn't face the same fate as the corn... but at least now Julia and Thuc knew they weren't alone."
+    
+    $ skill_social += 10
+    return
+
+# Community Shindig
+label social_9:
     scene bg path with fade
     play music "music/Prelude22.ogg" fadeout 3.0
 
@@ -926,113 +1029,6 @@ label done_party_menu:
 
     $ skill_social += 10
     $ community_level += 5
-    return
-
-# Family (appears to be?) slacking off and mooching off everyone else;
-# mayor asks [her_name] to see if she can determine what to do
-label social_9:
-    "I didn't see the other colonists much during the day, but I assumed they were working hard like we were."
-    "But not everyone thought that..."
-    scene bg community_center with fade
-    show her normal at midright
-    show sara at midleft
-    with dissolve
-    sara "Have you seen the Nguyen's farm lately?"
-    her serious "No, I don't really get over there."
-    sara "Well, there's nothing on it! They haven't planted anything this season!"
-    her surprised "Really? I wonder why?"
-    sara "I don't know; I see Mrs. Nguyen at the storehouse all the time, picking up food for their family... but it's not really fair for them to always be taking, and not contributing!"
-    her concerned "I see your point... but is it really any of our business?"
-    sara "I'm going to tell the Mayor about it."
-    "I followed Sara over to the storehouse, where the Mayor was talking to Ilian."
-    scene bg storehouse
-    show pavel at midright with dissolve
-    show her normal at quarterleft
-    show sara at midleft
-    with moveinleft
-    boss "Hello, Sara, what can I do for you?"
-    sara "Mayor, it's not fair for the Nguyens to always be taking food from the storehouse but not contributing anything. Their job is to be farmers, right?!"
-    boss "Yes, it is - do you have reason to believe they are not doing their job?"
-    sara "Their fields are completely empty!"
-    boss "I see..."
-    boss "[her_name], would you please go and speak to the Nguyens and see if you can determine the problem?"
-    her surprised "(Me?! Well, I guess Sara might be too upset about it, and I am on friendly terms with the Nguyens...)"
-    her serious "Yes, I'll do that."
-    scene bg laundry with fade
-    show julia at midright with dissolve
-    show her normal at midleft with moveinleft
-    "I headed over to their farm, and found Mrs. Nguyen hanging up the clothes to dry. She smiled when she saw me coming."
-    julia "Hello, [her_name], what can I do for you?"
-    menu:
-        "What should I say?"
-        "Ask if she is okay":
-            her concerned "Is...everything all right with your family?"
-            "Mrs. Nguyen stiffened, and she suddenly became very interested in her laundry."
-            julia "Of course. Everything's fine."
-            her serious "I mean, if there's any problems, we're all here to help each other..."
-            julia "I will ask if we need anything."
-            "I could tell something was bothering her, but she didn't want to talk about it with me."
-            julia "Thank you for stopping by, [her_name], but I have a lot to do and shouldn't waste time chit-chatting."
-            her concerned "I just want to help."
-            julia "Then please, leave us alone!"
-            show her sad
-            "All I could do was leave...it was clear something was wrong, but she wouldn't tell me what it was."
-            scene black with fade
-            "I sent her an apology message later that day, and she wrote me back."
-            julia "Thanks for stopping by...If you really want to help, perhaps someone could help Thuc with a flooding system for the rice he wants to plant."
-            
-        "Ask why they haven't planted anything":
-            her surprised "Why haven't you planted anything this season?"
-            julia "You think you know all about our farm, just by looking at it?"
-            her serious "No, but it just looks empty, so I wondered-"
-            julia "You wondered?! If you have time to waste with wondering, then perhaps you should put it to better use than bothering people who are trying to get some work done!"
-            her concerned "I'm sure you have a good reason--"
-            julia "Yes, but I see no reason to share our troubles with you. Thank you for stopping by, but I don't have any more time to share with you."
-            "She pinned clothes furiously, and I thought I'd better leave."
-            scene black with fade
-            "I sent her an apology message later that day, and she wrote me back."
-            julia "If you really want to help, perhaps someone could help Thuc with a flooding system for the rice he wants to plant."
-
-        "Chat for a while":
-            her normal "I just came by to say hi. We don't get to see each other very often, do we?"
-            julia "No, we don't! How are things going at your farm?"
-            her serious "Pretty well, though we lost a lot of corn a while back to some nasty bugs here. There's so many things you can't control on a farm, aren't there?"
-            julia "Yes, that's true."
-            "She paused for a minute. It looked like she was trying to decide whether to tell me something."
-            her normal "Your laundry looks so clean; how are you getting all the stains out? We don't have very good soap here..."
-            julia "Ah, you noticed! The trick is fermented urine."
-            her surprised "Really?"
-            julia "Yes, it's a trick they used in ancient Rome. It's also good for fertilizer."
-            her surprised "Wow! You might want to post that on the community message board; I bet everyone would like to know about it."
-            julia "Oh, I usually don't have time to go on there."
-            her normal "Well, if you don't mind, then, maybe I will post it on there with a note that you taught me how."
-            julia "Well, if you think it will help people."
-            her serious "Yes, we all need to help each other, don't you think?"
-            julia "Yes... I suppose you're right."
-            her concerned "..."
-            julia "You know, we lost a lot of our corn to those bugs, too. All of it, in fact."
-            her surprised "Oh, no! Did you have any other crops?"
-            julia "We have our vegetable garden, of course, but one day the goats got out and ate most of our plants..."
-            her sad "That's awful!"
-            julia "We wanted to plant rice, but we are still working on a system to flood and irrigate the fields properly. Well, Thuc {b}was{/b} working on it, but after the corn..."
-            her serious "It seems fruitless, doesn't it?"
-            julia "Yes! What's the point of digging and planning and planting, if some crazy critter is just going to come destroy everything we've done?!"
-            her concerned "I know what you mean. I felt the same way, too, after the corn."
-            julia "Thuc's not one to complain about his troubles, but I can see he's taken this hard. I suppose I haven't been very encouraging, either."
-            her serious "It is hard... but maybe if you had some help, it'd be easier to get started?"
-            julia "Do you think people would help?"
-            her normal "Sure! Not only would they want rice to eat, but we all are going to need help at some point."
-            if (has_goat):
-                her "Your family has been so kind to us, giving us one of your goats, and Thuc is a good friend to [his_name]. Of course we will help you."
-            else:
-                her "Thuc is a good friend to [his_name], so I'm sure he at least would be willing to help!"
-            julia "Oh, thank you. I've fretted about this long enough, it's time we did something about it!"
-            
-    scene black with fade
-    "I told the mayor what I had found out, and he agreed to find some people to help Thuc get his flooding system setup before the start of the next planting season."
-    "[his_name] and some other farmers helped, and they managed to get most of it done in a few days. I hoped their rice wouldn't face the same fate as the corn... but at least now Julia and Thuc knew they weren't alone."
-    
-    $ skill_social += 10
     return
 
 # Propose and fill seat on Community Council
