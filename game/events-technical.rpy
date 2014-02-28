@@ -284,8 +284,69 @@ label technical_7:
     $ skill_technical += 10
     return
 
-# Help Ilian with the inventory software - build good queries, or streamline interface, etc.
+# TODO: Finish this
+# 8 - write an app that uses weather data and frost prediction and knowledge of various plants to remind you when to plant/harvest crops. Also keeps track of your fields, what's been on them, and helps you rotate them efficiently.
+# programmable tractor attachment?
 label technical_8:
+    scene bg farm_interior with fade
+    show him normal at midright
+    show her normal at midleft with dissolve
+    her happy "Hey, is there anything you need around the farm?"
+    him surprised "Like what?"
+    her normal "Like an invention or something to help automate some of the tasks you do all the time."
+    him serious "I'm sure there is, but I can't think of anything right now."
+    her normal "Okay, let me know when you think of something."
+    scene black with fade
+    scene bg farm_interior with fade
+    show her normal at midright with dissolve
+    show him normal at midleft with moveinleft
+    him surprised "Hey, [her_name], I thought of something you could make for me."
+    her surprised "What is it?"
+    him serious "Well, I'm always mixing different amounts of different kinds of fertilizer and other substances for different fields, and I was wondering if you could set something up where I just enter in the proportions I need and it would measure and mix it for me?"
+    her serious "Or you could keep track of what you've planted, and it could cross-reference it with the Ag database and make suggestions for you?"
+    him normal "Yeah, even better! But there should be a manual option, too, in case I need something out of the ordinary."
+    her happy "Alright, I'll do it!"
+    scene bg tractor with fade
+    "The more I thought about it, the bigger this project seemed."
+    "Not only would I have to make a mechanical device to measure out the right amount of each substance, and a mixer to mix them all up, but I'd also have to make it so [his_name] could program and control it with a nice interface."
+    "And I'd need a lot of parts, too..."
+    scene bg storehouse with fade
+    show ilian at midright with dissolve
+    show her normal at midleft with moveinleft
+    her happy "Hey, Ilian, how are you doing?"
+    ilian "What do you want?"
+    her annoyed "...you don't care for small talk, do you?"
+    ilian "No."
+    her serious "Fine, I need some electronic ratio control valves and connecting pipe."
+    ilian "Let me check..."
+    ilian "We don't have any extras of those."
+    her surprised "What, really?"
+    ilian "All the control valves we have are mechanical."
+    her annoyed "Hmmm, okay..."
+    scene black with fade
+    "I would have to do something else."
+    "I ended up focusing more on the farming app [his_name] wanted; it couldn't measure the amounts of chemicals for him, but he said it would be useful even if it just reminded him of the right proportions for the plants he was working on."
+    "I put in a map interface, where he could quickly tell the app what plants he planted where, and when, and it would remind him when it was time to fertilize or harvest."
+    "It also listed the recommended nutrient proportions for each plant and calculated what soil amendments would be necessary given the chemical makeup of Talam's soil."
+    scene bg farm_interior with fade
+    show him normal at midright with dissolve
+    show her normal at midleft with moveinleft
+    her normal "Here, will you give this a try?"
+    him surprised "You finished it already?"
+    her serious "Well, it's pretty rough, but I wanted your input before I finalized the design."
+    him serious "Okay, let me try it."
+    him happy "Wow, this is really cool!"
+    her surprised "Don't you already keep track of all this stuff somewhere?"
+    him normal "Yeah, but it'll be better to have it all in one place. Thank you, [her_name]."
+    her happy "You're welcome."
+    "I wasn't a farmer, but I felt satisfied that I could help out in my own way."
+    
+    $ skill_technical += 10
+    return
+
+
+# 9 - Help Ilian with the inventory software - build good queries, or streamline interface, etc.
+label technical_9:
     scene bg storehouse with fade
     show ilian at midright with dissolve
     show her normal at midleft with moveinleft
@@ -341,24 +402,6 @@ label technical_8:
     $ skill_technical += 10
     return
 
-# TODO: Finish this
-# 9 - write an app that uses weather data and frost prediction and knowledge of various plants to remind you when to plant/harvest crops. Also keeps track of your fields, what's been on them, and helps you rotate them efficiently.
-# programmable tractor attachment?
-label technical_9:
-    scene bg farm_interior with fade
-    show him annoyed at midright with dissolve
-    him angry "I just can't remember!"
-    show her normal at midleft with moveinleft
-    her surprised "Can't remember what?"
-    him annoyed "I forgot which fields I put the fertilizer on last week... I know I didn't get to one, but I can't remember which one it was!"
-    her concerned "Don't you write that sort of thing down?"
-    him annoyed "...I started a map, but it was just too much trouble."
-    
-
-
-
-    $ skill_technical += 10
-    return
 
 
 # Setup webcams around the farm to monitor fields/(goat)

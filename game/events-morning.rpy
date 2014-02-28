@@ -569,8 +569,9 @@ label work_3:
             her normal "Well, maybe we could go for lunch together sometime."
             brennan "I'd like that, [her_name]. Thank you, for being a friend."
         "(Give him a hug)":
+            show her at center with move
             her concerned "I'm sorry you're so alone..."
-            "He didn't seem at all surprised when I reached out my arms to give him a hug. When he hugged back, he smelled clean, like soap. I pulled away."
+            "He didn't seem at all surprised when I reached out my arms to give him a hug. I didn't want him to feel left out...hopefully he could sense that."
             her concerned "(This is probably the first hug he's had in months... poor guy.)"
             brennan "Thank you, [her_name]. It helps having a friend like you."
         "We're all family":

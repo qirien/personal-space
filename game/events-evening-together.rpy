@@ -564,14 +564,14 @@ label relax_together_a:
         scene bg farm_interior
         show sara at quarterright
         show ilian at right
-        show him at left
-        show her at quarterleft
+        show him normal at left
+        show her normal at quarterleft
         with dissolve
         "The four of us played Robot Turtles and Machine of Death."
         ilian "...which is why he never saw it coming when the piano crashed down ten stories onto his head."
-        him "Ohhh! You got him! That was awesome."
+        him happy "Ohhh! You got him! That was awesome."
         sara "That was way better than [her_name]'s poison-in-the-toothpaste attempt."
-        her "Those were just the cards I had!"
+        her annoyed "That would totally work!"
         $ relaxed += 5
         $ loved += 2
         $ community_level += 2
@@ -692,7 +692,7 @@ label relax_together_g:
             $ relaxed -= 2
         "Tell him off":
             her angry "You had your chance, but you missed it. Sorry, I can't just wait around all day for you to finally decide to show up and get some action."
-            him concerned "C'mon, my [her_nickname]..."
+            him concerned "C'mon, [her_nickname]..."
             her annoyed "Just leave me alone."
             show him angry at quarterleft with move
             him "Fine."

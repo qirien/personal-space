@@ -5,7 +5,6 @@ Sprites
 -------
 Original line art by Clarissa Helps
 Coloring by Lisa Horner
-Placeholder art from Manga Clip Art Image Library (c) 2006 The Ilex Press
 
 Background Images
 -----------------
@@ -39,6 +38,9 @@ Music
 "You are the You" by Ehren Starks (Magnatune Records)
 "Will" by Chad Lawson (Magnatune Records)
 "No One Will Ever Know" by Ehren Starks (Magnatune Records)
+"Reflections" by Chad Lawson (Magnatune Records)
+"Sojourn" by Chad Lawson (Magnatune Records)
+"Run" by Ehren Starks (Magnatune Records)
 Used under the Creative Commons Attribution-NonCommercial-ShareAlike 1.0 License, http://creativecommons.org/licenses/by-nc-sa/1.0/legalcode
 
 Reference
