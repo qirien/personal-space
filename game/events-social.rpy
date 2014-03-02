@@ -104,7 +104,7 @@ label social_2:
     natalia "Great idea, [her_name]!"
     sara "Yeah, it feels good to get out of the house!"
     "Our snacks were not very tasty (mostly vegetables), and the games were not always fun, but joining together informally once a week helped us feel closer together."
-    stop sound fadeout 2.0
+    stop sound fadeout 3.0
     
     $ skill_social += 10
     $ community_level += 2
@@ -269,7 +269,7 @@ label social_5:
             sven "I think it has a few. It's not just lesbians if that's what you're asking."
             sara "Is it appropriate for children?"
             sven "Sure. There's some innuendo, but that goes right over their heads."
-            stop sound fadeout 2.0
+            stop sound fadeout 3.0
             scene black with fade
             "We decided to watch {i}Time For No Man{/i} the next day in the evening. I sent out a message to the colony message board, and tried to remind everyone I saw to come."
             "The movie was kind of ridiculous. At one point two cousins realized they were actually sisters, and that their evil uncle was actually their father. Then it turned out he wasn't evil at all, but had been infected with an alien virus that caused him brain damage that made him act rudely."
@@ -315,7 +315,7 @@ label social_5:
             sven "It's a mini-series called {i}The Adventures of Emily Thompson{/i}, about a young girl living in a small town in England during the 1900s. She solves various mysteries like finding missing shoes and pets, and she ends up finding the culprit of a livestock theft."
             her surprised "Well, that does sound a little more child-friendly than murder mysteries."
             sara "Let's do it."
-            stop sound fadeout 2.0
+            stop sound fadeout 3.0
             scene black with fade
             "I sent out a message to the colony e-mail list, and tried to remind everyone I saw to come."
             scene bg community_center with fade
@@ -337,7 +337,7 @@ label social_5:
             her normal "It's only forty minutes long!"
             sven "How 'bout {i}Wall-E{/i}? I haven't seen it in a while, and it could start some conversations about the colony, and what it oughta be like."
             sara "I agree! Some of the younger kids have never seen it, and I think they would like it."
-            stop sound fadeout 2.0
+            stop sound fadeout 3.0
             scene black with fade
             "We decided to watch {i}Wall-E{/i}. I sent out a message to the colony e-mail list, and tried to remind everyone I saw to come."
             scene bg community_center with fade

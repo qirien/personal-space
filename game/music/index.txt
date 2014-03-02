@@ -2,17 +2,21 @@
 ~THEMES~
 ~~~~~~~~
 Contemplative - Amnesia
-"Personal Space" theme (Change) - Lines Build Walls
-Tense - No One Will Ever Know
-Working - You are the You
+"Personal Space" theme (Change) - LinesBuildWalls
+Tense - NoOneWillKnow
+Working/Conflict - You
 Wonder - Run
 Argument - Prelude #2
 Celebrate - Prelude #22
-Peace - Will
+Peace/Relax Alone - Will
 Community Theme - Sojourn
-Bliss - Reflections
+Bliss/Relax Together - Reflections
+Monthly Event Default - RainSea
+Skill Event Default - OceansApart
 Romance - 
-Brennan's Theme - 
+Work/Brennan's Theme - Isaiah
+Computer Pad - Dandelion
+Ending Theme - Rain
 
 
 ~~~~~~~~~~~~~~~
@@ -107,12 +111,12 @@ Giorgio Costantini - Atmosphere
 Gianmarco Leona - the birth of a dancing star
 ---------------------------------------------
 Reqiuem for a Thousand Dreams - starts sad, happies up, maybe too changeable
-The Birth of a Dancing Star - she's the one I trust (Brennan's theme?)
+The Birth of a Dancing Star - she's the one I trust
 Let Children Play Till the Sunset - everyone has to grow up, pleasant/wistful
 Prettier than a Dream - flirty picnic with butterflies
 Every Single Glance - hiding secrets, some good, some bad
 Waiting for our Christmas - waiting, watching, patiently enduring
-Rain on the Sea - Turbulent voyage has some sunny days and some storms
+* Rain on the Sea - event - Turbulent voyage has some sunny days and some storms
 Improvisation for Piano and Bird - just sitting calmly, listening to the birds
 Journey to Peace - peace through sorrow and work
 Depression is Just a Feeling - everything sucks but it'll be okay!
@@ -125,9 +129,9 @@ Smile of the Earth - my kids are happy, so everyone's happy
 Benji Goodrich - Waiting
 ------------------------
 Longing - too short
-Oceans Apart - thinking positive while working
+* Oceans Apart - skill event - thinking positive while working
 Coming Home - going back home for summer break, gonna be awesome (beach theme?)
-Isaiah's Song - interesting things always going on (Brennan's Theme?)
+* Isaiah's Song - interesting things always going on (Brennan's Theme?)
 My Daughter's Waltz - cowgirl kid dancing slowly in ghost town
 My Beloved and My Friend
 Iowa

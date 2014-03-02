@@ -4,8 +4,8 @@
 label colony_ship:
 
     scene bg colony_ship_bunk with fade
+    play music "music/Amnesia.ogg" fadeout 3.0
     "What a honeymoon -- on board a cramped space shuttle with a hundred other people for a month. Of course, back on Earth four years had passed, since we were travelling so close to light speed. We spent a lot of it talking about the future..."
-    play music "music/Amnesia.ogg" fadeout 2.0
     show him normal at midright
     show her normal at midleft
     with dissolve
@@ -82,12 +82,12 @@ label colony_ship:
     "Even though Talam was technically a \"garden planet\", meaning humans could breathe and there were plants and animals, it wasn't very much like modern Earth.  The plants were all quite different, and most of the animals were similar to amphibians or insects."
     "Time on Talam would be different, too: days lasted longer, but a year was only about two-thirds of a year on Earth."
     # TODO: Would this be more exciting with some dialogue?
-    "The planet was also a lot less protected from its small Sun, since it was a lot closer.  The building materials we'd brought along would help protect us from solar flares and radiation, but only if we were inside."
+    "The planet was also a lot less protected from its small sun, since it was a lot closer.  The building materials we'd brought along would help protect us from solar flares and radiation, but only if we were inside."
     "They taught us about the early warning system they put in place so people would know when it was not safe to be outdoors."
 
     # He remembers her birthday
     scene bg colony_ship_bunk with fade
-    play music "music/Prelude22.ogg" fadeout 2.0
+    play music "music/Prelude22.ogg" fadeout 3.0
 
     "Time felt strange on the ship, too. Though there was no sunrise or sunset, they did dim the lights for ten hours every night. One night I came back to our room and found a surprise waiting for me."
     show him normal at midleft with dissolve
@@ -186,7 +186,7 @@ label colony_ship:
 
 label settling_in:         
     # Land on the planet and get settled
-    play music "music/You.ogg" fadeout 1.0
+    play music "music/You.ogg" fadeout 3.0
     scene bg talam with fade
     "The first month on Talam was really busy. We arrived at the end of winter, so it was still a bit cold and rainy. We all worked together to get everyone's houses up right away. The first one took the longest, as we had to figure out how to put all the pieces together."
     "Finally, our house was put up. We were so glad to stop sleeping in the shuttle and have our own space."
@@ -212,7 +212,7 @@ label settling_in:
     "There was no plumbing, electricity only when it was sunny or while our battery lasted, and no furniture other than our sleeping bags and a folding table."
     her annoyed "Good thing we didn't waste any space on frivolous things like bathrooms."
     him serious "The outhouse is not that far!"
-    her normal "It'll work. Instead of feeling like we're sleeping on a train, it will be like camping. Where do you think we should put our sleeping bags?"
+    her serious "It'll work. It will just be kind of like camping. Where do you think we should put our sleeping bags?"
     him happy "Well, there's this end- or that end."
     her normal "How about the end with the stove can be the kitchen, and the other end can be the bedroom?"
     him normal "Sounds fine to me."
@@ -220,7 +220,8 @@ label settling_in:
     show him normal at quarterleft
     show her normal at quarterright
     with dissolve
-    "After we setup our sleeping area, [his_name] started putting up a piece of paper he unfolded from his bag. When I got closer, I could see it was a picture of his family. I realized I hadn't brought any pictures of my family."
+    "We dragged in our bunk from the shuttle and put our sleeping bags on it."
+    "Afterwards, [his_name] started putting up a piece of paper he unfolded from his bag. When I got closer, I could see it was a picture of his family. I realized I hadn't brought any pictures of my family."
     "He put it right next to his side of the bed."
     menu:
         "What should I say?"
@@ -291,6 +292,8 @@ label settling_in:
     him sad "My mom was really sick last time my dad wrote to me; she's probably better by now, but it takes so long for messages to get through, so there's no way for me to know."
     her concerned "I'm sorry, [his_name], I didn't know..."
     him normal "It's all right. They're important to me, but you're my family now."
+    show him serious at center with move
+    show her serious at midright with move
     "We kissed, and looked out the window at the alien hills surrounding our little cabin. It felt surreal, like I was in a movie theatre and any minute the lights would come up and the credits would roll. I held [his_name] tightly; he was here; he was real."
     $ loved += 5
     jump end_settling_in

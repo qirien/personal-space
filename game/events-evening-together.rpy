@@ -51,7 +51,7 @@ label relax_together_1:
     show her normal at midright
     show him normal at midleft
     with dissolve
-    play music "music/Will.ogg" fadeout 2.0
+    play music "music/Will.ogg" fadeout 3.0
         
     "One of the things I missed most about Earth was having my own shower and bath. While we washed up well enough with water from the well, we still enjoyed going to the community bath once a week or so to really get clean."
     her concerned "I really need a bath."
@@ -135,7 +135,7 @@ label relax_together_2:
 label relax_together_3:
     scene bg farm_interior with fade
     show her normal at midright with dissolve
-    play music "music/Prelude02.ogg" fadeout 2.0
+    play music "music/Prelude02.ogg" fadeout 3.0
     "One day [his_name] came in from the fields with a big smile on his face."
     show him normal at midleft with moveinleft
     him happy "Ah, [her_nickname], you're such a great part of my life. You've brought me love, joy, and laughter. You've even brought me to new worlds, literally! There's no way I could have come here without you."
@@ -199,7 +199,7 @@ label relax_together_3:
 # Massage time!
 label relax_together_4:
     scene bg farm_interior with fade
-    play music "music/Will.ogg" fadeout 2.0
+    play music "music/Will.ogg" fadeout 3.0
     "One day after dinner I noticed [his_name] rubbing his shoulders and grimacing."
     show him normal at midleft
     show her normal at midright
@@ -362,7 +362,7 @@ label relax_together_7:
     show her normal at midleft
     show him normal at midright
     with dissolve
-    play music "music/Will.ogg" fadeout 2.0
+    play music "music/Will.ogg" fadeout 3.0
     "We went for a walk together under the stars. I brought my computer pad so we could find which one was our old Sun. I didn't see any constellations I recognized, so it was hard to find any reference points, but we finally found which one we thought it was."
     her concerned "It looks so small..."
     him serious "Remember how small Talam's sun looked from Earth?"

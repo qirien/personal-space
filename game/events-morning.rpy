@@ -58,7 +58,7 @@ label work_0:
 
     scene bg community_center
     play sound "sfx/people.mp3" fadein 1.0
-    play music "music/Sojourn.ogg" fadeout 2.0
+    play music "music/Sojourn.ogg" fadeout 3.0
     "My boss was also the leader of our little community. I guess you could call him the mayor?"
     "Right after we landed, he called a meeting for everyone where he gave a speech."
     show pavel at center
@@ -66,7 +66,7 @@ label work_0:
     stop sound fadeout 3.0
     boss "In two years, another colony ship will come with supplies and more colonists. So, until then, we're on our own."
     boss "Let me introduce some of our experts, here."
-    show pavel at quarterleft with dissolve
+    show pavel at quarterleft with move
     show naomi at center with moveinright
     boss "First of all, there's my wife Naomi, who is our colony's chaplain. She will be holding nondenominational religious services on Sundays for any who are interested, and is also available for individual counseling."
     naomi "I look forward to learning alongside all of you."
@@ -171,21 +171,24 @@ label work_0:
 
     # CRAFTER
     elif (profession == "crafter"):
-        boss "All right! This is the shop where people will come in if they need something made they can't make themselves. We don't have a lot of materials yet, but you can requisition some from the storehouse for important projects, and there are some materials, like wood, right here on the planet."
+        boss "All right! This is the shop where people will come in if they need something made they can't make themselves."
+        boss "We don't have a lot of materials yet, but you can requisition some from the storehouse for important projects, and there are some materials, like wood, right here on the planet."
         her happy "I can see that this job is going to take a lot of creativity!"
         boss "Yes, it will! Perhaps you can start by helping me out - one of the roof pieces from the Nguyen's house broke when we were unpacking it, so they are going to need a replacement."
         her normal "Sure, I'll take a look at the standard roofs and see if I can make something out of the wood around here."
 
     # MECHANIC
     elif (profession == "mechanic"):
-        boss "All right! This is the shop where people will bring machines that need to be fixed. You'll be responsible for any kind of machine people have, from datapads to tractors. We don't have many replacement parts, so do what you can to fix things up when they break."
+        boss "All right! This is the shop where people will bring machines that need to be fixed."
+        boss "You'll be responsible for any kind of machine people have, from datapads to tractors. We don't have many replacement parts, so do what you can to fix things up when they break."
         her concerned "I can see that this will take a lot of creativity."
         boss "Yes, it will! Perhaps you can start by helping me with my datapad? It always freezes up when I try to access my calendar..."
         her normal "Sure, let me take a look at it..."
 
     # TEACHER
     elif (profession == "teacher"):
-        boss "All right! This is the schoolhouse. There's not a lot of kids in the community yet, so we just have them all in one room with you as their teacher. Please consider what they'll need to learn in addition to the standard curriculum, and try to be flexible if kids are needed to help out back at home."
+        boss "All right! This is the schoolhouse. There's not a lot of kids in the community yet, so we just have them all in one room with you as their teacher."
+        boss "Please consider what they'll need to learn about Talam in addition to the standard curriculum, and try to be flexible if kids are needed to help out back at home."
         her normal "I guess the kids are going to have to work hard, too..."
         boss "Yes, but they need to learn a lot, too! It will take a lot of effort to see that they don't forget about Earth, and all the things humanity has managed to learn there."
         her serious "Even though it seems far away, it's still our home, isn't it?"
@@ -210,13 +213,13 @@ label work_0:
             her concerned "That's not true! I mean, I don't know you very well yet, but I can tell you're a good listener."
             sara "Thanks..."
         "Why are you here?":
-            her "Why {b}are{/b} you here?"
+            her surprised "Why {b}are{/b} you here?"
             sara "Well..."
         "(Change the subject)":
             her surprised "(I don't know what to say!)"
             her normal "Well, uh, what do you like to do?"
             sara "I like to read...I read a lot. I'm a pretty good photographer, too."
-            her "That sounds fun. Who's in your family??"
+            her normal "That sounds fun. Who's in your family??"
     show her normal
     sara "My husband is Ilian Andrevski - he's not a farmer, either. He's a food scientist."
     her surprised "Really? There are food scientists?"
@@ -621,7 +624,7 @@ label work_4:
     $ times_worked += 1
     $ relaxed -= 5
     $ community_level += 2
-    play music "music/NoOneWillKnow.ogg" fadeout 2.0
+    play music "music/NoOneWillKnow.ogg" fadeout 3.0
     call set_work_bg
 
     # Doctor - problems with new local bacteria (no viruses, though)

@@ -11,7 +11,7 @@ label monthly_event_1:
     scene bg farm_interior with fade
     show her normal at midleft
     show him normal at midright
-    play music "music/You.ogg" fadeout 2.0
+    play music "music/You.ogg" fadeout 3.0
     "Our first month living on our own together, we had to work a lot of things out."
     "Like, do we eat breakfast together, or separately? Who should cook and clean up?"
     menu:
@@ -93,7 +93,7 @@ label monthly_event_1:
 
     scene black with fade
     #if nobody did the dishes, pest problems!
-    play music "music/Prelude02.ogg" fadeout 1.0
+    play music "music/Prelude02.ogg" fadeout 3.0
     her "AAAAAAAAAAAAAAAHHHHHH!!!!"
     scene bg farm_interior with fade
     show her surprised at midleft
@@ -140,7 +140,7 @@ label monthly_event_1:
 
 # MONTH 2 - The Cellar
 label monthly_event_2:
-    play music "music/You.ogg" fadeout 2.0
+    play music "music/You.ogg" fadeout 3.0
     scene bg farm_exterior with fade
     show him normal at midright
     show her normal at midleft
@@ -159,7 +159,7 @@ label monthly_event_2:
             her normal "That does sound better, actually."
             play sound "sfx/shovel.mp3"
             "We dug and hauled out dirt and dug and hauled until finally we had a small cellar to store food in! We were exhausted, but it felt good to get it done together."
-            stop sound fadeout 2.0
+            stop sound fadeout 3.0
             $ loved += 5
             $ skill_physical += 5
 
@@ -173,7 +173,7 @@ label monthly_event_2:
             her "..."
             him normal "Why don't we work on it together?"
             "We dug and hauled out dirt and dug and hauled until finally we had a small cellar to store food in! We were exhausted, but it felt good to get it done together."
-            stop sound fadeout 2.0
+            stop sound fadeout 3.0
             $ loved += 5
             $ skill_physical += 5
 
@@ -197,7 +197,7 @@ label monthly_event_2:
             him happy "Oh, this will make it a lot faster!"
             play sound "sfx/shovel.mp3"
             "He dug in the hole, and I moved the dirt from where the machine dumped it to go on top of the roof of the cellar, which effectively made it deeper faster."
-            stop sound fadeout 2.0
+            stop sound fadeout 3.0
             "Even though it took a long time, it was kind of fun to work on it together."
             $ loved += 5
             $ skill_technical += 5
@@ -220,7 +220,7 @@ label monthly_event_2:
 
 # MONTH 3 - His Birthday
 label monthly_event_3:
-    play music "music/Prelude22.ogg" fadeout 2.0
+    play music "music/Prelude22.ogg" fadeout 3.0
     "Even though we were on a new planet, we still kept track of what day it was on the Earth calendar. The seasons didn't match up or anything, but it helped us feel like we were still a part of things back home."
     scene bg farm_interior with fade
     show her normal at midleft with dissolve
@@ -280,7 +280,7 @@ label monthly_event_3:
 
 #helper function for month 4 for a commonly used conversation tree
 label unappreciated:
-    play music "music/Prelude02.ogg" fadeout 2.0
+    play music "music/Prelude02.ogg" fadeout 3.0
     her annoyed "It's none of your business what I do in my spare time."
     him annoyed "Well, it just seems kind of like a waste of time when there's so much real work to be done."
     her angry "Real work?! You don't think I do real work?!"
@@ -1049,7 +1049,7 @@ label monthly_event_9:
     with dissolve
     show her normal at midleft
     with moveinleft
-    play music "music/You.ogg" fadeout 2.0
+    play music "music/You.ogg" fadeout 3.0
     him "I was just thinking about you. How do you think we're doing?"
     her surprised "At what?"
     him concerned "You know, in our marriage. Do you feel loved, is this working for you?"
@@ -1185,7 +1185,7 @@ label monthly_event_10:
     show him normal at midright
     show her normal at midleft
     with dissolve
-    play music "music/Prelude02.ogg" fadeout 2.0
+    play music "music/Prelude02.ogg" fadeout 3.0
     "It was our anniversary, according to the Earth calendar.  I think we had missed a few while we were on the shuttle? Anyway, it felt like we had been married about a year."
     her happy "Happy Anniversary!"
     him surprised "Really? Today?"

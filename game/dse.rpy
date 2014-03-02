@@ -51,7 +51,7 @@ label day:
 
     # Increment the month it is.
     $ month += 1
-    stop music fadeout 5.0
+    play music "music/Dandelion.ogg" fadeout 3.0
     scene black
 
     $ year = 1
@@ -107,6 +107,7 @@ label job_focus:
     scene black
     # Tell the user what period it is.
     centered "{color=#ffffff}Job Focus{/color}"
+    play music "music/Isaiah.ogg" fadeout 3.0
 
     # Set these variables to appropriate values, so they can be
     # picked up by the expression in the various events defined below. 
@@ -133,6 +134,7 @@ label skill_focus:
     # The rest of this is the same as for the job_focus.
     scene black
     centered "{color=#ffffff}Skill Focus{/color}"
+    play music "music/OceansApart.ogg" fadeout 3.0
 
     $ period = "skill_focus"
     $ act = skill_focus_act
@@ -153,6 +155,10 @@ label relaxation_focus:
 
     $ period = "relaxation_focus"
     $ act = relaxation_focus_act
+    if (act == "act_relax_together"):
+        play music "music/Reflections.ogg" fadeout 3.0
+    else:
+        play music "music/Will.ogg" fadeout 3.0
 
     $ normalize_stats()
     
@@ -164,6 +170,7 @@ label monthly_event:
     
     scene black
     centered "{color=#ffffff}Event!{/color}"
+    play music "music/RainSea.ogg" fadeout 3.0
 
     $ period = "monthly_event"
     $ act = monthly_event_act

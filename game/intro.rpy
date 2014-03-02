@@ -27,8 +27,7 @@ label doctor:
 
     him normal "No, I actually just fell off my horse.  A snake spooked her."
     her normal "Is your horse okay?"
-    him happy "Oh yeah, Lettie's fine. She seemed like she was almost laughing at me.
-"
+    him happy "Oh yeah, Lettie's fine. She seemed like she was almost laughing at me."
     jump first_date
 
 # Mechanic; scene at auto shop
@@ -56,10 +55,11 @@ label teacher:
     "Kid" "Chickens!"
     him normal "Right!"
     "Kid" "But where do the chickens get the eggs?"
-    him "They make them! Underneath those cute fluffy feathers, these birds are hard-working egg-making machines!"
+    him serious "They make them! Underneath those cute fluffy feathers, these birds are hard-working egg-making machines!"
     "Kid" "Really? Like a robot?!"
     show her laughing with dissolve
-    him normal "Yes! A robot made of meat!"
+    him happy "Yes! A robot made of meat!"
+    show her normal
     jump first_date
 
 
@@ -87,7 +87,7 @@ label first_date:
     show him normal at midright
     with dissolve
     show overlay night
-    play music "music/Run.ogg" fadeout 2.0
+    play music "music/Run.ogg" fadeout 3.0
     "At the barbeque, I thought there was going to be a lot of people, but it ended up being just him and his parents."
     "It wasn't too awkward, though - we all pitched in to make dinner and then afterwards when I offered to help with the dishes, his parents told us to go relax outside."
     "So we sat on the porch swing and talked and watched the stars come out."
@@ -96,6 +96,7 @@ label first_date:
     him "[her_name]... have you ever thought about what's out there?"
     her surprised "Out... where?"
     # TODO: this transition is awkward
+    # TODO: redo this background
     show bg stars with moveintop
     him happy "In space! So many stars, so many worlds... Did you know they are sending colonists to Talam?"
     her normal "That's the garden planet they found, right?"
@@ -106,7 +107,7 @@ label first_date:
     menu:
         "I thought,"
         "Why?":
-            her "Theoretically, but why would they want to?"
+            her serious "Theoretically, but why would they want to?"
         "Cool!":
             her happy "Really?! That would be so exciting!"
         "Maybe...":
@@ -153,7 +154,7 @@ label marriage_proposal:
 
     her happy "[his_name]...I would love to create a new life together, even if it is on a different planet."
     scene bg wedding with fade
-    play music "music/Reflections.ogg" fadeout 2.0
+    play music "music/Reflections.ogg" fadeout 3.0
     "And so we got married."
     "My mother cried; she knew we were going to space and she would probably never see me again (or any grandkids). My father..."
     menu:

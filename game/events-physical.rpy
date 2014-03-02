@@ -45,7 +45,7 @@ label physical_1:
     "When I had rested long enough, I started to bring my legs out of the water. However, they were completely numb! They weren't just cold; and they weren't tingly like they had fallen asleep - it felt more like some kind of anaesthesia."
     "I had to use my hands to pull my legs out of the water. I noticed some black spots on them, but when I tried to wipe off the spots..."
     her surprised "It's not mud...are these some kind of leech?!"
-    play music "music/Prelude02.ogg" fadeout 1.0
+    play music "music/Prelude02.ogg" fadeout 3.0
 
     "I was able to pry it off, and, sure enough, they were attached to my skin with little jaws just like leeches. They must secrete some kind of anesthetic..."
     if (skill_knowledge >= 20):
@@ -83,7 +83,7 @@ label physical_1:
     him "Keep talking to me, I'm coming!"
     her concerned "I can't move very well."
     him "It's okay, I'll get you home."
-    play music "music/You.ogg" fadeout 1.0
+    play music "music/You.ogg" fadeout 3.0
     show him serious at midright with moveinright
     "I saw [his_name] appear on the top of the ridge. He was riding Lettie, his eyes scanning the landscape fiercely, until he finally saw me."
     show him at midleft with move
@@ -392,7 +392,7 @@ label physical_6:
             her normal "It looks really cool."
             him normal "Yeah, now that we don't have to worry about getting cooked!"
             "After a few minutes the geyser died down."
-            stop sound fadeout 1.0
+            stop sound fadeout 3.0
             her "Let's look around some more."
             him serious "Sure, but be careful - there might be others."
 
@@ -408,7 +408,7 @@ label physical_6:
                 "Take a sample to Dr. Lily":
                     her normal "I'll take a sample to Dr. Lily; she can make sure it'd be safe for us to bathe in."
                     him serious "Good idea."
-                    stop sound fadeout 1.0
+                    stop sound fadeout 3.0
                     "I put some of the water into an old water bottle and we brought it back with us."
                     scene bg lab with fade
                     show lily at midright with dissolve
@@ -443,7 +443,7 @@ label physical_6:
                     her "Let's look around some more."
                     him "Okay."
                     "We hiked around and found a few more hot springs of different temperatures; no more geysers, though."
-            stop sound fadeout 1.0
+            stop sound fadeout 3.0
             "It was neat to find hot springs and geysers not too far from the house. Maybe they'd be useful to us in the future."
 
         "Don't tell him":
@@ -480,7 +480,7 @@ label physical_6:
                 "It could be dangerous...":
                     her concerned "I better not; it could be dangerous."
 
-            stop sound fadeout 1.0
+            stop sound fadeout 3.0
             her normal "The hot spring is a neat find; maybe I should tell [his_name]? But then he'll know I went hiking without him... Maybe I'll tell Dr. Lily; she can see if it's safe for us to use."
             menu:
                 "Whom should I tell?"

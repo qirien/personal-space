@@ -237,6 +237,7 @@ label start:
             $ known_each_other = "six months"
 
     # TODO: add some bgs? dialogue?
+    # TODO: Add town bg
     "After working hard on his parents' farm all day, he'd take a shower and meet me at the cafe near my work. We'd get something to drink, and I'd tell him about work, or the latest book I was reading, or a video game he might like."
     "He would tell me about what was going on on the farm - it was cute how serious he got about everything. One time, he was going on and on about Mathilda's hurt leg, and how she kept walking around even though she was in pain."
     "I asked 'Is Mathilda your aunt?' and he said 'No, she's one of the horses!'. We both laughed about that one."
@@ -260,19 +261,20 @@ label choose_career:
 menu:
     "Where do I work?"
     "The craft store":
-        $ skill_creative += 20
+        # TODO: decide if we want to do this. If so, fix a bug where the first month, it gives you every skill event up to your skill level.
+        #$ skill_creative += 20
         jump crafter
         
     "The hospital":
-        $ skill_knowledge += 20
+        #$ skill_knowledge += 20
         jump doctor
 
     "The car repair shop":
-        $ skill_technical += 20
+        #$ skill_technical += 20
         jump mechanic
 
     "The elementary school":
-        $ skill_social += 20
+        #$ skill_social += 20
         jump teacher        
 
 
