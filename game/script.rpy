@@ -125,34 +125,34 @@ define community_level = 0 # how successful is the colony?
 init -200:
     define month = 0
 
-define known_each_other = ""
-define profession = ""
-define father_attitude = ""
-define favorite_wedding_gift = ""
-define want_kids = False
-define have_goat = False
-define is_pregnant = False
-define is_pregnant_later = False
-define slacked_off = 0  #number of times slacked off at work
-define has_grass = False
-define met_Lily = False
-define times_worked = 1
-define he_hunts = False
-define brennan_relationship = 0
-define cheated_on_him = False
-define exposed_brennan = False
-define discovered_qec = False
-define ocean_character = ""
-define wants_to_leave = False
-define hated_food = "turnips"
-define baby_name = "Gaia"
-
-define COMMUNITY_LEVEL_OK = 30
-define COMMUNITY_LEVEL_GOOD = 50
-define LOVED_GOOD = 30
+    define known_each_other = ""
+    define profession = ""
+    define father_attitude = ""
+    define favorite_wedding_gift = ""
+    define want_kids = False
+    define have_goat = False
+    define is_pregnant = False
+    define is_pregnant_later = False
+    define slacked_off = 0  #number of times slacked off at work
+    define has_grass = False
+    define met_Lily = False
+    define times_worked = 1
+    define he_hunts = False
+    define brennan_relationship = 0
+    define cheated_on_him = False
+    define exposed_brennan = False
+    define discovered_qec = False
+    define ocean_character = ""
+    define wants_to_leave = False
+    define hated_food = "turnips"
+    define baby_name = "Gaia"
+    
+    define COMMUNITY_LEVEL_OK = 30
+    define COMMUNITY_LEVEL_GOOD = 50
+    define LOVED_GOOD = 30
 
 #Technical variables used to control how the game displays
-define fade = Fade(0.2, 0.2, 0.2)
+    define fade = Fade(0.2, 0.2, 0.2)
 
 # Splashscreen before the main menu
 label splashscreen:

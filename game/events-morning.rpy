@@ -389,12 +389,12 @@ label work_1:
         
     # TEACHER
     elif (profession == "teacher"):
-        show her normal at midright with dissolve
+        show her normal at center with dissolve
         play sound "sfx/kids.mp3"
         "Normally twenty-three students would be a nice size for a classroom. But my students are all different ages and skill levels. We have some good technology to help us out, but sometimes it's not enough..."
-        her "On your computer pad you will see that I have sent each of you some reading about ancient Rome, appropriate for your skill level. Please read the selection, and then answer the questions at the end."
+        her serious "On your computer pad you will see that I have sent each of you some reading about ancient Rome, appropriate for your skill level. Please read the selection, and then answer the questions at the end."
         "It took some of the kids five minutes, and others needed at least two hours. I decided to start a science experiment with the younger kids."
-        her "We're going to make some different shapes out of paper, and see which ones will fly the best."
+        her normal "We're going to make some different shapes out of paper, and see which ones will fly the best."
         "They all liked that idea, but the kids that were still reading didn't want to miss out on paper airplanes, so they ended up building those instead of doing their history work."
 
         "At recess, one of the kids fell and got a bloody nose. While I was helping him, two of the teenage boys started arguing on the other side of the field."
@@ -408,17 +408,17 @@ label work_1:
         show her concerned at midright with dissolve
         show pavel at midleft with moveinleft
         boss "[her_name], are you all right?"
-        her "Yes...though I may have a black eye tomorrow."
+        her serious "Yes...though I may have a black eye tomorrow."
         boss "That's terrible! You shouldn't be all by yourself here, not every day."
         her serious "Well, part of it is that those boys really don't need to be here every day. They could do most of their work from home."
         boss "That may be a good idea, but I want to find someone to help you out on the days when you have all the kids here."
         menu:
             "Do I need help?"
             "I need help":
-                her "You are right...I can't do this by myself."
+                her concerned "You are right...I can't do this by myself."
                 boss "I'll see what I can do to find someone to help you out some of the time."
             "I can do it myself":
-                her "It's not a problem most of the time. I can handle it."
+                her serious "It's not a problem most of the time. I can handle it."
                 boss "I appreciate your confidence, but let me see if I can find someone, at least for part of the time."
         her normal "Thanks, Mayor Grayson."
         "That wasn't the only rough day, but it was the worst one for quite some time."
