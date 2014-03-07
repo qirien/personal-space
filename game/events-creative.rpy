@@ -168,7 +168,6 @@ label creative_5:
     return
 
 # Re-cover space shuttle seats to make a couch?
-# TODO: wouldn't they have given everyone these way earlier?
 label creative_6:
 #month 5 is what to do with trash, so I'm assuming this will have to come after it (though it may be several months after it)
     scene bg storehouse with fade

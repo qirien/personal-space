@@ -98,7 +98,14 @@ label relax_alone_2:
     hide him with moveoutright
     hide her with moveoutleft
     scene bg stars with fade
+    show her serious at center with dissolve
+    show her at sitting with move
     "I sat out on the porch and gazed at the stars. They were so different from Earth, I had to make my own constellations."
+    her serious "Hmm, those kind of look like two lovers... and there's a sort of circle that reminds me of a UFO..."
+    her flirting "And...that looks like one long, crazy dragon."
+    "I wondered if eventually humans would live near some of those stars, too."
+    "I sat there for a long time, feeling small and far away, but also part of something amazing - humans living on a different planet. We'd never done that before."
+    "It sort of made me feel... proud."
 
     $ relaxed += 5
     $ loved -= 2
@@ -298,10 +305,10 @@ label relax_alone_g:
     her serious "Well, back on Earth I used to like to go to bookstores and just flip through books... This isn't really the same, though."
     sara "Oh, I just read this great book, you should take a look."
     her surprised "What's it about?"
-    sara "Well, there's these fish people and the fox people, and they have like this ancient feud, but then they hold a ball at the underwater palace, and these guys have to sneak in to get the Fish Prince to sign a document...It's hard to explain, you just have to read it yourself."
+    sara "Well, there's these fish people and the fox people, and they have like this ancient feud, but then they hold a ball at the underwater palace...It's hard to explain, you just have to read it yourself."
     her happy "That sounds interesting, at least!"
     sara "I'll send it to you!"
-    "We shared a few other book recommendations and talked for two hours. It felt good to get out of the house at night (even if it was just to the colony library)."
+    "We shared a few other book recommendations and talked for hours. It felt good to get out of the house at night (even if it was just to the colony library)."
     $ relaxed += 5
     $ loved -= 2
     return

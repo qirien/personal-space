@@ -362,22 +362,25 @@ label technical_9:
     "The current inventory management system had all sorts of buttons that would be useful in a store, but had no meaning on our colony."
     her serious "I could delete those buttons, and make it quicker to look up the things you need all the time. Will you make me a list of things that need to be easier?"
     ilian "Yes, I will."
-    scene black with fade
+    # TODO computer bg?
+    scene bg farm_interior with fade
+    show her normal at center
     "I worked on the inventory system every evening for a few weeks, asking Ilian for feedback after major changes."
-    "That should do it! Although, hmmm, it might be convenient to have access to this database from my computer..."
+    her happy "That should do it!"
+    her concerned "Although, hmmm, it might be convenient to have access to this database from my computer..."
     menu:
         "What should I do?"
         "Keep access private for just authorized people.":
             "I didn't think anyone needed access except Ilian and Mayor, so I just kept that part the same."
         "Ask Ilian about putting in a public interface.":
             "I sent Ilian an e-mail about adding a public interface."
-            her "If we had a way for everyone to access the database, they wouldn't have to come ask you about every little thing; they could just look it up themselves."
+            her serious "If we had a way for everyone to access the database, they wouldn't have to come ask you about every little thing; they could just look it up themselves."
             ilian "I don't know if that's a good idea..."
-            her "Why not? Haven't you been distributing things fairly?"
+            her surprised "Why not? Haven't you been distributing things fairly?"
             ilian "For the most part... although {b}some{/b} people always seem to need more things than others."
-            her "Well, some of us make more things than others."
+            her flirting "Well, some of us make more things than others."
             ilian "I don't think the inventory system should be public."
-            her "Okay, I guess I understand."
+            her serious "Okay, I guess I understand."
         "Add in a back door for yourself.":
             "I put in a back door so that I could access the database if I needed to. I mean, no need to bug Ilian about something when I could just look it up, right?"
             $ community_level -= 5
@@ -455,6 +458,9 @@ label technical_master:
         "What should I say?"
         "Sure.":
             her happy "Sure, I could use a walk anyway."
+            scene bg fields with fade
+            show her normal at midright
+            show him normal at midleft with dissolve
             "We walked around the farm, and I showed him all the cameras and how I had anchored them in place."
             him serious "You're amazing, you know that? I could never have built something like that."
             her flirting "Well, I'm hopeless at growing food, so it all works out."
@@ -487,7 +493,7 @@ label technical_master:
     her happy "Yeah, here, take a look! You can see the fields in every direction."
     boss "Would you mind setting up something similar at a few locations around town?"
     her surprised "Sure, I could do that."
-    "I setup some cameras; one in the storehouse, one at the river, and one overlooking the whole town, and made an interface so anyone in our community could see them and collect data from them."
+    "I setup some cameras; one at the river, one at the community center, and one overlooking the whole town, and made an interface so anyone in our community could see them and collect data from them."
     "A couple people even asked me for more instructions like the one I had posted, so I added how-tos for the water screw, laundry wringer, and everything else I had made."
     "Life on the colony was still hard, but some of my inventions made it easier for everyone."
 

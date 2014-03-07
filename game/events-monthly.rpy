@@ -1185,7 +1185,7 @@ label monthly_event_10:
     show him normal at midright
     show her normal at midleft
     with dissolve
-    play music "music/Prelude02.ogg" fadeout 3.0
+    play music "music/Run.ogg" fadeout 3.0
     "It was our anniversary, according to the Earth calendar.  I think we had missed a few while we were on the shuttle? Anyway, it felt like we had been married about a year."
     her happy "Happy Anniversary!"
     him surprised "Really? Today?"
@@ -1199,6 +1199,7 @@ label monthly_event_10:
     "All day long I looked forward to spending a nice evening together."
     scene bg farm_interior with fade
     show her normal at center
+    play music "music/Prelude02.ogg" fadeout 3.0
     "I got some special ingredients at the storehouse, and made a nice dessert and everything. But [his_name] wasn't home yet."
     her annoyed "(He knows we were going to celebrate today! Where could he be?)"
     "I tried calling him on the radio, and messaging him on the computer, but he didn't answer."
@@ -1259,8 +1260,11 @@ label monthly_event_10:
 
 label anniversary_next_day:
     scene black with fade
+    play music "music/Amnesia.ogg" fadeout 3.0
     "He didn't come home that night, just stopped in for a quick breakfast early in the morning and then left again. I didn't have a chance to talk to him again until that evening when I got home."
     scene bg farm_interior with fade
+    show him normal at midright with dissolve
+    show her serious at midleft with moveinleft
     him normal "Hey, [her_nickname]."
     menu:
         "(He's just saying hi like nothing happened!)"
@@ -1443,6 +1447,8 @@ label goto_ocean:
     "There wasn't a road going out to the ocean, so we had to make our way through wild vegetation."     
     "We had some minor run-ins with small insects, but nothing too surprising." 
     scene bg ocean with fade
+    play sound "sfx/ocean-waves.mp3" fadein 3.0
+    play music "music/NoSilencePlease.ogg" fadeout 3.0
     "Arriving at the ocean was magnificent. The air was moist, and my eyes could rest on a flat plane of wetness extending to the horizon."
     show lily at left
     show her normal at midright
@@ -1475,7 +1481,8 @@ label goto_ocean:
 
     her surprised "How much of this white stuff do we need?" 
     lily "The guano? Just get as much as you can. We have an hour or two so don't feel too rushed."
-    her annoyed "Eww! It's excrement? Well, I guess if it's for science I can do it."
+    her annoyed "Eww! It's excrement?"
+    her concerned "Well, I guess if it's for science I can do it."
     "We worked hard to get the samples we needed. We found a lot of shells and some bones. As we were getting ready to leave, the tide started to come back in."
     "The incoming waves were purple with one kind of alien sea creature. It had six spiny or hairy arms, and floated like a jellyfish."  
     lily "Oh! I've got to record this."
@@ -1530,6 +1537,7 @@ label goto_ocean:
         sara "Don't worry, I made sure your camera was safe!"
         lily "Thank you! Maybe I just had a little too much sun today."
 
+    stop sound fadeout 3.0 
     return
 
 # MONTH 11
@@ -1542,7 +1550,7 @@ label monthly_event_11:
     with dissolve
 #do we have a winter? I think there was a winter, but it was a mild one or something?
     "It was another cloudy day, and there wasn't enough solar power to cook and warm our house with."
-    him serious "I'll go get some wood. Can't we just cook inside?."
+    him concerned "I'll go get some wood. Can't we just cook inside?"
     her annoyed "No, remember how our chimney has a huge crack in it?"
     him annoyed "I'll cook outside then."
     hide him with moveoutleft
@@ -1554,7 +1562,7 @@ label monthly_event_11:
     her normal "If we want to advance technologically, we've got to start making our own metal. It's like, the next thing on the tech tree."
     him normal "I heard that Lily is gathering ores to see if we can start making our own metal here. But I think gunpowder is next on the tech tree."
     her surprised "Really? Why didn't anyone inform me?"
-    him annoyed "Well, you're not digging around in the dirt during your working hours. She probably just sent it out to all the farmers."
+    him serious "Well, you're not digging around in the dirt during your working hours. She probably just sent it out to all the farmers."
     scene black with fade
     "I ran over to the lab the next morning, excited to help."
     scene bg lab with fade
@@ -1603,7 +1611,7 @@ label monthly_event_11:
             show her normal at midleft with moveinleft
             her normal "Hey, Sven."
             sven "Hi, how can I help you?"
-            her "Want to come with Lily and me to the seashore?"
+            her happy "Want to come with Lily and me to the seashore?"
             sven "The seashore? The one a few kilometers away?"      
             her happy "Yeah, a real beach! Bring a shovel!"
             sven "No way. Not after what I've been reading about giant sea creatures and this planet."  
@@ -1632,7 +1640,7 @@ label monthly_event_11:
             brennan "Really?"   
             her happy "Yes! Lily is coming too, and we need a third person so we can look like a herd and not easy pickings."   
             brennan "Count me in! But why are you going to the ocean? Thinking of going for a swim?"
-            her normal "No, Lily wants to gather specimens."
+            her flirting "No, Lily wants to gather specimens."
             brennan "I don't really care what we do, as long as it's something exciting."  
             her happy "Oh, it'll be exciting."
 
@@ -1654,6 +1662,7 @@ label monthly_event_11:
             call goto_ocean
 
     scene bg talam with fade
+    
     "After Lily got her bearings, we made the long trip back."
     her surprised "Can you remember anything from your dream?"
     lily "My... dream?"
@@ -1896,19 +1905,20 @@ label monthly_event_13:
             her "I agree. Also, he is a healthy worker, which we can't afford to lose for that long. So I propose that he live outside the community boundaries, but close enough that we can trade with him. He can hunt or gather useful things and trade them for food or other community resources."
             thuc "That's too soft!"
             lily "I think a year is still too long."
-            her "How about two months?"
-            thuc "Three."
+            her "How about two weeks?"
+            thuc "Four."
             lily "I suppose that would work...as long as the resources he gathers go to help the Peron family."
             "Finally, we had come to an agreement."
             "Ilian and the Perons accepted it, but Sara and the Mayor frowned. Poor Sara... I guess in a way we were sentencing her, too."
+            "Still, it was only for a month."
             
         "{i}Compromise{/i}" if (skill_spiritual >= 40):
             her normal "Those both sound like good ideas. Perhaps some of both might be appropriate?"
             sven "What's your idea?"
             her concerned "Having him work for the Perons is a good idea, but it is too soon. They would feel angry, and then he would feel like his apology was not accepted."
-            her serious "But a year is too long to send anyone to live outside the community. I propose Ilian leave the community for two weeks. When he returns, he will have to work for the Perons one day of every week for the next half year."
+            her serious "But a year is too long to send anyone to live outside the community. I propose Ilian leave the community for a week. When he returns, he will have to work for the Perons one day of every week for the next half year."
             lily "That sounds fair for all involved."
-            thuc "I think two weeks is too short, but I will agree to this plan also."
+            thuc "I think a week is too short, but I will agree to this plan also."
             "Everyone agreed to my proposal. The mayor seemed happy with it, too, and both Ilian and the Perons accepted it without argument."
         "{i}He's innocent{/i}" if ((skill_technical >= 40) or (skill_knowledge >= 40)):
             her serious "He should provide some reparations, but I know he didn't kill her on purpose."
@@ -2793,8 +2803,8 @@ label monthly_event_19:
                 "I guess I didn't need to wear clothes around the house - it felt so good not to have that waistband constricting my growing belly!"
                 show her normal at midleft
                 show him normal at midright
-                show her sitting
-                show him sitting
+                show her at sitting
+                show him at sitting
                 with dissolve
                 him flirting "Hey, is it no pants day? How come I didn't get the memo?"
                 her normal "It just feels so much more comfortable this way..."
@@ -3004,18 +3014,307 @@ label monthly_event_21:
 
     return
 
-# TODO: Write this event
-# Include name for baby?
+# MONTH 22 - Shampoo thief!
+# Everyone took one or two extra bottles, and now there's none left!  Everyone suspects
+# one person is a thief and has stolen lots of it, but it's really just a lot of people
+# taking a little bit extra.
 label monthly_event_22:
     scene bg farm_interior with fade
-    "Month 22 is not finished yet."
-    # If pregnant, work out name for baby girl
-    if (is_pregnant):
-        "We finally picked a name for the baby!"
-        
-    # Otherwise, make a plan for future?
-    else:
-        "We thought about how we wanted to live the rest of our lives?"
+    "We had to trust each other all the time. We didn't have police or lawyers, so when something went wrong, we had to work together to solve problems."
+    "That was harder to do when the shampoo was found missing from the storehouse..."
+    scene bg community_center with fade
+    show pavel at center with dissolve
+    boss "...and so if anyone has extra shampoo at their house, we ask that you please return it to the storehouse. We want to make sure what we have left is distributed fairly."
+    hide pavel with dissolve
+    show her surprised at midright
+    show him serious at midleft with dissolve
+    her surprised "Shampoo? That's something we haven't made on our own yet..."
+    him happy "As long as we're not out of toilet paper, I think we'll survive."
+    hide him
+    hide her
+    show pavel at midright 
+    show natalia at midleft
+    show sara at right
+    show lily at left with dissolve
+    natalia "Wait, does that mean there's no more shampoo?!"
+    boss "Unless someone returns some, yes."
+    sara "I thought the storehouse had plenty!"
+    boss "Well, when Naomi went to get some, it was all gone."
+    natalia "Somebody must have stolen it! They are probably hoarding the last few bottles for themselves!"
+    lily "We could search everyone's houses. There's not that many places it could be."
+    boss "Let's wait and see if any is returned before we make any accusations."
+    scene black with fade
+    "But nobody returned any shampoo. There were fifteen bottles unaccounted for."
+    call set_work_bg
+    show her normal at midright with dissolve
+    show pavel at midleft with moveinleft
+    boss "Do you have a minute, [her_name]?"
+    her normal "Sure, what do you need?"
+    boss "I was hoping you might be able to help with our missing shampoo problem..."
+    her surprised "Me? What do you think I could do?"
+    $ highest_skill = highest_stat()
+    $ her_adjective = "trustworthy"
+    if (highest_skill == "Technical"):
+        $ her_adjective = "technical"
+    elif (highest_skill == "Creative"):
+        $ her_adjective = "creative"
+    elif (highest_skill == "Spiritual"):
+        $ her_adjective = "spiritual"
+    elif (highest_skill == "Social"):
+        $ her_adjective = "well-connected"
+    elif (highest_skill == "Domestic"):
+        $ her_adjective = "creative"
+    
+    boss "I don't know, but you seem very...[her_adjective]. Do you have any ideas?"
+    "I thought about it for a minute. How could I catch a thief?"
+    menu:
+        "{i}I can ask around{/i}" if ((skill_social >= 90) or (skill_spiritual >= 90)):
+            her normal "I can ask around for you."
+            boss "Thank you, maybe people will be more willing to talk to you."
+            her surprised "Hey, do you guys need any shampoo? You said Naomi was going to get some when you found out it was missing..."
+            boss "No, we're just fine. Helen gave us some of hers, so you don't need to worry about us."
+            her normal "Okay, good."
+            hide boss with moveoutleft
+            "I decided to start by looking at everyone's hair."
+            scene community_center with fade
+            "I knew that, like me, a lot of people probably had a little shampoo left that they were using. But, knowing that there wasn't any more, people that didn't have much would probably be trying to conserve it."
+            show naomi at midright
+            show pavel at midleft with dissolve
+            "Naomi and Pavel were definitely not washing their hair often. I ruled them out."
+            scene bg farm_exterior flip with fade
+            show natalia at midright
+            show martin at midleft
+            with dissolve
+            "Natalia and Martin seemed like they were conserving shampoo."
+            scene bg farm_interior flip with fade
+            "But everyone else... everyone else looked like they washed their hair at least every other day."
+            "I decided to talk to them."
+            show sara at midright with dissolve
+            show her serious at midleft with moveinleft
+            her surprised "Hey, Sara, do you know anything about who took the shampoo?"
+            sara "No, I don't! Ilian's really upset about it, though. He feels responsible..."
+            her serious "You guys still have plenty of shampoo?"
+            sara "Yeah, he got me an extra bottle before this whole thing started, so we should last until the shuttle from Earth gets here, anyway."
+            her serious "Hmmm, okay, that's good to hear."
+            scene bg fields flip with fade
+            show thuc at midright with dissolve
+            show her serious at midleft with moveinleft
+            her normal "Hey, there, Thuc."
+            thuc "[her_name]! How are you?"
+            her serious "Good, good...but I'm trying to find this shampoo thief. Do you have any ideas?"
+            thuc "Me? No... I mean, actually, I'll admit that I took an extra bottle one time for Julia's birthday, sort of off-the-record, you know."
+            her surprised "Oh, really?"
+            thuc "Yeah, she loves that stuff."
+            her serious "But just one extra."
+            thuc "Yeah! Well, maybe two, I think she's had two birthdays since we got here. But who'd be greedy enough to take fifteen bottles of the stuff?!"
+            her concerned "I wonder... Well, thanks for the information, Thuc."
+            thuc "No problem. Good luck in your investigation."
+            "I had to go to work, but I resolved to ask more questions later."
+            call set_work_bg
+            show brennan at midright with dissolve
+            show her normal at midleft with moveinleft
+            brennan "[her_name]! Your hair looks lovely."
+            "That gave me an idea."
+            her concerned "Not for long, with all the shampoo missing from the storehouse."
+            brennan "You don't have any?"
+            her sad "No..."
+            brennan "Well, we can't have that! Here, you can have one of mine, somehow I ended up with two bottles at home."
+            her flirting "Thank you very much, Brennan."
+            "I was beginning to see a pattern here. I decided to report to the mayor."
+            scene bg community_center with fade
+            show pavel at midright with dissolve
+            show her serious at midleft with moveinleft
+            boss "Well? How's your search going?"
+            her concerned "Mayor, I have bad news."
+            boss "What's that? You don't know who did it?"
+            her "There was not just one thief. There's about fifteen of them."
+            boss "Fifteen?! What do you mean?"
+            her "There's not one person hoarding all fifteen bottles of shampoo; fifteen people or so had each taken one extra bottle \"just in case\"."
+            boss "And now there's none left. Ahhh, I see."
+            scene black with fade
+            "The mayor sent out a message explaining the situation, and several people returned an \"extra\" bottle they just happened to have lying around, so there was enough for everyone."
+            "But I kept thinking about how such a small action as taking an extra bottle of shampoo had affected our whole colony."
+            "Who knows what other small actions could have such an effect?"
+            $ community_level += 2
+            $ relaxed += 2
+            
+        "{i}I could catch them on camera{/i}" if (skill_technical >= 100):
+            her normal "I could place some cameras in the storehouse, so we could catch them in the act."
+            boss "How would that work? They've already stolen the shampoo."
+            her normal "We'll say that someone returned one, and plant a decoy. Then when they come to get that one, we'll catch them on camera."
+            boss "Hmmm, that could work!"
+            scene bg storehouse with fade
+            show her normal at midleft with moveinleft
+            "I got a spare camera from the shuttle and set it up in the storehouse to send the video feed to me. Ilian came in while I was working."
+            show ilian at midright with moveinright
+            ilian "What are you doing, [her_name]?"
+            her surprised "(Did the mayor not tell him I was putting in a camera?! I guess he could be the shampoo thief...but I doubt it.)"
+            her serious "The mayor asked me to put this camera in here to try to catch the shampoo thief. But it's supposed to be a secret, so that's why I made it look like a can of flour."
+            ilian "Yeah, he mentioned that. Not sure why he trusts you so much."
+            her annoyed "Maybe he's just a great judge of character. Anyway, can you leave the storehouse unlocked tonight so we can catch whoever it is in the act?"
+            ilian "Okay..."
+            "I placed the fake bottle of shampoo on the shelf across from the camera, made sure it was working, and sent the mayor a message."
+            scene black with fade
+            "The mayor sent out an announcement thanking whoever had returned a bottle of shampoo, and asked for more to be returned."
+            scene bg storehouse with fade
+            show overlay night
+            "That night, I watched the camera for a while... but nothing happened. Just as I was about to go to bed, though, I saw someone creep into view."
+            show natalia at center with moveinright
+            her surprised "Natalia?!"
+            "She grabbed the shampoo bottle and left right away."
+            hide natalia with moveoutright
+            "I couldn't believe it. She was the one that had been so vehement we catch the thief! It didn't make sense."
+            "Still, I had to tell the mayor what I had found."
+            scene bg community_center with fade
+            show pavel at midright with dissolve
+            show her normal at midleft with moveinleft
+            boss "Well, did it work?"
+            her concerned "Yeah... Natalia snuck in last night and took the fake bottle."
+            boss "Really? That's strange... well, I'll ask her to come talk to us."
+            show natalia at midleft with moveinleft
+            show her at quarterleft with move
+            natalia "What is it, Mayor?"
+            boss "Please return the shampoo, Natalia."
+            natalia "What are you talking about?! I'm not hoarding a bunch of shampoo!"
+            her serious "You snuck into the storehouse last night and took the bottle that was returned."
+            natalia "How do you know that?!"
+            boss "Never mind that, we just need you to return it."
+            natalia "Fine, yes, I took it, but only because I knew that the thief would never give back what they stole! Since we had run out, I thought it only fair that we should get the bottle that was returned!"
+            boss "So, you won't mind showing us your house?"
+            natalia "Search my house all you want. All you'll find it my kids' mess and the one bottle I took last night."
+            scene bg farm_exterior flip
+            "Sure enough, we didn't find any secret shampoo cache."
+            scene bg community_center with fade
+            show pavel at midright
+            show her normal at midleft
+            with moveinleft
+            her serious "It seems like she's telling the truth."
+            boss "Yes, it does..."
+            scene black with fade
+            "I didn't have any other ideas."
+            "But I didn't need any."
+            "That night, ten bottles of shampoo were returned to the storehouse."
+            scene bg storehouse with fade
+            show overlay night
+            show julia at center with moveinleft
+            hide julia with moveoutright
+            show sven at center with moveinleft
+            hide sven with moveoutright
+            show sara at center with moveinleft
+            hide sara with moveoutright
+            show brennan at center with moveinleft
+            hide brennan with moveoutright
+            show lily at center with moveinleft
+            hide lily with moveoutright
+            "When I looked at the camera footage, it showed several people from the colony arrive at different times and each return a bottle or two of shampoo."
+            scene bg community_center with fade
+            show pavel at midright
+            show her normal at midleft with dissolve
+            boss "Well, how do you like that."
+            her normal "So there wasn't just one thief."
+            boss "Yes, just a lot of people who thought they'd take an extra bottle \"just in case\"."
+            her flirting "I guess you can seed honesty like you seed rainclouds, sometimes."
+            $ community_level += 2
+            $ relaxed += 2
+        "{i}I could look for clues.{/i}" if (skill_knowledge >= 90):
+            her normal "I could look around for clues."
+            boss "You're certainly welcome to do that, though we didn't find anything suspicous when we checked the storehouse."
+            "I decided to investigate."
+            "I started out by examining the scene of the crime, the storehouse."
+            scene bg storehouse with fade
+            show ilian at midright with dissolve
+            show her normal at midleft with moveinleft
+            her serious "Hello, Ilian. The mayor asked me to investigate the missing shampoo, and I was hoping you could answer a few questions for me."
+            ilian "Ask."
+            her surprised "How could someone steal the shampoo? Don't you lock the storehouse when you're not here?"
+            ilian "I lock it at night, but I used to leave it open if I was just out for a few minutes."
+            her serious "Did that happen often?"
+            ilian "Yeah, sometimes I need to talk to the Mayor, or I go home for lunch, or stop by the repair shop."
+            her concerned "So, anyone could have come in during one of those times and taken the shampoo."
+            ilian "Yes."
+            her surprised "Can you show me where it's kept?"
+            "He pointed to an empty spot on one of the higher shelves nearby."
+            her serious "Most people would need a ladder to get up there."
+            ilian "There's a rolling ladder right here anyone could have used."
+            her serious "You never noticed any shampoo was missing?"
+            ilian "No! I don't look in all the bins unless someone requests something! That's why I have an inventory system."
+            her surprised "When's the last time you know we had shampoo?"
+            ilian "Let me look it up...Looks like I gave one bottle to you, two weeks ago."
+            her serious "So it must have been in the last two weeks that it was taken. Can you get me a copy of the logs for the last two weeks?"
+            ilian "I...could do that."
+            her "Thank you."
+            scene bg farm_interior with fade
+            show her serious at center
+            "As I looked over the logs, disappointment creeped in through the shell of my enthusiasm. Almost everyone in the colony had visited the storehouse during that time."
+            "How could I find out which person was guilty, short of searching every colonist's house?"
+            her surprised "The ladder!"
+            scene bg storehouse with fade
+            show ilian at midright with dissolve
+            show her serious at midleft with moveinleft
+            ilian "Back already?"
+            her serious "I need some chalk, or cornstarch, or graphite powder, or ashes - some sort of fine powder."
+            ilian "I do have some cornstarch..."
+            her normal "Good, let's dust the ladder for prints."
+            ilian "Really? Who do you think you are, some crime show detective?"
+            ilian "Besides, won't it just be covered with my prints?"
+            her serious "Only if the thief is the same height as you. Pretend to grab the ladder."
+            "I marked the spot where he held it."
+            her serious "I'll expect mostly your prints in that area, but a shorter or taller person would grab it in a different spot. Looks like their thumb would hit about...here, at varying heights."
+            "I used a brush to dust the area with powder, and saw several prints above and below where Ilian's prints were."
+            her surprised "Does anyone else usually use this ladder?"
+            ilian "No, just me."
+            her serious "There are a lot of prints here..."
+            "I transferred them to a dark piece of paper with some clear tape, when, suddenly, the truth hit me."
+            "I had to tell the mayor."
+            scene bg community_center with fade
+            show pavel at midright with dissolve
+            show her serious at midleft with moveinleft
+            boss "[her_name]! Have you found our thief yet?"
+            her serious "Not \"thief\"...\"thieves\"."
+            boss "What?! A conspiracy?!"
+            her happy "No, not really. Just a lot of people who decided to take a little extra."
+            boss "Do you know who?"
+            her serious "I could compare all these fingerprints to the colonist database...but perhaps we should give everyone one more chance to come clean on their own?"
+            boss "Ha ha, nice one, [her_name]!"
+            her surprised "No pun intended!"
+            scene black with fade
+            "The mayor sent out a message explaining the situation, and several people returned an \"extra\" bottle they just happened to have lying around, so there was enough for everyone."
+            "But I kept thinking about how such a small action as taking an extra bottle of shampoo had affected our whole colony."
+            "Who knows what other small actions could have such an effect?"
+            $ community_level += 2
+            $ relaxed += 2
+        "{i}I could try and make shampoo.{/i}" if ((skill_creative >= 70) or (skill_domestic >= 90)):
+            her normal "I could try and make shampoo. Then everyone could have more."
+            boss "That won't catch our thief, but it will solve one problem. Best of luck to you, [her_name] - let me know what you figure out."
+            scene bg farm_interior with fade
+            show her normal at center with dissolve
+            "I did some research. I found methods for making shampoo out of bar soap, liquid soap, honey, or coconut milk, but those were all things we didn't have much of. I finally decided to make sort of a dry rinse out of baking soda that would absorb oil."
+            "I decided to test out the baking soda recipe. I mixed it with some corn flour and dried flowers, and sprinkled it on my own dry hair."
+            show him normal at midleft with moveinleft
+            show her at midright with move
+            "[his_name] caught me before I had brushed it out."
+            him surprised "What's that stuff in your hair?"
+            her annoyed "I'm trying a new type of shampoo."
+            him surprised "It looks more like herbs and spices..."
+            him laughing "Mmmm, herbed [her_name], my favorite dish..."
+            her annoyed "It's supposed to absorb the oils in your hair without having to use shampoo..."
+            if (loved > 0):
+                her flirting "But maybe I'll let you have a little taste later."                
+            him normal "Okay, well, tell me if it works."
+            hide him with moveoutleft
+            show her at center with move
+            "I brushed all the powder out and took a look at my hair. It definitely looked less oily, but it didn't really feel clean...but maybe I could get used to it?"
+            her concerned "It's better than nothing, anyway."
+            "We never did find out who was stealing the shampoo, but we made what we had last much longer by using the dry shampoo inbetween."
+            $ community_level += 2
+        "Sorry, I don't have time.":
+            her concerned "Sorry, Mayor, I think you've got the wrong person."
+            boss "Oh. I see."
+            scene black with fade
+            "We never did find out who was stealing the shampoo. We all went longer and longer without washing our hair, trying to make the little shampoo we had left last as long as possible."
+            "Hopefully the shuttle would bring more shampoo in a few months."
+            $ community_level -= 2
+    
     return
 
 # Climax - epic conflict leading to either "We'll always be together" or "I just want to get away from you!"  Conflict: Worried about new baby, pregnant if made_love a lot or affair with Brennan, otherwise, discussion about quality of sex
@@ -3373,6 +3672,7 @@ label monthly_event_23:
         
         "[his_name] was generally a good lover, but sometimes he was finished before I was."
         "Then he'd fall asleep, just as I was finally getting in the mood."
+        "I felt like I should say something, but I also didn't want him to feel bad..."
         hide overlay night
         him happy "Mmmm, good morning, my amazing sweet bundle of loveliness."
         her annoyed "Good morning..."
@@ -3692,7 +3992,7 @@ label monthly_event_24:
         her serious "Ohhhh, here comes another one-"
         her sad "Hooooooo. Hmmmmmm. Ahhhhh! AHHHHH!"
         her angry "I feel like... I should... push!"
-        julia "Okay, your body's ready, go ahead!"
+        julia "Okay, your everything's ready, go ahead!"
         "I yelled and pushed through most of the next contraction. It was hurting a lot, but it felt so good to finally be getting somewhere!"
         him surprised "What should I do?"
         julia "See if she wants to lean on you."
@@ -3710,7 +4010,7 @@ label monthly_event_24:
         her sad "Is this, even, doing anything?!"
         julia "Yes! I can see the top of her head!"
         "Suddenly, I felt centered. I had almost forgotten why I was going through all this pain in the first place. This wasn't about me, or about proving something, or winning, or anything stupid like that. This was about our baby, our tiny creature who needed my help just to exist!"
-        "I took a deep breath, and pushed again, stretching past fire and pain and breathing and my own body. Even that wasn't quite enough; I pushed again!"
+        "I took a deep breath, and pushed again, stretching past fire and pain and breathing and my own body. Even that wasn't enough; somehow I pushed again!"
         him happy "Yeah! There she is!"
         julia "One more little push, [her_name], and then you just lie back and relax a bit."
         show her serious
@@ -3727,7 +4027,12 @@ label monthly_event_24:
         her normal "I think she looks more like...a baby, than either one of us. Babies all look alike to me..."
         julia "Well, they won't so much now that you have one of your own."
         "One of my own... that was still so strange."
-        her happy "Our little [baby_name]..."
+        him surprised "What should we call her?"
+        her surprised "You don't want to choose?"
+        him concerned "Well, I've always liked the name \"Terra\"... but it's up to you."
+        $ baby_name = renpy.input("What is her name?", "Terra", length=20)
+        her normal "I want to call her [baby_name]."
+        him happy "Our little [baby_name]..."
         
     else:
         scene bg farm_interior with fade

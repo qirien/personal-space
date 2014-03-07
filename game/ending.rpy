@@ -16,7 +16,7 @@ label bad_ending:
     "Or, more like a nightmare."
     "[his_name] and I could barely speak to each other without arguing, I was swamped at work, and we were running out of materials and supplies."
     "I could tell this whole colony was going to end in failure."
-    "I just wanted to go home. Home to Earth, where there were TV shows and stores and weekends."
+    "I just wanted to go home. Home to Earth, where there were stores and toilet paper and weekends."
     "Home, where we didn't have to work so hard just to survive."
     if (cheated_on_him):
         "Home, where Brennan would appreciate me and not try to make me into something I'm not."

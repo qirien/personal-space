@@ -869,7 +869,7 @@ label relax_together_k:
             him serious "But we're not at home anymore, are we? Guess I'll have to man up and cut my own hair."
             show her surprised
             hide him with moveoutright
-            show him with moveinright
+            show him serious with moveinright
             "I watched as he got out some scissors, got his hair wet, and sat in front of the mirror. He cut the bangs and sides first, and did a decent job."
             show her normal
             him normal "Could you get the back for me?"
@@ -886,6 +886,7 @@ label relax_together_k:
                     her concerned "(It's in the back; he'll never see it, anyway)"
                     her serious "Yeah, it's fine."
                     $ loved -= 2
+            "I guess the exact hair cut he had didn't matter that much, anyway."
             
         "Sara could cut your hair." if (skill_social >= 30):
             her normal "Did you know Sara went to hair school for a while?"

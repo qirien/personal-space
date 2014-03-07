@@ -16,6 +16,7 @@ image bg wedding = "bg/wedding.jpg"
 image bg farm_interior = "bg/farm-interior.jpg"
 image bg farm_interior flip = im.Flip("bg/farm-interior.jpg", horizontal = True)
 image bg fields = "bg/fields.jpg"
+image bg fields flip = im.Flip("bg/fields.jpg", horizontal = True)
 image bg colony_ship_bunk = "bg/colony-ship-bunk.jpg"
 image bg talam = "bg/talam.jpg"
 image bg pond = "bg/pond.jpg"
@@ -145,7 +146,7 @@ init -200:
     define ocean_character = ""
     define wants_to_leave = False
     define hated_food = "turnips"
-    define baby_name = "Gaia"
+    define baby_name = "Terra"
     
     define COMMUNITY_LEVEL_OK = 30
     define COMMUNITY_LEVEL_GOOD = 50

@@ -573,7 +573,7 @@ label physical_8:
     her normal "Yeah, if you don't mind."
     brennan "Sure. Now we can have seven to a side."
     "The teams were very mixed, but they seemed pretty fair, with each side having some kids, and some men and women of varying ages." 
-    "The rules were pretty standard, except they had a rule that at least three different people had to touch the ball before making a goal, to discourage one player from hogging all the goals."
+    "The rules were pretty standard, except they had a rule that at least three different people had to touch the ball before making a goal, to encourage teamwork."
     "I hadn't played a lot of soccer, but since I was in pretty good shape I was able to do OK. Still, running up and down the field made me really tired."
     "It was the last quarter of the game and our teams were tied. Brennan passed me the ball, and so I was taking it down towards the goal. I had to pass it to someone, but who?"
     "Sara was really good at making goals, but Ilian hadn't had the ball much, and I was trying to help him get extra practice. They were both open."
