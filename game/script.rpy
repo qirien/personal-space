@@ -39,7 +39,9 @@ image bg stream = "bg/stream.jpg"
 image bg hotspring = "bg/hot-spring.jpg"
 image bg tractor = "bg/tractor.jpg"
 image bg church = "bg/church.jpg"
+image bg bathhouse = "bg/bathhouse.jpg"
 image overlay night = "bg/night.png"
+image overlay bathhouse = "bg/bathhouse-overlay.png"
 
 # Declare characters used by this game .
 define her = DynamicCharacter("her_name", color="#7264d5", image="her")
@@ -181,6 +183,7 @@ label start:
     $ quarterright = Position(xpos=0.65,
         xanchor=0)
     $ sitting = Position(ypos=0.5, yanchor=0)
+    $ squatting = Position(ypos=0.2, yanchor=0)
 
     $ config.say_attribute_transition = dissolve
 

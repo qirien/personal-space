@@ -80,7 +80,13 @@ label relax_together_1:
             her concerned "I think I'd rather skip dessert tonight..."
             him concerned "Oh...okay. Sure, let's just eat dinner."
             $ loved -= 5
-    scene black with fade
+    scene bg bathhouse with fade
+    show him normal at midleft with dissolve
+    show her normal at midright with dissolve
+    show overlay bathhouse
+    show him at squatting with move
+    show her at squatting with move
+
     "Afterwards, we packed up our towels and toiletries and headed down to the bathhouse."
     "We built a fire to heat up one of the tubs of water, and took turns washing off and then soaking in the small tub."
     "It felt so good to soak and relax together."

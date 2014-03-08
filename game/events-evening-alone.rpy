@@ -112,11 +112,11 @@ label relax_alone_2:
     return
 
 # Solo trip to bath house
-# TODO: bath house background?
 label relax_alone_3:
-    scene black with fade
+    scene bg bathhouse with fade
     "I went to the bath house by myself. I brought extra wood so I could have a long, hot bath, and I carried up extra water from the river to make it a deep one. All my effort just made me appreciate it all the more."
-    show her serious at sitting with dissolve
+    show her serious at squatting with dissolve
+    show overlay bathhouse
     her normal "Ahhh...."
     $ relaxed += 5
     $ loved -= 2
@@ -268,7 +268,7 @@ label relax_alone_e:
     scene bg farm_interior with fade
     "I read some online newspapers and magazines from Earth..."
     "It was hard to care about what the politicians or movie stars on Earth were saying and doing. Battles and natural disasters were at least four years past already. There was no point in reading about fashion or trends - we didn't have the resources to follow them even if we had wanted to."
-    "I didn't feel depressed, though - it was kind of a relief, actually.  There was no way to keep up with everything happening on Earth when we lived there, but I could easily keep track of what was happening to everyone on Talaam."
+    "I didn't feel depressed, though - it was kind of a relief.  There was no way to keep up with everything happening on Earth when we lived there, but I could easily keep track of what was happening to everyone on Talaam."
     "I decided to spend some time writing posts on the community message board instead. Our community here was more important than anything happening on Earth, anyway."
     $ relaxed += 5
     $ loved -= 2

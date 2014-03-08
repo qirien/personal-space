@@ -33,10 +33,10 @@ label knowledge_0:
 label knowledge_1:
     scene bg lab with fade
     "I went to a workshop at the laboratory about how to use a spectrometer to determine whether or not a food is edible." 
-    show lily at midright 
+    show lily at quarterright 
     show sven at left
     show brennan at quarterleft
-    show her normal at midleft
+    show her normal at center
     with dissolve
     lily "And in some cases, you'll just have to test a little on an Earth creature. If you spectrize something and can't tell if it's safe, bring it into the lab."
     her "Do you have a list of plants you've already tested?" 

@@ -11,7 +11,6 @@ label monthly_event_1:
     scene bg farm_interior with fade
     show her normal at midleft
     show him normal at midright
-    play music "music/You.ogg" fadeout 3.0
     "Our first month living on our own together, we had to work a lot of things out."
     "Like, do we eat breakfast together, or separately? Who should cook and clean up?"
     menu:
@@ -140,7 +139,6 @@ label monthly_event_1:
 
 # MONTH 2 - The Cellar
 label monthly_event_2:
-    play music "music/You.ogg" fadeout 3.0
     scene bg farm_exterior with fade
     show him normal at midright
     show her normal at midleft
@@ -557,7 +555,7 @@ label monthly_event_5:
 # MONTH 6 - Alien Pests
 label monthly_event_6:
     scene bg fields with fade
-
+    play music "music/NoOneWillKnow.ogg" fadeout 3.0
     "Our crops were starting to give an abundant harvest, but unfortunately, with the rainy season starting, the corn was being attacked by alien insects."
     "A small segmented insect like a sow bug but with thicker legs was our main culprit." 
     show her normal at midleft
@@ -792,6 +790,7 @@ label monthly_event_7:
             $ loved += 2
 
     scene black with fade
+    play music "music/LinesBuildWalls.ogg" fadeout 3.0
     "A week later, I was reading my messages when I noticed that they were having a New Year's party."
     scene bg farm_interior with fade
     show her normal at midleft
@@ -1685,6 +1684,7 @@ label monthly_event_11:
 # TODO: Revisit this; is he too whiny?
 label monthly_event_12:
     scene bg farm_interior with fade
+    play music "music/Prelude02.ogg" fadeout 3.0
     show him normal at midright
     show her normal at midleft
     with dissolve
@@ -1801,6 +1801,7 @@ label monthly_event_12:
 # uses spiritual, technical
 label monthly_event_13:
     scene black with fade
+    play music "music/NoOneWillKnow.ogg" fadeout 3.0
     "I hadn't thought about it much before, but we didn't have a lot of laws here on Talaam. Some things just didn't apply (like taxes, driving laws, etc), but I remember signing something about agreeing to abide by a set of laws that sounded very reasonable."
     "It had never seemed like something I would have to worry about.  Until I had to be on the jury for Ilian's trial, that is..."
     "We hadn't had any crime our whole first year (though we certainly had our share of arguments, accidents, and disagreements)."
@@ -1832,7 +1833,7 @@ label monthly_event_13:
     show natalia at right with moveinright
     natalia "Who knows who will be next?! It clearly wasn't an accident!"
     show ilian at midleft with moveinleft
-    "Finally, Ilian stepped forward."
+    "But then, Ilian stepped forward."
     ilian "I'm sorry! I'm so sorry!"
     show sara at left with dissolve
     sara "Sorry for what?!"
@@ -1840,9 +1841,9 @@ label monthly_event_13:
     "Nobody said a word. He worked his way up to the front of the room. He brushed his hand in front of his eyes - was he crying?"
     ilian "It was late, I didn't even see her until she was right in front of me. I was driving my tractor, maybe a little fast- she jumped in front of it- I was going too fast- I didn't mean to run over anyone!"
     natalia "But how did her body end up in the river?!"
-    ilian "It was obvious she was dead- there was so much blood- I was so horrified- I don't know why I did that- I didn't want anyone to know it was me. So I dropped her body in the river."
+    ilian "It was obvious she was dead- there was so much blood- I was so horrified- I don't know why I did that- I didn't want anyone to know it was me. So I... dropped her body in the river."
 
-    "Nobody knew what to say. He was really crying, now, heaving deep sobs that looked pathetic on a man his size. I looked over at his wife, Sara, who looked like she was in shock."
+    "Nobody knew what to say. He was really crying, now, heaving deep sobs that seemed so alien to his usual crankiness. I looked over at his wife, Sara, who looked like she was in shock."
     boss "Ilian, I can tell you're sorry about this, and I'm glad you came forward. We will need to have a trial and decide what to do about this."
     natalia "What do you need a trial for?! He just admitted he killed Josephina!"
     boss "The laws of our community, which you all signed, state that any accused shall receive a trial, administered by myself and with a jury randomly selected from the adults of the colony that are not involved in the crime."
@@ -1879,8 +1880,9 @@ label monthly_event_13:
     thuc "But would one of us have dumped her body in the river and covered it up? That behavior is suspicious. He says it was an accident, but who can tell for certain?"
     her surprised "But why would anyone kill Josephina?"
     thuc "Why does any criminal do what they do? They want to, and they don't care about other people."
+    thuc "Or maybe he was trying to cover up something else he did to her."
     show her serious
-    lily "Ilian has not shown any other behavior that would be cause for concern."
+    lily "That is pure speculation. Ilian has not shown any other behavior that would be cause for concern."
     thuc "But it's possible that it was not an accident. We cannot show too much mercy, or people will think they can get away with anything."
     sven "You're not thinking of killing him, are you?!"
     thuc "Of course not. I propose temporary banishment. He should have to live on his own, off the land, for a year. That will show how important our community is, both to him and any would-be criminals."
@@ -1923,7 +1925,7 @@ label monthly_event_13:
         "{i}He's innocent{/i}" if ((skill_technical >= 40) or (skill_knowledge >= 40)):
             her serious "He should provide some reparations, but I know he didn't kill her on purpose."
             thuc "How do you know that?"
-            her "Her injuries are consistent with being hit by a car and then floating down the river. She doesn't have any injuries that would come from being physically assaulted."
+            her "Her injuries are consistent with being hit by a car and then floating down the river. She doesn't have any injuries that would come from being assaulted."
             sven "Yes, that's right!"
             thuc "That's true... I guess he is still innocent unless proven guilty..."
             her "He still should provide some reparations, though. I think he should work for the Perons one day a week for a year."
@@ -2286,6 +2288,7 @@ label monthly_event_16:
             $ loved += 2
 
     scene black with fade
+    play music "music/NoOneWillKnow.ogg" fadeout 3.0
     "I felt better at work, and lunchtime was no problem, but as I was walking home, I felt sick again. I ended up throwing up by the side of the road, which wouldn't have been too bad except some of it got on my clothes. Now I had to do laundry, and it was my turn to make dinner..."
     scene bg farm_interior with fade
     show her serious at midright with dissolve
@@ -2396,12 +2399,12 @@ label monthly_event_16:
                              
     return
 
-# MONTH 17
+# MONTH 17 - bath house with Sara, discuss relationships
 # uses spiritual, creative
 label monthly_event_17:
     scene bg farm_interior with fade
     "One day Sara invited me to hang out with her at the bath house. It was a lot of work to fetch and heat water for a bath, so it was more worth it to share the work and the bath."
-    #scene bg bath with fade
+    scene bg bathhouse with fade
     show sara at midright
     show her normal at midleft
     her happy "This was a good idea! I never thought taking a bath would be such a luxury..."
@@ -2409,8 +2412,9 @@ label monthly_event_17:
     her normal "Is the hot water ready yet?"
     sara "Yeah, it's boiling."
     her "Alright, let's pour it in!"
-    show her at sitting
-    show sara at sitting
+    show her at squatting
+    show sara at squatting
+    show overlay bathhouse
     sara "Nice and hot! Not like our house; it's always freezing in there!"
     her surprised "Really? It hasn't been that cold..."
     sara "Well, Ilian never wants to use the heater. He's so stingy with everything!"
@@ -2564,6 +2568,7 @@ label monthly_event_18:
     her surprised "It's hooked up!"
     him serious "Okay, now turn on the tractor!"
     show her at center with move
+    play music "music/NoOneWillKnow.ogg" fadeout 3.0
     "He was making sure the clamp was on the battery when I turned the tractor on. But then I heard a strange sound...and was that smoke...?"
     him surprised "Aaaahhhhh!"
     "I turned it off, and as I jumped out, I could see that the engine was on fire! [his_name] was backing away, his hand charred and red."
@@ -3317,10 +3322,11 @@ label monthly_event_22:
     
     return
 
-# Climax - epic conflict leading to either "We'll always be together" or "I just want to get away from you!"  Conflict: Worried about new baby, pregnant if made_love a lot or affair with Brennan, otherwise, discussion about quality of sex
+# MONTH 23: Climax - epic conflict leading to either "We'll always be together" or "I just want to get away from you!"  Conflict: Worried about new baby, pregnant if made_love a lot or affair with Brennan, otherwise, discussion about quality of sex
 label monthly_event_23:
     scene bg farm_interior with fade
     show her serious at center with dissolve
+    play music "music/You.ogg" fadeout 3.0
 
     if (is_pregnant):
         "I was getting huge. I felt like I couldn't eat very much at a time, not only because of the terrible heartburn, but it just didn't feel like there was any room inside me for anything else."
@@ -3744,7 +3750,7 @@ label monthly_event_23:
     
     return
 
-# Birth or leave Talam
+# MONTH 24: Birth or leave Talam
 label monthly_event_24:
     if (is_pregnant):
         scene bg farm_interior with fade
@@ -3774,7 +3780,7 @@ label monthly_event_24:
         her annoyed "No. I'm sure everyone will know when the baby arrives."
         brennan "Yes, well, you just let me know if you, uh, need to leave or anything."
         her concerned "..."
-        "At last I could escape for lunch."
+        "At last I could escape at the end of the day. I stopped by Sara's house on my way home."
         scene bg farm_interior flip
         show sara at midright
         show her normal at midleft
@@ -3793,6 +3799,7 @@ label monthly_event_24:
         her normal "You know what? Let's go. I feel fine; we'll bring a radio; and I could certainly use the exercise."
         sara "Okay, if you're sure!"
         scene bg pond with fade
+        play music "music/Will.ogg" fadeout 3.0
         "After work we hiked for twenty minutes until we got to the riverside spot she mentioned. The sun shone down on us fiercely, but it was a little cooler when we finally got to the shade by the river."
         show her normal at midright
         show sara at midleft
@@ -3826,6 +3833,7 @@ label monthly_event_24:
         show sara at quarterright
         show her normal at right
         with moveinright
+        play music "music/Prelude02.ogg"
         "We started walking back. The sun felt hotter than ever, and I started feeling really thirsty."
         show her at midright
         show sara at center
@@ -3862,6 +3870,7 @@ label monthly_event_24:
         him happy "That's great! Hey, little baby, we're ready for you!"
         her annoyed "Speak for yourself!"
         "Now that I was resting and had had some water, the contractions seemed to be slowing down."
+        play music "music/RainSea.ogg" fadeout 3.0
         show julia at midleft with moveinleft
         show him at midright with move
         show sara at quarterright with move
@@ -3971,6 +3980,7 @@ label monthly_event_24:
         her serious "Okay, yeah, great."
 
         scene bg clinic with fade
+        play music "music/NoOneWillKnow.ogg" fadeout 3.0
         show her concerned at midright
         show him concerned at midleft
         "Time passed... I just tried to make it through one contraction at a time."
