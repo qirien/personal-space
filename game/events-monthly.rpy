@@ -4105,8 +4105,10 @@ label monthly_event_24:
             "What should I say?"
             "I'll never leave you." if (loved >= 0):
                 "He looked almost ready to cry; he really thought I might leave him. But, even so, he still wanted what was best for me."
-                her serious "Oh, [his_name], I'll never leave you!."
+                her concerned "Oh, [his_name], I'll never leave you!."
                 him serious "I need you, [her_name]. You're the reason I work, and the reason I come home."
+                show him sleeping at center with move
+                show her sleeping
                 "We held each other so tightly, as if we were made of a thousand pieces that would fall apart if the other person didn't hold them all together."
             "I need to leave." if ((loved <= 0) and (community_level < COMMUNITY_LEVEL_OK)):
                 her sad "I can't stay here, [his_name]."

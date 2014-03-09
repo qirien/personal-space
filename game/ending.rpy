@@ -83,9 +83,9 @@ label mediocre_ending:
             "Even after I cheated on him, he has always been there for me."
     else:
         "Like my job."
-        "I felt needed and appreciated at work, even if I didn't always feel that way at home."
 
     if (community_level >= COMMUNITY_LEVEL_OK):
+        "I felt needed and appreciated at work, even if I didn't always feel that way at home."
         call work_appreciation
 
     scene bg fields with fade
@@ -305,9 +305,9 @@ label good_ending:
     him surprised "[her_name]?"
     her surprised "What?"
     him serious "Thank you."
-    her laughing "Again? Hey, dinner wasn't that good!"
-    him normal "No, not just for dinner. For taking a chance on me, and for trusting me enough to come to Talam with me. For working so hard at your job and all the things you do at home. For loving me even when I'm grouchy or make mistakes."
-    her normal "[his_name]...I should be thanking {b}you{/b}. You work so hard every day - we literally couldn't survive without you. You have loved me no matter what this whole time. And there's nowhere I'd rather be than right here with you."
+    her flirting "You're welcome- wait, what are you thanking me for? There's so many things you owe me for..."
+    him normal "For taking a chance on me, and for trusting me enough to come to Talam with me. For working so hard at your job and all the things you do at home. For loving me even when I'm grouchy or make mistakes."
+    her normal "[his_name]...I need to thank {b}you{/b}. You work so hard every day - we literally couldn't survive without you. You have loved me no matter what this whole time. And there's nowhere I'd rather be than right here with you."
     him happy "Yeah...if someone came up to me, right now, and said 'All-expenses paid trip to wherever you want!', do you know what I'd say?"
     her surprised "What?"
     him flirting "I'd say, 'I want to go to my house, and be in my bed, next to my wife.'"
@@ -316,7 +316,7 @@ label good_ending:
     her happy "That's true... Good choice, then."
     show him happy
     with dissolve
-    "He didn't answer, just buried his face in my hair and tightened his grip around my body. I held on tight to his arms, feeling safety and love and happiness swirling around us."
+    "He didn't answer, just buried his face in my hair and tightened his grip around my waist. I held on tight to his arms, feeling safety and love and happiness swirling around us."
     show her sleeping
     show him sleeping
     with dissolve
