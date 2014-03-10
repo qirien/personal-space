@@ -25,7 +25,8 @@ label domestic_1:
     show her normal
     her "Time for laundry!"
     "I put all the clothes in a big bucket with water and soap, and scrubbed them. Usually that worked fine, but some of the clothes were really dirty."
-    her "Washing these clothes by hand is taking forever. I wonder how I could speed it up."
+    her annoyed "Washing these clothes by hand is taking forever."
+    her surprised "I wonder how I could speed it up?"
     menu:
         "Leave the clothes soaking while you finish doing the dishes.":
             her "Maybe I just need to let the soap do my work for me."
@@ -63,7 +64,7 @@ label domestic_3:
     her annoyed "(I chased it away, but what about next time?)"
     her serious "I know!  I'll make a fence!"
     "I gathered some sticks from some of the local plants, and tied them together with vines. When I tried to pound in the corners, the sticks broke in the hard dirt."
-    "I took a break for a snack and thought about it. I decided to try wetting the dirt first.  Then I was able to pound in the corners and finish my fence."
+    "I took a break for a snack and thought about it. I decided to soften the dirt with water first.  Then I was able to pound in the corners and finish my fence."
     her happy "Whew! It's done!"
     "I watched, and sure enough, my fence kept out the creature.  Good to know my herbs were safe."
     $ skill_domestic += 10
@@ -99,6 +100,7 @@ label domestic_4:
             show her normal at midleft
             show him angry at midright
             with dissolve
+            play music "music/Prelude02.ogg" fadeout 3.0
             him "Free goats? Why did you turn him down?!"
             her angry "I don't know anything about goats! I have enough to do as it is!"
             her annoyed "Besides, goat milk tastes gross."
@@ -224,6 +226,7 @@ label domestic_6:
             "I made some jack-o-lanterns and put candles in them. They grinned saucily at us at night, until they started rotting and I had to throw them away."
 
     hide her
+    play music "Prelude22.ogg" fadeout3.0
     "Even though it wasn't anywhere near Halloween going by the Earth calendar, the colonists all thought that if we had pumpkins, we should have a harvest festival!"
     "They announced that there would be a costume party at the community center, and everyone could bring sweets to give out to the kids."
     menu:
@@ -267,11 +270,11 @@ label domestic_7:
             him annoyed "Ate my plants, that's what. Well, you don't have to have any; I guess I'll just cook it myself."
             her annoyed "Yeah, please get that thing out of here."
             "He roasted it outside over a fire. He didn't tell me how it tasted, which was fine - I didn't want to know, anyway."
-            $loved -= 10
+            $loved -= 5
             return
         "That's awesome.":
             her happy "That's awesome! You're like my very own mountain man."
-            $loved += 10
+            $loved += 5
         "That's weird!":
             her concerned "That's...not something I'm used to. Can you really eat it?"
             him serious "The scientists here haven't detected anything toxic or unusual in the animal life here - I think as long as we cook it well and don't eat the organs it should be fine."
@@ -389,8 +392,8 @@ label domestic_8:
    
     "I heated the grease in one pot, and heated the lye in another pot to the right temperatures. Then I added a little of each to another pot several times until I had the right amount."
     if (loved >= 5):
-        show her normal at midright
-        show him normal at midleft
+        show her normal at midright with move
+        show him normal at midleft with moveinleft
         her "Would you stir that for me, please?"
         him "No problem."
         "It helped to have him stirring while I added the lye and grease."
@@ -418,7 +421,7 @@ label domestic_8:
             show her normal at midleft with moveinleft
             her "I was able to make some soap; here's some extra. You might want to warn anyone using it that it's pretty strong."
             boss "This looks wonderful! Thank you, [her_name]."
-            ilian "I'm impressed; you actually did it."
+            ilian "Huh. You actually did it."
             her "I can make more, if it's useful."
             boss "Definitely! No one else has tried soapmaking yet."
             $ community_level += 2

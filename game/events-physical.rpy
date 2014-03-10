@@ -45,7 +45,7 @@ label physical_1:
     "When I had rested long enough, I started to bring my legs out of the water. However, they were completely numb! They weren't just cold; and they weren't tingly like they had fallen asleep - it felt more like some kind of anaesthesia."
     "I had to use my hands to pull my legs out of the water. I noticed some black spots on them, but when I tried to wipe off the spots..."
     her surprised "It's not mud...are these some kind of leech?!"
-    play music "music/Prelude02.ogg" fadeout 3.0
+    play music "music/NoSilencePlease.ogg" fadeout 3.0
 
     "I was able to pry it off, and, sure enough, they were attached to my skin with little jaws just like leeches. They must secrete some kind of anesthetic..."
     if (skill_knowledge >= 20):
@@ -54,11 +54,13 @@ label physical_1:
     show her concerned with vpunch
     her "My legs are too numb to walk..."
     "Luckily, I had brought my radio with me, so I decided to try and call for help."
+    play sound "sfx/radio.mp3"
     her serious "Can anyone hear me? I'm at the south ridge, and I can't walk... please help!"
     her sad "...I repeat, this is [her_name], I'm stuck past the south ridge and need assistance, can anyone hear me?!"
     if (skill_technical >= 20):
         her serious "(The hill must be in the way... but maybe if I angle the antenna a different way... I could also touch this tree to try and send the signal through there!)"
         her "I need help over the south ridge, can anyone hear me?"
+        play sound "sfx/radio.mp3"
         him "[her_name]?! Is that you?"
         her normal "Yes! It's me! I need help!"
         him "You're over the south ridge? I'll be right there!"
@@ -94,6 +96,7 @@ label physical_1:
     "He nibbled on my ear playfully, and set me on Lettie. He held my hand all the way home."
 
     scene bg farm_interior with fade
+    play music "music/Amnesia.ogg" fadeout 3.0
     "After I had cleaned up and my legs were functioning again, I fell asleep. But the next morning, [his_name] wanted to talk."
     show her normal at midright
     show him normal at midleft
@@ -249,7 +252,7 @@ label physical_3:
     stop sound fadeout 3.0
     him normal "Thanks for your help, [her_name]. You are actually pretty good at shovelling."
     her flirting "Me and my hidden talents..."
-    him surprised "Yes, I wonder what else you are hiding?"
+    him flirting "Yes, I wonder what else you are hiding?"
     her "Come and find out."
     $ loved += 2
     $ made_love += 1
@@ -421,6 +424,7 @@ label physical_6:
                     $ community_level += 3
 
                 "Try it out":
+                    play music "music/Reflections.ogg" fadeout3.0
                     her normal "It seems fine; I'll try it out."
                     him normal "I'm game!"
                     show her at sitting
@@ -560,6 +564,7 @@ label physical_7:
 
 # Participate in community soccer team
 label physical_8:
+    play music "music/Prelude22.ogg" fadeout 3.0
     "Some of the colonists had taken to playing soccer on Saturday mornings. I decided to join them and see if I liked playing."
     scene bg path with fade
     show kid at right
@@ -655,6 +660,7 @@ label physical_9:
 # Lead a group hunt
 label physical_master:
     scene bg talam with fade
+    play music "music/NoSilencePlease.ogg" fadeout 3.0
     "One week a huge herd of six-legged grazing animals crossed the river near our colony into some wooded scrubland. We were able to hunt some from a distance, but they kept hiding in the bushes where we couldn't see them or get clear shots."
     "They were good to eat, partly because they tasted good dried and salted into jerky. We could always use more food, so I decided to organize a hunt."
     scene bg community_center with fade

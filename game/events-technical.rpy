@@ -284,9 +284,7 @@ label technical_7:
     $ skill_technical += 10
     return
 
-# TODO: Finish this
-# 8 - write an app that uses weather data and frost prediction and knowledge of various plants to remind you when to plant/harvest crops. Also keeps track of your fields, what's been on them, and helps you rotate them efficiently.
-# programmable tractor attachment?
+# 8 - programmable substance mixer, farming app
 label technical_8:
     scene bg farm_interior with fade
     show him normal at midright

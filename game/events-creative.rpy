@@ -142,7 +142,8 @@ label creative_5:
     her surprised "Do you have any rope?"
     ilian "It looks like they didn't send much along with us. I guess they thought we'd be making our own by now."
     her normal "So you have some?"
-    ilian "Yes, but it's only for emergencies."
+    ilian "Yes, but it's only for approved projects."
+    her annoyed "(I don't want to go through that red tape unless I have to!)"
     her concerned "I guess I'll figure something else out..."
 
     scene bg farm_interior with fade

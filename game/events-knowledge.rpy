@@ -14,13 +14,13 @@ label knowledge_0:
     "I knew there was a library here, so I decided to check it out. A young man was intently reading from his computer pad at the desk when I walked in."
     show her normal at midleft with moveinleft
     her "Hello there, your name's Sven, right?"
-    sven "Howdy, there! Yes, I'm Sven, but I'm afraid forgot your name."
+    sven "Howdy! Yeah, I'm Sven, but I'm afraid forgot your name."
     her happy "It's okay, there's a lot of people here on the colony.  I'm [her_name]."
-    sven "That's right. So...what can I help you with?"
+    sven "That's right. So, [her_name]...what can I help you with?"
     her normal "Well, I had a few minutes and I thought I'd see what sort of stuff you have here in the library."
     sven "Well, most books you can just borrow from our online library, but we do have some high-res maps of the planet and a few printed reference books.  We have also some tools and equipment people can borrow, like if you want to build something."
     her serious "Okay, that makes sense. We didn't have room to bring drills and wrenches for everyone, huh?"
-    sven "Exactly. This is also where you can get new data from the extranet connection to Earth, though we've got limited bandwidth and it'll take a couple of years to get here."
+    sven "Yup. This is also where you can get new data from the extranet connection to Earth, though we've got limited bandwidth and it'll take a couple of years to get here."
     her surprised "What are those machines over there?"
     sven "Those are our printers. You can print on paper, of course, and we have a 3D printer if you need to print something out of plastic. But we don't have a ton of either material, so you can't just print anything, and recycling's real important."
     her normal "That makes sense. Thanks for the tour, Sven."
@@ -191,7 +191,7 @@ label knowledge_7:
     "I had been doing a lot of reading lately. I read about the lives of pioneers who settled in new places, whether it was the Pilgrims in the 17th century, homesteaders in the 19th century, or refugees fleeing war and discord to start a new life in a totally unfamiliar place."
     "I could really relate to these pioneers. While it was exciting to be experiencing new areas, it was also scary. They couldn't rely on past experience, other people, or traditional society - they could only rely on themselves."
     "I realized how much trust we had all placed in each other, on our new colony here."
-    "Not just the lazy trust of suburban neighbors, where you trust that your neighbor is not a killer, but the trust of pioneers, where you have to believe everyone is working hard and will help each other out of otherwise hopeless situations."
+    "Not just the lazy trust of casual neighbors, where you trust that your neighbor is not a killer, but the trust of pioneers, where you have to believe everyone is working hard and will help each other out of otherwise hopeless situations."
     "What will living on a different planet do to our culture...?"
     
     $ skill_knowledge += 10
@@ -217,6 +217,7 @@ label knowledge_8:
     "I also asked them to play music from a playlist that I picked to go with that artist."
     "Soon, the museum night arrived."
     scene bg community_center with fade
+    play music "music/Sojourn.ogg" fadeout 3.0
     image greatwave = "sprites/art-greatwave.png"
     image pearlearring = "sprites/art-girlpearlearring.png"
     image starrynight = "sprites/art-starrynight.png"

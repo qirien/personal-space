@@ -40,6 +40,7 @@ label spiritual_0:
     $ skill_spiritual += 10
     return
 
+# Reading a little each day
 label spiritual_1:
     scene bg farm_interior with fade
     show her serious at center with dissolve
@@ -56,7 +57,7 @@ label spiritual_1:
     $ skill_spiritual += 10
     return
 
-
+# Reading the Dhammapada
 label spiritual_2:
     scene bg farm_interior with fade
     show her serious at center with dissolve
@@ -70,6 +71,8 @@ label spiritual_2:
 
     return
 
+# Peace in nature
+# TODO: Change to Naomi's sermon from events-evening-
 label spiritual_3:
     scene bg talam with fade
     "I watched the sun set while flying creatures gathered in the sky."
@@ -80,7 +83,7 @@ label spiritual_3:
     $ skill_spiritual += 10
     return
 
-
+# Reading the Upanishads
 label spiritual_4:
     scene bg farm_interior with fade
     show her normal at center
@@ -112,6 +115,7 @@ label spiritual_4:
     $ skill_spiritual += 10
     return
 
+# Pondering, praying, meditating
 label spiritual_5:
     scene bg path with fade
     "I decided to take a break from reading for a while...I wanted to experience some of the things I read about for myself."
@@ -120,6 +124,7 @@ label spiritual_5:
         "Meditate":
             "I found a quiet place and sat down, emptying my thoughts. I tried to be like the ocean, letting thoughts drift away like bits of kelp. Without my thoughts, what was I?"
             "Without any distractions, without any worldly cares, I could just...{b}be{/b}. The boundary between myself and other living things seemed smaller, somehow, and I floated in a sea of stars and souls."
+            "The physical world I could see was such a small portion of the universe..."
         "Pray":
             "I prayed to God to help me find the truth I had been looking for. I prayed that our little colony would make it. I prayed that [his_name] and I would make it. I prayed for forgiveness and comfort and peace and something to fill the emptiness that I felt sometimes even when I was happy."
             "And...I felt something. It was like the feeling you get when you know someone far away is thinking about you, or the feeling you get when someone looks in your eyes and sees your soul, or the feeling of belonging and being loved and knowing everything will be okay."
@@ -133,6 +138,7 @@ label spiritual_5:
     $ skill_spiritual += 10
     return
 
+# Reading the Koran; helping Helen Engel
 label spiritual_6:
     scene bg farm_interior with fade
     show her normal at center
@@ -234,6 +240,7 @@ label spiritual_6:
     $ community_level += 2
     return
 
+# Reading the Tao Te Ching
 label spiritual_7:
     scene bg farm_interior with fade
     show her normal at center with dissolve
@@ -250,6 +257,7 @@ label spiritual_7:
     $ skill_spiritual += 10
     return
 
+# Reading the Tattvartha Sutra
 label spiritual_8:
     scene bg farm_interior with fade
     show her normal at center with dissolve
@@ -259,7 +267,8 @@ label spiritual_8:
     her surprised "Our...function? \nThat makes us sound like robots!"
     her normal "Well, that's a good question - if I was a robot programmed to help other humans, what would I do differently?"
 
-    her concerned "Maybe I would think about other people more? What if I had sensors that could detect when people needed my help? That would sure be handy."
+    her concerned "Maybe I would think about other people more?"
+    her happy "What if I had sensors that could detect when people needed my help? That would sure be handy."
     her serious "I suppose that getting in the habit of thinking about other people would help with that."
     her concerned "I do that sometimes, but how can I remember to think about others more? Just wanting to isn't going to make it happen..."
     her serious "I suppose that's why mindfulness and prayer are such an important part of most religions. Without daily reminders, we forget about the little changes we want to make."
@@ -268,7 +277,7 @@ label spiritual_8:
     "At first it felt a little awkward - slightly as if I was programming a robot."
     "But I was able to think about others more and help them in specific ways."
     her serious "Sara is often lonely; I should invite her to lunch this week.  Hmmm, Ms. Peron was mentioning that she loves potatoes, and I don't think they are growing any on their farm - I could give them some of ours."
-    her concerned "[his_name] has been really stressed out lately - he'd probably like it if I rubbed his shoulders or something."
+    her concerned "[his_name] has been really stressed out lately - he'd probably like it if I spent some time with him."
     her normal "It's been really nice of Sister Naomi to lend me these books and take the time to talk to me so much lately - I should tell her thank you for that."
     
     "They were just little things, but I could tell they meant a lot to the people I helped."
@@ -277,6 +286,7 @@ label spiritual_8:
     $ skill_spiritual += 10
     return
 
+# attending church and praying
 label spiritual_9:
     scene bg church with fade
     show naomi at center with dissolve
@@ -300,12 +310,15 @@ label spiritual_9:
 
     return
 
+# Reading the Bible
 label spiritual_master:
     scene bg farm_interior with fade
     show her normal at center
 
-    "I had read so many religious texts from all over the world, but last I started reading the Bible. While some of the stories were familiar, there was a lot I had never read before."
-    "I read in 1 Thessalonians in the Bible, \"In every thing give thanks,\" and it made me stop and think."
+    "I had read so many religious texts from all over the world, but last I started reading the Bible."
+    "I was touched by how many people Jesus helped, and his continual teaching that people stop seeing people who were different as \"others\" but instead treat them as neighbors."
+    "A lot of the stories were familiar, but there were some things I had never read before."
+    "I read in 1 Thessalonians, \"In every thing give thanks,\" and it made me stop and think."
     her surprised "Can I really give thanks for {b}everything{/b}?"
     "There were a lot of things I was definitely not grateful for - pests, bad weather, sickness, arguments..."
     her concerned "I can't give thanks for those things."

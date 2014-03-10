@@ -14,6 +14,7 @@ label social_0:
     # TODO: computer background?
     scene bg farm_interior with fade
     show her normal at center with dissolve
+    play music "music/Prelude02.ogg" fadeout 3.0
     "We had a community message board online where we could talk to anyone else in the colony easily."
     "But people weren't always as polite online as they were in person..."
     julia "Can everyone please make an effort to attend the next farmer's meeting? We can't get your input if you do not attend."
@@ -80,6 +81,8 @@ label social_2:
     "I sent out a message inviting everyone to come to a once-a-week party. People could bring snacks to share, and just chat and be together."
     "I wasn't sure anyone would show up..."
     "But [his_name] agreed to come, and Sara and Ilian and the mayor were coming, so we could at least hang out."
+    play sound "sfx/people.mp3" loop
+    play music "music/Sojourn.ogg" fadeout 3.0
     show him normal at midleft
     show her normal at center
     with dissolve
@@ -89,7 +92,7 @@ label social_2:
     show ilian at quarterleft behind her, him
     show sara at left behind her, him
     with moveinright
-    play sound "sfx/people.mp3" loop
+
     "I was surprised when a lot of people showed up! I guess there's not much else to do here yet..."
     "Martin and Natalia brought a board game to play, and one of the Nguyen's teenagers brought dice and computer pads to play a role-playing game. I overheard [his_name] talking to Sven about tractor racing, which sounded weird, but I was glad he was having a good time."
     "The little kids seemed to playing some kind of spying game, as they would peek around a corner at us and then run away giggling whenever they were spotted."
@@ -195,11 +198,12 @@ label social_3:
 
 #organize lunch group
 label social_4:
+    play music "music/Sojourn.ogg" fadeout 3.0
+    play sound "sfx/people.mp3" loop
     "Sara and I met for lunch every week to chat and take a break."
     scene bg community_center with fade
     show sara at midright
     show her normal at midleft
-    play sound "sfx/people.mp3" loop
     sara "How are your neighbors doing?"
     her happy "We ate with the Nguyens a while back and they were all doing well! We're all starting to live off the land; it's kind of exciting."
     sara "I know! Hopefully we won't starve or anything."
@@ -239,6 +243,7 @@ label social_4:
 # Organize community movie night!
 label social_5:
     scene bg community_center with fade
+    play music "music/Sojourn.ogg" fadeout 3.0
     play sound "sfx/people.mp3" loop
     "One week at Friday lunch group, we were all complaining about our lack of excitement."
     show lily at quarterright
@@ -393,6 +398,7 @@ label social_6:
     show him serious at midright
     show her serious at midleft
     with dissolve
+    play music "music/NoOneWillKnow.ogg" fadeout 3.0
     "One good thing about being such a small community was that we all helped out when someone needed it."
     "Like when Sara's house burned down..."
     "It was the middle of the night when the radio crackled on."
@@ -643,7 +649,7 @@ label social_8:
             her sad "That's awful!"
             julia "We wanted to plant rice, but we are still working on a system to flood and irrigate the fields properly. Well, Thuc {b}was{/b} working on it, but after the corn..."
             her serious "It seems fruitless, doesn't it?"
-            julia "Yes! What's the point of digging and planning and planting, if some crazy critter is just going to come destroy everything we've done?!"
+            julia "Yes! What's the point of digging and planning and planting, if some alien creature is just going to come destroy everything we've done?!"
             her concerned "I know what you mean. I felt the same way, too, after the corn."
             julia "Thuc's not one to complain about his troubles, but I can see he's taken this hard. I suppose I haven't been very encouraging, either."
             her serious "It is hard... but maybe if you had some help, it'd be easier to get started?"
@@ -665,7 +671,6 @@ label social_8:
 # Community Shindig
 label social_9:
     scene bg path with fade
-    play music "music/Prelude22.ogg" fadeout 3.0
 
     "One day Sara and I took a walk together."
     show her normal at midright
@@ -767,6 +772,7 @@ label done_party_menu:
     "Sara and I worked hard for two weeks getting everything ready. Finally, the night of the party came..."
     #TODO: Add animated (?) glowing lights to the community center bg with an overlay
     scene bg community_center with fade
+    play music "music/Prelude22.ogg" fadeout 3.0
     "As people started to arrive, they seemed to brighten when they saw the community center ready for a party."
     if (party_decorations == "flowers"):
         "The flowers we picked looked nice. Even though they were nothing like Earth flowers, they had their own beauty. And Sara had programmed some of the lights to glow softly blue and green, like an ocean."
