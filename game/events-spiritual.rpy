@@ -72,14 +72,88 @@ label spiritual_2:
     return
 
 # Peace in nature
-# TODO: Change to Naomi's sermon from events-evening-
 label spiritual_3:
-    scene bg talam with fade
-    "I watched the sun set while flying creatures gathered in the sky."
-    show her serious at center with dissolve
-    her concerned "They seem so free and at peace... Animals never worry about what someone's saying behind their backs, or try to get other animals in trouble, or worry about their childhoods... I could probably learn a lot from them."
-    show her serious
-    "I felt peaceful, while at the same time motivated to be better."
+    scene bg farm_interior with fade
+    show him normal at midleft
+    show her normal at midright
+    with dissolve
+    
+    $ he_goes_to_church = False
+    her "Hey, [his_nickname], I was going to go to church services today... do you want to come?"
+    him surprised "Why are you going?"
+    menu:
+        "What should I say?"
+        "It helps me be a better person.":
+            her normal "I learn ways to become a better person. Sister Naomi always makes us think and helps us see our weaknesses and find ways to overcome them."
+            him surprised "Hmmm, really?"
+            if (loved >= 0):
+                him normal "Maybe I'll come with you today, then."
+                $ he_goes_to_church = True
+            else:
+                him concerned "Let me know how it is; I've got too much stuff going on here."
+        "It helps me feel more at peace.":
+            her concerned "Sometimes I feel so stressed out... church is one of the few places where I really feel at peace."
+            him surprised "Hmmm, really?"
+            if (loved >= 0):
+                him normal "Maybe I'll come with you today, then."
+                $ he_goes_to_church = True
+            else:
+                him concerned "Let me know how it is; I've got too much stuff going on here."
+        "I like socializing with everyone.":
+            her normal "I like to have an excuse to see everyone and chat with them."
+            him annoyed "That's why you go?"
+            her serious "Well, one of the reasons..."
+            him serious "Well, I don't really want to do that, so I'm staying here."
+        "I feel like I'm supposed to.":
+            her concerned "I guess I feel like I'm supposed to. Maybe I go because I feel guilty if I don't?"
+            him surprised "Really? You'd feel guilty if you didn't go to church?"
+            her concerned "Yeah, isn't it something you're supposed to do?"
+            him serious "Only if it helps you."
+            her concerned "Does that mean you don't want to come?"
+            him concerned "Not really, I've got too much stuff going on here."
+    
+    her serious "Okay..."
+
+    "I didn't dress up or anything - nobody here owned nice clothes."
+    if (he_goes_to_church):
+        "We held hands as we walked to town and entered the small chapel."
+    else:
+        "I walked to town and entered the small chapel."
+    scene bg church with fade
+    "Probably about half the people of the colony were there. Some people were coming in from smaller rooms on the side; some denominations held their own meetings before Sister Naomi's sermon."
+    "We sang a hymn of thankfulness for blessings, and Mrs. Peron gave a prayer."
+    show naomi at center with moveinright
+    naomi "Today I want to share a parable with you."
+    naomi "Once there was a merchant travelling to a far-off land. He carried fruits and other foods. While he was travelling, one of the fruits fell out of his pack and rolled down the hill to a gardener's house."
+    naomi "No fruit trees grew in this area; everyone thought it was too dry and rocky."
+    naomi "But this fruit landed in some soft earth that had been cleared by a man who lived nearby. Wild animals came and ate away the fruit, but the seeds nestled into the soft dirt."
+    naomi "When they sprouted, the man who lived nearby didn't know what they were. He thought about pulling them up so they wouldn't bother his garden. But he decided to wait and see what they were."
+    naomi "He waited for years and years, until a great tree grew there, and every summer it gave bushels and bushels of delicious fruit to the man, who shared it with his friends and neighbors with a heart of thanksgiving, and humility."
+    "Sister Naomi was quiet for a minute, letting us think about what she said. I wondered if we were supposed to be the merchant, or the gardener, or maybe the seeds?"
+    "She told a few more stories, but I kept thinking about those seeds."
+    "She ended with a few moments of silence for us to ponder or pray."
+    
+    if (he_goes_to_church):
+        "Then there was a potluck lunch, where everyone brought some food to share, and we talked and mingled with the other colonists."
+        
+    scene bg path with fade
+    show her normal at midright
+    
+    if (he_goes_to_church):
+        show him normal at midleft
+        "Then we walked home."
+        her surprised "What did you think about it, [his_name]?"
+        him serious "Oh, it was alright. Sister Naomi seems really nice."
+        her serious "Yeah... I keep thinking about that story about the seeds."
+        him "Yeah, me too... Like, what kind of seeds are we planting for those who will come after us?"
+        her concerned "It made me think about how I came here, even though I had no idea what it would be like. I'm still waiting to see what sort of tree this colony will grow into..."
+        show her serious
+        "We walked in thoughtful silence together all the way home."
+    else:
+        "I walked home slowly by myself, thinking about everything she had said."
+        "Was I doing everything to have the life I wanted? Was my attitude one of humility and thanksgiving, or ingratitude and selfishness?"
+        "What would help me to improve my relationships and my situation?"
+        "What seeds could I plant now, what things could I do to later have the blessings I sought?"
     $ skill_spiritual += 10
     return
 

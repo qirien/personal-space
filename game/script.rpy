@@ -222,10 +222,9 @@ label start:
             #call screen computer_pad
 
     "I thought I knew what love was. After all, that's why I married..."
+    show him normal at quarterright with moveinright
     $ his_name = renpy.input("What is his name?", "Jack", length=20)
     "After all, that's why I married [his_name]."
-
-    show him normal at quarterright with moveinright
 
     "We had known each other..."
     menu:

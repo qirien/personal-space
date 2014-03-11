@@ -51,7 +51,6 @@ label relax_together_1:
     show her normal at midright
     show him normal at midleft
     with dissolve
-    play music "music/Will.ogg" fadeout 3.0
         
     "One of the things I missed most about Earth was having my own shower and bath. While we washed up well enough with water from the well, we still enjoyed going to the community bath once a week or so to really get clean."
     her concerned "I really need a bath."
@@ -100,6 +99,7 @@ label relax_together_1:
 label relax_together_2:
     scene bg pond with fade
     show overlay night
+    play music "music/Rain.ogg" fadeout 3.0
     "We went on a moonlight walk to the river. We found a spot where the water was deeper and slower, and sat down. I put my head on his shoulder, breathing in the cool night air."
     show her normal at midleft
     show him normal at center
@@ -129,10 +129,15 @@ label relax_together_2:
             "Soon he got tired of swimming and we headed home together."
             $ loved += 5
         "Leave":
+            stop music fadeout 3.0
             her angry "Ugh, now I'm all wet and cold!"
             him flirting "I'll warm you up, [her_nickname]!"
             her "No thanks, I'm going home."
+            hide her with moveoutleft
+            scene black with fade
+            "Why did he have to ruin such a nice evening?!"
             $ loved -= 5
+            return
 
     scene black with fade
     return
@@ -141,10 +146,11 @@ label relax_together_2:
 label relax_together_3:
     scene bg farm_interior with fade
     show her normal at midright with dissolve
-    play music "music/Prelude02.ogg" fadeout 3.0
+    play music "music/You.ogg" fadeout 3.0
     "One day [his_name] came in from the fields with a big smile on his face."
     show him normal at midleft with moveinleft
-    him happy "Ah, [her_nickname], you're such a great part of my life. You've brought me love, joy, and laughter. You've even brought me to new worlds, literally! There's no way I could have come here without you."
+    him happy "Ah, [her_nickname], you're such a great part of my life. You've brought me love, joy, and laughter."
+    him laughing "You've even brought me to new worlds, literally! There's no way I could have come here without you."
     her surprised "What do you mean?"
     him normal "Well, I mean, it's a colony, right? They want couples, people that are going to have kids, so they can build up the colony."
     her concerned "You mean, you wouldn't have been able to come unless we were married."
@@ -205,7 +211,6 @@ label relax_together_3:
 # Massage time!
 label relax_together_4:
     scene bg farm_interior with fade
-    play music "music/Will.ogg" fadeout 3.0
     "One day after dinner I noticed [his_name] rubbing his shoulders and grimacing."
     show him normal at midleft
     show her normal at midright
@@ -250,6 +255,7 @@ label relax_together_5:
     show her normal at midright
     show him normal at midleft
     with dissolve
+    play music "music/Rain.ogg" fadeout 3.0
     him happy "Put on your fancy clothes, [her_nickname], because we are going OUT tonight!"
     her surprised "Out where? And I don't have any fancy clothes..."
     him normal "Any clothes look fancy on you! But I can't tell you where we're going; it's a suprise."
@@ -261,7 +267,7 @@ label relax_together_5:
     scene black with fade
     "I let him blindfold me and we left the house.  He spun me around so I couldn't tell which direction we were going, and then we hiked for about twenty minutes or so. He held my hand so I didn't trip."
     "It's a good thing I didn't actually put on fancy clothes for scrambling over these rocks."
-    him normal "We're almost there."
+    him "We're almost there."
     "Finally, he took off the blindfold."
     scene bg sunset with fade
     "He had setup a small table and two chairs with dishes and utensils. I sat down at the table and he lit the candles.  Then he got some food out of his backpack."
@@ -273,47 +279,52 @@ label relax_together_5:
         "So cool!":
             her happy "It's...so romantic! Wow, I didn't know you were planning this!"
             him happy "I'm glad you like it! I just really missed taking you out to eat, so I thought this would be as close as we could get."
+            $ loved += 2
         "A lot of trouble.":
             her concerned "Wow, you went to a lot of trouble to set this all up. I feel bad..."
             him happy "Don't feel bad; just enjoy it!"
+            $ loved -= 2
         "A waste.":
             her concerned "This is really pretty, but isn't it kind of a waste?"
             him flirting "My time is never wasted when it's spent on you."
+            $ loved -= 2
     "We ate our candlelight dinner and watched the sun setting over the hills. I couldn't even see our house or the town or anything."
     her serious "It's like we're the only two people in the whole universe."
     him flirting "Then we have quite a job ahead of us, don't we?"
     her surprised "A job?"
     him serious "Repopulating the entire universe. We better get started now, don't you think?"
     menu:
-        "He's so..."
-        "Funny":
+        "What should I say?"
+        "You always make me laugh.":
             her laughing "Oh, you...! You always make me laugh."
             him normal "I like it when you laugh."
-        "Sexy":
+            $ loved += 2
+        "Should we get started like this?":
             her flirting "Should we get started like this...?"
             him flirting "Maybe a little bit of this?"
             her serious "It's too bad there's so many rocks here..."
-        "Exasperating":
+            $ loved += 2
+        "Is everything about sex to you?!":
             her annoyed "Is everything about sex to you?!"
-            him laughing "Ha ha, I'm just kidding. And, anyway, it's hard to think of anything else when I'm with you."
+            him laughing "Ha ha, I'm just kidding. And, anyway, sometimes it's hard to think of anything else when you're right here, looking beautiful..."
             her "..."
             $ loved -= 2
 
     "The food wasn't anything special, but somehow it tasted better combined with a beautiful sunset. Afterwards he gathered up the dishes and walked a little ways away."
     him normal "Come sit down over here, it's softer."
-    her surprised "Is this our sleeping bags?! You were planning this all along!"
-    him happy "It never hurts to be prepared..."
+    her surprised "Is this our sleeping bags?! Are we spending the night out here?"
+    him happy "If you want to. I thought it would be fun."
     menu:
-        "That's..."
-        "Romantic":
+        "What should I say?"
+        "You're so romantic.":
             her happy "You're so romantic. You thought of everything."
             him serious "I love you, [her_name]."
             $ made_love += 1
-        "Logical":
+        "That makes sense.":
             her serious "Yeah, that makes sense. You really planned this out, didn't you?"
             him serious "I love you, [her_name]."
             $ made_love += 1
-        "Presumptuous":
+        "That's presumptuous!":
             her annoyed "That's pretty presumptuous. You think that just because you setup a fancy dinner that you're automatically going to get some?"
             him annoyed "No! I mean, I was thinking it would be a nice end to the evening, but we don't have to. I just thought it might be romantic."
             her serious "Well, it's not. You can't just assume things like that."
@@ -326,7 +337,7 @@ label relax_together_5:
             return
 
     $ relaxed += 5
-    $ loved += 5
+    $ loved += 2
     show her sleeping
     show him sleeping
     with dissolve
@@ -394,120 +405,8 @@ label relax_together_8 :
 
     return
 
-# He wants to go to church services, you can go with him or not.
-# TODO: Would this go better in events-spiritual?
-label relax_together_9:
-    scene bg farm_interior with fade
-    show him normal at midleft
-    show her normal at midright
-    with dissolve
-    him "Hey, [her_nickname], I was going to go to church services today... do you want to come?"
-    menu:
-        "Do I want to go to church with him?"
-        "Sure":
-            if (skill_spiritual >= 30):
-                her "Yeah, I usually go anyway, but it will be nice to go with you."
-            else:
-                her "Yeah, I'll go with you."
-            jump goto_church
-        "Why?":
-            her surprised "Why are you going?"
-            him serious "I thought I'd check it out. It's been a long time since I've been to church; maybe it'd be good for me."
-            menu:
-                "What do I think?"
-                "I'll go with you.":
-                    her normal "I'll go with you."
-                    jump goto_church
-                "What do you think about spirituality, anyway?":
-                    her surprised "What's your position on spirituality?"
-                    him normal "Well, you know I used to go with my family a lot back on Earth... I went more to be with them, though, than because I really wanted to. I'm not sure what's true and what's human tradition, but if there is someone out there watching out for us, we sure could use some blessings."
-                    him surprised "How about you?"
-                    menu:
-                        "How do I feel?"
-                        "I agree with you":
-                            her serious "I feel kind of the same way... I know a lot of people that religion has helped, but sometimes God feels so far away."
-                            him normal "Let's go together, then, and we can talk about it afterwards."
-                            her normal "Sure."
-                            jump goto_church
-                        "I have no doubt God exists":
-                            her normal "I know someone's watching out for us."
-                            him serious "Maybe so. We can talk about it more after church, if you want to come with me."
-                            her normal "Sure."
-                            jump goto_church
-                        "I don't think about it much":
-                            her concerned "I don't know. It's not something I think about a lot. I'd rather stay here, I guess."
-                            him serious "Okay, well, I'll let you know how it goes."
-                            her normal "Bye."
-                        "I don't think there's a God":
-                            her annoyed "God is just an idea people made up to explain things they don't understand. But if it helps you, go ahead and go by yourself."
-                            him serious "Alright, well, I'll see you later, then."
-                            her serious "Bye."
-                            return
-                "I'm not going.":
-                    her serious "I'm not going."
-                    him normal "Alright, well, I'll see you later, then."
-                    her normal "Bye."
-                    return.
-        "No, thanks":
-            her serious "No, I'm staying here."
-            him serious "Okay. Are you not interested today, or would you pretty much never want to come?"
-            menu:
-                "I don't feel like it today.":
-                    her sad "I just don't feel like it today. Thanks for inviting me; I'm going to enjoy some peace and quiet here."
-                    him normal "Okay, maybe next time. I'll see you later, my sweet [her_nickname]."
-                "Church isn't my thing.":
-                    her concerned "I probably would never go."
-                    him serious "Okay, no problem. I'll see you in a bit."
-                    return
-    hide him with moveoutleft
-    "When he came home, he seemed thoughtful and quiet."
-    show him with moveinleft
-    her surprised "How was it?"
-    him serious "It was interesting- Sister Naomi is not like any other preacher I've listened to."
-    her "How's that?"
-    him normal "Well, she tries to speak to everyone, even though people here have a lot of different beliefs. So she uses a lot of stories and asks a lot of questions."
-    him "Like today, she told us the story of some seeds that fell out of a merchant's pack where there weren't any other plants like them."
-    him serious "A gardener let them grow and they grew into beautiful trees with delicious fruit."
-    her serious "What does that mean to you?"
-    him normal "Hmm, well it made me think of how our colony is kind of like the seeds that fell onto strange soil. I hope we will grow into something great."
-    her surprised "Was it helpful?"
-    him normal "It made me think about things, which is good... I feel a little more peaceful, optimistic... but also motivated to keep working hard. So, yeah, I guess it was helpful."
-    her normal "That's good."
-    return
-
-label goto_church:
-    "We didn't dress up or anything - nobody here owned nice clothes. We held hands as we walked to town and entered the community center."
-    scene bg wedding with fade
-    "Probably about half the people of the colony were there. Some people were coming in from smaller rooms on the side; some denominations held their own meetings before Sister Naomi's sermon."
-    "We sang a hymn of thankfulness for blessings, and Mrs. Peron gave a prayer."
-    show naomi at center with moveinright
-    naomi "Today I want to share a story with you."
-    naomi "Once there was a merchant travelling to a far-off land. He carried fruits and other foods. While he was travelling, one of the fruits fell out of his pack and rolled down the hill to a gardener's house."
-    naomi "No fruit trees grew in this area; everyone thought it was too dry and rocky."
-    naomi "But this fruit landed in some soft earth that had been cleared by a man who lived nearby. Wild animals came and ate away the fruit, but the seeds nestled into the soft dirt."
-    naomi "When they sprouted, the man who lived nearby didn't know what they were. He thought about pulling them up so they wouldn't bother his garden. But he decided to wait and see what they were."
-    naomi "He waited for years and years, until a great tree grew there, and every summer it gave bushels and bushels of delicious fruit to the man, who shared it with his friends and neighbors with a heart of thanksgiving, and humility."
-    "Sister Naomi was quiet for a minute, letting us think about what she said. I wondered if we were supposed to be the merchant, or the gardener, or maybe the seeds?"
-    "She told a few more stories, but I kept thinking about those seeds."
-    "She ended with a few moments of silence for us to ponder or pray."
-    "Then there was a potluck lunch, where everyone brought some food to share, and we talked and mingled with the other colonists."
-
-    "Then we walked home."
-    scene bg path with fade
-    show her normal at midright
-    show him normal at midleft
-    her surprised "What did you think about it, [his_name]?"
-    him serious "Oh, it was alright. Sister Naomi seems really nice."
-    her serious "Yeah... I keep thinking about that story about the seeds."
-    him "Yeah, me too... Like, what kind of seeds are we planting for those who will come after us?"
-    her concerned "It made me think about how I came here, even though I had no idea what it would be like. I'm still waiting to see what sort of tree this colony will grow into..."
-    show her serious
-    "We walked in thoughtful silence together all the way home."
-
-    return
-
 # People probably won't even see these last ones unless they always choose "Do something with [his_name]", so don't put a ton of effort into them.
-label relax_together_10:
+label relax_together_9:
     scene bg farm_interior with fade
     "We did the dishes together, and then sat together and talked while we worked on little projects."
     show her normal at midright
@@ -519,6 +418,36 @@ label relax_together_10:
     $ loved += 2
     return
 
+# She's "stunning"
+label relax_together_10:
+    scene bg farm_interior with fade
+    show her normal at midright
+    show him normal at midleft
+    with dissolve
+    
+    him surprised "...!"
+    her surprised "What is it? Is everything okay?"
+    him surprised "...!"
+    her flirting "Why are you staring at me like that?"
+    him surprised "You're just... so stunning... I'm totally stunned."
+    her annoyed "You're stunned."
+    him surprised "Yup, can't move. Can only... gaze upon... your radiant beauty..."
+    her flirting "Hmm, what if... I tickle you?!"
+    him laughing "Oh! Suddenly I can move again!"
+    her flirting "You're so silly."
+    if (loved >= 0):
+        him serious "I'm being completely serious. You're like, sweeter than a hot fudge sundae, and hotter than a habanero, and brighter than any sun, anywhere!"
+        her normal "Awww... I love you, [his_name]."
+        "He picked me up and spun us around before covering my face in kisses."
+        him "And I love you, [her_name]."
+    else:
+        him serious "I'm being completely serious."
+        her flirting "..."
+    
+    $ relaxed += 5
+    $ loved += 2
+    return
+    
 label relax_together_11:
     scene bg bedroom with fade
     "We started talking, and somehow I ended up telling him all about my job. Who was hard to work with, things that seemed impossible, the people I helped... it felt good to have him know what I had been working on."
@@ -625,13 +554,22 @@ label relax_together_c:
 label relax_together_d:
     scene bg farm_interior with fade
     "We were both reading on our computer pads, sitting near each other. We didn't talk much, but everyone once in a while we would look up and smile at each other."
+    "It was nice that we didn't always have to be doing the same thing to spend time together."
     $ relaxed += 5
     $ loved += 2
     return
 
 label relax_together_e:
     scene bg farm_interior with fade
+    show her normal at midright
+    show him normal at midleft
+    with dissolve
     "We played video games together on our computer pads. We liked to play on the same team."
+    her surprised "Oh, that's a great place to put that ice tower!"
+    him happy "I know, it just hits them right when they first come in-"
+    her happy "...and slows them down so they get hit by my fireballs. Perfect!"
+    him flirting "One more level?"
+    her flirting "I'll probably regret it tomorrow but... bring it on!"
     $ relaxed += 5
     $ loved += 2
     return

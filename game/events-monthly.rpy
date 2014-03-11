@@ -632,7 +632,7 @@ label monthly_event_6:
             him normal "It tastes kind of nutty."
             him surprised "Gross! Is this an insect leg?"
             her normal "Yeah, for the next batch I'm going to try processing the flour a little differently. But for a first try it's not bad, is it?"
-            him annnoyed "It's a whole lot better than nothing, that's for sure."
+            him annoyed "It's a whole lot better than nothing, that's for sure."
             "One day I sprinkled them with garlic salt and roasted them. They were crunchy and dry, but edible."
             him normal "So, eating these insects is great and all, but we should plant something else where that infested corn is right now."
             her surprised "Yeah... how do we get rid of the plants that are already there?"
@@ -3079,9 +3079,9 @@ label monthly_event_22:
             her surprised "Hey, do you guys need any shampoo? You said Naomi was going to get some when you found out it was missing..."
             boss "No, we're just fine. Helen gave us some of hers, so you don't need to worry about us."
             her normal "Okay, good."
-            hide boss with moveoutleft
-            "I decided to start by looking at everyone's hair."
-            scene community_center with fade
+            hide pavel with moveoutleft
+            "I decided to start by looking at everyone's hair over the next few days."
+            scene bg community_center with fade
             "I knew that, like me, a lot of people probably had a little shampoo left that they were using. But, knowing that there wasn't any more, people that didn't have much would probably be trying to conserve it."
             show naomi at midright
             show pavel at midleft with dissolve
@@ -3917,7 +3917,7 @@ label monthly_event_24:
         show overlay night
         "We had dinner, and I went to bed early."
         "I felt frustrated and tired of waiting and wished I had more control over my own body."
-        hide night
+        hide overlay night
         "I woke up in the early morning to more contractions. I didn't want to wake up [his_name] yet, so I walked around outside as the sun was just starting to come up."
         scene bg sunset with fade
         show her serious at center with dissolve

@@ -296,7 +296,7 @@ screen file_picker:
                 action FilePageNext()
 
         $ columns = 2
-        $ rows = 5
+        $ rows = 3
                 
         # Display a grid of file slots.
         grid columns rows:

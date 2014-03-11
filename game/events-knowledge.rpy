@@ -368,7 +368,7 @@ label knowledge_master:
             her "If you don't know where your information goes, or there's not a place for it yet, just send it to me and I will add it in the right place."
             "I hoped that would encourage people to add to our planet encyclopedia."
         "Get the Mayor's help":
-            scene community_center with fade
+            scene bg community_center with fade
             show pavel at midright with dissolve
             show her normal at midleft with moveinleft
             her surprised "Mayor Grayson, is there a way you could encourage people to add to the planet encyclopedia?"

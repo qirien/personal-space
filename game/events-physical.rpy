@@ -424,7 +424,7 @@ label physical_6:
                     $ community_level += 3
 
                 "Try it out":
-                    play music "music/Reflections.ogg" fadeout3.0
+                    play music "music/Reflections.ogg" fadeout 3.0
                     her normal "It seems fine; I'll try it out."
                     him normal "I'm game!"
                     show her at sitting

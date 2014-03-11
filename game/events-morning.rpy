@@ -19,7 +19,8 @@ label act_work:
 
 label act_skip_work:
     call set_work_bg
-
+    play music "music/You.ogg" fadeout 3.0
+                
     if (slacked_off == 3):
         "My boss called me in to meet with him after work."
         show pavel at midright
@@ -161,7 +162,8 @@ label work_0:
     call set_work_bg
     show pavel at quarterleft with moveinleft
     show her normal at midright with moveinleft
-
+    play music "music/Isaiah.ogg" fadeout 3.0
+    
     #Different event for each profession
     # DOCTOR
     if (profession == "doctor"):
@@ -244,6 +246,7 @@ label work_1:
     $ community_level += 2
 
     call set_work_bg
+    play music "music/NoSilencePlease.ogg" fadeout 3.0
 
     # DOCTOR
     if (profession == "doctor"):
@@ -335,7 +338,7 @@ label work_1:
         show pavel at midleft with moveinleft
         boss "[her_name], have you finished the barrels for the storehouse yet?"
         her serious "No, I thought you said you wouldn't need those for another week."
-        boss "Well, the Engel's carrots grew faster than they anticipated, and they need a place to put them."
+        boss "Well, the Nguyen's carrots grew faster than they anticipated, and they need a place to put them."
         her "Well, I can start on them now, but the Peron's really wanted this roof for their chicken coop - they've already lost two chickens to some nighttime predator."
         boss "I think the chicken coop takes priority here. But you're starting to have a lot of work to do, aren't you?"
         menu:
@@ -576,7 +579,8 @@ label work_3:
             brennan "I'm glad there's something useful I can do."
             her surprised "You weren't doing anything useful before?"
         "Tell me about yourself.":
-            her surprised "Thanks. So, what brings you to the colony, anyway?"
+            her normal "Thank you."
+            her surprised "Hey, I've been wondering, what brings you to the colony, anyway?"
         "Gotta go, bye.":
             her concerned "Thanks. Um, I gotta go."
             brennan "I'll see you tomorrow, [her_name]..."
@@ -624,7 +628,7 @@ label work_4:
     $ times_worked += 1
     $ relaxed -= 5
     $ community_level += 2
-    play music "music/NoOneWillKnow.ogg" fadeout 3.0
+    play music "music/NoSilencePlease.ogg" fadeout 3.0
     call set_work_bg
 
     # Doctor - problems with new local bacteria (no viruses, though)
@@ -837,6 +841,7 @@ label work_5:
     her concerned "Please calm down. I'm sure your wife knows what to do."
     martin "Natalia always forgets to turn the radio on! She might not even know there is a flare! And Mateo and Josephina are at home with her."
     "I tried contacting his family on the radio, but the radiation from the flare was interfering with our transmissions. I couldn't connect my computer pad to the wireless network, either."
+    play music "music/NoOneWillKnow.ogg" fadeout 3.0
     "Mr. Peron was getting more and more distraught. I was worried he was going to try and leave, and I wasn't sure I could stop him."
     show brennan at midright
     show her serious at right
@@ -1123,22 +1128,21 @@ label work_7:
     $ has_batteries = False
     $ questioned_brennan = False
     $ searched_room = False
-    # TODO: finish adding emotions
     show her normal at midright with dissolve
     show brennan at midleft with moveinleft
 
     "One day while we were cleaning up after work, Brennan came up to me."
     brennan "[her_name], can I ask a favor of you?"
-    her "You can ask..."
+    her flirting "You can ask..."
     brennan "I need batteries."
-    her "Can't you just get them from the storehouse?"
-    brennan "Normally I would, but... I've used my quota already. It's been so cloudly lately, you know, the solar panels just haven't been keeping up."
-    her "What do you need them for?"
+    her surprised "Can't you just get them from the storehouse?"
+    brennan "Normally I would, but... I've used my quota already. It's been so cloudy lately, you know, the solar panels just haven't been keeping up."
+    her concerned "What do you need them for?"
     brennan "Just some electronics in my room."
     menu:
         "What should I say?"
         "Sure.":
-            her "Sure, Brennan, I'll get some for you."
+            her normal "Sure, Brennan, I'll get some for you."
             brennan "Thanks so much. And, ah, I'd appreciate it if you didn't mention to Ilian that they're for me."
             menu investigate_brennan:
                 "What should I do?"
@@ -1148,14 +1152,14 @@ label work_7:
                     show brennan at midleft
                     with dissolve
                     $ questioned_brennan = True
-                    her "So, what kind of electronics do you have that are using so much power?"
+                    her surprised "So, what kind of electronics do you have that are using so much power?"
                     brennan "You know, razor, computer pad, blow dryer, that sort of thing."
                     if ((skill_technical >= 60) or (profession == "mechanic")):
-                        her "Blow dryers don't even work here, they draw too much current."
+                        her annoyed "Blow dryers don't even work here, they draw too much current."
                     elif ((skill_spiritual >= 60) or (skill_social >= 60)):
-                        her "You aren't being completely honest with me."
+                        her sad "You aren't being completely honest with me."
                     else:
-                        her "Really? That's strange..."
+                        her surprised "Really? That's strange..."
 
                     if (brennan_relationship >= 2):
                         brennan "Oh, [her_name], I should have known I couldn't hide anything from you."
@@ -1178,15 +1182,15 @@ label work_7:
                     menu:
                         "What should I do?"
                         "Question Ilian":
-                            her "Hey, Ilian, do you know what Brennan needs all these batteries for?"
+                            her surprised "Hey, Ilian, do you know what Brennan needs all these batteries for?"
                             ilian "Wait, these are for Brennan?!"
-                            her "Yeah, he asked me to get them for him."
+                            her serious "Yeah, he asked me to get them for him."
                             ilian "He's already five sets over his quota! He needs to learn to do without!"
-                            her "Do you know what they are for?"
+                            her surprised "Do you know what they are for?"
                             ilian "What does everyone use batteries for? Lights, computers, things around the house. They're not supposed to wear out so fast when they're charged properly."
-                            her "Hmmm, okay, thanks."
+                            her serious "Hmmm, okay, thanks."
                             ilian "What about the batteries?!"
-                            her "I might need them."
+                            her normal "I might need them."
                             ilian "Gahhh..."
                         "Leave":
                             "I left with the batteries."
@@ -1206,9 +1210,9 @@ label work_7:
                     "His room had the same few pieces of shuttle furniture we had, with a sleeping bag on the floor and a seat and table in the corner. The walls were bare; there were no photos or posters or decorations at all."
                     "The table had a mess kit and a cable for charging a computer pad. There was another cable, too, though, and when I followed it, it went underneath the table where there was a strange device."
                     "It looked a little bit like a computer, with a metal case and some LEDs lighting up every now and then. But there was no writing or labels on the case at all. It made a low humming noise."
-                    her "What is it?"
+                    her surprised "What is that?"
                     "Suddenly, I heard footsteps and I jumped. Brennan was in the doorway, watching me. He seemed amused."
-                    her surprised "I was just, ah, well..."
+                    her concerned "I was just, ah, well..."
                     "He entered the room, closing the door behind him."
                     show brennan at center with moveinleft
                     jump brennan_confess
@@ -1221,66 +1225,67 @@ label work_7:
 
                     "I brought the batteries back to Brennan."
                     brennan "Thank you so much, [her_name]. I'm completely in your debt."
-                    her "You're welcome..."
+                    her normal "You're welcome..."
                     return
 
         "No, sorry.":
-            her "I'm sorry; I can't do that for you, Brennan."
+            her serious "I'm sorry; I can't do that for you, Brennan."
             brennan "Please, [her_name]. I wouldn't ask you unless it was really important."
             menu:
                 "What should I say?"
                 "I'll see what I can do":
                     jump investigate_brennan
                 "No, sorry.":
-                    "Sorry, Brennan, I won't do that."
+                    her "Sorry, Brennan, I won't do that."
                     brennan "Oh...well, I'll just make do without, then, I suppose."
-                    her "Yeah, that's something we've all had to do, isn't it?"
+                    her concerned "Yeah, that's something we've all had to do, isn't it?"
                     return
     return
 
 label brennan_confess:
     $ discovered_qec = True
     brennan "It's a quantum entanglement communicator."
-    her "Okay, but what does it do and why do you have one?"
+    her concerned "Okay, but what does it do and why do you have one?"
     brennan "I use it to send messages with Earth, instantly."
-    her "Instantly?! Faster than light speed - I thought that was impossible!"
+    her surprised "Instantly?! Faster than light speed - I thought that was impossible!"
     brennan "The technology's quite new and expensive - this is a prototype, actually. Part of my job here was to test it."
-    her "And the other part?"
+    her annoyed "And the other part?"
     "He looked away and paused for a second before answering."
-    brennan "I'm to report on any resources this planet has that my employer might find profitable."
+    brennan "I'm to report on any resources this planet has that my...employer might find profitable."
     her "Who is your employer?"
     brennan "Rare Earth Tech. Well, technically I'm an independent contractor for Senator Martinez, who happens to be both on the board of R.E.T. and on the Senate Energy Committee."
-    her "So you're a spy, basically."
+    her serious "So you're a spy, basically."
     brennan "You could look at it that way."
     her annoyed "Since you've kept your employment a secret, I don't see any other way I can look at it."
     her angry "How could you hide this technology? People could have been using this to talk to their families back on Earth!"
     brennan "That's just it - there's not enough bandwidth for that. I can only send small bits of text at a time - like a telegraph. And besides, when I first came here we weren't even sure it would work."
-    her "So why did you need the extra batteries?"
+    her surprised "So why did you need the extra batteries?"
     brennan "If it ever turns off, even for a second, the connection will be broken and I'll completely lose contact."
     if (brennan_relationship >= 1):
-        her "You were never a salesman on Earth, were you?"
-        brennan "Actually, I was. I never lied to you, [her_name] - though I hope you'll understand why there's some topics I haven't brought up."
+        her annoyed "You were never a salesman on Earth, were you?"
+        brennan "Actually, I was. I never lied to you, [her_name]. But I hope you'll understand why I never told you about this."
 
-    her "So, is this the part where you turn into an evil villain and kill me because I know too much?"
+    her flirting "So, is this the part where you turn into an evil villain and kill me because I know too much?"
     brennan "Kill you?! Of course not. This is the part where I beg for mercy and ask you not to tell anyone else about my device here."
     menu:
         "What should I say?"
         "I won't tell":
-            her "I won't tell anyone. You're not hurting anyone, and..."
+            her serious "I won't tell anyone. You're not hurting anyone, and..."
             brennan "And what?"
             if (brennan_relationship >= 2):
-                her "I'm afraid of what they'd do to you."
+                her concerned "I'm afraid of what they'd do to you."
                 brennan "That's much too sweet of you, [her_name]."
             else:
-                her "I'm not sure if everyone else would be as understanding as I am."
+                her concerned "I'm not sure if everyone else would be as understanding as I am."
                 brennan "That's true. Well, I trust you to keep it a secret. Thank you."
-            her "But there is one more thing..."
+            her serious "But there is one more thing..."
             brennan "Oh? What's that?"
             jump wants_from_brennan
         "They have a right to know":
-            her "The colony has a right to know, and a right to be able to use the device. Like you said, we'll need some kind of priority system and limits on messages, etc, but it's not fair for only one person to be able to communicate with Earth like that."
+            her annoyed "The colony has a right to know, and a right to be able to use the device."
+            her serious "Like you said, we'll need some kind of priority system and limits on messages, etc, but it's not fair for only one person to be able to communicate with Earth like that."
             brennan "Do you think they'll forgive me?"
-            her "We'll see."
+            her concerned "We'll see."
             "Brennan and I worked out a proposed system where he would send one message a month under a certain length for each family. Then we told the colony about the device."
             "At first they were upset with Brennan, and even with me, but they were so excited at the ability to send telegrams to Earth that they were able to let it go."
             "Though they never trusted him the same way, after that."
@@ -1290,23 +1295,25 @@ label brennan_confess:
             menu wants_from_brennan:
                 "What should I say?"
                 "Get me off this planet":
-                    her "Promise to get me off this planet with the next colony ship. I know I promised to stay forever, but you have connections, you could help me."
+                    her sad "Promise to get me off this planet with the next colony ship. I know I promised to stay forever, but you have connections, you could help me."
                     brennan "Of course I'll help you. Just leave it to me."
                     $ wants_to_leave = True
                 "Send a message for me":
-                    her "Promise to send some messages to Earth for me."
+                    her concerned "Promise to send some messages to Earth for me."
                     brennan "Of course, I'll do what I can."
                     brennan "Thank you, [her_name]. I trust you to keep it a secret."
                 "Kiss me" if ((brennan_relationship >= 2) and (loved <= 5)):
-                    her "Kiss me. Now."
+                    her serious "Kiss me. Now."
                     "What was I saying? What was I doing? I thought he was going to laugh, and I could pretend it was a joke, but then he stepped closer."
                     show her concerned at midright with move
                     show brennan at center with move
                     "My heart raced and my mind shut down as there were no more words, just flesh melting into flesh with all the passion we had been holding back."
+                    scene black with fade
                     "I didn't think, didn't analyze, didn't worry about [his_name]; I just existed, in that eternal moment of pleasure and mutual acceptance."
+                    "Afterwards, we didn't say anything. I just went home, and for a while w pretended nothing had happened..."
                     $ cheated_on_him = True
                 "You owe me one":
-                    her "Never mind, just... keep in mind that you owe me one."
+                    her flirting "Never mind, just... keep in mind that you owe me one."
                     brennan "I owe you much more than that. Thank you, [her_name]."
     return
 
@@ -1317,10 +1324,10 @@ label work_8:
 
     call set_work_bg
     show her normal at midright with dissolve
+    play music "music/You.ogg" fadeout 3.0
 
     "Most days I was able to help everyone with what they needed."
     "But not every day was a success."
-    #TODO: have some work event in here first
     if (profession == "doctor"):
         # Someone has chronic pain (fibromyalgia?), don't know why
         show julia at midleft with moveinleft

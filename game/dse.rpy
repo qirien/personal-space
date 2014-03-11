@@ -80,7 +80,12 @@ label day:
     "It's year %(year)d, month %(local_month)d. We've been here %(month)d months. It's [season]. The weather is [weather]."
     # TODO: comment out this debugging code
     # TODO: Play a season-specific sound (like rain or wind)?
-    "Loved = [loved], Relaxed = [relaxed], community_level = [community_level], made_love = [made_love]"
+    if (loved >= 0):
+        "You feel pretty loved."
+    else:
+        "You and [his_name] aren't getting along very well."
+        
+    #"Loved = [loved], Relaxed = [relaxed], community_level = [community_level], made_love = [made_love]"
     if (month == 25):
         "The shuttle should be coming some time this month!"
 

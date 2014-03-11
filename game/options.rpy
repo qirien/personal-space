@@ -40,51 +40,44 @@ init -1 python hide:
     ## The theme function takes a number of parameters that can
     ## customize the color scheme.
 
-    theme.glow(
-        # Color scheme: Earth Tones
-                                    
+    theme.a_white_tulip(
+        ## Theme: A White Tulip
+        ## Scheme Winter Mint
+
         ## The color of an idle widget face.
-        widget = "#ad8c31",
+        widget = "#7AA27B",
 
         ## The color of a focused widget face.
-        widget_hover = "#568153",
-
-        ## The color of the text in a widget.
-        widget_text = "#ffffff",
+        widget_hover = "#A3C7A3",
 
         ## The color of the text in a selected widget. (For
         ## example, the current value of a preference.)
-        widget_selected = "#000000",
+        widget_selected = "#ffffff",
 
-        ## The color of a disabled widget face. 
-        disabled = "#12612f",
-
-        ## The color of disabled widget text.
-        disabled_text = "#2c6e44",
-
-        ## The color of informational labels.
-        label = "#ffffff",
+        ## The color of a disabled widget face.
+        disabled = "#426143",
 
         ## The color of a frame containing widgets.
-        frame = "#00551f",
+        frame = "#245536",
 
         ## The background of the main menu. This can be a color
         ## beginning with '#', or an image filename. The latter
         ## should take up the full height and width of the screen.
-        mm_root = "#568153",
+        mm_root = "bg/title-screen.png",
 
         ## The background of the game menu. This can be a color
         ## beginning with '#', or an image filename. The latter
         ## should take up the full height and width of the screen.
-        gm_root = "#6b4a27",
+        gm_root = "#e5f1e5",
 
-        ## If this is True, the in-game window is rounded. If False,
-        ## the in-game window is square.
-        rounded_window = False,
+        ## The fonts used by this theme. The default fonts may not be
+        ## suitable for non-English languages.
+        regular_font = "_theme_awt/Quicksand-Regular.ttf",
+        bold_font = "_theme_awt/Quicksand-Bold.ttf",
 
         ## And we're done with the theme. The theme will customize
         ## various styles, so if we want to change them, we should
-        ## do so below.            
+        ## do so below.
         )
 
 
@@ -148,6 +141,7 @@ init -1 python hide:
 
     # style.default.font = "DejaVuSans.ttf"
     style.default.color="#FFFFFF"
+    style.default.font = "_theme_awt/Quicksand-Regular.ttf"
 
     ## The default size of text.
 
@@ -275,7 +269,7 @@ init python:
     ## The name that's used for directories and archive files. For example, if
     ## this is 'mygame-1.0', the windows distribution will be in the
     ## directory 'mygame-1.0-win', in the 'mygame-1.0-win.zip' file.
-    build.directory_name = "OurPersonalSpace-1.0"
+    build.directory_name = "OurPersonalSpace-1.1"
     
     ## The name that's uses for executables - the program that users will run
     ## to start the game. For example, if this is 'mygame', then on Windows,

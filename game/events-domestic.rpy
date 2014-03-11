@@ -226,7 +226,7 @@ label domestic_6:
             "I made some jack-o-lanterns and put candles in them. They grinned saucily at us at night, until they started rotting and I had to throw them away."
 
     hide her
-    play music "Prelude22.ogg" fadeout3.0
+    play music "music/Prelude22.ogg" fadeout 3.0
     "Even though it wasn't anywhere near Halloween going by the Earth calendar, the colonists all thought that if we had pumpkins, we should have a harvest festival!"
     "They announced that there would be a costume party at the community center, and everyone could bring sweets to give out to the kids."
     menu:

@@ -10,10 +10,9 @@ Argument - Prelude #2
 Celebrate - Prelude #22
 Peace/Relax Alone - Will
 Community Theme - Sojourn
-Bliss/Relax Together - Reflections
+Romance/Relax Together - Reflections
 Monthly Event Default - RainSea
 Skill Event Default - OceansApart
-Romance - 
 Work/Brennan's Theme - Isaiah
 Computer Pad - Dandelion
 Ending Theme - Rain

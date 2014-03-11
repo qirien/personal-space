@@ -111,19 +111,8 @@ label relax_alone_2:
     $ loved -= 2
     return
 
-# Solo trip to bath house
-label relax_alone_3:
-    scene bg bathhouse with fade
-    "I went to the bath house by myself. I brought extra wood so I could have a long, hot bath, and I carried up extra water from the river to make it a deep one. All my effort just made me appreciate it all the more."
-    show her serious at squatting with dissolve
-    show overlay bathhouse
-    her normal "Ahhh...."
-    $ relaxed += 5
-    $ loved -= 2
-    return
-
 # Emails from Home
-label relax_alone_4:
+label relax_alone_3:
     scene bg farm_interior with fade
     play sound "sfx/message.mp3"
     # TODO: Actually read e-mail from mom?
@@ -137,7 +126,7 @@ label relax_alone_4:
     return
 
 # Watch a movie alone
-label relax_alone_5:
+label relax_alone_4:
     scene bg bedroom with fade
     "There are some movies that I love that [his_name] just doesn't like. That's fine; we don't have to do things together all the time. So one night, I watched..."
     menu:
@@ -156,7 +145,7 @@ label relax_alone_5:
     return
 
 # He does things by himself sometimes, too.
-label relax_alone_6:
+label relax_alone_5:
     scene bg farm_interior with fade
     show him normal at midleft
     show her normal at midright
@@ -177,10 +166,21 @@ label relax_alone_6:
     return
 
 # Family photos
-label relax_alone_7:
+label relax_alone_6:
     scene bg farm_interior with fade
     "I looked through some old photos of my family. The places, the people - they all felt so unreal. I'd probably never see them again."
     "It was kind of sad, but at the same time it made me appreciate even more the good times we had had together."
+    $ relaxed += 5
+    $ loved -= 2
+    return
+
+# Solo trip to bath house
+label relax_alone_7:
+    scene bg bathhouse with fade
+    "I went to the bath house by myself. I brought extra wood so I could have a long, hot bath, and I carried up extra water from the river to make it a deep one. All my effort just made me appreciate it all the more."
+    show her serious at squatting with dissolve
+    show overlay bathhouse
+    her normal "Ahhh...."
     $ relaxed += 5
     $ loved -= 2
     return
@@ -288,12 +288,12 @@ label relax_alone_f:
 # Hang out at the library!
 label relax_alone_g:
     scene bg library with fade
+    "I invited Sara to come to the library with me to hang out."
     show sven at quarterright
     with dissolve
     show sara at midleft
     show her normal at quarterleft
     with moveinleft
-    "I invited Sara to come to the library with me to hang out."
     sara "Why do they even have a library? Isn't everything just on computers?"
     sven "Almost everything. Some things, like blueprints and maps, are easier to look at on huge rolls of paper."
     sara "I guess so..."
