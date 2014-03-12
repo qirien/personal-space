@@ -16,7 +16,7 @@ init python:
 
     dp_period("Job Focus", "job_focus_act")
     dp_choice("Focus on Work", "act_work")
-    dp_choice("Take it Easy", "act_skip_work", enable="month>1")
+    dp_choice("Take it Easy", "act_skip_work", enable="(month>1) and (month<25)")
 
     dp_period("Skill Focus", "skill_focus_act")
     dp_choice("Domestic", "act_domestic")

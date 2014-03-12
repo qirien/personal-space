@@ -254,7 +254,7 @@ init -1 python hide:
 
     ## The default text speed in characters per second. 0 is infinite.
 
-    config.default_text_cps = 10
+    config.default_text_cps = 60
 
     #########################################
     ## More customizations can go here.
@@ -313,6 +313,7 @@ init python:
     build.classify('**/.**', None)
     build.classify('**/#**', None)
     build.classify('**/thumbs.db', None)
+    build.classify('art/**', None)
     
     ## To archive files, classify them as 'archive'.
     
