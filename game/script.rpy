@@ -39,6 +39,7 @@ image bg stream = "bg/stream.jpg"
 image bg hotspring = "bg/hot-spring.jpg"
 image bg tractor = "bg/tractor.jpg"
 image bg church = "bg/church.jpg"
+image bg city_street = "bg/city-street.jpg"
 image bg bathhouse = "bg/bathhouse.jpg"
 image overlay night = "bg/night.png"
 image overlay bathhouse = "bg/bathhouse-overlay.png"
@@ -60,6 +61,9 @@ define helen = Character("Helen Engel", image="helen")
 define julia = Character("Julia Nguyen", color="#cc2200", image="julia")
 define martin = Character("Martin Peron", color="#990011", image="martin")
 # TODO: add accent on Martin (also Peron?)
+
+define note = Character("", kind=nvl)
+define computer = Character("", kind=nvl)
 
 # SPRITES
 
@@ -223,7 +227,18 @@ label start:
 
     "I thought I knew what love was. After all, that's why I married..."
     show him normal at quarterright with moveinright
-    $ his_name = renpy.input("What is his name?", "Jack", length=20)
+    
+    # Get his name
+    if not renpy.variant('touch'):
+        $ her_name = renpy.input("What is his name?", "Jack", length=20)
+    else:
+        "What is his name?"
+        $ text_group = 1
+        $ input_text = ''
+        $ input_header = 'First Name:'
+        call inputter
+        $ his_name = input_text or "Jack"
+    
     "After all, that's why I married [his_name]."
 
     "We had known each other..."
@@ -239,19 +254,56 @@ label start:
             "We had known each other for just six months, but we spent almost all our free time together. Though we started out as just friends, lately there was a romantic tension that hadn't been there before."
             $ known_each_other = "six months"
 
-    # TODO: add some bgs? dialogue?
-    # TODO: Add town bg
+    scene bg city_street with fade
+    
+    show her normal at midright with dissolve
+    show him normal at quarterleft with moveinleft
     "After working hard on his parents' farm all day, he'd take a shower and meet me at the cafe near my work. We'd get something to drink, and I'd tell him about work, or the latest book I was reading, or a video game he might like."
-    "He would tell me about what was going on on the farm - it was cute how serious he got about everything. One time, he was going on and on about Mathilda's hurt leg, and how she kept walking around even though she was in pain."
-    "I asked 'Is Mathilda your aunt?' and he said 'No, she's one of the horses!'. We both laughed about that one."
+    "He would tell me about what was going on on the farm - it was cute how serious he got about everything."
+    him concerned "I can tell Mathilda's in a lot of pain - she's been hobbling around, and she doesn't want to eat anything. But she still walks over and says hello to me whenever she sees me."
+    her surprised "Is Mathilda your aunt?"
+    him laughing "No, she's one of the horses!"
+    show her laughing
     "I loved the way he said my name... as if he knew everything about me and loved every bit of it."
-    $ her_name = renpy.input("What is your name?", "Mary", length=20)
-    # TODO: should this be an actual dialogue?
-    "We talked about how we both wanted an adventure. We had lived in that little town for so long..."
-    "It felt comfortable, but it also so predictable. There was so much of the world, of the universe, out there to see!"
-    "But neither of us had very much money. I was still paying off my school debts, and he said his family was lucky to have enough income from the farm to repair their equipment every year."
-    "Sometimes he'd bring me fresh vegetables from the farm. It was amazing how much better they were than food from the store. I couldn't believe he grew them."
-    "One time we cooked dinner together and stayed up until three in the morning, just talking... we didn't even realize how late it was!  He stayed to watch the sunrise with me, and then headed straight to work. I felt kind of guilty that I had the day off and could sleep in."
+    
+    # Get the main character's ame
+    if not renpy.variant('touch'):
+        $ her_name = renpy.input("What is your name?", "Mary", length=20)
+    else:
+        "What is your name?"
+        $ text_group = 1
+        $ input_text = ''
+        $ input_header = 'First Name:'
+        call inputter
+        $ her_name = input_text or "Mary"
+        
+    show him at midleft with move
+    him normal "[her_name], you're incredible. But..."
+    her concerned "But?"
+    him annoyed "This little town is driving me insane! I've lived here my whole life!"
+    her surprised "You want to move?"
+    him serious "Someday. Think about how much of the world there is out there."
+    him happy "Forget the world, there's so much of the {b}universe{/b} out there!"
+    her normal "Yeah, I'd love to see it..."
+    show him concerned
+    her concerned "Someday."
+    "Neither of us had enough money to seriously consider moving. I was still paying off my school debts, and he said his family was lucky to have enough income from the farm to repair their equipment every year."
+    "But we made sure to see each other, even if we didn't have the money to do anything big and exciting yet."
+    scene bg porch with fade
+    show him normal at midleft with dissolve
+    show her normal at midright with moveinright
+    "Sometimes he'd invite me over for dinner and cook up some fresh vegetables from the farm."
+    her surprised "You grew these?"
+    him happy "Yeah! Well, my family and I did, anyway."
+    him concerned "Do you like them?"
+    her happy "Of course! I didn't even know asparagus could taste this good!"
+    him flirting "Well, part of that's my secret ingredient."
+    her flirting "What is it? Butter? Paprika? MSG?"
+    him normal "Nope. It's lots and lots of love."
+    her laughing "Ha ha ha! That's so cheesy!"
+    him laughing "But it's true!"
+    #TODO: was that too cheesy?
+    "That night we stayed up until three in the morning, just talking... we didn't even realize how late it was!  He stayed to watch the sunrise with me, and then headed straight to work. I felt kind of guilty that I had the day off and could sleep in."
 
     jump choose_career
 
@@ -298,3 +350,79 @@ label test_positions:
     show her at right
     "end test positions"
     return
+    
+    
+########################################################
+#   Android keyboard input stuff, adapted from: http://lemmasoft.renai.us/forums/viewtopic.php?f=8&t=14985
+init python:
+    text_list1=["Q","W","E","R","T","Y","U","I","O","P","0",
+                      "A","S","D","F","G","H","J","K","L","0",
+                      "Z","X","C","V","B","N","M","0"]
+    text_list2=["q","w","e","r","t","y","u","i","o","p","0",
+                      "a","s","d","f","g","h","j","k","l","0",
+                      "z","x","c","v","b","n","m","0"]
+    input_text = ''
+    input_header = 'NAME:'
+    text_limit = 16
+    text_list=text_list1
+    text_group=1
+   
+########################################################
+#   More android keyboard input stuff, adapted from: http://lemmasoft.renai.us/forums/viewtopic.php?f=8&t=14985
+
+label inputter:
+    if text_group==1:
+        $text_list=text_list1
+    elif text_group==2:
+        $text_list=text_list2
+         
+    $ ui.frame(xpos=0.5, ypos=0.1, xanchor=0.5, yanchor=0, xminimum=450)
+    $ ui.vbox()
+    $ ui.text(input_header+" "+input_text)
+    $ ui.null(height=30)
+
+    $ ui.hbox()
+    $ ui.textbutton("Done", clicked=ui.returns("Done"))
+    $ ui.textbutton("Backspace", clicked=ui.returns("Backspace"))
+    $ ui.textbutton("Delete all", clicked=ui.returns("Deleteall"))
+    if text_group==1:
+        $ ui.textbutton("Caps (On)", clicked=ui.returns("lowercase"))
+    elif text_group==2:
+        $ ui.textbutton("Caps (Off)", clicked=ui.returns("uppercase"))
+    $ ui.close()
+
+    $ ui.null(height=10)
+
+    $ ui.hbox(xalign= 0.5)
+    python:
+        for text_code in text_list:
+            if text_code=="0":
+                ui.close()
+                ui.hbox(xalign= 0.5)
+            elif  len(input_text)<=text_limit-1:
+                ui.textbutton(text_code, clicked=ui.returns(text_code))
+    $ ui.close()
+    $ ui.close()
+    $ button_selection=ui.interact()
+               
+    if button_selection=="Backspace":
+        $ input_text=input_text[:-1]
+        jump inputter
+    elif button_selection=="Deleteall":
+        $ input_text=''
+        jump inputter
+    elif button_selection=="uppercase":
+        $text_group=1
+        jump inputter
+    elif button_selection=="lowercase":
+        $text_group=2
+        jump inputter
+    elif button_selection=="Done":
+        return
+    $ select_text=button_selection
+
+    python:
+        for text_code in text_list:
+            if select_text==text_code:
+                input_text += text_code
+    jump inputter    

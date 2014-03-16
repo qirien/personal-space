@@ -4040,7 +4040,18 @@ label monthly_event_24:
         him surprised "What should we call her?"
         her surprised "You don't want to choose?"
         him concerned "Well, I've always liked the name \"Terra\"... but it's up to you."
-        $ baby_name = renpy.input("What is her name?", "Terra", length=20)
+        
+        # Get baby's name
+        if not renpy.variant('touch'):
+            $ baby_name = renpy.input("What is her name?", "Terra", length=20)
+        else:
+            "What is her name?"
+            $ text_group = 1
+            $ input_text = ''
+            $ input_header = 'First Name:'
+            call inputter
+            $ baby_name = input_text or "Terra"
+        
         her normal "I want to call her [baby_name]."
         him happy "Our little [baby_name]..."
         

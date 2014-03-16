@@ -66,20 +66,16 @@ label teacher:
 # No matter what profession you choose, the first date is the same
 
 label first_date:
-    hide him
+    hide him with moveoutright
     "As he was leaving, he slipped me a note."
-    # TODO: should we make a note graphic and display it?
     "It read:"
-    "Hey there, my [her_name]!"
-    "I've been thinking a lot about us lately..."
-    "How I want to be with you all the time."
-    "How I keep thinking about you, even when I'm up to my knees in manure. \n(was that romantic or what?!)"
-    "How I can't imagine how a woman could be more perfect than you."
-    "How it's time we said goodbye to this little town and started something new on our own..."
-    "How I love you heart, body, and soul, every minute of every day..."
-    "Anyway, I want to tell you more, in person!"
-    "So come to my folks' tonight for a barbeque, okay? Right after work."
-    "-your [his_name]"
+    note "{font=fonts/danielbd.ttf}{size=+2}Hey there, my [her_name]!\n\nI've been thinking a lot about us lately..."
+    note "{font=fonts/danielbd.ttf}{size=+2}How I want to be with you all the time."
+    note "{font=fonts/danielbd.ttf}{size=+2}How I keep thinking about you, even when I'm up to my knees in manure. {size=-6}(was that romantic or what?!){/size}"
+    note "{font=fonts/danielbd.ttf}{size=+2}How I can't imagine how a woman could be more perfect than you."
+    note "{font=fonts/danielbd.ttf}{size=+2}How it's time we said goodbye to this little town and started something new on our own..."
+    note "{font=fonts/danielbd.ttf}{size=+2}How I love you heart, body, and soul, every minute of every day..."
+    note "{font=fonts/danielbd.ttf}{size=+2}Anyway, I want to tell you more, in person! So come to my folks' tonight for a barbeque, okay? Right after work.\n\nLove,\n       your [his_name]{/font}"
 
     her surprised "(That's so sweet! But I wonder what's up, he sounds so serious!)"
     scene bg porch with fade
