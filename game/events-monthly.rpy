@@ -40,6 +40,7 @@ label monthly_event_1:
     her "In my house, whoever made the mess cleaned up the mess."
     him "Well, this is {b}our{/b} house, now."
     menu:
+        "What should I say?"
         "We'll do it your way":
             her normal "Okay, we'll do it your way. Whoever cooks, the other person cleans up afterwards."
             him normal "Great, that will work."
@@ -81,8 +82,8 @@ label monthly_event_1:
             him surprised "According to who?"
             her flirting "There's also a study correlating amount of housework done with frequency of sex."
             him annoyed "What exactly are you trying to say?"
-            her normal "Just thought you might find those studies interesting. In a totally abstract way."
-            him normal "It sounds like splitting household chores is really important to you."
+            her flirting "Just thought you might find those studies interesting. In a totally abstract way."
+            him normal "It...sounds like splitting household chores is really important to you."
             her "It is. We both work hard all day in different ways. We don't have to each do half of everything, but I think there will be less chance for arguments if we decide ahead of time what each person will do."
             him "All right, let's make a list, then."
             "We listed all the household chores we could think of, and then marked each one as \"hate\", \"enjoy\" or \"neutral\". It turned out that he really hated doing dishes, so I agreed to do them all the time, and since I was not a morning person, he would make breakfast every morning. We worked out the other chores, too."
@@ -102,30 +103,30 @@ label monthly_event_1:
     him "Whoa!"
 
     menu:
-        "I..."
-        "Yelled":
+        "What should I do?"
+        "Yell":
             her angry "THAT is why you don't leave dirty dishes out overnight!!!"
             him angry "Okay! How was I supposed to know this planet had giant leftover-eating millipedes?"
             her "It's pretty obvious! Every planet has its scavengers!"
             him annoyed "Calm down, [her_name]. I'll take care of it."
             $relaxed -= 5
-        "Cried":
+        "Cry":
             "I started sobbing."
             her sad "This would have never happened if you hadn't left out those dirty dishes!"
             him concerned "Hey, hey, it's okay, here, I'll take care of it."
             $relaxed -= 5
-        "Laughed" if (relaxed >= 5):
+        "Laugh" if (relaxed >= 5):
             her laughing "Ha ha ha ha ha ha...\nWho invited the millipede to breakfast?"
             him happy "Sorry about that. He seemed like such a nice fellow last night..."
             her happy "I'm afraid he's worn out his welcome. Perhaps you could gently escort him off the premises?"
             him normal "It would be my pleasure."
             
-        "{i}Analyzed{/i}" if (skill_knowledge >= 10):
+        "{i}Analyze{/i}" if (skill_knowledge >= 10):
             her surprised "Interesting. It's legs are jointed like an arthropod, but those claws look more crustacean ... of course, arthropods and crustaceans are not that far apart from each other... how did it get inside, anyway?"
             him normal "I think it crawled under the front door. There's quite a gap there."
             her "Huh. Looks like it's an omnivore; it ate the protein and the vegetables..."
             him "Well, whatever it is, we should put it back outside."
-        "{i}Stayed calm{/i}" if (skill_spiritual >= 10):
+        "{i}Stay calm{/i}" if (skill_spiritual >= 10):
             her surprised "Oh...my. That is...gigantic."
             him concerned "No kidding. Hold on, I'll get him out of here."
     "He put on his work gloves and picked up the mess kit by the handle. I opened the door so he could take it outside."
@@ -150,7 +151,7 @@ label monthly_event_2:
     her concerned "We don't have a refrigerator..."
     him "No, I was thinking of digging a cellar, but I just haven't had time...preparing the fields has taken longer than I thought."
     menu:
-        "The cellar...?"
+        "What should I say?"
         "I'll do it!":
             her happy "Don't worry about the cellar; I'll take care of it!"
             him happy "Whoa, whoa, that's a big job - why don't we work on it together?"
@@ -225,7 +226,7 @@ label monthly_event_3:
 
     her "It's his birthday this month!"
     menu:
-        "Maybe I should do something for him..."
+        "What should I do?"
         "{i}Have a party{/i}" if (skill_social >= 20):
             show sara at right
             show ilian at quarterright
@@ -289,6 +290,7 @@ label unappreciated:
     $ loved -= 10
     $ community_level -= 10
     menu:
+        "What should I say?"
         "You're freaking me out":
             her sad "[his_name], you're freaking me out. Are we going to die out here?"
             him annoyed "Maybe. But, live or die, it's up to us. Our hard work, or lack of it, will determine our fate."
@@ -477,6 +479,7 @@ label monthly_event_5:
     her concerned "We can't just throw things away when they break like on Earth. We need to take care of this planet for future colonists and the life forms that are already here."
     him annoyed "Well, what should we do with all this junk?"
     menu:
+        "What should I say?"
         "{i}I could see if any of our neighbors could use the fabric.{/i}" if (skill_social >= 20):
             her normal "One of my friends is making a quilt, and I think she could cut it up and use it for part of the batting."
             him surprised "Someone will have my skin cells in their quilt! I'm grossed out just thinking about it."
@@ -521,6 +524,7 @@ label monthly_event_5:
             her annoyed "Why do I have to decide? You're just as much a part of this household."
             him annoyed "Well if it's up to me, then let's just throw it all out."
             menu:
+                "What should I say?"
                 "Fine.":
                     her angry "Fine. Then it'll be partly your fault if our colony is making too much waste for more colonists to come."
                     him angry "Good riddance! I came here to get away from them."
@@ -839,9 +843,9 @@ label monthly_event_8:
     show him normal at midright
     her happy "Hey, [his_nickname], I got a movie for us to watch tonight."
     him concerned "Oh, sorry, I told Thuc I'd help him build a fence tonight. He helped me build ours to keep the animals out of the crops, so I said I'd help with his."
+    her sad "Oh..."
     menu:
-        "I was disappointed, but..."
-
+        "What should I say?"
         "Can't you do it another night?":
             her annoyed "Can't you help him another night? I was really looking forward to watching this with you."
             him serious "No, sorry, it has to be tonight."
@@ -924,7 +928,7 @@ label monthly_event_8:
             her angry "Then stay home with me!"
             him angry "No, I'm not going to break my promise. Now I have to go, we want to get this done before the moons set."
             menu:
-                "He's leaving..."
+                "He's leaving... what should I say?"
                 "Fine, just leave me here.":
                     her angry "Fine, just leave me here."
                     "He didn't say anything, just shook his head. I watched him leave, feeling hurt and lonely."
@@ -981,6 +985,7 @@ label she_can_do_better:
         him normal "I'd like it if we spent more time together."
 
         menu:
+            "What should I say?"
             "Me too":
                 her normal "I'd like that, too."
                 him normal "Let's go on a walk together."
@@ -1005,10 +1010,12 @@ label she_can_do_better:
     elif (skill_domestic < 10):
         him "I'd like it if you did more things around the house."
         menu:
+            "What should I say?"
             "That's sexist":
                 her annoyed "That's sexist. Women belong in the house, is that it?"
                 him annoyed "Hey, you asked what I'd like. I'd like to come home to a clean, well-organized house."
                 menu:
+                    "What should I say?"
                     "If it's that important to you...":
                         her concerned "If it's that important to you, I could work on that."
                         $ loved += 5
@@ -1020,6 +1027,7 @@ label she_can_do_better:
                        her concerned "That's... hard for me. With work and everything, when I come home I just want to relax."
                        him annoyed "Well, you asked what I'd like."
                        menu:
+                           "What should I say?"
                            "I can try.":
                                her concerned "If it's that important to you, I could work on that."
                                $ loved += 5
@@ -1053,6 +1061,7 @@ label monthly_event_9:
     her surprised "At what?"
     him concerned "You know, in our marriage. Do you feel loved, is this working for you?"
     menu:
+        "What should I say?"
         "Honestly, no" if (loved <= 0):
             her concerned "Honestly, no, it's not."
         "(Lie) It's fine" if (loved <= 0):
@@ -1067,6 +1076,7 @@ label monthly_event_9:
         him concerned "How can we make it better?"
 
     menu:
+        "What should I say?"
         "Give me stuff":
             her normal "I'd like if you gave me gifts - nothing big, obviously, but just something little to show you were thinking about me."
             him "Really? You like that sort of thing?"
@@ -1111,6 +1121,7 @@ label monthly_event_9:
             her normal "You don't need to do anything differently; you're doing just fine."
 
     menu:
+        "What should I say?"
         "Thanks for asking":
             her happy "Thanks for asking; that's really sweet of you."
             $ loved += 2
@@ -1206,7 +1217,7 @@ label monthly_event_10:
     show him serious at midleft with moveinleft
     show her at midright with move
     menu:
-        "He's so late..."
+        "He's so late...what should I say?"
         "Is everything okay?":
             her concerned "You're home late, [his_nickname]. Is everything okay?"
             him concerned "Yeah."
@@ -1265,14 +1276,16 @@ label anniversary_next_day:
     show him normal at midright with dissolve
     show her serious at midleft with moveinleft
     him normal "Hey, [her_nickname]."
+    show her annoyed
+    "(He's just saying hi like nothing happened!)"
     menu:
-        "(He's just saying hi like nothing happened!)"
+        "What should I do?"
         "Ignore him":
             her annoyed "(He ignored me all last night; let's see how he likes it.)"
             her angry "..."
             him surprised "Hey, are you mad?"
             menu:
-                "(Am I mad?!)"
+                "What should I say?"
                 "Yes!":
                     her angry "Yes, I'm mad! We were supposed to have a nice dinner for our anniversary, but you just left without saying anything!"
                     him angry "Lettie was sick! Really sick!"
@@ -1280,18 +1293,19 @@ label anniversary_next_day:
                     him annoyed "I'm sorry; I was too worried."
                     her annoyed "Well, is she okay?"
                     him serious "Yes, she's fine now."
+                    her serious "..."
                     him concerned "Um, here, I got you these."
-                    "He handed me a glass bottle with wildflowers in it."
+                    "He handed me a water bottle with wildflowers in it."
                     her surprised "Oh! Thank you, [his_name]."
                     him normal "Happy Anniversary."
                     show her normal
                     "We kissed perfunctorily. I still felt a little mad, but we'd get over it."
-                "No.":
+                "(Lie) No.":
                     her annoyed "No, why would I be mad? Where I come from it's totally normal to ignore your wife on your anniversary."
                     him normal "Lettie was-"
                     her angry "Lettie?! You were thinking about your HORSE?!"
                     him angry "Tch, forget it! You are obviously more interested in your own righteous anger than in knowing what actually happened. Here."
-                    "He slammed a glass bottle with some wildflowers in it on the table. Water sloshed onto the table and a few of the flowers fell out."
+                    "He slammed a water bottle with some wildflowers in it on the table. Water sloshed onto the table and a few of the flowers fell out."
                     him "Happy Anniversary."
                     "Then he stormed out."
                     $ loved -= 5
@@ -1303,7 +1317,7 @@ label anniversary_next_day:
             him normal "Yeah, me too."
             him concerned "Sorry about last night - I know we were going to celebrate our anniversary and everything, but I just couldn't celebrate when I was so worried about her. But I did get you something."
             her surprised "What?"
-            "He pulled out some wildflowers - he must have picked them earlier today. He had put them in an old glass bottle for a vase."
+            "He pulled out some wildflowers - he must have picked them earlier today. He had put them in an old water bottle for a vase."
             show her normal
             him serious "The little bit of beauty these flowers bring can't compare to the joy you bring to my life. They won't last forever, but my love for you will."
             menu:
@@ -1331,6 +1345,7 @@ label anniversary_next_day:
 
 label follow_him:
     menu:
+        "What should I do?"
         "Go with him.":
             her serious "I'll help you."
             him concerned "Okay."
@@ -1981,8 +1996,9 @@ label monthly_event_14:
         her concerned "Excuse me, please."
         brennan "Are you alright? You don't look so good."
         her sad "I just need... to rest for a bit..."
+        "I sat down and put my head on my desk. Slowly, the dizziness subsided, but I didn't feel like eating."
         menu:
-            "I sat down and put my head on my desk. Slowly, the dizziness subsided, but I didn't feel like eating."
+            "What should I do?"
             "Go home":
                 her serious "Brennan, I'm feeling sick. Can you take care of things here for a bit; I'm going to go home."
                 brennan "Are you sure you're up to walking? Want me to call [his_name]?"
@@ -2363,14 +2379,15 @@ label monthly_event_16:
             her sad "Just a little."
             him surprised "What's wrong?"
             menu:
-                "It's morning sickness" if (is_pregnant):
+                "What should I say?"
+                "It's morning sickness." if (is_pregnant):
                     her concerned "It's morning sickness, I think."
                     him serious "Aw, I hear that can be rough."
                     her sad "It's not that bad, but..."
                     him normal "You want me to cook tonight?"
                     her normal "Yeah, thank you. I'm not even hungry."
                     $ loved += 2
-                "I'm sick" if (not is_pregnant):
+                "I'm sick." if (not is_pregnant):
                     her concerned "I'm sick."
                     him surprised "Really? We haven't had much illness here..."
                     her annoyed "Well, I sure didn't throw up all over myself just for fun."
@@ -2378,7 +2395,7 @@ label monthly_event_16:
                     her concerned "Yeah..."
                     him serious "Well, you should take it easy, then, I'll make myself something."
                     $ loved += 2
-                "It's this place":
+                "It's this place.":
                     her concerned "It's this place... I'm so sick of everything here."
                     him surprised "Like what?"
                     her sad "I hate not having foods that I like, and feeling like there's dangerous things around every corner, and being so far away from everyone."
@@ -2654,7 +2671,7 @@ label monthly_event_18:
     her concerned "You're supposed to take it easy."
     show him serious at left with move
     him "I've healed enough; I could at least take Lettie out and look around..."
-    show him at midleft with move
+    show him at midright with move
 
     menu:
         "What should I say?"
@@ -2667,9 +2684,13 @@ label monthly_event_18:
             him serious "I'm just going to look around. I need some fresh air."
             her concerned "But-"
             him angry "Get out of the way!"
+            # TODO: how to do multiple transitions? hpunch?
+            hide him with moveoutleft #hpunch
+            show her at midright with move
             "He pushed past me and stormed out the house."
             her annoyed "(What's his problem?!)"
             "When he came back later, we were both much calmer."
+            show him serious at midleft with moveinleft
             her concerned "Everything okay, [his_name]?"
             him concerned "Yeah, I was just checking on things..."
             $ loved -= 2
@@ -3073,6 +3094,7 @@ label monthly_event_22:
     boss "I don't know, but you seem very...[her_adjective]. Do you have any ideas?"
     "I thought about it for a minute. How could I catch a thief?"
     menu:
+        "What should I say?"
         "{i}I can ask around{/i}" if ((skill_social >= 90) or (skill_spiritual >= 90)):
             her normal "I can ask around for you."
             boss "Thank you, maybe people will be more willing to talk to you."

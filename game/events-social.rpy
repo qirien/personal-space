@@ -210,6 +210,7 @@ label social_4:
     her laughing "Yeah, really!"
     sara "Sometimes it seems like the physical needs are actually the easiest... it's making social connections that's hard."
     menu:
+        "What should I say?"
         "I should get out more.":
             her normal "Yeah, we should see if we can get a lunch group going! Lots of people are on break now; let's ask around."
             "We found a few other people who seemed interested in gathering at the community center for lunch every Friday."
@@ -288,12 +289,14 @@ label social_5:
             her annoyed "Yeah, there's no way a virus would only affect men. It's not like our immune systems are all that different."
             him surprised "What would you do if I turned into a jerk overnight?"
             menu:
+                "What should I say?"
                 "Take you to the doctor.":
                     her normal "I would take you in to have your head examined."
                     him happy "Because the only way I would be mean to you is if I had brain damage, right?"
                     her annoyed "And if you were mean to me you might get brain damage, if you know what I mean."
                     him flirting "Oh, you're so feisty."
                     menu:
+                        "What should I say?"
                         "You'd better believe it.":
                             her flirting "I know you like it like that."
                             him "Let's take this indoors!"

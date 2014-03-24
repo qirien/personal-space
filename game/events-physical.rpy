@@ -318,13 +318,14 @@ label physical_5:
             show her at midright with move
             show him at midleft with moveinleft
 
-            him "Oh, sweaty [her_nickname], my favorite."
+            him "Ohhh, sweaty [her_nickname], my favorite."
             menu:
                 "What should I say?"
                 "I feel so gross when I'm sweaty.":
                     her annoyed "Not my favorite. I hope I can get to the bath house tonight."
                     him normal "I'll come with you."
                     menu:
+                        "What should I say?"
                         "I'd prefer to go by myself tonight.":
                             her serious "No need, I can take care of cleaning myself by myself."
                         "Looking forward to it.":
@@ -583,7 +584,7 @@ label physical_8:
     "It was the last quarter of the game and our teams were tied. Brennan passed me the ball, and so I was taking it down towards the goal. I had to pass it to someone, but who?"
     "Sara was really good at making goals, but Ilian hadn't had the ball much, and I was trying to help him get extra practice. They were both open."
     menu:
-         "Who should I pass to?"
+         "Whom should I pass to?"
          "Sara":
               her serious "Sara! It's yours!"
               "I passed the ball to Sara, who promptly shot it in."

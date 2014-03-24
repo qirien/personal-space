@@ -193,6 +193,7 @@ label marriage_proposal:
     her surprised "\"Lovebug?\""
     him surprised "Don't you like it? I thought it was cute."
     show her normal with dissolve
+    # TODO: put in android text entry code
 
     menu:
         "What should he call you?"

@@ -14,6 +14,7 @@ label colony_ship:
     him concerned "You and me, becoming parents. Sounds kind of crazy, doesn't it?"
 
     # Do they want to have kids right away?
+    # TODO: Make it easier to choose to have kids
     menu:
         "What should I say?"
 
@@ -31,7 +32,16 @@ label colony_ship:
         "I don't know.":
             $ want_kids = False
             label want_kids_maybe:
-                her concerned "Maybe someday, but I don't think I'm ready for that yet."
+                her concerned "I don't think I'm ready for that yet."
+                him surprised "Really? What are you waiting for?"
+                menu:
+                    "What should I say?"
+                    "When we get to Talam.":
+                        $ want_kids = True
+                        her normal "I at least want to be on a planet, not hurtling through the air. I mean, have they done studies on the effects of near-light speed travel on fetuses?"
+                        him surprised "Probably not. I hadn't thought of that."
+                    "When everything's settled."
+                    "Maybe never."
                 him normal "Someday, definitely. Let's just focus on us, for now."
                 her flirting "Oh yeah? What part of \"us\" are you focusing on?"
                 him flirting "I think...this part right here. Mmmm...this part is good, too."
@@ -96,16 +106,16 @@ label colony_ship:
     her surprised "What? It's not my birthday!"
     him normal "Actually, according to Earth time you've had two birthdays while we've been travelling, and it seemed sad to let them go by without any sort of celebration, so... Well, it's not much, but I wanted to make sure I didn't forget."
     "He programmed his computer pad to display \"Happy Birthday, [her_name]\", and there's some sort of streamers hanging down from the ceiling. And... is that cake on the table?"
-    show her surprised
+    her surprised "You...used toilet paper for streamers?"
     menu:
-        her "You...used toilet paper for streamers? That's very..."
-        "Amazing":
+        "What should I say?"
+        "That's amazing.":
             her happy "That's amazing! It's so inventive, and I can tell you went to a lot of work just for me."
             him happy "I'm glad you like it. Yeah, it's weird, but what matters is that we do something a little different to celebrate you, right?"
-        "Creative":
+        "That's very...creative.":
             her serious "That's...creative. Definitely unexpected; it's very different."
             him annoyed "You're trying to be polite, but I can tell you don't really like it. But, that's okay! What matters is that it's a fun change, right?"
-        "Gross":
+        "That's just gross.":
             her annoyed "That's...gross. Sorry, but toilet paper hanging from the walls does not really create a festive mood."
             him annoyed "Sorry, I thought you'd think it was funny."
             $ loved -= 2

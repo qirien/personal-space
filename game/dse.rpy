@@ -28,7 +28,7 @@ init python:
     dp_choice("Physical", "act_physical")
 
     dp_period("Relaxation Focus", "relaxation_focus_act")
-    dp_choice("Do something with [his_name]", "act_relax_together")
+    dp_choice("Do something with [his_name]", "act_relax_together", enable="not ((month>=24) and wants_to_leave)")
     dp_choice("Do something alone", "act_relax_alone")
 
     dp_period("Monthly Event", "monthly_event_act")

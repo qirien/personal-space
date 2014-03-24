@@ -63,7 +63,7 @@ label relax_together_1:
     her flirting "Ohhh, {b}that{/b} kind of dessert."
     him surprised "Yes...though we could have dessert first, you know. Sometimes it's fun to break the rules."
     menu:
-        "\"Dessert\" first?"
+        "What should I say?"
         "Dinner first.":
             her happy "How about dinner first? You can think of it as an appetizer..."
             him flirting "Hmmm, you're very appetizing."
@@ -108,9 +108,9 @@ label relax_together_2:
     him happy "Yes!"
     show him normal at quarterright
     "He took off his clothes - all of them - and cannonballed in, splashing me."
-    show her annoyed
+    her annoyed "Hey! That's cold!"
     menu:
-        her "Hey! That's cold!"
+        "What should I do?"
         "Join him":
             her flirting "Watch out, here I come!"
             "I undressed slowly. There was enough moonlight that I knew he could see me."
@@ -275,16 +275,16 @@ label relax_together_5:
     show him normal at midleft
     with dissolve
     menu:
-        "It's..."
-        "So cool!":
+        "What should I say?"
+        "It's so cool!":
             her happy "It's...so romantic! Wow, I didn't know you were planning this!"
             him happy "I'm glad you like it! I just really missed taking you out to eat, so I thought this would be as close as we could get."
             $ loved += 2
-        "A lot of trouble.":
+        "Looks like a lot of trouble.":
             her concerned "Wow, you went to a lot of trouble to set this all up. I feel bad..."
             him happy "Don't feel bad; just enjoy it!"
             $ loved -= 2
-        "A waste.":
+        "What a waste.":
             her concerned "This is really pretty, but isn't it kind of a waste?"
             him flirting "My time is never wasted when it's spent on you."
             $ loved -= 2
@@ -679,6 +679,7 @@ label relax_together_i:
     "I was weeding in the backyard when I found some wildflowers. They reminded me of clover, so I made a daisy-chain circlet out of them. It was fun."
     show him normal at midleft with moveinleft
     menu:
+        "What should I do?"
         "Make one for [his_name] too.":
             him normal "It looks like you had some fun this afternoon."
             her happy "I made one for you too!"

@@ -28,6 +28,7 @@ label domestic_1:
     her annoyed "Washing these clothes by hand is taking forever."
     her surprised "I wonder how I could speed it up?"
     menu:
+        "What should I do?"
         "Leave the clothes soaking while you finish doing the dishes.":
             her "Maybe I just need to let the soap do my work for me."
             "Twenty minutes later..."
@@ -217,7 +218,7 @@ label domestic_6:
     show her normal at center with move
     her surprised "(I wonder what I should do with them...?"
     menu:
-        "What shall I do with the pumpkins?"
+        "What should I do?"
         "Make pumpkin pie":
             "I made pumpkin pie. I didn't have much sugar to put in it, but it tasted pretty good, anyway."
         "Make pumpkin goulash":

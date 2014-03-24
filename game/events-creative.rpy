@@ -16,7 +16,7 @@ label creative_0:
 
     "I wanted to do something to make our one room pre-fab house seem unique."
     show her serious at right with dissolve
-    "So I took a knife and carved our names above the door."
+    "So I took a knife and carved our names in calligraphy above the door."
     "I had so much fun that I started carving designs on the wall posts near the ceiling. [his_name] came in and watched me for a while."
     show him normal at center with moveinleft
     him serious "Hmm, this is a nice house, here. Hand-carved moldings, even! I wonder who it belongs to?"
@@ -97,6 +97,7 @@ label creative_4:
     "I wanted to make some crates out of wood, but I wasn't sure how I'd manage without nails."
     "I got some wood from the storehouse, and tried to figure out how to put it together."
     menu:
+        "What should I do?"
         "Notch the planks log-cabin style.":
             "I tried notching the planks to help them stay in place as I stacked them into a box shape. There were some wide gaps between planks, but luckily they weren't wide enough for the vegetables to fall out."
             $ community_level += 2
@@ -207,6 +208,7 @@ label creative_6:
     "That night I told [his_name] about my plan."
     him surprised "You want a sofa? Do we really have room for that?"
     menu:
+        "What should I say?"
         "Yeah.":
             her concerned "Yeah, I kind of miss have a sofa. Don't you?"
             him normal "I do sometimes miss it. Would it have reclining seats?"

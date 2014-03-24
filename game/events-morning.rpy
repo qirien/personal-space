@@ -209,8 +209,9 @@ label work_0:
     her "Not really. I'm a [profession]."
     sara "Really? That's pretty cool."
     "We talked about my job for a while, and then she admitted,"
+    sara "I'm not sure why I'm here...I'm not really good at anything."
     menu:
-        sara "I'm not sure why I'm here...I'm not really good at anything."
+        "What should I say?"
         "That's not true!":
             her concerned "That's not true! I mean, I don't know you very well yet, but I can tell you're a good listener."
             sara "Thanks..."
@@ -342,6 +343,7 @@ label work_1:
         her "Well, I can start on them now, but the Peron's really wanted this roof for their chicken coop - they've already lost two chickens to some nighttime predator."
         boss "I think the chicken coop takes priority here. But you're starting to have a lot of work to do, aren't you?"
         menu:
+            "What should I say?"
             "Way too much":
                 her "I'm a little overwhelmed, honestly."
             "Sometimes":
@@ -1446,6 +1448,7 @@ label work_8:
         her concerned "I don't know..."
         brennan "What?! Why would you want to stay?!"
         menu:
+            "What should I say?"
             "They need me here" if (community_level >= COMMUNITY_LEVEL_OK):
                 her concerned "They need me here. There's no one else that is as good of a [profession] as I am."
                 $ community_level += 5
@@ -1457,7 +1460,7 @@ label work_8:
                 $ loved += 2
             "Actually, I don't want to stay.":
                 $ wants_to_leave = True
-                her annoyed "Actually, I don't want to stay here. This is my last chance to leave it all behind, so better take it."
+                her annoyed "Actually, I don't want to stay here. This is my last chance to leave it all behind, so I'd better take it."
                 brennan "I'm so glad. That long shuttle trip will be much more interesting with you on board with me."
                 if (cheated_on_him):
                     her flirting "Oh, really? What were you thinking we'd do?"
