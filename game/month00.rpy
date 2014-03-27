@@ -40,15 +40,21 @@ label colony_ship:
                         $ want_kids = True
                         her normal "I at least want to be on a planet, not hurtling through the air. I mean, have they done studies on the effects of near-light speed travel on fetuses?"
                         him surprised "Probably not. I hadn't thought of that."
-                    "When everything's settled."
-                    "Maybe never."
-                him normal "Someday, definitely. Let's just focus on us, for now."
-                her flirting "Oh yeah? What part of \"us\" are you focusing on?"
-                him flirting "I think...this part right here. Mmmm...this part is good, too."
-                her "Don't forget this..."
-                him surprised "Ohhh. Wow, I will never forget that."
-                scene bg stars with fade
-                $ made_love += 1
+                    "When everything's settled.":
+                        her serious "Maybe when we've got things figured out on Talaam. Who knows what it will be like there?"
+                        him serious "Yeah... but what if we never get everything figured out?"
+                        her annoyed "Not everything! Just food, clothing, shelter - I want to make sure we can provide for a kid."
+                        him concerned "Yeah, that makes sense."
+                    "Maybe never.":
+                        her serious "Maybe never. I'm not sure if I want kids at all."
+                        him surprised "Really? I always thought you wanted a family."
+                        him normal "Someday, maybe. Let's just focus on us, for now."
+                        her flirting "Oh yeah? What part of \"us\" are you focusing on?"
+                        him flirting "I think...this part right here. Mmmm...this part is good, too."
+                        her "Don't forget this..."
+                        him surprised "Ohhh. Wow, I will never forget that."
+                        scene bg stars with fade
+                        $ made_love += 1
 
         # Definitely no kids
         "That's really crazy.":
@@ -80,7 +86,7 @@ label colony_ship:
                             $ loved += 5
 
                 "That does sound kind of cute...":
-                    her normal "(That does sound kind of cute...)"
+                    her normal "(That does sound kind of cute, but...)"
                     jump want_kids_maybe
 
 # After talking about having kids
@@ -311,5 +317,10 @@ label settling_in:
 label end_settling_in:
     # After we land on the planet, we start the monthly routines
     stop music fadeout 5.0
+    # TODO: how do you do this in Android? Does help file work there?
+    if renpy.variant('touch'):
+        "To access the menu and save your game, right-click or press \"Esc\". For more help, click on the \"Help\" option in that menu."
+    else:
+        "To access the menu and save your game, right-click or press \"Esc\". For more help, click on the \"Help\" option in that menu."
     jump month01
     return

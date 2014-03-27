@@ -193,7 +193,6 @@ label marriage_proposal:
     her surprised "\"Lovebug?\""
     him surprised "Don't you like it? I thought it was cute."
     show her normal with dissolve
-    # TODO: put in android text entry code
 
     menu:
         "What should he call you?"
@@ -207,7 +206,15 @@ label marriage_proposal:
             $ her_nickname = "sugar"
             her "You could call me '[her_nickname]'."
         "Something else":
-            $ her_nickname = renpy.input("He calls me:", "sweetie", length=20)
+            if not renpy.variant('touch'):
+                $ her_nickname = renpy.input("He calls me:", "sweetie", length=20)
+            else:
+                "He calls me..."
+                $ text_group = 1
+                $ input_text = ''
+                $ input_header = 'Nickname:'
+                call inputter
+                $ her_nickname = input_text or "sweetie"
             her "You could call me '[her_nickname]'."
 
     him flirting "Hey, I like that. You're my [her_nickname]."
@@ -221,7 +228,15 @@ label marriage_proposal:
         "Honey":
             $ his_nickname = "honey"
         "Something else":
-            $ his_nickname = renpy.input("I call him:", "honey", length=20)
+            if not renpy.variant('touch'):
+                $ his_nickname = renpy.input("I call him:", "honey", length=20)
+            else:
+                "I call him..."
+                $ text_group = 1
+                $ input_text = ''
+                $ input_header = 'Nickname:'
+                call inputter
+                $ his_nickname = input_text or "honey"
 
     her flirting "And you're my '[his_nickname]'."
     him surprised "You're calling me [his_nickname]?"

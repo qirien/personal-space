@@ -230,7 +230,7 @@ label start:
     
     # Get his name
     if not renpy.variant('touch'):
-        $ her_name = renpy.input("What is his name?", "Jack", length=20)
+        $ his_name = renpy.input("What is his name?", "Jack", length=20)
     else:
         "What is his name?"
         $ text_group = 1

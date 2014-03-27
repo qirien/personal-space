@@ -15,7 +15,7 @@ label monthly_event_1:
     "Like, do we eat breakfast together, or separately? Who should cook and clean up?"
     menu:
         "What should I do about breakfast today?"
-        "Make some for [his_name]":
+        "{i}Make some for [his_name]{/i}" if (relaxed >= 0):
             her normal "Here, [his_name], I made you some breakfast."
             him happy "Oh, thank you. I could just make it myself, you know."
             her happy "I don't mind making breakfast."
@@ -26,9 +26,9 @@ label monthly_event_1:
             her "Still just meal rations, until the crops start coming in."
             him "Yeah, it will be a while still."
             $ loved += 2
-        "Don't make him any":
+        "{i}Don't make him any{/i}" if (relaxed <= 0):
             him surprised "Oh, you made breakfast?"
-            her "Sorry, I just made some for me."
+            her serious "Sorry, I just made some for me."
             him annoyed "Okay, I can get my own."
             $ loved -= 2
     
@@ -41,7 +41,7 @@ label monthly_event_1:
     him "Well, this is {b}our{/b} house, now."
     menu:
         "What should I say?"
-        "We'll do it your way":
+        "{i}We'll do it your way{/i}" if (relaxed >= 0):
             her normal "Okay, we'll do it your way. Whoever cooks, the other person cleans up afterwards."
             him normal "Great, that will work."
             "But it didn't work..."
@@ -115,7 +115,7 @@ label monthly_event_1:
             her sad "This would have never happened if you hadn't left out those dirty dishes!"
             him concerned "Hey, hey, it's okay, here, I'll take care of it."
             $relaxed -= 5
-        "Laugh" if (relaxed >= 5):
+        "{i}Laugh{/i}" if (relaxed >= 5):
             her laughing "Ha ha ha ha ha ha...\nWho invited the millipede to breakfast?"
             him happy "Sorry about that. He seemed like such a nice fellow last night..."
             her happy "I'm afraid he's worn out his welcome. Perhaps you could gently escort him off the premises?"
@@ -291,17 +291,17 @@ label unappreciated:
     $ community_level -= 10
     menu:
         "What should I say?"
-        "You're freaking me out":
+        "You're freaking me out!":
             her sad "[his_name], you're freaking me out. Are we going to die out here?"
             him annoyed "Maybe. But, live or die, it's up to us. Our hard work, or lack of it, will determine our fate."
             her concerned "That's so scary."
             him "At least we are in control. If we die, it's our own damn fault."
-        "We can't focus on that all the time":
+        "We can't focus on that all the time.":
             her concerned "That's true, but we can't be working on food, clothes, and shelter twenty-four hours a day. If you don't take a break and think about other things once in a while, you'll go insane."
             him annoyed "Survival is mostly what I'm thinking about. Every day."
             her annoyed "Well, I can't live that way."
             him "Well, hopefully you won't die that way."
-        "I can't talk about this anymore":
+        "I can't talk about this anymore.":
             her sad "Stop it, I can't talk about this anymore."
             him annoyed "Well, just think about what I said. Are we going to live or die?"
             her angry "I said stop it!"
@@ -321,7 +321,7 @@ label monthly_event_4:
         him surprised "You spend a lot of time around the house; what exactly do you do?"
         menu:
             "What do I do?"
-            "You really don't know?":
+            "{i}You really don't know?{/i}" if (relaxed >= 0):
                 her annoyed "What do I do?! You really haven't noticed?"
                 him annoyed "I don't know; I'm sure you're doing something useful, I'm just not sure what."
                 her annoyed "Well, have you noticed those clean clothes you're wearing?"
@@ -342,25 +342,25 @@ label monthly_event_4:
         him surprised "You spend a lot of time making crafts, don't you?"
         menu:
             "Do I?"
-            "It's important.":
+            "{i}It's important.{/i}" if (relaxed >= 0):
                 her normal "I think it's important to know how to make things with what we have on this new planet."
                 him "Like what kinds of things?"
                 her "I made those placemats that keep our table clean, and I'm learning how to crochet. When our warm clothes from Earth wear out, we'll need to know how to make new ones with the resources we have."
                 him normal "That's true...we can't just go to the store and buy stuff anymore, can we? Sorry, I didn't meant to accuse, I just really was curious what projects you've been working on."
-            "{b}You{/b} spend a lot of time reading":
+            "{b}You{/b} spend a lot of time reading.":
                 her surprised "What about you? You've been reading a lot lately."
                 him normal "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field."
                 him "I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
                 her normal "That sounds useful."
                 her happy "I've been learning how to make things out of native materials, like these placemats."
                 him "Oh, good. It's important for us to be independent from Earth."
-            "You don't appreciate what I do":
+            "You don't appreciate what I do.":
                 jump unappreciated
     elif (highest_skill == "Technical"):
         him surprised "You spend a lot of time tinkering with things, don't you?"
         menu:
             "Do I?"
-            "It's important":
+            "{i}It's important.{/i}" if (relaxed >= 0):
                 her annoyed "When things break, we can't just take them to a repair shop. I try and keep everything in good condition so it won't break."
                 him surprised "Like what?"
                 her normal "Well, I installed the antenna that lets us communicate with the town, and the screw that brings water into the house."
@@ -372,14 +372,14 @@ label monthly_event_4:
                 her concerned "Okay, well, that sounds very... necessary."
                 her normal "I installed the antenna that lets us talk with the village, and the device that brings water into the house."
                 him happy "I love those; thank you."
-            "I can't believe you don't appreciate me":
+            "I can't believe you don't appreciate me.":
                 jump unappreciated
 
     elif (highest_skill == "Spiritual"):
         him surprised "You spend a lot of time just thinking about stuff, don't you?"
         menu:
             "Do I?"
-            "It's important":
+            "{i}It's important.{/i}" if (relaxed >= 0):
                 her normal "So many things have changed, I think it's important to have a reason to work hard and help each other out."
                 him surprised "Like what?"
                 her flirting "Well, from my studies I've learned how important it is to answer someone with love, even if they are being insensitive or unappreciative."
@@ -396,14 +396,14 @@ label monthly_event_4:
                 her sad "I'm not that good at it yet, though."
                 him normal "I could probably use some reminders of that, too. Want to show me what you've been reading?"
                 her happy "Sure, let's read together."
-            "I can't believe you don't appreciate me":
+            "I can't believe you don't appreciate me!":
                 jump unappreciated
 
     elif (highest_skill == "Social"):
         him surprised "You spend a lot of time just hanging out with friends, don't you?"
         menu:
             "Do I?"
-            "It's important":
+            "{i}It's important.{/i}" if (relaxed >= 0):
                 her annoyed "We need our connections with other people if we're going to survive as a community."
                 him surprised "Does that really do any good?"
                 her concerned "Well, remember those delicious dried fruits we got from the Peron's? We were \"just hanging out\" when we prepared them."
@@ -417,19 +417,19 @@ label monthly_event_4:
                 her concerned "Okay, well, that sounds very... necessary."
                 her normal "I'm not just \"hanging out\", you know. I'm building relationships in the community that we're going to need if we're going to survive. We can't make it alone here."
                 him normal "You're right; I wish I didn't need anyone else, but I can't do everything."
-            "I can't believe you don't appreciate me":
+            "I can't believe you don't appreciate me!":
                 jump unappreciated
 
     elif (highest_skill == "Knowledge"):
         him surprised "You spend a lot of time reading, don't you?"
         menu:
             "Do I?"
-            "It's important":
+            "{i}It's important.{/i}" if (relaxed >= 0):
                 her normal "I've been researching native plants that we can use when our reserves from Earth run out."
                 him surprised "Like what?"
                 her normal "Well, we are working together on a list of edible plants, and I helped one of the families research how far their outhouse needed to be from the river."
                 him normal "Oh yeah, that is important. Sorry, I didn't mean to accuse, I just was curious about what you're learning."
-            "So do you":
+            "So do you.":
                 her annoyed "You read a lot, too."
                 him normal "Yeah, I've been reading up on all the plants we're growing, and I've scheduled out what needs to be done each week for preparing, planting, tending, and harvesting each field."
                 him "I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
@@ -437,14 +437,14 @@ label monthly_event_4:
                 her "I've been researching native plants, and helping the other colonists with their research. One family was going to build their outhouse just 15 meters from the river, but after I did some research I convinced them to build it at least 75 meters away."
                 him normal "That's really important. Thank you for doing that, [her_name]."
                 show her normal
-            "I can't believe you don't appreciate me":
+            "I can't believe you don't appreciate me!":
                 jump unappreciated
 
     elif (highest_skill == "Physical"):
         him surprised "You spend a lot of time exercising, don't you?"
         menu:
             "Do I?"
-            "It's important":
+            "{i}It's important.{/i}" if (relaxed >= 0):
                 her normal "I need to keep my body in good condition."
                 him surprised "For what?"
                 her happy "Well, did you know that I can run to town in six minutes? And I am getting pretty good at chopping wood, which we'll need when the cold season starts and our solar panels don't work."
@@ -458,7 +458,7 @@ label monthly_event_4:
                 him surprised "Six minutes?! That's pretty fast. You must have been training a lot. I guess I haven't thought about doing that because I usually ride Lettie around."
                 her flirting "Well, not all of us have horses, so we have to make do with the legs we have."
                 him flirting "And what nice legs they are..."
-            "I can't believe you don't appreciate me":
+            "I can't believe you don't appreciate me!":
                 jump unappreciated
 
     "We ended up staying up late, talking about all the things we had been doing. I felt like I understood him a little better after that, and he seemed to appreciate what I was doing more, too."
@@ -529,26 +529,26 @@ label monthly_event_5:
                     her angry "Fine. Then it'll be partly your fault if our colony is making too much waste for more colonists to come."
                     him angry "Good riddance! I came here to get away from them."
                     "It took me several trips to get our trash to the designated area. Someone there said they were trying to recycle as much as possible, but I felt bad for not even trying."
-                    $ relaxed -= 10
-                    $ loved -= 5
+                    $ relaxed -= 5
+                    $ loved -= 3
                     $ community_level -= 5
                     return
                 "I don't want to throw it all out.":
                     her concerned "I'll think of something on my own if that's how you feel."
                     him annoyed "Okay then."
                     "Over the next few days I tried to recycle the items I had, but nothing worked out. I ended up taking most of it to the designated dump. Someone there said they were trying to recycle as much as possible. At least I tried."
-                    $ relaxed -= 10
+                    $ relaxed -= 5
                     $ loved -= 3
                     $ community_level -= 5
                     return
-        "Let's compromise.":
+        "{i}Let's compromise.{/i}" if (relaxed >= 0):
             her surprised "We could throw away half of this stuff, and then try to think of uses for what we keep over the next few days."
             him annoyed "Okay."
             her surprised "Can you help me sort it?"
             him normal "Sure."
             "We sorted through our trash and decided to throw most of it away. [his_name] made a box for fresh produce out of some of the old packaging."
             "I was glad we could use some of it, but I felt bad that I didn't come up with anything."
-            $relaxed -= 5
+            $relaxed -= 2
             return
             
     "We ended up throwing some of the waste items away, but I felt good about the effort I put it."
@@ -625,6 +625,7 @@ label monthly_event_6:
             him normal "And then some!"
             "We cut off and burned all the ears of corn that had eggs in them. We cut and dried all the corn stalks to turn it into hay."
             "[his_name] started plowing the land for a new crop."
+            
         "{i}Use the bugs as food.{/i}" if (skill_domestic >= 30 or skill_creative >= 30):
             her surprised "This is going to sound a little crazy, but I read that it's possible to make flour out of certain kinds of insects."
             him surprised "Okay... will it actually help keep us alive?"
@@ -644,6 +645,7 @@ label monthly_event_6:
             her concerned "Sounds better than nothing."
             "We piled all the corn plants into a huge bonfire. It burned into the night and made a big plume of smoke."
             "Our neighbors the Perons came by the see the fire, and we ate roasted insects as we watched the egg-infested crops turn to ash."
+            
         "{i}Ask if anyone else is having the same problem.{/i}" if (skill_spiritual >= 30 or skill_social >= 30):
             her normal "Let's ask around and see if anyone else has had problems with these pests."
             him normal "Okay. I'll take Lettie into town; can you ask our neighbors?"
@@ -660,6 +662,7 @@ label monthly_event_6:
             natalia "All that work..."
             him sad "I know."
             her sad "..."
+            
         "Spray them with pesticide":
             him normal "We have some pesticide that we used for corn pests on Earth."
             her surprised "Will it work on these bugs?"
@@ -673,6 +676,7 @@ label monthly_event_6:
             him "If it works, yes. We don't have enough food to pick and choose."
             "It did seem to get rid of a lot of the pests. Whenever we ate it, I washed it really well, but it always tasted a little funny to me."
             $ relaxed -= 5
+            
         "I have no idea.":
             her sad "I don't have any ideas...I'm sorry."
             him concerned "Well, let's try to salvage what we can."
@@ -700,7 +704,7 @@ label monthly_event_7:
     $ fixed_computer = False
     menu broken_computer_pad:
         "What should I do?"
-        "{i}Try and fix it{/i}" if ((skill_technical >= 40) and (not fixed_computer)):
+        "{i}Try and fix it.{/i}" if ((skill_technical >= 40) and (not fixed_computer)):
             "I thought that if it dried out, it would probably work just fine, so I opened the cover and set it on the windowsill in the sun to dry."
             "Sure enough, after a few hours, it turned on just fine."
             $ fixed_computer = True
@@ -708,7 +712,8 @@ label monthly_event_7:
             "On the one hand, it works just fine, so he doesn't need to know about it, right?"
             "On the other hand, I don't want to keep secrets from [his_name], even dumb secrets. I want us to be able to trust each other completely."
             call broken_computer_pad
-        "Put it back and pretend not to know what happened":
+            
+        "Put it back and pretend not to know what happened.":
             "I put it back where I found it. It was just an accident, so he doesn't need to know it was my fault, right?"
             "Even so, I was nervous when he got home."
             show her serious at quarterright
@@ -738,14 +743,18 @@ label monthly_event_7:
                         her concerned "I dropped it in the sink the other day...that's why it's wet. It was an accident; I'm sorry."
                         him annoyed "So, you lied to me."
                         her concerned "Yes, I'm sorry."
-                        him annoyed "Wow, I can't believe you didn't just tell me about i."
-                        her annoyed "What's the big deal? It works now, doesn't it?"
-                        him angry "This isn't about the computer! If you lie about something small like that, who knows what else you might lie about?"
-                        her angry "Hey, I told you about it eventually."
-                        him "Only when you got caught in your lie!"
-                        her "I said I was sorry, okay?!"
-                        him annoyed "...Okay."
-                        $ loved -= 2
+                        him annoyed "Wow, I can't believe you didn't just tell me about it."
+                        if (relaxed >= 0):
+                            her serious "Yeah, I don't know what I was thinking."
+                            him serious "Well, I'm glad you told me about it now, anyway."
+                        else:
+                            her annoyed "What's the big deal? It works now, doesn't it?"
+                            him angry "This isn't about the computer! If you lie about something small like that, who knows what else you might lie about?"
+                            her angry "Hey, I told you about it eventually."
+                            him "Only when you got caught in your lie!"
+                            her "I said I was sorry, okay?!"
+                            him annoyed "...Okay."
+                            $ loved -= 2
                         $ relaxed -= 2
                     "{i}Apologize sincerely.{/i}" if (skill_spiritual >= 40):
                         her concerned "I'm sorry, [his_name]. I dropped it in the sink, and then I didn't tell you about it because I didn't want you to know how clumsy I was. But I should have told you; I'm so sorry."
@@ -762,7 +771,7 @@ label monthly_event_7:
                         
                         $ loved -= 5
                         $ relaxed -= 5
-        "Leave it on the table and tell him when he gets home":
+        "Leave it on the table and tell him when he gets home.":
             "I left it on the table so I would remember to tell him about it when he got home."
             show her at quarterright
             show him normal at quarterleft with moveinleft
@@ -815,21 +824,22 @@ label monthly_event_7:
         "To us!":
             her happy "To us!"
             if (loved >= 0):
-                him happy "May we have many more years together..." #I got here while playing and it looped back to the beginning of the event. Does the if need a return after it?
+                him happy "May we have many more years together..." #TODO: I got here while playing and it looped back to the beginning of the event. Does the if need a return after it?
             else:
                 him normal "To us, then."
-            $ loved += 2
+            $ loved += 5
         "To the colony!":
             her happy "To the colony! We made it one year!"
             him happy "May we all survive many more!"
-            $ community_level += 2
+            $ community_level += 5
         "To humanity!":
             her happy "To humanity! We're still here!"
             him happy "To humanity!"
-            $ relaxed += 2
+            $ relaxed += 5
         "To partying!":
             her laughing "Here's to any excuse to party!"
             him laughing "To partying!"
+            $ made_love += 1
 
     return
 
@@ -917,7 +927,7 @@ label monthly_event_8:
             $ relaxed += 5
             $ loved += 5
   
-        "You're never here when I need you!":
+        "{i}You're never here when I need you!{/i}" if (relaxed <= 0):
             $ loved -= 5
             her sad "You're never here when I need you!"
             him annoyed "What are you talking about? I'm home almost every night."
@@ -952,7 +962,7 @@ label monthly_event_8:
                     "Finally, I just went to bed."
                     scene black with fade
                     "I forgave him the next day, but I still felt insecure."
-                "Sorry":
+                "{i}Sorry...{/i}" if (loved >= 0):
                     her sad "Sorry, [his_name]. I'm being selfish."
                     him concerned "It's all right, [her_nickname]. Let's do something together tomorrow night, okay?"
                     her concerned "Okay, [his_name]."
@@ -1003,7 +1013,7 @@ label she_can_do_better:
                 her surprised "You're serious?!"
                 him annoyed "Well, I don't know! Doesn't it sound kind of fun to read to each other things that we like?"
                 her happy "We could try it!"
-            "We don't have time":
+            "{i}We don't have time.{/i}" if (relaxed <= 0):
                 her concerned "That sounds good, but we don't really have much free time, do we?"
                 him concerned "We have been working pretty hard...but I think it's important to do things together. Even if we're just reading next to each other, that would be nice."
                 her normal "OK, we can do that."
@@ -1011,7 +1021,7 @@ label she_can_do_better:
         him "I'd like it if you did more things around the house."
         menu:
             "What should I say?"
-            "That's sexist":
+            "That's sexist!":
                 her annoyed "That's sexist. Women belong in the house, is that it?"
                 him annoyed "Hey, you asked what I'd like. I'd like to come home to a clean, well-organized house."
                 menu:
@@ -1036,11 +1046,11 @@ label she_can_do_better:
                                him annoyed "..."
                                $ loved -= 5
 
-            "OK, I'll try":
+            "OK, I'll try.":
                 her normal "It would be nice if the house was a little neater... OK, I'll try to do that."
                 him happy "Thank you, [her_nickname]."
                 $ loved += 5
-            "Let's work on it together":
+            "{i}Let's work on it together.{/i}" if (relaxed >= 0):
                 her normal "How about if we take some time one evening and clean up the house together?"
                 him normal "Yeah, I guess we could do that."
                 $ loved += 2 
@@ -1062,13 +1072,13 @@ label monthly_event_9:
     him concerned "You know, in our marriage. Do you feel loved, is this working for you?"
     menu:
         "What should I say?"
-        "Honestly, no" if (loved <= 0):
+        "{i}Honestly, no.{/i}" if (loved <= 0):
             her concerned "Honestly, no, it's not."
-        "(Lie) It's fine" if (loved <= 0):
+        "{i}(Lie) It's fine.{/i}" if (loved <= 0):
             her concerned "Yeah, it's okay, I guess."
-        "It's fine" if (loved >= 0):
+        "{i}It's fine.{/i}" if (loved >= 0):
             her normal "It's fine; I haven't really had time to think about things like that."
-        "It's wonderful" if (loved >= 0):
+        "{i}It's wonderful.{/i}" if (loved >= 0):
             her happy "Of course! It's great!"
     if (loved > 0):
         him normal "Is there anything I can do to be a be a better husband to you?"
@@ -1077,34 +1087,34 @@ label monthly_event_9:
 
     menu:
         "What should I say?"
-        "Give me stuff":
+        "Give me stuff.":
             her normal "I'd like if you gave me gifts - nothing big, obviously, but just something little to show you were thinking about me."
             him "Really? You like that sort of thing?"
             her "Yes, it would mean a lot to me."
             $ she_wants = "stuff"
-        "Tell me how much you love me":
+        "Tell me how much you love me.":
             her normal "I'd love it if you told me how much you love me."
             him surprised "Ummm... a lot?"
             her annoyed "No! Not like that! Like, what is it you like about me, and tell me things I do that you like, stuff like that."
             him surprised "That's what you like? Words?"
             her normal "Yeah. You have to mean it, of course."
             $ she_wants = "saynicestuff"
-        "Do things together":
+        "Do more things together.":
             her normal "I want to do things with you more often."
             him surprised "What kinds of things?"
             her "Anything - go on walks, make dinner together, play games together."
             $ she_wants = "dostuff"
-        "Do things for me":
+        "Do things for me.":
             her normal "I'd like you to do little things for me sometimes."
             him surprised "Like what?"
             her "Like, washing the dishes when it's my turn, or picking something up from the storehouse, or things like that."
             $ she_wants = "service"
-        "Show more affection":
+        "Show more affection.":
             her normal "I'd like to hold hands more, hug more, just be close to each other more."
             him normal "How about rubbing your shoulders? Like this?"
             her happy "Ohhh yeah, that definitely is good."
             $ she_wants = "affection"
-        "I want you to know what I want":
+        "I want you to know what I want.":
             her normal "I don't want to have to tell you what I want; you should figure it out on your own."
             him annoyed "With what, telepathy? I thought that's what communication was for."
             her annoyed "Well, it's not romantic if I have to tell you 'Hey, don't forget to say 'I love you'."
@@ -1116,7 +1126,7 @@ label monthly_event_9:
             hide him
             her angry "(He is not romantic at all!)"
             return
-        "Nothing":
+        "Nothing.":
             $ she_wants = "nothing"
             her normal "You don't need to do anything differently; you're doing just fine."
 
@@ -1218,14 +1228,14 @@ label monthly_event_10:
     show her at midright with move
     menu:
         "He's so late...what should I say?"
-        "Is everything okay?":
+        "{i}Is everything okay?{/i}" if (relaxed >= 0):
             her concerned "You're home late, [his_nickname]. Is everything okay?"
             him concerned "Yeah."
             $ loved += 1
         "Did you forget about tonight?":
             her annoyed "You're home late - did you forget about our anniversary dinner tonight?"
             him concerned "Yeah."
-        "Where have you been?!":
+        "{i}Where have you been?!{/i}" if (relaxed <= 0):
             her angry "Where have you been?! I've been waiting here for an hour!"
             him concerned "Sorry."
             $ loved -= 1
@@ -1280,7 +1290,7 @@ label anniversary_next_day:
     "(He's just saying hi like nothing happened!)"
     menu:
         "What should I do?"
-        "Ignore him":
+        "Ignore him.":
             her annoyed "(He ignored me all last night; let's see how he likes it.)"
             her angry "..."
             him surprised "Hey, are you mad?"
@@ -1309,7 +1319,7 @@ label anniversary_next_day:
                     him "Happy Anniversary."
                     "Then he stormed out."
                     $ loved -= 5
-        "Ask what happened":
+        "Ask what happened.":
             her concerned "What happened? Last night you were really worried about something."
             him serious "Oh, it was Lettie. I think she ate something poisonous while she was grazing - she was really sick."
             him happy "But she's doing better today; I think she'll be fine."
@@ -1455,6 +1465,7 @@ label follow_him:
     $ relaxed += 2
     return
 
+# TODO: finish checking all menus for this month.
 # Helper function for month 11
 label goto_ocean:
     scene bg talam with fade
