@@ -42,6 +42,7 @@ label month01:
     $ month = 0
     scene black with fade
     "Once we arrived, we soon settled into a routine. Every day he would work on the farm while I worked as a [profession]. I had a little free time after work, and then we ate dinner together. In the evenings we tried to relax, mostly."
+    "There were plenty of things I could choose to do in my free time, but I usually chose just one or two to focus on. I didn't have to be good at everything; I wanted to get really good at a few things."
 
     jump day
 

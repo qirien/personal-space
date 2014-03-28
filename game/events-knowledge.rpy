@@ -5,7 +5,7 @@
 label knowledge_def:
     scene bg library with fade
     "I read up on the latest science research."
-    $ skill_knowledge += 5
+    $ skill_knowledge += 10
 
 # Intro Event
 label knowledge_0:
@@ -204,7 +204,7 @@ label knowledge_8:
     "But we did have digital copies of lots of famous paintings and music...."
     "I couldn't be the only one yearning for a night of culture and art."
     scene bg community_center with fade
-    show pavel at midright with dissolve
+    show pavel at midright, behind her with dissolve
     show her normal at midleft with moveinleft
     her surprised "Is it okay if I use the community center for a night next week?"
     boss "What for?"
@@ -249,8 +249,7 @@ label knowledge_8:
     $ skill_knowledge += 10
     return
 
-# Find bacteria that produce plastic, sort of like:
-# http://www.scientificamerican.com/article.cfm?id=turning-bacteria-into-plastic-factories-replacing-fossil-fuels
+# Find bacteria that produce plastic
 label knowledge_9:
     scene black with fade
     "I had been working with Dr. Lily on a lot of things - not just the edible plants, but also cataloguing animal species and their behavior."
@@ -369,7 +368,7 @@ label knowledge_master:
             "I hoped that would encourage people to add to our planet encyclopedia."
         "Get the Mayor's help":
             scene bg community_center with fade
-            show pavel at midright with dissolve
+            show pavel at midright, behind her with dissolve
             show her normal at midleft with moveinleft
             her surprised "Mayor Grayson, is there a way you could encourage people to add to the planet encyclopedia?"
             boss "There's a planet encyclopedia?"

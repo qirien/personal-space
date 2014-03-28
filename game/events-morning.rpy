@@ -23,7 +23,7 @@ label act_skip_work:
                 
     if (slacked_off == 3):
         "My boss called me in to meet with him after work."
-        show pavel at midright
+        show pavel at midright,behind her
         show her normal at midleft
         boss "[her_name], I'm worried about you. You haven't been putting in your usual effort at work lately."
         menu:
@@ -41,11 +41,13 @@ label act_skip_work:
                 boss "Well, just see that you do get it done."
                 $ slacked_off = 1
                 return
+            "I'm pregnant.":
+                her serious "Sorry, I didn't think being pregnant would make me so tired."
+
         boss "I understand, but this can't happen all the time. We need you here."
         her serious "All right, thanks for understanding."
         $ slacked_off = 0
         $ relaxed -= 2  #it's stressful to get caught slacking off
-        $ community_level -= 10
     else:
         "I took a little time off work and didn't push myself this month."
         $ relaxed += 5
@@ -67,22 +69,23 @@ label work_0:
     stop sound fadeout 3.0
     boss "In two years, another colony ship will come with supplies and more colonists. So, until then, we're on our own."
     boss "Let me introduce some of our experts, here."
-    show pavel at quarterleft with move
+    show pavel at quarterleft, behind naomi with move
     show naomi at center with moveinright
-    boss "First of all, there's my wife Naomi, who is our colony's chaplain. She will be holding nondenominational religious services on Sundays for any who are interested, and is also available for individual counseling."
+    boss "First of all, here's my wife Naomi, who is our colony's counselor and chaplain. She will be holding nondenominational religious services once a week for any who are interested, and is also available for individual counseling."
     naomi "I look forward to learning alongside all of you."
     hide naomi with moveoutright
     show lily at midright with moveinright
     boss "Next is the person who has lived here the longest, astronaut and xenobiologist Dr. Lily. Any scientific inquiries should be directed her way."
     lily "Thank you, Mayor."
     hide lily with moveoutright
-    show ilian at midright
+    show ilian at midright with moveinright
     show sara at right with moveinright
     boss "Ilian Andrevski is in charge of the storehouse here on the colony. That's where we keep all our extra supplies and food. His wife, Sara will be helping all of us stay organized."
     ilian "I want to distribute things frugally and fairly. And, if you have extra goods you cannot use, please give them to the storehouse so others can use them."
     sara "Right!"
-    hide ilian with moveoutright
-    hide sara with moveoutright
+    hide ilian
+    hide sara
+    with moveoutright
     show sven at midright with moveinright
     show helen at right with moveinright
     boss "Sven is in charge of the library, so if you need to research something or print something out, head over there. He and his wife Helen are also experts on raising cattle, and will be starting a ranch up to the north."
@@ -91,9 +94,6 @@ label work_0:
     hide helen
     with moveoutright
     boss "Next I want to introduce our farmers."
-    show him normal at midright with moveinright
-    boss "[his_name] knows a lot about growing vegetables and caring for horses and other animals, so be sure to ask him if you have questions in that area."
-    hide him with moveoutright
     show julia at midright
     show thuc at right 
     with moveinright
@@ -111,22 +111,29 @@ label work_0:
     natalia "Don't get him started!"
     hide natalia
     hide martin
-    "The mayor introduced the rest of the people on the colony, and then..."
-    show her normal at midright with moveinright
+    with moveoutright
+    show him normal at midright with moveinright
+    show her normal at quarterright with moveinright
+    boss "[his_name] knows a lot about growing vegetables and caring for horses and other animals, so be sure to ask him if you have questions in that area."
+    show him at quarterright with move
+    show her at midright with move
+    
     if (profession == "doctor"):
-        boss "Last, I want to introduce you to our doctor, [her_name]. Don't wait until you're sick to stop by the clinic; go over and say hi sometime this week."
+        boss "His wife, [her_name] is our doctor. Don't wait until you're sick to stop by the clinic; go over and say hi sometime this week."
         her "Thanks, Mayor. I'll try and keep you all healthy!"
     elif (profession == "crafter"):
-        boss "Last, I want to introduce you to our crafter, [her_name]. If you need something built, she's the one to ask."
+        boss "His wife, [her_name] is our crafter. If you need something built, she's the one to ask."
         her "I work mainly with wood and fabric, and can print things with plastic, too."
     elif (profession == "mechanic"):
-        boss "Last, I want to introduce you to our mechanic, [her_name]. When things break, she'll help get them working again!"
+        boss "His wife, [her_name] is our mechanic. When things break, she'll help get them working again!"
         her "But it's much easier if they don't break in the first place, so please treat your machines nicely!"
     elif (profession == "teacher"):
-        boss "Last - and you kids ought to pay attention right now - I want to introduce the colony's teacher, [her_name]."
+        boss "Now, you kids ought to pay attention - I want to introduce the colony's teacher, [her_name]."
         her "Classes start next week, and I'm looking forward to meeting all you kids!"
 
     hide her
+    hide him
+    with moveoutright
     boss "Are there any questions?"
     menu boss_meeting:
         "Do I have any questions?"
@@ -147,7 +154,7 @@ label work_0:
             boss "We do have a few hunting weapons that you can check out from the storehouse if you would like to try your hand at hunting, though I'd check with Dr. Lily first and make sure that the animal is edible!"
             jump boss_meeting
         "When is the colony ship coming?":
-            her surprised "You said another ship is comning? Is that in two Earth years or Talam years?"
+            her surprised "You said another ship is coming? Is that in two Earth years or Talam years?"
             boss "Good question; that's two Earth years, which makes about..."
             show lily at midright with moveinright
             lily "About 26 Talam months. Since there are seven months a year here, that makes a little over three Talam years."
@@ -175,7 +182,7 @@ label work_0:
     elif (profession == "crafter"):
         boss "All right! This is the shop where people will come in if they need something made they can't make themselves."
         boss "We don't have a lot of materials yet, but you can requisition some from the storehouse for important projects, and there are some materials, like wood, right here on the planet."
-        her happy "I can see that this job is going to take a lot of creativity!"
+        her happy "I can see that this job is going to take a lot of ingenuity!"
         boss "Yes, it will! Perhaps you can start by helping me out - one of the roof pieces from the Nguyen's house broke when we were unpacking it, so they are going to need a replacement."
         her normal "Sure, I'll take a look at the standard roofs and see if I can make something out of the wood around here."
 
@@ -183,7 +190,7 @@ label work_0:
     elif (profession == "mechanic"):
         boss "All right! This is the shop where people will bring machines that need to be fixed."
         boss "You'll be responsible for any kind of machine people have, from datapads to tractors. We don't have many replacement parts, so do what you can to fix things up when they break."
-        her concerned "I can see that this will take a lot of creativity."
+        her concerned "I can see that this will take a lot of ingenuity."
         boss "Yes, it will! Perhaps you can start by helping me with my datapad? It always freezes up when I try to access my calendar..."
         her normal "Sure, let me take a look at it..."
 
@@ -196,7 +203,7 @@ label work_0:
         her serious "Even though it seems far away, it's still our home, isn't it?"
 
     "I worked hard getting things set up, and even though the job seemed pretty big, I thought I would probably do okay."
-    $ relaxed -= 5
+    $ relaxed -= 3
 
     # Meet friend Sara
     scene bg community_center with fade
@@ -323,7 +330,7 @@ label work_1:
         "Word got around about my two close calls in one day."
         scene bg clinic with fade
         show her normal at midright with dissolve
-        show pavel at quarterleft with moveinleft
+        show pavel at quarterleft, behind her with moveinleft
         boss "Doctor, I'm so sorry about what happened today."
         her serious "It's not your fault, Mayor Grayson."
         boss "Well, it partly is my fault. It's obvious you need an assistant. Perhaps not full-time, but someone who can come quickly and help out during busy times."
@@ -336,7 +343,7 @@ label work_1:
         show her normal at midright with dissolve
         "They kept me pretty busy making things for all the colonists. I made a lot of farm tools and fences, and started working on some woodworking tools. We didn't have a lot of metal, so I was trying to make tools out of local materials, but it wasn't going very well."
         "Today, however, I didn't have time for any of that. I was working on a roof for a chicken coop."
-        show pavel at midleft with moveinleft
+        show pavel at midleft, behind her with moveinleft
         boss "[her_name], have you finished the barrels for the storehouse yet?"
         her serious "No, I thought you said you wouldn't need those for another week."
         boss "Well, the Nguyen's carrots grew faster than they anticipated, and they need a place to put them."
@@ -384,8 +391,8 @@ label work_1:
                 $ loved -= 2
         
         hide him
-        show pavel at midleft with moveinleft
-        show her normal
+        show pavel at midleft, behind her with moveinleft
+        show her serious
         boss "Everything all right in here?"
         her concerned "Yes, it's just a busy day."
         boss "Are those all the things that need to be repaired?"
@@ -414,7 +421,7 @@ label work_1:
         stop sound fadeout 3.0
         "I separated the two fighters, and somehow I managed to make it through the rest of that day. Just as the children were all leaving, the mayor came by."
         show her concerned at midright with dissolve
-        show pavel at midleft with moveinleft
+        show pavel at midleft, behind her with moveinleft
         boss "[her_name], are you all right?"
         her serious "Yes...though I may have a black eye tomorrow."
         boss "That's terrible! You shouldn't be all by yourself here, not every day."
@@ -442,7 +449,7 @@ label work_2:
     show brennan at quarterleft with moveinleft
     show pavel at midleft with moveinleft
     boss "[her_name], I'd like you to meet Mr. Callahan. He's sort of a jack-of-all-trades here, helping out wherever we need it. He can help you out some of the time."
-    show pavel at quarterleft with move
+    show pavel at left, behind brennan with move
     show brennan at midleft with move
     brennan "Call me Brennan. And I know we've met already; I'd never forget a pretty face like yours."
     menu:
@@ -600,7 +607,7 @@ label work_3:
     her concerned "No, it's just - well, no offense, but we don't really need any salesmen here, especially ones with no family, and.... I'm sorry, that was rude of me--"
     brennan "And absolutely true. It feels lonely here, sometimes. There's no pubs or parks or any place to meet people - there's no one to meet! I don't even have my own pad or anything; they put me up in the Mayor's house."
     her serious "That sounds awkward."
-    brennan "He's a nice enough fellow, and his wife doesn't seem to mind having me around, but they're not family."
+    brennan "I have my own room, and he and his wife are nice enough, but they're not family."
     menu:
         "What should I say?"
         "Want to come over for dinner?":
@@ -772,7 +779,7 @@ label work_4:
         show brennan at midright with dissolve
         "It was the end of another school day. Even though the kids went home in the afternoon, I usually stayed around for another hour or two working on lesson plans and grading papers. Sometimes Brennan stayed and worked, too."
         "One day after school the Mayor came by to talk with me."
-        show pavel at quarterleft with moveinleft
+        show pavel at quarterleft, behind her with moveinleft
         show her at center with move
         show brennan at quarterright with move
         boss "So, how are things going at the school?"
@@ -808,7 +815,10 @@ label work_5:
     $ times_worked += 1
     call set_work_bg
 
-    "There were some days when we just had to stay inside because of strong solar flares. They had a prediction system that usually let us know a day ahead of time, so we could be prepared."
+    if (skill_technical >= 30):
+        "There were some days when we just had to stay inside because of strong solar flares. The prediction system I improved usually let us know a day or two ahead of time, so we could be prepared."
+    else:
+        "There were some days when we just had to stay inside because of strong solar flares. They had a prediction system that usually let us know an hour or two ahead of time, so we could be prepared."
     "But one day it didn't work..."
 
     show her normal at midright with dissolve
@@ -1494,7 +1504,7 @@ label work_8:
         her surprised "What? Where are you going?"
         brennan "Back to Earth."
         her flirting "How are you going to do that?"
-        brennan "On the shuttle that's coming in two months!"
+        brennan "On the shuttle that's coming soon!"
         her surprised "They're returning to Earth?"
         brennan "Yeah, they're bringing back some samples of rocks and plants for the scientists on Earth to study. So I thought I'd tag along."
         her concerned "You've never liked it here, have you?"

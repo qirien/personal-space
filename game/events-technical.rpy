@@ -5,7 +5,7 @@
 label technical_def:
     scene bg tractor with fade
     "I tuned up some of the farm equipment."
-    $ skill_technical += 5
+    $ skill_technical += 10
 
 # Intro Event
 label technical_0:
@@ -56,7 +56,7 @@ label technical_2:
 
     return
 
-# Improve alarm system for solar flares. see http://www.spaceweather.com/glossary/srs.html for information on solar flare radiation storms. Help with technical details appreciated.
+# Improve alarm system for solar flares.
 label technical_3:
     scene bg farm_interior with fade
     show her normal at midright
@@ -69,7 +69,6 @@ label technical_3:
     her surprised "I wonder if there's a way to get more advanced notice of the flares?"
     him happy "If there is, I bet you'll find it!"
     "Since I couldn't go to work, either, I decided to spend the time working on a better solar flare detector."
-    # TODO: Fact check
     "The current detector could detect flares as they started and give about an hour's notice to everyone."
     "But I thought we could do better. I researched solar flares and detection and prediction methods, and discovered a method for predicting solar flares based on the rate of decay of radioactive materials."
     "I didn't have any of those lying around, so I decided to ask Dr. Lily."
@@ -245,7 +244,7 @@ label technical_7:
     scene bg farm_exterior with fade
     "Our solar panels worked well most of the time, but sometimes it was cloudy for days and our batteries ran out. Then we had to use candles and burn wood for cooking, which made a big mess and felt wasteful."
     "I wondered if we could use the nearby river to augment our electricity sources."
-    "I studied some diagrams on the internet and drew up some plans for a water wheel that would work with our river."
+    "I looked up some diagrams other people had made, and drew up some plans for a water wheel that would work with our river."
 
     scene bg storehouse with fade
     show ilian at midright with dissolve
@@ -486,7 +485,7 @@ label technical_master:
     call set_work_bg
     show her normal at midright with dissolve
     "The next day at work, the mayor came to see me."
-    show pavel at midleft with moveinleft
+    show pavel at midleft, behind her with moveinleft
     boss "I hear you have a great camera system setup at your farm, [her_name]."
     her happy "Yeah, here, take a look! You can see the fields in every direction."
     boss "Would you mind setting up something similar at a few locations around town?"

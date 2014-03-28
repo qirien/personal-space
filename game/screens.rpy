@@ -558,7 +558,7 @@ init -2 python:
     style.quick_button.xpadding = 5
 
     style.quick_button_text.set_parent('default')
-    style.quick_button_text.size = 12
+    style.quick_button_text.size = 14
     style.quick_button_text.idle_color = "#8888"
     style.quick_button_text.hover_color = "#ccc"
     style.quick_button_text.selected_idle_color = "#cc08"

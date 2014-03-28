@@ -5,8 +5,8 @@
 label physical_def:
     scene bg path with fade
     "I went for a run around the farm."
-    $ skill_physical += 5
-
+    $ skill_physical += 10
+    
 # Intro Event
 label physical_0:
     scene bg farm_exterior with fade
@@ -299,7 +299,6 @@ label physical_5:
             "I felt both more energized, and more relaxed."
             $ relaxed += 5 
             $ skill_physical += 5
-            $ skill_spiritual += 5
             return
         "Practice balancing with long standing poses":
             "I tried to balance on one leg with my upper body in various poses."
@@ -665,7 +664,7 @@ label physical_master:
     "One week a huge herd of six-legged grazing animals crossed the river near our colony into some wooded scrubland. We were able to hunt some from a distance, but they kept hiding in the bushes where we couldn't see them or get clear shots."
     "They were good to eat, partly because they tasted good dried and salted into jerky. We could always use more food, so I decided to organize a hunt."
     scene bg community_center with fade
-    show pavel at midright with dissolve
+    show pavel at midright, behind her with dissolve
     boss "Let's hear [her_name]'s idea, everyone. I hope you give her your full support."
     show her normal at midleft with moveinleft
     her serious "It would be much easier to catch these animals with some help. We need some people to scare the animals out of the scrub and into the open, and some people to wait on the other side and hunt them as they come out."

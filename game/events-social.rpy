@@ -4,7 +4,7 @@
 # Default Event
 label social_def:
     "I met up with my friend Sara and we talked together. She is a great listener and understands me so well."
-    $ skill_social += 5
+    $ skill_social += 10
 
 # Intro Event
 # Community message board flame war
@@ -68,7 +68,7 @@ label social_2:
     scene bg community_center with fade
     "Soon after we arrived, the main shuttle bay was converted into a community center. It was the only building large enough for everyone to gather in at once."
     "But other than official colony meetings, it wasn't used very much."
-    show pavel at midright with dissolve
+    show pavel at midright, behind her with dissolve
     show her normal at midleft with moveinleft
 
     her serious "Excuse me, Mayor Grayson?"
@@ -144,7 +144,7 @@ label social_3:
     else:
         "I just put out a bunch of beans, crackers, fruit, and vegetables, and let people choose what they wanted. It tasted a little bland, but the kids seemed to like it."
     "Then the kids all played hide-and-seek around the farm while we talked with the Nguyens."
-    hide kid
+    hide kid with moveoutleft
     stop sound fadeout 20.0
     if (profession == "teacher"):
         her normal "The kids are doing great in school."
@@ -158,10 +158,10 @@ label social_3:
         her concerned "But...what if I don't love the baby right away?"
         julia "You want to love the baby, don't you?"
         her serious "Yes, of course!"
-        julia "Well, that's enough love to start with. Do you have someone to deliver the baby yet?"
-        her surprised "I guess I assumed someone at the clinic would do it?"
-        julia "Let me help you, too. Call me on the radio when it's time, and I'll meet you at the clinic or wherever you are."
-        her happy "Really? That would be great; you seem to be an expert on having kids, but I'm not sure if anyone at the clinic knows much about babies."
+        julia "Well, that's enough love to start with. You know I'm a midwife, right?"
+        her normal "Yes, I was sort of planning on you helping me out?"
+        julia "Of course. Call me on the radio when it's time, and I'll meet you at the clinic or wherever you are."
+        her happy "That would be great; you seem to be a real expert on babies."
         julia "I'd be happy to help."
     elif (want_kids):
         her normal "So...Mrs. Nguyen, you seem like an expert on kids."
@@ -500,7 +500,6 @@ label social_6:
             "Luckily, there were extra materials for building another house on the shuttle, but it took Ilian and Sara a few weeks to build it by themselves."
             "We didn't have time to help out; we were all too busy."
             "I hoped that something like that would never happen to us."
-            $ skill_social += 5
             return
         "You could stay at the clinic." if (profession == "doctor"):
             her "You could stay at the clinic; there's extra beds we're not using."
@@ -798,7 +797,7 @@ label done_party_menu:
         "After we ate, Sara broke us up into small groups for games."
         show brennan at left
         show naomi at quarterleft
-        show pavel at midleft
+        show pavel at midleft, behind naomi
         with moveinleft
         show him normal at right
         show her normal at quarterright
@@ -1043,7 +1042,7 @@ label done_party_menu:
 # Propose and fill seat on Community Council
 label social_master:
     scene bg community_center
-    show pavel at midright with dissolve
+    show pavel at midright, behind her with dissolve
     show her normal at midleft with moveinleft
     her surprised "Mayor Grayson, can I talk to you for a moment?"
     boss "I'd like to, [her_name], but there's too much to do. I have to decide where the new farm should be, and how to allocate the latest harvest, and which supply requests to approve, and-"

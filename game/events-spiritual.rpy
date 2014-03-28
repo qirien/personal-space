@@ -5,7 +5,7 @@
 label spiritual_def:
     scene bg path with fade
     "I took a walk and spent some time just thinking."
-    $ skill_spiritual += 5
+    $ skill_spiritual += 10
 
     return
 

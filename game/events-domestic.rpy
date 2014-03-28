@@ -5,7 +5,7 @@
 label domestic_def:
     scene bg farm_interior with fade
     "I did some deep cleaning and organizing, and put in some extra work for a great dinner."
-    $ skill_domestic += 5
+    $ skill_domestic += 10
     return
 
 # Intro Event
@@ -178,12 +178,10 @@ label domestic_5:
         "I decided to do some research about radishes..."
         her happy "Radish pickles?! That sounds fun!"
         "They had plenty of vinegar and salt at the storehouse, and I used some of the herbs and spices from the garden to make a few batches of pickled radishes."
-        $ skill_knowledge += 5
     elif (skill_social >= 20):
         her normal "I bet I could trade these with the Peron's for some eggs from their chickens..."
         "Sure enough, Natalia was delighted to have some fresh vegetables, and I made a souffle instead."
         $ community_level += 5
-        $ skill_social += 5
     elif have_goat:
         "I sliced them really thin and spread them with goat cheese and some herbs from the garden."
         her happy "They hardly taste like radishes anymore...much better!"
@@ -292,14 +290,12 @@ label domestic_7:
                 her "I'll ask around."
                 "I got on the radio and asked around town -- turns out a lot of people felt like [his_name] and thought some fresh meat would be delicious, even if it was alien meat."
                 "It felt good to share with our neighbors."
-                $ skill_social += 5
                 $ community_level += 5
             elif skill_social >= 20:
                 her normal "I know just who would want some."
                 "The Nguyen family had ten kids and I knew some of their crops hadn't made it. There were plenty of rations in the storehouse, so they weren't starving or anything, but I thought they'd like some real food."
                 "When I took it to them, they didn't care that it came from an alien monster; they just thanked me and gave me some butter from their goats to take home with me."
                 $ community_level += 5
-                $ skill_social += 5
             else:
                 "I wanted to share, but I didn't really know who to ask. I gave some to the Mayor, and some to Sara, but there was still a fair amount left over."
                 $ community_level += 2
@@ -308,9 +304,8 @@ label domestic_7:
             him surprised "Do you know how to do that?"
             her serious "Theoretically...we'll need to smoke and salt it...We can adapt a recipe for fish jerky, I think."
             him normal "OK, I'll skin and cut up this sucker while you're figuring that out."
-            if (skill_technical >= 40):
+            if (skill_technical >= 30):
                 "I rigged up a smoker with some old scrap metal and put some screens above it for the meat"
-                $ skill_technical += 5
             else:
                 "We soaked the meat in brine, and then I setup some racks where the fish could dry in the sun and wind."
                 her concerned "If it rains we'll need to bring everything inside..."
@@ -330,7 +325,6 @@ label domestic_7:
             if skill_social >= 90:
                 "We invited the whole town for a giant potluck celebration. People brought salads and fresh bread and rice and spicy beans and there was even a little fruit for everyone."
                 "Our little colony didn't have many celebrations; even though there wasn't really enough meat for everyone to have much, since we all brought something it worked out. We felt like a real community."
-                $ skill_social += 5
                 $ community_level += 10
             elif skill_social >=30:
                 "We invited a large group of friends and we ate almost all of it. I think they appreciated that we shared it with them. It felt good to help out our friends."
@@ -417,7 +411,7 @@ label domestic_8:
             "I took what we couldn't use right away to the storehouse."
             scene bg storehouse with fade
             show ilian at right
-            show pavel at midright
+            show pavel at midright, behind ilian
             with dissolve
             show her normal at midleft with moveinleft
             her "I was able to make some soap; here's some extra. You might want to warn anyone using it that it's pretty strong."
@@ -438,7 +432,7 @@ label domestic_8:
 label domestic_9:
     scene bg farm_interior with fade
     "[his_name] was harvesting a lot of vegetables and fruits, and while the cellar kept some things cool and dry, other produce didn't last very long."
-    "We had so many tomatoes and zuchinnis there was no way we could possibly eat them all before they went bad. We took a bunch to the storehouse, but they told us that everyone else had all they could eat, too."
+    "We had so many tomatoes and zuchinis there was no way we could possibly eat them all before they went bad. We took a bunch to the storehouse, but they told us that everyone else had all they could eat, too."
     "I didn't want them to go to waste, and I knew we would be wishing we had some more later, so I decided to preserve them. But what should I turn them into?"
     menu:
         "What should I make?"
@@ -446,14 +440,14 @@ label domestic_9:
             if (skill_technical >= 60):
                 "I used the blender I had made to puree a bunch of vegetables in a nice sauce."
             else:
-                "I chopped up the tomatoes and zuchinnis."
+                "I chopped up the tomatoes and zuchinis."
             "Then I cooked the sauce and ladled it into clean glass jars. I let the jars sit in boiling water to kill any bacteria."
             "It took all day, but looking at the rows of jars full of food we had grown and made ourselves was very satisfying."
         "Salsa":
             if (skill_technical >= 60):
                 "I used the blender I had made to puree a bunch of vegetables in a nice salsa."
             else:
-                "I chopped up the tomatoes and zuchinnis and onions and peppers."
+                "I chopped up the tomatoes and zuchinis and onions and peppers."
             "I ladled the salsa into clean glass jars. I let the jars sit in boiling water to kill any bacteria."
             "It took all day, but looking at the rows of jars full of food we had grown and made ourselves was very satisfying."
         "Dehydrate them":

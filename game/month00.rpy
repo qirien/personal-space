@@ -95,9 +95,8 @@ label colony_ship:
     show her normal
     "We talked about lots of other things, of course. We talked about space, about what we would miss from Earth, about what our families were probably doing.  We studied what the pre-colonization team of scientists had reported so far."
     scene bg talam with fade
-    "Even though Talam was technically a \"garden planet\", meaning humans could breathe and there were plants and animals, it wasn't very much like modern Earth.  The plants were all quite different, and most of the animals were similar to amphibians or insects."
+    "Even though Talam was technically a \"garden planet\", meaning humans could breathe and there were plants and animals, it was only superficially like modern Earth.  The plants looked similar, but had completely different biologies, and most of the animals were more like prehistoric amphibians or insects."
     "Time on Talam would be different, too: days lasted longer, but a year was only about two-thirds of a year on Earth."
-    # TODO: Would this be more exciting with some dialogue?
     "The planet was also a lot less protected from its small sun, since it was a lot closer.  The building materials we'd brought along would help protect us from solar flares and radiation, but only if we were inside."
     "They taught us about the early warning system they put in place so people would know when it was not safe to be outdoors."
 
@@ -130,9 +129,9 @@ label colony_ship:
     him flirting "Ha ha, not on Earth, that's for sure! Here."
     her surprised "(It's wrapped in tissues...with hearts drawn on them)"
     her normal "(It looks like a poem...)"
-    "Surrounded by stars, in the darkness of space \nEmptiness presses; the universe waits"
-    "Though silently fades the memory of time, \nThere's one special thing I won't leave behind."
-    "[her_name], my sweetest lover and friend. \nI'll always be with you, till eternity ends."
+    note "{font=fonts/danielbd.ttf}{size=+2}Surrounded by stars, in the darkness of space \nEmptiness presses; the universe waits"
+    note "{font=fonts/danielbd.ttf}{size=+2}Though silently fades the memory of time, \nThere's one special thing I won't leave behind."
+    note "{font=fonts/danielbd.ttf}{size=+2}[her_name], my sweetest lover and friend. \nI'll always be with you, till eternity ends."
 
     menu:
         "The poem is..."
@@ -159,7 +158,7 @@ label colony_ship:
     him normal "Well...it turns out that cake is considered a terrible waste of weight and space by the Food Manager. So there isn't any actual cake. But-"
     her surprised "But?"
     him happy "But I tried to make some out of what I could get. Just taste it, and tell me if it's good!"
-    her concerned "(It look like chocolate, but...)"
+    her concerned "(It looks like chocolate, but...)"
     menu:
         "What should I do?"
         "Try it":
@@ -224,7 +223,7 @@ label settling_in:
     with dissolve
     her serious "Not bad, not bad..."
     him happy "Isn't it awesome?! It's so small, it'll be easy to clean. And it's cozy, for just the two of us."
-    "The house really was pretty small- just one room. One end had a wood-burning/electric hybrid stove/heater as well as a battery that the solar panels could charge, and the other end had a window."
+    "The house really was pretty small- just one room. One end had a biomass/electric hybrid stove/heater as well as a battery that the solar panels could charge, and the other end had a window."
     "There was no plumbing, electricity only when it was sunny or while our battery lasted, and no furniture other than our sleeping bags and a folding table."
     her annoyed "Good thing we didn't waste any space on frivolous things like bathrooms."
     him serious "The outhouse is not that far!"
@@ -322,5 +321,6 @@ label end_settling_in:
         "To access the menu and save your game, right-click or press \"Esc\". For more help, click on the \"Help\" option in that menu."
     else:
         "To access the menu and save your game, right-click or press \"Esc\". For more help, click on the \"Help\" option in that menu."
+        
     jump month01
     return

@@ -5,7 +5,7 @@
 label creative_def:
     scene bg farm_interior with fade
     "I worked on a quilt for our bedroom using scraps of fabric we didn't need. It was pretty tedious cutting out tiny squares of exactly the right size and sewing them together by hand, so I just worked on it a little at a time."
-    $ skill_creative += 5
+    $ skill_creative += 10
 
 # Intro Event
 label creative_0:
@@ -52,7 +52,6 @@ label creative_2:
     him surprised "A scarecrow? I don't think they're instinctively scared of people; we just barely got here."
     her normal "We'll make it shaped like something they are scared of, then! Like those wolfslugs that hunt near the river."
     him normal "Do you think you could do that?"
-    her happy "Let me give it a try. You could also experiment with different strong scents that they might not like, like coffee grounds or vinegar."
     scene bg fields with fade
     "He placed some different scents near some of the plants, while I got to work on our 'scarecrow'."
     "I started with bunches of sticks for the body and legs, held together with twine.  Then I covered them with algae from a pond to give it that slimy look."
@@ -174,7 +173,7 @@ label creative_6:
 #month 5 is what to do with trash, so I'm assuming this will have to come after it (though it may be several months after it)
     scene bg storehouse with fade
     "Ever since the push to recycle or compost all our trash, I had been trying to think of other uses for shuttle parts."
-    "I went down to the storehouse to ask about how the shuttle parts were being distrubuted. I thought maybe I could make a sofa out of them"
+    "I went down to the storehouse to ask about how the shuttle parts were being distrubuted. I thought maybe I could make a sofa out of them."
     show ilian at midright with dissolve
     show her normal at midleft with moveinleft
     ilian "We already gave you your seat for your bed... I don't have that many extras!"
@@ -246,7 +245,7 @@ label creative_7:
     "As I set up shots- some simple landscapes, others focusing on an alien plant or insect with the clouds in the background- I felt awed. Here was this entire planet full of wonders, and only the few of us who lived here got to experience it."
     "I decided to send some of my pictures to magazines on Earth; maybe they would be interested in doing an article on Talam and would want to use them. I just wanted to show everyone on Earth what a beautiful planet we had."
     scene bg community_center with fade
-    show pavel at midright with dissolve
+    show pavel at midright, behind her with dissolve
     show her normal at midleft with moveinleft
     boss "So, you want special permission to exceed your alloted Earth-upload bandwidth to send photographs?"
     her "Yes, they need to be large so that they will look good in print. Is that okay?"
@@ -258,10 +257,10 @@ label creative_7:
 # Make some dishes out of local clay, fire them
 label creative_8:
     scene bg pond with fade
-    "A rainy night made the banks of the river swell. When I was checking to make sure our plants were okay, I noticed that some of the upturned banks had a clay-like texture."
+    "A rainy night made the banks of the river swell. When I was checking to make sure our plants were okay, I noticed that some of the upturned soil had a clay-like texture."
     "I did a little digging on the other side of the river, where I found some clay."
     "It had lots of rocks and leaves in it, so I dried it and broke it into pieces, which were easier to sort from the leaves. Then I let it sit in a bucket of water."
-    #source: http://www.kitcornellpottery.com/teaching/clay.html
+
     scene bg farm_exterior with fade
     "The next day, I put the clay through a piece of fabric to further purify it."
     "I didn't have a potter's wheel, so I tried to make a cup without one."
@@ -286,7 +285,6 @@ label creative_8:
     return
 
 #build a bridge out of braided grass rope
-#source: http://www.pbs.org/wgbh/nova/education/ancient/grass-bridge.html
 label creative_9:
     scene bg pond with fade
     "It was a nice day out and I went for a walk. I wanted to cross the river and continue walking, but I didn't want to get wet."
@@ -332,13 +330,15 @@ label creative_master:
     "I couldn't bear it - I had to share the wild, alien beauty of this planet with everyone I had left behind back home."
     "I wrote down all the things I wanted to show everyone, and then sorted them and connected the ideas."
     "I made a list of footage to shoot, and wrote a script for the narrator."
-    if (skill_spiritual >= 60):
+    
+    #TODO: change to use highest other skill?
+    if (skill_spiritual >= 40):
         "The film had a lot of meaning - I wanted viewers to be able to ponder their own place in the universe and be delighted at the new things we experienced here."
-    if (skill_technical >= 60):
+    if (skill_technical >= 40):
         "I was able to put in great transitions and professional-looking text, and I made sure to use non-lossy compression algorithms to keep the video quality high."
-    if (skill_knowledge >= 60):
+    if (skill_knowledge >= 40):
         "I included details about the planet's geology, biology, and chemistry that I had been studying the whole time we'd been living here."
-    if (skill_social >= 60):
+    if (skill_social >= 40):
         "The film had a great human element - I interviewed some of the families and they told of their struggles and triumphs."
 
     "It wasn't the most professional or polished film ever. But it was the only film about this planet I had come to call home."

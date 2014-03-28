@@ -4,7 +4,7 @@ label monthly_event_25:
     # TODO: tweak these numbers.
     if (((community_level < COMMUNITY_LEVEL_OK) and (loved < 0)) or wants_to_leave):
         jump bad_ending
-    elif ((community_level >= COMMUNITY_LEVEL_GOOD) and (loved > LOVED_GOOD)):
+    elif ((community_level >= COMMUNITY_LEVEL_GOOD) and (loved >= LOVED_GOOD)):
         jump good_ending
     else:
         jump mediocre_ending
@@ -25,7 +25,8 @@ label bad_ending:
         "[his_name] said he would stay, no matter what. But I didn't have to do what he wanted. I needed to do what was best for me."
     "I talked with the Mayor about my situation, and he agreed that the circumstances made it possible for me to divorce [his_name] and cancel my contract as a colonist and return to Earth."
     if (is_pregnant):
-        "I was taking the baby with me; I could tell Jack already loved her a lot, but we decided I should have full custody."
+        "I was taking [baby_name] with me; I could tell Jack already loved her a lot, but we decided I should have full custody."
+        "He would never see her again."
     if (is_pregnant_later):
         "Even though I might end up giving birth on the shuttle on the way back to Earth, somehow I was not as worried about that as I had been about the idea of giving birth at Talaam's little clinic."
     "I didn't have much to bring with me- it reminded me again how little we had. It just wasn't enough."
@@ -61,7 +62,7 @@ label bad_ending:
         brennan "Just pretend it was all a bad dream..."
     her serious "At least I have a chance to start over again... this time on Earth, my favorite planet in the universe."
     
-    ".:. Ending 1/3."
+    ".:. Separation Ending, 1 of 3."
     jump show_credits
     return
 
@@ -154,7 +155,7 @@ label mediocre_ending:
     show her normal
     "We kissed good night, but I lay awake for a little while, thinking a lot and worrying a little. I wanted to believe in our colony, to believe in our marriage, but I knew it took more than believing in something to make it come true."
     "But I had a feeling things would turn out all right."
-    ".:. Ending 2/3."
+    ".:. Happy Ending, 2 of 3."
     jump show_credits
     return
 
@@ -197,27 +198,27 @@ label work_appreciation:
         "As the only doctor on the colony, people came to me with all sorts of problems. Mostly medical ones, but sometimes other questions, too."
         "It felt good to know I was the one who helped Mr. Peron overcome his cancer, and helped little Van not die from choking, and took care of everyone's health. They really needed me."
         show her normal at midright with dissolve
-        show pavel at midleft with moveinleft
+        show pavel at midleft, behind her with moveinleft
         boss "[her_name], I don't know what we'd do without you. You've worked so hard to keep everyone on the colony healthy."
     elif (profession == "crafter"):
         scene bg workshop with fade
         "Every day was a new challenge; something new to build, a new material found, or some new technique to try. And nobody could make things as well as I could."
         "Chairs, shelves, rope, clothes - you name it, I'd made it for someone this past year."
         show her normal at midright with dissolve
-        show pavel at midleft with moveinleft
+        show pavel at midleft, behind her with moveinleft
         boss "[her_name], I don't know what we'd do without you. Everyone has something you've made in their house or on their farm. And you've taught others how to make useful things, too."
     elif (profession == "mechanic"):
         scene bg machine_shop with fade
         "When someone needed a piece of tech fixed, it wasn't just because they wanted it - they really needed it. We all needed everything to be working smoothly for the food to grow and us all to survive."
         "Without our radios, computer pads, tractors, and electricity, we'd be no better off than people were three hundred years ago."
         show her normal at midright with dissolve
-        show pavel at midleft with moveinleft
+        show pavel at midleft, behind her with moveinleft
         boss "[her_name], I don't know what we'd do without you. All our machines would be broken and useless if not for your hard work fixing them up all the time."
     elif (profession == "teacher"):
         scene bg classroom with fade
         "Aside from their parents, the kids on the colony didn't have any other teachers. So when they finally figured out multiplication or why history was important or read their first novel, it was because of me."
         show her normal at midright with dissolve
-        show pavel at midleft with moveinleft
+        show pavel at midleft, behind her with moveinleft
         boss "[her_name], I don't know what we'd do without you. All the kids love your enthusiasm for learning, and you've worked hard to make sure they know about Earth and learn the things they need to succeed here on Talam."
 
     her serious "I've just been trying to help out."
@@ -259,10 +260,10 @@ label work_appreciation:
     "Brennan left, and I got ready to go."
 
     if (is_pregnant):
-        "I stayed a few more minutes to feed the baby before walking home. She wasn't that heavy, yet, but she started to get heavy when I carried her all day long."
+        "I stayed a few more minutes to feed [baby_name] before walking home. She wasn't that heavy, yet, but she started to feel heavy when I carried her all day long."
     return
 
-# ENDING 4 - Community and Marriage Thriving
+# ENDING 3 - Community and Marriage Thriving
 label good_ending:
     "I was finishing up at work, thinking about how much I enjoyed my job."
     call work_appreciation
@@ -275,7 +276,7 @@ label good_ending:
     her surprised "There you are! How come you're so late?"
     him serious "Just had to finish up out here."
     if (is_pregnant):
-        her normal "The baby's taking a nap, so I took the opportunity to make a nice dinner."
+        her normal "[baby_name]'s taking a nap, so I took the opportunity to make a nice dinner."
         him surprised "You sure you shouldn't be sleeping, too?"
         her annoyed "I can't sleep all the time!"
         her concerned "Besides, I feel like all I ever do is feed and change the baby and wash her diapers..."
@@ -292,9 +293,11 @@ label good_ending:
     
     call skill_appreciation
     if (is_pregnant):
-        "After dinner, [his_name] joked and held the baby on his lap and tickled her chin, and then we talked and read books and went to sleep all snuggled up together."
+        "After dinner, [his_name] joked and held [baby_name] on his lap and tickled her chin, and then we talked and read books and went to bed all snuggled up together."
     else:
-        "After dinner, [his_name] joked and we laughed and talked and read books and went to sleep curled up next to each other."
+        "After dinner, [his_name] joked and we laughed and talked and read books and went to bed curled up next to each other."
+    if (is_pregnant_later):
+        "His arm was draped over my growing belly, which he rubbed gently. Sometimes the baby would kick him back."
 
     scene bg bedroom with fade
     show overlay night
@@ -321,29 +324,40 @@ label good_ending:
     show him sleeping
     with dissolve
     "We were home."
-    ".:. Ending 3/3."
+    ".:. Best Ending, 3 of 3."
     jump show_credits
     return
 
 # Credits
 label show_credits:
-
+    "You scored [loved] out of [LOVED_GOOD] relationship points, and [community_level] out of [COMMUNITY_LEVEL_GOOD] comunity points."
+    
+    # TODO: show images from the game during this?
     scene black with fade
     hide text with fade
     show text "Credits" with fade
     with Pause(2.0)
     hide text with fade
     show text "Written, Produced, and Directed by Andrea Landaker" with fade 
-    with Pause(2.0)
+    with Pause(2.5)
     hide text with fade
     show text "Additional Writing and Design by Rachel Helps" with fade 
-    with Pause(2.0)
+    with Pause(2.5)
     hide text with fade
     show text "Sprites by Clarissa Helps" with fade 
-    with Pause(2.0)
+    with Pause(2.5)
     hide text with fade
     show text "GUI Design by Luce Jumble" with fade 
-    with Pause(2.0)
+    with Pause(2.5)
+    hide text with fade
+    show text "With music by:\nEhren Starks\nJan Hanford\nChad Lawson\nGiorgio Costantini\nKalabi\nBenji Goodrich\nGianmarco Leona" with fade
+    with Pause(4.0)
+    hide text with fade     
+    show text "With background images by:\nLisa Horner\nWes Landaker\nAndrea Landaker\nNASA\nBurningwell\nESO/L. Calçada\n\nAnd the following Wikimedia Commons users:\nRandwick\nLabpluto123\nWrlctech\nEbyabe\nAvi/Skrewtap\nMarcus Budde\nAluter\nDorothea Witter-Rieder\nAnna Frodesiak\nAndrei Stroe\nJean-Pierre\n\nFiltered with Fotosketcher" with fade
+    with Pause(4.0)
+    hide text with fade   
+    show text "Made with Ren'Py" with fade 
+    with Pause(2.5)
     hide text with fade
     #show text "Background Images\nEarth image courtesy of NASA, www.nasa.gov\nTriple-star sunset courtesy of JPL at NASA, http://www.jpl.nasa.gov/\nRed dwarf sunset CREDIT: ESO/L. Calçada\nCaledonian Sleeper Single berth by Randwick, from http://en.wikipedia.org/wiki/File:Caledonian_Sleeper_Single_berth.jpg\nFVES Classroom by Labpluto123, from http://commons.wikimedia.org/wiki/File:FVES_Classroom.jpg\nBirchip Community Library circulation desk by Wrlctech, from http://commons.wikimedia.org/wiki/File:Birchip_reno_008.jpg\nGuantanamo Captive's hospital beds in the public domain, from the U.S. Department of Defense\nKoreshan Machine Shop by Ebyabe, from http://commons.wikimedia.org/wiki/File:Koreshan_SHS_large_machine_shop_inside01.jpg\nTool Area - Workshop by Avi/Skrewtape, from http://commons.wikimedia.org/wiki/File:Tool_Area_-_Workshop.jpg\nWhite Desert Egyptian Sunset from http://www.burningwell.org\nOther photos by Wes Landaker, Andrea Landaker, Lisa Horner, and Lance Meibos" with dissolve with Pause(2.0)
 

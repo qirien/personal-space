@@ -450,13 +450,20 @@ label relax_together_10:
     
 label relax_together_11:
     scene bg bedroom with fade
-    "We started talking, and somehow I ended up telling him all about my job. Who was hard to work with, things that seemed impossible, the people I helped... it felt good to have him know what I had been working on."
+    show her normal at midleft
+    show him normal at midright
+    with dissolve
+    "One night we went to bed early and just started talking. I ended up telling him all about my job. Who was hard to work with, things that seemed impossible, the people I helped..."
+    "It felt good to have him know what I had been working on, and know that I had his support."
     $ relaxed += 5
     $ loved += 2
     return
 
 label relax_together_12:
     scene bg bedroom with fade
+    show her normal at midleft
+    show him normal at midright
+    with dissolve
     "We snuggled together in bed and talked softly together."
     $ relaxed += 5
     $ loved += 2
@@ -512,6 +519,8 @@ label relax_together_a:
         him happy "Ohhh! You got him! That was awesome."
         sara "That was way better than [her_name]'s poison-in-the-toothpaste attempt."
         her annoyed "That would totally work!"
+        scene black with fade
+        "I think it was good for [his_name] to socialize with some friends... and I definitely had fun, too."
         $ relaxed += 5
         $ loved += 2
         $ community_level += 2
@@ -530,7 +539,8 @@ label relax_together_a:
                 sara "Sure, we can play with three people."
                 her "Bye, [his_name]."
                 him serious "Bye..."
-                "We played some games together, but I felt a little out of place without [his_name]."
+                scene black with fade
+                "We played some games together, but I felt a little out of place without [his_name]. Maybe he'd come next time..."
                 $ loved -= 2
                 $ relaxed += 2
     return

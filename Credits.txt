@@ -3,8 +3,7 @@ CREDITS
 
 Sprites
 -------
-Original line art by Clarissa Helps
-Coloring by Lisa Horner
+Original art by Clarissa Helps
 
 Background Images
 -----------------
@@ -21,10 +20,21 @@ White Desert Egyptian Sunset from http://www.burningwell.org
 EketorpsBorgHayBarn.jpg by Marcus Budde from http://commons.wikimedia.org/wiki/File:EketorpsBorgHayBarn.jpg
 Finished Yurt by Aluter from http://commons.wikimedia.org/wiki/File:FinishedYurt.jpg
 RoscheiderHof-rathaus by Dorothea Witter-Rieder from http://commons.wikimedia.org/wiki/File:RoscheiderHof-rathaus-2008-8.jpg
-Wooden bathtub for adultsby Anna Frodesiak from http://commons.wikimedia.org/wiki/File:Wooden_bathtub_for_adults_-_02.JPG 
+Wooden bathtub for adults by Anna Frodesiak from http://commons.wikimedia.org/wiki/File:Wooden_bathtub_for_adults_-_02.JPG 
 RO OT Slatina old city street 2 by Andrei Stroe from http://commons.wikimedia.org/wiki/File:RO_OT_Slatina_old_city_street_2.jpg
+Chemistry Laboratory - Bench.jpg by Jean-Pierre from http://commons.wikimedia.org/wiki/File:Chemistry_Laboratory_-_Bench.jpg
 Other photos by Wes Landaker, Andrea Landaker, Lisa Horner, and Lance Meibos
 Filtered with FotoSketcher, http://www.fotosketcher.com
+
+Alpha Testers
+-------------
+Lisa Horner
+Wes Landaker
+
+
+Beta Testers
+------------
+
 
 Sound Effects
 -------------
@@ -54,3 +64,7 @@ Reference
 ---------
 www.rogueturtle.com for soap-making and other survival skills
 www.space.com for information on habitable extra-solar planets
+http://www.kitcornellpottery.com/teaching/clay.html for pottery making
+http://www.pbs.org/wgbh/nova/education/ancient/grass-bridge.html for grass bridge construction
+http://www.scientificamerican.com/article.cfm?id=turning-bacteria-into-plastic-factories-replacing-fossil-fuels for bacteria that make plastic
+http://www.spaceweather.com/glossary/srs.html for info on solar flares

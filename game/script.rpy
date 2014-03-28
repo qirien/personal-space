@@ -45,21 +45,21 @@ image overlay night = "bg/night.png"
 image overlay bathhouse = "bg/bathhouse-overlay.png"
 
 # Declare characters used by this game .
-define her = DynamicCharacter("her_name", color="#7264d5", image="her")
-define him = DynamicCharacter("his_name", color="#c80000", image="him")
+define her = DynamicCharacter("her_name", color="#7264d5", image="her") #periwinkle
+define him = DynamicCharacter("his_name", color="#c80000", image="him") #red 
 
-define naomi = Character("Sister Naomi Grayson", color="#6500ab", image="naomi")
-define boss = Character("Mayor Grayson", color="#cccccc", image="pavel")
-define lily = Character("Lily", color="#ffe74a", image="lily")
-define sara = Character("Sara", color="#c64e89", image="sara")
-define thuc = Character("Thuc Nguyen", color="a9ff22", image="thuc")
-define ilian = Character("Ilian Andrevski", color="ffa922", image="ilian")
-define brennan = Character("Brennan Callahan", color="11ee11", image="brennan")
-define sven = Character("Sven Engel", image="sven")
-define natalia = Character("Natalia Peron", image="natalia")
-define helen = Character("Helen Engel", image="helen")
-define julia = Character("Julia Nguyen", color="#cc2200", image="julia")
-define martin = Character("Martin Peron", color="#990011", image="martin")
+define naomi = Character("Sister Naomi Grayson", color="#ededed", image="naomi")  #light gray
+define boss = Character("Mayor Grayson", color="#cccccc", image="pavel")   #dark gray
+define lily = Character("Lily", color="#8655bd", image="lily")  #purple
+define sara = Character("Sara", color="#c64e89", image="sara")  # dark pink
+define thuc = Character("Thuc Nguyen", color="a9ff22", image="thuc")  #lime green
+define ilian = Character("Ilian Andrevski", color="ffa922", image="ilian") #tangerine
+define brennan = Character("Brennan Callahan", color="33b533", image="brennan")  #irish green
+define sven = Character("Sven Engel", color="522f19", image="sven")  #brown
+define natalia = Character("Natalia Peron", color="ffe74a", image="natalia")  #yellow
+define helen = Character("Helen Engel", color="cdcfb2", image="helen") #tan
+define julia = Character("Julia Nguyen", color="#4b54cd", image="julia") #icy blue
+define martin = Character("Martin Peron", color="#990011", image="martin")  #dark red
 # TODO: add accent on Martin (also Peron?)
 
 define note = Character("", kind=nvl)
@@ -222,7 +222,7 @@ label start:
             $ known_each_other = "six months"
 
             #jump test_positions
-            jump monthly_event_24
+            jump show_credits
             #call screen computer_pad
 
     "I thought I knew what love was. After all, that's why I married..."
@@ -339,7 +339,7 @@ label test_positions:
     "quarterleft"
     show him normal at quarterleft
     "midleft"
-    show pavel at midleft
+    show pavel at midleft, behind sara
     "center"
     show sara at center
     "midright"
@@ -366,11 +366,15 @@ init python:
     text_limit = 16
     text_list=text_list1
     text_group=1
+    initial_caps=True
    
 ########################################################
 #   More android keyboard input stuff, adapted from: http://lemmasoft.renai.us/forums/viewtopic.php?f=8&t=14985
 
 label inputter:
+    if initial_caps:
+        $ text_group = 1
+        $ initial_caps = False
     if text_group==1:
         $text_list=text_list1
     elif text_group==2:
@@ -410,6 +414,8 @@ label inputter:
         jump inputter
     elif button_selection=="Deleteall":
         $ input_text=''
+        $ initial_caps = True
+        $ ui.returns("uppercase")
         jump inputter
     elif button_selection=="uppercase":
         $text_group=1
@@ -422,6 +428,8 @@ label inputter:
     $ select_text=button_selection
 
     python:
+        initial_caps = False
+        text_group = 2
         for text_code in text_list:
             if select_text==text_code:
                 input_text += text_code
