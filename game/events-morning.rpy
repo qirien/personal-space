@@ -154,10 +154,10 @@ label work_0:
             boss "We do have a few hunting weapons that you can check out from the storehouse if you would like to try your hand at hunting, though I'd check with Dr. Lily first and make sure that the animal is edible!"
             jump boss_meeting
         "When is the colony ship coming?":
-            her surprised "You said another ship is coming? Is that in two Earth years or Talam years?"
+            her surprised "You said another ship is coming? Is that in two Earth years or Talaam years?"
             boss "Good question; that's two Earth years, which makes about..."
             show lily at midright with moveinright
-            lily "About 26 Talam months. Since there are seven months a year here, that makes a little over three Talam years."
+            lily "About 26 Talaam months. Since there are seven months a year here, that makes a little over three Talaam years."
             boss "Right...hopefully that answers your question!"
             hide lily with moveoutright
             jump boss_meeting
@@ -197,7 +197,7 @@ label work_0:
     # TEACHER
     elif (profession == "teacher"):
         boss "All right! This is the schoolhouse. There's not a lot of kids in the community yet, so we just have them all in one room with you as their teacher."
-        boss "Please consider what they'll need to learn about Talam in addition to the standard curriculum, and try to be flexible if kids are needed to help out back at home."
+        boss "Please consider what they'll need to learn about Talaam in addition to the standard curriculum, and try to be flexible if kids are needed to help out back at home."
         her normal "I guess the kids are going to have to work hard, too..."
         boss "Yes, but they need to learn a lot, too! It will take a lot of effort to see that they don't forget about Earth, and all the things humanity has managed to learn there."
         her serious "Even though it seems far away, it's still our home, isn't it?"
@@ -364,7 +364,7 @@ label work_1:
     # MECHANIC
     elif (profession == "mechanic"):
         show her normal at midright with dissolve
-        "Back on Earth, I only worked on cars. But here on Talam, people brought me all kinds of machines to try and fix. If it had moving parts or electricity and it broke, it came to my shop."
+        "Back on Earth, I only worked on cars. But here on Talaam, people brought me all kinds of machines to try and fix. If it had moving parts or electricity and it broke, it came to my shop."
         "Usually I could fix things pretty quickly, but after several months of hard farming, a lot of things were breaking down. It wouldn't have been so bad except that we had only a small reserve of spare parts, so I tried to only use them when there was no other way to fix things."
         show him normal at midleft with moveinleft
         him "Hey, [her_nickname], is the tractor fixed yet?"
@@ -1442,7 +1442,7 @@ label work_8:
 
     her surprised "We've been working here three years, now, haven't we?"
     brennan "Three years? Isn't it two?"
-    her serious "Oh, I meant three Talam years. That's probably about two Earth years."
+    her serious "Oh, I meant three Talaam years. That's probably about two Earth years."
     brennan "I can't get used to the different time measurements here - no matter how this planet rotates, I can't call seven months a year."
     if (wants_to_leave):
         her concerned "I know what you mean. This place still doesn't feel like home."

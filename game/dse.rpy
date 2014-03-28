@@ -194,7 +194,7 @@ label end_of_month:
     scene black
     #centered "{color=#ffffff}End of the Month{/color}"
 
-    "We made it through another month on Talam..."
+    "We made it through another month on Talaam..."
 
     # We call events_end_day to let it know that the day is done.
     call events_end_day

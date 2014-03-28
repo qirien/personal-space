@@ -205,7 +205,7 @@ label monthly_event_2:
         "{i}Maybe the Peron's would help us dig it?{/i}" if (skill_social >= 10):
             her surprised "Maybe the Peron's would help us dig ours, and we could help them dig a cellar, too?"
             him happy "That would be great; it'll be more efficient with a few more people."
-            "I talked to the Peron's and they thought that sounded great, so we were able to help each other have a cellar to store food in. They also gave us some eggs from their chickens, who were acclimatizing to Talam nicely."
+            "I talked to the Peron's and they thought that sounded great, so we were able to help each other have a cellar to store food in. They also gave us some eggs from their chickens, who were acclimatizing to Talaam nicely."
             $ community_level += 5
 
         "I don't want to help.":
@@ -2997,7 +2997,7 @@ label monthly_event_20:
 # uses knowledge, technical, social
 label monthly_event_21:
     scene bg farm_interior with fade
-    "The weather was usually fairly mild on Talam. It didn't snow in the winter, and the summer was hot but not unbearable. It was much colder near the poles, of course, but we were near the equator and the ocean."
+    "The weather was usually fairly mild on Talaam. It didn't snow in the winter, and the summer was hot but not unbearable. It was much colder near the poles, of course, but we were near the equator and the ocean."
     "But one week was a lot colder than usual."
     show her normal at midright
     show him normal at midleft
@@ -3694,7 +3694,7 @@ label monthly_event_23:
                     brennan "Although, you should know I'm planning on leaving."
                     her surprised "Leaving?!"
                     brennan "On the next ship. They're dropping off more supplies, and colonists, and my orders are to report back to Earth. But you could come, too."
-                    her concerned "Leave Talam... I'll have to think about it."
+                    her concerned "Leave Talaam... I'll have to think about it."
                     brennan "You have a month or two before the ship arrives. So, let me give you a little something to think about in the meantime..."
                     scene black with fade
                     "He kissed me softly, not full of passion like before, but the tender kiss of a lover's promise..."
@@ -3806,7 +3806,7 @@ label monthly_event_23:
     
     return
 
-# MONTH 24: Birth or leave Talam
+# MONTH 24: Birth or leave Talaam
 label monthly_event_24:
     if (is_pregnant):
         scene bg farm_interior with fade
@@ -4153,7 +4153,7 @@ label monthly_event_24:
             her surprised "You shouldn't have to work so hard! There's an easier way!"
             him angry "I don't want to do things the easy way. I did that on Earth; it was boring and pointless."
             her annoyed "I'd rather be bored and know I'll survive."
-            him annoyed "That kind of life is not even worth living. I've never felt more alive than here on Talam."
+            him annoyed "That kind of life is not even worth living. I've never felt more alive than here on Talaam."
             her angry "Really? You feel alive when you realize that bugs just ate all your food and you might starve? Or when you almost get your hands burned off?"
             him angry "Yes! It's better than all the idiotic stuff people do on Earth."
             him angry "All they care about is how to make more money so they can buy more stuff so they can distract themselves from the fact that nothing they do matters!"
@@ -4180,7 +4180,7 @@ label monthly_event_24:
                 him concerned "If we want things to be better here, it's up to us to make it happen. We can't just do the bare minimum and hope for the best."
                 her angry "The bare minimum?! Is that what you think I've been doing?!"
 
-                him concerned "Anyway, no matter what, I'm staying here. I love Talam. I love the challenge and the adventure. But if you really need to leave... I, I won't-"
+                him concerned "Anyway, no matter what, I'm staying here. I love Talaam. I love the challenge and the adventure. But if you really need to leave... I, I won't-"
         
         him sad "I won't try to stop you."
         menu:

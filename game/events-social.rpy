@@ -1075,7 +1075,7 @@ label social_master:
             "Sara nominated me, and [his_name] nominated Thuc, but he didn't want to run. Sven nominated Sister Naomi, but she declined the position as well. Nobody else wanted to run, but we held a vote anyway."
             boss "I guess you've got the job, [her_name]! Now, about those supply requests..."
         
-    "It was quite a lot of work to help be in charge of the colony, but the Mayor seemed much less stressed out. It felt good to be trusted, and to help everyone work together here on Talam."
+    "It was quite a lot of work to help be in charge of the colony, but the Mayor seemed much less stressed out. It felt good to be trusted, and to help everyone work together here on Talaam."
 
     $ skill_social += 10
     $ community_level += 10

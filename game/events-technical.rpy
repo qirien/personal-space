@@ -324,7 +324,7 @@ label technical_8:
     "I would have to do something else."
     "I ended up focusing more on the farming app [his_name] wanted; it couldn't measure the amounts of chemicals for him, but he said it would be useful even if it just reminded him of the right proportions for the plants he was working on."
     "I put in a map interface, where he could quickly tell the app what plants he planted where, and when, and it would remind him when it was time to fertilize or harvest."
-    "It also listed the recommended nutrient proportions for each plant and calculated what soil amendments would be necessary given the chemical makeup of Talam's soil."
+    "It also listed the recommended nutrient proportions for each plant and calculated what soil amendments would be necessary given the chemical makeup of Talaam's soil."
     scene bg farm_interior with fade
     show him normal at midright with dissolve
     show her normal at midleft with moveinleft

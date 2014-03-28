@@ -155,7 +155,7 @@ label relax_together_3:
     him normal "Well, I mean, it's a colony, right? They want couples, people that are going to have kids, so they can build up the colony."
     her concerned "You mean, you wouldn't have been able to come unless we were married."
     him normal "Probably not. Farmers aren't that hard to find."
-    her "You never told me that... So part of the reason you married me was so that you could come to Talam."
+    her "You never told me that... So part of the reason you married me was so that you could come to Talaam."
     him serious "No! I mean, that was part of the timing, I guess, but I would have asked you to marry me anyway! That just sort of, made it happen sooner, I guess."
     menu:
         "What should I say?"
@@ -382,7 +382,7 @@ label relax_together_7:
     play music "music/Will.ogg" fadeout 3.0
     "We went for a walk together under the stars. I brought my computer pad so we could find which one was our old Sun. I didn't see any constellations I recognized, so it was hard to find any reference points, but we finally found which one we thought it was."
     her concerned "It looks so small..."
-    him serious "Remember how small Talam's sun looked from Earth?"
+    him serious "Remember how small Talaam's sun looked from Earth?"
     her serious "That seems so long ago..."
     if (loved >= 0):
         "We held hands and walked together, and though I felt so small in the universe, I knew [his_name] and I had a place with each other."

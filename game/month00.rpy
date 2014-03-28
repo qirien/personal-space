@@ -36,7 +36,7 @@ label colony_ship:
                 him surprised "Really? What are you waiting for?"
                 menu:
                     "What should I say?"
-                    "When we get to Talam.":
+                    "When we get to Talaam.":
                         $ want_kids = True
                         her normal "I at least want to be on a planet, not hurtling through the air. I mean, have they done studies on the effects of near-light speed travel on fetuses?"
                         him surprised "Probably not. I hadn't thought of that."
@@ -90,13 +90,13 @@ label colony_ship:
                     jump want_kids_maybe
 
 # After talking about having kids
-# Background about Talam
+# Background about Talaam
     show him normal
     show her normal
     "We talked about lots of other things, of course. We talked about space, about what we would miss from Earth, about what our families were probably doing.  We studied what the pre-colonization team of scientists had reported so far."
     scene bg talam with fade
-    "Even though Talam was technically a \"garden planet\", meaning humans could breathe and there were plants and animals, it was only superficially like modern Earth.  The plants looked similar, but had completely different biologies, and most of the animals were more like prehistoric amphibians or insects."
-    "Time on Talam would be different, too: days lasted longer, but a year was only about two-thirds of a year on Earth."
+    "Even though Talaam was technically a \"garden planet\", meaning humans could breathe and there were plants and animals, it was only superficially like modern Earth.  The plants looked similar, but had completely different biologies, and most of the animals were more like prehistoric amphibians or insects."
+    "Time on Talaam would be different, too: days lasted longer, but a year was only about two-thirds of a year on Earth."
     "The planet was also a lot less protected from its small sun, since it was a lot closer.  The building materials we'd brought along would help protect us from solar flares and radiation, but only if we were inside."
     "They taught us about the early warning system they put in place so people would know when it was not safe to be outdoors."
 
@@ -132,6 +132,7 @@ label colony_ship:
     note "{font=fonts/danielbd.ttf}{size=+2}Surrounded by stars, in the darkness of space \nEmptiness presses; the universe waits"
     note "{font=fonts/danielbd.ttf}{size=+2}Though silently fades the memory of time, \nThere's one special thing I won't leave behind."
     note "{font=fonts/danielbd.ttf}{size=+2}[her_name], my sweetest lover and friend. \nI'll always be with you, till eternity ends."
+    nvl clear
 
     menu:
         "The poem is..."
@@ -203,7 +204,7 @@ label settling_in:
     # Land on the planet and get settled
     play music "music/You.ogg" fadeout 3.0
     scene bg talam with fade
-    "The first month on Talam was really busy. We arrived at the end of winter, so it was still a bit cold and rainy. We all worked together to get everyone's houses up right away. The first one took the longest, as we had to figure out how to put all the pieces together."
+    "The first month on Talaam was really busy. We arrived at the end of winter, so it was still a bit cold and rainy. We all worked together to get everyone's houses up right away. The first one took the longest, as we had to figure out how to put all the pieces together."
     "Finally, our house was put up. We were so glad to stop sleeping in the shuttle and have our own space."
     scene bg farm_exterior with fade
     show her normal at midright

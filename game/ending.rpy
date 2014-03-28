@@ -1,6 +1,6 @@
 label monthly_event_25:
     play music "music/Rain.ogg" fadeout 3.0
-    "It had been two years since we first arrived on Talam. In a way, it felt like we had been here forever. But sometimes I still expected to find myself back on Earth, waking up from a long, long dream."
+    "It had been two years since we first arrived on Talaam. In a way, it felt like we had been here forever. But sometimes I still expected to find myself back on Earth, waking up from a long, long dream."
     # TODO: tweak these numbers.
     if (((community_level < COMMUNITY_LEVEL_OK) and (loved < 0)) or wants_to_leave):
         jump bad_ending
@@ -70,7 +70,7 @@ label bad_ending:
 # OR - Community failing, marriage succeeding
 # OR - both mediocre
 label mediocre_ending:
-    "Things were still rough on Talam. I wasn't sure they would ever get better."
+    "Things were still rough on Talaam. I wasn't sure they would ever get better."
     if (community_level >= COMMUNITY_LEVEL_OK):
         "But at least I had my friends and neighbors; we all helped each other out."
     else:
@@ -166,7 +166,7 @@ label skill_appreciation:
     if (skill_creative >= 100):
         "As we ate, I traced my hand around the pattern I had inlaid on the edge of the dishes we used. All around were things I had made to make our lives a little better - placemats, potholders, rope, crates - it made our little house seem more like our home."
     if (skill_knowledge >= 100):
-        "We talked about some of the research Lily and I had been doing about pharmaceutical properties of Talam's plants. Making our own medicines would be a huge boon for us."
+        "We talked about some of the research Lily and I had been doing about pharmaceutical properties of Talaam's plants. Making our own medicines would be a huge boon for us."
     if (skill_physical >= 100):
         "As I took another bite of beans, the juicy meat tasted so good. We'd dried it to preserve it, but when it soaked with the beans it regained some of its original texture."
     if (skill_social >= 100):
@@ -219,7 +219,7 @@ label work_appreciation:
         "Aside from their parents, the kids on the colony didn't have any other teachers. So when they finally figured out multiplication or why history was important or read their first novel, it was because of me."
         show her normal at midright with dissolve
         show pavel at midleft, behind her with moveinleft
-        boss "[her_name], I don't know what we'd do without you. All the kids love your enthusiasm for learning, and you've worked hard to make sure they know about Earth and learn the things they need to succeed here on Talam."
+        boss "[her_name], I don't know what we'd do without you. All the kids love your enthusiasm for learning, and you've worked hard to make sure they know about Earth and learn the things they need to succeed here on Talaam."
 
     her serious "I've just been trying to help out."
     boss "I just wanted to let you know how much we all appreciate your hard work and expertise."
@@ -239,7 +239,7 @@ label work_appreciation:
     else:
         brennan "I don't think anyone will be sad to see me go."
         if (brennan_relationship >= 2):
-            her flirting "Of course we'll miss you! But maybe you won't miss Talam?"
+            her flirting "Of course we'll miss you! But maybe you won't miss Talaam?"
         else:
             her concerned "We'll miss you, Brennan. But I think it'll be good for you to do something else."
         brennan "Yeah, I never did quite fit in here. I'm not too sad about it; I missed having things to do, people to see, places to go..."
@@ -247,7 +247,7 @@ label work_appreciation:
     
     brennan "Anything you want me to bring back to Earth?"
     "I thought about it for a minute. By the time he got back to Earth, another four years would have passed there. It wouldn't be any faster than sending a message."
-    "I probably couldn't send back any plants from Talam even if I had wanted to - they wanted to make sure they didn't mess up Earth's ecosystem with alien life."
+    "I probably couldn't send back any plants from Talaam even if I had wanted to - they wanted to make sure they didn't mess up Earth's ecosystem with alien life."
     "Finally, I decided that anything I wanted to send, I could send electronically."
     her serious "Just... could you tell people about how it is here? I mean, you'll probably be kind of a celebrity, right? Not everyone gets to visit another planet and come back."
     brennan "I will. It'll be a great way to impress women, don't you think? I can tell them all about how I risked radiation burns to rescue the poor Perons during the solar flare."
@@ -309,7 +309,7 @@ label good_ending:
     her surprised "What?"
     him serious "Thank you."
     her flirting "You're welcome- wait, what are you thanking me for? There's so many things you owe me for..."
-    him normal "For taking a chance on me, and for trusting me enough to come to Talam with me. For working so hard at your job and all the things you do at home. For loving me even when I'm grouchy or make mistakes."
+    him normal "For taking a chance on me, and for trusting me enough to come to Talaam with me. For working so hard at your job and all the things you do at home. For loving me even when I'm grouchy or make mistakes."
     her normal "[his_name]...I need to thank {b}you{/b}. You work so hard every day - we literally couldn't survive without you. You have loved me no matter what this whole time. And there's nowhere I'd rather be than right here with you."
     him happy "Yeah...if someone came up to me, right now, and said 'All-expenses paid trip to wherever you want!', do you know what I'd say?"
     her surprised "What?"

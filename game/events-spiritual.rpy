@@ -19,7 +19,7 @@ label spiritual_0:
     her surprised "Hi...uh, What should I call you, anyway? Pastor? Reverend?"
     naomi "Why don't you call me \"Sister Naomi\"? While I'm not a nun of any religion, I like to emphasize that we are all like children when it comes to matters of the spirit."
     her normal "OK, Sister Naomi...what exactly do you do here?"
-    naomi "When people have questions about what they should do, or what to believe, sometimes it is helpful for them to have a guide. Since there are people of many different faiths here on Talam, I try and guide them in a way that is helpful for their religious background."
+    naomi "When people have questions about what they should do, or what to believe, sometimes it is helpful for them to have a guide. Since there are people of many different faiths here on Talaam, I try and guide them in a way that is helpful for their religious background."
     her serious "But what do you believe?"
     naomi "Is that really the question you should be asking?"
     her surprised "Huh?"
@@ -34,7 +34,7 @@ label spiritual_0:
         "I don't think it matters.":
             her annoyed "What does it matter what I believe? I'm only interested in what's true."
 
-    naomi "It is good to want to learn. May I suggest learning about several of the main religions people believe in here on Talam, and let your experiences there guide you further?"
+    naomi "It is good to want to learn. May I suggest learning about several of the main religions people believe in here on Talaam, and let your experiences there guide you further?"
     her normal "I would like to learn more, yes."
     naomi "I have several books you can borrow, if you would like. But as you study, listen with your heart as well as your mind. Read as if the writer is speaking to you, about your own life, and perhaps you will find some truth that you need."
     $ skill_spiritual += 10
@@ -375,7 +375,7 @@ label spiritual_9:
         "Poured out my heart to God.":
             "I poured out my heart to God. I talked about everything that was bothering me, everything that made me happy, and asked for help. Praying about all that helped me feel at peace."
         "Prayed for peace and understanding.":
-            "I wished for an increase in love, peace, and understanding in the  people of Talam -- and Earth. I also prayed for peace in my own heart, and began to feel it even as the services ended."
+            "I wished for an increase in love, peace, and understanding in the  people of Talaam -- and Earth. I also prayed for peace in my own heart, and began to feel it even as the services ended."
 
     "Every week she had different things to say, but she always ended with about ten minutes of just quiet, where people could pray or meditate or just think. I didn't always make time for quiet moments in my everyday life, so I enjoyed this bit of peace."
     $ skill_spiritual += 10

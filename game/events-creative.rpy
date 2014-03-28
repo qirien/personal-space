@@ -243,7 +243,7 @@ label creative_7:
     scene bg sunset with fade
     "I hadn't done any photography in a long time, but the way the light was coming through the clouds really inspired me."
     "As I set up shots- some simple landscapes, others focusing on an alien plant or insect with the clouds in the background- I felt awed. Here was this entire planet full of wonders, and only the few of us who lived here got to experience it."
-    "I decided to send some of my pictures to magazines on Earth; maybe they would be interested in doing an article on Talam and would want to use them. I just wanted to show everyone on Earth what a beautiful planet we had."
+    "I decided to send some of my pictures to magazines on Earth; maybe they would be interested in doing an article on Talaam and would want to use them. I just wanted to show everyone on Earth what a beautiful planet we had."
     scene bg community_center with fade
     show pavel at midright, behind her with dissolve
     show her normal at midleft with moveinleft
@@ -325,7 +325,7 @@ label creative_9:
 # Make a documentary about the colony and send it to Earth
 label creative_master:
     scene bg sunset with fade
-    "One day, as I was taking pictures of a flock of crabirds, I suddenly realized that no one on Earth had any idea what Talam was like. They had never seen a wolfslug, or the shimmering rocks by the hot springs, or the rise of twin moons at twilight."
+    "One day, as I was taking pictures of a flock of crabirds, I suddenly realized that no one on Earth had any idea what Talaam was like. They had never seen a wolfslug, or the shimmering rocks by the hot springs, or the rise of twin moons at twilight."
     "I had sent a few pictures, but they alone couldn't communicate enough."
     "I couldn't bear it - I had to share the wild, alien beauty of this planet with everyone I had left behind back home."
     "I wrote down all the things I wanted to show everyone, and then sorted them and connected the ideas."

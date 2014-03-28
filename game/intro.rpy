@@ -77,6 +77,8 @@ label first_date:
     note "{font=fonts/danielbd.ttf}{size=+2}How I love you heart, body, and soul, every minute of every day..."
     note "{font=fonts/danielbd.ttf}{size=+2}Anyway, I want to tell you more, in person! So come to my folks' tonight for a barbeque, okay? Right after work.\n\nLove,\n       your [his_name]{/font}"
 
+    nvl clear
+    
     her surprised "(That's so sweet! But I wonder what's up, he sounds so serious!)"
     scene bg porch with fade
     show her normal at midleft
@@ -94,7 +96,7 @@ label first_date:
     # TODO: this transition is awkward
     # TODO: redo this background
     show bg stars with moveintop
-    him happy "In space! So many stars, so many worlds... Did you know they are sending colonists to Talam?"
+    him happy "In space! So many stars, so many worlds... Did you know they are sending colonists to Talaam?"
     her normal "That's the garden planet they found, right?"
     him "Yes! It's only about four light years away. People could breathe there, grow things, live there!"
 
@@ -118,7 +120,7 @@ label marriage_proposal:
     show her normal at midleft
     show him normal at midright
     with dissolve
-    him serious "I'm going there, [her_name]. To Talam."
+    him serious "I'm going there, [her_name]. To Talaam."
     her laughing "Oh really? I didn't know you were an astronaut, [his_name]."
     him annoyed "..."
     her surprised "You're serious, aren't you?!"

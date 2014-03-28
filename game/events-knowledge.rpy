@@ -112,7 +112,7 @@ label knowledge_4:
 # Research geology, geography of planet
 label knowledge_5:
     scene bg library with fade
-    "I wanted to know why Talam's climate was the way it was, and why they chose to settle here on this spot, out of the whole planet."
+    "I wanted to know why Talaam's climate was the way it was, and why they chose to settle here on this spot, out of the whole planet."
     "I read a few research papers from astronomers and looked at maps of the planet. I could see that it was colder near the poles; we were closer to the equator, which made for milder temperatures and made year-round agriculture possible."
     "Obviously the river was very useful to our settlement for irrigation, and I also noticed some mountains further to the west. I had seen them in the distance. There was much more precipitation on this side of the mountain than on the other side, which also made this area ideal for colonization."
     "I wondered why they didn't put us near the ocean, but then I read that hurricanes were very common here. Those same mountains acted as a hurricane barrier as well."
@@ -146,14 +146,14 @@ label knowledge_6:
             her annoyed "Well, I'm not COMPLETELY ignorant of biology, but I see what you're getting at and I'll give it shot."
             "I spent some time gathering the edible plants Lily talked about in her paper. At first, I tried to sort them into categories based on their venation, but there were only two plants where that made a difference."
             "I decided to write down all the ways the plants were different, and then I ranked them by order of usefulness. The flowers were the easiest to tell apart, but were only present for part of the time."
-            "I realized that Talam's plants' leaves didn't vary in size within a species. Leaf size ranged from tiny to umbrella-sized. Since I was halfway to making an identification key, I made one."
+            "I realized that Talaam's plants' leaves didn't vary in size within a species. Leaf size ranged from tiny to umbrella-sized. Since I was halfway to making an identification key, I made one."
             lily "This is excellent. Whenever I tried to categorize these plants, I could only think of things like leaf shape and number of petals."
             her "I'm glad I could help. Maybe we can distribute the key to the colonists too."
             lily "That's a wonderful idea. You can use the photos I already have if that will help."
-            "Lily sent the paper off to Earth and I sent out an updated edible plant guide to the colonists, with guidelines on which earth plants were essential for supplementing a Talam-based diet."
+            "Lily sent the paper off to Earth and I sent out an updated edible plant guide to the colonists, with guidelines on which earth plants were essential for supplementing a Talaam-based diet."
             $ community_level += 1
             
-        "I want to write my own paper to publish here on Talam":
+        "I want to write my own paper to publish here on Talaam":
             her "Actually, I was thinking of writing my own paper. I'd like to make a more detailed and accessible chart of edible plants with explanations my neighbors could understand."
             lily "Oh. I see. After you finish it, may I reference it in my paper?"
             her "Yes, that's fine."
@@ -178,7 +178,7 @@ label knowledge_6:
             her annoyed "That's your job."
             lily "Perhaps you could tell me what you know, and I could write it down?"
             her serious "Well, if it's that important to you, I can tell you what I know."
-            "I spent the afternoon with Lily in the lab, discussing which plants were most useful to eat. She told me that she was fascinated by how a human could almost live off of Talam's plants alone, except for a few missing nutrients."
+            "I spent the afternoon with Lily in the lab, discussing which plants were most useful to eat. She told me that she was fascinated by how a human could almost live off of Talaam's plants alone, except for a few missing nutrients."
             "We both learned a lot, and I didn't have to spend any time writing aimlessly."
             $ community_level -= 1
 
@@ -293,7 +293,7 @@ label knowledge_9:
     $ skill_knowledge += 10
     return
 
-# Write a book about Talam? Collect essays from everyone?
+# Write a book about Talaam? Collect essays from everyone?
 label knowledge_master:
     scene bg lab with fade
     show lily at midright
