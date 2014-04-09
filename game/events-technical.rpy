@@ -13,20 +13,16 @@ label technical_0:
     "I decided to familiarize myself with all the farm equipment so that if something broke, I would be able to understand the problem quicker."
     "The tractors were an interesting biofuel/solar hybrid and were built in a very modular way so that pieces could easily be taken out and replaced, and it had a hitch on the back for attachments like plows, cutters, loaders, etc."
     "I downloaded the schematics and spent some time studying them."
-    $ skill_technical += 10
-
-    return
-
-# Better Radio Communication
-label technical_1:
+    
     scene bg farm_exterior with fade
-    "I installed an antenna on the roof so that we can communicate with the town better. It took some trial and error to figure out the exact alignment and height, since this planet's atmosphere and shape are different from Earth's, but it's working with the radios pretty well."
+    "I also installed an antenna on the roof so that we can communicate with the town better."
+    "It took some trial and error to figure out the exact alignment and height, since this planet's atmosphere and shape are different from Earth's, but it's working with the radios pretty well."
     "Maybe this way we wouldn't be completely cut off during a solar flare, but could still have some communication with town."
     $ skill_technical += 10
     return
 
 # Build a water pump
-label technical_2:
+label technical_1:
     scene bg farm_exterior with fade
     "Even though we have a solar panel to run our pad computers, the lights, and a few other things, we do most work the old-fashioned way, without electricity."
     "And did I mention there's no running water? We have a well and a pump, but we're always fetching water with buckets...Well, mostly I fetch water with buckets, since [his_name] has a bunch of pipes and canals setup for watering the farm."
@@ -57,7 +53,7 @@ label technical_2:
     return
 
 # Improve alarm system for solar flares.
-label technical_3:
+label technical_2:
     scene bg farm_interior with fade
     show her normal at midright
     show him normal at midleft
@@ -104,7 +100,7 @@ label technical_3:
     return
 
 # Make laundry wringer
-label technical_4:
+label technical_3:
     scene bg laundry with fade
     show her annoyed at center
     her "These clothes still aren't dry?! It's so humid here, it takes forever..."
@@ -137,7 +133,7 @@ label technical_4:
 
 # Hot water heater
 # put in hot water connected to solar
-label technical_5:
+label technical_4:
     scene bg farm_interior with fade
     "One of the things I missed from Earth life was having hot water available whenever I wanted it. Of the few luxuries we enjoyed, hot water seemed like one I could improve on."
     show her normal at midright
@@ -189,7 +185,7 @@ label technical_5:
     return
 
 # scavenge electronics, etc from shuttle to make blender
-label technical_6:
+label technical_5:
     scene bg farm_interior with fade
     show him normal at midright
     show her normal at midleft
@@ -240,7 +236,7 @@ label technical_6:
     return
 
 # build a water wheel to augment power grid
-label technical_7:
+label technical_6:
     scene bg farm_exterior with fade
     "Our solar panels worked well most of the time, but sometimes it was cloudy for days and our batteries ran out. Then we had to use candles and burn wood for cooking, which made a big mess and felt wasteful."
     "I wondered if we could use the nearby river to augment our electricity sources."
@@ -284,7 +280,7 @@ label technical_7:
     return
 
 # 8 - programmable substance mixer, farming app
-label technical_8:
+label technical_7:
     scene bg farm_interior with fade
     show him normal at midright
     show her normal at midleft with dissolve
@@ -343,7 +339,7 @@ label technical_8:
 
 
 # 9 - Help Ilian with the inventory software - build good queries, or streamline interface, etc.
-label technical_9:
+label technical_8:
     scene bg storehouse with fade
     show ilian at midright with dissolve
     show her normal at midleft with moveinleft

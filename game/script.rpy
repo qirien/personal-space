@@ -222,7 +222,7 @@ label start:
             $ known_each_other = "six months"
 
             #jump test_positions
-            jump show_credits
+            jump test_inputter
             #call screen computer_pad
 
     "I thought I knew what love was. After all, that's why I married..."
@@ -332,6 +332,16 @@ menu:
         #$ skill_social += 20
         jump teacher        
 
+label test_inputter:
+    "What is your pet's name?"
+    $ style.button_text.size = "+4"
+    $ style.button_text.font = "Times New Roman.ttf"
+    $ text_group = 1
+    $ input_text = ''
+    $ input_header = 'Pet\'s Name:'
+    call inputter
+    $ pet_name = input_text or "Fido"
+    "You picked the name [pet_name]."
 
 label test_positions:
     "left"

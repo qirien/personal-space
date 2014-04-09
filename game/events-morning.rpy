@@ -774,9 +774,9 @@ label work_4:
 
     # TEACHER a kid claims teacher hit them
     elif (profession == "teacher"):
-        scene bg classroom with fade 
-        show her normal at midleft with dissolve
-        show brennan at midright with dissolve
+        show her normal at midleft
+        show brennan at midright
+        with dissolve
         "It was the end of another school day. Even though the kids went home in the afternoon, I usually stayed around for another hour or two working on lesson plans and grading papers. Sometimes Brennan stayed and worked, too."
         "One day after school the Mayor came by to talk with me."
         show pavel at quarterleft, behind her with moveinleft
@@ -948,7 +948,10 @@ label work_6:
         "Inspired by the idea of replacing complicated parts with more simple ones, I set about looking at our inventory and cataloguing how parts we had a lot of could be used to substitute for parts we were running out of."
         "Soon it was lunch time."
     elif (profession == "teacher"):
-        her "Class, after you read your assigned section on nomads of the Great Steppe, please write about ways our colony is similar to and different from the nomad culture. Once you've done that, you can come over here and we will learn some wood carving techniques that they used to make and decorate their furnishings."
+        show her normal at center with dissolve
+        her serious "Class, after you read your assigned section on nomads of the Great Steppe, please write about ways our colony is similar to and different from the nomad culture."
+        her normal "Once you've done that, you can come over here and we will learn some wood carving techniques that they used to make and decorate their furnishings."
+        hide her with dissolve
         "I tried to include a hands-on component to all our learning, even if sometimes it wasn't completely related."
         "Of course, most of the kids just dashed off a few sentences before coming to watch Brennan teach woodcarving, so I had to make some of them go back and work on it some more."
         "Soon it was lunchtime, and the kids went home to eat."
@@ -963,7 +966,7 @@ label work_6:
     her concerned "Well..."
     menu:
         "What should I say?"
-        "Yes":
+        "Yes.":
             her normal "Thank you, I'd appreciate that."
             scene bg farm_interior flip
             show brennan at midright
@@ -982,7 +985,7 @@ label work_6:
             brennan "You're lucky to have someone who loves you so much."
             menu:
                 "What should I say?"
-                "I sure am" if (loved >= 0):
+                "I sure am." if (loved >= 0):
                     her normal "I sure am...I don't know what I'd do without him."
                     brennan "..."
                     her flirting "But what about you! Aren't there any single women on the colony you could date? Or are you not interested in women?"
@@ -997,7 +1000,7 @@ label work_6:
                     brennan "You're not seriously suggesting I try and date a child, are you?"
                     menu:
                         "What should I say?"
-                        "Yeah, things are different here":
+                        "Yeah, things are different here.":
                             her concerned "Normally, I wouldn't, but..."
                             brennan "But what?"
                             her serious "I want you to have a future here. I can tell you're lonely, and Miranda is old enough to make her own decisions."
@@ -1009,7 +1012,7 @@ label work_6:
                             brennan "... Of course."
                             her happy "Just like that, then."
                             brennan "Sure. Just like that."
-                        "No, you should date Dr. Lily":
+                        "No, you should date Dr. Lily.":
                             her normal "No, I was just kidding. Actually, I think you should reconsider Dr. Lily."
                             brennan "Really? You don't think twenty years age difference is too much?"
                             her serious "No way! I mean, she's young enough to still be good-looking, right?"
@@ -1021,11 +1024,11 @@ label work_6:
                             her serious "She doesn't act like your mother!"
                             brennan "No, you're right... I should talk to her. There's no harm in trying, right?"
                             her concerned "The worst thing that could happen is she says she's not interested, and then it's awkward every time you see her for a while, and then you both forget about it."
-                        "No, there's no hope for you":
+                        "No, there's no hope for you.":
                             her flirting "Of course not. But I didn't want to tell you to just give up."
                             brennan "You never know, perhaps we'll find some beautiful blue alien women out here somewhere. I could be Earth's ambassador, to teach them all about the strange and wonderful ways of the human species..."
                             her annoyed "Keep dreaming, Brennan!"
-                "I'm not so sure":
+                "I'm not so sure.":
                     her concerned "I used to think so, but I'm not so sure."
                     brennan "Why not?"
                     her sad "Things just aren't as exciting as they were when we were dating. I mean, we say 'I love you', but I don't feel it anymore. I don't think he does, either."
@@ -1097,7 +1100,7 @@ label work_6:
                 her normal "Thanks, Brennan..."
             $ brennan_relationship += 1
 
-        "No":
+        "No.":
             her normal "No, thank you. But if you would cover for me in case I get back late, I'd appreciate that."
             brennan "Of course."
             scene bg farm_interior with fade
@@ -1114,7 +1117,7 @@ label work_6:
             "I held his hand tight, and he squeezed back. We didn't need to say anything; he knew I appreciated him, and I knew he appreciated me, too."
             $ loved += 5
             return
-        "{i}Let's join Sara{/i}" if (skill_social >= 30):
+        "{i}Let's join Sara.{/i}" if (skill_social >= 30):
             her surprised "Hey, do you mind if I invite Sara, too? Sometimes we like to have lunch together."
             brennan "No, that's - that would be fine. I'll cook up something for the three of us."
             scene bg farm_interior flip with fade
@@ -1158,7 +1161,7 @@ label work_7:
             brennan "Thanks so much. And, ah, I'd appreciate it if you didn't mention to Ilian that they're for me."
             menu investigate_brennan:
                 "What should I do?"
-                "Question Brennan further" if (not questioned_brennan):
+                "Question Brennan further." if (not questioned_brennan):
                     call set_work_bg
                     show her normal at midright
                     show brennan at midleft
@@ -1185,7 +1188,7 @@ label work_7:
                     else:
                         brennan "You're right, of course, but I can't tell you what they're really for. Can you just trust me?"
                         jump investigate_brennan
-                "Go to the store house" if (not has_batteries):
+                "Go to the store house." if (not has_batteries):
                     scene bg storehouse with fade
                     show ilian at midright with dissolve
                     show her normal at midleft with moveinleft
@@ -1193,7 +1196,7 @@ label work_7:
                     $ has_batteries = True
                     menu:
                         "What should I do?"
-                        "Question Ilian":
+                        "Question Ilian.":
                             her surprised "Hey, Ilian, do you know what Brennan needs all these batteries for?"
                             ilian "Wait, these are for Brennan?!"
                             her serious "Yeah, he asked me to get them for him."
@@ -1204,7 +1207,7 @@ label work_7:
                             ilian "What about the batteries?!"
                             her normal "I might need them."
                             ilian "Gahhh..."
-                        "Leave":
+                        "Leave.":
                             "I left with the batteries."
                                                         
                     jump investigate_brennan
@@ -1229,7 +1232,7 @@ label work_7:
                     show brennan at center with moveinleft
                     jump brennan_confess
                     
-                "Give him the batteries" if has_batteries:
+                "Give him the batteries." if has_batteries:
                     call set_work_bg
                     show her normal at midright
                     show brennan at midleft
@@ -1247,7 +1250,7 @@ label work_7:
                 "What should I say?"
                 "I'll see what I can do":
                     jump investigate_brennan
-                "No, sorry.":
+                "No.":
                     her "Sorry, Brennan, I won't do that."
                     brennan "Oh...well, I'll just make do without, then, I suppose."
                     her concerned "Yeah, that's something we've all had to do, isn't it?"

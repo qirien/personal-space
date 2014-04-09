@@ -114,7 +114,8 @@ label knowledge_5:
     scene bg library with fade
     "I wanted to know why Talaam's climate was the way it was, and why they chose to settle here on this spot, out of the whole planet."
     "I read a few research papers from astronomers and looked at maps of the planet. I could see that it was colder near the poles; we were closer to the equator, which made for milder temperatures and made year-round agriculture possible."
-    "Obviously the river was very useful to our settlement for irrigation, and I also noticed some mountains further to the west. I had seen them in the distance. There was much more precipitation on this side of the mountain than on the other side, which also made this area ideal for colonization."
+    "Obviously the river was very useful to our settlement for irrigation, and I also noticed some mountains further to the west. I had seen them in the distance."
+    "There was much more precipitation on this side of the mountain than on the other side, which also made this area ideal for colonization."
     "I wondered why they didn't put us near the ocean, but then I read that hurricanes were very common here. Those same mountains acted as a hurricane barrier as well."
     "There were plans to mine the mountains later for valuable metals and minerals, but for now they mainly wanted to see if it was even possible for us to live here. Apparently they were not as confident in our chances for survival as [his_name] was."
     "Last, I learned that the mountains were also a region of previous volcanic activity, and there might be hot springs in the area."
@@ -139,7 +140,7 @@ label knowledge_6:
             her normal "Sure, that sounds like a good way to get our knowledge out to the scientific community."
             lily "Good. I'll send you what I have so far, and we can discuss it in the lab tomorrow."
             "Lily's paper was very technical, getting down to how the enzymes in these plants could still be broken down by human digestion, even though they were slightly different than earth's."
-            "She also wrote about how humans wouldn't be able to live off of Telanian plants alone, since they were missing vital nutrients."
+            "She also wrote about how humans wouldn't be able to live off of Talaam's plants alone, since they were missing vital nutrients."
             "I felt a little out of my league when I went in to talk to Lily."
             her concerned "I'm not much of a chemist, so I can't really help with checking most of your paper. I found a few typos, but you can easily fix those. Why did you want my help?"
             lily "Oh, I have a hard time seeing the big picture with plants. I know a lot of scientists are interested in their classification, but I think my knowledge of Earth plants might be tainting how I attempt to classify them. I'm interested in a more plebian perspective."
@@ -185,20 +186,8 @@ label knowledge_6:
     $ skill_knowledge += 10
     return
 
-# Research psychology of the frontier, gain insight into something?
-label knowledge_7:
-    scene bg library with fade    
-    "I had been doing a lot of reading lately. I read about the lives of pioneers who settled in new places, whether it was the Pilgrims in the 17th century, homesteaders in the 19th century, or refugees fleeing war and discord to start a new life in a totally unfamiliar place."
-    "I could really relate to these pioneers. While it was exciting to be experiencing new areas, it was also scary. They couldn't rely on past experience, other people, or traditional society - they could only rely on themselves."
-    "I realized how much trust we had all placed in each other, on our new colony here."
-    "Not just the lazy trust of casual neighbors, where you trust that your neighbor is not a killer, but the trust of pioneers, where you have to believe everyone is working hard and will help each other out of otherwise hopeless situations."
-    "What will living on a different planet do to our culture...?"
-    
-    $ skill_knowledge += 10
-    return
-
 # Turn the community center into an art museum!
-label knowledge_8:
+label knowledge_7:
     scene black with fade
     "One of the things I missed about Earth was all the cultural events and places. We didn't have any museums or galleries or concerts here."
     "But we did have digital copies of lots of famous paintings and music...."
@@ -250,7 +239,7 @@ label knowledge_8:
     return
 
 # Find bacteria that produce plastic
-label knowledge_9:
+label knowledge_8:
     scene black with fade
     "I had been working with Dr. Lily on a lot of things - not just the edible plants, but also cataloguing animal species and their behavior."
     "We were trying to build a food web based on what the animals here ate, but we knew it was woefully incomplete."
@@ -308,10 +297,10 @@ label knowledge_master:
     her concerned "I see what you mean..."
 
     scene bg library with fade
-    show sven at midright with fade
+    show sven at midright with dissolve
     show her normal at midleft with moveinleft
 
-    her normal "Sven, do we have any refernece materials about our planet?"
+    her normal "Sven, do we have any referece materials about our planet?"
     sven "About Talaam? Well, there's Dr. Lily's initial reports, and the probe's data..."
     her surprised "But nothing since we arrived here?"
     sven "Nah, everyone's been too busy just tryin' to survive."

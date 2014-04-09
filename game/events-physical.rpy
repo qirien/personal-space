@@ -16,6 +16,22 @@ label physical_0:
     "I thought it would be pretty useful to be able to get to town (and work) more quickly, so I decided to jog or run when I could."
     "For the first week I could only jog for a minute or so until I got out of breath and had to walk. But I didn't give up. I went to town all the time, so I had plenty of opportunities to practice."
     "Slowly, my running started to improve."
+    
+    scene bg fields with fade
+    show him serious at midright
+    show her serious at midleft
+    with dissolve
+    "A few weeks later, [his_name] needed a ditch dug for the new field, so I volunteered to help."
+    play sound "sfx/shovel.mp3"
+    "We dug and dug and dug, and finally, the ditch was finished."
+    stop sound fadeout 3.0
+    him normal "Thanks for your help, [her_name]. You are actually pretty good at shovelling."
+    her flirting "Me and my hidden talents..."
+    him flirting "Yes, I wonder what else you are hiding?"
+    her "Come and find out."
+    $ loved += 2
+    $ made_love += 1
+
     $ skill_physical += 10
 
     return
@@ -241,28 +257,9 @@ label physical_2:
 
     return
 
-# ditch digging
-label physical_3:
-    scene bg fields with fade
-    show him serious at midright
-    show her serious at midleft
-    with dissolve
-    play sound "sfx/shovel.mp3"
-    "[his_name] needed a ditch dug for the new field, so I volunteered to help. We dug and dug and dug, and finally, the ditch was finished."
-    stop sound fadeout 3.0
-    him normal "Thanks for your help, [her_name]. You are actually pretty good at shovelling."
-    her flirting "Me and my hidden talents..."
-    him flirting "Yes, I wonder what else you are hiding?"
-    her "Come and find out."
-    $ loved += 2
-    $ made_love += 1
-
-    $ skill_physical += 10
-
-    return
 
 #Learn how to ride a horse
-label physical_4:
+label physical_3:
     scene bg barn with fade
     show her normal at midright
     show him normal at midleft
@@ -284,7 +281,7 @@ label physical_4:
     return
 
 #Yoga
-label physical_5:
+label physical_4:
     scene bg farm_interior with fade
     show her serious at center
     play sound "sfx/rain-02.mp3" loop
@@ -315,7 +312,7 @@ label physical_5:
         "Do sun salutations.":
             "I switched rapidly between several poses until I worked up a sweat."
             show her at midright with move
-            show him at midleft with moveinleft
+            show him normal at midleft with moveinleft
 
             him "Ohhh, sweaty [her_nickname], my favorite."
             menu:
@@ -342,7 +339,7 @@ label physical_5:
     return
 
 # Go hiking again. Find a hot spring. If you bring him, you both enjoy a long soak and feel invigorated. If you don't bring him, you have to decide if you will tell him about it (even though you sort of promised not to hike alone)
-label physical_6:
+label physical_5:
     scene bg farm_interior with fade
     "I wanted to go hiking again. I just knew there were all sorts of interesting and useful places out there, if only we could find them."
     "Should I tell [his_name] about it? He might want to come, too."
@@ -522,7 +519,7 @@ label physical_6:
     return
 
 # Go hunting and bring back some meat
-label physical_7:
+label physical_6:
     scene bg bedroom with fade
     show her normal at midright
     show him sleeping at midleft
@@ -563,7 +560,7 @@ label physical_7:
     return
 
 # Participate in community soccer team
-label physical_8:
+label physical_7:
     play music "music/Prelude22.ogg" fadeout 3.0
     "Some of the colonists had taken to playing soccer on Saturday mornings. I decided to join them and see if I liked playing."
     scene bg path with fade
@@ -597,14 +594,14 @@ label physical_8:
               "I decided to try and shoot it in myself. I managed to make it in, but since three people hadn't touched it yet, it didn't count, and the other team won the game."
               $ community_level -= 1
          
-    brennan "Good game, [her_name]"
+    brennan "Good game, [her_name]."
     "Not only was soccer good exercise, but I feel like it's good for our sense of community, too."
     $ skill_physical += 10
     $ community_level += 2
     return
 
 # Lift heavy ?
-label physical_9:
+label physical_8:
     scene bg barn with fade
     show her normal at midright with dissolve
     "I was rearranging the cellar storage again when [his_name] walked in."

@@ -11,7 +11,27 @@ label spiritual_def:
 
 # Intro Event
 label spiritual_0:
-    "I went to the colony's spiritual leader, just to talk. I'd been thinking a lot about what makes us human, and what there may be that we cannot see."
+    # attending church and praying
+    scene bg church with fade
+    show naomi at center with dissolve
+    "I decided to check out the worship services that Sister Naomi led."
+    naomi "...we are all invited to come and partake of goodness and peace. Do you think it matters what planet we are on?  Of course it doesn't. We all have the same access to divine inspiration and guidance, no matter where we are."
+    naomi "Now let us pray."
+    "I thought she was going to pray for us, but instead we had a few minutes of silence where everyone could pray on their own."
+    menu:
+        "I..."
+        "Didn't know what to say.":
+            "I didn't know what to say, so I just kind of sat there. I guess it was peaceful."
+        "Poured out my heart to God.":
+            "I poured out my heart to God. I talked about everything that was bothering me, everything that made me happy, and asked for help. Praying about all that helped me feel at peace."
+        "Prayed for peace and understanding.":
+            "I wished for an increase in love, peace, and understanding in the  people of Talaam -- and Earth. I also prayed for peace in my own heart, and began to feel it even as the services ended."
+
+    "Every week she had different things to say, but she always ended with about ten minutes of just quiet, where people could pray or meditate or just think. I didn't always make time for quiet moments in my everyday life, so I enjoyed this bit of peace."
+    $ relaxed += 5
+    $ community_level += 1
+
+    "Afterwards, I went up to her to talk. I'd been thinking a lot about what makes us human, and what there may be that we cannot see."
     scene bg church with fade
     show naomi at midright with dissolve
     show her serious at midleft with moveinleft
@@ -323,7 +343,7 @@ label spiritual_7:
     her serious "\"I treat those who are good with goodness,\nAnd I also treat those who are not good with goodness.\nThus goodness is attained.\""
     her "\"I am honest with those who are honest,\nAnd I am also honest with those who are dishonest.\nThus honesty is attained.\""
     her surprised "I guess the only person whose goodness or honesty I have any control over is myself. If people were only nice when other people were nice, soon no one would feel like they had to be nice."
-    her serious "I guess that's kind of like turning the other cheek, isn't it?"
+    her serious "That's kind of like turning the other cheek, isn't it?"
     "There were a lot of teachings that seemed to be in common across different religions, even if their theology and cultures were widely different."
     her concerned "Some of these scriptures are so old... people sacrificed a lot to make sure they were passed down to future generations... What wisdom will I pass on to future generations?"
     "I thought about that for a long time."
@@ -358,30 +378,6 @@ label spiritual_8:
 
     $ community_level +=3
     $ skill_spiritual += 10
-    return
-
-# attending church and praying
-label spiritual_9:
-    scene bg church with fade
-    show naomi at center with dissolve
-    "Sometimes I went to the worship services that Sister Naomi led."
-    naomi "...we are all invited to come and partake of goodness and peace. Do you think it matters what planet we are on?  Of course it doesn't. We all have the same access to divine inspiration and guidance, no matter where we are."
-    naomi "Now let us pray."
-    "I thought she was going to pray for us, but instead we had a few minutes of silence where everyone could pray on their own."
-    menu:
-        "I..."
-        "Didn't know what to say.":
-            "I didn't know what to say, so I just kind of sat there. I guess it was peaceful."
-        "Poured out my heart to God.":
-            "I poured out my heart to God. I talked about everything that was bothering me, everything that made me happy, and asked for help. Praying about all that helped me feel at peace."
-        "Prayed for peace and understanding.":
-            "I wished for an increase in love, peace, and understanding in the  people of Talaam -- and Earth. I also prayed for peace in my own heart, and began to feel it even as the services ended."
-
-    "Every week she had different things to say, but she always ended with about ten minutes of just quiet, where people could pray or meditate or just think. I didn't always make time for quiet moments in my everyday life, so I enjoyed this bit of peace."
-    $ skill_spiritual += 10
-    $ relaxed += 5
-    $ community_level += 2
-
     return
 
 # Reading the Bible

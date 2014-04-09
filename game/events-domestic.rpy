@@ -42,21 +42,8 @@ label domestic_1:
     $ skill_domestic += 10
     return
 
-# make curtains for windows
-label domestic_2:
-    scene bg farm_interior with fade
-    show her normal
-    her concerned "I've got to do something about these windows. They are too bright when the sun is low. But it's not as if I can just buy some cloth..."
-    if (skill_social >= 10):
-        her normal "I'll ask around for everyone's scraps of cloth, and sew them together to make some curtains"
-    else:
-        her normal "I could probably sew these old dishtowels together to make some curtains..."
-    her happy "There! That's better."
-    $ skill_domestic += 10
-    return
-
 # fence to keep out herb garden pests
-label domestic_3:
+label domestic_2:
     scene bg fields with fade
     show her normal at center
     "I planted an herb garden when we first arrived, and the plants are just starting to get big enough for me to use. I think I'll make some tea..."
@@ -73,7 +60,7 @@ label domestic_3:
     return
 
 # Who wants a goat?
-label domestic_4:
+label domestic_3:
     scene bg farm_exterior with fade
     show her normal at midright with dissolve
     show thuc at midleft with moveinleft
@@ -165,7 +152,7 @@ label domestic_4:
     return
 
 # Too many radishes!
-label domestic_5:
+label domestic_4:
     scene bg farm_interior with fade
     show her normal at midright with dissolve
     show him normal at midleft with moveinleft
@@ -192,7 +179,7 @@ label domestic_5:
     return
 
 # Pumpkins and Halloween!
-label domestic_6:
+label domestic_5:
     scene bg farm_interior with fade
     show her normal at midright with dissolve
     "One day, [his_name] brought home some pumpkins he had planted."
@@ -250,7 +237,7 @@ label domestic_6:
     return
 
 # what to do with local meat
-label domestic_7:
+label domestic_6:
     scene bg farm_interior with fade
     "One day, I came home from work to find a dead monster on the kitchen table."
     show her surprised at midleft with moveinleft
@@ -337,7 +324,7 @@ label domestic_7:
     return
 
 # running out of soap; must make own soap with ash, fat, etc
-label domestic_8:
+label domestic_7:
     scene bg community_center with fade
     show pavel at center with dissolve
     boss "One last item of business for the community meeting-"
@@ -429,7 +416,7 @@ label domestic_8:
     return
 
 # Canning
-label domestic_9:
+label domestic_8:
     scene bg farm_interior with fade
     "[his_name] was harvesting a lot of vegetables and fruits, and while the cellar kept some things cool and dry, other produce didn't last very long."
     "We had so many tomatoes and zuchinis there was no way we could possibly eat them all before they went bad. We took a bunch to the storehouse, but they told us that everyone else had all they could eat, too."

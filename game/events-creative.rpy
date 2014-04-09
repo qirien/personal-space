@@ -31,16 +31,8 @@ label creative_0:
 
     return
 
-# Weave Placemats
-label creative_1:
-    scene bg path with fade
-    "On my way back from work, I found some tall, wide weeds that had grown very quickly. I wanted to work on some weaving, so I took some home and made a door mat."
-    "Not only did it make the place look more homey, but it kept some of the dirt from outside off our floors."
-    $ skill_creative += 10
-    return
-
 # Scarecrow
-label creative_2:
+label creative_1:
     scene bg farm_interior with fade
     show him normal at midright
     show her normal at midleft
@@ -73,7 +65,7 @@ label creative_2:
     return
 
 # Crochet something new using goat's hair?
-label creative_3:
+label creative_2:
     scene bg farm_interior with fade
     "One of the villagers was able to spin yarn out of goat hair. I took a skein and promised I'd try to make something with it."
     "Luckily, I was able to borrow a crochet needle from the library. I looked up how to crochet on my computer pad, and started making a simple potholder."
@@ -90,7 +82,7 @@ label creative_3:
     return
 
 # Woodworking - make vegetable crate/barrel or clothes drying rack out of local wood 
-label creative_4:
+label creative_3:
     scene bg farm_interior with fade
     "Our harvests were staying fairly fresh in the cellar, but I needed a way to organize which vegetables were the oldest."
     "I wanted to make some crates out of wood, but I wasn't sure how I'd manage without nails."
@@ -132,7 +124,7 @@ label creative_4:
     return
 
 # Make rope
-label creative_5:
+label creative_4:
     scene bg farm_interior with fade
     "[his_name] asked me if we had any rope to make a rope to get up into the loft of our barn and pull carts around. I told him I'd look at the supply center next time I went into town."
     scene bg storehouse with fade
@@ -169,7 +161,7 @@ label creative_5:
     return
 
 # Re-cover space shuttle seats to make a couch?
-label creative_6:
+label creative_5:
 #month 5 is what to do with trash, so I'm assuming this will have to come after it (though it may be several months after it)
     scene bg storehouse with fade
     "Ever since the push to recycle or compost all our trash, I had been trying to think of other uses for shuttle parts."
@@ -239,7 +231,7 @@ label creative_6:
     return
 
 # Photography
-label creative_7:
+label creative_6:
     scene bg sunset with fade
     "I hadn't done any photography in a long time, but the way the light was coming through the clouds really inspired me."
     "As I set up shots- some simple landscapes, others focusing on an alien plant or insect with the clouds in the background- I felt awed. Here was this entire planet full of wonders, and only the few of us who lived here got to experience it."
@@ -255,7 +247,7 @@ label creative_7:
     return
 
 # Make some dishes out of local clay, fire them
-label creative_8:
+label creative_7:
     scene bg pond with fade
     "A rainy night made the banks of the river swell. When I was checking to make sure our plants were okay, I noticed that some of the upturned soil had a clay-like texture."
     "I did a little digging on the other side of the river, where I found some clay."
@@ -285,7 +277,7 @@ label creative_8:
     return
 
 #build a bridge out of braided grass rope
-label creative_9:
+label creative_8:
     scene bg pond with fade
     "It was a nice day out and I went for a walk. I wanted to cross the river and continue walking, but I didn't want to get wet."
     "I know a few other people said they would like to get more familiar with the land past the river, but they didn't want to go to the trouble of getting their boats out just for a walk."

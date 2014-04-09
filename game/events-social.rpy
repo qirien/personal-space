@@ -40,19 +40,19 @@ label social_0:
     julia "Thank you, [her_name]. Anyway, you are all free to choose whether to attend or not, but we hope to get everyone's input at the next meeting."
     her "(Whew! They would never say things like that in person! Hopefully everyone can think a little more before they type...)"
     
-    $ skill_social += 10
+    "Later, Natalia sent me a message."
+    natalia "I'm sorry I was so rude; I hope you'll forgive me."
+    her "Oh, I completely understand. I think everyone's a little frustrated."
+    natalia "Why don't you come over and we can chat in person? I found a fruit you might want to try..."
+    her "Sure, I'll be right over."
 
-    return
-
-# Dry fruits with Natalia
-label social_1:
     scene bg farm_exterior flip with fade
-    "One day I was at the Peron's house. Natalia had found some fruits while hiking that the scientists deemed edible. She had picked so many; her table was covered with them."
+    "When I got to the Peron's house, I saw Natalia's table was covered with some small, spiny fruits she had found while hiking."
     show natalia at midright
     show her normal at midleft
     with dissolve
     her happy "These look really good!"
-    natalia "Here, try one."
+    natalia "Here, try one. Dr. Lily says they should be fine, and I haven't had any problems with them."
     her surprised "Thanks...Oh!"
     "They tasted sweet and juicy, but they were full of hard, bitter seeds."
     show her normal
@@ -64,7 +64,7 @@ label social_1:
     return
 
 # Start a weekly game night at the community center
-label social_2:
+label social_1:
     scene bg community_center with fade
     "Soon after we arrived, the main shuttle bay was converted into a community center. It was the only building large enough for everyone to gather in at once."
     "But other than official colony meetings, it wasn't used very much."
@@ -114,7 +114,7 @@ label social_2:
     return
 
 # Invite Nguyens over for dinner
-label social_3:
+label social_2:
     scene bg farm_interior with fade
     "Even though we had all lived together for months, there were some people in the community we didn't know very well."
     show her normal at midright
@@ -197,7 +197,7 @@ label social_3:
     return
 
 #organize lunch group
-label social_4:
+label social_3:
     play music "music/Sojourn.ogg" fadeout 3.0
     play sound "sfx/people.mp3" loop
     "Sara and I met for lunch every week to chat and take a break."
@@ -242,7 +242,7 @@ label social_4:
     return
 
 # Organize community movie night!
-label social_5:
+label social_4:
     scene bg community_center with fade
     play music "music/Sojourn.ogg" fadeout 3.0
     play sound "sfx/people.mp3" loop
@@ -395,7 +395,7 @@ label social_5:
     return
 
 # Someone's house burns down; will you help?
-label social_6:
+label social_5:
     scene bg bedroom with fade
     show overlay night
     show him serious at midright
@@ -520,7 +520,7 @@ label social_6:
 
 
 # Teach 'enrichment' class on [profession]
-label social_7:
+label social_6:
     call set_work_bg
     show her normal at quarterright with dissolve
     "As the colony's [profession], I knew a lot more than most about my job. I decided to hold a class to teach anyone who was interested in learning more.  It wasn't smart for be to be the only [profession] around."
@@ -565,7 +565,7 @@ label social_7:
 
 # Family (appears to be?) slacking off and mooching off everyone else;
 # mayor asks [her_name] to see if she can determine what to do
-label social_8:
+label social_7:
     "I didn't see the other colonists much during the day, but I assumed they were working hard like we were."
     "But not everyone thought that..."
     scene bg community_center with fade
@@ -671,7 +671,7 @@ label social_8:
     return
 
 # Community Shindig
-label social_9:
+label social_8:
     scene bg path with fade
 
     "One day Sara and I took a walk together."

@@ -50,8 +50,7 @@ init python:
     style.stat_value_label_text.yalign = 0.5
     style.stat_value_label_text.xalign = 0.0
     style.stat_value_label_text.size = 16
-    
-    
+        
     # Center the stat bar vertically.
     style.stat_bar.yalign = 0.5
     style.stat_bar.xminimum = 200
