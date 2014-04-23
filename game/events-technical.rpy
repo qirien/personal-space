@@ -153,7 +153,7 @@ label technical_4:
     her serious "Well, yes, I was going to see if you had any pipes or sheets of metal or something."
     ilian "We don't have much left. If it's an emergency or something vital to our survival you can use it, but I'm afraid that otherwise I have to say no."
     menu:
-        "It's not vital to my survival":
+        "It's not vital to my survival.":
             her serious "I just wanted to build a hot water heater for my house. Do you have any ideas about what kind of material I could use that would conduct heat easily?"
             ilian "Hmm. Well, I know we're always finding new uses for these animal skeleton things."
             her flirting "And by \"always finding\" you mean no one has thought of anything to do with them?"
@@ -169,7 +169,7 @@ label technical_4:
             "We found a tree that was about the width I needed. [his_name] cut it down, and we brought it home on our wagon in pieces."
             "After the wood dried out, I hollowed it out using tools at the storehouse."
             "In the end, it just ended up being lukewarm storage for more water."
-        "I'll die if I don't get what I need":
+        "I'll die if I don't get what I need".:
             her concerned "It's for something really important. Can I please get two sheets of metal and some pipes?"
             ilian "What exactly is it for?"
             her angry "I don't have time for your questions! This is a matter of life and death!"
@@ -195,13 +195,13 @@ label technical_5:
     "My least favorite was:"
     menu:
         "What was my least favorite food?"
-        "Kale":
+        "Kale.":
             $ hated_food = "kale"
-        "Beets":
+        "Beets.":
             $ hated_food = "beets"
-        "Carrots":
-            $ hated_food = "carrots"
-        "Brussels sprouts":
+        "Turnips.":
+            $ hated_food = "turnips"
+        "Brussels sprouts.":
             $ hated_food = "brussels sprouts"
     her concerned "I just don't like [hated_food]."
     him serious "Sorry, it's nutritious and it grows really well here, so we have a lot of it."

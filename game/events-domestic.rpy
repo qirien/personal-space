@@ -35,7 +35,7 @@ label domestic_1:
             her "That helped a bit! I should leave clothes soaking more often."
             $ relaxed +=2
 
-        "Use hot water instead of cold water":
+        "Use hot water instead of cold water.":
             "It took about half an hour to go fetch enough water for the wash bin, heat it up on the stove, and pour it in the wash tub."
             "But the hot water did seem to get dirt out faster."
         
@@ -95,21 +95,21 @@ label domestic_3:
             him annoyed "I would have appreciated you asking me about it first."
             menu:
                 "What should I say?"
-                "You're right.":
+                "{i}You're right.{/i}" if (relaxed >= 0):
                     her sad "You're right, I'm sorry."
                     him sad "Sorry for yelling at you - it's not worth getting upset over."
                     menu:
                         "What should I say?"
-                        "I hate it when we fight":
+                        "I hate it when we fight.":
                             her concerned "I hate it when we fight."
                             "He came over and held me close."
                             him serious "I'm sorry, [her_nickname]. You do a lot around here that I don't always see or appreciate."
                             her serious "I know you work hard every day, too. I don't want to ask you to do any more than you already do."
                             "We didn't need to say anything more."
-                        "I have to get out of here":
+                        "I have to get out of here.":
                             her angry "I'm going out."
                             "I went on a walk until I had cooled off. When I came back, we didn't talk about it anymore, and eventually we were back to normal."
-                        "(Give him a hug)":
+                        "(Give him a hug.)":
                             "I hugged him. It took a few seconds for him to hug me back, but then I knew that everything would be all right."
                             
                 "What's the point?":
@@ -204,11 +204,11 @@ label domestic_5:
     her surprised "(I wonder what I should do with them...?"
     menu:
         "What should I do?"
-        "Make pumpkin pie":
+        "Make pumpkin pie.":
             "I made pumpkin pie. I didn't have much sugar to put in it, but it tasted pretty good, anyway."
-        "Make pumpkin goulash":
+        "Make pumpkin goulash.":
             "I made a pumpkin goulash with other vegetables and baked it inside the pumpkin. It tasted pretty good!"
-        "Make jack-o-lanterns":
+        "Make jack-o-lanterns.":
             "I made some jack-o-lanterns and put candles in them. They grinned saucily at us at night, until they started rotting and I had to throw them away."
 
     hide her
@@ -355,14 +355,14 @@ label domestic_7:
         him "I could hunt down another one of those creatures that are always nosing around the farm."
         menu:
             "What should I say?"
-            "Yes":
+            "Yes.":
                 her normal "That would work. We could use the meat and hide, too, for other things."
                 him happy "All right, I'll bring home the bacon for you, [her_nickname]."
                 "It was a lot of work separating the fat from the meat, and rendering and cleaning the fat, but I was glad we could make it using only things we found on this planet."
                 him normal "It feels good to be more independent from Earth."
                 her happy "Yeah, who needs Earth, anyway!"
                 him serious "Doesn't mean I won't be glad to see the supply ships, though."
-            "No":
+            "No.":
                 her serious "No, why don't you just see if the storehouse still has oil?"
                 him serious "Okay, but we should start saving fat for next time."
                 her normal "Good idea."
@@ -394,7 +394,7 @@ label domestic_7:
     her "Now, after all this hard work, should I share some with everyone else? I do have some extra..."
     menu:
         "What should I do?"
-        "Share it":
+        "Share it.":
             "I took what we couldn't use right away to the storehouse."
             scene bg storehouse with fade
             show ilian at right
@@ -407,7 +407,7 @@ label domestic_7:
             her "I can make more, if it's useful."
             boss "Definitely! No one else has tried soapmaking yet."
             $ community_level += 2
-        "Keep it":
+        "Keep it.":
             "I worked so hard on this soap, I couldn't bear to give it away to just anyone."
 
     "I would never take soap for granted again."
@@ -422,22 +422,22 @@ label domestic_8:
     "We had so many tomatoes and zuchinis there was no way we could possibly eat them all before they went bad. We took a bunch to the storehouse, but they told us that everyone else had all they could eat, too."
     "I didn't want them to go to waste, and I knew we would be wishing we had some more later, so I decided to preserve them. But what should I turn them into?"
     menu:
-        "What should I make?"
-        "Tomato sauce":
+        "What should I do?"
+        "Make tomato sauce.":
             if (skill_technical >= 60):
                 "I used the blender I had made to puree a bunch of vegetables in a nice sauce."
             else:
                 "I chopped up the tomatoes and zuchinis."
             "Then I cooked the sauce and ladled it into clean glass jars. I let the jars sit in boiling water to kill any bacteria."
             "It took all day, but looking at the rows of jars full of food we had grown and made ourselves was very satisfying."
-        "Salsa":
+        "Make salsa.":
             if (skill_technical >= 60):
                 "I used the blender I had made to puree a bunch of vegetables in a nice salsa."
             else:
                 "I chopped up the tomatoes and zuchinis and onions and peppers."
             "I ladled the salsa into clean glass jars. I let the jars sit in boiling water to kill any bacteria."
             "It took all day, but looking at the rows of jars full of food we had grown and made ourselves was very satisfying."
-        "Dehydrate them":
+        "Dehydrate them.":
             "I sliced up the vegetables and set them on screens outside to dry."
             "The texture wasn't very good, but they would be fine rehydrated in sauces and things."
             "I sealed them up and put them in the cellar. The sight of all that food that we had grown and made ourselves was very satisfying!"

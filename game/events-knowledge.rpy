@@ -136,7 +136,7 @@ label knowledge_6:
     lily "[her_name]. I want to talk to you. I am writing an article about the edible, native plants we've found for an Earth science journal, but I am sure I have missed something. Will you co-author it with me?"
     menu:
         "What should I say?"
-        "Sounds fun":
+        "Sounds fun.":
             her normal "Sure, that sounds like a good way to get our knowledge out to the scientific community."
             lily "Good. I'll send you what I have so far, and we can discuss it in the lab tomorrow."
             "Lily's paper was very technical, getting down to how the enzymes in these plants could still be broken down by human digestion, even though they were slightly different than earth's."
@@ -154,7 +154,7 @@ label knowledge_6:
             "Lily sent the paper off to Earth and I sent out an updated edible plant guide to the colonists, with guidelines on which earth plants were essential for supplementing a Talaam-based diet."
             $ community_level += 1
             
-        "I want to write my own paper to publish here on Talaam":
+        "I want to write my own paper to publish here on Talaam.":
             her "Actually, I was thinking of writing my own paper. I'd like to make a more detailed and accessible chart of edible plants with explanations my neighbors could understand."
             lily "Oh. I see. After you finish it, may I reference it in my paper?"
             her "Yes, that's fine."
@@ -355,7 +355,7 @@ label knowledge_master:
             her "Don't wait until your knowledge is perfect or until someone makes a costly mistake your knowledge could have prevented - share it with us now!"
             her "If you don't know where your information goes, or there's not a place for it yet, just send it to me and I will add it in the right place."
             "I hoped that would encourage people to add to our planet encyclopedia."
-        "Get the Mayor's help":
+        "Get the Mayor's help.":
             scene bg community_center with fade
             show pavel at midright, behind her with dissolve
             show her normal at midleft with moveinleft

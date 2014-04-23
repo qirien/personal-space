@@ -143,7 +143,7 @@ label physical_1:
             him angry "Maybe you'll find something lethal!"
             menu:
                 "What should I say?"
-                "That's the fun":
+                "That's the fun.":
                     her normal "That's the fun of it! It wouldn't be an adventure if it wasn't just a little bit dangerous, would it?"
                     him serious "You're not indestructible, like some action hero. If you die out there, you can't just load your game and try again."
                     her serious "You're right; it's not a game. We can't just follow some mini-map to the next plot point; there could be something we need just minutes away from our house that we didn't find because we were too afraid to look."
@@ -227,7 +227,7 @@ label physical_2:
             him surprised "Speaking of not starving, what's for dinner?"
             menu:
                 "What should I say?"
-                "You're asking {b}me{/b}?!" if (relaxed <= 5):
+                "You're asking {b}me{/b}?!" if (relaxed <= 0):
                     her angry "I hadn't gotten to that yet because I had to chop up all this stupid wood!"
                     stop sound
                     play sound "sfx/ice-block-drop-01.mp3"
@@ -290,14 +290,14 @@ label physical_4:
     "After warming up I had to decide what to do next."
     menu:
         "What should I do?"
-        "Meditate in sitting and prone poses":
+        "Meditate in sitting and prone poses.":
             show her sleeping at sitting with move
             "I spent time sitting and lying down just focusing on my breathing. "
             "I felt both more energized, and more relaxed."
             $ relaxed += 5 
             $ skill_physical += 5
             return
-        "Practice balancing with long standing poses":
+        "Practice balancing with long standing poses.":
             "I tried to balance on one leg with my upper body in various poses."
             show her at midright with move
             show him normal at midleft with moveinleft
@@ -345,7 +345,7 @@ label physical_5:
     "Should I tell [his_name] about it? He might want to come, too."
     menu:
         "What should I do?"
-        "Tell him":
+        "Tell him.":
             show her normal at midright
             show him normal at midleft
             with dissolve
@@ -405,7 +405,7 @@ label physical_5:
             her "This one's not too hot; feels like a bathtub."
             menu:
                 "What should we do?"
-                "Take a sample to Dr. Lily":
+                "Take a sample to Dr. Lily.":
                     her normal "I'll take a sample to Dr. Lily; she can make sure it'd be safe for us to bathe in."
                     him serious "Good idea."
                     stop sound fadeout 3.0
@@ -420,7 +420,7 @@ label physical_5:
                     lily "Thanks for reporting this; our initial scans showed geothermal activity in that area, but you've confirmed it. We may eventually use the springs for energy."
                     $ community_level += 3
 
-                "Try it out":
+                "Try it out.":
                     play music "music/Reflections.ogg" fadeout 3.0
                     her normal "It seems fine; I'll try it out."
                     him normal "I'm game!"
@@ -440,14 +440,14 @@ label physical_5:
                         $ relaxed = 0
                     else:
                         $ relaxed += 5
-                "Look around some more":
+                "Look around some more.":
                     her "Let's look around some more."
                     him "Okay."
                     "We hiked around and found a few more hot springs of different temperatures; no more geysers, though."
             stop sound fadeout 3.0
             "It was neat to find hot springs and geysers not too far from the house. Maybe they'd be useful to us in the future."
 
-        "Don't tell him":
+        "Don't tell him.":
             "I didn't tell him; he'd just worry. But I left a note saying where I went. If something went wrong, he'd find the note and know where I went. But if nothing went wrong, I'd be home before him and I could throw the note away before he found it."
             scene bg mountains with fade
             "I set off west, towards the mountains, until I found a stream meandering down from them."
@@ -484,8 +484,8 @@ label physical_5:
             stop sound fadeout 3.0
             her normal "The hot spring is a neat find; maybe I should tell [his_name]? But then he'll know I went hiking without him... Maybe I'll tell Dr. Lily; she can see if it's safe for us to use."
             menu:
-                "Whom should I tell?"
-                "Tell [his_name]":
+                "What should I do?"
+                "Tell [his_name].":
                     scene bg farm_interior with fade
                     "When I got back, I told [his_name] all about what I had found."
                     show him at midright with dissolve
@@ -498,7 +498,7 @@ label physical_5:
                     her annoyed "Well, I guess we just disagree on this."
                     him annoyed "No, you're just wrong."
                     her angry "Whatever."
-                "Tell Dr. Lily":
+                "Tell Dr. Lily.":
                     scene bg lab with fade
                     show lily at midright with dissolve
                     show her at midleft with moveinleft
@@ -511,7 +511,7 @@ label physical_5:
                     $ loved -= 2
                     $ relaxed -= 2
                     $ community_level += 3
-                "Don't tell anyone":
+                "Don't tell anyone.":
                     "I decided not to tell anyone about it - it would be my very own secret spot."
                     $ community_level -= 3
                     $ loved -= 2
@@ -581,16 +581,16 @@ label physical_7:
     "Sara was really good at making goals, but Ilian hadn't had the ball much, and I was trying to help him get extra practice. They were both open."
     menu:
          "Whom should I pass to?"
-         "Sara":
+         "Sara.":
               her serious "Sara! It's yours!"
               "I passed the ball to Sara, who promptly shot it in."
               "We won the game!"
-         "Ilian":
+         "Ilian.":
               her happy "Ilian! Take it on down!"
               "I passed it to Ilian. Victory was not as important as practice and team spirit."
               "The other team won, but I could tell our team felt strong and happy about how we played."
               $ community_level += 1
-         "Keep the ball":
+         "Keep the ball.":
               "I decided to try and shoot it in myself. I managed to make it in, but since three people hadn't touched it yet, it didn't count, and the other team won the game."
               $ community_level -= 1
          

@@ -262,7 +262,7 @@ label social_4:
     her happy "I know the perfect movie!"
     menu:
         "What should we watch?"
-        "A sci-fi drama":
+        "A sci-fi drama.":
             her laughing "There's a space opera movie about finding the strength to persist through hardships that I think would be highly entertaining!"
             sara "Oh no, is it one of those Star Wars remakes?"
             her normal "Well, yes, but isn't it interesting to think about what space travel will be like in the future?"
@@ -313,7 +313,7 @@ label social_4:
                     her angry "Then I guess I wouldn't notice anything was wrong!"
                     $ loved -= 2
             "It seemed like the other families enjoyed the movie too, even though it was pretty ridiculous."
-        "A historical mystery action flick":
+        "A historical mystery action flick.":
             her happy "Sherlock Holmes would be perfect! It has mystery, suspense, romance, action, and would help educate children about the 1890s."
             sara "Yeah, and it would encourage kids to try smoking alien weeds."
             her annoyed "Oh come on. We grew up watching films with people drinking all the time and it didn't turn us into alcoholics."
@@ -337,7 +337,7 @@ label social_4:
             him happy "Yeah, but making coins out of copper is a waste of metal!"
             her happy "Seriously, they should be making teapots out of them."
             him normal "Or you know, wires."
-        "An animated art film":
+        "An animated art film.":
             her normal "Let's put on an old cartoon movie so that the kids will enjoy it too."
             lily "{i}Wall-E{/i} is one that might be both relevant and entertaining."
             her surprised "I was thinking more along the lines of {i}The Old Man and the Sea{/i}."
@@ -360,10 +360,10 @@ label social_4:
             him normal "Yes, I am glad. Are you?"
             menu:
                 "What should I say?"
-                "I love it here!" if (loved > 0):
+                "{i}I love it here!{/i}" if (loved > 0):
                     her normal "Of course I miss my family, but I love our community and working with you to make a place for ourselves."
                     him laughing "Good, because we're stuck here!"
-                "I don't really like it here" if (loved <= 0): 
+                "{i}I don't really like it here.{/i}" if (loved < 0): 
                     her sad "I think about going home all the time. I wish I hadn't come."
                     him surprised "Really? I thought you were getting used to it."
                     her annoyed "No, I'm not."
@@ -374,14 +374,14 @@ label social_4:
                     him normal "Making mistakes is how we'll learn! And even if we end up dying young together... isn't that kind of romantic?"
                     menu:
                         "What should I say?"
-                        "No, it's not romantic":
+                        "No, it's not romantic.":
                             her annoyed "It's not romantic. We'll be too dead to appreciate how cute our sacrifice is."
                             him normal "Well, I'm happy as long as we're together."
-                        "It could be romantic":
+                        "It could be romantic.":
                             her flirting "If they find our skeletons embracing each other, I guess that could be romantic."
                             him flirting "That's the spirit!"
                             $ loved += 5
-                "Most of the time":
+                "Most of the time.":
                     her normal "Most of the time I'm happy to be here. There are lots of things I miss, of course. But it's also exciting to start something new."
                     him happy "We're living off the land! We can make our own futures!"
                     her flirting "Yeah, as long as that future involves farming of some kind."
@@ -439,6 +439,7 @@ label social_5:
             her concerned "I'm so sorry..."
     sara "I don't know where we'll stay; what we'll wear; how we'll eat..."
     menu:
+        "What should I say?"
         "Come stay at our house.":
             her serious "You and Ilian are welcome to stay at our house if you want..."
             sara "Really? I know your house is pretty small..."
@@ -599,8 +600,8 @@ label social_7:
     "I headed over to their farm, and found Mrs. Nguyen hanging up the clothes to dry. She smiled when she saw me coming."
     julia "Hello, [her_name], what can I do for you?"
     menu:
-        "What should I say?"
-        "Ask if she is okay":
+        "What should I do?"
+        "Ask if she is okay.":
             her concerned "Is...everything all right with your family?"
             "Mrs. Nguyen stiffened, and she suddenly became very interested in her laundry."
             julia "Of course. Everything's fine."
@@ -616,7 +617,7 @@ label social_7:
             "I sent her an apology message later that day, and she wrote me back."
             julia "Thanks for stopping by...If you really want to help, perhaps someone could help Thuc with a flooding system for the rice he wants to plant."
             
-        "Ask why they haven't planted anything":
+        "Ask why they haven't planted anything.":
             her surprised "Why haven't you planted anything this season?"
             julia "You think you know all about our farm, just by looking at it?"
             her serious "No, but it just looks empty, so I wondered-"
@@ -628,7 +629,7 @@ label social_7:
             "I sent her an apology message later that day, and she wrote me back."
             julia "If you really want to help, perhaps someone could help Thuc with a flooding system for the rice he wants to plant."
 
-        "Chat for a while":
+        "Chat for a while.":
             her normal "I just came by to say hi. We don't get to see each other very often, do we?"
             julia "No, we don't! How are things going at your farm?"
             her serious "Pretty well, though we lost a lot of corn a while back to some nasty bugs here. There's so many things you can't control on a farm, aren't there?"
@@ -713,12 +714,12 @@ label social_8:
             sara "Yeah...should we use recorded music, or see if we can get someone to play live?"
             menu:
                 "What kind of music?"
-                "Recorded music":
+                "Recorded music.":
                     her normal "Recorded music is fine; then we we have more control over it, and it's better for dancing."
                     sara "Let's get a good playlist setup of lots of different kinds of dance music."
                     her "Good point; everyone here probably likes different things, so I will send out an e-mail asking everyone to send me their favorite dance song."
                     $ party_music = "recorded"
-                "Live music":
+                "Live music.":
                     her "Live music is better because it's people you actually know playing the music."
                     if (skill_creative >= 50):
                         her happy "I can play, you know."
@@ -736,17 +737,17 @@ label social_8:
             sara "Yeah, something everyone would like..."
             menu:
                 "How about:"                
-                "Party games":
+                "Party games!":
                     her surprised "Maybe some party games? Like musical chairs or something? Is that dumb?"
                     sara "Not if we play it right..."
                     her serious "There are also a lot of people. We might need to split them up into small groups."
                     sara "I have some ideas; leave it to me!"
                     $ party_entertainment = "games"
-                "Talent show":
+                "Talent show!":
                     her happy "How about a talent show? I'm sure lots of people have things they can do, even if it's just jokes or a skit or something."
                     sara "Sure! We'll just organize the performances and be the announcers."
                     $ party_entertainment = "talent show"
-                "Contests":
+                "Contests!":
                     her surprised "Maybe some kind of contests?"
                     sara "Okay, this is totally Farm Life, but what about a wood chopping contest?"
                     her laughing "Ha ha, that actually could be fun. We'd need some other contests, too, though..."
@@ -807,12 +808,12 @@ label done_party_menu:
         her happy "Hi, I'm [her_name]. My hobby is anything [top_skill], I helped organize this party, and I used to-"
         menu:
             "What should I say? (I need to tell a plausible lie...)"
-            "Eat bacon ice cream":
-                her "-eat bacon ice cream."
-            "Work as a roller-skating carhop":
-                her "-work as a roller-skating carhop."
-            "Hate looking at the stars":
-                her "-hate looking at the stars."
+            "I used to eat bacon ice cream.":
+                her "I used to eat bacon ice cream."
+            "I used to work as a roller-skating carhop.":
+                her "I used to work as a roller-skating carhop."
+            "I used to hate looking at the stars.":
+                her "I used to hate looking at the stars."
         "Everyone guessed my lie right away, but that's okay. I was more interested in hearing what everyone else had to say."
         him happy "Hi, my name's [his_name]. I like to write poetry, I won a sheep-riding rodeo when I was five years old, and in high school I was known as The Candid Bandit."
         "(Well, I know he likes to write poetry...but I have no idea which of the other things is true!"
@@ -856,11 +857,11 @@ label done_party_menu:
 
         menu:
             "That was..."
-            "Touching":
+            "Touching.":
                 "...actually sort of touching. It wouldn't win any poetry contests, but I think it described how we all felt. Everyone applauded, including myself."
-            "Funny":
+            "Funny.":
                 "...kind of funny. 'Extrasolar history', hee hee. Everyone seemed to agree with me; they laughed and applauded."
-            "Embarrassing":
+            "Embarrassing.":
                 "...embarrassing. Poetry should be a private thing, shouldn't it? But the other people seemed to like it, and they applauded politely."
                 $ loved -= 5
         "We all felt closer together after enjoying the performances together."
@@ -871,7 +872,7 @@ label done_party_menu:
         sara "All right, listen up! We've got four contests tonight, and I need participants to make these a success! So I hope you will all consider taking part in a contest, even if it's just for fun! The contests are: Wood Chopping, Space Ship Construction, Colony Trivia, and Adamantium Chef."
         menu:
             "Which contest should I enter?"
-            "Wood Chopping":
+            "Wood Chopping.":
                 "I decided to enter the wood chopping contest."
                 show sara at left with move
                 show her normal at right
@@ -896,7 +897,7 @@ label done_party_menu:
                     sara "Just bragging rights."
                     sven "I'll take it!"
                     "I did my best, but I didn't chop very much. My arms were sore and I was sweating all over, but it was still fun."
-            "Space Ship Construction":
+            "Space Ship Construction.":
                 "I decided to enter the Space Ship Construction contest."
                 sara "This is a game for teams of two, so find a partner!"
                 show sara at quarterleft with move
@@ -925,7 +926,7 @@ label done_party_menu:
                         "Ours didn't look the best, but it actually kind flew off the roof and glided for a bit before landing gracefully on the ground. We won the contest!"
                 else:
                     "Ours was kind of a disaster. We felt relieved when the contest was over."
-            "Colony Trivia":
+            "Colony Trivia.":
                 show sara at center
                 show her normal at midright
                 show naomi at midleft
@@ -940,7 +941,7 @@ label done_party_menu:
                 sara "And for the last question, which will determine the winner of the trivia contest:"
                 sara "What is Mayor Grayson's favorite song?"
                 menu:
-                    "The mayor's favorite song?"
+                    "What's the mayor's favorite song?"
                     "\"Walkin' on the Sun\"":
                         her "\"Walkin' on the Sun\" is his favorite song."
                         sara "Sorry, that's not it."
@@ -963,7 +964,7 @@ label done_party_menu:
                         her "\"It's the End of the World\" is his favorite song."
                         sara "That's right! [her_name] is the winner!"
                         "It was fun to win, and also to learn more about everyone."
-            "Adamantium Chef":
+            "Adamantium Chef.":
                 "I decided to enter the Adamantium Chef contest."
                 show sara at center
                 show her normal at midright
@@ -1051,11 +1052,12 @@ label social_master:
     her serious "There's too much here for just one person. You need some help."
     boss "Isn't that what I told you about your job when we first arrived here?"
     her normal "Yes, and I listened to you, so I hope you will listen to me."
-    her serious "You've done a great job, but the truth is there's just too much for one person. There's a lot of decisions to be made, and some of them would be made easier by someone just specializing in that one thing."
+    her serious "You've done a great job, but the truth is there's just too much for one person."
+    her normal "There's a lot of decisions to be made, and some of them would be made easier by someone just specializing in that one thing."
     boss "What do you propose?"
     menu:
         "What do I propose?"
-        "Have a committee":
+        "Form a committee.":
             her normal "Why not have a committee? One person could be in charge of the store house, one person could be in charge of the land, one person in charge of the services like the school and library, and one person in charge of laws and safety."
             boss "Hmmm..."
             her "Of course, you would be welcome on the committees."
@@ -1064,7 +1066,7 @@ label social_master:
             boss "Very well. I am sure you will be voted to be in charge of something."
             "Sure enough, they voted me to be in charge of services."
 
-        "I could assist you":
+        "I could assist you.":
             her happy "Maybe I could help you out with some of the more mundane things."
             boss "Hmm, sort of like a deputy mayor?"
             her normal "Yeah, you need a deputy! That would also help in case you got sick or something."

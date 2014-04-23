@@ -173,7 +173,7 @@ label creative_5:
     ilian "... yes. But there's not enough for every family to have an extra, so we've been keeping them here."
     menu:
         "What should I say?"
-        "I'll make one for you, too":
+        "I'll make one for you, too.":
             her surprised "What if I make one for you and Sara, too?"
             ilian "Are you trying to bribe me?!"
             her normal "Of course not! We'd just be helping each other out. Isn't that what we're supposed to do to get along as a colony?"

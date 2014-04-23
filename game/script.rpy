@@ -196,12 +196,12 @@ label start:
     show her normal at center with moveinleft
 
     her normal "Do I want to remember how it all began?"
-    # TODO: Stronger beginning    
+    # TODO: Remove this, or change it somehow?
     menu:
         "Do I want to remember how it all began?"
-        "Yes":
+        "Yes.":
             "Of course."
-        "No":
+        "No.":
             $ his_name = "Jack"
             $ her_name = "Jill"
             $ profession = "mechanic"
@@ -244,13 +244,13 @@ label start:
     "We had known each other..."
     menu:
         "How long had we known each other?"
-        "Since we were kids":
+        "Since we were kids.":
             "We had known each other since we were kids. He pulled my hair in first grade; I chased him and tried to kiss him. Then in high school we became best friends. It wasn't until recently that we had begun to think about each other romantically."
             $ known_each_other = "since we were kids"
-        "For three years":
+        "For three years.":
             "We had known each other for three years. We started out as friends, then pretty soon we were hanging out all the time, and lately we had begun to think about each other as more than friends."
             $ known_each_other = "three years"
-        "For just six months":
+        "For just six months.":
             "We had known each other for just six months, but we spent almost all our free time together. Though we started out as just friends, lately there was a romantic tension that hadn't been there before."
             $ known_each_other = "six months"
 
@@ -315,20 +315,20 @@ label choose_career:
 
 menu:
     "Where do I work?"
-    "The craft store":
+    "The craft store.":
         # TODO: decide if we want to do this. If so, fix a bug where the first month, it gives you every skill event up to your skill level.
         #$ skill_creative += 20
         jump crafter
         
-    "The hospital":
+    "The hospital.":
         #$ skill_knowledge += 20
         jump doctor
 
-    "The car repair shop":
+    "The car repair shop.":
         #$ skill_technical += 20
         jump mechanic
 
-    "The elementary school":
+    "The elementary school.":
         #$ skill_social += 20
         jump teacher        
 

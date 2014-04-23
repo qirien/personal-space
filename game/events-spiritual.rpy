@@ -91,7 +91,7 @@ label spiritual_2:
 
     return
 
-# Peace in nature
+# See if he wants to come to church
 label spiritual_3:
     scene bg farm_interior with fade
     show him normal at midleft
@@ -191,15 +191,15 @@ label spiritual_4:
     her concerned "...and I guess I should try to visualize the souls of other people, too."
     menu:
         "Whom should I think about?"
-        "[his_name]":
+        "[his_name].":
             her serious "[his_name]'s soul... Sometimes he acts kind of rude, but I think that is usually when he is worried about something. He probably feels like the whole farm is his responsibility, and if anything goes wrong he has to fix it on his own."
             her normal "So instead of getting mad at him for being rude, maybe I could try and see what he's worried about."
-        "My boss":
+        "My boss.":
             her annoyed "I hate it when Mayor Grayson tells me how to do my job... but how does he see the situation?"
             her concerned "..."
             her sad "I guess he probably is worried about the colony, and wants to make sure everything goes well so that we can all survive together."
             her serious "What a huge responsibility that would be! And he actually does a good job, most of the time.  He could use my support, not my annoyance."
-        "Sara":
+        "Sara.":
             her annoyed "Sara comes to me about every little problem...sometimes it gets kind of annoying."
             her serious "But I know she doesn't really have any other friends, and her husband isn't much of a talker, either."
             her normal "She always seems to feel better after we talk...maybe if I can keep in mind how important it is to her I can be a better listener and friend to her."
@@ -215,15 +215,15 @@ label spiritual_5:
     "I decided to take a break from reading for a while...I wanted to experience some of the things I read about for myself."
     menu:
         "I decided to:"
-        "Meditate":
+        "Meditate.":
             "I found a quiet place and sat down, emptying my thoughts. I tried to be like the ocean, letting thoughts drift away like bits of kelp. Without my thoughts, what was I?"
             "Without any distractions, without any worldly cares, I could just...{b}be{/b}. The boundary between myself and other living things seemed smaller, somehow, and I floated in a sea of stars and souls."
             "The physical world I could see was such a small portion of the universe..."
-        "Pray":
+        "Pray.":
             "I prayed to God to help me find the truth I had been looking for. I prayed that our little colony would make it. I prayed that [his_name] and I would make it. I prayed for forgiveness and comfort and peace and something to fill the emptiness that I felt sometimes even when I was happy."
             "And...I felt something. It was like the feeling you get when you know someone far away is thinking about you, or the feeling you get when someone looks in your eyes and sees your soul, or the feeling of belonging and being loved and knowing everything will be okay."
             "It wasn't lightning or thunder; I didn't faint or scream or shout; but it was {b}something{/b}, and it was something that I wanted to draw closer to."
-        "Ponder":
+        "Ponder.":
             "As I walked I pondered. I thought about the stars; how many trillions of stars were there, and how small our one little planet was. I marvelled at how many living things there were, just on our own little farm, not to mention in the universe."
             "I was just one of those little lives. Could I make a difference? What was the point of my life, unless I made things better for at least some other little lives near mine?"
             "I felt inspired to do better, and be better."
@@ -299,17 +299,17 @@ label spiritual_6:
     her serious "Helen, it's not how much we get done that counts."
     helen "What does count, then?"
     menu:
-        her "It's.."
-        "Relationships":
+        "What is the most important thing?"
+        "Relationships.":
             her normal "It's the relationships you are building with other people, like your husband and your new baby."
             helen "I don't feel like I'm building relationships. I feel like I'm wasting my time."
-        "Love":
+        "Love.":
             her normal "It's the love you nurture in your heart and the hearts of others."
             helen "I don't think I'm doing that. I'm just sitting here."
-        "Good Deeds":
+        "Good deeds.":
             her normal "It's the things you do for others that matter most."
             helen "I can't do anything! I just sit here, all day!"
-        "Fun":
+        "Fun.":
             her happy "Having fun! That's the most important thing! So if you're not having fun knitting, do something else! It's not worth being sad over."
             helen "What else can I do?! I just have to sit here."
     her surprised "Well, why are you just sitting here?"

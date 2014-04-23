@@ -134,19 +134,19 @@ label marriage_proposal:
     # How does she feel about getting married and going to new planet?
     menu:
         "I felt..."
-        "Shocked":
+        "Shocked.":
             her "Did you... did you just ask me to marry you?!"
             him laughing "Sorry, I should have made that part more obvious. [her_name], will you marry me?!"
-        "Excited":
+        "Excited.":
             her happy "Oh [his_name], I can't think of anything that would make me happier!"
             $ loved += 5
             $ relaxed += 5
-        "Worried":
+        "Worried.":
             her concerned "[his_name], I love you, but are you sure you want to go to an entirely new planet? So many things could go wrong..."
             him normal "I'm sure they will, [her_name], but I know it will be worth it. And when thing's do go wrong, I want you by my side."
             $ loved += 5
             $ relaxed -= 5
-        "Annoyed":
+        "Annoyed.":
             her annoyed "Oh, so you only want me along because I'm such a good [profession]?"
             him annoyed "Of course not. I want you along because I'm madly in love with you, and I want to show you that every day, forever."
 
@@ -173,16 +173,16 @@ label marriage_proposal:
 
     menu:
         "My favorite gift was:"
-        "The music player":
+        "The music player.":
             $ favorite_wedding_gift = "music player with my favorite music"
             "The music player. My friends all pitched in and bought a really nice one. They fit all our favorite songs on there."
-        "A Swiss Army knife":
+        "A Swiss Army knife.":
             $ favorite_wedding_gift = "Swiss army knife"
             "The Swiss Army knife. It had so many gadgets on it, it could practically bake bread. We couldn't take a lot with us, so I thought all its little tools would be handy."
-        "A locket with [his_name]'s picture":
+        "A locket with [his_name]'s picture.":
             $ favorite_wedding_gift = "locket with your photo in it"
-            "A locket with [his_name]'s picture. I thought it was kind of weird at first that his mom gave it to me, but now I understand she was sharing with me her most precious posession of all - her son."
-        "My mom's recipe book":
+            "A locket with [his_name]'s picture. I thought it was kind of weird at first that his mom gave it to me, but now I understand she was sharing with me her most precious possession of all - her son."
+        "My mom's recipe book.":
             $ favorite_wedding_gift = "my mother's recipe book"
             "My mom's recipe book. She's not that great of a cook, but she put in recipes for all the foods she regularly cooks. Those foods bring back so many childhood memories."
 
@@ -198,16 +198,16 @@ label marriage_proposal:
 
     menu:
         "What should he call you?"
-        "Lovebug":
+        "Lovebug.":
             $ her_nickname = "lovebug"
             her "You can call me '[her_nickname]'; that's cute."
-        "Sweetie":
+        "Sweetie.":
             $ her_nickname = "sweetie"
             her "You could call me '[her_nickname]'."
-        "Sugar":
+        "Sugar.":
             $ her_nickname = "sugar"
             her "You could call me '[her_nickname]'."
-        "Something else":
+        "Something else.":
             if not renpy.variant('touch'):
                 $ her_nickname = renpy.input("He calls me:", "sweetie", length=20)
             else:
@@ -223,13 +223,13 @@ label marriage_proposal:
 
     menu:
         "I realized I didn't have a name for him. I thought fast and decided to call him:"
-        "Dear":
+        "Dear.":
             $ his_nickname = "dear"
-        "Lover":
+        "Lover.":
             $ his_nickname = "lover"
-        "Honey":
+        "Honey.":
             $ his_nickname = "honey"
-        "Something else":
+        "Something else.":
             if not renpy.variant('touch'):
                 $ his_nickname = renpy.input("I call him:", "honey", length=20)
             else:
