@@ -30,7 +30,7 @@ label act_skip_work:
             "What should I say?"
             "I'm sorry.":
                 her concerned "I'm sorry. I should pay better attention to my work."
-            "Things are busy at home":
+            "Things are busy at home.":
                 her concerned "Sorry - things have been so busy at home, trying to get the farm started and everything."
             "It won't happen again.":
                 her serious "I'm sorry - I won't let it happen again."
@@ -41,7 +41,7 @@ label act_skip_work:
                 boss "Well, just see that you do get it done."
                 $ slacked_off = 1
                 return
-            "I'm pregnant.":
+            "I'm pregnant." if ((is_pregnant) or (is_pregnant_later)):
                 her serious "Sorry, I didn't think being pregnant would make me so tired."
 
         boss "I understand, but this can't happen all the time. We need you here."
@@ -225,7 +225,7 @@ label work_0:
         "Why are you here?":
             her surprised "Why {b}are{/b} you here?"
             sara "Well..."
-        "(Change the subject)":
+        "(Change the subject.)":
             her surprised "(I don't know what to say!)"
             her normal "Well, uh, what do you like to do?"
             sara "I like to read...I read a lot. I'm a pretty good photographer, too."
@@ -321,9 +321,9 @@ label work_1:
         show her normal
         menu:
             "Do I need help?"
-            "I need help":
+            "I need help.":
                 her "You are right...I can't do this by myself. I'll ask the mayor if there's someone that could assist me."
-            "I can do it myself":
+            "I can do it myself.":
                 her "It's not a problem most of the time. I can handle it."
 
         scene black with fade
@@ -351,11 +351,11 @@ label work_1:
         boss "I think the chicken coop takes priority here. But you're starting to have a lot of work to do, aren't you?"
         menu:
             "What should I say?"
-            "Way too much":
+            "Way too much.":
                 her "I'm a little overwhelmed, honestly."
-            "Sometimes":
+            "Sometimes.":
                 her "Sometimes. It seems like when one person needs something right away, everyone else suddenly needs something, too."
-            "No problem":
+            "No problem.":
                 her "Nothing I can't handle."
         boss "Well, I'll see if I can get someone that you can call on when you get a lot of work."
         her normal "That would be great, thanks."
@@ -376,15 +376,15 @@ label work_1:
         her "Yeah, but the clinic needs the radio in case someone on one of the farms is hurt. We don't have phones, and the computer pads are unreliable."
         him annoyed "Well, how long is it going to take?"
         menu:
-            "A day or two":
+            "A day or two.":
                 her serious "Probably another day or two. Sorry, [his_nickname]."
                 him serious "All right, well, maybe I'll just hitch Lettie up to the plow and see what she can do."
                 her happy "Lettie can do anything!"
-            "As long as it takes":
+            "As long as it takes.":
                 her annoyed "It'll take as long as it takes, okay? It depends on whether I can make it work without putting in a new belt."
                 him serious "All right, I guess I'll just have to trust you."
                 her normal "I'll get it done."
-            "It'll go faster if you leave me alone":
+            "It'll go faster if you leave me alone.":
                 her angry "It'll go faster if you leave me alone!"
                 him angry "Okay! I'm leaving!"
                 her "Good!"
@@ -429,10 +429,10 @@ label work_1:
         boss "That may be a good idea, but I want to find someone to help you out on the days when you have all the kids here."
         menu:
             "Do I need help?"
-            "I need help":
+            "I need help.":
                 her concerned "You are right...I can't do this by myself."
                 boss "I'll see what I can do to find someone to help you out some of the time."
-            "I can do it myself":
+            "I can do it myself.":
                 her serious "It's not a problem most of the time. I can handle it."
                 boss "I appreciate your confidence, but let me see if I can find someone, at least for part of the time."
         her normal "Thanks, Mayor Grayson."
@@ -454,13 +454,13 @@ label work_2:
     brennan "Call me Brennan. And I know we've met already; I'd never forget a pretty face like yours."
     menu:
         "What should I say?"
-        "Nice to meet you":
+        "Nice to meet you.":
             her "Nice to meet you, Brennan. It will be good to have some help sometimes."
             brennan "You're quite welcome."
         "I remember you, too.":
             her "Yes, I remember you too, Brennan. Thanks for agreeing to help out."
             brennan "You're quite welcome."
-        "I'm more than just a pretty face":
+        "I'm more than just a pretty face.":
             her annoyed "I'm more than just a pretty face, I hope."
             brennan "Of course! I just meant that I remembered you. But I could understand how you might not remember me."
         "Are you going to be helpful?":
@@ -483,7 +483,7 @@ label work_2:
     him "How was work today?"
     menu:
         "What should I say?"
-        "Great, I got some help":
+        "I got some help...":
             her happy "Great! I got some help - the mayor sent Brennan Callahan to help me out once in a while."
             him annoyed "Oh, well, that's good, I guess."
             her surprised "What, you don't think that's a good idea?"
@@ -516,7 +516,7 @@ label work_2:
             him surprised "Want me to talk to him?"
             menu:
                 "Do I want him to talk to Brennan?"
-                "No, I'll handle this":
+                "No, I'll handle this.":
                     her serious "No thanks, I can handle him."
                     him annoyed "That's what I'm afraid of."
                     her annoyed "You know that's not what I meant! You're the only man I want to handle, silly."
@@ -529,12 +529,12 @@ label work_2:
                     brennan "I'm sorry; I didn't mean to make you uncomfortable. Quite the opposite, actually."
                     her serious "Right. Now we've got work to do."
                     "Things went more smoothly after that, and we got a lot of work done."
-                "Just talk to him":
+                "Just talk to him.":
                     her concerned "By 'talk' you mean 'speak words with' not 'punch in the face', right?"
                     him annoyed "Of course, what kind of barbarian do you think I am?"
                     her annoyed "I don't know, I was just making sure!"
                     "I didn't hear anything else about it, but the next time Brennan came to help, he acted much more professionally. That sure made things easier at work."
-                "No, I'm probably imagining things":
+                "No, I'm probably imagining things.":
                     her normal "No, it's not the big of a deal. He's probably just a friendly kind of guy."
                     him annoyed "Friendly to women, you mean."
                     her flirting "Maybe, but, whatever. I'm not interested. I've got you!"
@@ -617,13 +617,13 @@ label work_3:
             brennan "Oh, sure! He's always looking at me like I'm a ravenous wolf."
             her normal "Well, maybe we could go for lunch together sometime."
             brennan "I'd like that, [her_name]. Thank you, for being a friend."
-        "(Give him a hug)":
+        "(Give him a hug.)":
             show her at center with move
             her concerned "I'm sorry you're so alone..."
             "He didn't seem at all surprised when I reached out my arms to give him a hug. I didn't want him to feel left out...hopefully he could sense that."
             her concerned "(This is probably the first hug he's had in months... poor guy.)"
             brennan "Thank you, [her_name]. It helps having a friend like you."
-        "We're all family":
+        "We're all family.":
             her normal "We're all family here, right?"
             brennan "I suppose so, though you're the only one I feel close enough to to call family."
             her flirting "Sure, I'll be your big sister."
@@ -665,14 +665,14 @@ label work_4:
 
         menu:
             "What should we do?"
-            "Use maggots":
+            "Use maggots.":
                 her "Brennan, we need some maggots."
                 brennan "Maggots?! What for?"
                 her "They will eat the infected tissue but leave healthy tissue alone. We'll need a lot of them; I'll ask around, too, and we'll see what we can find."
                 "We ended up with about a hundred maggots from local insects. I hoped they would work like the ones on Earth. I kept some for breeding, since we might need more, and disinfected the rest and applied them to the wounds."
                 "The kids were a little grossed out, but they watched intently as we applied them and wrapped them gently with gauze."
                 "Then there was nothing to do but wait... somehow, I managed to fall asleep."
-            "Ask Dr. Lily":
+            "Ask Dr. Lily.":
                 her "There's got to be something these bacteria are weak against. Maybe Dr. Lily can help."
                 scene bg lab with fade
                 show lily at midright with dissolve
@@ -692,7 +692,7 @@ label work_4:
                 "We decided to try it. The kids just kept getting worse, and I was worried the bacteria would spread to vital systems."
                 "We scraped off a little of the infected tissue and put some of the algae on with a new bandage."
                 "Then there was nothing to do but wait... somehow, I managed to fall asleep."
-            "Cut out bacteria":
+            "Cut out bacteria.":
                 her serious "We can't risk the bacteria spreading to vital systems. The antibiotics aren't working, and these kids' condition just keeps worsening. "
                 brennan "What are you going to do?"
                 her "I'm going to try to cut away the infected flesh to make it easier for the antibiocs to do their job."
@@ -867,10 +867,10 @@ label work_5:
     $ grays_absorbed = 3
     menu:
         "What should I do?"
-        "Try and stop him":
+        "Try and stop him.":
             her angry "It's not worth sacrificing yourself over!"
             brennan "I'll be fine. And if I'm not, well, at least I'll have done some good here."
-        "Let him go":
+        "Let him go.":
             her serious "If you really want to go, I won't stop you."
             brennan "Not that you could, anyway. But I'm glad you understand."
         "{i}Wear this blanket{/i}" if (profession == "doctor"):
@@ -985,7 +985,7 @@ label work_6:
             brennan "You're lucky to have someone who loves you so much."
             menu:
                 "What should I say?"
-                "I sure am." if (loved >= 0):
+                "{i}I sure am.{/i}" if (loved >= 0):
                     her normal "I sure am...I don't know what I'd do without him."
                     brennan "..."
                     her flirting "But what about you! Aren't there any single women on the colony you could date? Or are you not interested in women?"
@@ -1047,17 +1047,17 @@ label work_6:
                     brennan "I mean, for crying out loud, [her_name], don't you realize how lucky you are just to have someone?!"
                     her concerned "..."
                         
-                "He doesn't love me." if (loved <= -5):
+                "{i}He doesn't love me.{/i}" if (loved <= -5):
                     her sad "I don't think he loves me at all."
                     brennan "What?! Why do you say that?"
                     menu:
                         "What should I say?"
-                        "He doesn't tell me":
+                        "He doesn't tell me.":
                             her sad "He never says 'I love you'"
                             brennan "Well, he should. How could he look at you every single day and not say 'I love you'? I'm sure I would."
                             her surprised "Would what?"
                             brennan "I, ah, well-- He's an arse, that's all I'm saying."
-                        "We never make love":
+                        "We never make love.":
                             her sad "It seems like we never make love anymore..."
                             brennan "Is he gay? Impotent?"
                             her surprised "What?! No!"
@@ -1067,7 +1067,7 @@ label work_6:
                             her normal "Ha ha, that's not a bad idea. We'd probably feel like it more, then."
                             brennan "I mean, don't you two realize how lucky you are to have each other?!"
                             her concerned "..."
-                        "I'm not good enough":
+                        "I'm not good enough.":
                             her sad "I'm no good at living here; I'm not tough or hard-working enough."
                             brennan "What?! That's not true at all; we'd be totally lost without you as our [profession]."
                             her concerned "But I'm no farmer. I hate farm food; I don't want to work hard all day; I don't want to have to do without. I just want to go to a store and buy food and soap and have hot water!"
@@ -1077,7 +1077,7 @@ label work_6:
                             her sad "I don't know..."
                             brennan "If you want out, we could leave the planet on the next colony ship. It'll be a few months, but you don't have to stay here if you're miserable."
                             her surprised "Brennan..."
-                        "Things aren't exciting":
+                        "Things aren't exciting.":
                             her concerned "I don't know; it's just not the same as it was when we first got married."
                             brennan "Of course not. Nothing exciting can last forever, or it wouldn't be exciting any more, would it?"
                             her sad "But if I don't feel the love, then..."
@@ -1248,7 +1248,7 @@ label work_7:
             brennan "Please, [her_name]. I wouldn't ask you unless it was really important."
             menu:
                 "What should I say?"
-                "I'll see what I can do":
+                "I'll see what I can do.":
                     jump investigate_brennan
                 "No.":
                     her "Sorry, Brennan, I won't do that."
@@ -1284,7 +1284,7 @@ label brennan_confess:
     brennan "Kill you?! Of course not. This is the part where I beg for mercy and ask you not to tell anyone else about my device here."
     menu:
         "What should I say?"
-        "I won't tell":
+        "I won't tell.":
             her serious "I won't tell anyone. You're not hurting anyone, and..."
             brennan "And what?"
             if (brennan_relationship >= 2):
@@ -1296,7 +1296,7 @@ label brennan_confess:
             her serious "But there is one more thing..."
             brennan "Oh? What's that?"
             jump wants_from_brennan
-        "They have a right to know":
+        "They have a right to know.":
             her annoyed "The colony has a right to know, and a right to be able to use the device."
             her serious "Like you said, we'll need some kind of priority system and limits on messages, etc, but it's not fair for only one person to be able to communicate with Earth like that."
             brennan "Do you think they'll forgive me?"
@@ -1309,15 +1309,15 @@ label brennan_confess:
             her "I won't tell if you promise to-"
             menu wants_from_brennan:
                 "What should I say?"
-                "Get me off this planet":
+                "Get me off this planet.":
                     her sad "Promise to get me off this planet with the next colony ship. I know I promised to stay forever, but you have connections, you could help me."
                     brennan "Of course I'll help you. Just leave it to me."
                     $ wants_to_leave = True
-                "Send a message for me":
+                "Send a message for me.":
                     her concerned "Promise to send some messages to Earth for me."
                     brennan "Of course, I'll do what I can."
                     brennan "Thank you, [her_name]. I trust you to keep it a secret."
-                "Kiss me" if ((brennan_relationship >= 2) and (loved <= 5)):
+                "{i}Kiss me.{/i}" if ((brennan_relationship >= 2) and (loved <= 5)):
                     her serious "Kiss me. Now."
                     "What was I saying? What was I doing? I thought he was going to laugh, and I could pretend it was a joke, but then he stepped closer."
                     show her concerned at midright with move
@@ -1327,7 +1327,7 @@ label brennan_confess:
                     "I didn't think, didn't analyze, didn't worry about [his_name]; I just existed, in that eternal moment of pleasure and mutual acceptance."
                     "Afterwards, we didn't say anything. I just went home, and for a while w pretended nothing had happened..."
                     $ cheated_on_him = True
-                "You owe me one":
+                "You owe me one.":
                     her flirting "Never mind, just... keep in mind that you owe me one."
                     brennan "I owe you much more than that. Thank you, [her_name]."
     return
@@ -1462,13 +1462,13 @@ label work_8:
         brennan "What?! Why would you want to stay?!"
         menu:
             "What should I say?"
-            "They need me here" if (community_level >= COMMUNITY_LEVEL_OK):
+            "{i}They need me here.{/i}" if (community_level >= COMMUNITY_LEVEL_OK):
                 her concerned "They need me here. There's no one else that is as good of a [profession] as I am."
                 $ community_level += 5
-            "I love the people here" if (skill_social >= 50):
+            "{i}I love the people here.{/i}" if (skill_social >= 50):
                 her normal "I love the people here. They feel like family."
                 $ community_level += 5
-            "I love [his_name]" if (loved >= 0):
+            "{i}I love [his_name].{/i}" if (loved >= 0):
                 her concerned "I love [his_name] too much to leave him behind."
                 $ loved += 2
             "Actually, I don't want to stay.":

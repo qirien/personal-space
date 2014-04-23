@@ -135,19 +135,19 @@ label colony_ship:
 
     menu:
         "The poem is..."
-        "Sweet":
+        "Sweet.":
             her happy "Aww, it's sweet, [his_name], thank you."
             him sad "...it's not very good."
             her normal "I like it just how it is."
             him normal "I'm glad, [her_name]. I don't always tell you how much you mean to me, but I hope you know."
             $ loved += 2
-        "Sappy":
+        "Sappy.":
             her concerned "This is very... sweet."
             him concerned "It's too much, isn't it?"
             her happy "Yeah, but I like it anyway. Thank you, [his_name]."
             him happy "You're welcome."
             $ loved += 2
-        "Awful":
+        "Awful.":
             her concerned "..."
             him sad "It's bad, isn't it?"
             her normal "...thank you for thinking of me, [his_name]."
@@ -181,7 +181,7 @@ label colony_ship:
     her concerned "This sugar is from our coffee ration, isn't it? You went without sugar, and your weekly chocolate so you could make this for me?"
     him concerned "Well, I couldn't think of any other way to get you something yummy. Sorry it's not much, but happy birthday."
     menu:
-        "Thank you, [his_name]":
+        "Thank you, [his_name].":
             her happy "Thank you, [his_name]...it's the best space birthday I've ever had."
             him happy "You're welcome."
         "Happy birthday to you.":
@@ -266,7 +266,7 @@ label settling_in:
                     him concerned "We'll see."
                     menu:
                         "That wasn't fair."
-                        "(Slap him)":
+                        "(Slap him.)":
                             "That was just too much; I slapped him on the face, harder than I meant to."
                             him surprised "Hey!"
                             her angry "Don't you dare question my commitment to family! I just gave up my world, literally my ACTUAL WORLD, and flew across the universe to be with you! You're my family now!"
@@ -274,7 +274,7 @@ label settling_in:
                             "I didn't have an answer to that, so I just left the house and slammed the door. I couldn't decide whether to cry or scream."
                             $ loved -= 5
                             $ relaxed -= 5
-                        "(Start crying)":
+                        "(Start crying.)":
                             "I started to sob."
                             him concerned "Aww, hey, [her_name], don't cry."
                             her sad "How can you question my commitment to family? I just gave up my whole world and flew across the universe to be with you. {b}You're{/b} my family now."
