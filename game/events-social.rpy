@@ -887,7 +887,7 @@ label done_party_menu:
                 him "Go, [her_name]!"
                 show sara at left with moveinleft
                 sara "Time's up!"
-                if (skill_physical >= 80):
+                if (skill_physical >= 70):
                     sara "We have a winner! Congratulations, [her_name]!"
                     her laughing "Yay!"
                     "I guess all the exercise I'd been doing really paid off."

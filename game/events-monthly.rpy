@@ -2168,8 +2168,8 @@ label monthly_event_14:
                 him laughing "You better get used to it! Someday a bunch of kids are going to call you that all the time!"
                 her laughing "That's so... weird! But at least they'll be calling you 'daddy', so I won't be alone."
                 him serious "You'll never be alone."
-                $want_kids = True
-                $made_love += 1   
+                $ want_kids = True
+                $ made_love += 1   
             
     return
 
@@ -2182,6 +2182,7 @@ label monthly_event_15:
     if (is_pregnant):
         him happy "I made you breakfast, so eat up, [her_name]! You're eating for two!"
         her flirting "Yeah, but one of us is the size of a grain of rice..."
+        him flirting "If you don't want it, I'll gladly take it."
         her surprised "Eggs? Bacon?! Where did you get this stuff?!"
         him happy "Well, when Mrs. Peron heard about your 'condition', she insisted that you needed to eat eggs to have a healthy baby. And when I told Ilian the good news, he pulled this out of some stash in the storehouse."
         her annoyed "Wait, you told them I'm pregnant?"
@@ -2585,7 +2586,7 @@ label monthly_event_18:
     him serious "I need to jump start my tractor. Can you run these cables to the house's battery for me?"
     her surprised "Why do you need to jump start your tractor?"
     him serious "Something wrong with the battery. It won't hold a charge for very long anymore."
-    if ((skill_technical >= 60) or (profession == "mechanic")):
+    if ((skill_technical >= 50) or (profession == "mechanic")):
         her normal "Want me to take a look at it?"
     else:
         her surprised "Well, shouldn't you take it in to get it fixed?"
@@ -2609,7 +2610,7 @@ label monthly_event_18:
     show her serious
     hide her with moveoutleft
     "I ran and got our fire extinguisher from the house."
-    if ((skill_technical >= 70) or (skill_knowledge >= 70) or (profession == "mechanic")):
+    if ((skill_technical >= 50) or (skill_knowledge >= 50) or (profession == "mechanic")):
         "As I was running back to the tractor, I skimmed the label."
         "The extinguisher said it was an ABC fire extinguisher filled with monoammonium phosphate."
         "That was the wrong type of fire extinguisher! While it might put out the fire, the tractor would be ruined!"
@@ -2638,7 +2639,7 @@ label monthly_event_18:
     her concerned "Alright, just don't you check out on me."
     show him concerned
     "He stared off into the distance, like he could barely hear me."
-    if (skill_social >= 60):
+    if (skill_social >= 50):
         her serious "Stay here; I'm going to radio for help."
         "I called on the radio and Thuc and Mr. Peron came over. Together, we helped [his_name] get to the town."
     elif (skill_physical >= 40):
@@ -2740,12 +2741,12 @@ label monthly_event_18:
     her surprised "There must be something we can do..."
     menu:
         "What should I say?"
-        "{i}Let's ask for help.{/i}" if (skill_social >= 60):
+        "{i}Let's ask for help.{/i}" if (skill_social >= 50):
             her normal "I bet our neighbors would be willing to help out."
             him normal "We can ask..."
             "We asked around, and several neighbors said they would spend half a day working at our farm, or send one of their kids to work at our farm."
             "[his_name] didn't like sitting around watching other people work on his farm, but he didn't have much of a choice."
-        "{i}I'll do the harvest!{/i}" if ((skill_domestic >= 60) or (skill_physical >= 60)):
+        "{i}I'll do the harvest!{/i}" if ((skill_domestic >= 50) or (skill_physical >= 50)):
             her happy "I can do the harvesting!"
             him surprised "Really? I know you have plenty of your own things to do..."
             her flirting "It's not that hard to pick tomatoes and peppers."

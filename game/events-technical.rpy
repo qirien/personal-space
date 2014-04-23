@@ -169,7 +169,7 @@ label technical_4:
             "We found a tree that was about the width I needed. [his_name] cut it down, and we brought it home on our wagon in pieces."
             "After the wood dried out, I hollowed it out using tools at the storehouse."
             "In the end, it just ended up being lukewarm storage for more water."
-        "I'll die if I don't get what I need".:
+        "I'll die if I don't get what I need.":
             her concerned "It's for something really important. Can I please get two sheets of metal and some pipes?"
             ilian "What exactly is it for?"
             her angry "I don't have time for your questions! This is a matter of life and death!"

@@ -300,9 +300,11 @@ label start:
     him flirting "Well, part of that's my secret ingredient."
     her flirting "What is it? Butter? Paprika? MSG?"
     him normal "Nope. It's lots and lots of love."
-    her laughing "Ha ha ha! That's so cheesy!"
-    him laughing "But it's true!"
-    #TODO: was that too cheesy?
+    her laughing "Ha ha ha..."
+    him serious "..."
+    her surprised "... Are you serious?"
+    him normal "Maybe..."
+
     "That night we stayed up until three in the morning, just talking... we didn't even realize how late it was!  He stayed to watch the sunrise with me, and then headed straight to work. I felt kind of guilty that I had the day off and could sleep in."
 
     jump choose_career
@@ -315,21 +317,16 @@ label choose_career:
 
 menu:
     "Where do I work?"
-    "The craft store.":
-        # TODO: decide if we want to do this. If so, fix a bug where the first month, it gives you every skill event up to your skill level.
-        #$ skill_creative += 20
+    "The craft store":
         jump crafter
         
-    "The hospital.":
-        #$ skill_knowledge += 20
+    "The hospital":
         jump doctor
 
-    "The car repair shop.":
-        #$ skill_technical += 20
+    "The car repair shop":
         jump mechanic
 
-    "The elementary school.":
-        #$ skill_social += 20
+    "The elementary school":
         jump teacher        
 
 label test_inputter:

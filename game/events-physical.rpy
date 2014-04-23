@@ -54,7 +54,7 @@ label physical_1:
     "I sat down on a rock and took a long drink from the water I brought."
     if (skill_creative >= 20):
         "The pond was so familiar, and yet so distinct from anything I'd seen on Earth, I felt like I had to draw it, so I took out my sketchpad and got to work."
-    if (skill_domestic >= 30):
+    if ((skill_domestic >= 30) or (skill_knowledge >= 30)):
         "I decided to bring some of the sweet-smelling herbs back to the house and see if the scientists had tested their edibility."
     
     show her serious
