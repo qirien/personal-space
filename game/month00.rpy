@@ -14,7 +14,6 @@ label colony_ship:
     him concerned "You and me, becoming parents. Sounds kind of crazy, doesn't it?"
 
     # Do they want to have kids right away?
-    # TODO: Make it easier to choose to have kids
     menu:
         "What should I say?"
 
