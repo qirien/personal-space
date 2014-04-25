@@ -22,7 +22,7 @@ label relax_alone_1:
     sara "Are you still up? Can you please come over, [her_name]?"
     menu:
         "Should I go?"
-        "I'll be right over":
+        "I'll be right over.":
             her "Sure, I'll be right there."
             "I walked to Sara's house in the dusky evening light, wondering what it was she wanted to talk about. When I got there, I could tell she'd been crying."
             scene bg farm_interior flip
@@ -40,7 +40,7 @@ label relax_alone_1:
             show sara at midright
             with dissolve
             $ community_level += 1
-        "I can't come tonight":
+        "I can't come tonight.":
             her "Sorry, Sara, I can't tonight. Can we meet tomorrow at lunch?"
             sara "Yeah, I guess."
             $ relaxed += 2
@@ -131,13 +131,13 @@ label relax_alone_4:
     "There are some movies that I love that [his_name] just doesn't like. That's fine; we don't have to do things together all the time. So one night, I watched..."
     menu:
         "I watched:"
-        "A musical":
+        "A musical.":
             "A musical. It was cheesy, of course, but the dancing was good and the songs were moving. Something about music just communicates in a way nothing else can..."
-        "A romantic comedy":
+        "A romantic comedy.":
             "A romantic comedy. I was struck by how silly their disagreements were. Here we were, wondering if we were going to survive, and they were hiding petty secrets from each other. Who has time for that?"
-        "A historical drama":
+        "A historical drama.":
             "A historical drama. The situation of the immigrants in the movie reminded me a little bit of us, except instead of learning how to get along with hostile foreign people we were trying to get along with hostile natural forces."
-        "A documentary":
+        "A documentary.":
             "A documentary. It felt kind of irrelevant now that we weren't even living on the same planet, but also nostalgic. Ahh, the days back when we lived on Earth..."
                 
     $ relaxed += 5
@@ -180,6 +180,7 @@ label relax_alone_7:
     "I went to the bath house by myself. I brought extra wood so I could have a long, hot bath, and I carried up extra water from the river to make it a deep one. All my effort just made me appreciate it all the more."
     show her serious at squatting with dissolve
     show overlay bathhouse
+    play sound "sfx/splash.mp3"
     her normal "Ahhh...."
     $ relaxed += 5
     $ loved -= 2
@@ -188,6 +189,7 @@ label relax_alone_7:
 # These probably won't be seen, so make them simple.
 label relax_alone_8:
     scene bg bedroom with fade
+    play music "music/Shanghai.ogg" fadeout 3.0
     "I listened to some music - I didn't do anything else while listening, just lay back and really listened."
     "It made me think of summer vacation when I was a teenager back home, just lying back and reading books in the shade, playing video games, going swimming, and drinking lemonade."
     "What would our kids' summers be like?"
@@ -241,7 +243,7 @@ label relax_alone_a:
 # browsing wikipedia
 label relax_alone_b:
     scene bg farm_interior with fade
-    "I was curious about horses, so I started reading about them in the encylopedia."
+    "I was curious about horses, so I started reading about them in the encyclopedia."
     "Reading about domestication led to Mycenaean script, and that led to morphology, and before I knew it I was reading a fascinating page about Austronesian languages."
     "I'm not sure I will ever use that knowledge, but it was still interesting to read about."
     $ relaxed += 5
@@ -318,6 +320,7 @@ label relax_alone_h:
     scene bg farm_interior with fade
     show her normal at center with dissolve
     "I found this video game about trying to get a farm up and running... It was way more fun than a real farm."
+    play sound "sfx/whinny.mp3"
     show him normal at quarterleft
     show her normal at quarterright
     him surprised "What are you doing?"
@@ -368,16 +371,16 @@ label relax_alone_k:
     $ starship_man = "None"
     menu:
         "Which guy should I pick?"
-        "The brave, heroic security officer":
+        "The brave, heroic security officer.":
             "I picked the security officer. He seemed like he could hold his own in a fight."
             $ starship_man = "brave"
-        "The clever engineer with a prosthetic arm":
+        "The clever engineer with a prosthetic arm.":
             "I picked the engineer. He seemed smart, and a probably had a tragic backstory where he lost his arm."
             $ starship_man = "clever"
-        "The sardonic doctor":
+        "The sardonic doctor.":
             "I picked the doctor. I bet he had a lot of funny things to say."
             $ starship_man = "witty"
-        "The shy alien navigator":
+        "The shy alien navigator.":
             "I picked the alien navigator. The fur and foreignness just made him so much more interesting."
             $ starship_man = "intruiging"
 
@@ -388,7 +391,7 @@ label relax_alone_k:
     him happy "I was just walking by when I saw all those men on your screen. I had to stop and see what was going on."
     menu:
         "What should I say?"
-        "It doesn't mean anything":
+        "It doesn't mean anything.":
             her normal "Well, I might play through all these and see them, so this doesn't mean as much as you might think."
             him normal "That's fine, that's fine! I was just curious, don't worry."
             her flirting "You know you're the only man for me in real life. I just feel sorry for my character in this game that has to make do with these poor imitations."
@@ -396,7 +399,7 @@ label relax_alone_k:
             her happy "Ha ha, I love you, [his_nickname]."
             him happy "I love you, too, [her_nickname]."
             $ loved += 2
-        "He's kind of like you":
+        "He's kind of like you.":
             her normal "He's only my type because he's kind of like you."
             him surprised "Really? You see me like that?"
             her "A little. You're both very [starship_man]."
@@ -408,13 +411,13 @@ label relax_alone_k:
             him normal "Out of those three...probably crazy."
             him laughing "I mean, anyone who could tolerate me would have to be at least half crazy!"
             her annoyed "I see your point."
-            him happy "And, of course, none of those cliches compares to a real woman like you."
+            him happy "And, of course, none of those clichés compares to a real woman like you."
             her normal "Of course not!"
             him surprised "Was that the right answer?"
             her happy "Ding! Your relationship with \"[her_name]\" went up by ten points!"
             him happy "All right!"
             $ loved += 2
-        "Stop spying on me":
+        "Stop spying on me!":
             her annoyed "Can't I do something on the computer without you spying on me?"
             him annoyed "Sorry, I just saw it while I was walking by."
             her angry "Well, it's really rude to look at someone else's screen without asking."

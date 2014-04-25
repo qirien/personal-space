@@ -38,7 +38,7 @@ Beta Testers
 
 Sound Effects
 -------------
-Select sound effects and music from www.soundjay.com and freesound.org
+Select sound effects and music from www.soundjay.com and freesound.org, including Freesound users OwlStorm, ERH, soundscalpel.com, dobroide.  Used under the Creative Commons license.
 
 
 Music
@@ -58,6 +58,7 @@ Music
 "Isaiah's Song" by Benji Goodrich (Magnatune Records)
 "Rain on the Sea" by Gianmarco Leona (Magnatune Records)
 "Oceans Apart" by Benji Goodrich (Magnatune Records)
+"Shanghai 20 00" by Attic Trax (Magnatune Records)              
 Used under the Creative Commons Attribution-NonCommercial-ShareAlike 1.0 License, http://creativecommons.org/licenses/by-nc-sa/1.0/legalcode
 
 Reference

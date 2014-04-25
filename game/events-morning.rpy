@@ -1042,7 +1042,7 @@ label work_6:
                     her concerned "It's kind of weird to have you telling me to get naked for my husband..."
                     brennan "Well, no one else is telling you, and you need to hear it!"
                     her serious "Brennan, you really don't have to-"
-                    brennan "Also, you should wake him up once in a while with steamy hot kisses, nevermind how bad your breath may smell in the morning."
+                    brennan "Also, you should wake him up once in a while with steamy hot kisses, never mind how bad your breath may smell in the morning."
                     brennan "And you should work together! When you've got a job to do, ask him to help you, or help him out. Find something he likes and surprise him with it. Make his favorite food!"
                     brennan "I mean, for crying out loud, [her_name], don't you realize how lucky you are just to have someone?!"
                     her concerned "..."

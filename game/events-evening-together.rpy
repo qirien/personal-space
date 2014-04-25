@@ -32,14 +32,16 @@ label relax_together_0:
             her sad "I guess I can help out...."
             him happy "Great! Let's get started!"
             scene bg farm_exterior with fade
-            "His enthusiasm was kind of infectious, and once we got started, I could see it wouldn't take too long to put together."
+            "His enthusiasm was kind of infectious, and once we got started, I could see how important it was to him. It was dark when we finally finished..."
             scene bg barn with fade
             show her normal at midright
             show him normal at midleft
             with dissolve
             her happy "This is a nice little barn!"
             him happy "Yeah, let's see how she likes it!  C'mon Lettie!"
+            play sound "sfx/clipclop.mp3"
             "He led his horse into one of the stalls. She was nervous at first, but soon she was in a stall chewing hay like normal."
+            play sound "sfx/whinny.mp3"
             him normal "Thanks a lot, [her_name]. This is great."
             her normal "You're welcome."
             $ loved += 5
@@ -79,16 +81,18 @@ label relax_together_1:
             her concerned "I think I'd rather skip dessert tonight..."
             him concerned "Oh...okay. Sure, let's just eat dinner."
             $ loved -= 5
+            
+    "Afterwards, we packed up our towels and toiletries and headed down to the bathhouse."            
     scene bg bathhouse with fade
     show him normal at midleft with dissolve
     show her normal at midright with dissolve
     show overlay bathhouse
     show him at squatting with move
     show her at squatting with move
-
-    "Afterwards, we packed up our towels and toiletries and headed down to the bathhouse."
+    play sound "sfx/splash.mp3"
     "We built a fire to heat up one of the tubs of water, and took turns washing off and then soaking in the small tub."
     "It felt so good to soak and relax together."
+    
     if (relaxed < 0):
         $ relaxed = 0
     else:
@@ -100,6 +104,7 @@ label relax_together_2:
     scene bg pond with fade
     show overlay night
     play music "music/Rain.ogg" fadeout 3.0
+    play music "sfx/stream-3.mp3" loop fadein 1.0
     "We went on a moonlight walk to the river. We found a spot where the water was deeper and slower, and sat down. I put my head on his shoulder, breathing in the cool night air."
     show her normal at midleft
     show him normal at center
@@ -108,37 +113,43 @@ label relax_together_2:
     him happy "Yes!"
     show him normal at quarterright
     "He took off his clothes - all of them - and cannonballed in, splashing me."
+    show him at squatting with move
+    play sound "sfx/splash.mp3"
     her annoyed "Hey! That's cold!"
     menu:
         "What should I do?"
-        "Join him":
+        "Join him.":
             her flirting "Watch out, here I come!"
             "I undressed slowly. There was enough moonlight that I knew he could see me."
             him flirting "Whoo! Alright, [her_name]! Come on in!"
-            show her normal at center
+            show her normal at center with move
+            show her at squatting with move
+            play sound "sfx/splash.mp3"        
             "I decided to get back at him by jumping in right next to him with a big splash, but he didn't seem to mind."
             "The water was cold, but somehow that just made everything more exciting."
+            stop music fadeout 3.0
             "When we were done, we got dressed and raced each other home, laughing all the way."
             $ loved += 5
             $ made_love += 1
-        "Watch him":
+        "Watch him.":
             her normal "I don't really want to get wet; I'll just watch you."
             him flirting "Oh yeah? I better give you a good show, then."
             "He flexed his muscles and then tried to do a handstand on the bottom of the river."
             her laughing "Ha ha, not bad!"
+            stop music fadeout 3.0
             "Soon he got tired of swimming and we headed home together."
             $ loved += 5
-        "Leave":
+        "Leave.":
             stop music fadeout 3.0
             her angry "Ugh, now I'm all wet and cold!"
             him flirting "I'll warm you up, [her_nickname]!"
             her "No thanks, I'm going home."
+            stop music fadeout 3.0
             hide her with moveoutleft
             scene black with fade
             "Why did he have to ruin such a nice evening?!"
             $ loved -= 5
             return
-
     scene black with fade
     return
 
@@ -183,7 +194,7 @@ label relax_together_3:
             him serious "Exactly! I wanted to get married either way; the whole colony thing just made me quit stalling and ask you."
             her concerned "I still wish you had told me about that earlier."
             him concerned "I'm sorry, [her_nickname]. But I do love you, no matter what."
-            her sad "I love you, too, [his_nickname]. But... nevermind."
+            her sad "I love you, too, [his_nickname]. But... never mind."
 
             $ loved += 2
 
@@ -258,13 +269,14 @@ label relax_together_5:
     play music "music/Rain.ogg" fadeout 3.0
     him happy "Put on your fancy clothes, [her_nickname], because we are going OUT tonight!"
     her surprised "Out where? And I don't have any fancy clothes..."
-    him normal "Any clothes look fancy on you! But I can't tell you where we're going; it's a suprise."
+    him normal "Any clothes look fancy on you! But I can't tell you where we're going; it's a surprise."
     her normal "Okay, let me get ready, then. I can at least brush my hair."
     her surprised "(Where can we be going?)"
     him normal "Now put this blindfold on."
     her surprised "You're not serious, are you?!"
     him happy "I'm totally serious!"
     scene black with fade
+    play sound "sfx/alien-crickets.mp3" loop 
     "I let him blindfold me and we left the house.  He spun me around so I couldn't tell which direction we were going, and then we hiked for about twenty minutes or so. He held my hand so I didn't trip."
     "It's a good thing I didn't actually put on fancy clothes for scrambling over these rocks."
     him "We're almost there."
@@ -332,6 +344,7 @@ label relax_together_5:
             "I tried to storm off, but I didn't know which way was home."
             her annoyed "Which way back home?"
             him annoyed "That way."
+            stop sound fadeout 3.0
             "I stomped off towards home, leaving him to carry everything back to the house himself. It wasn't that I didn't appreciate what he did; I just didn't like feeling manipulated."
             $ loved -= 5
             return
@@ -342,6 +355,7 @@ label relax_together_5:
     show him sleeping
     with dissolve
     scene black with fade
+    stop sound fadeout 3.0
     "We lay there for a long time..."
     scene bg sunset with fade
     "In the morning, it felt so good to wake up next to him, watching the sky lighten. With one final kiss, we got up and carried everything back to the house together."
@@ -380,12 +394,15 @@ label relax_together_7:
     show him normal at midright
     with dissolve
     play music "music/Will.ogg" fadeout 3.0
+    play sound "sfx/alien-crickets.mp3" loop
     "We went for a walk together under the stars. I brought my computer pad so we could find which one was our old Sun. I didn't see any constellations I recognized, so it was hard to find any reference points, but we finally found which one we thought it was."
     her concerned "It looks so small..."
     him serious "Remember how small Talaam's sun looked from Earth?"
     her serious "That seems so long ago..."
     if (loved >= 0):
         "We held hands and walked together, and though I felt so small in the universe, I knew [his_name] and I had a place with each other."
+        
+    stop sound fadeout 3.0
     $ relaxed += 5
     $ loved += 1
 
@@ -487,8 +504,9 @@ label relax_together_a:
     show him normal at midright
     show her normal at midleft
     with dissolve
+    play sound "sfx/clipclop.mp3"
     "We walked beside Lettie, who was pulling the wagon. We talked and laughed, and when we dropped off the food we saw Ilian and Sara."
-
+    stop sound fadeout 3.0
     scene bg storehouse with fade
     show sara at quarterright
     show ilian at right
@@ -528,13 +546,13 @@ label relax_together_a:
         him concerned "Sorry, I've got to do some things at home."
         menu:
             "What should I do?"
-            "Go with [his_name]":
+            "Go with [his_name].":
                 her normal "Yeah, I should probably get going, too. Maybe another time, Sara?"
                 sara "Yeah, I'll see you at lunch or something."
                 "We both worked hard on our projects at home, but at least we were together."
                 $ relaxed -= 2
                 $ loved += 2
-            "Hang out with Ilian and Sara":
+            "Hang out with Ilian and Sara.":
                 her normal "Well, I'll come over, if you don't mind."
                 sara "Sure, we can play with three people."
                 her "Bye, [his_name]."
@@ -620,6 +638,7 @@ label relax_together_g:
     with dissolve
     show him normal at center with moveinleft
     show overlay night
+    play sound "sfx/cloth.mp3"
     "I half awoke in the middle of the night to [his_name] snuggling up to me and nuzzling my ear."
     her concerned "Wha-huh?"
     him serious "I'm home..."
@@ -629,7 +648,7 @@ label relax_together_g:
     him normal "Mmm, you're so sexy..."
     menu:
         "What should I do?"
-        "Wake up for some action":
+        "Wake up for some action.":
             her flirting "I just can't say no to you..."
             him flirting "Why would you want to?"
             her surprised "Did you get everything fixed up outside?"
@@ -641,7 +660,7 @@ label relax_together_g:
             $ made_love += 1
             $ loved += 2
             $ relaxed += 5
-        "Go back to sleep":
+        "Go back to sleep.":
             her concerned "I'm so sleepy..."
             him sad "..."
             her normal "But I love you."
@@ -652,7 +671,7 @@ label relax_together_g:
             with dissolve
             $ loved += 1
             $ relaxed -= 2
-        "Tell him off":
+        "Tell him off.":
             her angry "You had your chance, but you missed it. Sorry, I can't just wait around all day for you to finally decide to show up and get some action."
             him concerned "C'mon, [her_nickname]..."
             her annoyed "Just leave me alone."
@@ -708,7 +727,6 @@ label relax_together_i:
             $ loved += 2
             $ made_love += 1
                 
-    $ skill_creative += 5
     return
 
 # Messages on the computer
@@ -724,7 +742,7 @@ label relax_together_j:
     him serious "Right now I am sitting five feet away from the hottest chick in the universe."
     menu:
         "What should I write back?"
-        "I'm jealous":
+        "I'm jealous!":
             her annoyed "I'm so jealous, who is she?!"
             him happy "Her name's [her_name]; you've probably heard of her. She's famous for her quick wit and good looks."
             her normal "Tell me more about her."
@@ -733,7 +751,7 @@ label relax_together_j:
             "He sauntered over with a grin, leaned down, and kissed me like we had never kissed before."
             $ made_love += 1
             $ loved += 2
-        "I'm next to a hot guy":
+        "I'm next to a hot guy.":
             her flirting "Oh yeah, well I'm sitting right next to the sexiest man alive, or dead!"
             him surprised "Sexier than Clark Gable and Abraham Lincoln?!"
             her happy "Definitely. He's funny, and hard-working, and when he looks at me, he's got these intense eyes-- I just melt."
@@ -741,11 +759,10 @@ label relax_together_j:
             "He looked over at me with what I'm sure he thought was a melting gaze, but instead it just made me laugh."
             "Soon he was laughing, too, and we were kissing, and everything seemed just about perfect."
             $ loved += 2
-        "Nothing":
+        "Nothing.":
             "I didn't write him back. He's just being silly, to send me a message when I'm right here. I don't have time for that."
             $ loved -= 2
     $ relaxed += 5
-    $ loved += 2
     return
 
 label relax_together_k:
@@ -765,6 +782,7 @@ label relax_together_k:
             him happy "Well, I guess if it's awful I could just shave my head."
             her annoyed "It'll look fine! Now sit outside while I get some scissors."
             "We didn't have haircutting scissors, so I just used regular scissors and a comb."
+            play sound "sfx/scissors.mp3"
             if (skill_creative >= 40):
                 "I gave him a haircut kind of like what it had before. It was easier than I thought."
                 her happy "Well, what do you think?"
@@ -795,6 +813,7 @@ label relax_together_k:
                     show him at center
                     show her at midright
                     with dissolve
+                    play sound "sfx/scissors.mp3"
                     him serious "..."
                     her concerned "..."
                     show him at midleft
@@ -826,17 +845,18 @@ label relax_together_k:
             hide him with moveoutright
             show him serious with moveinright
             "I watched as he got out some scissors, got his hair wet, and sat in front of the mirror. He cut the bangs and sides first, and did a decent job."
+            play sound "sfx/scissors.mp3"
             show her normal
             him normal "Could you get the back for me?"
             her normal "Okay...I guess I just match up what you did on the sides?"
             him "Yeah, just straight across."
             "I tried to match up what he had done, but I accidentally made it too short..."
             menu:
-                "Tell him":
+                "Tell him.":
                     her serious "Sorry, but I made it a little too short in the back... I'm just not very good at this."
                     him serious "Where? Oh, I see. It's okay; I'll just make the sides a little shorter to match."
                     $ loved += 2
-                "Don't tell him":
+                "Don't tell him.":
                     him surprised "Does it look okay?"
                     her concerned "(It's in the back; he'll never see it, anyway)"
                     her serious "Yeah, it's fine."

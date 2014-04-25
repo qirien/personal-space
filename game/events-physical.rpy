@@ -295,7 +295,6 @@ label physical_4:
             "I spent time sitting and lying down just focusing on my breathing. "
             "I felt both more energized, and more relaxed."
             $ relaxed += 5 
-            $ skill_physical += 5
             return
         "Practice balancing with long standing poses.":
             "I tried to balance on one leg with my upper body in various poses."

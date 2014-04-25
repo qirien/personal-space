@@ -118,16 +118,19 @@ define her_name = "Me"
 define his_nickname = "dear"
 define her_nickname = "lover"
 
+# Songs
+#define pop_songs = [ "music/Dandelion.ogg", "music/Shanghai.ogg"]
+
 # Variables about emotional state.  -100 is minimum, 100 is maximum
 define relaxed = 0    # negative = stressed
 define loved = 0      # negative = neglected
 define made_love = 0  # Counter of lovemaking, used for pregnancy calculation
 define community_level = 0 # how successful is the colony?
 
-# Variables about skills.  On a scale from 0-100, how skilled is the character?  These are now defined in dse.rpy
+# Variables about skills.  On a scale from 0-100, how skilled is the character?
+# These are now defined in dse.rpy
 
 # Variables about our characters and their relationship
-
 # Variables that need to be initialized before anything else
 init -200:
     define month = 0
