@@ -239,7 +239,7 @@ label creative_6:
     scene bg community_center with fade
     show pavel at midright, behind her with dissolve
     show her normal at midleft with moveinleft
-    boss "So, you want special permission to exceed your alloted Earth-upload bandwidth to send photographs?"
+    boss "So, you want special permission to exceed your allotted Earth-upload bandwidth to send photographs?"
     her "Yes, they need to be large so that they will look good in print. Is that okay?"
     boss "I think that is a worthy use of our resources. The pictures look great, [her_name], I hope people on Earth get to see them."
     "It would take years for the photos to reach Earth, and even more years before I heard anything back, but I felt like it was worth it, anyway. I felt like an ancient explorer like Magellan, writing in his journal, not knowing if anyone from the homeland would ever read it..."
@@ -281,7 +281,7 @@ label creative_8:
     scene bg pond with fade
     "It was a nice day out and I went for a walk. I wanted to cross the river and continue walking, but I didn't want to get wet."
     "I know a few other people said they would like to get more familiar with the land past the river, but they didn't want to go to the trouble of getting their boats out just for a walk."
-    "I knew that some ancient Earth civilizations used grass to form rope bridges, and I wondered if I could do the same."
+    "Since I already had some experience making rope, I thought I could give it a try."
     "I found some dry grasses near the mountain and took some home with me, where I started twisting them into rope."
     scene bg farm_interior with fade
     "I tried to find the part in the documentary that showed how they incoporated new strands of grass, but they didn't show it very closely. I had to kind of twist them in on my own."

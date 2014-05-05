@@ -776,10 +776,12 @@ label done_party_menu:
     #TODO: Add animated (?) glowing lights to the community center bg with an overlay
     scene bg community_center with fade
     play music "music/Prelude22.ogg" fadeout 3.0
+    play sound "sfx/people.mp3" loop
     "As people started to arrive, they seemed to brighten when they saw the community center ready for a party."
     if (party_decorations == "flowers"):
         "The flowers we picked looked nice. Even though they were nothing like Earth flowers, they had their own beauty. And Sara had programmed some of the lights to glow softly blue and green, like an ocean."
 
+    #TODO: play some music here
     if (party_music == "recorded"):
         "We played some great dance music, and some people really got into dancing! It was really interesting to hear the variety of songs everyone sent us. There was pop music, ballads, slow love songs, techno, rap... Even though some of it was in languages we didn't all know, it was still good for dancing."
     elif (party_music == "live"):
@@ -1035,7 +1037,7 @@ label done_party_menu:
     show her normal at midright with move
     her "Thanks, Mayor Grayson."
     boss "Thank you! I think the party was a great success."
-
+    stop sound
     $ skill_social += 10
     $ community_level += 5
     return

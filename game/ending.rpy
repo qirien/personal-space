@@ -182,7 +182,7 @@ label skill_appreciation:
         "Looking around at our house, I noticed how different it was from when we first moved in."
         "The water screw, the blender, the laundry wringer - the contraptions I built made things at home just a little easier when everything else was so much harder than back on Earth."
     if (skill_spiritual >= 100):
-        "I thought of all the little things that had happened to help us succeed. We had plenty of bad things, too, but somehow no matter what happened we managed to make it through."
+        "I thought of all the little things that had happened to help us succeed. We had plenty of bad things happen, too, but somehow no matter what happened we managed to make it through."
         "Not on our own, though - I noticed some people in the colony who were always looking out for everyone else, even at great cost to themselves."
         "Like Sister Naomi, and the Mayor, and even [his_name], sometimes."
         "I wanted to be one of those people."
@@ -313,7 +313,7 @@ label good_ending:
     her normal "[his_name]...I need to thank {b}you{/b}. You work so hard every day - we literally couldn't survive without you. You have loved me no matter what this whole time. And there's nowhere I'd rather be than right here with you."
     him happy "Yeah...if someone came up to me, right now, and said 'All-expenses paid trip to wherever you want!', do you know what I'd say?"
     her surprised "What?"
-    him flirting "I'd say, 'I want to go to my house, and be in my bed, next to my wife.'"
+    him flirting "I'd say, \"I want to go to my house, and be in my bed, next to my wife.\""
     her laughing "What a waste! You should pick somewhere exotic!"
     him laughing "There is no place more exotic!"
     her happy "That's true... Good choice, then."
@@ -359,6 +359,6 @@ label show_credits:
     show text "Made with Ren'Py" with fade 
     with Pause(2.5)
     hide text with fade
-    #show text "Background Images\nEarth image courtesy of NASA, www.nasa.gov\nTriple-star sunset courtesy of JPL at NASA, http://www.jpl.nasa.gov/\nRed dwarf sunset CREDIT: ESO/L. Calçada\nCaledonian Sleeper Single berth by Randwick, from http://en.wikipedia.org/wiki/File:Caledonian_Sleeper_Single_berth.jpg\nFVES Classroom by Labpluto123, from http://commons.wikimedia.org/wiki/File:FVES_Classroom.jpg\nBirchip Community Library circulation desk by Wrlctech, from http://commons.wikimedia.org/wiki/File:Birchip_reno_008.jpg\nGuantanamo Captive's hospital beds in the public domain, from the U.S. Department of Defense\nKoreshan Machine Shop by Ebyabe, from http://commons.wikimedia.org/wiki/File:Koreshan_SHS_large_machine_shop_inside01.jpg\nTool Area - Workshop by Avi/Skrewtape, from http://commons.wikimedia.org/wiki/File:Tool_Area_-_Workshop.jpg\nWhite Desert Egyptian Sunset from http://www.burningwell.org\nOther photos by Wes Landaker, Andrea Landaker, Lisa Horner, and Lance Meibos" with dissolve with Pause(2.0)
+
 
     $ renpy.full_restart()

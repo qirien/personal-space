@@ -1299,11 +1299,52 @@ label brennan_confess:
         "They have a right to know.":
             her annoyed "The colony has a right to know, and a right to be able to use the device."
             her serious "Like you said, we'll need some kind of priority system and limits on messages, etc, but it's not fair for only one person to be able to communicate with Earth like that."
-            brennan "Do you think they'll forgive me?"
-            her concerned "We'll see."
+            brennan "I suppose I can't stop you."
+            her annoyed "..."
+            brennan "...Do you think they'll forgive me?"
+            her serious "We'll see."
             "Brennan and I worked out a proposed system where he would send one message a month under a certain length for each family. Then we told the colony about the device."
-            "At first they were upset with Brennan, and even with me, but they were so excited at the ability to send telegrams to Earth that they were able to let it go."
-            "Though they never trusted him the same way, after that."
+            scene bg community_center with fade
+            show brennan at center
+            show him angry at midright
+            with dissolve
+            him angry "I knew we couldn't trust him!"
+            hide him
+            show julia at midleft with dissolve
+            julia "How could such a dishonest spy care about our colony?"
+            hide julia
+            show martin at midright with dissolve
+            martin "I don't agree with his secret keeping, but Brennan does care about the colony - he saved Natalia and the kids from the solar flare."
+            show natalia at right with dissolve
+            natalia "Or he was just doing that so you wouldn't suspect him!"
+            hide natalia
+            hide martin
+            show sven at left with dissolve
+            sven "Yeah, there's no way we can trust him after this!"
+            show him annoyed at midright
+            him annoyed "Not that we trusted him much before..."
+            show her serious at right
+            her annoyed "I agree with you, but you're missing the most important piece of information here."
+            show julia at midleft with dissolve
+            julia "And what is that?"
+            her serious "We can send messages to Earth instantaneously! No more waiting four years for your families to get your messages, and another four years for them to write back!"
+            hide julia
+            show sara at midleft with dissolve
+            sara "My family is going through a lot right now... at least, they were four years ago. Being able to write back and forth to them will help me so much."
+            show sven at left with dissolve
+            sven "..."
+            him concerned "..."
+            her serious "I'm not asking you to trust Brennan. But can you forgive him enough to let him keep his place here?"
+            brennan "I always hoped that the QEC would work well enough that eventually you could all use it... but they wanted to keep it a secret. Now that the secret's out, they have decided to let you all use it."
+            sven "I don't think you got a choice, right?"
+            brennan "Even if you stole the device from me, they could simply turn off their receiver, or refuse to pass on your messages. It might be better to retain their goodwill."
+            hide sara 
+            show julia at midleft with dissolve
+            julia "How shall we do that?"
+            brennan "By not treating me like a criminal."
+            scene black with fade
+            "In the end everyone agreed, but even though they were nice to him on the surface, I think Mr. Peron and I were the only ones that trusted him at all."
+            
             $ exposed_brennan = True
         "I won't tell if...":
             her "I won't tell if you promise to-"
