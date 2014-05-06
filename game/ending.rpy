@@ -60,7 +60,8 @@ label bad_ending:
         show brennan at midright with moveinright
         "Brennan put his arm around me and pulled me close. He whispered in my ear,"
         brennan "Just pretend it was all a bad dream..."
-    her serious "At least I have a chance to start over again... this time on Earth, my favorite planet in the universe."
+    "At least I have a chance to start over again... this time on Earth, my favorite planet in the universe."
+    scene bg earth with fade
     
     ".:. Separation Ending, 1 of 3."
     jump show_credits

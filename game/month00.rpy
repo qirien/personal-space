@@ -93,10 +93,10 @@ label colony_ship:
     show him normal
     show her normal
     "We talked about lots of other things, of course. We talked about space, about what we would miss from Earth, about what our families were probably doing.  We studied what the pre-colonization team of scientists had reported so far."
-    scene bg talam with fade
+    scene bg talaam_space with fade
     "Even though Talaam was technically a \"garden planet\", meaning humans could breathe and there were plants and animals, it was only superficially like modern Earth.  The plants looked similar, but had completely different biologies, and most of the animals were more like prehistoric amphibians or insects."
     "Time on Talaam would be different, too: days lasted longer, but a year was only about two-thirds of a year on Earth."
-    "The planet was also a lot less protected from its small sun, since it was a lot closer.  The building materials we'd brought along would help protect us from solar flares and radiation, but only if we were inside."
+    "The planet was also a lot less protected from its small sun, since it was closer than Earth.  The building materials we'd brought along would help protect us from solar flares and radiation, but only if we were inside."
     "They taught us about the early warning system they put in place so people would know when it was not safe to be outdoors."
 
     # He remembers her birthday

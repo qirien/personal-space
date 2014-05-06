@@ -53,7 +53,7 @@ label day:
     # Increment the month it is.
     $ month += 1
     play music "music/Dandelion.ogg" fadeout 3.0
-    scene black
+    scene bg talaam_space with fade
 
     $ year = 1
     $ local_month = month

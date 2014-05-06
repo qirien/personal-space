@@ -19,6 +19,7 @@ image bg fields = "bg/fields.jpg"
 image bg fields flip = im.Flip("bg/fields.jpg", horizontal = True)
 image bg colony_ship_bunk = "bg/colony-ship-bunk.jpg"
 image bg talam = "bg/talam.jpg"
+image bg talaam_space = "bg/talaam-from-space.jpg"
 image bg pond = "bg/pond.jpg"
 image bg path = "bg/path.jpg"
 image bg laundry = "bg/laundry.jpg"
