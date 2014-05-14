@@ -15,36 +15,75 @@ label social_0:
     scene bg farm_interior with fade
     show her normal at center with dissolve
     play music "music/Prelude02.ogg" fadeout 3.0
+    nvl clear
+    
     "We had a community message board online where we could talk to anyone else in the colony easily."
     "But people weren't always as polite online as they were in person..."
-    julia "Can everyone please make an effort to attend the next farmer's meeting? We can't get your input if you do not attend."
-    natalia "Some of us are busy farming."
-    sven "Why're the meetings always held in the community center? That's a long ways for some of us."
-    natalia "Not such a tough cowboy now, are you? It's only two kilometers!"
-    sven "Well, it ain't fair for the meetings to always be close for some folks, and far for others. We oughta meet here sometime."
-    julia "The community center is centrally located. The meeting will be there. Everyone who comes will have input into how resources are distributed."
+    julia_c "Can everyone please make an effort to attend the next farmer's meeting? We can't get your input if you do not attend."
+    natalia_c "Some of us are busy farming."
+    sven_c "Why're the meetings always held in the community center? That's a long ways for some of us."
+    natalia_c "Not such a tough cowboy now, are you? It's only two kilometers!"
+    sven_c "Well, it ain't fair for the meetings to always be close for some folks, and far for others. We oughta meet here sometime."
+    julia_c "The community center is centrally located. The meeting will be there."
+    sven_c "Who died and made you queen of the colony?"
     "I decided to step in and try and keep the peace."
-    her "Hey, let's all support Julia and the farmers! She's working hard to help everyone be organized and have the food they need."
-    sven "She's working hard on knowin' everyone's business."
-    julia "We will all have to cooperate to survive!"
-    sven "Speak for yourself, we're doin' just fine up here."
-    natalia "I'll remember that the next time Helen asks me for some eggs!"
-    helen "Hey, hey, don't drag me into this!"
-    sven "Yeah, well, see how you like going without milk for your kids. They're runty enough as it is."
+    nvl clear
+    
+    her_c "Hey, let's all support Julia and the farmers! She's working hard to help everyone be organized and have the food they need."
+    sven_c "She's working hard on knowin' everyone's business."
+    julia_c "We will all have to cooperate to survive!"
+    sven_c "Speak for yourself, we're doin' just fine up here."
+    natalia_c "I'll remember that the next time Helen asks me for some eggs!"
+    helen_c "Hey, hey, don't drag me into this!"
+    sven_c "Yeah, well, see how you like going without milk for your kids. They're runty enough as it is."
     "Uh-oh. Things were getting personal. Was there anything I could do?"
-    her "Hey, hey, calm down everyone. I think we're all going to need things from each other in the next couple years. We don't have to agree about everything, but let's try and be polite, okay?"
-    natalia "Tell that to Mr. Lone Ranger, who thinks he can do it all alone. Well, if he keeps this up, he may just get his wish!"
-    her "I'm telling that to everyone. It takes two to argue, right?"
-    natalia "..."
-    sven "..."
-    julia "Thank you, [her_name]. Anyway, you are all free to choose whether to attend or not, but we hope to get everyone's input at the next meeting."
+    nvl clear
+    
+    menu:
+        "What should I do?"
+        "Side with Natalia and Julia.":
+            her_c "Sven, that's going to far! We all need to help each other!"
+            sven_c "Of course you'd side with the other women. Where's all the men around here, anyway?  Back me up, guys!"
+            thuc_c "Don't look at me!"
+            him_c "..."
+            sven_c "[his_name]? C'mon..."
+            him_c "I don't care where we meet; let me know when you have it all straightened out."
+            sven_c "You guys are all whipped..."
+            natalia_c "Oh please. You had a dumb idea, get over it."
+            her_c "I think it's time we all got over ourselves and stopped arguing."
+            natalia_c "No one asked you."
+            sven_c "Yeah, you don't even come to these meetings."
+            her_c "..."                       
+        "Side with Sven.":
+            her_c "I'm sure Sven wouldn't make a big deal out of it unless it was really important to him. Would it be that terrible to have a meeting at his house?"
+            natalia_c "I'm not letting that bully have anything he wants."
+            sven_c "[her_name], stay out of this. I don't need you to make my case for me."
+            her_c "Fine, forget it."
+        "Stay neutral.":
+            her_c "Hey, hey, calm down everyone. I think we're all going to need things from each other in the next couple years. We don't have to agree about everything, but let's try and be polite, okay?"
+            natalia_c "Tell that to Mr. Lone Ranger, who thinks he can do it all alone. Well, if he keeps this up, he may just get his wish!"
+            her_c "I'm telling that to everyone. It takes two to argue, right?"
+            natalia_c "..."
+            sven_c "..."
+            $ community_level += 2
+        "Say nothing.":
+            natalia_c "You leave my kids out of this!!!"
+            sven_c "Hey, it's just an observation."
+            natalia_c "Why, you...!"
+            him_c "Are we going to have a meeting or not?"
+            julia_c "Yes, we will have a meeting!"
+    
+    
+    julia_c "Anyway, you are all free to choose whether to attend or not, but we hope to get everyone's input at the next meeting."
     her "(Whew! They would never say things like that in person! Hopefully everyone can think a little more before they type...)"
+    nvl clear
     
     "Later, Natalia sent me a message."
-    natalia "I'm sorry I was so rude; I hope you'll forgive me."
-    her "Oh, I completely understand. I think everyone's a little frustrated."
-    natalia "Why don't you come over and we can chat in person? I found a fruit you might want to try..."
-    her "Sure, I'll be right over."
+    natalia_c "I'm sorry I was so rude; I hope you'll forgive me."
+    her_c "Oh, I understand. I think everyone's a little frustrated."
+    natalia_c "Why don't you come over and we can chat in person? I found a fruit you might want to try..."
+    her_c "Sure, I'll be right over."
+    nvl clear
 
     scene bg farm_exterior flip with fade
     "When I got to the Peron's house, I saw Natalia's table was covered with some small, spiny fruits she had found while hiking."
@@ -60,7 +99,7 @@ label social_0:
     her happy "Sure!"
     "We cut and scraped and talked together all afternoon."
     $ skill_social += 10
-    $ community_level += 2
+    $ community_level += 1
     return
 
 # Start a weekly game night at the community center

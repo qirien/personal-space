@@ -19,11 +19,11 @@ label relax_alone_1:
     scene bg farm_interior with fade
     "I was all set to spend the evening by myself when Sara sent me a message on my computer."
     play sound "sfx/message.mp3"
-    sara "Are you still up? Can you please come over, [her_name]?"
+    sara_c "Are you still up? Can you please come over, [her_name]?"
     menu:
         "Should I go?"
         "I'll be right over.":
-            her "Sure, I'll be right there."
+            her_c "Sure, I'll be right there."
             "I walked to Sara's house in the dusky evening light, wondering what it was she wanted to talk about. When I got there, I could tell she'd been crying."
             scene bg farm_interior flip
             show her serious at midleft
@@ -32,17 +32,17 @@ label relax_alone_1:
             sara "I got a message from Earth today...My mom died."
             $ community_level += 2
         "Can it wait?":
-            her "Can it wait? I was just about to get in bed..."
-            sara "I could...it's...my mom died."
-            her "Oh no, I'll be right over."
+            her_c "Can it wait? I was just about to get in bed..."
+            sara_c "I could...it's...my mom died."
+            her_c "Oh no, I'll be right over."
             scene bg farm_interior
             show her serious at midleft
             show sara at midright
             with dissolve
             $ community_level += 1
         "I can't come tonight.":
-            her "Sorry, Sara, I can't tonight. Can we meet tomorrow at lunch?"
-            sara "Yeah, I guess."
+            her_c "Sorry, Sara, I can't tonight. Can we meet tomorrow at lunch?"
+            sara_c "Yeah, I guess."
             $ relaxed += 2
             scene bg farm_interior
             show her serious at midleft
@@ -50,6 +50,7 @@ label relax_alone_1:
             with dissolve
             "The next day at lunch, Sara told me that her mom had died."
 
+    nvl clear
     "Since it took four years for the message to get here, her mom had actually been dead for a long time already. That didn't make it any easier for Sara, though."
     sara "All this time - I've been thinking about what she's doing back on Earth, and imagining her playing with her grandkids, and working in the garden, but really she's just been dead."
     her sad "Oh Sara, I'm sorry..."

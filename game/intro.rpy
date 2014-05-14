@@ -68,14 +68,13 @@ label teacher:
 label first_date:
     hide him with moveoutright
     "As he was leaving, he slipped me a note."
-    "It read:"
-    note "{font=fonts/danielbd.ttf}{size=+2}Hey there, my [her_name]!\n\nI've been thinking a lot about us lately..."
-    note "{font=fonts/danielbd.ttf}{size=+2}How I want to be with you all the time."
-    note "{font=fonts/danielbd.ttf}{size=+2}How I keep thinking about you, even when I'm up to my knees in manure. {size=-6}(was that romantic or what?!){/size}"
-    note "{font=fonts/danielbd.ttf}{size=+2}How I can't imagine how a woman could be more perfect than you."
-    note "{font=fonts/danielbd.ttf}{size=+2}How it's time we said goodbye to this little town and started something new on our own..."
-    note "{font=fonts/danielbd.ttf}{size=+2}How I love you heart, body, and soul, every minute of every day..."
-    note "{font=fonts/danielbd.ttf}{size=+2}Anyway, I want to tell you more, in person! So come to my folks' tonight for a barbeque, okay? Right after work.\n\nLove,\n       your [his_name]{/font}"
+    note "{font=fonts/danielbd.ttf}{size=+2}Hey there, my [her_name]!\n\nI've been thinking a lot about us lately...{/font}{/size}"
+    note "{font=fonts/danielbd.ttf}{size=+2}How I want to be with you all the time.{/font}{/size}"
+    note "{font=fonts/danielbd.ttf}{size=+2}How I keep thinking about you, even when I'm up to my knees in manure.{/size} {size=-6}(was that romantic or what?!){/size}{/font}"
+    note "{font=fonts/danielbd.ttf}{size=+2}How I can't imagine how a woman could be more perfect than you.{/font}{/size}"
+    note "{font=fonts/danielbd.ttf}{size=+2}How it's time we said goodbye to this little town and started something new on our own...{/font}{/size}"
+    note "{font=fonts/danielbd.ttf}{size=+2}How I love you heart, body, and soul, every minute of every day...{/font}{/size}"
+    note "{font=fonts/danielbd.ttf}{size=+2}Anyway, I want to tell you more, in person! So come to my folks' tonight for a barbeque, okay? Right after work.\n\nLove,\n       your [his_name]{/font}{/size}"
 
     nvl clear
     

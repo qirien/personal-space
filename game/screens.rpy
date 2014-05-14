@@ -12,7 +12,6 @@ screen say:
     default side_image = None
     default two_window = False
 
-
     # Decide if we want to use the one-window or two-window varaint.
     if not two_window:
 
@@ -65,6 +64,7 @@ init -1 python hide:
     # TODO: change font?
     # style.say_dialogue.size = 20
     #style.say_dialogue.font = "GUI/ERINAL__.TTF"
+    style.nvl_dialogue.font = "fonts/VeraMono.ttf"
     
     ## Margin is space surrounding the window
     style.window.left_margin = 0

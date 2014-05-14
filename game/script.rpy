@@ -49,7 +49,7 @@ image overlay bathhouse = "bg/bathhouse-overlay.png"
 define her = DynamicCharacter("her_name", color="#7264d5", image="her") #periwinkle
 define him = DynamicCharacter("his_name", color="#c80000", image="him") #red 
 
-define naomi = Character("Sister Naomi Grayson", color="#ededed", image="naomi")  #light gray
+define naomi = Character("Sister Naomi", color="#ededed", image="naomi")  #light gray
 define boss = Character("Mayor Grayson", color="#cccccc", image="pavel")   #dark gray
 define lily = Character("Lily", color="#8655bd", image="lily")  #purple
 define sara = Character("Sara", color="#c64e89", image="sara")  # dark pink
@@ -63,8 +63,25 @@ define julia = Character("Julia Nguyen", color="#4b54cd", image="julia") #icy bl
 define martin = Character("Martin Peron", color="#990011", image="martin")  #dark red
 # TODO: add accent on Martin (also Peron?)
 
+
+# NVL mode characters for chat rooms, etc
+define her_c = DynamicCharacter("her_name", color="#7264d5", image="her", who_suffix=":", kind=nvl)
+define him_c = DynamicCharacter("his_name", color="#c80000", image="him", who_suffix=":", kind=nvl) #red 
+define naomi_c = Character("Naomi", color="#ededed", image="naomi", who_suffix=":", kind=nvl)  #light gray
+define boss_c = Character("Pavel", color="#cccccc", image="pavel", who_suffix=":", kind=nvl)   #dark gray
+define lily_c = Character("Lily", color="#8655bd", image="lily", who_suffix=":", kind=nvl)  #purple
+define sara_c = Character("Sara", color="#c64e89", image="sara", who_suffix=":", kind=nvl)  # dark pink
+define thuc_c = Character("Thuc", color="a9ff22", image="thuc", who_suffix=":", kind=nvl)  #lime green
+define ilian_c = Character("Ilian", color="ffa922", image="ilian", who_suffix=":", kind=nvl) #tangerine
+define brennan_c = Character("Brennan", color="33b533", image="brennan", who_suffix=":", kind=nvl)  #irish green
+define sven_c = Character("Sven", color="cb5500", image="sven", who_suffix=":", kind=nvl)  #rusty brown
+define natalia_c = Character("Natalia", color="ffe74a", image="natalia", who_suffix=":", kind=nvl)  #yellow
+define helen_c = Character("Helen", color="cdcfb2", image="helen", who_suffix=":", kind=nvl) #tan
+define julia_c = Character("Julia", color="#4b54cd", image="julia", who_suffix=":", kind=nvl) #icy blue
+define martin_c = Character("Martin", color="#990011", image="martin", who_suffix=":", kind=nvl)  #dark red
+
 define note = Character("", kind=nvl)
-define computer = Character("", kind=nvl)
+define computer = Character(None, kind=nvl)
 
 # SPRITES
 
@@ -162,8 +179,16 @@ init -200:
     define COMMUNITY_LEVEL_GOOD = 50
     define LOVED_GOOD = 30
 
-#Technical variables used to control how the game displays
+    #Technical variables used to control how the game displays
+    # Custom transitions, positions, etc.
     define fade = Fade(0.2, 0.2, 0.2)
+    define midleft = Position(xpos=0.20, xanchor=0)        
+    define midright = Position(xpos=0.50, xanchor=0)
+    define quarterleft = Position(xpos=0.10, xanchor=0)
+    define quarterright = Position(xpos=0.65, xanchor=0)
+    define sitting = Position(ypos=0.5, yanchor=0)
+    define squatting = Position(ypos=0.2, yanchor=0)
+
 
 # Splashscreen before the main menu
 label splashscreen:
@@ -181,20 +206,10 @@ label splashscreen:
 
 # The game starts here.
 label start:
-    # Custom transitions, positions, etc.
-    $ midleft = Position(xpos=0.20,
-        xanchor=0)
-    $ midright = Position(xpos=0.50,
-        xanchor=0)
-    $ quarterleft = Position(xpos=0.10,
-        xanchor=0)
-    $ quarterright = Position(xpos=0.65,
-        xanchor=0)
-    $ sitting = Position(ypos=0.5, yanchor=0)
-    $ squatting = Position(ypos=0.2, yanchor=0)
 
+    # add a default dissolve transition between each say if no other transition is speficied
     $ config.say_attribute_transition = dissolve
-
+  
 
     scene bg stars with fade
     show her normal at center with moveinleft
@@ -225,8 +240,9 @@ label start:
             $ is_pregnant = True
             $ known_each_other = "six months"
 
+            jump social_0
             #jump test_positions
-            jump test_inputter
+            #jump test_inputter
             #call screen computer_pad
 
     "I thought I knew what love was. After all, that's why I married..."
@@ -343,6 +359,7 @@ label test_inputter:
     call inputter
     $ pet_name = input_text or "Fido"
     "You picked the name [pet_name]."
+    return
 
 label test_positions:
     "left"
@@ -361,6 +378,7 @@ label test_positions:
     show her at right
     "end test positions"
     return
+    
     
     
 ########################################################
