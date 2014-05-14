@@ -240,7 +240,7 @@ label start:
             $ is_pregnant = True
             $ known_each_other = "six months"
 
-            jump social_0
+            jump relax_together_j
             #jump test_positions
             #jump test_inputter
             #call screen computer_pad

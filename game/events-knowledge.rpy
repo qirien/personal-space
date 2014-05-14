@@ -349,12 +349,12 @@ label knowledge_master:
         "Write a passionate plea for help.":
             scene black with fade
             "I decided to write another message that would get my point across better."
-            # TODO: display in NVL mode?
-            her "We need your knowledge! With what you know, future colony ships can be better prepared, and other colonists in the community can learn from your mistakes instead of repeating them!"
-            her "I know each of you has learned something about this planet that no one else knows - with this encyclopedia we can preserve that information not just for future generations, but for your neighbors right here and now!"
-            her "Don't wait until your knowledge is perfect or until someone makes a costly mistake your knowledge could have prevented - share it with us now!"
-            her "If you don't know where your information goes, or there's not a place for it yet, just send it to me and I will add it in the right place."
+            her_c "We need your knowledge! With what you know, future colony ships can be better prepared, and other colonists in the community can learn from your mistakes instead of repeating them!"
+            her_c "I know each of you has learned something about this planet that no one else knows - with this encyclopedia we can preserve that information not just for future generations, but for your neighbors right here and now!"
+            her_c "Don't wait until your knowledge is perfect or until someone makes a costly mistake your knowledge could have prevented - share it with us now!"
+            her_c "If you don't know where your information goes, or there's not a place for it yet, just send it to me and I will add it in the right place."
             "I hoped that would encourage people to add to our planet encyclopedia."
+            nvl clear
         "Get the Mayor's help.":
             scene bg community_center with fade
             show pavel at midright, behind her with dissolve

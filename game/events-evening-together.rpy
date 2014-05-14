@@ -738,30 +738,35 @@ label relax_together_j:
     "I was sitting at the table, reading on my computer pad, when I got a message from [his_name]."
     play sound "sfx/message.mp3"
     "(Why is he sending me a message? He's right there...)"
-    "I opened it."
-    him serious "Right now I am sitting five feet away from the hottest chick in the universe."
+    him_c "Right now I am sitting five feet away from the hottest chick in the universe."
     menu:
         "What should I write back?"
         "I'm jealous!":
-            her annoyed "I'm so jealous, who is she?!"
-            him happy "Her name's [her_name]; you've probably heard of her. She's famous for her quick wit and good looks."
-            her normal "Tell me more about her."
-            him flirting "Well, she's not conceited at all, that's one thing I like about her, and she's funny and creative, and she's got these lips that just beg to be kissed."
-            her flirting "So kiss them already!"
+            her_c "I'm so jealous, who is she?!"
+            him_c "Her name's [her_name]; you've probably heard of her. She's famous for her quick wit and good looks."
+            her_c "Tell me more about her."
+            him_c "Well, she's not conceited at all, that's one thing I like about her, and she's funny and creative, and she's got these lips that just beg to be kissed."
+            her_c "So kiss them already!"
+            show her flirting
+            show him flirting at midright with move
             "He sauntered over with a grin, leaned down, and kissed me like we had never kissed before."
             $ made_love += 1
             $ loved += 2
         "I'm next to a hot guy.":
-            her flirting "Oh yeah, well I'm sitting right next to the sexiest man alive, or dead!"
-            him surprised "Sexier than Clark Gable and Abraham Lincoln?!"
-            her happy "Definitely. He's funny, and hard-working, and when he looks at me, he's got these intense eyes-- I just melt."
-            him normal "What a lucky guy..."
+            her_c "Oh yeah, well I'm sitting right next to the sexiest man alive, or dead!"
+            him_c "Sexier than Clark Gable and Abraham Lincoln?!"
+            her_c "Definitely. He's funny, and hard-working, and when he looks at me, he's got these intense eyes-- I just melt."
+            him_c "What a lucky guy..."
+            show him serious
+            show her laughing
             "He looked over at me with what I'm sure he thought was a melting gaze, but instead it just made me laugh."
+            show him laughing
             "Soon he was laughing, too, and we were kissing, and everything seemed just about perfect."
             $ loved += 2
         "Nothing.":
             "I didn't write him back. He's just being silly, to send me a message when I'm right here. I don't have time for that."
             $ loved -= 2
+    nvl clear
     $ relaxed += 5
     return
 

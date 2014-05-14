@@ -117,7 +117,8 @@ label relax_alone_3:
     scene bg farm_interior with fade
     play sound "sfx/message.mp3"
     # TODO: Actually read e-mail from mom?
-    "I got a message from my mother. It was one she sent several years ago, but she told me all about my siblings, and how the neighbors were doing, and I better take good care of [his_name] and is he taking care of me, that sort of thing."
+    "I got a message from my mother."
+    "It was one she sent several years ago, but she told me all about my siblings, and how the neighbors were doing, and I better take good care of [his_name] and is he taking care of me, that sort of thing."
     "Even though I knew it would take four years for my letter to cross the vast space between our planets, I wrote back. I told her all about the farm and [his_name] and the town and my job. I wonder how much she could understand; our life was so different here..."
     "Still, it felt good to be connected to Earth."
     if (relaxed < 0):
