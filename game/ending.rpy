@@ -56,6 +56,7 @@ label bad_ending:
     hide her with moveoutright
     scene bg colony_ship_bunk with fade
     show her serious at center with dissolve
+    "Was our love ever real? I had married him, so at one point I thought so, but once we got here, it disappeared."
     if (cheated_on_him):
         show brennan at midright with moveinright
         "Brennan put his arm around me and pulled me close. He whispered in my ear,"
@@ -71,12 +72,12 @@ label bad_ending:
 # OR - Community failing, marriage succeeding
 # OR - both mediocre
 label mediocre_ending:
-    "Things were still rough on Talaam. I wasn't sure they would ever get better."
+    "Things were rough on Talaam. I wasn't sure they would ever get better."
     if (community_level >= COMMUNITY_LEVEL_OK):
         "But at least I had my friends and neighbors; we all helped each other out."
     else:
         "There was always too much work to do; not just at work, but at home, too."
-        "It always seemed like things were this close to falling apart completely. I felt like any day now we'd all get attacked by wild animals, or all the crops would die, or a solar flare would destroy us all."
+        "Every day, we seemed so close to falling apart completely. I felt like any day now we'd all get attacked by wild animals, or all the crops would die, or a solar flare would destroy us all."
 
     "There were a lot of things I missed about Earth, but there were some things I loved about this planet."
     if (loved >= 0):
@@ -147,23 +148,49 @@ label mediocre_ending:
         him normal "Let's never give up on us."
         her serious "Yeah."
         if (is_pregnant_later):
-            "He patted my belly gently and added,"
+            "He caressed my belly and added,"
             him normal "After all, this little baby's depending on us."
             her serious "Yeah..."
         
-    # TODO: is this too cheesy?
-    show him normal
-    show her normal
+    show him sleeping
+    show her serious
+    with dissolve
     "We kissed good night, but I lay awake for a little while, thinking a lot and worrying a little. I wanted to believe in our colony, to believe in our marriage, but I knew it took more than believing in something to make it come true."
-    "But I had a feeling things would turn out all right."
-    ".:. Happy Ending, 2 of 3."
+    "Sometimes it seemed like [his_name] wasn't even the same person I'd married before we came here."
+    "I guess I wasn't the same person, either."
+    "We didn't sit around gazing into each other's eyes anymore, and we didn't rush home from work just to see one another."
+    "Was it love binding us together, or just habit?"
+    if (loved > 0):
+        show her normal
+        "It was love, of course, just a different kind."
+        "The kind of love that works together towards hopes and dreams..."
+        "The kind of love that trusts and endures..."
+        "The kind of love that forgives..."
+        "The kind of love that was worth sacrificing for."
+        "Even if the colony failed, our love bound us together."
+        "I held onto that thought and let my worries slip away."
+        "I had [his_name]; what else did I need?"
+    else:
+        "Sometimes we felt more like coworkers than a couple..."
+        "If we were back on Earth, would we even be together?"
+        "..."
+        "It was pointless to think about such things. We were here, we had a job to do, and we would do it together."
+        "We'd do whatever we had to to make this colony a success."
+        "After all, we'd managed to make Talaam, this strange and unfriendly planet, a real home."
+        "If we could do that, we could do anything."
+    show her sleeping with dissolve
+    ".:. Good Ending, 2 of 3."
     jump show_credits
     return
 
 # Helper function for endings 2 & 3 to emphasize skills the player mastered
 label skill_appreciation:
     if (skill_domestic >= 100):
-        "I told [his_name] about my latest post on the No Space Like Home blog. I had been experimenting to see all the different kinds of vegetables you could pickle."
+        "I told [his_name] about my latest post on the No Space Like Home blog. I had been experimenting to see all the different kinds of foods you could ferment, and which were tastiest."
+        if (have_goat):
+            "The goat's milk yogurt was my favorite so far, but [his_name] liked the sauerkraut."
+        else:
+            "The sauerkraut was pretty good, actually."
     if (skill_creative >= 100):
         "As we ate, I traced my hand around the pattern I had inlaid on the edge of the dishes we used. All around were things I had made to make our lives a little better - placemats, potholders, rope, crates - it made our little house seem more like our home."
     if (skill_knowledge >= 100):
@@ -185,7 +212,7 @@ label skill_appreciation:
     if (skill_spiritual >= 100):
         "I thought of all the little things that had happened to help us succeed. We had plenty of bad things happen, too, but somehow no matter what happened we managed to make it through."
         "Not on our own, though - I noticed some people in the colony who were always looking out for everyone else, even at great cost to themselves."
-        "Like Sister Naomi, and the Mayor, and even [his_name], sometimes."
+        "Like Sister Naomi, and the Mayor, and even [his_name]."
         "I wanted to be one of those people."
 
     return
@@ -222,7 +249,7 @@ label work_appreciation:
         show pavel at midleft, behind her with moveinleft
         boss "[her_name], I don't know what we'd do without you. All the kids love your enthusiasm for learning, and you've worked hard to make sure they know about Earth and learn the things they need to succeed here on Talaam."
 
-    her serious "I've just been trying to help out."
+    her serious "I'm just doing my job."
     boss "I just wanted to let you know how much we all appreciate your hard work and expertise."
     her happy "Thank you, that's nice to hear."
     hide pavel with moveoutleft
@@ -246,10 +273,8 @@ label work_appreciation:
         brennan "Yeah, I never did quite fit in here. I'm not too sad about it; I missed having things to do, people to see, places to go..."
         her normal "That's the spirit!"
     
-    brennan "Anything you want me to bring back to Earth?"
-    "I thought about it for a minute. By the time he got back to Earth, another four years would have passed there. It wouldn't be any faster than sending a message."
-    "I probably couldn't send back any plants from Talaam even if I had wanted to - they wanted to make sure they didn't mess up Earth's ecosystem with alien life."
-    "Finally, I decided that anything I wanted to send, I could send electronically."
+    brennan "Anything you want me to do for you? A favorite food I should sample, or some place I ought to visit?"
+    "I thought about it for a minute. By the time he got back to Earth, another four years would have passed there. What could he do in person that we couldn't do remotely?"
     her serious "Just... could you tell people about how it is here? I mean, you'll probably be kind of a celebrity, right? Not everyone gets to visit another planet and come back."
     brennan "I will. It'll be a great way to impress women, don't you think? I can tell them all about how I risked radiation burns to rescue the poor Perons during the solar flare."
     her flirting "Only if you leave out the part where you threw up all over me."
@@ -284,7 +309,7 @@ label good_ending:
         him concerned "That's how babies are, I guess."
         him happy "But someday she'll be an incredible woman like you, so it's totally worth it."
     elif (is_pregnant_later):
-        her normal "I actually feel like eating today, so I took the opportunity to make a nice dinner."
+        her normal "Well, my morning sickness is getting better; I actually feel like eating today, so I took the opportunity to make a nice dinner."
         him happy "You don't have to do that! But thank you..."
     else:
         her normal "I made your favorite dinner..."
@@ -309,22 +334,25 @@ label good_ending:
     him surprised "[her_name]?"
     her surprised "What?"
     him serious "Thank you."
-    her flirting "You're welcome- wait, what are you thanking me for? There's so many things you owe me for..."
+    her flirting "You're welcome- wait, which of the many wonderful things I've done are you thanking me for?"
     him normal "For taking a chance on me, and for trusting me enough to come to Talaam with me. For working so hard at your job and all the things you do at home. For loving me even when I'm grouchy or make mistakes."
-    her normal "[his_name]...I need to thank {b}you{/b}. You work so hard every day - we literally couldn't survive without you. You have loved me no matter what this whole time. And there's nowhere I'd rather be than right here with you."
+    her normal "[his_name]... You work so hard every day - we literally couldn't survive without you. You have loved me no matter what this whole time - through pests and fires and sicknesses and everything. And there's nowhere I'd rather be than right here with you."
     him happy "Yeah...if someone came up to me, right now, and said 'All-expenses paid trip to wherever you want!', do you know what I'd say?"
     her surprised "What?"
     him flirting "I'd say, \"I want to go to my house, and be in my bed, next to my wife.\""
     her laughing "What a waste! You should pick somewhere exotic!"
-    him laughing "There is no place more exotic!"
-    her happy "That's true... Good choice, then."
+    him happy "What could be more exotic than an alien planet?"
+    her happy "That's true..."
     show him happy
     with dissolve
-    "He didn't answer, just buried his face in my hair and tightened his grip around my waist. I held on tight to his arms, feeling safety and love and happiness swirling around us."
+    "He didn't say anything else, just buried his face in my hair and tightened his grip around my waist. I held on tight to his arms, feeling safety and love and happiness swirling around us."
+    "I wanted to hold on to this feeling right here that we had worked so hard for. And it was work - it wasn't easy to forgive, or compromise, or stay calm."
+    "But those moments when we made the choice to listen instead of judge, to help instead of sit back, or to be honest instead of hide an ugly truth - those were the moments that built our love, little by little."
+    "Like a coral reef, or a tree, or a stalactite, it took time, and in many ways it was still fragile."
+    "But as long as we kept building, it could only grow."
     show her sleeping
     show him sleeping
     with dissolve
-    "We were home."
     ".:. Best Ending, 3 of 3."
     jump show_credits
     return
@@ -356,6 +384,7 @@ label show_credits:
     hide text with fade     
     show text "With background images by:\nLisa Horner\nWes Landaker\nAndrea Landaker\nNASA\nBurningwell\nESO/L. Calçada\n\nAnd the following Wikimedia Commons users:\nRandwick\nLabpluto123\nWrlctech\nEbyabe\nAvi/Skrewtap\nMarcus Budde\nAluter\nDorothea Witter-Rieder\nAnna Frodesiak\nAndrei Stroe\nJean-Pierre\n\nFiltered with Fotosketcher" with fade
     with Pause(4.0)
+    # TODO: Add sound Credits
     hide text with fade   
     show text "Made with Ren'Py" with fade 
     with Pause(2.5)
