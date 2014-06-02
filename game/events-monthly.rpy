@@ -324,7 +324,7 @@ label monthly_event_4:
                 him surprised "Oh, yeah, you washed those, huh?"
                 her normal "And I've planted an herb garden out front to add flavor to our meals, and for herbal teas and things."
                 him normal "Okay, that sounds good. Sorry, I didn't meant to accuse, I just really was curious what projects you've been working on."
-            "What do {b}you{/b} do?":
+            "{b}You{/b} spend a lot of time reading.":
                 her surprised "What have {b}you{/b} been doing lately? You've been reading a lot."
                 him normal "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field."
                 him "I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they will grow."
@@ -361,7 +361,7 @@ label monthly_event_4:
                 him surprised "Like what?"
                 her normal "Well, I installed the antenna that lets us communicate with the town, and the screw that brings water into the house."
                 him normal "Yeah, I'm really glad to have those. Sorry, I didn't meant to accuse, I just really was curious what projects you've been working on."
-            "What do {b}you{/b} do?":
+            "{b}You{/b} spend a lot of time reading.":
                 her annoyed "What have {b}you{/b} been doing lately? You've been reading a lot."
                 him normal "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field."
                 him "I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
@@ -382,7 +382,7 @@ label monthly_event_4:
                 him flirting "...You probably have a lot of opportunities to practice that, don't you?"
                 her happy "Well...yes. I think studying these principles helps me to get along better with others and work unselfishly."
                 him normal "That is important. Sorry, I didn't meant to accuse, I just really was curious what you've been learning."
-            "What do {b}you{/b} do?":
+            "{b}You{/b} spend a lot of time reading.":
                 her surprised "What have {b}you{/b} been doing lately? You've been reading a lot."
                 him normal "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field."
                 him "I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
@@ -406,7 +406,7 @@ label monthly_event_4:
                 him normal "Yeah, those are good."
                 her normal "We can't survive by ourselves out here - we need the community."
                 him normal "You're right; I don't like to depend on others, but we do need to work together."
-            "What do {b}you{/b} do?":
+            "{b}You{/b} spend a lot of time reading.":
                 her annoyed "What have {b}you{/b} been doing lately? You've been reading a lot."
                 him normal "Yeah, I've been reading up on all the plants we're growing, and I've scheduled out what needs to be done each week for preparing, planting, tending, and harvesting each field."
                 him "I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
@@ -445,7 +445,7 @@ label monthly_event_4:
                 him surprised "For what?"
                 her happy "Well, did you know that I can run to town in six minutes? And I am getting pretty good at chopping wood, which we'll need when the cold season starts and our solar panels don't work."
                 him normal "Oh yeah, that is important. Sorry, I didn't mean to accuse, I just was curious about what you've been doing."
-            "What do {b}you{/b} do?":
+            "{b}You{/b} spend a lot of time reading.":                
                 her annoyed "What have {b}you{/b} been doing lately? You've been reading a lot."
                 him normal "Yeah, I've been reading up on all the plants we're growing, and I've scheduled out what needs to be done each week for preparing, planting, tending, and harvesting each field."
                 him "I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
