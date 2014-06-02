@@ -1717,7 +1717,7 @@ label monthly_event_12:
     her serious "Well, we can go again if you really want to. Dr. Lily could always use more guano."
     him concerned "No, I really shouldn't leave the farm."
     her annoyed "Well, then what's the big deal? It's not like it was a big fun vacation; I had to go to fix the stove."
-    him sad "I never see you anymore. Whenever I want to talk to you, you're off somewhere else."
+    him sad "I feel like you're always busy. Whenever I want to talk to you, you're off somewhere else."
     her annoyed "What?! I'm home all the time! And when I am home, half the time you're doing farm stuff anyway, so I never get to talk to {b}you{/b}!"
     if (ocean_character == "Brennan"):
         him concerned "You seem to have plenty of time to see Brennan."
