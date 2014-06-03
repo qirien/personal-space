@@ -101,15 +101,16 @@ label first_date:
     him "Yes! It's only about four light years away. People could breathe there, grow things, live there!"
 
 # What do you think about the new planet?
-# TODO: Make these choices actually affect something.
     menu:
         "I thought,"
         "Why?":
             her serious "Theoretically, but why would they want to?"
         "Cool!":
             her happy "Really?! That would be so exciting!"
+            $ relaxed += 1
         "Maybe...":
             her concerned "It seems like it would be a lot of hard work."
+            $ relaxed -= 1
 
     him "What a challenge it would be! Different animals, plants, even different seasons..."
     her surprised "Why are you so interested in this planet all of a sudden?"
@@ -174,13 +175,13 @@ label marriage_proposal:
     menu:
         "My favorite gift was:"
         "The music player.":
-            $ favorite_wedding_gift = "music player with my favorite music"
+            $ favorite_wedding_gift = "music player from my friends"
             "The music player. My friends all pitched in and bought a really nice one. They fit all our favorite songs on there."
         "A Swiss Army knife.":
             $ favorite_wedding_gift = "Swiss army knife"
             "The Swiss Army knife. It had so many gadgets on it, it could practically bake bread. We couldn't take a lot with us, so I thought all its little tools would be handy."
         "A locket with [his_name]'s picture.":
-            $ favorite_wedding_gift = "locket with your photo in it"
+            $ favorite_wedding_gift = "locket from [his_name]'s mom"
             "A locket with [his_name]'s picture. I thought it was kind of weird at first that his mom gave it to me, but now I understand she was sharing with me her most precious possession of all - her son."
         "My mom's recipe book.":
             $ favorite_wedding_gift = "my mother's recipe book"

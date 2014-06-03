@@ -171,7 +171,9 @@ label relax_alone_5:
 label relax_alone_6:
     scene bg farm_interior with fade
     "I looked through some old photos of my family. The places, the people - they all felt so unreal. I'd probably never see them again."
-    "It was kind of sad, but at the same time it made me appreciate even more the good times we had had together."
+    "I picked up my [favorite_wedding_gift] and fingered it gently. It was one of the few things that was the same between Earth and Talaam."
+    "It looked, it felt so foreign, like an ancient relic from a dead civilization. Earth seemed like another life."
+    "It was kind of sad, but at the same time it made me appreciate even more the experiences I had on Earth, and the new life we were making here on Talaam."
     $ relaxed += 5
     $ loved -= 2
     return

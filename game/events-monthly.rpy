@@ -874,6 +874,8 @@ label monthly_event_8:
                     $ relaxed -= 5
                 "...":
                     "All I could think about was how he abandoned me. It wasn't every night I asked him to do something fun with me; why couldn't he put me first instead of his other plans?"
+                    if (father_attitude == "apathetic"):
+                        "He reminded me of my own father, who was never around, either."
                     "I worried that maybe I was not good enough - not pretty enough, not smart enough, not strong enough - not just for him, but for this planet. What was I even doing here?"
                     "I trudged in circles through these depressing thoughts for hours."
                     $ relaxed -= 10
@@ -927,7 +929,10 @@ label monthly_event_8:
   
         "{i}You're never here when I need you!{/i}" if (relaxed <= 0):
             $ loved -= 5
-            her sad "You're never here when I need you!"
+            if (father_attitude == "apathetic"):
+                her angry "You're just like my father - you're never around when I need you!"
+            else:
+                her sad "You're never here when I need you!"
             him annoyed "What are you talking about? I'm home almost every night."
             her "But you're always reading; I wanted to do something together tonight."
             him "Well, I can't. I promised Thuc I'd come tonight."
@@ -1238,6 +1243,8 @@ label monthly_event_10:
             him concerned "Sorry."
             $ loved -= 1
     "He didn't look at me, just washed his hands and sat at the table. He was reading on his computer pad while we ate dinner.  We ate in silence for a few minutes. I thought maybe I'd change the subject."
+    if (father_attitude == "serious"):
+        her annoyed "(He's just like my dad - so serious when he's thinking about something! Well, maybe I can make him laugh...)"
     her normal "Something funny happened at work today."
     him concerned "Yeah?"
     her happy "Little Van, you know, the Nguyen's youngest, came by with his mom, and he said, 'I am an alien that looks like a kid. I really am. I'm not pretending.'"
@@ -2630,7 +2637,7 @@ label monthly_event_18:
         her serious "You're in shock; let's go to the clinic and I'll check you out."
     else:
         her serious "Let's get you to town and have the doctor check you out."
-    him laughing "Check me out... check me out, you can check me out, anytime..."
+    him laughing "Check me out... check me out..."
     her concerned "Alright, just don't you check out on me."
     show him concerned
     "He stared off into the distance, like he could barely hear me."
@@ -2873,7 +2880,7 @@ label monthly_event_19:
                 $ relaxed += 2
 
     else:
-        "But for some reason this month it really bothered me. I was sick of the uniform's fabric, its unisex cut, and the sameness of it all."
+        "But for some reason this month it really bothered me. I was sick of the uniform's fabric, its unisex cut, and the sameness of it all. And after air drying it so much, it had lost its original softness and felt stiff and scratchy."
         "But what could I do about it?"
         menu:
             "{i}Make a new accessory.{/i}" if (skill_creative >= 50):
@@ -2915,6 +2922,9 @@ label monthly_event_20:
         her normal "I can't sleep while I'm being pummeled from the inside."
         "He put his hand on my belly and felt the tiny movements."
         him happy "Wow, that's an energetic kid!"
+        if (father_attitude == "grinning"):
+            her annoyed "Do you have to be so happy about everything? You remind me of my dad..."
+            him surprised "What's there not to be happy about? We're alive and healthy, and so's our growing baby!"
         her sad "I'm just so tired..."
         him sad "Have you not been sleeping well?"
         her serious "Every time I fall asleep, something wakes me up in an hour or two. Either I have to use the bathroom, or the baby's moving, or my back hurts, or, worst of all, it's morning."

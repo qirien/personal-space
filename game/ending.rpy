@@ -34,6 +34,7 @@ label bad_ending:
     show him serious at midleft
     show her serious at midright
     with dissolve
+    "How do you say goodbye to your husband? Ex-husband, now, I guess. The silence stretched on like the gap between us, endless and loveless."
     him concerned "I guess... this is good-bye, then."
     her concerned "Yeah. Sorry it didn't work out."
     him sad "..."
@@ -50,13 +51,19 @@ label bad_ending:
         her sad "Sorry, [his_name]. I can't live here... and I can't live with you."
         him sad "{size=6}I don't know if I can live without you...{/size}"
         her surprised "What was that?"
-        him angry "I said, I'll be fine without you. Enjoy Earth. Goodbye."
+        him angry "I said, I'll be fine without you. Enjoy Earth. Goodbye!"
     hide him with moveoutleft
     "He turned away and walked home, never looking back. I picked up my bag and boarded the shuttle as we got ready to lift off."
     hide her with moveoutright
     scene bg colony_ship_bunk with fade
     show her serious at center with dissolve
     "Was our love ever real? I had married him, so at one point I thought so, but once we got here, it disappeared."
+    if (known_each_other == "since we were kids"):
+        "I had known him for so long... I knew exactly what he was thinking. But that didn't mean I wanted to be with him, here on Talaam."
+    elif (known_each_other == "three years"):
+        "It seemed like so long ago when we first met, even though it was really just a few years. Well, I'd lived without him before, and I could do it again."
+    else:
+        "It seemed like just yesterday when we had met and started this crazy adventure. I thought I knew him, but I just couldn't understand him at all. Or, what I did understand, I didn't like."
     if (cheated_on_him):
         show brennan at midright with moveinright
         "Brennan put his arm around me and pulled me close. He whispered in my ear,"
@@ -129,6 +136,7 @@ label mediocre_ending:
     # TODO: Make this less cheesy: include some body language or specific details or something
     if (loved > 0):
         her concerned "I'm so glad to be here, with you."
+        "He scooted closer to me and stroked my hair."
         him normal "I'm glad to be with you, [her_nickname]!"
         her normal "What an adventure we've had..."
         him happy "Hmmm, I think our adventure is just beginning!"
@@ -143,6 +151,7 @@ label mediocre_ending:
         her concerned "I'm sorry."
         him surprised "For what, now?"
         her sad "I haven't always been as good to you as you deserve... "
+        him sad "..."
         him concerned "I'm sorry, too. Sometimes I know I'm hard to deal with."
         her normal "Thanks for not giving up on me."
         him normal "Let's never give up on us."
@@ -341,14 +350,14 @@ label good_ending:
     her surprised "What?"
     him flirting "I'd say, \"I want to go to my house, and be in my bed, next to my wife.\""
     her laughing "What a waste! You should pick somewhere exotic!"
-    him happy "What could be more exotic than an alien planet?"
-    her happy "That's true..."
+    him happy "What could be more exotic than an alien planet? Besides, you make everything seem exotic..."
+    her flirting "I think the word you're looking for is \"erotic\", not \"exotic\"."
     show him happy
     with dissolve
     "He didn't say anything else, just buried his face in my hair and tightened his grip around my waist. I held on tight to his arms, feeling safety and love and happiness swirling around us."
     "I wanted to hold on to this feeling right here that we had worked so hard for. And it was work - it wasn't easy to forgive, or compromise, or stay calm."
     "But those moments when we made the choice to listen instead of judge, to help instead of sit back, or to be honest instead of hide an ugly truth - those were the moments that built our love, little by little."
-    "Like a coral reef, or a tree, or a stalactite, it took time, and in many ways it was still fragile."
+    "Like a coral reef, or a redwood tree, or a stalactite, it took time, and in many ways it was still fragile."
     "But as long as we kept building, it could only grow."
     show her sleeping
     show him sleeping
