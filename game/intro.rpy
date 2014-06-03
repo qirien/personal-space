@@ -1,16 +1,18 @@
 # Introduction
 # Choose profession, hobby, and some character dynamics.
 
-# Crafter; scene at craft store
-label crafter:
-    $ profession = "crafter"
+# CARPENTER; scene at craft store
+label carpenter:
+    $ profession = "carpenter"
     scene bg workshop with fade
     show her normal at midleft with dissolve
-    "...the craft store. He was looking for some elastics to braid his horse's hair for a parade."
+    "...the hardware store. He was looking for some wire to fix a fence on his farm."
     show him normal at quarterright with moveinright
-    her surprised "You know how to braid your horse's hair?"
-    him flirting "It's a fine art."
-    her normal "I'll believe it when I see it."
+    him surprised "What gauge do you think I should use?"
+    her serious "Well, the larger wire will have a stronger hold, but the thinner wire is easier to work with. What sort of force does it need to hold against?"
+    him serious "Well, I had a gate, but it came off..."
+    her serious "You might just need a new fitting. Take a look over here..."
+
     jump first_date
 
 # Doctor; scene at hospital
@@ -57,13 +59,13 @@ label teacher:
     "Kid" "But where do the chickens get the eggs?"
     him serious "They make them! Underneath those cute fluffy feathers, these birds are hard-working egg-making machines!"
     "Kid" "Really? Like a robot?!"
-    show her laughing with dissolve
+    show her happy with dissolve
     him happy "Yes! A robot made of meat!"
     show her normal
     jump first_date
 
 
-# No matter what profession you choose, the first date is the same
+# No matter what profession you choose, this date is the same
 
 label first_date:
     hide him with moveoutright

@@ -575,7 +575,7 @@ label social_6:
         naomi "You mentioned sudden headache, numbness, trouble speaking, trouble walking, and vision problems, sometimes just on one side."
         her serious "Yes, thank you. If you see any of these, please bring the person to the clinic right away, or radio me if it's after hours. There are some treatments that must be applied immediately to be effective."
         "They were little things, really, but they could make a big difference in saving someone's life."
-    elif (profession == "crafter"):
+    elif (profession == "carpenter"):
         "I taught everyone how to make a simple basket out of one of the local plants that had long, flexible branches."
         her normal "So, you weave the horizontal branches in and out of the skeleton you've already made..."
         brennan "Like this?"

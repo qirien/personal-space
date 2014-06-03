@@ -1392,7 +1392,7 @@ label follow_him:
         her normal "There's some laxatives at the clinic; I'll get some."
         hide her with moveoutleft
         scene bg clinic with fade
-    elif (profession == "crafter" or skill_creative >= 40):
+    elif (profession == "carpenter" or skill_creative >= 40):
         her normal "They have some mineral oil in the workshop; I'll get it."
         hide her with moveoutleft
         scene bg workshop with fade

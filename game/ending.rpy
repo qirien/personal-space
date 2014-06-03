@@ -228,7 +228,7 @@ label work_appreciation:
         show her normal at midright with dissolve
         show pavel at midleft, behind her with moveinleft
         boss "[her_name], I don't know what we'd do without you. You've worked so hard to keep everyone on the colony healthy."
-    elif (profession == "crafter"):
+    elif (profession == "carpenter"):
         scene bg workshop with fade
         "Every day was a new challenge; something new to build, a new material found, or some new technique to try. And nobody could make things as well as I could."
         "Chairs, shelves, rope, clothes - you name it, I'd made it for someone this past year."

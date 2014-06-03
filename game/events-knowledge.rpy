@@ -327,7 +327,7 @@ label knowledge_master:
         "I talked about how to preserve the meat of different animals and native plants."
     if (profession == "doctor"):
         "I wrote about what we knew about local bacteria that were dangerous to humans, and other medical issues specific to this planet."
-    if (profession == "crafter"):
+    if (profession == "carpenter"):
         "I wrote about what plants were useful for making furniture and how to treat them to last longer."
         
     "Then I sent a message out asking for everyone to help fill in the blank sections of the encyclopedia."

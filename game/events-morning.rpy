@@ -121,8 +121,8 @@ label work_0:
     if (profession == "doctor"):
         boss "His wife, [her_name] is our doctor. Don't wait until you're sick to stop by the clinic; go over and say hi sometime this week."
         her "Thanks, Mayor. I'll try and keep you all healthy!"
-    elif (profession == "crafter"):
-        boss "His wife, [her_name] is our crafter. If you need something built, she's the one to ask."
+    elif (profession == "carpenter"):
+        boss "His wife, [her_name] is our carpenter. If you need something built, she's the one to ask."
         her "I work mainly with wood and fabric, and can print things with plastic, too."
     elif (profession == "mechanic"):
         boss "His wife, [her_name] is our mechanic. When things break, she'll help get them working again!"
@@ -178,8 +178,8 @@ label work_0:
         her serious "I helped some people out on the ship on the way here, so this should be similar. I will need some more supplies, though."
         boss "That's fine, just write up a list and give it to me to approve. Then you can go on over to the storehouse and take what you need."
 
-    # CRAFTER
-    elif (profession == "crafter"):
+    # CARPENTER
+    elif (profession == "carpenter"):
         boss "All right! This is the shop where people will come in if they need something made they can't make themselves."
         boss "We don't have a lot of materials yet, but you can requisition some from the storehouse for important projects, and there are some materials, like wood, right here on the planet."
         her happy "I can see that this job is going to take a lot of ingenuity!"
@@ -338,8 +338,8 @@ label work_1:
         boss "Well, I'll see who has some medical experience and get back to you about that."
         her "Thank you."
 
-    # CRAFTER
-    elif (profession == "crafter"):
+    # CARPENTER
+    elif (profession == "carpenter"):
         show her normal at midright with dissolve
         "They kept me pretty busy making things for all the colonists. I made a lot of farm tools and fences, and started working on some woodworking tools. We didn't have a lot of metal, so I was trying to make tools out of local materials, but it wasn't going very well."
         "Today, however, I didn't have time for any of that. I was working on a roof for a chicken coop."
@@ -556,8 +556,8 @@ label work_3:
         "Brennan worked hard, too - he didn't have any formal medical training, but he learned to take vitals and log patients and fetch equipment for me."
         "It would have been impossible to do it all by myself."
 
-    # CRAFTER
-    elif (profession == "crafter"):
+    # CARPENTER
+    elif (profession == "carpenter"):
         "I worked hard all month. Now that everyone was settling in, people had a lot of things they wanted. We made towels and spoons and a cradle and pots and other things."
         show brennan at quarterleft with dissolve
         "Brennan worked hard, too - he had some woodworking skills, so he did a lot of that work so I could concentrate on other things."
@@ -723,8 +723,8 @@ label work_4:
 
         "There were other outbreaks of the Streaks, but now that we knew how to treat it, we didn't worry quite so much."
 
-    # CRAFTER - running out of plastic & wood
-    elif (profession == "crafter"):
+    # CARPENTER - running out of plastic & wood
+    elif (profession == "carpenter"):
         show her normal at midright with dissolve
         "We made a lot of furniture and parts for the colonists - sometimes they made things on their own, but not everyone knew how. It was easier with the schematics we brought with us - the computer could easily cut complex shapes out of wood or metal, or print them out of plastic."
         "But..."
@@ -838,7 +838,7 @@ label work_5:
     if (profession == "doctor"):
         "We only had one patient at the time; Mr. Peron was being treated for basal-cell carcinoma."
         "We had just cut a large tumor out of his face, and I was bandaging it up."
-    elif (profession == "crafter"):
+    elif (profession == "carpenter"):
         "There were just the three of us in the shop at the time - Brennan, me, and Mr. Peron, who had been explaining a farm tool he wanted us to try and make."
     elif (profession == "mechanic"):
         "Brennan and I had been watching Mr. Peron show us his method for twisting wire together to use the least amount of metal possible."
@@ -940,7 +940,7 @@ label work_6:
         "The clinic wasn't very busy this month, so I'd been working on writing a paper about how the nutrition of crops planted here differed from the nutrition of crops grown in Earth soil, based on comparing my own blood samples."
         "The colonists would need supplements of some minerals that were not as abundant here."
         "But soon it was lunch time."
-    elif (profession == "crafter"):
+    elif (profession == "carpenter"):
         "We had the kids collect supple branches from the local trees, and we made wicker crates, baskets, and chairs out of them."
         "I went to the school and taught some of the kids the weaving techniques I had learned."
         "Soon it was lunchtime, and the kids went home to eat."
@@ -1411,7 +1411,7 @@ label work_8:
         her "But isn't that my job? Why am I here if I can't even help one person feel better?"
         brennan "Ah, sometimes I wonder the same thing."        
 
-    elif (profession == "crafter"):
+    elif (profession == "carpenter"):
         # Someone needs glasses; can't grind glass precisely enough
         show natalia at midleft with moveinleft
         natalia "I hope you can do something for Raul..."
@@ -1577,7 +1577,7 @@ label work_8:
 label set_work_bg:
     if (profession == "doctor"):
         scene bg clinic with fade
-    elif (profession == "crafter"):
+    elif (profession == "carpenter"):
         scene bg workshop with fade
     elif (profession == "mechanic"):
         scene bg machine_shop with fade

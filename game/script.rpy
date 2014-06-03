@@ -337,8 +337,8 @@ label choose_career:
 
 menu:
     "Where do I work?"
-    "The craft store":
-        jump crafter
+    "The hardware store":
+        jump carpenter
         
     "The hospital":
         jump doctor
