@@ -823,7 +823,7 @@ label monthly_event_7:
         "To us!":
             her happy "To us!"
             if (loved >= 0):
-                him happy "May we have many more years together..." #TODO: I got here while playing and it looped back to the beginning of the event. Does the if need a return after it?
+                him happy "May we have many more years together..." 
             else:
                 him normal "To us, then."
             $ loved += 5
@@ -846,7 +846,7 @@ label monthly_event_7:
 label monthly_event_8:
     scene bg library with fade
     "The library had a huge collection of Earth media that colonists could check out. They only had enough space for the most popular things, but it was still more media than anyone could experience in a lifetime."
-    "One day I noticed they had a movie about space colonists. I was curious to see how people on Earth saw people like us, so I checked it out."
+    "One day I noticed they had a movie about space colonists called \"Pioneer of the Stars\". I was curious to see how people on Earth saw people like us, so I checked it out."
     scene bg farm_interior with fade
     show her normal at midleft
     show him normal at midright
@@ -1720,7 +1720,7 @@ label monthly_event_12:
     her surprised "Vacation? Not really; Dr. Lily got stung by some weird jellyfish creature, and we scraped guano off the rocks for her."
     him concerned "I don't know; it just sounds fun to get away from everything here for a change..."
     her annoyed "Well, you should have come with us!"
-    him annoyed "I didn't have time then, but I could have done it if you waited a few weeks until that harvest was over."
+    him annoyed "I didn't have time then, but I could have done it if you waited a week until that harvest was over."
     her serious "Well, we can go again if you really want to. Dr. Lily could always use more guano."
     him concerned "No, I really shouldn't leave the farm."
     her annoyed "Well, then what's the big deal? It's not like it was a big fun vacation; I had to go to fix the stove."
@@ -1750,7 +1750,7 @@ label monthly_event_12:
     else:
         him sad "We're falling apart, [her_name]. I want to stop it."
         her annoyed "Well, yelling at me isn't the way to go about it!"
-        him angry "Yeah? What should I do, then? I can't bring you flowers, or take you to a concert, or even take you out for coffee!"
+        him angry "Yeah? What should I do, then? I can't bring you chocolate, or take you to a concert, or even take you out for coffee!"
         her angry "What are you so mad about?!"
 
     him concerned "I'm sorry, [her_name]..."
@@ -1847,7 +1847,8 @@ label monthly_event_13:
     "Everyone searched together all day long, and finally we found her body washed up downstream of the Peron's farm."
     if (profession == "doctor"):
         "We didn't have a coroner or anything, so I took a look at the girl's body."
-        "I could tell she probably died the afternoon before. I found a gash on her head that looked pretty awful, and she had several broken bones. The injuries seemed too severe to have been sustained after she fell in the river..."
+        "I could tell she probably died the afternoon before. I found a gash on her head that looked pretty awful, and she had several broken bones."
+        "The injuries seemed too severe to have been sustained after she fell in the river..."
     else:
         "We didn't have a coroner or anything, but the doctor took a look at the body."
         "Josephina's body had several broken bones and big gash on her head that didn't seem like they came from falling in the river..."
@@ -2054,14 +2055,15 @@ label monthly_event_14:
                 "Sure enough, I went to the clinic and tested positive for pregnancy."
                 
             "{i}Run some tests.{/i}" if (profession == "doctor"):
-                her normal "I'll just run some tests at work today, no big deal."
-                scene bg clinic with fade
+                her normal "I'll just run some tests at work tomorrow, no big deal."
                 if (loved >= 0):
                     him normal "I'll come with you."
-                    "We walked to the clinic holding hands. It felt so good not to be alone right now."
+                    "The next day, we walked to the clinic holding hands. It felt so good not to be alone."
+                    scene bg clinic with fade
                     show him serious at left
                 else:
                     him "Okay, let me know what happens."
+                    scene bg clinic with fade                    
                 show her serious at midright
                 show brennan at quarterleft
                 with moveinleft
@@ -2073,6 +2075,8 @@ label monthly_event_14:
                 "He took the blood sample and we ran the standard tests on it."
                 "Everything was normal except--"
                 brennan "You're pregnant?"
+                if (loved >= 0):
+                    him surprised "You're pregnant?!"
                 her surprised "I guess...I am!"
                 "That explained everything."
                 
@@ -2325,7 +2329,6 @@ label monthly_event_16:
     "I ended up throwing up by the side of the road, which wouldn't have been too bad except some of it got on my clothes. Now I had to do laundry, and it was my turn to make dinner..."
     scene bg farm_interior with fade
     show her serious at midright with dissolve
-    #TODO: cellar background?
     menu:
         "What should I do?"
         "Cook something simple.":
@@ -2689,7 +2692,7 @@ label monthly_event_18:
     her concerned "You're supposed to take it easy."
     show him serious at left with move
     him "I've healed enough; I could at least take Lettie out and look around..."
-    show him at midright with move
+    show him at quarterright with move
 
     menu:
         "What should I say?"
@@ -2702,11 +2705,10 @@ label monthly_event_18:
             him serious "I'm just going to look around. I need some fresh air."
             her concerned "But-"
             him angry "Get out of the way!"
-            # TODO: Does this work? how to do multiple transitions? hpunch?
             show her with hpunch
             hide him with moveoutleft
             show her at midright with move
-            "He pushed past me and stormed out the house."
+            "He pushed past me and stormed out of the house."
             her annoyed "(What's his problem?!)"
             "When he came back later, we were both much calmer."
             show him serious at midleft with moveinleft
@@ -2907,7 +2909,6 @@ label monthly_event_19:
                 "It was too much work. We had more important things to worry about than clothes, anyway."
     return
 
-# TODO: is this boring? Add argument?
 label monthly_event_20:
     scene bg bedroom with fade
     show her normal at midright

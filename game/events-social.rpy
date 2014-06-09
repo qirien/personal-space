@@ -631,13 +631,13 @@ label social_7:
     sara "Their fields are completely empty!"
     boss "I see..."
     boss "[her_name], would you please go and speak to the Nguyens and see if you can determine the problem?"
-    her surprised "(Me?! Well, I guess Sara might be too upset about it, and I am on friendly terms with the Nguyens...)"
+    her surprised "(Me?! Well, I guess Sara might be too upset about it, and I am on friendly terms with Julia and Thuc...)"
     her serious "Yes, I'll do that."
     scene bg laundry with fade
     show julia at midright with dissolve
     show her normal at midleft with moveinleft
     "I headed over to their farm, and found Mrs. Nguyen hanging up the clothes to dry. She smiled when she saw me coming."
-    julia "Hello, [her_name], what can I do for you?"
+    julia "Hello, [her_name], what brings you over for a visit?"
     menu:
         "What should I do?"
         "Ask if she is okay.":
@@ -680,7 +680,7 @@ label social_7:
             julia "Yes, it's a trick they used in ancient Rome. It's also good for fertilizer."
             her surprised "Wow! You might want to post that on the community message board; I bet everyone would like to know about it."
             julia "Oh, I usually don't have time to go on there."
-            her normal "Well, if you don't mind, then, maybe I will post it on there with a note that you taught me how."
+            her normal "Well, if you don't mind, then, maybe you could help me write up some instructions and I will post it from both of us."
             julia "Well, if you think it will help people."
             her serious "Yes, we all need to help each other, don't you think?"
             julia "Yes... I suppose you're right."
@@ -980,6 +980,7 @@ label done_party_menu:
                 elif (skill_spiritual >= 70):
                     "Because of my connections in the community, I was able to answer a lot of the questions about the people in the colony."
                 sara "And for the last question, which will determine the winner of the trivia contest:"
+                # TODO: This isn't written anywhere... change to something else?
                 sara "What is Mayor Grayson's favorite song?"
                 menu:
                     "What's the mayor's favorite song?"

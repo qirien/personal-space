@@ -235,6 +235,7 @@ label relax_together_4:
     else:
         her happy "Want me to rub your shoulders?"
         him happy "I would love that!"
+        show her normal at center, behind him with move
         "I started off gently. His muscles were so tight, I was amazed he could move at all. I gradually kneaded harder, trying to tell what sorts of massage he liked."
         him serious "Ohhh, that feels so good."
         "Sometimes he would make sort of painful grunt that let me know he didn't like what I was doing. But he would also sigh with content when I hit a particularly tense spot."
@@ -246,12 +247,13 @@ label relax_together_4:
                 "My hands were starting to get a little tired, but I didn't want to stop yet, so I rubbed his legs and feet, too."
 
         "To finish off I massaged his neck and head. I could tell he really enjoyed it."
-
+        show her at midright with move
         if (loved >= 5):
             him normal "Now it's your turn to get massaged."
             her flirting "Mmmm, really? Are you talking about shoulders, or...?"
             him flirting "I'll massage anything you like."
             her normal "Why don't you start with the shoulders, and then we'll see what happens?"
+            show him normal at center, behind her with move
             "He copied what I had done earlier, and gave me quite the massage, too. It was so relaxing to just sit and do nothing while he took care of all my tense muscles. He takes such good care of me..."
             $ made_love += 1
             $ relaxed += 5
@@ -563,7 +565,6 @@ label relax_together_a:
                 $ relaxed += 2
     return
     
-# TODO: make this a tractor race instead?
 label relax_together_b:
     scene bg farm_interior with fade
     "We watched a sports game together. It was hard to get too excited about it, since it happened on Earth four years ago, and I didn't feel as loyal to any of the teams now that I wasn't even on the same planet as them."
@@ -597,7 +598,7 @@ label relax_together_e:
     him happy "I know, it just hits them right when they first come in-"
     her happy "...and slows them down so they get hit by my fireballs. Perfect!"
     him flirting "One more level?"
-    her flirting "I'll probably regret it tomorrow but... bring it on!"
+    her serious "I'll probably regret it tomorrow but... bring it on!"
     $ relaxed += 5
     $ loved += 2
     return
@@ -789,7 +790,7 @@ label relax_together_k:
             "We didn't have haircutting scissors, so I just used regular scissors and a comb."
             play sound "sfx/scissors.mp3"
             if (skill_creative >= 40):
-                "I gave him a haircut kind of like what it had before. It was easier than I thought."
+                "I gave him a haircut kind of like what he had before. It was easier than I thought."
                 her happy "Well, what do you think?"
                 him surprised "Hey, that looks good!"
                 her annoyed "Of course it does."

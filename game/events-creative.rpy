@@ -323,14 +323,13 @@ label creative_master:
     "I wrote down all the things I wanted to show everyone, and then sorted them and connected the ideas."
     "I made a list of footage to shoot, and wrote a script for the narrator."
     
-    #TODO: change to use highest other skill?
-    if (skill_spiritual >= 40):
+    if (skill_spiritual >= 20):
         "The film had a lot of meaning - I wanted viewers to be able to ponder their own place in the universe and be delighted at the new things we experienced here."
-    if (skill_technical >= 40):
+    if (skill_technical >= 20):
         "I was able to put in great transitions and professional-looking text, and I made sure to use non-lossy compression algorithms to keep the video quality high."
-    if (skill_knowledge >= 40):
+    if (skill_knowledge >= 20):
         "I included details about the planet's geology, biology, and chemistry that I had been studying the whole time we'd been living here."
-    if (skill_social >= 40):
+    if (skill_social >= 20):
         "The film had a great human element - I interviewed some of the families and they told of their struggles and triumphs."
 
     "It wasn't the most professional or polished film ever. But it was the only film about this planet I had come to call home."

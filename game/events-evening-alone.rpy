@@ -116,7 +116,6 @@ label relax_alone_2:
 label relax_alone_3:
     scene bg farm_interior with fade
     play sound "sfx/message.mp3"
-    # TODO: Actually read e-mail from mom?
     "I got a message from my mother."
     "It was one she sent several years ago, but she told me all about my siblings, and how the neighbors were doing, and I better take good care of [his_name] and is he taking care of me, that sort of thing."
     "Even though I knew it would take four years for my letter to cross the vast space between our planets, I wrote back. I told her all about the farm and [his_name] and the town and my job. I wonder how much she could understand; our life was so different here..."
@@ -431,25 +430,25 @@ label relax_alone_k:
     $ relaxed += 5
     return
 
-#TODO: should we have a terminal/tablet chat mode for chatting online?  Maybe use NVL mode?
 label relax_alone_l:
     scene bg farm_interior with fade
     "I chatted with Helen Engel over the network - she lived on the other side of the colony and didn't leave the house much, so we didn't get to see each other very often."
-    her "Hey, how are your cows doing?"
-    helen "Good! They have plenty of room to graze, but we had to pull out a few poisonous plants we didn't know about."
-    her "How'd you find out they were poisonous?"
+    her_c "Hey, how are your cows doing?"
+    helen_c "Good! They have plenty of room to graze, but we had to pull out a few poisonous plants we didn't know about."
+    her_c "How'd you find out they were poisonous?"
     if (skill_knowledge >= 60):
-        helen "I read your edible plants guide!"
-        her "Wow, really?"
-        helen "Yes! I was glad you put in the poisonous plant section so we could identify it."
+        helen_c "I read your edible plants guide!"
+        her_c "Wow, really?"
+        helen_c "Yes! I was glad you put in the poisonous plant section so we could identify it."
         $ community_level += 2
         $ relaxed += 2
     else:
-        helen "All the cows got sick, so we took samples of all the plants in their pasture to Dr. Lily to analyze. Luckily, they made it through, but it was a close call."
+        helen_c "All the cows got sick, so we took samples of all the plants in their pasture to Dr. Lily to analyze. Luckily, they made it through, but it was a close call."
 
-    her "How is Sven?"
-    helen "Doing fine - though sometimes he's pretty busy taking care of the cows and the library!"
-    her "Yeah, [his_name] is busy a lot, too..."
+    her_c "How is Sven?"
+    helen_c "Doing fine - though sometimes he's pretty busy taking care of the cows and the library!"
+    her_c "Yeah, [his_name] is busy a lot, too..."
+    nvl clear
     "She was a newlywed like me and we had a lot in common, so it was fun to chat together."
     $ relaxed += 5
     $ loved -= 2

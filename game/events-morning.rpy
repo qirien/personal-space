@@ -312,7 +312,7 @@ label work_1:
         her "Sorry to leave you waiting so long; I know you're hurting- oh!"
         show her surprised
         "I had bandaged up his leg, but the wound had reopened and he was bleeding a lot."
-        sven "I tried to, to, stop the bleeding..."
+        sven "Doc, I tried to, to, stop the bleeding..."
         her serious "It's okay, I'm here now. You're going to be just fine..."
         "I took care of his leg, and several hours later, Sven woke up."
         sven "Hey, is Van okay?"
@@ -425,7 +425,7 @@ label work_1:
         boss "[her_name], are you all right?"
         her serious "Yes...though I may have a black eye tomorrow."
         boss "That's terrible! You shouldn't be all by yourself here, not every day."
-        her serious "Well, part of it is that those boys really don't need to be here every day. They could do most of their work from home."
+        her serious "Well, part of it is that Tomas really doesn't need to be here every day. He's old enough to do most of his work from home, and then he could help out his parents more, too."
         boss "That may be a good idea, but I want to find someone to help you out on the days when you have all the kids here."
         menu:
             "Do I need help?"
@@ -993,7 +993,7 @@ label work_6:
                     her surprised "Okay, she's really smart, and nice too, actually, but that is a lot older than you."
                     brennan "And then there's the Nguyen's oldest daughters, who are seventeen and sixteen."
                     her normal "I've seen them taking care of their little siblings, but I don't know them very well."
-                    brennan "Well, the oldest, Joanna, is all over that Thomas fellow who's about her age. I'm surprised they're not married yet."
+                    brennan "Well, the oldest, Joanna, is all over that Tomas fellow who's about her age. I'm surprised they're not married yet."
                     her surprised "They're only seventeen!"
                     brennan "Well, it's old enough to get into trouble, and old enough to help propagate the species..."
                     her normal "What about the younger sister, Miranda?"
@@ -1394,7 +1394,7 @@ label work_8:
         julia "Obviously."
         her annoyed "Well, let's try something else, then."
         julia "How shall we do that, if you don't know what is causing the pain? Shall I simply try every single drug available, and see what works?"
-        her annoyed "Of course not. We started with the most probably cause, and we will work down from there."
+        her annoyed "Of course not. We started with the most probable cause, and we will work down from there."
         julia "How long is this list of \"probable causes\"?"
         her serious "Well, there's lots of things that can cause joint pain. Infections, cancer, fibromyalgia, depressive disorders--"
         julia "Enough. I won't subject my body to any more of your theories."
@@ -1495,7 +1495,6 @@ label work_8:
 
     brennan "At least I won't have to deal with it much longer."
 
-    # TODO: make sure this isn't redundant with monthly_event 24 or ending
     if (wants_to_leave or cheated_on_him):
         her serious "Because you're going back to Earth."
         brennan "Yes. You're coming too, right?"
