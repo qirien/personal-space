@@ -2,12 +2,14 @@ label msg_01:
     boss_c "Mandatory all-colony meeting tomorrow at 10, followed by a farmer's meeting at 11!"
     note " "
     him_c msg "Hey, a few people asked me about the attachment system on these tractors; so here's a how-to."
+    return
     
 label msg_02:
     naomi_c "Please let me know if you would be interested in a weekly yoga and meditation session."
     note " "
     lily_c "I am looking for a volunteer to come to the ocean and gather guano. No experience necessary."
     sven_c "Doubt you'll get many takers on that one, Lily."
+    return
     
 label msg_03:
     sven_c "Hey, uh, I forgot who checked out the chisel set, but could you please return them?"
@@ -16,27 +18,46 @@ label msg_03:
     him_c "Thanks, [her_name]..."
     sara_c "It's your birthday? How old are you?"
     him_c "In Earth time, or relative time as experienced by me?"
-    sara_c "Oh, never mind, it doesn't really matter, I guess."
+    sara_c "Oh, never mind, it doesn't really matter. Happy Birthday, anyway!"
+    return
 
 label msg_04:
-    brennan_c ""
+    julia_c "I don't mean to be rude, but whoever is using our front yard as a shortcut to the community center is being extremely inconsiderate. They're trampling my oregano."
+    natalia_c "Oh, is that your front yard? I didn't see a fence, so I just thought they were weeds. Sorry!"
+    julia_c "I didn't think fences were necessary among trusting, sensible neighbors."
+    sara_c "You have oregano?! Can I have some?"
+    julia_c "Of course, dear. Bring me some soap from the storehouse when you come, please."
+    sara_c "Sure."
+    ilian_c "Make sure you log it, Sara."
+    sara_c "I always do."
+    ilian_c "Except for that one time with the chocolate."
+    sara_c "That was three months ago! Can you just let it go already?!"
+    ilian_c "It's my job to see that everything is accounted for."
+    return
     
 label msg_05:
     boss_c "I've had a few questions about what to do with trash - let me remind everyone that our plastic and metal supplies are very limited, so make sure you recycle these items at the community center. Other trash can be burned or composted; see pages 126-128 of the Colonist's Guide."
+    return
     
 label msg_06:
     thuc_c "Hey, my corn was doing fine, but the ears don't seem to be growing any bigger - anyone else having this problem?"
     martin_c "Yeah, mine, too. I noticed some tiny white dots under the leaves - maybe insect eggs?"
-    
-label msg_07:
+   
     #message from her based on highest_skill
     $ highest_skill = highest_stat()
     if (highest_skill == "Domestic"):
         her_c "I've got some extra mint if anyone needs some - it grows really well here!"
+        sara_c "Ooh, I'll take some."
+        thuc_c "Me, too. You could dry some, too."
+        her_c "Yeah, I think I will."
     elif (highest_skill == "Creative"):
         her_c "Moonrise over the south hills, pic attached."
+        julia_c "Beautiful! You're quite the photographer!"
+        natalia_c "Do you do family pictures? I want to send one back to Earth with a Christmas card."
+        her_c "Sure! Let me know when and where."
     elif (highest_skill == "Technical"):
         her_c "Finally got our new antenna installed. Everyone sounds much clearer now!"
+        sara_c "Yay, call me sometime!"
     elif (highest_skill == "Spiritual"):
         her_c "Sister Naomi gave a great sermon yesterday..."
         natalia_c "Yes, it even kept Martin awake!"
@@ -51,7 +72,24 @@ label msg_07:
         her_c "I took a picture of this plant; does anyone know if you can eat it? It smells good, but I'm not sure..."
         lily_c "It's not in our database; bring it by the lab and I'll run it through the spectrometer."
     elif (highest_skill == "Physical"):
-        her_c "Ran 10k today; it feels good!"
+        her_c "Ran 10k today; I feel tired but so good!"
+        sara_c "Yay! You go, [her_name]!"
+    return
+    
+label msg_07:
+    boss_c "Congratulations, everyone, at the end of the month we'll have been here for one whole Talaam year!"
+    boss_c "We wanted to give everyone a time to celebrate their winter holidays, so at the end of the month we'll take a week off for those, and also to make plans for the new year."
+    brennan_c "Hopefully there are plans for celebration!"
+    naomi_c "Yes, I'll post a list of events for all the winter holidays, including a New Year's Eve party at the community center."
+    brennan_c "Hey, Sven, any chance you could bring some strong beverages?"
+    sven_c "I don't think you could handle my latest batch, Brennan."
+    brennan_c "I can't back down from that sort of challenge. Bring it on!"
+    note " "
+    
+    sara_c "It'll be strange to have Christmas without snow..."
+    martin_c "When I lived in Chile we'd always go to the beach for Christmas..."
+    brennan_c "Too bad it's not warm enough for that here!"
+    return
         
 label msg_8:
     if (profession == "teacher"):
@@ -71,6 +109,8 @@ label msg_8:
     elif (profession == "mechanic"):
         helen_c "[her_name], I heard you fixed the clinic's radio, could you take a look at ours, too? The volume control is broken..."
         her_c "Sure, bring it by sometime."
+        
+    return
 
 label msg_9:
     sara_c "Anyone seen \"Pioneer of the Stars\"? Is it any good?"
@@ -80,31 +120,48 @@ label msg_9:
     her_c "I'll watch it with you, Sara, Ilian won't enjoy it anyway. He'll just spend the whole movie talking about how space ships don't really work like that."
     lily_c "They don't. The scenario in that movie is physically impossible."
     her_c "That's why it's a movie, not a documentary."
+    return
     
 label msg_10:
     boss_c "Who grew the strawberries? These are delicious!"
     sven_c "They taste even better with some cream, Mayor G."
     boss_c "I'm sure they do - do you have any to spare?"
     sven_c "Sure, we can work out a trade."
+    return
     
 label msg_11:
     thuc_c "[his_name], is Lettie better yet?"
     him_c "Yeah, she's fine. Still haven't figured out exactly what it was, though."
-    nvl " "
+    return
     
+label msg_14:
+    sven_c "Sure has been quiet around here lately..."
+    martin_c "It's even quieter over here, without Josephina..."
+    sven_c "Sorry, Martin..."
+    helen_c "How's Natalia holding up?"
+    natalia_c "I'm fine."
+    #TODO: brennan_c posts pic of sad kitten, everyone calls him insensitive.
+    return
+
+label msgs_pregnant:
+    natalia_c "So, [his_name] and [her_name], what are you going to name the baby?"
+    sara_c "Baby?! What baby? Why am I always the last to hear about these things?!"
+    him_c "Haven't decided on a name yet; we just barely found out ourselves!"
+    boss_c "Congratulations!"
+    sven_c "About time!"
+    ilian_c "[his_name], come by sometime, I have something for the baby..."
+    lily_c "Congratulations may be premature. Approximately 15% of pregancies end in a miscarriage during the first trimester."
+    helen "Even so, it's something to celebrate."
+    brennan_c "Congratulations, [her_name]."
+    thuc_c "And [his_name]! People are always forgetting about the father."
+    brennan_c "...Yes, of course."
+    note " "
+    return
 
 label msg_15:
     if (is_pregnant):
-        natalia_c "So, [his_name], what are you going to name the baby?"
-        sara_c "Baby?! What baby? Why am I always the last to hear about these things?!"
-        him_c "Haven't decided on a name yet; we just barely found out ourselves!"
-        boss_c "Congratulations!"
-        sven_c "About time!"
-        ilian_c "[his_name], come by sometime, I have something for the baby..."
-        lily_c "Congratulations may be premature. Approximately 15% of pregancies end in a miscarriage during the first trimester."
-        helen "Even so, it's something to celebrate."
-        brennan_c "Congratulations, [her_name]."
-        nvl " "
+        call msgs_pregnant
+
     boss_c "Just a reminder - please don't let kids play in the community center when no one else is there. I wouldn't want anyone to get hurt by falling chairs or anything."
     natalia_c "Falling chairs? We're on an alien planet full of unknown perils and you're worried about falling chairs?"
     boss_c "I would feel responsible if something bad happened at the community center."
@@ -114,9 +171,43 @@ label msg_15:
     natalia_c "Oh, that. Well, sure, I'll have them clean it up. No need to restrict the whole area, right?"
     boss_c "I suppose not. But we can't have messes in there, we hold meetings there."
     natalia_c "Of course not. I'll let them know."
+    return
+    
+label msg_16:
+    helen_c "Has anyone seen Sven?! He didn't come home last night!"
+    naomi_c "He and Brennan got rather intoxicated last night, testing Sven's latest brew - I'll check at the community center for you."
+    helen_c "Thanks, Naomi. Hopefully that's all it is."
+    msg " "
+    sven_c "hey, baby, be home soon, sorry you were worried."
+    helen_c "We can talk about it when you get home, dear."
+    brennan_c "Whatever she has to say, it was completely worth it, Sven. That was your best creation yet."
+    naomi_c "I'm sure I don't have to remind you gentlemen to make sure the community center is ready for the meeting this afternoon."
+    brennan_c "No problem, we got it covered."
+    brennan_c "Ha ha, get it, man?! We got it \"covered\"?! Because the floor is covered in, in--"
+    sven_c "you're hilarious."
+    return
+    
+label msg_17:
+    sara_c "Hey, is there a schedule somewhere for the bathhouse?"
+    boss_c "No, right now it's first come, first served. Has there been a problem?"
+    sara_c "No, I just wanted to like, reserve it for tomorrow night."
+    boss_c "Well, then, consider it reserved!"
+    sara_c "Okay, great."
+    return
+    
+label msg_18:
+    him_c "Anyone else have any problems with a tractor battery going dead?"
+    thuc_c "Mine doesn't hold the charge it used to; I have to come home at lunch and charge it off the house battery."
+    julia_c "And then there's no power left for the stove!"
+    lily_c "The overcast meteorological conditions of late also reduce the efficiency of the solar chargers."
+    him_c "Anyone tried using the biofuel system?"
+    sven_c "Yeah, if you use wood you gotta refill it every hour or so. Not too efficient. If we had some liquid fuel it'd probably last longer."
+    ilian_c "That fuel is only for emergencies."
+    him_c "Alright, I'll just charge it off the house for now."
+    return
     
 label msg_19:
-    him_c "Hey, is there someone that wants our tomatoes and peppers? I'm not allowed to use my burned hands for another week..."
+    him_c "Hey, is there someone that wants some tomatoes and peppers? I'm not allowed to use my burned hands for another week..."
     thuc_c "You're not going to pick them with your teeth? You're such a slacker, [his_name]."
     him_c "Yeah, I know."
     thuc_c "I'm just kidding! I'll help you tomorrow night, okay?"
@@ -126,6 +217,15 @@ label msg_19:
     sara_c "Yes! Ohhh, chips and salsa..."
     brennan_c "Sara, have I mentioned lately how beautiful you are? And how generous, and kind to poor hungry souls like myself?"
     sara_c "Yes, actually you have. Make your own chips and salsa, Brennan."
+    return
+    
+label msg_20:
+    #TODO: write something here
+    return
+
+label msg_21:
+    ilian_c "COLONISTS: Please try to conserve rechargeable batteries. We are running out. They should last for at least ten years if charged properly and are not allowed to discharge fully."
+    return
 
 label msg_22:
     natalia_c "I have good news - our son Tomas is engaged to Joanna Ngyuen!"
@@ -134,9 +234,49 @@ label msg_22:
     julia_c "True love! You're probably where she got such a ridiculous romantic notions."
     thuc_c "That, or it could be your old love letters that I let her read. I knew there was a reason I kept them all."
     julia_c "Thuc!!"
-    nvl " "
-    brennan "Ahhh, Tomas, you're a lucky man."
+    note " "
+    brennan "Ahhh, Tomas, you're a lucky man. Though I don't envy you having Julia for a mother-in-law...."
     martin_c "Man?! He's still a boy... Though if he's old enough to get married..."
+    julia_c "A man is as a man does. Tomas is more of a man than some here, at least."
+    brennan_c "I stand by what I said."
     
+    return
+    
+label msg_23:
+    return
+             
 label msg_24:
+    if (is_pregnant):
+        julia_c "Congratulations to [his_name] and [her_name] on the birth of their new baby, [baby_name]!"
+        sara_c "She's adorable! Yay!"
+        martin_c "Congratulations!"
+        natalia_c "You'll be wonderful parents! I'd be happy to watch her for you if you need to get some things done. I miss babies..."
+        thuc_c "She looks just like you, [his_name]!"
+        him_c "I hope not!"
+        helen_c "I think she looks more like [her_name]."
+        lily_c "Congratulations on successfully breeding."
+        ilian_c "I can bring some things by from the storehouse, so you don't have to leave the house for a bit, if you want."
+        her_c "Thanks, everyone!! We're just taking it easy for a week or two, but I'll be bringing her to work with me as soon as I can manage it."
+        note " "
+    elif (is_pregnant_later):
+        call msgs_pregnant
+    
     boss_c "I know we're all looking forward to a few new supplies from the new ship, but let's remember to take only what we need."
+    return
+    
+label msg_25:
+    if (((community_level < COMMUNITY_LEVEL_OK) and (loved < 0)) or wants_to_leave):
+        sara_c "I'm going to miss you, [her_name]!!!"
+        helen_c "What? [her_name]'s leaving? Is [his_name] leaving, too?"
+        him_c "No, I'm staying."
+        helen_c "Ohhh... I'm sorry."
+        him_c "Yeah, well, it's okay."
+        
+    brennan_c "I'm leaving, in case anyone cared."
+    him_c "Not likely."
+    lily_c "That is a shame."
+    brennan_c "Thanks, Lily."
+    lily_c "With you gone, the ratio of people capable of producing useful capital to dependents will decrease substantially."
+    brennan_c "Awww, stop, you're making me blush."
+        
+    return

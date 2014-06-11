@@ -812,7 +812,7 @@ label monthly_event_7:
     him normal "Well, a year on this planet is only seven months, but, yeah. It's good for farming to have a shorter year, especially since the winters are so mild."
     her happy "Happy New Year, then!"
     scene black with fade
-    "We all took a week off from working. People celebrated their winter holidays, worked on things at home, and visited each other. We ended the festivities with an all-night party at the community center."
+    "We all took a week off from working. People celebrated their winter holidays, worked on home projects, and visited each other. We ended the festivities with an all-night party at the community center."
     scene bg community_center with fade
     show him happy at midright
     show her happy at midleft 
@@ -1830,7 +1830,7 @@ label monthly_event_12:
 label monthly_event_13:
     scene black with fade
     play music "music/NoOneWillKnow.ogg" fadeout 3.0
-    "I hadn't thought about it much before, but we didn't have a lot of laws here on Talaam. Some things just didn't apply (like taxes, driving laws, etc), but I remember signing something about agreeing to abide by a set of laws that sounded very reasonable."
+    "I hadn't thought about it much before, but we didn't have a lot of laws here on Talaam. Some things just didn't apply (like taxes, food regulations, etc), but I remember signing something about agreeing to abide by a set of laws that sounded very reasonable."
     "It had never seemed like something I would have to worry about.  Until I had to be on the jury for Ilian's trial, that is..."
     "We hadn't had any crime our whole first year (though we certainly had our share of arguments, accidents, and disagreements)."
     "After all, who would hurt anyone else in our colony? We needed each other too much."

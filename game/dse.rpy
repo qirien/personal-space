@@ -79,6 +79,9 @@ label day:
         $ weather = "cold and rainy"
 
     "It's year %(year)d, month %(local_month)d. We've been here %(month)d months. It's [season]. The weather is [weather]."
+    $ message = "msg_" + `month`
+    nvl clear
+    call expression message
     # TODO: comment out this debugging code
     # TODO: Play a season-specific sound (like rain or wind)?
     if (loved >= 0):
