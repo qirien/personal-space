@@ -30,7 +30,7 @@ label social_0:
     nvl clear
     
     her_c "Hey, let's all support Julia and the farmers! She's working hard to help everyone be organized and have the food they need."
-    sven_c "She's working hard on knowin' everyone's business."
+    sven_c "She's working hard knowin' everyone's business."
     julia_c "We will all have to cooperate to survive!"
     sven_c "Speak for yourself, we're doin' just fine up here."
     natalia_c "I'll remember that the next time Helen asks me for some eggs!"
@@ -437,15 +437,18 @@ label social_4:
 label social_5:
     scene bg bedroom with fade
     show overlay night
-    show him serious at midright
-    show her serious at midleft
+    show overlay bedroom_covers behind night        
+    show him sleeping at midleft, squatting, behind overlay
+    show her sleeping at midright, squatting, behind overlay
     with dissolve
+    
     play music "music/NoOneWillKnow.ogg" fadeout 3.0
     "One good thing about being such a small community was that we all helped out when someone needed it."
     "Like when Sara's house burned down..."
     "It was the middle of the night when the radio crackled on."
     play sound "sfx/radio.mp3"
     "Sara on the radio" "Is anyone awake? Please, help! Our house is on fire!!!"
+    show her surprised
     him surprised "Let's go!"
     scene bg farm_exterior flip burned with fade
     show overlay night
@@ -477,6 +480,7 @@ label social_5:
             sara "What does it matter?! Either way, our house just burned down! Not just the house, but our clothes, tools, computers..."
             her concerned "I'm so sorry..."
     sara "I don't know where we'll stay; what we'll wear; how we'll eat..."
+    stop sound
     menu:
         "What should I say?"
         "Come stay at our house.":

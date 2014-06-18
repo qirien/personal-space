@@ -82,6 +82,7 @@ label day:
     $ message = "msg_" + `month`
     nvl clear
     call expression message
+    nvl clear    
     # TODO: comment out this debugging code
     # TODO: Play a season-specific sound (like rain or wind)?
     if (loved >= 0):

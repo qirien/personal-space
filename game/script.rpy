@@ -44,9 +44,10 @@ image bg city_street = "bg/city-street.jpg"
 image bg bathhouse = "bg/bathhouse.jpg"
 image overlay night = "bg/night.png"
 image overlay bathhouse = "bg/bathhouse-overlay.png"
+image overlay bedroom_covers = "bg/bedroom-overlay.png"
 
 # Declare characters used by this game .
-define her = DynamicCharacter("her_name", color="#7264d5", image="her") #periwinkle
+define her = DynamicCharacter("her_name", color="#8864d5", image="her") #periwinkle
 define him = DynamicCharacter("his_name", color="#c80000", image="him") #red 
 
 define naomi = Character("Sister Naomi", color="#ededed", image="naomi")  #light gray
@@ -65,7 +66,7 @@ define martin = Character("Martin Peron", color="#990011", image="martin")  #dar
 
 
 # NVL mode characters for chat rooms, etc
-define her_c = DynamicCharacter("her_name", color="#7264d5", image="her", who_suffix=":", kind=nvl)
+define her_c = DynamicCharacter("her_name", color="#8864d5", image="her", who_suffix=":", kind=nvl)
 define him_c = DynamicCharacter("his_name", color="#c80000", image="him", who_suffix=":", kind=nvl) #red 
 define naomi_c = Character("Naomi", color="#ededed", image="naomi", who_suffix=":", kind=nvl)  #light gray
 define boss_c = Character("Pavel", color="#cccccc", image="pavel", who_suffix=":", kind=nvl)   #dark gray
@@ -177,7 +178,9 @@ init -200:
     
     define COMMUNITY_LEVEL_OK = 30
     define COMMUNITY_LEVEL_GOOD = 50
+    define COMMUNITY_LEVEL_MAX = 60    
     define LOVED_GOOD = 30
+    define LOVED_MAX = 50
 
     #Technical variables used to control how the game displays
     # Custom transitions, positions, etc.

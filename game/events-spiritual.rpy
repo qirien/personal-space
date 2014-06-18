@@ -294,7 +294,7 @@ label spiritual_6:
     "We sat in silence for a few minutes. I didn't know what to say. I hoped Naomi would say something wise and comforting, but she didn't."
     helen "The truth is, I hate knitting."
     her surprised "You do?"
-    helen "Yes! But the one thing I hate more than knitting is feeling useless! I wish I could be helping Ilian with the garden, or working at the library, or {b}something{/b} other than sitting around for three more months!"
+    helen "Yes! But the one thing I hate more than knitting is feeling useless! I wish I could be helping Sven with the cows, or working at the library, or {b}something{/b} other than sitting around for three more months!"
     helen "At least this way I'm accomplishing something, even if it's just embarassing myself."
     her serious "Helen, it's not how much we get done that counts."
     helen "What does count, then?"

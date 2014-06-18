@@ -520,10 +520,11 @@ label physical_5:
 # Go hunting and bring back some meat
 label physical_6:
     scene bg bedroom with fade
-    show her normal at midright
-    show him sleeping at midleft
-    with dissolve
-    show overlay night
+    show overlay bedroom_covers    
+    show him sleeping at midleft, squatting, behind overlay
+    show her normal at midright, squatting, behind overlay
+    with dissolve    
+    
     "I woke up early and couldn't go back to sleep. All I could think of was how hungry I was for meat."
     "I felt like stealing one of my neighbor's chickens and roasting it, but I knew we needed them more for their eggs."
     "I'd seen plenty of animals by the river. They didn't look like the tastiest creatures, but at that point I didn't care."

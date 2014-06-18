@@ -469,8 +469,10 @@ label relax_together_10:
     
 label relax_together_11:
     scene bg bedroom with fade
-    show her normal at midleft
-    show him normal at midright
+    show overlay night
+    show overlay bedroom_covers behind night        
+    show him normal at midleft, squatting, behind overlay
+    show her normal at center, squatting, behind overlay
     with dissolve
     "One night we went to bed early and just started talking. I ended up telling him all about my job. Who was hard to work with, things that seemed impossible, the people I helped..."
     "It felt good to have him know what I had been working on, and know that I had his support."
@@ -480,8 +482,10 @@ label relax_together_11:
 
 label relax_together_12:
     scene bg bedroom with fade
-    show her normal at midleft
-    show him normal at midright
+    show overlay night
+    show overlay bedroom_covers behind night        
+    show him normal at midleft, squatting, behind overlay
+    show her normal at center, squatting, behind overlay
     with dissolve
     "We snuggled together in bed and talked softly together."
     $ relaxed += 5
@@ -626,19 +630,22 @@ label relax_together_g:
     him angry "Look, I just can't right now! I'll be back in after I fix this!"
     hide him
     "He left."
-    show her concerned at center
+    show her concerned
     "I waited."
-    show her annoyed at center
+    show her annoyed
     "And waited."
-    show her sleeping at center
+    show her sleeping at squatting
+    show overlay bedroom_covers
     "And waited."
     scene black with fade
     "Finally, I just went to sleep."
     scene bg bedroom with fade
-    show her sleeping at midright
+    show her sleeping at midright, squatting
+    show overlay bedroom_covers
     with dissolve
-    show him normal at center with moveinleft
+    show him normal at center, squatting, behind overlay with moveinleft
     show overlay night
+    show overlay bedroom_covers behind night
     play sound "sfx/cloth.mp3"
     "I half awoke in the middle of the night to [his_name] snuggling up to me and nuzzling my ear."
     her concerned "Wha-huh?"

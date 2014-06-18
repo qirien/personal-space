@@ -1129,7 +1129,7 @@ label monthly_event_9:
             hide him
             her angry "(He is not romantic at all!)"
             return
-        "Nothing.":
+        "{i}Nothing.{/i}" if (loved >= 0):
             $ she_wants = "nothing"
             her normal "You don't need to do anything differently; you're doing just fine."
 
@@ -1160,7 +1160,10 @@ label monthly_event_9:
             call she_can_do_better
 
     scene black with fade
-    "I wondered if he would actually do anything based on what I said I liked. A few days passed and I figured he had forgotten all about it."
+    if (she_wants == "nothing"):
+        "A few days passed, and I forgot all about that conversation."
+    else:
+        "I wondered if he would actually do anything based on what I said I liked. A few days passed and I figured he had forgotten all about it."
     if (loved >= -5):
         "But then..."
         scene bg farm_interior with fade
@@ -1530,7 +1533,7 @@ label goto_ocean:
     if (skill_physical >= 40):
         "Lily had a strange look on her face, so I carried her further inland so she could sit down."
         "She wasn't blinking, so I pinched her a few times."
-        lily "Hey, knock it off! What happened? Did I fall asleep?"
+        lily "Please stop that. What happened? Did I fall asleep?"
     elif (skill_knowledge >= 40):
         "Lily appeared to be temporarily paralyzed, so I motioned to [ocean_character] to help me carry her further inland."
         "I was trying to think of what I could do to help her when she came out of her trance."
@@ -1550,7 +1553,7 @@ label goto_ocean:
         lily "W-what happened? Did I fall asleep?"
 
     her normal "No, one of the purple jellies latched onto you."
-    lily "Weird. I feel like I just woke up from a dream."
+    lily "Weird. I feel like I've been dreaming for hours."
     her serious "Its tentacle is still on you; we should probably remove it."
     lily "Oh, I'll take care of that."
     if (ocean_character == "Brennan"):
@@ -1561,7 +1564,7 @@ label goto_ocean:
         "She carefully grabbed it with her tweezers and moved it into a specimen bag. Sven and I looked at each other with exasperation. Maybe she was a little TOO dedicated."
     else:
         sara "Don't worry, I made sure your camera was safe!"
-        lily "Thank you! Maybe I just had a little too much sun today."
+        lily "Thank you! Perhaps I just had a little too much sun today."
 
     stop sound fadeout 3.0 
     return
@@ -1827,6 +1830,7 @@ label monthly_event_12:
 
 # MONTH 13 - Jury Duty
 # uses spiritual, technical
+# TODO: Why would Ilian be driving a tractor?!
 label monthly_event_13:
     scene black with fade
     play music "music/NoOneWillKnow.ogg" fadeout 3.0
@@ -1988,7 +1992,8 @@ label monthly_event_14:
             him serious "It'll be okay, [her_nickname]. Why don't you get some rest?"
             her sad "Maybe I will..."
             scene bg bedroom with fade
-            show her sleeping at center
+            show her sleeping at center, squatting
+            show overlay bedroom_covers
             "I fell asleep immediately..."
             
         else:
@@ -2000,6 +2005,7 @@ label monthly_event_14:
             "I went to lay down and fell asleep immediately..."
             scene bg bedroom with fade
             show her sleeping at center
+            show overlay bedroom_covers            
 
         scene black with fade
         "The next morning I felt less tired, but still a little off. I went to work anyway, and had been standing up all day when I started to feel dizzy and sick to my stomach."
@@ -2788,9 +2794,10 @@ label monthly_event_18:
         him surprised "Haven't you missed me, just a little?"
         her flirting "Maybe..."
         scene bg bedroom with fade
-        show him serious at midleft
-        show her serious at center
         show overlay night
+        show overlay bedroom_covers behind night        
+        show him serious at midleft, squatting, behind overlay
+        show her serious at center, squatting, behind overlay
         with dissolve
         "That night, he held me gently, his hands caressing my skin as if for the first time. His skin was still rough from the burns, but I didn't care."
         him serious "Mmmm, the touch of your skin... I've missed {b}you{/b}, [her_nickname]."
@@ -2911,9 +2918,10 @@ label monthly_event_19:
 
 label monthly_event_20:
     scene bg bedroom with fade
-    show her normal at midright
-    show him normal at midleft
     show overlay night
+    show overlay bedroom_covers behind night        
+    show him serious at midleft, squatting, behind overlay
+    show her serious at center, squatting, behind overlay
     with dissolve
 
     if (is_pregnant):
@@ -2980,8 +2988,9 @@ label monthly_event_20:
             her serious "I can try it..."
             
             scene bg bedroom with fade
-            show her serious at center
-            show overlay night
+            show overlay bedroom_covers            
+            show overlay night            
+            show her serious at center, squatting, behind overlay
             with dissolve
             "I took a few minutes before bed to do what Sister Naomi suggested."
             "My back still hurt, but when I wrote down ideas or things to do the next day, I didn't have to worry about them anymore, so I was able to sleep a little bit better."
@@ -3281,6 +3290,8 @@ label monthly_event_22:
             her normal "So there wasn't just one thief."
             boss "Yes, just a lot of people who thought they'd take an extra bottle \"just in case\"."
             her flirting "And when we told them one person had been honest enough to return some, they all felt guilty and returned their extras."
+            "I couldn't stop thinking about how such a small action as taking or returning an extra bottle of shampoo had affected our whole colony."
+            "Who knows what other small actions could have such an effect?"
             $ community_level += 2
             $ relaxed += 2
         "{i}I could look for clues.{/i}" if (skill_knowledge >= 80):
@@ -3593,8 +3604,9 @@ label monthly_event_23:
                         "Even after I worked things out with Brennan, I could tell [his_name] still hadn't forgiven me..."
                         scene bg bedroom with fade
                         show overlay night
-                        show her serious at quarterleft
-                        show him concerned at midright
+                        show overlay bedroom_covers behind night                        
+                        show her serious at quarterleft, squatting, behind overlay
+                        show him concerned at midright, squatting, behind overlay
                         with dissolve
                         her serious "Good night, [his_nickname]..."
                         show her at center with moveinleft
@@ -3734,10 +3746,11 @@ label monthly_event_23:
     # How to talk about sex
     else:
         scene bg bedroom
-        show her annoyed at midright
-        show him sleeping at midleft
-        with dissolve
         show overlay night
+        show overlay bedroom_covers behind night        
+        show her annoyed at midright, squatting, behind overlay
+        show him sleeping at midleft, squatting, behind overlay
+        with dissolve
         
         "[his_name] was generally a good lover, but sometimes he was finished before I was."
         "Then he'd fall asleep, just as I was finally getting in the mood."
@@ -3941,7 +3954,6 @@ label monthly_event_24:
         her serious "Well, I just went on a little walk and then started feeling some contractions on the way back... but I think they went away."
         julia "That wouldn't surprise me at all. Shall we check and see how things are going?"
         her serious "Yeah..."
-        "I started to undress."
         sara "Ummmm, do you want me to stay? I mean, I could, but if you want your privacy..."
         menu:
             "What should I say?"
@@ -3979,12 +3991,15 @@ label monthly_event_24:
         him serious "Hey, it's okay. It's a little disappointing, but the baby has to come eventually, right?"
         her annoyed "It feels like it's taking forever!"
         him annoyed "Sorry, there's not much we can do about it."
-        scene bg bedroom
-        show her sleeping at midleft with dissolve
-        show overlay night
+        scene bg bedroom      
+        show overlay night        
+        show overlay bedroom_covers behind night        
+        show her sleeping at midleft, squatting, behind overlay
+        with dissolve
+
         "We had dinner, and I went to bed early."
         "I felt frustrated and tired of waiting and wished I had more control over my own body."
-        show him sleeping at midright with dissolve
+        show him sleeping at midright, squatting, behind overlay with dissolve
         hide overlay night
         "I woke up in the early morning to more contractions. I didn't want to wake up [his_name] yet, so I walked around outside as the sun was just starting to come up."
         hide her with moveoutleft

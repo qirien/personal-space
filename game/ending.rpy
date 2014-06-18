@@ -368,7 +368,15 @@ label good_ending:
 
 # Credits
 label show_credits:
-    "You scored [loved] out of [LOVED_GOOD] relationship points, and [community_level] out of [COMMUNITY_LEVEL_GOOD] comunity points."
+    $ loved_ceiling = loved
+    if (loved_ceiling > LOVED_MAX):
+        $ loved_ceiling = LOVED_MAX
+    
+    $ community_ceiling = community_level
+    if (community_ceiling > COMMUNITY_LEVEL_MAX):
+        $ community_ceiling = COMMUNITY_LEVEL_MAX
+        
+    "You scored [loved] out of [LOVED_MAX] relationship points, and [community_level] out of [COMMUNITY_LEVEL_MAX] comunity points."
     
     # TODO: show images from the game during this?
     scene black with fade
