@@ -248,7 +248,13 @@ label start:
             #jump test_inputter
             #call screen computer_pad
 
-    "I thought I knew what love was. After all, that's why I married..."
+    "I thought I knew what love was."
+    "Smiling ridiculously whenever I thought of him."
+    "Counting down the minutes until we could meet again."
+    "My heart beating faster when we kissed."
+    "That feeling of contenment when he held me in his arms."
+    "That's what I thought love was...{p}I was so wrong."
+    "But that's why I married him..."
     show him normal at quarterright with moveinright
     
     # Get his name
@@ -262,7 +268,7 @@ label start:
         call inputter
         $ his_name = input_text or "Jack"
     
-    "After all, that's why I married [his_name]."
+    "I thought we were in love. That's why I married [his_name]."
 
     "We had known each other..."
     menu:
@@ -287,7 +293,9 @@ label start:
     her surprised "Is Mathilda your aunt?"
     him laughing "No, she's one of the horses!"
     show her laughing
-    "I loved the way he said my name... as if he knew everything about me and loved every bit of it."
+    show her normal
+    "I loved how he put his whole soul into everything he did." 
+    "And when he said my name... it was as if he knew everything about me and loved every bit of it."
     
     # Get the main character's ame
     if not renpy.variant('touch'):
@@ -301,8 +309,8 @@ label start:
         $ her_name = input_text or "Mary"
         
     show him at midleft with move
-    him normal "[her_name], you're incredible. But..."
-    her concerned "But?"
+    him normal "[her_name]... you're incredible. Being here with you is almost perfect."
+    her flirting "Almost?"
     him annoyed "This little town is driving me insane! I've lived here my whole life!"
     her surprised "You want to move?"
     him serious "Someday. Think about how much of the world there is out there."

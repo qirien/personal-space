@@ -95,7 +95,7 @@ label first_date:
     him "[her_name]... have you ever thought about what's out there?"
     her surprised "Out... where?"
     # TODO: this transition is awkward
-    show bg stars with fade
+    show bg talaam_space with fade
     him happy "In space! So many stars, so many worlds... Did you know they are sending colonists to Talaam?"
     her normal "That's the garden planet they found, right?"
     him "Yes! It's only about four light years away. People could breathe there, grow things, live there!"
@@ -127,8 +127,9 @@ label marriage_proposal:
     her surprised "You're serious, aren't you?!"
     him normal "They need farmers to come start the colony, and I want to go."
     him serious "It's a chance to leave this world behind and focus on the things that really matter in life."
+    him concerned "And... you know my parents are getting older. They're paying me enough that I can help my folks retire."
     her sad "..."
-    him "I want you to come with me."
+    him serious "I want you to come with me."
     her surprised "...?"
     him "As my wife. You're a great [profession], they'll need those there."
 

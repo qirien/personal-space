@@ -461,7 +461,7 @@ label work_2:
             her "Yes, I remember you too, Brennan. Thanks for agreeing to help out."
             brennan "You're quite welcome."
         "I'm more than just a pretty face.":
-            her annoyed "I'm more than just a pretty face, I hope."
+            her flirting "I'm more than just a pretty face, I hope."
             brennan "Of course! I just meant that I remembered you. But I could understand how you might not remember me."
         "Are you going to be helpful?":
             her annoyed "Do you have any talents besides flattery?"
