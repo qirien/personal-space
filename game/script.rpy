@@ -168,6 +168,9 @@ init -200:
     define times_worked = 1
     define he_hunts = False
     define brennan_relationship = 0
+    define trimester = "None"
+    define season = "spring"
+    define weather = "calm and cool"
     define cheated_on_him = False
     define exposed_brennan = False
     define discovered_qec = False
@@ -243,10 +246,10 @@ label start:
             $ is_pregnant = True
             $ known_each_other = "six months"
 
-            jump monthly_event_25
+            #jump monthly_event_25
             #jump test_positions
             #jump test_inputter
-            #call screen computer_pad
+            call screen computer_pad
 
     "I thought I knew what love was."
     "Smiling ridiculously whenever I thought of him."

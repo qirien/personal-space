@@ -60,10 +60,18 @@ label day:
     $ season = ""
     $ weather = ""
 
-    # Compute the year and what month in the year it is
+    # Compute the year and what month in the year it is, on Talaam and Earth
     while (local_month > 7):
         $ year += 1
         $ local_month -= 7        
+
+    # There are 196 27-hour days per year on Talaam, and 356 24-hour days on Earth
+    $ earth_months = int(month*((196.0*27.0) / (356.0*24.0)))
+    $ earth_month = earth_months
+    $ earth_year = 1
+    while (earth_month > 12):
+        $ earth_year += 1
+        $ earth_month -= 12
 
     if ((local_month == 1) or (local_month == 2)):
         $ season = "spring"
@@ -78,7 +86,23 @@ label day:
         $ season = "winter"
         $ weather = "cold and rainy"
 
-    "It's year %(year)d, month %(local_month)d. We've been here %(month)d months. It's [season]. The weather is [weather]."
+    # calculate pregnancy progress
+    $ pregnant_months = 0
+    $ trimester = "None"
+    if (is_pregnant):
+        $ pregnant_months = month - 14
+    if (is_pregnant_later):
+        $ pregnant_months = month - 23
+    if (pregnant_months < 4):
+        $ trimester = "first"
+    elif (pregnant_months < 9):
+        $ trimester = "second"
+    else:
+        $ trimester = "third"
+        
+    "It's year %(year)d, month %(local_month)d. We've been here %(month)d months. It's [season]. The weather is [weather]. \nOn Earth it's year %(earth_year)d, month %(earth_month)d."
+    if (is_pregnant or is_pregnant_later):
+        "You are in the [trimester] trimester of pregnancy."
     $ message = "msg_" + `month`
     nvl clear
     call expression message

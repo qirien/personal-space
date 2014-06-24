@@ -95,10 +95,12 @@ label first_date:
     him "[her_name]... have you ever thought about what's out there?"
     her surprised "Out... where?"
     # TODO: this transition is awkward
+    show bg stars with fade
+    him happy "In space! So many stars, so many worlds..."
+    him normal "Did you know they are sending colonists to Talaam?"
     show bg talaam_space with fade
-    him happy "In space! So many stars, so many worlds... Did you know they are sending colonists to Talaam?"
     her normal "That's the garden planet they found, right?"
-    him "Yes! It's only about four light years away. People could breathe there, grow things, live there!"
+    him happy "Yes! It's only about four light years away. People could breathe there, grow things, live there!"
 
 # What do you think about the new planet?
     menu:
