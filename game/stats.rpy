@@ -17,7 +17,7 @@ init -100 python:
 
     style.stat_grid = Style(style.grid)
 
-    __dse_stats = [ ]
+    dse_stats = [ ]
 
     class __Stat(object):
 
@@ -28,16 +28,16 @@ init -100 python:
             self.max = max
 
     def __init_stats():
-        for s in __dse_stats:
+        for s in dse_stats:
             setattr(store, s.var, s.default)
 
     config.start_callbacks.append(__init_stats)
             
     def register_stat(name, var, default, max):
-        __dse_stats.append(__Stat(name, var, default, max))
+        dse_stats.append(__Stat(name, var, default, max))
 
     def normalize_stats():
-        for s in __dse_stats:
+        for s in dse_stats:
 
             v = getattr(store, s.var)
 
@@ -55,7 +55,7 @@ init -100 python:
         highest_stat = 0
         highest_stat_name = ""
 
-        for curr_stat in __dse_stats:
+        for curr_stat in dse_stats:
             stat_value = getattr(store, curr_stat.var)
             if (stat_value >= highest_stat):
                 highest_stat_name = curr_stat.name
@@ -69,12 +69,12 @@ init -100 python:
         ui.window(style=style.stats_frame)
         #ui.vbox(style=style.stats_vbox)
         # Instead of a vertical box, use a grid to display our many stats
-        ui.grid(2, len(__dse_stats)//2 + 1, 2, style=style.stat_grid)
+        ui.grid(2, len(dse_stats)//2 + 1, 2, style=style.stat_grid)
 
         layout.label("Statistics", "stats")            
         #layout.label("", "stats")
         
-        for s in __dse_stats:
+        for s in dse_stats:
             v = getattr(store, s.var)
 
             ui.side(['l', 'r', 'c'], style=style.stat_side)

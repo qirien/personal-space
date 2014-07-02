@@ -2,6 +2,9 @@
 # Separate different threads by a 'note " "' for now, but that means you have to click an extra time. Replace wth a couple \ns??
 # TODO: make these look like threads, put on tablet interface?
 # TODO: have tiny avatars appear with each person's name
+label msg_0:
+    boss_c "We'll be arriving in a few days, so please review the attached housing setup document that explains how we will be setting up the colony."
+    return
 
 label msg_1:
     boss_c "Mandatory all-colony meeting tomorrow at 10, followed by a farmer's meeting at 11!"

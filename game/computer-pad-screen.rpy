@@ -1,55 +1,29 @@
 # Code to display our "Day Planner" -> "Month Planner" -> "Computer Pad" screen
 
-screen grid_test:
-    frame:
-        xfill True
-        yfill True
-        has vbox
-        
-        grid 3 1:
-            xfill True
-            vbox:
-                text "grid1"
-            vbox:
-                text "grid2"
-            vbox:
-                text "grid3"
-        
-        hbox:
-            xfill True
-            vbox:
-                frame:
-                    text "hbox1"
-            vbox:
-                frame:
-                    text "hbox2"
-            vbox:
-                frame:
-                    text "hbox3"
-        textbutton "Return":
-            action Hide("grid_test")
-            
-        
-
-
 screen computer_pad:
     tag month_menu
-    
+
+    add "bg/computer-pad.png"
     frame:
+        background None
+        xpadding 50
+        ypadding 25
+
         yfill True
         xfill True
         has vbox
         
-        text "Welcome, [her_name]." size 30
-        textbutton "GridTest":
-            action Show("grid_test")
+        text "Welcome, [her_name]." size 30 xalign 0.5
+        #textbutton "GridTest":
+        #    action Show("grid_test")
        # hbox:
         grid 3 1:
             xfill True
+            spacing 5
             #has hbox
             
             # Left column
-            vbox:  
+            vbox:
                 yfill True
                 
                 label "Personal Status"
@@ -65,8 +39,8 @@ screen computer_pad:
                     has vbox
                     
                     label "Time"
-                    text "Talaam: Year %(year)d, month %(local_month)d"
-                    text "Earth: Year %(earth_year)d, month %(earth_month)d"
+                    text "Talaam: Year [year], month [month]"
+                    text "Earth: Year [earth_year], month [earth_month]"
             
                 frame:
                     xfill True
@@ -87,6 +61,7 @@ screen computer_pad:
                     
             # Middle column - skills
             # TODO: make these buttons that integrate with DSE
+            # TODO: Has someone upgraded the DSE for screen language? If not, maybe I should!
             vbox:
                 yfill True
                 label "Focus"
@@ -124,26 +99,44 @@ screen computer_pad:
             # Right column
             vbox:
                 yfill True
+                xalign 0.5
                 
                 label "Colony Status"
                 frame:
                     xfill True
                     has vbox
+                    xalign 0.5
                     
-                    label "South Camera View"
+                    label "South Camera View" xalign 0.5
+                    if season == "summer":
+                        add "bg/weather-summer.jpg" xalign 0.5
+                    elif season == "fall":
+                        add "bg/weather-fall.jpg" xalign 0.5
+                    elif season == "winter":
+                        add "bg/weather-winter.jpg" xalign 0.5
+                    else:
+                        add "bg/weather-spring.jpg" xalign 0.5
                     text "Season: [season]"
                     text "Weather: [weather]"
                     
                 frame:
                     xfill True
-                    label "Colony Messages"            
+                    xalign 0.5
+                    textbutton "Colony Messages" xalign 0.5:
+                        action Jump("monthly_messages")
                 
                 frame:
-                    xalign 1.0
-                    yalign 1.0
+                    xalign 0.9
+                    yalign 0.9
                     textbutton _("GO!"):
                             action Return()    
     
+label monthly_messages:
+        $ message = "msg_" + `month`
+        nvl clear
+        call expression message
+        nvl clear  
+        call screen computer_pad
         
 screen computer_pad_imagemap:        
     imagemap:
@@ -161,9 +154,57 @@ screen computer_pad_imagemap:
  
 screen skill_screen:
     frame:
-        label _("Display Stats Here")
-        
-    frame:
-        textbutton _("Return"):
-            action Return()
+        xpadding 45
+        ypadding 20
+        yalign 0.5
+        has vbox
+        grid 2 4:
+            xfill True
+            $ v = 0
+            # TODO: display this better
+            for s in dse_stats:
+                vbox:
+                    $ v = getattr(store, s.var)
+                    text s.name
+                    text "%d/%d" % (v, s.max)
+                    bar value v range s.max
+                    
+            vbox:
+                text "empty"
+            
+        frame:
+            xalign 1.0
+            yalign 1.0
+            textbutton _("Return"):
+                action Hide("skill_screen")
     
+screen grid_test:
+    frame:
+        xfill True
+        yfill True
+        has vbox
+        
+        grid 3 1:
+            xfill True
+            vbox:
+                text "grid1"
+            vbox:
+                text "grid2"
+            vbox:
+                text "grid3"
+        
+        hbox:
+            xfill True
+            vbox:
+                frame:
+                    text "hbox1"
+            vbox:
+                frame:
+                    text "hbox2"
+            vbox:
+                frame:
+                    text "hbox3"
+        textbutton "Return":
+            action Hide("grid_test")
+            
+        

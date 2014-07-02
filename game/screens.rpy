@@ -145,12 +145,18 @@ screen input:
 # http://www.renpy.org/doc/html/screen_special.html#nvl
 
 screen nvl:
-
+    add "bg/computer-pad.png"
     window:
         style "nvl_window"
+        xpadding 50
+        ypadding 30
+
+        yfill True
+        xfill True
 
         has vbox:
             style "nvl_vbox"
+        label "Messages"
 
         # Display dialogue.
         for who, what, who_id, what_id, window_id in dialogue:

@@ -45,6 +45,8 @@ image bg bathhouse = "bg/bathhouse.jpg"
 image overlay night = "bg/night.png"
 image overlay bathhouse = "bg/bathhouse-overlay.png"
 image overlay bedroom_covers = "bg/bedroom-overlay.png"
+image overlay computer_pad = "bg/computer-pad.png"
+
 
 # Declare characters used by this game .
 define her = DynamicCharacter("her_name", color="#8864d5", image="her") #periwinkle
@@ -153,6 +155,10 @@ define community_level = 0 # how successful is the colony?
 # Variables that need to be initialized before anything else
 init -200:
     define month = 0
+    define local_month = 0
+    define year = 1
+    define earth_year = 1
+    define earth_month = 0
 
     define known_each_other = ""
     define profession = ""
@@ -194,6 +200,7 @@ init -200:
     define quarterright = Position(xpos=0.65, xanchor=0)
     define sitting = Position(ypos=0.5, yanchor=0)
     define squatting = Position(ypos=0.2, yanchor=0)
+    
 
 
 # Splashscreen before the main menu
@@ -203,7 +210,7 @@ label splashscreen:
 
     show cuttlefish with dissolve
     with Pause(2)
-
+    
     scene black
     with Pause(1)
 
@@ -243,8 +250,12 @@ label start:
             $ skill_knowledge = 100
             $ skill_domestic = 100
             $ want_kids = True
-            $ is_pregnant = True
+            $ is_pregnant = False
             $ known_each_other = "six months"
+            her_c "Testing computer mode"
+            him_c "We are totally testing this."
+            scene bg stars
+            show overlay computer_pad
 
             #jump monthly_event_25
             #jump test_positions
