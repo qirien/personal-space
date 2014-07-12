@@ -1,27 +1,26 @@
 # These are messages that appear on the colony message board each month
-# Separate different threads by a 'note " "' for now, but that means you have to click an extra time. Replace wth a couple \ns??
-# TODO: make these look like threads, put on tablet interface?
+
 # TODO: have tiny avatars appear with each person's name
 label msg_0:
     boss_c "We'll be arriving in a few days, so please review the attached housing setup document that explains how we will be setting up the colony."
     return
 
 label msg_1:
-    boss_c "Mandatory all-colony meeting tomorrow at 10, followed by a farmer's meeting at 11!"
-    note " "
-    him_c msg "Hey, a few people asked me about the attachment system on these tractors; so here's a how-to."
+    boss_c "Mandatory all-colony meeting tomorrow at 10, followed by a farmer's meeting at 11!\n"
+    
+    him_c "Hey, a few people asked me about the attachment system on these tractors; so here's a how-to."
     return
     
 label msg_2:
-    naomi_c "Please let me know if you would be interested in a weekly yoga and meditation session."
-    note " "
+    naomi_c "Please let me know if you would be interested in a weekly yoga and meditation session.\n"
+
     lily_c "I am looking for a volunteer to come to the ocean and gather guano. No experience necessary."
     sven_c "Doubt you'll get many takers on that one, Lily."
     return
     
 label msg_3:
-    sven_c "Hey, uh, I forgot who checked out the chisel set, but could you please return them?"
-    note " "
+    sven_c "Hey, uh, I forgot who checked out the chisel set, but could you please return them?\n"
+
     her_c "Happy Birthday, [his_name]!"
     him_c "Thanks, [her_name]..."
     sara_c "It's your birthday? How old are you?"
@@ -51,8 +50,7 @@ label msg_5:
     
 label msg_6:
     thuc_c "Hey, my corn was doing fine, but the ears don't seem to be growing any bigger - anyone else having this problem?"
-    martin_c "Yeah, mine, too. I noticed some tiny white dots under the leaves - maybe insect eggs?"
-    note " "
+    martin_c "Yeah, mine, too. I noticed some tiny white dots under the leaves - maybe insect eggs?\n"
    
     #message from her based on highest_skill
     $ highest_skill = highest_stat()
@@ -94,8 +92,7 @@ label msg_7:
     naomi_c "Yes, I'll post a list of events for all the winter holidays, including a New Year's Eve party at the community center."
     brennan_c "Hey, Sven, any chance you could bring some strong beverages?"
     sven_c "I don't think you could handle my latest batch, Brennan."
-    brennan_c "I can't back down from that sort of challenge. Bring it on!"
-    note " "
+    brennan_c "I can't back down from that sort of challenge. Bring it on!\n"
     
     sara_c "It'll be strange to have Christmas without snow..."
     martin_c "When I lived in Chile we'd always go to the beach for Christmas..."
@@ -214,22 +211,21 @@ label msg_15:
     boss_c "Well, I-"
     naomi_c "The truth is... there was a mess of mud and sticks on the corner. It seems some children were building a fort?"
     natalia_c "Oh, that. Well, sure, I'll have them clean it up. No need to restrict the whole area, right?"
-    boss_c "I suppose not. But we can't have messes in there, we hold meetings there."
-    natalia_c "Of course not. I'll let them know."
+    boss_c "I suppose not. But we can't have messes in there; that area is for meetings and other colony business."
+    natalia_c "Of course. I'll let them know."
     return
     
 label msg_16:
     helen_c "Has anyone seen Sven?! He didn't come home last night!"
     naomi_c "He and Brennan got rather intoxicated last night, testing Sven's latest brew - I'll check at the community center for you."
-    helen_c "Thanks, Naomi. Hopefully that's all it is."
-    note " "
-    sven_c "hey, baby, be home soon, sorry you were worried."
+    helen_c "Thanks, Naomi. Hopefully that's all it is.\n"
+    sven_c "hey baby be home soon sorry you were worried."
     helen_c "We can talk about it when you get home, dear."
     brennan_c "Whatever she has to say, it was completely worth it, Sven. That was your best creation yet."
     naomi_c "I'm sure I don't have to remind you gentlemen to make sure the community center is ready for the meeting this afternoon."
     brennan_c "No problem, we got it covered."
     brennan_c "Ha ha, get it, man?! We got it \"covered\"?! Because the floor is covered in, in--"
-    sven_c "you're hilarious."
+    sven_c "your hilarious."
     return
     
 label msg_17:
@@ -294,8 +290,8 @@ label msg_22:
     thuc_c "Now, Julia, is that any way to talk about your daughter and her true love?"
     julia_c "True love! You're probably where she got such a ridiculous romantic notion."
     thuc_c "That, or it could be your old love letters that I let her read. I knew there was a reason I kept them all."
-    julia_c "Thuc!!"
-    note " "
+    julia_c "Thuc!!\n"
+
     brennan "Ahhh, Tomas, you're a lucky man. Though I don't envy you having Julia for a mother-in-law...."
     martin_c "Man?! He's still a boy... Though if he's old enough to get married..."
     julia_c "A man is as a man does. Tomas is more of a man than some here, at least."
@@ -307,8 +303,8 @@ label msg_23:
     helen_c "Hey, [her_name] you haven't had your baby yet, right? I hardly ever see you..."
     her_c "Not yet... I'm not due for another month."
     him_c "She's been sleeping a lot, trying to store it up for the nights ahead."
-    helen_c "Ohhh, if only it worked that way!"
-    note " "
+    helen_c "Ohhh, if only it worked that way!\n"
+
     naomi_c "I wanted to announce that I will be asking each person to come in for a visit with me, just to make sure everyone is doing okay. I'm asking everyone, so please don't assume something's wrong when I contact you."
     natalia_c "This doesn't have anything to do with shampoo incident, does it?"
     naomi_c "Not at all. Just that it's been almost two years since we arrived."
@@ -327,8 +323,7 @@ label msg_23:
     return
              
 label msg_24:
-    boss_c "I know we're all looking forward to a few new supplies from the new ship, but let's remember to take only what we need."
-    note " "
+    boss_c "I know we're all looking forward to a few new supplies from the new ship, but let's remember to take only what we need.\n"
     
     if (is_pregnant):
         julia_c "Congratulations to [his_name] and [her_name] on the birth of their new baby, [baby_name]!"

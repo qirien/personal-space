@@ -128,9 +128,10 @@ label colony_ship:
     him flirting "Ha ha, not on Earth, that's for sure! Here."
     her surprised "(It's wrapped in tissues...with hearts drawn on them)"
     her normal "(It looks like a poem...)"
-    note "{font=fonts/danielbd.ttf}{size=+2}Surrounded by stars, in the darkness of space \nEmptiness presses; the universe waits"
-    note "{font=fonts/danielbd.ttf}{size=+2}Though silently fades the memory of time, \nThere's one special thing I won't leave behind."
-    note "{font=fonts/danielbd.ttf}{size=+2}[her_name], my sweetest lover and friend. \nI'll always be with you, till eternity ends."
+    note "{font=fonts/danielbd.ttf}{size=+3}Surrounded by stars, in the darkness of space \nEmptiness presses; the universe waits{/font}{/size}"
+    note "{font=fonts/danielbd.ttf}{size=+3}Though silently fades the memory of time, \nThere's one special thing I won't leave behind.{/font}{/size}"
+    note "{font=fonts/danielbd.ttf}{size=+3}[her_name], my sweetest lover and friend. \nI'll always be with you, till eternity ends.{/font}{/size}"
+    note "{font=fonts/danielbd.ttf}{size=+3}\nlove on your birthday and always,\nyour [his_name]{/font}{/size}"
     nvl clear
 
     menu:
@@ -316,6 +317,12 @@ label settling_in:
 label end_settling_in:
     # After we land on the planet, we start the monthly routines
     stop music fadeout 5.0
+    scene black with fade
+    "Once we arrived, we soon settled into a routine. Every day he would work on the farm while I worked as a [profession]. I had a little free time after work, and then we ate dinner together. After dinner we tried to relax, mostly."
+    "There were plenty of things I could choose to do in my free time, but I usually chose just one or two to focus on. I didn't have to be good at everything; I wanted to get really good at a few things."
+    "But maybe if I had made different choices... \nWould things be different?"
+    "Did all those little decisions really matter? At least some of them did..."
+
     # TODO: how do you do this in Android? Does help file work there?
     if renpy.variant('touch'):
         "To access the menu and save your game, right-click or press \"Esc\". For more help, click on the \"Help\" option in that menu."

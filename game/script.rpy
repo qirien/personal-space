@@ -83,7 +83,7 @@ define helen_c = Character("Helen", color="cdcfb2", image="helen", who_suffix=":
 define julia_c = Character("Julia", color="#4b54cd", image="julia", who_suffix=":", kind=nvl) #icy blue
 define martin_c = Character("Martin", color="#990011", image="martin", who_suffix=":", kind=nvl)  #dark red
 
-define note = Character("", kind=nvl)
+define note = Character("note", kind=nvl)
 define computer = Character(None, kind=nvl)
 
 # SPRITES
@@ -225,9 +225,8 @@ label start:
   
 
     scene bg stars with fade
-    show her normal at center with moveinleft
 
-    her normal "Do I want to remember how it all began?"
+    "Do I want to remember how it all began?"
     # TODO: Remove this, or change it somehow?
     menu:
         "Do I want to remember how it all began?"
@@ -266,9 +265,11 @@ label start:
     "Smiling ridiculously whenever I thought of him."
     "Counting down the minutes until we could meet again."
     "My heart beating faster when we kissed."
-    "That feeling of contenment when he held me in his arms."
+    "That feeling of contentment when he held me in his arms."
     "That's what I thought love was...{p}I was so wrong."
     "But that's why I married him..."
+    show her normal at center with moveinleft
+
     show him normal at quarterright with moveinright
     
     # Get his name

@@ -138,6 +138,7 @@ screen input:
 
     use quick_menu
         
+     
 ##############################################################################
 # Nvl
 #
@@ -145,7 +146,10 @@ screen input:
 # http://www.renpy.org/doc/html/screen_special.html#nvl
 
 screen nvl:
-    add "bg/computer-pad.png"
+    if (dialogue[0][0] == "note"):
+        add "bg/paper.jpg"
+    else:
+        add "bg/computer-pad.png"
     window:
         style "nvl_window"
         xpadding 50
@@ -156,7 +160,8 @@ screen nvl:
 
         has vbox:
             style "nvl_vbox"
-        label "Messages"
+        if (dialogue[0][0] != "note"):
+            label "Messages"
 
         # Display dialogue.
         for who, what, who_id, what_id, window_id in dialogue:
