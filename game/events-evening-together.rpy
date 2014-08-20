@@ -326,7 +326,7 @@ label relax_together_5:
 
     "The food wasn't anything special, but somehow it tasted better combined with a beautiful sunset. Afterwards he gathered up the dishes and walked a little ways away."
     him normal "Come sit down over here, it's softer."
-    her surprised "Is this our sleeping bags?! Are we spending the night out here?"
+    her surprised "Are these are blankets?! Are we spending the night out here?"
     him happy "If you want to. I thought it would be fun."
     menu:
         "What should I say?"

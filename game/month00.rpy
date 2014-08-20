@@ -205,6 +205,18 @@ label settling_in:
     play music "music/You.ogg" fadeout 3.0
     scene bg talam with fade
     "The first month on Talaam was really busy. We arrived at the end of winter, so it was still a bit cold and rainy. We all worked together to get everyone's houses up right away. The first one took the longest, as we had to figure out how to put all the pieces together."
+    # TODO: show map?
+    "I took a look at the map showing where everyone would be situated."
+    show her normal at midright
+    show him normal at midleft
+    with dissolve
+    her annoyed "Why is our house so far from everyone else?"
+    him serious "I picked this spot on purpose. It's close enough that you can walk to work easily, but far enough away that we have plenty of room."
+    her surprised "Room for what?"
+    him normal "Room to grow! Room to breathe! Room to do whatever we want! We can yodel, or have loud parties, or make love in the backyard, or do anything we want! No nosy neighbors!"
+    her annoyed "Yeah, but you're not the one who has to walk two kilometers to work every day..."
+    him normal "I think you'll like it. There's no room for a big farm in town, anyway."
+    her concerned "I guess you're right."
     "Finally, our house was put up. We were so glad to stop sleeping in the shuttle and have our own space."
     scene bg farm_exterior with fade
     show her normal at midright
@@ -212,12 +224,7 @@ label settling_in:
     with dissolve
     him happy "Here it is! Home, sweet home!"
     her happy "This might actually work!"
-    her annoyed "But why are we so far from everyone else?"
-    him serious "I picked this spot on purpose. It's close enough that you can walk to work easily, but far enough away that we have plenty of room."
-    her surprised "Room for what?"
-    him normal "Room to grow! Room to breathe! Room to do whatever we want! We can yodel, or have loud parties, or make love in the backyard, or do anything we want! No nosy neighbors!"
-    her annoyed "Yeah, but you're not the one who has to walk two miles to work every day..."
-    him normal "I think you'll like it. Come on inside, let's setup our stuff."
+    him normal "Come on inside, let's setup our stuff."
     scene bg farm_interior with fade
     show her normal at quarterright
     show him normal at quarterleft
@@ -225,10 +232,10 @@ label settling_in:
     her serious "Not bad, not bad..."
     him happy "Isn't it awesome?! It's so small, it'll be easy to clean. And it's cozy, for just the two of us."
     "The house really was pretty small- just one room. One end had a biomass/electric hybrid stove/heater as well as a battery that the solar panels could charge, and the other end had a window."
-    "There was no plumbing, electricity only when it was sunny or while our battery lasted, and no furniture other than our sleeping bags and a folding table."
+    "There was no plumbing, electricity only when it was sunny or while our battery lasted, and no furniture other than our bunk and a folding table."
     her annoyed "Good thing we didn't waste any space on frivolous things like bathrooms."
     him serious "The outhouse is not that far!"
-    her serious "It'll work. It will just be kind of like camping. Where do you think we should put our sleeping bags?"
+    her serious "It'll work. It will just be kind of like camping. Where do you think we should put our bed?"
     him happy "Well, there's this end- or that end."
     her normal "How about the end with the stove can be the kitchen, and the other end can be the bedroom?"
     him normal "Sounds fine to me."
@@ -236,7 +243,7 @@ label settling_in:
     show him normal at quarterleft
     show her normal at quarterright
     with dissolve
-    "We dragged in our bunk from the shuttle and put our sleeping bags on it."
+    "We dragged in our bunk from the shuttle and put our bedding on it."
     "Afterwards, [his_name] started putting up a piece of paper he unfolded from his bag. When I got closer, I could see it was a picture of his family. I realized I hadn't brought any pictures of my family."
     "He put it right next to his side of the bed."
     menu:
@@ -303,9 +310,10 @@ label settling_in:
 
     him normal "This was taken at my parents' farm a few years ago. My sister and her husband and their kids drove for two days to come and visit, and my little brother flew in from overseas."
     him concerned "Good thing, too, because it was the last time we'd all be together."
-    her surprised "Have you heard from them lately?"
-    him normal "Yeah, they write about once a month, but now that that we've stopped travelling so fast I haven't heard from them at all."
-    him sad "My mom was really sick last time my dad wrote to me; she's probably better by now, but it takes so long for messages to get through, so there's no way for me to know."
+    her surprised "Have you heard from them lately? I know they wrote you a lot on the shuttle..."
+    him normal "They write me all the time, but the messages took longer and longer to reach us, so I haven't heard from them for a few months."
+    her sad "How's your mom? I know she was sick..."
+    him sad "She's probably better by now, but it takes so long for messages to get through, there's no way to know for sure."
     her concerned "I'm sorry, [his_name], I didn't know..."
     him normal "It's all right. They're important to me, but you're my family now."
     show him serious at center with move
@@ -322,12 +330,6 @@ label end_settling_in:
     "There were plenty of things I could choose to do in my free time, but I usually chose just one or two to focus on. I didn't have to be good at everything; I wanted to get really good at a few things."
     "But maybe if I had made different choices... \nWould things be different?"
     "Did all those little decisions really matter? At least some of them did..."
-
-    # TODO: how do you do this in Android? Does help file work there?
-    if renpy.variant('touch'):
-        "To access the menu and save your game, right-click or press \"Esc\". For more help, click on the \"Help\" option in that menu."
-    else:
-        "To access the menu and save your game, right-click or press \"Esc\". For more help, click on the \"Help\" option in that menu."
         
     jump month01
     return

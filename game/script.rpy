@@ -98,10 +98,11 @@ image him happy = "sprites/him-happy.png"
 image him laughing = "sprites/him-happy.png"
 image him sad = "sprites/him-sad.png"
 image him surprised = "sprites/him-surprised.png"
-image him serious = "sprites/him-serious.png"
-image him sleeping = "sprites/him-sleeping.png"
+image him serious = "sprites/him-annoyed.png" #TODO: does this work OK?
+image him sleeping = "sprites/him-sleeping.png" #TODO: make color (shirtless?) version?
 
 # Her
+# TODO: Adjust sizes of sprites for heights
 image her normal = "sprites/her.png"
 image her normal flip = im.Flip("sprites/her.png", horizontal = True)
 #image side her normal = "sprites/her-head.png"
@@ -314,14 +315,14 @@ label start:
     
     # Get the main character's ame
     if not renpy.variant('touch'):
-        $ her_name = renpy.input("What is your name?", "Mary", length=20)
+        $ her_name = renpy.input("What is your name?", "Kelly", length=20)
     else:
         "What is your name?"
         $ text_group = 1
         $ input_text = ''
         $ input_header = 'First Name:'
         call inputter
-        $ her_name = input_text or "Mary"
+        $ her_name = input_text or "Kelly"
         
     show him at midleft with move
     him normal "[her_name]... you're incredible. Being here with you is almost perfect."
@@ -343,15 +344,32 @@ label start:
     him happy "Yeah! Well, my family and I did, anyway."
     him concerned "Do you like them?"
     her happy "Of course! I didn't even know asparagus could taste this good!"
-    him flirting "Well, part of that's my secret ingredient."
-    her flirting "What is it? Butter? Paprika? MSG?"
-    him normal "Nope. It's lots and lots of love."
-    her laughing "Ha ha ha..."
-    him serious "..."
-    her surprised "... Are you serious?"
-    him normal "Maybe..."
-
-    "That night we stayed up until three in the morning, just talking... we didn't even realize how late it was!  He stayed to watch the sunrise with me, and then headed straight to work. I felt kind of guilty that I had the day off and could sleep in."
+    
+    him serious "It's because it's grown with love."
+    her flirting "Oh, you \"love\" your asparagus, do you?"
+    him flirting "Of course I do. How else would I know what it needs?"
+    her annoyed "And does your asparagus love you back?"
+    him happy "It sure does; can't you taste it in every bite? Mmmm..."
+    her flirting "That's the taste of love, huh? Asparagus?"
+    him serious "That's one kind."
+    her happy "There's much better kinds, you know."
+    him normal "Of course. But some of those are dangerous."
+    her surprised "Dangerous?"
+    him concerned "You know, like blackberries and their thorns."
+    her normal "Blackberries are so delicious, they're worth the thorns."
+    him serious "You're right. They're so sweet, and soft...they just melt in your mouth..."
+    show him normal at center with move
+    "He came closer - for a kiss? I couldn't help blurting out a response."
+    her flirting "Don't forget plump, sour, and just a little bit lumpy."
+    show him surprised at midleft with move
+    him surprised "Lumpy! I would never insult a blackberry like that. I love them just the way they are. And--"
+    her surprised "And?"
+    him serious "And I love you, just the way you are."
+    show him normal at center with move
+    "His face neared mine, and I decided this wasn't the time for more jokes."
+    her happy "I love you, [his_name]. You and your silly asparagus and blackberries and everything."
+    
+    "That night we stayed up until four in the morning, mostly talking... we didn't even realize how late it was!  He stayed to watch the sunrise with me, and then headed straight to work. I felt kind of guilty that I had the day off and could sleep in."
 
     jump choose_career
 
@@ -359,7 +377,7 @@ label start:
 
 label choose_career:
 
-    "One day [his_name] came to my work at..."
+    "A few days later, [his_name] came to my work at..."
 
 menu:
     "Where do I work?"

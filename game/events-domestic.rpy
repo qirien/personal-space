@@ -11,10 +11,22 @@ label domestic_def:
 # Intro Event
 label domestic_0:
     scene bg farm_interior with fade
-    "I setup a system for cleaning the house, with different tasks for each day of the week."
-    "Mondays I would plan meals for the week based on what food we had; Tuesdays I would do laundry; Wednesdays I would dust and wipe down the walls and furniture; Thursdays I would clean the outhouse; and Fridays I reserved for special projects."
-    "Chores like sweeping and dishes would be done every day."
-    "Having a system made it easier, because I didn't have to decide each day what I should do (though I didn't follow it every day)."
+    show her serious at center with dissolve
+    her "There's a lot of work to do be done around the house... should I plan it, or just dive in?"
+    menu:
+        "What should I do?"
+        "Make a cleaning schedule.":
+            "I setup a system for cleaning the house, with different tasks for each day of the week."
+            "Mondays I would plan meals for the week based on what food we had; Tuesdays I would do laundry; Wednesdays I would dust and wipe down the walls and furniture; Thursdays I would clean the outhouse; and Fridays I reserved for special projects."
+            "Chores like sweeping and dishes would be done every day."
+            "Having a system made it easier, because I didn't have to decide each day what I should do (though I didn't follow it every day)."
+            $ community_level += 2
+        "Get started and clean whatever looks dirtiest.":
+            "I didn't want to be restricted by a schedule. I saw the sink was dirty, so I cleaned it. When the floors got too messy, I swept them. When our clothes got too dirty, I did laundry."
+            "You could never tell when things would need to be cleaned, anyway."
+            "When I wanted to make something, I'd look at the ingredients we had and throw something together."
+            "It worked out pretty good most of the time."
+    
     $ skill_domestic += 10
 
     return
@@ -76,6 +88,7 @@ label domestic_3:
             thuc "Of course! Why don't you let me know when you have a spot fenced off for them? They are able to eat the native vegetation here, so you could even use them to help clear space for fields."
             "[his_name] and I talked it over, and we decided to fence in a part of the wild area not too far from the house for the goats."
             "There were three of them, two males and a female, and I became remarkably attached to them. [his_name] used the manure for fertilizer, and they worked hard eating the strange plants from this planet."
+            "They even kept Lettie company - she seemed to like grazing near them."
             $ skill_domestic += 10
             $ community_level += 5
             $ have_goat = True
@@ -92,7 +105,7 @@ label domestic_3:
             him "Free goats? Why did you turn him down?!"
             her angry "I don't know anything about goats! I have enough to do as it is!"
             her annoyed "Besides, goat milk tastes gross."
-            him annoyed "I would have appreciated you asking me about it first."
+            him annoyed "You should have asked me about it first."
             menu:
                 "What should I say?"
                 "{i}You're right.{/i}" if (relaxed >= 0):
@@ -139,6 +152,7 @@ label domestic_3:
             him surprised "Free goats?! Of course we want those!"
             her surprised "Are they really that useful?"
             him happy "Yeah! They can clear land by eating weeds, they leave fertilizer wherever they go, and you can get goat's milk from them."
+            him normal "And they can keep Lettie company."
             her concerned "That's true... but I don't know anything about how to take care of them."
             him normal "Don't worry about it; I'll take care of them."
             her normal "Okay, great. I'll tell Thuc tomorrow."

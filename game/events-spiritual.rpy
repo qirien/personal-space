@@ -13,8 +13,10 @@ label spiritual_def:
 label spiritual_0:
     # attending church and praying
     scene bg church with fade
-    show naomi at center with dissolve
+    "Coming to a new planet and leaving behind my old job, friends, and family felt pretty lonely sometimes."
+    "I mean, of course I had [his_name], and I was making some friends here, but I yearned to feel more included, a part of something bigger than myself."
     "I decided to check out the worship services that Sister Naomi led."
+    show naomi at center with dissolve    
     naomi "...we are all invited to come and partake of goodness and peace. Do you think it matters what planet we are on?  Of course it doesn't. We all have the same access to divine inspiration and guidance, no matter where we are."
     naomi "Now let us pray."
     "I thought she was going to pray for us, but instead we had a few minutes of silence where everyone could pray on their own."
@@ -49,6 +51,7 @@ label spiritual_0:
         "What do {b}I{/b} believe?"
         "I don't know.":
             her concerned "I don't really know what I believe. My parents didn't talk about spiritual things much."
+            her normal "That's why I'm coming to you; I want to learn more."
         "I have strong beliefs.":
             her normal "I've thought a lot about religion and spirituality, and I have my own reasons for my beliefs, but I still want to learn from others and their experiences."
         "I don't think it matters.":

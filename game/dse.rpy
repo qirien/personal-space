@@ -41,6 +41,12 @@ label month01:
     
     $ month = 0
     scene black with fade
+    # TODO: how do you do this in Android? Does help file work there?
+    if renpy.variant('touch'):
+        "To access the menu and save your game, right-click or press \"Esc\". For more help, click on the \"Help\" option in that menu."
+    else:
+        "To access the menu and save your game, right-click or press \"Esc\". For more help, click on the \"Help\" option in that menu."
+
     jump day
 
 # This is the label that is jumped to at the start of a day

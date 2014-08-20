@@ -73,14 +73,15 @@ label first_date:
     note "{font=fonts/danielbd.ttf}{size=+2}Hey there, my [her_name]!\n\nI've been thinking a lot about us lately...{/font}{/size}"
     note "{font=fonts/danielbd.ttf}{size=+2}How I want to be with you all the time.{/font}{/size}"
     note "{font=fonts/danielbd.ttf}{size=+2}How I keep thinking about you, even when I'm up to my knees in manure.{/size} {size=-6}(was that romantic or what?!){/size}{/font}"
+    her happy "(Somehow, that is romantic...)"
     note "{font=fonts/danielbd.ttf}{size=+2}How I can't imagine how a woman could be more perfect than you.{/font}{/size}"
+    her flirting "(If he thinks I'm perfect, he's delusional)"
     note "{font=fonts/danielbd.ttf}{size=+2}How it's time we said goodbye to this little town and started something new on our own...{/font}{/size}"
     note "{font=fonts/danielbd.ttf}{size=+2}How I love you heart, body, and soul, every minute of every day...{/font}{/size}"
     note "{font=fonts/danielbd.ttf}{size=+2}Anyway, I want to tell you more, in person! So come to my folks' tonight for a barbeque, okay? Right after work.\n\nLove,\n       your [his_name]{/font}{/size}"
 
     nvl clear
-    
-    her surprised "(That's so sweet! But I wonder what's up, he sounds so serious!)"
+    her surprised "(I wonder what's up, he sounds so serious!)"
     scene bg porch with fade
     show her normal at midleft
     show him normal at midright
@@ -92,7 +93,7 @@ label first_date:
     "So we sat on the porch swing and talked and watched the stars come out."
     "It was so relaxing to just talk with him - he was always funny and listened to me. He didn't always have the best advice, but I could tell he wanted to help."
 
-    him "[her_name]... have you ever thought about what's out there?"
+    him surprised "[her_name]... have you ever thought about what's out there?"
     her surprised "Out... where?"
     # TODO: this transition is awkward
     show bg stars with fade
@@ -129,7 +130,7 @@ label marriage_proposal:
     her surprised "You're serious, aren't you?!"
     him normal "They need farmers to come start the colony, and I want to go."
     him serious "It's a chance to leave this world behind and focus on the things that really matter in life."
-    him concerned "And... you know my parents are getting older. They're paying me enough that I can help my folks retire."
+    him concerned "And... you know my parents are getting older. Farming on Talaam will pay enough that I can help my folks retire."
     her sad "..."
     him serious "I want you to come with me."
     her surprised "...?"
