@@ -1831,6 +1831,7 @@ label monthly_event_12:
 # MONTH 13 - Jury Duty
 # uses spiritual, technical
 # TODO: Why would Ilian be driving a tractor?!
+# TODO: Have Ilian get depressed later about being accused and not trusted anymore
 label monthly_event_13:
     scene black with fade
     play music "music/NoOneWillKnow.ogg" fadeout 3.0
@@ -2014,7 +2015,7 @@ label monthly_event_14:
         show brennan at midleft
         with dissolve
         her concerned "Excuse me, please."
-        brennan "Are you alright? You don't look so good."
+        brennan "Are you alright? You look pale."
         her sad "I just need... to rest for a bit..."
         "I sat down and put my head on my desk. Slowly, the dizziness subsided, but I didn't feel like eating."
         menu:

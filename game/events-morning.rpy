@@ -641,6 +641,7 @@ label work_4:
     call set_work_bg
 
     # Doctor - problems with new local bacteria (no viruses, though)
+    #TODO change old fashioned stuff to new tech (genetic engineering, nanobots, etc)
     if (profession == "doctor"):
         "There were not a lot of illnesses so far - they took great pains to make sure none of the colonists were carrying infectious diseases, and the viruses here probably hadn't had time to adapt to us yet."
         "But there were plenty of injuries, as people tried to adjust to new equipment, the different climate and atmosphere, and a new way of life."

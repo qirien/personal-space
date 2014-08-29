@@ -235,25 +235,24 @@ label start:
             "Of course."
         "No.":
             $ his_name = "Jack"
-            $ her_name = "Jill"
+            $ her_name = "Kelly"
             $ profession = "mechanic"
             $ want_kids = True
             $ known_each_other = "six months"
             jump month01
         "Skip to Debug Point":
             $ his_name = "Jack"
-            $ her_name = "Jill"
+            $ her_name = "Kelly"
             $ profession = "teacher"
             $ community_level = 25
-            $ loved = 60
+            $ loved = 40
             $ exposed_brennan = True
             $ skill_knowledge = 100
+            $ skill_technical = 40
             $ skill_domestic = 100
             $ want_kids = True
-            $ is_pregnant = False
+            $ is_pregnant = True
             $ known_each_other = "six months"
-            her_c "Testing computer mode"
-            him_c "We are totally testing this."
             scene bg stars
             show overlay computer_pad
 

@@ -57,11 +57,12 @@ label bad_ending:
     hide her with moveoutright
     scene bg colony_ship_bunk with fade
     show her serious at center with dissolve
-    "Was our love ever real? I had married him, so at one point I thought so, but once we got here, it disappeared."
+    "Was our love ever real? I had married him, so at one point I thought so, but once we got here, it... disappeared."
     if (known_each_other == "since we were kids"):
-        "I had known him for so long... I knew exactly what he was thinking. But that didn't mean I wanted to be with him, here on Talaam."
+        "I had known him for so long... I knew exactly what he was thinking. But that didn't mean I liked it. I couldn't stay here, with him, on Talaam."
     elif (known_each_other == "three years"):
-        "It seemed like so long ago when we first met, even though it was really just a few years. Well, I'd lived without him before, and I could do it again."
+        "It seemed like so long ago when we first met, even though it was really just a few years."
+        "Well, I'd lived without him before, and I could do it again."
     else:
         "It seemed like just yesterday when we had met and started this crazy adventure. I thought I knew him, but I just couldn't understand him at all. Or, what I did understand, I didn't like."
     if (cheated_on_him):
@@ -133,7 +134,6 @@ label mediocre_ending:
 
     her serious "[his_name]?"
     him surprised "Hmmm?"
-    # TODO: Make this less cheesy: include some body language or specific details or something
     if (loved > 0):
         her concerned "I'm so glad to be here, with you."
         "He scooted closer to me and stroked my hair."
@@ -228,7 +228,6 @@ label skill_appreciation:
 
 # Helper function for endings 2 & 3 to show appreciation for work and say
 # goodbye to Brennan, if he's leaving.
-# TODO: Make this less cheesy by including specific people she's helped
 label work_appreciation:
     if (profession == "doctor"):
         scene bg clinic with fade
@@ -240,7 +239,7 @@ label work_appreciation:
     elif (profession == "carpenter"):
         scene bg workshop with fade
         "Every day was a new challenge; something new to build, a new material found, or some new technique to try. And nobody could make things as well as I could."
-        "Chairs, shelves, rope, clothes - you name it, I'd made it for someone this past year."
+        "The Peron's chicken coop, barrels for the storehouse, shelves for the school, chairs for Sara and Ilian - you name it, I'd made it for someone this past year."
         show her normal at midright with dissolve
         show pavel at midleft, behind her with moveinleft
         boss "[her_name], I don't know what we'd do without you. Everyone has something you've made in their house or on their farm. And you've taught others how to make useful things, too."
@@ -390,7 +389,7 @@ label show_credits:
     show text "Additional Writing and Design by Rachel Helps" with fade 
     with Pause(2.5)
     hide text with fade
-    show text "Sprites by Clarissa Helps" with fade 
+    show text "Character Art by Clarissa Helps" with fade 
     with Pause(2.5)
     hide text with fade
     show text "GUI Design by Luce Jumble" with fade 

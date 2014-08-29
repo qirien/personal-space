@@ -42,23 +42,23 @@ init -1 python hide:
 
     theme.a_white_tulip(
         ## Theme: A White Tulip
-        ## Scheme Winter Mint
+        ## Scheme Ice Queen
 
         ## The color of an idle widget face.
-        widget = "#7AA27B",
+        widget = "#D9D9D9",
 
         ## The color of a focused widget face.
-        widget_hover = "#A3C7A3",
+        widget_hover = "#F0F2F2",
 
         ## The color of the text in a selected widget. (For
         ## example, the current value of a preference.)
-        widget_selected = "#ffffff",
+        widget_selected = "#737373",
 
         ## The color of a disabled widget face.
-        disabled = "#426143",
+        disabled = "#F0F2F2",
 
         ## The color of a frame containing widgets.
-        frame = "#245536",
+        frame = "#ffffff",
 
         ## The background of the main menu. This can be a color
         ## beginning with '#', or an image filename. The latter
@@ -68,7 +68,7 @@ init -1 python hide:
         ## The background of the game menu. This can be a color
         ## beginning with '#', or an image filename. The latter
         ## should take up the full height and width of the screen.
-        gm_root = "#e5f1e5",
+        gm_root = "bg/starscape.jpg",
 
         ## The fonts used by this theme. The default fonts may not be
         ## suitable for non-English languages.

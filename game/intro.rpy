@@ -95,7 +95,6 @@ label first_date:
 
     him surprised "[her_name]... have you ever thought about what's out there?"
     her surprised "Out... where?"
-    # TODO: this transition is awkward
     show bg stars with fade
     him happy "In space! So many stars, so many worlds..."
     him normal "Did you know they are sending colonists to Talaam?"
@@ -196,15 +195,15 @@ label marriage_proposal:
     show him normal at midright
     with dissolve
     
-    him "Today's the day, lovebug."
-    her surprised "\"Lovebug?\""
+    him "Today's the day, blackberry."
+    her surprised "\"Blackberry?\""
     him surprised "Don't you like it? I thought it was cute."
     show her normal with dissolve
 
     menu:
         "What should he call you?"
-        "Lovebug.":
-            $ her_nickname = "lovebug"
+        "Blackberry.":
+            $ her_nickname = "blackberry"
             her "You can call me '[her_nickname]'; that's cute."
         "Sweetie.":
             $ her_nickname = "sweetie"
@@ -214,14 +213,14 @@ label marriage_proposal:
             her "You could call me '[her_nickname]'."
         "Something else.":
             if not renpy.variant('touch'):
-                $ her_nickname = renpy.input("He calls me:", "sweetie", length=20)
+                $ her_nickname = renpy.input("He calls me:", "lovebug", length=20)
             else:
                 "He calls me..."
                 $ text_group = 1
                 $ input_text = ''
                 $ input_header = 'Nickname:'
                 call inputter
-                $ her_nickname = input_text or "sweetie"
+                $ her_nickname = input_text or "lovebug"
             her "You could call me '[her_nickname]'."
 
     him flirting "Hey, I like that. You're my [her_nickname]."
@@ -236,14 +235,14 @@ label marriage_proposal:
             $ his_nickname = "honey"
         "Something else.":
             if not renpy.variant('touch'):
-                $ his_nickname = renpy.input("I call him:", "honey", length=20)
+                $ his_nickname = renpy.input("I call him:", "asparagus", length=20)
             else:
                 "I call him..."
                 $ text_group = 1
                 $ input_text = ''
                 $ input_header = 'Nickname:'
                 call inputter
-                $ his_nickname = input_text or "honey"
+                $ his_nickname = input_text or "asparagus"
 
     her flirting "And you're my '[his_nickname]'."
     him surprised "You're calling me [his_nickname]?"

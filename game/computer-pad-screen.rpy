@@ -1,11 +1,27 @@
 # Code to display our "Day Planner" -> "Month Planner" -> "Computer Pad" screen
 
+style cp_text is text:
+    color "#000"
+    
+style cp_label_text is label_text:
+    bold True
+    size 20
+    
+style cp_label is label:
+    xalign 0.5
+    
+style cp_choice_button is button:
+    size_group "cp_choice_button"
+
 screen computer_pad:
     tag month_menu
 
     add "bg/computer-pad.png"
     frame:
+        style_group "cp"
         background None
+        
+        # fit our window to the size of the computer screen
         xpadding 50
         ypadding 25
 
@@ -13,7 +29,7 @@ screen computer_pad:
         xfill True
         has vbox
         
-        text "Welcome, [her_name]." size 30 xalign 0.5
+        text "Welcome, [her_name]." size 30 xalign 0.5 bold True
         #textbutton "GridTest":
         #    action Show("grid_test")
        # hbox:
@@ -48,9 +64,16 @@ screen computer_pad:
                     
                     label "Health"
                     if (month == 14):
-                        text "You are in fair health."
+                        text "You are in poor health."
                     else:
                         text "You are in good health."
+                    
+                    $ stress_level = "normal"
+                    if (relaxed <= -5):
+                        $ stress_level = "high"
+                    elif (relaxed >= 5):
+                        $ stress_level = "low"
+                    text "Your stress level is [stress_level]."
                     if (is_pregnant or is_pregnant_later):
                         text "Trimester: [trimester]"                
                         
@@ -61,7 +84,7 @@ screen computer_pad:
                     
             # Middle column - skills
             # TODO: make these buttons that integrate with DSE
-            # TODO: Has someone upgraded the DSE for screen language? If not, maybe I should!
+            # TODO: Incorporate new DSE
             vbox:
                 yfill True
                 label "Focus"
@@ -70,31 +93,39 @@ screen computer_pad:
                     has vbox
                     
                     label "Work"
-                    vbox:
-                        text "Do your best!"
-                        text "Take it easy"
+                    hbox:
+                        style_group "cp_choice"
+                        xfill True
+                        textbutton "Do your best!"
+                        textbutton "Take it easy"
                 
                 frame:
                     xfill True
                     has vbox
                     
-                    label "Skills"
-                    text "Domestic"
-                    text "Physical"
-                    text "Creative"
-                    text "Technical"
-                    text "Social"
-                    text "Knowledge"
-                    text "Spiritual"
+                    label "Skills"                    
+                    grid 2 4:
+                        style_group "cp_choice"
+                        xfill True
+                        textbutton "Domestic"
+                        textbutton "Physical"
+                        textbutton "Creative"
+                        textbutton "Technical"
+                        textbutton "Social"
+                        textbutton "Knowledge"
+                        textbutton "Spiritual"
+                        text ""
                     
                 frame:
                     xfill True
                     has vbox
                     
                     label "Free Time"
-                    vbox:
-                        text "Together"
-                        text "Alone"
+                    hbox:
+                        style_group "cp_choice"
+                        xfill True
+                        textbutton "Together"
+                        textbutton "Alone"
                     
             # Right column
             vbox:
@@ -107,7 +138,7 @@ screen computer_pad:
                     has vbox
                     xalign 0.5
                     
-                    label "South Camera View" xalign 0.5
+                    label "South Camera View"
                     if season == "summer":
                         add "bg/weather-summer.jpg" xalign 0.5
                     elif season == "fall":
@@ -154,23 +185,29 @@ screen computer_pad_imagemap:
  
 screen skill_screen:
     frame:
+        style_group "cp"
         xpadding 45
         ypadding 20
         yalign 0.5
+        xalign 0.5
         has vbox
+        label "Skills"
         grid 2 4:
-            xfill True
+            spacing 25
             $ v = 0
-            # TODO: display this better
             for s in dse_stats:
                 vbox:
+                    xmaximum 200
+                    xalign 0.5
                     $ v = getattr(store, s.var)
-                    text s.name
-                    text "%d/%d" % (v, s.max)
+                    hbox:
+                        xfill True
+                        text s.name xalign 0.0
+                        text "%d/%d" % (v, s.max) xalign 1.0
                     bar value v range s.max
                     
             vbox:
-                text "empty"
+                text ""
             
         frame:
             xalign 1.0
