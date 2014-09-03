@@ -514,7 +514,7 @@ label monthly_event_5:
             him happy "It could be our little secret."
             "I dug and dug and dug. After I buried the items, it was nice to not have it cluttering up the house. And I didn't have to feel guilty about preventing other people from starting a new life here."
             "Still, I couldn't help feeling like I might have done better."
-            $ relaxed -= 5
+            $ relaxed -= 2
             return
         "I'm sick of making all the decisions.":
             her annoyed "Why do I have to decide? You're just as much a part of this household."
@@ -2647,7 +2647,7 @@ label monthly_event_18:
         her serious "You're in shock; let's go to the clinic and I'll check you out."
     else:
         her serious "Let's get you to town and have the doctor check you out."
-    him laughing "Check me out... check me out..."
+    him laughing "Check me out... hey, check me out..."
     her concerned "Alright, just don't you check out on me."
     show him concerned
     "He stared off into the distance, like he could barely hear me."
@@ -2749,7 +2749,7 @@ label monthly_event_18:
             $ relaxed -= 2
 
     him serious "Most of the farm will be okay, but the tomatoes and peppers are ready to harvest right now."
-    her surprised "There must be something we can do..."
+    her surprised "Well..."
     menu:
         "What should I say?"
         "{i}Let's ask for help.{/i}" if (skill_social >= 50):
@@ -2982,10 +2982,10 @@ label monthly_event_20:
             show naomi at midright
             show her normal at midleft
             with dissolve
-            naomi "Do you meditate before bed?"
-            her surprised "Meditate? No, I usually just fall into bed and try and get to sleep."
+            naomi "Have you tried meditation?"
+            her surprised "No, I usually just fall into bed and think about how I can't sleep."
             naomi "You might want to try it. It can help put your mind at ease."
-            naomi "If you have any problems bothering you, write them down so that you know you will remember to do something about them tomorrow. Then your meditation and your sleep can be peaceful and uninterrupted."
+            naomi "If you have any problems bothering you, write them down first so that you know you will remember to do something about them tomorrow. Then your meditation and your sleep can be peaceful and uninterrupted."
             her serious "I can try it..."
             
             scene bg bedroom with fade

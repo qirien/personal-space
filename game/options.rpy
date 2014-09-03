@@ -42,24 +42,24 @@ init -1 python hide:
 
     theme.a_white_tulip(
         ## Theme: A White Tulip
-        ## Scheme Ice Queen
+        ## Scheme Muted Horror
 
         ## The color of an idle widget face.
-        widget = "#D9D9D9",
+        widget = "#777777",
 
         ## The color of a focused widget face.
-        widget_hover = "#F0F2F2",
+        widget_hover = "#73735C",
 
         ## The color of the text in a selected widget. (For
         ## example, the current value of a preference.)
-        widget_selected = "#737373",
+        widget_selected = "#000000",
 
         ## The color of a disabled widget face.
-        disabled = "#F0F2F2",
+        disabled = "#73735C",
 
         ## The color of a frame containing widgets.
-        frame = "#ffffff",
-
+        frame = "#555544",
+        
         ## The background of the main menu. This can be a color
         ## beginning with '#', or an image filename. The latter
         ## should take up the full height and width of the screen.
@@ -72,8 +72,8 @@ init -1 python hide:
 
         ## The fonts used by this theme. The default fonts may not be
         ## suitable for non-English languages.
-        regular_font = "_theme_awt/Quicksand-Regular.ttf",
-        bold_font = "_theme_awt/Quicksand-Bold.ttf",
+        regular_font = "DejaVuSerif.ttf",
+        #bold_font = "DejaVuSerifBold",
 
         ## And we're done with the theme. The theme will customize
         ## various styles, so if we want to change them, we should
@@ -139,13 +139,12 @@ init -1 python hide:
 
     ## The file containing the default font.
 
-    # style.default.font = "DejaVuSans.ttf"
+    style.default.font = "DejaVuSerif.ttf"
     style.default.color="#FFFFFF"
-    style.default.font = "_theme_awt/Quicksand-Regular.ttf"
 
     ## The default size of text.
 
-    style.default.size = 20
+    style.default.size = 18
 
     ## Note that these only change the size of some of the text. Other
     ## buttons have their own styles.

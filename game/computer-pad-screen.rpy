@@ -4,7 +4,7 @@ style cp_text is text:
     color "#000"
     
 style cp_label_text is label_text:
-    bold True
+    color "#000"
     size 20
     
 style cp_label is label:
@@ -150,6 +150,8 @@ screen computer_pad:
                     text "Season: [season]"
                     text "Weather: [weather]"
                     
+                #TODO: Add music selector, remember track and show artist/title
+                #      Dandelion, Shanghai, Alpha
                 frame:
                     xfill True
                     xalign 0.5

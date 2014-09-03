@@ -57,14 +57,31 @@ screen say:
     # Use the quick menu.
     use quick_menu
 
+#
+# Styles for use everywhere in the game
+# Custom code for our game goes here
+#
+style button:
+    background Frame("GUI/button_idle.png", 15, 15)
+    hover_background Frame("GUI/button_selected.png", 15, 15)
+    insensitive_background Frame("GUI/button_insensitive.png", 15, 15)
+    yminimum 40
+    
+style button_text:
+    color "#fff"
+    font "DejaVuSans.ttf"
+    
+    
+#style frame:
+#    background "#000"
+
 init -1 python hide:
     style.window.background = "GUI/textbox.png"
-
+    
     style.say_dialogue.color = "#ffffff"
     # TODO: change font?
     # style.say_dialogue.size = 20
-    #style.say_dialogue.font = "GUI/ERINAL__.TTF"
-    style.nvl_dialogue.font = "fonts/VeraMono.ttf"
+    style.nvl_dialogue.font = "DejaVuSansMono.ttf"
     
     ## Margin is space surrounding the window
     style.window.left_margin = 0
@@ -486,12 +503,6 @@ init -2 python:
 
     style.pref_button.size_group = "pref"
     style.pref_button.xalign = 1.0
-    # TODO: Change our buttons to use images!
-    #style.pref_button.background = Frame("menu/button_idle.png",10,10)
-    #style.pref_button.hover_background = Frame("gui/button_hover.png",10,10)
-    #style.pref_button.selected_background = Frame("gui/button_selected.png",10,10)
-    #style.pref_button.selected_hover_background = Frame("gui/button_hover.png",10,10)
-    #style.pref_button.yminimum = 40
 
     style.pref_slider.xmaximum = 192
     style.pref_slider.xalign = 1.0

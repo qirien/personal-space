@@ -128,10 +128,10 @@ label colony_ship:
     him flirting "Ha ha, not on Earth, that's for sure! Here."
     her surprised "(It's wrapped in tissues...with hearts drawn on them)"
     her normal "(It looks like a poem...)"
-    note "{font=fonts/danielbd.ttf}{size=+3}Surrounded by stars, in the darkness of space \nEmptiness presses; the universe waits{/font}{/size}"
-    note "{font=fonts/danielbd.ttf}{size=+3}Though silently fades the memory of time, \nThere's one special thing I won't leave behind.{/font}{/size}"
-    note "{font=fonts/danielbd.ttf}{size=+3}[her_name], my sweetest lover and friend. \nI'll always be with you, till eternity ends.{/font}{/size}"
-    note "{font=fonts/danielbd.ttf}{size=+3}\nlove on your birthday and always,\nyour [his_name]{/font}{/size}"
+    note "{font=fonts/danielbd.ttf}{size=+3}Surrounded by stars, in the darkness of space \nEmptiness presses; the universe waits{/size}{/font}"
+    note "{font=fonts/danielbd.ttf}{size=+3}Though silently fades the memory of time, \nThere's one special thing I won't leave behind.{/size}{/font}"
+    note "{font=fonts/danielbd.ttf}{size=+3}[her_name], my sweetest lover and friend. \nI'll always be with you, till eternity ends.{/size}{/font}"
+    note "{font=fonts/danielbd.ttf}{size=+3}\nlove on your birthday and always,\nyour [his_name]{/size}{/font}"
     nvl clear
 
     menu:
