@@ -73,7 +73,7 @@ init -1 python hide:
         ## The fonts used by this theme. The default fonts may not be
         ## suitable for non-English languages.
         regular_font = "DejaVuSerif.ttf",
-        #bold_font = "DejaVuSerifBold",
+        #bold_font = "DejaVuSerifBold.ttf",
 
         ## And we're done with the theme. The theme will customize
         ## various styles, so if we want to change them, we should
@@ -178,7 +178,7 @@ init -1 python hide:
 
     ## A sample sound that can be played to check the sound volume.
 
-    config.sample_sound = "message.mp3"
+    config.sample_sound = "sfx/message.mp3"
 
     ## Music that is played while the user is at the main menu.
 

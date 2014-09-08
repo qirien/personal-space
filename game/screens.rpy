@@ -65,15 +65,34 @@ style button:
     background Frame("GUI/button_idle.png", 15, 15)
     hover_background Frame("GUI/button_selected.png", 15, 15)
     insensitive_background Frame("GUI/button_insensitive.png", 15, 15)
+    selected_background Frame("GUI/button_selected.png", 15, 15)
     yminimum 40
-    
+    activate_sound "sfx/click.mp3"
+
 style button_text:
     color "#fff"
     font "DejaVuSans.ttf"
-    
-    
-#style frame:
-#    background "#000"
+    insensitive_color "#666"
+    xalign 0.5
+
+style large_button:
+    background Frame("GUI/button_idle.png", 15, 15)
+    hover_background Frame("GUI/button_selected.png", 15, 15)
+    insensitive_background Frame("GUI/button_insensitive.png", 15, 15)
+    selected_background Frame("GUI/button_selected.png", 15, 15)
+    yminimum 80
+    xminimum 40
+    activate_sound "sfx/click.mp3"
+
+style large_button_text:
+    color "#fff"
+    font "DejaVuSans.ttf"
+    insensitive_color "#666"
+    size 16
+    xalign 0.5
+
+style frame:
+    background Frame("GUI/frame.png", 10, 10)
 
 init -1 python hide:
     style.window.background = "GUI/textbox.png"
@@ -162,6 +181,9 @@ screen input:
 # Screen used for nvl-mode dialogue and menus.
 # http://www.renpy.org/doc/html/screen_special.html#nvl
 
+# TODO: Clean this up and make it look more like a message board - use stylegroup nvl
+#       and a frame around the text, etc. Also needs to work for handwritte notes still.
+#       Maybe just have two separate screens.
 screen nvl:
     if (dialogue[0][0] == "note"):
         add "bg/paper.jpg"
@@ -170,7 +192,7 @@ screen nvl:
     window:
         style "nvl_window"
         xpadding 50
-        ypadding 30
+        ypadding 50
 
         yfill True
         xfill True
@@ -215,7 +237,7 @@ screen nvl:
 
     add SideImage() xalign 0.0 yalign 1.0
     
-    use quick_menu
+    #use quick_menu
         
 ##############################################################################
 # Main Menu 
@@ -299,6 +321,9 @@ screen file_picker:
 
     frame:
         style "file_picker_frame"
+        xalign 0.1
+        yalign 0.1
+        xmaximum 800
 
         has vbox
 
@@ -316,14 +341,14 @@ screen file_picker:
             textbutton _("Quick"):
                 action FilePage("quick")
 
-            for i in range(1, 9):
+            for i in range(1, 10):
                 textbutton str(i):
                     action FilePage(i)
                     
             textbutton _("Next"):
                 action FilePageNext()
 
-        $ columns = 2
+        $ columns = 3
         $ rows = 3
                 
         # Display a grid of file slots.
@@ -331,6 +356,7 @@ screen file_picker:
             transpose True
             xfill True
             style_group "file_picker"
+            spacing 5
             
             # Display ten file slots, numbered 1 - 10.
             for i in range(1, columns * rows + 1):
@@ -360,7 +386,6 @@ screen save:
 
     # This ensures that any other menu screen is replaced.
     tag menu
-
     use navigation
     use file_picker
 
@@ -580,7 +605,7 @@ init -2 python:
     style.quick_button.xpadding = 5
 
     style.quick_button_text.set_parent('default')
-    style.quick_button_text.size = 18
+    style.quick_button_text.size = 16
     style.quick_button_text.idle_color = "#8888"
     style.quick_button_text.hover_color = "#ccc"
     style.quick_button_text.selected_idle_color = "#cc08"

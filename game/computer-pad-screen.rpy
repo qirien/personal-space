@@ -1,10 +1,11 @@
-# Code to display our "Day Planner" -> "Month Planner" -> "Computer Pad" screen
+# Code to display our "Computer Pad" screen for planning the month, viewing skills,
+# reading colony messages, etc.
 
 style cp_text is text:
-    color "#000"
+    color "#222"
     
 style cp_label_text is label_text:
-    color "#000"
+    color "#222"
     size 20
     
 style cp_label is label:
@@ -23,16 +24,13 @@ screen computer_pad:
         
         # fit our window to the size of the computer screen
         xpadding 50
-        ypadding 25
+        ypadding 35
 
         yfill True
         xfill True
         has vbox
         
-        text "Welcome, [her_name]." size 30 xalign 0.5 bold True
-        #textbutton "GridTest":
-        #    action Show("grid_test")
-       # hbox:
+        text "Welcome, [her_name]." size 30 xalign 0.5
         grid 3 1:
             xfill True
             spacing 5
@@ -59,6 +57,7 @@ screen computer_pad:
                     text "Earth: Year [earth_year], month [earth_month]"
             
                 frame:
+                    # TODO: Make these bars?
                     xfill True
                     has vbox
                     
@@ -87,6 +86,7 @@ screen computer_pad:
             # TODO: Incorporate new DSE
             vbox:
                 yfill True
+                xfill True
                 label "Focus"
                 frame:
                     xfill True
@@ -96,7 +96,7 @@ screen computer_pad:
                     hbox:
                         style_group "cp_choice"
                         xfill True
-                        textbutton "Do your best!"
+                        textbutton "Give 100%"
                         textbutton "Take it easy"
                 
                 frame:
@@ -186,36 +186,39 @@ screen computer_pad_imagemap:
         
  
 screen skill_screen:
-    frame:
-        style_group "cp"
-        xpadding 45
-        ypadding 20
-        yalign 0.5
-        xalign 0.5
-        has vbox
-        label "Skills"
-        grid 2 4:
-            spacing 25
-            $ v = 0
-            for s in dse_stats:
-                vbox:
-                    xmaximum 200
-                    xalign 0.5
-                    $ v = getattr(store, s.var)
-                    hbox:
-                        xfill True
-                        text s.name xalign 0.0
-                        text "%d/%d" % (v, s.max) xalign 1.0
-                    bar value v range s.max
-                    
-            vbox:
-                text ""
-            
         frame:
-            xalign 1.0
-            yalign 1.0
-            textbutton _("Return"):
-                action Hide("skill_screen")
+            style_group "cp"
+            yalign 0.5
+            xalign 0.5
+            has vbox
+            frame:
+                xpadding 45
+                ypadding 20
+                xalign 0.5
+                has vbox
+                label "Skills"
+                grid 2 4:
+                    spacing 20
+                    $ v = 0
+                    for s in dse_stats:
+                        frame:
+                            vbox:
+                                xmaximum 250
+                                xalign 0.5
+                                $ v = getattr(store, s.var)
+                                hbox:
+                                    xfill True
+                                    text s.name xalign 0.0
+                                    text "%d/%d" % (v, s.max) xalign 1.0
+                                bar value v range s.max
+                                
+                    vbox:
+                        text ""
+                
+                textbutton _("Return"):
+                        xalign 1.0
+                        yalign 1.0
+                        action Hide("skill_screen")
     
 screen grid_test:
     frame:
