@@ -272,7 +272,6 @@ label events_run_period:
         eingroup = { }
 
         for i in all_events:
-            #print("EVENT: " + i.name + "\tCheck:" + `i.check(eobjs)`)
             if not i.check(eobjs):
                 continue
                 

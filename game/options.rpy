@@ -110,8 +110,7 @@ init -1 python hide:
     ## This is the minimum height of the window, including the margins
     ## and padding.
 
-    # Changed this to be smaller to work better with the DSE
-    style.window.yminimum = 130
+    # style.window.yminimum = 250
 
 
     #########################################

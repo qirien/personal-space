@@ -1,23 +1,12 @@
+# stats.rpy
+# Keeps track of and displays the stats for the DSE.
+#
+# To change styles, add a style block for the element you want
+# preceded by "dse_stats_" down below
+
 init -100 python:
 
-    style.stats_frame = Style(style.frame)
-    style.stats_frame.xalign = 0.5
-    style.stats_vbox = Style(style.vbox)
-
-    style.stats_label = Style(style.label)
-    style.stats_label_text = Style(style.label_text)
-
-    style.stat_side = Style(style.default)
-
-    style.stat_label = Style(style.label)
-    style.stat_label_text = Style(style.label_text)
-    style.stat_bar = Style(style.bar)
-    style.stat_value_label = Style(style.label)
-    style.stat_value_label_text = Style(style.label_text)
-
-    style.stat_grid = Style(style.grid)
-
-    dse_stats = [ ]
+    __dse_stats = [ ]
 
     class __Stat(object):
 
@@ -28,16 +17,16 @@ init -100 python:
             self.max = max
 
     def __init_stats():
-        for s in dse_stats:
+        for s in __dse_stats:
             setattr(store, s.var, s.default)
 
     config.start_callbacks.append(__init_stats)
-            
+    
     def register_stat(name, var, default, max):
-        dse_stats.append(__Stat(name, var, default, max))
+        __dse_stats.append(__Stat(name, var, default, max))
 
     def normalize_stats():
-        for s in dse_stats:
+        for s in __dse_stats:
 
             v = getattr(store, s.var)
 
@@ -48,60 +37,45 @@ init -100 python:
 
             setattr(store, s.var, v)
 
-    # Function to return the name of the highest stat
-    def highest_stat():
-        normalize_stats()
-        
-        highest_stat = 0
-        highest_stat_name = ""
+    # Whenever a python statement is executed, we will ensure our stats
+    # stay within range.
+    config.python_callbacks.append(normalize_stats)
+                        
 
-        for curr_stat in dse_stats:
-            stat_value = getattr(store, curr_stat.var)
-            if (stat_value >= highest_stat):
-                highest_stat_name = curr_stat.name
-                highest_stat = stat_value
-        return highest_stat_name
+# Here you can change the style of any elements in the Stats screen you want.
+# As an example, here is a style defined for the label text to make sure it is not bold.
+style dse_stats_label_text:
+    bold False
 
-    def display_stats(name=True, bar=True, value=True, max=True):
+screen display_stats(name=True, bar=True, value=True, max=True):
+    $ dse_stat_length = len(__dse_stats)
+    frame:
+        style_group "dse_stats"        
+        yalign 0.0
+        xalign 0.5
 
-        normalize_stats()
-        
-        ui.window(style=style.stats_frame)
-        #ui.vbox(style=style.stats_vbox)
-        # Instead of a vertical box, use a grid to display our many stats
-        ui.grid(2, len(dse_stats)//2 + 1, 2, style=style.stat_grid)
+        vbox:
+            yalign 0.0
+            xalign 0.5
+            label "Statistics" xalign 0.5
 
-        layout.label("Statistics", "stats")            
-        #layout.label("", "stats")
-        
-        for s in dse_stats:
-            v = getattr(store, s.var)
-
-            ui.side(['l', 'r', 'c'], style=style.stat_side)
-
-            if name:
-                layout.label(s.name, "stat")
-            else:
-                ui.nul()
-
-            if value and max:
-                layout.label("%d/%d" % (v, s.max), "stat_value")
-            elif value:
-                layout.label("%d" % (v,), "stat_value")
-            elif max:
-                layout.label("%d" % (max,), "stat_value")
-            else:
-                ui.null()
-
-            if bar:
-                ui.bar(s.max, v, style=style.stat_bar)
-            else:
-                ui.null()
-
-            ui.close()
+            grid 3 dse_stat_length:
+                xalign 0.5
+                yalign 0.5
+                spacing 5
                 
-        ui.close()
+                for s in __dse_stats:
+                    $ v = getattr(store, s.var)
 
-        
-    
-    
+                    if name:
+                        label s.name
+                    
+                    if bar:
+                        bar value v range s.max xmaximum 150 xalign 0.0
+                        
+                    if value and max:
+                        label ("%d/%d" % (v, s.max)) xalign 1.0
+                    elif value:
+                        label ("%d" % (v,)) xalign 1.0
+                    elif max:
+                        label ("%d" % (max,)) xalign 1.0
