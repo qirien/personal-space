@@ -66,25 +66,7 @@ define julia = Character("Julia Nguyen", color="#4b54cd", image="julia") #icy bl
 define martin = Character("Martin Peron", color="#990011", image="martin")  #dark red
 # TODO: add accent on Martin (also Peron?)
 
-
-# NVL mode characters for chat rooms, etc
-define her_c = DynamicCharacter("her_name", color="#8864d5", image="her", who_suffix=":", kind=nvl)
-define him_c = DynamicCharacter("his_name", color="#c80000", image="him", who_suffix=":", kind=nvl) #red 
-define naomi_c = Character("Naomi", color="#ededed", image="naomi", who_suffix=":", kind=nvl)  #light gray
-define boss_c = Character("Pavel", color="#cccccc", image="pavel", who_suffix=":", kind=nvl)   #dark gray
-define lily_c = Character("Lily", color="#8655bd", image="lily", who_suffix=":", kind=nvl)  #purple
-define sara_c = Character("Sara", color="#c64e89", image="sara", who_suffix=":", kind=nvl)  # dark pink
-define thuc_c = Character("Thuc", color="a9ff22", image="thuc", who_suffix=":", kind=nvl)  #lime green
-define ilian_c = Character("Ilian", color="ffa922", image="ilian", who_suffix=":", kind=nvl) #tangerine
-define brennan_c = Character("Brennan", color="33b533", image="brennan", who_suffix=":", kind=nvl)  #irish green
-define sven_c = Character("Sven", color="cb5500", image="sven", who_suffix=":", kind=nvl)  #rusty brown
-define natalia_c = Character("Natalia", color="ffe74a", image="natalia", who_suffix=":", kind=nvl)  #yellow
-define helen_c = Character("Helen", color="cdcfb2", image="helen", who_suffix=":", kind=nvl) #tan
-define julia_c = Character("Julia", color="#4b54cd", image="julia", who_suffix=":", kind=nvl) #icy blue
-define martin_c = Character("Martin", color="#990011", image="martin", who_suffix=":", kind=nvl)  #dark red
-
 define note = Character("note", kind=nvl)
-define computer = Character(None, kind=nvl)
 
 # SPRITES
 
@@ -253,13 +235,13 @@ label start:
             $ want_kids = True
             $ is_pregnant = True
             $ known_each_other = "six months"
-            scene bg stars
-            show overlay computer_pad
+            #scene bg stars
+            #show overlay computer_pad
 
             #jump monthly_event_25
             #jump test_positions
             #jump test_inputter
-            call screen computer_pad
+            call screen computer_pad(["Work", "Skills", "Free Time"])
 
     "I thought I knew what love was."
     "Smiling ridiculously whenever I thought of him."

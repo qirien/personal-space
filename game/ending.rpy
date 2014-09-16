@@ -378,6 +378,7 @@ label show_credits:
     "You scored [loved] out of [LOVED_MAX] relationship points, and [community_level] out of [COMMUNITY_LEVEL_MAX] comunity points."
     
     # TODO: show images from the game during this?
+    # TODO: make it so mouse clicks don't skip the whole thing?
     scene black with fade
     hide text with fade
     show text "Credits" with fade
@@ -392,15 +393,18 @@ label show_credits:
     show text "Character Art by Clarissa Helps" with fade 
     with Pause(2.5)
     hide text with fade
-    show text "GUI Design by Luce Jumble" with fade 
-    with Pause(2.5)
-    hide text with fade
     show text "With music by:\nEhren Starks\nJan Hanford\nChad Lawson\nGiorgio Costantini\nKalabi\nBenji Goodrich\nGianmarco Leona" with fade
+    show text "Licensed from {a=http://www.magnatune.com}Magnatune{/a} under the {a=http://creativecommons.org/licenses/by-nc-sa/1.0/}BY-NC-SA Creative Commons License{/a}"
     with Pause(4.0)
     hide text with fade     
     show text "With background images by:\nLisa Horner\nWes Landaker\nAndrea Landaker\nNASA\nBurningwell\nESO/L. Calçada\n\nAnd the following Wikimedia Commons users:\nRandwick\nLabpluto123\nWrlctech\nEbyabe\nAvi/Skrewtap\nMarcus Budde\nAluter\nDorothea Witter-Rieder\nAnna Frodesiak\nAndrei Stroe\nJean-Pierre\n\nFiltered with Fotosketcher" with fade
     with Pause(4.0)
     # TODO: Add sound Credits
+    
+    hide text with fade   
+    show text "This open-source work is licensed under a {a=http://creativecommons.org/licenses/by-nc-sa/4.0/}Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License{/a}." with fade 
+    with Pause(2.5)
+    
     hide text with fade   
     show text "Made with Ren'Py" with fade 
     with Pause(2.5)

@@ -1,6 +1,53 @@
 # These are messages that appear on the colony message board each month
 
 # TODO: have tiny avatars appear with each person's name
+
+screen message_board:
+    add "bg/computer-pad.png"
+    window:
+        style "nvl_window"
+        xpadding 50
+        ypadding 50
+
+        yfill True
+        xfill True
+
+        has vbox:
+            style "nvl_vbox"
+        label "Messages"
+
+        # Display dialogue.
+        for who, what, who_id, what_id, window_id in dialogue:
+            window:
+                id window_id
+
+                has hbox:
+                    spacing 10
+
+                if who is not None:
+                    text who id who_id
+
+                text what id what_id
+    add SideImage() xalign 0.0 yalign 1.0
+        
+# NVL mode characters for chat rooms, etc
+define her_c = DynamicCharacter("her_name", color="#8864d5", image="her", who_suffix=":", kind=nvl)
+define him_c = DynamicCharacter("his_name", color="#c80000", image="him", who_suffix=":", kind=nvl) #red 
+define naomi_c = Character("Naomi", color="#ededed", image="naomi", who_suffix=":", kind=nvl)  #light gray
+define boss_c = Character("Pavel", color="#cccccc", image="pavel", who_suffix=":", kind=nvl)   #dark gray
+define lily_c = Character("Lily", color="#8655bd", image="lily", who_suffix=":", kind=nvl)  #purple
+define sara_c = Character("Sara", color="#c64e89", image="sara", who_suffix=":", kind=nvl)  # dark pink
+define thuc_c = Character("Thuc", color="a9ff22", image="thuc", who_suffix=":", kind=nvl)  #lime green
+define ilian_c = Character("Ilian", color="ffa922", image="ilian", who_suffix=":", kind=nvl) #tangerine
+define brennan_c = Character("Brennan", color="33b533", image="brennan", who_suffix=":", kind=nvl)  #irish green
+define sven_c = Character("Sven", color="cb5500", image="sven", who_suffix=":", kind=nvl)  #rusty brown
+define natalia_c = Character("Natalia", color="ffe74a", image="natalia", who_suffix=":", kind=nvl)  #yellow
+define helen_c = Character("Helen", color="cdcfb2", image="helen", who_suffix=":", kind=nvl) #tan
+define julia_c = Character("Julia", color="#4b54cd", image="julia", who_suffix=":", kind=nvl) #icy blue
+define martin_c = Character("Martin", color="#990011", image="martin", who_suffix=":", kind=nvl)  #dark red
+
+define computer = Character(None, kind=nvl)
+
 label msg_0:
     boss_c "We'll be arriving in a few days, so please review the attached housing setup document that explains how we will be setting up the colony."
     return
@@ -50,7 +97,7 @@ label msg_5:
     
 label msg_6:
     thuc_c "Hey, my corn was doing fine, but the ears don't seem to be growing any bigger - anyone else having this problem?"
-    martin_c "Yeah, mine, too. I noticed some tiny white dots under the leaves - maybe insect eggs?\n"
+    martin_c "Mine as well. I noticed some tiny white dots under the leaves - maybe insect eggs?\n"
    
     #message from her based on highest_skill
     $ highest_skill = highest_stat()

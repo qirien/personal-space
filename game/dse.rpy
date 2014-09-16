@@ -5,7 +5,6 @@
 # Set up our daily schedule options
 init python:
 
-    # TODO: Have a stress/love meter?
     register_stat("Domestic", "skill_domestic", 0, 100)
     register_stat("Creative", "skill_creative", 0, 100)
     register_stat("Technical", "skill_technical", 0, 100)
@@ -14,11 +13,11 @@ init python:
     register_stat("Knowledge", "skill_knowledge", 0, 100)
     register_stat("Physical", "skill_physical", 0, 100)
 
-    dp_period("Job Focus", "job_focus_act")
+    dp_period("Work", "job_focus_act")
     dp_choice("Focus on Work", "act_work")
     dp_choice("Take it Easy", "act_skip_work", enable="(month>1) and (month<25)")
 
-    dp_period("Skill Focus", "skill_focus_act")
+    dp_period("Skills", "skill_focus_act")
     dp_choice("Domestic", "act_domestic", enable="skill_domestic < 100")
     dp_choice("Creative", "act_creative", enable="skill_creative < 100")
     dp_choice("Technical", "act_technical", enable="skill_technical < 100")
@@ -27,7 +26,7 @@ init python:
     dp_choice("Knowledge", "act_knowledge", enable="skill_knowledge < 100")
     dp_choice("Physical", "act_physical", enable="skill_physical < 100")
 
-    dp_period("Relaxation Focus", "relaxation_focus_act")
+    dp_period("Free Time", "relaxation_focus_act")
     dp_choice("Do something with [his_name]", "act_relax_together", enable="not ((month>=24) and wants_to_leave)")
     dp_choice("Do something alone", "act_relax_alone")
 
@@ -135,7 +134,7 @@ label day:
     # Now, we call the day planner, which may set the act variables
     # to new values. We call it with a list of periods that we want
     # to compute the values for.
-    call day_planner(["Job Focus", "Skill Focus", "Relaxation Focus"])
+    call day_planner(["Work", "Skills", "Free Time"])
 
     
     # We process each of the three periods of the day, in turn.
@@ -143,7 +142,7 @@ label job_focus:
 
     scene black
     # Tell the user what period it is.
-    centered "{color=#ffffff}Job Focus{/color}"
+    centered "{color=#ffffff}At Work{/color}"
     play music "music/Isaiah.ogg" fadeout 3.0
 
     # Set these variables to appropriate values, so they can be
@@ -188,7 +187,7 @@ label relaxation_focus:
         jump monthly_event
 
     scene black
-    centered "{color=#ffffff}Relaxation Focus{/color}"
+    centered "{color=#ffffff}Free Time{/color}"
 
     $ period = "relaxation_focus"
     $ act = relaxation_focus_act

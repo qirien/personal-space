@@ -14,8 +14,9 @@ style cp_label is label:
 style cp_choice_button is button:
     size_group "cp_choice_button"
 
-screen computer_pad:
+screen computer_pad(periods):
     tag month_menu
+    $ renpy.choice_for_skipping()
 
     add "bg/computer-pad.png"
     frame:
@@ -83,7 +84,7 @@ screen computer_pad:
                     
             # Middle column - skills
             # TODO: make these buttons that integrate with DSE
-            # TODO: Incorporate new DSE
+            # TODO: Incorporate new DSE - perhaps make the new DSE have a callable screen that you can put anywhere?
             vbox:
                 yfill True
                 xfill True
@@ -156,6 +157,7 @@ screen computer_pad:
                     xfill True
                     xalign 0.5
                     textbutton "Colony Messages" xalign 0.5:
+                        # TODO: make this work
                         action Jump("monthly_messages")
                 
                 frame:
@@ -168,7 +170,8 @@ label monthly_messages:
         $ message = "msg_" + `month`
         nvl clear
         call expression message
-        nvl clear  
+        nvl clear
+        # TODO: add the needed parameter here
         call screen computer_pad
         
 screen computer_pad_imagemap:        

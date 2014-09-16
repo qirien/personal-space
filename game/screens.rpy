@@ -72,7 +72,7 @@ style button:
 style button_text:
     color "#fff"
     font "DejaVuSans.ttf"
-    insensitive_color "#666"
+    insensitive_color "#666" # TODO: get rid of weird drop shadow
     xalign 0.5
 
 style large_button:
@@ -185,59 +185,59 @@ screen input:
 #       and a frame around the text, etc. Also needs to work for handwritte notes still.
 #       Maybe just have two separate screens.
 screen nvl:
-    if (dialogue[0][0] == "note"):
-        add "bg/paper.jpg"
+    if (dialogue[0][0] != "note"):
+        use message_board
     else:
-        add "bg/computer-pad.png"
-    window:
-        style "nvl_window"
-        xpadding 50
-        ypadding 50
+        add "bg/paper.jpg"
+        window:
+            style "nvl_window"
+            xpadding 50
+            ypadding 50
 
-        yfill True
-        xfill True
+            yfill True
+            xfill True
 
-        has vbox:
-            style "nvl_vbox"
-        if (dialogue[0][0] != "note"):
-            label "Messages"
+            has vbox:
+                style "nvl_vbox"
+            if (dialogue[0][0] != "note"):
+                label "Messages"
 
-        # Display dialogue.
-        for who, what, who_id, what_id, window_id in dialogue:
-            window:
-                id window_id
+            # Display dialogue.
+            for who, what, who_id, what_id, window_id in dialogue:
+                window:
+                    id window_id
 
-                has hbox:
-                    spacing 10
+                    has hbox:
+                        spacing 10
 
-                if who is not None:
-                    text who id who_id
+                    if who is not None:
+                        text who id who_id
 
-                text what id what_id
+                    text what id what_id
 
-        # Display a menu, if given.
-        if items:
+            # Display a menu, if given.
+            if items:
 
-            vbox:
-                id "menu"
+                vbox:
+                    id "menu"
 
-                for caption, action, chosen in items:
+                    for caption, action, chosen in items:
 
-                    if action:
+                        if action:
 
-                        button:
-                            style "nvl_menu_choice_button"
-                            action action
+                            button:
+                                style "nvl_menu_choice_button"
+                                action action
 
-                            text caption style "nvl_menu_choice"
+                                text caption style "nvl_menu_choice"
 
-                    else:
+                        else:
 
-                        text caption style "nvl_dialogue"
+                            text caption style "nvl_dialogue"
 
-    add SideImage() xalign 0.0 yalign 1.0
-    
-    #use quick_menu
+        add SideImage() xalign 0.0 yalign 1.0
+        
+        #use quick_menu
         
 ##############################################################################
 # Main Menu 
