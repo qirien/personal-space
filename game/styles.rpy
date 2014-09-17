@@ -3,7 +3,7 @@
 init python:
 
     # Place the day planner.
-    style.dp_frame.ypos = 200
+    style.dp_frame.ypos = 0
     style.dp_frame.yanchor = 0.0
     style.dp_frame.xalign = 0.5
 
@@ -14,7 +14,7 @@ init python:
     style.dp_hbox.box_spacing = 20
 
     # Center the choices.
-    style.dp_choices.xalign = 0.5
+    style.dp_choice.xalign = 0.5
 
     # Center the label of each choice.
     style.dp_label.xalign = 0.5

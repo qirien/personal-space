@@ -27,7 +27,7 @@ init -100 python:
     style.dp_label_text = Style(style.label_text)
 
     # The title of the done button.
-    dp_done_title = "Done Planning"
+    dp_done_title = "All Done"
 
     # A map from period name to the information we know about that
     # period.
@@ -70,47 +70,55 @@ screen day_planner(periods):
     # indicate to Ren'Py engine that this is a choice point
     $ renpy.choice_for_skipping()
     window:
+        style_group "dp"  
         use display_stats(True, True, True, True)
         use display_planner(periods)            
             
 screen display_planner(periods):            
-    frame:
-        style_group "dp"        
         vbox:
-            text "Day Planner" yalign 0.0 xalign 0.5
-            hbox:
+            style_group "dp"        
+            label "Focus" yalign 0.0 xalign 0.5 style "cp_label"
+            vbox:
                 $ can_continue = True
                 for p in periods:
-                    vbox:
-                        label p
-                        if p not in __periods:
-                            $ raise Exception("Period %r was never defined." % p)
-                        $ this_period = __periods[p]
-                        $ selected_choice = getattr(store, this_period.var)
-
-                        $ valid_choice = False
+                    frame:
                         vbox:
-                            style_group "dp_choice"
-                            for name, curr_val, enable, should_show in this_period.acts:
-                                $ show_this = eval(should_show)
-                                $ enable = eval(enable)
+                            label p
+                            if p not in __periods:
+                                $ raise Exception("Period %r was never defined." % p)
+                            $ this_period = __periods[p]
+                            $ selected_choice = getattr(store, this_period.var)
+                            $ valid_choice = False
+                            $ num_choices = len(this_period.acts)
+                            $ choice_rows = ((num_choices-1) // 2) + 1
+                            grid 2 choice_rows: 
+                            #vbox:
+                                style_group "dp_choice"
+                                for name, curr_val, enable, should_show in this_period.acts:
+                                    $ show_this = eval(should_show)
+                                    $ enable = eval(enable)
 
-                                $ selected = (selected_choice == curr_val)
-                        
-                                if show_this:
-                                    if enable:
-                                        textbutton name action SetField(store, this_period.var, curr_val)
-                                    else:
-                                        textbutton name
-            
-                                if show_this and enable and selected:
-                                    $ valid_choice = True
+                                    $ selected = (selected_choice == curr_val)
+                            
+                                    if show_this:
+                                        if enable:
+                                            textbutton name action SetField(store, this_period.var, curr_val)
+                                        else:
+                                            textbutton name
+                
+                                    if show_this and enable and selected:
+                                        $ valid_choice = True
 
-                            if not valid_choice:
-                                $ can_continue = False
+                                if not valid_choice:
+                                    $ can_continue = False
                                     
+                                # We need an extra blank spot if there are an odd number of choices
+                                # and we didn't fill up our grid
+                                if ((2 * choice_rows) != num_choices):
+                                    text ""                                
+                                                       
             if (can_continue):
-                textbutton dp_done_title style "dp_done_button" action Return()
+                textbutton dp_done_title style "dp_done_button" xalign 1.0 action Return()
             else:
-                textbutton dp_done_title style "dp_done_button"
+                textbutton dp_done_title style "dp_done_button" xalign 1.0
 

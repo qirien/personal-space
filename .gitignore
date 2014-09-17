@@ -5,6 +5,7 @@
 
 # Temporary files
 *~
+*.bak
 tmp/*
 
 # Local-only files

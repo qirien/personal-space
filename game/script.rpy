@@ -126,6 +126,7 @@ define her_nickname = "lover"
 #define pop_songs = [ "music/Dandelion.ogg", "music/Shanghai.ogg"]
 
 # Variables about emotional state.  -100 is minimum, 100 is maximum
+# TODO: might need to normalize these, set as stats, so we can use bars for them.  Maybe 0 to 100?
 define relaxed = 0    # negative = stressed
 define loved = 0      # negative = neglected
 define made_love = 0  # Counter of lovemaking, used for pregnancy calculation

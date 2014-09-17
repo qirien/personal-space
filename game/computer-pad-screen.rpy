@@ -18,7 +18,10 @@ screen computer_pad(periods):
     tag month_menu
     $ renpy.choice_for_skipping()
 
+    # TODO: should you be able to change the wallpaper here?!
     add "bg/computer-pad.png"
+            
+    text "User {color=#888}[her_name]{/color} has logged on." size 12 xalign 0.1 ypos 20 color "FFFFFF"
     frame:
         style_group "cp"
         background None
@@ -31,7 +34,6 @@ screen computer_pad(periods):
         xfill True
         has vbox
         
-        text "Welcome, [her_name]." size 30 xalign 0.5
         grid 3 1:
             xfill True
             spacing 5
@@ -81,54 +83,10 @@ screen computer_pad(periods):
                     xalign 0.5
                     textbutton "Skills":
                         action Show("skill_screen")
+                        # Test the new DSE here, but our custom one is better.
+                        #action Show("display_stats")
                     
-            # Middle column - skills
-            # TODO: make these buttons that integrate with DSE
-            # TODO: Incorporate new DSE - perhaps make the new DSE have a callable screen that you can put anywhere?
-            vbox:
-                yfill True
-                xfill True
-                label "Focus"
-                frame:
-                    xfill True
-                    has vbox
-                    
-                    label "Work"
-                    hbox:
-                        style_group "cp_choice"
-                        xfill True
-                        textbutton "Give 100%"
-                        textbutton "Take it easy"
-                
-                frame:
-                    xfill True
-                    has vbox
-                    
-                    label "Skills"                    
-                    grid 2 4:
-                        style_group "cp_choice"
-                        xfill True
-                        textbutton "Domestic"
-                        textbutton "Physical"
-                        textbutton "Creative"
-                        textbutton "Technical"
-                        textbutton "Social"
-                        textbutton "Knowledge"
-                        textbutton "Spiritual"
-                        text ""
-                    
-                frame:
-                    xfill True
-                    has vbox
-                    
-                    label "Free Time"
-                    hbox:
-                        style_group "cp_choice"
-                        xfill True
-                        textbutton "Together"
-                        textbutton "Alone"
-                    
-            # Right column
+            # Middle column
             vbox:
                 yfill True
                 xalign 0.5
@@ -159,13 +117,15 @@ screen computer_pad(periods):
                     textbutton "Colony Messages" xalign 0.5:
                         # TODO: make this work
                         action Jump("monthly_messages")
+                        
+            # Right column - skills
+            vbox:
+                yfill True
+                xfill True
+                use display_planner(periods)
+                    
                 
-                frame:
-                    xalign 0.9
-                    yalign 0.9
-                    textbutton _("GO!"):
-                            action Return()    
-    
+               
 label monthly_messages:
         $ message = "msg_" + `month`
         nvl clear
@@ -173,21 +133,9 @@ label monthly_messages:
         nvl clear
         # TODO: add the needed parameter here
         call screen computer_pad
-        
-screen computer_pad_imagemap:        
-    imagemap:
-        ground "gui/monthmenu-base.png"
-        idle "gui/monthmenu-idle.png"
-        hover "gui/monthmenu-hover.png"
-        
-        hotspot (268, 117, 70, 60) action SetVariable(job_focus_act, "act_work")
-        hotspot (268, 561, 46, 43) action Jump("room_computer3")        
-        hotspot (0,0, 10, 10) action Start("job_focus")
-        #style_group = "cpad"
-        xalign 0.5
-        yalign 0.5
-        
  
+# Display our skills in a window on top of the computer pad
+# TODO: Make sure the order matches the order on the Skill Button section.
 screen skill_screen:
         frame:
             style_group "cp"

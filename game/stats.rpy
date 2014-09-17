@@ -6,7 +6,7 @@
 
 init -100 python:
 
-    __dse_stats = [ ]
+    dse_stats = [ ]
 
     class __Stat(object):
 
@@ -17,16 +17,16 @@ init -100 python:
             self.max = max
 
     def __init_stats():
-        for s in __dse_stats:
+        for s in dse_stats:
             setattr(store, s.var, s.default)
 
     config.start_callbacks.append(__init_stats)
     
     def register_stat(name, var, default, max):
-        __dse_stats.append(__Stat(name, var, default, max))
+        dse_stats.append(__Stat(name, var, default, max))
 
     def normalize_stats():
-        for s in __dse_stats:
+        for s in dse_stats:
 
             v = getattr(store, s.var)
 
@@ -48,7 +48,7 @@ style dse_stats_label_text:
     bold False
 
 screen display_stats(name=True, bar=True, value=True, max=True):
-    $ dse_stat_length = len(__dse_stats)
+    $ dse_stat_length = len(dse_stats)
     frame:
         style_group "dse_stats"        
         yalign 0.0
@@ -64,7 +64,7 @@ screen display_stats(name=True, bar=True, value=True, max=True):
                 yalign 0.5
                 spacing 5
                 
-                for s in __dse_stats:
+                for s in dse_stats:
                     $ v = getattr(store, s.var)
 
                     if name:

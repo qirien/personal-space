@@ -27,8 +27,8 @@ init python:
     dp_choice("Physical", "act_physical", enable="skill_physical < 100")
 
     dp_period("Free Time", "relaxation_focus_act")
-    dp_choice("Do something with [his_name]", "act_relax_together", enable="not ((month>=24) and wants_to_leave)")
-    dp_choice("Do something alone", "act_relax_alone")
+    dp_choice("With [his_name]", "act_relax_together", enable="not ((month>=24) and wants_to_leave)")
+    dp_choice("Alone", "act_relax_alone")
 
     dp_period("Monthly Event", "monthly_event_act")
     dp_choice("No Actual Choices", "act_monthly", False)
@@ -102,7 +102,7 @@ label day:
     else:
         $ trimester = "third"
         
-    "It's year %(year)d, month %(local_month)d. We've been here %(month)d months. It's [season]. The weather is [weather]. \nOn Earth it's year %(earth_year)d, month %(earth_month)d."
+    #"It's year %(year)d, month %(local_month)d. We've been here %(month)d months. It's [season]. The weather is [weather]. \nOn Earth it's year %(earth_year)d, month %(earth_month)d."
     if (is_pregnant or is_pregnant_later):
         "You are in the [trimester] trimester of pregnancy."
     $ message = "msg_" + `month`
@@ -115,6 +115,10 @@ label day:
         "You feel pretty loved."
     else:
         "You and [his_name] aren't getting along very well."
+        
+    "Time to decide what to do this month..."
+    if (month == 0):
+        "On your computer pad, you can read messages, check the status of yourself, your relationship, and the community, and plan your month. Once you choose a focus for each area of your life for this month, you can continue on."
         
     #"Loved = [loved], Relaxed = [relaxed], community_level = [community_level], made_love = [made_love]"
     if (month == 25):
@@ -134,7 +138,8 @@ label day:
     # Now, we call the day planner, which may set the act variables
     # to new values. We call it with a list of periods that we want
     # to compute the values for.
-    call day_planner(["Work", "Skills", "Free Time"])
+    # call screen day_planner(["Work", "Skills", "Free Time"])
+    call screen computer_pad(["Work", "Skills", "Free Time"]) 
 
     
     # We process each of the three periods of the day, in turn.
