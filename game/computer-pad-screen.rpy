@@ -41,11 +41,13 @@ screen computer_pad(periods):
             
             # Left column
             vbox:
-                yfill True
+                yalign 0.0
                 
                 label "Personal Status"
+                # TODO: Make these bars?
                 frame:
                     xfill True
+                    ypos 10
                     has vbox
                     
                     label "Relationship"
@@ -53,6 +55,7 @@ screen computer_pad(periods):
                 
                 frame:
                     xfill True
+                    ypos 30
                     has vbox
                     
                     label "Time"
@@ -60,8 +63,8 @@ screen computer_pad(periods):
                     text "Earth: Year [earth_year], month [earth_month]"
             
                 frame:
-                    # TODO: Make these bars?
                     xfill True
+                    ypos 60
                     has vbox
                     
                     label "Health"
@@ -81,19 +84,18 @@ screen computer_pad(periods):
                         
                 frame:
                     xalign 0.5
+                    ypos 100
                     textbutton "Skills":
                         action Show("skill_screen")
-                        # Test the new DSE here, but our custom one is better.
-                        #action Show("display_stats")
                     
             # Middle column
             vbox:
-                yfill True
                 xalign 0.5
                 
                 label "Colony Status"
                 frame:
                     xfill True
+                    ypos 10
                     has vbox
                     xalign 0.5
                     
@@ -109,18 +111,43 @@ screen computer_pad(periods):
                     text "Season: [season]"
                     text "Weather: [weather]"
                     
-                #TODO: Add music selector, remember track and show artist/title
-                #      Dandelion, Shanghai, Alpha
+                frame:
+                    xfill True
+                    ymaximum 100
+                    ypos 30
+                    label "Music Player"
+                    # TODO: after reloading, music does not play? or shows as "None"?
+                    $ current_song = renpy.music.get_playing()
+                    $ artist = ""
+                    $ song_title = ""
+                    if (current_song):
+                        if "Dandelion" in current_song:
+                            $ artist = "Kalabi"
+                            $ song_title = "Dandelion"
+                        elif "Shanghai" in current_song:
+                            $ artist = "Attic Trax"
+                            $ song_title = "Shanghai 20 00"
+                        elif "Alpha" in current_song:
+                            $ artist = "TranceVision"
+                            $ song_title = "Alpha"
+                        
+                    if (current_song):
+                        text "{i}[song_title]{/i} by [artist]" size 14 ypos 30 xalign 0.5
+                    imagebutton auto "gui/previous_%s.png" xalign 0.3 yalign 1.0 action pop_songs.Previous()
+                    if (renpy.music.is_playing()):
+                        imagebutton auto "gui/pause_%s.png" xalign 0.5 yalign 1.0 action pop_songs.Stop()
+                    else:
+                        imagebutton auto "gui/play_%s.png" xalign 0.5 yalign 1.0 action pop_songs.Play()
+                    imagebutton auto "gui/next_%s.png" xalign 0.7 yalign 1.0 action pop_songs.Next()
                 frame:
                     xfill True
                     xalign 0.5
+                    ypos 60
                     textbutton "Colony Messages" xalign 0.5:
-                        # TODO: make this work
                         action Jump("monthly_messages")
                         
             # Right column - skills
             vbox:
-                yfill True
                 xfill True
                 use display_planner(periods)
                     
@@ -131,8 +158,7 @@ label monthly_messages:
         nvl clear
         call expression message
         nvl clear
-        # TODO: add the needed parameter here
-        call screen computer_pad
+        call screen computer_pad(["Work", "Skills", "Free Time"])
  
 # Display our skills in a window on top of the computer pad
 # TODO: Make sure the order matches the order on the Skill Button section.

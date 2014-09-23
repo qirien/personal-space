@@ -122,8 +122,6 @@ define her_name = "Me"
 define his_nickname = "dear"
 define her_nickname = "lover"
 
-# Songs
-#define pop_songs = [ "music/Dandelion.ogg", "music/Shanghai.ogg"]
 
 # Variables about emotional state.  -100 is minimum, 100 is maximum
 # TODO: might need to normalize these, set as stats, so we can use bars for them.  Maybe 0 to 100?
@@ -185,7 +183,14 @@ init -200:
     define sitting = Position(ypos=0.5, yanchor=0)
     define squatting = Position(ypos=0.2, yanchor=0)
     
-
+    define current_song = " "
+    
+init python:
+    # Songs for computer pad
+    pop_songs = MusicRoom(fadeout=0.5)
+    pop_songs.add("music/Dandelion.ogg", always_unlocked = True)
+    pop_songs.add("music/Shanghai_20_00.ogg", always_unlocked = True)
+    pop_songs.add("music/Alpha.ogg", always_unlocked = True)
 
 # Splashscreen before the main menu
 label splashscreen:

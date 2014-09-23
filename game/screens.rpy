@@ -370,7 +370,7 @@ screen file_picker:
 
                     # Add the screenshot.
                     add FileScreenshot(i)
-                    
+                    # TODO: add month
                     # Format the description, and add it as text.
                     $ description = "% 2s. %s\n%s" % (
                         FileSlotName(i, columns * rows),

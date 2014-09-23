@@ -54,7 +54,8 @@ label day:
 
     # Increment the month it is.
     $ month += 1
-    play music "music/Dandelion.ogg" fadeout 3.0
+    stop music fadeout 1.0
+    $ pop_songs.Play()
     scene bg talaam_space with fade
 
     $ year = 1
@@ -102,20 +103,8 @@ label day:
     else:
         $ trimester = "third"
         
-    #"It's year %(year)d, month %(local_month)d. We've been here %(month)d months. It's [season]. The weather is [weather]. \nOn Earth it's year %(earth_year)d, month %(earth_month)d."
-    if (is_pregnant or is_pregnant_later):
-        "You are in the [trimester] trimester of pregnancy."
-    $ message = "msg_" + `month`
-    nvl clear
-    call expression message
-    nvl clear    
-    # TODO: comment out this debugging code
     # TODO: Play a season-specific sound (like rain or wind)?
-    if (loved >= 0):
-        "You feel pretty loved."
-    else:
-        "You and [his_name] aren't getting along very well."
-        
+
     "Time to decide what to do this month..."
     if (month == 0):
         "On your computer pad, you can read messages, check the status of yourself, your relationship, and the community, and plan your month. Once you choose a focus for each area of your life for this month, you can continue on."

@@ -379,6 +379,7 @@ label show_credits:
     
     # TODO: show images from the game during this?
     # TODO: make it so mouse clicks don't skip the whole thing?
+    # TODO: Double check EVERYTHING we used is in here!  Check Credits.txt, music, sfx, bg directories
     scene black with fade
     hide text with fade
     show text "Credits" with fade
@@ -390,7 +391,7 @@ label show_credits:
     show text "Additional Writing and Design by Rachel Helps" with fade 
     with Pause(2.5)
     hide text with fade
-    show text "Character Art by Clarissa Helps" with fade 
+    show text "Character Art by {a=http://clarissahelps.com}Clarissa Helps{/a}" with fade 
     with Pause(2.5)
     hide text with fade
     show text "With music by:\nEhren Starks\nJan Hanford\nChad Lawson\nGiorgio Costantini\nKalabi\nBenji Goodrich\nGianmarco Leona" with fade
