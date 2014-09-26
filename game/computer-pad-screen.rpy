@@ -51,7 +51,7 @@ screen computer_pad(periods):
                     has vbox
                     
                     label "Relationship"
-                    text "Loved: [loved]"
+                    use heart_display
                 
                 frame:
                     xfill True
@@ -150,15 +150,19 @@ screen computer_pad(periods):
             vbox:
                 xfill True
                 use display_planner(periods)
-                    
+     
+    # Start music every time this screen is shown
+    on "replace" action pop_songs.Play()
                 
-               
+
+# TODO: using a jump messes up our call stack here, so the next things won't work
 label monthly_messages:
-        $ message = "msg_" + `month`
-        nvl clear
-        call expression message
-        nvl clear
-        call screen computer_pad(["Work", "Skills", "Free Time"])
+    $ message = "msg_" + `month`
+    nvl clear
+    call expression message
+    computer "(End of messages)"
+    nvl clear
+    call screen computer_pad(["Work", "Skills", "Free Time"])
  
 # Display our skills in a window on top of the computer pad
 # TODO: Make sure the order matches the order on the Skill Button section.
@@ -226,4 +230,22 @@ screen grid_test:
         textbutton "Return":
             action Hide("grid_test")
             
+            
+screen heart_display:
+    $ image_name = "GUI/heart-normal.png"
+    if (loved >= LOVED_MAX):
+        add "GUI/heart-largest.png"
+    elif (loved >= (LOVED_MAX/1.5)):
+        add "GUI/heart-larger.png"
+    elif (loved >= (LOVED_MAX/3)):
+        add "GUI/heart-large.png"
+    elif (loved >= (LOVED_MAX/6)):
+        add "GUI/heart-normal.png"
+    elif (loved >= 0):
+        add "GUI/heart-small.png"
+    elif (loved >= -(LOVED_MAX/6)):
+        add "GUI/heart-smaller.png"
+    else:
+        add "GUI/heart-smallest.png"
+    
         

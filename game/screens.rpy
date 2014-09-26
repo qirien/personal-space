@@ -90,6 +90,9 @@ style large_button_text:
     insensitive_color "#666"
     size 16
     xalign 0.5
+    
+style label_text:
+    color "#222"
 
 style frame:
     background Frame("GUI/frame.png", 10, 10)

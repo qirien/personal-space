@@ -89,7 +89,8 @@ label work_0:
     show sven at midright with moveinright
     show helen at right with moveinright
     boss "Sven is in charge of the library, so if you need to research something or print something out, head over there. He and his wife Helen are also experts on raising cattle, and will be starting a ranch up to the north."
-    sven "I'll do my best to help you."
+    sven "Hey, y'all. Don't be strangers!"
+    helen "Hi..."
     hide sven
     hide helen
     with moveoutright
@@ -162,9 +163,7 @@ label work_0:
             hide lily with moveoutright
             jump boss_meeting
         "No questions.":
-            her normal "(I don't have any questions.)"
-
-    "After the meeting, the mayor met with me to show me around where I'd work."
+            "After the meeting, the mayor met with me to show me around where I'd work."
 
     call set_work_bg
     show pavel at quarterleft with moveinleft

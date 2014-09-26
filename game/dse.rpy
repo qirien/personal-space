@@ -55,7 +55,6 @@ label day:
     # Increment the month it is.
     $ month += 1
     stop music fadeout 1.0
-    $ pop_songs.Play()
     scene bg talaam_space with fade
 
     $ year = 1
@@ -135,8 +134,8 @@ label day:
 label job_focus:
 
     scene black
-    # Tell the user what period it is.
-    centered "{color=#ffffff}At Work{/color}"
+    # Tell the user what month it is.
+    centered "{color=#ffffff}Month [month] out of 25\n\nAt Work{/color}"
     play music "music/Isaiah.ogg" fadeout 3.0
 
     # Set these variables to appropriate values, so they can be
@@ -163,7 +162,7 @@ label skill_focus:
 
     # The rest of this is the same as for the job_focus.
     scene black
-    centered "{color=#ffffff}Skill Focus{/color}"
+    centered "{color=#ffffff}Month [month] out of 25\n\nSkill Focus{/color}"
     play music "music/OceansApart.ogg" fadeout 3.0
 
     $ period = "skill_focus"
@@ -181,7 +180,7 @@ label relaxation_focus:
         jump monthly_event
 
     scene black
-    centered "{color=#ffffff}Free Time{/color}"
+    centered "{color=#ffffff}Month [month] out of 25\n\nFree Time{/color}"
 
     $ period = "relaxation_focus"
     $ act = relaxation_focus_act
@@ -199,7 +198,7 @@ label monthly_event:
         jump end_of_month
     
     scene black
-    centered "{color=#ffffff}Event!{/color}"
+    centered "{color=#ffffff}Month [month] out of 25\n\nEvent!{/color}"
     play music "music/RainSea.ogg" fadeout 3.0
 
     $ period = "monthly_event"
