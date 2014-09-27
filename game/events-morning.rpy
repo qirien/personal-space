@@ -1277,7 +1277,7 @@ label brennan_confess:
     her surprised "So why did you need the extra batteries?"
     brennan "If it ever turns off, even for a second, the connection will be broken and I'll completely lose contact."
     if (brennan_relationship >= 1):
-        her annoyed "You were never a salesman on Earth, were you?"
+        her sad "What else are you hiding? Were you ever even a salesman, like you said?"
         brennan "Actually, I was. I never lied to you, [her_name]. But I hope you'll understand why I never told you about this."
 
     her flirting "So, is this the part where you turn into an evil villain and kill me because I know too much?"
@@ -1305,12 +1305,12 @@ label brennan_confess:
             her serious "We'll see."
             "Brennan and I worked out a proposed system where he would send one message a month under a certain length for each family. Then we told the colony about the device."
             scene bg community_center with fade
-            show brennan at center
+            show brennan at midleft
             show him angry at midright
             with dissolve
             him angry "I knew we couldn't trust him!"
             hide him
-            show julia at midleft with dissolve
+            show julia at left with dissolve
             julia "How could such a dishonest spy care about our colony?"
             hide julia
             show martin at midright with dissolve
@@ -1321,11 +1321,11 @@ label brennan_confess:
             hide martin
             show sven at left with dissolve
             sven "Yeah, there's no way we can trust him after this!"
-            show him annoyed at midright
+            show him annoyed at quarterright
             him annoyed "Not that we trusted him much before..."
             show her serious at right
             her annoyed "I agree with you, but you're missing the most important piece of information here."
-            show julia at midleft with dissolve
+            show julia at midright with dissolve
             julia "And what is that?"
             her serious "We can send messages to Earth instantaneously! No more waiting four years for your families to get your messages, and another four years for them to write back!"
             hide julia
@@ -1339,7 +1339,7 @@ label brennan_confess:
             sven "I don't think you got a choice, right?"
             brennan "Even if you stole the device from me, they could simply turn off their receiver, or refuse to pass on your messages. It might be better to retain their goodwill."
             hide sara 
-            show julia at midleft with dissolve
+            show julia at midright with dissolve
             julia "How shall we do that?"
             brennan "By not treating me like a criminal."
             scene black with fade

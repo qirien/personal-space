@@ -617,7 +617,7 @@ label relax_together_f:
 # Midnight lovin'
 label relax_together_g:
     scene bg bedroom with fade
-    show her normal at quarterright
+    show her normal at midright
     with dissolve
 
     "I decided to surprise [his_name] with a few candles lit near our bed and some soft music playing, and I wore the sexiest thing I owned. But it didn't go how I had planned..."
@@ -653,6 +653,7 @@ label relax_together_g:
     her annoyed "Welcome home...and good night."
     him flirting "You don't want to stay up for just fifteen more minutes?"
     her annoyed "I'm not up to begin with. I'm still asleep. Zzzzzz..."
+    show her sleeping
     him normal "Mmm, you're so sexy..."
     menu:
         "What should I do?"

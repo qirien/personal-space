@@ -74,7 +74,6 @@ label bad_ending:
     
     ".:. Separation Ending, 1 of 3."
     jump show_credits
-    return
 
 # ENDING 2 - Community succeeding, marriage failing
 # OR - Community failing, marriage succeeding
@@ -190,7 +189,6 @@ label mediocre_ending:
     show her sleeping with dissolve
     ".:. Good Ending, 2 of 3."
     jump show_credits
-    return
 
 # Helper function for endings 2 & 3 to emphasize skills the player mastered
 label skill_appreciation:
@@ -334,10 +332,11 @@ label good_ending:
         "His arm was draped over my growing belly, which he rubbed gently. Sometimes the baby would kick him back."
 
     scene bg bedroom with fade
-    show overlay night
-    show her normal at midright
-    show him normal at midleft
-    with dissolve
+    show overlay night        
+    show overlay bedroom_covers behind night        
+    show her normal at midleft, squatting, behind overlay
+    show him normal at midright, squatting, behind overlay    
+    with dissolve    
 
     him surprised "[her_name]?"
     her surprised "What?"
@@ -351,7 +350,7 @@ label good_ending:
     her laughing "What a waste! You should pick somewhere exotic!"
     him happy "What could be more exotic than an alien planet? Besides, you make everything seem exotic..."
     her flirting "I think the word you're looking for is \"erotic\", not \"exotic\"."
-    show him happy
+    show him normal at center, squatting
     with dissolve
     "He didn't say anything else, just buried his face in my hair and tightened his grip around my waist. I held on tight to his arms, feeling safety and love and happiness swirling around us."
     "I wanted to hold on to this feeling right here that we had worked so hard for. And it was work - it wasn't easy to forgive, or compromise, or stay calm."
@@ -363,7 +362,6 @@ label good_ending:
     with dissolve
     ".:. Best Ending, 3 of 3."
     jump show_credits
-    return
 
 # Credits
 label show_credits:
@@ -375,7 +373,7 @@ label show_credits:
     if (community_ceiling > COMMUNITY_LEVEL_MAX):
         $ community_ceiling = COMMUNITY_LEVEL_MAX
         
-    "You scored [loved] out of [LOVED_MAX] relationship points, and [community_level] out of [COMMUNITY_LEVEL_MAX] comunity points."
+    "You scored [loved_ceiling] out of [LOVED_MAX] relationship points, and [community_ceiling] out of [COMMUNITY_LEVEL_MAX] comunity points."
     
     # TODO: show images from the game during this?
     # TODO: make it so mouse clicks don't skip the whole thing?
@@ -411,5 +409,26 @@ label show_credits:
     with Pause(2.5)
     hide text with fade
 
-
+    "You have now unlocked New Game+! If you play again, you can keep your progress in your skills up to level [SKILL_SAVED_MAX], to make mastering skills easier."
+    
+    # in case a future game wants to use this information, we'll save it here
+    $ mp.jack_name = his_name
+    $ mp.kelly_name = her_name
+    $ mp.baby_name = baby_name
+    $ mp.save()
+    
+    # New Game+ saving of skills here
+    $ persistent.skill_domestic = save_skill(persistent.skill_domestic, skill_domestic)
+    $ persistent.skill_creative = save_skill(persistent.skill_creative, skill_creative)
+    $ persistent.skill_technical = save_skill(persistent.skill_technical, skill_technical)    
+    $ persistent.skill_spiritual = save_skill(persistent.skill_spiritual, skill_spiritual)
+    $ persistent.skill_social = save_skill(persistent.skill_social, skill_social)    
+    $ persistent.skill_knowledge = save_skill(persistent.skill_knowledge, skill_knowledge)
+    $ persistent.skill_physical = save_skill(persistent.skill_physical, skill_physical)
+    
+    if not persistent.times_beaten:
+        $ persistent.times_beaten = 1
+    else:
+        $ persistent.times_beaten += 1
+            
     $ renpy.full_restart()

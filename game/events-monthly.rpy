@@ -951,9 +951,9 @@ label monthly_event_8:
                     "I worried that maybe I was not good enough - not pretty enough, not smart enough, not strong enough - not just for him, but for this planet. What was I even doing here?"
                     "I trudged in circles through these depressing thoughts for hours."
                     scene black with fade
-                    "I forgave him the next day, but I still felt insecure."
                     $ relaxed -= 5
                     "Finally, I just went to bed."
+                    "I forgave him the next day, but I still felt insecure."
                 "...":
                     "I didn't say anything; just watched him leave, feeling hurt and lonely."
                     hide him with moveoutright
@@ -2456,6 +2456,7 @@ label monthly_event_17:
     her normal "Is the hot water ready yet?"
     sara "Yeah, it's boiling."
     her "Alright, let's pour it in!"
+    play sound "sfx/splash.mp3"
     show her at squatting
     show sara at squatting
     show overlay bathhouse
@@ -2729,6 +2730,9 @@ label monthly_event_18:
             him serious "Ah, it's okay. It's not your fault. I just hate sitting around doing nothing."
             her normal "Yeah, that's annoying. Let's go on a walk together. That should be okay, right?"
             him serious "Yeah.... I think I could use the fresh air."
+            scene bg fields with fade
+            show her normal at midright
+            show him normal at midleft
             "We walked around the farm together. I could tell he was itching to get down and get to work, but instead he just took notes."
             $ loved += 2
         "I'll go with you.":
@@ -2736,6 +2740,9 @@ label monthly_event_18:
             him annoyed "Really? You don't trust me?"
             her normal "Of course I trust you. I trust that you will do anything to take care of this farm, even if it's at the expense of your own health."
             him concerned "... All right, let's go."
+            scene bg fields with fade
+            show her normal at midright
+            show him normal at midleft            
             "We walked around the farm together. I could tell he was itching to get down and get to work, but instead he just took notes."
             $ loved += 2
         "This is all my fault.":
@@ -4001,7 +4008,8 @@ label monthly_event_24:
         "We had dinner, and I went to bed early."
         "I felt frustrated and tired of waiting and wished I had more control over my own body."
         show him sleeping at midright, squatting, behind overlay with dissolve
-        hide overlay night
+        hide night
+        show her serious
         "I woke up in the early morning to more contractions. I didn't want to wake up [his_name] yet, so I walked around outside as the sun was just starting to come up."
         hide her with moveoutleft
         scene bg sunset with fade

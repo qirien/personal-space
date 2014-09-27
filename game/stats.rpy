@@ -40,7 +40,35 @@ init -100 python:
     # Whenever a python statement is executed, we will ensure our stats
     # stay within range.
     config.python_callbacks.append(normalize_stats)
-                        
+                  
+                  
+    # Function to save skills for New Game +, up to SKILL_SAVED_MAX,
+    # if they are greater than what has already been saved.
+    def save_skill(current_saved_value, new_skill_value):
+        if (new_skill_value <= SKILL_SAVED_MAX):
+            if (not current_saved_value):
+                return new_skill_value
+            else:
+                if (current_saved_value < new_skill_value):
+                    return new_skill_value
+                else:
+                    return current_saved_value
+        else:
+            return SKILL_SAVED_MAX
+        
+    def highest_stat():
+        normalize_stats()
+        
+        highest_stat = 0
+        highest_stat_name = ""
+
+        for curr_stat in dse_stats:
+            stat_value = getattr(store, curr_stat.var)
+            if (stat_value >= highest_stat):
+                highest_stat_name = curr_stat.name
+                highest_stat = stat_value
+        return highest_stat_name
+
 
 # Here you can change the style of any elements in the Stats screen you want.
 # As an example, here is a style defined for the label text to make sure it is not bold.

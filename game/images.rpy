@@ -72,6 +72,9 @@ image her surprised = "sprites/her-surprised.png"
 image her serious = "sprites/her-serious.png"
 image her sleeping = "sprites/her-sleeping.png"
 
+# TODO: Add tiny avatars for message board.
+# TODO: add small images for him/her 
+
 # Other Characters
 image female_child = "sprites/female-child.png"
 image sara = "sprites/sara.png"

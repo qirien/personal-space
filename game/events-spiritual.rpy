@@ -236,6 +236,7 @@ label spiritual_5:
     return
 
 # Reading the Koran; helping Helen Engel
+# TODO: bed rest may be outdated
 label spiritual_6:
     scene bg farm_interior with fade
     show her normal at center

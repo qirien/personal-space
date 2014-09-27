@@ -15,7 +15,7 @@ style cp_choice_button is button:
     size_group "cp_choice_button"
 
 screen computer_pad(periods):
-    tag month_menu
+    #tag month_menu
     $ renpy.choice_for_skipping()
 
     # TODO: should you be able to change the wallpaper here?!
@@ -59,8 +59,9 @@ screen computer_pad(periods):
                     has vbox
                     
                     label "Time"
-                    text "Talaam: Year [year], month [month]"
+                    text "Talaam: Year [year], month [local_month]"
                     text "Earth: Year [earth_year], month [earth_month]"
+                    # TODO: add in number of months left, or "out of" whatever
             
                 frame:
                     xfill True

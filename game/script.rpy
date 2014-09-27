@@ -2,6 +2,8 @@
 # MAIN
 # Declare global variables, images, characters, etc.
 
+define mp = MultiPersistent("cuttlefishgames")
+
 # Declare characters used by this game .
 define her = DynamicCharacter("her_name", color="#8864d5", image="her") #periwinkle
 define him = DynamicCharacter("his_name", color="#c80000", image="him") #red 
@@ -23,8 +25,8 @@ define martin = Character("Martin Peron", color="#990011", image="martin")  #dar
 define note = Character("note", kind=nvl)
 
 # defaults used for debugging purposes
-define his_name = "???"
-define her_name = "Me"
+define his_name = "Jack"
+define her_name = "Kelly"
 define his_nickname = "dear"
 define her_nickname = "lover"
 
@@ -77,7 +79,8 @@ init -200:
     define COMMUNITY_LEVEL_GOOD = 50
     define COMMUNITY_LEVEL_MAX = 60    
     define LOVED_GOOD = 30
-    define LOVED_MAX = 50
+    define LOVED_MAX = 60
+    define SKILL_SAVED_MAX = 60
 
     #Technical variables used to control how the game displays
     # Custom transitions, positions, etc.
@@ -120,6 +123,22 @@ label start:
   
 
     scene bg stars with fade
+
+    if (persistent.times_beaten):
+        "Do you want to use New Game+ data to start skills at levels from last game?"
+        menu:
+            "Yes.":
+                "OK, initializing stats to previous levels, up to [SKILL_SAVED_MAX]."
+                $ skill_domestic = persistent.skill_domestic
+                $ skill_creative = persistent.skill_creative
+                $ skill_technical = persistent.skill_technical
+                $ skill_spiritual = persistent.skill_spiritual
+                $ skill_social = persistent.skill_social
+                $ skill_knowledge = persistent.skill_knowledge
+                $ skill_physical = persistent.skill_physical
+                
+            "No.":
+                "OK, we will not use New Game+ data."
 
     "Do I want to remember how it all began?"
     # TODO: Remove this, or change it somehow?

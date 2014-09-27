@@ -339,7 +339,7 @@ label msg_22:
     thuc_c "That, or it could be your old love letters that I let her read. I knew there was a reason I kept them all."
     julia_c "Thuc!!\n"
 
-    brennan "Ahhh, Tomas, you're a lucky man. Though I don't envy you having Julia for a mother-in-law...."
+    brennan_c "Ahhh, Tomas, you're a lucky man. Though I don't envy you having Julia for a mother-in-law...."
     martin_c "Man?! He's still a boy... Though if he's old enough to get married..."
     julia_c "A man is as a man does. Tomas is more of a man than some here, at least."
     brennan_c "I stand by what I said."
@@ -351,9 +351,10 @@ label msg_23:
     her_c "Not yet... I'm not due for another month."
     him_c "She's been sleeping a lot, trying to store it up for the nights ahead."
     helen_c "Ohhh, if only it worked that way!\n"
+    nvl clear
 
     naomi_c "I wanted to announce that I will be asking each person to come in for a visit with me, just to make sure everyone is doing okay. I'm asking everyone, so please don't assume something's wrong when I contact you."
-    natalia_c "This doesn't have anything to do with shampoo incident, does it?"
+    natalia_c "This doesn't have anything to do with the shampoo incident, does it?"
     naomi_c "Not at all. Just that it's been almost two years since we arrived."
     natalia_c "After your honesty sermon yesterday I just wanted to make sure."
     julia_c "Hit you a little hard, did it?"
@@ -362,6 +363,7 @@ label msg_23:
     ilian_c "I suggest you both stop arguing, since right after the sermon you both returned items you had \"borrowed\" from the storehouse."
     brennan_c "Ilian! Shame on you!"
     ilian_c "What? It stopped their argument, didn't it?"
+    nvl clear
     brennan_c "You stopped it just as it was getting good!"
     julia_c "This is none of your business, Mr. Callahan."
     natalia_c "Shut up, Brennan."
@@ -370,8 +372,11 @@ label msg_23:
     return
              
 label msg_24:
-    boss_c "I know we're all looking forward to a few new supplies from the new ship, but let's remember to take only what we need.\n"
+    boss_c "I know we're all looking forward to a few new supplies from the new ship, but let's still remember to conserve our resources."
+        
+    return
     
+label msg_25:
     if (is_pregnant):
         julia_c "Congratulations to [his_name] and [her_name] on the birth of their new baby, [baby_name]!"
         sara_c "She's adorable! Yay!"
@@ -393,9 +398,7 @@ label msg_24:
         thuc_c "Congratulations!"
         julia_c "Congratulations. I can serve as midwife when the time comes, if you would like."
         
-    return
-    
-label msg_25:
+    nvl clear
     if (((community_level < COMMUNITY_LEVEL_OK) and (loved < 0)) or wants_to_leave):
         sara_c "I'm going to miss you, [her_name]!!!"
         helen_c "What? [her_name]'s leaving? Is [his_name] leaving, too?"
