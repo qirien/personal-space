@@ -1475,7 +1475,7 @@ label follow_him:
 
 # Helper function for month 11
 label goto_ocean:
-    scene bg talam with fade
+    scene bg path with fade
     "There wasn't a road going out to the ocean, so we had to make our way through wild vegetation."     
     "We had some minor run-ins with small insects, but nothing too surprising." 
     scene bg ocean with fade
@@ -1531,22 +1531,30 @@ label goto_ocean:
     lily "O-oh!"
     "[ocean_character] looked on in horror as I jabbed the animal with my shovel. As I contacted it, its arm fell off, still wrapped around Lily."
     if (skill_physical >= 40):
+        show her at midleft with move
         "Lily had a strange look on her face, so I carried her further inland so she could sit down."
         "She wasn't blinking, so I pinched her a few times."
         lily "Please stop that. What happened? Did I fall asleep?"
     elif (skill_knowledge >= 40):
         "Lily appeared to be temporarily paralyzed, so I motioned to [ocean_character] to help me carry her further inland."
+        show her at right with move
+        if (ocean_character == "Sven"):
+            show sven at midleft with move
+        elif (ocean_character == "Brennan"):
+            show brennan at midleft with move
+        else:
+            show sara at midleft with move
         "I was trying to think of what I could do to help her when she came out of her trance."
         lily "W-what happened? Did I fall asleep?"
     else:
         "I had no idea what to do next. I just stood there, scared."
         show her at right with move
         if (ocean_character == "Sven"):
-            show sven at midright with move
+            show sven at midleft with move
         elif (ocean_character == "Brennan"):
-            show brennan at midright with move
+            show brennan at midleft with move
         else:
-            show sara at midright with move
+            show sara at midleft with move
             
         "[ocean_character] rushed over to catch Lily as she collapsed."            
         her surprised "Umm..."
@@ -1691,8 +1699,9 @@ label monthly_event_11:
 
             call goto_ocean
 
-    scene bg talam with fade
-    
+    scene bg path with fade
+    show lily at midleft
+    show her normal at midright with dissolve
     "After Lily got her bearings, we made the long trip back."
     her surprised "Can you remember anything from your dream?"
     lily "My... dream?"
@@ -2924,6 +2933,7 @@ label monthly_event_19:
                 "It was too much work. We had more important things to worry about than clothes, anyway."
     return
 
+# MONTH 20 - Trouble sleeping
 label monthly_event_20:
     scene bg bedroom with fade
     show overlay night
@@ -3017,7 +3027,7 @@ label monthly_event_20:
             $ relaxed -= 2
     return
 
-# Early frost kills lots of crops
+# MONTH 21 Early frost kills lots of crops
 # uses knowledge, technical, social
 label monthly_event_21:
     scene bg farm_interior with fade

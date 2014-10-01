@@ -41,6 +41,7 @@ label month01:
     $ month = 0
     scene black with fade
     # TODO: how do you do this in Android? Does help file work there?
+    # TODO: Have a tutorial about the computer pad.
     if renpy.variant('touch'):
         "To access the menu and save your game, right-click or press \"Esc\". For more help, click on the \"Help\" option in that menu."
     else:
@@ -126,7 +127,6 @@ label day:
     # Now, we call the day planner, which may set the act variables
     # to new values. We call it with a list of periods that we want
     # to compute the values for.
-    # call screen day_planner(["Work", "Skills", "Free Time"])
     call screen computer_pad(["Work", "Skills", "Free Time"]) 
 
     
@@ -135,7 +135,7 @@ label job_focus:
 
     scene black
     # Tell the user what month it is.
-    centered "{color=#ffffff}Month [month] out of 25\n\nAt Work{/color}"
+    centered "{color=#ffffff}Month [month] of 25\n\nAt Work{/color}"
     play music "music/Isaiah.ogg" fadeout 3.0
 
     # Set these variables to appropriate values, so they can be

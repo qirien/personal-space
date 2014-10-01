@@ -18,7 +18,7 @@ screen computer_pad(periods):
     #tag month_menu
     $ renpy.choice_for_skipping()
 
-    # TODO: should you be able to change the wallpaper here?!
+    add "bg/silk-gray.jpg"
     add "bg/computer-pad.png"
             
     text "User {color=#888}[her_name]{/color} has logged on." size 12 xalign 0.1 ypos 20 color "FFFFFF"
@@ -56,36 +56,45 @@ screen computer_pad(periods):
                 frame:
                     xfill True
                     ypos 30
-                    has vbox
-                    
-                    label "Time"
-                    text "Talaam: Year [year], month [local_month]"
-                    text "Earth: Year [earth_year], month [earth_month]"
-                    # TODO: add in number of months left, or "out of" whatever
-            
+                    vbox:
+                        xfill True
+                        
+                        label "Time"
+                        text "Talaam: Year [year], month [local_month]"
+                        text "Earth: Year [earth_year], month [earth_month]"
+                        $ shuttle_months = 25-month
+                        text "{i}{size=14}[shuttle_months] months until shuttle arrives.{/size}{/i}"
+                
                 frame:
                     xfill True
                     ypos 60
-                    has vbox
-                    
-                    label "Health"
-                    if (month == 14):
-                        text "You are in poor health."
-                    else:
-                        text "You are in good health."
-                    
-                    $ stress_level = "normal"
-                    if (relaxed <= -5):
-                        $ stress_level = "high"
-                    elif (relaxed >= 5):
-                        $ stress_level = "low"
-                    text "Your stress level is [stress_level]."
-                    if (is_pregnant or is_pregnant_later):
-                        text "Trimester: [trimester]"                
+                    vbox:
+                        xfill True
                         
+                        
+                        # Display health stats based on month, pregnancy, stress, etc.
+                        label "Health"
+                        if ((is_pregnant or is_pregnant_later) and (trimester != "third")):
+                            text "Blood Pressure... {color=FF0000}Low{/color}"
+                            text "Pulse Rate...{color=FF0000}Fast{/color}"
+                        elif (relaxed <= -5):
+                            text "Blood Pressure... {color=FF0000}High{/color}"
+                            text "Pulse Rate...{color=FF0000}Fast{/color}"
+                        else:
+                            text "Blood Pressure... {color=00FF00}OK{/color}"
+                            text "Pulse Rate...{color=00FF00}OK{/color}"
+                        if ((month == 14) or (month == 24)):
+                            text "Temperature...{color=FF0000}High{/color}"
+                        else:
+                            text "Temperature...{color=00FF00}OK{/color}"
+                        
+                        if (is_pregnant or is_pregnant_later):
+                            text "Pregnancy: [trimester] trimester."
+                            
                 frame:
+                    # TODO: this should be aligned with Colony Messages?
                     xalign 0.5
-                    ypos 100
+                    ypos 70
                     textbutton "Skills":
                         action Show("skill_screen")
                     
@@ -112,10 +121,18 @@ screen computer_pad(periods):
                     text "Season: [season]"
                     text "Weather: [weather]"
                     
+                # TODO: have something to report community_level ?
+                frame:
+                    xfill True
+                    xalign 0.5
+                    ypos 30
+                    textbutton "Colony Messages" xalign 0.5:
+                        action Jump("monthly_messages")
+                        
                 frame:
                     xfill True
                     ymaximum 100
-                    ypos 30
+                    ypos 60
                     label "Music Player"
                     # TODO: after reloading, music does not play? or shows as "None"?
                     $ current_song = renpy.music.get_playing()
@@ -140,12 +157,7 @@ screen computer_pad(periods):
                     else:
                         imagebutton auto "gui/play_%s.png" xalign 0.5 yalign 1.0 action pop_songs.Play()
                     imagebutton auto "gui/next_%s.png" xalign 0.7 yalign 1.0 action pop_songs.Next()
-                frame:
-                    xfill True
-                    xalign 0.5
-                    ypos 60
-                    textbutton "Colony Messages" xalign 0.5:
-                        action Jump("monthly_messages")
+
                         
             # Right column - skills
             vbox:
@@ -155,8 +167,7 @@ screen computer_pad(periods):
     # Start music every time this screen is shown
     on "replace" action pop_songs.Play()
                 
-
-# TODO: using a jump messes up our call stack here, so the next things won't work
+# TODO: Is this messing up our music?
 label monthly_messages:
     $ message = "msg_" + `month`
     nvl clear
@@ -233,20 +244,63 @@ screen grid_test:
             
             
 screen heart_display:
-    $ image_name = "GUI/heart-normal.png"
-    if (loved >= LOVED_MAX):
-        add "GUI/heart-largest.png"
-    elif (loved >= (LOVED_MAX/1.5)):
-        add "GUI/heart-larger.png"
-    elif (loved >= (LOVED_MAX/3)):
-        add "GUI/heart-large.png"
-    elif (loved >= (LOVED_MAX/6)):
-        add "GUI/heart-normal.png"
-    elif (loved >= 0):
-        add "GUI/heart-small.png"
-    elif (loved >= -(LOVED_MAX/6)):
-        add "GUI/heart-smaller.png"
-    else:
-        add "GUI/heart-smallest.png"
-    
+    hbox:
+        # Add a small headshot of her depending on how relaxed/stressed she is
+        if (relaxed >= 10):
+            add "her happy head"
+        elif (relaxed >= 0):
+            add "her normal head"
+        elif (relaxed >= -5):
+            add "her concerned head"
+        else:
+            add "her sad head"
+
+        # Add a heart whose size depicts their relationship status
+        if (loved >= LOVED_MAX):
+            add "GUI/heart-largest.png"
+        elif (loved >= (LOVED_MAX/1.5)):
+            add "GUI/heart-larger.png"
+        elif (loved >= (LOVED_MAX/3)):
+            add "GUI/heart-large.png"
+        elif (loved >= (LOVED_MAX/6)):
+            add "GUI/heart-normal.png"
+        elif (loved >= 0):
+            add "GUI/heart-small.png"
+        elif (loved >= -(LOVED_MAX/6)):
+            add "GUI/heart-smaller.png"
+        else:
+            add "GUI/heart-smallest.png"
         
+        # Add a small headshot of him depending on his mood.
+        if (month < 4):
+            add "him happy head"
+        elif (month == 5):
+            add "him normal head"
+        elif (month == 6):
+            add "him concerned head"
+        elif (month == 10):
+            add "him concerned head"
+        elif (month == 12):
+            add "him annoyed head"            
+        elif (month == 13):
+            add "him concerned head"
+        elif (month == 15):
+            add "him happy head"
+        elif (month == 19):
+            add "him annoyed head"
+        elif (month == 20):
+            add "him normal head"
+        elif (month == 21):
+            add "him concerned head"
+            
+        # If no special event, then his mood based on love stat
+        else:
+            if (loved >= 5):
+                add "him happy head"
+            elif (loved >= 0):
+                add "him normal head"
+            elif (loved >= -5):
+                add "him concerned head"
+            else:
+                add "him annoyed head"
+            

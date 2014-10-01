@@ -18,6 +18,7 @@ init -100 python:
     # Buttons.
     style.dp_choice_button = Style(style.button)
     style.dp_choice_button_text = Style(style.button_text)
+    style.dp_choice.size_group = "dp_choice_button"
 
     style.dp_done_button = Style(style.button)
     style.dp_done_button_text = Style(style.button_text)
@@ -92,6 +93,7 @@ screen display_planner(periods):
                             $ num_choices = len(this_period.acts)
                             $ choice_rows = ((num_choices-1) // 2) + 1
                             grid 2 choice_rows: 
+                            # TODO: some buttons change size after being deselected?
                             #vbox:
                                 style_group "dp_choice"
                                 for name, curr_val, enable, should_show in this_period.acts:

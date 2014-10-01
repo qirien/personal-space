@@ -72,8 +72,22 @@ image her surprised = "sprites/her-surprised.png"
 image her serious = "sprites/her-serious.png"
 image her sleeping = "sprites/her-sleeping.png"
 
+define SMALL_IMAGE_SCALE = 0.55
+define SMALL_IMAGE_CROP = 90
+
 # TODO: Add tiny avatars for message board.
-# TODO: add small images for him/her 
+# TODO: add small images for him/her for computer pad moods
+image her sad head = LiveCrop((0, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/her-sad.png", SMALL_IMAGE_SCALE))
+image her concerned head = LiveCrop((0, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/her-concerned.png", SMALL_IMAGE_SCALE))
+image her serious head = LiveCrop((0, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/her-serious.png", SMALL_IMAGE_SCALE))
+image her normal head = LiveCrop((0, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/her.png", SMALL_IMAGE_SCALE))
+image her happy head = LiveCrop((0, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/her-happy.png", SMALL_IMAGE_SCALE))
+
+image him concerned head = LiveCrop((0, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/him-concerned.png", SMALL_IMAGE_SCALE))
+image him annoyed head = LiveCrop((0, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/him-annoyed.png", SMALL_IMAGE_SCALE))
+image him normal head = LiveCrop((0, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/him.png", SMALL_IMAGE_SCALE))
+image him happy head = LiveCrop((0, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/him-happy.png", SMALL_IMAGE_SCALE))
+
 
 # Other Characters
 image female_child = "sprites/female-child.png"
