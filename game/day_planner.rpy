@@ -70,8 +70,7 @@ init -100 python:
 screen day_planner(periods):
     # indicate to Ren'Py engine that this is a choice point
     $ renpy.choice_for_skipping()
-    window:
-        style_group "dp"  
+    window:  
         use display_stats(True, True, True, True)
         use display_planner(periods)            
             
@@ -94,7 +93,6 @@ screen display_planner(periods):
                             $ choice_rows = ((num_choices-1) // 2) + 1
                             grid 2 choice_rows: 
                             # TODO: some buttons change size after being deselected?
-                            #vbox:
                                 style_group "dp_choice"
                                 for name, curr_val, enable, should_show in this_period.acts:
                                     $ show_this = eval(should_show)
@@ -107,6 +105,9 @@ screen display_planner(periods):
                                             textbutton name action SetField(store, this_period.var, curr_val)
                                         else:
                                             textbutton name
+                                    #if we're not showing this, leave a blank space in the grid
+                                    else: 
+                                        text ""
                 
                                     if show_this and enable and selected:
                                         $ valid_choice = True

@@ -100,6 +100,7 @@ init python:
     pop_songs.add("music/Dandelion.ogg", always_unlocked = True)
     pop_songs.add("music/Shanghai_20_00.ogg", always_unlocked = True)
     pop_songs.add("music/Alpha.ogg", always_unlocked = True)
+    pop_songs.add("music/YouUndone.ogg")
 
 # Splashscreen before the main menu
 label splashscreen:
@@ -125,8 +126,8 @@ label start:
     scene bg stars with fade
 
     if (persistent.times_beaten):
-        "Do you want to use New Game+ data to start skills at levels from last game?"
         menu:
+            "New Game+ data found. Do you want to use New Game+ data to start skills at levels from last game?"
             "Yes.":
                 "OK, initializing stats to previous levels, up to [SKILL_SAVED_MAX]."
                 $ skill_domestic = persistent.skill_domestic
@@ -172,7 +173,7 @@ label start:
             #jump monthly_event_25
             #jump test_positions
             #jump test_inputter
-            call screen computer_pad(["Work", "Skills", "Free Time"])
+            jump show_credits
 
     "I thought I knew what love was."
     "Smiling ridiculously whenever I thought of him."

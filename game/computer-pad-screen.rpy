@@ -134,7 +134,6 @@ screen computer_pad(periods):
                     ymaximum 100
                     ypos 60
                     label "Music Player"
-                    # TODO: after reloading, music does not play? or shows as "None"?
                     $ current_song = renpy.music.get_playing()
                     $ artist = ""
                     $ song_title = ""
@@ -164,10 +163,9 @@ screen computer_pad(periods):
                 xfill True
                 use display_planner(periods)
      
-    # Start music every time this screen is shown
-    on "replace" action pop_songs.Play()
+    # Start music every time this screen is shown if it's not already playing.
+    on "show" action If(renpy.music.is_playing(), true=None, false=pop_songs.RandomPlay())
                 
-# TODO: Is this messing up our music?
 label monthly_messages:
     $ message = "msg_" + `month`
     nvl clear
@@ -177,7 +175,6 @@ label monthly_messages:
     call screen computer_pad(["Work", "Skills", "Free Time"])
  
 # Display our skills in a window on top of the computer pad
-# TODO: Make sure the order matches the order on the Skill Button section.
 screen skill_screen:
         frame:
             style_group "cp"

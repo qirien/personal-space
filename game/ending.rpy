@@ -365,6 +365,10 @@ label good_ending:
 
 # Credits
 label show_credits:
+    
+    # TODO: remix this so it's shorter and gets to the point quicker
+    play music "music/YouUndone.ogg" fadeout 3.0
+    
     $ loved_ceiling = loved
     if (loved_ceiling > LOVED_MAX):
         $ loved_ceiling = LOVED_MAX
@@ -376,37 +380,38 @@ label show_credits:
     "You scored [loved_ceiling] out of [LOVED_MAX] relationship points, and [community_ceiling] out of [COMMUNITY_LEVEL_MAX] comunity points."
     
     # TODO: show images from the game during this?
-    # TODO: make it so mouse clicks don't skip the whole thing?
     # TODO: Double check EVERYTHING we used is in here!  Check Credits.txt, music, sfx, bg directories
+    
+    # If the user has beat the game before, allow them to skip the credits.
+    $ skippable = not persistent.times_beaten
     scene black with fade
     hide text with fade
     show text "Credits" with fade
-    with Pause(2.0)
+    $ renpy.pause(2.0, hard=skippable)
     hide text with fade
     show text "Written, Produced, and Directed by Andrea Landaker" with fade 
-    with Pause(2.5)
+    $ renpy.pause(3.0, hard=skippable)
     hide text with fade
     show text "Additional Writing and Design by Rachel Helps" with fade 
-    with Pause(2.5)
+    $ renpy.pause(3.0, hard=skippable)
     hide text with fade
     show text "Character Art by {a=http://clarissahelps.com}Clarissa Helps{/a}" with fade 
-    with Pause(2.5)
+    $ renpy.pause(3.0, hard=skippable)
     hide text with fade
-    show text "With music by:\nEhren Starks\nJan Hanford\nChad Lawson\nGiorgio Costantini\nKalabi\nBenji Goodrich\nGianmarco Leona" with fade
-    show text "Licensed from {a=http://www.magnatune.com}Magnatune{/a} under the {a=http://creativecommons.org/licenses/by-nc-sa/1.0/}BY-NC-SA Creative Commons License{/a}"
-    with Pause(4.0)
+    show text "With music by:\nEhren Starks\nJan Hanford\nChad Lawson\nGiorgio Costantini\nKalabi\nBenji Goodrich\nGianmarco Leona\n\nLicensed from {a=http://www.magnatune.com}Magnatune{/a} under the {a=http://creativecommons.org/licenses/by-nc-sa/1.0/}BY-NC-SA Creative Commons License{/a}" with fade
+    $ renpy.pause(4.0, hard=skippable)
     hide text with fade     
     show text "With background images by:\nLisa Horner\nWes Landaker\nAndrea Landaker\nNASA\nBurningwell\nESO/L. Calçada\n\nAnd the following Wikimedia Commons users:\nRandwick\nLabpluto123\nWrlctech\nEbyabe\nAvi/Skrewtap\nMarcus Budde\nAluter\nDorothea Witter-Rieder\nAnna Frodesiak\nAndrei Stroe\nJean-Pierre\n\nFiltered with Fotosketcher" with fade
-    with Pause(4.0)
+    $ renpy.pause(4.0, hard=skippable)    
     # TODO: Add sound Credits
     
     hide text with fade   
     show text "This open-source work is licensed under a {a=http://creativecommons.org/licenses/by-nc-sa/4.0/}Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License{/a}." with fade 
-    with Pause(2.5)
+    $ renpy.pause(3.0, hard=skippable)
     
     hide text with fade   
     show text "Made with Ren'Py" with fade 
-    with Pause(2.5)
+    $ renpy.pause(3.0, hard=skippable)
     hide text with fade
 
     "You have now unlocked New Game+! If you play again, you can keep your progress in your skills up to level [SKILL_SAVED_MAX], to make mastering skills easier."
@@ -431,4 +436,5 @@ label show_credits:
     else:
         $ persistent.times_beaten += 1
             
+    stop music fadeout 3.0
     $ renpy.full_restart()

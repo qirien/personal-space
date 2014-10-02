@@ -172,8 +172,8 @@ init -1 python hide:
 
     ## Sounds that are used when entering and exiting the game menu.
 
-    config.enter_sound = "sfx/click.mp3"
-    config.exit_sound = "sfx/click.mp3"
+    config.enter_sound = "sfx/click.ogg"
+    config.exit_sound = "sfx/click.ogg"
 
     ## A sample sound that can be played to check the sound volume.
 

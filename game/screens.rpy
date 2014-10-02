@@ -67,12 +67,12 @@ style button:
     insensitive_background Frame("GUI/button_insensitive.png", 15, 15)
     selected_background Frame("GUI/button_selected.png", 15, 15)
     yminimum 40
-    activate_sound "sfx/click.mp3"
+    activate_sound "sfx/click.ogg"
 
 style button_text:
     color "#fff"
     font "DejaVuSans.ttf"
-    insensitive_color "#666" # TODO: get rid of weird drop shadow
+    insensitive_color "#666"
     xalign 0.5
 
 style large_button:
@@ -82,7 +82,7 @@ style large_button:
     selected_background Frame("GUI/button_selected.png", 15, 15)
     yminimum 80
     xminimum 40
-    activate_sound "sfx/click.mp3"
+    activate_sound "sfx/click.ogg"
 
 style large_button_text:
     color "#fff"
