@@ -121,7 +121,7 @@ screen display_planner(periods):
                                     text ""                                
                                                        
             if (can_continue):
-                textbutton dp_done_title style "dp_done_button" xalign 1.0 action Jump("job_focus")
+                textbutton dp_done_title style "dp_done_button" xalign 0.5 action Jump("job_focus")
             else:
-                textbutton dp_done_title style "dp_done_button" xalign 1.0
+                textbutton dp_done_title style "dp_done_button" xalign 0.5
 

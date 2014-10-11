@@ -4,6 +4,8 @@
 # Clarissa says: it would be nice if the horizontal spaces lined up more so it looks less busy.
 # Or separate out into different screens? Or combine boxes?
 
+# TODO: This screen is messed up in 6.18; check with newest version of Ren'Py
+
 style cp_text is text:
     color "#222"
     
@@ -11,6 +13,8 @@ style cp_label_text is label_text:
     color "#222"
     size 20
     
+    
+# TODO: weird outline
 style cp_label is label:
     xalign 0.5
     
@@ -39,7 +43,7 @@ screen computer_pad(periods):
         
         grid 3 1:
             xfill True
-            spacing 5
+            spacing 15
             #has hbox
             
             # Left column
@@ -51,6 +55,7 @@ screen computer_pad(periods):
                 frame:
                     xfill True
                     ypos 10
+                    ysize 150
                     has vbox
                     
                     label "Relationship"
@@ -58,7 +63,7 @@ screen computer_pad(periods):
                 
                 frame:
                     xfill True
-                    ypos 30
+                    ypos 25
                     vbox:
                         xfill True
                         
@@ -70,7 +75,8 @@ screen computer_pad(periods):
                 
                 frame:
                     xfill True
-                    ypos 60
+                    ypos 40
+                    ysize 148
                     vbox:
                         xfill True
                         
@@ -94,13 +100,9 @@ screen computer_pad(periods):
                         if (is_pregnant or is_pregnant_later):
                             text "Pregnancy: [trimester] trimester."
                             
-                frame:
-                    # TODO: this should be aligned with Colony Messages?
-                    xalign 0.5
-                    ypos 70
-                    textbutton "Skills":
-                        action Show("skill_screen")
-                    
+                textbutton "Skills" xalign 0.5 ypos 50:
+                    action Show("skill_screen")
+                
             # Middle column
             vbox:
                 xalign 0.5
@@ -109,6 +111,7 @@ screen computer_pad(periods):
                 frame:
                     xfill True
                     ypos 10
+                    ysize 315
                     has vbox
                     xalign 0.5
                     
@@ -121,21 +124,16 @@ screen computer_pad(periods):
                         add "bg/weather-winter.jpg" xalign 0.5
                     else:
                         add "bg/weather-spring.jpg" xalign 0.5
+                    text ""
+                    # TODO: Capitalize
                     text "Season: [season]"
                     text "Weather: [weather]"
                     
-                # TODO: have something to report community_level ?
-                frame:
-                    xfill True
-                    xalign 0.5
-                    ypos 30
-                    textbutton "Colony Messages" xalign 0.5:
-                        action Jump("monthly_messages")
                         
                 frame:
                     xfill True
-                    ymaximum 100
-                    ypos 60
+                    ymaximum 112
+                    ypos 20
                     label "Music Player"
                     $ current_song = renpy.music.get_playing()
                     $ artist = ""
@@ -159,6 +157,14 @@ screen computer_pad(periods):
                     else:
                         imagebutton auto "gui/play_%s.png" xalign 0.5 yalign 1.0 action pop_songs.Play()
                     imagebutton auto "gui/next_%s.png" xalign 0.7 yalign 1.0 action pop_songs.Next()
+                    
+                # TODO: have something to report community_level ?
+#                frame:
+#                    xfill True
+#                    xalign 0.5
+#                    ypos 80
+                textbutton "Colony Messages" xalign 0.5 ypos 30:
+                    action Jump("monthly_messages")
 
                         
             # Right column - skills

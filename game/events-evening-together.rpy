@@ -538,7 +538,7 @@ label relax_together_a:
         show him normal at left
         show her normal at quarterleft
         with dissolve
-        "The four of us played Robot Turtles and Machine of Death."
+        "The four of us played Machine of Death."
         ilian "...which is why he never saw it coming when the piano crashed down ten stories onto his head."
         him happy "Ohhh! You got him! That was awesome."
         sara "That was way better than [her_name]'s poison-in-the-toothpaste attempt."

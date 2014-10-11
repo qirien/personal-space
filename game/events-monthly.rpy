@@ -801,6 +801,7 @@ label monthly_event_7:
                 "And the repair shop was able to fix it so it worked just fine."
             $ loved += 2
 
+    # TODO: Sometimes this scene loops?!
     scene black with fade
     play music "music/LinesBuildWalls.ogg" fadeout 3.0
     "A week later, I was reading my messages when I noticed that they were having a New Year's party."
@@ -839,7 +840,9 @@ label monthly_event_7:
             her laughing "Here's to any excuse to party!"
             him laughing "To partying!"
             $ made_love += 1
-
+    
+    "Midnight struck and we kissed. Here, in this moment, I felt like we could conquer anything..."
+    "But that was only because I didn't yet know what was in store."
     return
 
 # MONTH 8 Want to watch a movie, he is busy helping neighbor

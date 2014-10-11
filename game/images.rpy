@@ -44,6 +44,7 @@ image overlay computer_pad = "bg/computer-pad.png"
 
 
 # SPRITES
+# TODO: Make sure bottom of sprites looks good; cut off if needed
 
 # Him
 image him normal = "sprites/him.png"
@@ -78,16 +79,16 @@ define SMALL_IMAGE_CROP = 90
 
 # TODO: Add tiny avatars for message board.
 # TODO: add small images for him/her for computer pad moods
-image her sad head = LiveCrop((0, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/her-sad.png", SMALL_IMAGE_SCALE))
-image her concerned head = LiveCrop((0, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/her-concerned.png", SMALL_IMAGE_SCALE))
-image her serious head = LiveCrop((0, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/her-serious.png", SMALL_IMAGE_SCALE))
-image her normal head = LiveCrop((0, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/her.png", SMALL_IMAGE_SCALE))
-image her happy head = LiveCrop((0, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/her-happy.png", SMALL_IMAGE_SCALE))
+image her sad head = LiveCrop((5, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/her-sad.png", SMALL_IMAGE_SCALE))
+image her concerned head = LiveCrop((5, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/her-concerned.png", SMALL_IMAGE_SCALE))
+image her serious head = LiveCrop((5, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/her-serious.png", SMALL_IMAGE_SCALE))
+image her normal head = LiveCrop((5, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/her.png", SMALL_IMAGE_SCALE))
+image her happy head = LiveCrop((5, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/her-happy.png", SMALL_IMAGE_SCALE))
 
-image him concerned head = LiveCrop((0, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/him-concerned.png", SMALL_IMAGE_SCALE))
-image him annoyed head = LiveCrop((0, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/him-annoyed.png", SMALL_IMAGE_SCALE))
-image him normal head = LiveCrop((0, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/him.png", SMALL_IMAGE_SCALE))
-image him happy head = LiveCrop((0, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/him-happy.png", SMALL_IMAGE_SCALE))
+image him concerned head = LiveCrop((5, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/him-concerned.png", SMALL_IMAGE_SCALE))
+image him annoyed head = LiveCrop((5, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/him-annoyed.png", SMALL_IMAGE_SCALE))
+image him normal head = LiveCrop((5, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/him.png", SMALL_IMAGE_SCALE))
+image him happy head = LiveCrop((5, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/him-happy.png", SMALL_IMAGE_SCALE))
 
 
 # Other Characters
