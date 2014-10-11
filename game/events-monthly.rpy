@@ -1561,7 +1561,8 @@ label goto_ocean:
         lily "W-what happened? Did I fall asleep?"
 
     her normal "No, one of the purple jellies latched onto you."
-    lily "Weird. I feel like I've been dreaming for hours."
+    lily "Strange. I feel like I've been dreaming for hours."
+    # TODO: this is still awkward (see (b) )
     her serious "Its tentacle is still on you; we should probably remove it."
     lily "Oh, I'll take care of that."
     if (ocean_character == "Brennan"):
@@ -1703,6 +1704,7 @@ label monthly_event_11:
     show lily at midleft
     show her normal at midright with dissolve
     "After Lily got her bearings, we made the long trip back."
+    # TODO (b): This is awkward, make it fit with the TODO above.
     her surprised "Can you remember anything from your dream?"
     lily "My... dream?"
     show her serious

@@ -113,11 +113,11 @@ screen computer_pad(periods):
                     xalign 0.5
                     
                     label "South Camera View"
-                    if season == "summer":
+                    if (season == "summer"):
                         add "bg/weather-summer.jpg" xalign 0.5
-                    elif season == "fall":
+                    elif (season == "fall"):
                         add "bg/weather-fall.jpg" xalign 0.5
-                    elif season == "winter":
+                    elif (season == "winter"):
                         add "bg/weather-winter.jpg" xalign 0.5
                     else:
                         add "bg/weather-spring.jpg" xalign 0.5
