@@ -40,7 +40,7 @@ define sara_c = Character("Sara", color="#c64e89", image="sara", who_suffix=":",
 define thuc_c = Character("Thuc", color="a9ff22", image="thuc", who_suffix=":", kind=nvl)  #lime green
 define ilian_c = Character("Ilian", color="ffa922", image="ilian", who_suffix=":", kind=nvl) #tangerine
 define brennan_c = Character("Brennan", color="33b533", image="brennan", who_suffix=":", kind=nvl)  #irish green
-define sven_c = Character("Sven", color="cb5500", image="sven", who_suffix=":", kind=nvl)  #rusty brown
+define jed_c = Character("Jed", color="cb5500", image="jed", who_suffix=":", kind=nvl)  #rusty brown
 define natalia_c = Character("Natalia", color="ffe74a", image="natalia", who_suffix=":", kind=nvl)  #yellow
 define helen_c = Character("Helen", color="cdcfb2", image="helen", who_suffix=":", kind=nvl) #tan
 define julia_c = Character("Julia", color="#4b54cd", image="julia", who_suffix=":", kind=nvl) #icy blue
@@ -62,11 +62,11 @@ label msg_2:
     naomi_c "Please let me know if you would be interested in a weekly yoga and meditation session.\n"
 
     lily_c "I am looking for a volunteer to come to the ocean and gather guano. No experience necessary."
-    sven_c "Doubt you'll get many takers on that one, Lily."
+    jed_c "Doubt you'll get many takers on that one, Lily."
     return
     
 label msg_3:
-    sven_c "Hey, uh, I forgot who checked out the chisel set, but could you please return them?\n"
+    jed_c "Hey, uh, I forgot who checked out the chisel set, but could you please return them?\n"
 
     her_c "Happy Birthday, [his_name]!"
     him_c "Thanks, [her_name]..."
@@ -137,8 +137,8 @@ label msg_7:
     boss_c "We wanted to give everyone a time to celebrate their winter holidays, so at the end of the month we'll take a week off for those, and also to make plans for the new year."
     brennan_c "Hopefully there are plans for celebration!"
     naomi_c "Yes, I'll post a list of events for all the winter holidays, including a New Year's Eve party at the community center."
-    brennan_c "Hey, Sven, any chance you could bring some strong beverages?"
-    sven_c "I don't think you could handle my latest batch, Brennan."
+    brennan_c "Hey, Jed, any chance you could bring some strong beverages?"
+    jed_c "I don't think you could handle my latest batch, Brennan."
     brennan_c "I can't back down from that sort of challenge. Bring it on!\n"
     
     sara_c "It'll be strange to have Christmas without snow..."
@@ -155,9 +155,9 @@ label msg_8:
         julia_c "I'm so grateful for [her_name]; if it wasn't for her, my dear little Van wouldn't be with us anymore."
         her_c "I'm glad he's okay! His breathing isn't noisy, is it?"
         julia_c "No, he's completely recovered."
-        sven_c "She fixed my leg up good, too. Thanks, Doc."
+        jed_c "She fixed my leg up good, too. Thanks, Doc."
         her_c "No problem. But, next time you go up against a mill roller, get some backup first, okay?"
-        sven_c "Sure thing, Doc."
+        jed_c "Sure thing, Doc."
     elif (profession == "carpenter"):
         martin_c "The new roof works great, [her_name]. The craftsmanship is excellent; I can tell  it will last."
         her_c "Glad to hear it!."
@@ -179,9 +179,9 @@ label msg_9:
     
 label msg_10:
     boss_c "Who grew the strawberries? These are delicious!"
-    sven_c "They taste even better with some cream, Mayor G."
+    jed_c "They taste even better with some cream, Mayor G."
     boss_c "I'm sure they do - do you have any to spare?"
-    sven_c "Sure, we can work out a trade."
+    jed_c "Sure, we can work out a trade."
     return
     
 label msg_11:
@@ -191,10 +191,10 @@ label msg_11:
     
     
 label msg_12:
-    if (ocean_character == "Sven"):
-        sven_c "For the small price of shoveling guano, you too can see the beauties of the ocean! Ask Dr. Lily for details."
+    if (ocean_character == "Jed"):
+        jed_c "For the small price of shoveling guano, you too can see the beauties of the ocean! Ask Dr. Lily for details."
         her_c "Purple jelly encounter included at no additional cost!"
-        sven_c "Yeah, that critter was downright strange. Almost seemed like it knew we were there."
+        jed_c "Yeah, that critter was downright strange. Almost seemed like it knew we were there."
     elif (ocean_character == "Brennan"):
         brennan_c "Dr. Lily, I wanted to thank you for that charming excursion to the ocean."
         her_c "Yeah, it was a nice break from the routine, and such beautiful scenery!"
@@ -223,9 +223,9 @@ label msg_13:
     return
     
 label msg_14:
-    sven_c "Sure has been quiet around here lately..."
+    jed_c "Sure has been quiet around here lately..."
     martin_c "It's even quieter over here, without Josephina..."
-    sven_c "Sorry, Martin..."
+    jed_c "Sorry, Martin..."
     helen_c "How's Natalia holding up?"
     natalia_c "I'm fine."
     #TODO: brennan_c posts pic of sad kitten, everyone calls him insensitive.
@@ -237,7 +237,7 @@ label msgs_pregnant:
     him_c "Haven't decided on a name yet; we just barely found out ourselves!"
     boss_c "Congratulations!"
     naomi_c "That's wonderful!"
-    sven_c "About time!"
+    jed_c "About time!"
     ilian_c "[his_name], come by sometime, I have something for the baby..."
     lily_c "Congratulations may be premature. Approximately 15\% of pregancies end in a miscarriage during the first trimester."
     helen_c "Even so, it's something to celebrate."
@@ -263,16 +263,16 @@ label msg_15:
     return
     
 label msg_16:
-    helen_c "Has anyone seen Sven?! He didn't come home last night!"
-    naomi_c "He and Brennan got rather intoxicated last night, testing Sven's latest brew - I'll check at the community center for you."
+    helen_c "Has anyone seen Jed?! He didn't come home last night!"
+    naomi_c "He and Brennan got rather intoxicated last night, testing Jed's latest brew - I'll check at the community center for you."
     helen_c "Thanks, Naomi. Hopefully that's all it is.\n"
-    sven_c "hey baby be home soon sorry you were worried."
+    jed_c "hey baby be home soon sorry you were worried."
     helen_c "We can talk about it when you get home, dear."
-    brennan_c "Whatever she has to say, it was completely worth it, Sven. That was your best creation yet."
+    brennan_c "Whatever she has to say, it was completely worth it, Jed. That was your best creation yet."
     naomi_c "I'm sure I don't have to remind you gentlemen to make sure the community center is ready for the meeting this afternoon."
     brennan_c "No problem, we got it covered."
     brennan_c "Ha ha, get it, man?! We got it \"covered\"?! Because the floor is covered in, in--"
-    sven_c "your hilarious."
+    jed_c "your hilarious."
     return
     
 label msg_17:
@@ -289,7 +289,7 @@ label msg_18:
     julia_c "And then there's no power left for the stove!"
     lily_c "The overcast meteorological conditions of late also reduce the efficiency of the solar chargers."
     him_c "Anyone tried using the biofuel system?"
-    sven_c "Yeah, if you use wood you gotta refill it every hour or so. Not too efficient. If we had some liquid fuel it'd probably last longer."
+    jed_c "Yeah, if you use wood you gotta refill it every hour or so. Not too efficient. If we had some liquid fuel it'd probably last longer."
     ilian_c "That fuel is only for emergencies."
     him_c "Alright, I'll just charge it off the house for now."
     return
@@ -311,13 +311,13 @@ label msg_20:
     her_c "Does anyone have any protein foods they could spare? Meat, nuts, eggs, dairy...? I can trade vegetables..."    
     if (community_level < COMMUNITY_LEVEL_OK):
         natalia_c "No extra, sorry."
-        sven_c "Nope."
+        jed_c "Nope."
         thuc_c "No."
         ilian_c "The storehouse still has some protein powder."
         her_c "I was hoping to avoid that, but I guess that'll have to do."
     else:
         natalia_c "You want some eggs? Bring some of those bell peppers and tomatoes and we'll trade!"
-        sven_c "We've got milk or cheese we could trade for quinoa. I found a way to cook it so it almost tastes like grits."
+        jed_c "We've got milk or cheese we could trade for quinoa. I found a way to cook it so it almost tastes like grits."
         julia_c "I'll drop something by your house this evening."
         if (is_pregnant or is_pregnant_later):
             julia_c "You especially need the protein, since you're expecting."
@@ -368,7 +368,7 @@ label msg_23:
     julia_c "This is none of your business, Mr. Callahan."
     natalia_c "Shut up, Brennan."
     brennan_c "There, did you see how I sacrificed myself to get them to agree on something?"
-    sven_c "Downright noble of you."
+    jed_c "Downright noble of you."
     return
              
 label msg_24:

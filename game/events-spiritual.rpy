@@ -251,7 +251,7 @@ label spiritual_6:
     her annoyed "Where are we going?"
     naomi "We are needed."
     scene bg talam with fade
-    "We walked past one farm, and then another. We had been walking for about a half an hour. Finally, we reached the farthest farm from town. It belonged to the Engels - Helen and Sven were newlyweds like [his_name] and me. They were the farthest farm for a reason; they seemed to like to be by themselves."
+    "We walked past one farm, and then another. We had been walking for about a half an hour. Finally, we reached the farthest farm from town. It belonged to the Engels - Helen and Jed were newlyweds like [his_name] and me. They were the farthest farm for a reason; they seemed to like to be by themselves."
     if (profession == "doctor"):
         "I had seen her at the clinic; she was expecting a baby, but due to some complications she had to be on bed rest most of the time."
     elif (skill_social >= 30):
@@ -298,7 +298,7 @@ label spiritual_6:
     "We sat in silence for a few minutes. I didn't know what to say. I hoped Naomi would say something wise and comforting, but she didn't."
     helen "The truth is, I hate knitting."
     her surprised "You do?"
-    helen "Yes! But the one thing I hate more than knitting is feeling useless! I wish I could be helping Sven with the cows, or working at the library, or {b}something{/b} other than sitting around for three more months!"
+    helen "Yes! But the one thing I hate more than knitting is feeling useless! I wish I could be helping Jed with the cows, or working at the library, or {b}something{/b} other than sitting around for three more months!"
     helen "At least this way I'm accomplishing something, even if it's just embarassing myself."
     her serious "Helen, it's not how much we get done that counts."
     helen "What does count, then?"

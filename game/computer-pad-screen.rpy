@@ -1,6 +1,9 @@
 # Code to display our "Computer Pad" screen for planning the month, viewing skills,
 # reading colony messages, etc.
 
+# Clarissa says: it would be nice if the horizontal spaces lined up more so it looks less busy.
+# Or separate out into different screens? Or combine boxes?
+
 style cp_text is text:
     color "#222"
     

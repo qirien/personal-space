@@ -127,6 +127,7 @@ label day:
     # Now, we call the day planner, which may set the act variables
     # to new values. We call it with a list of periods that we want
     # to compute the values for.
+    scene bg gray_silk
     call screen computer_pad(["Work", "Skills", "Free Time"]) 
 
     

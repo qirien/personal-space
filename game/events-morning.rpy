@@ -86,12 +86,12 @@ label work_0:
     hide ilian
     hide sara
     with moveoutright
-    show sven at midright with moveinright
+    show jed at midright with moveinright
     show helen at right with moveinright
-    boss "Sven is in charge of the library, so if you need to research something or print something out, head over there. He and his wife Helen are also experts on raising cattle, and will be starting a ranch up to the north."
-    sven "Hey, y'all. Don't be strangers!"
+    boss "Jed is in charge of the library, so if you need to research something or print something out, head over there. He and his wife Helen are also experts on raising cattle, and will be starting a ranch up to the north."
+    jed "Hey, y'all. Don't be strangers!"
     helen "Hi..."
-    hide sven
+    hide jed
     hide helen
     with moveoutright
     boss "Next I want to introduce our farmers."
@@ -263,12 +263,12 @@ label work_1:
         her surprised "Oh! What happened?"
         show her normal at quarterright with dissolve
         show him annoyed at quarterleft with moveinleft
-        show sven at midleft with moveinleft
-        "[his_name] carried Sven in and set him in the exam table. I could tell his leg was hurt but he was not in immediate danger. I took his vitals while Sven filled me in."
+        show jed at midleft with moveinleft
+        "[his_name] carried Jed in and set him in the exam table. I could tell his leg was hurt but he was not in immediate danger. I took his vitals while Jed filled me in."
         show her serious
-        him serious "We were putting together a mill for grain. But one of the heavy cast iron rollers fell on Sven here. We tried not to move his leg while we carried him over."
-        her normal "Good, thank you. You'll be all right, Sven."
-        sven "Thanks, doc. Hurts like hell, though."
+        him serious "We were putting together a mill for grain. But one of the heavy cast iron rollers fell on Jed here. We tried not to move his leg while we carried him over."
+        her normal "Good, thank you. You'll be all right, Jed."
+        jed "Thanks, doc. Hurts like hell, though."
         him normal "I'll see you later, [her_name]."
         her normal "Hey, thanks for bringing him in."
         hide him
@@ -278,7 +278,7 @@ label work_1:
         play sound "sfx/radio.mp3"
         # TODO: should we show sara as a side image here?
         "Sara on the radio" "Doctor! You've gotta come right away; one of the kids stopped breathing - I think he swallowed something."
-        "I started out the door while I talked to her on the radio. I hated to leave Sven alone, but this was urgent."
+        "I started out the door while I talked to her on the radio. I hated to leave Jed alone, but this was urgent."
         her "I'm on my way. How old is he?"
         "Sara on the radio" "It's Van Nguyen, he's three!"
         her "Do you know how to do the Heimlich?"
@@ -304,19 +304,19 @@ label work_1:
         play sound "sfx/cough.mp3"
         "Finally, he coughed and started to breathe."
         julia "Van! Oh, my boy!"
-        "I didn't have time to stick around for adulation, though - Sven was still waiting for me to help his leg in the clinic."
+        "I didn't have time to stick around for adulation, though - Jed was still waiting for me to help his leg in the clinic."
         scene bg clinic with fade
-        show sven at midleft with dissolve
+        show jed at midleft with dissolve
         show her normal at midright with moveinleft
         her "Sorry to leave you waiting so long; I know you're hurting- oh!"
         show her surprised
         "I had bandaged up his leg, but the wound had reopened and he was bleeding a lot."
-        sven "Doc, I tried to, to, stop the bleeding..."
+        jed "Doc, I tried to, to, stop the bleeding..."
         her serious "It's okay, I'm here now. You're going to be just fine..."
-        "I took care of his leg, and several hours later, Sven woke up."
-        sven "Hey, is Van okay?"
+        "I took care of his leg, and several hours later, Jed woke up."
+        jed "Hey, is Van okay?"
         her surprised "Van? Oh, yes, I got there just in time."
-        sven "They really ought to have someone in here helping you out. I mean, what if you were in the middle of surgery or something?"
+        jed "They really ought to have someone in here helping you out. I mean, what if you were in the middle of surgery or something?"
         show her normal
         menu:
             "Do I need help?"
@@ -1319,8 +1319,8 @@ label brennan_confess:
             natalia "Or he was just doing that so you wouldn't suspect him!"
             hide natalia
             hide martin
-            show sven at left with dissolve
-            sven "Yeah, there's no way we can trust him after this!"
+            show jed at left with dissolve
+            jed "Yeah, there's no way we can trust him after this!"
             show him annoyed at quarterright
             him annoyed "Not that we trusted him much before..."
             show her serious at right
@@ -1331,12 +1331,12 @@ label brennan_confess:
             hide julia
             show sara at midleft with dissolve
             sara "My family is going through a lot right now... at least, they were four years ago. Being able to write back and forth to them will help me so much."
-            show sven at left with dissolve
-            sven "..."
+            show jed at left with dissolve
+            jed "..."
             him concerned "..."
             her serious "I'm not asking you to trust Brennan. But can you forgive him enough to let him keep his place here?"
             brennan "I always hoped that the QEC would work well enough that eventually you could all use it... but they wanted to keep it a secret. Now that the secret's out, they have decided to let you all use it."
-            sven "I don't think you got a choice, right?"
+            jed "I don't think you got a choice, right?"
             brennan "Even if you stole the device from me, they could simply turn off their receiver, or refuse to pass on your messages. It might be better to retain their goodwill."
             hide sara 
             show julia at midright with dissolve
