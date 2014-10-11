@@ -71,7 +71,8 @@ screen computer_pad(periods):
                         text "Talaam: Year [year], month [local_month]"
                         text "Earth: Year [earth_year], month [earth_month]"
                         $ shuttle_months = 25-month
-                        text "{i}{size=14}[shuttle_months] months until shuttle arrives.{/size}{/i}"
+                        if (month >= 2):
+                            text "{i}{size=14}[shuttle_months] months until shuttle arrives.{/size}{/i}"
                 
                 frame:
                     xfill True

@@ -80,8 +80,10 @@ screen display_planner(periods):
             label "Focus" yalign 0.0 xalign 0.5 style "cp_label"
             vbox:
                 $ can_continue = True
-                for p in periods:
-                    frame:
+                frame:
+                    ysize 437
+                    has vbox
+                    for p in periods:
                         vbox:
                             label p
                             if p not in __periods:
