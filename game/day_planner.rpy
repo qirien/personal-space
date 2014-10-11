@@ -25,7 +25,9 @@ init -100 python:
 
     # Labels.
     style.dp_label = Style(style.label)
-    style.dp_label_text = Style(style.label_text)
+    style.dp_label_text = Style(style.text)
+    style.dp_label_text.color = "#000"
+    style.dp_label_text.font = "DejaVuSans.ttf"
 
     # The title of the done button.
     dp_done_title = "All Done"
@@ -77,7 +79,7 @@ screen day_planner(periods):
 screen display_planner(periods):            
         vbox:
             style_group "dp"        
-            label "Focus" yalign 0.0 xalign 0.5 style "cp_label"
+            label "Focus" yalign 0.0 xalign 0.5 text_style "cp_header_text"
             vbox:
                 $ can_continue = True
                 frame:

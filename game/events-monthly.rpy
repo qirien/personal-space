@@ -1833,7 +1833,7 @@ label monthly_event_12:
     if (relaxed >= 0):
         her serious "Here I am...here for you and loving you, [his_nickname]."
         "We held each other for a long time. I felt there was so much I wanted to say, I tried to put it all into my hug and strengthen him and help him."
-        $ loved += 5        
+        $ loved += 5
     else:
         her serious "Yeah, I'm here for you."
         "That's what I said, but inside I just felt annoyed. I had enough problems of my own without worrying about his."

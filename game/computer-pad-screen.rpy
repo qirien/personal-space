@@ -1,18 +1,23 @@
 # Code to display our "Computer Pad" screen for planning the month, viewing skills,
 # reading colony messages, etc.
 
-# Clarissa says: it would be nice if the horizontal spaces lined up more so it looks less busy.
-# Or separate out into different screens? Or combine boxes?
+# Clarissa says: Sans font, white label
 
 # TODO: This screen is messed up in 6.18; check with newest version of Ren'Py
 
 style cp_text is text:
     color "#222"
+    font "DejaVuSans.ttf"
     
-style cp_label_text is label_text:
-    color "#222"
-    size 20
-    
+style cp_label_text is text:
+    color "#000"
+    size 18
+    font "DejaVuSans.ttf"
+
+style cp_header_text is cp_label_text:
+    color "#FFF"
+    size 22
+    font "DejaVuSans.ttf"
     
 # TODO: weird outline
 style cp_label is label:
@@ -28,14 +33,16 @@ screen computer_pad(periods):
     add "bg/silk-gray.jpg"
     add "bg/computer-pad.png"
             
-    text "User {color=#888}[her_name]{/color} has logged on." size 12 xalign 0.1 ypos 20 color "FFFFFF"
+    text "{font=DejaVuSans.ttf}User {color=#888}[her_name]{/color} has logged on.{/font}" size 12 xalign 0.1 ypos 20 color "FFFFFF"
     frame:
         style_group "cp"
         background None
         
         # fit our window to the size of the computer screen
-        xpadding 50
-        ypadding 35
+        top_padding 40
+        bottom_padding 20
+        left_padding 50
+        right_padding 55
 
         yfill True
         xfill True
@@ -50,7 +57,7 @@ screen computer_pad(periods):
             vbox:
                 yalign 0.0
                 
-                label "Personal Status"
+                label "Personal Status" text_style "cp_header_text"
                 # TODO: Make these bars?
                 frame:
                     xfill True
@@ -64,6 +71,7 @@ screen computer_pad(periods):
                 frame:
                     xfill True
                     ypos 25
+                    ysize 108
                     vbox:
                         xfill True
                         
@@ -108,7 +116,7 @@ screen computer_pad(periods):
             vbox:
                 xalign 0.5
                 
-                label "Colony Status"
+                label "Colony Status" text_style "cp_header_text"
                 frame:
                     xfill True
                     ypos 10
