@@ -14,7 +14,7 @@ screen message_board:
 
         has vbox:
             style "nvl_vbox"
-        label "Messages"
+        text "{b}Messages{/b}"
 
         # Display dialogue.
         for who, what, who_id, what_id, window_id in dialogue:

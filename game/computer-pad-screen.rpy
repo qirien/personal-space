@@ -7,19 +7,21 @@
 
 style cp_text is text:
     color "#222"
-    font "DejaVuSans.ttf"
+    font "fonts/Exo2.otf"
     
 style cp_label_text is text:
     color "#000"
-    size 18
-    font "DejaVuSans.ttf"
+    #size 18
+    bold True
+    font "fonts/Exo2.otf"
 
-style cp_header_text is cp_label_text:
+style cp_header_text is text:
     color "#FFF"
     size 22
-    font "DejaVuSans.ttf"
+    #bold True
+    font "fonts/Exo2.otf"
     
-# TODO: weird outline
+    
 style cp_label is label:
     xalign 0.5
     
@@ -33,7 +35,7 @@ screen computer_pad(periods):
     add "bg/silk-gray.jpg"
     add "bg/computer-pad.png"
             
-    text "{font=DejaVuSans.ttf}User {color=#888}[her_name]{/color} has logged on.{/font}" size 12 xalign 0.1 ypos 20 color "FFFFFF"
+    text "{font=fonts/Exo2.otf}User {color=#888}[her_name]{/color} has logged on.{/font}" size 12 xalign 0.1 ypos 20 color "FFFFFF"
     frame:
         style_group "cp"
         background None

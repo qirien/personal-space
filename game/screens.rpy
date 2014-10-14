@@ -71,7 +71,7 @@ style button:
 
 style button_text:
     color "#fff"
-    font "DejaVuSans.ttf"
+    font "fonts/Exo2.otf"
     insensitive_color "#666"
     xalign 0.5
 
@@ -86,7 +86,7 @@ style large_button:
 
 style large_button_text:
     color "#fff"
-    font "DejaVuSans.ttf"
+    font "fonts/Exo2.otf"
     insensitive_color "#666"
     size 16
     xalign 0.5
@@ -103,7 +103,7 @@ init -1 python hide:
     style.say_dialogue.color = "#ffffff"
     # TODO: change font?
     # style.say_dialogue.size = 20
-    style.nvl_dialogue.font = "DejaVuSansMono.ttf"
+    style.nvl_dialogue.font = "fonts/Exo2.otf"
     
     ## Margin is space surrounding the window
     style.window.left_margin = 0

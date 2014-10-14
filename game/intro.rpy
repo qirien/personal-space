@@ -70,15 +70,15 @@ label teacher:
 label first_date:
     hide him with moveoutright
     "As he was leaving, he slipped me a note."
-    note "{font=fonts/danielbd.ttf}{size=+2}Hey there, my [her_name]!\n\nI've been thinking a lot about us lately...{/size}{/font}"
-    note "{font=fonts/danielbd.ttf}{size=+2}How I want to be with you all the time.{/size}{/font}"
-    note "{font=fonts/danielbd.ttf}{size=+2}How I keep thinking about you, even when I'm up to my knees in manure.{/size} {size=-6}(was that romantic or what?!){/size}{/font}"
+    note "{font=fonts/danielbd.ttf}{size=+0}Hey there, my [her_name]!\n\nI've been thinking a lot about us lately...{/size}{/font}"
+    note "{font=fonts/danielbd.ttf}{size=+0}How I want to be with you all the time.{/size}{/font}"
+    note "{font=fonts/danielbd.ttf}{size=+0}How I keep thinking about you, even when I'm up to my knees in manure.{/size} {size=-6}(was that romantic or what?!){/size}{/font}"
     her happy "(Somehow, that is romantic...)"
-    note "{font=fonts/danielbd.ttf}{size=+2}How I can't imagine how a woman could be more perfect than you.{/size}{/font}"
+    note "{font=fonts/danielbd.ttf}{size=+0}How I can't imagine how a woman could be more perfect than you.{/size}{/font}"
     her flirting "(If he thinks I'm perfect, he's delusional)"
-    note "{font=fonts/danielbd.ttf}{size=+2}How it's time we said goodbye to this little town and started something new on our own...{/size}{/font}"
-    note "{font=fonts/danielbd.ttf}{size=+2}How I love you heart, body, and soul, every minute of every day...{/size}{/font}"
-    note "{font=fonts/danielbd.ttf}{size=+2}Anyway, I want to tell you more, in person! So come to my folks' tonight for a barbeque, okay? Right after work.\n\nLove,\n       your [his_name]{/size}{/font}"
+    note "{font=fonts/danielbd.ttf}{size=+0}How it's time we said goodbye to this little town and started something new on our own...{/size}{/font}"
+    note "{font=fonts/danielbd.ttf}{size=+0}How I love you heart, body, and soul, every minute of every day...{/size}{/font}"
+    note "{font=fonts/danielbd.ttf}{size=+0}Anyway, I want to tell you more, in person! So come to my folks' tonight for a barbeque, okay? Right after work.\n\nLove,\n       your [his_name]{/size}{/font}"
 
     nvl clear
     her surprised "(I wonder what's up, he sounds so serious!)"

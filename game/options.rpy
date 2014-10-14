@@ -72,7 +72,7 @@ init -1 python hide:
 
         ## The fonts used by this theme. The default fonts may not be
         ## suitable for non-English languages.
-        regular_font = "DejaVuSerif.ttf",
+        regular_font = "fonts/Andada.otf",
         #bold_font = "DejaVuSerifBold.ttf",
 
         ## And we're done with the theme. The theme will customize
@@ -138,12 +138,12 @@ init -1 python hide:
 
     ## The file containing the default font.
 
-    style.default.font = "fonts/DejaVuSerif.ttf"
+    style.default.font = "fonts/Andada.otf"
     style.default.color="#FFFFFF"
 
     ## The default size of text.
 
-    style.default.size = 18
+    style.default.size = 19
 
     ## Note that these only change the size of some of the text. Other
     ## buttons have their own styles.
