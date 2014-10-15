@@ -89,6 +89,8 @@ init -200:
     define midright = Position(xpos=0.50, xanchor=0)
     define quarterleft = Position(xpos=0.10, xanchor=0)
     define quarterright = Position(xpos=0.65, xanchor=0)
+    define farleft = Position(xpos=-0.30, xanchor = 0)
+    define farright = Position(xpos=1.0, xanchor = 0)    
     define sitting = Position(ypos=0.5, yanchor=0)
     define squatting = Position(ypos=0.2, yanchor=0)
     
@@ -140,6 +142,9 @@ label start:
                 
             "No.":
                 "OK, we will not use New Game+ data."
+         
+        # TODO: Make a skip and menu button to go on the dialogue box. Change this for Android?
+        "To fast-forward through scenes you have already seen, hold down \"Ctrl\" or use the \"Skip\" button."
 
     "Do I want to remember how it all began?"
     # TODO: Remove this, or change it somehow?

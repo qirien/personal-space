@@ -87,6 +87,11 @@ label domestic_3:
             her normal "I would love to! But I've never taken care of goats before, so would you help me if I run into trouble?"
             thuc "Of course! Why don't you let me know when you have a spot fenced off for them? They are able to eat the native vegetation here, so you could even use them to help clear space for fields."
             "[his_name] and I talked it over, and we decided to fence in a part of the wild area not too far from the house for the goats."
+            scene bg fields with fade
+            show goat_flip at left
+            show goat at center
+            show goat_small at quarterright
+            show lettie at right with dissolve
             "There were three of them, two males and a female, and I became remarkably attached to them. [his_name] used the manure for fertilizer, and they worked hard eating the strange plants from this planet."
             "They even kept Lettie company - she seemed to like grazing near them."
             $ skill_domestic += 10

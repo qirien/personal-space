@@ -34,11 +34,12 @@ label relax_together_0:
             scene bg farm_exterior with fade
             "His enthusiasm was kind of infectious, and once we got started, I could see how important it was to him. It was dark when we finally finished..."
             scene bg barn with fade
-            show her normal at midright
-            show him normal at midleft
+            show her normal at midleft
+            show him normal at midright
             with dissolve
             her happy "This is a nice little barn!"
             him happy "Yeah, let's see how she likes it!  C'mon Lettie!"
+            show lettie at right behind him, her with moveinright 
             play sound "sfx/clipclop.mp3"
             "He led his horse into one of the stalls. She was nervous at first, but soon she was in a stall chewing hay like normal."
             play sound "sfx/whinny.mp3"

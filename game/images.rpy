@@ -105,4 +105,8 @@ image jed = "sprites/sven.png"
 image helen = "sprites/helen.png"
 image ilian = "sprites/ilian.png"
 image martin = "sprites/martin.png"
+image lettie = "sprites/horse.png"
+image goat = "sprites/goat.png"
+image goat_flip = im.Flip("sprites/goat.png", horizontal = True)
+image goat_small = im.FactorScale("sprites/goat.png", 0.85)
 image kid = "sprites/kid.png"
