@@ -183,6 +183,9 @@ label monthly_event_2:
             her laughing "Wow, you're trusting me with your favorite horse? I'm touched."
             him annoyed "I wouldn't trust anyone else."
             scene bg fields with fade
+            show her normal at midright
+            show lettie at right behind her
+            with moveinright
             "I rode Lettie around, scouting the fields for weeds. I had never noticed how big the farm was before -- [his_name] takes care of a lot of plants!"
             "It took longer than I thought, and I ended up helping him haul out a lot of the dirt he dug, but then we had our very own cellar!"
             $ loved += 5
@@ -688,7 +691,7 @@ label monthly_event_6:
             return
             
     $ community_level += 5
-return
+    return
 
 # MONTH 7 - Broken computer - honesty?
 label monthly_event_7:
@@ -703,6 +706,7 @@ label monthly_event_7:
     $ fixed_computer = False
     menu broken_computer_pad:
         "What should I do?"
+        
         "{i}Try and fix it.{/i}" if (((profession == "mechanic") or (skill_technical >= 40)) and (not fixed_computer)):
             "I thought that if it dried out, it would probably work just fine, so I opened the cover and set it on the windowsill in the sun to dry."
             "Sure enough, after a few hours, it turned on just fine."
@@ -710,7 +714,7 @@ label monthly_event_7:
             "But there was still the question of whether to tell him about it or not..."
             "On the one hand, it works just fine, so he doesn't need to know about it, right?"
             "On the other hand, I don't want to keep secrets from [his_name], even dumb secrets. I want us to be able to trust each other completely."
-            call broken_computer_pad
+            jump broken_computer_pad
             
         "Put it back and pretend not to know what happened.":
             "I put it back where I found it. It was just an accident, so he doesn't need to know it was my fault, right?"
@@ -800,8 +804,7 @@ label monthly_event_7:
                 "I could tell he was kind of disappointed, but I felt glad I wasn't hiding anything from him."
                 "And the repair shop was able to fix it so it worked just fine."
             $ loved += 2
-
-    # TODO: Sometimes this scene loops?!
+    
     scene black with fade
     play music "music/LinesBuildWalls.ogg" fadeout 3.0
     "A week later, I was reading my messages when I noticed that they were having a New Year's party."
@@ -1383,6 +1386,7 @@ label follow_him:
             jump anniversary_next_day
 
     scene bg barn with fade
+    show lettie at right behind him,her with dissolve    
     show him serious at midright
     show her serious at midleft
     with moveinleft
@@ -1423,6 +1427,7 @@ label follow_him:
         $ relaxed -= 5
 
     scene bg barn with fade
+    show lettie at right behind him,her with dissolve        
     show him serious at quarterright
     show her serious at midleft with moveinleft
     "He had me hold Lettie still while he measured it out and administered it to her. I was amazed how much Lettie trusted him."
@@ -1449,6 +1454,7 @@ label follow_him:
             "The next morning, I decided to check on Lettie and [his_name]."
 
     scene bg barn with fade
+    show lettie at right behind him,her    
     show him normal at midright
     show her normal at midleft
     with dissolve
@@ -1883,7 +1889,7 @@ label monthly_event_13:
     show ilian at midleft with moveinleft
     "But then, Ilian stepped forward."
     ilian "I'm sorry! I'm so sorry!"
-    show sara at left with dissolve
+    show sara sad at left with dissolve
     sara "Sorry for what?!"
     ilian "I-- I'm the one that killed Josephina."
     "Nobody said a word. He worked his way up to the front of the room. He brushed his hand in front of his eyes - was he crying?"
@@ -2672,6 +2678,7 @@ label monthly_event_18:
     elif (skill_physical >= 40):
         her surprised "Where's Lettie?"
         "I found Lettie tied up near the barn."
+        show lettie at right behind him,her with dissolve    
         her serious "C'mon, Lettie, [his_name] needs your help, alright?"
         "I remembered what [his_name] had taught me and was able to lead her over to [his_name]. He couldn't ride her, not with his hands so badly burned, but I hitched her up to the cart."
         her serious "Get in, [his_nickname]."
@@ -2829,6 +2836,8 @@ label monthly_event_18:
         scene black with fade
     else:
         him annoyed "That's not what I was thinking of, but I did miss Lettie, too. I better go see how she's doing."
+        hide him with moveoutleft
+        play sound "sfx/whinny.mp3"
         her annoyed "..."
     
     "I was glad [his_name] was back to normal again, though he still had to be careful with his hands for a while."
@@ -3196,7 +3205,8 @@ label monthly_event_22:
             sara "Yeah, he got me an extra bottle before this whole thing started, so we should last until the shuttle from Earth gets here, anyway."
             her serious "Hmmm, okay, that's good to hear."
             scene bg fields flip with fade
-            show thuc at midright with dissolve
+            show thuc at midright
+            show goat at right with dissolve
             show her serious at midleft with moveinleft
             her normal "Hey, there, Thuc."
             thuc "[her_name]! How are you?"
@@ -3888,9 +3898,9 @@ label monthly_event_24:
         her angry "YES! Yes, I am nine months pregnant now, and any minute, without warning, a strange creature could come bursting out between my legs!"
         sara "Whoa, feeling a little sensitive?"
         her sad "Sorry... it's just that it's all anyone ever talks to me about anymore."
-        sara "I'm sorry; do you want to talk about something else?"
+        sara sad "I'm sorry; do you want to talk about something else?"
         her normal "Yes, please! Tell me you've read a good book, or found a cool new place, or something!"
-        sara "Yeah, there's this spot by the river where it's kind of like a little beach. It's great for wading and sunbathing."
+        sara normal "Yeah, there's this spot by the river where it's kind of like a little beach. It's great for wading and sunbathing."
         her happy "That sounds great! Will you show me sometime?"
         sara "Of course! It's not too late; do you want to go right now?"
         her sad "Well... I probably shouldn't. I mean, what if we went, and I went into labor out there in the wilderness?"
@@ -3918,13 +3928,13 @@ label monthly_event_24:
         her surprised "That's true! We'll have new neighbors."
         sara "And maybe they'll have something tasty from Earth."
         her normal "You know, I don't miss it that much anymore."
-        sara "I do. I don't know that I'll ever get used to all the work it takes to make food here... and then it's not even very good."
+        sara sad "I do. I don't know that I'll ever get used to all the work it takes to make food here... and then it's not even very good."
         her sad "..."
-        sara "Sorry. I should be more positive."
+        sara normal "Sorry. I should be more positive."
         her concerned "No, it's good to be able to be honest about how you feel."
-        sara "..."
+        sara sad "..."
         her flirting "Like, for example, did you know I've been having contractions this whole time?"
-        sara "What?!"
+        sara normal "What?!"
         her serious "Just small ones. I guess they call them practice contractions. I've been getting them a lot lately whenever I exercise or get tired. That's why I wanted to lie down."
         sara "So, we don't need to radio for help or anything?"
         her normal "No. But we should probably head back."
@@ -3938,7 +3948,7 @@ label monthly_event_24:
         show sara at center
         with move
         her serious "You don't have any water, do you?"
-        sara "No, sorry. Hey, are you okay?"
+        sara sad "No, sorry. Hey, are you okay?"
         her concerned "Yeah, let's just get back."
         "The contractions started to get stronger. I could still walk, but I had to concentrate more on just walking and breathing. I realized Sara was saying something."
         show her at midleft
@@ -3946,7 +3956,7 @@ label monthly_event_24:
         with move
         sara "-really shouldn't have said that. Don't you think?"
         her concerned "Can't really...talk right now."
-        sara "Oh, oh, oh, are you in labor?!"
+        sara sad "Oh, oh, oh, are you in labor?!"
         her serious "I don't know, I just need to get home."
         sara "Should we go straight to the clinic? Should I radio the doctor?"
         if (profession == "doctor"):

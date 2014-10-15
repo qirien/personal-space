@@ -27,7 +27,7 @@ label relax_alone_1:
             "I walked to Sara's house in the dusky evening light, wondering what it was she wanted to talk about. When I got there, I could tell she'd been crying."
             scene bg farm_interior flip
             show her serious at midleft
-            show sara at midright
+            show sara sad at midright
             with dissolve
             sara "I got a message from Earth today...My mom died."
             $ community_level += 2
@@ -37,7 +37,7 @@ label relax_alone_1:
             her_c "Oh no, I'll be right over."
             scene bg farm_interior
             show her serious at midleft
-            show sara at midright
+            show sara sad at midright
             with dissolve
             $ community_level += 1
         "I can't come tonight.":
@@ -46,7 +46,7 @@ label relax_alone_1:
             $ relaxed += 2
             scene bg farm_interior
             show her serious at midleft
-            show sara at midright
+            show sara sad at midright
             with dissolve
             "The next day at lunch, Sara told me that her mom had died."
 
@@ -58,7 +58,7 @@ label relax_alone_1:
         "What should I say?"
         "How's your dad doing?":
             her serious "How's your dad holding up?"
-            sara "He's strong, I'm sure he'll be fine, but I feel terrible! I've been asking him questions about mom and telling jokes about the two of them, and he's going to keep getting those messages from me for years! It'll make him sad every time he gets a message from me."
+            sara "I'm sure he'll be fine, but I feel terrible! I've been asking him questions about mom and telling jokes about the two of them, and he's going to keep getting those messages from me for years! It'll make him sad every time he gets a message from me."
             her normal "Or maybe it will make him happy to know how much you still care about her and remember her."
             sara "Yeah, maybe so."
         "How do you feel?":

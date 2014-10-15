@@ -510,6 +510,7 @@ label relax_together_a:
     scene bg path with fade
     show him normal at midright
     show her normal at midleft
+    show lettie at right behind him, her
     with dissolve
     play sound "sfx/clipclop.mp3"
     "We walked beside Lettie, who was pulling the wagon. We talked and laughed, and when we dropped off the food we saw Ilian and Sara."

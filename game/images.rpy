@@ -94,6 +94,8 @@ image him happy head = LiveCrop((5, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.F
 # Other Characters
 image female_child = "sprites/female-child.png"
 image sara = "sprites/sara.png"
+image sara normal = "sprites/sara.png"
+image sara sad = "sprites/sara-sad.png"
 image pavel = "sprites/pavel.png"
 image thuc = "sprites/thuc.png"
 image natalia = "sprites/natalia.png"
@@ -105,8 +107,11 @@ image jed = "sprites/sven.png"
 image helen = "sprites/helen.png"
 image ilian = "sprites/ilian.png"
 image martin = "sprites/martin.png"
+image kid = "sprites/kid.png"
+
+# Animals
 image lettie = "sprites/horse.png"
+image lettie_head = LiveCrop((0,0,300,570), "sprites/horse.png")
 image goat = "sprites/goat.png"
 image goat_flip = im.Flip("sprites/goat.png", horizontal = True)
 image goat_small = im.FactorScale("sprites/goat.png", 0.85)
-image kid = "sprites/kid.png"

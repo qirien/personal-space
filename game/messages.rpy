@@ -3,6 +3,7 @@
 # TODO: have tiny avatars appear with each person's name
 
 screen message_board:
+    add "bg/silk-gray.jpg"
     add "bg/computer-pad.png"
     window:
         style "nvl_window"

@@ -215,7 +215,7 @@ label work_0:
     her "Not really. I'm a [profession]."
     sara "Really? That's pretty cool."
     "We talked about my job for a while, and then she admitted,"
-    sara "I'm not sure why I'm here...I'm not really good at anything."
+    sara sad "I'm not sure why I'm here...I'm not really good at anything."
     menu:
         "What should I say?"
         "That's not true!":
@@ -230,6 +230,7 @@ label work_0:
             sara "I like to read...I read a lot. I'm a pretty good photographer, too."
             her normal "That sounds fun. Who's in your family??"
     show her normal
+    show sara normal
     sara "My husband is Ilian Andrevski - he's not a farmer, either. He's a food scientist."
     her surprised "Really? There are food scientists?"
     sara "Yes, they study things like nutrition and shelf-life and ways to preserve foods while maintaining lots of nutrients - things like that. I think he'll also do a lot of the inventory and distribution of food once we get there."
@@ -290,7 +291,7 @@ label work_1:
 
         scene bg farm_interior with fade
         show julia at midright with dissolve
-        show sara at right with dissolve
+        show sara sad at right with dissolve
         show kid at center with dissolve
         show her serious at midleft with moveinleft
         if (skill_physical < 20):

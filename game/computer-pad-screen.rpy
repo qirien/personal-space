@@ -273,9 +273,11 @@ screen heart_display:
             add "her sad head"
 
         # Add a heart whose size depicts their relationship status
-        if (loved >= LOVED_MAX):
-            add "GUI/heart-largest.png"
+        if (loved > LOVED_MAX):
+            add "GUI/heart-full.png"
         elif (loved >= (LOVED_MAX/1.5)):
+            add "GUI/heart-largest.png"
+        elif (loved >= LOVED_GOOD):
             add "GUI/heart-larger.png"
         elif (loved >= (LOVED_MAX/3)):
             add "GUI/heart-large.png"

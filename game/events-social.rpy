@@ -453,7 +453,7 @@ label social_5:
     scene bg farm_exterior flip burned with fade
     show overlay night
     show ilian at quarterright
-    show sara at midright
+    show sara sad at midright
     with dissolve
     show him serious at midleft
     show her serious at quarterleft
@@ -491,14 +491,14 @@ label social_5:
             show her annoyed
             ilian "Thanks; we really appreciate it."
             show her normal
-            sara "Yes, honestly, I'd rather stay with you guys than anywhere else."
+            sara normal "Yes, honestly, I'd rather stay with you guys than anywhere else."
             scene bg farm_interior with fade
             "It was a little crowded and stressful having so many people in our one-room house."
             "And sometimes I overheard things I really didn't want to know..."
             show ilian at quarterright
             show sara at midright
             ilian "I don't want to go anywhere tonight; I have a headache."
-            sara "But I told Helen and Jed we'd both come over! How come you only have a headache when it's time to do something I want to do?!"
+            sara sad "But I told Helen and Jed we'd both come over! How come you only have a headache when it's time to do something I want to do?!"
             ilian "It's not like I can just turn them on or off! You think I like my head pounding?"
             sara "Yeah, I think you like having a headache more than you like doing something with me."
             ilian "That's ridiculous!"
@@ -513,7 +513,7 @@ label social_5:
             with moveoutleft
             scene bg farm_exterior with fade
             show her serious at midleft
-            show sara at midright
+            show sara sad at midright
             with moveinright
             sara "Sorry you had to hear that."
             her serious "No, it's okay, everyone has disagreements."
@@ -521,7 +521,7 @@ label social_5:
             her surprised "I guess that's Ilian's favorite thing to do?"
             sara "Yeah..."
             her normal "Well, why don't I go with you to Helen's after dinner, and we can have a girl's night? We haven't done that for a while..."
-            sara "Okay...thanks, [her_name]."
+            sara normal "Okay...thanks, [her_name]."
             scene bg farm_exterior flip with fade
             "Luckily, they had materials for an extra house on the shuttle, so the whole community worked together one day to put it together for them."
             "The Nguyens donated one of their computer pads for them to share, and everyone pitched in some cookware and tools to replace those that had burned."

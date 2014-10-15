@@ -103,6 +103,7 @@ label physical_1:
     him "It's okay, I'll get you home."
     play music "music/You.ogg" fadeout 3.0
     show him serious at midright with moveinright
+    show lettie at right behind him, her with moveinright    
     "I saw [his_name] appear on the top of the ridge. He was riding Lettie, his eyes scanning the landscape fiercely, until he finally saw me."
     show him at midleft with move
     "Before I could even explain what had happened, he had picked me up and was holding me close. I could barely breathe!"
@@ -269,6 +270,7 @@ label physical_3:
     her normal "I assume there's more to it than just sit and hold the reins."
     him happy "Well, yeah! There's a lot, actually. But I'd be happy to teach you."
     "We decided that every weekend this month we'd have a riding lesson. He started at the very beginning."
+    show lettie_head at right behind him, her with moveinright
     him serious "Now, you can't just jump on Lettie and start riding. Approach her from the left side, and let her get to know you a bit. Try talking to her."
     her surprised "What should I say?"
     him normal "Just like, 'Hey there, good girl' or something. The words don't matter as much as the intent behind them."
