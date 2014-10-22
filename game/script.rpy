@@ -94,6 +94,9 @@ init -200:
     define sitting = Position(ypos=0.5, yanchor=0)
     define squatting = Position(ypos=0.2, yanchor=0)
     
+    define sans_font = "fonts/Exo2.otf"
+    define serif_font = "fonts/Andada.otf"
+    
     define current_song = " "
     
 init python:

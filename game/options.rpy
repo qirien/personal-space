@@ -40,6 +40,8 @@ init -1 python hide:
     ## The theme function takes a number of parameters that can
     ## customize the color scheme.
 
+
+    # TODO: maybe get rid of this? are we even using this?
     theme.a_white_tulip(
         ## Theme: A White Tulip
         ## Scheme Muted Horror
@@ -72,7 +74,7 @@ init -1 python hide:
 
         ## The fonts used by this theme. The default fonts may not be
         ## suitable for non-English languages.
-        regular_font = "fonts/Andada.otf",
+        regular_font = serif_font,
         #bold_font = "DejaVuSerifBold.ttf",
 
         ## And we're done with the theme. The theme will customize
@@ -138,7 +140,7 @@ init -1 python hide:
 
     ## The file containing the default font.
 
-    style.default.font = "fonts/Andada.otf"
+    style.default.font = serif_font
     style.default.color="#FFFFFF"
 
     ## The default size of text.

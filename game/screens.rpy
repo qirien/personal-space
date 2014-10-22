@@ -62,8 +62,9 @@ screen say:
 # Custom code for our game goes here
 
 # TODO: Consolidate fonts so you only have to change them 1 place
-#style sans_text is text:
-
+style sans_text is text:
+    font sans_font
+    
 style button:
     background Frame("GUI/button_idle.png", 15, 15)
     hover_background Frame("GUI/button_selected.png", 15, 15)
@@ -72,11 +73,12 @@ style button:
     yminimum 40
     activate_sound "sfx/click.ogg"
 
-style button_text:
+style button_text is sans_text:
     color "#fff"
-    font "fonts/Exo2.otf"
     insensitive_color "#666"
     xalign 0.5
+    yalign 0.5
+    font sans_font
 
 style large_button:
     background Frame("GUI/button_idle.png", 15, 15)
@@ -87,9 +89,8 @@ style large_button:
     xminimum 40
     activate_sound "sfx/click.ogg"
 
-style large_button_text:
+style large_button_text is sans_text:
     color "#fff"
-    font "fonts/Exo2.otf"
     insensitive_color "#666"
     size 16
     xalign 0.5
@@ -97,13 +98,11 @@ style large_button_text:
 style label_text:
     color "#222"
     
-style nvl_label is label:
-    font "fonts/Exo2.otf"
+style nvl_label is sans_text:
     size 26
     yalign 0.0
     
-style nvl_dialogue is text:
-    font "fonts/Exo2.otf"
+style nvl_dialogue is sans_text:
     size 18
     #xpos 100
 
