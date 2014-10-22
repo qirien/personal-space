@@ -60,7 +60,10 @@ screen say:
 #
 # Styles for use everywhere in the game
 # Custom code for our game goes here
-#
+
+# TODO: Consolidate fonts so you only have to change them 1 place
+#style sans_text is text:
+
 style button:
     background Frame("GUI/button_idle.png", 15, 15)
     hover_background Frame("GUI/button_selected.png", 15, 15)
@@ -93,6 +96,16 @@ style large_button_text:
     
 style label_text:
     color "#222"
+    
+style nvl_label is label:
+    font "fonts/Exo2.otf"
+    size 26
+    yalign 0.0
+    
+style nvl_dialogue is text:
+    font "fonts/Exo2.otf"
+    size 18
+    #xpos 100
 
 style frame:
     background Frame("GUI/frame.png", 10, 10)
@@ -103,7 +116,6 @@ init -1 python hide:
     style.say_dialogue.color = "#ffffff"
     # TODO: change font?
     # style.say_dialogue.size = 20
-    style.nvl_dialogue.font = "fonts/Exo2.otf"
     
     ## Margin is space surrounding the window
     style.window.left_margin = 0
@@ -202,8 +214,6 @@ screen nvl:
 
             has vbox:
                 style "nvl_vbox"
-            if (dialogue[0][0] != "note"):
-                label "Messages"
 
             # Display dialogue.
             for who, what, who_id, what_id, window_id in dialogue:
@@ -213,8 +223,8 @@ screen nvl:
                     has hbox:
                         spacing 10
 
-                    if who is not None:
-                        text who id who_id
+#                    if who is not None:
+#                        text who id who_id
 
                     text what id what_id
 

@@ -79,7 +79,7 @@ label social_0:
     nvl clear
     
     "Later, Natalia sent me a message."
-    natalia_c "I'm sorry I was so rude; I hope you'll forgive me."
+    natalia_c "I'm sorry I was so rude; Jed just make me so mad sometimes!"
     her_c "Oh, I understand. I think everyone's a little frustrated."
     natalia_c "Why don't you come over and we can chat in person? I found a fruit you might want to try..."
     her_c "Sure, I'll be right over."
@@ -291,11 +291,11 @@ label social_4:
     show sara at midleft
     show her normal at midright
     with dissolve
-    lily "We all live so close to each other, but it seems like in the evening everyone just wants to go to bed early."
+    lily upset "We all live so close to each other, but in the evenings everyone just wants to go to bed early."
     her concerned "Well, people who aren't working in town are farming all day, which is pretty tiring."
     jed "That's true, but don't you get tired of sitting at home all the time? I get up early to milk the cows, and I'm in the library all day, so the last thing I want to do when I get home is sit around by myself some more."
     her normal "I'm pretty busy, but I agree that it'd be fun to do something together as a community."
-    lily "I was just reading on how we could use a magnifying glass with our tablets to make a projector. Perhaps we could have a movie night?"
+    lily normal "I was just reading on how we could use a magnifying glass with our tablets to make a projector. Perhaps we could have a movie night?"
     jed "Yeah, a movie is low-key enough that even if you're all tuckered out from farming you should be able to sit through it."
     sara "And kids like to watch movies too, so we could include everyone."
     her happy "I know the perfect movie!"
@@ -378,12 +378,12 @@ label social_4:
             him normal "Or you know, wires."
         "An animated art film.":
             her normal "Let's put on an old cartoon movie so that the kids will enjoy it too."
-            lily "{i}Wall-E{/i} is one that might be both relevant and entertaining."
+            lily normal "{i}Wall-E{/i} is one that might be both relevant and entertaining."
             her surprised "I was thinking more along the lines of {i}The Old Man and the Sea{/i}."
             jed "I think that movie would put everyone to sleep."
             her normal "It's only forty minutes long!"
-            jed "How 'bout {i}Wall-E{/i}? I haven't seen it in a while, and it could start some conversations about the colony, and what it oughta be like."
-            sara "I agree! Some of the younger kids have never seen it, and I think they would like it."
+            jed "I haven't seen {i}Wall-E{/i} in a while, and it could start some conversations about the colony, and what it oughta be like."
+            sara "I agree! Some of the people have never seen it, and I think they would like it."
             stop sound fadeout 3.0
             scene black with fade
             "We decided to watch {i}Wall-E{/i}. I sent out a message to the colony e-mail list, and tried to remind everyone I saw to come."
@@ -522,6 +522,29 @@ label social_5:
             sara "Yeah..."
             her normal "Well, why don't I go with you to Helen's after dinner, and we can have a girl's night? We haven't done that for a while..."
             sara normal "Okay...thanks, [her_name]."
+            scene black with fade
+            "When we came back, the mood had definitely changed."            
+            scene bg farm_interior with fade
+            show ilian at quarterright with dissolve
+            show him normal at midleft with dissolve
+            show sara at midright with moveinleft
+            show her normal at quarterleft with moveinleft
+            ilian "Did you have a good time?"
+            sara "We did, actually."
+            ilian "Good."
+            sara "..."
+            ilian "..."
+            sara sad "Hey, sorry I got mad at you. I know you don't like stuff like that; I shouldn't try to make you do things you don't like."
+            ilian "I could do more, I'm just lazy..."
+            show sara normal
+            "She came up and hugged him and whispered something in his ear. He laughed and squeezed her close."
+            ilian "I'm not going to let a headache stop me from--"
+            her laughing "Hey! [his_name], come outside, I want to show you something."
+            him surprised "Huh? What is it?"
+            her happy "Just come outside with me for twenty minutes."
+            sara "Thank you, [her_name]!"
+            hide him with moveoutleft
+            hide her with moveoutleft
             scene bg farm_exterior flip with fade
             "Luckily, they had materials for an extra house on the shuttle, so the whole community worked together one day to put it together for them."
             "The Nguyens donated one of their computer pads for them to share, and everyone pitched in some cookware and tools to replace those that had burned."
@@ -530,7 +553,7 @@ label social_5:
             show her normal at midleft
             him "It wasn't as bad as I thought, having Ilian and Sara stay with us for a week..."
             her flirting "Yeah. But now that we have the house to ourselves, we can do whatever we want, whenever we want..."
-            him flirting "You're right! Now I can finally let out all the burps I've been saving up..."
+            him flirting "You're right! Now I can finally let out all the gas I've been saving up..."
             her annoyed "Is that the best thing you can think of?!"
             him flirting "You're the best thing I can think of."
             her happy "That's more like it!"

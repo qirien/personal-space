@@ -415,8 +415,8 @@ label physical_5:
                     show lily at midright with dissolve
                     show her at midleft with moveinleft
                     her surprised "Dr. Lily, I found a hot spring up in the mountains; would you mind testing the water for us?"
-                    lily "Not a problem. Let me get my pH strips and put some under the microscope..."
-                    lily "The water is slightly alkaline, and it has several kinds of minerals in it. I do see some bacteria, however, but they are not a kind we know about, so I don't know if they are dangerous or not."
+                    lily happy "Not a problem. Let me get my pH strips and put some under the microscope..."
+                    lily normal "The water is slightly alkaline, and it has several kinds of minerals in it. I do see some bacteria, however, but they are not a kind we know about, so I don't know if they are dangerous or not."
                     her "Okay, thanks."
                     lily "Thanks for reporting this; our initial scans showed geothermal activity in that area, but you've confirmed it. We may eventually use the springs for energy."
                     $ community_level += 3
@@ -504,9 +504,9 @@ label physical_5:
                     show lily at midright with dissolve
                     show her at midleft with moveinleft
                     "When I got back, told Dr. Lily about the place I found. I asked her to keep it a secret that I was the one who found it."
-                    lily "This will be very useful! Not only can we harvest minerals from the springs, but the geothermal energy might be useful, too."
+                    lily happy "This will be very useful! Not only can we harvest minerals from the springs, but the geothermal energy might be useful, too."
                     her surprised "It's not dangerous, right?"
-                    lily "What? You mean to soak in? Yes, as long as the temperature is suitable."
+                    lily normal "What? You mean to soak in? It's fine, as long as the temperature is suitable."
                     her normal "That's good to know."
                     her concerned "(I don't think [his_name] will find out...)"
                     $ loved -= 2

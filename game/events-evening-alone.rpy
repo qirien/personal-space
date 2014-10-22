@@ -369,6 +369,7 @@ label relax_alone_j:
 
 label relax_alone_k:
     scene bg farm_interior with fade
+    show her normal at midleft with dissolve
     "I downloaded a visual novel I found online. It looked pretty cheesy, but at least it wasn't in high school - it was about romance on a star ship."
     "Your character was an ensign on the ship as it explored the galaxies, and you could romance one of four characters."
     $ starship_man = "None"
@@ -389,14 +390,13 @@ label relax_alone_k:
 
     show him normal at midright with moveinright
     him laughing "Oh, so that's the kind of guy you like?"
-    show her normal at midleft with dissolve
     her surprised "Wahhh! You scared me! I didn't know you were watching!"
     him happy "I was just walking by when I saw all those men on your screen. I had to stop and see what was going on."
     menu:
         "What should I say?"
         "It doesn't mean anything.":
-            her normal "Well, I might play through all these and see them, so this doesn't mean as much as you might think."
-            him normal "That's fine, that's fine! I was just curious, don't worry."
+            her normal "Well, I might play through all these and see every ending, so this doesn't mean as much as you might think."
+            him normal "That's fine, that's fine! I was just curious."
             her flirting "You know you're the only man for me in real life. I just feel sorry for my character in this game that has to make do with these poor imitations."
             him flirting "Yeah, yeah!"
             her happy "Ha ha, I love you, [his_nickname]."

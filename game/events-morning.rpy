@@ -76,7 +76,7 @@ label work_0:
     hide naomi with moveoutright
     show lily at midright with moveinright
     boss "Next is the person who has lived here the longest, astronaut and xenobiologist Dr. Lily. Any scientific inquiries should be directed her way."
-    lily "Thank you, Mayor."
+    lily happy "Thank you, Mayor."
     hide lily with moveoutright
     show ilian at midright with moveinright
     show sara at right with moveinright
@@ -685,7 +685,7 @@ label work_4:
                 "The hardest part was waiting around for the results, while the kids were suffering."
                 lily "Look at the algae culture! There's hardly any bacteria left."
                 her concerned "Hopefully the algae itself wouldn't be harmful to people..."
-                lily "I can't say for sure."
+                lily upset "I can't say for sure."
                 call set_work_bg
                 show her serious at midright
                 show brennan at midleft

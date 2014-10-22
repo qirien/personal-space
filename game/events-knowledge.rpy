@@ -40,7 +40,7 @@ label knowledge_1:
     with dissolve
     lily "And in some cases, you'll just have to test a little on an Earth creature. If you spectrize something and can't tell if it's safe, bring it into the lab."
     her "Do you have a list of plants you've already tested?" 
-    lily "Oh, right. Well, of course there's the ones you're planting, but in addition to those we've discovered a few that contain relevant nutrients. I'll have my assistant send out a guide." 
+    lily "Yes. Of course there's the ones you're planting, but in addition to those we've discovered a few that contain relevant nutrients. I'll have my assistant send out a guide." 
     "I was excited to try out some of the edible plants here."
     $ skill_knowledge  += 10 
     $ met_Lily = True
@@ -70,7 +70,7 @@ label knowledge_3:
     scene black with fade
     "The next day he brought me a pile of these tall grasses. I brought some to the laboratory to see how we could process them."
     scene bg lab with fade
-    show lily at midright with dissolve
+    show lily happy at midright with dissolve
     show her normal at midleft with moveinleft
     lily "It looks like if you pull apart the fiber strands, you can get something that looks like hair. It's not very soft, but it's strong, so it would make good food sacks or rope. I'll make a note in the guide about this plant."
     "I told her it grew near our riverbed, and she promised to update the useful plants list."
@@ -90,18 +90,18 @@ label knowledge_4:
     show her normal at midleft
     with dissolve
     "Lily, our resident xenobiologist, organized a nature hike to tell us more about the local plants, and I went along."
-    lily "As far as I can tell, this plant, which I call Bulbosa, isn't edible. Its bright orange flowers make a good dye though."
-    lily "Alright, take a good look at this next plant and its surroundings. What can you tell me about it?"
+    lily "As far as I can tell, this plant, which I call Bulbosa, isn't edible. But its bright orange flowers make a good dye."
+    lily "Scrutinize this next plant and its surroundings. What can you tell me about it?"
     "Lily pointed to a tall flower with what looked like a tongue sticking out of its flower. Its leaves looked furry like ferns, but were hairier than an Earth fern. There no other plants around it, besides a few trees."
     menu:
-        lily "Do you have any questions?"
+        lily "What can you tell me about it?"
         "Is it poisonous?":
             lily "It's poisonous to certain kinds of seeds. Its roots make the soil around it very acidic, so new flowers won't germinate near it. But it is dangerous in another way."
         "Is it carnivorous?":
-            lily "Yes!"
+            lily happy "Yes!"
         "Is it very old?":
             lily "I don't think it's much older than the other plants here. But it's actually carnivorous!"
-    lily "The tongue-like projection both attracts and detains nearby flying insects. While the insect is stuck on its tongue, the plant sucks out its innards, much like an Earth spider. If you look closely at the tongue-like area, it has multiple spikey projections for this purpose."
+    lily normal "The tongue-like projection both attracts and detains nearby flying insects. While the insect is stuck on its tongue, the plant sucks out its innards, much like an Earth spider. If you look closely at the tongue-like area, it has multiple spikey projections for this purpose."
     lily "On Earth, the secretions from carnivorous plants had antifungal properties. I'm in the process of testing this plant's goo to see if I can find a good use for it."
     her concerned "Hopefully athlete's foot didn't make it onto the shuttle."
     lily "A good example. There are also a lot of plants around here that release spores, and if they make us sick, I want to have a medicine to give out. That reminds me, while we don't have any mushrooms here, we do have these cute edible plants I call ringlets..."
@@ -138,7 +138,8 @@ label knowledge_6:
         "What should I say?"
         "Sounds fun.":
             her normal "Sure, that sounds like a good way to get our knowledge out to the scientific community."
-            lily "Good. I'll send you what I have so far, and we can discuss it in the lab tomorrow."
+            lily happy "Good. I'll send you what I have so far, and we can discuss it in the lab tomorrow."
+            show lily normal
             "Lily's paper was very technical, getting down to how the enzymes in these plants could still be broken down by human digestion, even though they were slightly different than earth's."
             "She also wrote about how humans wouldn't be able to live off of Talaam's plants alone, since they were missing vital nutrients."
             "I felt a little out of my league when I went in to talk to Lily."
@@ -148,7 +149,7 @@ label knowledge_6:
             "I spent some time gathering the edible plants Lily talked about in her paper. At first, I tried to sort them into categories based on their venation, but there were only two plants where that made a difference."
             "I decided to write down all the ways the plants were different, and then I ranked them by order of usefulness. The flowers were the easiest to tell apart, but were only present for part of the time."
             "I realized that Talaam's plants' leaves didn't vary in size within a species. Leaf size ranged from tiny to umbrella-sized. Since I was halfway to making an identification key, I made one."
-            lily "This is excellent. Whenever I tried to categorize these plants, I could only think of things like leaf shape and number of petals."
+            lily happy "This is excellent. Whenever I tried to categorize these plants, I could only think of things like leaf shape and number of petals."
             her "I'm glad I could help. Maybe we can distribute the key to the colonists too."
             lily "That's a wonderful idea. You can use the photos I already have if that will help."
             "Lily sent the paper off to Earth and I sent out an updated edible plant guide to the colonists, with guidelines on which earth plants were essential for supplementing a Talaam-based diet."
@@ -156,7 +157,7 @@ label knowledge_6:
             
         "I want to write my own paper to publish here on Talaam.":
             her "Actually, I was thinking of writing my own paper. I'd like to make a more detailed and accessible chart of edible plants with explanations my neighbors could understand."
-            lily "Oh. I see. After you finish it, may I reference it in my paper?"
+            lily normal "Oh. I see. After you finish it, may I reference it in my paper?"
             her "Yes, that's fine."
             scene black with fade
             "I worked hard over the next week to make a digital plant reference I could send out to the other colonists. In some ways, it was more difficult than making a complete encyclopedia. I wanted a succinct, but smart way of teaching about plants."
@@ -169,15 +170,15 @@ label knowledge_6:
             show lily at midright
             show her normal at midleft
             with dissolve
-            lily "Thank you for making the guide and identification key. I would not have thought to look at leaf size first, but given the plants you described that was the quickest way to do it. I shall definitely cite this."
+            lily happy "Thank you for making the guide and identification key. I would not have thought to look at leaf size first, but given the plants you described that was the quickest way to do it. I shall definitely cite this."
             her happy "Well, I'm glad it ended up being useful to you too."
             $ community_level += 1
             
         "I don't want to write anything down.":
             her concerned "I don't know, that sounds like a lot of work. I've seen these plants so many times that I don't think writing down will help my memory at all. I can pass my knowledge on by you know, actually {b}talking{/b} to my neighbors."
-            lily "Writing is a lot of work, but what if your neighbor doesn't remember what you told her correctly?"
+            lily upset "Writing is a lot of work, but what if your neighbor doesn't remember what you told her correctly?"
             her annoyed "That's your job."
-            lily "Perhaps you could tell me what you know, and I could write it down?"
+            lily normal "Perhaps you could tell me what you know, and I could write it down?"
             her serious "Well, if it's that important to you, I can tell you what I know."
             "I spent the afternoon with Lily in the lab, discussing which plants were most useful to eat. She told me that she was fascinated by how a human could almost live off of Talaam's plants alone, except for a few missing nutrients."
             "We both learned a lot, and I didn't have to spend any time writing aimlessly."
@@ -271,9 +272,9 @@ label knowledge_8:
     show lily at midright with dissolve
     show her normal at midleft with moveinleft
     her happy "So, did you ever find out what was making that plastic at the pond?"
-    lily "Oh! Yes. In fact, I am attempting to replicate the conditions of the pond in that tank over there to grow plastic."
+    lily happy "Oh! Yes. In fact, I am attempting to replicate the conditions of the pond in that tank over there to grow plastic."
     her surprised "It looks like it's working!"
-    lily "Yes, I believe I have managed to replicate the necessary conditions."
+    lily normal "Yes, I believe I have managed to replicate the necessary conditions."
     her happy "Great! If we can produce our own plastic, we can 3D print more things that we need."
     lily "That's true; It would normally be at least 25 years before we could have our own plastic manufacturing facilities."
     "How cool is that?! We could now make our own plastic with bacteria..."
@@ -293,7 +294,7 @@ label knowledge_master:
     her normal "Well, we did work on that information on edible plants..."
     lily "Yes, but that is not enough. What about the bacteria you found, and the creatures we found at the ocean, and the maps we've made? There's not one place to find all those things."
     her flirting "We could just ask you,"
-    lily "I will not live forever. And neither will you. Our knowledge needs to outlive us."
+    lily upset "I will not live forever. And neither will you. Our knowledge needs to outlive us."
     her concerned "I see what you mean..."
 
     scene bg library with fade
@@ -371,7 +372,7 @@ label knowledge_master:
             "With the mayor's encouragement, more people wrote about what they knew for the encyclopedia."
 
     scene bg lab with fade
-    show lily at midright with dissolve
+    show lily happy at midright with dissolve
     show her normal at midleft with moveinleft
 
     her happy "Well, we have twenty articles about Talaam now! Are you going to write one, too, Dr. Lily?"

@@ -3,6 +3,8 @@
 # TODO: have tiny avatars appear with each person's name
 
 screen message_board:
+    default side_image = None
+    
     add "bg/silk-gray.jpg"
     add "bg/computer-pad.png"
     window:
@@ -15,37 +17,57 @@ screen message_board:
 
         has vbox:
             style "nvl_vbox"
-        text "{b}Messages{/b}"
+        $ num_messages = len(dialogue)
+        text "{b}Colony Messages{/b}"
 
-        # Display dialogue.
-        for who, what, who_id, what_id, window_id in dialogue:
-            window:
-                id window_id
+        # This is kind of cool, but it is distracting when there are not many messages.
+        if (num_messages >= 10):
+            viewport:
+                mousewheel True
+                yinitial 0
+                scrollbars "vertical"
+                has vbox
+                for who, what, who_id, what_id, window_id in dialogue:
+                    window:
+                        id window_id
+                    
+                        has hbox:
+                            spacing 10
 
-                has hbox:
-                    spacing 10
+                        if who is not None:
+                            text who id who_id
 
-                if who is not None:
-                    text who id who_id
+                        text what id what_id                
+        else:
+            vbox:
+                # Display dialogue.
+                for who, what, who_id, what_id, window_id in dialogue:
+                    window:
+                        id window_id
+                    
+                        has hbox:
+                            spacing 10
 
-                text what id what_id
-    add SideImage() xalign 0.0 yalign 1.0
-        
+                        if who is not None:
+                            text who id who_id
+
+                        text what id what_id
+            
 # NVL mode characters for chat rooms, etc
-define her_c = DynamicCharacter("her_name", color="#8864d5", image="her", who_suffix=":", kind=nvl)
-define him_c = DynamicCharacter("his_name", color="#c80000", image="him", who_suffix=":", kind=nvl) #red 
-define naomi_c = Character("Naomi", color="#ededed", image="naomi", who_suffix=":", kind=nvl)  #light gray
-define boss_c = Character("Pavel", color="#cccccc", image="pavel", who_suffix=":", kind=nvl)   #dark gray
-define lily_c = Character("Lily", color="#8655bd", image="lily", who_suffix=":", kind=nvl)  #purple
-define sara_c = Character("Sara", color="#c64e89", image="sara", who_suffix=":", kind=nvl)  # dark pink
-define thuc_c = Character("Thuc", color="a9ff22", image="thuc", who_suffix=":", kind=nvl)  #lime green
-define ilian_c = Character("Ilian", color="ffa922", image="ilian", who_suffix=":", kind=nvl) #tangerine
-define brennan_c = Character("Brennan", color="33b533", image="brennan", who_suffix=":", kind=nvl)  #irish green
-define jed_c = Character("Jed", color="cb5500", image="jed", who_suffix=":", kind=nvl)  #rusty brown
-define natalia_c = Character("Natalia", color="ffe74a", image="natalia", who_suffix=":", kind=nvl)  #yellow
-define helen_c = Character("Helen", color="cdcfb2", image="helen", who_suffix=":", kind=nvl) #tan
-define julia_c = Character("Julia", color="#4b54cd", image="julia", who_suffix=":", kind=nvl) #icy blue
-define martin_c = Character("Martin", color="#990011", image="martin", who_suffix=":", kind=nvl)  #dark red
+define her_c = DynamicCharacter("her_name", color="#8864d5", image="her", kind=nvl)
+define him_c = DynamicCharacter("his_name",  who_suffix = " {image=sprites/him-icon.png}",color="#c80000", image="him", kind=nvl) #red 
+define naomi_c = Character("Naomi", color="#ededed", image="naomi", kind=nvl)  #light gray
+define boss_c = Character("Pavel", who_suffix = " {image=sprites/pavel-icon.png}", color="#cccccc", image="pavel_c", kind=nvl)   #dark gray
+define lily_c = Character("Lily", color="#8655bd", image="lily", kind=nvl)  #purple
+define sara_c = Character("Sara", color="#c64e89", image="sara", kind=nvl)  # dark pink
+define thuc_c = Character("Thuc", color="a9ff22", image="thuc", kind=nvl)  #lime green
+define ilian_c = Character("Ilian", color="ffa922", image="ilian", kind=nvl) #tangerine
+define brennan_c = Character("Brennan", color="33b533", image="brennan", kind=nvl)  #irish green
+define jed_c = Character("Jed", color="cb5500", image="jed", kind=nvl)  #rusty brown
+define natalia_c = Character("Natalia", color="ffe74a", image="natalia", kind=nvl)  #yellow
+define helen_c = Character("Helen", color="cdcfb2", image="helen", kind=nvl) #tan
+define julia_c = Character("Julia", color="#4b54cd", image="julia", kind=nvl) #icy blue
+define martin_c = Character("Martin", color="#990011", image="martin", kind=nvl)  #dark red
 
 define computer = Character(None, kind=nvl)
 
@@ -71,18 +93,18 @@ label msg_3:
 
     her_c "Happy Birthday, [his_name]!"
     him_c "Thanks, [her_name]..."
-    sara_c "It's your birthday? How old are you?"
+    sara_c "It's your birthday? How old are you? ;-)"
     him_c "In Earth time, or relative time as experienced by me?"
-    sara_c "Oh, never mind, it doesn't really matter. Happy Birthday, anyway!"
+    sara_c "Oh, never mind, it doesn't really matter. Happy Birthday, anyway! :-D"
     return
 
 label msg_4:
     julia_c "I don't mean to be rude, but whoever is using our front yard as a shortcut to the community center is being extremely inconsiderate. They're trampling my oregano."
     natalia_c "Oh, is that your front yard? I didn't see a fence, so I just thought they were weeds. Sorry!"
     julia_c "I didn't think fences were necessary among trusting, sensible neighbors."
-    sara_c "You have oregano?! Can I have some?"
+    sara_c "You have oregano?! :-o Can I have some?"
     julia_c "Of course, dear. Bring me some soap from the storehouse when you come, please."
-    sara_c "Sure."
+    sara_c "Sure. :-)"
     ilian_c "Make sure you log it, Sara."
     sara_c "I always do."
     ilian_c "Except for that one time with the chocolate."
@@ -104,7 +126,7 @@ label msg_6:
     $ highest_skill = highest_stat()
     if (highest_skill == "Domestic"):
         her_c "I've got some extra mint if anyone needs some - it grows really well here!"
-        sara_c "Ooh, I'll take some."
+        sara_c "Ooh, I'll take some! :-D"
         thuc_c "Me, too. You could dry some, too."
         her_c "Yeah, I think I will."
     elif (highest_skill == "Creative"):
@@ -114,7 +136,7 @@ label msg_6:
         her_c "Sure! Let me know when and where."
     elif (highest_skill == "Technical"):
         her_c "Finally got our new antenna installed. Everyone sounds much clearer now!"
-        sara_c "Yay, call me sometime!"
+        sara_c "Yay, call me sometime! :-)"
     elif (highest_skill == "Spiritual"):
         her_c "Sister Naomi gave a great sermon yesterday..."
         natalia_c "Yes, it even kept Martin awake!"
@@ -130,7 +152,7 @@ label msg_6:
         lily_c "It's not in our database; bring it by the lab and I'll run it through the spectrometer."
     elif (highest_skill == "Physical"):
         her_c "Ran 10k today; I feel tired but so good!"
-        sara_c "Yay! You go, [her_name]!"
+        sara_c "Yay! You go, [her_name]! \o/"
     return
     
 label msg_7:
@@ -142,7 +164,7 @@ label msg_7:
     jed_c "I don't think you could handle my latest batch, Brennan."
     brennan_c "I can't back down from that sort of challenge. Bring it on!\n"
     
-    sara_c "It'll be strange to have Christmas without snow..."
+    sara_c "It'll be strange to have Christmas without snow... :-/"
     martin_c "When I lived in Chile we'd always go to the beach for Christmas..."
     brennan_c "Too bad it's not warm enough for that here!"
     return
@@ -160,19 +182,23 @@ label msg_8:
         her_c "No problem. But, next time you go up against a mill roller, get some backup first, okay?"
         jed_c "Sure thing, Doc."
     elif (profession == "carpenter"):
-        martin_c "The new roof works great, [her_name]. The craftsmanship is excellent; I can tell  it will last."
+        martin_c "The new roof works great, [her_name]. Two storms and no leaks yet."
         her_c "Glad to hear it!."
     elif (profession == "mechanic"):
         helen_c "[her_name], I heard you fixed the clinic's radio, could you take a look at ours, too? The volume control is broken..."
         her_c "Sure, bring it by sometime."
         
+    naomi_c "I'm sorry to have to bring this up, but some candles are missing from the chapel. If you borrowed them, please return them."
+    natalia_c "I was wondering where those came from! I'll send Raul over to give them back."
+    naomi_c "Thank you."
     return
 
 label msg_9:
     sara_c "Anyone seen \"Pioneer of the Stars\"? Is it any good?"
     her_c "Yeah, I just saw it! The romance was good, but the science was terrible. If you can ignore that, you might be able to enjoy it."
-    sara_c "All right! Ilian, date night!!"
+    sara_c "All right! Ilian, date night!! :-D"
     ilian_c "I'm not watching it."
+    sara_c ":'-("
     her_c "I'll watch it with you, Sara, Ilian won't enjoy it anyway. He'll just spend the whole movie talking about how space ships don't really work like that."
     lily_c "They don't. The scenario in that movie is physically impossible."
     her_c "That's why it's a movie, not a documentary."
@@ -205,7 +231,7 @@ label msg_12:
         brennan_c "They made you fall asleep and act a bit loony."
         lily_c "Yes... I may have to retrieve one for study next time I go."
     else:
-        sara_c "If you haven't been to the ocean yet, you should totally go sometime! Just watch out for those purple jellies."
+        sara_c "If you haven't been to the ocean yet, you should totally go sometime! Just watch out for those purple jellies. :-o"
         lily_c "They did not harm me."
         sara_c "They made you fall asleep!"
         lily_c "An effect that could have medicinal applications. I cannot afford not to look into it further."
@@ -215,7 +241,7 @@ label msg_12:
 label msg_13:
     natalia_c "Has anyone seen Josephina?! I put her to bed last night, and now she's gone!"
     thuc_c "She hasn't been to our farm all day."
-    sara_c "I haven't seen her in town..."
+    sara_c "I haven't seen her in town... :-("
     her_c "I saw her walking home from school with her siblings yesterday, but not this morning."
     boss_c "How long has she been missing?"
     natalia_c "I don't know! She could've been gone all night! I thought I saw her when I went to bed, but she's so small, it could've just been her blankets!"
@@ -234,7 +260,7 @@ label msg_14:
 
 label msgs_pregnant:
     natalia_c "So, [his_name] and [her_name], what are you going to name the baby?"
-    sara_c "Baby?! What baby? Why am I always the last to hear about these things?!"
+    sara_c "Baby?! :-o What baby? Why am I always the last to hear about these things?!"
     him_c "Haven't decided on a name yet; we just barely found out ourselves!"
     boss_c "Congratulations!"
     naomi_c "That's wonderful!"
@@ -281,7 +307,7 @@ label msg_17:
     boss_c "No, right now it's first come, first served. Has there been a problem?"
     sara_c "No, I just wanted to like, reserve it for tomorrow night."
     boss_c "Well, then, consider it reserved!"
-    sara_c "Okay, great."
+    sara_c "Okay, great! :-D"
     return
     
 label msg_18:
@@ -305,7 +331,7 @@ label msg_19:
     natalia_c "I'll teach you how to make some, if you want."
     sara_c "Yes! Ohhh, chips and salsa..."
     brennan_c "Sara, have I mentioned lately how beautiful you are? And how generous, and kind to poor hungry souls like myself?"
-    sara_c "Yes, actually you have. Make your own chips and salsa, Brennan."
+    sara_c "Yes, actually you have. Make your own chips and salsa, Brennan. :-P"
     return
     
 label msg_20:
@@ -327,7 +353,11 @@ label msg_20:
     return
 
 label msg_21:
-    ilian_c "COLONISTS: Please try to conserve rechargeable batteries. We are running out. They should last for at least ten years if charged properly and are not allowed to discharge fully."
+    ilian_c "COLONISTS: Please try to conserve rechargeable batteries. We are running out. They should last for at least ten years if treated properly."
+    natalia_c "What does \"treated properly\" mean?"
+    ilian_c "Try to charge them when they are halfway full instead of waiting until they are empty, and don't let them overcharge."
+    lily_c "Also, don't let them get too hot. They should not be kept in the sun, or especially solar flares, if possible."
+    natalia_c "OK, can do."
     
     return
 
@@ -380,7 +410,7 @@ label msg_24:
 label msg_25:
     if (is_pregnant):
         julia_c "Congratulations to [his_name] and [her_name] on the birth of their new baby, [baby_name]!"
-        sara_c "She's adorable! Yay!"
+        sara_c "She's adorable! Yay! :-D"
         martin_c "Congratulations!"
         natalia_c "You'll be wonderful parents! I'd be happy to watch her for you if you need to get some things done. I miss babies..."
         thuc_c "She looks just like you, [his_name]!"
@@ -392,20 +422,23 @@ label msg_25:
     elif (is_pregnant_later):
         call msgs_pregnant
     else:
-        sara_c "Great news everyone!! We're going to have a baby!!"
+        sara_c "Great news everyone!! We're going to have a baby!! :-)"
         her_c "Way to go! That's great!"
         naomi_c "That's wonderful!"
         helen_c "I'm so happy for you!"
         thuc_c "Congratulations!"
         julia_c "Congratulations. I can serve as midwife when the time comes, if you would like."
+        sara_c "Thanks, everyone! I'm sure Ilian appreciates your well-wishes, too... :-/"
+        ilian_c "Yeah, thanks."
         
     nvl clear
     if (((community_level < COMMUNITY_LEVEL_OK) and (loved < 0)) or wants_to_leave):
-        sara_c "I'm going to miss you, [her_name]!!!"
-        helen_c "What? [her_name]'s leaving? Is [his_name] leaving, too?"
+        sara_c "I'm going to miss you, [her_name]!!! :-("
+        helen_c "What? [his_name] and [her_name] are leaving?"
         him_c "No, I'm staying."
         helen_c "Ohhh... I'm sorry."
         him_c "Yeah, well, it's okay."
+        nvl clear
         
     brennan_c "I'm leaving, in case anyone cared."
     him_c "Not likely."
@@ -413,5 +446,11 @@ label msg_25:
     brennan_c "Thanks, Lily."
     lily_c "With you gone, the ratio of people capable of producing useful capital to dependents will decrease substantially."
     brennan_c "Awww, stop, you're making me blush."
+    lily_c "Also, the variation of our genetic pool will decrease."
+    brennan_c "You should have said something sooner, maybe we could have contributed to the gene pool together!"
+    julia_c "That's enough; sometimes my kids read these messages!"
+    lily_c "I will continue this conversation with you in private, Brennan."
+    sara_c ":-o Ummm, wow, did one of Brennan's pickup lines actually work?!"
+    jed_c "It's about time."
         
     return

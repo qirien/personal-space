@@ -435,7 +435,7 @@ label spiritual_master:
     ilian "I'm thankful for my wife, Sara. She never complains, and is always smiling cheerfully."
     hide ilian
     show lily at center with dissolve
-    lily "I'm thankful for electricity."
+    lily happy "I'm thankful for electricity."
     hide lily 
     show thuc at center with dissolve
     thuc "I'm grateful to Mayor Grayson. He's fair and cares about everyone."

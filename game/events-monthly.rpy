@@ -584,9 +584,9 @@ label monthly_event_6:
             her "Sure, there's plenty more where that came from."
             "I watched as Lily sprayed the bugs with her mineral oil and fungus concoction."
             her annoyed "Um, it looks like they're still alive."
-            lily "Yes, if the pesticide works we will know in a few days."
+            lily upset "Yes, if the pesticide works we will know in a few days."
             her angry "A few days? Our crops will be gone by then."
-            lily "It is a rather pressing matter. Do you have any mature garlic cloves?"
+            lily normal "It is a rather pressing matter. Do you have any mature garlic cloves?"
             her surprised "I think we do, but why?"
             lily "Garlic is a natural insect repellent. You'll still have to remove all the bugs, but if you can spray your plants with some diluted garlic it might stop them from returning as quickly."
             her normal "Well, it's worth a shot."
@@ -1042,7 +1042,7 @@ label she_can_do_better:
                         her annoyed "Sorry, that's never going to happen."
                         him annoyed "..."
                         $ loved -= 5
-                    "It's hard":
+                    "It's hard.":
                        her concerned "That's... hard for me. With work and everything, when I come home I just want to relax."
                        him annoyed "Well, you asked what I'd like."
                        menu:
@@ -1201,9 +1201,11 @@ label monthly_event_9:
             her flirting "Thank you, [his_nickname]."
         if (she_wants == "nothing"):
             "I found a poem on my pillow one afternoon:"
-            "you are the sweetest thing\n not like honey or sugar"
-            "but like the nectar of a bright flower\n you sustain even the clumsy bumblebee."
-            her happy "(That was sweet of him...)"
+            note "{font=fonts/danielbd.ttf}you are the sweetest thing\n not like honey or sugar{/font}"
+            note "{font=fonts/danielbd.ttf}but like the nectar of a bright flower\n you sustain even the clumsy bumblebee.{/font}"
+            note "{font=fonts/danielbd.ttf}love forever, [his_name]{/font}"
+            her happy "That was so sweet..."
+            him happy "Nowhere near as sweet as you."
             
     else:
         "Of course he wasn't serious about it. I shouldn't have gotten my hopes up, I guess."
@@ -1508,7 +1510,8 @@ label goto_ocean:
         sara "It's not the kind of beach I'd want to swim in, and I'm glad I brought a sweater, but this is such a sight for sore eyes!"
         her happy "It's an amazing view." 
 
-    lily "I'm so glad we made it! Okay, I'd like to take samples of this crusty white stuff and any other organic material you can find."     
+    lily happy "Yes, this is the ocean. Now, please take samples of this crusty white substance and any other organic material you can find."
+    show lily normal
 
     if (ocean_character == "Jed"):
         jed "Okay, you guys do the stuff on the shore, and I'll get some of this coastal brush." 
@@ -1526,7 +1529,7 @@ label goto_ocean:
     her concerned "Well, I guess if it's for science I can do it."
     "We worked hard to get the samples we needed. We found a lot of shells and some bones. As we were getting ready to leave, the tide started to come back in."
     "The incoming waves were purple with one kind of alien sea creature. It had six spiny or hairy arms, and floated like a jellyfish."  
-    lily "Oh! I've got to record this."
+    lily happy "Oh! I've got to record this."
     if (ocean_character == "Jed"):
         jed "Be careful! Those critters might be deadly!"
     elif (ocean_character == "Brennan"):
@@ -1536,14 +1539,15 @@ label goto_ocean:
 
     "It surprised me how quickly the tide rushed back in. Little spider-crabs rushed to dry rocks, and many got swallowed up by the waves and the purple jellies."
     "A wave splashed under Lily's feet, and one of the purple spiny jellys grabbed at her leg."
-    show lily at squatting with move
+    show lily upset at squatting with move
     lily "O-oh!"
+    show lily happy
     "[ocean_character] looked on in horror as I jabbed the animal with my shovel. As I contacted it, its arm fell off, still wrapped around Lily."
     if (skill_physical >= 40):
         show her at midleft with move
         "Lily had a strange look on her face, so I carried her further inland so she could sit down."
         "She wasn't blinking, so I pinched her a few times."
-        lily "Please stop that. What happened? Did I fall asleep?"
+        lily normal "Please stop that. What happened? Did I fall asleep?"
     elif (skill_knowledge >= 40):
         "Lily appeared to be temporarily paralyzed, so I motioned to [ocean_character] to help me carry her further inland."
         show her at right with move
@@ -1554,7 +1558,7 @@ label goto_ocean:
         else:
             show sara at midleft with move
         "I was trying to think of what I could do to help her when she came out of her trance."
-        lily "W-what happened? Did I fall asleep?"
+        lily normal "W-what happened? Did I fall asleep?"
     else:
         "I had no idea what to do next. I just stood there, scared."
         show her at right with move
@@ -1567,13 +1571,13 @@ label goto_ocean:
             
         "[ocean_character] rushed over to catch Lily as she collapsed."            
         her surprised "Umm..."
-        lily "W-what happened? Did I fall asleep?"
+        lily normal "W-what happened? Did I fall asleep?"
 
     her normal "No, one of the purple jellies latched onto you."
-    lily "Strange. I feel like I've been dreaming for hours."
+    lily upset "Strange. I feel like I've been dreaming for hours."
     # TODO: this is still awkward (see (b) )
     her serious "Its tentacle is still on you; we should probably remove it."
-    lily "Oh, I'll take care of that."
+    lily normal "Oh, I'll take care of that."
     if (ocean_character == "Brennan"):
         brennan "Did that animal make you fall asleep?"
         lily "I don't have narcolepsy, but it has been an unusually exhausting day. Maybe I overextended myself."
@@ -1582,7 +1586,7 @@ label goto_ocean:
         "She carefully grabbed it with her tweezers and moved it into a specimen bag. Jed and I looked at each other with exasperation. Maybe she was a little TOO dedicated."
     else:
         sara "Don't worry, I made sure your camera was safe!"
-        lily "Thank you! Perhaps I just had a little too much sun today."
+        lily happy"Thank you! Perhaps I just had a little too much sun today."
 
     stop sound fadeout 3.0 
     return
@@ -1617,18 +1621,18 @@ label monthly_event_11:
     show lily at quarterright with dissolve
     show her normal at midleft with moveinleft
     her surprised "I heard you've been gathering ore?"
-    lily "Yes! Do you have some you'd like to donate?"
+    lily happy "Yes! Do you have some you'd like to donate?"
     her happy "I don't, but I'm willing to test the material's melting point!"
-    lily "Are you hoping to make something?"
+    lily normal "Are you hoping to make something?"
     her normal "Yes, I want to make a rocket stove to heat our house on cloudy days."
     lily "I don't really have enough to make anything with it yet, but I can help you find more metal."
     lily "I've received samples of three different ores, and I think one could make the kind of metal you're looking for. You'd need to go mining for it though."
     her surprised "Mining, like with a pick?"
     lily "Yes. I think gunpowder would help a lot too."
     her "Blowing up rocks? Is that allowed?"
-    lily "Well, we are supposed to survive in a way that doesn't damage the existing ecosystem excessively."
+    lily upset "Well, we are supposed to survive in a way that doesn't damage the existing ecosystem excessively."
     her normal "Tell me where you think the metal is and I'll see if I can get it out using our pick. I don't think I want to think about gunpowder quite yet."
-    lily "I will tell you where the metal is, but I want your help collecting some samples from a semi-remote location first."
+    lily normal "I will tell you where the metal is, but I want your help collecting some samples from a semi-remote location first."
     her annoyed "Don't you think metal is more important than documenting organisms?"
     lily "No, I don't. And you never know, maybe one of these creatures will have an iron lung or something."
     her normal "Okay, what do I need to bring?"
@@ -1671,7 +1675,6 @@ label monthly_event_11:
             jed "Now that you mention it, I have been wanting to go for a hike."
             her happy "Just think of it as a long hike, and if the beach scares you you can stay far away from it."
             jed "Okay, can do."
-            call goto_ocean
                     
         "Brennan, my co-worker":
             $ ocean_character = "Brennan"
@@ -1692,7 +1695,6 @@ label monthly_event_11:
             brennan "I don't really care what we do, as long as it's something exciting."  
             her happy "Oh, it'll be exciting."
 
-            call goto_ocean
 
         "Sara, my friend":
             $ ocean_character = "Sara"
@@ -1707,15 +1709,15 @@ label monthly_event_11:
             her concerned "Usually you're so worried about trying anything new, I'm kind of surprised that you're so excited about this."
             sara "Yeah, I guess it could be dangerous. But I used to live by an ocean, so I kind of miss it."
 
-            call goto_ocean
-
+    call goto_ocean
+    
     scene bg path with fade
     show lily at midleft
     show her normal at midright with dissolve
     "After Lily got her bearings, we made the long trip back."
     # TODO (b): This is awkward, make it fit with the TODO above.
     her surprised "Can you remember anything from your dream?"
-    lily "My... dream?"
+    lily normal "My... dream?"
     show her serious
     "She didn't remember? Strange... I wondered what she would find when she studied these animals."
     scene bg lab with fade
@@ -1929,18 +1931,18 @@ label monthly_event_13:
     show her serious at left
     with dissolve
 
-    lily "He shows great remorse. I doubt he will be so careless as to repeat his mistakes."
+    lily normal "He shows great remorse. I doubt he will be so careless as to repeat his mistakes."
     jed "It could have been any of us..."
     thuc "But would one of us have dumped her body in the river and covered it up? That behavior is suspicious. He says it was an accident, but who can tell for certain?"
     her surprised "But why would anyone kill Josephina?"
     thuc "Why does any criminal do what they do? They want to, and they don't care about other people."
     thuc "Or maybe he was trying to cover up something else he did to her."
     show her serious
-    lily "That is pure speculation. Ilian has not shown any other behavior that would be cause for concern."
+    lily upset "That is pure speculation. Ilian has not shown any other behavior that would be cause for concern."
     thuc "But it's possible that it was not an accident. We cannot show too much mercy, or people will think they can get away with anything."
     jed "So, what, you want to string him up?"
     thuc "Of course not. I propose temporary banishment. He should have to live on his own, off the land, for a year. That will show how important our community is, both to him and any would-be criminals."
-    lily "There are no would-be criminals here, Thuc. What you are proposing is a death sentence. I think he should simply provide a certain amount of free labor to the Peron family every week. Perhaps that way they can eventually forgive him."
+    lily normal "There are no would-be criminals here, Thuc. What you are proposing is a death sentence. I think he should simply provide a certain amount of free labor to the Peron family every week. Perhaps that way they can eventually forgive him."
     jed "I don't much like either of those options, but I can't think of anything better."
 
     menu:
@@ -1956,10 +1958,10 @@ label monthly_event_13:
 
         "Banishment":
             her serious "I agree with Thuc; we need to show that our community won't allow such behavior."
-            lily "It would be more humane to simply shoot him in the head; it would be impossible to survive for a year alone out there."
+            lily upset "It would be more humane to simply shoot him in the head; it would be impossible to survive for a year alone out there."
             her "I agree. Also, we can't afford to lose our storehouse manager for that long. So I propose that he live outside the community boundaries, but close enough that we can trade with him. He can hunt or gather useful things and trade them for food or other community resources."
             thuc "That's too soft!"
-            lily "I think a year is still too long."
+            lily normal "I think a year is still too long."
             her "How about two weeks?"
             thuc "Four."
             lily "I suppose that would work...as long as the resources he gathers go to help the Peron family."
@@ -1972,7 +1974,7 @@ label monthly_event_13:
             jed "What's your idea?"
             her concerned "Having him work for the Perons is a good idea, but it is too soon. They would feel angry, and then he would feel like his apology was not accepted."
             her serious "But a year is too long to send anyone to live outside the community. I propose Ilian leave the community for a week. When he returns, he will have to work for the Perons one day of every week for the next half year."
-            lily "That sounds fair for all involved."
+            lily happy "That sounds fair for all involved."
             thuc "I think a week is too short. He should live outside for a month!"
             jed "How 'bout two weeks, then?"
             "Everyone agreed to this proposal. The mayor seemed happy with it, too, and both Ilian and the Perons accepted it without argument."
@@ -2948,6 +2950,8 @@ label monthly_event_19:
     return
 
 # MONTH 20 - Trouble sleeping
+# TODO: Replace this with something more EPIC!!!
+# she gets hurt by giant hail
 label monthly_event_20:
     scene bg bedroom with fade
     show overlay night
@@ -3313,7 +3317,7 @@ label monthly_event_22:
             hide sara with moveoutright
             show brennan at center with moveinleft
             hide brennan with moveoutright
-            show lily at center with moveinleft
+            show lily upset at center with moveinleft
             hide lily with moveoutright
             "When I looked at the camera footage, it showed several people from the colony arrive at different times and each return a bottle or two of shampoo."
             scene bg community_center with fade

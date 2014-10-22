@@ -4,6 +4,7 @@
 # Clarissa says: Sans font, white label
 
 # TODO: This screen is messed up in 6.18; check with newest version of Ren'Py
+# TODO: Save game screenshots of this show the save screen and not the computer screen
 
 style cp_text is text:
     color "#222"
@@ -64,7 +65,7 @@ screen computer_pad(periods):
                 frame:
                     xfill True
                     ypos 10
-                    ysize 150
+                    ysize 140
                     has vbox
                     
                     label "Relationship"
@@ -73,7 +74,7 @@ screen computer_pad(periods):
                 frame:
                     xfill True
                     ypos 25
-                    ysize 108
+                    ysize 118
                     vbox:
                         xfill True
                         
@@ -95,18 +96,18 @@ screen computer_pad(periods):
                         # Display health stats based on month, pregnancy, stress, etc.
                         label "Health"
                         if ((is_pregnant or is_pregnant_later) and (trimester != "third")):
-                            text "Blood Pressure... {color=FF0000}Low{/color}"
-                            text "Pulse Rate...{color=FF0000}Fast{/color}"
+                            text "Blood Pressure... {color=EA0000}Low{/color}"
+                            text "Pulse Rate...{color=EA0000}Fast{/color}"
                         elif (relaxed <= -5):
-                            text "Blood Pressure... {color=FF0000}High{/color}"
-                            text "Pulse Rate...{color=FF0000}Fast{/color}"
+                            text "Blood Pressure... {color=EA0000}High{/color}"
+                            text "Pulse Rate...{color=EA0000}Fast{/color}"
                         else:
-                            text "Blood Pressure... {color=00FF00}OK{/color}"
-                            text "Pulse Rate...{color=00FF00}OK{/color}"
+                            text "Blood Pressure... {color=00AA00}OK{/color}"
+                            text "Pulse Rate...{color=00AA00}OK{/color}"
                         if ((month == 14) or (month == 24)):
-                            text "Temperature...{color=FF0000}High{/color}"
+                            text "Temperature...{color=EA0000}High{/color}"
                         else:
-                            text "Temperature...{color=00FF00}OK{/color}"
+                            text "Temperature...{color=00AA00}OK{/color}"
                         
                         if (is_pregnant or is_pregnant_later):
                             text "Pregnancy: [trimester] trimester."
