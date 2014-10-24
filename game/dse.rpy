@@ -55,6 +55,7 @@ label day:
 
     # Increment the month it is.
     $ month += 1
+    $ save_name = "Month [month]"
     stop music fadeout 1.0
     scene bg talaam_space with fade
 

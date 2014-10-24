@@ -6,22 +6,18 @@
 # TODO: This screen is messed up in 6.18; check with newest version of Ren'Py
 # TODO: Save game screenshots of this show the save screen and not the computer screen
 
-style cp_text is text:
+style cp_text is sans_text:
     color "#222"
-    font "fonts/Exo2.otf"
     
-style cp_label_text is text:
+style cp_label_text is sans_text:
     color "#000"
     #size 18
     bold True
-    font "fonts/Exo2.otf"
 
-style cp_header_text is text:
+style cp_header_text is sans_text:
     color "#FFF"
     size 22
-    #bold True
-    font "fonts/Exo2.otf"
-    
+    #bold True    
     
 style cp_label is label:
     xalign 0.5

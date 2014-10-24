@@ -49,6 +49,7 @@ init -200:
     define year = 1
     define earth_year = 1
     define earth_month = 0
+    define save_name = "Intro"
 
     define known_each_other = ""
     define profession = ""
@@ -123,7 +124,6 @@ label splashscreen:
 
 # The game starts here.
 label start:
-
     # add a default dissolve transition between each say if no other transition is speficied
     $ config.say_attribute_transition = dissolve
   
