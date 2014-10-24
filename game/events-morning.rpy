@@ -551,7 +551,7 @@ label work_3:
 
     # DOCTOR 
     if (profession == "doctor"):
-        "I worked hard all month. A new baby was born, a kid got his finger chopped off, and it looked like Mr. Peron might have cancer. In addition, we were monitoring the colonist's radiation and nutrient levels to try to keep them healthy."
+        "I worked hard all month. A new baby was born, a kid got his finger chopped off, and it looked like Mr. Peron might have cancer. In addition, we were monitoring the colonists' radiation and nutrient levels to try to keep them healthy."
         show brennan at quarterleft with dissolve
         "Brennan worked hard, too - he didn't have any formal medical training, but he learned to take vitals and log patients and fetch equipment for me."
         "It would have been impossible to do it all by myself."
@@ -580,7 +580,7 @@ label work_3:
         "There were times when just having another adult around was so important."
     show her normal
     her normal "Good work today, Brennan."
-    brennan "Thanks, [her_name]. I really enjoy working with you."
+    brennan "Thanks, [her_name]. It's a pleasure working with you."
     menu:
         "What should I say?"
         "I enjoy working with you, too.":
@@ -642,6 +642,8 @@ label work_4:
 
     # Doctor - problems with new local bacteria (no viruses, though)
     #TODO change old fashioned stuff to new tech (genetic engineering, nanobots, etc)
+    # TODO: Message Lily on the computer?
+    # TODO: A parent comes to stay with the kids? Learn more of their past?
     if (profession == "doctor"):
         "There were not a lot of illnesses so far - they took great pains to make sure none of the colonists were carrying infectious diseases, and the viruses here probably hadn't had time to adapt to us yet."
         "But there were plenty of injuries, as people tried to adjust to new equipment, the different climate and atmosphere, and a new way of life."

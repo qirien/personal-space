@@ -213,6 +213,8 @@ label social_2:
             her surprised "That's probably true..."
     else:
         "[his_name] and I talked to the Nguyens about our farms and crops, and what things seemed to help the crops grow better, and what the kids were doing."
+        
+    # TODO: Ask how they met, hear interesting story.  Military? College?  "such a gentleman"
 
     "We talked and talked, until finally, it got dark. One of the moons was shining brightly; the other was dark."
     show overlay night with dissolve
