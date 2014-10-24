@@ -61,7 +61,7 @@ screen say:
 # Styles for use everywhere in the game
 # Custom code for our game goes here
 
-# TODO: Consolidate fonts so you only have to change them 1 place
+# Consolidate fonts so you only have to change them 1 place
 style sans_text is text:
     font sans_font
     
@@ -330,6 +330,7 @@ init -2 python:
 # from simple load and save screens.
     
 screen file_picker:
+    tag menu
 
     frame:
         style "file_picker_frame"
@@ -382,7 +383,6 @@ screen file_picker:
 
                     # Add the screenshot.
                     add FileScreenshot(i)
-                    # TODO: add month
                     # Format the description, and add it as text.
                     $ description = "% 2s. %s\n%s" % (
                         FileSlotName(i, columns * rows),
@@ -556,7 +556,6 @@ init -2 python:
 screen yesno_prompt:
 
     modal True
-
     window:
         style "gm_root"
 

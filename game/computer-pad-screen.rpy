@@ -1,10 +1,9 @@
 # Code to display our "Computer Pad" screen for planning the month, viewing skills,
 # reading colony messages, etc.
 
-# Clarissa says: Sans font, white label
-
 # TODO: This screen is messed up in 6.18; check with newest version of Ren'Py
 # TODO: Save game screenshots of this show the save screen and not the computer screen
+# use FileTakeScreenshot() ?
 
 style cp_text is sans_text:
     color "#222"
@@ -28,6 +27,7 @@ style cp_choice_button is button:
 screen computer_pad(periods):
     #tag month_menu
     $ renpy.choice_for_skipping()
+    $ FileTakeScreenshot()
 
     add "bg/silk-gray.jpg"
     add "bg/computer-pad.png"
