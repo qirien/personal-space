@@ -1,6 +1,6 @@
-"Love in Space" by Andrea Landaker and Rachel Helps is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License (CC BY-NC-SA 3.0)
+"Our Personal Space" by Andrea Landaker and Rachel Helps is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License (CC BY-NC-SA 3.0)
 
 http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode
 
 For more information about this work, see
-https://github.com/qirien/personal-space or contact Andrea at qirien@gmail.com
+http://qirien.icecavern.net/PersonalSpace or contact Andrea at qirien@gmail.com

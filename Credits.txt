@@ -26,6 +26,8 @@ Chemistry Laboratory - Bench.jpg by Jean-Pierre from http://commons.wikimedia.or
 Other photos by Wes Landaker, Andrea Landaker, Lisa Horner, and Lance Meibos
 Filtered with FotoSketcher, http://www.fotosketcher.com
 
+Tablet status icons from the Google Material Design Icons, used under the CC-BY-SA-4.0 License.
+
 Alpha Testers
 -------------
 Lisa Horner
