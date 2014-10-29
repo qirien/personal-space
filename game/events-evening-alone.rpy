@@ -192,7 +192,7 @@ label relax_alone_7:
 # These probably won't be seen, so make them simple.
 label relax_alone_8:
     scene bg bedroom with fade
-    play music "music/Shanghai.ogg" fadeout 3.0
+    play music "music/Shanghai_20_00.ogg" fadeout 3.0
     "I listened to some music - I didn't do anything else while listening, just lay back and really listened."
     "It made me think of summer vacation when I was a teenager back home, just lying back and reading books in the shade, playing video games, going swimming, and drinking lemonade."
     "What would our kids' summers be like?"
