@@ -27,7 +27,7 @@ init -100 python:
     style.dp_label = Style(style.label)
     style.dp_label_text = Style(style.text)
     style.dp_label_text.color = "#000"
-    style.dp_label_text.font =  "fonts/Exo2.otf"
+    style.dp_label_text.font =  "fonts/Questrial-Regular.otf"
     style.dp_label_text.bold = True
 
     # The title of the done button.
