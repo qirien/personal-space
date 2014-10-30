@@ -55,7 +55,7 @@ label day:
 
     # Increment the month it is.
     $ month += 1
-    $ save_name = "Month [month]"
+    $ save_name = "Month %d" % month
     stop music fadeout 1.0
     scene bg talaam_space with fade
 
@@ -85,7 +85,7 @@ label day:
         $ weather = "hot and dry"
     if (local_month == 5):
         $ season = "fall"
-        $ weather = "warm during the day and cool at night"
+        $ weather = "mild and breezy"
     if ((local_month == 6) or (local_month == 7)):
         $ season = "winter"
         $ weather = "cold and rainy"
@@ -99,10 +99,12 @@ label day:
         $ pregnant_months = month - 23
     if (pregnant_months < 4):
         $ trimester = "first"
-    elif (pregnant_months < 9):
+    elif (pregnant_months < 8):
         $ trimester = "second"
-    else:
+    elif (pregnant_months <= 10):
         $ trimester = "third"
+    else:
+        $ trimester = "done"
         
     # TODO: Play a season-specific sound (like rain or wind)?
 

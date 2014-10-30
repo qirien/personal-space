@@ -97,7 +97,6 @@ screen display_planner(periods):
                             $ num_choices = len(this_period.acts)
                             $ choice_rows = ((num_choices-1) // 2) + 1
                             grid 2 choice_rows: 
-                            # TODO: some buttons change size after being deselected?
                                 style_group "dp_choice"
                                 for name, curr_val, enable, should_show in this_period.acts:
                                     $ show_this = eval(should_show)

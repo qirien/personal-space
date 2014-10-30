@@ -966,13 +966,13 @@ label work_6:
     her concerned "Oh no, I forgot my lunch."
     brennan "I was just going to go home for lunch; do you want to join me?"
     her serious "No, it's okay, I can just walk home and get something."
-    brennan "That's two kilometers each way; you won't have any time to cook and eat anything. Come on, I'll fix you something. It's the least I can do for you, after all you've done for me."
+    brennan "That's two klicks each way; you won't have any time to cook and eat anything. Come on, I'll fix you something. It's the least I can do for you, after all you've done for me."
     her concerned "Well..."
     menu:
         "What should I say?"
         "Yes.":
             her normal "Thank you, I'd appreciate that."
-            scene bg farm_interior flip
+            scene bg farm_interior flip with fade
             show brennan at midright
             show her normal at midleft
             with moveinleft
@@ -980,7 +980,7 @@ label work_6:
             "Mr. and Mrs. Grayson weren't there today, though."
             "Brennan pulled out a frying pan and put some oil in it, and prepared some potatoes, cabbage, eggs and spices."
             her surprised "Do you like to cook?"
-            brennan "Once in a while. Usually Mrs. Grayson cooks for all four of us, but I'll take a turn, too."
+            brennan "Once in a while. Usually Mrs. Grayson cooks for all of us, but I'll take a turn sometimes, too."
             her normal "What are you making?"
             brennan "Just a little hash. Ordinarily, I'd add some sausage or bacon, but they're both in short supply these days."
             her happy "That sounds delicious! It's kind of a treat to have someone else cook for me..."
@@ -1000,7 +1000,7 @@ label work_6:
                     brennan "Well, the oldest, Joanna, is all over that Tomás fellow who's about her age. I'm surprised they're not married yet."
                     her surprised "They're only seventeen!"
                     brennan "Well, it's old enough to get into trouble, and old enough to help propagate the species..."
-                    her normal "What about the younger sister, Miranda?"
+                    her flirting "What about the younger sister, Miranda?"
                     brennan "You're not seriously suggesting I try and date a child, are you?"
                     menu:
                         "What should I say?"
@@ -1041,7 +1041,7 @@ label work_6:
                     brennan "Of course! But that doesn't mean you can't have any sparks of excitement. You just have to work a little harder."
                     her annoyed "Got any ideas?"
                     brennan "Hundreds! Like, when you're at dinner, play a little footsie under the table, or give him a little spank when he walks by, or go to bed naked, or grab his--"
-                    her surprised "OK! That's enough!"
+                    her surprised "Whoa! That's enough!"
                     brennan "I've got plenty more..."
                     her concerned "It's kind of weird to have you telling me to get naked for my husband..."
                     brennan "Well, no one else is telling you, and you need to hear it!"

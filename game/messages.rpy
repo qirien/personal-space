@@ -21,6 +21,7 @@ screen message_board:
         text "{b}Colony Messages{/b}"
 
         # This is kind of cool, but it is distracting when there are not many messages.
+        # TODO: Is there a way to only display this when the text is big enough?
         if (num_messages >= 10):
             viewport:
                 mousewheel True
@@ -284,9 +285,6 @@ label msgs_pregnant:
     return
 
 label msg_15:
-    if (is_pregnant):
-        call msgs_pregnant
-
     boss_c "Just a reminder - please don't let kids play in the community center when no one else is there. I wouldn't want anyone to get hurt by falling chairs or anything."
     natalia_c "Falling chairs? We're on an alien planet full of unknown perils and you're worried about falling chairs?"
     boss_c "I would feel responsible if something bad happened at the community center."
@@ -299,6 +297,8 @@ label msg_15:
     return
     
 label msg_16:
+    if (is_pregnant):
+        call msgs_pregnant
     helen_c "Has anyone seen Jed?! He didn't come home last night!"
     naomi_c "He and Brennan got rather intoxicated last night, testing Jed's latest brew - I'll check at the community center for you."
     helen_c "Thanks, Naomi. Hopefully that's all it is.\n"

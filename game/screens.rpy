@@ -328,6 +328,9 @@ init -2 python:
 # Since saving and loading are so similar, we combine them into
 # a single screen, file_picker. We then use the file_picker screen
 # from simple load and save screens.
+
+# TODO: make the description contain the month when it saves, not when it displays.
+#     
     
 screen file_picker:
     tag menu

@@ -25,7 +25,7 @@ style cp_choice_button is button:
     size_group "cp_choice_button"
 
 screen computer_pad(periods):
-    #tag month_menu
+    tag month_menu
     $ renpy.choice_for_skipping()
     $ FileTakeScreenshot()
 
@@ -101,12 +101,13 @@ screen computer_pad(periods):
                             text "Blood Pressure... {color=00AA00}OK{/color}"
                             text "Pulse Rate...{color=00AA00}OK{/color}"
                         if ((month == 14) or (month == 24)):
-                            text "Temperature...{color=EA0000}High{/color}"
+                            text "Temperature... {color=EA0000}High{/color}"
                         else:
-                            text "Temperature...{color=00AA00}OK{/color}"
+                            text "Temperature... {color=00AA00}OK{/color}"
                         
-                        if (is_pregnant or is_pregnant_later):
-                            text "Pregnancy: [trimester] trimester."
+                        # TODO: Test if it shows pregnant forever.
+                        if ((is_pregnant or is_pregnant_later) and (trimester != "done")):
+                            text "Pregnancy... [trimester] trimester"
                             
                 textbutton "Skills" xalign 0.5 ypos 50:
                     action Show("skill_screen")
@@ -180,8 +181,8 @@ screen computer_pad(periods):
                 xfill True
                 use display_planner(periods)
                 
-        textbutton "Help":
-            action Show
+#        textbutton "Help":
+#            action Show
      
     # Start music every time this screen is shown if it's not already playing.
     on "show" action If(renpy.music.is_playing(), true=None, false=pop_songs.RandomPlay())
