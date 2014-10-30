@@ -61,7 +61,7 @@ screen say:
 # Styles for use everywhere in the game
 # Custom code for our game goes here
 
-# Consolidate fonts so you only have to change them 1 place
+# Consolidate Sans fonts so you only have to change them 1 place
 style sans_text is text:
     font sans_font
     

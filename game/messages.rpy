@@ -67,7 +67,7 @@ define jed_c = Character("Jed", color="cb5500", image="jed", kind=nvl)  #rusty b
 define natalia_c = Character("Natalia", color="ffe74a", image="natalia", kind=nvl)  #yellow
 define helen_c = Character("Helen", color="cdcfb2", image="helen", kind=nvl) #tan
 define julia_c = Character("Julia", color="#4b54cd", image="julia", kind=nvl) #icy blue
-define martin_c = Character("Martin", color="#990011", image="martin", kind=nvl)  #dark red
+define martin_c = Character("Martín", color="#990011", image="martin", kind=nvl)  #dark red
 
 define computer = Character(None, kind=nvl)
 
@@ -139,7 +139,7 @@ label msg_6:
         sara_c "Yay, call me sometime! :-)"
     elif (highest_skill == "Spiritual"):
         her_c "Sister Naomi gave a great sermon yesterday..."
-        natalia_c "Yes, it even kept Martin awake!"
+        natalia_c "Yes, it even kept Martín awake!"
     elif (highest_skill == "Social"):
         her_c "Free advice: never play Pictionary against Helen! She draws like da Vinci on speed..."
         him_c "I thought we did pretty good!"
@@ -189,7 +189,7 @@ label msg_8:
         her_c "Sure, bring it by sometime."
         
     naomi_c "I'm sorry to have to bring this up, but some candles are missing from the chapel. If you borrowed them, please return them."
-    natalia_c "I was wondering where those came from! I'll send Raul over to give them back."
+    natalia_c "I was wondering where those came from! I'll send Raúl over to give them back."
     naomi_c "Thank you."
     return
 
@@ -213,7 +213,16 @@ label msg_10:
     
 label msg_11:
     thuc_c "[his_name], is Lettie better yet?"
-    him_c "Yeah, she's fine. Still haven't figured out exactly what it was, though."
+    him_c "Yeah, she's fine. Still haven't figured out exactly what it was, though.\n"
+    julia_c "I just fed someone else's ill-mannered children again... Ilian, would it be possible for me to pick up a little extra flour the next time I'm there?"
+    ilian_c "Uhhh, yeah, that's probably fine..."
+    natalia_c "Why are you getting all passive-aggressive, Julia? Just send them all over here next time. They know to listen to adults."
+    julia_c "I'm terribly sorry, but I only let my children play at houses where there is proper adult supervision."
+    natalia_c "You're not still mad about the mud, are you?"
+    julia_c "They threw mudballs at my children!"
+    natalia_c "They were all throwing mudballs! It was fun!"
+    julia_c "I will not subject my children to that sort of mean-spirited \"play\"."
+    natalia_c "Just mean-spirited parenting."
     return
     
     
@@ -244,15 +253,15 @@ label msg_13:
     sara_c "I haven't seen her in town... :-("
     her_c "I saw her walking home from school with her siblings yesterday, but not this morning."
     boss_c "How long has she been missing?"
-    natalia_c "I don't know! She could've been gone all night! I thought I saw her when I went to bed, but she's so small, it could've just been her blankets!"
-    boss_c "She's awfully young to be out on her own for so long. Anyone who can, please meet at the Peron's and we'll organize a search."
+    natalia_c "I don't know! She could've been gone all night! I thought I saw her when I went to bed, but she's so small, it could've just been her blankets..."
+    boss_c "She's awfully young to be out on her own for so long. Anyone who can, please meet at the Perón's and we'll organize a search."
     natalia_c "Thank you, Mayor."
     return
     
 label msg_14:
     jed_c "Sure has been quiet around here lately..."
     martin_c "It's even quieter over here, without Josephina..."
-    jed_c "Sorry, Martin..."
+    jed_c "Sorry, Martín..."
     helen_c "How's Natalia holding up?"
     natalia_c "I'm fine."
     #TODO: brennan_c posts pic of sad kitten, everyone calls him insensitive.
@@ -363,16 +372,16 @@ label msg_21:
 
 label msg_22:
     # Can I have Tomas and Joanna post here w/o making characters for them?
-    natalia_c "I have good news - our son Tomas is engaged to Joanna Ngyuen!"
+    natalia_c "I have good news - our son Tomás is engaged to Joanna Ngyuen!"
     julia_c "They can't keep their hands off each other, so I suppose it's for the best."
     thuc_c "Now, Julia, is that any way to talk about your daughter and her true love?"
     julia_c "True love! You're probably where she got such a ridiculous romantic notion."
-    thuc_c "That, or it could be your old love letters that I let her read. I knew there was a reason I kept them all."
+    thuc_c "That, or it could be your old love letters that I let her read."
     julia_c "Thuc!!\n"
 
-    brennan_c "Ahhh, Tomas, you're a lucky man. Though I don't envy you having Julia for a mother-in-law...."
+    brennan_c "Ahhh, Tomás, you're a lucky man. Though I don't envy you having Julia for a mother-in-law...."
     martin_c "Man?! He's still a boy... Though if he's old enough to get married..."
-    julia_c "A man is as a man does. Tomas is more of a man than some here, at least."
+    julia_c "A man is as a man does. Tomás is more of a man than some here, at least."
     brennan_c "I stand by what I said."
     
     return

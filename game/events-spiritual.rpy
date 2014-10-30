@@ -144,7 +144,7 @@ label spiritual_3:
         "I walked to town and entered the small chapel."
     scene bg church with fade
     "Probably about half the people of the colony were there. Some people were coming in from smaller rooms on the side; some denominations held their own meetings before Sister Naomi's sermon."
-    "We sang a hymn of thankfulness for blessings, and Mrs. Peron gave a prayer."
+    "We sang a hymn of thankfulness for blessings, and Mrs. Perón gave a prayer."
     show naomi at center with moveinright
     naomi "Today I want to share a parable with you."
     naomi "Once there was a merchant travelling to a far-off land. He carried fruits and other foods. While he was travelling, one of the fruits fell out of his pack and rolled down the hill to a gardener's house."
@@ -374,7 +374,7 @@ label spiritual_8:
     "I decided to set aside a time each day to think about how I can help all the people in my life. I would even add items to my schedule or to-do list on my computer pad if there were specific things I wanted to do that day."
     "At first it felt a little awkward - slightly as if I was programming a robot."
     "But I was able to think about others more and help them in specific ways."
-    her serious "Sara is often lonely; I should invite her to lunch this week.  Hmmm, Ms. Peron was mentioning that she loves potatoes, and I don't think they are growing any on their farm - I could give them some of ours."
+    her serious "Sara is often lonely; I should invite her to lunch this week.  Hmmm, Ms. Perón was mentioning that she loves potatoes, and I don't think they are growing any on their farm - I could give them some of ours."
     her concerned "[his_name] has been really stressed out lately - he'd probably like it if I spent some time with him."
     her normal "It's been really nice of Sister Naomi to lend me these books and take the time to talk to me so much lately - I should tell her thank you for that."
     
@@ -444,7 +444,7 @@ label spiritual_master:
     julia "I'm thankful for the doctor's quick care, so Van didn't choke to death."
     hide julia
     "Even some of the kids chimed in."
-    "Raul Peron" "No school today!"
+    "Raúl Perón" "No school today!"
     "Miranda Nguyen" "We haven't been eaten by wolfslugs!"
     "Van Nguyen" "Mommy and daddy."
     

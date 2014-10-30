@@ -149,8 +149,8 @@ label monthly_event_2:
     him "It'll sure be nice when we have some fresh food to eat."
     her annoyed "I know; I'm so tired of MREs!"
     him "It won't take too long until the radishes, spinach, and maybe even carrots are ready."
-    her concerned "We don't have a refrigerator..."
-    him "No, I was thinking of digging a cellar, but I just haven't had time...preparing the fields has taken longer than I thought."
+    her concerned "Our fridge is so small..."
+    him "Yeah, I was thinking of digging a cellar, but I just haven't had time...preparing the fields has taken longer than I thought."
     menu:
         "What should I say?"
         "I'll do it!":
@@ -201,10 +201,10 @@ label monthly_event_2:
             "Even though it took a long time, it was kind of fun to work on it together."
             $ loved += 5
 
-        "{i}Maybe the Peron's would help us dig it?{/i}" if (skill_social >= 10):
-            her surprised "Maybe the Peron's would help us dig ours, and we could help them dig a cellar, too?"
+        "{i}Maybe the Peróns would help us dig it?{/i}" if (skill_social >= 10):
+            her surprised "Maybe the Peróns would help us dig ours, and we could help them dig a cellar, too?"
             him happy "That would be great; it'll be more efficient with a few more people."
-            "I talked to the Peron's and they thought that sounded great, so we were able to help each other have a cellar to store food in. They also gave us some eggs from their chickens, who were acclimatizing to Talaam nicely."
+            "I talked to the Peróns and they thought that sounded great, so we were able to help each other have a cellar to store food in. They also gave us some eggs from their chickens, who were acclimatizing to Talaam nicely."
             $ community_level += 5
 
         "I don't want to help.":
@@ -405,7 +405,7 @@ label monthly_event_4:
             "{i}It's important.{/i}" if (relaxed >= 0):
                 her annoyed "We need our connections with other people if we're going to survive as a community."
                 him surprised "Does that really do any good?"
-                her concerned "Well, remember those delicious dried fruits we got from the Peron's? We were \"just hanging out\" when we prepared them."
+                her concerned "Well, remember those delicious dried fruits we got from the Perón's? We were \"just hanging out\" when we prepared them."
                 him normal "Yeah, those are good."
                 her normal "We can't survive by ourselves out here - we need the community."
                 him normal "You're right; I don't like to depend on others, but we do need to work together."
@@ -646,21 +646,21 @@ label monthly_event_6:
             him normal "Well, I could burn them all, and then the ashes can fertilize the next crop."
             her concerned "Sounds better than nothing."
             "We piled all the corn plants into a huge bonfire. It burned into the night and made a big plume of smoke."
-            "Our neighbors the Perons came by the see the fire, and we ate roasted insects as we watched the egg-infested crops turn to ash."
+            "Our neighbors the Peróns came by the see the fire, and we ate roasted insects as we watched the egg-infested crops turn to ash."
             
         "{i}Ask if anyone else is having the same problem.{/i}" if (skill_spiritual >= 30 or skill_social >= 30):
             her normal "Let's ask around and see if anyone else has had problems with these pests."
             him normal "Okay. I'll take Lettie into town; can you ask our neighbors?"
             her "Sure."
-            "I found out that the Perons had the same insect eating their corn. To prevent the insects from laying eggs in the corn, they put mineral oil on the silks."
+            "I found out that the Peróns had the same insect eating their corn. To prevent the insects from laying eggs in the corn, they put mineral oil on the silks."
             "I radioed [his_name] and asked him to bring back some mineral oil from the storehouse. For the rest of the week, we put the oil on our corn silks and picked off the insects by hand."
-            "I kept in touch with the Perons, and we made a huge pile of dead insects, which we ground up to extend the food we had for our livestock."
+            "I kept in touch with the Peróns, and we made a huge pile of dead insects, which we ground up to extend the food we had for our livestock."
             "We were able to preserve some of our corn until it was ready for harvest, although for most of the corn, it was too late."
             scene bg fields with fade
             show overlay night
             show her normal at quarterright
             show him normal at center
-            "We had a big bonfire with the Perons and burned the infested corn. Their kids danced around the fire, and they brought a chicken for us to roast."
+            "We had a big bonfire with the Peróns and burned the infested corn. Their kids danced around the fire, and they brought a chicken for us to roast."
             natalia "All that work..."
             him sad "I know."
             her sad "..."
@@ -1864,14 +1864,14 @@ label monthly_event_13:
     "But that peace couldn't last forever..."
 
     scene bg community_center with fade
-    "We awoke one morning to the tragic news that the Peron's four-year-old girl, Josephina, was missing."
+    "We awoke one morning to the tragic news that the Perón's four-year-old girl, Josephina, was missing."
     show her serious at midleft
     show natalia at midright
-    "Mrs. Peron was alternately furious with herself and those around her."
+    "Mrs. Perón was alternately furious with herself and those around her."
     natalia "Someone should have been watching her more closely!"
     natalia "I should have been watching her more closely..."
     scene bg talam with fade
-    "Everyone searched together all day long, and finally we found her body washed up downstream of the Peron's farm."
+    "Everyone searched together all day long, and finally we found her body washed up downstream of the Perón's farm."
     if (profession == "doctor"):
         "We didn't have a coroner or anything, so I took a look at the girl's body."
         "I could tell she probably died the afternoon before. I found a gash on her head that looked pretty awful, and she had several broken bones."
@@ -1880,7 +1880,7 @@ label monthly_event_13:
         "We didn't have a coroner or anything, but the doctor took a look at the body."
         "Josephina's body had several broken bones and big gash on her head that didn't seem like they came from falling in the river..."
 
-    "In addition, Mr. Peron found some blood on the road next to his farm that led to the river."
+    "In addition, Mr. Perón found some blood on the road next to his farm that led to the river."
     "We spent a few days being suspicious of each other. [his_name] started barring our door at night."
     "Finally, the mayor called a community meeting."
     scene bg community_center with fade
@@ -1915,7 +1915,7 @@ label monthly_event_13:
     boss "That's fine. We will proceed with the trial at two o'clock."
     
     scene bg community_center with fade
-    "Everyone in the town turned out to see the trial. Ilian repeated what happened, and Mrs. Peron repeated what she had found. It sounded like a fairly simple case of involuntary manslaughter; we mainly needed to decide upon a sentence."
+    "Everyone in the town turned out to see the trial. Ilian repeated what happened, and Mrs. Perón repeated what she had found. It sounded like a fairly simple case of involuntary manslaughter; we mainly needed to decide upon a sentence."
     show pavel at midleft, behind ilian
     show ilian at midright
     with dissolve
@@ -1942,19 +1942,19 @@ label monthly_event_13:
     thuc "But it's possible that it was not an accident. We cannot show too much mercy, or people will think they can get away with anything."
     jed "So, what, you want to string him up?"
     thuc "Of course not. I propose temporary banishment. He should have to live on his own, off the land, for a year. That will show how important our community is, both to him and any would-be criminals."
-    lily normal "There are no would-be criminals here, Thuc. What you are proposing is a death sentence. I think he should simply provide a certain amount of free labor to the Peron family every week. Perhaps that way they can eventually forgive him."
+    lily normal "There are no would-be criminals here, Thuc. What you are proposing is a death sentence. I think he should simply provide a certain amount of free labor to the Perón family every week. Perhaps that way they can eventually forgive him."
     jed "I don't much like either of those options, but I can't think of anything better."
 
     menu:
         "What will you argue for?"
-        "Work for Perons":
-            her serious "I agree with Lily; he should have to work for the Perons. It can't make up for the loss of a child, but it will require some sacrifice and will help him show his remorse."
+        "Work for Peróns":
+            her serious "I agree with Lily; he should have to work for the Peróns. It can't make up for the loss of a child, but it will require some sacrifice and will help him show his remorse."
             thuc "He should be their slave for a year!"
             her concerned "Well, we don't want his work at the storehouse to suffer..."
             jed "We could make him work a certain number of hours? Like community service?"
-            her serious "Yes, but instead of the community it will be for the Perons. Let's say eight hours a week for a year."
+            her serious "Yes, but instead of the community it will be for the Peróns. Let's say eight hours a week for a year."
 
-            "The jury agreed to that, and the Mayor, Ilian, and the Perons all accepted our proposal. Sara didn't seem to happy about it, though. She'd probably have to do extra work on their farm to make up for his absence."
+            "The jury agreed to that, and the Mayor, Ilian, and the Peróns all accepted our proposal. Sara didn't seem to happy about it, though. She'd probably have to do extra work on their farm to make up for his absence."
 
         "Banishment":
             her serious "I agree with Thuc; we need to show that our community won't allow such behavior."
@@ -1964,30 +1964,30 @@ label monthly_event_13:
             lily normal "I think a year is still too long."
             her "How about two weeks?"
             thuc "Four."
-            lily "I suppose that would work...as long as the resources he gathers go to help the Peron family."
+            lily "I suppose that would work...as long as the resources he gathers go to help the Perón family."
             "Finally, we had come to an agreement."
-            "Ilian and the Perons accepted it, but Sara and the Mayor frowned. Poor Sara... I guess in a way we were sentencing her, too."
+            "Ilian and the Peróns accepted it, but Sara and the Mayor frowned. Poor Sara... I guess in a way we were sentencing her, too."
             "Still, it was only for a month."
             
         "{i}Compromise{/i}" if (skill_spiritual >= 40):
             her normal "Those both sound like good ideas. Perhaps some of both might be appropriate?"
             jed "What's your idea?"
-            her concerned "Having him work for the Perons is a good idea, but it is too soon. They would feel angry, and then he would feel like his apology was not accepted."
-            her serious "But a year is too long to send anyone to live outside the community. I propose Ilian leave the community for a week. When he returns, he will have to work for the Perons one day of every week for the next half year."
+            her concerned "Having him work for the Peróns is a good idea, but it is too soon. They would feel angry, and then he would feel like his apology was not accepted."
+            her serious "But a year is too long to send anyone to live outside the community. I propose Ilian leave the community for a week. When he returns, he will have to work for the Peróns one day of every week for the next half year."
             lily happy "That sounds fair for all involved."
             thuc "I think a week is too short. He should live outside for a month!"
             jed "How 'bout two weeks, then?"
-            "Everyone agreed to this proposal. The mayor seemed happy with it, too, and both Ilian and the Perons accepted it without argument."
+            "Everyone agreed to this proposal. The mayor seemed happy with it, too, and both Ilian and the Peróns accepted it without argument."
         "{i}He's innocent{/i}" if ((skill_technical >= 40) or (skill_knowledge >= 40)):
             her serious "He should provide some reparations, but I know he didn't kill her on purpose."
             thuc "How do you know that?"
             her "Her injuries are consistent with being hit by a car and then floating down the river. She doesn't have any injuries that would come from being assaulted."
             jed "Yes, that's right!"
             thuc "That's true... I guess he is still innocent unless proven guilty..."
-            her concerned "He still should provide some reparations, though. I think he should work for the Perons one day a week for a year."
+            her concerned "He still should provide some reparations, though. I think he should work for the Peróns one day a week for a year."
             lily "I agree."
             jed "That's fair."
-            "We all agreed, and the Mayor, Ilian, and the Perons seemed satisfied with our verdict also."
+            "We all agreed, and the Mayor, Ilian, and the Peróns seemed satisfied with our verdict also."
 
     scene black with fade
     "I was just glad it was over."
@@ -2219,11 +2219,11 @@ label monthly_event_15:
         her flirting "Yeah, but one of us is the size of a grain of rice..."
         him flirting "If you don't want it, I'll gladly take it."
         her surprised "Eggs? Bacon?! Where did you get this stuff?!"
-        him happy "Well, when Mrs. Peron heard about your 'condition', she insisted that you needed to eat eggs to have a healthy baby. And when I told Ilian the good news, he pulled this out of some stash in the storehouse."
+        him happy "Well, when Mrs. Perón heard about your 'condition', she insisted that you needed to eat eggs to have a healthy baby. And when I told Ilian the good news, he pulled this out of some stash in the storehouse."
         her annoyed "Wait, you told them I'm pregnant?"
         him surprised "Yeah, why not?"
         her concerned "I don't know if I'm ready for people to know, yet."
-        him concerned "Oh... well, when I told Mrs. Peron, she posted a message about it on the colony message board..."
+        him concerned "Oh... well, when I told Mrs. Perón, she posted a message about it on the colony message board..."
         her serious "So everyone knows?"
         him serious "Yeah, pretty much."
         her annoyed "I haven't even told my parents yet!"
@@ -2676,7 +2676,7 @@ label monthly_event_18:
     "He stared off into the distance, like he could barely hear me."
     if (skill_social >= 50):
         her serious "Stay here; I'm going to radio for help."
-        "I called on the radio and Thuc and Mr. Peron came over. Together, we helped [his_name] get to the town."
+        "I called on the radio and Thuc and Mr. Perón came over. Together, we helped [his_name] get to the town."
     elif (skill_physical >= 40):
         her surprised "Where's Lettie?"
         "I found Lettie tied up near the barn."
@@ -3197,7 +3197,7 @@ label monthly_event_22:
             show natalia at midright
             show martin at midleft
             with dissolve
-            "Natalia and Martin seemed like they were conserving shampoo."
+            "Natalia and Martín seemed like they were conserving shampoo."
             scene bg farm_interior flip with fade
             "But everyone else... everyone else looked like they washed their hair at least every other day."
             "I decided to talk to them."

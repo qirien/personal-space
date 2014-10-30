@@ -16,11 +16,11 @@ define thuc = Character("Thuc Nguyen", color="a9ff22", image="thuc")  #lime gree
 define ilian = Character("Ilian Andrevski", color="ffa922", image="ilian") #tangerine
 define brennan = Character("Brennan Callahan", color="33b533", image="brennan")  #irish green
 define jed = Character("Jed Engel", color="cb5500", image="jed")  #rusty brown
-define natalia = Character("Natalia Peron", color="ffe74a", image="natalia")  #yellow
+define natalia = Character("Natalia Perón", color="ffe74a", image="natalia")  #yellow
 define helen = Character("Helen Engel", color="cdcfb2", image="helen") #tan
 define julia = Character("Julia Nguyen", color="#4b54cd", image="julia") #icy blue
-define martin = Character("Martin Peron", color="#990011", image="martin")  #dark red
-# TODO: add accent on Martin (also Peron?)
+define martin = Character("Martín Perón", color="#990011", image="martin")  #dark red
+# TODO: add accent on Martín (also Perón?)
 
 define note = Character("note", kind=nvl)
 
@@ -96,7 +96,7 @@ init -200:
     define squatting = Position(ypos=0.2, yanchor=0)
     
     define sans_font = "fonts/Exo2.otf"
-    define serif_font = "fonts/Andada.otf"
+    define serif_font = "fonts/RobotoSlab.ttf"
     
     define current_song = " "
     
@@ -178,10 +178,10 @@ label start:
             #scene bg stars
             #show overlay computer_pad
 
-            #jump monthly_event_25
+            jump monthly_event_25
             #jump test_positions
             #jump test_inputter
-            jump show_credits
+            #jump show_credits
 
     "I thought I knew what love was."
     "Smiling ridiculously whenever I thought of him."

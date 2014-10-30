@@ -28,24 +28,23 @@ init python:
     # SKILL FOCUS EVENTS
     # For each type of skill, we have 10 special events that happen when your skill
     # reaches a certain level.  There is also an intro event and a master event.
+    # TODO: Make this work with New Game+
     for skill_type in ["domestic", "creative", "technical", "spiritual", "social", "knowledge", "physical"]:
         # Set up default events for each type of skill
         event (skill_type + "_def", "act == 'act_" + skill_type + "'", event.solo(), priority=400)
 
-        # Setup intro event
-        event (skill_type + "_0", "act == 'act_" + skill_type + "'", event.once(), priority=0)
-        
         # Add special events that only happen once when you first get to a certain
         # skill level in that skill type.
-        for i in range(1,9):
+        for i in range(0,9):
+            # event(skill_type_i, "act == 'act_skill_type' and skill_skill_type == i*10", event.once(), priority=10)
             event(skill_type + "_" + `i`,
-                  "act == 'act_" + skill_type + "' and skill_" + skill_type + " >= " + `i*10`,
+                  "act == 'act_" + skill_type + "' and skill_" + skill_type + " == " + `i*10`,
                   event.once(),
                   priority=10)
 
         # This event happens when a skill reaches 100.
         event(skill_type + "_master",
-              "act == 'act_" + skill_type + "' and skill_" + skill_type + " >= 90",
+              "act == 'act_" + skill_type + "' and skill_" + skill_type + " == 90",
               event.once(),
               priority = 10)
 

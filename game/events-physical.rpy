@@ -648,9 +648,9 @@ label physical_8:
                 her flirting "So hunting is better than lifting heavy things?"
                 him normal "As long as I come with you!"
     else:
-        him normal "I know the Perons just built new shelves in their cellar and want to rearrange their storage, but I haven't had time to help them. Could you do that?"
+        him normal "I know the Peróns just built new shelves in their cellar and want to rearrange their storage, but I haven't had time to help them. Could you do that?"
         her happy "Yes, I sure can!"
-        "I spent the next day at the Peron's taking all their vegetables and fruits out of their cellar and then rearranging them. Natalia told me where to put things, and she helped with some of the smaller veggies."
+        "I spent the next day at the Perón's taking all their vegetables and fruits out of their cellar and then rearranging them. Natalia told me where to put things, and she helped with some of the smaller veggies."
         $ community_level += 1
              
     $ skill_physical += 10

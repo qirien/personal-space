@@ -179,6 +179,9 @@ screen computer_pad(periods):
             vbox:
                 xfill True
                 use display_planner(periods)
+                
+        textbutton "Help":
+            action Show
      
     # Start music every time this screen is shown if it's not already playing.
     on "show" action If(renpy.music.is_playing(), true=None, false=pop_songs.RandomPlay())

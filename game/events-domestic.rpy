@@ -185,7 +185,7 @@ label domestic_4:
         her happy "Radish pickles?! That sounds fun!"
         "They had plenty of vinegar and salt at the storehouse, and I used some of the herbs and spices from the garden to make a few batches of pickled radishes."
     elif (skill_social >= 20):
-        her normal "I bet I could trade these with the Peron's for some eggs from their chickens..."
+        her normal "I bet I could trade these with the Perón's for some eggs from their chickens..."
         "Sure enough, Natalia was delighted to have some fresh vegetables, and I made a souffle instead."
         $ community_level += 5
     elif have_goat:

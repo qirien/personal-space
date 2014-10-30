@@ -86,7 +86,7 @@ label social_0:
     nvl clear
 
     scene bg farm_exterior flip with fade
-    "When I got to the Peron's house, I saw Natalia's table was covered with some small, spiny fruits she had found while hiking."
+    "When I got to the Perón's house, I saw Natalia's table was covered with some small, spiny fruits she had found while hiking."
     show natalia at midright
     show her normal at midleft
     with dissolve
@@ -133,7 +133,7 @@ label social_1:
     with moveinright
 
     "I was surprised when a lot of people showed up! I guess there's not much else to do here yet..."
-    "Martin and Natalia brought a board game to play, and one of the Nguyen's teenagers brought dice and computer pads to play a role-playing game. I overheard [his_name] talking to Jed about tractor racing, which sounded weird, but I was glad he was having a good time."
+    "Martín and Natalia brought a board game to play, and one of the Nguyen's teenagers brought dice and computer pads to play a role-playing game. I overheard [his_name] talking to Jed about tractor racing, which sounded weird, but I was glad he was having a good time."
     "The little kids seemed to playing some kind of spying game, as they would peek around a corner at us and then run away giggling whenever they were spotted."
     hide pavel with moveoutleft
     hide brennan with moveoutright
@@ -610,6 +610,7 @@ label social_6:
         brennan "Like this?"
         her concerned "Yes, your first row is good, but the second row needs to alternate which ones it goes over and under."
         brennan "Ah, I see."
+        show her normal
         "Maybe if I taught them how to make some of the easier things, they wouldn't come to me with every little thing they wanted."
     elif (profession == "mechanic"):
         "I taught everyone about basic tractor repair and maintenance. Even though a lot of the farmers were already experienced with this, the hybrid tractors we used had some different parts and needed different servicing."
@@ -641,7 +642,7 @@ label social_7:
     show her normal at midright
     show sara at midleft
     with dissolve
-    sara "Have you seen the Nguyen's farm lately?"
+    sara sad "Have you seen the Nguyen's farm lately?"
     her serious "No, I don't really get over there."
     sara "Well, there's nothing on it! They haven't planted anything this season!"
     her surprised "Really? I wonder why?"
@@ -655,7 +656,7 @@ label social_7:
     show sara at midleft
     with moveinleft
     boss "Hello, Sara, what can I do for you?"
-    sara "Mayor, it's not fair for the Nguyens to always be taking food from the storehouse but not contributing anything. Their job is to be farmers, right?!"
+    sara sad "Mayor, it's not fair for the Nguyens to always be taking food from the storehouse but not contributing anything. Their job is to be farmers, right?!"
     boss "Yes, it is - do you have reason to believe they are not doing their job?"
     sara "Their fields are completely empty!"
     boss "I see..."
@@ -724,9 +725,9 @@ label social_7:
             her concerned "I know what you mean. I felt the same way, too, after the corn."
             julia "Thuc's not one to complain about his troubles, but I can see he's taken this hard. I suppose I haven't been very encouraging, either."
             her serious "It is hard... but maybe if you had some help, it'd be easier to get started?"
-            julia "Do you think people would help?"
-            her normal "Sure! Not only would they want rice to eat, but we all are going to need help at some point."
-            if (has_goat):
+            julia "Who would want to help us? Perhaps you've noticed that I'm not the most friendly person around..."
+            her normal "I think a lot of people would help! Not only would they want rice to eat, but we all are going to need help at some point."
+            if (have_goat):
                 her "Your family has been so kind to us, giving us one of your goats, and Thuc is a good friend to [his_name]. Of course we will help you."
             else:
                 her "Thuc is a good friend to [his_name], so I'm sure he at least would be willing to help!"
@@ -843,7 +844,7 @@ label done_party_menu:
     "Sara and I worked hard for two weeks getting everything ready. Finally, the night of the party came..."
     #TODO: Add animated (?) glowing lights to the community center bg with an overlay
     scene bg community_center with fade
-    play music "music/Prelude22.ogg" fadeout 3.0
+    play music "music/Prelude22.ogg" fadeout 3.0 
     play sound "sfx/people.mp3" loop
     "As people started to arrive, they seemed to brighten when they saw the community center ready for a party."
     if (party_decorations == "flowers"):
@@ -874,8 +875,8 @@ label done_party_menu:
         show her normal at quarterright
         with moveinright
         "The first one was 'Two Truths and a Lie' where we each had to tell three things about ourselves, and the group would try to guess which one wasn't true."
-        $ highest_skill = lower(highest_stat())
-        her happy "Hi, I'm [her_name]. My hobby is anything [top_skill], I helped organize this party, and I used to-"
+        $ highest_skill = highest_stat().lower()
+        her happy "Hi, I'm [her_name]. My hobby is anything [highest_skill], I helped organize this party, and I used to-"
         menu:
             "What should I say? (I need to tell a plausible lie...)"
             "I used to eat bacon ice cream.":
@@ -898,14 +899,17 @@ label done_party_menu:
                 him serious "You're right. But maybe they should..."
             "I'm not going to guess.":
                 "I had no clue."
-        him normal "I really did win a sheep-riding rodeo when I was five. Just held on forever. I wouldn't let go even when they told me it was over. Nobody has called me 'The Candid Bandit' yet, but you can if you want to."
-        her annoyed "(I'm not going to call him that!)"
+                brennan "I have a hard time believing you ever won anything."
+        him normal "I really did win a sheep-riding rodeo when I was five. Just held on forever. I wouldn't let go even when they told me it was over. Nobody has called me \"The Candid Bandit\" yet, but you can if you want to."
+        naomi "The Candid Bandit?"
+        brennan "That's the barmiest nickname I ever heard of."
+        her normal "(I'm going to have to agree with Brennan on this one!)"
                  
         "We also played a game called 'Mafia' where we had to guess who in our group was secretly a bad guy, and also a game called 'Unfortunately' where each person told one sentence of a story, starting with the words 'Fortunately' or 'Unfortunately'."
         "It was fun to get to know our neighbors better and relax for a bit."
 
     elif (party_entertainment == "talent show"):
-        "We had a few entries in the talent show, but not a lot. The Mayor got up and told jokes, some of which were even funny. Some of the Peron children sang a silly song about a goat, and Thuc juggled knives. We had no idea he could do that!"
+        "We had a few entries in the talent show, but not a lot. The Mayor got up and told jokes, some of which were even funny. Some of the Perón children sang a silly song about a goat, and Thuc juggled knives. We had no idea he could do that!"
         "But I was even more surprised when [his_name] took the stage. I whispered to Sara,"
         show her normal at midright
         show sara at midleft
@@ -1096,10 +1100,11 @@ label done_party_menu:
     show her normal at right
     show pavel at midleft
     with dissolve
-    sara "Well, the party's almost over, guess it's time to clean up."
+    sara sad "Well, the party's almost over, guess it's time to clean up."
     her surprised "Yeah, is that going to be just you and me?"
     boss "Thank you, Sara and [her_name], for organizing such a wonderful celebration for us. I know you've put a lot of work into it."
     show her normal
+    show sara normal
     boss "But, folks, I see quite a mess here in our community center. I don't think it's fair that these two ladies should have to do all the work, so I'd like to ask one person from each family to stay and help clean up."
     "I was relieved to hear that, and even more relieved to see that a lot of people stayed to help clean up. Not just one person from each family, either - entire families got to work clearing plates, putting away chairs, mopping up spills, and doing dishes."
     hide sara

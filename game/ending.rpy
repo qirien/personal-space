@@ -2,6 +2,7 @@ label monthly_event_25:
     play music "music/Rain.ogg" fadeout 3.0
     "It had been two years since we first arrived on Talaam. In a way, it felt like we had been here forever. But sometimes I still expected to find myself back on Earth, waking up from a long, long dream."
     # TODO: tweak these numbers.
+    # TODO: Does this make sense: you don't get the bad ending if wants_to_leave and COMMUNITY_LEVEL_OK?
     if (((community_level < COMMUNITY_LEVEL_OK) and (loved < 0)) or wants_to_leave):
         jump bad_ending
     elif ((community_level >= COMMUNITY_LEVEL_GOOD) and (loved >= LOVED_GOOD)):
@@ -35,6 +36,7 @@ label bad_ending:
     show her serious at midright
     with dissolve
     "How do you say goodbye to your husband? Ex-husband, now, I guess. The silence stretched on like the gap between us, endless and loveless."
+    "I thought of several mean things to say, and didn't say them.  I thought of several false apologies I could make, but I didn't make them."
     him concerned "I guess... this is good-bye, then."
     her concerned "Yeah. Sorry it didn't work out."
     him sad "..."
@@ -126,15 +128,17 @@ label mediocre_ending:
         "After dinner, he played with the baby while I took a break."
     "He read, and I worked on some projects, and then it was time for bed."
     scene bg bedroom with fade
-    show overlay night
-    show her normal at quarterright
-    show him normal at midleft
-    with dissolve
+    show overlay night        
+    show overlay bedroom_covers behind night        
+    show her normal at midleft, squatting, behind overlay
+    show him normal at quarterright, squatting, behind overlay    
+    with dissolve 
 
     her serious "[his_name]?"
     him surprised "Hmmm?"
     if (loved > 0):
         her concerned "I'm so glad to be here, with you."
+        show him normal at midright with move
         "He scooted closer to me and stroked my hair."
         him normal "I'm glad to be with you, [her_nickname]!"
         her normal "What an adventure we've had..."
@@ -175,9 +179,10 @@ label mediocre_ending:
         "The kind of love that trusts and endures..."
         "The kind of love that forgives..."
         "The kind of love that was worth sacrificing for."
-        "Even if the colony failed, our love bound us together."
+        "Even if the colony failed, our love bound us together. It couldn't fail, because it wasn't some outside force beyond my control - I would not let my love fail."
+        "I couldn't control [his_name], of course. But he had shown me that he would do the same."
         "I held onto that thought and let my worries slip away."
-        "I had [his_name]; what else did I need?"
+        "If we had each other, we could do anything."
     else:
         "Sometimes we felt more like coworkers than a couple..."
         "If we were back on Earth, would we even be together?"
@@ -230,14 +235,14 @@ label work_appreciation:
     if (profession == "doctor"):
         scene bg clinic with fade
         "As the only doctor on the colony, people came to me with all sorts of problems. Mostly medical ones, but sometimes other questions, too."
-        "It felt good to know I was the one who helped Mr. Peron overcome his cancer, and helped little Van not die from choking, and took care of everyone's health. They really needed me."
+        "It felt good to know I was the one who helped Mr. Perón overcome his cancer, and helped little Van not die from choking, and took care of everyone's health. They really needed me."
         show her normal at midright with dissolve
         show pavel at midleft, behind her with moveinleft
         boss "[her_name], I don't know what we'd do without you. You've worked so hard to keep everyone on the colony healthy."
     elif (profession == "carpenter"):
         scene bg workshop with fade
         "Every day was a new challenge; something new to build, a new material found, or some new technique to try. And nobody could make things as well as I could."
-        "The Peron's chicken coop, barrels for the storehouse, shelves for the school, chairs for Sara and Ilian - you name it, I'd made it for someone this past year."
+        "The Perón's chicken coop, barrels for the storehouse, shelves for the school, chairs for Sara and Ilian - you name it, I'd made it for someone this past year."
         show her normal at midright with dissolve
         show pavel at midleft, behind her with moveinleft
         boss "[her_name], I don't know what we'd do without you. Everyone has something you've made in their house or on their farm. And you've taught others how to make useful things, too."
@@ -282,7 +287,7 @@ label work_appreciation:
     brennan "Anything you want me to do for you? A favorite food I should sample, or some place I ought to visit?"
     "I thought about it for a minute. By the time he got back to Earth, another four years would have passed there. What could he do in person that we couldn't do remotely?"
     her serious "Just... could you tell people about how it is here? I mean, you'll probably be kind of a celebrity, right? Not everyone gets to visit another planet and come back."
-    brennan "I will. It'll be a great way to impress women, don't you think? I can tell them all about how I risked radiation burns to rescue the poor Perons during the solar flare."
+    brennan "I will. It'll be a great way to impress women, don't you think? I can tell them all about how I risked radiation burns to rescue the poor Peróns during the solar flare."
     her flirting "Only if you leave out the part where you threw up all over me."
     brennan "Yeah, that'll have to go."
     her serious "..."
@@ -379,7 +384,7 @@ label show_credits:
         
     "You scored [loved_ceiling] out of [LOVED_MAX] relationship points, and [community_ceiling] out of [COMMUNITY_LEVEL_MAX] comunity points."
     
-    # TODO: show images from the game during this?
+    # TODO: show images from the game during this?  omake?
     # TODO: Double check EVERYTHING we used is in here!  Check Credits.txt, music, sfx, bg directories
     
     # If the user has beat the game before, allow them to skip the credits.
@@ -399,10 +404,10 @@ label show_credits:
     $ renpy.pause(3.0, hard=skippable)
     hide text with fade
     show text "With music by:\nEhren Starks\nJan Hanford\nChad Lawson\nGiorgio Costantini\nKalabi\nBenji Goodrich\nGianmarco Leona\n\nLicensed from {a=http://www.magnatune.com}Magnatune{/a} under the {a=http://creativecommons.org/licenses/by-nc-sa/1.0/}BY-NC-SA Creative Commons License{/a}" with fade
-    $ renpy.pause(4.0, hard=skippable)
+    $ renpy.pause(6.0, hard=skippable)
     hide text with fade     
     show text "With background images by:\nLisa Horner\nWes Landaker\nAndrea Landaker\nNASA\nBurningwell\nESO/L. Calçada\n\nAnd the following Wikimedia Commons users:\nRandwick\nLabpluto123\nWrlctech\nEbyabe\nAvi/Skrewtap\nMarcus Budde\nAluter\nDorothea Witter-Rieder\nAnna Frodesiak\nAndrei Stroe\nJean-Pierre\n\nFiltered with Fotosketcher" with fade
-    $ renpy.pause(4.0, hard=skippable)    
+    $ renpy.pause(8.0, hard=skippable)    
     # TODO: Add sound Credits
     
     hide text with fade   
@@ -414,6 +419,7 @@ label show_credits:
     $ renpy.pause(3.0, hard=skippable)
     hide text with fade
 
+    stop music fadeout 3.0
     "You have now unlocked New Game+! If you play again, you can keep your progress in your skills up to level [SKILL_SAVED_MAX], to make mastering skills easier."
     
     # in case a future game wants to use this information, we'll save it here
@@ -436,5 +442,4 @@ label show_credits:
     else:
         $ persistent.times_beaten += 1
             
-    stop music fadeout 3.0
     $ renpy.full_restart()

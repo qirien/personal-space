@@ -107,9 +107,10 @@ label work_0:
     show natalia at right
     show martin at midright
     with moveinright
-    boss "The Perons will be growing beans and corn, and are raising chickens and turkeys."
-    martin "They are egg-cellent animals."
-    natalia "Don't get him started!"
+    boss "The Peróns will be growing beans and corn, and are raising chickens and turkeys."
+    martin "And also five children."
+    natalia "Tomás is the oldest, and then there's Isabella, Raúl, Josephina, and Mateo."
+    martin "Don't feel like you have to remember them all; that's my job!"
     hide natalia
     hide martin
     with moveoutright
@@ -347,7 +348,7 @@ label work_1:
         boss "[her_name], have you finished the barrels for the storehouse yet?"
         her serious "No, I thought you said you wouldn't need those for another week."
         boss "Well, the Nguyen's carrots grew faster than they anticipated, and they need a place to put them."
-        her "Well, I can start on them now, but the Peron's really wanted this roof for their chicken coop - they've already lost two chickens to some nighttime predator."
+        her "Well, I can start on them now, but the Perón's really wanted this roof for their chicken coop - they've already lost two chickens to some nighttime predator."
         boss "I think the chicken coop takes priority here. But you're starting to have a lot of work to do, aren't you?"
         menu:
             "What should I say?"
@@ -425,7 +426,7 @@ label work_1:
         boss "[her_name], are you all right?"
         her serious "Yes...though I may have a black eye tomorrow."
         boss "That's terrible! You shouldn't be all by yourself here, not every day."
-        her serious "Well, part of it is that Tomas really doesn't need to be here every day. He's old enough to do most of his work from home, and then he could help out his parents more, too."
+        her serious "Well, part of it is that Tomás really doesn't need to be here every day. He's old enough to do most of his work from home, and then he could help out his parents more, too."
         boss "That may be a good idea, but I want to find someone to help you out on the days when you have all the kids here."
         menu:
             "Do I need help?"
@@ -551,7 +552,7 @@ label work_3:
 
     # DOCTOR 
     if (profession == "doctor"):
-        "I worked hard all month. A new baby was born, a kid got his finger chopped off, and it looked like Mr. Peron might have cancer. In addition, we were monitoring the colonists' radiation and nutrient levels to try to keep them healthy."
+        "I worked hard all month. A new baby was born, a kid got his finger chopped off, and it looked like Mr. Perón might have cancer. In addition, we were monitoring the colonists' radiation and nutrient levels to try to keep them healthy."
         show brennan at quarterleft with dissolve
         "Brennan worked hard, too - he didn't have any formal medical training, but he learned to take vitals and log patients and fetch equipment for me."
         "It would have been impossible to do it all by myself."
@@ -839,14 +840,14 @@ label work_5:
 
     show martin at midleft with dissolve
     if (profession == "doctor"):
-        "We only had one patient at the time; Mr. Peron was being treated for basal-cell carcinoma."
+        "We only had one patient at the time; Mr. Perón was being treated for basal-cell carcinoma."
         "We had just cut a large tumor out of his face, and I was bandaging it up."
     elif (profession == "carpenter"):
-        "There were just the three of us in the shop at the time - Brennan, me, and Mr. Peron, who had been explaining a farm tool he wanted us to try and make."
+        "There were just the three of us in the shop at the time - Brennan, me, and Mr. Perón, who had been explaining a farm tool he wanted us to try and make."
     elif (profession == "mechanic"):
-        "Brennan and I had been watching Mr. Peron show us his method for twisting wire together to use the least amount of metal possible."
+        "Brennan and I had been watching Mr. Perón show us his method for twisting wire together to use the least amount of metal possible."
     elif (profession == "teacher"):
-        "Other than that, I tried to teach class as usual. We had a guest speaker today, Mr. Peron, who was teaching the kids about chickens and how to breed and feed them, and what sort of plants they liked, and what they might eat that would make them sick."
+        "Other than that, I tried to teach class as usual. We had a guest speaker today, Mr. Perón, who was teaching the kids about chickens and how to breed and feed them, and what sort of plants they liked, and what they might eat that would make them sick."
         "He had just finished speaking and got ready to go when I stopped him."
 
     her serious "I'm afraid you're stuck here for awhile - Dr. Lily says there is a solar flare going on."
@@ -857,12 +858,12 @@ label work_5:
     martin "Natalia always forgets to turn the radio on! She might not even know there is a flare! And Mateo and Josephina are at home with her."
     "I tried contacting his family on the radio, but the radiation from the flare was interfering with our transmissions. I couldn't connect my computer pad to the wireless network, either."
     play music "music/NoOneWillKnow.ogg" fadeout 3.0
-    "Mr. Peron was getting more and more distraught. I was worried he was going to try and leave, and I wasn't sure I could stop him."
+    "Mr. Perón was getting more and more distraught. I was worried he was going to try and leave, and I wasn't sure I could stop him."
     show brennan at midright
     show her serious at right
     brennan "Calm down, please! Everything will be just fine."
     martin "You can't understand! If you had any family, you'd know that I have to be there!"
-    "Brennan just looked at Mr. Peron, a curious expression on his face. Finally, he nodded."
+    "Brennan just looked at Mr. Perón, a curious expression on his face. Finally, he nodded."
     brennan "I'll go make sure everything's all right with your family."
     her surprised "You can't do that! The radiation is too strong!"
     brennan "But he's right. I don't have a family; I don't have as much to lose."
@@ -884,15 +885,15 @@ label work_5:
     hide brennan with moveoutleft
     show her serious at midright with move
     "I watched him leave. The weather was deceptively placid - bright sun, a cool breeze, tree branches waving... the deadly radiation was completely invisible."
-    "Neither Mr. Peron or I talked; we couldn't do anything else, either; we were too nervous."
+    "Neither Mr. Perón or I talked; we couldn't do anything else, either; we were too nervous."
     show her concerned
     play sound "sfx/radio.mp3"
     "The radio crackled every ten minutes - we could just barely make out that it was Dr. Lily repeating her warning."
     "The second time she repeated her warning, the radio came on again just minutes later."
     play sound "sfx/radio.mp3"
-    brennan "[her_name]...Peron house...got everyone inside...There was...but we...anyway. Repeat, we're...okay."
+    brennan "[her_name]...Perón house...got everyone inside...There was...but we...anyway. Repeat, we're...okay."
     show her normal
-    "I let out a breath I hadn't realized I had been holding. Mr. Peron smiled and asked me to hand him the radio."
+    "I let out a breath I hadn't realized I had been holding. Mr. Perón smiled and asked me to hand him the radio."
     martin "Thank you, Brennan. Earlier, what I said...well, I was wrong. You have a family; you're part of ours."
     "There was silence, and static."
     brennan "...thank you."
@@ -900,7 +901,7 @@ label work_5:
 
     if (profession == "doctor"):
         show brennan at midleft with moveinleft
-        "The flare was over after a few more hours, and Mr. Peron brought Natalia and the little kids to be treated for radiation sickness.  Afterwards, I insisted on Brennan being treated, too."
+        "The flare was over after a few more hours, and Mr. Perón brought Natalia and the little kids to be treated for radiation sickness.  Afterwards, I insisted on Brennan being treated, too."
         her serious "You've absorbed at least [grays_absorbed] grays of radiation..."
         brennan "Grays of radiation? That makes it sound like I've got aliens living inside me."
         her annoyed "Stop joking and lie down. We need to see how bad it is."
@@ -911,7 +912,7 @@ label work_5:
         show her serious
         "I treated his burns and gave him some medicine, and warned him to be especially careful to avoid any radiation for the next few weeks while his body healed."
     else:
-        "The flare was over after a few more hours, and Mr. Peron went home, but I insisted on Brennan going to the clinic."
+        "The flare was over after a few more hours, and Mr. Perón went home, but I insisted on Brennan going to the clinic."
         scene bg path with fade
         show her serious at midright
         show brennan at midleft
@@ -929,7 +930,7 @@ label work_5:
 
     scene black with fade
     "I was impressed that he had risked himself for a family he wasn't particularly close to - but maybe it was that desire for closeness that led him to do such a thing in the first place."
-    "It hadn't even occurred to me to go out in the solar flare to help Mr. Peron. Was that because I was more selfish, or just not as stupid? What if it was my family out there - would I have sacrificed my health to help them?"
+    "It hadn't even occurred to me to go out in the solar flare to help Mr. Perón. Was that because I was more selfish, or just not as stupid? What if it was my family out there - would I have sacrificed my health to help them?"
     "It wasn't something I had ever had to think about before."
 
     return
@@ -996,7 +997,7 @@ label work_6:
                     her surprised "Okay, she's really smart, and nice too, actually, but that is a lot older than you."
                     brennan "And then there's the Nguyen's oldest daughters, who are seventeen and sixteen."
                     her normal "I've seen them taking care of their little siblings, but I don't know them very well."
-                    brennan "Well, the oldest, Joanna, is all over that Tomas fellow who's about her age. I'm surprised they're not married yet."
+                    brennan "Well, the oldest, Joanna, is all over that Tomás fellow who's about her age. I'm surprised they're not married yet."
                     her surprised "They're only seventeen!"
                     brennan "Well, it's old enough to get into trouble, and old enough to help propagate the species..."
                     her normal "What about the younger sister, Miranda?"
@@ -1271,7 +1272,7 @@ label brennan_confess:
     "He looked away and paused for a second before answering."
     brennan "I'm to report on any resources this planet has that my...employer might find profitable."
     her "Who is your employer?"
-    brennan "Rare Earth Tech. Well, technically I'm an independent contractor for Senator Martinez, who happens to be both on the board of R.E.T. and on the Senate Energy Committee."
+    brennan "Rare Earth Tech. Well, technically I'm an independent contractor for Senator Martínez, who happens to be both on the board of R.E.T. and on the Senate Energy Committee."
     her serious "So you're a spy, basically."
     brennan "You could look at it that way."
     her annoyed "Since you've kept your employment a secret, I don't see any other way I can look at it."
@@ -1346,7 +1347,7 @@ label brennan_confess:
             julia "How shall we do that?"
             brennan "By not treating me like a criminal."
             scene black with fade
-            "In the end everyone agreed, but even though they were nice to him on the surface, I think Mr. Peron and I were the only ones that trusted him at all."
+            "In the end everyone agreed, but even though they were nice to him on the surface, I think Mr. Perón and I were the only ones that trusted him at all."
             
             $ exposed_brennan = True
         "I won't tell if...":
@@ -1417,14 +1418,14 @@ label work_8:
     elif (profession == "carpenter"):
         # Someone needs glasses; can't grind glass precisely enough
         show natalia at midleft with moveinleft
-        natalia "I hope you can do something for Raul..."
+        natalia "I hope you can do something for Raúl..."
         her surprised "What is it?"
         natalia "He needs glasses. All this time we thought he was just a slow reader, but the doctor says it's his vision that's the problem."
         her normal "That would make it hard to read, wouldn't it?"
-        her serious "But shouldn't the doctor have something that can help Raul?"
+        her serious "But shouldn't the doctor have something that can help Raúl?"
         natalia "None of the glasses at the clinic worked. I brought over the closest ones, and the doctor wrote a prescription. Here it is."
         her serious "Hmmm, astigmatism, I see. Well, I'll see what I can make for him."
-        natalia "Thank you, [her_name]. You always do such a nice job on everything you make, I'm sure you'll be able to help Raul."
+        natalia "Thank you, [her_name]. You always do such a nice job on everything you make, I'm sure you'll be able to help Raúl."
         hide natalia with moveoutleft
         show brennan at midleft with moveinleft
         brennan "We're making glasses, now?"
@@ -1444,8 +1445,8 @@ label work_8:
         show natalia at midleft with moveinleft
         natalia "[her_name], I don't know if there's anything you can do, but one of the kids' computer pads won't turn on."
         her surprised "What happened to it?"
-        natalia "I think Raul left it out during one of the solar flares..."
-        her annoyed "(Again?! This is the fifth time she's brought Raul's computer pad in for repairs!)"
+        natalia "I think Raúl left it out during one of the solar flares..."
+        her annoyed "(Again?! This is the fifth time she's brought Raúl's computer pad in for repairs!)"
         her normal "OK, I'll take a look at it."
         hide natalia with moveoutleft
         "I opened it up and got out my multimeter. Some of the circuits were completely fried."
