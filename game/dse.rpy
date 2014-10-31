@@ -99,7 +99,7 @@ label day:
         $ pregnant_months = month - 23
     if (pregnant_months < 4):
         $ trimester = "first"
-    elif (pregnant_months < 8):
+    elif (pregnant_months < 7):
         $ trimester = "second"
     elif (pregnant_months <= 10):
         $ trimester = "third"

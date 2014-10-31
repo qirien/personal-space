@@ -274,8 +274,12 @@ screen main_menu:
 
         has vbox
 
-        textbutton _("Start Game") action Start()
+        if (persistent.times_beaten):
+            textbutton _("New Game+") action Start() text_size 28
+        textbutton _("New Game") action Start()
         textbutton _("Load Game") action ShowMenu("load")
+        if (persistent.times_beaten):
+            textbutton _("Omake") action Start("omake")
         textbutton _("Preferences") action ShowMenu("preferences")
         textbutton _("Help") action Help()
         textbutton _("Quit") action Quit(confirm=False)

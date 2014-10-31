@@ -18,7 +18,7 @@ screen message_board:
         has vbox:
             style "nvl_vbox"
         $ num_messages = len(dialogue)
-        text "{b}Colony Messages{/b}"
+        text "{b}Messages{/b}"
 
         # This is kind of cool, but it is distracting when there are not many messages.
         # TODO: Is there a way to only display this when the text is big enough?

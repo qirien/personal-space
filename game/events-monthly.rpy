@@ -2912,12 +2912,12 @@ label monthly_event_19:
             "{i}Ask around{/i}" if (skill_social >= 60):
                 "I knew Helen was also expecting, so I decided to send her a message and see what she had done."
                 play sound "sfx/message.mp3"
-                her "Hey, Helen, what are you doing for maternity clothes?"
-                helen "Oh, I just made a big tent dress out of a hospital gown. It doesn't look very good, but it's very comfortable."
-                her "Do you think you could show me how?"
-                helen "Well, I'm sort of stuck in bed because of this pregnancy... but send me your measurements and I'll make you one!"
-                her "Really?!"
-                helen "Sure, I've got nothing else to do all day, and I'm sick of crocheting baby clothes..."
+                her_c "Hey, Helen, what are you doing for maternity clothes?"
+                helen_c "Oh, I just made a big tent dress out of a hospital gown. It doesn't look very good, but it's very comfortable."
+                her_c "Do you think you could show me how?"
+                helen_c "Well, I'm sort of stuck in bed because of this pregnancy... but send me your measurements and I'll make you one!"
+                her_c "Really?!"
+                helen_c "Sure, I've got nothing else to do all day, and I'm sick of crocheting baby clothes..."
                 "About a week later Jed dropped the dress off at work for me."
                 "Sure enough, it looked kind of terrible. But it fit, and was comfy, so I wore it a lot."
                 $ relaxed += 2
@@ -2965,7 +2965,7 @@ label monthly_event_20:
         "One night I lay down for bed, and, of course, that's when the baby decides to practice martial arts on my bladder."
         her annoyed "Not again..."
         him surprised "Everything okay?"
-        her normal "I can't sleep while I'm being pummeled from the inside."
+        her serious "I can't sleep while I'm being pummeled from the inside."
         "He put his hand on my belly and felt the tiny movements."
         him happy "Wow, that's an energetic kid!"
         if (father_attitude == "grinning"):
@@ -3118,6 +3118,10 @@ label monthly_event_21:
             $ loved -= 5
             return
             
+    hide overlay
+    show him normal at midright
+    show her normal at midleft
+    with dissolve
     him normal "I think the quinoa should be safe, now."
     him happy "Thanks for all your help, [her_name]."
     $ loved += 2
@@ -3150,10 +3154,10 @@ label monthly_event_22:
     show lily at left with dissolve
     natalia "Wait, does that mean there's no more shampoo?!"
     boss "Unless someone returns some, yes."
-    sara "I thought the storehouse had plenty!"
+    sara sad "I thought the storehouse had plenty!"
     boss "Well, when Naomi went to get some, it was all gone."
     natalia "Somebody must have stolen it! They are probably hoarding the last few bottles for themselves!"
-    lily "We could search everyone's houses. There's not that many places it could be."
+    lily upset "We could search everyone's houses. There's not that many places it could be."
     boss "Let's wait and see if any is returned before we make any accusations."
     scene black with fade
     "But nobody returned any shampoo. There were fifteen bottles unaccounted for."
@@ -3161,7 +3165,7 @@ label monthly_event_22:
     show her normal at midright with dissolve
     show pavel at midleft, behind her with moveinleft
     boss "Do you have a minute, [her_name]?"
-    her normal "Sure, what do you need?"
+    her serious "Sure, what do you need?"
     boss "I was hoping you might be able to help with our missing shampoo problem..."
     her surprised "Me? What do you think I could do?"
     $ highest_skill = highest_stat()
@@ -3445,9 +3449,11 @@ label monthly_event_23:
         
         # who will take care of the baby during the day?
         scene bg bedroom with fade
-        show her normal at midright
-        show him normal at midleft
-        with dissolve
+        show overlay night        
+        show overlay bedroom_covers behind night        
+        show her normal at midleft, squatting, behind overlay
+        show him normal at midright, squatting, behind overlay    
+        with dissolve 
 
         her concerned "Do you feel ready?\n...For the baby, I mean?"
         him serious "Well, we made a little crib, and we have plenty of rags for diapers, and I thought you said you got some clothes from the storehouse..."
@@ -3519,6 +3525,7 @@ label monthly_event_23:
             her surprised "You would?"
             him serious "Of course!"
             her serious "[his_name]...thank you. We'll both have to make some sacrifices and work hard, but we can do it together, can't we?"
+            show her normal at center, squatting with move
             "We held each other tightly, my huge belly between us, and the baby kicked."
             him laughing "See, she agrees!"
             show her laughing
@@ -4011,9 +4018,9 @@ label monthly_event_24:
                 hide sara with moveoutright
 
         "Julia put on a sterile glove and felt my cervix."
-        julia "Good. Hmmm. Well, the baby's head is engaged, and she's started working her way down... You're dilated to about 3.5cm..."
+        julia "Good. Hmmm. Well, the baby's head is engaged, and she's started working her way down... You're dilated to about three and half centimeters..."
         him surprised "That's a lot, right?"
-        julia "When she gets close to 10, it's time to start pushing."
+        julia "When she gets close to ten, it's time to start pushing."
         him serious "Oh."
         "We waited around in the clinic for awhile, but instead of getting stronger, the contractions got weaker and farther apart."
         julia "I don't think you're going to have this baby tonight. Why don't you go home, and let me know when the contractions are more regular."
@@ -4151,12 +4158,14 @@ label monthly_event_24:
         her sad "Is this, even, doing anything?!"
         julia "Yes! I can see the top of her head!"
         "Suddenly, I felt centered. I had almost forgotten why I was going through all this pain in the first place. This wasn't about me, or about proving something, or winning, or anything stupid like that. This was about our baby, our tiny creature who needed my help just to exist!"
+        show her angry
         "I took a deep breath, and pushed again, stretching past fire and pain and breathing and my own body. I think I probably screamed. Everything else disappeared, and all that was left was the burning. But it still wasn't enough; somehow I pushed again!"
         him happy "Yeah! There she is!"
         julia "One more little push, [her_name], and then you just lie back and relax a bit."
-        show her serious
+        show her sleeping
         "I closed my eyes. I think [his_name] was holding the baby while Julia cut the cord. It was finished. I did it."
         "Something small and floppy was placed on my chest. I opened my eyes."
+        show her serious
         if (loved >= 0):
             him happy "Hey, little one, this here's your momma. She is one awesome woman, but you don't need me to tell you that, right?"
         else:

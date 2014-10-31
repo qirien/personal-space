@@ -1314,7 +1314,7 @@ label brennan_confess:
             with dissolve
             him angry "I knew we couldn't trust him!"
             hide him
-            show julia at left with dissolve
+            show julia at right with dissolve
             julia "How could such a dishonest spy care about our colony?"
             hide julia
             show martin at midright with dissolve
@@ -1329,11 +1329,11 @@ label brennan_confess:
             him annoyed "Not that we trusted him much before..."
             show her serious at right
             her annoyed "I agree with you, but you're missing the most important piece of information here."
-            show julia at midright with dissolve
+            show julia at center with dissolve
             julia "And what is that?"
             her serious "We can send messages to Earth instantaneously! No more waiting four years for your families to get your messages, and another four years for them to write back!"
             hide julia
-            show sara at midleft with dissolve
+            show sara at center with dissolve
             sara "My family is going through a lot right now... at least, they were four years ago. Being able to write back and forth to them will help me so much."
             show jed at left with dissolve
             jed "..."
@@ -1343,7 +1343,7 @@ label brennan_confess:
             jed "I don't think you got a choice, right?"
             brennan "Even if you stole the device from me, they could simply turn off their receiver, or refuse to pass on your messages. It might be better to retain their goodwill."
             hide sara 
-            show julia at midright with dissolve
+            show julia at center with dissolve
             julia "How shall we do that?"
             brennan "By not treating me like a criminal."
             scene black with fade

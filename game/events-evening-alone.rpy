@@ -180,9 +180,10 @@ label relax_alone_6:
 # Solo trip to bath house
 label relax_alone_7:
     scene bg bathhouse with fade
-    "I went to the bath house by myself. I brought extra wood so I could have a long, hot bath, and I carried up extra water from the river to make it a deep one. All my effort just made me appreciate it all the more."
-    show her serious at squatting with dissolve
     show overlay bathhouse
+    show her serious
+    "I went to the bath house by myself. I brought extra wood so I could have a long, hot bath, and I carried up extra water from the river to make it a deep one. All my effort just made me appreciate it all the more."
+    show her serious at squatting behind overlay with move
     play sound "sfx/splash.mp3"
     her normal "Ahhh...."
     $ relaxed += 5

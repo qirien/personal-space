@@ -79,7 +79,7 @@ init -200:
     define COMMUNITY_LEVEL_OK = 30
     define COMMUNITY_LEVEL_GOOD = 50
     define COMMUNITY_LEVEL_MAX = 60    
-    define LOVED_GOOD = 30
+    define LOVED_GOOD = 40
     define LOVED_MAX = 60
     define SKILL_SAVED_MAX = 60
 

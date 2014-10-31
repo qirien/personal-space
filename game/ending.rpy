@@ -291,9 +291,16 @@ label work_appreciation:
     her flirting "Only if you leave out the part where you threw up all over me."
     brennan "Yeah, that'll have to go."
     her serious "..."
+    if (brennan_relationship >= 2):
+        "Suddenly he was hugging me. I hugged him back, and he squeezed tighter."
+        if (cheated_on_him):
+            "I held onto him tightly, then lifted my face for a farewell kiss. He did not disappoint."
+        else:
+            "I let go, but he was still holding me. Finally, he let go, a wry smile on his face."
     brennan "Anyway, goodbye, [her_name]."
     her normal "Goodbye, Brennan."
 
+    hide brennan with moveoutleft
     "Brennan left, and I got ready to go."
 
     if (is_pregnant):
@@ -347,8 +354,8 @@ label good_ending:
     her surprised "What?"
     him serious "Thank you."
     her flirting "You're welcome- wait, which of the many wonderful things I've done are you thanking me for?"
-    him normal "For taking a chance on me, and for trusting me enough to come to Talaam with me. For working so hard at your job and all the things you do at home. For loving me even when I'm grouchy or make mistakes."
-    her normal "[his_name]... You work so hard every day - we literally couldn't survive without you. You have loved me no matter what this whole time - through pests and fires and sicknesses and everything. And there's nowhere I'd rather be than right here with you."
+    him normal "For taking a chance on me, and for trusting me enough to come to Talaam with me. For working so hard at your job and at home. For loving me even when I'm grouchy or make mistakes."
+    her normal "[his_name]... You work so hard every day - we literally couldn't survive without you. You have loved me no matter what this whole time - through pests and fires and sicknesses and everything."
     him happy "Yeah...if someone came up to me, right now, and said 'All-expenses paid trip to wherever you want!', do you know what I'd say?"
     her surprised "What?"
     him flirting "I'd say, \"I want to go to my house, and be in my bed, next to my wife.\""
@@ -356,7 +363,7 @@ label good_ending:
     him happy "What could be more exotic than an alien planet? Besides, you make everything seem exotic..."
     her flirting "I think the word you're looking for is \"erotic\", not \"exotic\"."
     show him normal at center, squatting
-    with dissolve
+    with move
     "He didn't say anything else, just buried his face in my hair and tightened his grip around my waist. I held on tight to his arms, feeling safety and love and happiness swirling around us."
     "I wanted to hold on to this feeling right here that we had worked so hard for. And it was work - it wasn't easy to forgive, or compromise, or stay calm."
     "But those moments when we made the choice to listen instead of judge, to help instead of sit back, or to be honest instead of hide an ugly truth - those were the moments that built our love, little by little."
@@ -420,7 +427,7 @@ label show_credits:
     hide text with fade
 
     stop music fadeout 3.0
-    "You have now unlocked New Game+! If you play again, you can keep your progress in your skills up to level [SKILL_SAVED_MAX], to make mastering skills easier."
+    "You have now unlocked New Game+! If you play again, you can keep your progress in your skills up to level [SKILL_SAVED_MAX], to make mastering skills easier. At the end of each skill tree is a special event."
     
     # in case a future game wants to use this information, we'll save it here
     $ mp.jack_name = his_name
