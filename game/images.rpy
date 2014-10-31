@@ -118,3 +118,4 @@ image lettie_head = LiveCrop((0,0,300,570), "sprites/horse.png")
 image goat = "sprites/goat.png"
 image goat_flip = im.Flip("sprites/goat.png", horizontal = True)
 image goat_small = im.FactorScale("sprites/goat.png", 0.85)
+image seastar = "sprites/seastar.png"

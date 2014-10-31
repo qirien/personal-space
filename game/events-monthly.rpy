@@ -1538,11 +1538,13 @@ label goto_ocean:
         sara "Oh, I want a picture too! I can't wait to show everyone how beautiful our planet is."
 
     "It surprised me how quickly the tide rushed back in. Little spider-crabs rushed to dry rocks, and many got swallowed up by the waves and the purple jellies."
+    show seastar at left with dissolve
     "A wave splashed under Lily's feet, and one of the purple spiny jellys grabbed at her leg."
     show lily upset at squatting with move
     lily "O-oh!"
     show lily happy
     "[ocean_character] looked on in horror as I jabbed the animal with my shovel. As I contacted it, its arm fell off, still wrapped around Lily."
+    hide seastar with moveoutbottom
     if (skill_physical >= 40):
         show her at midleft with move
         "Lily had a strange look on her face, so I carried her further inland so she could sit down."
@@ -1717,7 +1719,7 @@ label monthly_event_11:
     "After Lily got her bearings, we made the long trip back."
     # TODO (b): This is awkward, make it fit with the TODO above.
     her surprised "Can you remember anything from your dream?"
-    lily normal "My... dream?"
+    lily upset "My... dream?"
     show her serious
     "She didn't remember? Strange... I wondered what she would find when she studied these animals."
     scene bg lab with fade
