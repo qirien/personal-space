@@ -1510,7 +1510,8 @@ label goto_ocean:
         sara "It's not the kind of beach I'd want to swim in, and I'm glad I brought a sweater, but this is such a sight for sore eyes!"
         her happy "It's an amazing view." 
 
-    lily happy "Yes, this is the ocean. Now, please take samples of this crusty white substance and any other organic material you can find."
+    lily happy "Yes, this is the ocean. After you get the ocean water boiling, please take samples of this crusty white substance and any other organic material you can find."
+    "We gathered saltwater in big pots and strained it through cloth. Then we built fires and started boiling the water near the shore."
     show lily normal
 
     if (ocean_character == "Jed"):
@@ -1518,16 +1519,17 @@ label goto_ocean:
         lily "I'm going to take some of the smaller creatures and plants back too."
     elif (ocean_character == "Brennan"):
         brennan "Lovely. Is it all right if I touch the water?" 
-        lily "I would advise against it until we know what's in it. I would like to take a sample of it though, if you wouldn't mind. I'm going to take some of the smaller creatures and plants back too."
+        lily "The water itself should be fine, but there could be some microscopic, poisonous plankton that could cause you to break out in hives."
     elif (ocean_character == "Sara"):
         sara "Okay, I'll take samples of anything that's not moving." 
         lily "I'll focus on some of the smaller creatures then."
 
     her surprised "How much of this white stuff do we need?" 
-    lily "The guano? Just get as much as you can. We have an hour or two so don't feel too rushed."
+    lily "The guano? Just get as much as you can. That saltwater will take a while to boil, so don't feel too rushed."
     her annoyed "Eww! It's excrement?"
     her concerned "Well, I guess if it's for science I can do it."
-    "We worked hard to get the samples we needed. We found a lot of shells and some bones. As we were getting ready to leave, the tide started to come back in."
+    "We worked hard to get the samples we needed. We found a lot of shells and some bones."
+    "As we were getting ready to leave, the tide started to come back in."
     "The incoming waves were purple with one kind of alien sea creature. It had six spiny or hairy arms, and floated like a jellyfish."  
     lily happy "Oh! I've got to record this."
     if (ocean_character == "Jed"):
@@ -1589,72 +1591,51 @@ label goto_ocean:
     else:
         sara "Don't worry, I made sure your camera was safe!"
         lily happy"Thank you! Perhaps I just had a little too much sun today."
-
+    her surprised "Do you remember your dream?"
+    lily upset "My... dream? It felt like I was back in college, teaching a really long review session."
+    show her serious
+    "Strange... I wonder what she will find when she studies these animals."
+    "The saltwater hadn't boiled all the way down when we were ready to leave, so I took the saltwater sludge back with me."
     stop sound fadeout 3.0 
     return
 
 # MONTH 11
-# uses knowledge, physical, creative
-#I read about rocket stoves and thought it would be fun to write an event on them http://www.richsoil.com/rocket-stove-mass-heater.jsp   
-# TODO: should we simplify this? 
+#TODO: uses knowledge, physical, creative 
 label monthly_event_11:
     scene bg farm_interior with fade
     show him normal at midleft
     show her normal at midright
     with dissolve
-#do we have a winter? I think there was a winter, but it was a mild one or something?
-    "It was another cloudy day, and there wasn't enough solar power to cook and warm our house with."
-    him concerned "I'll go get some wood. Can't we just cook inside?"
-    her annoyed "No, remember how our chimney has a huge crack in it?"
-    him annoyed "I'll cook outside then."
+    him concerned "This corn tastes... kind of bland."
+    her serious "Yeah, um, we ran out of salt."
+    him annoyed "Can we get some more?"
+    her concerned "I asked at the storehouse, but they're all out."
+    him annoyed "Well, we live near an ocean, don't we? Isn't it a saltwater ocean?"
+    her serious "Yes, it is! But I don't want to just run out there by myself!"
+    him sad "I'd go with you, but I can't leave these crops for even one day."
+    her angry "Really? They would die if you left them just one day?"
+    him annoyed "Well, it's more like some of the food might get eaten by something else since it's harvest time again."
+    her serious "Okay. I'll try to find someone else."
     hide him with moveoutleft
-    her serious "There's got to be a better way to distribute all this energy."
-    "I spent the evening researching low-power heating. I found some old texts about using light bulbs to heat their houses, but we had LEDs that didn't give off much heat."
-    "I found a type of combustion stove called a rocket stove, which burned wood sideways very cleanly. I'd need some metal pipes though." 
-    "I knew we were saving a lot of the metal from the shuttle for emergencies. I wasn't sure what I would do."
-    show him normal at midleft with moveinleft
-    her normal "If we want to advance technologically, we've got to start making our own metal. It's like, the next thing on the tech tree."
-    him normal "I heard that Lily is gathering ores to see if we can start making our own metal here. But I think gunpowder is next on the tech tree."
-    her surprised "Really? Why didn't anyone inform me?"
-    him serious "Well, you're not digging around in the dirt during your working hours. She probably just sent it out to all the farmers."
+    show her normal at midleft with moveinleft
+    "I asked on the community message board if anyone was planning to visit the ocean."
+    #would it be cooler to make this into a little board conversation?
+    lily "I'd love to gather samples at the ocean. Come visit me in the lab tomorrow and I'll tell you my plan."
     scene black with fade
-    "I ran over to the lab the next morning, excited to help."
+    "I ran over to the lab the next morning, excited to plan our trip."
     scene bg lab with fade
     show lily at quarterright with dissolve
     show her normal at midleft with moveinleft
-    her surprised "I heard you've been gathering ore?"
-    lily happy "Yes! Do you have some you'd like to donate?"
-    her happy "I don't, but I'm willing to test the material's melting point!"
-    lily normal "Are you hoping to make something?"
-    her normal "Yes, I want to make a rocket stove to heat our house on cloudy days."
-    lily "I don't really have enough to make anything with it yet, but I can help you find more metal."
-    lily "I've received samples of three different ores, and I think one could make the kind of metal you're looking for. You'd need to go mining for it though."
-    her surprised "Mining, like with a pick?"
-    lily "Yes. I think gunpowder would help a lot too."
-    her "Blowing up rocks? Is that allowed?"
-    lily upset "Well, we are supposed to survive in a way that doesn't damage the existing ecosystem excessively."
-    her normal "Tell me where you think the metal is and I'll see if I can get it out using our pick. I don't think I want to think about gunpowder quite yet."
-    lily normal "I will tell you where the metal is, but I want your help collecting some samples from a semi-remote location first."
-    her annoyed "Don't you think metal is more important than documenting organisms?"
-    lily "No, I don't. And you never know, maybe one of these creatures will have an iron lung or something."
+    lily normal "So you need saltwater, and I need help gathering samples."
+    her concerned "Yes. I'm pretty sure I can help with your samples, but boiling the water down to salt might take all day."
+    lily "I'm willing to wait."
     her normal "Okay, what do I need to bring?"
     lily "Well, a backpack, food, and another person."
     her surprised "Another person?"
     lily "Yes, it's much safer to travel in a group of three than a group of two. At least, that's what I believe from my observations and the small amount of anecdotal evidence on the behavior of the local carnivores."
-    her serious "When do you need me to be ready?"
+    her serious "When should we go?"
     lily "Well, the next low-low tide is in two days. That's when the moons should be in sync long enough to make a tide substantial enough for our purposes."
-    her normal "Okay, I'll talk to [his_name]."
-    scene bg farm_interior with fade
-    show him normal at midleft
-    show her normal at midright
-    with dissolve
-    her happy "Hey, [his_name], do you want to come to the ocean with me?"
-    him surprised "Wouldn't it take half the day just to get there? Why do you want to go?"
-    her normal "Lily said she would help me find and purify metals if I helped her collect specimens at the ocean."
-    him concerned "That sounds fun, but I'm worried that if I take a day off from farming, my plants will die."
-    her annoyed "Really? They would die if you left them just one day?"
-    him annoyed "Well, it's more like some of the food might get eaten by something else since it's harvest time again."
-    her normal "Okay. I'll try to find someone else."
+    her normal "Okay, I'll see what I can do."
     scene black with fade
     menu:
         "Whom should I ask to come?"
@@ -1717,19 +1698,10 @@ label monthly_event_11:
     show lily at midleft
     show her normal at midright with dissolve
     "After Lily got her bearings, we made the long trip back."
-    # TODO (b): This is awkward, make it fit with the TODO above.
-    her surprised "Can you remember anything from your dream?"
-    lily upset "My... dream?"
-    show her serious
-    "She didn't remember? Strange... I wondered what she would find when she studied these animals."
     scene bg lab with fade
-    "The next day, Lily told me where to go for the most ore-rich rocks. I followed her directions and gathered nearby rocks. I was pleasantly surprised by how little I needed my pick."
-    "I had a lot of help from Lily and Ilian in melting the rocks and using the 3D printers to make the metal can and pipes I needed."
-    "I arranged the pipes around the inside of our house and covered them with mud. The rocket stove easily heated our whole home using only a few sticks."
-    if (skill_creative >= 40):
-        "I made the mud on top of the pipes into a large mud bench. Since it was a little too hot, I made some cushions from dried grasses. It felt luxurious, like having a heated bed."
+    "In the lab, we finished evaporating the saltwater, and Lily tested the remaining salt to make sure it was safe to eat."
     # I'm thinking that Lily might make gunpowder on her own. It's such a loaded (heh, sorry) technology that I felt like the implications for introducing it this soon were a little overwhelming to handle in one event.
-    # I'm also thinking that some of the sea creatures can kind of communicate with humans by accessing their nervous system or maybe just making them dream. 
+    # I'm also thinking that some of the sea creatures can kind of communicate with humans by accessing their nervous system or maybe just making them dream. They use the saltwater ocean much like our nervous system uses neurons? 
     # So the purple jellies are kind of like bees in a collective unconscious sort of way. Maybe that's too far out? It's a seed for something later on anyway.
     return
 
