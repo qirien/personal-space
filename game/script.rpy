@@ -132,9 +132,9 @@ label start:
 
     if (persistent.times_beaten):
         menu:
-            "New Game+ data found. Do you want to use New Game+ data to start skills at levels from last game?"
+            "New Game+ data found. Do you want to use New Game+ data to start skills at the highest achieved levels?"
             "Yes.":
-                "OK, initializing stats to previous levels, up to [SKILL_SAVED_MAX]."
+                "OK, initializing stats to previous levels, to a maximum of [SKILL_SAVED_MAX]."
                 $ skill_domestic = persistent.skill_domestic
                 $ skill_creative = persistent.skill_creative
                 $ skill_technical = persistent.skill_technical

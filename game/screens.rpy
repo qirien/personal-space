@@ -277,7 +277,8 @@ screen main_menu:
 
         if (persistent.times_beaten):
             textbutton _("New Game+") action Start() text_size 28
-        textbutton _("New Game") action Start()
+        else:
+            textbutton _("New Game") action Start()
         textbutton _("Load Game") action ShowMenu("load")
         if (persistent.times_beaten):
             textbutton _("Omake") action Start("omake")
