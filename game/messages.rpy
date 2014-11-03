@@ -56,6 +56,22 @@ screen message_board:
                 for who, what, who_id, what_id, window_id in dialogue:
                     window:
                         id window_id
+
+# This would be cool, but doesn't work with dynamic character names, unless we can somehow get at
+# the character and their "image" attribute.
+#                        hbox:
+#                            $ image_name = "sprites/" + who.lower() + "-icon.png"
+#                            add image_name
+                        
+#                        hbox:
+#                            vbox:
+#                                xpos 30
+#                                if who is not None:
+#                                    text who id who_id
+#                            vbox:
+#                                xpos 67
+#                                xmaximum 850
+#                                text what id what_id
                     
                         has vbox:
                             # The author of the message
@@ -66,13 +82,11 @@ screen message_board:
                                     text who id who_id
                             # The message
                             vbox:
-                                xpos 67
+                                xpos 87
+                                ypos -20
                                 xmaximum 850
                                 xalign 0.0
                                 text what id what_id
-                            # blank spacer
-                            vbox:
-                                text " " size 7
                 
 # NVL mode characters for chat rooms, etc
 define her_c = DynamicCharacter("her_name", who_prefix = "{image=sprites/her-icon.png} ", color="#8864d5", image="her", kind=nvl)
@@ -84,7 +98,7 @@ define sara_c = Character("Sara", who_prefix = "{image=sprites/sara-icon.png} ",
 define thuc_c = Character("Thuc", who_prefix = "{image=sprites/thuc-icon.png} ", color="a9ff22", image="thuc", kind=nvl)  #lime green
 define ilian_c = Character("Ilian", color="ffa922", image="ilian", kind=nvl) #tangerine
 define brennan_c = Character("Brennan", who_prefix = "{image=sprites/brennan-icon.png} ", color="33b533", image="brennan", kind=nvl)  #irish green
-define jed_c = Character("Jed", color="cb5500", image="jed", kind=nvl)  #rusty brown
+define jed_c = Character("Jed", who_prefix = "{image=sprites/jed-icon.png} ", color="cb5500", image="jed", kind=nvl)  #rusty brown
 define natalia_c = Character("Natalia", who_prefix = "{image=sprites/natalia-icon.png} ", color="ffe74a", image="natalia", kind=nvl)  #yellow
 define helen_c = Character("Helen", color="cdcfb2", image="helen", kind=nvl) #tan
 define julia_c = Character("Julia", color="#4b54cd", image="julia", kind=nvl) #icy blue

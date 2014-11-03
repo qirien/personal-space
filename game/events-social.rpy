@@ -49,13 +49,12 @@ label social_0:
             him_c "..."
             jed_c "[his_name]? C'mon..."
             him_c "I don't care where we meet; let me know when you have it all straightened out."
-            jed_c "You guys are all whipped..."
             nvl clear
+            jed_c "You guys are all whipped..."
             natalia_c "Oh please. You had a dumb idea, get over it."
             her_c "I think it's time we all got over ourselves and stopped arguing."
             natalia_c "No one asked you."
-            jed_c "Yeah, you don't even come to these meetings."
-            her_c "Yes, but..."                       
+            jed_c "Yeah, you don't even come to these meetings."               
         "Side with Jed.":
             her_c "I'm sure Jed wouldn't make a big deal out of it unless it was really important to him. Would it be that terrible to have a meeting at his house?"
             natalia_c "I'm not letting that bully have anything he wants."
