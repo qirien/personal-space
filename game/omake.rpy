@@ -56,15 +56,15 @@ label omake:
     show naomi at midright
     with dissolve
     
-    boss "Priya, have you seen my computer around here?"
+    pavel "Priya, have you seen my computer around here?"
     naomi "Yes, it's right here, but I wanted to speak with you first."
-    boss "What is it?"
+    pavel "What is it?"
     naomi "That was very kind of you, what you did for Miranda today."
-    boss "What? I just asked her to see if she would mind babysitting for our new parents once in a while."
+    pavel "What? I just asked her to see if she would mind babysitting for our new parents once in a while."
     naomi "But it helped her feel like you trusted her, as an adult member of the community. That is just what she needed."
-    boss "Well, good. I'm just trying to help everyone..."
+    pavel "Well, good. I'm just trying to help everyone..."
     naomi "I know you are, beloved. That's one of the things I love about you."
-    boss "I couldn't do it without you, priya."
+    pavel "I couldn't do it without you, priya."
     show pavel at center with move
     
     brennan "..."

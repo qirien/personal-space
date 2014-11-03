@@ -197,7 +197,7 @@ label spiritual_4:
         "[his_name].":
             her serious "[his_name]'s soul... Sometimes he acts kind of rude, but I think that is usually when he is worried about something. He probably feels like the whole farm is his responsibility, and if anything goes wrong he has to fix it on his own."
             her normal "So instead of getting mad at him for being rude, maybe I could try and see what he's worried about."
-        "My boss.":
+        "My pavel.":
             her annoyed "I hate it when Mayor Grayson tells me how to do my job... but how does he see the situation?"
             her concerned "..."
             her sad "I guess he probably is worried about the colony, and wants to make sure everything goes well so that we can all survive together."

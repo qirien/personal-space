@@ -40,8 +40,6 @@ init -1 python hide:
     ## The theme function takes a number of parameters that can
     ## customize the color scheme.
 
-
-    # TODO: maybe get rid of this? are we even using this?
     theme.a_white_tulip(
         ## Theme: A White Tulip
         ## Scheme Muted Horror

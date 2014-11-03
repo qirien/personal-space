@@ -5,8 +5,8 @@ label colony_ship:
 
     scene bg colony_ship_bunk with fade
     play music "music/Amnesia.ogg" fadeout 3.0
-    # TODO: Weightlessness? Low Gravity? Artificial Gravity?
-    "What a honeymoon -- on board a cramped space shuttle with a hundred other people for a month. Of course, back on Earth four years had passed, since we were travelling so close to light speed. We spent a lot of it talking about the future..."
+    "What a honeymoon -- on board a cramped space shuttle with a hundred other people for a month. Of course, back on Earth four years had passed, since we were travelling so close to light speed."
+    "We spent a lot of it talking about the future..."
     show him normal at midright
     show her normal at midleft
     with dissolve

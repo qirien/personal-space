@@ -499,9 +499,9 @@ label technical_master:
     show her normal at midright with dissolve
     "The next day at work, the mayor came to see me."
     show pavel at midleft, behind her with moveinleft
-    boss "I hear you have a great camera system setup at your farm, [her_name]."
+    pavel "I hear you have a great camera system setup at your farm, [her_name]."
     her happy "Yeah, here, take a look! You can see the fields in every direction."
-    boss "Would you mind setting up something similar at a few locations around town?"
+    pavel "Would you mind setting up something similar at a few locations around town?"
     her surprised "Sure, I could do that."
     "I setup some cameras; one at the river, one at the community center, and one overlooking the whole town, and made an interface so anyone in our community could see them and collect data from them."
     "A couple people even asked me for more instructions like the one I had posted, so I added how-tos for the water screw, laundry wringer, and everything else I had made."

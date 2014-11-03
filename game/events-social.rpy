@@ -36,6 +36,7 @@ label social_0:
     natalia_c "I'll remember that the next time Helen asks me for some eggs!"
     helen_c "Hey, hey, don't drag me into this!"
     jed_c "Yeah, well, see how you like going without milk for your kids. They're runty enough as it is."
+    show her concerned
     "Uh-oh. Things were getting personal. Was there anything I could do?"
     nvl clear
     
@@ -49,11 +50,12 @@ label social_0:
             jed_c "[his_name]? C'mon..."
             him_c "I don't care where we meet; let me know when you have it all straightened out."
             jed_c "You guys are all whipped..."
+            nvl clear
             natalia_c "Oh please. You had a dumb idea, get over it."
             her_c "I think it's time we all got over ourselves and stopped arguing."
             natalia_c "No one asked you."
             jed_c "Yeah, you don't even come to these meetings."
-            her_c "..."                       
+            her_c "Yes, but..."                       
         "Side with Jed.":
             her_c "I'm sure Jed wouldn't make a big deal out of it unless it was really important to him. Would it be that terrible to have a meeting at his house?"
             natalia_c "I'm not letting that bully have anything he wants."
@@ -111,9 +113,9 @@ label social_1:
     show her normal at midleft with moveinleft
 
     her serious "Excuse me, Mayor Grayson?"
-    boss "Yes, [her_name]?"
+    pavel "Yes, [her_name]?"
     her surprised "Can anyone use the community center?"
-    boss "Well, of course, for anything that's open to the entire colony."
+    pavel "Well, of course, for anything that's open to the entire colony."
     her normal "Good, that's what I wanted to know..."
     hide pavel
     hide her
@@ -256,7 +258,7 @@ label social_3:
             her normal "Yeah, we should see if we can get a lunch group going! Lots of people are on break now; let's ask around."
             "We found a few other people who seemed interested in gathering at the community center for lunch every Friday."
         "I'm not worried.":
-            her serious "I feel pretty socially healthy now. I see you, my boss, and my husband pretty regularly."
+            her serious "I feel pretty socially healthy now. I see you, my pavel, and my husband pretty regularly."
             sara "But we're going to be here the rest of our lives! Shouldn't we get to know everyone?"
             menu:
                 "I don't want to meet everyone.":
@@ -655,12 +657,12 @@ label social_7:
     show her normal at quarterleft
     show sara at midleft
     with moveinleft
-    boss "Hello, Sara, what can I do for you?"
+    pavel "Hello, Sara, what can I do for you?"
     sara sad "Mayor, it's not fair for the Nguyens to always be taking food from the storehouse but not contributing anything. Their job is to be farmers, right?!"
-    boss "Yes, it is - do you have reason to believe they are not doing their job?"
+    pavel "Yes, it is - do you have reason to believe they are not doing their job?"
     sara "Their fields are completely empty!"
-    boss "I see..."
-    boss "[her_name], would you please go and speak to the Nguyens and see if you can determine the problem?"
+    pavel "I see..."
+    pavel "[her_name], would you please go and speak to the Nguyens and see if you can determine the problem?"
     her surprised "(Me?! Well, I guess Sara might be too upset about it, and I am on friendly terms with Julia and Thuc...)"
     her serious "Yes, I'll do that."
     scene bg laundry with fade
@@ -760,7 +762,7 @@ label social_8:
     show sara at midleft
     with moveinleft
     "We asked him about it, and he thought it sounded great."
-    boss "It's about time we had a celebration of some kind. Earth Day is in two weeks - we could have it then. But I don't know who to ask to plan it - everyone is so busy..."
+    pavel "It's about time we had a celebration of some kind. Earth Day is in two weeks - we could have it then. But I don't know who to ask to plan it - everyone is so busy..."
     sara "Just leave it to us. We'll have a party ready in two weeks!"
     $ party_music = ""
     $ party_entertainment = ""
@@ -1102,15 +1104,15 @@ label done_party_menu:
     with dissolve
     sara sad "Well, the party's almost over, guess it's time to clean up."
     her surprised "Yeah, is that going to be just you and me?"
-    boss "Thank you, Sara and [her_name], for organizing such a wonderful celebration for us. I know you've put a lot of work into it."
+    pavel "Thank you, Sara and [her_name], for organizing such a wonderful celebration for us. I know you've put a lot of work into it."
     show her normal
     show sara normal
-    boss "But, folks, I see quite a mess here in our community center. I don't think it's fair that these two ladies should have to do all the work, so I'd like to ask one person from each family to stay and help clean up."
+    pavel "But, folks, I see quite a mess here in our community center. I don't think it's fair that these two ladies should have to do all the work, so I'd like to ask one person from each family to stay and help clean up."
     "I was relieved to hear that, and even more relieved to see that a lot of people stayed to help clean up. Not just one person from each family, either - entire families got to work clearing plates, putting away chairs, mopping up spills, and doing dishes."
     hide sara
     show her normal at midright with move
     her "Thanks, Mayor Grayson."
-    boss "Thank you! I think the party was a great success."
+    pavel "Thank you! I think the party was a great success."
     stop sound
     $ skill_social += 10
     $ community_level += 5
@@ -1122,36 +1124,36 @@ label social_master:
     show pavel at midright, behind her with dissolve
     show her normal at midleft with moveinleft
     her surprised "Mayor Grayson, can I talk to you for a moment?"
-    boss "I'd like to, [her_name], but there's too much to do. I have to decide where the new farm should be, and how to allocate the latest harvest, and which supply requests to approve, and-"
+    pavel "I'd like to, [her_name], but there's too much to do. I have to decide where the new farm should be, and how to allocate the latest harvest, and which supply requests to approve, and-"
     her normal "That's what I want to talk to you about."
-    boss "Oh?"
+    pavel "Oh?"
     her serious "There's too much here for just one person. You need some help."
-    boss "Isn't that what I told you about your job when we first arrived here?"
+    pavel "Isn't that what I told you about your job when we first arrived here?"
     her normal "Yes, and I listened to you, so I hope you will listen to me."
     her serious "You've done a great job, but the truth is there's just too much for one person."
     her normal "There's a lot of decisions to be made, and some of them would be made easier by someone just specializing in that one thing."
-    boss "What do you propose?"
+    pavel "What do you propose?"
     menu:
         "What do I propose?"
         "Form a committee.":
             her normal "Why not have a committee? One person could be in charge of the store house, one person could be in charge of the land, one person in charge of the services like the school and library, and one person in charge of laws and safety."
-            boss "Hmmm..."
+            pavel "Hmmm..."
             her "Of course, you would be welcome on the committees."
-            boss "Will you serve as one of the committee members?"
+            pavel "Will you serve as one of the committee members?"
             her serious "If you like, though I think it would be better if they were elected."
-            boss "Very well. I am sure you will be voted to be in charge of something."
+            pavel "Very well. I am sure you will be voted to be in charge of something."
             "Sure enough, they voted me to be in charge of services."
 
         "I could assist you.":
             her happy "Maybe I could help you out with some of the more mundane things."
-            boss "Hmm, sort of like a deputy mayor?"
+            pavel "Hmm, sort of like a deputy mayor?"
             her normal "Yeah, you need a deputy! That would also help in case you got sick or something."
-            boss "Splendid! But... I believe our charter states that any additional officers must be elected by the adults of the colony."
+            pavel "Splendid! But... I believe our charter states that any additional officers must be elected by the adults of the colony."
             her happy "That's fine; everyone will support me more if they feel like they have chosen me."
-            boss "We'll see if anyone else wants the job."
+            pavel "We'll see if anyone else wants the job."
             "The mayor announced a vacancy in the post of deputy mayor, and asked for nominations."
             "Sara nominated me, and [his_name] nominated Thuc, but he didn't want to run. Jed nominated Sister Naomi, but she declined the position as well. Nobody else wanted to run, but we held a vote anyway."
-            boss "I guess you've got the job, [her_name]! Now, about those supply requests..."
+            pavel "I guess you've got the job, [her_name]! Now, about those supply requests..."
         
     "It was quite a lot of work to help be in charge of the colony, but the Mayor seemed much less stressed out. It felt good to be trusted, and to help everyone work together here on Talaam."
 

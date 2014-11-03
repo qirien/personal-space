@@ -28,12 +28,12 @@ init python:
     # SKILL FOCUS EVENTS
     # For each type of skill, we have 10 special events that happen when your skill
     # reaches a certain level.  There is also an intro event and a master event.
-    # TODO: Make this work with New Game+
     for skill_type in ["domestic", "creative", "technical", "spiritual", "social", "knowledge", "physical"]:
-        # Set up default events for each type of skill
+        # Set up default events for each type of skill. These should never show up, but are reserved
+        # for future use.
         event (skill_type + "_def", "act == 'act_" + skill_type + "'", event.solo(), priority=400)
 
-        # Add special events that only happen once when you first get to a certain
+        # Add special events that only happen once when you are at a certain
         # skill level in that skill type.
         for i in range(0,9):
             # event(skill_type_i, "act == 'act_skill_type' and skill_skill_type == i*10", event.once(), priority=10)
@@ -52,7 +52,6 @@ init python:
 
     # RELAXATION EVENTS
     # Default Events
-    # TODO: sometimes this is skipping the relaxation section?
     event("relax_together_0", "act == 'act_relax_together'", event.solo(), priority=200)
     event("relax_alone_0", "act == 'act_relax_alone'", event.solo(), priority=200)
 

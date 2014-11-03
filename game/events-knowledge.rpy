@@ -197,9 +197,9 @@ label knowledge_7:
     show pavel at midright, behind her with dissolve
     show her normal at midleft with moveinleft
     her surprised "Is it okay if I use the community center for a night next week?"
-    boss "What for?"
+    pavel "What for?"
     her happy "I want to turn it into a museum for a night!"
-    boss "That sounds marvelous. I would certainly like to see it."
+    pavel "That sounds marvelous. I would certainly like to see it."
     her normal "I'll be sure to invite everyone."
     scene black with fade
     "I would need a lot of computer pads to be setup like paintings, so I posted on the colony message board asking for volunteers."
@@ -361,13 +361,13 @@ label knowledge_master:
             show pavel at midright, behind her with dissolve
             show her normal at midleft with moveinleft
             her surprised "Mayor Grayson, is there a way you could encourage people to add to the planet encyclopedia?"
-            boss "There's a planet encyclopedia?"
+            pavel "There's a planet encyclopedia?"
             her annoyed "Yes, I just started one! Didn't you see my message?!"
-            boss "Well, I remember something like that..."
+            pavel "Well, I remember something like that..."
             her concerned "(No wonder no one's added anything...)"
-            boss "But that sounds like a great idea! I know there's been times when I wanted to know something, like Talaam's weather patterns."
+            pavel "But that sounds like a great idea! I know there's been times when I wanted to know something, like Talaam's weather patterns."
             her surprised "So can you encourage everyone to write articles for it?"
-            boss "Yes, I will! I might just write an article myself..."
+            pavel "Yes, I will! I might just write an article myself..."
             her happy "That would be wonderful!"
             "With the mayor's encouragement, more people wrote about what they knew for the encyclopedia."
 

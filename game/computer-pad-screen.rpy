@@ -27,7 +27,6 @@ style cp_choice_button is button:
 screen computer_pad(periods):
     tag month_menu
     $ renpy.choice_for_skipping()
-    $ FileTakeScreenshot()
 
     add "bg/silk-gray.jpg"
     add "bg/computer-pad.png"
@@ -105,7 +104,6 @@ screen computer_pad(periods):
                         else:
                             text "Temperature... {color=00AA00}OK{/color}"
                         
-                        # TODO: Test if it shows pregnant forever.
                         if ((is_pregnant or is_pregnant_later) and (trimester != "done")):
                             text "Pregnancy... [trimester] trimester"
                             

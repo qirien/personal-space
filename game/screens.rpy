@@ -101,9 +101,10 @@ style label_text:
 style nvl_label is sans_text:
     size 26
     yalign 0.0
+    text_align 0.0
     
 style nvl_dialogue is sans_text:
-    size 18
+    size 20
     #xpos 100
 
 style frame:
@@ -194,13 +195,13 @@ screen input:
 #
 # Screen used for nvl-mode dialogue and menus.
 # http://www.renpy.org/doc/html/screen_special.html#nvl
-
-# TODO: Clean this up and make it look more like a message board - use stylegroup nvl
-#       and a frame around the text, etc. Also needs to work for handwritte notes still.
-#       Maybe just have two separate screens.
 screen nvl:
+    
+    # use our message board screen unless it's a note
     if (dialogue[0][0] != "note"):
         use message_board
+        
+    # it's a handwritten note
     else:
         add "bg/paper.jpg"
         window:

@@ -1,7 +1,8 @@
 # These are messages that appear on the colony message board each month
 
 # TODO: have tiny avatars appear with each person's name
-
+# TODO: Clean this up and make it look more like a message board - use stylegroup nvl
+#       and a frame around the text, etc. 
 screen message_board:
     default side_image = None
     
@@ -22,7 +23,8 @@ screen message_board:
 
         # This is kind of cool, but it is distracting when there are not many messages.
         # TODO: Is there a way to only display this when the text is big enough?
-        if (num_messages >= 10):
+        # TODO: It flips back up to the top when a new message is displayed
+        if (num_messages >= 8):
             viewport:
                 mousewheel True
                 yinitial 0
@@ -31,14 +33,23 @@ screen message_board:
                 for who, what, who_id, what_id, window_id in dialogue:
                     window:
                         id window_id
-                    
-                        has hbox:
-                            spacing 10
-
-                        if who is not None:
-                            text who id who_id
-
-                        text what id what_id                
+                        has vbox:
+                            # The author of the message
+                            vbox:
+                                xpos 30
+                                xalign 0.0
+                                if who is not None:
+                                    text who id who_id
+                            # The message
+                            vbox:
+                                xpos 67
+                                xmaximum 850
+                                xalign 0.0
+                                text what id what_id
+                            # blank spacer
+                            vbox:
+                                text " " size 7       
+                            
         else:
             vbox:
                 # Display dialogue.
@@ -46,26 +57,35 @@ screen message_board:
                     window:
                         id window_id
                     
-                        has hbox:
-                            spacing 10
-
-                        if who is not None:
-                            text who id who_id
-
-                        text what id what_id
-            
+                        has vbox:
+                            # The author of the message
+                            vbox:
+                                xpos 30
+                                xalign 0.0
+                                if who is not None:
+                                    text who id who_id
+                            # The message
+                            vbox:
+                                xpos 67
+                                xmaximum 850
+                                xalign 0.0
+                                text what id what_id
+                            # blank spacer
+                            vbox:
+                                text " " size 7
+                
 # NVL mode characters for chat rooms, etc
-define her_c = DynamicCharacter("her_name", color="#8864d5", image="her", kind=nvl)
-define him_c = DynamicCharacter("his_name",  who_suffix = " {image=sprites/him-icon.png}",color="#c80000", image="him", kind=nvl) #red 
+define her_c = DynamicCharacter("her_name", who_prefix = "{image=sprites/her-icon.png} ", color="#8864d5", image="her", kind=nvl)
+define him_c = DynamicCharacter("his_name", who_prefix = "{image=sprites/him-icon.png} ",color="#c80000", image="him", kind=nvl) #red 
 define naomi_c = Character("Naomi", color="#ededed", image="naomi", kind=nvl)  #light gray
-define boss_c = Character("Pavel", who_suffix = " {image=sprites/pavel-icon.png}", color="#cccccc", image="pavel_c", kind=nvl)   #dark gray
-define lily_c = Character("Lily", color="#8655bd", image="lily", kind=nvl)  #purple
-define sara_c = Character("Sara", color="#c64e89", image="sara", kind=nvl)  # dark pink
-define thuc_c = Character("Thuc", color="a9ff22", image="thuc", kind=nvl)  #lime green
+define pavel_c = Character("Pavel", who_prefix = "{image=sprites/pavel-icon.png} ", color="#cccccc", image="pavel_c", kind=nvl)   #dark gray
+define lily_c = Character("Lily", who_prefix = "{image=sprites/lily-icon.png} ", color="#8655bd", image="lily", kind=nvl)  #purple
+define sara_c = Character("Sara", who_prefix = "{image=sprites/sara-icon.png} ", color="#c64e89", image="sara", kind=nvl)  # dark pink
+define thuc_c = Character("Thuc", who_prefix = "{image=sprites/thuc-icon.png} ", color="a9ff22", image="thuc", kind=nvl)  #lime green
 define ilian_c = Character("Ilian", color="ffa922", image="ilian", kind=nvl) #tangerine
-define brennan_c = Character("Brennan", color="33b533", image="brennan", kind=nvl)  #irish green
+define brennan_c = Character("Brennan", who_prefix = "{image=sprites/brennan-icon.png} ", color="33b533", image="brennan", kind=nvl)  #irish green
 define jed_c = Character("Jed", color="cb5500", image="jed", kind=nvl)  #rusty brown
-define natalia_c = Character("Natalia", color="ffe74a", image="natalia", kind=nvl)  #yellow
+define natalia_c = Character("Natalia", who_prefix = "{image=sprites/natalia-icon.png} ", color="ffe74a", image="natalia", kind=nvl)  #yellow
 define helen_c = Character("Helen", color="cdcfb2", image="helen", kind=nvl) #tan
 define julia_c = Character("Julia", color="#4b54cd", image="julia", kind=nvl) #icy blue
 define martin_c = Character("Martín", color="#990011", image="martin", kind=nvl)  #dark red
@@ -73,11 +93,11 @@ define martin_c = Character("Martín", color="#990011", image="martin", kind=nvl
 define computer = Character(None, kind=nvl)
 
 label msg_0:
-    boss_c "We'll be arriving in a few days, so please review the attached housing setup document that explains how we will be setting up the colony."
+    pavel_c "We'll be arriving in a few days, so please review the attached housing setup document that explains how we will be setting up the colony."
     return
 
 label msg_1:
-    boss_c "Mandatory all-colony meeting tomorrow at 10, followed by a farmer's meeting at 11!\n"
+    pavel_c "Mandatory all-colony meeting tomorrow at 10, followed by a farmer's meeting at 11!\n"
     
     him_c "Hey, a few people asked me about the attachment system on these tractors; so here's a how-to."
     return
@@ -114,7 +134,7 @@ label msg_4:
     return
     
 label msg_5:
-    boss_c "I've had a few people ask questions about what to do with trash - let me remind everyone that our plastic and metal supplies are very limited, so make sure you recycle these items at the community center. Other trash can be burned or composted; see pages 126-128 of the Colonist's Guide."
+    pavel_c "I've had a few people ask questions about what to do with trash - let me remind everyone that our plastic and metal supplies are very limited, so make sure you recycle these items at the community center. Other trash can be burned or composted; see pages 126-128 of the Colonist's Guide."
     lily_c "You can save combustible trash for your hybrid stoves for days of precipitation or cloud cover."
     him_c "Yeah, just make sure it's well-covered. There's some gigantic scavengers here who would love to become your pets."
     return
@@ -157,8 +177,8 @@ label msg_6:
     return
     
 label msg_7:
-    boss_c "Congratulations, everyone, at the end of the month we'll have been here for one whole Talaam year!"
-    boss_c "We wanted to give everyone a time to celebrate their winter holidays, so at the end of the month we'll take a week off for those, and also to make plans for the new year."
+    pavel_c "Congratulations, everyone, at the end of the month we'll have been here for one whole Talaam year!"
+    pavel_c "We wanted to give everyone a time to celebrate their winter holidays, so at the end of the month we'll take a week off for those, and also to make plans for the new year."
     brennan_c "Hopefully there are plans for celebration!"
     naomi_c "Yes, I'll post a list of events for all the winter holidays, including a New Year's Eve party at the community center."
     brennan_c "Hey, Jed, any chance you could bring some strong beverages?"
@@ -206,9 +226,9 @@ label msg_9:
     return
     
 label msg_10:
-    boss_c "Who grew the strawberries? These are delicious!"
+    pavel_c "Who grew the strawberries? These are delicious!"
     jed_c "They taste even better with some cream, Mayor G."
-    boss_c "I'm sure they do - do you have any to spare?"
+    pavel_c "I'm sure they do - do you have any to spare?"
     jed_c "Sure, we can work out a trade."
     return
     
@@ -253,9 +273,9 @@ label msg_13:
     thuc_c "She hasn't been to our farm all day."
     sara_c "I haven't seen her in town... :-("
     her_c "I saw her walking home from school with her siblings yesterday, but not this morning."
-    boss_c "How long has she been missing?"
+    pavel_c "How long has she been missing?"
     natalia_c "I don't know! She could've been gone all night! I thought I saw her when I went to bed, but she's so small, it could've just been her blankets..."
-    boss_c "She's awfully young to be out on her own for so long. Anyone who can, please meet at the Perón's and we'll organize a search."
+    pavel_c "She's awfully young to be out on her own for so long. Anyone who can, please meet at the Perón's and we'll organize a search."
     natalia_c "Thank you, Mayor."
     return
     
@@ -272,7 +292,7 @@ label msgs_pregnant:
     natalia_c "So, [his_name] and [her_name], what are you going to name the baby?"
     sara_c "Baby?! :-o What baby? Why am I always the last to hear about these things?!"
     him_c "Haven't decided on a name yet; we just barely found out ourselves!"
-    boss_c "Congratulations!"
+    pavel_c "Congratulations!"
     naomi_c "That's wonderful!"
     jed_c "About time!"
     ilian_c "[his_name], come by sometime, I have something for the baby..."
@@ -285,14 +305,14 @@ label msgs_pregnant:
     return
 
 label msg_15:
-    boss_c "Just a reminder - please don't let kids play in the community center when no one else is there. I wouldn't want anyone to get hurt by falling chairs or anything."
+    pavel_c "Just a reminder - please don't let kids play in the community center when no one else is there. I wouldn't want anyone to get hurt by falling chairs or anything."
     natalia_c "Falling chairs? We're on an alien planet full of unknown perils and you're worried about falling chairs?"
-    boss_c "I would feel responsible if something bad happened at the community center."
+    pavel_c "I would feel responsible if something bad happened at the community center."
     natalia_c "Well, you wouldn't be. Let the kids be responsible for themselves, or else they won't learn how."
-    boss_c "Well, I-"
+    pavel_c "Well, I-"
     naomi_c "The truth is... there was a mess of mud and sticks on the corner. It seems some children were building a fort?"
     natalia_c "Oh, that. Well, sure, I'll have them clean it up. No need to restrict the whole area, right?"
-    boss_c "I suppose not. But we can't have messes in there; that area is for meetings and other colony business."
+    pavel_c "I suppose not. But we can't have messes in there; that area is for meetings and other colony business."
     natalia_c "Of course. I'll let them know."
     return
     
@@ -313,9 +333,9 @@ label msg_16:
     
 label msg_17:
     sara_c "Hey, is there a schedule somewhere for the bathhouse?"
-    boss_c "No, right now it's first come, first served. Has there been a problem?"
+    pavel_c "No, right now it's first come, first served. Has there been a problem?"
     sara_c "No, I just wanted to like, reserve it for tomorrow night."
-    boss_c "Well, then, consider it reserved!"
+    pavel_c "Well, then, consider it reserved!"
     sara_c "Okay, great! :-D"
     return
     
@@ -412,7 +432,7 @@ label msg_23:
     return
              
 label msg_24:
-    boss_c "I know we're all looking forward to a few new supplies from the new ship, but let's still remember to conserve our resources."
+    pavel_c "I know we're all looking forward to a few new supplies from the new ship, but let's still remember to conserve our resources."
         
     return
     

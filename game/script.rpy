@@ -9,7 +9,7 @@ define her = DynamicCharacter("her_name", color="#8864d5", image="her") #periwin
 define him = DynamicCharacter("his_name", color="#c80000", image="him") #red 
 
 define naomi = Character("Sister Naomi", color="#ededed", image="naomi")  #light gray
-define boss = Character("Mayor Grayson", color="#cccccc", image="pavel")   #dark gray
+define pavel = Character("Mayor Grayson", color="#cccccc", image="pavel")   #dark gray
 define lily = Character("Lily", color="#8655bd", image="lily")  #purple
 define sara = Character("Sara", color="#c64e89", image="sara")  # dark pink
 define thuc = Character("Thuc Nguyen", color="a9ff22", image="thuc")  #lime green
@@ -20,7 +20,6 @@ define natalia = Character("Natalia Perón", color="ffe74a", image="natalia")  #
 define helen = Character("Helen Engel", color="cdcfb2", image="helen") #tan
 define julia = Character("Julia Nguyen", color="#4b54cd", image="julia") #icy blue
 define martin = Character("Martín Perón", color="#990011", image="martin")  #dark red
-# TODO: add accent on Martín (also Perón?)
 
 define note = Character("note", kind=nvl)
 

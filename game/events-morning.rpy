@@ -22,10 +22,10 @@ label act_skip_work:
     play music "music/You.ogg" fadeout 3.0
                 
     if (slacked_off == 3):
-        "My boss called me in to meet with him after work."
+        "The mayor called me in to meet with him after work."
         show pavel at midright,behind her
         show her normal at midleft
-        boss "[her_name], I'm worried about you. You haven't been putting in your usual effort at work lately."
+        pavel "[her_name], I'm worried about you. You haven't been putting in your usual effort at work lately."
         menu:
             "What should I say?"
             "I'm sorry.":
@@ -36,15 +36,15 @@ label act_skip_work:
                 her serious "I'm sorry - I won't let it happen again."
             "Whatever.":
                 her annoyed "Whatever."
-                boss "Excuse me?"
+                pavel "Excuse me?"
                 her "As long as I get my job done, what's the big deal?"
-                boss "Well, just see that you do get it done."
+                pavel "Well, just see that you do get it done."
                 $ slacked_off = 1
                 return
             "I'm pregnant." if ((is_pregnant) or (is_pregnant_later)):
                 her serious "Sorry, I didn't think being pregnant would make me so tired."
 
-        boss "I understand, but this can't happen all the time. We need you here."
+        pavel "I understand, but this can't happen all the time. We need you here."
         her serious "All right, thanks for understanding."
         $ slacked_off = 0
         $ relaxed -= 2  #it's stressful to get caught slacking off
@@ -65,22 +65,22 @@ label work_0:
     "My boss was also the leader of our little community. I guess you could call him the mayor?"
     "Right after we landed, he called a meeting for everyone where he gave a speech."
     show pavel at center
-    boss "We made it this far! Now, as you know, we've arrived right at the beginning of this planet's spring, so it's time to get seeds in the ground! We would like for our colony to become self-sufficient as far as necessities are concerned."
+    pavel "We made it this far! Now, as you know, we've arrived right at the beginning of this planet's spring, so it's time to get seeds in the ground! We would like for our colony to become self-sufficient as far as necessities are concerned."
     stop sound fadeout 3.0
-    boss "In two years, another colony ship will come with supplies and more colonists. So, until then, we're on our own."
-    boss "Let me introduce some of our experts, here."
+    pavel "In two years, another colony ship will come with supplies and more colonists. So, until then, we're on our own."
+    pavel "Let me introduce some of our experts, here."
     show pavel at quarterleft, behind naomi with move
     show naomi at center with moveinright
-    boss "First of all, here's my wife Naomi, who is our colony's counselor and chaplain. She will be holding nondenominational religious services once a week for any who are interested, and is also available for individual counseling."
+    pavel "First of all, here's my wife Naomi, who is our colony's counselor and chaplain. She will be holding nondenominational religious services once a week for any who are interested, and is also available for individual counseling."
     naomi "I look forward to learning alongside all of you."
     hide naomi with moveoutright
     show lily at midright with moveinright
-    boss "Next is the person who has lived here the longest, astronaut and xenobiologist Dr. Lily. Any scientific inquiries should be directed her way."
+    pavel "Next is the person who has lived here the longest, astronaut and xenobiologist Dr. Lily. Any scientific inquiries should be directed her way."
     lily happy "Thank you, Mayor."
     hide lily with moveoutright
     show ilian at midright with moveinright
     show sara at right with moveinright
-    boss "Ilian Andrevski is in charge of the storehouse here on the colony. That's where we keep all our extra supplies and food. His wife, Sara will be helping all of us stay organized."
+    pavel "Ilian Andrevski is in charge of the storehouse here on the colony. That's where we keep all our extra supplies and food. His wife, Sara will be helping all of us stay organized."
     ilian "I want to distribute things frugally and fairly. And, if you have extra goods you cannot use, please give them to the storehouse so others can use them."
     sara "Right!"
     hide ilian
@@ -88,17 +88,17 @@ label work_0:
     with moveoutright
     show jed at midright with moveinright
     show helen at right with moveinright
-    boss "Jed is in charge of the library, so if you need to research something or print something out, head over there. He and his wife Helen are also experts on raising cattle, and will be starting a ranch up to the north."
+    pavel "Jed is in charge of the library, so if you need to research something or print something out, head over there. He and his wife Helen are also experts on raising cattle, and will be starting a ranch up to the north."
     jed "Hey, y'all. Don't be strangers!"
     helen "Hi..."
     hide jed
     hide helen
     with moveoutright
-    boss "Next I want to introduce our farmers."
+    pavel "Next I want to introduce our farmers."
     show julia at midright
     show thuc at right 
     with moveinright
-    boss "The Nguyens raise goats along with alfalfa and rice and some other crops. I'm sure their kids have names, but, honestly, I'm having trouble telling them all apart!"
+    pavel "The Nguyens raise goats along with alfalfa and rice and some other crops. I'm sure their kids have names, but, honestly, I'm having trouble telling them all apart!"
     thuc "C'mon, there's only ten of them!"
     julia "We look forward to getting to know you all better."
     hide julia
@@ -107,7 +107,7 @@ label work_0:
     show natalia at right
     show martin at midright
     with moveinright
-    boss "The Peróns will be growing beans and corn, and are raising chickens and turkeys."
+    pavel "The Peróns will be growing beans and corn, and are raising chickens and turkeys."
     martin "And also five children."
     natalia "Tomás is the oldest, and then there's Isabella, Raúl, Josephina, and Mateo."
     martin "Don't feel like you have to remember them all; that's my job!"
@@ -116,53 +116,53 @@ label work_0:
     with moveoutright
     show him normal at midright with moveinright
     show her normal at quarterright with moveinright
-    boss "[his_name] knows a lot about growing vegetables and caring for horses and other animals, so be sure to ask him if you have questions in that area."
+    pavel "[his_name] knows a lot about growing vegetables and caring for horses and other animals, so be sure to ask him if you have questions in that area."
     show him at quarterright with move
     show her at midright with move
     
     if (profession == "doctor"):
-        boss "His wife, [her_name] is our doctor. Don't wait until you're sick to stop by the clinic; go over and say hi sometime this week."
+        pavel "His wife, [her_name] is our doctor. Don't wait until you're sick to stop by the clinic; go over and say hi sometime this week."
         her "Thanks, Mayor. I'll try and keep you all healthy!"
     elif (profession == "carpenter"):
-        boss "His wife, [her_name] is our carpenter. If you need something built, she's the one to ask."
+        pavel "His wife, [her_name] is our carpenter. If you need something built, she's the one to ask."
         her "I work mainly with wood and fabric, and can print things with plastic, too."
     elif (profession == "mechanic"):
-        boss "His wife, [her_name] is our mechanic. When things break, she'll help get them working again!"
+        pavel "His wife, [her_name] is our mechanic. When things break, she'll help get them working again!"
         her "But it's much easier if they don't break in the first place, so please treat your machines nicely!"
     elif (profession == "teacher"):
-        boss "Now, you kids ought to pay attention - I want to introduce the colony's teacher, [her_name]."
+        pavel "Now, you kids ought to pay attention - I want to introduce the colony's teacher, [her_name]."
         her "Classes start next week, and I'm looking forward to meeting all you kids!"
 
     hide her
     hide him
     with moveoutright
-    boss "Are there any questions?"
-    menu boss_meeting:
+    pavel "Are there any questions?"
+    menu pavel_meeting:
         "Do I have any questions?"
         "How much food do we have?":
             her surprised "How much food do we have in storage now?"
-            boss "We brought enough in our storehouse for everyone for two years. It will last much longer than that unopened, so I'd like to keep it for emergencies and use the food we grow as much as possible."
-            jump boss_meeting
+            pavel "We brought enough in our storehouse for everyone for two years. It will last much longer than that unopened, so I'd like to keep it for emergencies and use the food we grow as much as possible."
+            jump pavel_meeting
         "What about medicine?":
             her surprised "What about medicine?"
-            boss "We have a good supply of the most common medicines, and Dr. Lily has the tools to synthesize new medicines if needed. But our supply is not unlimited, so try and use them sparingly."
-            jump boss_meeting
+            pavel "We have a good supply of the most common medicines, and Dr. Lily has the tools to synthesize new medicines if needed. But our supply is not unlimited, so try and use them sparingly."
+            jump pavel_meeting
         "Do we have spare parts?":
             her surprised "Do we have spare parts for when things break?"
-            boss "We have the 3D printers at the library for spare parts, but we have a limited supply of plastic and metal, so let's make sure we recycle and use native materials where possible."
-            jump boss_meeting
+            pavel "We have the 3D printers at the library for spare parts, but we have a limited supply of plastic and metal, so let's make sure we recycle and use native materials where possible."
+            jump pavel_meeting
         "Any weapons?":
             her surprised "Do we have any weapons?"
-            boss "We do have a few hunting weapons that you can check out from the storehouse if you would like to try your hand at hunting, though I'd check with Dr. Lily first and make sure that the animal is edible!"
-            jump boss_meeting
+            pavel "We do have a few hunting weapons that you can check out from the storehouse if you would like to try your hand at hunting, though I'd check with Dr. Lily first and make sure that the animal is edible!"
+            jump pavel_meeting
         "When is the colony ship coming?":
             her surprised "You said another ship is coming? Is that in two Earth years or Talaam years?"
-            boss "Good question; that's two Earth years, which makes about..."
+            pavel "Good question; that's two Earth years, which makes about..."
             show lily at midright with moveinright
             lily "About 26 Talaam months. Since there are seven months a year here, that makes a little over three Talaam years."
-            boss "Right...hopefully that answers your question!"
+            pavel "Right...hopefully that answers your question!"
             hide lily with moveoutright
-            jump boss_meeting
+            jump pavel_meeting
         "No questions.":
             "After the meeting, the mayor met with me to show me around where I'd work."
 
@@ -174,32 +174,32 @@ label work_0:
     #Different event for each profession
     # DOCTOR
     if (profession == "doctor"):
-        boss "All right! This is the clinic where people will come in if they get sick. I don't just want us to react to injuries and illness, though - we need to be proactive, and help promote good health."
+        pavel "All right! This is the clinic where people will come in if they get sick. I don't just want us to react to injuries and illness, though - we need to be proactive, and help promote good health."
         her serious "I helped some people out on the ship on the way here, so this should be similar. I will need some more supplies, though."
-        boss "That's fine, just write up a list and give it to me to approve. Then you can go on over to the storehouse and take what you need."
+        pavel "That's fine, just write up a list and give it to me to approve. Then you can go on over to the storehouse and take what you need."
 
     # CARPENTER
     elif (profession == "carpenter"):
-        boss "All right! This is the shop where people will come in if they need something made they can't make themselves."
-        boss "We don't have a lot of materials yet, but you can requisition some from the storehouse for important projects, and there are some materials, like wood, right here on the planet."
+        pavel "All right! This is the shop where people will come in if they need something made they can't make themselves."
+        pavel "We don't have a lot of materials yet, but you can requisition some from the storehouse for important projects, and there are some materials, like wood, right here on the planet."
         her happy "I can see that this job is going to take a lot of ingenuity!"
-        boss "Yes, it will! Perhaps you can start by helping me out - one of the roof pieces from the Nguyen's house broke when we were unpacking it, so they are going to need a replacement."
+        pavel "Yes, it will! Perhaps you can start by helping me out - one of the roof pieces from the Nguyen's house broke when we were unpacking it, so they are going to need a replacement."
         her normal "Sure, I'll take a look at the standard roofs and see if I can make something out of the wood around here."
 
     # MECHANIC
     elif (profession == "mechanic"):
-        boss "All right! This is the shop where people will bring machines that need to be fixed."
-        boss "You'll be responsible for any kind of machine people have, from datapads to tractors. We don't have many replacement parts, so do what you can to fix things up when they break."
+        pavel "All right! This is the shop where people will bring machines that need to be fixed."
+        pavel "You'll be responsible for any kind of machine people have, from datapads to tractors. We don't have many replacement parts, so do what you can to fix things up when they break."
         her concerned "I can see that this will take a lot of ingenuity."
-        boss "Yes, it will! Perhaps you can start by helping me with my datapad? It always freezes up when I try to access my calendar..."
+        pavel "Yes, it will! Perhaps you can start by helping me with my datapad? It always freezes up when I try to access my calendar..."
         her normal "Sure, let me take a look at it..."
 
     # TEACHER
     elif (profession == "teacher"):
-        boss "All right! This is the schoolhouse. There's not a lot of kids in the community yet, so we just have them all in one room with you as their teacher."
-        boss "Please consider what they'll need to learn about Talaam in addition to the standard curriculum, and try to be flexible if kids are needed to help out back at home."
+        pavel "All right! This is the schoolhouse. There's not a lot of kids in the community yet, so we just have them all in one room with you as their teacher."
+        pavel "Please consider what they'll need to learn about Talaam in addition to the standard curriculum, and try to be flexible if kids are needed to help out back at home."
         her normal "I guess the kids are going to have to work hard, too..."
-        boss "Yes, but they need to learn a lot, too! It will take a lot of effort to see that they don't forget about Earth, and all the things humanity has managed to learn there."
+        pavel "Yes, but they need to learn a lot, too! It will take a lot of effort to see that they don't forget about Earth, and all the things humanity has managed to learn there."
         her serious "Even though it seems far away, it's still our home, isn't it?"
 
     "I worked hard getting things set up, and even though the job seemed pretty big, I thought I would probably do okay."
@@ -278,7 +278,6 @@ label work_1:
         her serious "It's a comminuted fracture; it will take quite a while to heal."
         "I was just about to put him under so I could put in some pins when the radio crackled and I heard Sara."
         play sound "sfx/radio.mp3"
-        # TODO: should we show sara as a side image here?
         "Sara on the radio" "Doctor! You've gotta come right away; one of the kids stopped breathing - I think he swallowed something."
         "I started out the door while I talked to her on the radio. I hated to leave Jed alone, but this was urgent."
         her "I'm on my way. How old is he?"
@@ -332,11 +331,11 @@ label work_1:
         scene bg clinic with fade
         show her normal at midright with dissolve
         show pavel at quarterleft, behind her with moveinleft
-        boss "Doctor, I'm so sorry about what happened today."
+        pavel "Doctor, I'm so sorry about what happened today."
         her serious "It's not your fault, Mayor Grayson."
-        boss "Well, it partly is my fault. It's obvious you need an assistant. Perhaps not full-time, but someone who can come quickly and help out during busy times."
+        pavel "Well, it partly is my fault. It's obvious you need an assistant. Perhaps not full-time, but someone who can come quickly and help out during busy times."
         her normal "That would be helpful, actually."
-        boss "Well, I'll see who has some medical experience and get back to you about that."
+        pavel "Well, I'll see who has some medical experience and get back to you about that."
         her "Thank you."
 
     # CARPENTER
@@ -345,11 +344,11 @@ label work_1:
         "They kept me pretty busy making things for all the colonists. I made a lot of farm tools and fences, and started working on some woodworking tools. We didn't have a lot of metal, so I was trying to make tools out of local materials, but it wasn't going very well."
         "Today, however, I didn't have time for any of that. I was working on a roof for a chicken coop."
         show pavel at midleft, behind her with moveinleft
-        boss "[her_name], have you finished the barrels for the storehouse yet?"
+        pavel "[her_name], have you finished the barrels for the storehouse yet?"
         her serious "No, I thought you said you wouldn't need those for another week."
-        boss "Well, the Nguyen's carrots grew faster than they anticipated, and they need a place to put them."
+        pavel "Well, the Nguyen's carrots grew faster than they anticipated, and they need a place to put them."
         her "Well, I can start on them now, but the Perón's really wanted this roof for their chicken coop - they've already lost two chickens to some nighttime predator."
-        boss "I think the chicken coop takes priority here. But you're starting to have a lot of work to do, aren't you?"
+        pavel "I think the chicken coop takes priority here. But you're starting to have a lot of work to do, aren't you?"
         menu:
             "What should I say?"
             "Way too much.":
@@ -358,7 +357,7 @@ label work_1:
                 her "Sometimes. It seems like when one person needs something right away, everyone else suddenly needs something, too."
             "No problem.":
                 her "Nothing I can't handle."
-        boss "Well, I'll see if I can get someone that you can call on when you get a lot of work."
+        pavel "Well, I'll see if I can get someone that you can call on when you get a lot of work."
         her normal "That would be great, thanks."
         "Eventually, I got everything done, but I was looking forward to having some help sometimes."
 
@@ -394,11 +393,11 @@ label work_1:
         hide him
         show pavel at midleft, behind her with moveinleft
         show her serious
-        boss "Everything all right in here?"
+        pavel "Everything all right in here?"
         her concerned "Yes, it's just a busy day."
-        boss "Are those all the things that need to be repaired?"
+        pavel "Are those all the things that need to be repaired?"
         her "Yes, I've got quite a backlog right now."
-        boss "Seems to me like you could use a little help sometimes."
+        pavel "Seems to me like you could use a little help sometimes."
         her normal "That'd be great, actually."
         hide pavel
         "It turned out that the radio just had a loose connection, so I soldered it back together, and then turned my attention to the tractor. I was able to get it fixed just before sundown. [his_name] would be happy, but it sure was a busy day for me. Hopefully the mayor would be able to find someone soon."
@@ -423,19 +422,19 @@ label work_1:
         "I separated the two fighters, and somehow I managed to make it through the rest of that day. Just as the children were all leaving, the mayor came by."
         show her concerned at midright with dissolve
         show pavel at midleft, behind her with moveinleft
-        boss "[her_name], are you all right?"
+        pavel "[her_name], are you all right?"
         her serious "Yes...though I may have a black eye tomorrow."
-        boss "That's terrible! You shouldn't be all by yourself here, not every day."
+        pavel "That's terrible! You shouldn't be all by yourself here, not every day."
         her serious "Well, part of it is that Tomás really doesn't need to be here every day. He's old enough to do most of his work from home, and then he could help out his parents more, too."
-        boss "That may be a good idea, but I want to find someone to help you out on the days when you have all the kids here."
+        pavel "That may be a good idea, but I want to find someone to help you out on the days when you have all the kids here."
         menu:
             "Do I need help?"
             "I need help.":
                 her concerned "You are right...I can't do this by myself."
-                boss "I'll see what I can do to find someone to help you out some of the time."
+                pavel "I'll see what I can do to find someone to help you out some of the time."
             "I can do it myself.":
                 her serious "It's not a problem most of the time. I can handle it."
-                boss "I appreciate your confidence, but let me see if I can find someone, at least for part of the time."
+                pavel "I appreciate your confidence, but let me see if I can find someone, at least for part of the time."
         her normal "Thanks, Mayor Grayson."
         "That wasn't the only rough day, but it was the worst one for quite some time."
     return
@@ -449,7 +448,7 @@ label work_2:
     "I was ready for another busy day at work when the mayor walked in with someone new. I remembered seeing him on the shuttle; he had an infectious smile and just the hint of an accent."
     show brennan at quarterleft with moveinleft
     show pavel at midleft with moveinleft
-    boss "[her_name], I'd like you to meet Mr. Callahan. He's sort of a jack-of-all-trades here, helping out wherever we need it. He can help you out some of the time."
+    pavel "[her_name], I'd like you to meet Mr. Callahan. He's sort of a jack-of-all-trades here, helping out wherever we need it. He can help you out some of the time."
     show pavel at left, behind brennan with move
     show brennan at midleft with move
     brennan "Call me Brennan. And I know we've met already; I'd never forget a pretty face like yours."
@@ -786,23 +785,23 @@ label work_4:
         show pavel at quarterleft, behind her with moveinleft
         show her at center with move
         show brennan at quarterright with move
-        boss "So, how are things going at the school?"
+        pavel "So, how are things going at the school?"
         her normal "Pretty good! I feel bad that the older kids have to spend so much time helping the younger kids, but it's really the only way to teach so many of different ages."
-        boss "That's good, that's good... Well, what I came to talk to you about, is that one of the parents came to me with a concern."
+        pavel "That's good, that's good... Well, what I came to talk to you about, is that one of the parents came to me with a concern."
         her surprised "Oh?"
-        boss "They said that their child came up with red marks on their hands, and the child said you hit their hands with a ruler."
+        pavel "They said that their child came up with red marks on their hands, and the child said you hit their hands with a ruler."
         her angry "They said WHAT?!"
         brennan "[her_name]'ll be stern when the kids need it, but she's never hit anyone."
-        boss "This is news to you, then."
+        pavel "This is news to you, then."
         her surprised "Of course it is! I would never do such a thing. Which kid is it?"
-        boss "Gardenia."
+        pavel "Gardenia."
         her concerned "Gardenia... Well, a few days ago we were talking about how discipline in schools has changed, and how they used to hit kids that misbehaved with rulers or make fun of them, and how we don't do that anymore."
         brennan "I remember that. Then at recess, she was playing school with some of the other kids, and I saw them whacking each other with sticks."
-        boss "So, you think it was one of the other kids pretending to be a teacher?"
+        pavel "So, you think it was one of the other kids pretending to be a teacher?"
         her serious "That's the only thing I can think of."
-        boss "It sounds like this was just a misunderstanding. I'll talk to Gardenia's parents and let them know what happened."
+        pavel "It sounds like this was just a misunderstanding. I'll talk to Gardenia's parents and let them know what happened."
         her normal "Thanks, Mayor Grayson. I wish they would have come to me about it, though."
-        boss "I'll tell them that, too. Good-bye, then."
+        pavel "I'll tell them that, too. Good-bye, then."
         her "Good-bye."
         hide pavel with moveoutleft
         show her at midleft with move

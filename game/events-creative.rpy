@@ -239,9 +239,9 @@ label creative_6:
     scene bg community_center with fade
     show pavel at midright, behind her with dissolve
     show her normal at midleft with moveinleft
-    boss "So, you want special permission to exceed your allotted Earth-upload bandwidth to send photographs?"
+    pavel "So, you want special permission to exceed your allotted Earth-upload bandwidth to send photographs?"
     her "Yes, they need to be large so that they will look good in print. Is that okay?"
-    boss "I think that is a worthy use of our resources. The pictures look great, [her_name], I hope people on Earth get to see them."
+    pavel "I think that is a worthy use of our resources. The pictures look great, [her_name], I hope people on Earth get to see them."
     "It would take years for the photos to reach Earth, and even more years before I heard anything back, but I felt like it was worth it, anyway. I felt like an ancient explorer like Magellan, writing in his journal, not knowing if anyone from the homeland would ever read it..."
     $ skill_creative += 10
     return

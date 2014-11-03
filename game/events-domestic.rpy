@@ -346,8 +346,8 @@ label domestic_6:
 label domestic_7:
     scene bg community_center with fade
     show pavel at center with dissolve
-    boss "One last item of business for the community meeting-"
-    boss "Our soap supply is running low. If anyone can make some soap and put the extra in the storehouse, that will help everyone to stay clean and healthy."
+    pavel "One last item of business for the community meeting-"
+    pavel "Our soap supply is running low. If anyone can make some soap and put the extra in the storehouse, that will help everyone to stay clean and healthy."
     hide pavel
     show him normal at midright
     show her normal at midleft 
@@ -421,10 +421,10 @@ label domestic_7:
             with dissolve
             show her normal at midleft with moveinleft
             her "I was able to make some soap; here's some extra. You might want to warn anyone using it that it's pretty strong."
-            boss "This looks wonderful! Thank you, [her_name]."
+            pavel "This looks wonderful! Thank you, [her_name]."
             ilian "Huh. You actually did it."
             her "I can make more, if it's useful."
-            boss "Definitely! No one else has tried soapmaking yet."
+            pavel "Definitely! No one else has tried soapmaking yet."
             $ community_level += 2
         "Keep it.":
             "I worked so hard on this soap, I couldn't bear to give it away to just anyone."

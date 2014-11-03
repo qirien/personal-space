@@ -664,7 +664,7 @@ label physical_master:
     "They were good to eat, partly because they tasted good dried and salted into jerky. We could always use more food, so I decided to organize a hunt."
     scene bg community_center with fade
     show pavel at midright, behind her with dissolve
-    boss "Let's hear [her_name]'s idea, everyone. I hope you give her your full support."
+    pavel "Let's hear [her_name]'s idea, everyone. I hope you give her your full support."
     show her normal at midleft with moveinleft
     her serious "It would be much easier to catch these animals with some help. We need some people to scare the animals out of the scrub and into the open, and some people to wait on the other side and hunt them as they come out."
     "Our brightly colored uniforms stood out clearly from the bushes, and we picked a spot where the startlers would be protected by a hillside after they scared the game."

@@ -238,30 +238,30 @@ label work_appreciation:
         "It felt good to know I was the one who helped Mr. Perón overcome his cancer, and helped little Van not die from choking, and took care of everyone's health. They really needed me."
         show her normal at midright with dissolve
         show pavel at midleft, behind her with moveinleft
-        boss "[her_name], I don't know what we'd do without you. You've worked so hard to keep everyone on the colony healthy."
+        pavel "[her_name], I don't know what we'd do without you. You've worked so hard to keep everyone on the colony healthy."
     elif (profession == "carpenter"):
         scene bg workshop with fade
         "Every day was a new challenge; something new to build, a new material found, or some new technique to try. And nobody could make things as well as I could."
         "The Perón's chicken coop, barrels for the storehouse, shelves for the school, chairs for Sara and Ilian - you name it, I'd made it for someone this past year."
         show her normal at midright with dissolve
         show pavel at midleft, behind her with moveinleft
-        boss "[her_name], I don't know what we'd do without you. Everyone has something you've made in their house or on their farm. And you've taught others how to make useful things, too."
+        pavel "[her_name], I don't know what we'd do without you. Everyone has something you've made in their house or on their farm. And you've taught others how to make useful things, too."
     elif (profession == "mechanic"):
         scene bg machine_shop with fade
         "When someone needed a piece of tech fixed, it wasn't just because they wanted it - they really needed it. We all needed everything to be working smoothly for the food to grow and us all to survive."
         "Without our radios, computer pads, tractors, and electricity, we'd be no better off than people were three hundred years ago."
         show her normal at midright with dissolve
         show pavel at midleft, behind her with moveinleft
-        boss "[her_name], I don't know what we'd do without you. All our machines would be broken and useless if not for your hard work fixing them up all the time."
+        pavel "[her_name], I don't know what we'd do without you. All our machines would be broken and useless if not for your hard work fixing them up all the time."
     elif (profession == "teacher"):
         scene bg classroom with fade
         "Aside from their parents, the kids on the colony didn't have any other teachers. So when they finally figured out multiplication or why history was important or read their first novel, it was because of me."
         show her normal at midright with dissolve
         show pavel at midleft, behind her with moveinleft
-        boss "[her_name], I don't know what we'd do without you. All the kids love your enthusiasm for learning, and you've worked hard to make sure they know about Earth and learn the things they need to succeed here on Talaam."
+        pavel "[her_name], I don't know what we'd do without you. All the kids love your enthusiasm for learning, and you've worked hard to make sure they know about Earth and learn the things they need to succeed here on Talaam."
 
     her serious "I'm just doing my job."
-    boss "I just wanted to let you know how much we all appreciate your hard work and expertise."
+    pavel "I just wanted to let you know how much we all appreciate your hard work and expertise."
     her happy "Thank you, that's nice to hear."
     hide pavel with moveoutleft
     "Even though it sounded cheesy, it was true. I felt needed, and appreciated - there really was no one else on the colony who could do the things I could do, but people didn't resent that."
