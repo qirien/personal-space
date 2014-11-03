@@ -854,7 +854,7 @@ label work_5:
     her serious "They just announced it on the radio; I don't know why we didn't have an earlier warning this time."
     martin "I can't stay here! I have to make sure Natalia is safe!"
     her concerned "Please calm down. I'm sure your wife knows what to do."
-    martin "Natalia always forgets to turn the radio on! She might not even know there is a flare! And Mateo and Josephina are at home with her."
+    martin "Natalia always forgets to turn the radio on! She might not even know there is a flare! And the little ones are at home with her."
     "I tried contacting his family on the radio, but the radiation from the flare was interfering with our transmissions. I couldn't connect my computer pad to the wireless network, either."
     play music "music/NoOneWillKnow.ogg" fadeout 3.0
     "Mr. Perón was getting more and more distraught. I was worried he was going to try and leave, and I wasn't sure I could stop him."

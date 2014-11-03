@@ -57,22 +57,6 @@ screen message_board:
                     window:
                         id window_id
 
-# This would be cool, but doesn't work with dynamic character names, unless we can somehow get at
-# the character and their "image" attribute.
-#                        hbox:
-#                            $ image_name = "sprites/" + who.lower() + "-icon.png"
-#                            add image_name
-                        
-#                        hbox:
-#                            vbox:
-#                                xpos 30
-#                                if who is not None:
-#                                    text who id who_id
-#                            vbox:
-#                                xpos 67
-#                                xmaximum 850
-#                                text what id what_id
-                    
                         has vbox:
                             # The author of the message
                             vbox:
@@ -83,7 +67,7 @@ screen message_board:
                             # The message
                             vbox:
                                 xpos 87
-                                ypos -20
+                                ypos -20  # put it up next to the icon
                                 xmaximum 850
                                 xalign 0.0
                                 text what id what_id
@@ -134,17 +118,15 @@ label msg_3:
     return
 
 label msg_4:
-    julia_c "I don't mean to be rude, but whoever is using our front yard as a shortcut to the community center is being extremely inconsiderate. They're trampling my oregano."
-    natalia_c "Oh, is that your front yard? I didn't see a fence, so I just thought they were weeds. Sorry!"
-    julia_c "I didn't think fences were necessary among trusting, sensible neighbors."
-    sara_c "You have oregano?! :-o Can I have some?"
-    julia_c "Of course, dear. Bring me some soap from the storehouse when you come, please."
-    sara_c "Sure. :-)"
-    ilian_c "Make sure you log it, Sara."
-    sara_c "I always do."
-    ilian_c "Except for that one time with the chocolate."
-    sara_c "That was three months ago! Can you just let it go already?!"
-    ilian_c "It's my job to see that everything is accounted for."
+    pavel_c "Just a reminder - please don't let kids play in the community center when no one else is there. I wouldn't want anyone to get hurt by falling chairs or anything."
+    natalia_c "Falling chairs? We're on an alien planet full of unknown perils and you're worried about falling chairs?"
+    pavel_c "I would feel responsible if something bad happened at the community center."
+    natalia_c "Well, you wouldn't be. Let the kids be responsible for themselves, or else they won't learn how."
+    pavel_c "Well, I-"
+    naomi_c "The truth is... there was a mess of mud and sticks on the corner. It seems some children were building a fort?"
+    natalia_c "Oh, that. Well, sure, I'll have them clean it up. No need to restrict the whole area, right?"
+    pavel_c "I suppose not. But we can't have messes in there; that area is for meetings and other colony business."
+    natalia_c "Of course. I'll let them know."
     return
     
 label msg_5:
@@ -283,13 +265,14 @@ label msg_12:
     return
 
 label msg_13:
-    natalia_c "Has anyone seen Josephina?! I put her to bed last night, and now she's gone!"
+    natalia_c "Has anyone seen Josephina?! She went outside to play a few hours ago, but she didn't come in for dinner!"
     thuc_c "She hasn't been to our farm all day."
     sara_c "I haven't seen her in town... :-("
-    her_c "I saw her walking home from school with her siblings yesterday, but not this morning."
+    her_c "I saw walking home from school with her siblings, but that was much earlier today."
     pavel_c "How long has she been missing?"
-    natalia_c "I don't know! She could've been gone all night! I thought I saw her when I went to bed, but she's so small, it could've just been her blankets..."
-    pavel_c "She's awfully young to be out on her own for so long. Anyone who can, please meet at the Perón's and we'll organize a search."
+    natalia_c "Raul said she stayed outside by herself when he came in to do homework, but that was four hours ago!"
+    nvl clear
+    pavel_c "She's awfully young to be out on her own in the dark for so long. Anyone who can, please meet at the Perón's and we'll organize a search."
     natalia_c "Thank you, Mayor."
     return
     
@@ -299,7 +282,9 @@ label msg_14:
     jed_c "Sorry, Martín..."
     helen_c "How's Natalia holding up?"
     natalia_c "I'm fine."
-    #TODO: brennan_c posts pic of sad kitten, everyone calls him insensitive.
+    naomi_c "Would you mind if I stopped by later today?"
+    natalia_c "Maybe tomorrow."
+    martin_c "We'd appreciate that, Sister Naomi."
     return
 
 label msgs_pregnant:
@@ -319,21 +304,24 @@ label msgs_pregnant:
     return
 
 label msg_15:
-    pavel_c "Just a reminder - please don't let kids play in the community center when no one else is there. I wouldn't want anyone to get hurt by falling chairs or anything."
-    natalia_c "Falling chairs? We're on an alien planet full of unknown perils and you're worried about falling chairs?"
-    pavel_c "I would feel responsible if something bad happened at the community center."
-    natalia_c "Well, you wouldn't be. Let the kids be responsible for themselves, or else they won't learn how."
-    pavel_c "Well, I-"
-    naomi_c "The truth is... there was a mess of mud and sticks on the corner. It seems some children were building a fort?"
-    natalia_c "Oh, that. Well, sure, I'll have them clean it up. No need to restrict the whole area, right?"
-    pavel_c "I suppose not. But we can't have messes in there; that area is for meetings and other colony business."
-    natalia_c "Of course. I'll let them know."
+    julia_c "I don't mean to be rude, but whoever is using our front yard as a shortcut to the community center is being extremely inconsiderate. They're trampling my oregano."
+    natalia_c "Oh, is that your front yard? I didn't see a fence, so I just thought they were weeds. Sorry!"
+    julia_c "I didn't think fences were necessary among trusting, sensible neighbors."
+    sara_c "You have oregano?! :-o Can I have some?"
+    julia_c "Of course, dear. Bring me some soap from the storehouse when you come, please."
+    sara_c "Sure. :-)"
+    ilian_c "Make sure you log it, Sara."
+    sara_c "I always do."
+    ilian_c "Except for that one time with the chocolate."
+    sara_c "That was three months ago! Can you just let it go already?!"
+    ilian_c "It's my job to see that everything is accounted for."
     return
     
 label msg_16:
     if (is_pregnant):
         call msgs_pregnant
     helen_c "Has anyone seen Jed?! He didn't come home last night!"
+    natalia_c "Hopefully he hasn't killed anyone with his tractor again."
     naomi_c "He and Brennan got rather intoxicated last night, testing Jed's latest brew - I'll check at the community center for you."
     helen_c "Thanks, Naomi. Hopefully that's all it is.\n"
     jed_c "hey baby be home soon sorry you were worried."
@@ -341,7 +329,7 @@ label msg_16:
     brennan_c "Whatever she has to say, it was completely worth it, Jed. That was your best creation yet."
     naomi_c "I'm sure I don't have to remind you gentlemen to make sure the community center is ready for the meeting this afternoon."
     brennan_c "No problem, we got it covered."
-    brennan_c "Ha ha, get it, man?! We got it \"covered\"?! Because the floor is covered in, in--"
+    brennan_c "Ha ha, get it, man?! We got it \"covered\"?! Because the floor is--"
     jed_c "your hilarious."
     return
     
@@ -434,10 +422,10 @@ label msg_23:
     julia_c "Hit you a little hard, did it?"
     natalia_c "Not a bit. But I noticed you looking quite uncomfortable."
     julia_c "I was just bored."
+    nvl clear
     ilian_c "I suggest you both stop arguing, since right after the sermon you both returned items you had \"borrowed\" from the storehouse."
     brennan_c "Ilian! Shame on you!"
     ilian_c "What? It stopped their argument, didn't it?"
-    nvl clear
     brennan_c "You stopped it just as it was getting good!"
     julia_c "This is none of your business, Mr. Callahan."
     natalia_c "Shut up, Brennan."
@@ -447,6 +435,11 @@ label msg_23:
              
 label msg_24:
     pavel_c "I know we're all looking forward to a few new supplies from the new ship, but let's still remember to conserve our resources."
+    naomi_c "And, if you have extra food or supplies, the storehouse can help make sure they are distributed fairly to those that need them most.\n"
+    
+    if (is_pregnant):
+        martin_c "Hey, [his_name], you guys didn't have the baby already, did you?"
+        him_c "No, I'll be sure and let you all know when she arrives!"
         
     return
     

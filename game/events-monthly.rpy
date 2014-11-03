@@ -1832,26 +1832,24 @@ label monthly_event_12:
 
 # MONTH 13 - Jury Duty
 # uses spiritual, technical
-# TODO: Why would Ilian be driving a tractor?!
-# TODO: Have Ilian get depressed later about being accused and not trusted anymore
+# TODO: Have Jed get depressed later about being accused and not trusted anymore
 label monthly_event_13:
-    scene black with fade
+    scene bg talam with fade
     play music "music/NoOneWillKnow.ogg" fadeout 3.0
     "I hadn't thought about it much before, but we didn't have a lot of laws here on Talaam. Some things just didn't apply (like taxes, food regulations, etc), but I remember signing something about agreeing to abide by a set of laws that sounded very reasonable."
-    "It had never seemed like something I would have to worry about.  Until I had to be on the jury for Ilian's trial, that is..."
+    "It had never seemed like something I would have to worry about.  Until I had to be on the jury for Jed's trial, that is..."
     "We hadn't had any crime our whole first year (though we certainly had our share of arguments, accidents, and disagreements)."
     "After all, who would hurt anyone else in our colony? We needed each other too much."
     "But that peace couldn't last forever..."
-
-    scene bg community_center with fade
-    "We awoke one morning to the tragic news that the Perón's four-year-old girl, Josephina, was missing."
-    show her serious at midleft
+    "One evening the Perón's four-year-old girl, Josephina, didn't come home for dinner."
     show natalia at midright
     "Mrs. Perón was alternately furious with herself and those around her."
+    show natalia at midleft with move
     natalia "Someone should have been watching her more closely!"
+    show natalia at midright with move
     natalia "I should have been watching her more closely..."
-    scene bg talam with fade
     "Everyone searched together all day long, and finally we found her body washed up downstream of the Perón's farm."
+    scene bg clinic with fade
     if (profession == "doctor"):
         "We didn't have a coroner or anything, so I took a look at the girl's body."
         "I could tell she probably died the afternoon before. I found a gash on her head that looked pretty awful, and she had several broken bones."
@@ -1861,6 +1859,7 @@ label monthly_event_13:
         "Josephina's body had several broken bones and big gash on her head that didn't seem like they came from falling in the river..."
 
     "In addition, Mr. Perón found some blood on the road next to his farm that led to the river."
+    scene black with fade
     "We spent a few days being suspicious of each other. [his_name] started barring our door at night."
     "Finally, the mayor called a community meeting."
     scene bg community_center with fade
@@ -1868,62 +1867,64 @@ label monthly_event_13:
     pavel "I know everyone is worried, and scared, but we can't stop trusting each other. We will find who's responsible for this."
     show natalia at right with moveinright
     natalia "Who knows who will be next?! It clearly wasn't an accident!"
-    show ilian at midleft with moveinleft
-    "But then, Ilian stepped forward."
-    ilian "I'm sorry! I'm so sorry!"
-    show sara sad at left with dissolve
-    sara "Sorry for what?!"
-    ilian "I-- I'm the one that killed Josephina."
+    show jed at midleft with moveinleft
+    "But then, Jed stepped forward."
+    jed "I'm sorry! I'm so sorry!"
+    show helen at left with dissolve
+    helen "Sorry for what?!"
+    jed "I-- I'm the one that killed Josephina."
     "Nobody said a word. He worked his way up to the front of the room. He brushed his hand in front of his eyes - was he crying?"
-    ilian "It was late, I didn't even see her until she was right in front of me. I was driving my tractor, maybe a little fast- she jumped in front of it- I was going too fast- I didn't mean to run over anyone!"
+    jed "It was late, and I was looking for one of the cows that got out. I didn't even see her until she was right in front of me."
+    jed "I was driving my tractor, maybe a little fast- she jumped in front of it- I was going too fast- I didn't mean to run over anyone!"
     natalia "But how did her body end up in the river?!"
-    ilian "It was obvious she was dead- there was so much blood- I was so horrified- I don't know why I did that- I didn't want anyone to know it was me. So I... dropped her body in the river."
-
-    "Nobody knew what to say. He was really crying, now, heaving deep sobs that seemed so alien to his usual crankiness. I looked over at his wife, Sara, who looked like she was in shock."
-    pavel "Ilian, I can tell you're sorry about this, and I'm glad you came forward. We will need to have a trial and decide what to do about this."
+    jed "It was obvious she was dead- there was so much blood- I was so horrified- I don't know why I did that- I didn't want anyone to know it was me. So I... dropped her body in the river."
+    "Nobody knew what to say. He was really crying, now, heaving deep sobs that seemed so alien to his usual bravado. I looked over at his wife, Helen, who looked like she was in shock."
+    pavel "Jed, I can tell you're sorry about this, and I'm glad you came forward. We will need to have a trial and decide what to do about this."
     natalia "What do you need a trial for?! He just admitted he killed Josephina!"
     pavel "The laws of our community, which you all signed, state that any accused shall receive a trial, administered by myself and with a jury randomly selected from the adults of the colony that are not involved in the crime."
     scene black with fade
-    "The mayor took Ilian to stay at his house until the next day, when the trial started."
+    "The mayor took Jed to stay at his house until the next day, when the trial started."
 
     call set_work_bg
     show pavel at midleft, behind her
     show her serious at midright
     with dissolve
     pavel "[her_name], you've been randomly selected to be on the jury. Is there any reason you should not do this? Any conflict of interest with either side?"
-    her concerned "I'm friends with Sara and Ilian... but, I guess everyone knows each other here."
+    her concerned "I'm friends with Helen... but, I guess everyone knows each other here."
     pavel "That's fine. We will proceed with the trial at two o'clock."
     
     scene bg community_center with fade
-    "Everyone in the town turned out to see the trial. Ilian repeated what happened, and Mrs. Perón repeated what she had found. It sounded like a fairly simple case of involuntary manslaughter; we mainly needed to decide upon a sentence."
-    show pavel at midleft, behind ilian
-    show ilian at midright
+    "Everyone in the town turned out to see the trial. Jed repeated what happened, and Mrs. Perón repeated what she had found. It sounded like a fairly simple case of involuntary manslaughter; we mainly needed to decide upon a sentence."
+    show pavel at midleft, behind jed
+    show jed at midright
     with dissolve
-    pavel "There is no mandatory sentencing in the laws of our colony. I am sure you will find a solution that is fair to all parties involved. In case you don't, I do have the authority to modify sentencing, but I have every confidence in this jury's abilities."
+    pavel "There is no mandatory sentencing in the laws of our colony. I am sure you will find a solution that is fair to all parties involved."
     "He left us jury members to deliberate in private."
     hide pavel
-    hide ilian
+    hide jed
     with moveoutleft
     
     show lily at midright
-    show jed at midleft
+    show ilian at midleft
     show thuc at right
     show her serious at left
     with dissolve
 
     lily normal "He shows great remorse. I doubt he will be so careless as to repeat his mistakes."
-    jed "It could have been any of us..."
+    ilian "It could have been any of us..."
     thuc "But would one of us have dumped her body in the river and covered it up? That behavior is suspicious. He says it was an accident, but who can tell for certain?"
     her surprised "But why would anyone kill Josephina?"
     thuc "Why does any criminal do what they do? They want to, and they don't care about other people."
     thuc "Or maybe he was trying to cover up something else he did to her."
     show her serious
-    lily upset "That is pure speculation. Ilian has not shown any other behavior that would be cause for concern."
+    lily upset "That is pure speculation. Jed has not shown any other behavior that would be cause for concern."
+    ilian "Except for being a jack-ass."
+    her surprised "That doesn't mean he attacked her!"
     thuc "But it's possible that it was not an accident. We cannot show too much mercy, or people will think they can get away with anything."
-    jed "So, what, you want to string him up?"
+    ilian "Right, because all of us are just dying to run people over, and the only thing stopping us is the knowledge that we might get punished."
     thuc "Of course not. I propose temporary banishment. He should have to live on his own, off the land, for a year. That will show how important our community is, both to him and any would-be criminals."
     lily normal "There are no would-be criminals here, Thuc. What you are proposing is a death sentence. I think he should simply provide a certain amount of free labor to the Perón family every week. Perhaps that way they can eventually forgive him."
-    jed "I don't much like either of those options, but I can't think of anything better."
+    ilian "I don't like either of those, but I can't think of anything better."
 
     menu:
         "What will you argue for?"
@@ -1931,43 +1932,47 @@ label monthly_event_13:
             her serious "I agree with Lily; he should have to work for the Peróns. It can't make up for the loss of a child, but it will require some sacrifice and will help him show his remorse."
             thuc "He should be their slave for a year!"
             her concerned "Well, we don't want his work at the storehouse to suffer..."
-            jed "We could make him work a certain number of hours? Like community service?"
+            ilian "There's always community service."
             her serious "Yes, but instead of the community it will be for the Peróns. Let's say eight hours a week for a year."
+            ilian "And now we know the price of a four-year-old girl: 400 work hours."
+            her annoyed "It's not like that. Of course there's no way to bring her back or make it up to them. But he needs to do something for reparations."
 
-            "The jury agreed to that, and the Mayor, Ilian, and the Peróns all accepted our proposal. Sara didn't seem to happy about it, though. She'd probably have to do extra work on their farm to make up for his absence."
+            "The jury decided that was fair, and the Mayor, Jed, and the Peróns all accepted our proposal. Helen didn't seem to happy about it, though. She'd probably have to do extra work on their farm to make up for his absence."
 
         "Banishment":
             her serious "I agree with Thuc; we need to show that our community won't allow such behavior."
             lily upset "It would be more humane to simply shoot him in the head; it would be impossible to survive for a year alone out there."
-            her "I agree. Also, we can't afford to lose our storehouse manager for that long. So I propose that he live outside the community boundaries, but close enough that we can trade with him. He can hunt or gather useful things and trade them for food or other community resources."
+            her concerned "I agree. Also, we can't afford to lose our storehouse manager for that long."
+            her serious "So I propose that he live outside the community boundaries, but close enough that we can trade with him. He can hunt or gather useful things and trade them for food or other community resources."
             thuc "That's too soft!"
             lily normal "I think a year is still too long."
             her "How about two weeks?"
             thuc "Four."
             lily "I suppose that would work...as long as the resources he gathers go to help the Perón family."
             "Finally, we had come to an agreement."
-            "Ilian and the Peróns accepted it, but Sara and the Mayor frowned. Poor Sara... I guess in a way we were sentencing her, too."
+            "Jed and the Peróns accepted it, but Helen and the Mayor frowned. Poor Helen... I guess in a way we were sentencing her, too."
             "Still, it was only for a month."
             
         "{i}Compromise{/i}" if (skill_spiritual >= 40):
             her normal "Those both sound like good ideas. Perhaps some of both might be appropriate?"
-            jed "What's your idea?"
+            ilian "What's your idea?"
             her concerned "Having him work for the Peróns is a good idea, but it is too soon. They would feel angry, and then he would feel like his apology was not accepted."
-            her serious "But a year is too long to send anyone to live outside the community. I propose Ilian leave the community for a week. When he returns, he will have to work for the Peróns one day of every week for the next half year."
+            her serious "But a year is too long to send anyone to live outside the community. I propose Jed leave the community for a week. When he returns, he will have to work for the Peróns one day of every week for the next half year."
             lily happy "That sounds fair for all involved."
             thuc "I think a week is too short. He should live outside for a month!"
-            jed "How 'bout two weeks, then?"
-            "Everyone agreed to this proposal. The mayor seemed happy with it, too, and both Ilian and the Peróns accepted it without argument."
+            ilian "Two weeks?"
+            "Everyone agreed to this proposal. The mayor seemed happy with it, too, and both Jed and the Peróns accepted it without argument."
         "{i}He's innocent{/i}" if ((skill_technical >= 40) or (skill_knowledge >= 40)):
             her serious "He should provide some reparations, but I know he didn't kill her on purpose."
             thuc "How do you know that?"
             her "Her injuries are consistent with being hit by a car and then floating down the river. She doesn't have any injuries that would come from being assaulted."
-            jed "Yes, that's right!"
-            thuc "That's true... I guess he is still innocent unless proven guilty..."
+            ilian "Yes, that's right."
+            thuc "That's true... I guess he is still innocent of any further crimes unless proven guilty..."
             her concerned "He still should provide some reparations, though. I think he should work for the Peróns one day a week for a year."
             lily "I agree."
-            jed "That's fair."
-            "We all agreed, and the Mayor, Ilian, and the Peróns seemed satisfied with our verdict also."
+            ilian "Now we know the price of a four-year-old girl: 400 man-hours."
+            her annoyed "It's not like that. Of course there's no way to bring her back or make it up to them. But he needs to do something for reparations."
+            "We all agreed on the sentencing, and the Mayor, Jed, and the Peróns seemed satisfied with our verdict also."
 
     scene black with fade
     "I was just glad it was over."
