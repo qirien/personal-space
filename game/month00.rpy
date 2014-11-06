@@ -203,6 +203,13 @@ label colony_ship:
 
 label settling_in:         
     # Land on the planet and get settled
+    scene bg talaam_space with fade
+    "Finally, we arrived."
+    
+    # TODO: get this working
+#    scene talaam_movie
+#    $ renpy.pause(10.0)
+    
     play music "music/You.ogg" fadeout 3.0
     scene bg talam with fade
     "The first month on Talaam was really busy. We arrived at the end of winter, so it was still a bit cold and rainy. We all worked together to get everyone's houses up right away. The first one took the longest, as we had to figure out how to put all the pieces together."

@@ -106,9 +106,13 @@ screen computer_pad(periods):
                         
                         if ((is_pregnant or is_pregnant_later) and (trimester != "done")):
                             text "Pregnancy... [trimester] trimester"
-                            
-                textbutton "Skills" xalign 0.5 ypos 50:
-                    action Show("skill_screen")
+                    
+                hbox ypos 50:
+                    textbutton "?" xalign 0.0 xpos 0:
+                        action Show("help_screen_1")
+                                     
+                    textbutton "Skills" xalign 0.5 xpos 100:
+                        action Show("skill_screen")
                 
             # Middle column
             vbox:
@@ -179,9 +183,6 @@ screen computer_pad(periods):
                 xfill True
                 use display_planner(periods)
                 
-#        textbutton "Help":
-#            action Show
-     
     # Start music every time this screen is shown if it's not already playing.
     on "show" action If(renpy.music.is_playing(), true=None, false=pop_songs.RandomPlay())
                 
@@ -195,69 +196,40 @@ label monthly_messages:
  
 # Display our skills in a window on top of the computer pad
 screen skill_screen:
+    frame:
+        style_group "cp"
+        yalign 0.5
+        xalign 0.5
+        has vbox
         frame:
-            style_group "cp"
-            yalign 0.5
+            xpadding 45
+            ypadding 20
             xalign 0.5
             has vbox
-            frame:
-                xpadding 45
-                ypadding 20
-                xalign 0.5
-                has vbox
-                label "Skills"
-                grid 2 4:
-                    spacing 20
-                    $ v = 0
-                    for s in dse_stats:
-                        frame:
-                            vbox:
-                                xmaximum 250
-                                xalign 0.5
-                                $ v = getattr(store, s.var)
-                                hbox:
-                                    xfill True
-                                    text s.name xalign 0.0
-                                    text "%d/%d" % (v, s.max) xalign 1.0
-                                bar value v range s.max
-                                
-                    vbox:
-                        text ""
-                
-                textbutton _("Return"):
-                        xalign 1.0
-                        yalign 1.0
-                        action Hide("skill_screen")
-    
-screen grid_test:
-    frame:
-        xfill True
-        yfill True
-        has vbox
-        
-        grid 3 1:
-            xfill True
-            vbox:
-                text "grid1"
-            vbox:
-                text "grid2"
-            vbox:
-                text "grid3"
-        
-        hbox:
-            xfill True
-            vbox:
-                frame:
-                    text "hbox1"
-            vbox:
-                frame:
-                    text "hbox2"
-            vbox:
-                frame:
-                    text "hbox3"
-        textbutton "Return":
-            action Hide("grid_test")
+            label "Skills"
+            grid 2 4:
+                spacing 20
+                $ v = 0
+                for s in dse_stats:
+                    frame:
+                        vbox:
+                            xmaximum 250
+                            xalign 0.5
+                            $ v = getattr(store, s.var)
+                            hbox:
+                                xfill True
+                                text s.name xalign 0.0
+                                text "%d/%d" % (v, s.max) xalign 1.0
+                            bar value v range s.max
+                            
+                vbox:
+                    text ""
             
+            textbutton _("Return"):
+                    xalign 1.0
+                    yalign 1.0
+                    action Hide("skill_screen")
+        
             
 screen heart_display:
     hbox:
@@ -322,3 +294,100 @@ screen heart_display:
             else:
                 add "him annoyed head"
             
+screen help_screen_1:
+    modal True
+    tag tutorial
+    frame:
+        xalign 0.5
+        xsize 350
+        ypos 25
+        xpadding 20
+        ypadding 20
+        frame:
+            style_group "cp"
+
+            vbox:
+                label "Tutorial"
+                text " "
+                text "This screen show's [her_name]'s computer pad."
+                text " "
+                text "On the left is her Personal Status."
+                text "[her_name]'s expression shows you how relaxed or stressed out she is."
+                text "[his_name]'s expression shows you how he is feeling this month."
+                text "The heart in the middle shows the strength of their relationship."
+            
+                textbutton _("Next"):
+                        xalign 1.0
+                        yalign 1.0
+                        action Show("help_screen_2")
+                        
+screen help_screen_2:
+    modal True
+    tag tutorial   
+    frame:
+        xalign 0.5
+        xsize 350
+        ypos 25
+        xpadding 20
+        ypadding 20
+        frame:
+            style_group "cp"
+
+            vbox:
+                label "Tutorial"
+                text ""
+                text "In the middle is the Colony Status."
+                text ""
+                text "You can see what the weather is, and what messages are on the colony message board."
+                textbutton _("Next"):
+                    xalign 1.0
+                    yalign 1.0
+                    action Show("help_screen_3")
+                
+screen help_screen_3:
+    modal True
+    tag tutorial 
+    frame:
+        xalign 0.5
+        xsize 350
+        ypos 25
+        xpadding 20
+        ypadding 20
+        frame:
+            style_group "cp"
+
+            vbox:
+                label "Tutorial"
+                text ""
+                text "On the right, you choose [her_name]'s focus for this month."
+                text ""
+                text "Taking it easy at work is more relaxing, but is not as useful to the colony."
+                text "All the skills are useful and help [her_name] and the colony in different ways."
+                text "Choosing to spend time together will increase their relationship, but is not as relaxing as spending time alone."
+                textbutton _("Next"):
+                    xalign 1.0
+                    yalign 1.0
+                    action Show("help_screen_4")
+                    
+screen help_screen_4:
+    modal True
+    tag tutorial
+    frame:
+        xalign 0.5
+        xsize 350
+        ypos 25
+        xpadding 20
+        ypadding 20
+        frame:
+            style_group "cp"
+            
+            vbox:
+                label "Tutorial"
+                text ""
+                text "You have 25 months to maintain their relationship and help the colony survive."
+                text "Good luck!"
+                textbutton _("Done"):
+                    xalign 1.0
+                    yalign 1.0
+                    action Hide("help_screen_4")
+                

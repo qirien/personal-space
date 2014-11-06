@@ -20,57 +20,26 @@ screen message_board:
             style "nvl_vbox"
         $ num_messages = len(dialogue)
         text "{b}Messages{/b}"
+        vbox:
+            # Display dialogue.
+            for who, what, who_id, what_id, window_id in dialogue:
+                window:
+                    id window_id
 
-        # This is kind of cool, but it is distracting when there are not many messages.
-        # TODO: Is there a way to only display this when the text is big enough?
-        # TODO: It flips back up to the top when a new message is displayed
-        if (num_messages >= 8):
-            viewport:
-                mousewheel True
-                yinitial 0
-                scrollbars "vertical"
-                has vbox
-                for who, what, who_id, what_id, window_id in dialogue:
-                    window:
-                        id window_id
-                        has vbox:
-                            # The author of the message
-                            vbox:
-                                xpos 30
-                                xalign 0.0
-                                if who is not None:
-                                    text who id who_id
-                            # The message
-                            vbox:
-                                xpos 67
-                                xmaximum 850
-                                xalign 0.0
-                                text what id what_id
-                            # blank spacer
-                            vbox:
-                                text " " size 7       
-                            
-        else:
-            vbox:
-                # Display dialogue.
-                for who, what, who_id, what_id, window_id in dialogue:
-                    window:
-                        id window_id
-
-                        has vbox:
-                            # The author of the message
-                            vbox:
-                                xpos 30
-                                xalign 0.0
-                                if who is not None:
-                                    text who id who_id
-                            # The message
-                            vbox:
-                                xpos 87
-                                ypos -20  # put it up next to the icon
-                                xmaximum 850
-                                xalign 0.0
-                                text what id what_id
+                    has vbox:
+                        # The author of the message
+                        vbox:
+                            xpos 30
+                            xalign 0.0
+                            if who is not None:
+                                text who id who_id
+                        # The message
+                        vbox:
+                            xpos 87
+                            ypos -20  # put it up next to the icon
+                            xmaximum 850
+                            xalign 0.0
+                            text what id what_id
                 
 # NVL mode characters for chat rooms, etc
 define her_c = DynamicCharacter("her_name", who_prefix = "{image=sprites/her-icon.png} ", color="#8864d5", image="her", kind=nvl)
@@ -269,7 +238,8 @@ label msg_13:
     thuc_c "She hasn't been to our farm all day."
     sara_c "I haven't seen her in town... :-("
     her_c "I saw walking home from school with her siblings, but that was much earlier today."
-    pavel_c "How long has she been missing?"
+    julia_c "I'm afraid it was only a matter of time, with the lack of supervision she's been subjected to."
+    jed_c "That ain't helping anything, Julia.  How long has she been missing?"
     natalia_c "Raul said she stayed outside by herself when he came in to do homework, but that was four hours ago!"
     nvl clear
     pavel_c "She's awfully young to be out on her own in the dark for so long. Anyone who can, please meet at the Perón's and we'll organize a search."

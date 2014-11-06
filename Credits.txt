@@ -3,7 +3,7 @@ CREDITS
 
 Sprites
 -------
-Original art by Clarissa Helps
+Original art by Clarissa Helps, CC-BY-NC-SA-4.0
 
 Background Images
 -----------------
@@ -23,7 +23,8 @@ RoscheiderHof-rathaus by Dorothea Witter-Rieder from http://commons.wikimedia.or
 Wooden bathtub for adults by Anna Frodesiak from http://commons.wikimedia.org/wiki/File:Wooden_bathtub_for_adults_-_02.JPG 
 RO OT Slatina old city street 2 by Andrei Stroe from http://commons.wikimedia.org/wiki/File:RO_OT_Slatina_old_city_street_2.jpg
 Chemistry Laboratory - Bench.jpg by Jean-Pierre from http://commons.wikimedia.org/wiki/File:Chemistry_Laboratory_-_Bench.jpg
-Other photos by Wes Landaker, Andrea Landaker, Lisa Horner, and Lance Meibos
+Talaam from Space generated with Planet Maker, http://planetmaker.wthr.us
+Other photos by Lisa Horner, Wes Landaker, Andrea Landaker, and Lance Meibos
 Filtered with FotoSketcher, http://www.fotosketcher.com
 
 Tablet status icons from the Google Material Design Icons, used under the CC-BY-SA-4.0 License.
@@ -41,7 +42,7 @@ Beta Testers
 
 Sound Effects
 -------------
-Select sound effects and music from www.soundjay.com and freesound.org, including Freesound users OwlStorm, ERH, soundscalpel.com, dobroide, Timbre.  Used under the Creative Commons license.
+Select sound effects and music from www.soundjay.com and freesound.org, including Freesound users OwlStorm, ERH, soundscalpel.com, dobroide, Timbre, 0ktober, and AlaskaRobotics.  Used under Creative Commons license.
 
 
 Music

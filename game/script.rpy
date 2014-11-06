@@ -178,7 +178,8 @@ label start:
             #scene bg stars
             #show overlay computer_pad
 
-            jump monthly_event_25
+            #jump monthly_event_25
+            jump settling_in
             #jump test_positions
             #jump test_inputter
             #jump show_credits
