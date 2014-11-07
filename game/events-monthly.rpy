@@ -2895,14 +2895,13 @@ label monthly_event_19:
                 $ relaxed += 2
                 jump maternity_clothing
             "{i}Ask around{/i}" if (skill_social >= 60):
-                "I knew Helen was also expecting, so I decided to send her a message and see what she had done."
+                "I knew Helen had recently had a baby, so I decided to send her a message and see what she had done."
                 play sound "sfx/message.mp3"
-                her_c "Hey, Helen, what are you doing for maternity clothes?"
+                her_c "Hey, Helen, what did you do for maternity clothes?"
                 helen_c "Oh, I just made a big tent dress out of a hospital gown. It doesn't look very good, but it's very comfortable."
                 her_c "Do you think you could show me how?"
-                helen_c "Well, I'm sort of stuck in bed because of this pregnancy... but send me your measurements and I'll make you one!"
-                her_c "Really?!"
-                helen_c "Sure, I've got nothing else to do all day, and I'm sick of crocheting baby clothes..."
+                helen_c "I think mine would fit you if you want it... I don't need it anymore."
+                her_c "Really? That would be great, thank you!"
                 "About a week later Jed dropped the dress off at work for me."
                 "Sure enough, it looked kind of terrible. But it fit, and was comfy, so I wore it a lot."
                 $ relaxed += 2

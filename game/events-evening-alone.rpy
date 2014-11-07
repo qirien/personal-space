@@ -446,9 +446,12 @@ label relax_alone_l:
     else:
         helen_c "All the cows got sick, so we took samples of all the plants in their pasture to Dr. Lily to analyze. Luckily, they made it through, but it was a close call."
 
+    nvl clear
     her_c "How is Jed?"
     helen_c "Doing fine - though sometimes he's pretty busy taking care of the cows and the library!"
     her_c "Yeah, [his_name] is busy a lot, too..."
+    helen_c "Hey, want to come over for lunch tomorrow? Jed's meeting with the mayor, so it'll just be me and the baby."
+    her_c "Sure, thanks!"
     nvl clear
     "She was a newlywed like me and we had a lot in common, so it was fun to chat together."
     $ relaxed += 5

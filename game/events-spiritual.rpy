@@ -236,7 +236,6 @@ label spiritual_5:
     return
 
 # Reading the Koran; helping Helen Engel
-# TODO: bed rest may be outdated
 label spiritual_6:
     scene bg farm_interior with fade
     show her normal at center
@@ -247,15 +246,15 @@ label spiritual_6:
     show naomi at midright with dissolve
     show her serious at midleft with moveinleft
     naomi "What is piety? Come with me, and I will show you."
+    scene bg path with fade
+    show naomi at midright with moveinleft
+    show her serious at midleft with moveinleft    
     "I followed her across town, and she still kept walking. I started to feel impatient."
     her annoyed "Where are we going?"
     naomi "We are needed."
     scene bg talam with fade
-    "We walked past one farm, and then another. We had been walking for about a half an hour. Finally, we reached the farthest farm from town. It belonged to the Engels - Helen and Jed were newlyweds like [his_name] and me. They were the farthest farm for a reason; they seemed to like to be by themselves."
-    if (profession == "doctor"):
-        "I had seen her at the clinic; she was expecting a baby, but due to some complications she had to be on bed rest most of the time."
-    elif (skill_social >= 30):
-        "I heard she was expecting a baby but had to stay in bed for some reason."
+    "We walked past one farm, and then another. We had been walking for about a half an hour. Finally, we reached the farthest farm from town. It belonged to the Engels - Helen and Jed were newlyweds like [his_name] and me."
+    "They were the farthest farm for a reason; they seemed to like to be by themselves. I hardly ever saw them, or their baby who was born on the shuttle."
     "When we got there, Sister Naomi knocked on the door and called out,"
     naomi "Helen, it's Naomi. May I come in?"
     helen "Of course, Sister Naomi."
@@ -264,10 +263,10 @@ label spiritual_6:
     show naomi at center
     show her normal at midleft
     with  moveinleft
-    "We entered their small cabin, not that much different from our own. Helen was in bed doing some knitting."
+    "We entered their small cabin, not that much different from our own. Helen was sitting on the bed doing some knitting. She invited us to sit next to her."
     her surprised "What are you making?"
     helen "It's supposed to be a baby hat, but it isn't turning out very well. I don't think any baby's head is shaped like this!"
-    "She held up her misshapen knitting and laughed, but I could tell something was really bothering her. Naomi didn't say anything, though - she just held Helen's hand and looked at me. What was I supposed to say?"
+    "She held up her misshapen knitting and laughed, but it was a forced laugh. Naomi didn't say anything, though - she just patted Helen's shoulder and looked at me. What was I supposed to say?"
     menu:
         "What should I say?"
         "I think the hat looks fine.":
@@ -277,48 +276,48 @@ label spiritual_6:
         "{i}The problem is with this row of stitches here.{/i}" if (skill_creative >= 60) :
             her serious "The problem is with this row of stitches here. See?"
             helen "Oh, you're right! I'll have to redo these last six rows..."
-            her normal "The rest of it looks great; do you like knitting?"
-        "It must be hard to stay in bed all day.":
-            her concerned "It must be hard to stay in bed all day."
-            helen "It's not that hard; all I have to do is sit here. Like a hen sitting on her eggs, keeping this baby alive is about all I'm good for these days."
-        "{i}I'm expecting, too{/i}" if is_pregnant:
-            her normal "I'm expecting, too."
+            her normal "The rest of it looks great. Ummm....how's your baby doing, anyway?"
+            "She leaned over the side of the bed to check on him, where he was lying on a blanket kicking his legs and grinning toothlessly."
+            helen "He's doing okay, I think. He's growing bigger, anyway."
+        "How's your baby doing?":
+            her concerned "How's your baby doing, anyway?"
+            "She leaned over the side of the bed to check on him, where he was lying on a blanket kicking his legs and grinning toothlessly."
+            helen "He's doing okay, I think. He's growing bigger, anyway."
+        "{i}I'm going to have a baby, too{/i}" if is_pregnant:
+            her normal "We're going to have a baby soon..."
             helen "Oh? Congratulations."
             her serious "Thanks...It's a weird feeling, isn't it?"
-            helen "What is?"
+            helen "Being pregnant?"
             her concerned "Knowing that someone else, a little stranger, is depending on you so much."
             helen "That's true..."
         "{i}I wish I was expecting, too{/i}" if want_kids and (not is_pregnant):
-            her concerned "I wish I was expecting, too."
-            helen "Oh...sorry."
             her serious "Yeah, we really want to have kids, but who knows how long it might take?"
             helen "We weren't really anticipating becoming parents so soon..."
-            her normal "Well, I think you will do great. It's cool that you're making something for the baby."
+            her normal "Well, I think you're doing great. It's cool that you're making something for the baby."
 
-    "We sat in silence for a few minutes. I didn't know what to say. I hoped Naomi would say something wise and comforting, but she didn't."
+    show naomi at quarterleft with move
+    show her serious at center with move
+    "We sat in silence for a few minutes. Naomi picked up the baby and played with him on the other side of the room, leaving Helen and I sitting together."
+    "I didn't know what to say. I hoped Naomi would say something wise and comforting, but she didn't. Finally, Helen set down her hat."
     helen "The truth is, I hate knitting."
     her surprised "You do?"
-    helen "Yes! But the one thing I hate more than knitting is feeling useless! I wish I could be helping Jed with the cows, or working at the library, or {b}something{/b} other than sitting around for three more months!"
-    helen "At least this way I'm accomplishing something, even if it's just embarassing myself."
-    her serious "Helen, it's not how much we get done that counts."
-    helen "What does count, then?"
-    menu:
-        "What is the most important thing?"
-        "Relationships.":
-            her normal "It's the relationships you are building with other people, like your husband and your new baby."
-            helen "I don't feel like I'm building relationships. I feel like I'm wasting my time."
-        "Love.":
-            her normal "It's the love you nurture in your heart and the hearts of others."
-            helen "I don't think I'm doing that. I'm just sitting here."
-        "Good deeds.":
-            her normal "It's the things you do for others that matter most."
-            helen "I can't do anything! I just sit here, all day!"
-        "Fun.":
-            her happy "Having fun! That's the most important thing! So if you're not having fun knitting, do something else! It's not worth being sad over."
-            helen "What else can I do?! I just have to sit here."
-    her surprised "Well, why are you just sitting here?"
-    helen "I guess that's what's best for the baby right now."
-    her normal "Well, you wouldn't be doing that if you didn't love your baby already. I know it's a sacrifice, but it's worth it. You have a choice, and you are choosing what's best for your baby. You're a great mom already."
+    helen "Yes! But the one thing I hate more than knitting is feeling useless! I wish I could be helping Jed with the cows, or working at the library, or {b}something{/b} other than sitting around waiting for this baby to grow up!" 
+    her surprised "Well, aren't there some other things you could do, even while watching a baby? It's not like he has to stay home all day."
+    helen "I don't know... this planet is so strange, I don't really feel safe taking him outside. And I don't feel safe leaving him here by himself, either."
+    her serious "When will it be safe enough?"
+    helen "What?"
+    her annoyed "Will it be safer when he's two? Six? Ten?"
+    helen "Probably not..."
+    her normal "There's risks everywhere; that's why he has you. To help him learn how to handle the dangers, not to shield him from any possibility of danger."
+    helen "It's just... every time I think about taking him anywhere, all I can think about is all the things that could go wrong. A solar flare giving him skin cancer, or alien bugs landing on him and biting him, or someone will hurt him..."
+    her serious "Helen... you sound really anxious."
+    helen "Yeah... Sister Naomi has been helping me with some therapy, but I still don't feel ready to leave the house yet."
+    if (profession == "doctor"):
+        her concerned "Well, if you'd like to make an appointment to meet with me sometime, as your doctor, we could consider some other options. Sister Naomi is a great therapist, but if therapy is not working for you, we should consider medication."
+    else:
+        her concerned "Would it help if I came with you?  We could just go on a short trip together, maybe to visit Jed or something, and I can help you with anything you need."
+    
+    helen "Thanks, [her_name]. I'll... I'll think about that."
     
     "We talked some more about other things, and Naomi left a book that she had brought, and then it was time for us to go. It was getting late, and it would take me a while to walk all the way home from Helen's house, but I felt that it was worth it."
     scene bg path with fade
@@ -328,10 +327,8 @@ label spiritual_6:
     show overlay night
     her surprised "But...what did any of that have to do with piety?"
     naomi "You read \"You will not attain piety until you expend of what you love\"."
-    her serious "Well...Helen gave up a lot of what she loves - freedom, feeling useful, getting things done."
-    naomi "You gave up something today, too."
-    her surprised "I did?"
-    naomi "You gave of your time, and of yourself. Thank you, [her_name]."
+    her serious "Well...Helen is definitely giving up a lot for her baby, even if I'm not sure all her sacrifices are necessary."
+    naomi "I was talking about your sacrifices, [her_name]. You gave of your time, and of yourself."
     show her normal
     
     $ skill_spiritual += 10

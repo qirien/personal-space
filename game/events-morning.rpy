@@ -89,6 +89,7 @@ label work_0:
     show jed at midright with moveinright
     show helen at right with moveinright
     pavel "Jed is in charge of the library, so if you need to research something or print something out, head over there. He and his wife Helen are also experts on raising cattle, and will be starting a ranch up to the north."
+    pavel "And, their baby, who was born on the shuttle, was the first human being to be born in space!"
     jed "Hey, y'all. Don't be strangers!"
     helen "Hi..."
     hide jed
@@ -104,8 +105,8 @@ label work_0:
     hide julia
     hide thuc
     with moveoutright
-    show natalia at right
-    show martin at midright
+    show natalia at midright
+    show martin at right
     with moveinright
     pavel "The Peróns will be growing beans and corn, and are raising chickens and turkeys."
     martin "And also five children."
@@ -114,25 +115,27 @@ label work_0:
     hide natalia
     hide martin
     with moveoutright
-    show him normal at midright with moveinright
-    show her normal at quarterright with moveinright
-    pavel "[his_name] knows a lot about growing vegetables and caring for horses and other animals, so be sure to ask him if you have questions in that area."
-    show him at quarterright with move
-    show her at midright with move
+    show her serious at midright with moveinright
+    show him normal at quarterright with moveinright
     
     if (profession == "doctor"):
-        pavel "His wife, [her_name] is our doctor. Don't wait until you're sick to stop by the clinic; go over and say hi sometime this week."
-        her "Thanks, Mayor. I'll try and keep you all healthy!"
+        pavel "[her_name] is our doctor. Don't wait until you're sick to stop by the clinic; go over and say hi sometime this week."
+        her normal "Thanks, Mayor. I'll try and keep you all healthy!"
     elif (profession == "carpenter"):
-        pavel "His wife, [her_name] is our carpenter. If you need something built, she's the one to ask."
-        her "I work mainly with wood and fabric, and can print things with plastic, too."
+        pavel "[her_name] is our carpenter. If you need something built, she's the one to ask."
+        her normal "I work mainly with wood and fabric, and can print things with plastic, too."
     elif (profession == "mechanic"):
-        pavel "His wife, [her_name] is our mechanic. When things break, she'll help get them working again!"
-        her "But it's much easier if they don't break in the first place, so please treat your machines nicely!"
+        pavel "[her_name] is our mechanic. When things break, she'll help get them working again!"
+        her normal "But it's much easier if they don't break in the first place, so please treat your machines nicely!"
     elif (profession == "teacher"):
         pavel "Now, you kids ought to pay attention - I want to introduce the colony's teacher, [her_name]."
-        her "Classes start next week, and I'm looking forward to meeting all you kids!"
+        her normal "Classes start next week, and I'm looking forward to meeting all you kids!"
 
+    show her at quarterright with move
+    show him at midright with move
+    pavel "[his_name] knows a lot about growing vegetables and caring for horses and other animals, so be sure to ask him if you have questions in that area."
+    him happy "I can't wait to get started!"
+    
     hide her
     hide him
     with moveoutright
@@ -153,13 +156,13 @@ label work_0:
             jump pavel_meeting
         "Any weapons?":
             her surprised "Do we have any weapons?"
-            pavel "We do have a few hunting weapons that you can check out from the storehouse if you would like to try your hand at hunting, though I'd check with Dr. Lily first and make sure that the animal is edible!"
+            pavel "We do have a few rifles and shotguns that you can check out from the storehouse if you would like to try your hand at hunting, though I'd check with Dr. Lily first and make sure that the animal is edible!"
             jump pavel_meeting
         "When is the colony ship coming?":
             her surprised "You said another ship is coming? Is that in two Earth years or Talaam years?"
             pavel "Good question; that's two Earth years, which makes about..."
             show lily at midright with moveinright
-            lily "About 26 Talaam months. Since there are seven months a year here, that makes a little over three Talaam years."
+            lily "About 25 Talaam months. Since there are seven months a year here, that makes a little over three Talaam years."
             pavel "Right...hopefully that answers your question!"
             hide lily with moveoutright
             jump pavel_meeting
@@ -234,7 +237,7 @@ label work_0:
     show sara normal
     sara "My husband is Ilian Andrevski - he's not a farmer, either. He's a food scientist."
     her surprised "Really? There are food scientists?"
-    sara "Yes, they study things like nutrition and shelf-life and ways to preserve foods while maintaining lots of nutrients - things like that. I think he'll also do a lot of the inventory and distribution of food once we get there."
+    sara "Yes, they study things like nutrition and shelf-life and ways to preserve foods while maintaining lots of nutrients - things like that. I think he'll also do a lot of the inventory and distribution of food."
     her normal "What about you? What's your job?"
     sara "Breeding stock."
     her surprised "What?!"
