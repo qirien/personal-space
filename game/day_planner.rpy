@@ -89,6 +89,9 @@ screen display_planner(periods):
                     for p in periods:
                         vbox:
                             label p
+                            if (p == "Skills"):
+                                textbutton " Current Skill Progression " xalign 0.5 text_bold True:
+                                    action Show("skill_screen")                            
                             if p not in __periods:
                                 $ raise Exception("Period %r was never defined." % p)
                             $ this_period = __periods[p]

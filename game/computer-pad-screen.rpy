@@ -108,11 +108,8 @@ screen computer_pad(periods):
                             text "Pregnancy... [trimester] trimester"
                     
                 hbox ypos 50:
-                    textbutton "?" xalign 0.0 xpos 0:
+                    textbutton "{i}Help{/i}" xalign 0.0 xpos 0:
                         action Show("help_screen_1")
-                                     
-                    textbutton "Skills" xalign 0.5 xpos 100:
-                        action Show("skill_screen")
                 
             # Middle column
             vbox:
@@ -196,14 +193,15 @@ label monthly_messages:
  
 # Display our skills in a window on top of the computer pad
 screen skill_screen:
+    modal True
     frame:
         style_group "cp"
         yalign 0.5
         xalign 0.5
         has vbox
         frame:
-            xpadding 45
-            ypadding 20
+            #xpadding 45
+            #ypadding 20
             xalign 0.5
             has vbox
             label "Skills"
@@ -225,7 +223,7 @@ screen skill_screen:
                 vbox:
                     text ""
             
-            textbutton _("Return"):
+            textbutton _("Done"):
                     xalign 1.0
                     yalign 1.0
                     action Hide("skill_screen")
@@ -312,9 +310,13 @@ screen help_screen_1:
                 text "This screen show's [her_name]'s computer pad."
                 text " "
                 text "On the left is her Personal Status."
+                text ""
                 text "[her_name]'s expression shows you how relaxed or stressed out she is."
+                text ""
                 text "[his_name]'s expression shows you how he is feeling this month."
+                text ""
                 text "The heart in the middle shows the strength of their relationship."
+                text ""
             
                 textbutton _("Next"):
                         xalign 1.0
@@ -339,6 +341,7 @@ screen help_screen_2:
                 text "In the middle is the Colony Status."
                 text ""
                 text "You can see what the weather is, and what messages are on the colony message board."
+                text ""
                 textbutton _("Next"):
                     xalign 1.0
                     yalign 1.0
@@ -362,8 +365,11 @@ screen help_screen_3:
                 text "On the right, you choose [her_name]'s focus for this month."
                 text ""
                 text "Taking it easy at work is more relaxing, but is not as useful to the colony."
+                text ""
                 text "All the skills are useful and help [her_name] and the colony in different ways."
-                text "Choosing to spend time together will increase their relationship, but is not as relaxing as spending time alone."
+                text ""
+                text "During Free Time, choosing to spend time together will increase their relationship, but is not as relaxing as spending time alone."
+                text ""
                 textbutton _("Next"):
                     xalign 1.0
                     yalign 1.0
@@ -385,7 +391,9 @@ screen help_screen_4:
                 label "Tutorial"
                 text ""
                 text "You have 25 months to maintain their relationship and help the colony survive."
+                text ""
                 text "Good luck!"
+                text ""
                 textbutton _("Done"):
                     xalign 1.0
                     yalign 1.0

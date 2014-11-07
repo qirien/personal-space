@@ -48,8 +48,10 @@ label colony_ship:
                     "Maybe never.":
                         her serious "Maybe never. I'm not sure if I want kids at all."
                         him surprised "Really? I always thought you wanted a family."
-                        him normal "Someday, maybe. Let's just focus on us, for now."
+                        her concerned "There's been so many changes lately - we just barely got married, we're moving to a new planet - I can't even think about adding another change right now."
+                        him normal "Okay, let's just focus on us, for now."
                         her flirting "Oh yeah? What part of \"us\" are you focusing on?"
+                        show him at center with move
                         him flirting "I think...this part right here. Mmmm...this part is good, too."
                         her "Don't forget this..."
                         him surprised "Ohhh. Wow, I will never forget that."
@@ -91,8 +93,6 @@ label colony_ship:
 
 # After talking about having kids
 # Background about Talaam
-    show him normal
-    show her normal
     "We talked about lots of other things, of course. We talked about space, about what we would miss from Earth, about what our families were probably doing.  We studied what the pre-colonization team of scientists had reported so far."
     scene bg talaam_space with fade
     "Even though Talaam was technically a \"garden planet\", meaning humans could breathe and there were plants and animals, it was only superficially like modern Earth.  The plants looked similar, but had completely different biologies, and most of the animals were more like prehistoric amphibians or insects."
@@ -193,7 +193,7 @@ label colony_ship:
             her sad "What's the point of celebrating birthdays? One year older, one year closer to dying...that's not a cause to party."
             him normal "It is if it means it's one more year I've been able to spend with you."
             $ relaxed -= 5
-    scene black with fade
+    scene bg stars with fade
     "He pulled me close in a gentle hug, then held me tightly, as if I would drift off into space without him."
     $ made_love += 1
     $ relaxed += 2
@@ -206,7 +206,7 @@ label settling_in:
     scene bg talaam_space with fade
     "Finally, we arrived."
     
-    # TODO: get this working
+    # TODO: get this working?
 #    scene talaam_movie
 #    $ renpy.pause(10.0)
     
@@ -241,7 +241,7 @@ label settling_in:
     him happy "Isn't it awesome?! It's so small, it'll be easy to clean. And it's cozy, for just the two of us."
     "The house really was pretty small- just one room. One end had a biomass/electric hybrid stove/heater as well as a battery that the solar panels could charge, and the other end had a window."
     "There was no plumbing, electricity only when it was sunny or while our battery lasted, and no furniture other than our bunk and a folding table."
-    her annoyed "Good thing we didn't waste any space on frivolous things like bathrooms."
+    her flirting "Good thing we didn't waste any space on frivolous things like bathrooms."
     him serious "The outhouse is not that far!"
     her serious "It'll work. It will just be kind of like camping. Where do you think we should put our bed?"
     him happy "Well, there's this end- or that end."

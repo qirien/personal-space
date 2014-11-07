@@ -43,9 +43,9 @@ label month01:
     # TODO: how do you do this in Android? Does help file work there?
     # TODO: Have a tutorial about the computer pad.
     if renpy.variant('touch'):
-        "To access the menu and save your game, right-click or press \"Esc\". For more help, click on the \"Help\" option in that menu."
+        "To access the menu and save your game, right-click or press \"Esc\". For more help, click on \"Help\"."
     else:
-        "To access the menu and save your game, right-click or press \"Esc\". For more help, click on the \"Help\" option in that menu."
+        "To access the menu and save your game, right-click or press \"Esc\". For more help, click on \"Help\"."
 
     jump day
 
