@@ -109,9 +109,7 @@ label day:
     # TODO: Play a season-specific sound (like rain or wind)?
 
     "Time to decide what to do this month..."
-    if (month == 0):
-        "On your computer pad, you can read messages, check the status of yourself, your relationship, and the community, and plan your month. Once you choose a focus for each area of your life for this month, you can continue on."
-        
+    
     #"Loved = [loved], Relaxed = [relaxed], community_level = [community_level], made_love = [made_love]"
     if (month == 25):
         "The shuttle should be coming some time this month!"
@@ -127,6 +125,14 @@ label day:
     $ relaxation_focus_act = None
     $ monthly_event_act = None
 
+    if (month == 1):
+        menu:
+            "Would you like to see the Tutorial?"
+            "Yes":
+                call tutorial
+            "No":
+                $pass
+        
     # Now, we call the day planner, which may set the act variables
     # to new values. We call it with a list of periods that we want
     # to compute the values for.

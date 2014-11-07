@@ -27,6 +27,8 @@ style cp_choice_button is button:
 screen computer_pad(periods):
     tag month_menu
     $ renpy.choice_for_skipping()
+    if (month == 1):
+        use help_screen_1
 
     add "bg/silk-gray.jpg"
     add "bg/computer-pad.png"
@@ -106,10 +108,6 @@ screen computer_pad(periods):
                         
                         if ((is_pregnant or is_pregnant_later) and (trimester != "done")):
                             text "Pregnancy... [trimester] trimester"
-                    
-                hbox ypos 50:
-                    textbutton "{i}Help{/i}" xalign 0.0 xpos 0:
-                        action Show("help_screen_1")
                 
             # Middle column
             vbox:
@@ -119,7 +117,7 @@ screen computer_pad(periods):
                 frame:
                     xfill True
                     ypos 10
-                    ysize 315
+                    ysize 275
                     has vbox
                     xalign 0.5
                     
@@ -133,15 +131,17 @@ screen computer_pad(periods):
                     else:
                         add "bg/weather-spring.jpg" xalign 0.5
                     text ""
-                    # TODO: Capitalize
-                    text "Season: [season]"
-                    text "Weather: [weather]"
+                    $ upper_season = season.capitalize()
+                    $ upper_weather = weather.capitalize()
+                    text "Season: [upper_season]"
+                    text "Weather: [upper_weather]"
                     
-                        
+                textbutton "Colony Messages" xalign 0.5 ypos 22:
+                    action Jump("monthly_messages")                        
                 frame:
                     xfill True
-                    ymaximum 112
-                    ypos 20
+                    ysize 100
+                    ypos 32
                     label "Music Player"
                     $ current_song = renpy.music.get_playing()
                     $ artist = ""
@@ -171,8 +171,7 @@ screen computer_pad(periods):
 #                    xfill True
 #                    xalign 0.5
 #                    ypos 80
-                textbutton "Colony Messages" xalign 0.5 ypos 30:
-                    action Jump("monthly_messages")
+
 
                         
             # Right column - skills

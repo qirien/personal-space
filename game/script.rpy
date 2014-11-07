@@ -21,6 +21,8 @@ define helen = Character("Helen Engel", color="cdcfb2", image="helen") #tan
 define julia = Character("Julia Nguyen", color="#4b54cd", image="julia") #icy blue
 define martin = Character("Martín Perón", color="#990011", image="martin")  #dark red
 
+
+define tutorial = Character("Tutorial", color="#ededed")  #light gray
 define note = Character("note", kind=nvl)
 
 # defaults used for debugging purposes

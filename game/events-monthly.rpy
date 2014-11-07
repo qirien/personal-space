@@ -3424,18 +3424,18 @@ label monthly_event_22:
 
 # MONTH 23: Climax - epic conflict leading to either "We'll always be together" or "I just want to get away from you!"  Conflict: Worried about new baby, pregnant if made_love a lot or affair with Brennan, otherwise, discussion about quality of sex
 label monthly_event_23:
-    scene bg farm_interior with fade
-    show her serious at center with dissolve
     play music "music/You.ogg" fadeout 3.0
 
     if (is_pregnant):
+        scene bg farm_interior with fade
+        show her serious at center with dissolve        
         "I was getting huge. I felt like I couldn't eat very much at a time, not only because of the terrible heartburn, but it just didn't feel like there was any room inside me for anything else."
         "Some days I couldn't believe that I had been pregnant for so long, and other days I wished it would last longer because I didn't feel ready yet."
         
         # who will take care of the baby during the day?
         scene bg bedroom with fade
         show overlay night        
-        show overlay bedroom_covers behind night        
+        show overlay bedroom_covers behind night
         show her normal at midleft, squatting, behind overlay
         show him normal at midright, squatting, behind overlay    
         with dissolve 

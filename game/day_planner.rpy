@@ -78,7 +78,7 @@ screen day_planner(periods):
         use display_planner(periods)            
             
 screen display_planner(periods):            
-        vbox:
+        vbox xfill True:
             style_group "dp"        
             label "Focus" yalign 0.0 xalign 0.5 text_style "cp_header_text"
             vbox:
@@ -126,9 +126,11 @@ screen display_planner(periods):
                                 # and we didn't fill up our grid
                                 if ((2 * choice_rows) != num_choices):
                                     text ""                                
-                                                       
-            if (can_continue):
-                textbutton dp_done_title style "dp_done_button" xalign 0.5 action Jump("job_focus")
-            else:
-                textbutton dp_done_title style "dp_done_button" xalign 0.5
+            hbox xfill True:
+#                textbutton "Help" xalign 0.0 xpos 10:
+#                    action Show("help_screen_1")                                                       
+                if (can_continue):
+                    textbutton dp_done_title style "dp_done_button" xalign 1.0 action Jump("job_focus")
+                else:
+                    textbutton dp_done_title style "dp_done_button" xalign 1.0
 
