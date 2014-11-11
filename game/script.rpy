@@ -5,24 +5,25 @@
 define mp = MultiPersistent("cuttlefishgames")
 
 # Declare characters used by this game .
-define her = DynamicCharacter("her_name", color="#8864d5", image="her") #periwinkle
-define him = DynamicCharacter("his_name", color="#c80000", image="him") #red 
+define narrator = Character(ctc="ctc_blink", ctc_position="nestled")
+define her = DynamicCharacter("her_name", color="#8864d5", image="her", ctc="ctc_blink", ctc_position="nestled") #periwinkle
+define him = DynamicCharacter("his_name", color="#c80000", image="him", ctc="ctc_blink", ctc_position="nestled") #red 
 
-define naomi = Character("Sister Naomi", color="#ededed", image="naomi")  #light gray
-define pavel = Character("Mayor Grayson", color="#cccccc", image="pavel")   #dark gray
-define lily = Character("Lily", color="#8655bd", image="lily")  #purple
-define sara = Character("Sara", color="#c64e89", image="sara")  # dark pink
-define thuc = Character("Thuc Nguyen", color="a9ff22", image="thuc")  #lime green
-define ilian = Character("Ilian Andrevski", color="ffa922", image="ilian") #tangerine
-define brennan = Character("Brennan Callahan", color="33b533", image="brennan")  #irish green
-define jed = Character("Jed Engel", color="cb5500", image="jed")  #rusty brown
-define natalia = Character("Natalia Perón", color="ffe74a", image="natalia")  #yellow
-define helen = Character("Helen Engel", color="cdcfb2", image="helen") #tan
-define julia = Character("Julia Nguyen", color="#4b54cd", image="julia") #icy blue
-define martin = Character("Martín Perón", color="#990011", image="martin")  #dark red
+define naomi = Character("Sister Naomi", color="#ededed", image="naomi", ctc="ctc_blink", ctc_position="nestled")  #light gray
+define pavel = Character("Mayor Grayson", color="#cccccc", image="pavel", ctc="ctc_blink", ctc_position="nestled")   #dark gray
+define lily = Character("Lily", color="#8655bd", image="lily", ctc="ctc_blink", ctc_position="nestled")  #purple
+define sara = Character("Sara", color="#c64e89", image="sara", ctc="ctc_blink", ctc_position="nestled")  # dark pink
+define thuc = Character("Thuc Nguyen", color="a9ff22", image="thuc", ctc="ctc_blink", ctc_position="nestled")  #lime green
+define ilian = Character("Ilian Andrevski", color="ffa922", image="ilian", ctc="ctc_blink", ctc_position="nestled") #tangerine
+define brennan = Character("Brennan Callahan", color="33b533", image="brennan", ctc="ctc_blink", ctc_position="nestled")  #irish green
+define jed = Character("Jed Engel", color="cb5500", image="jed", ctc="ctc_blink", ctc_position="nestled")  #rusty brown
+define natalia = Character("Natalia Perón", color="ffe74a", image="natalia", ctc="ctc_blink", ctc_position="nestled")  #yellow
+define helen = Character("Helen Engel", color="cdcfb2", image="helen", ctc="ctc_blink", ctc_position="nestled") #tan
+define julia = Character("Julia Nguyen", color="#4b54cd", image="julia", ctc="ctc_blink", ctc_position="nestled") #icy blue
+define martin = Character("Martín Perón", color="#990011", image="martin", ctc="ctc_blink", ctc_position="nestled")  #dark red
 
 
-define tutorial = Character("Tutorial", color="#ededed")  #light gray
+define tutorial = Character("Tutorial", color="#ededed", ctc="ctc_blink", ctc_position="nestled")  #light gray
 define note = Character("note", kind=nvl)
 
 # defaults used for debugging purposes

@@ -121,5 +121,9 @@ image goat_small = im.FactorScale("sprites/goat.png", 0.85)
 image seastar = "sprites/seastar.png"
 
 
-# Talaam movie
-#image talaam_movie:
+# GUI
+image ctc_blink:
+       "GUI/ctc.png"
+       linear 0.75 alpha 1.0
+       linear 0.75 alpha 0.0
+       repeat 
