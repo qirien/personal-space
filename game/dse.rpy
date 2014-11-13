@@ -134,8 +134,10 @@ label day:
             "No":
                 $pass
         
+    # Autosave
     $ renpy.choice_for_skipping()
-    $ renpy. notify("{vspace=550}{color=#000}{space=40}Autosaving...{/color}")
+    $ renpy.notify("{vspace=540}{color=#000}{space=40}Autosaving...{/color}")
+    
     # Now, we call the day planner, which may set the act variables
     # to new values. We call it with a list of periods that we want
     # to compute the values for.
@@ -148,7 +150,9 @@ label job_focus:
 
     scene black
     # Tell the user what month it is.
-    centered "{color=#ffffff}Month [month] of 25\n\nAt Work{/color}"
+    show text "{color=#ffffff}Month [month] of 25\n\nAt Work{/color}"
+    $ renpy.pause(1.5)
+    hide text
     play music "music/Isaiah.ogg" fadeout 3.0
 
     # Set these variables to appropriate values, so they can be
@@ -175,7 +179,9 @@ label skill_focus:
 
     # The rest of this is the same as for the job_focus.
     scene black
-    centered "{color=#ffffff}Month [month] out of 25\n\nSkill Focus{/color}"
+    show text "{color=#ffffff}Month [month] out of 25\n\nSkill Focus{/color}"
+    $ renpy.pause(1.5)
+    hide text
     play music "music/OceansApart.ogg" fadeout 3.0
 
     $ period = "skill_focus"
@@ -193,7 +199,9 @@ label relaxation_focus:
         jump monthly_event
 
     scene black
-    centered "{color=#ffffff}Month [month] out of 25\n\nFree Time{/color}"
+    show text "{color=#ffffff}Month [month] out of 25\n\nFree Time{/color}"
+    $ renpy.pause(1.5)
+    hide text
 
     $ period = "relaxation_focus"
     $ act = relaxation_focus_act
@@ -211,7 +219,9 @@ label monthly_event:
         jump end_of_month
     
     scene black
-    centered "{color=#ffffff}Month [month] out of 25\n\nEvent!{/color}"
+    show text "{color=#ffffff}Month [month] out of 25\n\nEvent!{/color}"
+    $ renpy.pause(1.5)
+    hide text
     play music "music/RainSea.ogg" fadeout 3.0
 
     $ period = "monthly_event"
@@ -228,7 +238,7 @@ label end_of_month:
     # in here.
     
     scene black
-    #centered "{color=#ffffff}End of the Month{/color}"
+    #show text "{color=#ffffff}End of the Month{/color}"
 
     "We made it through another month on Talaam..."
 
