@@ -90,27 +90,28 @@ init -1 python hide:
     ## respectively.
 
     # style.window.background = Frame("frame.png", 12, 12)
+    style.window.background = Frame("GUI/textbox-frame.png", 80, 80)    
 
     ## Margin is space surrounding the window, where the background
     ## is not drawn.
 
-    # style.window.left_margin = 6
-    # style.window.right_margin = 6
-    # style.window.top_margin = 6
-    # style.window.bottom_margin = 6
+    style.window.left_margin = 100
+    style.window.right_margin = 100
+    style.window.top_margin = 0
+    style.window.bottom_margin = 0
 
     ## Padding is space inside the window, where the background is
     ## drawn.
 
-    # style.window.left_padding = 6
-    # style.window.right_padding = 6
-    # style.window.top_padding = 6
-    # style.window.bottom_padding = 6
+    style.window.left_padding = 25
+    style.window.right_padding = 25
+    style.window.top_padding = 15
+    style.window.bottom_padding = 15
 
     ## This is the minimum height of the window, including the margins
     ## and padding.
 
-    # style.window.yminimum = 250
+    style.window.yminimum = 150
 
 
     #########################################
@@ -257,7 +258,8 @@ init -1 python hide:
     #########################################
     ## More customizations can go here.
     
-    
+    config.thumbnail_width = 280
+    config.thumbnail_height = 164    
 
                          
 ## This section contains information about how to build your project into 

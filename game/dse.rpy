@@ -4,6 +4,7 @@
 
 # Set up our daily schedule options
 init python:
+    from math import ceil
 
     register_stat("Domestic", "skill_domestic", 0, 100)
     register_stat("Creative", "skill_creative", 0, 100)
@@ -70,7 +71,7 @@ label day:
         $ local_month -= 7        
 
     # There are 196 27-hour days per year on Talaam, and 356 24-hour days on Earth
-    $ earth_months = int(month*((196.0*27.0) / (356.0*24.0)))
+    $ earth_months = int(ceil(month*((196.0*27.0) / (356.0*24.0))))
     $ earth_month = earth_months
     $ earth_year = 1
     while (earth_month > 12):

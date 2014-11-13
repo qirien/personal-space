@@ -11,6 +11,7 @@ define him = DynamicCharacter("his_name", color="#c80000", image="him", ctc="ctc
 
 define naomi = Character("Sister Naomi", color="#ededed", image="naomi", ctc="ctc_blink", ctc_position="nestled")  #light gray
 define pavel = Character("Mayor Grayson", color="#cccccc", image="pavel", ctc="ctc_blink", ctc_position="nestled")   #dark gray
+# TODO: Lily and Sara don't have last names?! Lily has Hawaiian last name?
 define lily = Character("Lily", color="#8655bd", image="lily", ctc="ctc_blink", ctc_position="nestled")  #purple
 define sara = Character("Sara", color="#c64e89", image="sara", ctc="ctc_blink", ctc_position="nestled")  # dark pink
 define thuc = Character("Thuc Nguyen", color="a9ff22", image="thuc", ctc="ctc_blink", ctc_position="nestled")  #lime green
@@ -24,7 +25,7 @@ define martin = Character("Martín Perón", color="#990011", image="martin", ctc
 
 
 define tutorial = Character("Tutorial", color="#ededed", ctc="ctc_blink", ctc_position="nestled")  #light gray
-define note = Character("note", kind=nvl)
+define note = Character("note", kind=nvl, ctc="ctc_blink", ctc_position="nestled")
 
 # defaults used for debugging purposes
 define his_name = "Jack"

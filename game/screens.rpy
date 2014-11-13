@@ -7,10 +7,12 @@
 # Screen that's used to display adv-mode dialogue.
 # http://www.renpy.org/doc/html/screen_special.html#say
 screen say:
-
     # Defaults for side_image and two_window
     default side_image = None
     default two_window = False
+
+    # Use the quick menu.
+    use quick_menu
 
     # Decide if we want to use the one-window or two-window varaint.
     if not two_window:
@@ -54,8 +56,6 @@ screen say:
     else:
         add SideImage() xalign 0.0 yalign 1.0
 
-    # Use the quick menu.
-    use quick_menu
 
 #
 # Styles for use everywhere in the game
@@ -79,6 +79,16 @@ style button_text is sans_text:
     xalign 0.5
     yalign 0.5
     font sans_font
+
+style quick_frame:
+    xpadding 10
+    ypadding 10
+
+style quick_button:
+    background Frame("GUI/textbox-frame.png", 15, 15)
+    activate_sound "sfx/click.ogg"
+    xalign 0.5
+    yalign 0.5
 
 style large_button:
     background Frame("GUI/button_idle.png", 15, 15)
@@ -111,25 +121,26 @@ style frame:
     background Frame("GUI/frame.png", 10, 10)
 
 init -1 python hide:
-    style.window.background = "GUI/textbox.png"
+    # We do this in options.rpy now
+    #style.window.background = "GUI/textbox.png"
     
     style.say_dialogue.color = "#ffffff"
     # TODO: change font?
     # style.say_dialogue.size = 20
     
     ## Margin is space surrounding the window
-    style.window.left_margin = 0
-    style.window.right_margin = 0
-    style.window.top_margin = 0
-    style.window.bottom_margin = 0
+#    style.window.left_margin = 0
+#    style.window.right_margin = 0
+#    style.window.top_margin = 0
+#    style.window.bottom_margin = 0
 
-    ## Padding is space inside the window
-    style.window.left_padding = 180
-    style.window.right_padding = 100
-    style.window.top_padding = 460
-    style.window.bottom_padding = 10
+#    ## Padding is space inside the window
+#    style.window.left_padding = 180
+#    style.window.right_padding = 100
+#    style.window.top_padding = 460
+#    style.window.bottom_padding = 10
 
-    style.window.yminimum = 600 # This is the minimum height of the window, including the margins
+#    style.window.yminimum = 600 # This is the minimum height of the window, including the margins
 
 
 ##############################################################################
@@ -333,10 +344,7 @@ init -2 python:
 
 # Since saving and loading are so similar, we combine them into
 # a single screen, file_picker. We then use the file_picker screen
-# from simple load and save screens.
-
-# TODO: make the description contain the month when it saves, not when it displays.
-#     
+# from simple load and save screens.     
     
 screen file_picker:
     tag menu
@@ -345,7 +353,7 @@ screen file_picker:
         style "file_picker_frame"
         xalign 0.1
         yalign 0.1
-        xmaximum 800
+        xmaximum 835
 
         has vbox
 
@@ -353,6 +361,7 @@ screen file_picker:
         # page of files.
         hbox:
             style_group "file_picker_nav"
+            xalign 0.5
             
             textbutton _("Previous"):
                 action FilePagePrevious()
@@ -370,8 +379,8 @@ screen file_picker:
             textbutton _("Next"):
                 action FilePageNext()
 
-        $ columns = 3
-        $ rows = 3
+        $ columns = 2
+        $ rows = 2
                 
         # Display a grid of file slots.
         grid columns rows:
@@ -604,33 +613,41 @@ init -2 python:
 # A screen that's included by the default say screen, and adds quick access to
 # several useful functions.
 screen quick_menu:
-
+    zorder -1
     # Add an in-game quick menu.
-    hbox:
-        style_group "quick"
+    style_group "quick"
+    imagebutton auto "gui/config_%s.png" action ShowMenu('preferences') xpos 57 ypos 450 background Frame("GUI/textbox-frame.png", 10, 10) xpadding 12 ypadding 10
+    imagebutton auto "gui/save_%s.png" action ShowMenu('save') xpos 57 ypos 500 background Frame("GUI/textbox-frame.png", 10, 10) xpadding 12 ypadding 10
+    imagebutton auto "gui/quit_%s.png" action Quit(confirm=True) xpos 57 ypos 550 background Frame("GUI/textbox-frame.png", 10, 10) xpadding 12 ypadding 9
+    #TODO: FIx padding, position
+    #quit
     
-        xalign 1.0
-        yalign 1.0
+    
+#    hbox:
+#        style_group "quick"
+    
+#        xalign 1.0
+#        yalign 1.0
 
-        textbutton _("Q.Save") action QuickSave()
-        textbutton _("Q.Load") action QuickLoad()
-        textbutton _("Save") action ShowMenu('save')
-        textbutton _("Skip") action Skip()
-        textbutton _("Auto") action Preference("auto-forward", "toggle")
-        textbutton _("Prefs") action ShowMenu('preferences')
+#        textbutton _("Q.Save") action QuickSave()
+#        textbutton _("Q.Load") action QuickLoad()
+#        textbutton _("Save") action ShowMenu('save')
+#        textbutton _("Skip") action Skip()
+#        textbutton _("Auto") action Preference("auto-forward", "toggle")
+#        textbutton _("Prefs") action ShowMenu('preferences')
         
 init -2 python:
-    style.quick_button.set_parent('default')
-    style.quick_button.background = None
-    style.quick_button.xpadding = 5
+#    style.quick_button.set_parent('default')
+#    style.quick_button.background = None
+#    style.quick_button.xpadding = 5
 
-    style.quick_button_text.set_parent('default')
-    style.quick_button_text.size = 16
-    style.quick_button_text.idle_color = "#8888"
-    style.quick_button_text.hover_color = "#ccc"
-    style.quick_button_text.selected_idle_color = "#cc08"
-    style.quick_button_text.selected_hover_color = "#cc0"
-    style.quick_button_text.insensitive_color = "#4448"
+#    style.quick_button_text.set_parent('default')
+#    style.quick_button_text.size = 16
+#    style.quick_button_text.idle_color = "#8888"
+#    style.quick_button_text.hover_color = "#ccc"
+#    style.quick_button_text.selected_idle_color = "#cc08"
+#    style.quick_button_text.selected_hover_color = "#cc0"
+#    style.quick_button_text.insensitive_color = "#4448"
     
     # Set a default value for the auto-forward time, and note that AFM is
     # turned off by default.

@@ -22,7 +22,8 @@ label tutorial:
     scene screenshot_right with dissolve
     tutorial "On the right, you choose [her_name]'s focus for this month."
     tutorial "Taking it easy at work is more relaxing, but is not as useful to the colony."
-    tutorial "All the skills are useful and help [her_name] and the colony in different ways, so choose whichever skill you like."
+    tutorial "All the skills are useful and help [her_name] and the colony in different ways, so choose whichever skill you like. Mastery of a certain skill can unlock new scenes and help the colony in special ways."
+    tutorial "But remember, life's too short to master every skill (at least, until New Game+)!"
     tutorial "During Free Time, choosing to spend time together will increase their relationship, but is not as relaxing as spending time alone."
 
     scene screenshot with dissolve
