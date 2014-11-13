@@ -14,9 +14,12 @@ label knowledge_0:
     "I knew there was a library here, so I decided to check it out. A young man was intently reading from his computer pad at the desk when I walked in."
     show her normal at midleft with moveinleft
     her "Hello there, your name's Jed, right?"
-    jed "Howdy! Yeah, I'm Jed, but I'm afraid forgot your name."
-    her happy "It's okay, there's a lot of people here on the colony.  I'm [her_name]."
-    jed "That's right. So, [her_name]...what can I help you with?"
+    if (profession = "doctor"):
+        jed "Howdy, Doc! What can I help you with?"
+    else:
+        jed "Howdy! Yeah, I'm Jed, but I'm afraid forgot your name."
+        her happy "It's okay, there's a lot of people here on the colony.  I'm [her_name]."
+        jed "That's right. So, [her_name]...what can I help you with?"
     her normal "Well, I had a few minutes and I thought I'd see what sort of stuff you have here in the library."
     jed "Well, most books you can just borrow from our online library, but we do have some high-res maps of the planet and a few printed reference books.  We have also some tools and equipment people can borrow, like if you want to build something."
     her serious "Okay, that makes sense. We didn't have room to bring drills and wrenches for everyone, huh?"

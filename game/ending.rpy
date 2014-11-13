@@ -414,8 +414,12 @@ label show_credits:
     $ renpy.pause(6.0, hard=skippable)
     hide text with fade     
     show text "With background images by:\nLisa Horner\nWes Landaker\nAndrea Landaker\nNASA\nBurningwell\nESO/L. Calçada\n\nAnd the following Wikimedia Commons users:\nRandwick\nLabpluto123\nWrlctech\nEbyabe\nAvi/Skrewtap\nMarcus Budde\nAluter\nDorothea Witter-Rieder\nAnna Frodesiak\nAndrei Stroe\nJean-Pierre\n\nFiltered with Fotosketcher" with fade
-    $ renpy.pause(8.0, hard=skippable)    
+    $ renpy.pause(8.0, hard=skippable)
     # TODO: Add sound Credits
+    
+    hide text with fade
+    show text "Beta Testing by:\nWes Landaker\nLisa Horner\nCatherine White"
+    $ renpy.pause(6.0, hard=skippable)
     
     hide text with fade   
     show text "This open-source work is licensed under a {a=http://creativecommons.org/licenses/by-nc-sa/4.0/}Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License{/a}." with fade 

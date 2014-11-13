@@ -134,6 +134,8 @@ label day:
             "No":
                 $pass
         
+    $ renpy.choice_for_skipping()
+    $ renpy. notify("{vspace=550}{color=#000}{space=40}Autosaving...{/color}")
     # Now, we call the day planner, which may set the act variables
     # to new values. We call it with a list of periods that we want
     # to compute the values for.

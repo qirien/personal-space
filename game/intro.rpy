@@ -147,7 +147,7 @@ label marriage_proposal:
             $ relaxed += 5
         "Worried.":
             her concerned "[his_name], I love you, but are you sure you want to go to an entirely new planet? So many things could go wrong..."
-            him normal "I'm sure they will, [her_name], but I know it will be worth it. And when thing's do go wrong, I want you by my side."
+            him normal "I'm sure they will, [her_name], but I know it will be worth it. And when things do go wrong, I want you by my side."
             $ loved += 5
             $ relaxed -= 5
         "Annoyed.":

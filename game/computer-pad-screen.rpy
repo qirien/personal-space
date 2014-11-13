@@ -26,7 +26,6 @@ style cp_choice_button is button:
 
 screen computer_pad(periods):
     tag month_menu
-    $ renpy.choice_for_skipping()
     if (month == 1):
         use help_screen_1
 

@@ -12,6 +12,7 @@ screen say:
     default two_window = False
 
     # Use the quick menu.
+    # TODO: This shows up on the transition screens between events?
     use quick_menu
 
     # Decide if we want to use the one-window or two-window varaint.
@@ -605,6 +606,11 @@ screen yesno_prompt:
 init -2 python:    
     style.yesno_button.size_group = "yesno"
     style.yesno_label_text.text_align = 0.5
+        
+    # Set a default value for the auto-forward time, and note that AFM is
+    # turned off by default.
+    config.default_afm_time = 10
+    config.default_afm_enable = False
 
 
 ##############################################################################
@@ -616,42 +622,12 @@ screen quick_menu:
     zorder -1
     # Add an in-game quick menu.
     style_group "quick"
-    imagebutton auto "gui/config_%s.png" action ShowMenu('preferences') xpos 57 ypos 450 background Frame("GUI/textbox-frame.png", 10, 10) xpadding 12 ypadding 10
-    imagebutton auto "gui/save_%s.png" action ShowMenu('save') xpos 57 ypos 500 background Frame("GUI/textbox-frame.png", 10, 10) xpadding 12 ypadding 10
+    imagebutton auto "gui/save_%s.png" action ShowMenu('save') xpos 57 ypos 450 background Frame("GUI/textbox-frame.png", 10, 10) xpadding 12 ypadding 10
+    imagebutton auto "gui/config_%s.png" action ShowMenu('preferences') xpos 57 ypos 500 background Frame("GUI/textbox-frame.png", 10, 10) xpadding 12 ypadding 10
     imagebutton auto "gui/quit_%s.png" action Quit(confirm=True) xpos 57 ypos 550 background Frame("GUI/textbox-frame.png", 10, 10) xpadding 12 ypadding 9
-    #TODO: FIx padding, position
+    #TODO: This shows up
     #quit
     
-    
-#    hbox:
-#        style_group "quick"
-    
-#        xalign 1.0
-#        yalign 1.0
 
-#        textbutton _("Q.Save") action QuickSave()
-#        textbutton _("Q.Load") action QuickLoad()
-#        textbutton _("Save") action ShowMenu('save')
-#        textbutton _("Skip") action Skip()
-#        textbutton _("Auto") action Preference("auto-forward", "toggle")
-#        textbutton _("Prefs") action ShowMenu('preferences')
-        
-init -2 python:
-#    style.quick_button.set_parent('default')
-#    style.quick_button.background = None
-#    style.quick_button.xpadding = 5
-
-#    style.quick_button_text.set_parent('default')
-#    style.quick_button_text.size = 16
-#    style.quick_button_text.idle_color = "#8888"
-#    style.quick_button_text.hover_color = "#ccc"
-#    style.quick_button_text.selected_idle_color = "#cc08"
-#    style.quick_button_text.selected_hover_color = "#cc0"
-#    style.quick_button_text.insensitive_color = "#4448"
-    
-    # Set a default value for the auto-forward time, and note that AFM is
-    # turned off by default.
-    config.default_afm_time = 10
-    config.default_afm_enable = False
     
     
