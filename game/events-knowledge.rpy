@@ -11,23 +11,30 @@ label knowledge_def:
 label knowledge_0:
     scene bg library with fade
     show jed at midright with dissolve
-    "I knew there was a library here, so I decided to check it out. A young man was intently reading from his computer pad at the desk when I walked in."
+    "I knew there was a library here, so I decided to check it out. I sent Jed a message and he agreed to meet me there and show me around. When I arrived, he was lounging in a chair reading on his computer pad."
     show her normal at midleft with moveinleft
-    her "Hello there, your name's Jed, right?"
-    if (profession = "doctor"):
+    if (profession == "doctor"):
         jed "Howdy, Doc! What can I help you with?"
     else:
-        jed "Howdy! Yeah, I'm Jed, but I'm afraid forgot your name."
-        her happy "It's okay, there's a lot of people here on the colony.  I'm [her_name]."
-        jed "That's right. So, [her_name]...what can I help you with?"
+        jed "Howdy! [her_name], right? Well, what can I help you with?"
     her normal "Well, I had a few minutes and I thought I'd see what sort of stuff you have here in the library."
-    jed "Well, most books you can just borrow from our online library, but we do have some high-res maps of the planet and a few printed reference books.  We have also some tools and equipment people can borrow, like if you want to build something."
+    jed "Well, most books you can just borrow from our online library, but we do have some high-res maps of the planet and a few printed reference books.  We've also got some tools and equipment people can borrow, like if you want to build something."
     her serious "Okay, that makes sense. We didn't have room to bring drills and wrenches for everyone, huh?"
     jed "Yup. This is also where you can get new data from the extranet connection to Earth, though we've got limited bandwidth and it'll take a couple of years to get here."
     her surprised "What are those machines over there?"
-    jed "Those are our printers. You can print on paper, of course, and we have a 3D printer if you need to print something out of plastic. But we don't have a ton of either material, so you can't just print anything, and recycling's real important."
+    jed "Those are our printers. You can print on paper, of course, and we have a 3D printer if you need to print something out of metal or plastic. But we don't have a ton of either material, so you can't just print anything, and recycling's real important."
     her normal "That makes sense. Thanks for the tour, Jed."
     jed "You're welcome."
+    her surprised "By the way, what are you reading?"
+    jed "Aw, just a book, nothing special."
+    her normal "What's it about?"
+    jed "It's sort of a historical book about some settlers in Australia. New place, unfamiliar terrain, crazy people - sort of like us."
+    her serious "Hopefully without the crazy people part."
+    jed "Well, most folks are alright, but that Julia... man, she's a witch. Don't know how she passed the psych test to come up here."
+    her flirting "Same way you passed it, probably."
+    jed "Charm and good looks? I don't think so. She probably just fixed 'em with that glare of hers and they didn't dare tell her no."
+    her normal "Maybe so.  See you around, Jed."
+    jed "Bye."
     $ skill_knowledge += 10
 
     return

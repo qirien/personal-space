@@ -845,7 +845,7 @@ label monthly_event_7:
             $ made_love += 1
     
     "Midnight struck and we kissed. Here, in this moment, I felt like we could conquer anything..."
-    "But that was only because I didn't yet know what was in store."
+    "Would I have felt that way if I knew what was to come?"
     return
 
 # MONTH 8 Want to watch a movie, he is busy helping neighbor
@@ -1623,6 +1623,7 @@ label monthly_event_11:
     pavel_c "There's plenty left in the storehouse, but we want to make sure it lasts."
     ilian_c "Each family receives enough salt to satisfy dietary requirements."
     jed_c "Well, it sure ain't enough to satisfy deliciousness requirements."
+    nvl clear
     
     "I ran over to the lab the next morning, excited to plan our trip."
     scene bg lab with fade
@@ -1852,6 +1853,8 @@ label monthly_event_13:
     scene bg clinic with fade
     if (profession == "doctor"):
         "We didn't have a coroner or anything, so I took a look at the girl's body."
+        "It was only two months ago that I had treated her bacterial infection...and now she was dead."
+        "I took a deep breath, put on my doctor's mask of indifference, and examined her corpse."
         "I could tell she probably died the afternoon before. I found a gash on her head that looked pretty awful, and she had several broken bones."
         "The injuries seemed too severe to have been sustained after she fell in the river..."
     else:

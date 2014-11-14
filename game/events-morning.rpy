@@ -40,6 +40,7 @@ label act_skip_work:
                 her "As long as I get my job done, what's the big deal?"
                 pavel "Well, just see that you do get it done."
                 $ slacked_off = 1
+                $ relaxed -= 2
                 return
             "I'm pregnant." if ((is_pregnant) or (is_pregnant_later)):
                 her serious "Sorry, I didn't think being pregnant would make me so tired."
@@ -90,7 +91,7 @@ label work_0:
     show helen at right with moveinright
     pavel "Jed is in charge of the library, so if you need to research something or print something out, head over there. He and his wife Helen are also experts on raising cattle, and will be starting a ranch up to the north."
     pavel "And, their baby, who was born on the shuttle, was the first human being to be born in space!"
-    jed "Hey, y'all. Don't be strangers!"
+    jed "Hey, y'all. Don't be strangers! I'll mostly be up at the ranch, but send me a message and I'll come down to the library if y'all need help."
     helen "Hi..."
     hide jed
     hide helen
@@ -262,17 +263,17 @@ label work_1:
 
     # DOCTOR
     if (profession == "doctor"):
-        show her normal at center with dissolve
-        "Usually things were pretty quiet at the clinic. I made an appointment with each colonist to learn about each person's medical conditions, and sometimes made suggestions for how to deal with chronic problems. We had a few minor injuries setting up, but nothing serious."
+        show her normal at quarterright with dissolve
+        "Usually things were pretty quiet at the clinic. I made an appointment with each colonist to learn about each person's medical conditions, and sometimes made suggestions for how to deal with chronic problems. We had a few minor injuries while setting up, but nothing serious."
         "But one day in particular was extremely busy."
         her surprised "Oh! What happened?"
-        show her normal at quarterright with dissolve
-        show him annoyed at quarterleft with moveinleft
-        show jed at midleft with moveinleft
-        "[his_name] carried Jed in and set him in the exam table. I could tell his leg was hurt but he was not in immediate danger. I took his vitals while Jed filled me in."
+        show him annoyed at quarterleft
+        show jed at midleft
+        with moveinleft
+        "[his_name] carried Jed in and set him in the exam table. I could tell his leg was hurt but he was not in immediate danger. I took his vitals while [his_name] filled me in."
         show her serious
         him serious "We were putting together a mill for grain. But one of the heavy cast iron rollers fell on Jed here. We tried not to move his leg while we carried him over."
-        her normal "Good, thank you. You'll be all right, Jed."
+        her serious "Good, thank you. You'll be all right, Jed."
         jed "Thanks, doc. Hurts like hell, though."
         him normal "I'll see you later, [her_name]."
         her normal "Hey, thanks for bringing him in."
@@ -283,13 +284,19 @@ label work_1:
         play sound "sfx/radio.mp3"
         "Sara on the radio" "Doctor! You've gotta come right away; one of the kids stopped breathing - I think he swallowed something."
         "I started out the door while I talked to her on the radio. I hated to leave Jed alone, but this was urgent."
+        hide her with moveoutleft
+        scene bg path with fade
+        show her serious at left with moveinleft
         her "I'm on my way. How old is he?"
         "Sara on the radio" "It's Van Nguyen, he's three!"
+        show her serious at center with move
         her "Do you know how to do the Heimlich?"
         "Sara on the radio" "Yes! I mean, I've never done it before, but..."
         her angry "Do it! Put your fist right above his belly button, support it with your other hand, and push in and up forcefully."
+        show her serious at right with move
         "Sara on the radio" "She's doing what you said; it's not working!!"
         her serious "Keep trying! Then use your finger to sweep through his mouth to see if you can dislodge anything."
+        hide her with moveoutright
         "Sara on the radio" "Hurry, [her_name], he's starting to turn blue!"
 
         scene bg farm_interior with fade
@@ -307,8 +314,11 @@ label work_1:
             
         play sound "sfx/cough.mp3"
         "Finally, he coughed and started to breathe."
+        show sara normal
+        show her normal
         julia "Van! Oh, my boy!"
         "I didn't have time to stick around for adulation, though - Jed was still waiting for me to help his leg in the clinic."
+        hide her with moveoutleft
         scene bg clinic with fade
         show jed at midleft with dissolve
         show her normal at midright with moveinleft
@@ -472,8 +482,10 @@ label work_2:
     show her surprised
     "He winked at me playfully. Was he...flirting with me? I didn't have time to think about it; there was too much work to do."
     show her normal
-    hide pavel
+    hide pavel with moveoutleft
     "It was nice to have him around, especially when things got busy later in the day. He didn't wait for me to ask him to do things, but he didn't get in my way, either."
+    show brennan at center with move
+    show her serious at quarterright with move
     brennan "It was a pleasure working with you today, [her_name]."
     "He looked into my eyes intently as he shook my hand. His gaze was direct, friendly, and...amused? I looked away."
     her normal "Thanks for your help today."
@@ -644,14 +656,11 @@ label work_4:
     call set_work_bg
 
     # Doctor - problems with new local bacteria (no viruses, though)
-    #TODO change old fashioned stuff to new tech (genetic engineering, nanobots, etc)
-    # TODO: Message Lily on the computer?
-    # TODO: A parent comes to stay with the kids? Learn more of their past?
     if (profession == "doctor"):
         "There were not a lot of illnesses so far - they took great pains to make sure none of the colonists were carrying infectious diseases, and the viruses here probably hadn't had time to adapt to us yet."
         "But there were plenty of injuries, as people tried to adjust to new equipment, the different climate and atmosphere, and a new way of life."
         "Then, we met our first big challenge - the Streaks."
-        "The first incidence was with one of the kids. She fell down, got a scrape on her hand, and kept playing. The next day, the scrape was swollen and had red streaks all around it - like a child's drawing of the Sun."
+        "The first incidence was with one of the kids. Josephina fell down, got a scrape on her hand, and kept playing. The next day, the scrape was swollen and had red streaks all around it - like a child's drawing of the Sun."
         "Brennan and I cleaned out the wound and put a fresh bandage on it. We weren't too worried - it was a small scrape, and the kid was mostly acting fine."
         "But the next day, she came back. She had a fever and the wound wasn't healing well."
         show her normal at midleft with dissolve
@@ -662,52 +671,80 @@ label work_4:
         her "Brennan, we need to quarantine the clinic. I'll send out a message to everyone urging them to stay away, wash wounds promptly, and watch out for these symptoms."
         "Would this bacteria respond to traditional antibiotics? They seemed to have cell walls, just like bacteria on Earth, so we decided to give it a try."
         scene bg clinic with fade
+        show her normal at midleft
+        show brennan at midright
+        with dissolve
         "We stayed up all night with the girl, but the next day she was shaking, and her hand was starting to turn white around the cut. And now her brother was in the clinic with similar symptoms on his knee."
-        "We continued treatment all that day, but the wounds still didn't seem to be improving. Instead, the infection appeared to be spreading. We tried several antibiotics, but none had any effect on this strange organism."
+        show natalia at quarterright with moveinright
+        "Their mother, Natalia Perón, ignored the quarantine and came to be with them in the clinic."
+        natalia "You think a quarantine's going to stop me from being with Josephina and Raúl? Not this mama!"
+        "Though the kids appreciated her presence, it also made everything take longer because she wanted me to explain everything we were doing."
+        show her serious with dissolve
+        "We continued treatment all that day, but the wounds still didn't seem to be improving. Instead, the infection appeared to be spreading."
+        "We tried several antibiotic medications, but none had any effect on this strange organism. The girl complained of tingling in her hands and feet, which made me think the bacteria were attacking her spinal cord."
         show her serious at midright
         show brennan at midleft
         with dissolve
-        "I hoped we wouldn't have to amputate; it seemed like we had time to try one last thing."
-
+        
         menu:
             "What should we do?"
-            "Use maggots.":
-                her "Brennan, we need some maggots."
-                brennan "Maggots?! What for?"
-                her "They will eat the infected tissue but leave healthy tissue alone. We'll need a lot of them; I'll ask around, too, and we'll see what we can find."
-                "We ended up with about a hundred maggots from local insects. I hoped they would work like the ones on Earth. I kept some for breeding, since we might need more, and disinfected the rest and applied them to the wounds."
-                "The kids were a little grossed out, but they watched intently as we applied them and wrapped them gently with gauze."
-                "Then there was nothing to do but wait... somehow, I managed to fall asleep."
             "Ask Dr. Lily.":
                 her "There's got to be something these bacteria are weak against. Maybe Dr. Lily can help."
-                scene bg lab with fade
-                show lily at midright with dissolve
-                show her serious at midleft
-                with moveinleft
-                lily "Let's try several different kinds of antibiotics on different cultures and see if we can find what works best."
-                her "Good idea."
-                "We tried a little bit of all the medicines and substances we had that we thought could possibly work. We tried different chemicals, synthetic drugs, local mold, algae - anything we could think of."
-                "The hardest part was waiting around for the results, while the kids were suffering."
-                lily "Look at the algae culture! There's hardly any bacteria left."
+                brennan "But what about the quarantine? You said you didn't want to risk the bacteria infecting anyone else in the colony."
+                her concerned "We'll figure something out"
+                
+                her_c "Dr. Lily, do you have anything that might be helpful with fighting against local bacteria?"
+                lily_c "Perhaps some of the fungi or algae here have evolved ways to fight against it?"
+                her_c "Yes! Can you collect some samples and bring them to the clinic?  The Perón kids are here sick, and I don't want you to catch it."
+                lily_c "I will bring anything that might help."
+                nvl clear
+                
+                scene bg clinic with fade
+                show her serious at midleft with dissolve
+                show lily at midright with moveinright
+                her surprised "What! No, don't come in! Now we'll have to quarantine you, too..."
+                lily "You require my assistance. I am not concerned about being quarantined."
+                her normal "Okay, well, thank you. Let's get started."
+                "We tried a little bit of all the medicines and substances we had that we thought could possibly work. We tried different chemicals, local mold, algae - anything we could think of."
+                "The hardest part was waiting around for the results, while the kids were suffering. Natalia and Brennan did their best to keep them comfortable and distracted."
+
+                lily "Look at the algae culture; there's hardly any bacteria left."
                 her concerned "Hopefully the algae itself wouldn't be harmful to people..."
                 lily upset "I can't say for sure."
                 call set_work_bg
                 show her serious at midright
                 show brennan at midleft
                 with dissolve
-                "We decided to try it. The kids just kept getting worse, and I was worried the bacteria would spread to vital systems."
-                "We scraped off a little of the infected tissue and put some of the algae on with a new bandage."
-                "Then there was nothing to do but wait... somehow, I managed to fall asleep."
+                "We decided to try it. The kids just kept getting worse, and I was worried that if the bacteria spread further, it could do irreversible damage."
+                "I monitored the kids' condition, but there was really nothing to do but wait... somehow, I must have fallen asleep."
             "Cut out bacteria.":
                 her serious "We can't risk the bacteria spreading to vital systems. The antibiotics aren't working, and these kids' condition just keeps worsening. "
                 brennan "What are you going to do?"
-                her "I'm going to try to cut away the infected flesh to make it easier for the antibiocs to do their job."
-                brennan "That's going to be painful."
-                her "That's why your job is to keep the kid happy while I'm doing it."
+                her "I'm going to try to cut away the infected flesh to make it easier for the antibiotics to do their job."
+                natalia "What?! Don't we have anything better?!"
+                her "Honestly, I think this is the simplest option with the fewest side effects."
+                natalia "... I supposed I'll have to trust you, then."
+                brennan "Isn't that going to be painful?"
+                her "That's why your job is to keep the kid immobilized and happy while I'm doing it."
                 brennan "You have an awfully high opinion of my ability to keep people happy."
-                her annoyed "I have local anaesthetics I can use; just help her feel better."
-                "We told her what we were going to do, and then Brennan started telling her a story about faeries and flying mushrooms while I gave her the local anaesthetic. I didn't want to take out healthy skin, but I wanted to leave as little bacteria as possible, so it was pretty tricky."
+                her annoyed "I have local anaesthetics I can use; just help her not to be scared or wiggle around too much."
+                "We told her what we were going to do, and then Brennan and Natalia held her so she wouldn't move. Brennan started telling her a story about faeries and flying mushrooms while I gave her the local anaesthetic."
+                "I didn't want to take out healthy skin, but I wanted to leave as little bacteria as possible, so it was pretty tricky."
                 "We treated the boy the same way, and then I was so exhausted I fell asleep at my desk."
+            "Program nanobots.":
+                her serious "We'll see if we can program our nanobots to hunt and destroy this type of bacteria."
+                brennan "I hope you know how to do that."
+                her concerned "I've worked with them a few times before. Basically, we will set them in leukocyte mode and give it a sample of the bacteria we want it to fight. It will then seek out and destroy those wherever it finds them."
+                brennan "That sounds easy enough; why didn't we just try that in the first place?"
+                her serious "Because we don't have built-in algorithms for this kind of bacteria. We have to train the nanobots, which takes time, and if they are not trained properly they can damage the body's own cells instead of just the bacteria."
+                brennan "I'll leave you to it, then."
+                natalia "Good luck, Doctor [her_name]."
+                hide brennan with moveoutleft
+                hide natalia with moveoutright
+                "It took all day. The standard leukocyte programs ignored things they didn't recognize, like this alien bacteria, so I had to change their algorithms."
+                "Brennan and Natalia did their best to keep the kids comfortable and distracted while I worked."
+                "After several training passes, the highest accuracy I could get was 85\%. Hopefully their bodies could fight the rest of them on their own..."
+                "I injected the nanobots into the two kids around 3am. I stayed up, monitoring their condition, making sure their bodies didn't reject the nanobots, and then I must have fallen asleep somehow."
 
         scene black with fade
         scene bg clinic with fade
@@ -718,11 +755,12 @@ label work_4:
         "Brennan had fallen asleep on another bed, snoring softly."
         show her normal
         "On my desk, my computer pad was full of messages from everyone asking about the kids and the quarantine. I looked for messages from [his_name]."
-        him "1) Hey, [her_nickname], I haven't heard from you since the quarantine announcement...are you okay? I missed you today, but if anyone can help those kids, you can."
+        him_c "Hey, [her_nickname], I haven't heard from you since the quarantine announcement...are you okay? I missed you today, but if anyone can help those kids, you can."
         if (loved >= 5):
-            him "2) Starting to get a little worried here - any news?"
+            him_c "Starting to get a little worried here - any news?"
         if (loved >= 10):
-            him "3) [her_name], I am seriously considering breaking my own leg so that they'll let me in there with you! You better still be alive in there!"
+            him_c "[her_name], I am seriously considering breaking my own leg so that they'll let me in there with you! You better still be alive in there!"
+        nvl clear
 
         her happy "(He was so worried about me...)"
         $ loved += 2
@@ -816,7 +854,7 @@ label work_4:
 
     return
 
-# Month 12 - Solar flare while at work
+# Month 15 - Solar flare while at work
 label work_5:
     $ times_worked += 1
     call set_work_bg
@@ -857,7 +895,7 @@ label work_5:
     her serious "They just announced it on the radio; I don't know why we didn't have an earlier warning this time."
     martin "I can't stay here! I have to make sure Natalia is safe!"
     her concerned "Please calm down. I'm sure your wife knows what to do."
-    martin "Natalia always forgets to turn the radio on! She might not even know there is a flare! And the little ones are at home with her."
+    martin "Natalia always forgets to turn the radio on! She might not even know there is a flare! And Mateo is at home with her..."
     "I tried contacting his family on the radio, but the radiation from the flare was interfering with our transmissions. I couldn't connect my computer pad to the wireless network, either."
     play music "music/NoOneWillKnow.ogg" fadeout 3.0
     "Mr. Perón was getting more and more distraught. I was worried he was going to try and leave, and I wasn't sure I could stop him."
@@ -903,7 +941,7 @@ label work_5:
 
     if (profession == "doctor"):
         show brennan at midleft with moveinleft
-        "The flare was over after a few more hours, and Mr. Perón brought Natalia and the little kids to be treated for radiation sickness.  Afterwards, I insisted on Brennan being treated, too."
+        "The flare was over after a few more hours, and Mr. Perón brought Natalia and little Mateo to be treated for radiation sickness.  Afterwards, I insisted on Brennan being treated, too."
         her serious "You've absorbed at least [grays_absorbed] grays of radiation..."
         brennan "Grays of radiation? That makes it sound like I've got aliens living inside me."
         her annoyed "Stop joking and lie down. We need to see how bad it is."
@@ -937,7 +975,7 @@ label work_5:
 
     return
 
-# MONTH 15 - lunch with Brennan
+# MONTH 18 - lunch with Brennan
 label work_6:
     $ times_worked += 1
     call set_work_bg

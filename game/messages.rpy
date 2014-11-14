@@ -299,7 +299,7 @@ label msg_16:
     brennan_c "Whatever she has to say, it was completely worth it, Jed. That was your best creation yet."
     naomi_c "I'm sure I don't have to remind you gentlemen to make sure the community center is ready for the meeting this afternoon."
     brennan_c "No problem, we got it covered."
-    brennan_c "Ha ha, get it, man?! We got it \"covered\"?! Because the floor is--"
+    brennan_c "Ha ha, get it, man?! We got it \"covered\"?! Because the floor is {b}covered{/b} in--"
     jed_c "your hilarious."
     return
     

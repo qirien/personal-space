@@ -203,7 +203,6 @@ screen input:
         text prompt
         input id "input"
 
-    use quick_menu
         
      
 ##############################################################################

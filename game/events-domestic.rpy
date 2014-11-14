@@ -161,7 +161,12 @@ label domestic_3:
             her concerned "That's true... but I don't know anything about how to take care of them."
             him normal "Don't worry about it; I'll take care of them."
             her normal "Okay, great. I'll tell Thuc tomorrow."
-            "[his_name] and I talked it over, and we decided to fence in a part of the wild area not too far from the house for the goats."
+            scene bg fields with fade
+            show lettie at right with dissolve            
+            show goat_flip at left
+            show goat at center
+            show goat_small at quarterright
+            "[his_name] and I talked it over, and we decided to fence in a part of the wild area not too far from the house for the goats."            
             "There were three of them, two males and a female, and I became remarkably attached to them. They worked hard eating the strange plants from this planet."            
 
             $ skill_domestic += 10
@@ -438,7 +443,7 @@ label domestic_7:
 label domestic_8:
     scene bg farm_interior with fade
     "[his_name] was harvesting a lot of vegetables and fruits, and while the cellar kept some things cool and dry, other produce didn't last very long."
-    "We had so many tomatoes and zuchinis there was no way we could possibly eat them all before they went bad. We took a bunch to the storehouse, but they told us that everyone else had all they could eat, too."
+    "We had so many tomatoes and zucchinis there was no way we could possibly eat them all before they went bad. We took a bunch to the storehouse, but they told us that everyone else had all they could eat, too."
     "I didn't want them to go to waste, and I knew we would be wishing we had some more later, so I decided to preserve them. But what should I turn them into?"
     menu:
         "What should I do?"
