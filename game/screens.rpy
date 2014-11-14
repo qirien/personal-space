@@ -10,9 +10,9 @@ screen say:
     # Defaults for side_image and two_window
     default side_image = None
     default two_window = False
-
+    default tt = Tooltip("")
+    
     # Use the quick menu.
-    # TODO: This shows up on the transition screens between events?
     use quick_menu
 
     # Decide if we want to use the one-window or two-window varaint.
@@ -63,6 +63,10 @@ screen say:
 # Custom code for our game goes here
 
 # Consolidate Sans fonts so you only have to change them 1 place
+
+style say_window is window:
+    xoffset 25
+    
 style sans_text is text:
     font sans_font
     
@@ -622,11 +626,35 @@ screen quick_menu:
     zorder -1
     # Add an in-game quick menu.
     style_group "quick"
-    imagebutton auto "gui/save_%s.png" action ShowMenu('save') xpos 57 ypos 450 background Frame("GUI/textbox-frame.png", 10, 10) xpadding 12 ypadding 10
-    imagebutton auto "gui/config_%s.png" action ShowMenu('preferences') xpos 57 ypos 500 background Frame("GUI/textbox-frame.png", 10, 10) xpadding 12 ypadding 10
-    imagebutton auto "gui/quit_%s.png" action Quit(confirm=True) xpos 57 ypos 550 background Frame("GUI/textbox-frame.png", 10, 10) xpadding 12 ypadding 9
-    #TODO: This shows up
-    #quit
+    
+    imagebutton:
+        auto "gui/save_%s.png"
+        action ShowMenu('save')
+        xpos 82
+        ypos 450
+        background Frame("GUI/textbox-frame.png", 10, 10)
+        xpadding 12
+        ypadding 10
+        hovered tt.Action("Save")
+    imagebutton:
+        auto "gui/config_%s.png"
+        action ShowMenu('preferences')
+        xpos 82
+        ypos 500
+        background Frame("GUI/textbox-frame.png", 10, 10)
+        xpadding 12
+        ypadding 10
+        hovered tt.Action("Config")
+    imagebutton:
+        auto "gui/quit_%s.png"
+        action Quit(confirm=True)
+        xpos 82
+        ypos 550
+        background Frame("GUI/textbox-frame.png", 10, 10)
+        xpadding 12
+        ypadding 9
+        hovered tt.Action("Quit")
+    text tt.value ypos 420 xpos 75
     
 
     
