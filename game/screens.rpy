@@ -58,96 +58,6 @@ screen say:
         add SideImage() xalign 0.0 yalign 1.0
 
 
-#
-# Styles for use everywhere in the game
-# Custom code for our game goes here
-
-# Consolidate Sans fonts so you only have to change them 1 place
-
-style say_window is window:
-    xoffset 25
-    
-style sans_text is text:
-    font sans_font
-    
-style button:
-    background Frame("GUI/button_idle.png", 15, 15)
-    hover_background Frame("GUI/button_selected.png", 15, 15)
-    insensitive_background Frame("GUI/button_insensitive.png", 15, 15)
-    selected_background Frame("GUI/button_selected.png", 15, 15)
-    yminimum 40
-    activate_sound "sfx/click.ogg"
-
-style button_text is sans_text:
-    color "#fff"
-    insensitive_color "#666"
-    xalign 0.5
-    yalign 0.5
-    font sans_font
-
-style quick_frame:
-    xpadding 10
-    ypadding 10
-
-style quick_button:
-    background Frame("GUI/textbox-frame.png", 15, 15)
-    activate_sound "sfx/click.ogg"
-    xalign 0.5
-    yalign 0.5
-
-style large_button:
-    background Frame("GUI/button_idle.png", 15, 15)
-    hover_background Frame("GUI/button_selected.png", 15, 15)
-    insensitive_background Frame("GUI/button_insensitive.png", 15, 15)
-    selected_background Frame("GUI/button_selected.png", 15, 15)
-    yminimum 80
-    xminimum 40
-    activate_sound "sfx/click.ogg"
-
-style large_button_text is sans_text:
-    color "#fff"
-    insensitive_color "#666"
-    size 16
-    xalign 0.5
-    
-style label_text:
-    color "#222"
-    
-style nvl_label is sans_text:
-    size 26
-    yalign 0.0
-    text_align 0.0
-    
-style nvl_dialogue is sans_text:
-    size 20
-    #xpos 100
-
-style frame:
-    background Frame("GUI/frame.png", 10, 10)
-
-init -1 python hide:
-    # We do this in options.rpy now
-    #style.window.background = "GUI/textbox.png"
-    
-    style.say_dialogue.color = "#ffffff"
-    # TODO: change font?
-    # style.say_dialogue.size = 20
-    
-    ## Margin is space surrounding the window
-#    style.window.left_margin = 0
-#    style.window.right_margin = 0
-#    style.window.top_margin = 0
-#    style.window.bottom_margin = 0
-
-#    ## Padding is space inside the window
-#    style.window.left_padding = 180
-#    style.window.right_padding = 100
-#    style.window.top_padding = 460
-#    style.window.bottom_padding = 10
-
-#    style.window.yminimum = 600 # This is the minimum height of the window, including the margins
-
-
 ##############################################################################
 # Choice
 #
@@ -553,20 +463,6 @@ screen preferences:
                         action Play("voice", config.sample_voice)
                         style "soundtest_button"
 
-init -2 python:
-    style.pref_frame.xfill = True
-    style.pref_frame.xmargin = 5
-    style.pref_frame.top_margin = 5
-
-    style.pref_vbox.xfill = True
-
-    style.pref_button.size_group = "pref"
-    style.pref_button.xalign = 1.0
-
-    style.pref_slider.xmaximum = 192
-    style.pref_slider.xalign = 1.0
-
-    style.soundtest_button.xalign = 1.0
 
 
 ##############################################################################
@@ -624,37 +520,22 @@ init -2 python:
 screen quick_menu:
     zorder -1
     # Add an in-game quick menu.
-    style_group "quick"
     
-    imagebutton:
-        auto "gui/save_%s.png"
-        action ShowMenu('save')
-        xpos 82
-        ypos 450
-        background Frame("GUI/textbox-frame.png", 10, 10)
-        xpadding 12
-        ypadding 10
-        hovered tt.Action("Save")
-    imagebutton:
-        auto "gui/config_%s.png"
-        action ShowMenu('preferences')
-        xpos 82
-        ypos 500
-        background Frame("GUI/textbox-frame.png", 10, 10)
-        xpadding 12
-        ypadding 10
-        hovered tt.Action("Config")
-    imagebutton:
-        auto "gui/quit_%s.png"
-        action Quit(confirm=True)
-        xpos 82
-        ypos 550
-        background Frame("GUI/textbox-frame.png", 10, 10)
-        xpadding 12
-        ypadding 9
-        hovered tt.Action("Quit")
-    text tt.value ypos 420 xpos 75
-    
-
-    
-    
+    vbox:
+        style_group "quick"
+        xpos 55
+        ypos 460
+        spacing 12
+        imagebutton:
+            auto "gui/save_%s.png"
+            action ShowMenu('save')
+            hovered tt.Action("Save")
+        imagebutton:
+            auto "gui/config_%s.png"
+            action ShowMenu('preferences')
+            hovered tt.Action("Config")
+        imagebutton:
+            auto "gui/quit_%s.png"
+            action Quit(confirm=True)
+            hovered tt.Action("Quit")
+    text tt.value ypos 420 xpos 55 outlines [(1, "#111", 1, 1)]

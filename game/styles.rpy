@@ -1,57 +1,90 @@
-# This file contains styles for the day planner.
+#
+# Styles for use everywhere in the game
+#
 
-init python:
+# Consolidate Sans fonts so you only have to change them 1 place
+style sans_text is text:
+    font sans_font
 
-    # Place the day planner.
-    style.dp_frame.ypos = 0
-    style.dp_frame.yanchor = 0.0
-    style.dp_frame.xalign = 0.5
-
-    # Spacing betweeen the choices and the done button.
-    style.dp_vbox.box_spacing = 10
-
-    # Spacing between the choice columns.
-    style.dp_hbox.box_spacing = 20
-
-    # Center the choices.
-    style.dp_choice.xalign = 0.5
-
-    # Center the label of each choice.
-    style.dp_label.xalign = 0.5
-
-    style.dp_label_text.text_align = 0.5
-
-    # Make each choice button the same size, and centered.
-    style.dp_choice_button.size_group = "dp_choice"
-    style.dp_choice_button.xalign = 0.5
-    style.dp_choice_button_text.size = 16
-
-    # Center the done button.
-    style.dp_done_button.xalign = 0.5
-
-    # Put a margin on the stats frame.
-    style.stats_frame.xmargin = 10
-    style.stats_frame.ymargin = 5
-
-    # Space between the label and the stats.
-    style.stats_vbox.box_first_spacing = 10
-
-    # Put blank space around each stat name, and right-justify.
-    style.stat_label.xminimum = 100
-    style.stat_label.xmaximum = 110
-    style.stat_label_text.xalign = 1.0
-    style.stat_label_text.yalign = 0.5
-    style.stat_label.xmargin = 5
-    style.stat_label_text.size = 16
+#style say_window is window:
+#    xoffset 25
     
-    # Put blank space around each stat value, and right-justify.
-    style.stat_value_label.xminimum = 80
-    style.stat_value_label.xmaximum = 100
-    style.stat_value_label_text.yalign = 0.5
-    style.stat_value_label_text.xalign = 0.0
-    style.stat_value_label_text.size = 16
-        
-    # Center the stat bar vertically.
-    style.stat_bar.yalign = 0.5
-    style.stat_bar.xminimum = 200
-    style.stat_bar.xmaximum = 200
+style say_dialogue:
+    color "#FFFFFF"
+    
+style button:
+    background Frame("GUI/button_idle.png", 15, 15)
+    hover_background Frame("GUI/button_selected.png", 15, 15)
+    insensitive_background Frame("GUI/button_insensitive.png", 15, 15)
+    selected_background Frame("GUI/button_selected.png", 15, 15)
+    yminimum 40
+    activate_sound "sfx/click.ogg"
+
+style button_text is sans_text:
+    color "#fff"
+    insensitive_color "#666"
+    xalign 0.5
+    yalign 0.5
+    font sans_font
+
+style quick_frame:
+    xpadding 10
+    ypadding 10
+
+style quick_button:
+    background Frame("GUI/textbox-frame.png", 15, 15)
+    activate_sound "sfx/click.ogg"
+    xalign 0.5
+    yalign 0.5
+
+style large_button:
+    background Frame("GUI/button_idle.png", 15, 15)
+    hover_background Frame("GUI/button_selected.png", 15, 15)
+    insensitive_background Frame("GUI/button_insensitive.png", 15, 15)
+    selected_background Frame("GUI/button_selected.png", 15, 15)
+    yminimum 80
+    xminimum 40
+    activate_sound "sfx/click.ogg"
+
+style large_button_text is sans_text:
+    color "#fff"
+    insensitive_color "#666"
+    size 16
+    xalign 0.5
+    
+style label_text:
+    color "#222"
+
+style frame:
+    background Frame("GUI/frame.png", 10, 10)
+
+# NVL Styles
+style nvl_label is sans_text:
+    size 26
+    yalign 0.0
+    text_align 0.0
+    
+style nvl_dialogue is sans_text:
+    size 20
+    #xpos 100
+
+# Preferences Styles
+style pref_frame:
+    xfill True
+    xmargin 5
+    top_margin 5
+    
+style pref_vbox:
+    xfill True
+    
+style pref_button:
+    size_group "pref"
+    xalign 1.0
+    
+style pref_slider:
+    xmaximum 192
+    xalign 1.0
+    
+style soundtest_button:
+    xalign 1.0
+    

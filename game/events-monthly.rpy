@@ -2276,7 +2276,7 @@ label monthly_event_15:
                     her serious "Well, we can't change it now. Just come eat some breakfast."
                     $ loved -= 2
                 $ relaxed -= 2
-            "I'm mortified":
+            "I'm mortified!":
                 her surprised "I'm mortified! I don't want people thinking about us conceiving a baby!"
                 him serious "Don't you think it's pretty obvious? I mean, healthy, newly-married couple on a colony, that's kind of why we're here?"
                 her sad "Yeah, but... it should be more private than that."

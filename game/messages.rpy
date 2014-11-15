@@ -175,7 +175,7 @@ label msg_8:
         her_c "Sure, bring it by sometime."
         
     naomi_c "I'm sorry to have to bring this up, but some candles are missing from the chapel. If you borrowed them, please return them."
-    natalia_c "I was wondering where those came from! I'll send Raúl over to give them back."
+    natalia_c "I was wondering where those came from! I'll send Raúl and Josephina over to give them back."
     naomi_c "Thank you."
     return
 
