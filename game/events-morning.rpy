@@ -87,13 +87,13 @@ label work_0:
     hide ilian
     hide sara
     with moveoutright
-    show jed at midright with moveinright
+    show pete at midright with moveinright
     show helen at right with moveinright
-    pavel "Jed is in charge of the library, so if you need to research something or print something out, head over there. He and his wife Helen are also experts on raising cattle, and will be starting a ranch up to the north."
+    pavel "Pete is in charge of the library, so if you need to research something or print something out, head over there. He and his wife Helen are also experts on raising cattle, and will be starting a ranch up to the north."
     pavel "And, their baby, who was born on the shuttle, was the first human being to be born in space!"
-    jed "Hey, y'all. Don't be strangers! I'll mostly be up at the ranch, but send me a message and I'll come down to the library if y'all need help."
+    pete "Hey, y'all. Don't be strangers! I'll mostly be up at the ranch, but send me a message and I'll come down to the library if y'all need help."
     helen "Hi..."
-    hide jed
+    hide pete
     hide helen
     with moveoutright
     pavel "Next I want to introduce our farmers."
@@ -268,13 +268,13 @@ label work_1:
         "But one day in particular was extremely busy."
         her surprised "Oh! What happened?"
         show him annoyed at quarterleft
-        show jed at midleft
+        show pete at midleft
         with moveinleft
-        "[his_name] carried Jed in and set him in the exam table. I could tell his leg was hurt but he was not in immediate danger. I took his vitals while [his_name] filled me in."
+        "[his_name] carried Pete in and set him in the exam table. I could tell his leg was hurt but he was not in immediate danger. I took his vitals while [his_name] filled me in."
         show her serious
-        him serious "We were putting together a mill for grain. But one of the heavy cast iron rollers fell on Jed here. We tried not to move his leg while we carried him over."
-        her serious "Good, thank you. You'll be all right, Jed."
-        jed "Thanks, doc. Hurts like hell, though."
+        him serious "We were putting together a mill for grain. But one of the heavy cast iron rollers fell on Pete here. We tried not to move his leg while we carried him over."
+        her serious "Good, thank you. You'll be all right, Pete."
+        pete "Thanks, doc. Hurts like hell, though."
         him normal "I'll see you later, [her_name]."
         her normal "Hey, thanks for bringing him in."
         hide him
@@ -283,7 +283,7 @@ label work_1:
         "I was just about to put him under so I could put in some pins when the radio crackled and I heard Sara."
         play sound "sfx/radio.mp3"
         "Sara on the radio" "Doctor! You've gotta come right away; one of the kids stopped breathing - I think he swallowed something."
-        "I started out the door while I talked to her on the radio. I hated to leave Jed alone, but this was urgent."
+        "I started out the door while I talked to her on the radio. I hated to leave Pete alone, but this was urgent."
         hide her with moveoutleft
         scene bg path with fade
         show her serious at left with moveinleft
@@ -317,20 +317,20 @@ label work_1:
         show sara normal
         show her normal
         julia "Van! Oh, my boy!"
-        "I didn't have time to stick around for adulation, though - Jed was still waiting for me to help his leg in the clinic."
+        "I didn't have time to stick around for adulation, though - Pete was still waiting for me to help his leg in the clinic."
         hide her with moveoutleft
         scene bg clinic with fade
-        show jed at midleft with dissolve
+        show pete at midleft with dissolve
         show her normal at midright with moveinleft
         her "Sorry to leave you waiting so long; I know you're hurting- oh!"
         show her surprised
         "I had bandaged up his leg, but the wound had reopened and he was bleeding a lot."
-        jed "Doc, I tried to, to, stop the bleeding..."
+        pete "Doc, I tried to, to, stop the bleeding..."
         her serious "It's okay, I'm here now. You're going to be just fine..."
-        "I took care of his leg, and several hours later, Jed woke up."
-        jed "Hey, is Van okay?"
+        "I took care of his leg, and several hours later, Pete woke up."
+        pete "Hey, is Van okay?"
         her surprised "Van? Oh, yes, I got there just in time."
-        jed "They really ought to have someone in here helping you out. I mean, what if you were in the middle of surgery or something?"
+        pete "They really ought to have someone in here helping you out. I mean, what if you were in the middle of surgery or something?"
         show her normal
         menu:
             "Do I need help?"
@@ -1270,10 +1270,11 @@ label work_7:
                     "The table had a mess kit and a cable for charging a computer pad. There was another cable, too, though, and when I followed it, it went underneath the table where there was a strange device."
                     "It looked a little bit like a computer, with a metal case and some LEDs lighting up every now and then. But there was no writing or labels on the case at all. It made a low humming noise."
                     her surprised "What is that?"
+                    show brennan at left with moveinleft
                     "Suddenly, I heard footsteps and I jumped. Brennan was in the doorway, watching me. He seemed amused."
                     her concerned "I was just, ah, well..."
                     "He entered the room, closing the door behind him."
-                    show brennan at center with moveinleft
+                    show brennan at midleft with move
                     jump brennan_confess
                     
                 "Give him the batteries." if has_batteries:
@@ -1363,8 +1364,8 @@ label brennan_confess:
             natalia "Or he was just doing that so you wouldn't suspect him!"
             hide natalia
             hide martin
-            show jed at left with dissolve
-            jed "Yeah, there's no way we can trust him after this!"
+            show pete at left with dissolve
+            pete "Yeah, there's no way we can trust him after this!"
             show him annoyed at quarterright
             him annoyed "Not that we trusted him much before..."
             show her serious at right
@@ -1375,12 +1376,12 @@ label brennan_confess:
             hide julia
             show sara at center with dissolve
             sara "My family is going through a lot right now... at least, they were four years ago. Being able to write back and forth to them will help me so much."
-            show jed at left with dissolve
-            jed "..."
+            show pete at left with dissolve
+            pete "..."
             him concerned "..."
             her serious "I'm not asking you to trust Brennan. But can you forgive him enough to let him keep his place here?"
             brennan "I always hoped that the QEC would work well enough that eventually you could all use it... but they wanted to keep it a secret. Now that the secret's out, they have decided to let you all use it."
-            jed "I don't think you got a choice, right?"
+            pete "I don't think you got a choice, right?"
             brennan "Even if you stole the device from me, they could simply turn off their receiver, or refuse to pass on your messages. It might be better to retain their goodwill."
             hide sara 
             show julia at center with dissolve
@@ -1405,12 +1406,13 @@ label brennan_confess:
                 "{i}Kiss me.{/i}" if ((brennan_relationship >= 2) and (loved <= 5)):
                     her serious "Kiss me. Now."
                     "What was I saying? What was I doing? I thought he was going to laugh, and I could pretend it was a joke, but then he stepped closer."
+                    show brennan at center with move                    
                     show her concerned at midright with move
-                    show brennan at center with move
                     "My heart raced and my mind shut down as there were no more words, just flesh melting into flesh with all the passion we had been holding back."
                     scene black with fade
+                    play sound "sfx/cloth.mp3"
                     "I didn't think, didn't analyze, didn't worry about [his_name]; I just existed, in that eternal moment of pleasure and mutual acceptance."
-                    "Afterwards, we didn't say anything. I just went home, and for a while w pretended nothing had happened..."
+                    "Afterwards, we didn't say anything. I just went home, and for a while we pretended nothing had happened..."
                     $ cheated_on_him = True
                 "You owe me one.":
                     her flirting "Never mind, just... keep in mind that you owe me one."

@@ -1496,9 +1496,9 @@ label goto_ocean:
     show lily at left
     show her normal at midright
     with dissolve
-    if (ocean_character == "Jed"):
-        show jed at right with dissolve
-        jed "Whoa, this beach reminds me Earth. Lots of rocks and a big blue wet thing." 
+    if (ocean_character == "Pete"):
+        show pete at right with dissolve
+        pete "Whoa, this beach reminds me Earth. Lots of rocks and a big blue wet thing." 
         her normal "I think you mean ocean. It's making me a little homesick too." 
     if (ocean_character == "Brennan"):
         show brennan at right with dissolve
@@ -1514,8 +1514,8 @@ label goto_ocean:
     "We gathered saltwater in big pots and strained it through cloth. Then we built fires and started boiling the water near the shore."
     show lily normal
 
-    if (ocean_character == "Jed"):
-        jed "Okay, you guys do the stuff on the shore, and I'll get some of this coastal brush." 
+    if (ocean_character == "Pete"):
+        pete "Okay, you guys do the stuff on the shore, and I'll get some of this coastal brush." 
         lily "I'm going to take some of the smaller creatures and plants back too."
     elif (ocean_character == "Brennan"):
         brennan "Lovely. Is it all right if I touch the water?" 
@@ -1535,8 +1535,8 @@ label goto_ocean:
     show seastar at left behind lily with moveinleft
     "The incoming waves were purple with one kind of alien sea creature. It had six spiny or hairy arms, and floated like a jellyfish."  
     lily happy "Oh! I've got to record this."
-    if (ocean_character == "Jed"):
-        jed "Be careful! Those critters might be deadly!"
+    if (ocean_character == "Pete"):
+        pete "Be careful! Those critters might be deadly!"
     elif (ocean_character == "Brennan"):
         brennan "Just be careful not to get swept away!" 
     elif (ocean_character == "Sara"):
@@ -1557,8 +1557,8 @@ label goto_ocean:
     elif (skill_knowledge >= 40):
         "Lily appeared to be temporarily paralyzed, so I motioned to [ocean_character] to help me carry her further inland."
         show her at right with move
-        if (ocean_character == "Jed"):
-            show jed at midleft with move
+        if (ocean_character == "Pete"):
+            show pete at midleft with move
         elif (ocean_character == "Brennan"):
             show brennan at midleft with move
         else:
@@ -1568,8 +1568,8 @@ label goto_ocean:
     else:
         "I had no idea what to do next. I just stood there, scared."
         show her at right with move
-        if (ocean_character == "Jed"):
-            show jed at midleft with move
+        if (ocean_character == "Pete"):
+            show pete at midleft with move
         elif (ocean_character == "Brennan"):
             show brennan at midleft with move
         else:
@@ -1587,8 +1587,8 @@ label goto_ocean:
         brennan "Did that animal make you fall asleep?"
         lily "I don't have narcolepsy, but it has been an unusually exhausting day. Maybe I overextended myself."
         brennan "Well, let me know what you find out about that thing."
-    elif (ocean_character == "Jed"):
-        "She carefully grabbed it with her tweezers and moved it into a specimen bag. Jed and I looked at each other with exasperation. Maybe she was a little TOO dedicated."
+    elif (ocean_character == "Pete"):
+        "She carefully grabbed it with her tweezers and moved it into a specimen bag. Pete and I looked at each other with exasperation. Maybe she was a little TOO dedicated."
     else:
         sara "Don't worry, I made sure your camera was safe!"
         lily happy "Thank you! Perhaps I just had a little too much sun today."
@@ -1622,7 +1622,7 @@ label monthly_event_11:
     helen_c "Wait, are we out of salt?! Isn't that pretty urgent?!"
     pavel_c "There's plenty left in the storehouse, but we want to make sure it lasts."
     ilian_c "Each family receives enough salt to satisfy dietary requirements."
-    jed_c "Well, it sure ain't enough to satisfy deliciousness requirements."
+    pete_c "Well, it sure ain't enough to satisfy deliciousness requirements."
     nvl clear
     
     "I ran over to the lab the next morning, excited to plan our trip."
@@ -1642,26 +1642,26 @@ label monthly_event_11:
     scene black with fade
     menu:
         "Whom should I ask to come?"
-        "Jed, the librarian":
-            $ ocean_character = "Jed"
+        "Pete, the librarian":
+            $ ocean_character = "Pete"
             scene bg library
-            show jed at quarterright with dissolve
+            show pete at quarterright with dissolve
             show her normal at midleft with moveinleft
-            her normal "Hey, Jed."
-            jed "Hi, how can I help you?"
+            her normal "Hey, Pete."
+            pete "Hi, how can I help you?"
             her happy "Want to come with Lily and me to the seashore?"
-            jed "The seashore? The one a few klicks away?"      
+            pete "The seashore? The one a few klicks away?"      
             her happy "Yeah, a real beach! Bring a shovel!"
-            jed "No way. Not after what I've been reading about giant sea creatures and this planet."  
+            pete "No way. Not after what I've been reading about giant sea creatures and this planet."  
             her surprised "What have you been reading?"  
-            jed "Well, I read that the animals in the ocean probably tolerate radiation the best, since the water can diffuse the radiation."
-            jed "The satellite telescope that came with us showed some strange, large shadows in a few of the oceans, and no one knows what they are."
+            pete "Well, I read that the animals in the ocean probably tolerate radiation the best, since the water can diffuse the radiation."
+            pete "The satellite telescope that came with us showed some strange, large shadows in a few of the oceans, and no one knows what they are."
             her serious "It could be some whales or something?"
-            jed "No. These are much bigger. Pretty darn creepy, if you ask me."
+            pete "No. These are much bigger. Pretty darn creepy, if you ask me."
             her normal "Well, we're not going out to the middle of the ocean, just the shore. Wouldn't it be fun to get out of your stuffy library for a day?"
-            jed "Now that you mention it, I have been wanting to go for a hike. And maybe I can get some extra salt, too."
+            pete "Now that you mention it, I have been wanting to go for a hike. And maybe I can get some extra salt, too."
             her happy "Just think of it as a long hike, and if the beach scares you you can stay far away from it."
-            jed "Okay, can do."
+            pete "Okay, can do."
                     
         "Brennan, my co-worker":
             $ ocean_character = "Brennan"
@@ -1833,12 +1833,12 @@ label monthly_event_12:
 
 # MONTH 13 - Jury Duty
 # uses spiritual, technical
-# TODO: Have Jed get depressed later about being accused and not trusted anymore
+# TODO: Have Pete get depressed later about being accused and not trusted anymore
 label monthly_event_13:
     scene bg talam with fade
     play music "music/NoOneWillKnow.ogg" fadeout 3.0
     "I hadn't thought about it much before, but we didn't have a lot of laws here on Talaam. Some things just didn't apply (like taxes, food regulations, etc), but I remember signing something about agreeing to abide by a set of laws that sounded very reasonable."
-    "It had never seemed like something I would have to worry about.  Until I had to be on the jury for Jed's trial, that is..."
+    "It had never seemed like something I would have to worry about.  Until I had to be on the jury for Pete's trial, that is..."
     "We hadn't had any crime our whole first year (though we certainly had our share of arguments, accidents, and disagreements)."
     "After all, who would hurt anyone else in our colony? We needed each other too much."
     "But that peace couldn't last forever..."
@@ -1870,23 +1870,23 @@ label monthly_event_13:
     pavel "I know everyone is worried, and scared, but we can't stop trusting each other. We will find who's responsible for this."
     show natalia at right with moveinright
     natalia "Who knows who will be next?! It clearly wasn't an accident!"
-    show jed at midleft with moveinleft
-    "But then, Jed stepped forward."
-    jed "I'm sorry! I'm so sorry!"
+    show pete at midleft with moveinleft
+    "But then, Pete stepped forward."
+    pete "I'm sorry! I'm so sorry!"
     show helen at left with dissolve
     helen "Sorry for what?!"
-    jed "I-- I'm the one that killed Josephina."
+    pete "I-- I'm the one that killed Josephina."
     "Nobody said a word. He worked his way up to the front of the room. He brushed his hand in front of his eyes - was he crying?"
-    jed "It was late, and I was looking for one of the cows that got out. I didn't even see her until she was right in front of me."
-    jed "I was driving my tractor, maybe a little fast- she jumped in front of it- I was going too fast- I didn't mean to run over anyone!"
+    pete "It was late, and I was looking for one of the cows that got out. I didn't even see her until she was right in front of me."
+    pete "I was driving my tractor, maybe a little fast- she jumped in front of it- I was going too fast- I didn't mean to run over anyone!"
     natalia "But how did her body end up in the river?!"
-    jed "It was obvious she was dead- there was so much blood- I was so horrified- I don't know why I did that- I didn't want anyone to know it was me. So I... dropped her body in the river."
+    pete "It was obvious she was dead- there was so much blood- I was so horrified- I don't know why I did that- I didn't want anyone to know it was me. So I... dropped her body in the river."
     "Nobody knew what to say. He was really crying, now, heaving deep sobs that seemed so alien to his usual bravado. I looked over at his wife, Helen, who looked like she was in shock."
-    pavel "Jed, I can tell you're sorry about this, and I'm glad you came forward. We will need to have a trial and decide what to do about this."
+    pavel "Pete, I can tell you're sorry about this, and I'm glad you came forward. We will need to have a trial and decide what to do about this."
     natalia "What do you need a trial for?! He just admitted he killed Josephina!"
     pavel "The laws of our community, which you all signed, state that any accused shall receive a trial, administered by myself and with a jury randomly selected from the adults of the colony that are not involved in the crime."
     scene black with fade
-    "The mayor took Jed to stay at his house until the next day, when the trial started."
+    "The mayor took Pete to stay at his house until the next day, when the trial started."
 
     call set_work_bg
     show pavel at midleft, behind her
@@ -1897,14 +1897,14 @@ label monthly_event_13:
     pavel "That's fine. We will proceed with the trial at two o'clock."
     
     scene bg community_center with fade
-    "Everyone in the town turned out to see the trial. Jed repeated what happened, and Mrs. Perón repeated what she had found. It sounded like a fairly simple case of involuntary manslaughter; we mainly needed to decide upon a sentence."
-    show pavel at midleft, behind jed
-    show jed at midright
+    "Everyone in the town turned out to see the trial. Pete repeated what happened, and Mrs. Perón repeated what she had found. It sounded like a fairly simple case of involuntary manslaughter; we mainly needed to decide upon a sentence."
+    show pavel at midleft, behind pete
+    show pete at midright
     with dissolve
     pavel "There is no mandatory sentencing in the laws of our colony. I am sure you will find a solution that is fair to all parties involved."
     "He left us jury members to deliberate in private."
     hide pavel
-    hide jed
+    hide pete
     with moveoutleft
     
     show lily at midright
@@ -1920,7 +1920,7 @@ label monthly_event_13:
     thuc "Why does any criminal do what they do? They want to, and they don't care about other people."
     thuc "Or maybe he was trying to cover up something else he did to her."
     show her serious
-    lily upset "That is pure speculation. Jed has not shown any other behavior that would be cause for concern."
+    lily upset "That is pure speculation. Pete has not shown any other behavior that would be cause for concern."
     ilian "Except for being a jack-ass."
     her surprised "That doesn't mean he attacked her!"
     thuc "But it's possible that it was not an accident. We cannot show too much mercy, or people will think they can get away with anything."
@@ -1940,7 +1940,7 @@ label monthly_event_13:
             ilian "And now we know the price of a four-year-old girl: 400 work hours."
             her annoyed "It's not like that. Of course there's no way to bring her back or make it up to them. But he needs to do something for reparations."
 
-            "The jury decided that was fair, and the Mayor, Jed, and the Peróns all accepted our proposal. Helen didn't seem to happy about it, though. She'd probably have to do extra work on their farm to make up for his absence."
+            "The jury decided that was fair, and the Mayor, Pete, and the Peróns all accepted our proposal. Helen didn't seem to happy about it, though. She'd probably have to do extra work on their farm to make up for his absence."
 
         "Banishment":
             her serious "I agree with Thuc; we need to show that our community won't allow such behavior."
@@ -1953,18 +1953,18 @@ label monthly_event_13:
             thuc "Four."
             lily "I suppose that would work...as long as the resources he gathers go to help the Perón family."
             "Finally, we had come to an agreement."
-            "Jed and the Peróns accepted it, but Helen and the Mayor frowned. Poor Helen... I guess in a way we were sentencing her, too."
+            "Pete and the Peróns accepted it, but Helen and the Mayor frowned. Poor Helen... I guess in a way we were sentencing her, too."
             "Still, it was only for a month."
             
         "{i}Compromise{/i}" if (skill_spiritual >= 40):
             her normal "Those both sound like good ideas. Perhaps some of both might be appropriate?"
             ilian "What's your idea?"
             her concerned "Having him work for the Peróns is a good idea, but it is too soon. They would feel angry, and then he would feel like his apology was not accepted."
-            her serious "But a year is too long to send anyone to live outside the community. I propose Jed leave the community for a week. When he returns, he will have to work for the Peróns one day of every week for the next half year."
+            her serious "But a year is too long to send anyone to live outside the community. I propose Pete leave the community for a week. When he returns, he will have to work for the Peróns one day of every week for the next half year."
             lily happy "That sounds fair for all involved."
             thuc "I think a week is too short. He should live outside for a month!"
             ilian "Two weeks?"
-            "Everyone agreed to this proposal. The mayor seemed happy with it, too, and both Jed and the Peróns accepted it without argument."
+            "Everyone agreed to this proposal. The mayor seemed happy with it, too, and both Pete and the Peróns accepted it without argument."
         "{i}He's innocent{/i}" if ((skill_technical >= 40) or (skill_knowledge >= 40)):
             her serious "He should provide some reparations, but I know he didn't kill her on purpose."
             thuc "How do you know that?"
@@ -1975,7 +1975,7 @@ label monthly_event_13:
             lily "I agree."
             ilian "Now we know the price of a four-year-old girl: 400 man-hours."
             her annoyed "It's not like that. Of course there's no way to bring her back or make it up to them. But he needs to do something for reparations."
-            "We all agreed on the sentencing, and the Mayor, Jed, and the Peróns seemed satisfied with our verdict also."
+            "We all agreed on the sentencing, and the Mayor, Pete, and the Peróns seemed satisfied with our verdict also."
 
     scene black with fade
     "I was just glad it was over."
@@ -2905,7 +2905,7 @@ label monthly_event_19:
                 her_c "Do you think you could show me how?"
                 helen_c "I think mine would fit you if you want it... I don't need it anymore."
                 her_c "Really? That would be great, thank you!"
-                "About a week later Jed dropped the dress off at work for me."
+                "About a week later Pete dropped the dress off at work for me."
                 "Sure enough, it looked kind of terrible. But it fit, and was comfy, so I wore it a lot."
                 $ relaxed += 2
 
@@ -3303,8 +3303,8 @@ label monthly_event_22:
             show overlay night
             show julia at center with moveinleft
             hide julia with moveoutright
-            show jed at center with moveinleft
-            hide jed with moveoutright
+            show pete at center with moveinleft
+            hide pete with moveoutright
             show sara at center with moveinleft
             hide sara with moveoutright
             show brennan at center with moveinleft
@@ -3522,6 +3522,8 @@ label monthly_event_23:
 
     elif ((want_kids) or (cheated_on_him)):
         $ is_pregnant_later = True
+        scene bg farm_interior with fade
+        show her serious at center with dissolve        
         "Lately I'd been feeling a little sick. My breasts were sore (for no reason), and I had to go to the bathroom all the time."
         her surprised "Come to think of it, shouldn't my period have started by now?"
         if (want_kids):
@@ -3541,7 +3543,7 @@ label monthly_event_23:
         show her concerned at midright
         show him normal at midleft with moveinright
         "I had to tell [his_name]. As soon as he came into the house, I blurted it out."
-        her concerned "I'm pregnant!"
+        her serious "I'm pregnant!"
         if (want_kids or (loved >= -5)):
             him happy "Really? That's great!"
             if (want_kids):
@@ -3596,7 +3598,7 @@ label monthly_event_23:
                         him sad "Not anymore."
                         her surprised "Well, I can make sure I'm not in that sort of situation again... I won't go to his house without other people around, and..."
                         him concerned "What else?"
-                        her surprised "When we're not working, I'll make sure we're around other people...like maybe I'll see if I can have lunch with Sarah or something."
+                        her surprised "When we're not working, I'll make sure we're around other people...like maybe I'll see if I can have lunch with Sara or something."
                         him serious "That could work."
                         her sad "..."
                         
@@ -3641,7 +3643,7 @@ label monthly_event_23:
                         show him concerned at midright, squatting, behind overlay
                         with dissolve
                         her serious "Good night, [his_nickname]..."
-                        show her at center with moveinleft
+                        show her at center, squatting with moveinleft
                         show him at quarterright with move
                         him concerned "Good night."
                         show her at quarterleft with move

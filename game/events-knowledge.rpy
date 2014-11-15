@@ -10,31 +10,31 @@ label knowledge_def:
 # Intro Event
 label knowledge_0:
     scene bg library with fade
-    show jed at midright with dissolve
-    "I knew there was a library here, so I decided to check it out. I sent Jed a message and he agreed to meet me there and show me around. When I arrived, he was lounging in a chair reading on his computer pad."
+    show pete at midright with dissolve
+    "I knew there was a library here, so I decided to check it out. I sent Pete a message and he agreed to meet me there and show me around. When I arrived, he was lounging in a chair reading on his computer pad."
     show her normal at midleft with moveinleft
     if (profession == "doctor"):
-        jed "Howdy, Doc! What can I help you with?"
+        pete "Howdy, Doc! What can I help you with?"
     else:
-        jed "Howdy! [her_name], right? Well, what can I help you with?"
+        pete "Howdy! [her_name], right? Well, what can I help you with?"
     her normal "Well, I had a few minutes and I thought I'd see what sort of stuff you have here in the library."
-    jed "Well, most books you can just borrow from our online library, but we do have some high-res maps of the planet and a few printed reference books.  We've also got some tools and equipment people can borrow, like if you want to build something."
+    pete "Well, most books you can just borrow from our online library, but we do have some high-res maps of the planet and a few printed reference books.  We've also got some tools and equipment people can borrow, like if you want to build something."
     her serious "Okay, that makes sense. We didn't have room to bring drills and wrenches for everyone, huh?"
-    jed "Yup. This is also where you can get new data from the extranet connection to Earth, though we've got limited bandwidth and it'll take a couple of years to get here."
+    pete "Yup. This is also where you can get new data from the extranet connection to Earth, though we've got limited bandwidth and it'll take a couple of years to get here."
     her surprised "What are those machines over there?"
-    jed "Those are our printers. You can print on paper, of course, and we have a 3D printer if you need to print something out of metal or plastic. But we don't have a ton of either material, so you can't just print anything, and recycling's real important."
-    her normal "That makes sense. Thanks for the tour, Jed."
-    jed "You're welcome."
+    pete "Those are our printers. You can print on paper, of course, and we have a 3D printer if you need to print something out of metal or plastic. But we don't have a ton of either material, so you can't just print anything, and recycling's real important."
+    her normal "That makes sense. Thanks for the tour, Pete."
+    pete "You're welcome."
     her surprised "By the way, what are you reading?"
-    jed "Aw, just a book, nothing special."
+    pete "Aw, just a book, nothing special."
     her normal "What's it about?"
-    jed "It's sort of a historical book about some settlers in Australia. New place, unfamiliar terrain, crazy people - sort of like us."
+    pete "It's sort of a historical book about some settlers in Australia. New place, unfamiliar terrain, crazy people - sort of like us."
     her serious "Hopefully without the crazy people part."
-    jed "Well, most folks are alright, but that Julia... man, she's a witch. Don't know how she passed the psych test to come up here."
+    pete "Well, most folks are alright, but that Julia... man, she's a witch. Don't know how she passed the psych test to come up here."
     her flirting "Same way you passed it, probably."
-    jed "Charm and good looks? I don't think so. She probably just fixed 'em with that glare of hers and they didn't dare tell her no."
-    her normal "Maybe so.  See you around, Jed."
-    jed "Bye."
+    pete "Charm and good looks? I don't think so. She probably just fixed 'em with that glare of hers and they didn't dare tell her no."
+    her normal "Maybe so.  See you around, Pete."
+    pete "Bye."
     $ skill_knowledge += 10
 
     return
@@ -44,7 +44,7 @@ label knowledge_1:
     scene bg lab with fade
     "I went to a workshop at the laboratory about how to use a spectrometer to determine whether or not a food is edible." 
     show lily at quarterright 
-    show jed at left
+    show pete at left
     show brennan at quarterleft
     show her normal at center
     with dissolve
@@ -61,7 +61,7 @@ label knowledge_2:
     scene bg library with fade
     "I went to town and helped out at the library."
     "They didn't need me to shelve books or anything, but sometimes people put in data requests for librarians to research or print out."
-    "Jed was working on printing out some plastic tools, so he asked me to help with something else."
+    "Pete was working on printing out some plastic tools, so he asked me to help with something else."
     "There were some research requests the colonists had posted, so I read some recently published research papers to answer their questions."
     $ skill_knowledge += 10
 
@@ -94,7 +94,7 @@ label knowledge_3:
 label knowledge_4:
     scene bg path with fade
     show lily at right
-    show jed at midright
+    show pete at midright
     show brennan at left
     show julia at quarterleft
     show her normal at midleft
@@ -308,21 +308,21 @@ label knowledge_master:
     her concerned "I see what you mean..."
 
     scene bg library with fade
-    show jed at midright with dissolve
+    show pete at midright with dissolve
     show her normal at midleft with moveinleft
 
-    her normal "Jed, do we have any referece materials about our planet?"
-    jed "About Talaam? Well, there's Dr. Lily's initial reports, and the probe's data..."
+    her normal "Pete, do we have any referece materials about our planet?"
+    pete "About Talaam? Well, there's Dr. Lily's initial reports, and the probe's data..."
     her surprised "But nothing since we arrived here?"
-    jed "Nah, everyone's been too busy just tryin' to survive."
+    pete "Nah, everyone's been too busy just tryin' to survive."
     her "That's going to change, starting now."
-    jed "You writin' a book or something?"
+    pete "You writin' a book or something?"
     her "An encyclopedia."
-    jed "Ha ha, sure, no point in starting simple, is there?"
+    pete "Ha ha, sure, no point in starting simple, is there?"
     her "Don't worry; I'll have help."
-    jed "Who has time to write for an encyclopedia?"
+    pete "Who has time to write for an encyclopedia?"
     her "You do."
-    jed "Whoa, whoa, hold your horses! I don't know anything worth puttin' on paper!"
+    pete "Whoa, whoa, hold your horses! I don't know anything worth puttin' on paper!"
     her "Of course you do! We all do. You just think about what you know better than anyone else - what knowledge about Talaam would be lost if you died right now, and I'll be asking everyone to share it."
 
     scene bg farm_interior with fade
@@ -342,7 +342,7 @@ label knowledge_master:
         "I wrote about what plants were useful for making furniture and how to treat them to last longer."
         
     "Then I sent a message out asking for everyone to help fill in the blank sections of the encyclopedia."
-    "I waited for a few days... but the only person who had posted anything was Jed, who had written one article about what plants were good for cattle to graze on and which could be dangerous."
+    "I waited for a few days... but the only person who had posted anything was Pete, who had written one article about what plants were good for cattle to graze on and which could be dangerous."
     "This was no good! I needed everyone's help for this encyclopedia!"
     menu:
         "What should I do?"

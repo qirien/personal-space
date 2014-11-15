@@ -29,20 +29,20 @@ label omake:
     scene bg path with fade
     show brennan with dissolve
     brennan "There go my plans for a bath."
-    brennan "Maybe I'll see if Jed's busy..."
+    brennan "Maybe I'll see if Pete's busy..."
     
     scene bg library with fade
-    show jed at midleft
+    show pete at midleft
     show helen at midright, squatting
     with dissolve
-    jed "You're the Milky Way in my night sky, baby."
+    pete "You're the Milky Way in my night sky, baby."
     helen "Is that a nursing joke?"
-    jed "Nah, I was just tryin' to be romantic."
+    pete "Nah, I was just tryin' to be romantic."
     helen "Sorry, it's hard for me to think about anything else while I'm feeding the baby. Can we be romantic when I'm done?"
-    jed "I'll just have to find some other way to help get you in the mood..."
-    show jed at squatting with move
-    helen "Ohhh. Mmmmm. Oh, Jed, that feels sooo good."
-    jed "You never could resist a good foot rub."
+    pete "I'll just have to find some other way to help get you in the mood..."
+    show pete at squatting with move
+    helen "Ohhh. Mmmmm. Oh, Pete, that feels sooo good."
+    pete "You never could resist a good foot rub."
     
     brennan "..."
     

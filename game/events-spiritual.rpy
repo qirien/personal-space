@@ -253,7 +253,7 @@ label spiritual_6:
     her annoyed "Where are we going?"
     naomi "We are needed."
     scene bg talam with fade
-    "We walked past one farm, and then another. We had been walking for about a half an hour. Finally, we reached the farthest farm from town. It belonged to the Engels - Helen and Jed were newlyweds like [his_name] and me."
+    "We walked past one farm, and then another. We had been walking for about a half an hour. Finally, we reached the farthest farm from town. It belonged to the Engels - Helen and Pete were newlyweds like [his_name] and me."
     "They were the farthest farm for a reason; they seemed to like to be by themselves. I hardly ever saw them, or their baby who was born on the shuttle."
     "When we got there, Sister Naomi knocked on the door and called out,"
     naomi "Helen, it's Naomi. May I come in?"
@@ -301,7 +301,7 @@ label spiritual_6:
     "I didn't know what to say. I hoped Naomi would say something wise and comforting, but she didn't. Finally, Helen set down her hat."
     helen "The truth is, I hate knitting."
     her surprised "You do?"
-    helen "Yes! But the one thing I hate more than knitting is feeling useless! I wish I could be helping Jed with the cows, or working at the library, or {b}something{/b} other than sitting around waiting for this baby to grow up!" 
+    helen "Yes! But the one thing I hate more than knitting is feeling useless! I wish I could be helping Pete with the cows, or working at the library, or {b}something{/b} other than sitting around waiting for this baby to grow up!" 
     her surprised "Well, aren't there some other things you could do, even while watching a baby? It's not like he has to stay home all day."
     helen "I don't know... this planet is so strange, I don't really feel safe taking him outside. And I don't feel safe leaving him here by himself, either."
     her serious "When will it be safe enough?"
@@ -315,7 +315,7 @@ label spiritual_6:
     if (profession == "doctor"):
         her concerned "Well, if you'd like to make an appointment to meet with me sometime, as your doctor, we could consider some other options. Sister Naomi is a great therapist, but if therapy is not working for you, we should consider medication."
     else:
-        her concerned "Would it help if I came with you?  We could just go on a short trip together, maybe to visit Jed or something, and I can help you with anything you need."
+        her concerned "Would it help if I came with you?  We could just go on a short trip together, maybe to visit Pete or something, and I can help you with anything you need."
     
     helen "Thanks, [her_name]. I'll... I'll think about that."
     

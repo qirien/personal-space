@@ -430,7 +430,7 @@ label show_credits:
     $ renpy.pause(3.0, hard=skippable)
     hide text with fade
 
-    stop music fadeout 3.0
+    scene bg stars with fade
     "You have now unlocked New Game+! If you play again, you can keep your progress in your skills up to level [SKILL_SAVED_MAX], to make mastering skills easier. At the end of each skill tree is a special event."
     
     # in case a future game wants to use this information, we'll save it here
@@ -452,5 +452,10 @@ label show_credits:
         $ persistent.times_beaten = 1
     else:
         $ persistent.times_beaten += 1
-            
+
+    "Thanks for playing! If you have feedback, I'd love to hear from you at {a=mailto:qirien@icecavern.net?subject=Our Personal Space}qirien@icecavern.net{/a}"
+    show text "{size=80}{font=fonts/danielbd.ttf}{b}The End{/b}{/font}{/size}" with fade
+    stop music fadeout 3.0
+    $ renpy.pause(5.0, hard=skippable)
+    
     $ renpy.full_restart()

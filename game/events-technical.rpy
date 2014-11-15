@@ -234,7 +234,7 @@ label technical_5:
             her concerned "No, thanks, I don't really need a blender, I guess."
             ilian "You want to make a blender?"
             her serious "Yeah..."
-            ilian "We could use one here at the storehouse; Jed wanted to make peanut butter."
+            ilian "We could use one here at the storehouse; Pete wanted to make peanut butter."
             her normal "Well, maybe he could help you dismantle parts, and I will see if there's enough to make two blenders."
 
     scene black with fade

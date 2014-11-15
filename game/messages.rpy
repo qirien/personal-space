@@ -37,25 +37,25 @@ screen message_board:
                         vbox:
                             xpos 87
                             ypos -20  # put it up next to the icon
-                            xmaximum 850
+                            xmaximum 830
                             xalign 0.0
                             text what id what_id
                 
 # NVL mode characters for chat rooms, etc
 define her_c = DynamicCharacter("her_name", who_prefix = "{image=sprites/her-icon.png} ", color="#8864d5", image="her", kind=nvl, ctc="ctc_blink", ctc_position="nestled")
 define him_c = DynamicCharacter("his_name", who_prefix = "{image=sprites/him-icon.png} ",color="#c80000", image="him", kind=nvl, ctc="ctc_blink", ctc_position="nestled") #red 
-define naomi_c = Character("Naomi", color="#ededed", image="naomi", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #light gray
+define naomi_c = Character("Naomi", who_prefix = "{image=sprites/naomi-icon.png} ", color="#ededed", image="naomi", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #light gray
 define pavel_c = Character("Pavel", who_prefix = "{image=sprites/pavel-icon.png} ", color="#cccccc", image="pavel_c", kind=nvl, ctc="ctc_blink", ctc_position="nestled")   #dark gray
 define lily_c = Character("Lily", who_prefix = "{image=sprites/lily-icon.png} ", color="#8655bd", image="lily", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #purple
 define sara_c = Character("Sara", who_prefix = "{image=sprites/sara-icon.png} ", color="#c64e89", image="sara", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  # dark pink
 define thuc_c = Character("Thuc", who_prefix = "{image=sprites/thuc-icon.png} ", color="a9ff22", image="thuc", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #lime green
-define ilian_c = Character("Ilian", color="ffa922", image="ilian", kind=nvl, ctc="ctc_blink", ctc_position="nestled") #tangerine
+define ilian_c = Character("Ilian", who_prefix = "{image=sprites/ilian-icon.png} ", color="ffa922", image="ilian", kind=nvl, ctc="ctc_blink", ctc_position="nestled") #tangerine
 define brennan_c = Character("Brennan", who_prefix = "{image=sprites/brennan-icon.png} ", color="33b533", image="brennan", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #irish green
-define jed_c = Character("Jed", who_prefix = "{image=sprites/jed-icon.png} ", color="cb5500", image="jed", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #rusty brown
+define pete_c = Character("Pete", who_prefix = "{image=sprites/pete-icon.png} ", color="cb5500", image="pete", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #rusty brown
 define natalia_c = Character("Natalia", who_prefix = "{image=sprites/natalia-icon.png} ", color="ffe74a", image="natalia", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #yellow
-define helen_c = Character("Helen", color="cdcfb2", image="helen", kind=nvl, ctc="ctc_blink", ctc_position="nestled") #tan
-define julia_c = Character("Julia", color="#4b54cd", image="julia", kind=nvl, ctc="ctc_blink", ctc_position="nestled") #icy blue
-define martin_c = Character("Martín", color="#990011", image="martin", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #dark red
+define helen_c = Character("Helen", who_prefix = "{image=sprites/helen-icon.png} ", color="cdcfb2", image="helen", kind=nvl, ctc="ctc_blink", ctc_position="nestled") #tan
+define julia_c = Character("Julia", who_prefix = "{image=sprites/julia-icon.png} ", color="#4b54cd", image="julia", kind=nvl, ctc="ctc_blink", ctc_position="nestled") #icy blue
+define martin_c = Character("Martín", who_prefix = "{image=sprites/martin-icon.png} ", color="#990011", image="martin", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #dark red
 
 define computer = Character(None, kind=nvl, ctc="ctc_blink", ctc_position="nestled")
 
@@ -73,11 +73,11 @@ label msg_2:
     naomi_c "Please let me know if you would be interested in a weekly yoga and meditation session.\n"
 
     lily_c "I am looking for a volunteer to come to the ocean and gather guano. No experience necessary."
-    jed_c "Doubt you'll get many takers on that one, Lily."
+    pete_c "Doubt you'll get many takers on that one, Lily."
     return
     
 label msg_3:
-    jed_c "Hey, uh, I forgot who checked out the chisel set, but could you please return them?\n"
+    pete_c "Hey, uh, I forgot who checked out the chisel set, but could you please return them?\n"
 
     her_c "Happy Birthday, [his_name]!"
     him_c "Thanks, [her_name]..."
@@ -92,6 +92,7 @@ label msg_4:
     pavel_c "I would feel responsible if something bad happened at the community center."
     natalia_c "Well, you wouldn't be. Let the kids be responsible for themselves, or else they won't learn how."
     pavel_c "Well, I-"
+    nvl clear
     naomi_c "The truth is... there was a mess of mud and sticks on the corner. It seems some children were building a fort?"
     natalia_c "Oh, that. Well, sure, I'll have them clean it up. No need to restrict the whole area, right?"
     pavel_c "I suppose not. But we can't have messes in there; that area is for meetings and other colony business."
@@ -138,16 +139,17 @@ label msg_6:
         lily_c "It's not in our database; bring it by the lab and I'll run it through the spectrometer."
     elif (highest_skill == "Physical"):
         her_c "Ran 10k today; I feel tired but so good!"
-        sara_c "Yay! You go, [her_name]! \o/"
+        sara_c "Yay! You go, [her_name]! \\o/"
     return
     
 label msg_7:
     pavel_c "Congratulations, everyone, at the end of the month we'll have been here for one whole Talaam year!"
     pavel_c "We wanted to give everyone a time to celebrate their winter holidays, so at the end of the month we'll take a week off for those, and also to make plans for the new year."
-    brennan_c "Hopefully there are plans for celebration!"
+    brennan_c "Hopefully there are plans for a group celebration!"
     naomi_c "Yes, I'll post a list of events for all the winter holidays, including a New Year's Eve party at the community center."
-    brennan_c "Hey, Jed, any chance you could bring some strong beverages?"
-    jed_c "I don't think you could handle my latest batch, Brennan."
+    nvl clear
+    brennan_c "Hey, Pete, any chance you could bring some strong beverages?"
+    pete_c "I don't think you could handle my latest batch, Brennan."
     brennan_c "I can't back down from that sort of challenge. Bring it on!\n"
     
     sara_c "It'll be strange to have Christmas without snow... :-/"
@@ -164,9 +166,9 @@ label msg_8:
         julia_c "I'm so grateful for [her_name]; if it wasn't for her, my dear little Van wouldn't be with us anymore."
         her_c "I'm glad he's okay! His breathing isn't noisy, is it?"
         julia_c "No, he's completely recovered."
-        jed_c "She fixed my leg up good, too. Thanks, Doc."
+        pete_c "She fixed my leg up good, too. Thanks, Doc."
         her_c "No problem. But, next time you go up against a mill roller, get some backup first, okay?"
-        jed_c "Sure thing, Doc."
+        pete_c "Sure thing, Doc."
     elif (profession == "carpenter"):
         martin_c "The new roof works great, [her_name]. Two storms and no leaks yet."
         her_c "Glad to hear it!."
@@ -185,6 +187,7 @@ label msg_9:
     sara_c "All right! Ilian, date night!! :-D"
     ilian_c "I'm not watching it."
     sara_c ":'-("
+    nvl clear
     her_c "I'll watch it with you, Sara, Ilian won't enjoy it anyway. He'll just spend the whole movie talking about how space ships don't really work like that."
     lily_c "They don't. The scenario in that movie is physically impossible."
     her_c "That's why it's a movie, not a documentary."
@@ -192,9 +195,9 @@ label msg_9:
     
 label msg_10:
     pavel_c "Who grew the strawberries? These are delicious!"
-    jed_c "They taste even better with some cream, Mayor G."
+    pete_c "They taste even better with some cream, Mayor G."
     pavel_c "I'm sure they do - do you have any to spare?"
-    jed_c "Sure, we can work out a trade."
+    pete_c "Sure, we can work out a trade."
     return
     
 label msg_11:
@@ -203,6 +206,7 @@ label msg_11:
     julia_c "I just fed someone else's ill-mannered children again... Ilian, would it be possible for me to pick up a little extra flour the next time I'm there?"
     ilian_c "Uhhh, yeah, that's probably fine..."
     natalia_c "Why are you getting all passive-aggressive, Julia? Just send them all over here next time. They know to listen to adults."
+    nvl clear
     julia_c "I'm terribly sorry, but I only let my children play at houses where there is proper adult supervision."
     natalia_c "You're not still mad about the mud, are you?"
     julia_c "They threw mudballs at my children!"
@@ -213,10 +217,10 @@ label msg_11:
     
     
 label msg_12:
-    if (ocean_character == "Jed"):
-        jed_c "For the small price of shoveling guano, you too can see the beauties of the ocean! Ask Dr. Lily for details."
+    if (ocean_character == "Pete"):
+        pete_c "For the small price of shoveling guano, you too can see the beauties of the ocean! Ask Dr. Lily for details."
         her_c "Purple jelly encounter included at no additional cost!"
-        jed_c "Yeah, that critter was downright strange. Almost seemed like it knew we were there."
+        pete_c "Yeah, that critter was downright strange. Almost seemed like it knew we were there."
     elif (ocean_character == "Brennan"):
         brennan_c "Dr. Lily, I wanted to thank you for that charming excursion to the ocean."
         her_c "Yeah, it was a nice break from the routine, and such beautiful scenery!"
@@ -239,22 +243,23 @@ label msg_13:
     sara_c "I haven't seen her in town... :-("
     her_c "I saw walking home from school with her siblings, but that was much earlier today."
     julia_c "I'm afraid it was only a matter of time, with the lack of supervision she's been subjected to."
-    jed_c "That ain't helping anything, Julia.  How long has she been missing?"
-    natalia_c "Raul said she stayed outside by herself when he came in to do homework, but that was four hours ago!"
+    pete_c "That ain't helping anything, Julia.  How long has she been missing?"
     nvl clear
+    natalia_c "Raúl said she stayed outside by herself when he came in to do homework, but that was four hours ago!"
     pavel_c "She's awfully young to be out on her own in the dark for so long. Anyone who can, please meet at the Perón's and we'll organize a search."
     natalia_c "Thank you, Mayor."
     return
     
 label msg_14:
-    jed_c "Sure has been quiet around here lately..."
+    pete_c "Sure has been quiet around here lately..."
     martin_c "It's even quieter over here, without Josephina..."
-    jed_c "Sorry, Martín..."
+    pete_c "Sorry, Martín..."
     helen_c "How's Natalia holding up?"
     natalia_c "I'm fine."
     naomi_c "Would you mind if I stopped by later today?"
+    nvl clear
     natalia_c "Maybe tomorrow."
-    martin_c "We'd appreciate that, Sister Naomi."
+    martin_c "Today would be fine. Come on over, Sister Naomi."
     return
 
 label msgs_pregnant:
@@ -263,7 +268,8 @@ label msgs_pregnant:
     him_c "Haven't decided on a name yet; we just barely found out ourselves!"
     pavel_c "Congratulations!"
     naomi_c "That's wonderful!"
-    jed_c "About time!"
+    pete_c "About time!"
+    nvl clear
     ilian_c "[his_name], come by sometime, I have something for the baby..."
     lily_c "Congratulations may be premature. Approximately 15\% of pregancies end in a miscarriage during the first trimester."
     helen_c "Even so, it's something to celebrate."
@@ -280,6 +286,7 @@ label msg_15:
     sara_c "You have oregano?! :-o Can I have some?"
     julia_c "Of course, dear. Bring me some soap from the storehouse when you come, please."
     sara_c "Sure. :-)"
+    nvl clear
     ilian_c "Make sure you log it, Sara."
     sara_c "I always do."
     ilian_c "Except for that one time with the chocolate."
@@ -290,17 +297,20 @@ label msg_15:
 label msg_16:
     if (is_pregnant):
         call msgs_pregnant
-    helen_c "Has anyone seen Jed?! He didn't come home last night!"
+    helen_c "Has anyone seen Pete?! He didn't come home last night!"
     natalia_c "Hopefully he hasn't killed anyone with his tractor again."
-    naomi_c "He and Brennan got rather intoxicated last night, testing Jed's latest brew - I'll check at the community center for you."
+    sara_c "Natalia! That was an accident!"
+    naomi_c "He and Brennan got rather intoxicated last night, testing Pete's latest brew - I'll check at the community center for you."
     helen_c "Thanks, Naomi. Hopefully that's all it is.\n"
-    jed_c "hey baby be home soon sorry you were worried."
+    nvl clear
+    pete_c "hey baby be home soon sorry you were worried."
     helen_c "We can talk about it when you get home, dear."
-    brennan_c "Whatever she has to say, it was completely worth it, Jed. That was your best creation yet."
+    brennan_c "Whatever she has to say, it was completely worth it, Pete. That was your best creation yet."
     naomi_c "I'm sure I don't have to remind you gentlemen to make sure the community center is ready for the meeting this afternoon."
     brennan_c "No problem, we got it covered."
+    nvl clear
     brennan_c "Ha ha, get it, man?! We got it \"covered\"?! Because the floor is {b}covered{/b} in--"
-    jed_c "your hilarious."
+    pete_c "ur hilarious."
     return
     
 label msg_17:
@@ -316,8 +326,9 @@ label msg_18:
     thuc_c "Mine doesn't hold the charge it used to; I have to come home at lunch and charge it off the house battery."
     julia_c "And then there's no power left for the stove!"
     lily_c "The overcast meteorological conditions of late also reduce the efficiency of the solar chargers."
+    nvl clear
     him_c "Anyone tried using the biofuel system?"
-    jed_c "Yeah, if you use wood you gotta refill it every hour or so. Not too efficient. If we had some liquid fuel it'd probably last longer."
+    pete_c "Yeah, if you use wood you gotta refill it every hour or so. Not too efficient. If we had some liquid fuel it'd probably last longer."
     ilian_c "That fuel is only for emergencies."
     him_c "Alright, I'll just charge it off the house for now."
     return
@@ -329,6 +340,7 @@ label msg_19:
     thuc_c "I'm just kidding! I'll help you tomorrow night, okay?"
     sara_c "I'll help, too, as long as I get to eat some. Now I'm craving salsa! Ilian, do we have any chips?"
     ilian_c "No."
+    nvl clear
     natalia_c "I'll teach you how to make some, if you want."
     sara_c "Yes! Ohhh, chips and salsa..."
     brennan_c "Sara, have I mentioned lately how beautiful you are? And how generous, and kind to poor hungry souls like myself?"
@@ -339,13 +351,13 @@ label msg_20:
     her_c "Does anyone have any protein foods they could spare? Meat, nuts, eggs, dairy...? I can trade vegetables..."    
     if (community_level < COMMUNITY_LEVEL_OK):
         natalia_c "No extra, sorry."
-        jed_c "Nope."
+        pete_c "Nope."
         thuc_c "No."
         ilian_c "The storehouse still has some protein powder."
         her_c "I was hoping to avoid that, but I guess that'll have to do."
     else:
         natalia_c "You want some eggs? Bring some of those bell peppers and tomatoes and we'll trade!"
-        jed_c "We've got milk or cheese we could trade for quinoa. I found a way to cook it so it almost tastes like grits."
+        pete_c "We've got milk or cheese we could trade for quinoa. I found a way to cook it so it almost tastes like grits."
         julia_c "I'll drop something by your house this evening."
         if (is_pregnant or is_pregnant_later):
             julia_c "You especially need the protein, since you're expecting."
@@ -357,7 +369,7 @@ label msg_21:
     ilian_c "COLONISTS: Please try to conserve rechargeable batteries. We are running out. They should last for at least ten years if treated properly."
     natalia_c "What does \"treated properly\" mean?"
     ilian_c "Try to charge them when they are halfway full instead of waiting until they are empty, and don't let them overcharge."
-    lily_c "Also, don't let them get too hot. They should not be kept in the sun, or especially solar flares, if possible."
+    lily_c "Also, don't let them get too hot. They should not be kept in the sun, or exposed to solar flares."
     natalia_c "OK, can do."
     
     return
@@ -370,20 +382,22 @@ label msg_22:
     julia_c "True love! You're probably where she got such a ridiculous romantic notion."
     thuc_c "That, or it could be your old love letters that I let her read."
     julia_c "Thuc!!\n"
-
+    
+    nvl clear
     brennan_c "Ahhh, Tomás, you're a lucky man. Though I don't envy you having Julia for a mother-in-law...."
     martin_c "Man?! He's still a boy... Though if he's old enough to get married..."
-    julia_c "A man is as a man does. Tomás is more of a man than some here, at least."
+    julia_c "A man is as a man does. Tomás is more of a man than {b}some{/b} here, at least."
     brennan_c "I stand by what I said."
     
     return
     
 label msg_23:
-    helen_c "Hey, [her_name] you haven't had your baby yet, right? I hardly ever see you..."
-    her_c "Not yet... I'm not due for another month."
-    him_c "She's been sleeping a lot, trying to store it up for the nights ahead."
-    helen_c "Ohhh, if only it worked that way!\n"
-    nvl clear
+    if (is_pregnant):
+        helen_c "Hey, [her_name] you haven't had your baby yet, right? I hardly ever see you..."
+        her_c "Not yet... I'm not due for another month."
+        him_c "She's been sleeping a lot, trying to store it up for the nights ahead."
+        helen_c "Ohhh, if only it worked that way!\n"
+        nvl clear
 
     naomi_c "I wanted to announce that I will be asking each person to come in for a visit with me, just to make sure everyone is doing okay. I'm asking everyone, so please don't assume something's wrong when I contact you."
     natalia_c "This doesn't have anything to do with the shampoo incident, does it?"
@@ -391,16 +405,17 @@ label msg_23:
     natalia_c "After your honesty sermon yesterday I just wanted to make sure."
     julia_c "Hit you a little hard, did it?"
     natalia_c "Not a bit. But I noticed you looking quite uncomfortable."
-    julia_c "I was just bored."
     nvl clear
+    julia_c "I was just imagining how you must feel."
     ilian_c "I suggest you both stop arguing, since right after the sermon you both returned items you had \"borrowed\" from the storehouse."
     brennan_c "Ilian! Shame on you!"
     ilian_c "What? It stopped their argument, didn't it?"
     brennan_c "You stopped it just as it was getting good!"
+    nvl clear
     julia_c "This is none of your business, Mr. Callahan."
     natalia_c "Shut up, Brennan."
     brennan_c "There, did you see how I sacrificed myself to get them to agree on something?"
-    jed_c "Downright noble of you."
+    pete_c "Downright noble of you."
     return
              
 label msg_24:
@@ -421,8 +436,9 @@ label msg_25:
         natalia_c "You'll be wonderful parents! I'd be happy to watch her for you if you need to get some things done. I miss babies..."
         thuc_c "She looks just like you, [his_name]!"
         him_c "I hope not!"
+        nvl clear
         helen_c "I think she looks more like [her_name]."
-        lily_c "Congratulations on successfully breeding."
+        lily_c "Congratulations on successfully breeding. The community population is now 202."
         ilian_c "I can bring some things by from the storehouse, so you don't have to leave the house for a bit, if you want."
         her_c "Thanks, everyone!! We're just taking it easy for a week or two, but I'll be bringing her to work with me as soon as I can manage it."
     elif (is_pregnant_later):
@@ -433,6 +449,7 @@ label msg_25:
         naomi_c "That's wonderful!"
         helen_c "I'm so happy for you!"
         thuc_c "Congratulations!"
+        nvl clear
         julia_c "Congratulations. I can serve as midwife when the time comes, if you would like."
         sara_c "Thanks, everyone! I'm sure Ilian appreciates your well-wishes, too... :-/"
         ilian_c "Yeah, thanks."
@@ -452,11 +469,12 @@ label msg_25:
     brennan_c "Thanks, Lily."
     lily_c "With you gone, the ratio of people capable of producing useful capital to dependents will decrease substantially."
     brennan_c "Awww, stop, you're making me blush."
+    nvl clear
     lily_c "Also, the variation of our genetic pool will decrease."
     brennan_c "You should have said something sooner, maybe we could have contributed to the gene pool together!"
     julia_c "That's enough; sometimes my kids read these messages!"
     lily_c "I will continue this conversation with you in private, Brennan."
     sara_c ":-o Ummm, wow, did one of Brennan's pickup lines actually work?!"
-    jed_c "It's about time."
+    pete_c "It's about time."
         
     return

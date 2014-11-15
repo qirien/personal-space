@@ -144,7 +144,8 @@ label day:
     # to new values. We call it with a list of periods that we want
     # to compute the values for.
     scene bg gray_silk
-    call screen computer_pad(["Work", "Skills", "Free Time"]) 
+    $ read_messages = False
+    call screen computer_pad(["Work", "Skills", "Free Time"])
 
     
     # We process each of the three periods of the day, in turn.

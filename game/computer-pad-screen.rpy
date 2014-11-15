@@ -135,12 +135,12 @@ screen computer_pad(periods):
                     text "Season: [upper_season]"
                     text "Weather: [upper_weather]"
                     
-                textbutton "Colony Messages" xalign 0.5 ypos 22:
-                    action Jump("monthly_messages")                        
+                use colony_messages_button(read_messages)
+                
                 frame:
                     xfill True
                     ysize 100
-                    ypos 32
+                    ypos 10
                     label "Music Player"
                     $ current_song = renpy.music.get_playing()
                     $ artist = ""
@@ -181,8 +181,31 @@ screen computer_pad(periods):
     # Start music every time this screen is shown if it's not already playing.
     on "show" action If(renpy.music.is_playing(), true=None, false=pop_songs.RandomPlay())
                 
+                
+screen colony_messages_button(read_colony_messages):
+    if (not read_colony_messages):
+        text "{color=#FF0}{b}NEW!{/b}{/color} " ypos 30 xalign 0.0 outlines [(1, "#000", 1, 1)]
+    else:
+        text "" ypos 30 xalign 0.0 # We have to have this here or it messes up all the positions
+    
+    textbutton "Colony Messages" xalign 0.5:
+        action Jump("monthly_messages")                        
+
+    
+    
+#    hbox ypos 22 xalign 0.5 xfill True:
+#        if (not read_colony_messages):
+#            text "{color=#FF0}{b}NEW!{/b}{/color} " yalign 0.5 xalign 1.0 outlines [(1, "#000", 1, 1)]
+#        else:
+#            text "      "
+#        textbutton "Colony Messages" xalign 0.5:
+#            action Jump("monthly_messages")                        
+            
+#        text "      "
+                
 label monthly_messages:
     $ message = "msg_" + `month`
+    $ read_messages = True
     nvl clear
     call expression message
     computer "\n(End of messages)"
@@ -190,7 +213,7 @@ label monthly_messages:
     call screen computer_pad(["Work", "Skills", "Free Time"])
  
 # Display our skills in a window on top of the computer pad
-screen skill_screen:
+screen skill_screen():
     modal True
     frame:
         style_group "cp"
@@ -227,7 +250,7 @@ screen skill_screen:
                     action Hide("skill_screen")
         
             
-screen heart_display:
+screen heart_display():
     hbox:
         # Add a small headshot of her depending on how relaxed/stressed she is
         if (relaxed >= 10):
@@ -289,111 +312,3 @@ screen heart_display:
                 add "him concerned head"
             else:
                 add "him annoyed head"
-            
-screen help_screen_1:
-    modal True
-    tag tutorial
-    frame:
-        xalign 0.5
-        xsize 350
-        ypos 25
-        xpadding 20
-        ypadding 20
-        frame:
-            style_group "cp"
-
-            vbox:
-                label "Tutorial"
-                text " "
-                text "This screen show's [her_name]'s computer pad."
-                text " "
-                text "On the left is her Personal Status."
-                text ""
-                text "[her_name]'s expression shows you how relaxed or stressed out she is."
-                text ""
-                text "[his_name]'s expression shows you how he is feeling this month."
-                text ""
-                text "The heart in the middle shows the strength of their relationship."
-                text ""
-            
-                textbutton _("Next"):
-                        xalign 1.0
-                        yalign 1.0
-                        action Show("help_screen_2")
-                        
-screen help_screen_2:
-    modal True
-    tag tutorial   
-    frame:
-        xalign 0.5
-        xsize 350
-        ypos 25
-        xpadding 20
-        ypadding 20
-        frame:
-            style_group "cp"
-
-            vbox:
-                label "Tutorial"
-                text ""
-                text "In the middle is the Colony Status."
-                text ""
-                text "You can see what the weather is, and what messages are on the colony message board."
-                text ""
-                textbutton _("Next"):
-                    xalign 1.0
-                    yalign 1.0
-                    action Show("help_screen_3")
-                
-screen help_screen_3:
-    modal True
-    tag tutorial 
-    frame:
-        xalign 0.5
-        xsize 350
-        ypos 25
-        xpadding 20
-        ypadding 20
-        frame:
-            style_group "cp"
-
-            vbox:
-                label "Tutorial"
-                text ""
-                text "On the right, you choose [her_name]'s focus for this month."
-                text ""
-                text "Taking it easy at work is more relaxing, but is not as useful to the colony."
-                text ""
-                text "All the skills are useful and help [her_name] and the colony in different ways."
-                text ""
-                text "During Free Time, choosing to spend time together will increase their relationship, but is not as relaxing as spending time alone."
-                text ""
-                textbutton _("Next"):
-                    xalign 1.0
-                    yalign 1.0
-                    action Show("help_screen_4")
-                    
-screen help_screen_4:
-    modal True
-    tag tutorial
-    frame:
-        xalign 0.5
-        xsize 350
-        ypos 25
-        xpadding 20
-        ypadding 20
-        frame:
-            style_group "cp"
-            
-            vbox:
-                label "Tutorial"
-                text ""
-                text "You have 25 months to maintain their relationship and help the colony survive."
-                text ""
-                text "Good luck!"
-                text ""
-                textbutton _("Done"):
-                    xalign 1.0
-                    yalign 1.0
-                    action Hide("help_screen_4")
-                

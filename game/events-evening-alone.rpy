@@ -295,17 +295,17 @@ label relax_alone_f:
 label relax_alone_g:
     scene bg library with fade
     "I invited Sara to come to the library with me to hang out."
-    show jed at quarterright
+    show pete at quarterright
     with dissolve
     show sara at midleft
     show her normal at quarterleft
     with moveinleft
     sara "Why do they even have a library? Isn't everything just on computers?"
-    jed "Almost everything. Some things, like blueprints and maps, are easier to look at on huge rolls of paper."
+    pete "Almost everything. Some things, like blueprints and maps, are easier to look at on huge rolls of paper."
     sara "I guess so..."
     her normal "You can even print things out here if you need to."
-    jed "But, make sure you recycle any papers you print out when you're done with them; we don't have a paper factory."
-    hide jed with moveoutright
+    pete "But, make sure you recycle any papers you print out when you're done with them; we don't have a paper factory."
+    hide pete with moveoutright
     show sara at center with move
     sara "Why did you want to come here, [her_name]?"
     her serious "Well, back on Earth I used to like to go to bookstores and just flip through books... This isn't really the same, though."
@@ -447,10 +447,10 @@ label relax_alone_l:
         helen_c "All the cows got sick, so we took samples of all the plants in their pasture to Dr. Lily to analyze. Luckily, they made it through, but it was a close call."
 
     nvl clear
-    her_c "How is Jed?"
+    her_c "How is Pete?"
     helen_c "Doing fine - though sometimes he's pretty busy taking care of the cows and the library!"
     her_c "Yeah, [his_name] is busy a lot, too..."
-    helen_c "Hey, want to come over for lunch tomorrow? Jed's meeting with the mayor, so it'll just be me and the baby."
+    helen_c "Hey, want to come over for lunch tomorrow? Pete's meeting with the mayor, so it'll just be me and the baby."
     her_c "Sure, thanks!"
     nvl clear
     "She was a newlywed like me and we had a lot in common, so it was fun to chat together."

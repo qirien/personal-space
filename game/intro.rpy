@@ -184,7 +184,7 @@ label marriage_proposal:
             $ favorite_wedding_gift = "Swiss army knife"
             "The Swiss Army knife. It had so many gadgets on it, it could practically bake bread. We couldn't take a lot with us, so I thought all its little tools would be handy."
         "A locket with [his_name]'s picture.":
-            $ favorite_wedding_gift = "locket from [his_name]'s mom"
+            $ favorite_wedding_gift = "locket from {}'s mom".format(his_name)
             "A locket with [his_name]'s picture. I thought it was kind of weird at first that his mom gave it to me, but now I understand she was sharing with me her most precious possession of all - her son."
         "My mom's recipe book.":
             $ favorite_wedding_gift = "my mother's recipe book"

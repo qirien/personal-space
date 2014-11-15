@@ -17,7 +17,7 @@ define sara = Character("Sara", color="#c64e89", image="sara", ctc="ctc_blink", 
 define thuc = Character("Thuc Nguyen", color="a9ff22", image="thuc", ctc="ctc_blink", ctc_position="nestled")  #lime green
 define ilian = Character("Ilian Andrevski", color="ffa922", image="ilian", ctc="ctc_blink", ctc_position="nestled") #tangerine
 define brennan = Character("Brennan Callahan", color="33b533", image="brennan", ctc="ctc_blink", ctc_position="nestled")  #irish green
-define jed = Character("Jed Engel", color="cb5500", image="jed", ctc="ctc_blink", ctc_position="nestled")  #rusty brown
+define pete = Character("Pete Engel", color="cb5500", image="pete", ctc="ctc_blink", ctc_position="nestled")  #rusty brown
 define natalia = Character("Natalia Perón", color="ffe74a", image="natalia", ctc="ctc_blink", ctc_position="nestled")  #yellow
 define helen = Character("Helen Engel", color="cdcfb2", image="helen", ctc="ctc_blink", ctc_position="nestled") #tan
 define julia = Character("Julia Nguyen", color="#4b54cd", image="julia", ctc="ctc_blink", ctc_position="nestled") #icy blue
@@ -103,6 +103,7 @@ init -200:
     define serif_font = "fonts/RobotoSlab-Regular.ttf"
     
     define current_song = " "
+    define read_messages = False
     
 init python:
     # Songs for computer pad

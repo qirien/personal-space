@@ -21,21 +21,21 @@ label social_0:
     "But people weren't always as polite online as they were in person..."
     julia_c "Can everyone please make an effort to attend the next farmer's meeting? We can't get your input if you do not attend."
     natalia_c "Some of us are busy farming."
-    jed_c "Why're the meetings always held in the community center? That's a long ways for some of us."
+    pete_c "Why're the meetings always held in the community center? That's a long ways for some of us."
     natalia_c "Not such a tough cowboy now, are you? It's only two kilometers!"
-    jed_c "Well, it ain't fair for the meetings to always be close for some folks, and far for others. We oughta meet here sometime."
+    pete_c "Well, it ain't fair for the meetings to always be close for some folks, and far for others. We oughta meet here sometime."
     julia_c "The community center is centrally located. The meeting will be there."
-    jed_c "Who died and made you queen of the colony?"
+    pete_c "Who died and made you queen of the colony?"
     "I decided to step in and try and keep the peace."
     nvl clear
     
     her_c "Hey, let's all support Julia and the farmers! She's working hard to help everyone be organized and have the food they need."
-    jed_c "She's working hard knowin' everyone's business."
+    pete_c "She's working hard knowin' everyone's business."
     julia_c "We will all have to cooperate to survive!"
-    jed_c "Speak for yourself, we're doin' just fine up here."
+    pete_c "Speak for yourself, we're doin' just fine up here."
     natalia_c "I'll remember that the next time Helen asks me for some eggs!"
     helen_c "Hey, hey, don't drag me into this!"
-    jed_c "Yeah, well, see how you like going without milk for your kids. They're runty enough as it is."
+    pete_c "Yeah, well, see how you like going without milk for your kids. They're runty enough as it is."
     show her concerned
     "Uh-oh. Things were getting personal. Was there anything I could do?"
     nvl clear
@@ -43,33 +43,33 @@ label social_0:
     menu:
         "What should I do?"
         "Side with Natalia and Julia.":
-            her_c "Jed, that's going to far! We all need to help each other!"
-            jed_c "Of course you'd side with the other women. Where's all the men around here, anyway?  Back me up, guys!"
+            her_c "Pete, that's going to far! We all need to help each other!"
+            pete_c "Of course you'd side with the other women. Where's all the men around here, anyway?  Back me up, guys!"
             thuc_c "Don't look at me!"
             him_c "..."
-            jed_c "[his_name]? C'mon..."
+            pete_c "[his_name]? C'mon..."
             him_c "I don't care where we meet; let me know when you have it all straightened out."
             nvl clear
-            jed_c "You guys are all whipped..."
+            pete_c "You guys are all whipped..."
             natalia_c "Oh please. You had a dumb idea, get over it."
             her_c "I think it's time we all got over ourselves and stopped arguing."
             natalia_c "No one asked you."
-            jed_c "Yeah, you don't even come to these meetings."               
-        "Side with Jed.":
-            her_c "I'm sure Jed wouldn't make a big deal out of it unless it was really important to him. Would it be that terrible to have a meeting at his house?"
+            pete_c "Yeah, you don't even come to these meetings."               
+        "Side with Pete.":
+            her_c "I'm sure Pete wouldn't make a big deal out of it unless it was really important to him. Would it be that terrible to have a meeting at his house?"
             natalia_c "I'm not letting that bully have anything he wants."
-            jed_c "[her_name], stay out of this. I don't need you to make my case for me."
+            pete_c "[her_name], stay out of this. I don't need you to make my case for me."
             her_c "Fine, forget it."
         "Stay neutral.":
             her_c "Hey, hey, calm down everyone. I think we're all going to need things from each other in the next couple years. We don't have to agree about everything, but let's try and be polite, okay?"
             natalia_c "Tell that to Mr. Lone Ranger, who thinks he can do it all alone. Well, if he keeps this up, he may just get his wish!"
             her_c "I'm telling that to everyone. It takes two to argue, right?"
             natalia_c "..."
-            jed_c "..."
+            pete_c "..."
             $ community_level += 2
         "Say nothing.":
             natalia_c "You leave my kids out of this!!!"
-            jed_c "Hey, it's just an observation."
+            pete_c "Hey, it's just an observation."
             natalia_c "Why, you...!"
             him_c "Are we going to have a meeting or not?"
             julia_c "Yes, we will have a meeting!"
@@ -80,7 +80,7 @@ label social_0:
     nvl clear
     
     "Later, Natalia sent me a message."
-    natalia_c "I'm sorry I was so rude; Jed just make me so mad sometimes!"
+    natalia_c "I'm sorry I was so rude; Pete just make me so mad sometimes!"
     her_c "Oh, I understand. I think everyone's a little frustrated."
     natalia_c "Why don't you come over and we can chat in person? I found a fruit you might want to try..."
     her_c "Sure, I'll be right over."
@@ -134,7 +134,7 @@ label social_1:
     with moveinright
 
     "I was surprised when a lot of people showed up! I guess there's not much else to do here yet..."
-    "Martín and Natalia brought a board game to play, and one of the Nguyen's teenagers brought dice and computer pads to play a role-playing game. I overheard [his_name] talking to Jed about tractor racing, which sounded weird, but I was glad he was having a good time."
+    "Martín and Natalia brought a board game to play, and one of the Nguyen's teenagers brought dice and computer pads to play a role-playing game. I overheard [his_name] talking to Pete about tractor racing, which sounded weird, but I was glad he was having a good time."
     "The little kids seemed to playing some kind of spying game, as they would peek around a corner at us and then run away giggling whenever they were spotted."
     hide pavel with moveoutleft
     hide brennan with moveoutright
@@ -290,16 +290,16 @@ label social_4:
     play sound "sfx/people.mp3" loop
     "One week at Friday lunch group, we were all complaining about our lack of excitement."
     show lily at quarterright
-    show jed at left
+    show pete at left
     show sara at midleft
     show her normal at midright
     with dissolve
     lily upset "We all live so close to each other, but in the evenings everyone just wants to go to bed early."
     her concerned "Well, people who aren't working in town are farming all day, which is pretty tiring."
-    jed "That's true, but don't you get tired of sitting at home all the time? I get up early to milk the cows, and I'm in the library all day, so the last thing I want to do when I get home is sit around by myself some more."
+    pete "That's true, but don't you get tired of sitting at home all the time? I get up early to milk the cows, and I'm in the library all day, so the last thing I want to do when I get home is sit around by myself some more."
     her normal "I'm pretty busy, but I agree that it'd be fun to do something together as a community."
     lily normal "I was just reading on how we could use a magnifying glass with our tablets to make a projector. Perhaps we could have a movie night?"
-    jed "Yeah, a movie is low-key enough that even if you're all tuckered out from farming you should be able to sit through it."
+    pete "Yeah, a movie is low-key enough that even if you're all tuckered out from farming you should be able to sit through it."
     sara "And kids like to watch movies too, so we could include everyone."
     her happy "I know the perfect movie!"
     menu:
@@ -310,13 +310,13 @@ label social_4:
             her normal "Well, yes, but isn't it interesting to think about what space travel will be like in the future?"
             sara "You just like watching it for the cute guys."
             her happy "I think everyone enjoys watching good-looking people do stupid things. Plus I already know we have it in the archives!"
-            jed "We've got lots of Star Wars remakes in the archives, but maybe you didn't know that we have some rarer sci-fi movies here too."
+            pete "We've got lots of Star Wars remakes in the archives, but maybe you didn't know that we have some rarer sci-fi movies here too."
             her surprised "Like what?"
-            jed "{i}Time For No Man{/i} was originally a tellanovella, but when set in space, it suddenly became a sleeper cult hit in the 2030s!"
+            pete "{i}Time For No Man{/i} was originally a tellanovella, but when set in space, it suddenly became a sleeper cult hit in the 2030s!"
             her flirting "'No man', huh? Does it have any guys in it?"
-            jed "I think it has a few. It's not just lesbians if that's what you're asking."
+            pete "I think it has a few. It's not just lesbians if that's what you're asking."
             sara "Is it appropriate for children?"
-            jed "Sure. There's some innuendo, but that goes right over their heads."
+            pete "Sure. There's some innuendo, but that goes right over their heads."
             stop sound fadeout 3.0
             scene black with fade
             "We decided to watch {i}Time For No Man{/i} the next day in the evening. I sent out a message to the colony message board, and tried to remind everyone I saw to come."
@@ -360,9 +360,9 @@ label social_4:
             sara "Yeah, and it would encourage kids to try smoking alien weeds."
             her annoyed "Oh come on. We grew up watching films with people drinking all the time and it didn't turn us into alcoholics."
             sara "The plot of a Sherlock Holmes mystery is also difficult to understand, so it might not hold their interest."
-            jed "Well, I can think of a historical film with plenty of mystery that kids and adults might like."
+            pete "Well, I can think of a historical film with plenty of mystery that kids and adults might like."
             her normal "Tell us about it."
-            jed "It's a mini-series called {i}The Adventures of Emily Thompson{/i}, about a young girl living in a small town in England during the 1900s. She solves various mysteries like finding missing shoes and pets, and she ends up finding the culprit of a livestock theft."
+            pete "It's a mini-series called {i}The Adventures of Emily Thompson{/i}, about a young girl living in a small town in England during the 1900s. She solves various mysteries like finding missing shoes and pets, and she ends up finding the culprit of a livestock theft."
             her surprised "Well, that does sound a little more child-friendly than murder mysteries."
             sara "Let's do it."
             stop sound fadeout 3.0
@@ -383,9 +383,9 @@ label social_4:
             her normal "Let's put on an old cartoon movie so that the kids will enjoy it too."
             lily normal "{i}Wall-E{/i} is one that might be both relevant and entertaining."
             her surprised "I was thinking more along the lines of {i}The Old Man and the Sea{/i}."
-            jed "I think that movie would put everyone to sleep."
+            pete "I think that movie would put everyone to sleep."
             her normal "It's only forty minutes long!"
-            jed "I haven't seen {i}Wall-E{/i} in a while, and it could start some conversations about the colony, and what it oughta be like."
+            pete "I haven't seen {i}Wall-E{/i} in a while, and it could start some conversations about the colony, and what it oughta be like."
             sara "I agree! Some of the people have never seen it, and I think they would like it."
             stop sound fadeout 3.0
             scene black with fade
@@ -431,7 +431,7 @@ label social_4:
                     her annoyed "True. But it's going to be a big part of our lives for the foreseeable future, is what I meant."
                     him normal "That's the way I like it. There's nothing like farm-fresh food to make you healthy."
         
-    "The families went home as we talked. Jed and Sara and Lily and I congratulated each other for a movie well-watched, and I went home feeling like I helped everyone feel a little closer."
+    "The families went home as we talked. Pete and Sara and Lily and I congratulated each other for a movie well-watched, and I went home feeling like I helped everyone feel a little closer."
     $ skill_social += 10
     $ community_level += 2
     return
@@ -501,7 +501,7 @@ label social_5:
             show ilian at quarterright
             show sara at midright
             ilian "I don't want to go anywhere tonight; I have a headache."
-            sara sad "But I told Helen and Jed we'd both come over! How come you only have a headache when it's time to do something I want to do?!"
+            sara sad "But I told Helen and Pete we'd both come over! How come you only have a headache when it's time to do something I want to do?!"
             ilian "It's not like I can just turn them on or off! You think I like my head pounding?"
             sara "Yeah, I think you like having a headache more than you like doing something with me."
             ilian "That's ridiculous!"
@@ -951,7 +951,7 @@ label done_party_menu:
                 "I decided to enter the wood chopping contest."
                 show sara at left with move
                 show her normal at right
-                show jed at midright
+                show pete at midright
                 show thuc at midleft
                 with moveinleft
                 sara "Line up, everyone! Now, the goal is to see who can chop the most wood in one minute! Ready, set...GO!"
@@ -967,10 +967,10 @@ label done_party_menu:
                     her laughing "Yay!"
                     "I guess all the exercise I'd been doing really paid off."
                 else:
-                    sara "We have a winner! Congratulations, Jed!"
-                    jed "Is there a prize?"
+                    sara "We have a winner! Congratulations, Pete!"
+                    pete "Is there a prize?"
                     sara "Just bragging rights."
-                    jed "I'll take it!"
+                    pete "I'll take it!"
                     "I did my best, but I didn't chop very much. My arms were sore and I was sweating all over, but it was still fun."
             "Space Ship Construction.":
                 "I decided to enter the Space Ship Construction contest."
@@ -1151,7 +1151,7 @@ label social_master:
             her happy "That's fine; everyone will support me more if they feel like they have chosen me."
             pavel "We'll see if anyone else wants the job."
             "The mayor announced a vacancy in the post of deputy mayor, and asked for nominations."
-            "Sara nominated me, and [his_name] nominated Thuc, but he didn't want to run. Jed nominated Sister Naomi, but she declined the position as well. Nobody else wanted to run, but we held a vote anyway."
+            "Sara nominated me, and [his_name] nominated Thuc, but he didn't want to run. Pete nominated Sister Naomi, but she declined the position as well. Nobody else wanted to run, but we held a vote anyway."
             pavel "I guess you've got the job, [her_name]! Now, about those supply requests..."
         
     "It was quite a lot of work to help be in charge of the colony, but the Mayor seemed much less stressed out. It felt good to be trusted, and to help everyone work together here on Talaam."
