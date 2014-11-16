@@ -200,6 +200,7 @@ screen main_menu:
 
         has vbox
 
+        # TODO: Does help file work on Android? If not, disable it
         if (persistent.times_beaten):
             textbutton _("New Game+") action Start() text_size 28
         else:
@@ -207,7 +208,7 @@ screen main_menu:
         textbutton _("Load Game") action ShowMenu("load")
         if (persistent.times_beaten):
             textbutton _("Omake") action Start("omake")
-        textbutton _("Preferences") action ShowMenu("preferences")
+        textbutton _("Config") action ShowMenu("preferences")
         textbutton _("Help") action Help()
         textbutton _("Quit") action Quit(confirm=False)
 
@@ -238,7 +239,7 @@ screen navigation:
         has vbox
 
         textbutton _("Return") action Return()
-        textbutton _("Preferences") action ShowMenu("preferences")
+        textbutton _("Config") action ShowMenu("preferences")
         textbutton _("Save Game") action ShowMenu("save")
         textbutton _("Load Game") action ShowMenu("load")
         textbutton _("Main Menu") action MainMenu()

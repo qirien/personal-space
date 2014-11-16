@@ -235,7 +235,7 @@ label spiritual_5:
     $ skill_spiritual += 10
     return
 
-# Reading the Koran; helping Helen Engel
+# Reading the Koran; helping Callie Jennings
 label spiritual_6:
     scene bg farm_interior with fade
     show her normal at center
@@ -253,20 +253,20 @@ label spiritual_6:
     her annoyed "Where are we going?"
     naomi "We are needed."
     scene bg talam with fade
-    "We walked past one farm, and then another. We had been walking for about a half an hour. Finally, we reached the farthest farm from town. It belonged to the Engels - Helen and Pete were newlyweds like [his_name] and me."
+    "We walked past one farm, and then another. We had been walking for about a half an hour. Finally, we reached the farthest farm from town. It belonged to the Jenningss - Callie and Pete were newlyweds like [his_name] and me."
     "They were the farthest farm for a reason; they seemed to like to be by themselves. I hardly ever saw them, or their baby who was born on the shuttle."
     "When we got there, Sister Naomi knocked on the door and called out,"
-    naomi "Helen, it's Naomi. May I come in?"
+    naomi "Callie, it's Naomi. May I come in?"
     helen "Of course, Sister Naomi."
     scene bg farm_interior flip
     show helen at quarterright with dissolve
     show naomi at center
     show her normal at midleft
     with  moveinleft
-    "We entered their small cabin, not that much different from our own. Helen was sitting on the bed doing some knitting. She invited us to sit next to her."
+    "We entered their small cabin, not that much different from our own. Callie was sitting on the bed doing some knitting. She invited us to sit next to her."
     her surprised "What are you making?"
     helen "It's supposed to be a baby hat, but it isn't turning out very well. I don't think any baby's head is shaped like this!"
-    "She held up her misshapen knitting and laughed, but it was a forced laugh. Naomi didn't say anything, though - she just patted Helen's shoulder and looked at me. What was I supposed to say?"
+    "She held up her misshapen knitting and laughed, but it was a forced laugh. Naomi didn't say anything, though - she just patted Callie's shoulder and looked at me. What was I supposed to say?"
     menu:
         "What should I say?"
         "I think the hat looks fine.":
@@ -297,8 +297,8 @@ label spiritual_6:
 
     show naomi at quarterleft with move
     show her serious at center with move
-    "We sat in silence for a few minutes. Naomi picked up the baby and played with him on the other side of the room, leaving Helen and I sitting together."
-    "I didn't know what to say. I hoped Naomi would say something wise and comforting, but she didn't. Finally, Helen set down her hat."
+    "We sat in silence for a few minutes. Naomi picked up the baby and played with him on the other side of the room, leaving Callie and I sitting together."
+    "I didn't know what to say. I hoped Naomi would say something wise and comforting, but she didn't. Finally, Callie set down her hat."
     helen "The truth is, I hate knitting."
     her surprised "You do?"
     helen "Yes! But the one thing I hate more than knitting is feeling useless! I wish I could be helping Pete with the cows, or working at the library, or {b}something{/b} other than sitting around waiting for this baby to grow up!" 
@@ -310,7 +310,7 @@ label spiritual_6:
     helen "Probably not..."
     her normal "There's risks everywhere; that's why he has you. To help him learn how to handle the dangers, not to shield him from any possibility of danger."
     helen "It's just... every time I think about taking him anywhere, all I can think about is all the things that could go wrong. A solar flare giving him skin cancer, or alien bugs landing on him and biting him, or someone will hurt him..."
-    her serious "Helen... you sound really anxious."
+    her serious "Callie... you sound really anxious."
     helen "Yeah... Sister Naomi has been helping me with some therapy, but I still don't feel ready to leave the house yet."
     if (profession == "doctor"):
         her concerned "Well, if you'd like to make an appointment to meet with me sometime, as your doctor, we could consider some other options. Sister Naomi is a great therapist, but if therapy is not working for you, we should consider medication."
@@ -319,7 +319,7 @@ label spiritual_6:
     
     helen "Thanks, [her_name]. I'll... I'll think about that."
     
-    "We talked some more about other things, and Naomi left a book that she had brought, and then it was time for us to go. It was getting late, and it would take me a while to walk all the way home from Helen's house, but I felt that it was worth it."
+    "We talked some more about other things, and Naomi left a book that she had brought, and then it was time for us to go. It was getting late, and it would take me a while to walk all the way home from Callie's house, but I felt that it was worth it."
     scene bg path with fade
     show naomi at midleft
     show her normal at midright
@@ -327,7 +327,7 @@ label spiritual_6:
     show overlay night
     her surprised "But...what did any of that have to do with piety?"
     naomi "You read \"You will not attain piety until you expend of what you love\"."
-    her serious "Well...Helen is definitely giving up a lot for her baby, even if I'm not sure all her sacrifices are necessary."
+    her serious "Well...Callie is definitely giving up a lot for her baby, even if I'm not sure all her sacrifices are necessary."
     naomi "I was talking about your sacrifices, [her_name]. You gave of your time, and of yourself."
     show her normal
     

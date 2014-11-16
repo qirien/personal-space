@@ -433,7 +433,7 @@ label relax_alone_k:
 
 label relax_alone_l:
     scene bg farm_interior with fade
-    "I chatted with Helen Engel over the network - she lived on the other side of the colony and didn't leave the house much, so we didn't get to see each other very often."
+    "I chatted with Callie Jennings over the network - she lived on the other side of the colony and didn't leave the house much, so we didn't get to see each other very often."
     her_c "Hey, how are your cows doing?"
     helen_c "Good! They have plenty of room to graze, but we had to pull out a few poisonous plants we didn't know about."
     her_c "How'd you find out they were poisonous?"

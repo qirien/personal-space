@@ -657,6 +657,8 @@ label physical_8:
     return
 
 # Lead a group hunt
+# TODO: Is this actually good hunting? 
+# TODO: Do these gunshot sounds match the type of guns they would be using?
 label physical_master:
     scene bg talam with fade
     play music "music/NoSilencePlease.ogg" fadeout 3.0

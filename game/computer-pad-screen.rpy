@@ -26,8 +26,6 @@ style cp_choice_button is button:
 
 screen computer_pad(periods):
     tag month_menu
-    if (month == 1):
-        use help_screen_1
 
     add "bg/silk-gray.jpg"
     add "bg/computer-pad.png"

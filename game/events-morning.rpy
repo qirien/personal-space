@@ -89,7 +89,7 @@ label work_0:
     with moveoutright
     show pete at midright with moveinright
     show helen at right with moveinright
-    pavel "Pete is in charge of the library, so if you need to research something or print something out, head over there. He and his wife Helen are also experts on raising cattle, and will be starting a ranch up to the north."
+    pavel "Pete is in charge of the library, so if you need to research something or print something out, head over there. He and his wife Callie are also experts on raising cattle, and will be starting a ranch up to the north."
     pavel "And, their baby, who was born on the shuttle, was the first human being to be born in space!"
     pete "Hey, y'all. Don't be strangers! I'll mostly be up at the ranch, but send me a message and I'll come down to the library if y'all need help."
     helen "Hi..."
@@ -581,7 +581,7 @@ label work_3:
     # MECHANIC
     elif (profession == "mechanic"):
         "I worked hard all month. People's datapads would get corrupted if they were left out during solar flares, the farm equipment needed maintenance, and sometimes homes' solar panels or stoves would break down."
-        "Some critter kept chewing through the wires at the Engels' farm, and so we were always going out there to replace those."
+        "Some critter kept chewing through the wires at the Jenningss' farm, and so we were always going out there to replace those."
         show brennan at quarterleft with dissolve
         "Brennan worked hard, too - he didn't know much about electronics, but he could run wires and haul materials and use ordinary tools to care of the easier things."
         "We accomplished a lot more together than I could have on my own."

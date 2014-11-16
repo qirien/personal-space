@@ -60,7 +60,6 @@ image him serious = "sprites/him-annoyed.png" #TODO: does this work OK?
 image him sleeping = "sprites/him-sleeping.png" #TODO: make color (shirtless?) version?
 
 # Her
-# TODO: Adjust sizes of sprites for heights
 image her normal = "sprites/her.png"
 # TODO: Fix angry, annoyed, flirting, serious,sleeping when they are done.
 image her angry = "sprites/her-angry.png"
@@ -77,8 +76,6 @@ image her sleeping = "sprites/her-sleeping.png"
 define SMALL_IMAGE_SCALE = 0.55
 define SMALL_IMAGE_CROP = 90
 
-# TODO: Add tiny avatars for message board.
-# TODO: add small images for him/her for computer pad moods
 image her sad head = LiveCrop((5, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/her-sad.png", SMALL_IMAGE_SCALE))
 image her concerned head = LiveCrop((5, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/her-concerned.png", SMALL_IMAGE_SCALE))
 image her serious head = LiveCrop((5, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/her-serious.png", SMALL_IMAGE_SCALE))

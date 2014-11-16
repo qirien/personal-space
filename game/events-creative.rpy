@@ -298,9 +298,9 @@ label creative_8:
     "We spent the evening winding grasses into rope."
     scene bg pond with fade
     "The next day I walked along the river bank. I was hoping to find the narrowest place to build my bridge. I also had to find a place where a suspension bridge would fit in with the geography."
-    "I found the perfect spot just as I was about to give up and go home. Near the Engel's, the river split a large knoll into two. Water had worn away the dirt into smooth mounds on either side of the river."
+    "I found the perfect spot just as I was about to give up and go home. Near the Jennings's, the river split a large knoll into two. Water had worn away the dirt into smooth mounds on either side of the river."
     if (skill_social >= 30) or (skill_knowledge >= 30):
-        "I talked to the Engels about building the bridge and they were excited to help. Helen thought it would be useful to have some more rope for the cows, and Pete said he'd try to spin rope during downtime at the library."
+        "I talked to the Jenningss about building the bridge and they were excited to help. Callie thought it would be useful to have some more rope for the cows, and Pete said he'd try to spin rope during downtime at the library."
         "After a few days we had enough rope to start making stronger rope."
     else:     
         if (loved >= 20):

@@ -370,7 +370,6 @@ label technical_8:
     "The current inventory management system had all sorts of buttons that would be useful in a store, but had no meaning on our colony."
     her serious "I could delete those buttons, and make it quicker to look up the things you need all the time. Will you make me a list of things that need to be easier?"
     ilian "Yes, I will."
-    # TODO computer bg?
     scene bg farm_interior with fade
     show her normal at center
     "I worked on the inventory system every evening for a few weeks, asking Ilian for feedback after major changes."

@@ -9,17 +9,17 @@ define narrator = Character(ctc="ctc_blink", ctc_position="nestled")
 define her = DynamicCharacter("her_name", color="#8864d5", image="her", ctc="ctc_blink", ctc_position="nestled") #periwinkle
 define him = DynamicCharacter("his_name", color="#c80000", image="him", ctc="ctc_blink", ctc_position="nestled") #red 
 
-define naomi = Character("Sister Naomi", color="#ededed", image="naomi", ctc="ctc_blink", ctc_position="nestled")  #light gray
+define naomi = Character("Sister Naomi Grayson", color="#ededed", image="naomi", ctc="ctc_blink", ctc_position="nestled")  #light gray
 define pavel = Character("Mayor Grayson", color="#cccccc", image="pavel", ctc="ctc_blink", ctc_position="nestled")   #dark gray
 # TODO: Lily and Sara don't have last names?! Lily has Hawaiian last name?
-define lily = Character("Lily", color="#8655bd", image="lily", ctc="ctc_blink", ctc_position="nestled")  #purple
-define sara = Character("Sara", color="#c64e89", image="sara", ctc="ctc_blink", ctc_position="nestled")  # dark pink
+define lily = Character("Dr. Lily Kealoha", color="#8655bd", image="lily", ctc="ctc_blink", ctc_position="nestled")  #purple
+define sara = Character("Sara Andrevski", color="#c64e89", image="sara", ctc="ctc_blink", ctc_position="nestled")  # dark pink
 define thuc = Character("Thuc Nguyen", color="a9ff22", image="thuc", ctc="ctc_blink", ctc_position="nestled")  #lime green
 define ilian = Character("Ilian Andrevski", color="ffa922", image="ilian", ctc="ctc_blink", ctc_position="nestled") #tangerine
 define brennan = Character("Brennan Callahan", color="33b533", image="brennan", ctc="ctc_blink", ctc_position="nestled")  #irish green
-define pete = Character("Pete Engel", color="cb5500", image="pete", ctc="ctc_blink", ctc_position="nestled")  #rusty brown
+define pete = Character("Pete Jennings", color="cb5500", image="pete", ctc="ctc_blink", ctc_position="nestled")  #rusty brown
 define natalia = Character("Natalia Perón", color="ffe74a", image="natalia", ctc="ctc_blink", ctc_position="nestled")  #yellow
-define helen = Character("Helen Engel", color="cdcfb2", image="helen", ctc="ctc_blink", ctc_position="nestled") #tan
+define helen = Character("Callie Jennings", color="cdcfb2", image="helen", ctc="ctc_blink", ctc_position="nestled") #tan
 define julia = Character("Julia Nguyen", color="#4b54cd", image="julia", ctc="ctc_blink", ctc_position="nestled") #icy blue
 define martin = Character("Martín Perón", color="#990011", image="martin", ctc="ctc_blink", ctc_position="nestled")  #dark red
 
@@ -35,7 +35,6 @@ define her_nickname = "lover"
 
 
 # Variables about emotional state.  -100 is minimum, 100 is maximum
-# TODO: might need to normalize these, set as stats, so we can use bars for them.  Maybe 0 to 100?
 define relaxed = 0    # negative = stressed
 define loved = 0      # negative = neglected
 define made_love = 0  # Counter of lovemaking, used for pregnancy calculation
@@ -152,7 +151,10 @@ label start:
                 "OK, we will not use New Game+ data."
          
         # TODO: Make a skip and menu button to go on the dialogue box. Change this for Android?
-        "To fast-forward through scenes you have already seen, hold down \"Ctrl\" or use the \"Skip\" button."
+        if not renpy.variant('touch'):
+            "To fast-forward through scenes you have already seen, hold down \"Ctrl\" or use the \"Skip\" option in the Config screen."
+        else:
+            "To fast-forward through scenes you have already seen, use the \"Skip\" option in the Config menu."
 
     "Do I want to remember how it all began?"
     # TODO: Remove this, or change it somehow?
@@ -201,6 +203,7 @@ label start:
     show him normal at quarterright with moveinright
     
     # Get his name
+    # TODO: Add a last name "Ventura"? She gets to pick if she wants his last name?
     if not renpy.variant('touch'):
         $ his_name = renpy.input("What is his name?", "Jack", length=20)
     else:

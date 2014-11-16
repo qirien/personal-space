@@ -1975,7 +1975,7 @@ label monthly_event_13:
     pete "I was driving my tractor, maybe a little fast- she jumped in front of it- I was going too fast- I didn't mean to run over anyone!"
     natalia "But how did her body end up in the river?!"
     pete "It was obvious she was dead- there was so much blood- I was so horrified- I don't know why I did that- I didn't want anyone to know it was me. So I... dropped her body in the river."
-    "Nobody knew what to say. He was really crying, now, heaving deep sobs that seemed so alien to his usual bravado. I looked over at his wife, Helen, who looked like she was in shock."
+    "Nobody knew what to say. He was really crying, now, heaving deep sobs that seemed so alien to his usual bravado. I looked over at his wife, Callie, who looked like she was in shock."
     pavel "Pete, I can tell you're sorry about this, and I'm glad you came forward. We will need to have a trial and decide what to do about this."
     natalia "What do you need a trial for?! He just admitted he killed Josephina!"
     pavel "The laws of our community, which you all signed, state that any accused shall receive a trial, administered by myself and with a jury randomly selected from the adults of the colony that are not involved in the crime."
@@ -1987,7 +1987,7 @@ label monthly_event_13:
     show her serious at midright
     with dissolve
     pavel "[her_name], you've been randomly selected to be on the jury. Is there any reason you should not do this? Any conflict of interest with either side?"
-    her concerned "I'm friends with Helen... but, I guess everyone knows each other here."
+    her concerned "I'm friends with Callie... but, I guess everyone knows each other here."
     pavel "That's fine. We will proceed with the trial at two o'clock."
     
     scene bg community_center with fade
@@ -2034,7 +2034,7 @@ label monthly_event_13:
             ilian "And now we know the price of a four-year-old girl: 400 work hours."
             her annoyed "It's not like that. Of course there's no way to bring her back or make it up to them. But he needs to do something for reparations."
 
-            "The jury decided that was fair, and the Mayor, Pete, and the Peróns all accepted our proposal. Helen didn't seem to happy about it, though. She'd probably have to do extra work on their farm to make up for his absence."
+            "The jury decided that was fair, and the Mayor, Pete, and the Peróns all accepted our proposal. Callie didn't seem to happy about it, though. She'd probably have to do extra work on their farm to make up for his absence."
 
         "Banishment":
             her serious "I agree with Thuc; we need to show that our community won't allow such behavior."
@@ -2047,7 +2047,7 @@ label monthly_event_13:
             thuc "Four."
             lily "I suppose that would work...as long as the resources he gathers go to help the Perón family."
             "Finally, we had come to an agreement."
-            "Pete and the Peróns accepted it, but Helen and the Mayor frowned. Poor Helen... I guess in a way we were sentencing her, too."
+            "Pete and the Peróns accepted it, but Callie and the Mayor frowned. Poor Callie... I guess in a way we were sentencing her, too."
             "Still, it was only for a month."
             
         "{i}Compromise{/i}" if (skill_spiritual >= 40):
@@ -2992,9 +2992,9 @@ label monthly_event_19:
                 $ relaxed += 2
                 jump maternity_clothing
             "{i}Ask around{/i}" if (skill_social >= 60):
-                "I knew Helen had recently had a baby, so I decided to send her a message and see what she had done."
+                "I knew Callie had recently had a baby, so I decided to send her a message and see what she had done."
                 play sound "sfx/message.mp3"
-                her_c "Hey, Helen, what did you do for maternity clothes?"
+                her_c "Hey, Callie, what did you do for maternity clothes?"
                 helen_c "Oh, I just made a big tent dress out of a hospital gown. It doesn't look very good, but it's very comfortable."
                 her_c "Do you think you could show me how?"
                 helen_c "I think mine would fit you if you want it... I don't need it anymore."
@@ -3270,7 +3270,7 @@ label monthly_event_22:
             her normal "I can ask around for you."
             pavel "Thank you, maybe people will be more willing to talk to you."
             her surprised "Hey, do you guys need any shampoo? You said Naomi was going to get some when you found out it was missing..."
-            pavel "No, we're just fine. Helen gave us some of hers, so you don't need to worry about us."
+            pavel "No, we're just fine. Callie gave us some of hers, so you don't need to worry about us."
             her normal "Okay, good."
             hide pavel with moveoutleft
             "I decided to start by looking at everyone's hair over the next few days."

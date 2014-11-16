@@ -33,7 +33,7 @@ label social_0:
     pete_c "She's working hard knowin' everyone's business."
     julia_c "We will all have to cooperate to survive!"
     pete_c "Speak for yourself, we're doin' just fine up here."
-    natalia_c "I'll remember that the next time Helen asks me for some eggs!"
+    natalia_c "I'll remember that the next time Callie asks me for some eggs!"
     helen_c "Hey, hey, don't drag me into this!"
     pete_c "Yeah, well, see how you like going without milk for your kids. They're runty enough as it is."
     show her concerned
@@ -501,7 +501,7 @@ label social_5:
             show ilian at quarterright
             show sara at midright
             ilian "I don't want to go anywhere tonight; I have a headache."
-            sara sad "But I told Helen and Pete we'd both come over! How come you only have a headache when it's time to do something I want to do?!"
+            sara sad "But I told Callie and Pete we'd both come over! How come you only have a headache when it's time to do something I want to do?!"
             ilian "It's not like I can just turn them on or off! You think I like my head pounding?"
             sara "Yeah, I think you like having a headache more than you like doing something with me."
             ilian "That's ridiculous!"
@@ -523,7 +523,7 @@ label social_5:
             sara "I just feel so trapped sometimes! I hate staying at home in the evenings and doing nothing!"
             her surprised "I guess that's Ilian's favorite thing to do?"
             sara "Yeah..."
-            her normal "Well, why don't I go with you to Helen's after dinner, and we can have a girl's night? We haven't done that for a while..."
+            her normal "Well, why don't I go with you to Callie's after dinner, and we can have a girl's night? We haven't done that for a while..."
             sara normal "Okay...thanks, [her_name]."
             scene black with fade
             "When we came back, the mood had definitely changed."            
