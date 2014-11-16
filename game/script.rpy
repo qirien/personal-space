@@ -52,7 +52,7 @@ init -200:
     define year = 1
     define earth_year = 1
     define earth_month = 0
-    define save_name = "Intro"
+    define save_name = "Intro" #name for the saved game
 
     define known_each_other = ""
     define profession = ""

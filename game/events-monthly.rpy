@@ -1600,7 +1600,10 @@ label goto_ocean:
     stop sound fadeout 3.0 
     return
 
+#
 # MONTH 11
+#
+# No salt! Head to the ocean with Dr. Lily to get some
 label monthly_event_11:
     scene bg farm_interior with fade
     show him normal at midleft
@@ -1713,7 +1716,9 @@ label monthly_event_11:
     # So the purple jellies are kind of like bees in a collective unconscious sort of way. Maybe that's too far out? It's a seed for something later on anyway.
     return
 
+#
 # MONTH 12
+#
 # Jealous of time spent with friend
 # uses domestic, social, spiritual
 label monthly_event_12:
@@ -1822,23 +1827,23 @@ label monthly_event_12:
     if (relaxed >= 0):
         her serious "Here I am...here for you and loving you, [his_nickname]."
         "We held each other for a long time. I felt there was so much I wanted to say, I tried to put it all into my hug and strengthen him and help him."
-        $ loved += 5
+        $ loved += 2
     else:
         her serious "Yeah, I'm here for you."
         "That's what I said, but inside I just felt annoyed. I had enough problems of my own without worrying about his."
         him concerned "Okay, thanks."
-        $ loved += 2
     
     return
 
+#
 # MONTH 13 - Jury Duty
+#
 # uses spiritual, technical
-# TODO: Have Pete get depressed later about being accused and not trusted anymore
 label monthly_event_13:
     scene bg talam with fade
     play music "music/NoOneWillKnow.ogg" fadeout 3.0
     "I hadn't thought about it much before, but we didn't have a lot of laws here on Talaam. Some things just didn't apply (like taxes, food regulations, etc), but I remember signing something about agreeing to abide by a set of laws that sounded very reasonable."
-    "It had never seemed like something I would have to worry about.  Until I had to be on the jury for Pete's trial, that is..."
+    "It had never seemed like something I would have to worry about.  Until I had to be on the jury for a manslaughter trial, that is..."
     "We hadn't had any crime our whole first year (though we certainly had our share of arguments, accidents, and disagreements)."
     "After all, who would hurt anyone else in our colony? We needed each other too much."
     "But that peace couldn't last forever..."
@@ -1859,17 +1864,106 @@ label monthly_event_13:
         "The injuries seemed too severe to have been sustained after she fell in the river..."
     else:
         "We didn't have a coroner or anything, but the doctor took a look at the body."
-        "Josephina's body had several broken bones and big gash on her head that didn't seem like they came from falling in the river..."
+        "Josephina's body had several broken bones and a big gash on her head that didn't seem like they came from falling in the river..."
 
     "In addition, Mr. Perón found some blood on the road next to his farm that led to the river."
     scene black with fade
-    "We spent a few days being suspicious of each other. [his_name] started barring our door at night."
-    "Finally, the mayor called a community meeting."
+    
+    "Exactly how she died was a mystery. But the Peróns didn't wait for it to be solved before holding a funeral."
+    call set_work_bg    
+    if (profession == "doctor"):
+        show her serious at right
+        show naomi at midright
+        show natalia at midleft
+        with dissolve
+        "I helped Sister Naomi and Natalia prepare Josephina's body for burial. Grotesque as it was, it was still her daughter's body, and we washed it and clothed it in her best clothes with respect."
+        "As I closed the lid on her bloated body, I tried to remember what she had looked like before, but all I could picture was the corpse."
+        scene bg church with fade
+        "At the funeral, they showed pictures of her - on Earth, with her family, going to school-- and I could remember her properly again."
+    elif (profession == "carpenter"):
+        "Sister Naomi asked me to make a coffin for the body. We didn't have large tree lumber, so I ended up weaving smaller branches together to make sort of a basket-style coffin."
+        "As I closed the lid on her bloated body, I tried to remember what she had looked like before, but all I could picture was the corpse."
+        scene bg church with fade        
+        "At the funeral, they showed pictures of her - on Earth, with her family, going to school-- and I could remember her properly again."
+    elif (profession == "mechanic"):
+        "Since the body was so bloated and could not be displayed, Sister Naomi asked me to put together a display of photos of Josephina on a computer tablet."
+        "The Peróns sent me the pictures they had of her. I could see why Sister Naomi asked me to do it instead of Josephina's parents."
+        "Going through the photos was like being haunted, with her impish young face eerily grinning at me from the past. Only weeks ago she had had her first day of school, she had played in the mud with her siblings and friends, she had harvested vegetables from the family garden..."
+        "I chose the ones that I thought showed her personality best and set them to display on my computer pad for the funeral."
+        scene bg church with fade
+    elif (profession == "teacher"):
+        "Sister Naomi asked me to have the kids at school prepare something for the funeral. I asked them each to write or draw one memory of her, and we would tie them together in a book for her family."
+        "Some of the kids didn't have much to say. \"She had pretty braids.\", or a generic picture of a smiling stick figure girl."
+        "Some of the entries were funny. \"Josephina threw mud at me so I threw some back and we were both dirty and my mom was really mad but we were laughing.\""
+        "Some were more heartbreaking. \"Josephina, I hope you get to learn to read in heaven because I know you really wanted to.\""
+        scene bg church with fade
+    
+    show naomi at center with dissolve
+    "At the funeral, Sister Naomi explained how her family believed they would be live again and be together after this life, and how blessed we were to have known such a joyous spirit."
+    if (skill_spiritual >= 40):
+        "I was touched by their faith as several members of the family told of how they looked forward to seeing her again."
+    "We sang a hymn, and then we all trudged out behind the chapel to the graveyard."
+    scene bg talam with fade
+    show naomi at midleft
+    show martin at quarterright    
+    show natalia at midright
+    with dissolve
+    "I hadn't even noticed we had a graveyard, but Josephina's was the second grave here."
+    "Her family took turns throwing in flowers, and then Sister Naomi said a prayer, and anyone who wanted to could shovel some dirt onto the coffin."
+    "Natalia was crying quietly, and Martín had his arm around her somberly. His other arm was wrapped around one of his sons."
+    hide naomi
+    with moveoutright
+    show him serious at left    
+    show her serious at quarterleft
+    with moveinleft    
+    "As I threw a shovelful of dirt on the coffin, my thoughts were not so much about Josephina, but about myself."
+    "Would I end up here someday? Would [his_name]? Would our kids? Would we be together somehow after we died?"
+    "I had never thought that far into the future before."
+    
+    scene bg community_center with fade
+    show julia at quarterright with dissolve
+    show him serious at left
+    show her serious at midleft
+    with moveinleft
+    "After the graveside service, we all headed over to the community center, where Julia and some other colonists had prepared lunch for everyone."
+    "As we ate, the silence slowly lifted, the mood lightened, and we could talk again."
+    show him normal
+    show her normal
+    with dissolve
+    "They showed some home videos of her, giggling as an infant, trying to keep up with her older brothers and sisters, working in the garden with her mom and dad."
+    "Almost all of us could remember something funny Josephina had said, and remembering them helped us laugh a little."
+    hide julia with moveoutright
+    show martin at right
+    show natalia at quarterright
+    with moveinright
+    show him serious at quarterleft with move
+    show her serious at center with move    
+    "I approached Natalia, suddenly nervous. I hadn't been to many funerals; what should I say to a friend who lost her daughter?"
+    menu:
+        "What should I say?"
+        "I'm sorry for your loss.":
+            her concerned "I'm so sorry for your loss, Natalia."
+            natalia "Thank you, [her_name]. It means a lot to me that you're all here supporting us."
+        "Josephina was a bright girl.":
+            her concerned "Josphina was such a bright, joyous little person... I'll miss her."
+            natalia "Yes, she was. And still is, up in heaven where she is now. Thank you, [her_name]."
+        "(Just give her a hug)":
+            show her serious at midright with move
+            "I didn't know what to say, so I just gave her a hug. I tried to communicate to her all that I felt, how I felt sad for her, and missed Josephina, and wanted her to feel better, and would always remember her daughter."
+            "She smiled at me in thanks, and I could see how much she was hurting, but also beginning to heal."
+            
+    "The wake would continue on for several hours, but [his_name] and I decided to go home."
+    scene black with fade
+    "The feeling of unity we felt at the funeral didn't last, however. We still didn't know how Josephina had died, only that it wasn't as simple as just falling into the river."
+    "Whatever, or whoever, had killed her was still out there."
+    "[his_name] started barring our door at night."
+    "The mayor brought it up at our next community meeting."
     scene bg community_center with fade
     show pavel at center, behind natalia with dissolve
-    pavel "I know everyone is worried, and scared, but we can't stop trusting each other. We will find who's responsible for this."
+    pavel "I know everyone is worried, and scared, but we can't stop trusting each other."
     show natalia at right with moveinright
     natalia "Who knows who will be next?! It clearly wasn't an accident!"
+    "Several people murmured in agreement. The mayor looked ready to say something further."
     show pete at midleft with moveinleft
     "But then, Pete stepped forward."
     pete "I'm sorry! I'm so sorry!"
