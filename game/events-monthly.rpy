@@ -4351,7 +4351,7 @@ label monthly_event_24:
                 him sad "..."
                 "He nodded sadly, and slowly turned away and walked out the front door."
                 "I didn't go after him."
-                $ loved -= 5
+                $ loved = -10
             "I'm not sure yet.":
                 her concerned "I just don't know..."
                 him serious "Then stay! You already know what kind of life you'll have on Earth - boring, predictable, pointless. But here - who knows what could happen?!"

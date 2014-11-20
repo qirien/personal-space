@@ -39,7 +39,7 @@ label spiritual_0:
     show her serious at midleft with moveinleft
     "Naomi Grayson" "Welcome, [her_name]. How can I help you?"
     her surprised "Hi...uh, What should I call you, anyway? Pastor? Reverend?"
-    naomi "Why don't you call me \"Sister Naomi\"? While I'm not a nun of any religion, I like to emphasize that we are all like children when it comes to matters of the spirit."
+    naomi "Why don't you call me \"Sister Naomi\"? While I'm not a nun of any religion, I like to emphasize that we are all like children when it comes to matters of the spirit, and all part of the same human family."
     her normal "OK, Sister Naomi...what exactly do you do here?"
     naomi "When people have questions about what they should do, or what to believe, sometimes it is helpful for them to have a guide. Since there are people of many different faiths here on Talaam, I try and guide them in a way that is helpful for their religious background."
     her serious "But what do you believe?"
@@ -209,6 +209,23 @@ label spiritual_4:
 
     "Thinking about another person's perspective did help me to understand them better, so maybe I wouldn't get mad at them as easily in the future."
     
+    scene bg church with fade
+    show naomi at midright with dissolve
+    show her normal at midleft with moveinleft
+    naomi "How is your reading going, [her_name]?"
+    her serious "Pretty good. Some of the books are more confusing than others, but there's always something that helps me think about things differently."
+    naomi "I'm glad to hear it. How is [his_name] doing?"
+    her normal "Good, he's been working hard every day growing food."
+    naomi "Yes, I don't see him very often, so I guessed that he was very busy."
+    her surprised "How are you and Pavel?"
+    naomi "Well, we miss our family sometimes, but we really feel that what we are doing here is important."
+    her surprised "You left family back on Earth?"
+    naomi "Yes, we have four children and seven grandchildren."
+    her concerned "That must be hard not to see them... Didn't any of them want to come with you to Talaam?"
+    naomi "No, they are all very much involved in their own areas. We miss them, but they are getting along just fine without us."
+    her happy "Well, we're lucky they were able to part with you, because you and Pavel really bind this community together."
+    naomi "Thank you, [her_name], we try."
+    
     $ skill_spiritual += 10
     return
 
@@ -310,6 +327,8 @@ label spiritual_6:
     helen "Probably not..."
     her normal "There's risks everywhere; that's why he has you. To help him learn how to handle the dangers, not to shield him from any possibility of danger."
     helen "It's just... every time I think about taking him anywhere, all I can think about is all the things that could go wrong. A solar flare giving him skin cancer, or alien bugs landing on him and biting him, or someone will hurt him..."
+    
+    # TODO: Add a choice here
     her serious "Callie... you sound really anxious."
     helen "Yeah... Sister Naomi has been helping me with some therapy, but I still don't feel ready to leave the house yet."
     if (profession == "doctor"):

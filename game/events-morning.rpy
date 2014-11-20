@@ -587,7 +587,7 @@ label work_3:
     # MECHANIC
     elif (profession == "mechanic"):
         "I worked hard all month. People's datapads would get corrupted if they were left out during solar flares, the farm equipment needed maintenance, and sometimes homes' solar panels or stoves would break down."
-        "Some critter kept chewing through the wires at the Jenningss' farm, and so we were always going out there to replace those."
+        "Some critter kept chewing through the wires at the Jennings' farm, and so we were always going out there to replace those."
         "The best part was the lack of meetings and paperwork. I met with the mayor every so often, and logged all the work we did, but that's it."
         "If there was nothing going on, I'd just head home. If I was in the middle of something at dinnertime, I might take it home with me and work on it some more at night."
         "It was so freeing to be doing work for the sake of getting good things done, and not for the sake of a paycheck."

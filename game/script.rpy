@@ -84,6 +84,7 @@ init -200:
     define LOVED_GOOD = 40
     define LOVED_MAX = 60
     define SKILL_SAVED_MAX = 60
+    define ending = "none"
 
     #Technical variables used to control how the game displays
     # Custom transitions, positions, etc.

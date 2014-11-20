@@ -5,6 +5,9 @@ Sprites
 -------
 Original art by Clarissa Helps, CC-BY-NC-SA-4.0
 
+Watercolor stock from by Deviant Art user ekoh-stock
+http://ekoh-stock.deviantart.com/art/Watercolor-Texture-Stock-1-96957280
+
 Background Images
 -----------------
 Earth image, starscape courtesy of NASA, www.nasa.gov
@@ -65,6 +68,7 @@ Music
 "Shanghai 20 00" by Attic Trax (Magnatune Records)
 "You Undone" by Anonymph (Magnatune Records)
 "Alpha" by TranceVision (Magnatune Records)
+"Blessed" by Falling You (Magnatune Records)
 Used under the Creative Commons Attribution-NonCommercial-ShareAlike 1.0 License, http://creativecommons.org/licenses/by-nc-sa/1.0/legalcode
 
 Reference
