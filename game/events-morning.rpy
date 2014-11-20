@@ -567,6 +567,10 @@ label work_3:
     # DOCTOR 
     if (profession == "doctor"):
         "I worked hard all month. A new baby was born, a kid got his finger chopped off, and it looked like Mr. Perón might have cancer. In addition, we were monitoring the colonists' radiation and nutrient levels to try to keep them healthy."
+        "The best thing about being a doctor here on the colony was not having to deal with insurance or payment or referrals. We logged everything carefully, but there was no bureaucracy and no money to keep track of."
+        "Since there were only about 200 colonists, I was usually able to devote much more time to each patient than I had at the general practice where I worked before."
+        "Although, sometimes it was awkward to do physical exams on people I saw all the time outside of work..."
+        
         show brennan at quarterleft with dissolve
         "Brennan worked hard, too - he didn't have any formal medical training, but he learned to take vitals and log patients and fetch equipment for me."
         "It would have been impossible to do it all by myself."
@@ -574,6 +578,8 @@ label work_3:
     # CARPENTER
     elif (profession == "carpenter"):
         "I worked hard all month. Now that everyone was settling in, people had a lot of things they wanted. We made towels and spoons and a cradle and pots and other things."
+        "The best part was having the freedom to make things the way we wanted. I didn't have to follow a pattern or follow the latest trends."
+         
         show brennan at quarterleft with dissolve
         "Brennan worked hard, too - he had some woodworking skills, so he did a lot of that work so I could concentrate on other things."
         "Together we accomplished way more than I could have on my own. Even so, our task list never seemed to get any shorter."
@@ -582,6 +588,10 @@ label work_3:
     elif (profession == "mechanic"):
         "I worked hard all month. People's datapads would get corrupted if they were left out during solar flares, the farm equipment needed maintenance, and sometimes homes' solar panels or stoves would break down."
         "Some critter kept chewing through the wires at the Jenningss' farm, and so we were always going out there to replace those."
+        "The best part was the lack of meetings and paperwork. I met with the mayor every so often, and logged all the work we did, but that's it."
+        "If there was nothing going on, I'd just head home. If I was in the middle of something at dinnertime, I might take it home with me and work on it some more at night."
+        "It was so freeing to be doing work for the sake of getting good things done, and not for the sake of a paycheck."
+         
         show brennan at quarterleft with dissolve
         "Brennan worked hard, too - he didn't know much about electronics, but he could run wires and haul materials and use ordinary tools to care of the easier things."
         "We accomplished a lot more together than I could have on my own."
@@ -590,6 +600,9 @@ label work_3:
     elif (profession == "teacher"):
         "I worked hard all month. We had to be a lot more flexible than at a regular school, as sometimes kids were absent if they were needed at home on the farm. I wrote up an entirely new curriculum customized for teaching all ages at once, so that all the kids could be studying the same topic but at their own level."
         "Some of my lessons were not as interesting to the kids as I hoped they'd be, but usually they went over pretty well. I felt like the kids were learning a lot."
+        "The best part was really being able to concentrate on the students. I didn't have to administer any standardized tests or fill out long forms or go to staff meetings."
+        "And I could teach what they really needed to learn and wanted to learn, not just what some committee thought they should learn."
+         
         show brennan at quarterleft with dissolve
         "Brennan worked hard, too - he didn't have any experience with teaching, but he was good with kids and helped keep them on task."
         "There were times when just having another adult around was so important."
