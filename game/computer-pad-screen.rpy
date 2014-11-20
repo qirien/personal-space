@@ -213,6 +213,7 @@ label monthly_messages:
 # Display our skills in a window on top of the computer pad
 screen skill_screen():
     modal True
+    zorder 1
     frame:
         style_group "cp"
         yalign 0.5

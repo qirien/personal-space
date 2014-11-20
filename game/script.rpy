@@ -145,8 +145,10 @@ label start:
                 $ skill_spiritual = persistent.skill_spiritual
                 $ skill_social = persistent.skill_social
                 $ skill_knowledge = persistent.skill_knowledge
-                $ skill_physical = persistent.skill_physical
-                
+                $ skill_physical = persistent.skill_physical                
+                show screen skill_screen()
+                "Initialized."
+                hide screen skill_screen
             "No.":
                 "OK, we will not use New Game+ data."
          

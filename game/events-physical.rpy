@@ -554,9 +554,8 @@ label physical_6:
     else: 
         "I went exploring on my own to find land-lobsters."
         "I managed to catch two of the crawly crustaceans. On the way back, I thought I heard a large animal moving in the brush, but I didn't see anything."
-        "[his_name] and I enjoyed eating the fresh land crabs as soon as I got back. They were delicious."
-
-    $ loved += 5    
+        "[his_name] and I enjoyed eating the fresh land-lobsters as soon as I got back. They were delicious."
+  
     $ skill_physical += 10
     $ community_level += 2
     return
@@ -657,25 +656,55 @@ label physical_8:
     return
 
 # Lead a group hunt
-# TODO: Is this actually good hunting? 
-# TODO: Do these gunshot sounds match the type of guns they would be using?
 label physical_master:
     scene bg talam with fade
     play music "music/NoSilencePlease.ogg" fadeout 3.0
-    "One week a huge herd of six-legged grazing animals crossed the river near our colony into some wooded scrubland. We were able to hunt some from a distance, but they kept hiding in the bushes where we couldn't see them or get clear shots."
-    "They were good to eat, partly because they tasted good dried and salted into jerky. We could always use more food, so I decided to organize a hunt."
+    
+    "One week a huge herd of six-legged grazing animals crossed the river near our colony into some wooded scrubland."
+    "They were good to eat, partly because they dried into jerky well."
+    "But when I heard about a plan to scare the herd and shoot as many as possible at once, I had to say something."
     scene bg community_center with fade
     show pavel at midright, behind her with dissolve
-    pavel "Let's hear [her_name]'s idea, everyone. I hope you give her your full support."
+    pavel "[her_name], you mentioned you had an announcement."
     show her normal at midleft with moveinleft
-    her serious "It would be much easier to catch these animals with some help. We need some people to scare the animals out of the scrub and into the open, and some people to wait on the other side and hunt them as they come out."
-    "Our brightly colored uniforms stood out clearly from the bushes, and we picked a spot where the startlers would be protected by a hillside after they scared the game."
-    "I lined the shooters up carefully so they wouldn't hit each other or anyone else."
-    "I had the startlers run up on the animals, banging pots and pans and yelling. Sure enough, the animals skittered out of the brush and into the open."
-    play sound "sfx/gunshots.mp3"
-    "There were so many animals, it was almost impossible to miss. We shot a good number of them, and then let the rest of the herd go. We wanted them to come back next year."
-    "We had a big party where we cooked up a big batch of the critters, and we all worked together to take off their shells and smoke and salt the ones we couldn't eat right away."
-    "I felt reassured to know that, even if all the crops failed, we could survive off of local meat for awhile, even if it did sort of remind me of frog legs."
+    her serious "I want to teach a hunting class. I know some people have been able to scare and shoot the grass crabs, but this is not good hunting practice."
+    her concerned "This shooting may hit a lot of animals, but most of them get injured instead of killed."
+    her serious "Not only does that harm the animal for no reason and waste ammunition, but it may also teach the herd to avoid this place in the future."
+    her normal "If we want there to always be plenty of these animals to hunt, and we want them to keep coming back to this spot, we should make sure to hunt responsibly."
+    pavel "[her_name] has done a lot of research on this subject, so please attend her class if you are interested in hunting the grass crabs."
+    scene black with fade
+    "I was a little nervous. Would anyone show up? Would they care?"
+    
+    scene bg community_center with fade
+    show her serious at center
+    show lily at right
+    show martin at left
+    show pete at quarterright
+    show natalia at quarterleft
+    with dissolve
+    pete "So, you going to tell us how to hunt these critters?"
+    her normal "Yes, a lot of the same principles apply from game hunting, but some are different because these are not mammals or birds; they are more like crustaceans."
+    her "Usually you hunt mainly the males of the species. With this species, we don't know how to tell males and females apart from a distance. But we can at least avoid shooting the babies."
+    pete "Guess you can't just look for the antlers or bright feathers, can you?"
+    her "We should strive for a single-shot kill. Dr. Lily, based on their anatomy, what would you recommend?"
+    lily "We should aim for the heart, which is right behind the head."
+    her normal "Not only is this more humane for the animal, but it will also conserve our ammunition."
+    martin "How much ammo do we have, anyway?"
+    her concerned "Not too much... we'll need everyone to conserve, and also collect casings for recycling."
+    natalia "I've been thinking about making some traps."
+    her normal "That would be great; but please announce on the message board if you do, so people don't get hurt in them."
+    natalia "Of course."
+    her serious "I've announced that we'll be hunting in the area tomorrow in the early morning, so it should be clear."
+    lily "Morning seems to be when the grass crabs are the most sluggish and vulnerable."
+    
+    scene bg path with fade
+    "We scouted out some good hiding places for us, and some likely locations for the crabs, and prepared for our hunt the next day."
+    
+    scene bg talam with fade
+    play sound "sfx/gunshot.ogg"
+    "Most of us were able to shoot one or two, and we brought them back to town to share."
+    "We had a community party where we cooked up a big batch of the critters, and we all worked together to take off their shells and smoke and salt the ones we couldn't eat right away."
+    "I felt reassured to know that, even if all the crops failed, we could hunt and survive off of local meat (even if it did sort of remind me of frog legs)."
 
     $ skill_physical += 10
     $ community_level += 10
