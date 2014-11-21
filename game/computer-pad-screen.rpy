@@ -1,7 +1,6 @@
 # Code to display our "Computer Pad" screen for planning the month, viewing skills,
 # reading colony messages, etc.
 
-# TODO: This screen is messed up in 6.18; check with newest version of Ren'Py
 # TODO: Save game screenshots of this show the save screen and not the computer screen
 # use FileTakeScreenshot() ?
 
@@ -55,7 +54,6 @@ screen computer_pad(periods):
                 yalign 0.0
                 
                 label "Personal Status" text_style "cp_header_text"
-                # TODO: Make these bars?
                 frame:
                     xfill True
                     ypos 10
@@ -153,6 +151,9 @@ screen computer_pad(periods):
                         elif "Alpha" in current_song:
                             $ artist = "TranceVision"
                             $ song_title = "Alpha"
+                        elif "YouUndone" in current_song:
+                            $ artist = "Anonymph"
+                            $ song_title = "You Undone"
                         
                     if (current_song):
                         text "{i}[song_title]{/i} by [artist]" size 14 ypos 30 xalign 0.5
@@ -163,13 +164,6 @@ screen computer_pad(periods):
                         imagebutton auto "gui/play_%s.png" xalign 0.5 yalign 1.0 action pop_songs.Play()
                     imagebutton auto "gui/next_%s.png" xalign 0.7 yalign 1.0 action pop_songs.Next()
                     
-                # TODO: have something to report community_level ?
-#                frame:
-#                    xfill True
-#                    xalign 0.5
-#                    ypos 80
-
-
                         
             # Right column - skills
             vbox:

@@ -473,8 +473,35 @@ label spiritual_master:
     naomi "That's true; that probably helped make it real for them."
     her normal "I love helping people feel positive and hopeful."
     naomi "We certainly need that here, don't we?"
-    her happy "Yes. I'd be happy to help you anytime, Sister Naomi."
-    naomi "Thank you. I'm grateful to have you helping me, [her_name]."
+    her concerned "Yes..."
+    naomi "What is it?"
+    her concerned "Can I ask you a question?"
+    naomi "Of course."
+    her surprised "What do you believe? And why?"
+    naomi "[her_name], that is a question with a very long answer."
+    her serious "I know..."
+    naomi "But I will share with you one thing, today. When I was a child, my parents both had very different religious beliefs. My mother was a Christian who also practiced many of the traditions of the Acoma pueblo where she grew up."
+    naomi "My father had grown up with Hindu beliefs, and while he wasn't particularly devout, he taught me many of the stories and teachings."
+    naomi "They were always very respectful of each other, and so I grew up thinking there was nothing strange about believing in Jesus and Vishnu and harmony with nature."
+    naomi "All these things, and my experiences with answers to prayers and searching for the divine, feed into my concept of \"God.\" God is not something you can understand simply by applying a label."
+    naomi "God is something you understand through study, prayer, and love."
+    naomi "Then, I think you will see the divine all around you."
+    
+    menu:
+        "What should I say?"
+        "I agree.":
+            her happy "I know what you mean. I have seen it, a little, as I've studied and tried to help people."
+            naomi "Good! But we must never stop searching, for \"It is impossible for a man to learn that which he already thinks he knows.\""
+        "I will think about that.":
+            her serious "Hmmm, I understand. I'll have to think about that some more."
+            naomi "Please do. You'll never stop learning unless you stop thinking. After all, \"He who asks a question is a fool for five minutes; he who does not ask a question remains a fool forever.\""
+        "That's not an answer!":
+            her annoyed "That's not really an answer."
+            naomi "No, it's not. The best questions don't have answers that you can explain with words."
+            naomi "Why do you think there are so many scriptures? They are trying to describe, with limited human words, that which is far greater than any words can convey."
+            naomi "But I hope that showing you where I have found answers may have helped you, a little."
+            
+    her normal "Yes, that's true. I'll keep searching."
 
     $ skill_spiritual += 10
     $ community_level += 10

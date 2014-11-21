@@ -326,6 +326,7 @@ label domestic_6:
             her concerned "Should we just compost what we can't eat?"
             him concerned "I guess..."
             "We cooked and ate quite a bit, but we didn't have a way to freeze or refrigerate so we just tossed the leftovers into the compost pile. Probably some scavenging animals will enjoy a nice feast..."
+            $ community_level -= 5
 
         "Let's have a meat party.":
             her normal "Let's cook it all up, invite our friends over, and have a meat party!"
@@ -470,13 +471,19 @@ label domestic_8:
     return
 
 # Start a 'No Space Like Home' blog about domestic life!
-# TODO: picture of screenshot of blog?
 label domestic_master:
     scene bg farm_interior with fade
     "I had learned so much about how to keep things clean and comfortable around our house."
     "So many people had asked me for advice that I decided to write a blog with entries relevant to domestic life on Talaam."
     "I was surprised at the huge response. It seemed everyone in the colony was reading my 'No Space like Home' blog."
-    "I got a lot of e-mails with questions on preserving and cooking different kinds of foods, cleaning furniture, pest control - lots of people were struggling with these things, especially since we didn't have the luxury of just going to a store and buying a bottle of some new product every week."
+    pete_c "[her_name], your jerky recipe's the best thing I ever tasted."
+    ilian_c "It has a long shelf life, too, if properly sealed."
+    naomi_c "Will you hold another canning class anytime soon? I'm afraid I had to miss the last one."
+    her_c "Sure, let me see who else is interested and I can teach another class."
+    nvl clear
+    
+    "I got a lot of e-mails with questions on preserving and cooking different kinds of foods, cleaning furniture, pest control."
+    "Lots of people were struggling with these things, especially since we didn't have the luxury of just going to a store and buying a bottle of some new product every week."
     "It seems I would always have something to write about."
     $ skill_domestic += 10
     $ community_level += 10

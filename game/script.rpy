@@ -10,7 +10,7 @@ define her = DynamicCharacter("her_name", color="#8864d5", image="her", ctc="ctc
 define him = DynamicCharacter("his_name", color="#c80000", image="him", ctc="ctc_blink", ctc_position="nestled") #red 
 
 define naomi = Character("Sister Naomi Grayson", color="#ededed", image="naomi", ctc="ctc_blink", ctc_position="nestled")  #light gray
-define pavel = Character("Mayor Grayson", color="#cccccc", image="pavel", ctc="ctc_blink", ctc_position="nestled")   #dark gray
+define pavel = Character("Mayor Pavel Grayson", color="#cccccc", image="pavel", ctc="ctc_blink", ctc_position="nestled")   #dark gray
 # TODO: Lily and Sara don't have last names?! Lily has Hawaiian last name?
 define lily = Character("Dr. Lily Kealoha", color="#8655bd", image="lily", ctc="ctc_blink", ctc_position="nestled")  #purple
 define sara = Character("Sara Andrevski", color="#c64e89", image="sara", ctc="ctc_blink", ctc_position="nestled")  # dark pink
@@ -153,7 +153,6 @@ label start:
             "No.":
                 "OK, we will not use New Game+ data."
          
-        # TODO: Make a skip and menu button to go on the dialogue box. Change this for Android?
         if not renpy.variant('touch'):
             "To fast-forward through scenes you have already seen, hold down \"Ctrl\" or use the \"Skip\" option in the Config screen."
         else:
@@ -206,7 +205,7 @@ label start:
     show him normal at quarterright with moveinright
     
     # Get his name
-    # TODO: Add a last name "Ventura"? She gets to pick if she wants his last name?
+    # TODO: Add a last name "Ventura"? Kuehn? She gets to pick if she wants his last name?
     if not renpy.variant('touch'):
         $ his_name = renpy.input("What is his name?", "Jack", length=20)
     else:
@@ -246,7 +245,7 @@ label start:
     "I loved how he put his whole soul into everything he did." 
     "And when he said my name... it was as if he knew everything about me and loved every bit of it."
     
-    # Get the main character's ame
+    # Get the main character's name
     if not renpy.variant('touch'):
         $ her_name = renpy.input("What is your name?", "Kelly", length=20)
     else:

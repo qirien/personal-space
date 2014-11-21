@@ -206,7 +206,7 @@ label settling_in:
     scene bg talaam_space with fade
     "Finally, we arrived."
     
-    # TODO: get this working?
+    # TODO: Have a movie here?
 #    scene talaam_movie
 #    $ renpy.pause(10.0)
     

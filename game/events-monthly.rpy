@@ -1960,7 +1960,7 @@ label monthly_event_13:
     "The mayor brought it up at our next community meeting."
     scene bg community_center with fade
     show pavel at center, behind natalia with dissolve
-    pavel "I know everyone is worried, and scared, but we can't stop trusting each other."
+    pavel "I know everyone is worried, and scared, but this fear is tearing our community apart."
     show natalia at right with moveinright
     natalia "Who knows who will be next?! It clearly wasn't an accident!"
     "Several people murmured in agreement. The mayor looked ready to say something further."
