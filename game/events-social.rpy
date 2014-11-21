@@ -8,10 +8,8 @@ label social_def:
 
 # Intro Event
 # Community message board flame war
-# TODO: make this more dramatic?
 label social_0:
     
-    # TODO: computer background?
     scene bg farm_interior with fade
     show her normal at center with dissolve
     play music "music/Prelude02.ogg" fadeout 3.0
@@ -24,14 +22,15 @@ label social_0:
     pete_c "Why're the meetings always held in the community center? That's a long ways for some of us."
     natalia_c "Not such a tough cowboy now, are you? It's only two kilometers!"
     pete_c "Well, it ain't fair for the meetings to always be close for some folks, and far for others. We oughta meet here sometime."
+    nvl clear
     julia_c "The community center is centrally located. The meeting will be there."
     pete_c "Who died and made you queen of the colony?"
     "I decided to step in and try and keep the peace."
-    nvl clear
     
     her_c "Hey, let's all support Julia and the farmers! She's working hard to help everyone be organized and have the food they need."
     pete_c "She's working hard knowin' everyone's business."
     julia_c "We will all have to cooperate to survive!"
+    nvl clear
     pete_c "Speak for yourself, we're doin' just fine up here."
     natalia_c "I'll remember that the next time Callie asks me for some eggs!"
     helen_c "Hey, hey, don't drag me into this!"
@@ -61,7 +60,7 @@ label social_0:
             pete_c "[her_name], stay out of this. I don't need you to make my case for me."
             her_c "Fine, forget it."
         "Stay neutral.":
-            her_c "Hey, hey, calm down everyone. I think we're all going to need things from each other in the next couple years. We don't have to agree about everything, but let's try and be polite, okay?"
+            her_c "Hey, hey, calm down everyone. We don't have to agree about everything, but let's try and be polite, okay? We need each other."
             natalia_c "Tell that to Mr. Lone Ranger, who thinks he can do it all alone. Well, if he keeps this up, he may just get his wish!"
             her_c "I'm telling that to everyone. It takes two to argue, right?"
             natalia_c "..."
@@ -72,7 +71,7 @@ label social_0:
             pete_c "Hey, it's just an observation."
             natalia_c "Why, you...!"
             him_c "Are we going to have a meeting or not?"
-            julia_c "Yes, we will have a meeting!"
+            julia_c "Yes!"
     
     
     julia_c "Anyway, you are all free to choose whether to attend or not, but we hope to get everyone's input at the next meeting."
@@ -80,6 +79,7 @@ label social_0:
     nvl clear
     
     "Later, Natalia sent me a message."
+    play music "music/OceansApart.ogg" fadeout 3.0
     natalia_c "I'm sorry I was so rude; Pete just make me so mad sometimes!"
     her_c "Oh, I understand. I think everyone's a little frustrated."
     natalia_c "Why don't you come over and we can chat in person? I found a fruit you might want to try..."
@@ -166,15 +166,15 @@ label social_2:
     him serious "Okay, that will be interesting...where are we all going to sit?"
     her serious "I thought we'd just sit outside. I guess I should make some food that kids like, too."
     him normal "Maybe some fruit?"
-    her normal "Yeah, I'll figure it out, don't worry."
+    her normal "Yeah, we'll figure it out, don't worry."
     "I worked hard on the food, and spread out some blankets to sit on, even though it meant I'd have more laundry to do to get all the dust out."
     scene bg farm_exterior with fade
-    show him normal at right
-    show her normal at quarterright
+    show him normal at quarterright
+    show her normal at midright
     with dissolve
-    show julia at center
-    show thuc at midleft
-    show kid at left
+    show julia at midleft
+    show thuc at quarterleft
+    show kid at center
     with moveinleft
     play sound "sfx/kids.mp3" loop
     julia "Thank you so much for having us over for dinner. I only hope we don't wear out your generosity by the end of the evening."
@@ -201,8 +201,7 @@ label social_2:
         julia "Well, that's enough love to start with. You know I'm a midwife, right?"
         her normal "Yes, I was sort of planning on you helping me out?"
         julia "Of course. Call me on the radio when it's time, and I'll meet you at the clinic or wherever you are."
-        her happy "That would be great; you seem to be a real expert on babies."
-        julia "I'd be happy to help."
+        her happy "I'll do that; I could definitely use an expert's help!"
     elif (want_kids):
         her normal "So...Mrs. Nguyen, you seem like an expert on kids."
         julia "Please, call me Julia. I do have a lot of experience with children - besides my own ten, I've been at twenty deliveries or so, helping the mother through labor."
@@ -215,7 +214,27 @@ label social_2:
     else:
         "[his_name] and I talked to the Nguyens about our farms and crops, and what things seemed to help the crops grow better, and what the kids were doing."
         
-    # TODO: Ask how they met, hear interesting story.  Military? College?  "such a gentleman"
+    him surprised "So, I'm curious, how did you two meet?"
+    thuc "Well, we were both-"
+    julia "Oh no, don't let him tell it, he'll get everything wrong."
+    show him normal
+    her happy "Well, why don't you tell it and then we'll ask for Thuc's version afterwards?"
+    julia "Hmph. Well, we were both serving in the Peace Corps in Cambodia. I was working as a sanitation educator, and he was working on a sustainable farming project."
+    him surprised "You're not Cambodian, are you Thuc?"
+    thuc "No, my great-grandparents immigrated from Vietnam. My grandpa thought it was crazy that I knew how to speak Khmer but not Vietnamese."
+    julia "Eventually we worked together on a bio-gas system to transform sewage into fertilizer. I didn't think anything of it at the time, but later it turned out he had specifically requested this opportunity so that he could see me more often."
+    thuc "That wasn't the only reason!"
+    julia "And soon every night he's hanging around my host family's house after dinner, and wants my opinion on every little detail of the project."
+    thuc "That was just for work!"
+    julia "Well, anyway, we got to be good friends. After we returned from our service, he looked me up and we started dating."
+    thuc "No, no, no. She's the one who looked me up! Any time I'd post something online, she'd comment on it. She practically stalked me."
+    julia "I was just tring to keep up our friendship! You were the one who wanted to meet in person!"
+    thuc "She's the one that proposed to me, just so you know."
+    him happy "Did she really?"
+    julia "It was a joke!"
+    thuc "I think our ten kids prove otherwise, {i}oun somlanh{/i}."
+    julia "Well, that's not to say it didn't turn out to be a good idea after all."
+    "That's what she said, but she blushed and smiled. I wasn't sure exactly how they had ended up together, but they were clearly just right for each other."
 
     "We talked and talked, until finally, it got dark. One of the moons was shining brightly; the other was dark."
     show overlay night with dissolve

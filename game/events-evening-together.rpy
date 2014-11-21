@@ -75,6 +75,7 @@ label relax_together_1:
             $ made_love += 1
         "Dessert first.":
             her laughing "Life is short; eat dessert first!"
+            show him laughing
             "And what a dessert it was..."
             $ loved += 3
             $ made_love += 1
@@ -109,6 +110,8 @@ label relax_together_2:
     "We went on a moonlight walk to the river. We found a spot where the water was deeper and slower, and sat down. I put my head on his shoulder, breathing in the cool night air."
     show her normal at midleft
     show him normal at center
+    her normal "This is so relaxing..."
+    him normal "Yeah..."
     him laughing "Want to go for a swim?"
     her surprised "Are you nuts?!"
     him happy "Yes!"

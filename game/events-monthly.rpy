@@ -2878,7 +2878,7 @@ label monthly_event_18:
             her concerned "Ummm... yeah, maybe you can dictate some e-mails for me?"
             him serious "Sure..."
             "(I will probably have to type them over again, anyway, but he needs something useful to do!)"
-            "I was so tired going to work and then coming home and harvesting vegetables, but at least we got them all picked."
+            "It was exhausting going to work and then coming home and harvesting vegetables, but at least we got them all picked."
         "{i}The kids at school can help out!{/i}" if (profession == "teacher"):
             her happy "Picking tomatoes and peppers is not that hard; why don't I have my students help out?"
             him surprised "The kids at school? Sure, it could be educational!"

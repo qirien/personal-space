@@ -56,7 +56,7 @@ label omake:
     show naomi at midright
     with dissolve
     
-    pavel "Priya, have you seen my computer around here?"
+    pavel "{i}priya{/i}, have you seen my computer around here?"
     naomi "Yes, it's right here, but I wanted to speak with you first."
     pavel "What is it?"
     naomi "That was very kind of you, what you did for Miranda today."
@@ -64,7 +64,7 @@ label omake:
     naomi "But it helped her feel like you trusted her, as an adult member of the community. That is just what she needed."
     pavel "Well, good. I'm just trying to help everyone..."
     naomi "I know you are, beloved. That's one of the things I love about you."
-    pavel "I couldn't do it without you, priya."
+    pavel "I couldn't do it without you, {i}priya{/i}."
     show pavel at center with move
     
     brennan "..."

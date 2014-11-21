@@ -1082,9 +1082,9 @@ label work_6:
                             brennan "No, you're right... I should talk to her. There's no harm in trying, right?"
                             her concerned "The worst thing that could happen is she says she's not interested, and then it's awkward every time you see her for a while, and then you both forget about it."
                         "No, there's no hope for you.":
-                            her flirting "Of course not. But I didn't want to tell you to just give up."
+                            her normal "Of course not. But I didn't want to tell you to just give up."
                             brennan "You never know, perhaps we'll find some beautiful blue alien women out here somewhere. I could be Earth's ambassador, to teach them all about the strange and wonderful ways of the human species..."
-                            her annoyed "Keep dreaming, Brennan!"
+                            her flirting "Keep dreaming, Brennan!"
                 "I'm not so sure.":
                     her concerned "I used to think so, but I'm not so sure."
                     brennan "Why not?"
@@ -1145,8 +1145,10 @@ label work_6:
                             brennan "Because if you want out, we could leave the planet on the next colony ship. It'll be a few months, but you don't have to stay here if you're miserable."
                             her surprised "Brennan..."
 
+            show her surprised
             "Suddenly I noticed an acrid smell..."
             brennan "The hash!"
+            show her normal
             "Luckily, it wasn't burned too badly, and we ate it together as the conversation turned to other topics."
             brennan "You know that I'm always here for you, right?"
             her normal "Yeah, thanks for listening."
@@ -1426,6 +1428,10 @@ label brennan_confess:
                     play sound "sfx/cloth.mp3"
                     "I didn't think, didn't analyze, didn't worry about [his_name]; I just existed, in that eternal moment of pleasure and mutual acceptance."
                     "Afterwards, we didn't say anything. I just went home, and for a while we pretended nothing had happened..."
+                    if (loved < 0):
+                        $ loved -= 5
+                    else:
+                        $ loved = -5
                     $ cheated_on_him = True
                 "You owe me one.":
                     her flirting "Never mind, just... keep in mind that you owe me one."
