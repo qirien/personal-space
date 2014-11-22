@@ -417,22 +417,43 @@ label spiritual_master:
     her happy "I guess there is always something to be grateful for, even when things are going wrong."
     "I thought about when the bugs had destroyed most of our corn."
     her serious "Even though we lost a lot of our corn, we did learn more about the planet. And our other crops haven't had many pest problems... the weather is nice, and we still have plenty of food to eat."
-    her normal "I like my job; I've been doing a lot of good there. And I'll always have [his_name]..."
+    her normal "I like my job; I've been doing a lot of good there. I have good friends, like Sara and Sister Naomi."
+    if (loved >= 0):
+        "And I'll always have [his_name]..."
     her happy "I do have a lot to be thankful for..."
     "I felt my attitude changing even as I recognized how many good things I had in my life."
+    scene black with fade
 
-    scene bg church with fade
-    show naomi at midright
-    show her normal at midleft
-    with dissolve
-    # TODO: I was thinking about having Sister Naomi have a stroke, and [her_name] agrees to care for her sometimes to give Pavel a break, and also takes over for her?  Maybe too much... maybe Naomi talks about her own spiritual experiences?
-    "Later, I was talking to Sister Naomi, and she mentioned that she was a little sick and hoped she would be feeling better before it was time to deliver her sermon."
+    if (profession == "doctor"):
+        scene bg clinic with fade
+        show naomi at midright
+        show her normal at midleft
+        with dissolve
+        "That week, the Mayor brought in Sister Naomi, who was having a stroke."
+        "Luckily, he brought her in soon enough that we were able to dissolve the blood clot and halt the damage."
+        "When the danger was passed and she was awake, I went in to speak with her."
+    else:
+        "Later, I went to see Sister Naomi, but found out that she had just had a stroke and was in the clinic."
+        "When I heard she was going to be okay, I headed over to see her."        
+        scene bg clinic with fade
+        show naomi at midright
+        show her normal at midleft
+        with dissolve
+    her concerned "Sister Naomi, how are you doing?"
+    naomi "The headache is gone, and my eyesight is back to normal. But...moving is difficult on my left side..."
+    if (profession == "doctor"):
+        her serious "Yes, there is some damage there. With therapy, I believe we will be able to restore use of your limbs."
+    else:
+        her serious "That's awful! Is it permanent?"
+        naomi "Probably not. The doctor said I'd need a lot of therapy, but my chances are good for a full recovery."
+        her normal "That's good."
+        
+    naomi "But, I won't be able to lead the services tomorrow."
     her surprised "You don't have anyone who can fill in for you?"
-    naomi "No, I'm the only one who works here at the chapel."
-    her concerned "That's no good. You should be able to have a break once in a while."
-    naomi "Hmmm, I wonder who could do that..."
-    her normal "Why don't you let me handle things this week? Even if you're feeling better, you should take a week off."
-    naomi "Yes, I think it would be good for everyone to hear from someone new, anyway. Thank you, [her_name]."
+    naomi "No, I'm the only one who works at the chapel."
+    her concerned "That's no good. You should be able to take it easy for a while."
+    her happy "Why don't you let me handle things for the next few weeks? It'd be better than cancelling, wouldn't it?"
+    naomi "Yes, I think it would be good for everyone to hear from someone new. Thank you, [her_name]."
 
     scene black with fade
     "I was a little nervous about speaking about such important things in front of half the colony. I knew they all had different beliefs, too - I didn't want to offend anyone."
@@ -441,6 +462,10 @@ label spiritual_master:
     scene bg church with fade
     show her serious at center
     "The congregation was a little surprised to see me up at the stand instead of Sister Naomi, but we sang and prayed together like normal, and then I delivered my sermon."
+    "I talked about how gratitude makes us happier. True gratitude also helps us be motivated to help others."
+    "I told about Moses parting the Red Sea, and how the Israelites praised God for protection and gave thanks."
+    "I counseled everyone to not just appreciate things, but also people. I challenged them to think of three people they could say thank you to this week."
+    show her concerned
     "It wasn't too bad, but it was way too short! I was supposed to talk for another fifteen minutes!"
     "I started to panic, but then a wave of calm swept it away. I had an idea."
     her normal "Let's not wait until later to be grateful. Let's give thanks right now. If you would like, please take turns sharing with us one thing you are grateful for."
@@ -465,7 +490,7 @@ label spiritual_master:
     "Van Nguyen" "Mommy and daddy."
     
     "They were all simple things, but thinking about them made us all feel so blessed and full of hope."
-    scene bg church with fade
+    scene bg clinic with fade
     show naomi at midright with dissolve
     show her normal at midleft with moveinleft
     naomi "So, how did it go?"
@@ -480,9 +505,9 @@ label spiritual_master:
     her surprised "What do you believe? And why?"
     naomi "[her_name], that is a question with a very long answer."
     her serious "I know..."
-    naomi "But I will share with you one thing, today. When I was a child, my parents both had very different religious beliefs. My mother was a Christian who also practiced many of the traditions of the Acoma pueblo where she grew up."
-    naomi "My father had grown up with Hindu beliefs, and while he wasn't particularly devout, he taught me many of the stories and teachings."
-    naomi "They were always very respectful of each other, and so I grew up thinking there was nothing strange about believing in Jesus and Vishnu and harmony with nature."
+    naomi "But I will share with you one thing, today. When I was a child, my parents both had very different religious beliefs. My mother was a Christian who also practiced many of the traditions of the Acoma Pueblo where she grew up."
+    naomi "My father had grown up with Hindu beliefs, and while he wasn't particularly devout, his mother taught me many of the stories and teachings."
+    naomi "My parents were always very respectful of each other, and so I grew up thinking there was nothing strange about believing in Jesus and Vishnu and harmony with nature."
     naomi "All these things, and my experiences with answers to prayers and searching for the divine, feed into my concept of \"God.\" God is not something you can understand simply by applying a label."
     naomi "God is something you understand through study, prayer, and love."
     naomi "Then, I think you will see the divine all around you."
@@ -497,11 +522,11 @@ label spiritual_master:
             naomi "Please do. You'll never stop learning unless you stop thinking. After all, \"He who asks a question is a fool for five minutes; he who does not ask a question remains a fool forever.\""
         "That's not an answer!":
             her annoyed "That's not really an answer."
-            naomi "No, it's not. The best questions don't have answers that you can explain with words."
+            naomi "No, it's not. The best questions don't have answers that you can explain with just a few words."
             naomi "Why do you think there are so many scriptures? They are trying to describe, with limited human words, that which is far greater than any words can convey."
             naomi "But I hope that showing you where I have found answers may have helped you, a little."
             
-    her normal "Yes, that's true. I'll keep searching."
+    her normal "Yes, that's true. I'll keep searching and learning."
 
     $ skill_spiritual += 10
     $ community_level += 10
