@@ -289,13 +289,14 @@ label work_appreciation:
         brennan "Yeah, I never did quite fit in here. I'm not too sad about it; I missed having things to do, people to see, places to go..."
         her normal "That's the spirit!"
     
-    brennan "Anything you want me to do for you? A favorite food I should sample, or some place I ought to visit?"
+    brennan happy "Anything you want me to do for you? A favorite food I should sample, or some place I ought to visit?"
     "I thought about it for a minute. By the time he got back to Earth, another four years would have passed there. What could he do in person that we couldn't do remotely?"
     her serious "Just... could you tell people about how it is here? I mean, you'll probably be kind of a celebrity, right? Not everyone gets to visit another planet and come back."
-    brennan "I will. It'll be a great way to impress women, don't you think? I can tell them all about how I risked radiation burns to rescue the poor Peróns during the solar flare."
+    brennan normal "I will. It'll be a great way to impress women, don't you think? I can tell them all about how I risked radiation burns to rescue the poor Peróns during the solar flare."
     her flirting "Only if you leave out the part where you threw up all over me."
-    brennan "Yeah, that'll have to go."
+    brennan happy "Yeah, that'll have to go."
     her serious "..."
+    show brennan normal
     if (brennan_relationship >= 2):
         "Suddenly he was hugging me. I hugged him back, and he squeezed tighter."
         show brennan at center with move

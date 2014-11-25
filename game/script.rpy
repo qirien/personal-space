@@ -198,7 +198,8 @@ label start:
     "Counting down the minutes until we could meet again."
     "My heart beating faster when we kissed."
     "That feeling of contentment when he held me in his arms."
-    "That's what I thought love was...{p}I was so wrong."
+    "That's what I thought love was..."
+    "I was so wrong."
     "But that's why I married him..."
     show her normal at center with moveinleft
 

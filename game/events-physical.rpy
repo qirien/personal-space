@@ -572,9 +572,9 @@ label physical_7:
     with dissolve
     show her normal at midleft with moveinleft
     sara "Look out, here comes [her_name]!"
-    brennan "You going to join us today?"
+    brennan happy "You going to join us today?"
     her normal "Yeah, if you don't mind."
-    brennan "Sure. Now we can have seven to a side."
+    brennan normal "Sure. Now we can have seven to a side."
     "The teams were very mixed, but they seemed pretty fair, with each side having some kids, and some men and women of varying ages." 
     "The rules were pretty standard, except they had a rule that at least three different people had to touch the ball before making a goal, to encourage teamwork."
     "I hadn't played a lot of soccer, but since I was in pretty good shape I was able to do OK. Still, running up and down the field made me really tired."

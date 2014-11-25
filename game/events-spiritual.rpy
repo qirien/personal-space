@@ -512,6 +512,8 @@ label spiritual_master:
     naomi "God is something you understand through study, prayer, and love."
     naomi "Then, I think you will see the divine all around you."
     
+    # TODO: Add in Sister Naomi fearing something, and faith helping with that fear?  Fear of death, of being useless and invalid, depending on others?
+    
     menu:
         "What should I say?"
         "I agree.":

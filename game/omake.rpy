@@ -4,9 +4,9 @@ label omake:
     "So here are some omake from {i}Our Personal Space{/i}."
     
     scene bg path with fade
-    show brennan with dissolve
+    show brennan normal with dissolve
     
-    brennan "Nothing like a nice bath after a hard day's work at the office... Hopefully no one's using it."
+    brennan "Nothing like a nice bath after a hard day's work... Hopefully no one's using it."
     
     scene bg bathhouse with fade
     show overlay bathhouse
@@ -27,9 +27,9 @@ label omake:
     brennan "..."
     
     scene bg path with fade
-    show brennan with dissolve
-    brennan "There go my plans for a bath."
-    brennan "Maybe I'll see if Pete's busy..."
+    show brennan normal with dissolve
+    brennan mad "There go my plans for a bath."
+    brennan normal "Maybe I'll see if Pete's busy..."
     
     scene bg library with fade
     show pete at midleft
@@ -48,22 +48,22 @@ label omake:
     
     scene bg path with fade
     show brennan with dissolve
-    brennan "Sounds like he's busy."
-    brennan "Maybe I'll just head home."
+    brennan mad "Sounds like he's busy."
+    brennan normal "Maybe I'll just head home."
     
     scene bg farm_interior flip with fade
     show pavel at midleft    
     show naomi at midright
     with dissolve
     
-    pavel "{i}priya{/i}, have you seen my computer around here?"
+    pavel "{i}Priya{/i}, have you seen my computer around here?"
     naomi "Yes, it's right here, but I wanted to speak with you first."
     pavel "What is it?"
     naomi "That was very kind of you, what you did for Miranda today."
     pavel "What? I just asked her to see if she would mind babysitting for our new parents once in a while."
     naomi "But it helped her feel like you trusted her, as an adult member of the community. That is just what she needed."
     pavel "Well, good. I'm just trying to help everyone..."
-    naomi "I know you are, beloved. That's one of the things I love about you."
+    naomi "I know you are, beloved. That's one of the things I adore about you."
     pavel "I couldn't do it without you, {i}priya{/i}."
     show pavel at center with move
     
@@ -71,36 +71,38 @@ label omake:
     
     scene bg sunset with fade
     show brennan at midleft with dissolve
-    brennan "I don't want to interrupt... they don't have that many romantic moments as it is."
-    brennan "At least there's a beautiful sunset."
+    brennan mad "I don't want to interrupt... they don't have that many romantic moments."
+    brennan happy "At least there's a beautiful sunset."
     
-    brennan "..."
+    brennan happy "..."
     show lily at midright with moveinright
+    show brennan normal
     lily "Brennan?"
-    brennan "Dr. Lily! It's so pleasant to see someone who--"
+    brennan happy "Dr. Lily! It's so pleasant to see someone who--"
     lily upset "Someone who what?"
-    brennan "Someone who is not busy snogging."
+    brennan normal "Someone who is not snogging."
     lily normal "Oh. No, I have not been doing that."
     brennan "What brings you this way?"
     lily upset "It is the anniversary of Winston's death. I found some flowers, and thought I might place them on his grave."
     brennan "Winston was your husband, right?"
     lily normal "Yes."
-    brennan "...I see. Well, don't let me stop you."
+    brennan normal "...I see. Well, don't let me stop you."
     lily "I won't."
     hide lily with moveoutleft
-    brennan "...Bye."
-    brennan "Even Dr. Lily has someone..."
-    brennan "..."
-    brennan "Who's there?!"
+    brennan normal "...Bye."
+    brennan mad "Even Dr. Lily has someone..."
+    brennan normal "..."
+    play sound "sfx/clipclop.mp3"
+    brennan mad "Who's there?!"
     
     show lettie at right with moveinright
-    brennan "Lettie?"
+    brennan normal "Lettie?"
     play sound "sfx/whinny.mp3"
-    brennan "Did I ever tell you what a good-looking horse you are?"
+    brennan happy "Did I ever tell you what a good-looking horse you are?"
     play sound "sfx/horse-snort.mp3"
-    brennan "I haven't? Well, just look at those long, straight legs! And that wavy mane!"
+    brennan normal "I haven't? Well, just look at those long, straight legs! And that wavy mane! And, if I may be so bold, a marvelous tail."
     play sound "sfx/whinny.mp3"
-    brennan "I know, no one appreciates me, either."
+    brennan "At least {b}you{/b} understand."
     
     scene black with fade
     

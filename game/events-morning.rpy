@@ -469,19 +469,20 @@ label work_2:
         "What should I say?"
         "Nice to meet you.":
             her "Nice to meet you, Brennan. It will be good to have some help sometimes."
-            brennan "You're quite welcome."
+            brennan happy "You're quite welcome."
         "I remember you, too.":
             her "Yes, I remember you too, Brennan. Thanks for agreeing to help out."
-            brennan "You're quite welcome."
+            brennan happy "You're quite welcome."
         "I'm more than just a pretty face.":
             her flirting "I'm more than just a pretty face, I hope."
-            brennan "Of course! I just meant that I remembered you. But I could understand how you might not remember me."
+            brennan happy "Of course! I just meant that I remembered you. But I could understand how you might not remember me."
         "Are you going to be helpful?":
             her annoyed "Do you have any talents besides flattery?"
-            brennan "A few, to be sure! Don't worry, I'll try not to distract you too much."
+            brennan happy "A few, to be sure! Don't worry, I'll try not to distract you too much."
     show her surprised
     "He winked at me playfully. Was he...flirting with me? I didn't have time to think about it; there was too much work to do."
     show her normal
+    show brennan normal
     hide pavel with moveoutleft
     "It was nice to have him around, especially when things got busy later in the day. He didn't wait for me to ask him to do things, but he didn't get in my way, either."
     show brennan at center with move
@@ -685,7 +686,7 @@ label work_4:
         "Would this bacteria respond to traditional antibiotics? They seemed to have cell walls, just like bacteria on Earth, so we decided to give it a try."
         scene bg clinic with fade
         show her normal at midleft
-        show brennan at midright
+        show brennan mad at midright
         with dissolve
         "We stayed up all night with the girl, but the next day she was shaking, and her hand was starting to turn white around the cut. And now her brother was in the clinic with similar symptoms on his knee."
         show natalia at quarterright with moveinright
@@ -696,7 +697,7 @@ label work_4:
         "We continued treatment all that day, but the wounds still didn't seem to be improving. Instead, the infection appeared to be spreading."
         "We tried several antibiotic medications, but none had any effect on this strange organism. The girl complained of tingling in her hands and feet, which made me think the bacteria were attacking her spinal cord."
         show her serious at midright
-        show brennan at midleft
+        show brennan mad at midleft
         with dissolve
         
         menu:
@@ -732,14 +733,14 @@ label work_4:
                 "I monitored the kids' condition, but there was really nothing to do but wait... somehow, I must have fallen asleep."
             "Cut out bacteria.":
                 her serious "We can't risk the bacteria spreading to vital systems. The antibiotics aren't working, and these kids' condition just keeps worsening. "
-                brennan "What are you going to do?"
+                brennan normal "What are you going to do?"
                 her "I'm going to try to cut away the infected flesh to make it easier for the antibiotics to do their job."
                 natalia "What?! Don't we have anything better?!"
                 her "Honestly, I think this is the simplest option with the fewest side effects."
                 natalia "... I supposed I'll have to trust you, then."
-                brennan "Isn't that going to be painful?"
+                brennan mad "Isn't that going to be painful?"
                 her "That's why your job is to keep the kid immobilized and happy while I'm doing it."
-                brennan "You have an awfully high opinion of my ability to keep people happy."
+                brennan normal "You have an awfully high opinion of my ability to keep people happy."
                 her annoyed "I have local anaesthetics I can use; just help her not to be scared or wiggle around too much."
                 "We told her what we were going to do, and then Brennan and Natalia held her so she wouldn't move. Brennan started telling her a story about faeries and flying mushrooms while I gave her the local anaesthetic."
                 "I didn't want to take out healthy skin, but I wanted to leave as little bacteria as possible, so it was pretty tricky."
@@ -748,9 +749,9 @@ label work_4:
                 her serious "We'll see if we can program our nanobots to hunt and destroy this type of bacteria."
                 brennan "I hope you know how to do that."
                 her concerned "I've worked with them a few times before. Basically, we will set them in leukocyte mode and give it a sample of the bacteria we want it to fight. It will then seek out and destroy those wherever it finds them."
-                brennan "That sounds easy enough; why didn't we just try that in the first place?"
+                brennan mad "That sounds easy enough; why didn't we just try that in the first place?"
                 her serious "Because we don't have built-in algorithms for this kind of bacteria. We have to train the nanobots, which takes time, and if they are not trained properly they can damage the body's own cells instead of just the bacteria."
-                brennan "I'll leave you to it, then."
+                brennan normal "I'll leave you to it, then."
                 natalia "Good luck, Doctor [her_name]."
                 hide brennan with moveoutleft
                 hide natalia with moveoutright
@@ -788,21 +789,21 @@ label work_4:
         show brennan at midleft with moveinleft
         brennan "Where's the two by fours? I wanted to start on those shelves for the school."
         her serious "That pile there is all we've got. The mayor said we're going to save the rest for emergencies."
-        brennan "Well how do you like that! How are we supposed to build without materials?"
+        brennan mad "Well how do you like that! How are we supposed to build without materials?"
         her concerned "Well, there are plenty of trees by the river..."
         brennan "We're not lumberjacks!"
         her normal "No, but I have an idea."
         "We didn't have a sawmill yet (I think that was one of the things that was supposed to come on the next ship), so we needed to make do with what we had."
         her "Brennan, I need you to gather or saw off or whatever a bunch of small branches, as uniform in diameter as possible."
-        brennan "You're the boss..."
+        brennan normal "You're the boss..."
         hide brennan with moveoutleft
         "While he was gone, I started drawing up some designs that used simpler materials. Instead of using big boards for the shelves, we could lash a bunch of medium-sized branches together."
         her serious "We'll still need some thick, long branches for the posts... and then how should we attach the shelves to the posts?"
         "I did some research and drew up some ideas when Brennan came back. He had a trailer full of branches, and he looked sweaty and miserable."
         show brennan at midleft with moveinleft
-        brennan "I hope this is enough for you."
+        brennan mad "I hope this is enough for you."
         her normal "That'll do... for today."
-        brennan "Today! You're a slave driver, you are."
+        brennan normal "Today! You're a slave driver, you are."
         her flirting "I have to be to get any work out of you, Your Laziness."
         her serious "Anyway, come see these plans. We'll need to strip the branches of twigs and leaves, and cut them to uniform sizes..."
         "He stripped the branches while I attached them together. It took a few tries to attach everything so it was sturdy, and it wouldn't hold as much weight as a normal shelf, but in the end, we finished it."
@@ -817,15 +818,15 @@ label work_4:
         show her normal at midright with dissolve
         show brennan at midleft with dissolve
         her annoyed "This is the third one of these radios that has broken so far! I can't believe they sent such cheapo equipment on a space mission."
-        brennan "I know; you'd think it might have occurred to them that we can't order new parts on a whim."
+        brennan mad "I know; you'd think it might have occurred to them that we can't order new parts on a whim."
         her concerned "And they didn't send us with many variable resistors, either."
-        brennan "There's plenty of these fixed resistors, though."
+        brennan normal "There's plenty of these fixed resistors, though."
         her serious "Well, that doesn't do us much good, unless..."
         brennan "What?"
         her normal "Well, we could just use a fixed resistor instead and turn it into an on/off switch instead of a volume control."
-        brennan "But then you couldn't control the volume."
+        brennan mad "But then you couldn't control the volume."
         her "No, but it's better than running out of variable resistors that we might need for a more vital system somewhere."
-        brennan "That's true..."
+        brennan normal "That's true..."
         her serious "Although, we do have some resistive tape; we could probably make our own...but it would be more bulky than the original."
         "We worked on making a small potentiometer out of resistive tape and metal rings, but we couldn't get it small enough to fit on the handheld radio. So we had to just remove the volume control. Our solutions weren't always ideal, but we did the best we could with the materials we had."
 
@@ -845,12 +846,12 @@ label work_4:
         her surprised "Oh?"
         pavel "They said that their child came up with red marks on their hands, and the child said you hit their hands with a ruler."
         her angry "They said WHAT?!"
-        brennan "[her_name]'ll be stern when the kids need it, but she's never hit anyone."
+        brennan mad "[her_name]'ll be stern when the kids need it, but she's never hit anyone."
         pavel "This is news to you, then."
         her surprised "Of course it is! I would never do that. Which kid is it?"
         pavel "Gardenia Nguyen."
         her concerned "Gardenia... Well, a few days ago we were talking about how discipline in schools has changed, and how they used to hit kids that misbehaved with rulers or make fun of them, and how we don't do that anymore."
-        brennan "I remember that. Then at recess, she was playing school with Josephina, and they were whacking each other's hands with sticks. They thought it was great fun."
+        brennan normal "I remember that. Then at recess, she was playing school with Josephina, and they were whacking each other's hands with sticks. They thought it was great fun."
         pavel "So, you think it was one of the other kids pretending to be a teacher?"
         her serious "That's the only thing I can think of."
         pavel "It sounds like this was just a misunderstanding. I'll talk to Gardenia's parents and let them know what happened."
@@ -859,7 +860,7 @@ label work_4:
         her "Good-bye."
         hide pavel with moveoutleft
         show her at midleft with move
-        show brennan at midright with move
+        show brennan normal at midright with move
         her serious "Thanks for sticking up for me."
         brennan "Of course. I couldn't let cute little Gardenia get away with another one of her fibs."
         her annoyed "She certainly has a good imagination..."
@@ -879,16 +880,20 @@ label work_5:
     "But one day it didn't work..."
 
     show her normal at midright with dissolve
-    show brennan at right with dissolve
+    show brennan normal at right with dissolve
     "It started as a normal day at work, when Dr. Lily's voice came over the radio."
     play sound "sfx/radio.mp3"
+    show her surprised
+    show brennan mad
     lily "Attention all colonists! This is Dr. Lily. A strong solar flare has just started. Get inside now. I repeat, there is a solar flare in progress, please get indoors."
     "The radio emitted a strong burst of static, and I could barely make out anything else she said."
     lily "...close the...stay...further notice..."
+    show her serious
     "Our computer pads also popped up a notification from her."
     her surprised "That's strange; usually we have more warning than this."
     brennan "Hopefully everyone can get inside in time."
     show her serious
+    show brennan normal
     "We closed the windows and turned off unecessary electronics."
 
     show martin at midleft with dissolve
@@ -914,10 +919,10 @@ label work_5:
     "Mr. Perón was getting more and more distraught. I was worried he was going to try and leave, and I wasn't sure I could stop him."
     show brennan at midright
     show her serious at right
-    brennan "Calm down, please! Everything will be just fine."
+    brennan mad "Calm down, please! Everything will be just fine."
     martin "You can't understand! If you had any family, you'd know that I have to be there!"
     "Brennan just looked at Mr. Perón, a curious expression on his face. Finally, he nodded."
-    brennan "I'll go make sure everything's all right with your family."
+    brennan normal "I'll go make sure everything's all right with your family."
     her surprised "You can't do that! The radiation is too strong!"
     brennan "But he's right. I don't have a family; I don't have as much to lose."
         
@@ -956,9 +961,9 @@ label work_5:
         show brennan at midleft with moveinleft
         "The flare was over after a few more hours, and Mr. Perón brought Natalia and little Mateo to be treated for radiation sickness.  Afterwards, I insisted on Brennan being treated, too."
         her serious "You've absorbed at least [grays_absorbed] grays of radiation..."
-        brennan "Grays of radiation? That makes it sound like I've got aliens living inside me."
+        brennan happy "Grays of radiation? That makes it sound like I've got aliens living inside me."
         her annoyed "Stop joking and lie down. We need to see how bad it is."
-        brennan "Hold on, I think I might--"
+        brennan mad "Hold on, I think I might--"
         "He vomited. At least most of it went on the floor..."
         her angry "That's exactly what I'm talking about. Now lie down!"
         "The amount he was exposed to was more than is usually used in chemotherapy, but if he didn't get more exposure his body would probably heal it just fine."
@@ -968,7 +973,7 @@ label work_5:
         "The flare was over after a few more hours, and Mr. Perón went home, but I insisted on Brennan going to the clinic."
         scene bg path with fade
         show her serious at midright
-        show brennan at midleft
+        show brennan mad at midleft
         with moveinleft
         "He threw up on the way there, and I could see some burns on his face and neck."
         hide her
@@ -977,7 +982,7 @@ label work_5:
 
         scene bg clinic with fade
         show her serious at midright
-        show brennan at midleft
+        show brennan normal at midleft
         with moveinleft
         "The doctor treated his burns and gave him some medicine and said he would probably be fine, as long as he was extra careful to avoid any radiation exposure in the next few weeks."
 
@@ -1019,14 +1024,15 @@ label work_6:
     her concerned "Oh no, I forgot my lunch."
     brennan "I was just going to go home for lunch; do you want to join me?"
     her serious "No, it's okay, I can just walk home and get something."
-    brennan "That's two klicks each way; you won't have any time to cook and eat anything. Come on, I'll fix you something. It's the least I can do for you, after all you've done for me."
+    brennan mad "That's two klicks each way; you won't have any time to cook and eat anything."
+    brennan normal "Come on, I'll fix you something. It's the least I can do for you, after all you've done for me."
     her concerned "Well..."
     menu:
         "What should I say?"
         "Yes.":
             her normal "Thank you, I'd appreciate that."
             scene bg farm_interior flip with fade
-            show brennan at midright
+            show brennan normal at midright
             show her normal at midleft
             with moveinleft
             "We headed over to the mayor's house, which was as large as the Nguyens', with three bedrooms and a kitchen.  I guess that's why they had Brennan staying there, too."
@@ -1037,125 +1043,126 @@ label work_6:
             her normal "What are you making?"
             brennan "Just a little hash. Ordinarily, I'd add some sausage or bacon, but they're both in short supply these days."
             her happy "That sounds delicious! It's kind of a treat to have someone else cook for me..."
-            brennan "[his_name] doesn't cook for you?"
+            brennan happy "[his_name] doesn't cook for you?"
             her normal "Oh, he does, sometimes, but we often end up just cooking together."
-            brennan "You're lucky to have someone who loves you so much."
+            brennan normal "You're lucky to have someone who loves you so much."
             menu:
                 "What should I say?"
                 "{i}I sure am.{/i}" if (loved >= 0):
                     her normal "I sure am...I don't know what I'd do without him."
-                    brennan "..."
+                    brennan mad "..."
                     her flirting "But what about you! Aren't there any single women on the colony you could date? Or are you not interested in women?"
-                    brennan "There's nothing I'm interested in more than women! But, well, let's see, single women...There's Dr. Lily, but she's at least 45 years old."
+                    brennan happy "There's nothing I'm interested in more than women! But, well, let's see, single women...There's Dr. Lily, but she's at least 45 years old."
                     her surprised "Okay, she's really smart, and nice too, actually, but that is a lot older than you."
-                    brennan "And then there's the Nguyen's oldest daughters, who are seventeen and sixteen."
+                    brennan normal "And then there's the Nguyen's oldest daughters, who are seventeen and sixteen."
                     her normal "I've seen them taking care of their little siblings, but I don't know them very well."
                     brennan "Well, the oldest, Joanna, is all over that Tomás fellow who's about her age. I'm surprised they're not married yet."
                     her surprised "They're only seventeen!"
-                    brennan "Well, it's old enough to get into trouble, and old enough to help propagate the species..."
+                    brennan happy "Well, it's old enough to get into trouble, and old enough to help propagate the species..."
                     her flirting "What about the younger sister, Miranda?"
-                    brennan "You're not seriously suggesting I try and date a child, are you?"
+                    brennan mad "You're not seriously suggesting I try and date a child, are you?"
                     menu:
                         "What should I say?"
                         "Yeah, things are different here.":
                             her concerned "Normally, I wouldn't, but..."
-                            brennan "But what?"
+                            brennan normal "But what?"
                             her serious "I want you to have a future here. I can tell you're lonely, and Miranda is old enough to make her own decisions."
                             her normal "I'm not saying you should sleep with her or anything, but in two years, she'll be an adult. Why not see if you can be friends, and then see what happens in the future?"
                             brennan "She is only eight years younger than me...But there's no way Mr. Nguyen would allow her to date such a creepy older man as myself."
                             her annoyed "Don't think of it as dating! And don't, like seduce her or anything. Just... see if you could be friends."
-                            brennan "I'm not very good at being 'just friends' with women, [her_name]."
+                            brennan normal "I'm not very good at being 'just friends' with women, [her_name]."
                             her normal "Well, you and I are just friends, right?"
-                            brennan "... Of course."
+                            brennan mad "... Of course."
                             her happy "Just like that, then."
-                            brennan "Sure. Just like that."
+                            brennan normal "Sure. Just like that."
                         "No, you should date Dr. Lily.":
                             her normal "No, I was just kidding. Actually, I think you should reconsider Dr. Lily."
                             brennan "Really? You don't think twenty years age difference is too much?"
                             her serious "No way! I mean, she's young enough to still be good-looking, right?"
-                            brennan "Yeah, I suppose she does have a sort of distracted-librarian sort of beauty..."
+                            brennan "Yeah, I suppose she does have a sort of sexy scientist sort of beauty..."
                             her flirting "And, you're not the type to be intimidated by a smart woman, right?"
-                            brennan "You know I'm not."
+                            brennan happy "You know I'm not."
                             her surprised "Well, then what do you have to lose?"
-                            brennan "I just - she's old enough to be my mother, you know!"
+                            brennan mad "I just - she's old enough to be my mother, you know!"
                             her serious "She doesn't act like your mother!"
-                            brennan "No, you're right... I should talk to her. There's no harm in trying, right?"
+                            brennan normal "No, you're right... I should talk to her. There's no harm in trying, right?"
                             her concerned "The worst thing that could happen is she says she's not interested, and then it's awkward every time you see her for a while, and then you both forget about it."
                         "No, there's no hope for you.":
                             her normal "Of course not. But I didn't want to tell you to just give up."
-                            brennan "You never know, perhaps we'll find some beautiful blue alien women out here somewhere. I could be Earth's ambassador, to teach them all about the strange and wonderful ways of the human species..."
+                            brennan happy "You never know, perhaps we'll find some beautiful blue alien women out here somewhere. I could be Earth's ambassador, to teach them all about the strange and wonderful ways of the human species..."
                             her flirting "Keep dreaming, Brennan!"
                 "I'm not so sure.":
                     her concerned "I used to think so, but I'm not so sure."
                     brennan "Why not?"
                     her sad "Things just aren't as exciting as they were when we were dating. I mean, we say 'I love you', but I don't feel it anymore. I don't think he does, either."
-                    brennan "Bollocks. That's completely normal in a long-term relationship."
+                    brennan mad "Bollocks. That's completely normal in a long-term relationship."
                     her surprised "Is it?"
-                    brennan "Of course! But that doesn't mean you can't have any sparks of excitement. You just have to work a little harder."
+                    brennan normal "Of course! But that doesn't mean you can't have any sparks of excitement. You just have to work a little harder."
                     her annoyed "Got any ideas?"
-                    brennan "Hundreds! Like, when you're at dinner, play a little footsie under the table, or give him a little spank when he walks by, or go to bed naked, or grab his--"
+                    brennan happy "Hundreds! Like, when you're at dinner, play a little footsie under the table, or give him a little spank when he walks by, or go to bed naked, or grab his--"
                     her surprised "Whoa! That's enough!"
-                    brennan "I've got plenty more..."
+                    brennan normal "I've got plenty more..."
                     her concerned "It's kind of weird to have you telling me to get naked for my husband..."
-                    brennan "Well, no one else is telling you, and you need to hear it!"
+                    brennan mad "Well, no one else is telling you, and you need to hear it!"
                     her serious "Brennan, you really don't have to-"
-                    brennan "Also, you should wake him up once in a while with steamy hot kisses, never mind how bad your breath may smell in the morning."
+                    brennan normal "Also, you should wake him up once in a while with steamy hot kisses, never mind how bad your breath may smell in the morning."
                     brennan "And you should work together! When you've got a job to do, ask him to help you, or help him out. Find something he likes and surprise him with it. Make his favorite food!"
-                    brennan "I mean, for crying out loud, [her_name], don't you realize how lucky you are just to have someone?!"
+                    brennan mad "I mean, for crying out loud, [her_name], don't you realize how lucky you are just to have someone?!"
                     her concerned "..."
                         
                 "{i}He doesn't love me.{/i}" if (loved <= -5):
                     her sad "I don't think he loves me at all."
-                    brennan "What?! Why do you say that?"
+                    brennan mad "What?! Why do you say that?"
                     menu:
                         "What should I say?"
                         "He doesn't tell me.":
                             her sad "He never says 'I love you'"
-                            brennan "Well, he should. How could he look at you every single day and not say 'I love you'? I'm sure I would."
+                            brennan normal "Well, he should. How could he look at you every single day and not say 'I love you'? I'm sure I would."
                             her surprised "Would what?"
-                            brennan "I, ah, well-- He's an arse, that's all I'm saying."
+                            brennan happy "I, ah, well-- He's an arse, that's all I'm saying."
                         "We never make love.":
                             her sad "It seems like we never make love anymore..."
-                            brennan "Is he gay? Impotent?"
+                            brennan normal "Is he gay? Impotent?"
                             her surprised "What?! No!"
-                            brennan "Well, then, what's his problem?! Who could be married to you, and not want to show you some love every day?"
+                            brennan mad "Well, then, what's his problem?! Who could be married to you, and not want to show you some love every day?"
                             her concerned "I don't know; it just seems like we're always too tired or too busy by the time we go to bed."
-                            brennan "Well, how about first thing in the morning? Or right before dinner? Or when you come home for a quick lunch break?"
+                            brennan normal "Well, how about first thing in the morning? Or right before dinner? Or when you come home for a quick lunch break?"
                             her normal "Ha ha, that's not a bad idea. We'd probably feel like it more, then."
-                            brennan "I mean, don't you two realize how lucky you are to have each other?!"
+                            brennan mad "I mean, don't you two realize how lucky you are to have each other?!"
                             her concerned "..."
                         "I'm not good enough.":
                             her sad "I'm no good at living here; I'm not tough or hard-working enough."
-                            brennan "What?! That's not true at all; we'd be totally lost without you as our [profession]."
+                            brennan normal "What?! That's not true at all; we'd be totally lost without you as our [profession]."
                             her concerned "But I'm no farmer. I hate farm food; I don't want to work hard all day; I don't want to have to do without. I just want to go to a store and buy food and soap and have hot water!"
                             brennan "It sounds like [his_name] isn't the problem."
                             her concerned "Maybe not. But he loves it here. I just... don't."
-                            brennan "Do you love him enough to stay here with him?"
+                            brennan mad "Do you love him enough to stay here with him?"
                             her sad "I don't know..."
-                            brennan "If you want out, we could leave the planet on the next colony ship. It'll be a few months, but you don't have to stay here if you're miserable."
+                            brennan normal "If you want out, we could leave the planet on the next colony ship. It'll be a few months, but you don't have to stay here if you're miserable."
                             her surprised "Brennan..."
                         "Things aren't exciting.":
                             her concerned "I don't know; it's just not the same as it was when we first got married."
-                            brennan "Of course not. Nothing exciting can last forever, or it wouldn't be exciting any more, would it?"
+                            brennan normal "Of course not. Nothing exciting can last forever, or it wouldn't be exciting any more, would it?"
                             her sad "But if I don't feel the love, then..."
                             brennan "That's not the only way to feel love, right? You care about each other, want the other person to be happy?"
                             her concerned "I used to..."
-                            brennan "Do you love him enough to try and make things better?"
+                            brennan mad "Do you love him enough to try and make things better?"
                             her serious "I don't know..."
-                            brennan "Because if you want out, we could leave the planet on the next colony ship. It'll be a few months, but you don't have to stay here if you're miserable."
+                            brennan normal "Because if you want out, we could leave the planet on the next colony ship. It'll be a few months, but you don't have to stay here if you're miserable."
                             her surprised "Brennan..."
 
             show her surprised
             "Suddenly I noticed an acrid smell..."
-            brennan "The hash!"
+            brennan mad "The hash!"
             show her normal
+            show brennan normal
             "Luckily, it wasn't burned too badly, and we ate it together as the conversation turned to other topics."
             brennan "You know that I'm always here for you, right?"
             her normal "Yeah, thanks for listening."
             if (brennan_relationship >= 1):
                 brennan "You helped me when I was feeling worthless; I'd do the same for you."
                 her concerned "I--"
-                brennan "I don't want you to ever feel trapped, like no one loves you or you have nowhere to go, because it's not true."
+                brennan mad "I don't want you to ever feel trapped, like no one loves you or you have nowhere to go, because it's not true."
                 her normal "Thanks, Brennan..."
             $ brennan_relationship += 1
 
@@ -1187,7 +1194,7 @@ label work_6:
             "We all went over to the Grayson's house where Brennan lived. He fried up some potatoes and cabbage and eggs for us, and we talked and laughed all together."
             her surprised "Oh! It's been almost an hour; we have to get back to work!"
             sara "Thanks for lunch, Brennan. We should do this again sometime."
-            brennan "It was my pleasure to entertain you."
+            brennan happy "It was my pleasure to entertain you."
     return
 
 # MONTH 21
@@ -1206,25 +1213,26 @@ label work_7:
     show brennan at midleft with moveinleft
 
     "One day while we were cleaning up after work, Brennan came up to me."
-    brennan "[her_name], can I ask a favor of you?"
+    brennan normal "[her_name], can I ask a favor of you?"
     her flirting "You can ask..."
-    brennan "I need batteries."
+    brennan mad "I need batteries."
     her surprised "Can't you just get them from the storehouse?"
-    brennan "Normally I would, but... I've used my quota already. It's been so cloudy lately, you know, the solar panels just haven't been keeping up."
+    brennan normal "Normally I would, but... I've used my quota already. It's been so cloudy lately, you know, the solar panels just haven't been keeping up."
     her concerned "What do you need them for?"
-    brennan "Just some electronics in my room."
+    brennan happy "Just some electronics in my room."
     menu:
         "What should I say?"
         "Sure.":
             her normal "Sure, Brennan, I'll get some for you."
-            brennan "Thanks so much. And, ah, I'd appreciate it if you didn't mention to Ilian that they're for me."
+            brennan normal "Thanks so much. And, ah, I'd appreciate it if you didn't mention to Ilian that they're for me."
             menu investigate_brennan:
                 "What should I do?"
                 "Question Brennan further." if (not questioned_brennan):
-                    call set_work_bg
-                    show her normal at midright
-                    show brennan at midleft
-                    with dissolve
+                    if (has_batteries):
+                        call set_work_bg
+                        show her normal at midright
+                        show brennan normal at midleft
+                        with dissolve
                     $ questioned_brennan = True
                     her surprised "So, what kind of electronics do you have that are using so much power?"
                     brennan "You know, razor, computer pad, blow dryer, that sort of thing."
@@ -1236,11 +1244,11 @@ label work_7:
                         her surprised "Really? That's strange..."
 
                     if (brennan_relationship >= 2):
-                        brennan "Oh, [her_name], I should have known I couldn't hide anything from you."
-                        brennan "It's easier if I just show you. Come with me."
+                        brennan happy "Oh, [her_name], I should have known I couldn't hide anything from you."
+                        brennan normal "It's easier if I just show you. Come with me."
                         scene bg farm_interior flip with fade
                         show her normal at midleft
-                        show brennan at midright
+                        show brennan normal at midright
                         with moveinleft
                         "We walked over to his room at the Graysons'. He pointed to an electronics box under the table."
                         jump brennan_confess
@@ -1285,7 +1293,7 @@ label work_7:
                     "The table had a mess kit and a cable for charging a computer pad. There was another cable, too, though, and when I followed it, it went underneath the table where there was a strange device."
                     "It looked a little bit like a computer, with a metal case and some LEDs lighting up every now and then. But there was no writing or labels on the case at all. It made a low humming noise."
                     her surprised "What is that?"
-                    show brennan at left with moveinleft
+                    show brennan mad at left with moveinleft
                     "Suddenly, I heard footsteps and I jumped. Brennan was in the doorway, watching me. He seemed amused."
                     her concerned "I was just, ah, well..."
                     "He entered the room, closing the door behind him."
@@ -1299,38 +1307,38 @@ label work_7:
                     with dissolve
 
                     "I brought the batteries back to Brennan."
-                    brennan "Thank you so much, [her_name]. I'm completely in your debt."
+                    brennan happy "Thank you so much, [her_name]. I'm completely in your debt."
                     her normal "You're welcome..."
                     return
 
         "No, sorry.":
             her serious "I'm sorry; I can't do that for you, Brennan."
-            brennan "Please, [her_name]. I wouldn't ask you unless it was really important."
+            brennan normal "Please, [her_name]. I wouldn't ask you unless it was really important."
             menu:
                 "What should I say?"
                 "I'll see what I can do.":
                     jump investigate_brennan
                 "No.":
                     her "Sorry, Brennan, I won't do that."
-                    brennan "Oh...well, I'll just make do without, then, I suppose."
+                    brennan mad "Oh...well, I'll just make do without, then, I suppose."
                     her concerned "Yeah, that's something we've all had to do, isn't it?"
                     return
     return
 
 label brennan_confess:
     $ discovered_qec = True
-    brennan "It's a quantum entanglement communicator."
+    brennan normal "It's a quantum entanglement communicator."
     her concerned "Okay, but what does it do and why do you have one?"
     brennan "I use it to send messages with Earth, instantly."
     her surprised "Instantly?! Faster than light speed - I thought that was impossible!"
     brennan "The technology's quite new and expensive - this is a prototype, actually. Part of my job here was to test it."
     her annoyed "And the other part?"
     "He looked away and paused for a second before answering."
-    brennan "I'm to report on any resources this planet has that my...employer might find profitable."
+    brennan mad "I'm to report on any resources this planet has that my...employer might find profitable."
     her "Who is your employer?"
-    brennan "Rare Earth Tech. Well, technically I'm an independent contractor for Senator Martínez, who happens to be both on the board of R.E.T. and on the Senate Energy Committee."
+    brennan mad "Rare Earth Tech. Well, technically I'm an independent contractor for Senator Martínez, who happens to be both on the board of R.E.T. and on the Senate Energy Committee."
     her serious "So you're a spy, basically."
-    brennan "You could look at it that way."
+    brennan normal "You could look at it that way."
     her annoyed "Since you've kept your employment a secret, I don't see any other way I can look at it."
     her angry "How could you hide this technology? People could have been using this to talk to their families back on Earth!"
     brennan "That's just it - there's not enough bandwidth for that. I can only send small bits of text at a time - like a telegraph. And besides, when I first came here we weren't even sure it would work."
@@ -1338,10 +1346,10 @@ label brennan_confess:
     brennan "If it ever turns off, even for a second, the connection will be broken and I'll completely lose contact."
     if (brennan_relationship >= 1):
         her sad "What else are you hiding? Were you ever even a salesman, like you said?"
-        brennan "Actually, I was. I never lied to you, [her_name]. But I hope you'll understand why I never told you about this."
+        brennan normal "I never lied to you, [her_name]. But I hope you'll understand why I never told you about this."
 
     her flirting "So, is this the part where you turn into an evil villain and kill me because I know too much?"
-    brennan "Kill you?! Of course not. This is the part where I beg for mercy and ask you not to tell anyone else about my device here."
+    brennan normal "Kill you?! Of course not. This is the part where I beg for mercy and ask you not to tell anyone else about my device here."
     menu:
         "What should I say?"
         "I won't tell.":
@@ -1349,7 +1357,7 @@ label brennan_confess:
             brennan "And what?"
             if (brennan_relationship >= 2):
                 her concerned "I'm afraid of what they'd do to you."
-                brennan "That's much too sweet of you, [her_name]."
+                brennan happy "That's much too sweet of you, [her_name]."
             else:
                 her concerned "I'm not sure if everyone else would be as understanding as I am."
                 brennan "That's true. Well, I trust you to keep it a secret. Thank you."
@@ -1359,13 +1367,13 @@ label brennan_confess:
         "They have a right to know.":
             her annoyed "The colony has a right to know, and a right to be able to use the device."
             her serious "Like you said, we'll need some kind of priority system and limits on messages, etc, but it's not fair for only one person to be able to communicate with Earth like that."
-            brennan "I suppose I can't stop you."
+            brennan mad "I suppose I can't stop you."
             her annoyed "..."
-            brennan "...Do you think they'll forgive me?"
+            brennan normal "...Do you think they'll forgive me?"
             her serious "We'll see."
             "Brennan and I worked out a proposed system where he would send one message a month under a certain length for each family. Then we told the colony about the device."
             scene bg community_center with fade
-            show brennan at midleft
+            show brennan mad at midleft
             show him angry at midright
             with dissolve
             him angry "I knew we couldn't trust him!"
@@ -1395,13 +1403,13 @@ label brennan_confess:
             pete "..."
             him concerned "..."
             her serious "I'm not asking you to trust Brennan. But can you forgive him enough to let him keep his place here?"
-            brennan "I always hoped that the QEC would work well enough that eventually you could all use it... but they wanted to keep it a secret. Now that the secret's out, they have decided to let you all use it."
+            brennan normal "I always hoped that the QEC would work well enough that eventually you could all use it... but they wanted to keep it a secret. Now that the secret's out, they have decided to let you all use it."
             pete "I don't think you got a choice, right?"
-            brennan "Even if you stole the device from me, they could simply turn off their receiver, or refuse to pass on your messages. It might be better to retain their goodwill."
+            brennan mad "Even if you stole the device from me, they could simply turn off their receiver, or refuse to pass on your messages. It might be better to retain their goodwill."
             hide sara 
             show julia at center with dissolve
             julia "How shall we do that?"
-            brennan "By not treating me like a criminal."
+            brennan normal "By not treating me like a criminal."
             scene black with fade
             "In the end everyone agreed, but even though they were nice to him on the surface, I think Mr. Perón and I were the only ones that trusted him at all."
             
@@ -1412,16 +1420,16 @@ label brennan_confess:
                 "What should I say?"
                 "Get me off this planet.":
                     her sad "Promise to get me off this planet with the next colony ship. I know I promised to stay forever, but you have connections, you could help me."
-                    brennan "Of course I'll help you. Just leave it to me."
+                    brennan normal "Of course I'll help you. Just leave it to me."
                     $ wants_to_leave = True
                 "Send a message for me.":
                     her concerned "Promise to send some messages to Earth for me."
-                    brennan "Of course, I'll do what I can."
+                    brennan normal "Of course, I'll do what I can."
                     brennan "Thank you, [her_name]. I trust you to keep it a secret."
                 "{i}Kiss me.{/i}" if ((brennan_relationship >= 2) and (loved <= 5)):
                     her serious "Kiss me. Now."
                     "What was I saying? What was I doing? I thought he was going to laugh, and I could pretend it was a joke, but then he stepped closer."
-                    show brennan at center with move                    
+                    show brennan normal at center with move                    
                     show her concerned at midright with move
                     "My heart raced and my mind shut down as there were no more words, just flesh melting into flesh with all the passion we had been holding back."
                     scene black with fade
@@ -1435,7 +1443,7 @@ label brennan_confess:
                     $ cheated_on_him = True
                 "You owe me one.":
                     her flirting "Never mind, just... keep in mind that you owe me one."
-                    brennan "I owe you much more than that. Thank you, [her_name]."
+                    brennan normal "I owe you much more than that. Thank you, [her_name]."
     return
 
 # MONTH 24 Resolve things at work? Someone you've helped says thank you?
@@ -1472,9 +1480,9 @@ label work_8:
         her concerned "She doesn't think I can help her... and she may not be wrong."
         brennan "Well, at least you're willing to give it a try!"
         her sad "She wants me to just do some magic and make it all better, but it doesn't work like that."
-        brennan "Don't blame yourself. You can't help a crocodile with a toothache."
+        brennan mad "Don't blame yourself. You can't help a crocodile with a toothache."
         her "But isn't that my job? Why am I here if I can't even help one person feel better?"
-        brennan "Ah, sometimes I wonder the same thing."        
+        brennan normal "Ah, sometimes I wonder the same thing."        
 
     elif (profession == "carpenter"):
         # Someone needs glasses; can't grind glass precisely enough
@@ -1488,18 +1496,18 @@ label work_8:
         her serious "Hmmm, astigmatism, I see. Well, I'll see what I can make for him."
         natalia "Thank you, [her_name]. You always do such a nice job on everything you make, I'm sure you'll be able to help Raúl."
         hide natalia with moveoutleft
-        show brennan at midleft with moveinleft
+        show brennan normal at midleft with moveinleft
         brennan "We're making glasses, now?"
         her concerned "I don't see how we can... I don't have tools for grinding glass precisely. And we don't have any lenses in the shape he needs."
         brennan "I'm guessing contacts are out?"
         her serious "Yeah, even if we could trust a six-year-old with contacts, we don't have any way to make those in the right shape, either."
-        brennan "So what are you going to do?"
+        brennan mad "So what are you going to do?"
         her concerned "I don't know."
-        brennan "This was bound to happen eventually. We don't have every tool ever invented."
+        brennan normal "This was bound to happen eventually. We don't have every tool ever invented."
         her sad "They're counting on me... but I can't help them..."
-        brennan "Don't blame yourself! They'll just have to make do with the lenses we have."
+        brennan mad "Don't blame yourself! They'll just have to make do with the lenses we have."
         her serious "I guess they will..."
-        brennan "Honestly, we've done well to have built as much as we have."
+        brennan normal "Honestly, we've done well to have built as much as we have."
 
     elif (profession == "mechanic"):
         # Can't fix someone's tractor/solar panels/hearing aid?
@@ -1511,16 +1519,16 @@ label work_8:
         her normal "OK, I'll take a look at it."
         hide natalia with moveoutleft
         "I opened it up and got out my multimeter. Some of the circuits were completely fried."
-        show brennan at midleft with moveinleft
+        show brennan normal at midleft with moveinleft
         brennan "That doesn't look good."
         her serious "No, it's totally fried."
-        brennan "You can't fix it?"
+        brennan normal "You can't fix it?"
         her concerned "These are specialized electronics components; I can't just get a new piece of the shelf and solder it in."
         brennan "Perhaps this'll teach that naughty little tyke to take better care of things."
         her sad "Yeah..."
-        brennan "Hey, don't blame yourself! It was bound to happen eventually."
+        brennan mad "Hey, don't blame yourself! It was bound to happen eventually."
         her concerned "I still feel like I'm letting them down."
-        brennan "Honestly, we've done well to have fixed as much as we have."
+        brennan normal "Honestly, we've done well to have fixed as much as we have."
         
     elif (profession == "teacher"):
         # Trouble with student
@@ -1538,33 +1546,33 @@ label work_8:
         "Gardenia" "No, I won't."
         hide kid with moveoutleft
         "She got up and walked out of the school. I started to follow her, but Brennan stopped me."
-        brennan "I'll go talk with her."
+        brennan normal "I'll go talk with her."
         her sad "Go for it, I'm obviously useless here."
         hide brennan with moveoutleft
         "Brennan got along much better with Gardenia than I did. In a few minutes she was smiling and rewriting her paper."
         "She handed it to him, glared at me, and went home."
         show brennan at midleft with moveinleft
         her concerned "Thanks, Brennan."
-        brennan "Hey, don't blame yourself. That one's a little spitfire."
+        brennan normal "Hey, don't blame yourself. That one's a little spitfire."
         her sad "Yeah, but that doesn't excuse me yelling at her. I shouldn't have lost my temper."
         brennan "Honestly, I'm impressed you've done as well as you have. It's tough to teach so many different ages all at once."
 
     her surprised "We've been working here three years, now, haven't we?"
-    brennan "Three years? Isn't it two?"
+    brennan normal "Three years? Isn't it two?"
     her serious "Oh, I meant three Talaam years. That's probably about two Earth years."
-    brennan "I can't get used to the different time measurements here - no matter how this planet rotates, I can't call seven months a year."
+    brennan mad "I can't get used to the different time measurements here - no matter how this planet rotates, I can't call seven months a year."
     if (wants_to_leave):
         her concerned "I know what you mean. This place still doesn't feel like home."
     else:
         her normal "Yeah, it is kind of weird. But I think I'm getting used to things here."
 
-    brennan "At least I won't have to deal with it much longer."
+    brennan normal "At least I won't have to deal with it much longer."
 
     if (wants_to_leave or cheated_on_him):
         her serious "Because you're going back to Earth."
         brennan "Yes. You're coming too, right?"
         her concerned "I don't know..."
-        brennan "What?! Why would you want to stay?!"
+        brennan mad "What?! Why would you want to stay?!"
         menu:
             "What should I say?"
             "{i}They need me here.{/i}" if (community_level >= COMMUNITY_LEVEL_OK):
@@ -1582,14 +1590,14 @@ label work_8:
                 brennan "I'm so glad. That long shuttle trip will be much more interesting with you on board with me."
                 if (cheated_on_him):
                     her flirting "Oh, really? What were you thinking we'd do?"
-                    brennan "You and me, in close quarters for a month with no other entertainment? What {b}won't{/b} we do?"
+                    brennan happy "You and me, in close quarters for a month with no other entertainment? What {b}won't{/b} we do?"
                     her flirting "I can't wait..."
                 else:
                     her flirting "Ha! We'll see about that."
                     
                 if (is_pregnant_later):
                     her surprised "The baby might even be born on Earth..."
-                    brennan "There's no better place."
+                    brennan normal "There's no better place."
                     show her happy
 
                 if (community_level >= COMMUNITY_LEVEL_OK):
@@ -1602,7 +1610,7 @@ label work_8:
                 else:
                     $ loved -= 10
                 return
-        brennan "You're lucky, [her_name]."
+        brennan normal "You're lucky, [her_name]."
         her surprised "Why?"
         brennan "You have a place here. People who need you, depend on you, love you."
         brennan "Of course you wouldn't want to give that up."
@@ -1610,29 +1618,29 @@ label work_8:
 
     else:
         her surprised "What? Where are you going?"
-        brennan "Back to Earth."
+        brennan normal "Back to Earth."
         her flirting "How are you going to do that?"
         brennan "On the shuttle that's coming soon!"
         her surprised "They're returning to Earth?"
         brennan "Yeah, they're bringing back some samples of rocks and plants for the scientists on Earth to study. So I thought I'd tag along."
         her concerned "You've never liked it here, have you?"
-        brennan "...No. If it wasn't for-"
+        brennan mad "...No. If it wasn't for-"
         her surprised "If it wasn't for what?"
         if (discovered_qec):
-            brennan "If it wasn't for my job, I never would have come here. I'm a civilized man; I like the comforts of Earth."
+            brennan normal "If it wasn't for my job, I never would have come here. I'm a civilized man; I like the comforts of Earth."
             her serious "So your new orders are to head back?"
-            brennan "They want me to bring some rock samples, too; I've found some ore they might be interested in."
+            brennan "They want me to bring some metal samples, too; I've found some ore they might be interested in."
             her annoyed "They better not come ruin this planet with huge mines and factories."
-            brennan "If the minerals are worth it, they might."
+            brennan mad "If the minerals are worth it, they might."
             her annoyed "..."
         else:
-            brennan "Never mind."
+            brennan happy "Never mind."
 
         her serious "Well, that's too bad. You've helped me a lot."
 
     brennan "I'm sure I'm easily replaceable. There will be new colonists coming on the shuttle, after all."
     her normal "That's true. But I'm sure none of them will be as...unique as you."
-    brennan "You mean none of them will be as handsome and dashing?"
+    brennan happy "You mean none of them will be as handsome and dashing?"
     her flirting "I meant exactly what I said."
     
     return

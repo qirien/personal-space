@@ -1504,7 +1504,7 @@ label goto_ocean:
         show brennan at right with dissolve
         brennan "I didn't think there would be so many rocks at the seashore. There's barely any beach!" 
         her serious "Well, we're not here to swim anyway."
-        brennan "More's the pity."
+        brennan happy "More's the pity."
     if (ocean_character == "Sara"):
         show sara at right with dissolve
         sara "It's not the kind of beach I'd want to swim in, and I'm glad I brought a sweater, but this is such a sight for sore eyes!"
@@ -1518,7 +1518,7 @@ label goto_ocean:
         pete "Okay, you guys do the stuff on the shore, and I'll get some of this coastal brush." 
         lily "I'm going to take some of the smaller creatures and plants back too."
     elif (ocean_character == "Brennan"):
-        brennan "Lovely. Is it all right if I touch the water?" 
+        brennan normal "Lovely. Is it all right if I touch the water?" 
         lily "The water itself should be fine, but there could be some microscopic, poisonous plankton that could cause you to break out in hives."
         brennan "Really?"
         lily "It is possible; we have not studied the marine life of the planet yet."
@@ -1538,7 +1538,7 @@ label goto_ocean:
     if (ocean_character == "Pete"):
         pete "Be careful! Those critters might be deadly!"
     elif (ocean_character == "Brennan"):
-        brennan "Just be careful not to get swept away!" 
+        brennan happy "Just be careful not to get swept away!" 
     elif (ocean_character == "Sara"):
         sara "Oh, I want a picture too! I can't wait to show everyone how beautiful our planet is."
 
@@ -1560,7 +1560,7 @@ label goto_ocean:
         if (ocean_character == "Pete"):
             show pete at midleft with move
         elif (ocean_character == "Brennan"):
-            show brennan at midleft with move
+            show brennan mad at midleft with move
         else:
             show sara at midleft with move
         "I was trying to think of what I could do to help her when she came out of her trance."
@@ -1571,7 +1571,7 @@ label goto_ocean:
         if (ocean_character == "Pete"):
             show pete at midleft with move
         elif (ocean_character == "Brennan"):
-            show brennan at midleft with move
+            show brennan mad at midleft with move
         else:
             show sara at midleft with move
             
@@ -1584,7 +1584,7 @@ label goto_ocean:
     her serious "Its tentacle is still on you; we should probably remove it."
     lily normal "Oh, I'll take care of that."
     if (ocean_character == "Brennan"):
-        brennan "Did that animal make you fall asleep?"
+        brennan normal "Did that animal make you fall asleep?"
         lily "I don't have narcolepsy, but it has been an unusually exhausting day. Maybe I overextended myself."
         brennan "Well, let me know what you find out about that thing."
     elif (ocean_character == "Pete"):
@@ -1670,19 +1670,19 @@ label monthly_event_11:
             $ ocean_character = "Brennan"
 
             call set_work_bg
-            show brennan at midright
+            show brennan normal at midright
             show her normal at midleft
             with dissolve
             "I was trying to think of who could come with us at work the next day."    
-            brennan "I just wish I could get away from it all! I feel like I'm trapped in this tiny town."
+            brennan mad "I just wish I could get away from it all! I feel like I'm trapped in this tiny town."
             her normal "Didn't you know what you were getting into when you signed up for this?"
-            brennan "Who says I signed up? Besides, I bet you're itching to have an adventure too."   
+            brennan normal "Who says I signed up? Besides, I bet you're itching to have an adventure too."   
             her serious "You should come to the ocean with me." 
             brennan "Really?"   
             her happy "Yes! Lily is coming too, and we need a third person so we can look like a herd and not easy pickings."   
-            brennan "Count me in! But why are you going to the ocean? Thinking of going for a swim?"
+            brennan happy "Count me in! But why are you going to the ocean? Thinking of going for a swim?"
             her flirting "No, Lily wants to gather specimens, and I'm harvesting salt."
-            brennan "I don't really care what we do, as long as it's something exciting."  
+            brennan normal "I don't really care what we do, as long as it's something exciting."  
             her happy "Oh, it'll be exciting."
 
 
@@ -2126,7 +2126,7 @@ label monthly_event_14:
             "What should I do?"
             "Go home.":
                 her serious "Brennan, I'm feeling sick. Can you take care of things here for a bit; I'm going to go home."
-                brennan "Are you sure you're up to walking? Want me to call [his_name]?"
+                brennan "Are you sure you're up to walking? I could carry you, you know."
                 her normal "I'll be fine, thanks."
                 "The fresh air and walking seemed to help some, but I was still glad to finally get home."
             "Try and get some work done.":
@@ -3317,7 +3317,7 @@ label monthly_event_22:
             her concerned "Not for long, with all the shampoo missing from the storehouse."
             brennan "You don't have any?"
             her sad "No..."
-            brennan "Well, we can't have that! Here, you can have one of mine, somehow I ended up with two bottles at home."
+            brennan happy "Well, we can't have that! Here, you can have one of mine, somehow I ended up with two bottles at home."
             her flirting "Thank you very much, Brennan."
             "I was beginning to see a pattern here. I decided to report to the mayor."
             scene bg community_center with fade
@@ -3702,15 +3702,15 @@ label monthly_event_23:
                         call set_work_bg
 
                         show her serious at midleft
-                        show brennan at midright
+                        show brennan normal at midright
                         with dissolve
-                        brennan "Good morning, [her_name]. You're looking well, as usual."
+                        brennan happy "Good morning, [her_name]. You're looking well, as usual."
                         her serious "Hey, good morning..."
-                        brennan "What is it?"
+                        brennan normal "What is it?"
                         her concerned "It's never going to happen again."
                         brennan "What isn't?"
                         her "You and me... doing anything that's not work."
-                        brennan "Ah. Did [his_name] forbid you from being friends with me?"
+                        brennan mad "Ah. Did [his_name] forbid you from being friends with me?"
                         her surprised "What? No, {b}I{/b} decided that we should be more distant, because I don't want to make that mistake again."
                         brennan "Oh, I see, I'm a mistake."
                         her annoyed "Don't make this harder than it is!"
@@ -3718,9 +3718,9 @@ label monthly_event_23:
                         her angry "What are you talking about?! He's trying to forgive me, even though I totally betrayed him and our marriage!"
                         brennan "Don't you have any freedom? He's just being selfish, and not letting you follow your heart. You can't tell me I mean nothing to you..."
                         her annoyed "Is that what it will take for you to believe me?"
-                        brennan "You won't say it."
+                        brennan normal "You won't say it."
                         her angry "You. Mean. Nothing. To. Me."
-                        brennan "..."
+                        brennan mad "..."
                         her sad "I'm sorry...but I have to do this. I can't be alone with you outside of work - even if nothing happens, I don't want it to look like something's going on between us."
                         brennan "Sure. Fine. No problem."
                         her concerned "Are you sure?"
@@ -3822,23 +3822,23 @@ label monthly_event_23:
                     show her serious at quarterleft
                     show brennan at midright
                     with dissolve
-                    brennan "What's wrong, my lovely? Did you decide you can't live another moment without me?"
+                    brennan normal "What's wrong, my lovely? Did you decide you can't live another moment without me?"
                     her concerned "...I'm pregnant."
-                    brennan "Oh. Well... congratulations."
+                    brennan mad "Oh. Well... congratulations."
                     her serious "I'm pretty sure it's yours. From when we...you know."
-                    brennan "...What?"
+                    brennan normal "...What?"
                     her sad "It all happened so fast, we weren't careful- [his_name] was always very careful- I mean, the timing fits, and--"
-                    brennan "Have you told [his_name]?"
+                    brennan mad "Have you told [his_name]?"
                     her concerned "I've told him I'm pregnant, but he doesn't know about- about us."
-                    brennan "Oh? Is there an 'us' now?"
+                    brennan normal "Oh? Is there an 'us' now?"
                     her concerned "I wish we could be together..."
-                    brennan "Well then, let's do it!"
+                    brennan happy "Well then, let's do it!"
                     her surprised "What?"
-                    brennan "Get a divorce! This isn't the dark ages, where people torture themselves with unhappy marriages."
+                    brennan normal "Get a divorce! This isn't the dark ages, where people torture themselves with unhappy marriages."
                     her serious "Would you... want both of us? Me and the baby, I mean."
-                    brennan "I don't care if you bring a flock of crabirds with you. As long as I get you, I'll be happy."
+                    brennan happy "I don't care if you bring a flock of crabirds with you. As long as I get you, I'll be happy."
                     her concerned "..."
-                    brennan "Although, you should know I'm planning on leaving."
+                    brennan normal "Although, you should know I'm planning on leaving."
                     her surprised "Leaving?!"
                     brennan "On the next ship. They're dropping off more supplies, and colonists, and my orders are to report back to Earth. But you could come, too."
                     her concerned "Leave Talaam... I'll have to think about it."
@@ -4128,7 +4128,7 @@ label monthly_event_24:
         "We had dinner, and I went to bed early."
         "I felt frustrated and tired of waiting and wished I had more control over my own body."
         show him sleeping at midright, squatting, behind overlay with dissolve
-        hide night
+        hide overlay night
         show her serious
         "I woke up in the early morning to more contractions. I didn't want to wake up [his_name] yet, so I walked around outside as the sun was just starting to come up."
         hide her with moveoutleft
@@ -4180,14 +4180,14 @@ label monthly_event_24:
         
         show brennan at left with moveinleft
         if (profession == "doctor"):
-            brennan "[her_name]! Are you our patient today?"
+            brennan happy "[her_name]! Are you our patient today?"
             her serious "Not feeling very patient, but, yes."
         else:
             brennan "[her_name]! You weren't at work- Oh, are you having a baby?!"
             her serious "I'm working on it."
-        brennan "Should I go fetch a bucket of water or something?"
+        brennan mad "Should I go fetch a bucket of water or something?"
         her annoyed "A bucket of water?"
-        brennan "Yeah, isn't that what people are supposed to bring you when you're in labor?"
+        brennan normal "Yeah, isn't that what people are supposed to bring you when you're in labor?"
         him annoyed "..."
         brennan "That's what they do in movies..."
         julia "Yes, by all means, go boil some water. That will be all, Brennan."
