@@ -108,8 +108,6 @@ label day:
     else:
         $ trimester = "done"
         
-    # TODO: Play a season-specific sound (like rain or wind)?
-
     "Time to decide what to do this month..."
     
     #"Loved = [loved], Relaxed = [relaxed], community_level = [community_level], made_love = [made_love]"

@@ -1,9 +1,6 @@
 # Code to display our "Computer Pad" screen for planning the month, viewing skills,
 # reading colony messages, etc.
 
-# TODO: Save game screenshots of this show the save screen and not the computer screen
-# use FileTakeScreenshot() ?
-
 style cp_text is sans_text:
     color "#222"
     

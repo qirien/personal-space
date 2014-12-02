@@ -862,13 +862,18 @@ label social_8:
 
 label done_party_menu:
     "Sara and I worked hard for two weeks getting everything ready. Finally, the night of the party came..."
-    #TODO: Add animated (?) glowing lights to the community center bg with an overlay
     scene bg community_center with fade
-    play music "music/Prelude22.ogg" fadeout 3.0 
+    if (party_music == "recorded"):
+        play music "music/Rising.ogg" fadeout 3.0
+    elif (party_music == "live"):
+        play music "music/CarolanConcerto.ogg" fadeout 3.0
+    else:
+        play music "music/Prelude22.ogg" fadeout 3.0 
+    if (party_decorations == "flowers"):
+        show overlay underwater with dissolve
+        "The flowers we picked looked nice. Even though they were nothing like Earth flowers, they had their own beauty. And Sara had programmed some of the lights to glow softly blue and green, like an ocean."
     play sound "sfx/people.mp3" loop
     "As people started to arrive, they seemed to brighten when they saw the community center ready for a party."
-    if (party_decorations == "flowers"):
-        "The flowers we picked looked nice. Even though they were nothing like Earth flowers, they had their own beauty. And Sara had programmed some of the lights to glow softly blue and green, like an ocean."
 
     #TODO: play some music here
     if (party_music == "recorded"):
@@ -929,7 +934,7 @@ label done_party_menu:
         "It was fun to get to know our neighbors better and relax for a bit."
 
     elif (party_entertainment == "talent show"):
-        "We had a few entries in the talent show, but not a lot. The Mayor got up and told jokes, some of which were even funny. Some of the Perón children sang a silly song about a goat, and Thuc juggled knives. We had no idea he could do that!"
+        "We had a few entries in the talent show, but not a lot. The Mayor got up and told jokes, some of which were even funny. Some of the Perón children sang a silly song about a turkey, and Thuc juggled knives. We had no idea he could do that!"
         "But I was even more surprised when [his_name] took the stage. I whispered to Sara,"
         show her normal at midright
         show sara at midleft
@@ -975,8 +980,8 @@ label done_party_menu:
                 with moveinleft
                 sara "Line up, everyone! Now, the goal is to see who can chop the most wood in one minute! Ready, set...GO!"
                 hide sara with moveoutleft
-                # TODO: make a different sound that's faster
                 play sound [ "sfx/wood-logs-2.mp3", "sfx/wood-logs-1.mp3" ]
+                play voice [ "sfx/wood-logs-2.mp3", "sfx/wood-logs-2.mp3", "sfx/wood-logs-2.mp3" ]
                 "I raised the axe and let it fall to split the wood, barely taking time to aim. I was concentrating so hard, I didn't even notice what anyone else was doing."
                 him "Go, [her_name]!"
                 show sara at left with moveinleft
@@ -1114,6 +1119,9 @@ label done_party_menu:
                     "I tasted my concotion, and it was pretty terrible."
                     sara "And the winner is...Julia! Her strange but delicious combination is a great hit! After the game everyone can come try some."
                     julia "Thank you."
+                    
+    else:
+        "Everyone milled around, chatting and enjoying the chance to relax."
 
     scene bg community_center
     show sara at quarterright

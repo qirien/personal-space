@@ -41,6 +41,7 @@ image overlay night = "bg/night.png"
 image overlay bathhouse = "bg/bathhouse-overlay.png"
 image overlay bedroom_covers = "bg/bedroom-overlay.png"
 image overlay computer_pad = "bg/computer-pad.png"
+image overlay underwater = "bg/underwater-overlay.png"
 
 
 # SPRITES
@@ -56,7 +57,7 @@ image him happy = "sprites/him-happy.png"
 image him laughing = "sprites/him-happy.png"
 image him sad = "sprites/him-sad.png"
 image him surprised = "sprites/him-surprised.png"
-image him serious = "sprites/him-annoyed.png" #TODO: does this work OK?
+image him serious = "sprites/him-annoyed.png"
 image him sleeping = "sprites/him-sleeping.png" #TODO: make color (shirtless?) version?
 
 # Her

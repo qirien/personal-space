@@ -210,7 +210,7 @@ screen main_menu:
             $ recent_save_page, recent_save_name = recent_save.split("-")
             textbutton _("Continue") action FileLoad(recent_save_name, page=recent_save_page) text_size 28
             textbutton _("Load Game") action ShowMenu("load")
-        if (persistent.times_beaten):
+        if (persistent.got_all_endings):
             textbutton _("Omake") action Start("omake")
         textbutton _("Config") action ShowMenu("preferences")
         #textbutton _("Help") action Help()
@@ -247,7 +247,7 @@ screen navigation:
         textbutton _("Save Game") action ShowMenu("save")
         textbutton _("Load Game") action ShowMenu("load")
         textbutton _("Main Menu") action MainMenu()
-        textbutton _("Help") action Help()
+        #textbutton _("Help") action Help()
         textbutton _("Quit") action Quit()
 
 init -2 python:

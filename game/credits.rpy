@@ -38,7 +38,7 @@ label show_credits:
     show text "Character Art by {a=http://clarissahelps.com}Clarissa Helps{/a}" with fade 
     $ renpy.pause(3.0, hard=skippable)
     hide text with fade
-    show text "With music by:\nEhren Starks\nJan Hanford\nChad Lawson\nGiorgio Costantini\nKalabi\nBenji Goodrich\nGianmarco Leona\nFalling You\n\nLicensed from {a=http://www.magnatune.com}Magnatune{/a} under the {a=http://creativecommons.org/licenses/by-nc-sa/1.0/}BY-NC-SA Creative Commons License{/a}" with fade
+    show text "With music by:\nEhren Starks\nJan Hanford\nChad Lawson\nGiorgio Costantini\nKalabi\nBenji Goodrich\nGianmarco Leona\nFalling You\nRuben van Rompaey\nDa Camera\n\nLicensed from {a=http://www.magnatune.com}Magnatune{/a} under the {a=http://creativecommons.org/licenses/by-nc-sa/1.0/}BY-NC-SA Creative Commons License{/a}" with fade
     $ renpy.pause(6.0, hard=skippable)
     hide text with fade     
     show text "With background images by:\nLisa Horner\nWes Landaker\nAndrea Landaker\nNASA\nBurningwell\nESO/L. Calçada\n\nAnd the following Wikimedia Commons users:\nRandwick\nLabpluto123\nWrlctech\nEbyabe\nAvi/Skrewtap\nMarcus Budde\nAluter\nDorothea Witter-Rieder\nAnna Frodesiak\nAndrei Stroe\nJean-Pierre\n\nFiltered with Fotosketcher" with fade
@@ -80,8 +80,13 @@ label show_credits:
         $ persistent.times_beaten = 1
     else:
         $ persistent.times_beaten += 1
-
-    # TODO: If got all endings, unlock something?  Omake?
+        
+    # TODO: Also unlock images for an image gallery, if we have CGs...
+    if (persistent.got_good_ending and persistent.got_mediocre_ending and persistent.got_bad_ending):
+        if (not persistent.got_all_endings):
+            "You have experienced all the endings and unlocked the Omake from the Main Menu!"
+        $ persistent.got_all_endings = True
+        
     "Thanks for playing! If you have feedback, I'd love to hear from you at {a=mailto:qirien@icecavern.net?subject=Our Personal Space}qirien@icecavern.net{/a}"
     show text "{size=80}{font=fonts/danielbd.ttf}{b}The End{/b}{/font}{/size}" with fade
     stop music fadeout 3.0

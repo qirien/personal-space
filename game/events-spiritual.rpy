@@ -512,8 +512,6 @@ label spiritual_master:
     naomi "God is something you understand through study, prayer, and love."
     naomi "Then, I think you will see the divine all around you."
     
-    # TODO: Add in Sister Naomi fearing something, and faith helping with that fear?  Fear of death, of being useless and invalid, depending on others?
-    
     menu:
         "What should I say?"
         "I agree.":
@@ -529,6 +527,21 @@ label spiritual_master:
             naomi "But I hope that showing you where I have found answers may have helped you, a little."
             
     her normal "Yes, that's true. I'll keep searching and learning."
+    her serious "But, what about you? How are you really feeling?"
+    
+    naomi "Well, I've been doing a lot of praying lately."
+    her surprised "More than usual?"
+    naomi "Oh yes. My whole life is built around helping others. But with my stroke, I could barely move, and I needed to be able to accept help instead of giving it."
+    her concerned "Why was that so hard?"
+    naomi "I had to face my fear of old age."
+    her surprised "You're scared of getting old? No offense, but aren't you already... um, I mean--"
+    naomi "Yes, I've been getting old for quite some time. But I've never been helpless, never had my body betray me quite like that."
+    her serious "Are you scared of dying?"
+    naomi "No, dying will be quite interesting. What bothers me is the slow process of decay of the body, and worst of all, the mind."
+    her surprised "Has your stroke affected your mind, too?"
+    naomi "Well, that's the problem - if my mental capacity is affected, I might have problems detecting it, won't I? And I wonder if those close to me would be honest and tell me if they notice anything?"
+    her serious "I'll tell you the truth, Naomi; you seem just as sharp as ever. And your kind spirit hasn't changed at all."
+    naomi "Thank you, [her_name]. I appreciate you letting me draw on your strength."
 
     $ skill_spiritual += 10
     $ community_level += 10
