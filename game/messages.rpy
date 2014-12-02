@@ -39,7 +39,8 @@ screen message_board:
                             text what id what_id
                 
 # NVL mode characters for chat rooms, etc
-define her_c = DynamicCharacter("her_name", who_prefix = "{image=sprites/her-icon.png} ", color="#8864d5", image="her", kind=nvl, ctc="ctc_blink", ctc_position="nestled")
+# TODO: update colors from script.rpy when sprites are done
+define her_c = DynamicCharacter("her_name", who_prefix = "{image=sprites/her-icon.png} ", color="#66dd77", image="her", kind=nvl, ctc="ctc_blink", ctc_position="nestled")
 define him_c = DynamicCharacter("his_name", who_prefix = "{image=sprites/him-icon.png} ",color="#c80000", image="him", kind=nvl, ctc="ctc_blink", ctc_position="nestled") #red 
 define naomi_c = Character("Naomi Grayson", who_prefix = "{image=sprites/naomi-icon.png} ", color="#ededed", image="naomi", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #light gray
 define pavel_c = Character("Mayor Pavel Grayson", who_prefix = "{image=sprites/pavel-icon.png} ", color="#cccccc", image="pavel_c", kind=nvl, ctc="ctc_blink", ctc_position="nestled")   #dark gray
@@ -48,10 +49,10 @@ define sara_c = Character("Sara Andrevski", who_prefix = "{image=sprites/sara-ic
 define thuc_c = Character("Thuc Nguyen", who_prefix = "{image=sprites/thuc-icon.png} ", color="a9ff22", image="thuc", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #lime green
 define ilian_c = Character("Ilian Andrevski", who_prefix = "{image=sprites/ilian-icon.png} ", color="ffa922", image="ilian", kind=nvl, ctc="ctc_blink", ctc_position="nestled") #tangerine
 define brennan_c = Character("Brennan Callahan", who_prefix = "{image=sprites/brennan-icon.png} ", color="33b533", image="brennan", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #irish green
-define pete_c = Character("Pete Jennings", who_prefix = "{image=sprites/pete-icon.png} ", color="cb5500", image="pete", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #rusty brown
+define pete_c = Character("Pete Jennings", who_prefix = "{image=sprites/pete-icon.png} ", color="ee7755", image="pete", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #rusty brown
 define natalia_c = Character("Natalia Perón", who_prefix = "{image=sprites/natalia-icon.png} ", color="ffe74a", image="natalia", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #yellow
 define helen_c = Character("Callie Jennings", who_prefix = "{image=sprites/helen-icon.png} ", color="cdcfb2", image="helen", kind=nvl, ctc="ctc_blink", ctc_position="nestled") #tan
-define julia_c = Character("Julia Nguyen", who_prefix = "{image=sprites/julia-icon.png} ", color="#4b54cd", image="julia", kind=nvl, ctc="ctc_blink", ctc_position="nestled") #icy blue
+define julia_c = Character("Julia Nguyen", who_prefix = "{image=sprites/julia-icon.png} ", color="#7b84fd", image="julia", kind=nvl, ctc="ctc_blink", ctc_position="nestled") #icy blue
 define martin_c = Character("Martín Perón", who_prefix = "{image=sprites/martin-icon.png} ", color="#990011", image="martin", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #dark red
 
 define computer = Character(None, kind=nvl, ctc="ctc_blink", ctc_position="nestled")

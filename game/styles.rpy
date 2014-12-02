@@ -67,6 +67,9 @@ style nvl_label is sans_text:
 style nvl_dialogue is sans_text:
     size 20
     #xpos 100
+    
+style nvl_window:
+    background None
 
 # Preferences Styles
 style pref_frame:
