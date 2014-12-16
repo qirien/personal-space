@@ -1724,7 +1724,8 @@ label monthly_event_11:
 label monthly_event_12:
     scene bg farm_interior with fade
     play music "music/Prelude02.ogg" fadeout 3.0
-    show him normal at midright
+    "[his_name] was usually pretty optimistic, but lately he had seemed more quiet and withdrawn. I figured he just had a lot on his mind."
+    show him serious at midright
     show her normal at midleft
     with dissolve
     him annoyed "So, how was your little vacation with [ocean_character]?"
@@ -1951,6 +1952,10 @@ label monthly_event_13:
             show her serious at midright with move
             "I didn't know what to say, so I just gave her a hug. I tried to communicate to her all that I felt, how I felt sad for her, and missed Josephina, and wanted her to feel better, and would always remember her daughter."
             "She smiled at me in thanks, and I could see how much she was hurting, but also beginning to heal."
+        "(Walk away)":
+            show her at midleft with move
+            "I couldn't do it. There was nothing I could say, nothing I could do that would make it better."
+            $ community_level -= 2
             
     "The wake would continue on for several hours, but [his_name] and I decided to go home."
     scene black with fade
@@ -2735,7 +2740,7 @@ label monthly_event_18:
         "But I knew something that could work instead..."
         show her serious at center with moveinleft
         "I ran to the cellar and pulled out a can of baking soda. Yanking the top off as I ran, I dumped it on the tractor engine fire."
-        $ community_level += 5
+        $ community_level += 2
     else:
         "I pulled the trigger; why wasn't it working?! Oh yeah, the pin!"
         "I fumbled with removing the pin; it seemed to take forever!"
@@ -3558,7 +3563,7 @@ label monthly_event_22:
     "I thought about it for a minute. How could I catch a thief?"
     menu:
         "What should I say?"
-        "{i}I can ask around.{/i}" if ((skill_social >= 80) or (skill_spiritual >= 80)):
+        "{i}I can ask around.{/i}" if ((skill_social >= 70) or (skill_spiritual >= 70)):
             her normal "I can ask around for you."
             pavel "Thank you, maybe people will be more willing to talk to you."
             her surprised "Hey, do you guys need any shampoo? You said Naomi was going to get some when you found out it was missing..."
@@ -3595,9 +3600,9 @@ label monthly_event_22:
             her serious "Good, good...but I'm trying to find this shampoo thief. Do you have any ideas?"
             thuc "Me? No... I mean, actually, I'll admit that I took an extra bottle one time for Julia's birthday, sort of off-the-record, you know."
             her surprised "Oh, really?"
-            thuc "Yeah, she loves that stuff."
+            thuc "Yeah, she's very particular about her hair."
             her serious "But just one extra."
-            thuc "Yeah! Well, maybe two, I think she's had two birthdays since we got here. But who'd be greedy enough to take fifteen bottles of the stuff?!"
+            thuc "Yeah! Well, maybe two, I think she's had two birthdays since we got here? But who'd be greedy enough to take fifteen bottles of the stuff?!"
             her concerned "I wonder... Well, thanks for the information, Thuc."
             thuc "No problem. Good luck in your investigation."
             "I had to go to work, but I resolved to ask more questions later."
@@ -3624,7 +3629,7 @@ label monthly_event_22:
             pavel "And now there's none left. Ahhh, I see."
             scene black with fade
             "The mayor sent out a message explaining the situation, and several people returned an \"extra\" bottle they just happened to have lying around, so there was enough for everyone."
-            "But I kept thinking about how such a small action as taking an extra bottle of shampoo had affected our whole colony."
+            "But I kept thinking about how such a little thing like taking an extra bottle of shampoo had affected our whole colony."
             "Who knows what other small actions could have such an effect?"
             $ community_level += 2
             $ relaxed += 2
