@@ -29,6 +29,9 @@ init -1 python hide:
     # with tracebacks and other debugging logs.
     config.name = "Our Personal Space"
     config.version = "1.3"
+    
+    config.window_icon = "GUI/window-icon.png"
+    config.windows_icon = "GUI/windows-icon.png"
 
     #########################################
     # Themes
@@ -195,7 +198,7 @@ init -1 python hide:
     ## - A file name relative to the base directory, which is opened in a
     ##   web browser.
     ## - None, to disable help.   
-    config.help = "README.html"
+    config.help = "tutorial"
 
 
     #########################################
@@ -230,6 +233,10 @@ init -1 python hide:
 
     ## Used when the window is hidden.
     config.window_hide_transition = dissolve
+    
+    ## Used when going from ADV to NVL, and vice versa
+    config.adv_nvl_transition = dissolve
+    config.nvl_adv_transition = dissolve
 
 
     #########################################
@@ -259,8 +266,14 @@ init -1 python hide:
     ## More customizations can go here.
     
     config.thumbnail_width = 280
-    config.thumbnail_height = 164    
-
+    config.thumbnail_height = 164
+    
+    # We only autosave monthly, on quit, or every 500 interactions
+    config.autosave_on_choice = False
+    config.autosave_frequency = 500
+    
+    config.hard_rollback_limit = 200
+    config.rollback_length = 256
                          
 ## This section contains information about how to build your project into 
 ## distribution files.

@@ -11,6 +11,7 @@ label relax_together_0:
     with dissolve
     
     "Everything here seemed to take ten times as much time and effort. It took twenty minutes just to boil water, because of the increased atmospheric pressure compared to Earth."
+    show her serious
     "So, after finally finishing up the dinner dishes, I was exhausted. I just wanted to snuggle on the couch and watch a movie or something."
     him "Hey, want to help me setup the barn? I got the walls from the shuttle yesterday."
     her surprised "Now?!"

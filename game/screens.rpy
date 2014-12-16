@@ -200,7 +200,6 @@ screen main_menu:
 
         has vbox
 
-        # TODO: Does help file work on Android? If not, disable it
         if (persistent.times_beaten):
             textbutton _("New Game+") action Start()
         else:
@@ -288,8 +287,8 @@ screen file_picker:
             textbutton _("Auto"):
                 action FilePage("auto")
 
-            textbutton _("Quick"):
-                action FilePage("quick")
+            #textbutton _("Quick"):
+            #    action FilePage("quick")
 
             for i in range(1, 10):
                 textbutton str(i):

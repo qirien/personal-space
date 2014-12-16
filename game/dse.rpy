@@ -134,6 +134,7 @@ label day:
                 $pass
         
     # Autosave
+    $ renpy.force_autosave(take_screenshot=True)
     $ renpy.choice_for_skipping()
     $ renpy.notify("{vspace=540}{color=#000}{space=40}Autosaving...{/color}")
     

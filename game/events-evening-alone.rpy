@@ -254,12 +254,82 @@ label relax_alone_b:
     $ loved -= 2
     return
 
+# go to bed early
 label relax_alone_c:
     scene bg bedroom with fade
     show overlay night
+    show overlay bedroom_covers behind night        
+    show her serious at midright, squatting, behind overlay
+    with dissolve
+
     "I felt so tired, I decided to just go to bed early."
+    show him serious at quarterleft 
+    with moveinleft
+    
+    if (is_pregnant):
+        "Of course, that's when the baby decides to practice martial arts on my bladder."
+        her annoyed "Not again..."
+        him surprised "Everything okay?"
+        her serious "I can't sleep while I'm being pummeled from the inside."
+        "He put his hand on my belly and felt the tiny movements."
+        him happy "Wow, that's an energetic kid!"
+        if (father_attitude == "grinning"):
+            her annoyed "Do you have to be so happy about everything? You remind me of my dad..."
+            him surprised "What's there not to be happy about? We're alive and healthy, and so's our growing baby!"
+        her sad "I'm just so tired..."
+        him sad "Have you not been sleeping well?"
+        her serious "Every time I fall asleep, something wakes me up in an hour or two. Either I have to use the bathroom, or the baby's moving, or my back hurts, or, worst of all, it's morning."
+        her "And I don't want to take any medicine or herbs because I'm worried it might hurt the baby."
+
+    else:
+        "I'd had trouble sleeping lately; my back hurt whenever I lay in one place for too long. The beds from the shuttle were sturdy, but they weren't the most ergonomic designs."
+        her annoyed "Oww..."
+        him surprised "You okay?"
+        her annoyed "Yeah, my back's been hurting; makes it hard to sleep."
+        if (profession == "doctor"):
+            him serious "Did you try taking some medicine for it?"
+        else:
+            him serious "Did you see the doctor about it?"
+
+        her concerned "Yeah, it didn't really seem to help."
+
+    if (loved > 0):
+        him concerned  "Sorry you're so tired."
+        her concerned "Yeah..."
+        him serious "Is there anything else you can do about it?"
+        her serious "I don't know; I'm trying to go to bed earlier, we'll see if that helps."
+        him normal "Well, I'll try not to do anything noisy and wake you up."
+        her normal "Okay, thanks."
+        show her sleeping
+    else:
+        him annoyed "Well, I can't do anything about that."
+        if (relaxed <= 0):
+            her angry "You don't have to do anything about it! Can you just listen?!"
+            him serious "What's the point of listening if it doesn't solve anything?"
+            her annoyed "It might help me feel better."
+            him annoyed "That doesn't make any sense."
+            her angry "Well, that's how I feel! I don't know why I'm even telling you, since obviously you don't care!"
+            him angry "I care, I just don't understand you!"
+            her annoyed "Well, you could try listening."
+            him annoyed "Hmph."
+            hide him with moveoutleft
+            show her sleeping
+            "I closed my eyes and tried to get to sleep, but I was too upset."
+            show her concerned
+            "He was supposed to be my husband, my beloved, my best friend; was it so much to ask for him to just listen to how I felt?!"
+            show him serious at midleft, squatting behind overlay with moveinleft
+            show her sleeping
+            "Finally, I managed to fall asleep, at about the same time I usually did. I felt like he just wasted my whole evening by being so obstinate."
+            show him sleeping
+            $ relaxed -= 5
+        else:
+            her concerned "I know, I just wanted to tell you how I was feeling."
+            him serious "I wish there was something I could do, [her_nickname]..."
+            her normal "It's okay; thanks for listening."
+            $ loved += 2
+    
     scene black with fade
-    $ relaxed += 7
+    $ relaxed += 5
     $ loved -= 2
     return
 

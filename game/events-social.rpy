@@ -6,8 +6,11 @@ label social_def:
     "I met up with my friend Sara and we talked together. She is a great listener and understands me so well."
     $ skill_social += 10
 
+#
+# SOCIAL 0
 # Intro Event
 # Community message board flame war
+#
 label social_0:
     
     scene bg farm_interior with fade
@@ -103,7 +106,10 @@ label social_0:
     $ community_level += 1
     return
 
+#
+# SOCIAL 1
 # Start a weekly game night at the community center
+#
 label social_1:
     scene bg community_center with fade
     "Soon after we arrived, the main shuttle bay was converted into a community center. It was the only building large enough for everyone to gather in at once."
@@ -153,7 +159,10 @@ label social_1:
     $ community_level += 2
     return
 
+#
+# SOCIAL 2
 # Invite Nguyens over for dinner
+#
 label social_2:
     scene bg farm_interior with fade
     "Even though we had all lived together for months, there were some people in the community we didn't know very well."
@@ -257,7 +266,10 @@ label social_2:
     $ community_level += 2
     return
 
-#organize lunch group
+#
+# SOCIAL 3
+# organize lunch group
+#
 label social_3:
     play music "music/Sojourn.ogg" fadeout 3.0
     play sound "sfx/people.mp3" loop
@@ -302,7 +314,10 @@ label social_3:
     $ community_level += 2
     return
 
+#
+# SOCIAL 4
 # Organize community movie night!
+#
 label social_4:
     scene bg community_center with fade
     play music "music/Sojourn.ogg" fadeout 3.0
@@ -455,7 +470,10 @@ label social_4:
     $ community_level += 2
     return
 
+#
+# SOCIAL 5
 # Someone's house burns down; will you help?
+#
 label social_5:
     scene bg bedroom with fade
     show overlay night
@@ -607,8 +625,10 @@ label social_5:
     $ skill_social += 10
     return
 
-
+#
+# SOCIAL 6
 # Teach 'enrichment' class on [profession]
+#
 label social_6:
     call set_work_bg
     show her normal at quarterright with dissolve
@@ -652,9 +672,11 @@ label social_6:
     $ skill_social += 10
     return
 
-
+#
+# SOCIAL 7
 # Family (appears to be?) slacking off and mooching off everyone else;
 # mayor asks [her_name] to see if she can determine what to do
+#
 label social_7:
     "I didn't see the other colonists much during the day, but I assumed they were working hard like we were."
     "But not everyone thought that..."
@@ -760,393 +782,91 @@ label social_7:
     $ skill_social += 10
     return
 
-# Community Shindig
+#
+# SOCIAL 8
+# Help the Mayor - how much role should government play?
+#
 label social_8:
     scene bg path with fade
-
-    "One day Sara and I took a walk together."
-    show her normal at midright
-    show sara at midleft
-    sara "I think this town needs something special."
-    her flirting "Like what? Indoor plumbing?"
-    sara "No, silly, I mean a special event! Like a festival, a party, a shindig! Something to cheer everyone up, give them hope."
-    her concerned "Yeah, I know what you mean. We've all been working pretty hard..."
-    sara "So let's plan one!"
-    her normal "If we got Mayor Grayson in on it, he might have some special food or something we could use."
-    sara "Good idea."
-    scene bg community_center with fade
-    show pavel at midright with dissolve
-    show her normal at quarterleft
-    show sara at midleft
-    with moveinleft
-    "We asked him about it, and he thought it sounded great."
-    pavel "It's about time we had a celebration of some kind. Earth Day is in two weeks - we could have it then. But I don't know who to ask to plan it - everyone is so busy..."
-    sara "Just leave it to us. We'll have a party ready in two weeks!"
-    $ party_music = ""
-    $ party_entertainment = ""
-    $ party_decorations = ""
-
-    scene bg storehouse with fade
-    show sara at midright
-    show her normal at midleft
-    with moveinleft
+    "One day I was walking through town when I heard loud music from inside the community center."
+    her surprised "I wonder if some kids are playing with the sound system?"
     
-    "We decided to make it a potluck, so everyone could share the different foods they had grown. We also obtained some goodies from the dwindling rations in the storehouse."
-    sara "Look! Potato chips! And fruit punch mix!"
-    her surprised "Wow, I haven't had those in months!"
-    sara "OK, I think we have the food down. What else should we have?"
-    show her normal
-    menu party_menu:
-        "What does the party still need?"
-        "Music" if (party_music == ""):
-            her serious "We need some music."
-            sara "Yeah...should we use recorded music, or see if we can get someone to play live?"
-            menu:
-                "What kind of music?"
-                "Recorded music.":
-                    her normal "Recorded music is fine; then we we have more control over it, and it's better for dancing."
-                    sara "Let's get a good playlist setup of lots of different kinds of dance music."
-                    her "Good point; everyone here probably likes different things, so I will send out an e-mail asking everyone to send me their favorite dance song."
-                    $ party_music = "recorded"
-                "Live music.":
-                    her "Live music is better because it's people you actually know playing the music."
-                    if (skill_creative >= 50):
-                        her happy "I can play, you know."
-                        sara "Of course! Can you get a group together to play some songs?"
-                    else:
-                        sara "Yes! That would be so cool. Can you be in charge of that?"
-                    her normal "Sure, I'll send out an e-mail. Maybe some people will want to play or sing solos, too."
-                    $ party_music = "live"
-                    
-            sara "OK, we've got the music!"
-            jump party_menu
-                                    
-        "Entertainment" if (party_entertainment == ""):
-            her serious "We should have some kind of entertainment."
-            sara "Yeah, something everyone would like..."
-            menu:
-                "How about:"                
-                "Party games!":
-                    her surprised "Maybe some party games? Like musical chairs or something? Is that dumb?"
-                    sara "Not if we play it right..."
-                    her serious "There are also a lot of people. We might need to split them up into small groups."
-                    sara "I have some ideas; leave it to me!"
-                    $ party_entertainment = "games"
-                "Talent show!":
-                    her happy "How about a talent show? I'm sure lots of people have things they can do, even if it's just jokes or a skit or something."
-                    sara "Sure! We'll just organize the performances and be the announcers."
-                    $ party_entertainment = "talent show"
-                "Contests!":
-                    her surprised "Maybe some kind of contests?"
-                    sara "Okay, this is totally Farm Life, but what about a wood chopping contest?"
-                    her laughing "Ha ha, that actually could be fun. We'd need some other contests, too, though..."
-                    sara "Leave it to me! I'll have a bunch of fun contests."
-                    $ party_entertainment = "contests"
-            jump party_menu
-
-        "Decorations" if (party_decorations == ""):
-            her serious "Some kind of decorations would be fun..."
-            sara "Yeah, it's not like we can just go to the party store and get some balloons or something, though."
-            her surprised "How about wildflowers?"
-            sara "Oh, yeah, we could just have a vase of wildflowers on each table."
-            her normal "I'll see if I can get some old jars or bottles to use as vases."
-            if (skill_creative >= 20):
-                her "Maybe we could glue old papers or scraps of cloth on them to make them look nice? I'll figure something out."
-                sara "Sounds good! We don't need a lot of decorations; just enough to show that it's a party. I'll see if I can make the lights in the new community room change color."
-            $ party_decorations = "flowers"
-            jump party_menu
-
-        "Nothing else":
-            her normal "I think that's enough."
-            jump done_party_menu
-
-label done_party_menu:
-    "Sara and I worked hard for two weeks getting everything ready. Finally, the night of the party came..."
     scene bg community_center with fade
-    if (party_music == "recorded"):
-        play music "music/Rising.ogg" fadeout 3.0
-    elif (party_music == "live"):
-        play music "music/CarolanConcerto.ogg" fadeout 3.0
+    show pavel at right with dissolve
+    show her normal at quarterleft with moveinleft
+    "But to my surprise, the only one inside was the Mayor. He was facing away from me, dancing, and...singing?"
+    show pavel at midright with move    
+    pavel "\"It's the end of the world, as we know it\nIt's the end of the world as we know it\nAnd I feel fine."
+    show pavel at right with move
+    "Either I giggled, or he sensed my presence, because he turned around looking sheepish."
+    show pavel at center with move
+    pavel "[her_name]! Sorry about that."
+    her happy "Not at all! You should be in a talent show or something, that was great."
+    pavel "Well, it wouldn't be a talent show if I was in it. My skills lie in other areas, I'm afraid."
+    her flirting "Like keeping space colonies running?"
+    pavel "I used to think so, but..."
+    her surprised "What's wrong?"
+    pavel "There's just been... a really difficult situation, lately. I'm not sure I know what to do."
+    her serious "Do you want to talk about it?"
+    pavel "I probably shouldn't, but..."
+    her concerned "I'll keep it confidential."
+    pavel "Well... have you heard of fire grass?"
+    if (skill_knowledge >= 40):
+        her normal "Yeah, that's on the edible plants list with a warning not to eat it raw. I guess it's kind of spicy?"
     else:
-        play music "music/Prelude22.ogg" fadeout 3.0 
-    if (party_decorations == "flowers"):
-        show overlay underwater with dissolve
-        "The flowers we picked looked nice. Even though they were nothing like Earth flowers, they had their own beauty. And Sara had programmed some of the lights to glow softly blue and green, like an ocean."
-    play sound "sfx/people.mp3" loop
-    "As people started to arrive, they seemed to brighten when they saw the community center ready for a party."
-
-    #TODO: play some music here
-    if (party_music == "recorded"):
-        "We played some great dance music, and some people really got into dancing! It was really interesting to hear the variety of songs everyone sent us. There was pop music, ballads, slow love songs, techno, rap... Even though some of it was in languages we didn't all know, it was still good for dancing."
-    elif (party_music == "live"):
-        if (skill_creative >= 50):
-            "I was a little nervous about playing music for everyone, but as soon as I started playing I lost myself in the songs."
-
-        "It turned out we had a lot of musicians in our little community. Some of them played together - we had some great Irish dancing music with a fiddle and flute - but there were a few solos, too."
-
-        "Everyone brought some food from their farm to share. There were lots of different soups and salads, some strange fruits that Natalia found while hiking, some local game meat, some hearty rolls, and an egg casserole."
-    if (have_goat == True):
-        "We brought some cheese we had made from our goat's milk, along with a few vegetables."
-    else:
-        "We brought some fresh vegetables and some salsa."
-
-    if (party_entertainment == "games"):
-        "After we ate, Sara broke us up into small groups for games."
-        show brennan at left
-        show naomi at quarterleft
-        show pavel at midleft, behind naomi
-        with moveinleft
-        show him normal at right
-        show her normal at quarterright
-        with moveinright
-        "The first one was 'Two Truths and a Lie' where we each had to tell three things about ourselves, and the group would try to guess which one wasn't true."
-        $ highest_skill = highest_stat().lower()
-        her happy "Hi, I'm [her_name]. My hobby is anything [highest_skill], I helped organize this party, and I used to-"
-        menu:
-            "What should I say? (I need to tell a plausible lie...)"
-            "I used to eat bacon ice cream.":
-                her "I used to eat bacon ice cream."
-            "I used to work as a roller-skating carhop.":
-                her "I used to work as a roller-skating carhop."
-            "I used to hate looking at the stars.":
-                her "I used to hate looking at the stars."
-        "Everyone guessed my lie right away, but that's okay. I was more interested in hearing what everyone else had to say."
-        him happy "Hi, my name's [his_name]. I like to write poetry, I won a sheep-riding rodeo when I was five years old, and in high school I was known as The Candid Bandit."
-        "(Well, I know he likes to write poetry...but I have no idea which of the other things is true!"
-        him flirting "No one has a guess which one of those is a lie?"
-        menu:
-            "What should I guess?"
-            "The sheep-riding is a lie.":
-                her surprised "I'll guess the sheep-riding."
-                him happy "Nope!"
-            "The Candid Bandit nickname is a lie.":
-                her surprised "Nobody called you 'The Candid Bandit'."
-                him serious "You're right. But maybe they should..."
-            "I'm not going to guess.":
-                "I had no clue."
-                brennan "I have a hard time believing you ever won anything."
-        him normal "I really did win a sheep-riding rodeo when I was five. Just held on forever. I wouldn't let go even when they told me it was over. Nobody has called me \"The Candid Bandit\" yet, but you can if you want to."
-        naomi "The Candid Bandit?"
-        brennan "That's the barmiest nickname I ever heard of."
-        her normal "(I'm going to have to agree with Brennan on this one!)"
-                 
-        "We also played a game called 'Mafia' where we had to guess who in our group was secretly a bad guy, and also a game called 'Unfortunately' where each person told one sentence of a story, starting with the words 'Fortunately' or 'Unfortunately'."
-        "It was fun to get to know our neighbors better and relax for a bit."
-
-    elif (party_entertainment == "talent show"):
-        "We had a few entries in the talent show, but not a lot. The Mayor got up and told jokes, some of which were even funny. Some of the Perón children sang a silly song about a turkey, and Thuc juggled knives. We had no idea he could do that!"
-        "But I was even more surprised when [his_name] took the stage. I whispered to Sara,"
-        show her normal at midright
-        show sara at midleft
-        with dissolve
-        her surprised "You didn't tell me he had an act!"
-        sara "I thought you'd like being surprised!  Shhh, watch."
-        hide her
-        hide sara
-        with dissolve
-        show him normal at center with dissolve
-        him happy "I just have a poem for you all, and then I'll leave you alone."
-        "I was apprehensive. His previous 'poems' were not that impressive."
-        him serious "Here on this lonely planet\nFar from that of our birth,"
-        him serious "We're trying to make our own\nNew planet, just like Earth."
-        him serious "The skies aren't really blue here,\nA red sun flares above,"
-        him serious "But we've got what's most important:\nFriends, family, and love."
-        him serious "So though we often struggle\nIn our small community,"
-        him normal "We'd better work and get along,\nOr we'll be extrasolar history."
-
-        menu:
-            "That was..."
-            "Touching.":
-                "...actually sort of touching. It wouldn't win any poetry contests, but I think it described how we all felt. Everyone applauded, including myself."
-            "Funny.":
-                "...kind of funny. 'Extrasolar history', hee hee. Everyone seemed to agree with me; they laughed and applauded."
-            "Embarrassing.":
-                "...embarrassing. Poetry should be a private thing, shouldn't it? But the other people seemed to like it, and they applauded politely."
-                $ loved -= 5
-        "We all felt closer together after enjoying the performances together."
-
-    elif (party_entertainment == "contests"):
-        "Next came the contests. Sara was in charge of those."
-        show sara at center with dissolve
-        sara "All right, listen up! We've got four contests tonight, and I need participants to make these a success! So I hope you will all consider taking part in a contest, even if it's just for fun! The contests are: Wood Chopping, Space Ship Construction, Colony Trivia, and Adamantium Chef."
-        menu:
-            "Which contest should I enter?"
-            "Wood Chopping.":
-                "I decided to enter the wood chopping contest."
-                show sara at left with move
-                show her normal at right
-                show pete at midright
-                show thuc at midleft
-                with moveinleft
-                sara "Line up, everyone! Now, the goal is to see who can chop the most wood in one minute! Ready, set...GO!"
-                hide sara with moveoutleft
-                play sound [ "sfx/wood-logs-2.mp3", "sfx/wood-logs-1.mp3" ]
-                play voice [ "sfx/wood-logs-2.mp3", "sfx/wood-logs-2.mp3", "sfx/wood-logs-2.mp3" ]
-                "I raised the axe and let it fall to split the wood, barely taking time to aim. I was concentrating so hard, I didn't even notice what anyone else was doing."
-                him "Go, [her_name]!"
-                show sara at left with moveinleft
-                sara "Time's up!"
-                if (skill_physical >= 70):
-                    sara "We have a winner! Congratulations, [her_name]!"
-                    her laughing "Yay!"
-                    "I guess all the exercise I'd been doing really paid off."
-                else:
-                    sara "We have a winner! Congratulations, Pete!"
-                    pete "Is there a prize?"
-                    sara "Just bragging rights."
-                    pete "I'll take it!"
-                    "I did my best, but I didn't chop very much. My arms were sore and I was sweating all over, but it was still fun."
-            "Space Ship Construction.":
-                "I decided to enter the Space Ship Construction contest."
-                sara "This is a game for teams of two, so find a partner!"
-                show sara at quarterleft with move
-                show him normal at right
-                show her normal at quarterright
-                with moveinright
-                him serious "Let's do it."
-                her flirting "Yeah, you and me, right now."
-                sara "I have a box of materials for each team. Your goal is to build the sturdiest and coolest-looking cardboard spaceship you can in five minutes! Then we will launch them from the roof and see whose has the best landing."
-                sara "Ready, set...GO!"
-                "[his_name] and I rummaged through the box. Sara had gathered trash from everyone and cleaned it off so we could use it on our creation."
-                him serious "Let's make the box the body of the spaceship."
-                her serious "OK, we'll also need some wings..."
-                if (loved <= 0):
-                    him surprised "Why are you putting that tin foil there?"
-                    her annoyed "It's reflective, like a solar panel."
-                    him annoyed "Solar panels aren't reflective."
-                    her angry "We don't have a lot of time! I'm just doing the best I can!"
-                else:
-                    "We worked together fluidly, like dancers, attaching a piece here and wrapping a piece there, not needing to talk much."
-                "We finished just as the time was up."
-                if (loved > 0):
-                    if (skill_creative >= 70):
-                        "Ours didn't have the best landing, but it looked so artistic and sleek that they gave it the best score anyway. We won the contest!"
-                    elif (skill_technical >= 70):
-                        "Ours didn't look the best, but it actually kind flew off the roof and glided for a bit before landing gracefully on the ground. We won the contest!"
-                else:
-                    "Ours was kind of a disaster. We felt relieved when the contest was over."
-            "Colony Trivia.":
-                show sara at center
-                show her normal at midright
-                show naomi at midleft
-                show ilian at left
-                show lily at right
-                with dissolve
-                "I decided to enter the triva contest. They had questions about the shuttle, the colony, and the people on the colony."
-                if (skill_knowledge >= 70):
-                    "Because of all my research, I was able to answer a lot of the questions about the shuttle and the colony."
-                elif (skill_spiritual >= 70):
-                    "Because of my connections in the community, I was able to answer a lot of the questions about the people in the colony."
-                sara "And for the last question, which will determine the winner of the trivia contest:"
-                # TODO: This isn't written anywhere... change to something else?
-                sara "What is Mayor Grayson's favorite song?"
-                menu:
-                    "What's the mayor's favorite song?"
-                    "\"Walkin' on the Sun\"":
-                        her "\"Walkin' on the Sun\" is his favorite song."
-                        sara "Sorry, that's not it."
-                        ilian "His favorite song is \"It's the End of the World\"!"
-                        sara "Correct! We have a winner!"
-                        "I didn't win, but I had fun anyway."
-                    "\"It Came Out of the Sky\"":
-                        her "\"It Came Out of the Sky\" is his favorite song."
-                        sara "Sorry, that's not it."
-                        ilian "His favorite song is \"It's the End of the World\"!"
-                        sara "Correct! We have a winner!"
-                        "I didn't win, but I had fun anyway."
-                    "\"Jupiter\", from 'The Planets'":
-                        her "\"Jupiter\", from 'The Planets' is his favorite song."
-                        sara "Sorry, that's not it."
-                        ilian "His favorite song is \"It's the End of the World\"!"
-                        sara "Correct! We have a winner!"
-                        "I didn't win, but I had fun anyway."
-                    "\"It's the End of the World\"":
-                        her "\"It's the End of the World\" is his favorite song."
-                        sara "That's right! [her_name] is the winner!"
-                        "It was fun to win, and also to learn more about everyone."
-            "Adamantium Chef.":
-                "I decided to enter the Adamantium Chef contest."
-                show sara at center
-                show her normal at midright
-                show natalia at left
-                show julia at right
-                show brennan at midleft
-                $ party_meat = False
-                $ party_gravy = False
-                $ party_strawberries = False
-                $ party_potato_chips = False
-                $ party_onions = False
-                $ party_cheese = False
-                sara "All right, listen up contestants! You have five minutes to make the tastiest concoction you can out of the leftover food on the tables! Ready, set...GO!"
-                "We all scanned through the leftovers. We each had a bowl for mixing, and a dish for serving."
-                show her serious
-                menu party_chef:
-                    "I scooped up some:"
-                    "Meat" if (not party_meat):
-                        "meat. I looked around for the next ingredient."
-                        $ party_meat = True
-                        jump party_chef
-                    "Gravy" if (not party_gravy):
-                        "gravy. I looked around for the next ingredient."
-                        $ party_gravy = True
-                        jump party_chef
-                    "Strawberries" if (not party_strawberries):
-                        "strawberries. I looked around for the next ingredient."
-                        $ party_strawberries = True
-                        jump party_chef
-                    "Potato Chips" if (not party_potato_chips):
-                        "potato chips. I looked around for the next ingredient."
-                        $ party_potato_chips = True
-                        jump party_chef
-                    "Onions" if (not party_onions):
-                        "onions. I looked around for the next ingredient."
-                        $ party_onions = True
-                        jump party_chef
-                    "Cheese" if (not party_cheese):
-                        "cheese. I looked around for the next ingredient."
-                        $ party_cheese = True
-                        jump party_chef
-                    "Nothing else":
-                        "...and I mixed them all together as best as I could."
-                if (skill_domestic >= 70):
-                    "Despite the strange ingredients, I melded them together into a mouthwatering concoction."
-                    sara "And the winner is...[her_name]! Her strange but delicious combination is a great hit! After the game everyone can come try some."
-                elif (skill_domestic >= 30):
-                    "Despite the strange ingredients, I managed to make something that didn't taste terrible, but it certainly wasn't the best."
-                    sara "And the winner is...Julia! Her strange but delicious combination is a great hit! After the game everyone can come try some."
-                    julia "Thank you."
-                else:
-                    "I tasted my concotion, and it was pretty terrible."
-                    sara "And the winner is...Julia! Her strange but delicious combination is a great hit! After the game everyone can come try some."
-                    julia "Thank you."
-                    
-    else:
-        "Everyone milled around, chatting and enjoying the chance to relax."
-
-    scene bg community_center
-    show sara at quarterright
-    show her normal at right
-    show pavel at midleft
-    with dissolve
-    sara sad "Well, the party's almost over, guess it's time to clean up."
-    her surprised "Yeah, is that going to be just you and me?"
-    pavel "Thank you, Sara and [her_name], for organizing such a wonderful celebration for us. I know you've put a lot of work into it."
-    show her normal
-    show sara normal
-    pavel "But, folks, I see quite a mess here in our community center. I don't think it's fair that these two ladies should have to do all the work, so I'd like to ask one person from each family to stay and help clean up."
-    "I was relieved to hear that, and even more relieved to see that a lot of people stayed to help clean up. Not just one person from each family, either - entire families got to work clearing plates, putting away chairs, mopping up spills, and doing dishes."
-    hide sara
-    show her normal at midright with move
-    her "Thanks, Mayor Grayson."
-    pavel "Thank you! I think the party was a great success."
-    stop sound
+        her concerned "No..."
+        
+    pavel "It grows wild all over here, and someone found out that if you smoke it, it is a powerful stimulant."
+    her surprised "Like caffeine?"
+    pavel "Yes, but more powerful. Some of the colonists say they can get so much more done and have much more energy when they use it."
+    her serious "Is it dangerous?"
+    pavel "We haven't studied it enough yet to know what long term effects it may have. It does seem to make the user more tired afterwards, but that's the only reported side effect."
+    her surprised "Has someone been abusing it?"
+    pavel "One woman wants to make smoking fire grass illegal. Apparently her kids play at the house of someone who smokes it, and she says the secondhand smoke makes them jittery and cranky."
+    menu:
+        "What should I say?"
+        "You should make it illegal.":
+            her concerned "That sounds really unhealthy; people shouldn't be using things like that."
+            pavel "Hmmm, I had been thinking that it wasn't our job to tell people what they should and shouldn't consume."
+            her annoyed "Yes, but it doesn't just affect the people that smoke it - it affects their kids, and apparently other people's kids, too.  That's not fair for them."
+            pavel "You're right. And I wouldn't be surprised if some of the older kids start smoking it to copy their parents, if we don't do something about it now."
+            her serious "But it grows everywhere... enforcing a law like that would be difficult."
+            pavel "Well, my job is not to make sure no one ever breaks any laws. My job is just to mediate disputes."
+            her surprised "So... if someone breaks a law, but nobody cares, nothing will happen?"
+            pavel "Yes, exactly. So if we made smoking illegal, it would hopefully still allow people to smoke it in ways that don't bother anyone."
+            her concerned "That kind of makes the law meaningless."
+            pavel "The law is not a set of dos and don'ts to control people's lives. The law is a way to resolve conflicts in a way that's fair for everyone."
+            her serious "I hadn't thought about it like that before..."
+        "You should not make it illegal.":
+            her annoyed "That's too bad, but I think our community will function better without too many  laws."
+            pavel "Really? I'm worried about the smoke's effects on the children..."
+            her serious "Well, there are other ways to help them. Maybe this woman could just talk to the person she has a problem with, or not let her kids play over there."
+            pavel "That's true..."
+            her annoyed "People don't need laws to tell them how to live; people only need laws to stop those that want to harm others. Too many laws just get in the way."
+            her flirting "Besides, do you really want to have to enforce a law like that?"
+            pavel "Good point. I'll see if there's a solution to this problem aside from making a new law."
+            her normal "I'm sure there is."
+        "The colony should vote on it.":
+            her concerned "Don't we vote on all new laws?"
+            pavel "Yes, of course, but I don't want to encourage the woman to propose a new law if there's another solution to this problem."
+            her normal "Well, if she has enough support, then maybe we should let everyone vote on it. That puts the burden off you a little bit and onto everyone else."
+            pavel "That might work... if people don't vote for it, then she will have to find another solution to her problem."
+            her serious "And if they do vote for it?"
+            pavel "Then hopefully people that want to smoke fire grass will be more discreet about it."
+            her concerned "Just because there's a law against something doesn't mean people will stop doing it."
+            pavel "But if their smoking is so discreet that it doesn't bother anyone else, then I don't think there's a problem."
+            her serious "Maybe so..."
+            
+    pavel "Anyway, I appreciate your insight into this dilemma, [her_name]. It helps to be able to talk to someone that I trust."
+    her normal "Anytime, Mayor."
+    
     $ skill_social += 10
-    $ community_level += 5
+    $ community_level += 2
     return
 
 # Propose and fill seat on Community Council
 label social_master:
-    scene bg community_center
+    scene bg community_center with fade
     show pavel at midright, behind her with dissolve
     show her normal at midleft with moveinleft
     her surprised "Mayor Grayson, can I talk to you for a moment?"

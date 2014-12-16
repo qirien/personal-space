@@ -28,6 +28,7 @@ label physical_0:
     him normal "Thanks for your help, [her_name]. You are actually pretty good at shovelling."
     her flirting "Me and my hidden talents..."
     him flirting "Yes, I wonder what else you are hiding?"
+    show her at center with move
     her "Come and find out."
     $ loved += 2
     $ made_love += 1
