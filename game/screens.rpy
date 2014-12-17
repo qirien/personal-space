@@ -122,58 +122,60 @@ screen input:
 # http://www.renpy.org/doc/html/screen_special.html#nvl
 screen nvl:
     
-    # use our message board screen unless it's a note
-    if (dialogue[0][0] != "note"):
-        use message_board
-        
-    # it's a handwritten note
-    else:
-        add "bg/paper.jpg"
-        window:
-            style "nvl_window"
-            xpadding 50
-            ypadding 50
+    # I guess sometimes this is called with no dialogue, so I put in this check.
+    if (dialogue):
+        # use our message board screen unless it's a note        
+        if (dialogue[0][0] != "note"):
+            use message_board
+            
+        # it's a handwritten note
+        else:
+            add "bg/paper.jpg"
+            window:
+                style "nvl_window"
+                xpadding 50
+                ypadding 50
 
-            yfill True
-            xfill True
+                yfill True
+                xfill True
 
-            has vbox:
-                style "nvl_vbox"
+                has vbox:
+                    style "nvl_vbox"
 
-            # Display dialogue.
-            for who, what, who_id, what_id, window_id in dialogue:
-                window:
-                    id window_id
+                # Display dialogue.
+                for who, what, who_id, what_id, window_id in dialogue:
+                    window:
+                        id window_id
 
-                    has hbox:
-                        spacing 10
+                        has hbox:
+                            spacing 10
 
-#                    if who is not None:
-#                        text who id who_id
+    #                    if who is not None:
+    #                        text who id who_id
 
-                    text what id what_id
+                        text what id what_id style "nvl_note" color "#000" font "fonts/danielbd.ttf"
 
-            # Display a menu, if given.
-            if items:
+                # Display a menu, if given.
+                if items:
 
-                vbox:
-                    id "menu"
+                    vbox:
+                        id "menu"
 
-                    for caption, action, chosen in items:
+                        for caption, action, chosen in items:
 
-                        if action:
+                            if action:
 
-                            button:
-                                style "nvl_menu_choice_button"
-                                action action
+                                button:
+                                    style "nvl_menu_choice_button"
+                                    action action
 
-                                text caption style "nvl_menu_choice"
+                                    text caption style "nvl_menu_choice"
 
-                        else:
+                            else:
 
-                            text caption style "nvl_dialogue"
+                                text caption style "nvl_dialogue" color "#000" font "fonts/danielbd.ttf"
 
-        add SideImage() xalign 0.0 yalign 1.0
+            add SideImage() xalign 0.0 yalign 1.0
         
         #use quick_menu
         

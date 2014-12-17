@@ -35,14 +35,14 @@ label omake:
     show pete at midleft
     show helen at midright, squatting
     with dissolve
-    pete "You're the Milky Way in my night sky, baby."
+    pete happy "You're the Milky Way in my night sky, baby."
     helen "Is that a nursing joke?"
-    pete "Nah, I was just tryin' to be romantic."
+    pete normal "Nah, I was just tryin' to be romantic."
     helen "Sorry, it's hard for me to think about anything else while I'm feeding the baby. Can we be romantic when I'm done?"
     pete "I'll just have to find some other way to help get you in the mood..."
     show pete at squatting with move
     helen "Ohhh. Mmmmm. Oh, Pete, that feels sooo good."
-    pete "You never could resist a good foot rub."
+    pete happy "You never could resist a good foot rub."
     
     brennan "..."
     

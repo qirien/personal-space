@@ -686,7 +686,7 @@ label physical_master:
     pete "So, you going to tell us how to hunt these critters?"
     her normal "Yes, a lot of the same principles apply from game hunting, but some are different because these are not mammals or birds; they are more like crustaceans."
     her "Usually you hunt mainly the males of the species. With this species, we don't know how to tell males and females apart from a distance. But we can at least avoid shooting the babies."
-    pete "Guess you can't just look for the antlers or bright feathers, can you?"
+    pete happy "Guess you can't just look for the antlers or bright feathers, can you?"
     her "We should strive for a single-shot kill. Dr. Lily, based on their anatomy, what would you recommend?"
     lily "We should aim for the heart, which is right behind the head."
     her normal "Not only is this more humane for the animal, but it will also conserve our ammunition."

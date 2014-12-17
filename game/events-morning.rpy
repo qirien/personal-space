@@ -91,7 +91,7 @@ label work_0:
     show helen at right with moveinright
     pavel "Pete is in charge of the library, so if you need to research something or print something out, head over there. He and his wife Callie are also experts on raising cattle, and will be starting a ranch up to the north."
     pavel "And, their baby, who was born on the shuttle, was the first human being to be born in space!"
-    pete "Hey, y'all. Don't be strangers! I'll mostly be up at the ranch, but send me a message and I'll come down to the library if y'all need help."
+    pete happy "Hey, y'all. Don't be strangers! I'll mostly be up at the ranch, but send me a message and I'll come down to the library if y'all need help."
     helen "Hi..."
     hide pete
     hide helen
@@ -202,7 +202,7 @@ label work_0:
     elif (profession == "teacher"):
         pavel "All right! This is the schoolhouse. There's not a lot of kids in the community yet, so we just have them all in one room with you as their teacher."
         pavel "Please consider what they'll need to learn about Talaam in addition to the standard curriculum, and try to be flexible if kids are needed to help out back at home."
-        her normal "I guess the kids are going to have to work hard, too..."
+        her surprised "I guess the kids are going to have to work hard, too..."
         pavel "Yes, but they need to learn a lot, too! It will take a lot of effort to see that they don't forget about Earth, and all the things humanity has managed to learn there."
         her serious "Even though it seems far away, it's still our home, isn't it?"
 
@@ -270,7 +270,7 @@ label work_1:
         show him annoyed at quarterleft
         show pete at midleft
         with moveinleft
-        "[his_name] carried Pete in and set him in the exam table. I could tell his leg was hurt but he was not in immediate danger. I took his vitals while [his_name] filled me in."
+        "[his_name] carried Pete in and set him on the exam table. I could tell his leg was broken but he was not in immediate danger. I took his vitals while [his_name] filled me in."
         show her serious
         him serious "We were putting together a mill for grain. But one of the heavy cast iron rollers fell on Pete here. We tried not to move his leg while we carried him over."
         her serious "Good, thank you. You'll be all right, Pete."

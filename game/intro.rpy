@@ -70,15 +70,15 @@ label teacher:
 label first_date:
     hide him with moveoutright
     "As he was leaving, he slipped me a note."
-    note "{font=fonts/danielbd.ttf}{size=+0}Hey there, my [her_name]!\n\nI've been thinking a lot about us lately...{/size}{/font}"
-    note "{font=fonts/danielbd.ttf}{size=+0}How I want to be with you all the time.{/size}{/font}"
-    note "{font=fonts/danielbd.ttf}{size=+0}How I keep thinking about you, even when I'm up to my knees in manure.{/size} {size=-6}(was that romantic or what?!){/size}{/font}"
+    note "Hey there, my [her_name]!\n\nI've been thinking a lot about us lately..."
+    note "How I want to be with you all the time."
+    note "How I keep thinking about you, even when I'm up to my knees in manure.{size=-6}(was that romantic or what?!){/size}"
     her happy "(Somehow, that is romantic...)"
-    note "{font=fonts/danielbd.ttf}{size=+0}How I can't imagine how a woman could be more perfect than you.{/size}{/font}"
+    note "How I can't imagine how a woman could be more perfect than you."
     her flirting "(If he thinks I'm perfect, he's delusional)"
-    note "{font=fonts/danielbd.ttf}{size=+0}How it's time we said goodbye to this little town and started something new on our own...{/size}{/font}"
-    note "{font=fonts/danielbd.ttf}{size=+0}How I love you heart, body, and soul, every minute of every day...{/size}{/font}"
-    note "{font=fonts/danielbd.ttf}{size=+0}Anyway, I want to tell you more, in person! So come to my folks' tonight for a barbeque, okay? Right after work.\n\nLove,\n       your [his_name]{/size}{/font}"
+    note "How it's time we said goodbye to this little town and started something new on our own..."
+    note "How I love you heart, body, and soul, every minute of every day..."
+    note "Anyway, I want to tell you more, in person! So come to my folks' tonight for a barbeque, okay? Right after work.\n\nLove,\n       your [his_name]"
 
     nvl clear
     her surprised "(I wonder what's up, he sounds so serious!)"
@@ -204,13 +204,13 @@ label marriage_proposal:
         "What should he call you?"
         "Blackberry.":
             $ her_nickname = "blackberry"
-            her "You can call me '[her_nickname]'; that's cute."
+            her "You can call me \"[her_nickname]\"; that's cute."
         "Sweetie.":
             $ her_nickname = "sweetie"
-            her "You could call me '[her_nickname]'."
+            her "You could call me \"[her_nickname]\"."
         "Sugar.":
             $ her_nickname = "sugar"
-            her "You could call me '[her_nickname]'."
+            her "You could call me \"[her_nickname]\"."
         "Something else.":
             if not renpy.variant('touch'):
                 $ her_nickname = renpy.input("He calls me:", "lovebug", length=20)
@@ -221,9 +221,9 @@ label marriage_proposal:
                 $ input_header = 'Nickname:'
                 call inputter
                 $ her_nickname = input_text or "lovebug"
-            her "You could call me '[her_nickname]'."
+            her "You could call me \"[her_nickname]\"."
 
-    him flirting "Hey, I like that. You're my [her_nickname]."
+    him flirting "Alright, then, you're my [her_nickname]!"
 
     menu:
         "I realized I didn't have a name for him. I thought fast and decided to call him:"
@@ -244,7 +244,7 @@ label marriage_proposal:
                 call inputter
                 $ his_nickname = input_text or "asparagus"
 
-    her flirting "And you're my '[his_nickname]'."
+    her flirting "And you're my \"[his_nickname]\"."
     him surprised "You're calling me [his_nickname]?"
     him happy "Well, okay. You can call me whatever you want as long as you come with me on the shuttle today!"
 

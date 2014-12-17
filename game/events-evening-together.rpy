@@ -12,7 +12,7 @@ label relax_together_0:
     
     "Everything here seemed to take ten times as much time and effort. It took twenty minutes just to boil water, because of the increased atmospheric pressure compared to Earth."
     show her serious
-    "So, after finally finishing up the dinner dishes, I was exhausted. I just wanted to snuggle on the couch and watch a movie or something."
+    "So, after finally finishing up thfe dinner dishes, I was exhausted. I just wanted to snuggle on the couch and watch a movie or something."
     him "Hey, want to help me setup the barn? I got the walls from the shuttle yesterday."
     her surprised "Now?!"
     him normal "Yeah, the sooner the better. Lettie needs a place to sleep, you know."
@@ -815,7 +815,7 @@ label relax_together_i:
             him normal "It looks like you had some fun this afternoon."
             her happy "I made one for you too!"
             him surprised "What am I, king of the faeries?"
-            her serious "And I'm the queen! All the insects will obey our orders!"
+            her flirting "And I'm the queen! All the insects will obey our orders!"
             him happy "Maybe if those orders include eating everything in sight!"
             $ loved += 2
             

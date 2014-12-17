@@ -371,10 +371,10 @@ label relax_alone_g:
     show her normal at quarterleft
     with moveinleft
     sara "Why do they even have a library? Isn't everything just on computers?"
-    pete "Almost everything. Some things, like blueprints and maps, are easier to look at on huge rolls of paper."
+    pete happy "Almost everything. Some things, like blueprints and maps, are easier to look at on huge rolls of paper."
     sara "I guess so..."
     her normal "You can even print things out here if you need to."
-    pete "But, make sure you recycle any papers you print out when you're done with them; we don't have a paper factory."
+    pete normal "But, make sure you recycle any papers you print out when you're done with them; we don't have a paper factory."
     hide pete with moveoutright
     show sara at center with move
     sara "Why did you want to come here, [her_name]?"

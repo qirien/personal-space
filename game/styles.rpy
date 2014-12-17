@@ -66,7 +66,10 @@ style nvl_label is sans_text:
     
 style nvl_dialogue is sans_text:
     size 20
-    #xpos 100
+    
+style nvl_note is nvl_dialogue:
+    font "fonts/danielbd.ttf"
+    color "#000000"
     
 style nvl_window:
     background None

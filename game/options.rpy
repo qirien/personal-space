@@ -271,10 +271,7 @@ init -1 python hide:
     # We only autosave monthly, on quit, or every 500 interactions
     config.autosave_on_choice = False
     config.autosave_frequency = 500
-    
-    config.hard_rollback_limit = 200
-    config.rollback_length = 256
-                         
+                       
 ## This section contains information about how to build your project into 
 ## distribution files.
 init python:

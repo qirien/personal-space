@@ -1498,8 +1498,8 @@ label goto_ocean:
     with dissolve
     if (ocean_character == "Pete"):
         show pete at right with dissolve
-        pete "Whoa, this beach reminds me Earth. Lots of rocks and a big blue wet thing." 
-        her normal "I think you mean ocean. It's making me a little homesick too." 
+        pete happy "Whoa, this beach reminds me Earth. Lots of rocks and a big blue wet thing." 
+        her normal "I think you mean the ocean. It's making me a little homesick too." 
     if (ocean_character == "Brennan"):
         show brennan at right with dissolve
         brennan "I didn't think there would be so many rocks at the seashore. There's barely any beach!" 
@@ -1515,7 +1515,7 @@ label goto_ocean:
     show lily normal
 
     if (ocean_character == "Pete"):
-        pete "Okay, you guys do the stuff on the shore, and I'll get some of this coastal brush." 
+        pete normal "Okay, you guys do the stuff on the shore, and I'll get some of this coastal brush." 
         lily "I'm going to take some of the smaller creatures and plants back too."
     elif (ocean_character == "Brennan"):
         brennan normal "Lovely. Is it all right if I touch the water?" 
@@ -1651,20 +1651,20 @@ label monthly_event_11:
             show pete at quarterright with dissolve
             show her normal at midleft with moveinleft
             her normal "Hey, Pete."
-            pete "Hi, how can I help you?"
+            pete happy "Hi, how can I help you?"
             her happy "Want to come with Lily and me to the seashore?"
             pete "The seashore? The one a few klicks away?"      
             her happy "Yeah, a real beach! Bring a shovel!"
-            pete "No way. Not after what I've been reading about giant sea creatures and this planet."  
+            pete normal "No way. Not after what I've been reading about giant sea creatures and this planet."  
             her surprised "What have you been reading?"  
             pete "Well, I read that the animals in the ocean probably tolerate radiation the best, since the water can diffuse the radiation."
             pete "The satellite telescope that came with us showed some strange, large shadows in a few of the oceans, and no one knows what they are."
             her serious "It could be some whales or something?"
             pete "No. These are much bigger. Pretty darn creepy, if you ask me."
             her normal "Well, we're not going out to the middle of the ocean, just the shore. Wouldn't it be fun to get out of your stuffy library for a day?"
-            pete "Now that you mention it, I have been wanting to go for a hike. And maybe I can get some extra salt, too."
+            pete happy "Now that you mention it, I have been wanting to go for a hike. And maybe I can get some extra salt, too."
             her happy "Just think of it as a long hike, and if the beach scares you you can stay far away from it."
-            pete "Okay, can do."
+            pete normal "I ain't scared, just careful. I'll come."
                     
         "Brennan, my co-worker":
             $ ocean_character = "Brennan"
@@ -1979,7 +1979,7 @@ label monthly_event_13:
     pete "It was late, and I was looking for one of the cows that got out. I didn't even see her until she was right in front of me."
     pete "I was driving my tractor, maybe a little fast- she jumped in front of it- I was going too fast- I didn't mean to run over anyone!"
     natalia "But how did her body end up in the river?!"
-    pete "It was obvious she was dead- there was so much blood- I was so horrified- I don't know why I did that- I didn't want anyone to know it was me. So I... dropped her body in the river."
+    pete "It was clear she was dead- there was so much blood- I was so horrified- I don't know why I did that- Didn't want anyone to know it was me. So I... dropped her body in the river."
     "Nobody knew what to say. He was really crying, now, heaving deep sobs that seemed so alien to his usual bravado. I looked over at his wife, Callie, who looked like she was in shock."
     pavel "Pete, I can tell you're sorry about this, and I'm glad you came forward. We will need to have a trial and decide what to do about this."
     natalia "What do you need a trial for?! He just admitted he killed Josephina!"
@@ -3275,7 +3275,7 @@ label done_party_menu:
                     sara "We have a winner! Congratulations, Pete!"
                     pete "Is there a prize?"
                     sara "Just bragging rights."
-                    pete "I'll take it!"
+                    pete happy "I'll take it!"
                     "I did my best, but I didn't chop very much. My arms were sore and I was sweating all over, but it was still fun."
             "Space Ship Construction.":
                 "I decided to enter the Space Ship Construction contest."
