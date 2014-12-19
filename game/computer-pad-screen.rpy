@@ -134,34 +134,8 @@ screen computer_pad(periods):
                     xfill True
                     ysize 100
                     ypos 10
-                    label "Music Player"
-                    $ current_song = renpy.music.get_playing()
-                    $ artist = ""
-                    $ song_title = ""
-                    if (current_song):
-                        if "Dandelion" in current_song:
-                            $ artist = "Kalabi"
-                            $ song_title = "Dandelion"
-                        elif "Shanghai" in current_song:
-                            $ artist = "Attic Trax"
-                            $ song_title = "Shanghai 20 00"
-                        elif "Alpha" in current_song:
-                            $ artist = "TranceVision"
-                            $ song_title = "Alpha"
-                        elif "YouUndone" in current_song:
-                            $ artist = "Anonymph"
-                            $ song_title = "You Undone"
-                        
-                    if (current_song):
-                        text "{i}[song_title]{/i} by [artist]" size 14 ypos 30 xalign 0.5
-                    imagebutton auto "gui/previous_%s.png" xalign 0.3 yalign 1.0 action pop_songs.Previous()
-                    if (renpy.music.is_playing()):
-                        imagebutton auto "gui/pause_%s.png" xalign 0.5 yalign 1.0 action pop_songs.Stop()
-                    else:
-                        imagebutton auto "gui/play_%s.png" xalign 0.5 yalign 1.0 action pop_songs.Play()
-                    imagebutton auto "gui/next_%s.png" xalign 0.7 yalign 1.0 action pop_songs.Next()
+                    use music_player()
                     
-                        
             # Right column - skills
             vbox:
                 xfill True
@@ -170,7 +144,8 @@ screen computer_pad(periods):
     # Start music every time this screen is shown if it's not already playing.
     on "show" action If(renpy.music.is_playing(), true=None, false=pop_songs.RandomPlay())
                 
-                
+# Screen to show "NEW" if unread, and colony messages button
+# This is a separate screen so that we can make it update with the read_colony_messages variable
 screen colony_messages_button(read_colony_messages):
     if (not read_colony_messages):
         text "{color=#FF0}{b}NEW!{/b}{/color} " ypos 30 xalign 0.0 outlines [(1, "#000", 1, 1)]
@@ -180,17 +155,50 @@ screen colony_messages_button(read_colony_messages):
     textbutton "Colony Messages" xalign 0.5:
         action Jump("monthly_messages")                        
 
+# Music Player that shows current track, previous, stop/play, and next buttons
+# TODO: This does not update unless a button is clicked somewhere else
+screen music_player():
+    label "Music Player"
+    $ current_song = renpy.music.get_playing()
+    $ artist = ""
+    $ song_title = ""
+    if (current_song):
+        if "Dandelion" in current_song:
+            $ artist = "Kalabi"
+            $ song_title = "Dandelion"
+        elif "Shanghai" in current_song:
+            $ artist = "Attic Trax"
+            $ song_title = "Shanghai 20 00"
+        elif "Alpha" in current_song:
+            $ artist = "TranceVision"
+            $ song_title = "Alpha"
+        elif "YouUndone" in current_song:
+            $ artist = "Anonymph"
+            $ song_title = "You Undone"
+        
+    if (current_song):
+        text "{i}[song_title]{/i} by [artist]" size 14 ypos 30 xalign 0.5
+    else:
+        text "Stopped" size 14 ypos 30 xalign 0.5
+    imagebutton auto "gui/previous_%s.png" xalign 0.3 yalign 1.0 action [
+        pop_songs.Previous(),
+        renpy.restart_interaction
+        ]
+    if (renpy.music.is_playing()):
+        imagebutton auto "gui/pause_%s.png" xalign 0.5 yalign 1.0 action [
+            pop_songs.Stop(),
+            renpy.restart_interaction
+            ]
+    else:
+        imagebutton auto "gui/play_%s.png" xalign 0.5 yalign 1.0 action [
+            pop_songs.Play(),
+            renpy.restart_interaction
+            ]
+    imagebutton auto "gui/next_%s.png" xalign 0.7 yalign 1.0 action [
+        pop_songs.Next(),
+        renpy.restart_interaction
+        ]
     
-    
-#    hbox ypos 22 xalign 0.5 xfill True:
-#        if (not read_colony_messages):
-#            text "{color=#FF0}{b}NEW!{/b}{/color} " yalign 0.5 xalign 1.0 outlines [(1, "#000", 1, 1)]
-#        else:
-#            text "      "
-#        textbutton "Colony Messages" xalign 0.5:
-#            action Jump("monthly_messages")                        
-            
-#        text "      "
                 
 label monthly_messages:
     $ message = "msg_" + `month`

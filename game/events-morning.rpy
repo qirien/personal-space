@@ -19,7 +19,7 @@ label act_work:
 
 label act_skip_work:
     call set_work_bg
-    play music "music/You.ogg" fadeout 3.0
+    play music "music/You.ogg" fadeout 1.0
                 
     if (slacked_off == 3):
         "The mayor called me in to meet with him after work."
@@ -61,13 +61,13 @@ label work_0:
     $ times_worked += 1
 
     scene bg community_center
-    play sound "sfx/people.mp3" fadein 1.0
-    play music "music/Sojourn.ogg" fadeout 3.0
+    play bg_sfx "sfx/people.mp3" fadein 1.0
+    play music "music/Sojourn.ogg" fadeout 1.0
     "My boss was also the leader of our little community. I guess you could call him the mayor?"
     "Right after we landed, he called a meeting for everyone where he gave a speech."
     show pavel at center
     pavel "We made it this far! Now, as you know, we've arrived right at the beginning of this planet's spring, so it's time to get seeds in the ground! We would like for our colony to become self-sufficient as far as necessities are concerned."
-    stop sound fadeout 3.0
+    stop bg_sfx fadeout 1.0
     pavel "In two years, another colony ship will come with supplies and more colonists. So, until then, we're on our own."
     pavel "Let me introduce some of our experts, here."
     show pavel at quarterleft, behind naomi with move
@@ -89,7 +89,7 @@ label work_0:
     with moveoutright
     show pete at midright with moveinright
     show helen at right with moveinright
-    pavel "Pete is in charge of the library, so if you need to research something or print something out, head over there. He and his wife Callie are also experts on raising cattle, and will be starting a ranch up to the north."
+    pavel "Pete is in charge of the library, so if you need to research something or print something out, head over there. He and his wife Helen are also experts on raising cattle, and will be starting a ranch up to the north."
     pavel "And, their baby, who was born on the shuttle, was the first human being to be born in space!"
     pete happy "Hey, y'all. Don't be strangers! I'll mostly be up at the ranch, but send me a message and I'll come down to the library if y'all need help."
     helen "Hi..."
@@ -173,7 +173,7 @@ label work_0:
     call set_work_bg
     show pavel at quarterleft with moveinleft
     show her normal at midright with moveinleft
-    play music "music/Isaiah.ogg" fadeout 3.0
+    play music "music/Isaiah.ogg" fadeout 1.0
     
     #Different event for each profession
     # DOCTOR
@@ -259,7 +259,7 @@ label work_1:
     $ community_level += 2
 
     call set_work_bg
-    play music "music/NoSilencePlease.ogg" fadeout 3.0
+    play music "music/NoSilencePlease.ogg" fadeout 1.0
 
     # DOCTOR
     if (profession == "doctor"):
@@ -281,7 +281,7 @@ label work_1:
         "The x-rays showed where his femur was crushed into several pieces."
         her serious "It's a comminuted fracture; it will take quite a while to heal."
         "I was just about to put him under so I could put in some pins when the radio crackled and I heard Sara."
-        play sound "sfx/radio.mp3"
+        play bg_sfx "sfx/radio.mp3"
         "Sara on the radio" "Doctor! You've gotta come right away; one of the kids stopped breathing - I think he swallowed something."
         "I started out the door while I talked to her on the radio. I hated to leave Pete alone, but this was urgent."
         hide her with moveoutleft
@@ -312,7 +312,7 @@ label work_1:
             "When I got there, he was blue but still conscious."
             "I moved quickly. I was able to get the peanut out of his throat, and performed CPR. Mrs. Nguyen watched me hopefully."
             
-        play sound "sfx/cough.mp3"
+        play bg_sfx "sfx/cough.mp3"
         "Finally, he coughed and started to breathe."
         show sara normal
         show her normal
@@ -418,7 +418,7 @@ label work_1:
     # TEACHER
     elif (profession == "teacher"):
         show her normal at center with dissolve
-        play sound "sfx/kids.mp3"
+        play bg_sfx "sfx/kids.mp3"
         "Normally twenty-three students would be a nice size for a classroom. But my students are all different ages and skill levels. We have some good technology to help us out, but sometimes it's not enough..."
         her serious "On your computer pad you will see that I have sent each of you some reading about ancient Rome, appropriate for your skill level. Please read the selection, and then answer the questions at the end."
         "It took some of the kids five minutes, and others needed at least two hours. I decided to start a science experiment with the younger kids."
@@ -429,9 +429,9 @@ label work_1:
         "One of them punched the other. Soon they were wrestling and rolling on the ground yelling. I ran to try to stop them."
         her angry "Stop! Stop it, now!"
         "They kept fighting. The kid with the bloody nose was crying, some of the kids were screaming and some were chanting and jeering, and I was trying to pull them apart."
-        play sound "sfx/punch.mp3"
+        play bg_sfx "sfx/punch.mp3"
         "One of the punches missed the kid and hit me in the head. I must have blacked out for a minute, because when I woke up the fight was over and all the kids were looking down at me worriedly."
-        stop sound fadeout 3.0
+        stop bg_sfx fadeout 1.0
         "I separated the two fighters, and somehow I managed to make it through the rest of that day. Just as the children were all leaving, the mayor came by."
         show her concerned at midright with dissolve
         show pavel at midleft, behind her with moveinleft
@@ -462,8 +462,9 @@ label work_2:
     show brennan at quarterleft with moveinleft
     show pavel at midleft with moveinleft
     pavel "[her_name], I'd like you to meet Mr. Callahan. He's sort of a jack-of-all-trades here, helping out wherever we need it. He can help you out some of the time."
-    show pavel at left, behind brennan with move
-    show brennan at midleft with move
+    show pavel at left, behind brennan
+    show brennan at midleft
+    with move
     brennan "Call me Brennan. And I know we've met already; I'd never forget a pretty face like yours."
     menu:
         "What should I say?"
@@ -491,9 +492,8 @@ label work_2:
     "He looked into my eyes intently as he shook my hand. His gaze was direct, friendly, and...amused? I looked away."
     her normal "Thanks for your help today."
     brennan "Anytime."
-    scene black with fade
-    "I walked home, trying not to think about him. When I got there, [his_name] greeted me with a kiss."
     scene bg farm_interior with fade
+    "I walked home, trying not to think about Brennan. When I got there, [his_name] greeted me with a kiss."    
     show him normal at midright with dissolve
     show her normal at midleft with moveinleft
     him "How was work today?"
@@ -666,7 +666,7 @@ label work_4:
     $ times_worked += 1
     $ relaxed -= 5
     $ community_level += 2
-    play music "music/NoSilencePlease.ogg" fadeout 3.0
+    play music "music/NoSilencePlease.ogg" fadeout 1.0
     call set_work_bg
 
     # Doctor - problems with new local bacteria (no viruses, though)
@@ -838,8 +838,9 @@ label work_4:
         "It was the end of another school day. Even though the kids went home in the afternoon, I usually stayed around for another hour or two working on lesson plans and grading papers. Sometimes Brennan stayed and worked, too."
         "One day after school the Mayor came by to talk with me."
         show pavel at quarterleft, behind her with moveinleft
-        show her at center with move
-        show brennan at quarterright with move
+        show her at center
+        show brennan at quarterright
+        with move
         pavel "So, how are things going at the school?"
         her normal "Pretty good! I feel bad that the older kids have to spend so much time helping the younger kids, but it's really the only way to teach so many of different ages."
         pavel "That's good, that's good... Well, what I came to talk to you about, is that one of the parents came to me with a concern."
@@ -859,8 +860,9 @@ label work_4:
         pavel "I'll tell them that, too. Good-bye, then."
         her "Good-bye."
         hide pavel with moveoutleft
-        show her at midleft with move
-        show brennan normal at midright with move
+        show her at midleft
+        show brennan normal at midright
+        with move
         her serious "Thanks for sticking up for me."
         brennan "Of course. I couldn't let cute little Gardenia get away with another one of her fibs."
         her annoyed "She certainly has a good imagination..."
@@ -882,7 +884,7 @@ label work_5:
     show her normal at midright with dissolve
     show brennan normal at right with dissolve
     "It started as a normal day at work, when Dr. Lily's voice came over the radio."
-    play sound "sfx/radio.mp3"
+    play bg_sfx "sfx/radio.mp3"
     show her surprised
     show brennan mad
     lily "Attention all colonists! This is Dr. Lily. A strong solar flare has just started. Get inside now. I repeat, there is a solar flare in progress, please get indoors."
@@ -914,30 +916,32 @@ label work_5:
     martin "I can't stay here! I have to make sure Natalia is safe!"
     her concerned "Please calm down. I'm sure your wife knows what to do."
     martin "Natalia always forgets to turn the radio on! She might not even know there is a flare! And Mateo is at home with her..."
-    "I tried contacting his family on the radio, but the radiation from the flare was interfering with our transmissions. I couldn't connect my computer pad to the wireless network, either."
-    play music "music/NoOneWillKnow.ogg" fadeout 3.0
+    "I tried contacting his family on the radio, but either the radiation from the flare was interfering with our transmissions, or her radio was off. I couldn't connect my computer pad to the wireless network, either."
+    play music "music/NoOneWillKnow.ogg" fadeout 1.0
     "Mr. Perón was getting more and more distraught. I was worried he was going to try and leave, and I wasn't sure I could stop him."
     show brennan at midright
     show her serious at right
     brennan mad "Calm down, please! Everything will be just fine."
-    martin "You can't understand! If you had any family, you'd know that I have to be there!"
+    martin "You don't understand; you can't understand! If you had any family, you'd know that I have to be there!"
     "Brennan just looked at Mr. Perón, a curious expression on his face. Finally, he nodded."
     brennan normal "I'll go make sure everything's all right with your family."
     her surprised "You can't do that! The radiation is too strong!"
-    brennan "But he's right. I don't have a family; I don't have as much to lose."
-        
+    brennan mad "But he's right. I don't have a family; I don't have as much to lose."
+    if (is_pregnant):
+        brennan "And you've got to protect your baby, so you can't go."
+       
     $ grays_absorbed = 3
     menu:
         "What should I do?"
         "Try and stop him.":
             her angry "It's not worth sacrificing yourself over!"
-            brennan "I'll be fine. And if I'm not, well, at least I'll have done some good here."
+            brennan normal "I'll be fine. And if I'm not, well, at least I'll have done some good here."
         "Let him go.":
             her serious "If you really want to go, I won't stop you."
-            brennan "Not that you could, anyway. But I'm glad you understand."
+            brennan normal "Not that you could, anyway. But I'm glad you understand."
         "{i}Wear this blanket{/i}" if (profession == "doctor"):
             her serious "Here, at least put this over your head to shield you from some of the flare's rays. It won't completely protect you, but it's better than nothing."
-            brennan "Thank you, [her_name]."
+            brennan happy "Thank you, [her_name]."
             $ grays_absorbed = 2
 
     hide brennan with moveoutleft
@@ -945,14 +949,16 @@ label work_5:
     "I watched him leave. The weather was deceptively placid - bright sun, a cool breeze, tree branches waving... the deadly radiation was completely invisible."
     "Neither Mr. Perón or I talked; we couldn't do anything else, either; we were too nervous."
     show her concerned
-    play sound "sfx/radio.mp3"
+    play bg_sfx "sfx/radio.mp3"
     "The radio crackled every ten minutes - we could just barely make out that it was Dr. Lily repeating her warning."
     "The second time she repeated her warning, the radio came on again just minutes later."
-    play sound "sfx/radio.mp3"
+    play bg_sfx "sfx/radio.mp3"
     brennan "[her_name]...Perón house...got everyone inside...There was...but we...anyway. Repeat, we're...okay."
     show her normal
     "I let out a breath I hadn't realized I had been holding. Mr. Perón smiled and asked me to hand him the radio."
-    martin "Thank you, Brennan. Earlier, what I said...well, I was wrong. You have a family; you're part of ours."
+    martin "Thank you, Brennan. Earlier, what I said...well, I was wrong. You do have a family here."
+
+    martin "You're part of ours."
     "There was silence, and static."
     brennan "...thank you."
     hide martin with moveoutleft
@@ -1433,7 +1439,7 @@ label brennan_confess:
                     show her concerned at midright with move
                     "My heart raced and my mind shut down as there were no more words, just flesh melting into flesh with all the passion we had been holding back."
                     scene black with fade
-                    play sound "sfx/cloth.mp3"
+                    play bg_sfx "sfx/cloth.mp3"
                     "I didn't think, didn't analyze, didn't worry about [his_name]; I just existed, in that eternal moment of pleasure and mutual acceptance."
                     "Afterwards, we didn't say anything. I just went home, and for a while we pretended nothing had happened..."
                     if (loved < 0):
@@ -1453,7 +1459,7 @@ label work_8:
 
     call set_work_bg
     show her normal at midright with dissolve
-    play music "music/You.ogg" fadeout 3.0
+    play music "music/You.ogg" fadeout 1.0
 
     "Most days I was able to help everyone with what they needed."
     "But not every day was a success."

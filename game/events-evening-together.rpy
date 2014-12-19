@@ -12,7 +12,7 @@ label relax_together_0:
     
     "Everything here seemed to take ten times as much time and effort. It took twenty minutes just to boil water, because of the increased atmospheric pressure compared to Earth."
     show her serious
-    "So, after finally finishing up thfe dinner dishes, I was exhausted. I just wanted to snuggle on the couch and watch a movie or something."
+    "So, after finally finishing up the dinner dishes, I was exhausted. I just wanted to snuggle on the couch and watch a movie or something."
     him "Hey, want to help me setup the barn? I got the walls from the shuttle yesterday."
     her surprised "Now?!"
     him normal "Yeah, the sooner the better. Lettie needs a place to sleep, you know."
@@ -41,9 +41,9 @@ label relax_together_0:
             her happy "This is a nice little barn!"
             him happy "Yeah, let's see how she likes it!  C'mon Lettie!"
             show lettie at right behind him, her with moveinright 
-            play sound "sfx/clipclop.mp3"
+            play bg_sfx "sfx/clipclop.mp3"
             "He led his horse into one of the stalls. She was nervous at first, but soon she was in a stall chewing hay like normal."
-            play sound "sfx/whinny.mp3"
+            play bg_sfx "sfx/whinny.mp3"
             him normal "Thanks a lot, [her_name]. This is great."
             her normal "You're welcome."
             $ loved += 5
@@ -92,7 +92,7 @@ label relax_together_1:
     show overlay bathhouse
     show him at squatting with move
     show her at squatting with move
-    play sound "sfx/splash.mp3"
+    play bg_sfx "sfx/splash.mp3"
     "We built a fire to heat up one of the tubs of water, and took turns washing off and then soaking in the small tub."
     "It felt so good to soak and relax together."
     
@@ -106,7 +106,7 @@ label relax_together_1:
 label relax_together_2:
     scene bg pond with fade
     show overlay night
-    play music "music/Rain.ogg" fadeout 3.0
+    play music "music/Rain.ogg" fadeout 1.0
     play music "sfx/stream-3.mp3" loop fadein 1.0
     "We went on a moonlight walk to the river. We found a spot where the water was deeper and slower, and sat down. I put my head on his shoulder, breathing in the cool night air."
     show her normal at midleft
@@ -119,7 +119,7 @@ label relax_together_2:
     show him normal at quarterright
     "He took off his clothes - all of them - and cannonballed in, splashing me."
     show him at squatting with move
-    play sound "sfx/splash.mp3"
+    play bg_sfx "sfx/splash.mp3"
     her annoyed "Hey! That's cold!"
     menu:
         "What should I do?"
@@ -129,10 +129,10 @@ label relax_together_2:
             him flirting "Whoo! Alright, [her_name]! Come on in!"
             show her normal at center with move
             show her at squatting with move
-            play sound "sfx/splash.mp3"        
+            play bg_sfx "sfx/splash.mp3"        
             "I decided to get back at him by jumping in right next to him with a big splash, but he didn't seem to mind."
             "The water was cold, but somehow that just made everything more exciting."
-            stop music fadeout 3.0
+            stop music fadeout 1.0
             "When we were done, we got dressed and raced each other home, laughing all the way."
             $ loved += 5
             $ made_love += 1
@@ -141,15 +141,15 @@ label relax_together_2:
             him flirting "Oh yeah? I better give you a good show, then."
             "He flexed his muscles and then tried to do a handstand on the bottom of the river."
             her laughing "Ha ha, not bad!"
-            stop music fadeout 3.0
+            stop music fadeout 1.0
             "Soon he got tired of swimming and we headed home together."
             $ loved += 5
         "Leave.":
-            stop music fadeout 3.0
+            stop music fadeout 1.0
             her angry "Ugh, now I'm all wet and cold!"
             him flirting "I'll warm you up, [her_nickname]!"
             her "No thanks, I'm going home."
-            stop music fadeout 3.0
+            stop music fadeout 1.0
             hide her with moveoutleft
             scene black with fade
             "Why did he have to ruin such a nice evening?!"
@@ -162,7 +162,7 @@ label relax_together_2:
 label relax_together_3:
     scene bg farm_interior with fade
     show her normal at midright with dissolve
-    play music "music/You.ogg" fadeout 3.0
+    play music "music/You.ogg" fadeout 1.0
     "One day [his_name] came in from the fields with a big smile on his face."
     show him normal at midleft with moveinleft
     him happy "Ah, [her_nickname], you're such a great part of my life. You've brought me love, joy, and laughter."
@@ -273,7 +273,7 @@ label relax_together_5:
     show her normal at midright
     show him normal at midleft
     with dissolve
-    play music "music/Rain.ogg" fadeout 3.0
+    play music "music/Rain.ogg" fadeout 1.0
     him happy "Put on your fancy clothes, [her_nickname], because we are going OUT tonight!"
     her surprised "Out where? And I don't have any fancy clothes..."
     him normal "Any clothes look fancy on you! But I can't tell you where we're going; it's a surprise."
@@ -283,7 +283,7 @@ label relax_together_5:
     her surprised "You're not serious, are you?!"
     him happy "I'm totally serious!"
     scene black with fade
-    play sound "sfx/alien-crickets.mp3" loop 
+    play bg_sfx "sfx/alien-crickets.mp3" loop 
     "I let him blindfold me and we left the house.  He spun me around so I couldn't tell which direction we were going, and then we hiked for about twenty minutes or so. He held my hand so I didn't trip."
     "It's a good thing I didn't actually put on fancy clothes for scrambling over these rocks."
     him "We're almost there."
@@ -351,7 +351,7 @@ label relax_together_5:
             "I tried to storm off, but I didn't know which way was home."
             her annoyed "Which way back home?"
             him annoyed "That way."
-            stop sound fadeout 3.0
+            stop bg_sfx fadeout 1.0
             "I stomped off towards home, leaving him to carry everything back to the house himself. It wasn't that I didn't appreciate what he did; I just didn't like feeling manipulated."
             $ loved -= 5
             return
@@ -362,7 +362,7 @@ label relax_together_5:
     show him sleeping
     with dissolve
     scene black with fade
-    stop sound fadeout 3.0
+    stop bg_sfx fadeout 1.0
     "We lay there for a long time..."
     scene bg sunset with fade
     "In the morning, it felt so good to wake up next to him, watching the sky lighten. With one final kiss, we got up and carried everything back to the house together."
@@ -387,7 +387,7 @@ label relax_together_6:
             him happy "Well, I guess if it's awful I could just shave my head."
             her annoyed "It'll look fine! Now sit outside while I get some scissors."
             "We didn't have haircutting scissors, so I just used regular scissors and a comb."
-            play sound "sfx/scissors.mp3"
+            play bg_sfx "sfx/scissors.mp3"
             if (skill_creative >= 40):
                 "I gave him a haircut kind of like what he had before. It was easier than I thought."
                 her happy "Well, what do you think?"
@@ -418,7 +418,7 @@ label relax_together_6:
                     show him at center
                     show her at midright
                     with dissolve
-                    play sound "sfx/scissors.mp3"
+                    play bg_sfx "sfx/scissors.mp3"
                     him serious "..."
                     her concerned "..."
                     show him at midleft
@@ -450,7 +450,7 @@ label relax_together_6:
             hide him with moveoutright
             show him serious with moveinright
             "I watched as he got out some scissors, got his hair wet, and sat in front of the mirror. He cut the bangs and sides first, and did a decent job."
-            play sound "sfx/scissors.mp3"
+            play bg_sfx "sfx/scissors.mp3"
             show her normal
             him normal "Could you get the back for me?"
             her normal "Okay...I guess I just match up what you did on the sides?"
@@ -486,8 +486,8 @@ label relax_together_7:
     show her normal at midleft
     show him normal at midright
     with dissolve
-    play music "music/Will.ogg" fadeout 3.0
-    play sound "sfx/alien-crickets.mp3" loop
+    play music "music/Will.ogg" fadeout 1.0
+    play bg_sfx "sfx/alien-crickets.mp3" loop
     "We went for a walk together under the stars. I brought my computer pad so we could find which one was our old Sun. I didn't see any constellations I recognized, so it was hard to find any reference points, but we finally found which one we thought it was."
     her concerned "It looks so small..."
     him serious "Remember how small Talaam's sun looked from Earth?"
@@ -495,7 +495,7 @@ label relax_together_7:
     if (loved >= 0):
         "We held hands and walked together, and though I felt so small in the universe, I knew [his_name] and I had a place with each other."
         
-    stop sound fadeout 3.0
+    stop bg_sfx fadeout 1.0
     $ relaxed += 5
     $ loved += 1
 
@@ -603,9 +603,9 @@ label relax_together_a:
     show her normal at midleft
     show lettie at right behind him, her
     with dissolve
-    play sound "sfx/clipclop.mp3"
+    play bg_sfx "sfx/clipclop.mp3"
     "We walked beside Lettie, who was pulling the wagon. We talked and laughed, and when we dropped off the food we saw Ilian and Sara."
-    stop sound fadeout 3.0
+    stop bg_sfx fadeout 1.0
     scene bg storehouse with fade
     show sara at quarterright
     show ilian at right
@@ -739,7 +739,7 @@ label relax_together_g:
     show him normal at center, squatting, behind overlay with moveinleft
     show overlay night
     show overlay bedroom_covers behind night
-    play sound "sfx/cloth.mp3"
+    play bg_sfx "sfx/cloth.mp3"
     "I half awoke in the middle of the night to [his_name] snuggling up to me and nuzzling my ear."
     her concerned "Wha-huh?"
     him serious "I'm home..."
@@ -838,7 +838,7 @@ label relax_together_j:
     show him normal at left
     with dissolve
     "I was sitting at the table, reading on my computer pad, when I got a message from [his_name]."
-    play sound "sfx/message.mp3"
+    play bg_sfx "sfx/message.mp3"
     "(Why is he sending me a message? He's right there...)"
     him_c "Right now I am sitting five feet away from the hottest chick in the universe."
     menu:

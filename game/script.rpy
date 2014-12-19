@@ -19,7 +19,7 @@ define ilian = Character("Ilian Andrevski", color="eea922", image="ilian", ctc="
 define brennan = Character("Brennan Callahan", color="33b533", image="brennan", ctc="ctc_blink", ctc_position="nestled")  #irish green
 define pete = Character("Pete Jennings", color="ee7755", image="pete", ctc="ctc_blink", ctc_position="nestled")  #rusty brown
 define natalia = Character("Natalia Perón", color="ffe74a", image="natalia", ctc="ctc_blink", ctc_position="nestled")  #yellow
-define helen = Character("Callie Jennings", color="cdcfb2", image="helen", ctc="ctc_blink", ctc_position="nestled") #icy gray
+define helen = Character("Helen Jennings", color="cdcfb2", image="helen", ctc="ctc_blink", ctc_position="nestled") #icy gray
 define julia = Character("Julia Nguyen", color="#7b84fd", image="julia", ctc="ctc_blink", ctc_position="nestled") #icy blue
 define martin = Character("Martín Perón", color="#dd1133", image="martin", ctc="ctc_blink", ctc_position="nestled")  #dark red
 
@@ -107,11 +107,13 @@ init -200:
     
 init python:
     # Songs for computer pad
-    pop_songs = MusicRoom(fadeout=0.5)
+    pop_songs = MusicRoom(fadeout=0)
     pop_songs.add("music/Dandelion.ogg", always_unlocked = True)
     pop_songs.add("music/Shanghai_20_00.ogg", always_unlocked = True)
     pop_songs.add("music/Alpha.ogg", always_unlocked = True)
     pop_songs.add("music/YouUndone.ogg")
+
+    renpy.music.register_channel("bg_sfx", mixer="sfx", loop=False, tight=True)
 
 # Splashscreen before the main menu
 label splashscreen:

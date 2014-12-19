@@ -16,7 +16,7 @@ label technical_0:
     
     scene bg farm_exterior with fade
     "I also installed an antenna on the roof so that we can communicate with the town better."
-    play sound "sfx/radio.mp3"
+    play bg_sfx "sfx/radio.mp3"
     "It took some trial and error to figure out the exact alignment and height, since this planet's atmosphere and shape are different from Earth's, but it's working with the radios pretty well."
     "Maybe this way we wouldn't be completely cut off during a solar flare, but could still have some communication with town."
     $ skill_technical += 10
@@ -47,11 +47,11 @@ label technical_1:
     him serious "Nothing's happening."
     her happy "Be patient! Keep turning!"
     him flirting "I will...I trust you."
-    play sound "sfx/trickle.mp3"
+    play bg_sfx "sfx/trickle.mp3"
     "The cold trickle was nothing like a faucet of instant hot water like on Earth, but it was much better than running out to the well all the time!"
     
     $ skill_technical += 10
-    stop sound fadeout 1.0
+    stop bg_sfx fadeout 1.0
     return
 
 # Improve alarm system for solar flares.
@@ -60,7 +60,7 @@ label technical_2:
     show her normal at midright
     show him normal at midleft
     with dissolve
-    play sound "sfx/siren.mp3" loop
+    play bg_sfx "sfx/siren.mp3" loop
     show him serious with dissolve
     her serious "There goes the siren again. I guess there's another flare."
     him serious "There goes all my chance to get anything done this morning! If I had known there was going to be a flare today, I would have worked harder yesterday and slept in this morning!"
@@ -70,7 +70,7 @@ label technical_2:
     "Since I couldn't go to work, either, I decided to spend the time working on a better solar flare detector."
     "The current detector could detect flares as they started and give about an hour's notice to everyone."
     "But I thought we could do better. I researched solar flares and detection and prediction methods, and discovered a method for predicting solar flares based on the rate of decay of radioactive materials."
-    stop sound fadeout 3.0
+    stop bg_sfx fadeout 1.0
     "I didn't have any of those lying around, so when the flare was over, I decided to ask Dr. Lily."
     scene bg lab with fade
     show lily at midright with dissolve
@@ -116,9 +116,9 @@ label technical_3:
     show her normal with moveinleft
     her annoyed "Why won't these two parts fit together?!"
     her surprised "Ohhh, one is imperial and one is metric! Stupid nonstandard parts!"
-    play sound "sfx/gears.mp3" loop
+    play bg_sfx "sfx/gears.mp3" loop
     "Finally, it was finished. It squeaked and rattled and if I had to do it again I would make some changes to the design, but it works."
-    stop sound fadeout 1.0
+    stop bg_sfx fadeout 1.0
     scene bg farm_interior with fade
     show her normal at midright
     show him normal at midleft
@@ -130,13 +130,13 @@ label technical_3:
     show her normal at midright
     show him normal at midleft
     with moveinleft
-    play sound "sfx/gears.mp3" loop
+    play bg_sfx "sfx/gears.mp3" loop
     him happy "You made this?! This is so awesome!\n...\n What is it?"
     her flirting "It's a clothes wringer! What kind of farm boy are you, anyway?"
     him serious "The kind that always had electricity."
     her surprised "Oh, good idea! I could hook it up to the solar and it could crank itself on sunny days...if we could get enough torque..."
     him normal "Whatever you want to do, my lovely inventor."
-    stop sound fadeout 3.0
+    stop bg_sfx fadeout 1.0
     $ skill_technical += 10
     return
 
@@ -185,11 +185,11 @@ label technical_4:
             ilian "Alright, alright, here you go."
             "After some careful welding, I made a tank for water with many metal arms sticking out of it to help passively heat the water."
             "I was able to put a pipe from the tank to our house, complete with a stopper that kind of leaked."
-            play sound "sfx/trickle.mp3"
+            play bg_sfx "sfx/trickle.mp3"
             scene bg farm_interior with fade
             show her normal with dissolve
             her happy "Ahhh, warm water!"
-            stop sound fadeout 3.0
+            stop bg_sfx fadeout 1.0
             $ community_level -= 5
                                                  
     $ skill_technical += 10
@@ -240,11 +240,11 @@ label technical_5:
     scene black with fade
     "I found a fan and thought I could use that for the blades of the blender. In the fuel intake there were plenty of gaskets, though it was tough to find them in the right size."
     "I even added a dial connected to some resistors that let you control the speed of the blender. The container wasn't transparent (I wasn't sure if the metal we used was even technically food-safe), but it fit on the blades okay."
-    play sound "sfx/blender.mp3"
+    play bg_sfx "sfx/blender.mp3"
     "When I tried it out, it leaked -- a lot. I sealed the leaks up and played around with the speeds to get a speed that would mix and blend without foaming or stalling."
     "Finally, I had a blender. It used so much electricity that it wouldn't run at the same time as anything else, so we had to turn off the lights when we needed to use it."
     "I didn't mind, though. I just sat back and enjoyed my smoothie full of [hated_food]."
-    stop sound
+    stop bg_sfx
     $ skill_technical += 10
     return
 

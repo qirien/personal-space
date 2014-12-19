@@ -154,7 +154,7 @@ label job_focus:
     show text "{color=#ffffff}Month [month] of 25\n\nAt Work{/color}"
     $ renpy.pause(1.5)
     hide text
-    play music "music/Isaiah.ogg" fadeout 3.0
+    play music "music/Isaiah.ogg" fadeout 1.0
 
     # Set these variables to appropriate values, so they can be
     # picked up by the expression in the various events defined below. 
@@ -183,7 +183,7 @@ label skill_focus:
     show text "{color=#ffffff}Month [month] out of 25\n\nSkill Focus{/color}"
     $ renpy.pause(1.5)
     hide text
-    play music "music/OceansApart.ogg" fadeout 3.0
+    play music "music/OceansApart.ogg" fadeout 1.0
 
     $ period = "skill_focus"
     $ act = skill_focus_act
@@ -207,9 +207,9 @@ label relaxation_focus:
     $ period = "relaxation_focus"
     $ act = relaxation_focus_act
     if (act == "act_relax_together"):
-        play music "music/Reflections.ogg" fadeout 3.0
+        play music "music/Reflections.ogg" fadeout 1.0
     else:
-        play music "music/Will.ogg" fadeout 3.0
+        play music "music/Will.ogg" fadeout 1.0
 
     $ normalize_stats()
     
@@ -223,7 +223,7 @@ label monthly_event:
     show text "{color=#ffffff}Month [month] out of 25\n\nEvent!{/color}"
     $ renpy.pause(1.5)
     hide text
-    play music "music/RainSea.ogg" fadeout 3.0
+    play music "music/RainSea.ogg" fadeout 1.0
 
     $ period = "monthly_event"
     $ act = monthly_event_act

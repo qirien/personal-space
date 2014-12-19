@@ -217,16 +217,16 @@ label knowledge_7:
     "I also asked them to play music from a playlist that I picked to go with that artist."
     "Soon, the museum night arrived."
     scene bg community_center with fade
-    play music "music/Sojourn.ogg" fadeout 3.0
+    play music "music/RondoAMinor.ogg" fadeout 1.0
     image greatwave = "sprites/art-greatwave.png"
     image pearlearring = "sprites/art-girlpearlearring.png"
     image starrynight = "sprites/art-starrynight.png"
     image viewfromkremlin = "sprites/art-viewfromkremlin.png"
 
-    show greatwave at Position(xpos=100,ypos=150)
-    show pearlearring at Position(xpos=950,ypos=250)
-    show starrynight at Position(xpos=500,ypos=150)
-    show viewfromkremlin at Position(xpos=800,ypos=150)
+    show greatwave at Position(xpos=170,ypos=250)
+    show pearlearring at Position(xpos=900,ypos=300)
+    show starrynight at Position(xpos=400,ypos=250)
+    show viewfromkremlin at Position(xpos=665,ypos=250)
 
     "It seemed like the whole colony had turned out for the event."
     show her normal at center
@@ -264,6 +264,8 @@ label knowledge_8:
     scene black with fade
     "I took a sample back to Dr. Lily for analysis."
     scene bg lab with fade
+    show lily at midright with dissolve
+    show her normal at midleft with moveinleft
     lily "It is plastic."
     her surprised "How is that possible?! This doesn't look like anything we brought from Earth..."
     lily "That's because it is not from Earth. This is a naturally-formed plastic."
@@ -303,7 +305,7 @@ label knowledge_master:
     lily "[her_name], we've learned so much about this planet, but I'm worried that all our research will be for naught if it is not shared properly."
     her normal "Well, we did work on that information on edible plants..."
     lily "Yes, but that is not enough. What about the bacteria you found, and the creatures we found at the ocean, and the maps we've made? There's not one place to find all those things."
-    her flirting "We could just ask you,"
+    her flirting "We could just ask you."
     lily upset "I will not live forever. And neither will you. Our knowledge needs to outlive us."
     her concerned "I see what you mean..."
 
@@ -315,15 +317,17 @@ label knowledge_master:
     pete "About Talaam? Well, there's Dr. Lily's initial reports, and the probe's data..."
     her surprised "But nothing since we arrived here?"
     pete "Nah, everyone's been too busy just tryin' to survive."
-    her "That's going to change, starting now."
+    her serious "That's going to change, starting now."
     pete "You writin' a book or something?"
     her "An encyclopedia."
     pete happy "Ha ha, sure, no point in starting simple, is there?"
-    her "Don't worry; I'll have help."
+    her normal "Don't worry; I'll have help."
     pete "Who has time to write for an encyclopedia?"
-    her "You do."
+    her flirting "You do."
     pete normal "Whoa, whoa, hold your horses! I don't know anything worth puttin' on paper!"
-    her "Of course you do! We all do. You just think about what you know better than anyone else - what knowledge about Talaam would be lost if you died right now, and I'll be asking everyone to share it."
+    her "Of course you do! We all do. Just think about what you know better than anyone else. What knowledge about Talaam would be lost if you died right now?"
+    pete "Well, when you put it that way... but I ain't the only one who's learned a thing or two."
+    her normal "I'll be asking everyone to contribute."
 
     scene bg farm_interior with fade
     "It wasn't enough to have a whole bunch of information in one place, though - it needed to be organized properly."

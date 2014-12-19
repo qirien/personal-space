@@ -93,7 +93,7 @@ label monthly_event_1:
 
     scene black with fade
     #if nobody did the dishes, pest problems!
-    play music "music/Prelude02.ogg" fadeout 3.0
+    play music "music/Prelude02.ogg" fadeout 1.0
     her "AAAAAAAAAAAAAAAHHHHHH!!!!"
     scene bg farm_interior with fade
     show her surprised at midleft
@@ -157,14 +157,14 @@ label monthly_event_2:
             her happy "Don't worry about the cellar; I'll take care of it!"
             him happy "Whoa, whoa, that's a big job - why don't we work on it together?"
             her normal "That does sound better, actually."
-            play sound "sfx/shovel.mp3"
+            play bg_sfx "sfx/shovel.mp3"
             "We dug and hauled out dirt and dug and hauled until finally we had a small cellar to store food in! We were exhausted, but it felt good to get it done together."
-            stop sound fadeout 3.0
+            stop bg_sfx fadeout 1.0
             $ loved += 5
 
         "{i}I'll surprise him...{/i}" if (skill_physical >= 10):
             her normal "We have time; don't worry about it yet."
-            play sound "sfx/shovel.mp3"
+            play bg_sfx "sfx/shovel.mp3"
             "I started digging after work, thinking I could get a lot dug before he came home, but..."
             him happy "Nice hole. Are you going to plant something in it?"
             her annoyed "No, it's going to be our cellar."
@@ -172,7 +172,7 @@ label monthly_event_2:
             her "..."
             him normal "Why don't we work on it together?"
             "We dug and hauled out dirt and dug and hauled until finally we had a small cellar to store food in! We were exhausted, but it felt good to get it done together."
-            stop sound fadeout 3.0
+            stop bg_sfx fadeout 1.0
             $ loved += 5
 
         "{i}I'll help with the farm while you dig.{/i}" if (skill_domestic >=10):
@@ -195,9 +195,9 @@ label monthly_event_2:
             him surprised "Really? That would be cool."
             "I researched and designed a simple machine with buckets and pulleys for getting the dirt up out of the hole. I was able to take one of the solar panels from the roof and power it with electricity."
             him happy "Oh, this will make it a lot faster!"
-            play sound "sfx/shovel.mp3"
+            play bg_sfx "sfx/shovel.mp3"
             "He dug in the hole, and I moved the dirt from where the machine dumped it to go on top of the roof of the cellar, which effectively made it deeper faster."
-            stop sound fadeout 3.0
+            stop bg_sfx fadeout 1.0
             "Even though it took a long time, it was kind of fun to work on it together."
             $ loved += 5
 
@@ -218,7 +218,7 @@ label monthly_event_2:
 
 # MONTH 3 - His Birthday
 label monthly_event_3:
-    play music "music/Prelude22.ogg" fadeout 3.0
+    play music "music/Prelude22.ogg" fadeout 1.0
     "Even though we were on a new planet, we still kept track of what day it was on the Earth calendar. The seasons didn't match up or anything, but it helped us feel like we were still a part of things back home."
     scene bg farm_interior with fade
     show her normal at midleft with dissolve
@@ -278,7 +278,7 @@ label monthly_event_3:
 
 #helper function for month 4 for a commonly used conversation tree
 label unappreciated:
-    play music "music/Prelude02.ogg" fadeout 3.0
+    play music "music/Prelude02.ogg" fadeout 1.0
     her annoyed "It's none of your business what I do in my spare time."
     him annoyed "Well, it just seems kind of like a waste of time when there's so much real work to be done."
     her angry "Real work?! You don't think I do real work?!"
@@ -558,7 +558,7 @@ label monthly_event_5:
 # MONTH 6 - Alien Pests
 label monthly_event_6:
     scene bg fields with fade
-    play music "music/NoOneWillKnow.ogg" fadeout 3.0
+    play music "music/NoOneWillKnow.ogg" fadeout 1.0
     "Our crops were starting to give an abundant harvest, but unfortunately, with the rainy season starting, the corn was being attacked by alien insects."
     "A small segmented insect like a sow bug but with thicker legs was our main culprit." 
     show her normal at midleft
@@ -669,13 +669,13 @@ label monthly_event_6:
             him normal "We have some pesticide that we used for corn pests on Earth."
             her surprised "Will it work on these bugs?"
             him concerned "I don't know. Usually you apply it before the pests start eating the corn - it works better as a preventative. I hadn't put any on here because I didn't think any of the bugs here would eat an alien plant species."
-            her normal "Seems like these bugs will eat anything."
-            him normal "Yeah, well, let's give it a try."
+            her concerned "Seems like these bugs will eat anything."
+            him serious "Yeah, well, let's give it a try."
             "We got some sprayers and face masks and gloves from the storehouse and got to work. Even with the face masks, the stuff smelled awful. It took all day to cover all the fields."
             "We tried to control where we sprayed, but it was windy and it kind of got everywhere."
             "When we were finally done, I had a terrible headache."
-            her "Are we really going to eat the corn after we sprayed this poison on it?"
-            him "If it works, yes. We don't have enough food to pick and choose."
+            her concerned "Are we really going to eat the corn after we sprayed this poison on it?"
+            him serious "If it works, yes. We don't have enough food to pick and choose."
             "It did seem to get rid of a lot of the pests. Whenever we ate it, I washed it really well, but it always tasted a little funny to me."
             $ relaxed -= 5
             
@@ -686,7 +686,7 @@ label monthly_event_6:
             him concerned "At least our next crop will have some really rich soil to grow on."
             her concerned "Yeah, and at least we have some potatoes, beets and ginger to eat for the next few months."
             him annoyed "But what if more insects destroy our existing crops?"
-            her normal "Then we might have a very limited diet. Hopefully someone will find a way to keep them at bay."
+            her serious "Then we might have a very limited diet. Hopefully someone will find a way to keep them at bay."
             $ community_level -= 5
             return
             
@@ -806,7 +806,7 @@ label monthly_event_7:
             $ loved += 2
     
     scene black with fade
-    play music "music/LinesBuildWalls.ogg" fadeout 3.0
+    play music "music/LinesBuildWalls.ogg" fadeout 1.0
     "A week later, I was reading my messages when I noticed that they were having a New Year's party."
     scene bg farm_interior with fade
     show her normal at midleft
@@ -901,7 +901,7 @@ label monthly_event_8:
             show him normal at center
             show thuc at quarterleft
             "Thuc had already cut some logs and branches for us to tie up, but we still had to dig holes for posts."
-            play sound "sfx/shovel.mp3"
+            play bg_sfx "sfx/shovel.mp3"
             if (skill_physical >= 20):
                 "It was a good thing I came, because there was a lot of hard work to do."
             elif (skill_technical >= 20):
@@ -909,7 +909,7 @@ label monthly_event_8:
             else:
                 "I'm not sure I was much help, but I worked hard and did my best."
             "We worked hard in the gathering darkness, until the moons rose and gave us their wan light. We worked on and on, until finally it was done."
-            stop sound
+            stop bg_sfx
             thuc "Thank you so much, both of you."
             him "Glad we could help. I hope this fence holds up for you."
             thuc "Well, you can count on my help anytime, if you need it."
@@ -952,14 +952,14 @@ label monthly_event_8:
                     her angry "Fine, just leave me here."
                     "He didn't say anything, just shook his head. I watched him leave, feeling hurt and lonely."
                     hide him with moveoutright
-                    show her sad at center
+                    show her sad at center with move
                     "All I could think about was how he abandoned me. It wasn't every night I asked him to do something with me; why couldn't he put me first instead of his other plans?"
                     "I worried that maybe I was not good enough - not pretty enough, not smart enough, not strong enough - not just for him, but for this planet. What was I even doing here?"
                     "I trudged in circles through these depressing thoughts for hours."
                     scene black with fade
                     $ relaxed -= 5
                     "Finally, I just went to bed."
-                    "I forgave him the next day, but I still felt insecure."
+                    "I forgave him the next day, but I still felt insecure..."
                 "...":
                     "I didn't say anything; just watched him leave, feeling hurt and lonely."
                     hide him with moveoutright
@@ -1075,7 +1075,7 @@ label monthly_event_9:
     with dissolve
     show her normal at midleft
     with moveinleft
-    play music "music/You.ogg" fadeout 3.0
+    play music "music/You.ogg" fadeout 1.0
     him "I was just thinking about you. How do you think we're doing?"
     her surprised "At what?"
     him concerned "You know, in our marriage. Do you feel loved, is this working for you?"
@@ -1132,7 +1132,7 @@ label monthly_event_9:
             him angry "Tch, I give up. You obviously don't want to tell me what you want, and I'm not going to waste time guessing."
             $ she_wants = "nothing"
             $ loved -= 5
-            hide him
+            hide him with moveoutright
             her angry "(He is not romantic at all!)"
             return
         "{i}Nothing.{/i}" if (loved >= 0):
@@ -1219,7 +1219,7 @@ label monthly_event_10:
     show him normal at midright
     show her normal at midleft
     with dissolve
-    play music "music/Run.ogg" fadeout 3.0
+    play music "music/Run.ogg" fadeout 1.0
     "It was our anniversary, according to the Earth calendar.  I think we had missed a few while we were on the shuttle? Anyway, it felt like we had been married about a year."
     her happy "Happy Anniversary!"
     him surprised "Really? Today?"
@@ -1233,7 +1233,7 @@ label monthly_event_10:
     "All day long I looked forward to spending a nice evening together."
     scene bg farm_interior with fade
     show her normal at center
-    play music "music/Prelude02.ogg" fadeout 3.0
+    play music "music/Prelude02.ogg" fadeout 1.0
     "I got some special ingredients at the storehouse, and made a nice dessert and everything. But [his_name] wasn't home yet."
     her annoyed "(He knows we were going to celebrate today! Where could he be?)"
     "I tried calling him on the radio, and messaging him on the computer, but he didn't answer."
@@ -1296,7 +1296,7 @@ label monthly_event_10:
 
 label anniversary_next_day:
     scene black with fade
-    play music "music/Amnesia.ogg" fadeout 3.0
+    play music "music/Amnesia.ogg" fadeout 1.0
     "He didn't come home that night, just stopped in for a quick breakfast early in the morning and then left again. I didn't have a chance to talk to him again until that evening when I got home."
     scene bg farm_interior with fade
     show him normal at midright with dissolve
@@ -1490,8 +1490,8 @@ label goto_ocean:
     "There wasn't a road going out to the ocean, so we had to make our way through wild vegetation."     
     "We had some minor run-ins with small insects, but nothing too surprising." 
     scene bg ocean with fade
-    play sound "sfx/ocean-waves.mp3" fadein 3.0
-    play music "music/NoSilencePlease.ogg" fadeout 3.0
+    play bg_sfx "sfx/ocean-waves.mp3" fadein 3.0
+    play music "music/NoSilencePlease.ogg" fadeout 1.0
     "Arriving at the ocean was magnificent. The air was moist, and my eyes could rest on a flat plane of blue waves extending to the horizon."
     show lily at left
     show her normal at midright
@@ -1552,6 +1552,9 @@ label goto_ocean:
     if (skill_physical >= 40):
         show her at midleft with move
         "Lily had a strange look on her face, so I carried her further inland so she could sit down."
+        show her at center
+        show lily at midleft
+        with move
         "She wasn't blinking, so I pinched her a few times."
         lily normal "Please stop that. What happened? Did I fall asleep?"
     elif (skill_knowledge >= 40):
@@ -1597,7 +1600,7 @@ label goto_ocean:
     show her serious
     "Strange... I wonder what she will find when she studies these animals."
     "The saltwater hadn't boiled all the way down when we were ready to leave, so I took the saltwater sludge back with me."
-    stop sound fadeout 3.0 
+    stop bg_sfx fadeout 1.0 
     return
 
 #
@@ -1609,13 +1612,13 @@ label monthly_event_11:
     show him normal at midleft
     show her normal at midright
     with dissolve
-    him concerned "This corn tastes... kind of bland."
+    him concerned "These beans taste... kind of bland."
     her serious "Yeah, um, we ran out of salt."
     him annoyed "Can we get some more?"
     her concerned "I asked at the storehouse, but they're rationing what we have, and I already used our amount up for this month."
     him annoyed "Well, we live near an ocean, don't we? Isn't it a saltwater ocean?"
     her serious "Yes, it is! But I don't want to just run out there by myself!"
-    him sad "I'd go with you, but I can't leave these crops for even one day."
+    him sad "I'd go with you, but I can't leave these crops."
     her angry "Really? They would die if you left them just one day?"
     him annoyed "Well, it's more like some of the food might get eaten by something else since it's harvest time again."
     her serious "Okay. I'll try to find someone else."
@@ -1723,7 +1726,7 @@ label monthly_event_11:
 # uses domestic, social, spiritual
 label monthly_event_12:
     scene bg farm_interior with fade
-    play music "music/Prelude02.ogg" fadeout 3.0
+    play music "music/Prelude02.ogg" fadeout 1.0
     "[his_name] was usually pretty optimistic, but lately he had seemed more quiet and withdrawn. I figured he just had a lot on his mind."
     show him serious at midright
     show her normal at midleft
@@ -1842,7 +1845,7 @@ label monthly_event_12:
 # uses spiritual, technical
 label monthly_event_13:
     scene bg talam with fade
-    play music "music/NoOneWillKnow.ogg" fadeout 3.0
+    play music "music/NoOneWillKnow.ogg" fadeout 1.0
     "I hadn't thought about it much before, but we didn't have a lot of laws here on Talaam. Some things just didn't apply (like taxes, food regulations, etc), but I remember signing something about agreeing to abide by a set of laws that sounded very reasonable."
     "It had never seemed like something I would have to worry about.  Until I had to be on the jury for a manslaughter trial, that is..."
     "We hadn't had any crime our whole first year (though we certainly had our share of arguments, accidents, and disagreements)."
@@ -1874,7 +1877,7 @@ label monthly_event_13:
     call set_work_bg    
     if (profession == "doctor"):
         show her serious at right
-        show naomi at midright
+        show naomi sad at midright
         show natalia at midleft
         with dissolve
         "I helped Sister Naomi and Natalia prepare Josephina's body for burial. Grotesque as it was, it was still her daughter's body, and we washed it and clothed it in her best clothes with respect."
@@ -1899,13 +1902,13 @@ label monthly_event_13:
         "Some were more heartbreaking. \"Josephina, I hope you get to learn to read in heaven because I know you really wanted to.\""
         scene bg church with fade
     
-    show naomi at center with dissolve
+    show naomi sad at center with dissolve
     "At the funeral, Sister Naomi explained how her family believed they would be live again and be together after this life, and how blessed we were to have known such a joyous spirit."
     if (skill_spiritual >= 40):
         "I was touched by their faith as several members of the family told of how they looked forward to seeing her again."
     "We sang a hymn, and then we all trudged out behind the chapel to the graveyard."
     scene bg talam with fade
-    show naomi at midleft
+    show naomi sad at midleft
     show martin at quarterright    
     show natalia at midright
     with dissolve
@@ -1980,7 +1983,7 @@ label monthly_event_13:
     pete "I was driving my tractor, maybe a little fast- she jumped in front of it- I was going too fast- I didn't mean to run over anyone!"
     natalia "But how did her body end up in the river?!"
     pete "It was clear she was dead- there was so much blood- I was so horrified- I don't know why I did that- Didn't want anyone to know it was me. So I... dropped her body in the river."
-    "Nobody knew what to say. He was really crying, now, heaving deep sobs that seemed so alien to his usual bravado. I looked over at his wife, Callie, who looked like she was in shock."
+    "Nobody knew what to say. He was really crying, now, heaving deep sobs that seemed so alien to his usual bravado. I looked over at his wife, Helen, who looked like she was in shock."
     pavel "Pete, I can tell you're sorry about this, and I'm glad you came forward. We will need to have a trial and decide what to do about this."
     natalia "What do you need a trial for?! He just admitted he killed Josephina!"
     pavel "The laws of our community, which you all signed, state that any accused shall receive a trial, administered by myself and with a jury randomly selected from the adults of the colony that are not involved in the crime."
@@ -1992,7 +1995,7 @@ label monthly_event_13:
     show her serious at midright
     with dissolve
     pavel "[her_name], you've been randomly selected to be on the jury. Is there any reason you should not do this? Any conflict of interest with either side?"
-    her concerned "I'm friends with Callie... but, I guess everyone knows each other here."
+    her concerned "I'm friends with Helen... but, I guess everyone knows each other here."
     pavel "That's fine. We will proceed with the trial at two o'clock."
     
     scene bg community_center with fade
@@ -2039,7 +2042,7 @@ label monthly_event_13:
             ilian "And now we know the price of a four-year-old girl: 400 work hours."
             her annoyed "It's not like that. Of course there's no way to bring her back or make it up to them. But he needs to do something for reparations."
 
-            "The jury decided that was fair, and the Mayor, Pete, and the Peróns all accepted our proposal. Callie didn't seem to happy about it, though. She'd probably have to do extra work on their farm to make up for his absence."
+            "The jury decided that was fair, and the Mayor, Pete, and the Peróns all accepted our proposal. Helen didn't seem to happy about it, though. She'd probably have to do extra work on their farm to make up for his absence."
 
         "Banishment":
             her serious "I agree with Thuc; we need to show that our community won't allow such behavior."
@@ -2052,7 +2055,7 @@ label monthly_event_13:
             thuc "Four."
             lily "I suppose that would work...as long as the resources he gathers go to help the Perón family."
             "Finally, we had come to an agreement."
-            "Pete and the Peróns accepted it, but Callie and the Mayor frowned. Poor Callie... I guess in a way we were sentencing her, too."
+            "Pete and the Peróns accepted it, but Helen and the Mayor frowned. Poor Helen... I guess in a way we were sentencing her, too."
             "Still, it was only for a month."
             
         "{i}Compromise{/i}" if (skill_spiritual >= 40):
@@ -2286,10 +2289,24 @@ label monthly_event_14:
                 him surprised "Yeah? You've changed your mind from last year?"
                 her serious "Yeah...let's stop the birth control now, and just see what happens."
                 him flirting "Yes, momma."
-                her flirting "Oh, ick, don't call me momma!"
+                her flirting "Ew, don't call me momma!"
                 him laughing "You better get used to it! Someday a bunch of kids are going to call you that all the time!"
-                her laughing "That's so... weird! But at least they'll be calling you 'daddy', so I won't be alone."
-                him serious "You'll never be alone."
+                her surprised "A bunch of kids? How many kids were you thinking of having?!"
+                him happy "I don't know, but don't you think it sounds cozy to have a bunch of little kids all running around?"
+                her concerned "It sounds crowded..."
+                him normal "Okay, well, let's start with one and see what happens."
+                if (loved > 0):                
+                    show her at center with move
+                    her normal "I know I can handle one kid. I can handle you, after all."
+                    him flirting "I love it when you handle me."
+                    her surprised "I was going to make a joke about \"love handles\", but you don't really have any..."
+                    him normal "Sorry I ruined your joke."
+                    her flirting "I think everything else makes up for it."
+                else:
+                    her normal "Okay. Just one kid, for now."
+                    show him at center with move
+                    him flirting "For now!"
+    
                 $ want_kids = True
                 $ made_love += 1   
             
@@ -2440,7 +2457,7 @@ label monthly_event_16:
             $ loved += 2
 
     scene black with fade
-    play music "music/NoOneWillKnow.ogg" fadeout 3.0
+    play music "music/NoOneWillKnow.ogg" fadeout 1.0
     "I felt better at work, and lunchtime was no problem, but as I was walking home, I felt sick again."
     "I ended up throwing up by the side of the road, which wouldn't have been too bad except some of it got on my clothes. Now I had to do laundry, and it was my turn to make dinner..."
     scene bg farm_interior with fade
@@ -2565,7 +2582,7 @@ label monthly_event_17:
     her normal "Is the hot water ready yet?"
     sara "Yeah, it's boiling."
     her "Alright, let's pour it in!"
-    play sound "sfx/splash.mp3"
+    play bg_sfx "sfx/splash.mp3"
     show her at squatting
     show sara at squatting
     show overlay bathhouse
@@ -2601,7 +2618,7 @@ label monthly_event_17:
             her surprised "Really?"
             sara "Well, I just don't have much experience with them..."
             her happy "Maybe it would be good to start now, then!"
-            sara "Yeah, maybe so..."
+            sara normal "Yeah, maybe so..."
             $ community_level += 1
         "{i}That's hard...Have you talked to him about how you feel?{/i}" if (skill_spiritual >= 50):
             her "That's hard... Have you talked to Ilian about how you feel?"
@@ -2723,7 +2740,8 @@ label monthly_event_18:
     her surprised "It's hooked up!"
     him serious "Okay, now turn on the tractor!"
     show her at center with move
-    play music "music/NoOneWillKnow.ogg" fadeout 3.0
+    play music "music/NoOneWillKnow.ogg" fadeout 1.0
+    play bg_sfx "sfx/fire-2.mp3"
     "He was making sure the clamp was on the battery when I turned the tractor on. But then I heard a strange sound...and was that smoke...?"
     him surprised "Aaaahhhhh!"
     "I turned it off, and as I jumped out, I could see that the engine was on fire! [his_name] was backing away, his hand charred and red."
@@ -2747,12 +2765,13 @@ label monthly_event_18:
         show her serious at center with moveinleft
         "Finally, I sprayed it at the fire. It didn't seem to do much, but I kept at it."
 
+    stop bg_sfx fadeout 1.0
     "Eventually, the fire died down."
     "Now that the fire was out, I turned to [his_name]. One of his hands and his forehead were singed and red."
     him serious "You put it out..."
     her concerned "You're really hurt!"
-    show him concerned 
-    "He started laughing. I didn't join him, though - I was too worried."
+    him concerned "Ha ha, ha ha ha..." 
+    "He started laughing and shaking. I didn't join him, though - I was too worried."
     if (profession == "doctor"):
         her serious "You're in shock; let's go to the clinic and I'll check you out."
     else:
@@ -2763,7 +2782,7 @@ label monthly_event_18:
     "He stared off into the distance, like he could barely hear me."
     if (skill_social >= 50):
         her serious "Stay here; I'm going to radio for help."
-        play sound "sfx/radio.mp3"
+        play bg_sfx "sfx/radio.mp3"
         "I called on the radio and Thuc and Mr. Perón came over. Together, we helped [his_name] get to the town."
     elif (skill_physical >= 40):
         her surprised "Where's Lettie?"
@@ -2927,7 +2946,7 @@ label monthly_event_18:
     else:
         him annoyed "That's not what I was thinking of, but I did miss Lettie, too. I better go see how she's doing."
         hide him with moveoutleft
-        play sound "sfx/whinny.mp3"
+        play bg_sfx "sfx/whinny.mp3"
         her annoyed "..."
     
     "I was glad [his_name] was back to normal again, though he still had to be careful with his hands for a while."
@@ -2987,7 +3006,7 @@ label monthly_event_19:
                 him flirting "Hey, is it no pants day? How come I didn't get the memo?"
                 her normal "It just feels so much more comfortable this way..."
                 him normal "Good idea."
-                play sound "sfx/cloth.mp3"
+                play bg_sfx "sfx/cloth.mp3"
                 "Pretty soon [his_name] was walking around free as a bird, too."
                 scene black with fade
                 "That led to some interesting results..."
@@ -2997,9 +3016,9 @@ label monthly_event_19:
                 $ relaxed += 2
                 jump maternity_clothing
             "{i}Ask around{/i}" if (skill_social >= 60):
-                "I knew Callie had recently had a baby, so I decided to send her a message and see what she had done."
-                play sound "sfx/message.mp3"
-                her_c "Hey, Callie, what did you do for maternity clothes?"
+                "I knew Helen had recently had a baby, so I decided to send her a message and see what she had done."
+                play bg_sfx "sfx/message.mp3"
+                her_c "Hey, Helen, what did you do for maternity clothes?"
                 helen_c "Oh, I just made a big tent dress out of a hospital gown. It doesn't look very good, but it's very comfortable."
                 her_c "Do you think you could show me how?"
                 helen_c "I think mine would fit you if you want it... I don't need it anymore."
@@ -3059,7 +3078,7 @@ label monthly_event_20:
     show sara at midleft
     with moveinleft
     "We asked him about it, and he thought it sounded great."
-    pavel "It's about time we had a celebration of some kind. Earth Day is in two weeks - we could have it then. But I don't know who to ask to plan it - everyone is so busy..."
+    pavel "It's about time we had a celebration of some kind. But I don't know who to ask to plan it - everyone is so busy..."
     sara "Just leave it to us. We'll have a party ready in two weeks!"
     $ party_music = ""
     $ party_entertainment = ""
@@ -3143,15 +3162,15 @@ label done_party_menu:
     "Sara and I worked hard for two weeks getting everything ready. Finally, the night of the party came..."
     scene bg community_center with fade
     if (party_music == "recorded"):
-        play music "music/Rising.ogg" fadeout 3.0
+        play music "music/Rising.ogg" fadeout 1.0
     elif (party_music == "live"):
-        play music "music/CarolanConcerto.ogg" fadeout 3.0
+        play music "music/CarolanConcerto.ogg" fadeout 1.0
     else:
-        play music "music/Prelude22.ogg" fadeout 3.0 
+        play music "music/Prelude22.ogg" fadeout 1.0 
     if (party_decorations == "flowers"):
         show overlay underwater with dissolve
         "The flowers we picked looked nice. Even though they were nothing like Earth flowers, they had their own beauty. And Sara had programmed some of the lights to glow softly blue and green, like an ocean."
-    play sound "sfx/people.mp3" loop
+    play bg_sfx "sfx/people.mp3" loop
     "As people started to arrive, they seemed to brighten when they saw the community center ready for a party."
 
     #TODO: play some music here
@@ -3180,7 +3199,7 @@ label done_party_menu:
         with moveinright
         "The first one was 'Two Truths and a Lie' where we each had to tell three things about ourselves, and the group would try to guess which one wasn't true."
         $ highest_skill = highest_stat().lower()
-        her happy "Hi, I'm [her_name]. My hobby is anything [highest_skill], I helped organize this party, and I used to-"
+        her happy "Hi, I'm [her_name]. My hobby is anything [highest_skill], I'd known [his_name] [known_each_other] before we got engaged, and I used to-"
         menu:
             "What should I say? (I need to tell a plausible lie...)"
             "I used to eat bacon ice cream.":
@@ -3190,9 +3209,25 @@ label done_party_menu:
             "I used to hate looking at the stars.":
                 her "I used to hate looking at the stars."
         "Everyone guessed my lie right away, but that's okay. I was more interested in hearing what everyone else had to say."
-        # TODO: Add Sister Naomi's? Brennan's?
+        brennan "I'll go next. I was born on a bus, I've been to dinner with the President, and in high school I took two girls to the same prom."
+        him annoyed "Maybe in your dreams you took two girls to the prom."
+        brennan happy "Actually, that one's true."
+        naomi "Do explain that one to us, Brennan."
+        brennan normal "I had invited one girl, and we were planning to go with her friend and her date, but he got sick at the last minute. She didn't want to go by herself, but she didn't want to miss the event, so the three of us went together."
+        pavel "So which one's the lie?"
+        menu:
+            "What should I say?"
+            "Born on a bus is a lie.":
+                her "I think being born on a bus is a lie."
+                brennan "You're right; it sounds exciting, but my mum says my birth was quite ordinary."
+            "Having dinner with the President is a lie.":
+                her "I think having dinner with the President is a lie."
+                brennan "No, I really did do that. Of course, it was a large dinner with hundreds of other people, but I did say hello."
+                pavel "So you weren't born on a bus?"
+                brennan "Sadly, no, my mum says my birth was quite ordinary."
         
-        him happy "Hi, my name's [his_name]. I like to write poetry, I won a sheep-riding rodeo when I was five years old, and in high school I was known as The Candid Bandit."
+        naomi "Very good! [his_name], I believe it's your turn."        
+        him happy "Okay, well, I like to write poetry, I won a sheep-riding rodeo when I was five years old, and in high school I was known as The Candid Bandit."
         "(Well, I know he likes to write poetry...but I have no idea which of the other things is true!"
         him flirting "No one has a guess which one of those is a lie?"
         menu:
@@ -3211,7 +3246,6 @@ label done_party_menu:
         brennan "That's the barmiest nickname I ever heard of."
         her normal "(I'm going to have to agree with Brennan on this one!)"
                  
-        "We also played a game called 'Mafia' where we had to guess who in our group was secretly a bad guy, and also a game called 'Unfortunately' where each person told one sentence of a story, starting with the words 'Fortunately' or 'Unfortunately'."
         "It was fun to get to know our neighbors better and relax for a bit."
 
     elif (party_entertainment == "talent show"):
@@ -3261,7 +3295,7 @@ label done_party_menu:
                 with moveinleft
                 sara "Line up, everyone! Now, the goal is to see who can chop the most wood in one minute! Ready, set...GO!"
                 hide sara with moveoutleft
-                play sound [ "sfx/wood-logs-2.mp3", "sfx/wood-logs-1.mp3" ]
+                play bg_sfx [ "sfx/wood-logs-2.mp3", "sfx/wood-logs-1.mp3" ]
                 play voice [ "sfx/wood-logs-2.mp3", "sfx/wood-logs-2.mp3", "sfx/wood-logs-2.mp3" ]
                 "I raised the axe and let it fall to split the wood, barely taking time to aim. I was concentrating so hard, I didn't even notice what anyone else was doing."
                 him "Go, [her_name]!"
@@ -3409,6 +3443,7 @@ label done_party_menu:
     show her normal at right
     show pavel at midleft
     with dissolve
+    stop music fadeout 1.0
     sara sad "Well, the party's almost over, guess it's time to clean up."
     her surprised "Yeah, is that going to be just you and me?"
     pavel "Thank you, Sara and [her_name], for organizing such a wonderful celebration for us. I know you've put a lot of work into it."
@@ -3417,10 +3452,10 @@ label done_party_menu:
     pavel "But, folks, I see quite a mess here in our community center. I don't think it's fair that these two ladies should have to do all the work, so I'd like to ask one person from each family to stay and help clean up."
     "I was relieved to hear that, and even more relieved to see that a lot of people stayed to help clean up. Not just one person from each family, either - entire families got to work clearing plates, putting away chairs, mopping up spills, and doing dishes."
     hide sara
+    stop bg_sfx fadeout 1.0
     show her normal at midright with move
     her "Thanks, Mayor Grayson."
     pavel "Thank you! I think the party was a great success."
-    stop sound
     $ community_level += 2
     return
 
@@ -3567,7 +3602,7 @@ label monthly_event_22:
             her normal "I can ask around for you."
             pavel "Thank you, maybe people will be more willing to talk to you."
             her surprised "Hey, do you guys need any shampoo? You said Naomi was going to get some when you found out it was missing..."
-            pavel "No, we're just fine. Callie gave us some of hers, so you don't need to worry about us."
+            pavel "No, we're just fine. Helen gave us some of hers, so you don't need to worry about us."
             her normal "Okay, good."
             hide pavel with moveoutleft
             "I decided to start by looking at everyone's hair over the next few days."
@@ -3817,7 +3852,7 @@ label monthly_event_22:
 
 # MONTH 23: Climax - epic conflict leading to either "We'll always be together" or "I just want to get away from you!"  Conflict: Worried about new baby, pregnant if made_love a lot or affair with Brennan, otherwise, discussion about quality of sex
 label monthly_event_23:
-    play music "music/You.ogg" fadeout 3.0
+    play music "music/You.ogg" fadeout 1.0
 
     if (is_pregnant):
         scene bg farm_interior with fade
@@ -4300,7 +4335,7 @@ label monthly_event_24:
         her normal "You know what? Let's go. I feel fine; we'll bring a radio; and I could certainly use the exercise."
         sara "Okay, if you're sure!"
         scene bg pond with fade
-        play music "music/Will.ogg" fadeout 3.0
+        play music "music/Will.ogg" fadeout 1.0
         "After work we hiked for twenty minutes until we got to the riverside spot she mentioned. The sun shone down on us fiercely, but it was a little cooler when we finally got to the shade by the river."
         show her normal at midright
         show sara at midleft
@@ -4371,7 +4406,7 @@ label monthly_event_24:
         him happy "That's great! Hey, little baby, we're ready for you!"
         her annoyed "Speak for yourself!"
         "Now that I was resting and had had some water, the contractions seemed to be slowing down."
-        play music "music/RainSea.ogg" fadeout 3.0
+        play music "music/RainSea.ogg" fadeout 1.0
         show julia at midleft with moveinleft
         show him at midright with move
         show sara at quarterright with move
@@ -4494,7 +4529,7 @@ label monthly_event_24:
         her serious "Okay, yeah, great."
 
         scene bg clinic with fade
-        play music "music/NoOneWillKnow.ogg" fadeout 3.0
+        play music "music/NoOneWillKnow.ogg" fadeout 1.0
         show her concerned at midright
         show him concerned at midleft
         "Time passed... I just tried to make it through one contraction at a time."

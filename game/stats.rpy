@@ -64,7 +64,7 @@ init -100 python:
 
         for curr_stat in dse_stats:
             stat_value = getattr(store, curr_stat.var)
-            if (stat_value >= highest_stat):
+            if (stat_value > highest_stat):
                 highest_stat_name = curr_stat.name
                 highest_stat = stat_value
         return highest_stat_name

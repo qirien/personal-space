@@ -148,10 +148,10 @@ label spiritual_3:
     show naomi at center with moveinright
     naomi "Today I want to share a parable with you."
     naomi "Once there was a merchant travelling to a far-off land. He carried fruits and other foods. While he was travelling, one of the fruits fell out of his pack and rolled down the hill to a gardener's house."
-    naomi "No fruit trees grew in this area; everyone thought it was too dry and rocky."
-    naomi "But this fruit landed in some soft earth that had been cleared by a man who lived nearby. Wild animals came and ate away the fruit, but the seeds nestled into the soft dirt."
-    naomi "When they sprouted, the man who lived nearby didn't know what they were. He thought about pulling them up so they wouldn't bother his garden. But he decided to wait and see what they were."
-    naomi "He waited for years and years, until a great tree grew there, and every summer it gave bushels and bushels of delicious fruit to the man, who shared it with his friends and neighbors with a heart of thanksgiving, and humility."
+    naomi sad "No fruit trees grew in this area; everyone thought it was too dry and rocky."
+    naomi normal "But this fruit landed in some soft earth that had been cleared by a man who lived nearby. Wild animals came and ate away the fruit, but the seeds nestled into the soft dirt."
+    naomi sad "When they sprouted, the man who lived nearby didn't know what they were. He thought about pulling them up so they wouldn't bother his garden. But he decided to wait and see what they were."
+    naomi normal "He waited for years and years, until a great tree grew there, and every summer it gave bushels and bushels of delicious fruit to the man, who shared it with his friends and neighbors with a heart of thanksgiving, and humility."
     "Sister Naomi was quiet for a minute, letting us think about what she said. I wondered if we were supposed to be the merchant, or the gardener, or maybe the seeds?"
     "She told a few more stories, but I kept thinking about those seeds."
     "She ended with a few moments of silence for us to ponder or pray."
@@ -216,9 +216,9 @@ label spiritual_4:
     her serious "Pretty good. Some of the books are more confusing than others, but there's always something that helps me think about things differently."
     naomi "I'm glad to hear it. How is [his_name] doing?"
     her normal "Good, he's been working hard every day growing food."
-    naomi "Yes, I don't see him very often, so I guessed that he was very busy."
+    naomi sad "Yes, I don't see him very often, so I guessed that he was very busy."
     her surprised "How are you and Pavel?"
-    naomi "Well, we miss our family sometimes, but we really feel that what we are doing here is important."
+    naomi normal "Well, we miss our family sometimes, but we really feel that what we are doing here is important."
     her surprised "You left family back on Earth?"
     naomi "Yes, we have four children and seven grandchildren."
     her concerned "That must be hard not to see them... Didn't any of them want to come with you to Talaam?"
@@ -252,7 +252,7 @@ label spiritual_5:
     $ skill_spiritual += 10
     return
 
-# Reading the Koran; helping Callie Jennings
+# Reading the Koran; helping Helen Jennings
 label spiritual_6:
     scene bg farm_interior with fade
     show her normal at center
@@ -268,28 +268,26 @@ label spiritual_6:
     show her serious at midleft with moveinleft    
     "I followed her across town, and she still kept walking. I started to feel impatient."
     her annoyed "Where are we going?"
-    naomi "We are needed."
+    naomi sad "We are needed."
     scene bg talam with fade
-    "We walked past one farm, and then another. We had been walking for about a half an hour. Finally, we reached the farthest farm from town. It belonged to the Jenningss - Callie and Pete were newlyweds like [his_name] and me."
+    "We walked past one farm, and then another. We had been walking for about a half an hour. Finally, we reached the farthest farm from town. It belonged to the Jennings - Helen and Pete were newlyweds like [his_name] and me."
     "They were the farthest farm for a reason; they seemed to like to be by themselves. I hardly ever saw them, or their baby who was born on the shuttle."
-    "When we got there, Sister Naomi knocked on the door and called out,"
-    naomi "Callie, it's Naomi. May I come in?"
-    helen "Of course, Sister Naomi."
+    "When we got there, Sister Naomi knocked on the door and Helen let us in."
     scene bg farm_interior flip
     show helen at quarterright with dissolve
-    show naomi at center
+    show naomi sad at center
     show her normal at midleft
     with  moveinleft
-    "We entered their small cabin, not that much different from our own. Callie was sitting on the bed doing some knitting. She invited us to sit next to her."
+    "We entered their small cabin, not that much different from our own. Helen was sitting on the bed doing some knitting. She invited us to sit next to her."
     her surprised "What are you making?"
     helen "It's supposed to be a baby hat, but it isn't turning out very well. I don't think any baby's head is shaped like this!"
-    "She held up her misshapen knitting and laughed, but it was a forced laugh. Naomi didn't say anything, though - she just patted Callie's shoulder and looked at me. What was I supposed to say?"
+    "She held up her misshapen knitting and laughed, but it was a forced laugh. Naomi didn't say anything, though - she just patted Helen's shoulder and looked at me. What was I supposed to say?"
     menu:
         "What should I say?"
         "I think the hat looks fine.":
             her normal "I think the hat looks fine. It's not like the baby's going to care if it's a little crooked; he'll just be happy to have a mom who loves him enough to make him a hat at all."
-            "She laughed."
-            helen "You have a point there. Hopefully it will at least stay on."
+            "I expected her to laugh, but she didn't."
+            helen "Yeah... hopefully it will at least stay on."
         "{i}The problem is with this row of stitches here.{/i}" if (skill_creative >= 60) :
             her serious "The problem is with this row of stitches here. See?"
             helen "Oh, you're right! I'll have to redo these last six rows..."
@@ -312,10 +310,10 @@ label spiritual_6:
             helen "We weren't really anticipating becoming parents so soon..."
             her normal "Well, I think you're doing great. It's cool that you're making something for the baby."
 
-    show naomi at quarterleft with move
+    show naomi sad at quarterleft with move
     show her serious at center with move
-    "We sat in silence for a few minutes. Naomi picked up the baby and played with him on the other side of the room, leaving Callie and I sitting together."
-    "I didn't know what to say. I hoped Naomi would say something wise and comforting, but she didn't. Finally, Callie set down her hat."
+    "We sat in silence for a few minutes. Naomi picked up the baby and played with him on the other side of the room, leaving Helen and I sitting together."
+    "I didn't know what to say. I hoped Naomi would say something wise and comforting, but she didn't. Finally, Helen set down her hat."
     helen "The truth is, I hate knitting."
     her surprised "You do?"
     helen "Yes! But the one thing I hate more than knitting is feeling useless! I wish I could be helping Pete with the cows, or working at the library, or {b}something{/b} other than sitting around waiting for this baby to grow up!" 
@@ -328,26 +326,32 @@ label spiritual_6:
     her normal "There's risks everywhere; that's why he has you. To help him learn how to handle the dangers, not to shield him from any possibility of danger."
     helen "It's just... every time I think about taking him anywhere, all I can think about is all the things that could go wrong. A solar flare giving him skin cancer, or alien bugs landing on him and biting him, or someone will hurt him..."
     
-    # TODO: Add a choice here
-    her serious "Callie... you sound really anxious."
+    menu:
+        "What should I say?"
+        "You need to stop worrying.":
+            her serious "Helen... you need to stop worrying so much."
+            helen "Don't you think I've tried?! I don't want to think about everything that could go wrong, but that's just what pops into my head!"
+            her surprised "Is there anyone that can help you?"
+        "That must be hard.":
+            her serious "Helen... you sound really anxious."
     helen "Yeah... Sister Naomi has been helping me with some therapy, but I still don't feel ready to leave the house yet."
     if (profession == "doctor"):
         her concerned "Well, if you'd like to make an appointment to meet with me sometime, as your doctor, we could consider some other options. Sister Naomi is a great therapist, but if therapy is not working for you, we should consider medication."
     else:
         her concerned "Would it help if I came with you?  We could just go on a short trip together, maybe to visit Pete or something, and I can help you with anything you need."
     
-    helen "Thanks, [her_name]. I'll... I'll think about that."
+    helen happy "Thanks, [her_name]. I'll... I'll think about that."
     
-    "We talked some more about other things, and Naomi left a book that she had brought, and then it was time for us to go. It was getting late, and it would take me a while to walk all the way home from Callie's house, but I felt that it was worth it."
+    "We talked some more about other things, and Naomi left a book that she had brought, and then it was time for us to go. It was getting late, and it would take me a while to walk all the way home from Helen's house, but I felt that it was worth it."
     scene bg path with fade
-    show naomi at midleft
+    show naomi sad at midleft
     show her normal at midright
     with moveinleft
     show overlay night
     her surprised "But...what did any of that have to do with piety?"
     naomi "You read \"You will not attain piety until you expend of what you love\"."
-    her serious "Well...Callie is definitely giving up a lot for her baby, even if I'm not sure all her sacrifices are necessary."
-    naomi "I was talking about your sacrifices, [her_name]. You gave of your time, and of yourself."
+    her serious "Well...Helen is definitely giving up a lot for her baby, even if I'm not sure all her sacrifices are necessary."
+    naomi normal "I was talking about your sacrifices, [her_name]. You gave of your time, and of yourself."
     show her normal
     
     $ skill_spiritual += 10
@@ -388,9 +392,9 @@ label spiritual_8:
     her serious "I suppose that's why mindfulness and prayer are such an important part of most religions. Without daily reminders, we forget about the little changes we want to make."
 
     "I decided to set aside a time each day to think about how I can help all the people in my life. I would even add items to my schedule or to-do list on my computer pad if there were specific things I wanted to do that day."
-    "At first it felt a little awkward - slightly as if I was programming a robot."
+    "At first it felt a little awkward - slightly as if I were programming a robot."
     "But I was able to think about others more and help them in specific ways."
-    her serious "Sara is often lonely; I should invite her to lunch this week.  Hmmm, Ms. Perón was mentioning that she loves potatoes, and I don't think they are growing any on their farm - I could give them some of ours."
+    her serious "Sara is often lonely; I should invite her to lunch this week.  Hmmm, Natalia was mentioning that she loves potatoes, and I don't think they are growing any on their farm - I could give them some of ours."
     her concerned "[his_name] has been really stressed out lately - he'd probably like it if I spent some time with him."
     her normal "It's been really nice of Sister Naomi to lend me these books and take the time to talk to me so much lately - I should tell her thank you for that."
     
@@ -434,26 +438,25 @@ label spiritual_master:
         "When the danger was passed and she was awake, I went in to speak with her."
     else:
         "Later, I went to see Sister Naomi, but found out that she had just had a stroke and was in the clinic."
-        "When I heard she was going to be okay, I headed over to see her."        
+        "When she was well enough for visitors, I headed over to see her."        
         scene bg clinic with fade
-        show naomi at midright
-        show her normal at midleft
-        with dissolve
+        show naomi at midright with dissolve
+        show her normal at midleft with moveinleft
     her concerned "Sister Naomi, how are you doing?"
-    naomi "The headache is gone, and my eyesight is back to normal. But...moving is difficult on my left side..."
+    naomi sad "The headache is gone, and my eyesight is back to normal. But...moving is difficult on my left side..."
     if (profession == "doctor"):
         her serious "Yes, there is some damage there. With therapy, I believe we will be able to restore use of your limbs."
     else:
         her serious "That's awful! Is it permanent?"
-        naomi "Probably not. The doctor said I'd need a lot of therapy, but my chances are good for a full recovery."
+        naomi normal "Probably not. The doctor said I'd need a lot of therapy, but my chances are good for a full recovery."
         her normal "That's good."
         
-    naomi "But, I won't be able to lead the services tomorrow."
+    naomi sad "But, I won't be able to lead the services tomorrow."
     her surprised "You don't have anyone who can fill in for you?"
     naomi "No, I'm the only one who works at the chapel."
     her concerned "That's no good. You should be able to take it easy for a while."
     her happy "Why don't you let me handle things for the next few weeks? It'd be better than cancelling, wouldn't it?"
-    naomi "Yes, I think it would be good for everyone to hear from someone new. Thank you, [her_name]."
+    naomi normal "Yes, I think it would be good for everyone to hear from someone new. Thank you, [her_name]."
 
     scene black with fade
     "I was a little nervous about speaking about such important things in front of half the colony. I knew they all had different beliefs, too - I didn't want to offend anyone."
@@ -489,7 +492,7 @@ label spiritual_master:
     "Miranda Nguyen" "We haven't been eaten by wolfslugs!"
     "Van Nguyen" "Mommy and daddy."
     
-    "They were all simple things, but thinking about them made us all feel so blessed and full of hope."
+    "They were all simple things, but thinking about them made us all feel so blessed and full of hope. And that hope gave us strength to work hard and help each other."
     scene bg clinic with fade
     show naomi at midright with dissolve
     show her normal at midleft with moveinleft
@@ -499,18 +502,33 @@ label spiritual_master:
     her normal "I love helping people feel positive and hopeful."
     naomi "We certainly need that here, don't we?"
     her concerned "Yes..."
-    naomi "What is it?"
+    naomi sad "What is it?"
     her concerned "Can I ask you a question?"
-    naomi "Of course."
+    naomi normal "Of course."
     her surprised "What do you believe? And why?"
-    naomi "[her_name], that is a question with a very long answer."
+    naomi sad "[her_name], that is a question with a very long answer."
     her serious "I know..."
     naomi "But I will share with you one thing, today. When I was a child, my parents both had very different religious beliefs. My mother was a Christian who also practiced many of the traditions of the Acoma Pueblo where she grew up."
     naomi "My father had grown up with Hindu beliefs, and while he wasn't particularly devout, his mother taught me many of the stories and teachings."
     naomi "My parents were always very respectful of each other, and so I grew up thinking there was nothing strange about believing in Jesus and Vishnu and harmony with nature."
-    naomi "All these things, and my experiences with answers to prayers and searching for the divine, feed into my concept of \"God.\" God is not something you can understand simply by applying a label."
-    naomi "God is something you understand through study, prayer, and love."
-    naomi "Then, I think you will see the divine all around you."
+    naomi sad "And when I was fourteen, my twin sister died at the hands of a violent stranger."
+    her surprised "Oh no!"
+    naomi sad "It was no longer obvious to me that a loving and caring deity was in charge, or that all souls deserved an afterlife, or that humanity was any good at all. I questioned everything."
+    naomi "People said that her death must have been part of God's plan, but I refused to accept that. My mother said I needed to be more humble, that God knew way more than I did and I should submit to His will."
+    naomi normal "But I decided that if God was really all-powerful, He could help me to understand why He would allow such a thing to happen."
+    naomi sad "And so I prayed. I studied. I read scriptures, philosophy, logic, history. I felt like Jacob wrestling with an angel, or like Hanuman chasing the Sun. How was it possible that the death of an innocent girl could be God's plan?"
+    her concerned "What did you find?"
+    naomi normal "I did not search in vain. One night I had a dream. My sister was in it, laughing. \"How can you laugh when you died so horribly?\" I asked her."
+    naomi "\"That was ages ago!\" she said. \"Death is not the worst thing that can happen.\" And so I asked her, \"What is the worst thing that can happen?\""
+    naomi "She just shook her head at me and disappeared."
+    naomi sad "Since then, I have thought of many more worse things than death. And I had to ask why God would allow those, too. But, I have come to realize that the purpose of life is not to avoid bad things happening."
+    her surprised "What is the purpose of life?"
+    naomi normal "To me, the purpose of life is to become your best self. Your self that is the most benevolent, the most knowledgeable: the most divine."
+    naomi "But that can only happen when people are allowed to have bad things happen. For it is in the reaction, in the choosing, in the consequences, that we change and become more than we have been."
+    naomi "That is why God does not stop all bad things from happening."
+    her concerned "But then, what is God?"
+    naomi "All my experiences with studying and praying and searching for the divine feed into my concept of \"God.\" God is not something you can understand simply by applying a label like \"Jesus\" or \"Brahman\"."
+    naomi normal "God is something you understand through study, prayer, and love. Then, I think, you will see the divine all around you."
     
     menu:
         "What should I say?"
@@ -531,17 +549,17 @@ label spiritual_master:
     
     naomi "Well, I've been doing a lot of praying lately."
     her surprised "More than usual?"
-    naomi "Oh yes. My whole life is built around helping others. But with my stroke, I could barely move, and I needed to be able to accept help instead of giving it."
+    naomi sad "Oh yes. My whole life is built around helping others. But with my stroke, I could barely move, and I needed to be able to accept help instead of giving it."
     her concerned "Why was that so hard?"
     naomi "I had to face my fear of old age."
     her surprised "You're scared of getting old? No offense, but aren't you already... um, I mean--"
-    naomi "Yes, I've been getting old for quite some time. But I've never been helpless, never had my body betray me quite like that."
+    naomi normal "Yes, I've been getting old for quite some time. But I've never been helpless, never had my body betray me quite like that."
     her serious "Are you scared of dying?"
-    naomi "No, dying will be quite interesting. What bothers me is the slow process of decay of the body, and worst of all, the mind."
+    naomi sad "No, dying will be quite interesting. What bothers me is the slow process of decay of the body, and worst of all, the mind."
     her surprised "Has your stroke affected your mind, too?"
-    naomi "Well, that's the problem - if my mental capacity is affected, I might have problems detecting it, won't I? And I wonder if those close to me would be honest and tell me if they notice anything?"
+    naomi "Well, that's the problem - if my mental capacity is affected, I might have problems detecting it. And I wonder if those close to me would be honest and tell me if they notice anything?"
     her serious "I'll tell you the truth, Naomi; you seem just as sharp as ever. And your kind spirit hasn't changed at all."
-    naomi "Thank you, [her_name]. I appreciate you letting me draw on your strength."
+    naomi normal "Thank you, [her_name]. I appreciate you letting me draw on your strength."
 
     $ skill_spiritual += 10
     $ community_level += 10

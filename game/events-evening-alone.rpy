@@ -18,7 +18,7 @@ label relax_alone_1:
     $ loved -= 2
     scene bg farm_interior with fade
     "I was all set to spend the evening by myself when Sara sent me a message on my computer."
-    play sound "sfx/message.mp3"
+    play bg_sfx "sfx/message.mp3"
     sara_c "Are you still up? Can you please come over, [her_name]?"
     menu:
         "Should I go?"
@@ -35,7 +35,7 @@ label relax_alone_1:
             her_c "Can it wait? I was just about to get in bed..."
             sara_c "I could...it's...my mom died."
             her_c "Oh no, I'll be right over."
-            scene bg farm_interior
+            scene bg farm_interior flip
             show her serious at midleft
             show sara sad at midright
             with dissolve
@@ -44,7 +44,7 @@ label relax_alone_1:
             her_c "Sorry, Sara, I can't tonight. Can we meet tomorrow at lunch?"
             sara_c "Yeah, I guess."
             $ relaxed += 2
-            scene bg farm_interior
+            scene bg farm_interior flip
             show her serious at midleft
             show sara sad at midright
             with dissolve
@@ -115,7 +115,7 @@ label relax_alone_2:
 # Emails from Home
 label relax_alone_3:
     scene bg farm_interior with fade
-    play sound "sfx/message.mp3"
+    play bg_sfx "sfx/message.mp3"
     "I got a message from my mother."
     "It was one she sent several years ago, but she told me all about my siblings, and how the neighbors were doing, and I better take good care of [his_name] and is he taking care of me, that sort of thing."
     "Even though I knew it would take four years for my letter to cross the vast space between our planets, I wrote back. I told her all about the farm and [his_name] and the town and my job. I wonder how much she could understand; our life was so different here..."
@@ -184,7 +184,7 @@ label relax_alone_7:
     show her serious
     "I went to the bath house by myself. I brought extra wood so I could have a long, hot bath, and I carried up extra water from the river to make it a deep one. All my effort just made me appreciate it all the more."
     show her serious at squatting behind overlay with move
-    play sound "sfx/splash.mp3"
+    play bg_sfx "sfx/splash.mp3"
     her normal "Ahhh...."
     $ relaxed += 5
     $ loved -= 2
@@ -193,7 +193,7 @@ label relax_alone_7:
 # These probably won't be seen, so make them simple.
 label relax_alone_8:
     scene bg bedroom with fade
-    play music "music/Shanghai_20_00.ogg" fadeout 3.0
+    play music "music/Shanghai_20_00.ogg" fadeout 1.0
     "I listened to some music - I didn't do anything else while listening, just lay back and really listened."
     "It made me think of summer vacation when I was a teenager back home, just lying back and reading books in the shade, playing video games, going swimming, and drinking lemonade."
     "What would our kids' summers be like?"
@@ -322,6 +322,7 @@ label relax_alone_c:
             "Finally, I managed to fall asleep, at about the same time I usually did. I felt like he just wasted my whole evening by being so obstinate."
             show him sleeping
             $ relaxed -= 5
+            $ loved -= 2
         else:
             her concerned "I know, I just wanted to tell you how I was feeling."
             him serious "I wish there was something I could do, [her_nickname]..."
@@ -392,33 +393,51 @@ label relax_alone_g:
 #play a farm game
 label relax_alone_h:
     scene bg farm_interior with fade
-    show her normal at center with dissolve
+    show her normal at quarterright with dissolve
     "I found this video game about trying to get a farm up and running... It was way more fun than a real farm."
-    play sound "sfx/whinny.mp3"
-    show him normal at quarterleft
-    show her normal at quarterright
+    play bg_sfx "sfx/whinny.mp3"
+    show him normal at quarterleft with moveinleft
     him surprised "What are you doing?"
     her happy "Feeding my horses!"
     him surprised "You have horses now?"
     her "In my game! I have to make sure they get exercise, and good food, and take them to the vet if they get sick! It's called Farm Life."
     him annoyed "Farm Life?! That's nothing like real farming!"
     her "No, it isn't. And that's why it's fun."
-    "He came over behind me and looked at my screen."
-    him happy "Those are the cutest ducks I've ever seen!"
-    her sad "I know! It's actually kind of sad when the farmer gets hungry and she eats one of them..."
-    him normal "Awww... Hey, that guy has the hearts for you!"
-    her normal "Yeah, he keeps bringing flowers, but my farmer only likes sweets! I keep trying to get her to marry him but she likes the fisherman instead."
-    him serious "It's too bad we can't do real farm work just by clicking on a screen."
-    her sad "I wish it was easier, too..."
+    if (loved <= 0):
+        him serious "What a waste of time."
+        her annoyed "It's just a game."
+        him angry "We don't have time to mess around with stupid games. There's real work to be done!"
+        her angry "Then why don't you go do it instead of spying on me!"
+        him serious "You know, someday if things go all wrong, you're going to think \"There wasn't anything I could have done to stop it\". You'll think back to this night where you were playing video games about a pretend farm instead of doing real work and realize that you could have done something, but you chose not to."
+        her annoyed "I'll worry about that when I have to."
+        him annoyed "No, that day will never come because people like me are doing actual work saving lazy people like you."
+        hide him with moveoutleft
+        show her angry
+        "How dare he?! I couldn't work twenty-four hours a day! Even he didn't do that!"
+        show her sad
+        "But... maybe I should be doing more."
+        "I closed my game. It wasn't fun anymore. But I couldn't bring myself to do any work, either."
+        "I just wished I was somewhere else."
+        $ loved -= 5
+        if (relaxed > 0):
+            $ relaxed = 0
+    else:
+        show him at center, behind her with move
+        him happy "Those are the cutest ducks I've ever seen!"
+        her sad "I know! It's actually kind of sad when the farmer gets hungry and she eats one of them..."
+        him normal "Awww... Hey, that guy has the hearts for you!"
+        her normal "Yeah, he keeps bringing flowers, but my farmer only likes sweets! I keep trying to get her to marry him but she likes the fisherman instead."
+        him serious "It's too bad we can't do real farm work just by clicking on a screen."
+        her sad "I wish it was easier, too..."
 
-    $ relaxed += 5
-    $ loved -= 2
+        $ relaxed += 5
+        $ loved -= 2
     return
 
 # cat videos on youtube!
 label relax_alone_i:
     scene bg farm_interior with fade
-    show her normal at center
+    show her concerned at center
     "I was too tired to do much of anything. I didn't feel motivated to read, or play a game, or even watch a movie."
     "So instead I found some funny, short videos that we had brought from Earth."
     "They weren't meaningful or profound or anything, but they made me laugh."
@@ -459,7 +478,7 @@ label relax_alone_k:
             "I picked the alien navigator. The fur and foreignness just made him so much more interesting."
             $ starship_man = "intruiging"
 
-    show him normal at midright with moveinright
+    show him normal at midright, behind her with moveinleft
     him laughing "Oh, so that's the kind of guy you like?"
     her surprised "Wahhh! You scared me! I didn't know you were watching!"
     him happy "I was just walking by when I saw all those men on your screen. I had to stop and see what was going on."
@@ -503,7 +522,7 @@ label relax_alone_k:
 
 label relax_alone_l:
     scene bg farm_interior with fade
-    "I chatted with Callie Jennings over the network - she lived on the other side of the colony and didn't leave the house much, so we didn't get to see each other very often."
+    "I chatted with Helen Jennings over the network - she lived on the other side of the colony and didn't leave the house much, so we didn't get to see each other very often."
     her_c "Hey, how are your cows doing?"
     helen_c "Good! They have plenty of room to graze, but we had to pull out a few poisonous plants we didn't know about."
     her_c "How'd you find out they were poisonous?"

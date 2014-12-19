@@ -4,7 +4,7 @@
 label colony_ship:
 
     scene bg colony_ship_bunk with fade
-    play music "music/Amnesia.ogg" fadeout 3.0
+    play music "music/Amnesia.ogg" fadeout 1.0
     "What a honeymoon -- on board a cramped space shuttle with a hundred other people for a month. Of course, back on Earth four years had passed, since we were travelling so close to light speed."
     "We spent a lot of it talking about the future..."
     show him normal at midright
@@ -102,7 +102,7 @@ label colony_ship:
 
     # He remembers her birthday
     scene bg colony_ship_bunk with fade
-    play music "music/Prelude22.ogg" fadeout 3.0
+    play music "music/Prelude22.ogg" fadeout 1.0
 
     "Time felt strange on the ship, too. Though there was no sunrise or sunset, they did dim the lights for ten hours every night. One night I came back to our room and found a surprise waiting for me."
     show him normal at midleft with dissolve
@@ -210,7 +210,7 @@ label settling_in:
 #    scene talaam_movie
 #    $ renpy.pause(10.0)
     
-    play music "music/You.ogg" fadeout 3.0
+    play music "music/You.ogg" fadeout 1.0
     scene bg talam with fade
     "The first month on Talaam was really busy. We arrived at the end of winter, so it was still a bit cold and rainy. We all worked together to get everyone's houses up right away. The first one took the longest, as we had to figure out how to put all the pieces together."
     # TODO: show map?

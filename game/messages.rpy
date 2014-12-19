@@ -51,7 +51,7 @@ define ilian_c = Character("Ilian Andrevski", who_prefix = "{image=sprites/ilian
 define brennan_c = Character("Brennan Callahan", who_prefix = "{image=sprites/brennan-icon.png} ", color="33b533", image="brennan", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #irish green
 define pete_c = Character("Pete Jennings", who_prefix = "{image=sprites/pete-icon.png} ", color="ee7755", image="pete", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #rusty brown
 define natalia_c = Character("Natalia Perón", who_prefix = "{image=sprites/natalia-icon.png} ", color="ffe74a", image="natalia", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #yellow
-define helen_c = Character("Callie Jennings", who_prefix = "{image=sprites/helen-icon.png} ", color="cdcfb2", image="helen", kind=nvl, ctc="ctc_blink", ctc_position="nestled") #tan
+define helen_c = Character("Helen Jennings", who_prefix = "{image=sprites/helen-icon.png} ", color="cdcfb2", image="helen", kind=nvl, ctc="ctc_blink", ctc_position="nestled") #tan
 define julia_c = Character("Julia Nguyen", who_prefix = "{image=sprites/julia-icon.png} ", color="#7b84fd", image="julia", kind=nvl, ctc="ctc_blink", ctc_position="nestled") #icy blue
 define martin_c = Character("Martín Perón", who_prefix = "{image=sprites/martin-icon.png} ", color="#990011", image="martin", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #dark red
 
@@ -100,13 +100,16 @@ label msg_4:
 label msg_5:
     pavel_c "I've had a few people ask questions about what to do with trash - let me remind everyone that our plastic and metal supplies are very limited, so make sure you recycle these items at the community center. Other trash can be burned or composted; see pages 126-128 of the Colonist's Guide."
     lily_c "You can save combustible trash for your hybrid stoves for days of precipitation or cloud cover."
-    him_c "Yeah, just make sure it's well-covered. There's some gigantic scavengers here who would love to become your pets."
+    him_c "Yeah, just make sure any trash you store is sealed up. There's some gigantic scavengers here who would love to become your pets."
     return
     
 label msg_6:
     thuc_c "Hey, my corn was doing fine, but the ears don't seem to be growing any bigger - anyone else having this problem?"
-    martin_c "Mine as well. I noticed some tiny white dots under the leaves - maybe insect eggs?\n"
-   
+    martin_c "Mine as well. I noticed some tiny white dots under the leaves - maybe insect eggs?"
+    him_c "They're not armyworms or aphids; I think it's something native."
+    thuc_c "Okay, I'll let you know if I find anything out!"
+    nvl clear
+    
     #message from her based on highest_skill
     $ highest_skill = highest_stat()
     if (highest_skill == "Domestic"):
@@ -126,7 +129,7 @@ label msg_6:
         her_c "Sister Naomi gave a great sermon yesterday..."
         natalia_c "Yes, it even kept Martín awake!"
     elif (highest_skill == "Social"):
-        her_c "Free advice: never play Pictionary against Callie! She draws like da Vinci on speed..."
+        her_c "Free advice: never play Pictionary against Helen! She draws like da Vinci on speed..."
         him_c "I thought we did pretty good!"
         her_c "You draw more like Picasso..."
         him_c "Well, he's a pretty good artist, right?"
@@ -174,6 +177,7 @@ label msg_8:
         helen_c "[her_name], I heard you fixed the clinic's radio, could you take a look at ours, too? The volume control is broken..."
         her_c "Sure, bring it by sometime."
         
+    nvl clear
     naomi_c "I'm sorry to have to bring this up, but some candles are missing from the chapel. If you borrowed them, please return them."
     natalia_c "I was wondering where those came from! I'll send Raúl and Josephina over to give them back."
     naomi_c "Thank you."

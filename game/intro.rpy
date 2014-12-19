@@ -87,7 +87,7 @@ label first_date:
     show him normal at midright
     with dissolve
     show overlay night
-    play music "music/Run.ogg" fadeout 3.0
+    play music "music/Run.ogg" fadeout 1.0
     "At the barbeque, I thought there was going to be a lot of people, but it ended up being just him and his parents."
     "It wasn't too awkward, though - we all pitched in to make dinner and then afterwards when I offered to help with the dishes, his parents told us to go relax outside."
     "So we sat on the porch swing and talked and watched the stars come out."
@@ -156,7 +156,7 @@ label marriage_proposal:
 
     her happy "[his_name]...I would love to create a new life together, even if it is on a different planet."
     scene bg wedding with fade
-    play music "music/Reflections.ogg" fadeout 3.0
+    play music "music/Reflections.ogg" fadeout 1.0
     "And so we got married."
     "My mother cried; she knew we were going to space and she would probably never see me again (or any grandkids). My father..."
     menu:

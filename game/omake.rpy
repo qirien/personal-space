@@ -53,7 +53,7 @@ label omake:
     
     scene bg farm_interior flip with fade
     show pavel at midleft    
-    show naomi at midright
+    show naomi sad at midright
     with dissolve
     
     pavel "{i}Priya{/i}, have you seen my computer around here?"
@@ -61,7 +61,7 @@ label omake:
     pavel "What is it?"
     naomi "That was very kind of you, what you did for Miranda today."
     pavel "What? I just asked her to see if she would mind babysitting for our new parents once in a while."
-    naomi "But it helped her feel like you trusted her, as an adult member of the community. That is just what she needed."
+    naomi normal "But it helped her feel like you trusted her, as an adult member of the community. That is just what she needed."
     pavel "Well, good. I'm just trying to help everyone..."
     naomi "I know you are, beloved. That's one of the things I adore about you."
     pavel "I couldn't do it without you, {i}priya{/i}."
@@ -92,16 +92,16 @@ label omake:
     brennan normal "...Bye."
     brennan mad "Even Dr. Lily has someone..."
     brennan normal "..."
-    play sound "sfx/clipclop.mp3"
+    play bg_sfx "sfx/clipclop.mp3"
     brennan mad "Who's there?!"
     
     show lettie at right with moveinright
     brennan normal "Lettie?"
-    play sound "sfx/whinny.mp3"
+    play bg_sfx "sfx/whinny.mp3"
     brennan happy "Did I ever tell you what a good-looking horse you are?"
-    play sound "sfx/horse-snort.mp3"
+    play bg_sfx "sfx/horse-snort.mp3"
     brennan normal "I haven't? Well, just look at those long, straight legs! And that wavy mane! And, if I may be so bold, a marvelous tail."
-    play sound "sfx/whinny.mp3"
+    play bg_sfx "sfx/whinny.mp3"
     brennan "At least {b}you{/b} understand."
     
     scene black with fade

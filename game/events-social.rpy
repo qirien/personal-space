@@ -15,7 +15,7 @@ label social_0:
     
     scene bg farm_interior with fade
     show her normal at center with dissolve
-    play music "music/Prelude02.ogg" fadeout 3.0
+    play music "music/Prelude02.ogg" fadeout 1.0
     nvl clear
     
     "We had a community message board online where we could talk to anyone else in the colony easily."
@@ -35,7 +35,7 @@ label social_0:
     julia_c "We will all have to cooperate to survive!"
     nvl clear
     pete_c "Speak for yourself, we're doin' just fine up here."
-    natalia_c "I'll remember that the next time Callie asks me for some eggs!"
+    natalia_c "I'll remember that the next time Helen asks me for some eggs!"
     helen_c "Hey, hey, don't drag me into this!"
     pete_c "Yeah, well, see how you like going without milk for your kids. They're runty enough as it is."
     show her concerned
@@ -82,7 +82,7 @@ label social_0:
     nvl clear
     
     "Later, Natalia sent me a message."
-    play music "music/OceansApart.ogg" fadeout 3.0
+    play music "music/OceansApart.ogg" fadeout 1.0
     natalia_c "I'm sorry I was so rude; Pete just make me so mad sometimes!"
     her_c "Oh, I understand. I think everyone's a little frustrated."
     natalia_c "Why don't you come over and we can chat in person? I found a fruit you might want to try..."
@@ -127,8 +127,8 @@ label social_1:
     "I sent out a message inviting everyone to come to a once-a-week party. People could bring snacks to share, and just chat and be together."
     "I wasn't sure anyone would show up..."
     "But [his_name] agreed to come, and Sara and Ilian and the mayor were coming, so we could at least hang out."
-    play sound "sfx/people.mp3" loop
-    play music "music/Sojourn.ogg" fadeout 3.0
+    play bg_sfx "sfx/people.mp3" loop
+    play music "music/Sojourn.ogg" fadeout 1.0
     show him normal at midleft
     show her normal at center
     with dissolve
@@ -153,7 +153,7 @@ label social_1:
     natalia "Great idea, [her_name]!"
     sara "Yeah, it feels good to get out of the house!"
     "Our snacks were not very tasty (mostly vegetables), and the games were not always fun, but joining together informally once a week helped us feel closer together."
-    stop sound fadeout 3.0
+    stop bg_sfx fadeout 1.0
     
     $ skill_social += 10
     $ community_level += 2
@@ -185,7 +185,7 @@ label social_2:
     show thuc at quarterleft
     show kid at center
     with moveinleft
-    play sound "sfx/kids.mp3" loop
+    play bg_sfx "sfx/kids.mp3" loop
     julia "Thank you so much for having us over for dinner. I only hope we don't wear out your generosity by the end of the evening."
     her happy "Well, hopefully I made enough food! Let's eat!"
     if (skill_domestic >= 10):
@@ -194,7 +194,7 @@ label social_2:
         "I just put out a bunch of beans, crackers, fruit, and vegetables, and let people choose what they wanted. It tasted a little bland, but the kids seemed to like it."
     "Then the kids all played hide-and-seek around the farm while we talked with the Nguyens."
     hide kid with moveoutleft
-    stop sound fadeout 20.0
+    stop bg_sfx fadeout 20.0
     if (profession == "teacher"):
         her normal "The kids are doing great in school."
         julia "I'm glad to hear that! They look forward to it; they say you are a wonderful teacher."
@@ -271,8 +271,8 @@ label social_2:
 # organize lunch group
 #
 label social_3:
-    play music "music/Sojourn.ogg" fadeout 3.0
-    play sound "sfx/people.mp3" loop
+    play music "music/Sojourn.ogg" fadeout 1.0
+    play bg_sfx "sfx/people.mp3" loop
     "Sara and I met for lunch every week to chat and take a break."
     scene bg community_center with fade
     show sara at midright
@@ -309,7 +309,7 @@ label social_3:
                     sara "Exactly. Look, some other people are taking their breaks now too, let's ask them if they want to have lunch with us."
                     "We interrupted a few conversations, but luckily everyone was in a good mood and seemed happy to meet us. We decided to meet every Friday for lunch in the community center."
             
-    stop sound
+    stop bg_sfx
     $ skill_social += 10
     $ community_level += 2
     return
@@ -320,8 +320,8 @@ label social_3:
 #
 label social_4:
     scene bg community_center with fade
-    play music "music/Sojourn.ogg" fadeout 3.0
-    play sound "sfx/people.mp3" loop
+    play music "music/Sojourn.ogg" fadeout 1.0
+    play bg_sfx "sfx/people.mp3" loop
     "One week at Friday lunch group, we were all complaining about our lack of excitement."
     show lily at quarterright
     show pete at left
@@ -351,7 +351,7 @@ label social_4:
             pete "I think it has a few. It's not just lesbians if that's what you're asking."
             sara "Is it appropriate for children?"
             pete "Sure. There's some innuendo, but that goes right over their heads."
-            stop sound fadeout 3.0
+            stop bg_sfx fadeout 1.0
             scene black with fade
             "We decided to watch {i}Time For No Man{/i} the next day in the evening. I sent out a message to the colony message board, and tried to remind everyone I saw to come."
             "The movie was kind of ridiculous. At one point two cousins realized they were actually sisters, and that their evil uncle was actually their father. Then it turned out he wasn't evil at all, but had been infected with an alien virus that caused him brain damage that made him act rudely."
@@ -399,7 +399,7 @@ label social_4:
             pete "It's a mini-series called {i}The Adventures of Emily Thompson{/i}, about a young girl living in a small town in England during the 1900s. She solves various mysteries like finding missing shoes and pets, and she ends up finding the culprit of a livestock theft."
             her surprised "Well, that does sound a little more child-friendly than murder mysteries."
             sara "Let's do it."
-            stop sound fadeout 3.0
+            stop bg_sfx fadeout 1.0
             scene black with fade
             "I sent out a message to the colony e-mail list, and tried to remind everyone I saw to come."
             scene bg community_center with fade
@@ -421,7 +421,7 @@ label social_4:
             her normal "It's only forty minutes long!"
             pete "I haven't seen {i}Wall-E{/i} in a while, and it could start some conversations about the colony, and what it oughta be like."
             sara "I agree! Some of the people have never seen it, and I think they would like it."
-            stop sound fadeout 3.0
+            stop bg_sfx fadeout 1.0
             scene black with fade
             "We decided to watch {i}Wall-E{/i}. I sent out a message to the colony e-mail list, and tried to remind everyone I saw to come."
             scene bg community_center with fade
@@ -482,11 +482,11 @@ label social_5:
     show her sleeping at midright, squatting, behind overlay
     with dissolve
     
-    play music "music/NoOneWillKnow.ogg" fadeout 3.0
+    play music "music/NoOneWillKnow.ogg" fadeout 1.0
     "One good thing about being such a small community was that we all helped out when someone needed it."
     "Like when Sara's house burned down..."
     "It was the middle of the night when the radio crackled on."
-    play sound "sfx/radio.mp3"
+    play bg_sfx "sfx/radio.mp3"
     "Sara on the radio" "Is anyone awake? Please, help! Our house is on fire!!!"
     show her surprised
     him surprised "Let's go!"
@@ -498,7 +498,7 @@ label social_5:
     show him serious at midleft
     show her serious at quarterleft
     with moveinleft
-    play sound "sfx/fire-2.mp3" fadein 1.0
+    play bg_sfx "sfx/fire-2.mp3" fadein 1.0
     "We brought buckets of water, but by the time we got there, the whole house had already burned to the ground."
     sara "Oh, [her_name], I'm so glad you came! It's... awful."
     show her at center with move
@@ -520,7 +520,7 @@ label social_5:
             sara "What does it matter?! Either way, our house just burned down! Not just the house, but our clothes, tools, computers..."
             her concerned "I'm so sorry..."
     sara "I don't know where we'll stay; what we'll wear; how we'll eat..."
-    stop sound
+    stop bg_sfx
     menu:
         "What should I say?"
         "Come stay at our house.":
@@ -538,7 +538,7 @@ label social_5:
             show ilian at quarterright
             show sara at midright
             ilian "I don't want to go anywhere tonight; I have a headache."
-            sara sad "But I told Callie and Pete we'd both come over! How come you only have a headache when it's time to do something I want to do?!"
+            sara sad "But I told Helen and Pete we'd both come over! How come you only have a headache when it's time to do something I want to do?!"
             ilian "It's not like I can just turn them on or off! You think I like my head pounding?"
             sara "Yeah, I think you like having a headache more than you like doing something with me."
             ilian "That's ridiculous!"
@@ -560,7 +560,7 @@ label social_5:
             sara "I just feel so trapped sometimes! I hate staying at home in the evenings and doing nothing!"
             her surprised "I guess that's Ilian's favorite thing to do?"
             sara "Yeah..."
-            her normal "Well, why don't I go with you to Callie's after dinner, and we can have a girl's night? We haven't done that for a while..."
+            her normal "Well, why don't I go with you to Helen's after dinner, and we can have a girl's night? We haven't done that for a while..."
             sara normal "Okay...thanks, [her_name]."
             scene black with fade
             "When we came back, the mood had definitely changed."            
@@ -632,7 +632,7 @@ label social_5:
 label social_6:
     call set_work_bg
     show her normal at quarterright with dissolve
-    "As the colony's [profession], I knew a lot more than most about my job. I decided to hold a class to teach anyone who was interested in learning more.  It wasn't smart for be to be the only [profession] around."
+    "As the colony's [profession], I knew a lot more than most about my job. I decided to hold a class to teach anyone who was interested in learning more.  It wasn't smart for me to be the only [profession] around."
     show natalia at center
     show thuc at left
     show brennan at quarterleft
@@ -662,7 +662,7 @@ label social_6:
         natalia "Yes, that's very well, but could you please not give the older kids so much homework? We need them to have time to work on the farm, too."
         thuc "That kind of training is vital to the success of our farms."
         her concerned "I try to give all the kids time to complete their assignments at school. So if they are bringing work home, it is because they have not completed what they were supposed to at school."
-        her normal "Sometimes they more interested in each other than the material."
+        her normal "Sometimes they are more interested in each other than the material."
         natalia "Well, then maybe they ought to do their work at home some days! They'd probably get more done without their friends to distract them!"
         her concerned "We could try that if you like, though I think their coming to school and mentoring the younger students has greatly benefited them, both in academic and social areas."
         natalia "Hmmm. Well, we'll think about it."
@@ -818,7 +818,7 @@ label social_8:
         
     pavel "It grows wild all over here, and someone found out that if you smoke it, it is a powerful stimulant."
     her surprised "Like caffeine?"
-    pavel "Yes, but more powerful. Some of the colonists say they can get so much more done and have much more energy when they use it."
+    pavel "Yes, but more powerful. Some of the colonists say they can get a lot more done and have more energy when they use it."
     her serious "Is it dangerous?"
     pavel "We haven't studied it enough yet to know what long term effects it may have. It does seem to make the user more tired afterwards, but that's the only reported side effect."
     her surprised "Has someone been abusing it?"

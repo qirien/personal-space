@@ -2,9 +2,9 @@
 label show_credits:
     
     if (ending == "good"):
-        play music "music/Blessed.ogg" fadeout 3.0
+        play music "music/Blessed.ogg" fadeout 1.0
     else:
-        play music "music/YouUndone.ogg" fadeout 3.0
+        play music "music/YouUndone.ogg" fadeout 1.0
     
     $ loved_ceiling = loved
     if (loved_ceiling > LOVED_MAX):
@@ -38,7 +38,7 @@ label show_credits:
     show text "Character Art by {a=http://clarissahelps.com}Clarissa Helps{/a}" with fade 
     $ renpy.pause(3.0, hard=skippable)
     hide text with fade
-    show text "With music by:\nEhren Starks\nJan Hanford\nChad Lawson\nGiorgio Costantini\nKalabi\nBenji Goodrich\nGianmarco Leona\nFalling You\nRuben van Rompaey\nDa Camera\n\nLicensed from {a=http://www.magnatune.com}Magnatune{/a} under the {a=http://creativecommons.org/licenses/by-nc-sa/1.0/}BY-NC-SA Creative Commons License{/a}" with fade
+    show text "With music by:\nEhren Starks\nJan Hanford\nChad Lawson\nGiorgio Costantini\nKalabi\nBenji Goodrich\nGianmarco Leona\nFalling You\nRuben van Rompaey\nDa Camera\nWillem Brons\n\nLicensed from {a=http://www.magnatune.com}Magnatune{/a} under the {a=http://creativecommons.org/licenses/by-nc-sa/1.0/}BY-NC-SA Creative Commons License{/a}" with fade
     $ renpy.pause(6.0, hard=skippable)
     hide text with fade     
     show text "With background images by:\nLisa Horner\nWes Landaker\nAndrea Landaker\nNASA\nBurningwell\nESO/L. Calçada\n\nAnd the following Wikimedia Commons users:\nRandwick\nLabpluto123\nWrlctech\nEbyabe\nAvi/Skrewtap\nMarcus Budde\nAluter\nDorothea Witter-Rieder\nAnna Frodesiak\nAndrei Stroe\nJean-Pierre\n\nFiltered with Fotosketcher" with fade
@@ -59,7 +59,7 @@ label show_credits:
     hide text with fade
 
     scene bg stars with fade
-    "You have now unlocked New Game+! If you play again, you can keep your progress in your skills up to level [SKILL_SAVED_MAX], to make mastering skills easier. At the end of each skill tree is a special event."
+    "You have now unlocked New Game+! If you play again, you can keep your progress in your skills up to level [SKILL_SAVED_MAX], to make mastering skills easier and to be able to see more of the events."
     
     # in case a future game wants to use this information, we'll save it here
     $ mp.jack_name = his_name
@@ -89,7 +89,7 @@ label show_credits:
         
     "Thanks for playing! If you have feedback, I'd love to hear from you at {a=mailto:qirien@icecavern.net?subject=Our Personal Space}qirien@icecavern.net{/a}"
     show text "{size=80}{font=fonts/danielbd.ttf}{b}The End{/b}{/font}{/size}" with fade
-    stop music fadeout 3.0
+    stop music fadeout 1.0
     $ renpy.pause(5.0, hard=skippable)
     
     $ renpy.full_restart()
