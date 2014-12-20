@@ -50,7 +50,7 @@ label show_credits:
     $ renpy.pause(6.0, hard=skippable)
     
     hide text with fade   
-    show text "This open-source work is licensed under a {a=http://creativecommons.org/licenses/by-nc-sa/4.0/}Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License{/a}." with fade 
+    show text "The code for this work is licensed under the {a=http://www.gnu.org/licenses/gpl.html}GPL{/a}, and the media is licensed under a {a=http://creativecommons.org/licenses/by-nc-sa/4.0/}Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License{/a}." with fade 
     $ renpy.pause(3.0, hard=skippable)
     
     hide text with fade   

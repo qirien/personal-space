@@ -1,6 +1,153 @@
-"Our Personal Space" by Andrea Landaker and Rachel Helps is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License (CC BY-NC-SA 3.0)
+"Our Personal Space" (c) 2014 by Andrea Landaker (qirien@icecavern.net) and Rachel Helps.
 
-http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode
+The text of this game is released under the Creative Commons Attribution-ShareAlike 3.0 Unported License (CC BY-SA 3.0), 
+http://creativecommons.org/licenses/by-sa/3.0/legalcode
 
-For more information about this work, see
-http://qirien.icecavern.net/PersonalSpace or contact Andrea at qirien@gmail.com
+The source code is licensed under the GPLv3 (see gpl-3.0.txt)
+
+The following is a list of materials used and their licenses:
+
+--------------------------------------------------------------------
+---------
+-Sprites-
+---------
+--------------------------------------------------------------------
+
+All sprites by Clarissa Helps, CC BY-SA 3.0
+
+Tablet status icons from the Google Material Design Icons, used under the CC-BY-SA-4.0 License.
+
+
+--------------------------------------------------------------------
+-------
+-Music-
+-------
+--------------------------------------------------------------------
+
+All music from Magnatune records, used under CC-BY-NC-SA 1.0, http://creativecommons.org/licenses/by-nc-sa/1.0/legalcode
+
+Ehren Starks
+------------
+"Amnesia" by Ehren Starks (Magnatune Records)
+"Lines Build Walls" by Ehren Starks (Magnatune Records)
+"You are the You" by Ehren Starks (Magnatune Records)
+"No One Will Ever Know" by Ehren Starks (Magnatune Records)
+"Run" by Ehren Starks (Magnatune Records)
+"Prelude No. 2 in G Minor" by Jan Hanford (Magnatune Records)
+"Prelude No. 22 in C Major" by Jan Hanford (Magnatune Records)
+"Will" by Chad Lawson (Magnatune Records)
+"Reflections" by Chad Lawson (Magnatune Records)
+"Sojourn" by Chad Lawson (Magnatune Records)
+"Rain" by Giorgio Costantini (Magnatune Records)
+"Dandelion" by Kalabi (Magnatune Records)
+"Isaiah's Song" by Benji Goodrich (Magnatune Records)
+"Rain on the Sea" by Gianmarco Leona (Magnatune Records)
+"Oceans Apart" by Benji Goodrich (Magnatune Records)
+"Shanghai 20 00" by Attic Trax (Magnatune Records)
+"You Undone" by Anonymph (Magnatune Records)
+"Alpha" by TranceVision (Magnatune Records)
+"Blessed" by Falling You (Magnatune Records)
+"Rising" by Ruben van Rompaey (Magnatune Records)
+"Carolan's Concerto" by Da Camera (Magnatune Records)
+"Rondo in A Minor K511 - Andante (WA Mozart)" by Willem Brons (Magnatune Records)
+Used under the Creative Commons Attribution-NonCommercial-ShareAlike 1.0 License, http://creativecommons.org/licenses/by-nc-sa/1.0/legalcode
+
+
+--------------------------------------------------------------------
+-------------------
+-Background Images-
+-------------------
+--------------------------------------------------------------------
+
+PUBLIC DOMAIN:
+-------------
+Earth image, starscape courtesy of NASA, www.nasa.gov
+Triple-star sunset courtesy of JPL at NASA, http://www.jpl.nasa.gov/
+White Desert Egyptian Sunset from http://www.burningwell.org
+Harvest Moon from http://www.burningwell.org
+Wooden bathtub for adults by Anna Frodesiak from http://commons.wikimedia.org/wiki/File:Wooden_bathtub_for_adults_-_02.JPG 
+Guantanamo Captive's hospital beds in the public domain, from the U.S. Department of Defense
+
+CC BY-SA 3.0
+------------
+Caledonian Sleeper Single berth by Randwick, from 
+http://en.wikipedia.org/wiki/File:Caledonian_Sleeper_Single_berth.jpg
+FVES Classroom by Labpluto123, from http://commons.wikimedia.org/wiki/File:FVES_Classroom.jpg
+Birchip Community Library circulation desk by Wrlctech, from http://commons.wikimedia.org/wiki/File:Birchip_reno_008.jpg
+Koreshan Machine Shop by Ebyabe, from http://commons.wikimedia.org/wiki/File:Koreshan_SHS_large_machine_shop_inside01.jpg
+Finished Yurt by Aluter from http://commons.wikimedia.org/wiki/File:FinishedYurt.jpg
+RoscheiderHof-rathaus (Coal Stove) by Dorothea Witter-Rieder from http://commons.wikimedia.org/wiki/File:RoscheiderHof-rathaus-2008-8.jpg
+RO OT Slatina old city street 2 by Andrei Stroe from http://commons.wikimedia.org/wiki/File:RO_OT_Slatina_old_city_street_2.jpg
+Bedroom, Mountains, Ocean, Talam, Weather-Summer by Lisa Horner
+Community Center, Farm Porch, Fields, Laundry, Path, Pond, Storehouse, Tractor, Wedding by Andrea Landaker
+Hot Spring, Stream by Wes Landaker
+
+CC BY-SA 2.0
+------------
+Tool Area - Workshop by Avi/Skrewtape, from http://commons.wikimedia.org/wiki/File:Tool_Area_-_Workshop.jpg
+Chemistry Laboratory - Bench.jpg by Jean-Pierre from http://commons.wikimedia.org/wiki/File:Chemistry_Laboratory_-_Bench.jpg
+
+CC-BY 3.0
+---------
+EketorpsBorgHayBarn.jpg by Marcus Budde from http://commons.wikimedia.org/wiki/File:EketorpsBorgHayBarn.jpg
+
+Talaam from Space generated with Planet Maker, http://planetmaker.wthr.us
+Other photos by Lisa Horner, Wes Landaker, Andrea Landaker, and Lance Meibos
+Filtered with FotoSketcher, http://www.fotosketcher.com
+
+OTHER
+-----
+Church candle from Turbophoto.com, license here: http://www.turbophoto.com/license.htm
+
+--------------------------------------------------------------------
+---------------
+-Sound Effects-
+---------------
+--------------------------------------------------------------------
+
+Custom License, SoundJay.com http://www.soundjay.com/tos.html
+-----------------
+Airplane Interior
+Cloth folding
+Fire
+Geyser
+Hurricane
+Ice Block Drop
+People
+Radio
+Rain
+Stream 2, 3
+Trickle
+Wood Logs
+
+Public Domain
+-------------
+Alien Crickets, a combination of 
+    animals-chitinous by dobroide (http://www.freesound.org/people/dobroide/sounds/37469/)
+    crickety-tupperware by alienistcog (http://www.freesound.org/people/alienistcog/sounds/124286/)
+Blender, by jackofall29 (http://www.freesound.org/people/jackofall29/sounds/158737/)
+Horse Whinny, by foxen10 (http://www.freesound.org/people/foxen10/sounds/149024/)
+AK-47 mid distance single shot, by Firearm SFX Library (http://freefirearmsfx.com/)
+Busy kids chatting, by Walter_Odington (http://www.freesound.org/people/Walter_Odington/sounds/32376/)
+Click, by Andrea Landaker
+Message, by Andrea Landaker
+Air Hose Delayed by powpowrider (http://www.freesound.org/people/powpowrider/sounds/89098/)
+Punching Light Armor by saint_leibowitz (http://www.freesound.org/people/saint_leibowitz/sounds/205744/)
+Radio Static by pushkin (http://www.freesound.org/people/pushkin/sounds/100417/)
+Scissors by jadend2 (http://www.freesound.org/people/jadend2/sounds/205103/)
+Shovel by Ohrwurm (http://www.freesound.org/people/Ohrwurm/sounds/64416/)
+Siren by UncleSigmund (http://www.freesound.org/people/UncleSigmund/sounds/117118/)
+
+
+CC-BY 3.0
+----------
+Cough, by OwlStorm (http://www.freesound.org/people/OwlStorm/sounds/151212/)
+Horse Snort, by ERH (http://www.freesound.org/people/ERH/sounds/32043/)
+Splash, by soundscalpel.com (http://www.freesound.org/people/soundscalpel.com/sounds/110393/)
+
+
+CC-BY-NC 3.0
+------------
+Gears, by Timbre (http://www.freesound.org/people/Timbre/sounds/135647/)
+
+OwlStorm, ERH, soundscalpel.com, dobroide, Timbre, 0ktober, and AlaskaRobotics.  Used under Creative Commons license.

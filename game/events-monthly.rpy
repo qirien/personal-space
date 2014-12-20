@@ -897,8 +897,8 @@ label monthly_event_8:
             him happy "All right, let's go!"
             scene bg sunset with fade
             show overlay night
-            show her normal at midright
-            show him normal at center
+            show her normal at quarterright
+            show him normal at midright
             show thuc at quarterleft
             "Thuc had already cut some logs and branches for us to tie up, but we still had to dig holes for posts."
             play bg_sfx "sfx/shovel.mp3"
@@ -3055,10 +3055,7 @@ label monthly_event_19:
                 "It was too much work. We had more important things to worry about than clothes, anyway."
     return
 
-# MONTH 20 - Trouble sleeping
-# TODO: Replace this with something more EPIC!!!
-# replace with social_event_8?
-# she gets hurt by giant hail
+# MONTH 20 - Community Party!
 label monthly_event_20:
     scene bg path with fade
 
@@ -3172,8 +3169,7 @@ label done_party_menu:
         "The flowers we picked looked nice. Even though they were nothing like Earth flowers, they had their own beauty. And Sara had programmed some of the lights to glow softly blue and green, like an ocean."
     play bg_sfx "sfx/people.mp3" loop
     "As people started to arrive, they seemed to brighten when they saw the community center ready for a party."
-
-    #TODO: play some music here
+    
     if (party_music == "recorded"):
         "We played some great dance music, and some people really got into dancing! It was really interesting to hear the variety of songs everyone sent us. There was pop music, ballads, slow love songs, techno, rap... Even though some of it was in languages we didn't all know, it was still good for dancing."
     elif (party_music == "live"):
