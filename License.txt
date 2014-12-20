@@ -1,7 +1,7 @@
 "Our Personal Space" (c) 2014 by Andrea Landaker (qirien@icecavern.net) and Rachel Helps.
 
-The text of this game is released under the Creative Commons Attribution-ShareAlike 3.0 Unported License (CC BY-SA 3.0), 
-http://creativecommons.org/licenses/by-sa/3.0/legalcode
+The text of this game is released under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0), 
+http://creativecommons.org/licenses/by-sa/4.0/legalcode
 
 The source code is licensed under the GPLv3 (see gpl-3.0.txt)
 
@@ -149,5 +149,3 @@ Splash, by soundscalpel.com (http://www.freesound.org/people/soundscalpel.com/so
 CC-BY-NC 3.0
 ------------
 Gears, by Timbre (http://www.freesound.org/people/Timbre/sounds/135647/)
-
-OwlStorm, ERH, soundscalpel.com, dobroide, Timbre, 0ktober, and AlaskaRobotics.  Used under Creative Commons license.

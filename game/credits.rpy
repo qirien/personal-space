@@ -41,16 +41,20 @@ label show_credits:
     show text "With music by:\nEhren Starks\nJan Hanford\nChad Lawson\nGiorgio Costantini\nKalabi\nBenji Goodrich\nGianmarco Leona\nFalling You\nRuben van Rompaey\nDa Camera\nWillem Brons\n\nLicensed from {a=http://www.magnatune.com}Magnatune{/a} under the {a=http://creativecommons.org/licenses/by-nc-sa/1.0/}BY-NC-SA Creative Commons License{/a}" with fade
     $ renpy.pause(6.0, hard=skippable)
     hide text with fade     
-    show text "With background images by:\nLisa Horner\nWes Landaker\nAndrea Landaker\nNASA\nBurningwell\nESO/L. Calçada\n\nAnd the following Wikimedia Commons users:\nRandwick\nLabpluto123\nWrlctech\nEbyabe\nAvi/Skrewtap\nMarcus Budde\nAluter\nDorothea Witter-Rieder\nAnna Frodesiak\nAndrei Stroe\nJean-Pierre\n\nFiltered with Fotosketcher" with fade
+    show text "With background images by:\nLisa Horner\nWes Landaker\nAndrea Landaker\nNASA\nBurningwell\n\nAnd the following Wikimedia Commons users:\nRandwick\nLabpluto123\nWrlctech\nEbyabe\nAvi/Skrewtap\nMarcus Budde\nAluter\nDorothea Witter-Rieder\nAnna Frodesiak\nAndrei Stroe\nJean-Pierre\n\nFiltered with Fotosketcher" with fade
     $ renpy.pause(8.0, hard=skippable)
     # TODO: Add sound Credits
+    
+    hide text with fade
+    show text "Sound Effects by:\nSoundjay.com\nFirearm SFX Library\n\n And Freesound.org users:\ndobroide, alienistcog, jackofall29, foxen10, Walter_Odington, powpowrider, saint_leibowitz, pushkin, jadend2, Ohrwurm, UncleSigmund, OwlStorm, ERH, soundscalpel.com, Timbre"
+    $ renpy.pause(6.0, hard=skippable)
     
     hide text with fade
     show text "Beta Testing by:\nWes Landaker\nLisa Horner\nCatherine White"
     $ renpy.pause(6.0, hard=skippable)
     
     hide text with fade   
-    show text "The code for this work is licensed under the {a=http://www.gnu.org/licenses/gpl.html}GPL{/a}, and the media is licensed under a {a=http://creativecommons.org/licenses/by-nc-sa/4.0/}Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License{/a}." with fade 
+    show text "The code for this work is licensed under the {a=http://www.gnu.org/licenses/gpl.html}GPL{/a}, and the text is licensed under a {a=http://creativecommons.org/licenses/by-sa/4.0/}Creative Commons Attribution-ShareAlike 4.0 International License{/a}.\nFor other licenses used, see accompanying License.txt" with fade 
     $ renpy.pause(3.0, hard=skippable)
     
     hide text with fade   
