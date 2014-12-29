@@ -126,6 +126,7 @@ label day:
     $ monthly_event_act = None
 
     if (month == 1):
+	scene bg screenshot with fade
         menu:
             "Would you like to see the Tutorial?"
             "Yes":

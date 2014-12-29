@@ -6,7 +6,6 @@ image screenshot_center = "bg/screenshot-center.jpg"
 image screenshot_right = "bg/screenshot-right.jpg"
 
 label tutorial:
-    scene screenshot with fade
     tutorial "This screen shows [her_name]'s computer pad."
     
     scene screenshot_left with dissolve
