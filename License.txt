@@ -1,151 +1,352 @@
-"Our Personal Space" (c) 2014 by Andrea Landaker (qirien@icecavern.net) and Rachel Helps.
+= "Our Personal Space" Licenses
 
-The text of this game is released under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0), 
-http://creativecommons.org/licenses/by-sa/4.0/legalcode
+"Our Personal Space" is an aggregate collection of various material using the following licenses:
 
-The source code is licensed under the GPLv3 (see gpl-3.0.txt)
+== Program, Text & Dialogue
 
-The following is a list of materials used and their licenses:
+"Our Personal Space" Program, Text & Dialogue are licensed under the GNU GPLv3.
 
---------------------------------------------------------------------
----------
--Sprites-
----------
---------------------------------------------------------------------
+.License
+****
+"Our Personal Space" Program, Text & Dialogue © 2014-2015 Andrea Landaker <qirien@icecavern.net>, Rachel Helps <TODO>.
 
-All sprites by Clarissa Helps, CC BY-SA 3.0
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
-Tablet status icons from the Google Material Design Icons, used under the CC-BY-SA-4.0 License.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU General Public License for more details.
 
+You should have received a copy of the GNU General Public License along with this program.
+If not, see <http://www.gnu.org/licenses/>.
+****
 
---------------------------------------------------------------------
--------
--Music-
--------
---------------------------------------------------------------------
+== Graphics
 
-All music from Magnatune records, used under CC-BY-NC-SA 1.0, http://creativecommons.org/licenses/by-nc-sa/1.0/legalcode
+=== Character Sprites
 
-Ehren Starks
-------------
-"Amnesia" by Ehren Starks (Magnatune Records)
-"Lines Build Walls" by Ehren Starks (Magnatune Records)
-"You are the You" by Ehren Starks (Magnatune Records)
-"No One Will Ever Know" by Ehren Starks (Magnatune Records)
-"Run" by Ehren Starks (Magnatune Records)
-"Prelude No. 2 in G Minor" by Jan Hanford (Magnatune Records)
-"Prelude No. 22 in C Major" by Jan Hanford (Magnatune Records)
-"Will" by Chad Lawson (Magnatune Records)
-"Reflections" by Chad Lawson (Magnatune Records)
-"Sojourn" by Chad Lawson (Magnatune Records)
-"Rain" by Giorgio Costantini (Magnatune Records)
-"Dandelion" by Kalabi (Magnatune Records)
-"Isaiah's Song" by Benji Goodrich (Magnatune Records)
-"Rain on the Sea" by Gianmarco Leona (Magnatune Records)
-"Oceans Apart" by Benji Goodrich (Magnatune Records)
-"Shanghai 20 00" by Attic Trax (Magnatune Records)
-"You Undone" by Anonymph (Magnatune Records)
-"Alpha" by TranceVision (Magnatune Records)
-"Blessed" by Falling You (Magnatune Records)
-"Rising" by Ruben van Rompaey (Magnatune Records)
-"Carolan's Concerto" by Da Camera (Magnatune Records)
-"Rondo in A Minor K511 - Andante (WA Mozart)" by Willem Brons (Magnatune Records)
-Used under the Creative Commons Attribution-NonCommercial-ShareAlike 1.0 License, http://creativecommons.org/licenses/by-nc-sa/1.0/legalcode
+"Our Personal Space" Character Sprites are dual-licensed under the GNU GPLv3 and CC-BY-SA-4.0.
 
+.License
+****
+"Our Personal Space" Character Sprites © 2014-2015 Clarissa Helps <TODO>, Andrea Landaker <qirien@icecavern.net>, Rachel Helps <TODO>.
 
---------------------------------------------------------------------
--------------------
--Background Images-
--------------------
---------------------------------------------------------------------
+This artwork is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
-PUBLIC DOMAIN:
--------------
-Earth image, starscape courtesy of NASA, www.nasa.gov
-Triple-star sunset courtesy of JPL at NASA, http://www.jpl.nasa.gov/
-White Desert Egyptian Sunset from http://www.burningwell.org
-Harvest Moon from http://www.burningwell.org
-Wooden bathtub for adults by Anna Frodesiak from http://commons.wikimedia.org/wiki/File:Wooden_bathtub_for_adults_-_02.JPG 
-Guantanamo Captive's hospital beds in the public domain, from the U.S. Department of Defense
+This artwork is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU General Public License for more details.
 
-CC BY-SA 3.0
-------------
-Caledonian Sleeper Single berth by Randwick, from 
-http://en.wikipedia.org/wiki/File:Caledonian_Sleeper_Single_berth.jpg
-FVES Classroom by Labpluto123, from http://commons.wikimedia.org/wiki/File:FVES_Classroom.jpg
-Birchip Community Library circulation desk by Wrlctech, from http://commons.wikimedia.org/wiki/File:Birchip_reno_008.jpg
-Koreshan Machine Shop by Ebyabe, from http://commons.wikimedia.org/wiki/File:Koreshan_SHS_large_machine_shop_inside01.jpg
-Finished Yurt by Aluter from http://commons.wikimedia.org/wiki/File:FinishedYurt.jpg
-RoscheiderHof-rathaus (Coal Stove) by Dorothea Witter-Rieder from http://commons.wikimedia.org/wiki/File:RoscheiderHof-rathaus-2008-8.jpg
-RO OT Slatina old city street 2 by Andrei Stroe from http://commons.wikimedia.org/wiki/File:RO_OT_Slatina_old_city_street_2.jpg
-Bedroom, Mountains, Ocean, Talam, Weather-Summer by Lisa Horner
-Community Center, Farm Porch, Fields, Laundry, Path, Pond, Storehouse, Tractor, Wedding by Andrea Landaker
-Hot Spring, Stream by Wes Landaker
+You should have received a copy of the GNU General Public License along with this program.
+If not, see <http://www.gnu.org/licenses/>.
+****
 
-CC BY-SA 2.0
-------------
-Tool Area - Workshop by Avi/Skrewtape, from http://commons.wikimedia.org/wiki/File:Tool_Area_-_Workshop.jpg
-Chemistry Laboratory - Bench.jpg by Jean-Pierre from http://commons.wikimedia.org/wiki/File:Chemistry_Laboratory_-_Bench.jpg
+.License
+****
+"Our Personal Space" Character Sprites © 2014-2015 Clarissa Helps <TODO>, Andrea Landaker <qirien@icecavern.net>, Rachel Helps <TODO>.
 
-CC-BY 3.0
----------
-EketorpsBorgHayBarn.jpg by Marcus Budde from http://commons.wikimedia.org/wiki/File:EketorpsBorgHayBarn.jpg
+This artwork is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License <http://creativecommons.org/licenses/by-sa/4.0/>.
+****
 
-Talaam from Space generated with Planet Maker, http://planetmaker.wthr.us
-Other photos by Lisa Horner, Wes Landaker, Andrea Landaker, and Lance Meibos
-Filtered with FotoSketcher, http://www.fotosketcher.com
+=== Tablet Icons
 
-OTHER
------
-Church candle from Turbophoto.com, license here: http://www.turbophoto.com/license.htm
+"Our Personal Space" Tablet Icons are licensed under the CC-BY-4.0, based on the Material Design Icons by Google.
+These icons have been modified by Andrea Landaker for this game.
 
---------------------------------------------------------------------
----------------
--Sound Effects-
----------------
---------------------------------------------------------------------
+.License
+****
+Material Design Icons © 2014 Google <http://google.com/design/spec>.
+Material Design Icons Modifications © 2014 Andrea Landaker <qirien@icecavern.net>
 
-Custom License, SoundJay.com http://www.soundjay.com/tos.html
------------------
-Airplane Interior
-Cloth folding
-Fire
-Geyser
-Hurricane
-Ice Block Drop
-People
-Radio
-Rain
-Stream 2, 3
-Trickle
-Wood Logs
+All icons are released under an Creative Commons Attribution 4.0 International License <http://creativecommons.org/licenses/by/4.0/>.
+****
 
-Public Domain
--------------
-Alien Crickets, a combination of 
-    animals-chitinous by dobroide (http://www.freesound.org/people/dobroide/sounds/37469/)
-    crickety-tupperware by alienistcog (http://www.freesound.org/people/alienistcog/sounds/124286/)
-Blender, by jackofall29 (http://www.freesound.org/people/jackofall29/sounds/158737/)
-Horse Whinny, by foxen10 (http://www.freesound.org/people/foxen10/sounds/149024/)
-AK-47 mid distance single shot, by Firearm SFX Library (http://freefirearmsfx.com/)
-Busy kids chatting, by Walter_Odington (http://www.freesound.org/people/Walter_Odington/sounds/32376/)
-Click, by Andrea Landaker
-Message, by Andrea Landaker
-Air Hose Delayed by powpowrider (http://www.freesound.org/people/powpowrider/sounds/89098/)
-Punching Light Armor by saint_leibowitz (http://www.freesound.org/people/saint_leibowitz/sounds/205744/)
-Radio Static by pushkin (http://www.freesound.org/people/pushkin/sounds/100417/)
-Scissors by jadend2 (http://www.freesound.org/people/jadend2/sounds/205103/)
-Shovel by Ohrwurm (http://www.freesound.org/people/Ohrwurm/sounds/64416/)
-Siren by UncleSigmund (http://www.freesound.org/people/UncleSigmund/sounds/117118/)
+=== Background Images
 
+"Our Personal Space" Background Images are modified versions of images licensed under a variety of licenses.
+All modifications are released under the same license as the original images.
 
-CC-BY 3.0
-----------
-Cough, by OwlStorm (http://www.freesound.org/people/OwlStorm/sounds/151212/)
-Horse Snort, by ERH (http://www.freesound.org/people/ERH/sounds/32043/)
-Splash, by soundscalpel.com (http://www.freesound.org/people/soundscalpel.com/sounds/110393/)
+==== Public Domain
 
+The following images are in the public domain.
 
-CC-BY-NC 3.0
-------------
-Gears, by Timbre (http://www.freesound.org/people/Timbre/sounds/135647/)
+White desert Egyptian sunset <sunset.jpg>, and Harvest Moon <harvestmoon.jpg>, by Andrea Landaker, derived from images from <http://www.burningwell.org>.
+
+Wooden bathtub for adults <bathhouse.jpg> by Andrea Landaker, derived from <http://commons.wikimedia.org/wiki/File:Wooden_bathtub_for_adults_-_02.JPG>, by Anna Frodesiak.
+
+Earth image starscape <earth.jpg> by Andrea Landaker, derived from <http://www.nasa.gov>, courtesy of NASA.
+
+Guantanamo captive's hospital beds <clinic.jpg> by Andrea Landaker, derived from <https://commons.wikimedia.org/wiki/File:Guantanamo_captive%27s_hospital_beds_-c.jpg>, courtesy of the U.S. Department of Defense
+
+Talaam from Space <talaam-from-space.jpg>, by Andrea Landaker, generated with Planet Maker <http://planetmaker.wthr.us>.
+
+.License
+****
+These images are in the public domain.
+****
+
+==== GPLv3 / CC-BY-SA-4.0
+
+The following images are dual-licensed GPLv3 and CC-BY-SA-4.0.
+
+Bedroom <bedroom.jpg>, Mountains <mountains.jpg>, Ocean <ocean.jpg>, Talaam <talam.jpg>, and Weather-Summer <weather-summer.jpg> by Andrea Landaker, derived from images by Lisa Horner.
+
+Community Center <community-center.jpg>, Farm Porch <farm-porch.jpg>, Fields <fields.jpg>, Laundry <laundry.jpg>, Path <path.jpg>, Pond <pond.jpg>, Storehouse <storehouse.jpg>, Tractor <tractor.jpg>, and Wedding <wedding.jpg> by Andrea Landaker
+
+Hot Spring <hot-spring.jpg>, Stream <stream.jpg> by Andrea Landaker, derived from images by Wesley J. Landaker.
+
+Any other images not listed in other sections by Andrea Landaker.
+
+.License
+****
+These images are free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+These images are distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program.
+If not, see <http://www.gnu.org/licenses/>.
+****
+
+.License
+****
+These images are licensed under a Creative Commons Attribution-ShareAlike 4.0 International License <http://creativecommons.org/licenses/by-sa/4.0/>.
+****
+
+==== CC-BY-SA-3.0
+
+The following images are licensed CC-BY-SA-3.0.
+(Some of these images are also dual-licensed by their respective authors.)
+
+Caledonian sleeper single berth <colony-ship-bunk.jpg> by Andrea Landaker, derived from <http://en.wikipedia.org/wiki/File:Caledonian_Sleeper_Single_berth.jpg>, by Randwick.
+
+FVES classroom <classroom.jpg> by Andrea Landaker, derived from <http://commons.wikimedia.org/wiki/File:FVES_Classroom.jpg>, by Labpluto123.
+
+Birchip Community Library circulation desk <library.jpg> by Andrea Landaker, derived from <http://commons.wikimedia.org/wiki/File:Birchip_reno_008.jpg>, by Wrlctech.
+
+Koreshan machine shop <machine-shop.jpg> by Andrea Landaker, derived from <http://commons.wikimedia.org/wiki/File:Koreshan_SHS_large_machine_shop_inside01.jpg>, by Ebyabe.
+
+Finished yurt <farm-exterior.jpg> by Andrea Landaker, derived from <http://commons.wikimedia.org/wiki/File:FinishedYurt.jpg>, by Aluter.
+
+RoscheiderHof-rathaus (coal stove) <farm-interior.jpg> by Andrea Landaker, derived from <http://commons.wikimedia.org/wiki/File:RoscheiderHof-rathaus-2008-8.jpg>, by Dorothea Witter-Rieder.
+
+RO OT Slatina old city street 2 <city-street.jpg> by Andrea Landaker, derived from <http://commons.wikimedia.org/wiki/File:RO_OT_Slatina_old_city_street_2.jpg>, by Andrei Stroe.
+
+.License
+****
+These images are licensed under the Creative Commons Attribution-Share Alike 3.0 Unported license <http://creativecommons.org/licenses/by-sa/3.0/>.
+****
+
+==== CC-BY-SA-2.0
+
+The following images are licensed CC-BY-SA-2.0.
+
+Tool Area - Workshop <workshop.jpg> by Andrea Landaker, derived from <http://commons.wikimedia.org/wiki/File:Tool_Area_-_Workshop.jpg>, by Avi/Skrewtape.
+
+Chemistry Laboratory - Bench <lab.jpg> by Andrea Landaker, derived from http://commons.wikimedia.org/wiki/File:Chemistry_Laboratory_-_Bench.jpg, by Jean-Pierre.
+
+.License
+****
+These images are licensed under the Creative Commons Attribution-Share Alike 2.0 Generic license <http://creativecommons.org/licenses/by-sa/2.0/>.
+****
+
+==== CC-BY-3.0
+
+The following images are licensed CC-BY-3.0.
+
+EketorpsBorgHayBarn <barn.jpg> by Andrea Landaker, derived from <http://commons.wikimedia.org/wiki/File:EketorpsBorgHayBarn.jpg>, by Marcus Budde.
+
+.License
+****
+These images are licensed under the Creative Commons Attribution 3.0 Unported license <http://creativecommons.org/licenses/by/3.0/>.
+****
+
+== Audio
+
+=== Music
+
+"Our Personal Space" Music consists of the following, and is licensed under CC-BY-NC-SA-1.0.
+
+"Amnesia" by Ehren Starks (Magnatune Records).
+
+"Lines Build Walls" by Ehren Starks (Magnatune Records).
+
+"You are the You" by Ehren Starks (Magnatune Records).
+
+"No One Will Ever Know" by Ehren Starks (Magnatune Records).
+
+"Run" by Ehren Starks (Magnatune Records).
+
+"Prelude No. 2 in G Minor" by Jan Hanford (Magnatune Records).
+
+"Prelude No. 22 in C Major" by Jan Hanford (Magnatune Records).
+
+"Will" by Chad Lawson (Magnatune Records).
+
+"Reflections" by Chad Lawson (Magnatune Records).
+
+"Sojourn" by Chad Lawson (Magnatune Records).
+
+"Rain" by Giorgio Costantini (Magnatune Records).
+
+"Dandelion" by Kalabi (Magnatune Records).
+
+"Isaiah's Song" by Benji Goodrich (Magnatune Records).
+
+"Rain on the Sea" by Gianmarco Leona (Magnatune Records).
+
+"Oceans Apart" by Benji Goodrich (Magnatune Records).
+
+"Shanghai 20 00" by Attic Trax (Magnatune Records).
+
+"Alpha" by TranceVision (Magnatune Records).
+
+"Blessed" by Falling You (Magnatune Records).
+
+"Rising" by Ruben van Rompaey (Magnatune Records).
+
+"Carolan's Concerto" by Da Camera (Magnatune Records).
+
+"Rondo in A Minor K511 - Andante (WA Mozart)" by Willem Brons (Magnatune Records).
+
+"You Undone" by Anonymph (Magnatune Records), modified for this game by Andrea Landaker.
+
+.License
+****
+This music is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 1.0 Generic license <http://creativecommons.org/licenses/by-nc-sa/1.0/>.
+****
+
+=== Sound Effects
+
+"Our Personal Space" Sound Effects are modified and unmodified versions of sound files licensed under a variety of licenses.
+All modifications are released under the same license as the original sound files.
+
+==== Public Domain
+
+The following sounds are in the public domain.
+
+Alien Crickets <alien-crickets.mp3>, by Andrea Landaker, derived from a combination of animals-chitinous by dobroide <http://www.freesound.org/people/dobroide/sounds/37469/> and crickety-tupperware by alienistcog <http://www.freesound.org/people/alienistcog/sounds/124286/>
+
+Blender <blender.mp3>, by jackofall29 <http://www.freesound.org/people/jackofall29/sounds/158737/>.
+
+Horse Whinny <whinny.mp3>, by foxen10 <http://www.freesound.org/people/foxen10/sounds/149024/>
+
+AK-47 mid distance single shot <gunshot.ogg>, by Firearm SFX Library <http://freefirearmsfx.com/>
+
+Busy kids chatting <kids.mp3>, by Walter_Odington <http://www.freesound.org/people/Walter_Odington/sounds/32376/>
+
+Click <click.ogg>, by Andrea Landaker
+
+Message <message.mp3>, by Andrea Landaker
+
+Air Hose Delayed <puff.mp3>, by powpowrider <http://www.freesound.org/people/powpowrider/sounds/89098/>
+
+Punching Light Armor <punch.mp3>, by saint_leibowitz <http://www.freesound.org/people/saint_leibowitz/sounds/205744/>
+
+Radio Static <radio.mp3>, by pushkin <http://www.freesound.org/people/pushkin/sounds/100417/>
+
+Scissors <scissors.mp3>, by jadend2 <http://www.freesound.org/people/jadend2/sounds/205103/>
+
+Shovel <shovel.mp3>, by Ohrwurm <http://www.freesound.org/people/Ohrwurm/sounds/64416/>
+
+Siren <siren.mp3>, by UncleSigmund <http://www.freesound.org/people/UncleSigmund/sounds/117118/>
+
+.License
+****
+These sounds are in the public domain.
+****
+
+==== CC-BY-3.0
+
+The following sounds are licensed CC-BY-3.0.
+
+Cough <cough.mp3>, by OwlStorm <http://www.freesound.org/people/OwlStorm/sounds/151212/>
+
+Horse Snort <horse-snort.mp3>, by ERH <http://www.freesound.org/people/ERH/sounds/32043/>
+
+Splash <splash.mp3>, by soundscalpel.com <http://www.freesound.org/people/soundscalpel.com/sounds/110393/>
+
+.License
+****
+These sounds are licensed under the Creative Commons Attribution 3.0 Unported license <http://creativecommons.org/licenses/by/3.0/>.
+****
+
+==== CC-BY-NC-3.0
+
+The following sounds are licensed CC-BY-NC-3.0.
+
+Gears <gears.mp3>, by Timbre <http://www.freesound.org/people/Timbre/sounds/135647/>
+
+.License
+****
+These sounds are licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported license <http://creativecommons.org/licenses/by-nc/3.0/>.
+****
+
+==== Soundjay
+
+The following sounds are modified or unmodified versions licensed under the Soundjay license.
+All modifications are released under the same license as the original sound files.
+
+Airplane Interior <airplane-interior-2.mp3>, Cloth folding <cloth.mp3>, Fire <fire-2.mp3>, Geyser <geyser.mp3>, Ice Block Drop <ice-block-drop-01.mp3>, People <people.mp3>, Radio <radio.mp3>, Rain <rain-02.ogg>, Stream 2 <stream-2.mp3>, Stream 3 <stream-3.mp3>, Trickle <trickle.mp3>, Wood Logs 1 <wood-logs-1.mp3>, Wood Logs 2 <wood-logs-2.mp3>.
+
+.License
+****
+Sound Effects
+
+You are allowed to use the sounds free of charge and royalty free in your projects (such as films, videos, games, presentations, animations, stage plays, radio plays, audio books, apps) be it for commercial or non-commercial purposes.
+
+But you are NOT allowed to
+- post the sounds (as sound effects or ringtones) on any website for others to download, copy or use
+- use them as a raw material to create sound effects or ringtones that you will sell, distribute or offer for downloading
+- sell or license the sounds (as sound effects or ringtones) to anyone else
+- claim the sounds as yours
+- link directly to individual sound files on our server
+- distribute the sounds in apps or computer programs that are clearly sound related in nature (such as sound machine, funny sounds app, sound therapy app, ringtone maker, etc.). If you are developing such programs, contact us for licensing options.
+- distribute the sounds in apps or computer programs that use the sounds as the program's sound resource library for other people's use (such as animation creator, video editing app, song maker software, ebook creator, etc.). If you are developing such programs, contact us for licensing options.
+- use the sounds to create so-called 'video sound effects'. An example would be a video titled 'dog sound effect' that simply plays a dog sound effect.
+
+If you use the sound effects, please consider giving us a credit but it's not required.
+If you are adding your movie to IMDb (the Internet Movie Database), contact us on how to credit us correctly.
+****
+
+== Game Engine
+
+The Ren'Py game engine is composed of software of various licenses.
+
+.License
+****
+License
+
+Most of Ren'Py is covered by the terms of the following (MIT) license:
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Portions of Ren'Py are derived from code that is licensed under the GNU Lesser General Public License, so Ren'Py games must be distributed in a manner that satisfies the LGPL.
+
+Please see each individual source file for a list of copyright holders. The artwork in the demo is released by various copyright holders, under the same terms.
+
+Ren'Py binaries include code from the following projects:
+
+    Python (Python License)
+    Pygame (LGPL)
+    SDL (LGPL)
+    SDL_image (LGPL)
+    SDL_ttf (LGPL)
+    Freetype (LGPL)
+    Fribidi (LGPL)
+    libav (LGPL)
+    libjpeg-turbo (LGPL)
+    libpng (PNG license)
+    zlib (Zlib License)
+    bzip2 (Bzip2 License)
+    pyobjc (MIT License)
+    py2exe (MIT License)
+    GLEW (Modified BSD, MIT)
+    zsync (Artistic License)
+
+For the purpose of LGPL compliance, the source code to all LGPL software we depend on is either in the Ren'Py package (available from http://www.renpy.org/), or in the renpy-deps package (http://www.renpy.org/dl/lgpl/). We believe compliance can be achieved by including a copy of this license with every copy of Ren'Py you distribute, and referring to it in your project's README file.
+
+Ren'Py may be distributed alongside the jEdit or Editra text editors. Editra is licensed under the wxWindows license, while jEdit is under the GNU General Public License.
+****
+
