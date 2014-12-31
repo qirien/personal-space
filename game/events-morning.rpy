@@ -267,7 +267,7 @@ label work_1:
         "Usually things were pretty quiet at the clinic. I made an appointment with each colonist to learn about each person's medical conditions, and sometimes made suggestions for how to deal with chronic problems. We had a few minor injuries while setting up, but nothing serious."
         "But one day in particular was extremely busy."
         her surprised "Oh! What happened?"
-        show him annoyed at quarterleft
+        show him serious at left
         show pete at midleft
         with moveinleft
         "[his_name] carried Pete in and set him on the exam table. I could tell his leg was broken but he was not in immediate danger. I took his vitals while [his_name] filled me in."
@@ -277,7 +277,7 @@ label work_1:
         pete "Thanks, doc. Hurts like hell, though."
         him normal "I'll see you later, [her_name]."
         her normal "Hey, thanks for bringing him in."
-        hide him
+        hide him with moveoutleft
         "The x-rays showed where his femur was crushed into several pieces."
         her serious "It's a comminuted fracture; it will take quite a while to heal."
         "I was just about to put him under so I could put in some pins when the radio crackled and I heard Sara."
@@ -302,7 +302,7 @@ label work_1:
         scene bg farm_interior with fade
         show julia at midright with dissolve
         show sara sad at right with dissolve
-        show kid at center with dissolve
+        show van wince at center with dissolve
         show her serious at midleft with moveinleft
         if (skill_physical < 20):
             "By the time I got there, the little boy was unconscious."
@@ -316,6 +316,8 @@ label work_1:
         "Finally, he coughed and started to breathe."
         show sara normal
         show her normal
+        show van normal
+        with dissolve
         julia "Van! Oh, my boy!"
         "I didn't have time to stick around for adulation, though - Pete was still waiting for me to help his leg in the clinic."
         hide her with moveoutleft
@@ -1538,7 +1540,7 @@ label work_8:
         
     elif (profession == "teacher"):
         # Trouble with student
-        show kid at midleft with dissolve
+        show kid frown at midleft with dissolve
         "I had been having some trouble with one of the students, Gardenia. I asked her to stay after school so I could talk to her about her paper."
         "Gardenia" "Who cares if the letter's written the wrong way? You can tell what letter it is!"
         her normal "But it doesn't look right, and it will make it harder to learn cursive later."

@@ -489,8 +489,12 @@ label spiritual_master:
     hide julia
     "Even some of the kids chimed in."
     "Raúl Perón" "No school today!"
-    "Miranda Nguyen" "We haven't been eaten by wolfslugs!"
-    "Van Nguyen" "Mommy and daddy."
+    show kid at center with dissolve
+    "Gardenia Nguyen" "We haven't been eaten by wolfslugs!"
+    hide kid
+    show van at center with dissolve
+    van "Mommy and daddy."
+    hide van
     
     "They were all simple things, but thinking about them made us all feel so blessed and full of hope. And that hope gave us strength to work hard and help each other."
     scene bg clinic with fade

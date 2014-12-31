@@ -184,6 +184,7 @@ label social_2:
     show julia at midleft
     show thuc at quarterleft
     show kid at center
+    show van at left
     with moveinleft
     play bg_sfx "sfx/kids.mp3" loop
     julia "Thank you so much for having us over for dinner. I only hope we don't wear out your generosity by the end of the evening."
@@ -193,7 +194,9 @@ label social_2:
     else:
         "I just put out a bunch of beans, crackers, fruit, and vegetables, and let people choose what they wanted. It tasted a little bland, but the kids seemed to like it."
     "Then the kids all played hide-and-seek around the farm while we talked with the Nguyens."
-    hide kid with moveoutleft
+    hide kid 
+    hide van
+    with moveoutleft
     stop bg_sfx fadeout 20.0
     if (profession == "teacher"):
         her normal "The kids are doing great in school."

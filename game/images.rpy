@@ -115,8 +115,17 @@ image pete happy = "sprites/pete-happy.png"
 image helen = "sprites/helen.png"
 image helen happy = "sprites/helen-happy.png"
 image ilian = "sprites/ilian.png"
+image ilian happy = "sprites/ilian-happy.png" #TODO: use this somewhere
 image martin = "sprites/martin.png"
-image kid = "sprites/kid.png"
+image martin normal = "sprites/martin.png"
+image martin happy = "sprites/martin-happy.png" #TODO: use this
+image martin upset = "sprites/martin-upset.png"
+image van = "sprites/van.png"
+image van normal = "sprites/van.png"
+image van wince = "sprites/van-wince.png"
+image kid = "sprites/vani.png"
+image kid normal = "sprites/vani.png"
+image kid frown = "sprites/vani-frown.png"
 
 # Animals
 image lettie = "sprites/horse.png"

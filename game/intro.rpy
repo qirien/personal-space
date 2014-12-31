@@ -53,15 +53,16 @@ label teacher:
     with dissolve
     "...the elementary school. He had come to tell all the kindergartners about life on a farm."
     him happy "And do you know where eggs come from?"
-    show female_child at quarterright with dissolve
-    "Kid" "Chickens!"
+    show kid normal at quarterright with dissolve
+    kid "Chickens!"
     him normal "Right!"
-    "Kid" "But where do the chickens get the eggs?"
+    kid frown "But where do the chickens get the eggs?"
     him serious "They make them! Underneath those cute fluffy feathers, these birds are hard-working egg-making machines!"
-    "Kid" "Really? Like a robot?!"
+    kid normal "Really? Like a robot?!"
     show her happy with dissolve
     him happy "Yes! A robot made of meat!"
     show her normal
+    hide kid with moveoutright
     jump first_date
 
 
@@ -69,6 +70,7 @@ label teacher:
 
 label first_date:
     hide him with moveoutright
+    show her at center with move
     "As he was leaving, he slipped me a note."
     note "Hey there, my [her_name]!\n\nI've been thinking a lot about us lately..."
     note "How I want to be with you all the time."

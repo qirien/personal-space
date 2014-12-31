@@ -23,6 +23,9 @@ define helen = Character("Helen Jennings", color="cdcfb2", image="helen", ctc="c
 define julia = Character("Julia Nguyen", color="#7b84fd", image="julia", ctc="ctc_blink", ctc_position="nestled") #icy blue
 define martin = Character("Martín Perón", color="#dd1133", image="martin", ctc="ctc_blink", ctc_position="nestled")  #dark red
 
+define van = Character("Van Nguyen", color="#7788fc", image="van", ctc="ctc_blink", ctc_position="nestled")
+define kid = Character("Kid", color="#7788fc", image="kid", ctc="ctc_blink", ctc_position="nestled")
+
 
 define tutorial = Character("Tutorial", color="#ededed", ctc="ctc_blink", ctc_position="nestled")  #light gray
 define note = Character("note", kind=nvl, ctc="ctc_blink", ctc_position="nestled")
