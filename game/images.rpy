@@ -43,13 +43,19 @@ image overlay bedroom_covers = "bg/bedroom-overlay.png"
 image overlay computer_pad = "bg/computer-pad.png"
 image overlay underwater = "bg/underwater-overlay.png"
 
+# Tutorial screenshots
+image screenshot = "bg/screenshot.jpg"
+image screenshot_left = "bg/screenshot-left.jpg"
+image screenshot_center = "bg/screenshot-center.jpg"
+image screenshot_right = "bg/screenshot-right.jpg"
+
 
 # SPRITES
 # TODO: Make sure bottom of sprites looks good; cut off if needed
 
 # Him
 image him normal = "sprites/him.png"
-image him angry = "sprites/him-angry.png"
+image him angry = "sprites/him-angry.png" # TODO: combine with flirt so he has hands on hips while angry?
 image him annoyed = "sprites/him-annoyed.png"
 image him concerned = "sprites/him-concerned.png"
 image him flirting = "sprites/him-flirt.png"
@@ -62,7 +68,6 @@ image him sleeping = "sprites/him-sleeping.png" #TODO: make color (shirtless?) v
 
 # Her
 image her normal = "sprites/her.png"
-# TODO: Fix angry, annoyed, flirting, serious,sleeping when they are done.
 image her angry = "sprites/her-angry.png"
 image her annoyed = "sprites/her-annoyed.png"
 image her concerned = "sprites/her-concerned.png"
@@ -73,6 +78,9 @@ image her sad = "sprites/her-sad.png"
 image her surprised = "sprites/her-surprised.png"
 image her serious = "sprites/her-serious.png"
 image her sleeping = "sprites/her-sleeping.png"
+
+# Her Dress
+# TODO: Use dress, pregnant (what about dress & pregnant?!)
 
 define SMALL_IMAGE_SCALE = 0.55
 define SMALL_IMAGE_CROP = 90
@@ -90,14 +98,19 @@ image him happy head = LiveCrop((5, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.F
 
 
 # Other Characters
-image female_child = "sprites/female-child.png"
+image baby girl = "sprites/baby1.png"
+image baby boy = "sprites/baby2.png"
 image sara = "sprites/sara.png"
 image sara normal = "sprites/sara.png"
 image sara sad = "sprites/sara-sad.png"
 image pavel = "sprites/pavel.png"
-image thuc = "sprites/thuc.png"
+image pavel normal = "sprites/pavel.png"
+image pavel sad = "sprites/pavel-sad.png"
+image thuc = "sprites/thuc.png" # TODO: Make Thuc "serious"?
 image natalia = "sprites/natalia.png"
 image julia = "sprites/julia.png"
+image julia normal = "sprites/julia.png"
+image julia mad = "sprites/julia-mad.png"
 image brennan = "sprites/brennan.png"
 image brennan normal = "sprites/brennan.png"
 image brennan happy = "sprites/brennan-happy.png"
@@ -115,6 +128,7 @@ image pete happy = "sprites/pete-happy.png"
 image helen = "sprites/helen.png"
 image helen happy = "sprites/helen-happy.png"
 image ilian = "sprites/ilian.png"
+image ilian normal = "sprites/ilian.png"
 image ilian happy = "sprites/ilian-happy.png" #TODO: use this somewhere
 image martin = "sprites/martin.png"
 image martin normal = "sprites/martin.png"
@@ -123,7 +137,7 @@ image martin upset = "sprites/martin-upset.png"
 image van = "sprites/van.png"
 image van normal = "sprites/van.png"
 image van wince = "sprites/van-wince.png"
-image kid = "sprites/vani.png"
+image kid = "sprites/vani.png"  #TODO: add in these in more places?
 image kid normal = "sprites/vani.png"
 image kid frown = "sprites/vani-frown.png"
 

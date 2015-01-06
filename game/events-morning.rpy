@@ -3,7 +3,6 @@
 
 # Default work event if there's no special event
 label act_work:
-    # TODO: mention that the mayor's favorite song is "It's the End of the World"
     call set_work_bg
 
     if (relaxed <= -10):
@@ -25,7 +24,7 @@ label act_skip_work:
         "The mayor called me in to meet with him after work."
         show pavel at midright,behind her
         show her normal at midleft
-        pavel "[her_name], I'm worried about you. You haven't been putting in your usual effort at work lately."
+        pavel sad "[her_name], I'm worried about you. You haven't been putting in your usual effort at work lately."
         menu:
             "What should I say?"
             "I'm sorry.":
@@ -45,7 +44,7 @@ label act_skip_work:
             "I'm pregnant." if ((is_pregnant) or (is_pregnant_later)):
                 her serious "Sorry, I didn't think being pregnant would make me so tired."
 
-        pavel "I understand, but this can't happen all the time. We need you here."
+        pavel normal "I understand, but this can't happen all the time. We need you here."
         her serious "All right, thanks for understanding."
         $ slacked_off = 0
         $ relaxed -= 2  #it's stressful to get caught slacking off
@@ -300,7 +299,7 @@ label work_1:
         "Sara on the radio" "Hurry, [her_name], he's starting to turn blue!"
 
         scene bg farm_interior with fade
-        show julia at midright with dissolve
+        show julia mad at midright with dissolve
         show sara sad at right with dissolve
         show van wince at center with dissolve
         show her serious at midleft with moveinleft
@@ -318,7 +317,7 @@ label work_1:
         show her normal
         show van normal
         with dissolve
-        julia "Van! Oh, my boy!"
+        julia normal "Van! Oh, my boy!"
         "I didn't have time to stick around for adulation, though - Pete was still waiting for me to help his leg in the clinic."
         hide her with moveoutleft
         scene bg clinic with fade
@@ -346,9 +345,9 @@ label work_1:
         scene bg clinic with fade
         show her normal at midright with dissolve
         show pavel at quarterleft, behind her with moveinleft
-        pavel "Doctor, I'm so sorry about what happened today."
+        pavel sad "Doctor, I'm so sorry about what happened today."
         her serious "It's not your fault, Mayor Grayson."
-        pavel "Well, it partly is my fault. It's obvious you need an assistant. Perhaps not full-time, but someone who can come quickly and help out during busy times."
+        pavel normal "Well, it partly is my fault. It's obvious you need an assistant. Perhaps not full-time, but someone who can come quickly and help out during busy times."
         her normal "That would be helpful, actually."
         pavel "Well, I'll see who has some medical experience and get back to you about that."
         her "Thank you."
@@ -437,11 +436,11 @@ label work_1:
         "I separated the two fighters, and somehow I managed to make it through the rest of that day. Just as the children were all leaving, the mayor came by."
         show her concerned at midright with dissolve
         show pavel at midleft, behind her with moveinleft
-        pavel "[her_name], are you all right?"
+        pavel sad "[her_name], are you all right?"
         her serious "Yes...though I may have a black eye tomorrow."
         pavel "That's terrible! You shouldn't be all by yourself here, not every day."
         her serious "Well, part of it is that Tomás really doesn't need to be here every day. He's old enough to do most of his work from home, and then he could help out his parents more, too."
-        pavel "That may be a good idea, but I want to find someone to help you out on the days when you have all the kids here."
+        pavel normal "That may be a good idea, but I want to find someone to help you out on the days when you have all the kids here."
         menu:
             "Do I need help?"
             "I need help.":
@@ -847,7 +846,7 @@ label work_4:
         her normal "Pretty good! I feel bad that the older kids have to spend so much time helping the younger kids, but it's really the only way to teach so many of different ages."
         pavel "That's good, that's good... Well, what I came to talk to you about, is that one of the parents came to me with a concern."
         her surprised "Oh?"
-        pavel "They said that their child came up with red marks on their hands, and the child said you hit their hands with a ruler."
+        pavel sad "They said that their child came up with red marks on their hands, and the child said you hit their hands with a ruler."
         her angry "They said WHAT?!"
         brennan mad "[her_name]'ll be stern when the kids need it, but she's never hit anyone."
         pavel "This is news to you, then."
@@ -857,7 +856,7 @@ label work_4:
         brennan normal "I remember that. Then at recess, she was playing school with Josephina, and they were whacking each other's hands with sticks. They thought it was great fun."
         pavel "So, you think it was one of the other kids pretending to be a teacher?"
         her serious "That's the only thing I can think of."
-        pavel "It sounds like this was just a misunderstanding. I'll talk to Gardenia's parents and let them know what happened."
+        pavel normal "It sounds like this was just a misunderstanding. I'll talk to Gardenia's parents and let them know what happened."
         her normal "Thanks, Mayor Grayson. I wish they would have come to me about it, though."
         pavel "I'll tell them that, too. Good-bye, then."
         her "Good-bye."
@@ -1387,7 +1386,7 @@ label brennan_confess:
             him angry "I knew we couldn't trust him!"
             hide him
             show julia at right with dissolve
-            julia "How could such a dishonest spy care about our colony?"
+            julia mad "How could such a dishonest spy care about our colony?"
             hide julia
             show martin at midright with dissolve
             martin "I don't agree with his secret keeping, but Brennan does care about the colony - he saved Natalia and the kids from the solar flare."
@@ -1415,7 +1414,7 @@ label brennan_confess:
             pete "I don't think you got a choice, right?"
             brennan mad "Even if you stole the device from me, they could simply turn off their receiver, or refuse to pass on your messages. It might be better to retain their goodwill."
             hide sara 
-            show julia at center with dissolve
+            show julia normal at center with dissolve
             julia "How shall we do that?"
             brennan normal "By not treating me like a criminal."
             scene black with fade
@@ -1472,15 +1471,15 @@ label work_8:
         her surprised "Really?"
         julia "Yes, I'm still having pain all over, especially in my joints."
         her serious "Well, if the ibuprofen was not effective, it's probably not arthritis..."
-        julia "Obviously."
+        julia mad "Obviously."
         her annoyed "Well, let's try something else, then."
         julia "How shall we do that, if you don't know what is causing the pain? Shall I simply try every single drug available, and see what works?"
         her annoyed "Of course not. We started with the most probable cause, and we will work down from there."
-        julia "How long is this list of \"probable causes\"?"
+        julia normal "How long is this list of \"probable causes\"?"
         her serious "Well, there's lots of things that can cause joint pain. Infections, cancer, fibromyalgia, depressive disorders--"
-        julia "Enough. I won't subject my body to any more of your theories."
+        julia mad "Enough. I won't subject my body to any more of your theories."
         her annoyed "Look, the tests were inconclusive. The only way we'll know is by trying some different treatments!"
-        julia "My apologies for wasting your time. Goodbye, Dr. [her_name]."
+        julia normal "My apologies for wasting your time. Goodbye, Dr. [her_name]."
         hide julia with moveoutleft
         her sad "..."
         show brennan at midleft with moveinleft
@@ -1567,7 +1566,7 @@ label work_8:
 
     her surprised "We've been working here three years, now, haven't we?"
     brennan normal "Three years? Isn't it two?"
-    her serious "Oh, I meant three Talaam years. That's probably about two Earth years."
+    her normal "Oh, I meant three Talaam years. That's probably about two Earth years."
     brennan mad "I can't get used to the different time measurements here - no matter how this planet rotates, I can't call seven months a year."
     if (wants_to_leave):
         her concerned "I know what you mean. This place still doesn't feel like home."

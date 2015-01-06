@@ -704,8 +704,8 @@ label social_7:
     sara sad "Mayor, it's not fair for the Nguyens to always be taking food from the storehouse but not contributing anything. Their job is to be farmers, right?!"
     pavel "Yes, it is - do you have reason to believe they are not doing their job?"
     sara "Their fields are completely empty!"
-    pavel "I see..."
-    pavel "[her_name], would you please go and speak to the Nguyens and see if you can determine the problem?"
+    pavel sad "I see..."
+    pavel normal "[her_name], would you please go and speak to the Nguyens and see if you can determine the problem?"
     her surprised "(Me?! Well, I guess Sara might be too upset about it, and I am on friendly terms with Julia and Thuc...)"
     her serious "Yes, I'll do that."
     scene bg laundry with fade
@@ -718,7 +718,7 @@ label social_7:
         "Ask if she is okay.":
             her concerned "Is...everything all right with your family?"
             "Mrs. Nguyen stiffened, and she suddenly became very interested in her laundry."
-            julia "Of course. Everything's fine."
+            julia mad "Of course. Everything's fine."
             her serious "I mean, if there's any problems, we're all here to help each other..."
             julia "I will ask if we need anything."
             "I could tell something was bothering her, but she didn't want to talk about it with me."
@@ -729,19 +729,21 @@ label social_7:
             "All I could do was leave...it was clear something was wrong, but she wouldn't tell me what it was."
             scene black with fade
             "I sent her an apology message later that day, and she wrote me back."
-            julia "Thanks for stopping by...If you really want to help, perhaps someone could help Thuc with a flooding system for the rice he wants to plant."
+            julia_c "Thanks for stopping by...If you really want to help, perhaps someone could help Thuc with a flooding system for the rice he wants to plant."
+            nvl clear
             
         "Ask why they haven't planted anything.":
             her surprised "Why haven't you planted anything this season?"
             julia "You think you know all about our farm, just by looking at it?"
             her serious "No, but it just looks empty, so I wondered-"
-            julia "You wondered?! If you have time to waste with wondering, then perhaps you should put it to better use than bothering people who are trying to get some work done!"
+            julia mad "You wondered?! If you have time to waste with wondering, then perhaps you should put it to better use than bothering people who are trying to get some work done!"
             her concerned "I'm sure you have a good reason--"
             julia "Yes, but I see no reason to share our troubles with you. Thank you for stopping by, but I don't have any more time to share with you."
             "She pinned clothes furiously, and I thought I'd better leave."
             scene black with fade
             "I sent her an apology message later that day, and she wrote me back."
-            julia "If you really want to help, perhaps someone could help Thuc with a flooding system for the rice he wants to plant."
+            julia_c "If you really want to help, perhaps someone could help Thuc with a flooding system for the rice he wants to plant."
+            nvl clear
 
         "Chat for a while.":
             her normal "I just came by to say hi. We don't get to see each other very often, do we?"
@@ -770,13 +772,13 @@ label social_7:
             her concerned "I know what you mean. I felt the same way, too, after the corn."
             julia "Thuc's not one to complain about his troubles, but I can see he's taken this hard. I suppose I haven't been very encouraging, either."
             her serious "It is hard... but maybe if you had some help, it'd be easier to get started?"
-            julia "Who would want to help us? Perhaps you've noticed that I'm not the most friendly person around..."
+            julia mad "Who would want to help us? Perhaps you've noticed that I'm not the most friendly person around..."
             her normal "I think a lot of people would help! Not only would they want rice to eat, but we all are going to need help at some point."
             if (have_goat):
                 her "Your family has been so kind to us, giving us one of your goats, and Thuc is a good friend to [his_name]. Of course we will help you."
             else:
                 her "Thuc is a good friend to [his_name], so I'm sure he at least would be willing to help!"
-            julia "Oh, thank you. I've fretted about this long enough, it's time we did something about it!"
+            julia normal "Oh, thank you. I've fretted about this long enough, it's time we did something about it!"
             
     scene black with fade
     "I told the mayor what I had found out, and he agreed to find some people to help Thuc get his flooding system setup before the start of the next planting season."
@@ -803,11 +805,11 @@ label social_8:
     show pavel at right with move
     "Either I giggled, or he sensed my presence, because he turned around looking sheepish."
     show pavel at center with move
-    pavel "[her_name]! Sorry about that."
+    pavel sad "[her_name]! Sorry about that."
     her happy "Not at all! You should be in a talent show or something, that was great."
-    pavel "Well, it wouldn't be a talent show if I was in it. My skills lie in other areas, I'm afraid."
+    pavel normal "Well, it wouldn't be a talent show if I was in it. My skills lie in other areas, I'm afraid."
     her flirting "Like keeping space colonies running?"
-    pavel "I used to think so, but..."
+    pavel sad "I used to think so, but..."
     her surprised "What's wrong?"
     pavel "There's just been... a really difficult situation, lately. I'm not sure I know what to do."
     her serious "Do you want to talk about it?"
@@ -821,18 +823,18 @@ label social_8:
         
     pavel "It grows wild all over here, and someone found out that if you smoke it, it is a powerful stimulant."
     her surprised "Like caffeine?"
-    pavel "Yes, but more powerful. Some of the colonists say they can get a lot more done and have more energy when they use it."
+    pavel normal "Yes, but more powerful. Some of the colonists say they can get a lot more done and have more energy when they use it."
     her serious "Is it dangerous?"
     pavel "We haven't studied it enough yet to know what long term effects it may have. It does seem to make the user more tired afterwards, but that's the only reported side effect."
     her surprised "Has someone been abusing it?"
-    pavel "One woman wants to make smoking fire grass illegal. Apparently her kids play at the house of someone who smokes it, and she says the secondhand smoke makes them jittery and cranky."
+    pavel sad "One woman wants to make smoking fire grass illegal. Apparently her kids play at the house of someone who smokes it, and she says the secondhand smoke makes them jittery and cranky."
     menu:
         "What should I say?"
         "You should make it illegal.":
             her concerned "That sounds really unhealthy; people shouldn't be using things like that."
             pavel "Hmmm, I had been thinking that it wasn't our job to tell people what they should and shouldn't consume."
             her annoyed "Yes, but it doesn't just affect the people that smoke it - it affects their kids, and apparently other people's kids, too.  That's not fair for them."
-            pavel "You're right. And I wouldn't be surprised if some of the older kids start smoking it to copy their parents, if we don't do something about it now."
+            pavel normal "You're right. And I wouldn't be surprised if some of the older kids start smoking it to copy their parents, if we don't do something about it now."
             her serious "But it grows everywhere... enforcing a law like that would be difficult."
             pavel "Well, my job is not to make sure no one ever breaks any laws. My job is just to mediate disputes."
             her surprised "So... if someone breaks a law, but nobody cares, nothing will happen?"
@@ -847,13 +849,13 @@ label social_8:
             pavel "That's true..."
             her annoyed "People don't need laws to tell them how to live; people only need laws to stop those that want to harm others. Too many laws just get in the way."
             her flirting "Besides, do you really want to have to enforce a law like that?"
-            pavel "Good point. I'll see if there's a solution to this problem aside from making a new law."
+            pavel normal "Good point. I'll see if there's a solution to this problem aside from making a new law."
             her normal "I'm sure there is."
         "The colony should vote on it.":
             her concerned "Don't we vote on all new laws?"
             pavel "Yes, of course, but I don't want to encourage the woman to propose a new law if there's another solution to this problem."
             her normal "Well, if she has enough support, then maybe we should let everyone vote on it. That puts the burden off you a little bit and onto everyone else."
-            pavel "That might work... if people don't vote for it, then she will have to find another solution to her problem."
+            pavel normal "That might work... if people don't vote for it, then she will have to find another solution to her problem."
             her serious "And if they do vote for it?"
             pavel "Then hopefully people that want to smoke fire grass will be more discreet about it."
             her concerned "Just because there's a law against something doesn't mean people will stop doing it."
@@ -873,9 +875,9 @@ label social_master:
     show pavel at midright, behind her with dissolve
     show her normal at midleft with moveinleft
     her surprised "Mayor Grayson, can I talk to you for a moment?"
-    pavel "I'd like to, [her_name], but there's too much to do. I have to decide where the new farm should be, and how to allocate the latest harvest, and which supply requests to approve, and-"
+    pavel sad "I'd like to, [her_name], but there's too much to do. I have to decide where the new farm should be, and how to allocate the latest harvest, and which supply requests to approve, and-"
     her normal "That's what I want to talk to you about."
-    pavel "Oh?"
+    pavel normal "Oh?"
     her serious "There's too much here for just one person. You need some help."
     pavel "Isn't that what I told you about your job when we first arrived here?"
     her normal "Yes, and I listened to you, so I hope you will listen to me."

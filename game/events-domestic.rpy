@@ -359,7 +359,7 @@ label domestic_7:
     show her normal at midleft 
     with dissolve
     him "I bet you could make some soap, [her_nickname]."
-    her "I bet I could. But I bet we could make even better soap together."
+    her flirting "I bet I could. But I bet we could make even better soap together."
     if (loved >= 5):
         him flirting "Everything we make together is good."
     else:
@@ -368,7 +368,7 @@ label domestic_7:
     scene black with fade
     "Making soap from scratch wasn't something I had ever done before. On Earth soap was so cheap there was not much reason to make your own. But I used my computer pad to look up instructions."
     scene bg laundry with fade
-    show her normal at center with dissolve
+    show her serious at center with dissolve
     her "It looks like it will take at least a month to make the soap...better start on it now!"
     "First, I put on gloves and goggles. We needed to make lye, which is very caustic. I got some ashes from our stove and added boiling water, and let it sit overnight."
     "Meanwhile, I needed to get some fat."
@@ -416,7 +416,7 @@ label domestic_7:
         "I poured all the soap in a box and let it cool."
     "After the hard soap cooled, I cut it up and set it out to dry and air out. After a few weeks, it was ready to use!"
     "My first batch was very drying and hard on the skin, but it did get things clean. I decided to start saving ashes and fat to use so I could get better at making soap."
-    her "Now, after all this hard work, should I share some with everyone else? I do have some extra..."
+    her surprised "Now, after all this hard work, should I share some with everyone else? I do have some extra..."
     menu:
         "What should I do?"
         "Share it.":

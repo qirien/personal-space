@@ -7,6 +7,12 @@ define mp = MultiPersistent("cuttlefishgames")
 # Declare characters used by this game .
 # TODO: Update colors when sprites are finished
 define narrator = Character(ctc="ctc_blink", ctc_position="nestled")
+# TODO: Instead of image="her", image=LiveComposite(blah blah blah)
+# Needs to run a function that decides what she is wearing (nothing, uniform, dress, pregnant) 
+# (and what expression she has)?
+# See http://www.renpy.org/wiki/renpy/doc/cookbook/Blink_And_Lip_Flap
+#  and http://gamedev.stackexchange.com/questions/11431/renpy-get-an-image-depending-on-variables
+#  and http://www.renpy.org/doc/html/displayables.html
 define her = DynamicCharacter("her_name", color="#66dd77", image="her", ctc="ctc_blink", ctc_position="nestled") #light mint green
 define him = DynamicCharacter("his_name", color="#d82222", image="him", ctc="ctc_blink", ctc_position="nestled") #red 
 

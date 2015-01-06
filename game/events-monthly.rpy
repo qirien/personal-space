@@ -1967,7 +1967,7 @@ label monthly_event_13:
     "[his_name] started barring our door at night."
     "The mayor brought it up at our next community meeting."
     scene bg community_center with fade
-    show pavel at center, behind natalia with dissolve
+    show pavel sad at center, behind natalia with dissolve
     pavel "I know everyone is worried, and scared, but this fear is tearing our community apart."
     show natalia at right with moveinright
     natalia "Who knows who will be next?! It clearly wasn't an accident!"
@@ -1991,7 +1991,7 @@ label monthly_event_13:
     "The mayor took Pete to stay at his house until the next day, when the trial started."
 
     call set_work_bg
-    show pavel at midleft, behind her
+    show pavel sad at midleft, behind her
     show her serious at midright
     with dissolve
     pavel "[her_name], you've been randomly selected to be on the jury. Is there any reason you should not do this? Any conflict of interest with either side?"
@@ -2000,7 +2000,7 @@ label monthly_event_13:
     
     scene bg community_center with fade
     "Everyone in the town turned out to see the trial. Pete repeated what happened, and Mrs. Perón repeated what she had found. It sounded like a fairly simple case of involuntary manslaughter; we mainly needed to decide upon a sentence."
-    show pavel at midleft, behind pete
+    show pavel sad at midleft, behind pete
     show pete at midright
     with dissolve
     pavel "There is no mandatory sentencing in the laws of our colony. I am sure you will find a solution that is fair to all parties involved."
@@ -3380,7 +3380,7 @@ label done_party_menu:
                 show sara at center
                 show her normal at midright
                 show natalia at left
-                show julia at right
+                show julia mad at right
                 show brennan at midleft
                 $ party_meat = False
                 $ party_gravy = False
@@ -3425,11 +3425,11 @@ label done_party_menu:
                 elif (skill_domestic >= 30):
                     "Despite the strange ingredients, I managed to make something that didn't taste terrible, but it certainly wasn't the best."
                     sara "And the winner is...Julia! Her strange but delicious combination is a great hit! After the game everyone can come try some."
-                    julia "Thank you."
+                    julia normal "Thank you."
                 else:
                     "I tasted my concotion, and it was pretty terrible."
                     sara "And the winner is...Julia! Her strange but delicious combination is a great hit! After the game everyone can come try some."
-                    julia "Thank you."
+                    julia normal "Thank you."
                     
     else:
         "Everyone milled around, chatting and enjoying the chance to relax."
@@ -3549,7 +3549,7 @@ label monthly_event_22:
     "That was harder to do when the shampoo was found missing from the storehouse..."
     scene bg community_center with fade
     show pavel at center with dissolve
-    pavel "...and so if anyone has extra shampoo at their house, we ask that you please return it to the storehouse. We want to make sure what we have left is distributed fairly."
+    pavel sad "...and so if anyone has extra shampoo at their house, we ask that you please return it to the storehouse. We want to make sure what we have left is distributed fairly."
     hide pavel with dissolve
     show her surprised at midright
     show him serious at midleft with dissolve
@@ -3557,7 +3557,7 @@ label monthly_event_22:
     him happy "As long as we're not out of toilet paper, I think we'll survive."
     hide him
     hide her
-    show pavel at midright, behind sara
+    show pavel sad at midright, behind sara
     show natalia at midleft
     show sara at right
     show lily at left with dissolve
@@ -3575,7 +3575,7 @@ label monthly_event_22:
     show pavel at midleft, behind her with moveinleft
     pavel "Do you have a minute, [her_name]?"
     her serious "Sure, what do you need?"
-    pavel "I was hoping you might be able to help with our missing shampoo problem..."
+    pavel sad "I was hoping you might be able to help with our missing shampoo problem..."
     her surprised "Me? What do you think I could do?"
     $ highest_skill = highest_stat()
     $ her_adjective = "trustworthy"
@@ -3596,7 +3596,7 @@ label monthly_event_22:
         "What should I say?"
         "{i}I can ask around.{/i}" if ((skill_social >= 70) or (skill_spiritual >= 70)):
             her normal "I can ask around for you."
-            pavel "Thank you, maybe people will be more willing to talk to you."
+            pavel normal "Thank you, maybe people will be more willing to talk to you."
             her surprised "Hey, do you guys need any shampoo? You said Naomi was going to get some when you found out it was missing..."
             pavel "No, we're just fine. Helen gave us some of hers, so you don't need to worry about us."
             her normal "Okay, good."
@@ -3653,11 +3653,11 @@ label monthly_event_22:
             show her serious at midleft with moveinleft
             pavel "Well? How's your search going?"
             her concerned "Mayor, I have bad news."
-            pavel "What's that? You don't know who did it?"
+            pavel sad "What's that? You don't know who did it?"
             her "There was not just one thief. There's about fifteen of them."
             pavel "Fifteen?! What do you mean?"
             her "There's not one person hoarding all fifteen bottles of shampoo; fifteen people or so had each taken one extra bottle \"just in case\"."
-            pavel "And now there's none left. Ahhh, I see."
+            pavel normal "And now there's none left. Ahhh, I see."
             scene black with fade
             "The mayor sent out a message explaining the situation, and several people returned an \"extra\" bottle they just happened to have lying around, so there was enough for everyone."
             "But I kept thinking about how such a little thing like taking an extra bottle of shampoo had affected our whole colony."
@@ -3669,7 +3669,7 @@ label monthly_event_22:
             her normal "I could place some cameras in the storehouse, so we could catch them in the act."
             pavel "How would that work? They've already stolen the shampoo."
             her normal "We'll say that someone returned one, and plant a decoy. Then when they come to get that one, we'll catch them on camera."
-            pavel "Hmmm, that could work!"
+            pavel normal "Hmmm, that could work!"
             scene bg storehouse with fade
             show her normal at midleft with moveinleft
             "I got a spare camera from the shuttle and set it up in the storehouse to send the video feed to me. Ilian came in while I was working."
@@ -3697,11 +3697,11 @@ label monthly_event_22:
             show her normal at midleft with moveinleft
             pavel "Well, did it work?"
             her concerned "Yeah... Natalia snuck in last night and took the fake bottle."
-            pavel "Really? That's strange... well, I'll ask her to come talk to us."
+            pavel sad "Really? That's strange... well, I'll ask her to come talk to us."
             show natalia at midleft with moveinleft
             show her at quarterleft with move
             natalia "What is it, Mayor?"
-            pavel "Please return the shampoo, Natalia."
+            pavel sad "Please return the shampoo, Natalia."
             natalia "What are you talking about?! I'm not hoarding a bunch of shampoo!"
             her serious "You snuck into the storehouse last night and took the bottle that was returned."
             natalia "How do you know that?!"
@@ -3747,7 +3747,7 @@ label monthly_event_22:
             $ relaxed += 2
         "{i}I could look for clues.{/i}" if (skill_knowledge >= 80):
             her normal "I could look around for clues."
-            pavel "You're certainly welcome to do that, though we didn't find anything suspicious when we checked the storehouse."
+            pavel normal "You're certainly welcome to do that, though we didn't find anything suspicious when we checked the storehouse."
             "I decided to investigate."
             "I started out by examining the scene of the crime, the storehouse."
             scene bg storehouse with fade
@@ -3800,11 +3800,11 @@ label monthly_event_22:
             show her serious at midleft with moveinleft
             pavel "[her_name]! Have you found our thief yet?"
             her serious "Not \"thief\"...\"thieves\"."
-            pavel "What?! A conspiracy?!"
+            pavel sad "What?! A conspiracy?!"
             her happy "No, not really. Just a lot of people who decided to take a little extra."
             pavel "Do you know who?"
             her serious "I could compare all these fingerprints to the colonist database...but perhaps we should give everyone one more chance to come clean on their own?"
-            pavel "Ha ha, 'come clean'."
+            pavel normal "Ha ha, 'come clean'."
             her surprised "No pun intended!"
             scene black with fade
             "The mayor sent out a message explaining the situation, and several people returned an \"extra\" bottle they just happened to have lying around, so there was enough for everyone."
@@ -3814,7 +3814,7 @@ label monthly_event_22:
             $ relaxed += 2
         "{i}I could try and make shampoo.{/i}" if ((skill_creative >= 70) or (skill_domestic >= 90)):
             her normal "I could try and make shampoo. Then everyone could have more."
-            pavel "That won't catch our thief, but it will solve one problem. Best of luck to you, [her_name] - let me know what you figure out."
+            pavel normal "That won't catch our thief, but it will solve one problem. Best of luck to you, [her_name] - let me know what you figure out."
             scene bg farm_interior with fade
             show her normal at center with dissolve
             "I did some research. I found methods for making shampoo out of bar soap, liquid soap, honey, or coconut milk, but those were all things we didn't have much of. I finally decided to make sort of a dry rinse out of baking soda that would absorb oil."
@@ -4455,9 +4455,12 @@ label monthly_event_24:
 
         "We had dinner, and I went to bed early."
         "I felt frustrated and tired of waiting and wished I had more control over my own body."
+        scene bg bedroom
+        show overlay night
+        show overlay bedroom_covers behind night
         show him sleeping at midright, squatting, behind overlay with dissolve
-        hide overlay night
-        show her serious
+        show her serious at midleft
+        
         "I woke up in the early morning to more contractions. I didn't want to wake up [his_name] yet, so I walked around outside as the sun was just starting to come up."
         hide her with moveoutleft
         scene bg sunset with fade
@@ -4557,26 +4560,27 @@ label monthly_event_24:
         julia "See if she wants to lean on you."
         him serious "Ummm, do you want to lean on me?"
         "I couldn't concentrate on anything except breathing and pushing. Talking was impossible."
-        julia "Don't use words, just be there."
+        julia mad "Don't use words, just be there."
         show her at center with move
         show him at midleft with move
-        show julia at midright with move
+        show julia normal at midright with move
         "I pushed five more times. Every muscle in my body felt so tired that I started shaking all over. I felt ready to give up, but that was impossible."
         "I managed to gasp out the one thing that was running through my head."
         her concerned "I guess it's, too late, to, change my mind?"
         julia "Yes, dear. But don't worry, another four or five pushes and you'll be there!"
         "After three more pushes I felt like I was done. I had nothing left. If it was a race, I would have quit long ago."
         her sad "Is this, even, doing anything?!"
-        julia "Yes! I can see the top of her head!"
+        julia mad "Yes! I can see the top of her head!"
         "Suddenly, I felt centered. I had almost forgotten why I was going through all this pain in the first place. This wasn't about me, or about proving something, or winning, or anything stupid like that. This was about our baby, our tiny creature who needed my help just to exist!"
         show her angry
         "I took a deep breath, and pushed again, stretching past fire and pain and breathing and my own body. I think I probably screamed. Everything else disappeared, and all that was left was the burning. But it still wasn't enough; somehow I pushed again!"
         him happy "Yeah! There she is!"
-        julia "One more little push, [her_name], and then you just lie back and relax a bit."
-        show her sleeping
+        julia normal "One more little push, [her_name], and then you just lie back and relax a bit."
+        show her serious
         "I closed my eyes. I think [his_name] was holding the baby while Julia cut the cord. It was finished. I did it."
         "Something small and floppy was placed on my chest. I opened my eyes."
-        show her serious
+        show baby girl at Position(xpos=500, ypos=400)
+        show her normal
         if (loved >= 0):
             him happy "Hey, little one, this here's your momma. She is one awesome woman, but you don't need me to tell you that, right?"
         else:
@@ -4585,7 +4589,7 @@ label monthly_event_24:
         "I looked down at the tiny face in my arms. I couldn't even fathom that this was the same being that I had nourished for these last nine months. I guess I was supposed to feel intense love? I don't know; mostly I was just tired and in awe."
         julia "I think she looks like you, [her_name]."
         him surprised "Really?"
-        her normal "I think she looks more like...a baby, than either one of us. Babies all look alike to me..."
+        her serious "I think she looks more like...a baby, than either one of us. Babies all look alike to me..."
         julia "Well, they won't so much now that you have one of your own."
         "One of my own... that was still so strange."
         him surprised "What should we call her?"
@@ -4638,6 +4642,7 @@ label monthly_event_24:
             her angry "Really? You feel alive when you realize that bugs just ate all your food and you might starve? Or when you almost get your hands burned off?"
             him angry "Yes! It's better than all the idiotic stuff people do on Earth."
             him angry "All they care about is how to make more money so they can buy more stuff so they can distract themselves from the fact that nothing they do matters!"
+            show her annoyed with dissolve
             him annoyed "Here, everything matters. Every day you have to get up and do your job, because if you don't, everyone will suffer."
             if (community_level <= COMMUNITY_LEVEL_OK):
                 him annoyed "But I guess you wouldn't understand that."

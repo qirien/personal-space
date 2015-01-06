@@ -411,7 +411,7 @@ label msg_23:
     julia_c "I was just imagining how you must feel."
     ilian_c "I suggest you both stop arguing, since right after the sermon you both returned items you had \"borrowed\" from the storehouse."
     brennan_c "Ilian! Shame on you!"
-    ilian_c "What? It stopped their argument, didn't it?"
+    ilian_c "What? I stopped their argument."
     brennan_c "You stopped it just as it was getting good!"
     nvl clear
     julia_c "This is none of your business, Mr. Callahan."

@@ -277,8 +277,9 @@ label spiritual_6:
     show helen at quarterright with dissolve
     show naomi sad at center
     show her normal at midleft
+    show baby boy at Position(xpos=750, ypos=400)
     with  moveinleft
-    "We entered their small cabin, not that much different from our own. Helen was sitting on the bed doing some knitting. She invited us to sit next to her."
+    "We entered their small cabin, not that much different from our own. Helen was sitting on the bed with the baby on her lap doing some knitting. She invited us to sit next to her."
     her surprised "What are you making?"
     helen "It's supposed to be a baby hat, but it isn't turning out very well. I don't think any baby's head is shaped like this!"
     "She held up her misshapen knitting and laughed, but it was a forced laugh. Naomi didn't say anything, though - she just patted Helen's shoulder and looked at me. What was I supposed to say?"
@@ -292,11 +293,11 @@ label spiritual_6:
             her serious "The problem is with this row of stitches here. See?"
             helen "Oh, you're right! I'll have to redo these last six rows..."
             her normal "The rest of it looks great. Ummm....how's your baby doing, anyway?"
-            "She leaned over the side of the bed to check on him, where he was lying on a blanket kicking his legs and grinning toothlessly."
+            "She looked down at him, and he grinned toothlessly."
             helen "He's doing okay, I think. He's growing bigger, anyway."
         "How's your baby doing?":
             her concerned "How's your baby doing, anyway?"
-            "She leaned over the side of the bed to check on him, where he was lying on a blanket kicking his legs and grinning toothlessly."
+            "She looked down at him, and he grinned toothlessly."
             helen "He's doing okay, I think. He's growing bigger, anyway."
         "{i}I'm going to have a baby, too{/i}" if is_pregnant:
             her normal "We're going to have a baby soon..."
@@ -310,8 +311,11 @@ label spiritual_6:
             helen "We weren't really anticipating becoming parents so soon..."
             her normal "Well, I think you're doing great. It's cool that you're making something for the baby."
 
-    show naomi sad at quarterleft with move
+    show naomi sad at quarterleft
+    show baby boy at quarterleft, Position(ypos=400)
+    with move
     show her serious at center with move
+    
     "We sat in silence for a few minutes. Naomi picked up the baby and played with him on the other side of the room, leaving Helen and I sitting together."
     "I didn't know what to say. I hoped Naomi would say something wise and comforting, but she didn't. Finally, Helen set down her hat."
     helen "The truth is, I hate knitting."

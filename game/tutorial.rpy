@@ -1,10 +1,5 @@
 # File containing the tutorial, played at month 1
 
-image screenshot = "bg/screenshot.jpg"
-image screenshot_left = "bg/screenshot-left.jpg"
-image screenshot_center = "bg/screenshot-center.jpg"
-image screenshot_right = "bg/screenshot-right.jpg"
-
 label tutorial:
     tutorial "This screen shows [her_name]'s computer pad."
     
