@@ -75,7 +75,7 @@ init -1 python hide:
 
         ## The fonts used by this theme. The default fonts may not be
         ## suitable for non-English languages.
-        regular_font = serif_font,
+        regular_font = serif_font
         #bold_font = "DejaVuSerifBold.ttf",
 
         ## And we're done with the theme. The theme will customize
@@ -235,8 +235,11 @@ init -1 python hide:
     config.window_hide_transition = dissolve
     
     ## Used when going from ADV to NVL, and vice versa
-    config.adv_nvl_transition = dissolve
-    config.nvl_adv_transition = dissolve
+    config.adv_nvl_transition = zoomin
+    config.nvl_adv_transition = zoomout
+
+    # add a default dissolve transition between each say if no other transition is speficied
+    config.say_attribute_transition = dissolve
 
 
     #########################################

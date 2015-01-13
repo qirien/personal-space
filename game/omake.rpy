@@ -18,7 +18,7 @@ label omake:
     him surprised "Seriously!?  What a cheeseball!"
     her annoyed "I know! Like I'm supposed to feel flattered because some random guy likes my physical appearance."
     him happy "And you've already got me, so what more could you want in a man?"
-    her flirting "I don't know, maybe more flattering cheesy lines?"
+    her flirt "I don't know, maybe more flattering cheesy lines?"
     him serious "Ohhh, [her_nickname], you're so sexy, you make my heart race faster than a space shuttle."
     her serious "You're so sexy, you're illegal to bring on space shuttles."
     him laughing "Ha ha ha!"

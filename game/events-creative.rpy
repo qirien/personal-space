@@ -21,7 +21,7 @@ label creative_0:
     show him normal at center with moveinleft
     him serious "Hmm, this is a nice house, here. Hand-carved moldings, even! I wonder who it belongs to?"
     him happy "Oh, look, it's written right here above the door, [his_name] and [her_name]. One of them must be very creative."
-    her flirting "I hear the other one's hard-working and handsome."
+    her flirt "I hear the other one's hard-working and handsome."
     him flirting "Really? We should go meet them sometime."
 
     "I was a little worried he wouldn't like it, but I guess he doesn't mind."
@@ -148,7 +148,7 @@ label creative_4:
         her normal "Yeah! I can think of a few things I'd like to use it for too, like giving some of our livestock a leash or making a backpack."
         him flirting "Oh, are you going to make a leash for me too?"
         if (loved > 0):
-            her flirting "Only if you want one."
+            her flirt "Only if you want one."
             $ loved += 2
         else:
             her annoyed "Don't be silly."
@@ -208,7 +208,7 @@ label creative_5:
             him normal "I do sometimes miss it. Would it have reclining seats?"
             her normal "Well, considering it will be two bed-seats from the shuttle, yes."
             him surprised "That means it could be a sofabed too."
-            her flirting "Our bed isn't good enough?"
+            her flirt "Our bed isn't good enough?"
             him normal "Well, I'm not sure which I'd prefer. But it will be nice to have an extra bed in case someone else is stranded here."
 
         "We could sit on it to watch movies.":

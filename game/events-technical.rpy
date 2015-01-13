@@ -132,7 +132,7 @@ label technical_3:
     with moveinleft
     play bg_sfx "sfx/gears.mp3" loop
     him happy "You made this?! This is so awesome!\n...\n What is it?"
-    her flirting "It's a clothes wringer! What kind of farm boy are you, anyway?"
+    her flirt "It's a clothes wringer! What kind of farm boy are you, anyway?"
     him serious "The kind that always had electricity."
     her surprised "Oh, good idea! I could hook it up to the solar and it could crank itself on sunny days...if we could get enough torque..."
     him normal "Whatever you want to do, my lovely inventor."
@@ -165,8 +165,8 @@ label technical_4:
         "It's not vital to my survival.":
             her serious "I just wanted to build a hot water heater for my house. Do you have any ideas about what kind of material I could use that would conduct heat easily?"
             ilian "Hmm. Well, I know we're always finding new uses for these animal skeleton things."
-            her flirting "And by \"always finding\" you mean no one has thought of anything to do with them?"
-            ilian "They're looking pretty good in my junk pile, if I do say so myself."
+            her flirt "And by \"always finding\" you mean no one has thought of anything to do with them?"
+            ilian happy "They're looking pretty good in my junk pile, if I do say so myself."
             her serious "I'll take a few. There has to be some way I could use them."
             "The exoskeletons varied in texture. Some parts were brittle while others were as hard as a seashell. I felt like there was no way I could make anything useful out of them."
             "I put them aside and wondered if I could make a tank out of wood."
@@ -261,9 +261,9 @@ label technical_6:
     her surprised "Do you mind if I get some more parts from the shuttle?"
     ilian "What are you making now?"
     her normal "A water wheel, for electricity."
-    ilian "That sounds great. Can you hook it up to the storehouse?"
+    ilian happy "That sounds great. Can you hook it up to the storehouse?"
     her concerned "No, it's just for our house..."
-    ilian "Maybe we should all be on the same power grid..."
+    ilian normal "Maybe we should all be on the same power grid..."
     her serious "Maybe so, but we're not right now. Besides, if we were, we'd have the same problems we do now on cloudy days, just everyone will blame their neighbors for using all the electricity."
     ilian "True. Well, if you find something you can use, go ahead - you're the only one who's shown much of an interest so far."
     her normal "Thanks, I will."
@@ -322,7 +322,7 @@ label technical_7:
     show ilian at midright with dissolve
     show her normal at midleft with moveinleft
     her happy "Hey, Ilian, how are you doing?"
-    ilian "What do you want?"
+    ilian normal "What do you want?"
     her annoyed "...you don't care for small talk, do you?"
     ilian "No."
     her serious "Fine, I need some electronic ratio control valves and connecting pipe."
@@ -369,7 +369,7 @@ label technical_8:
     her normal "That sounds fun! Let me take a look at what you currently have..."
     "The current inventory management system had all sorts of buttons that would be useful in a store, but had no meaning on our colony."
     her serious "I could delete those buttons, and make it quicker to look up the things you need all the time. Will you make me a list of things that need to be easier?"
-    ilian "Yes, I will."
+    ilian happy "Yes, I will."
     scene bg farm_interior with fade
     show her normal at center
     "I worked on the inventory system every evening for a few weeks, asking Ilian for feedback after major changes."
@@ -381,13 +381,15 @@ label technical_8:
             "I didn't think anyone needed access except Ilian and Mayor, so I just kept that part the same."
         "Ask Ilian about putting in a public interface.":
             "I sent Ilian an e-mail about adding a public interface."
-            her serious "If we had a way for everyone to access the database, they wouldn't have to come ask you about every little thing; they could just look it up themselves."
-            ilian "I don't know if that's a good idea..."
-            her surprised "Why not? Haven't you been distributing things fairly?"
-            ilian "For the most part... although {b}some{/b} people always seem to need more things than others."
-            her flirting "Well, some of us make more things than others."
-            ilian "I don't think the inventory system should be public."
-            her serious "Okay, I guess I understand."
+            her_c "If we had a way for everyone to access the database, they wouldn't have to come ask you about every little thing; they could just look it up themselves."
+            ilian_c "I don't know if that's a good idea..."
+            nvl clear
+            her_c "Why not? Haven't you been distributing things fairly?"
+            ilian_c "For the most part... although {b}some{/b} people always seem to need more things than others."
+            her_c "Well, some of us make more things than others."
+            ilian_c "I don't think the inventory system should be public."
+            her_c "Okay, I guess I understand."
+            nvl clear
         "Add in a back door for yourself.":
             "I put in a back door so that I could access the database if I needed to. I mean, no need to bug Ilian about something when I could just look it up, right?"
             $ community_level -= 5
@@ -401,11 +403,11 @@ label technical_8:
     her serious "You can use this screen here. It shows current levels of everything, sorted by type: food, tools, electronics, etc."
     ilian "I see..."
     her normal "And you can also just type in the name of something here and it will search for all the items with that name and tell you where they are."
-    ilian "This is... much better. Thank you."
-    her "So, now that you have a perfect inventory system, can I have some more salt, please?"
+    ilian happy "This is... much better. Thank you."
+    her "So, now that you have a perfect inventory system, can I have some more flour, please?"
     ilian "That's all you wanted? Sure, here you go."
     her annoyed "...You didn't even look it up!"
-    ilian "I don't have to; these barrels here are all full of salt. It's not something we're running out of."
+    ilian normal "I don't have to; these barrels here are all full of flour. It's not something we're running out of."
     her laughing "Well, how about variable-rate resistors?"
     ilian "...Let me see... Sorry, we're out of those."
     her normal "Okay, well, at least now we have a quick way to find out."
@@ -472,7 +474,7 @@ label technical_master:
             show him normal at midleft with dissolve
             "We walked around the farm, and I showed him all the cameras and how I had anchored them in place."
             him serious "You're amazing, you know that? I could never have built something like that."
-            her flirting "Well, I'm hopeless at growing food, so it all works out."
+            her flirt "Well, I'm hopeless at growing food, so it all works out."
             $ loved += 2
         "No, thanks.":
             her annoyed "No, thanks. That's why I made this whole thing, so we wouldn't have to walk around the whole farm every night."
@@ -481,7 +483,7 @@ label technical_master:
             him serious "Bye."
             "He did still use my security cameras sometimes, but I guess he actually enjoyed his nightly patrol, because he still walked around the farm almost every night."
         "I'll just watch you from here.":
-            her flirting "I'll just watch you from here."
+            her flirt "I'll just watch you from here."
             him flirting "All right, I'll try and make watching me worth your time."
             hide him with moveoutleft
             her happy "(Hee hee, he's visiting Lettie...)"

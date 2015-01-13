@@ -1,6 +1,5 @@
 # Credits
 label show_credits:
-    
     if (ending == "good"):
         play music "music/Blessed.ogg" fadeout 1.0
     else:
@@ -24,7 +23,7 @@ label show_credits:
     
     # If the user has beat the game before, allow them to skip the credits.
     $ skippable = not persistent.times_beaten
-    scene black with fade
+    scene black with fade    
     hide text with fade
     show text "Credits" with fade
     $ renpy.pause(2.0, hard=skippable)

@@ -78,26 +78,30 @@ label work_0:
     pavel "Next is the person who has lived here the longest, astronaut and xenobiologist Dr. Lily. Any scientific inquiries should be directed her way."
     lily happy "Thank you, Mayor."
     hide lily with moveoutright
-    show ilian at midright with moveinright
-    show sara at right with moveinright
+    show ilian at midright
+    show sara at quarterright
+    with moveinright
     pavel "Ilian Andrevski is in charge of the storehouse here on the colony. That's where we keep all our extra supplies and food. His wife, Sara will be helping all of us stay organized."
     ilian "I want to distribute things frugally and fairly. And, if you have extra goods you cannot use, please give them to the storehouse so others can use them."
-    sara "Right!"
+    sara "If you want an appointment with the mayor, it's best to ask me, since I'm handling his schedule."
     hide ilian
     hide sara
     with moveoutright
-    show pete at midright with moveinright
-    show helen at right with moveinright
+    show pete at midright
+    show helen at right
+    show baby boy at Position(xpos=950, ypos=450)
+    with moveinright    
     pavel "Pete is in charge of the library, so if you need to research something or print something out, head over there. He and his wife Helen are also experts on raising cattle, and will be starting a ranch up to the north."
     pavel "And, their baby, who was born on the shuttle, was the first human being to be born in space!"
     pete happy "Hey, y'all. Don't be strangers! I'll mostly be up at the ranch, but send me a message and I'll come down to the library if y'all need help."
     helen "Hi..."
     hide pete
     hide helen
+    hide baby
     with moveoutright
     pavel "Next I want to introduce our farmers."
     show julia at midright
-    show thuc at right 
+    show thuc at quarterright 
     with moveinright
     pavel "The Nguyens raise goats along with alfalfa and rice and some other crops. I'm sure their kids have names, but, honestly, I'm having trouble telling them all apart!"
     thuc "C'mon, there's only ten of them!"
@@ -111,7 +115,7 @@ label work_0:
     pavel "The Peróns will be growing beans and corn, and are raising chickens and turkeys."
     martin "And also five children."
     natalia "Tomás is the oldest, and then there's Isabella, Raúl, Josephina, and Mateo."
-    martin "Don't feel like you have to remember them all; that's my job!"
+    martin happy "Don't feel like you have to remember them all; that's my job!"
     hide natalia
     hide martin
     with moveoutright
@@ -476,7 +480,7 @@ label work_2:
             her "Yes, I remember you too, Brennan. Thanks for agreeing to help out."
             brennan happy "You're quite welcome."
         "I'm more than just a pretty face.":
-            her flirting "I'm more than just a pretty face, I hope."
+            her flirt "I'm more than just a pretty face, I hope."
             brennan happy "Of course! I just meant that I remembered you. But I could understand how you might not remember me."
         "Are you going to be helpful?":
             her annoyed "Do you have any talents besides flattery?"
@@ -509,14 +513,14 @@ label work_2:
             him annoyed "He seems nice enough, but I'm just wondering what the real purpose is for him to be here."
             her surprised "You think he's a spy or something?"
             him serious "I'm not saying that. I'm just saying that there's unanswered questions here."
-            her flirting "Interesting. Well, I'll keep an eye out, and if I see him sending coded messages to the aliens, I will let you know."
+            her flirt "Interesting. Well, I'll keep an eye out, and if I see him sending coded messages to the aliens, I will let you know."
             "The next time Brennan helped out at work, he was as friendly as ever, but I didn't feel as uncomfortable as before. I treated him politely, but coolly, and we got a lot of work done."
         "Nothing special.":
             her serious "Just the usual. How about you?"
             him serious "Had to dig out some big boulders in the new field I'm working on."
             her normal "Oh, that sounds hard. Hungry for dinner?"
             him flirting "Oh yeah, I'm always hungry."
-            her flirting "Ohh, that I believe!"
+            her flirt "Ohh, that I believe!"
 
             $ loved -= 5
             $ relaxed -= 5
@@ -554,7 +558,7 @@ label work_2:
                 "No, I'm probably imagining things.":
                     her normal "No, it's not the big of a deal. He's probably just a friendly kind of guy."
                     him annoyed "Friendly to women, you mean."
-                    her flirting "Maybe, but, whatever. I'm not interested. I've got you!"
+                    her flirt "Maybe, but, whatever. I'm not interested. I've got you!"
                     "The next time Brennan helped me out, he was friendly as ever, but I didn't feel as uncomfortable as before. I treated him politely but coolly, and work went well."
 
     return
@@ -656,7 +660,7 @@ label work_3:
         "We're all family.":
             her normal "We're all family here, right?"
             brennan "I suppose so, though you're the only one I feel close enough to to call family."
-            her flirting "Sure, I'll be your big sister."
+            her flirt "Sure, I'll be your big sister."
             brennan "Sister! Ha, that's...nice. Thank you, [her_name]."
     
     return
@@ -805,7 +809,7 @@ label work_4:
         brennan mad "I hope this is enough for you."
         her normal "That'll do... for today."
         brennan normal "Today! You're a slave driver, you are."
-        her flirting "I have to be to get any work out of you, Your Laziness."
+        her flirt "I have to be to get any work out of you, Your Laziness."
         her serious "Anyway, come see these plans. We'll need to strip the branches of twigs and leaves, and cut them to uniform sizes..."
         "He stripped the branches while I attached them together. It took a few tries to attach everything so it was sturdy, and it wouldn't hold as much weight as a normal shelf, but in the end, we finished it."
         
@@ -914,7 +918,7 @@ label work_5:
     her serious "I'm afraid you're stuck here for awhile - Dr. Lily says there is a solar flare going on."
     martin "What? I haven't heard anything about that."
     her serious "They just announced it on the radio; I don't know why we didn't have an earlier warning this time."
-    martin "I can't stay here! I have to make sure Natalia is safe!"
+    martin sad "I can't stay here! I have to make sure Natalia is safe!"
     her concerned "Please calm down. I'm sure your wife knows what to do."
     martin "Natalia always forgets to turn the radio on! She might not even know there is a flare! And Mateo is at home with her..."
     "I tried contacting his family on the radio, but either the radiation from the flare was interfering with our transmissions, or her radio was off. I couldn't connect my computer pad to the wireless network, either."
@@ -956,10 +960,12 @@ label work_5:
     play bg_sfx "sfx/radio.mp3"
     brennan "[her_name]...Perón house...got everyone inside...There was...but we...anyway. Repeat, we're...okay."
     show her normal
+    show martin normal
+    with dissolve
     "I let out a breath I hadn't realized I had been holding. Mr. Perón smiled and asked me to hand him the radio."
     martin "Thank you, Brennan. Earlier, what I said...well, I was wrong. You do have a family here."
 
-    martin "You're part of ours."
+    martin happy "You're part of ours."
     "There was silence, and static."
     brennan "...thank you."
     hide martin with moveoutleft
@@ -1058,7 +1064,7 @@ label work_6:
                 "{i}I sure am.{/i}" if (loved >= 0):
                     her normal "I sure am...I don't know what I'd do without him."
                     brennan mad "..."
-                    her flirting "But what about you! Aren't there any single women on the colony you could date? Or are you not interested in women?"
+                    her flirt "But what about you! Aren't there any single women on the colony you could date? Or are you not interested in women?"
                     brennan happy "There's nothing I'm interested in more than women! But, well, let's see, single women...There's Dr. Lily, but she's at least 45 years old."
                     her surprised "Okay, she's really smart, and nice too, actually, but that is a lot older than you."
                     brennan normal "And then there's the Nguyen's oldest daughters, who are seventeen and sixteen."
@@ -1066,7 +1072,7 @@ label work_6:
                     brennan "Well, the oldest, Joanna, is all over that Tomás fellow who's about her age. I'm surprised they're not married yet."
                     her surprised "They're only seventeen!"
                     brennan happy "Well, it's old enough to get into trouble, and old enough to help propagate the species..."
-                    her flirting "What about the younger sister, Miranda?"
+                    her flirt "What about the younger sister, Miranda?"
                     brennan mad "You're not seriously suggesting I try and date a child, are you?"
                     menu:
                         "What should I say?"
@@ -1087,7 +1093,7 @@ label work_6:
                             brennan "Really? You don't think twenty years age difference is too much?"
                             her serious "No way! I mean, she's young enough to still be good-looking, right?"
                             brennan "Yeah, I suppose she does have a sort of sexy scientist sort of beauty..."
-                            her flirting "And, you're not the type to be intimidated by a smart woman, right?"
+                            her flirt "And, you're not the type to be intimidated by a smart woman, right?"
                             brennan happy "You know I'm not."
                             her surprised "Well, then what do you have to lose?"
                             brennan mad "I just - she's old enough to be my mother, you know!"
@@ -1097,7 +1103,7 @@ label work_6:
                         "No, there's no hope for you.":
                             her normal "Of course not. But I didn't want to tell you to just give up."
                             brennan happy "You never know, perhaps we'll find some beautiful blue alien women out here somewhere. I could be Earth's ambassador, to teach them all about the strange and wonderful ways of the human species..."
-                            her flirting "Keep dreaming, Brennan!"
+                            her flirt "Keep dreaming, Brennan!"
                 "I'm not so sure.":
                     her concerned "I used to think so, but I'm not so sure."
                     brennan "Why not?"
@@ -1221,7 +1227,7 @@ label work_7:
 
     "One day while we were cleaning up after work, Brennan came up to me."
     brennan normal "[her_name], can I ask a favor of you?"
-    her flirting "You can ask..."
+    her flirt "You can ask..."
     brennan mad "I need batteries."
     her surprised "Can't you just get them from the storehouse?"
     brennan normal "Normally I would, but... I've used my quota already. It's been so cloudy lately, you know, the solar panels just haven't been keeping up."
@@ -1264,7 +1270,7 @@ label work_7:
                         jump investigate_brennan
                 "Go to the store house." if (not has_batteries):
                     scene bg storehouse with fade
-                    show ilian at midright with dissolve
+                    show ilian happy at midright with dissolve
                     show her normal at midleft with moveinleft
                     "I headed over to the store house and asked Ilian for the batteries. I hadn't gone over quota, so there was no problem."
                     $ has_batteries = True
@@ -1272,7 +1278,7 @@ label work_7:
                         "What should I do?"
                         "Question Ilian.":
                             her surprised "Hey, Ilian, do you know what Brennan needs all these batteries for?"
-                            ilian "Wait, these are for Brennan?!"
+                            ilian normal "Wait, these are for Brennan?!"
                             her serious "Yeah, he asked me to get them for him."
                             ilian "He's already five sets over his quota! He needs to learn to do without!"
                             her surprised "Do you know what they are for?"
@@ -1355,7 +1361,7 @@ label brennan_confess:
         her sad "What else are you hiding? Were you ever even a salesman, like you said?"
         brennan normal "I never lied to you, [her_name]. But I hope you'll understand why I never told you about this."
 
-    her flirting "So, is this the part where you turn into an evil villain and kill me because I know too much?"
+    her flirt "So, is this the part where you turn into an evil villain and kill me because I know too much?"
     brennan normal "Kill you?! Of course not. This is the part where I beg for mercy and ask you not to tell anyone else about my device here."
     menu:
         "What should I say?"
@@ -1388,7 +1394,7 @@ label brennan_confess:
             show julia at right with dissolve
             julia mad "How could such a dishonest spy care about our colony?"
             hide julia
-            show martin at midright with dissolve
+            show martin sad at midright with dissolve
             martin "I don't agree with his secret keeping, but Brennan does care about the colony - he saved Natalia and the kids from the solar flare."
             show natalia at right with dissolve
             natalia "Or he was just doing that so you wouldn't suspect him!"
@@ -1449,7 +1455,7 @@ label brennan_confess:
                         $ loved = -5
                     $ cheated_on_him = True
                 "You owe me one.":
-                    her flirting "Never mind, just... keep in mind that you owe me one."
+                    her flirt "Never mind, just... keep in mind that you owe me one."
                     brennan normal "I owe you much more than that. Thank you, [her_name]."
     return
 
@@ -1596,11 +1602,11 @@ label work_8:
                 her annoyed "Actually, I don't want to stay here. This is my last chance to leave it all behind, so I'd better take it."
                 brennan "I'm so glad. That long shuttle trip will be much more interesting with you on board with me."
                 if (cheated_on_him):
-                    her flirting "Oh, really? What were you thinking we'd do?"
+                    her flirt "Oh, really? What were you thinking we'd do?"
                     brennan happy "You and me, in close quarters for a month with no other entertainment? What {b}won't{/b} we do?"
-                    her flirting "I can't wait..."
+                    her flirt "I can't wait..."
                 else:
-                    her flirting "Ha! We'll see about that."
+                    her flirt "Ha! We'll see about that."
                     
                 if (is_pregnant_later):
                     her surprised "The baby might even be born on Earth..."
@@ -1626,7 +1632,7 @@ label work_8:
     else:
         her surprised "What? Where are you going?"
         brennan normal "Back to Earth."
-        her flirting "How are you going to do that?"
+        her flirt "How are you going to do that?"
         brennan "On the shuttle that's coming soon!"
         her surprised "They're returning to Earth?"
         brennan "Yeah, they're bringing back some samples of rocks and plants for the scientists on Earth to study. So I thought I'd tag along."
@@ -1648,7 +1654,7 @@ label work_8:
     brennan "I'm sure I'm easily replaceable. There will be new colonists coming on the shuttle, after all."
     her normal "That's true. But I'm sure none of them will be as...unique as you."
     brennan happy "You mean none of them will be as handsome and dashing?"
-    her flirting "I meant exactly what I said."
+    her flirt "I meant exactly what I said."
     
     return
 

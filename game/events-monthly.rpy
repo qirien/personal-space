@@ -1,5 +1,7 @@
 # Event content for all the important monthly events
 
+# TODO: Set wearing_dress = True during any night/relaxing events
+
 # You shouldn't ever see this. This is just a fall through in case something happens
 # and there's no event for this month.
 label monthly_event_0:
@@ -80,9 +82,9 @@ label monthly_event_1:
         "{i}Let's take turns fairly{/i}." if (skill_knowledge >= 10):
             her surprised "Did you know that men who do more housework are generally happier in their marriages?"
             him surprised "According to who?"
-            her flirting "There's also a study correlating amount of housework done with frequency of sex."
+            her flirt "There's also a study correlating amount of housework done with frequency of sex."
             him annoyed "What exactly are you trying to say?"
-            her flirting "Just thought you might find those studies interesting. In a totally abstract way."
+            her flirt "Just thought you might find those studies interesting. In a totally abstract way."
             him normal "It...sounds like splitting household chores is really important to you."
             her "It is. We both work hard all day in different ways. We don't have to each do half of everything, but I think there will be less chance for arguments if we decide ahead of time what each person will do."
             him "All right, let's make a list, then."
@@ -186,6 +188,7 @@ label monthly_event_2:
             show her normal at midright
             show lettie at right behind her
             with moveinright
+            play bg_sfx "sfx/clipclop.mp3"
             "I rode Lettie around, scouting the fields for weeds. I had never noticed how big the farm was before -- [his_name] takes care of a lot of plants!"
             "It took longer than I thought, and I ended up helping him haul out a lot of the dirt he dug, but then we had our very own cellar!"
             $ loved += 5
@@ -228,7 +231,7 @@ label monthly_event_3:
         "What should I do?"
         "{i}Have a party.{/i}" if (skill_social >= 20):
             show sara at right
-            show ilian at quarterright
+            show ilian happy at quarterright
             show thuc at quarterleft
             show julia at left
             show him normal at midright
@@ -381,7 +384,7 @@ label monthly_event_4:
             "{i}It's important.{/i}" if (relaxed >= 0):
                 her normal "So many things have changed, I think it's important to have a reason to work hard and help each other out."
                 him surprised "Like what?"
-                her flirting "Well, from my studies I've learned how important it is to answer someone with love, even if they are being insensitive or unappreciative."
+                her flirt "Well, from my studies I've learned how important it is to answer someone with love, even if they are being insensitive or unappreciative."
                 him flirting "...You probably have a lot of opportunities to practice that, don't you?"
                 her happy "Well...yes. I think studying these principles helps me to get along better with others and work unselfishly."
                 him normal "That is important. Sorry, I didn't meant to accuse, I just really was curious what you've been learning."
@@ -390,7 +393,7 @@ label monthly_event_4:
                 him normal "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field."
                 him "I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
                 her concerned "Okay, well, that sounds very... necessary."
-                her flirting "I've been learning about how important it is to answer someone with love, even if they are being insensitive or unappreciative."
+                her flirt "I've been learning about how important it is to answer someone with love, even if they are being insensitive or unappreciative."
                 him flirting "That {b}is{/b} important."
                 her sad "I'm not that good at it yet, though."
                 him normal "I could probably use some reminders of that, too. Want to show me what you've been reading?"
@@ -455,7 +458,7 @@ label monthly_event_4:
                 her concerned "Okay, well, that sounds very... necessary."
                 her normal "On that hike, I found out about a new water source, and I can run to town in six minutes in case there's an emergency."
                 him surprised "Six minutes?! That's pretty fast. You must have been training a lot. I guess I haven't thought about doing that because I usually ride Lettie around."
-                her flirting "Well, not all of us have horses, so we have to make do with the legs we have."
+                her flirt "Well, not all of us have horses, so we have to make do with the legs we have."
                 him flirting "And what nice legs they are..."
             "I can't believe you don't appreciate me!":
                 jump unappreciated
@@ -508,9 +511,9 @@ label monthly_event_5:
             him normal "OK, I'll cut up the socks."
             her "I'll smash the plate. That sounds satisfying, anyway."
             him surprised "I guess this packaging we can tear into pieces like cave men?"
-            her flirting "You mean Paleolithic humans?"
+            her flirt "You mean Paleolithic humans?"
             him angry "Rawr, rawr."
-            her flirting "Wow, you're so paleolithic."
+            her flirt "Wow, you're so paleolithic."
             him flirting "I'll take that as a compliment."
         "{i}I could dig a deep hole for them.{/i}" if (skill_physical >= 30):
             her normal "If I dig deep enough, we can just get rid of this stuff and no one will know that we couldn't think of a way to reuse them."
@@ -864,7 +867,7 @@ label monthly_event_8:
         "Can't you do it another night?":
             her annoyed "Can't you help him another night? I was really looking forward to watching this with you."
             him serious "No, sorry, it has to be tonight."
-            her normal "Okay, see you later."
+            her serious "Okay, see you later."
             him normal "Bye, [her_nickname]."
             show her concerned
             hide him with moveoutright
@@ -919,7 +922,7 @@ label monthly_event_8:
             "We walked home by moonlight.  The two moons cast opposing shadows from the shrubs and trees, making a maze of light for us to follow. [his_name] reached for my hand."
             show him at center with move
             him normal "Thanks for coming. Everything's better with you."
-            her flirting "Even putting up fences is not too bad when we're together."
+            her flirt "Even putting up fences is not too bad when we're together."
             $ loved += 5
             $ community_level += 5
             scene black with fade
@@ -1154,11 +1157,11 @@ label monthly_event_9:
                 him surprised "What are you talking about?! You are the perfect wife!"
                 her surprised "Really?"
                 him happy "Yeah! You always spend time with me, and show me lots of lovin', and you even take care of the house and everything."
-                her flirting "There must be something I'm doing wrong."
+                her flirt "There must be something I'm doing wrong."
                 him serious "I can't think of a single thing."
             else:
                 him normal "I think you do a pretty good job."
-                her flirting "I'm sure there's something you'd like me to do differently. What is it?"
+                her flirt "I'm sure there's something you'd like me to do differently. What is it?"
                 call she_can_do_better
         "How about you?":
             her concerned "What about you? Is there something you'd like to see more of from me?"
@@ -1198,7 +1201,7 @@ label monthly_event_9:
             her happy "I've never heard of that holiday before."
             him happy "That's because I just made it up."
             "He did the dishes for me and rubbed my feet with a smile."
-            her flirting "Thank you, [his_nickname]."
+            her flirt "Thank you, [his_nickname]."
         if (she_wants == "nothing"):
             "I found a poem on my pillow one afternoon:"
             note "{font=fonts/danielbd.ttf}you are the sweetest thing\n not like honey or sugar{/font}"
@@ -1362,7 +1365,7 @@ label anniversary_next_day:
                     him annoyed "Hey! I worked hard on that poem! I poured out my heart to you!"
                     her happy "I know, and it was really sweet... but also really cheesy."
                     him serious "Well, at least I learned my lesson."
-                    her flirting "I think there's still a few things you could learn."
+                    her flirt "I think there's still a few things you could learn."
                     him flirting "Are you going to teach me?"
             "I didn't even have time to set the flowers down before he wrapped his arms around me. I kissed his chin, then his lips, and we forgot about everything else for a while..."
             $ made_love += 1
@@ -1375,11 +1378,15 @@ label follow_him:
         "Go with him.":
             her serious "I'll help you."
             him concerned "Okay."
+            hide him with moveoutleft
+            hide her with moveoutleft
             scene bg farm_exterior with fade
             show overlay night
             "We walked to the small barn where the animals could sleep at night, and where we could keep hay dry."
         "Follow him quietly.":
+            hide him with moveoutleft
             "I waited until he left, then I silently lifted the latch and followed him out."
+            hide her with moveoutleft            
             scene bg farm_exterior with fade
             show overlay night
             "He headed for our small barn, and I followed him."
@@ -1388,7 +1395,7 @@ label follow_him:
             jump anniversary_next_day
 
     scene bg barn with fade
-    show lettie at right behind him,her with dissolve    
+    show lettie at right, squatting behind him,her with dissolve    
     show him serious at midright
     show her serious at midleft
     with moveinleft
@@ -1429,7 +1436,7 @@ label follow_him:
         $ relaxed -= 5
 
     scene bg barn with fade
-    show lettie at right behind him,her with dissolve        
+    show lettie at right, squatting behind him,her with dissolve        
     show him serious at quarterright
     show her serious at midleft with moveinleft
     "He had me hold Lettie still while he measured it out and administered it to her. I was amazed how much Lettie trusted him."
@@ -1461,6 +1468,7 @@ label follow_him:
     show her normal at midleft
     with dissolve
     "[his_name] was already up, talking to Lettie in a soft voice and petting her nose. She wasn't shaking any more, and her breathing seemed more regular."
+    play bg_sfx "sfx/whinny.mp3"
     her happy "She seems better!"
     him normal "Yeah, I hope so. I'll give her some really good food today and let her take it easy for a while."
     her normal "Well, I have to get to work, but I'll see you this evening."
@@ -1477,7 +1485,7 @@ label follow_him:
             "I pulled away enough to poke at his chest sternly."
             her angry "You owe me, [his_nickname]. Last night was our anniversary dinner - I don't think you even noticed because you were so distracted - but you owe me a fabulous night tonight."
             him surprised "Our anniversary! I'm so sorry - but I will make it up to you tonight."
-            her flirting "Shall I make a list for you?"
+            her flirt "Shall I make a list for you?"
             him flirting "I think I know what you like."
             $ made_love += 1
     $ loved += 10
@@ -1684,7 +1692,7 @@ label monthly_event_11:
             brennan "Really?"   
             her happy "Yes! Lily is coming too, and we need a third person so we can look like a herd and not easy pickings."   
             brennan happy "Count me in! But why are you going to the ocean? Thinking of going for a swim?"
-            her flirting "No, Lily wants to gather specimens, and I'm harvesting salt."
+            her flirt "No, Lily wants to gather specimens, and I'm harvesting salt."
             brennan normal "I don't really care what we do, as long as it's something exciting."  
             her happy "Oh, it'll be exciting."
 
@@ -1798,7 +1806,7 @@ label monthly_event_12:
                 her concerned "Yeah, I know I am. There's so much to do, and so much going wrong..."
                 her serious "But we need to help each other! How can I help you?"
             else:
-                her flirting "Well, the only thing I'm stressed out about right now is the fact that you seem stressed out! How can I help?"
+                her flirt "Well, the only thing I'm stressed out about right now is the fact that you seem stressed out! How can I help?"
                 
             him concerned "Oh, [her_name], I don't know. But I need you by my side, on my side."
             
@@ -1852,6 +1860,7 @@ label monthly_event_13:
     "After all, who would hurt anyone else in our colony? We needed each other too much."
     "But that peace couldn't last forever..."
     "One evening the Perón's four-year-old girl, Josephina, didn't come home for dinner."
+    show martin sad at right    
     show natalia at midright
     "Mrs. Perón was alternately furious with herself and those around her."
     show natalia at midleft with move
@@ -1902,6 +1911,7 @@ label monthly_event_13:
         "Some were more heartbreaking. \"Josephina, I hope you get to learn to read in heaven because I know you really wanted to.\""
         scene bg church with fade
     
+label funeral:
     show naomi sad at center with dissolve
     "At the funeral, Sister Naomi explained how her family believed they would be live again and be together after this life, and how blessed we were to have known such a joyous spirit."
     if (skill_spiritual >= 40):
@@ -1909,8 +1919,9 @@ label monthly_event_13:
     "We sang a hymn, and then we all trudged out behind the chapel to the graveyard."
     scene bg talam with fade
     show naomi sad at midleft
-    show martin at quarterright    
+    show martin sad at quarterright
     show natalia at midright
+    show raul at right
     with dissolve
     "I hadn't even noticed we had a graveyard, but Josephina's was the second grave here."
     "Her family took turns throwing in flowers, and then Sister Naomi said a prayer, and anyone who wanted to could shovel some dirt onto the coffin."
@@ -1937,7 +1948,7 @@ label monthly_event_13:
     "They showed some home videos of her, giggling as an infant, trying to keep up with her older brothers and sisters, working in the garden with her mom and dad."
     "Almost all of us could remember something funny Josephina had said, and remembering them helped us laugh a little."
     hide julia with moveoutright
-    show martin at right
+    show martin sad at right
     show natalia at quarterright
     with moveinright
     show him serious at quarterleft with move
@@ -1967,9 +1978,11 @@ label monthly_event_13:
     "[his_name] started barring our door at night."
     "The mayor brought it up at our next community meeting."
     scene bg community_center with fade
-    show pavel sad at center, behind natalia with dissolve
+    show pavel sad at center, behind natalia, martin with dissolve
     pavel "I know everyone is worried, and scared, but this fear is tearing our community apart."
-    show natalia at right with moveinright
+    show natalia at quarterright
+    show martin sad at right, behind natalia
+    with moveinright
     natalia "Who knows who will be next?! It clearly wasn't an accident!"
     "Several people murmured in agreement. The mayor looked ready to say something further."
     show pete at midleft with moveinleft
@@ -2011,7 +2024,7 @@ label monthly_event_13:
     
     show lily at midright
     show ilian at midleft
-    show thuc at right
+    show thuc sad at right
     show her serious at left
     with dissolve
 
@@ -2036,7 +2049,7 @@ label monthly_event_13:
         "Work for Peróns":
             her serious "I agree with Lily; he should have to work for the Peróns. It can't make up for the loss of a child, but it will require some sacrifice and will help him show his remorse."
             thuc "He should be their slave for a year!"
-            her concerned "Well, we don't want his work at the storehouse to suffer..."
+            her concerned "Well, we don't want his work on his own farm to suffer..."
             ilian "There's always community service."
             her serious "Yes, but instead of the community it will be for the Peróns. Let's say eight hours a week for a year."
             ilian "And now we know the price of a four-year-old girl: 400 work hours."
@@ -2251,7 +2264,7 @@ label monthly_event_14:
                         $ loved = 0
 
             "Let's make a baby!":
-                her flirting "Come on over here, [his_nickname], and make me a baby!"
+                her flirt "Come on over here, [his_nickname], and make me a baby!"
                 him flirting "You want me to turn you into a baby?"
                 her laughing "Ohhh, you!"
                 him laughing "Sorry, I mean, 'Yes ma'am'!"
@@ -2271,7 +2284,7 @@ label monthly_event_14:
                 him concerned "I think we're doing pretty good."
                 her annoyed "It just feels like one more thing to worry about; I'm already stressed out about food, work, and this whole crazy planet."
                 him normal "Don't worry; we'll figure something out. We can always... get creative."
-                her flirting "I like it when you get creative."
+                her flirt "I like it when you get creative."
             "Maybe...":
                 her concerned "I guess we could be, but...I just don't feel ready yet. Maybe things will be different in six months... or we could always use other methods."
                 him normal "Yeah, I feel ready, but you're the one that will be carrying the baby, so we can do whatever you think is best."
@@ -2289,7 +2302,7 @@ label monthly_event_14:
                 him surprised "Yeah? You've changed your mind from last year?"
                 her serious "Yeah...let's stop the birth control now, and just see what happens."
                 him flirting "Yes, momma."
-                her flirting "Ew, don't call me momma!"
+                her flirt "Ew, don't call me momma!"
                 him laughing "You better get used to it! Someday a bunch of kids are going to call you that all the time!"
                 her surprised "A bunch of kids? How many kids were you thinking of having?!"
                 him happy "I don't know, but don't you think it sounds cozy to have a bunch of little kids all running around?"
@@ -2301,7 +2314,7 @@ label monthly_event_14:
                     him flirting "I love it when you handle me."
                     her surprised "I was going to make a joke about \"love handles\", but you don't really have any..."
                     him normal "Sorry I ruined your joke."
-                    her flirting "I think everything else makes up for it."
+                    her flirt "I think everything else makes up for it."
                 else:
                     her normal "Okay. Just one kid, for now."
                     show him at center with move
@@ -2320,7 +2333,7 @@ label monthly_event_15:
     with dissolve
     if (is_pregnant):
         him happy "I made you breakfast, so eat up, [her_name]! You're eating for two!"
-        her flirting "Yeah, but one of us is the size of a grain of rice..."
+        her flirt "Yeah, but one of us is the size of a grain of rice..."
         him flirting "If you don't want it, I'll gladly take it."
         her surprised "Eggs? Bacon?! Where did you get this stuff?!"
         him happy "Well, when Mrs. Perón heard about your 'condition', she insisted that you needed to eat eggs to have a healthy baby. And when I told Ilian the good news, he pulled this out of some stash in the storehouse."
@@ -2373,7 +2386,7 @@ label monthly_event_15:
             "It's not a big deal.":
                 her annoyed "I guess not. It's just kind of weird. As long as they don't start serenading us with fertility songs or anything it doesn't really matter."
                 him flirting "Okay, I'll post that to the message board. 'Thanks for the well-wishes, but no fertility rites, please.'"
-                her flirting "Shut up and try some of this."
+                her flirt "Shut up and try some of this."
             "It's annoying.":
                 her annoyed "That's really annoying. I don't want people to be asking me all the time if I'm pregnant yet, or giving well-meaning but idiotic advice, or looking at me like I'm a time bomb or something."
                 him serious "I'm not sure you can prevent that, anyway. I mean, they're going to know sooner or later, right?"
@@ -2411,9 +2424,9 @@ label monthly_event_15:
         him concerned "I think she was trying to help us have a baby."
         her laughing "Ha ha, it'll take more than berries and cream..."
         him happy "Well, we can enjoy the food anyway, right?"
-        her flirting "We? She sent this for me!"
+        her flirt "We? She sent this for me!"
         him happy "Oh, so you want me to tell her that we're not trying to have a baby?"
-        her flirting "Don't say that! Then she won't send any more!"
+        her flirt "Don't say that! Then she won't send any more!"
         him happy "Better share, then!"
         menu:
             "Should I share it?"
@@ -2579,13 +2592,16 @@ label monthly_event_17:
     show her normal at midleft
     her happy "This was a good idea! I never thought taking a bath would be such a luxury..."
     sara "It's a lot faster with you helping me haul water."
-    her normal "Is the hot water ready yet?"
+    her surprised "Is the hot water ready yet?"
     sara "Yeah, it's boiling."
-    her "Alright, let's pour it in!"
+    her happy "Alright, let's pour it in!"
     play bg_sfx "sfx/splash.mp3"
-    show her at squatting
-    show sara at squatting
+    scene bg bathhouse with fade
+    $ is_nude = True
+    show her at midright, squatting
+    show sara at midleft, squatting
     show overlay bathhouse
+    with dissolve
     sara "Nice and hot! Not like our house; it's always freezing in there!"
     her surprised "Really? It hasn't been that cold..."
     sara sad "Well, Ilian never wants to use the heater. He's so stingy with everything!"
@@ -2641,7 +2657,7 @@ label monthly_event_17:
     if (is_pregnant):
         her normal "Well, we had an ultrasound the other day..."
         sara sad "For the baby?! What is it?"
-        her flirting "We are pretty sure it is a human fetus."
+        her flirt "We are pretty sure it is a human fetus."
         sara normal "Ohhh, you know what I mean! Girl or boy?"
         her happy "Looks like a girl!"
         sara "Yay, how fun! Have you started getting ready yet?"
@@ -2682,9 +2698,9 @@ label monthly_event_17:
             sara "Yeah! Don't you think that constellation is a bit like Orion?"
             her concerned "I don't know, it looks kind of like a woman?"
             sara "Maybe it should be Artemis, then!"
-            her serious "Yeah, Artemis. I like that."
+            her normal "Yeah, Artemis. I like that."
             sara "..."
-            her normal "Thanks, Sara - talking with you really helps."
+            her happy "Thanks, Sara - talking with you really helps."
             sara "Anytime! You help me, too, you know!"
             $ relaxed += 3
         "I'm worried about the future":
@@ -2706,6 +2722,7 @@ label monthly_event_17:
 
     show her sleeping with dissolve
     "We relaxed for a bit more in the hot bath, and then went home. It was comforting to know I could depend on Sara."
+    $ is_nude = False
     $ relaxed += 2
     return
 
@@ -2794,6 +2811,7 @@ label monthly_event_18:
         show him sad
         "He sat down, but now his laughing had turned into trembling."
         "We set off at an easy pace."
+        play bg_sfx "sfx/clipclop.mp3"
     else:
         "I didn't know what to do. I didn't feel like I could call on any of our neighbors, and I didn't know how to have Lettie pull a cart or anything..."
         "But he could still walk, so I was able to sort of guide him towards the town. I just hoped he wouldn't pass out on me or anything."
@@ -2897,7 +2915,7 @@ label monthly_event_18:
         "{i}I'll do the harvest!{/i}" if ((skill_domestic >= 50) or (skill_physical >= 50)):
             her happy "I can do the harvesting!"
             him surprised "Really? I know you have plenty of your own things to do..."
-            her flirting "It's not that hard to pick tomatoes and peppers."
+            her flirt "It's not that hard to pick tomatoes and peppers."
             him happy "Okay, awesome! If there's anything you need done that doesn't involve hands, maybe I can do that?"
             her concerned "Ummm... yeah, maybe you can dictate some e-mails for me?"
             him serious "Sure..."
@@ -2927,10 +2945,10 @@ label monthly_event_18:
     with dissolve
     "Finally, the bandages came off and [his_name] could use his hands again."
     him flirting "I know the first thing I want to touch when we get home."
-    her flirting "Hmmm, are you talking about Lettie? I know she's missed you..."
+    her flirt "Hmmm, are you talking about Lettie? I know she's missed you..."
     if (loved >= 0):
         him surprised "Haven't you missed me, just a little?"
-        her flirting "Maybe..."
+        her flirt "Maybe..."
         scene bg bedroom with fade
         show overlay night
         show overlay bedroom_covers behind night        
@@ -3063,7 +3081,7 @@ label monthly_event_20:
     show her normal at midright
     show sara at midleft
     sara "I think this town needs something special."
-    her flirting "Like what? Indoor plumbing?"
+    her flirt "Like what? Indoor plumbing?"
     sara "No, silly, I mean a special event! Like a festival, a party, a shindig! Something to cheer everyone up, give them hope."
     her concerned "Yeah, I know what you mean. We've all been working pretty hard..."
     sara "So let's plan one!"
@@ -3315,7 +3333,7 @@ label done_party_menu:
                 show her normal at quarterright
                 with moveinright
                 him serious "Let's do it."
-                her flirting "Yeah, you and me, right now."
+                her flirt "Yeah, you and me, right now."
                 sara "I have a box of materials for each team. Your goal is to build the sturdiest and coolest-looking cardboard spaceship you can in five minutes! Then we will launch them from the roof and see whose has the best landing."
                 sara "Ready, set...GO!"
                 "[his_name] and I rummaged through the box. Sara had gathered trash from everyone and cleaned it off so we could use it on our creation."
@@ -3467,7 +3485,7 @@ label monthly_event_21:
     him concerned "It was so cold today... with no clouds, either. Dr. Lily says it might freeze..."
     her surprised "Well, we have our heater, so we'll be fine, right? Do we need to chop some more wood?"
     him "Yeah, maybe - but it's not us I'm worried about."
-    her flirting "Oh, is it going to be too cold for Lettie? Maybe she'd like to sleep in bed with us?"
+    her flirt "Oh, is it going to be too cold for Lettie? Maybe she'd like to sleep in bed with us?"
     him annoyed "Of course not. Horses are incredibly strong and can handle the cold no problem. It's the quinoa that might not make it."
     her surprised "The quinoa?"
     him normal "Well, I planted it a week ago. Even though it's technically still winter here, we don't have any records of freezing weather in this area, so I thought it would be safe..."
@@ -3646,7 +3664,7 @@ label monthly_event_22:
             brennan "You don't have any?"
             her sad "No..."
             brennan happy "Well, we can't have that! Here, you can have one of mine, somehow I ended up with two bottles at home."
-            her flirting "Thank you very much, Brennan."
+            her flirt "Thank you very much, Brennan."
             "I was beginning to see a pattern here. I decided to report to the mayor."
             scene bg community_center with fade
             show pavel at midright, behind her with dissolve
@@ -3740,7 +3758,7 @@ label monthly_event_22:
             pavel "Well, how do you like that."
             her normal "So there wasn't just one thief."
             pavel "Yes, just a lot of people who thought they'd take an extra bottle \"just in case\"."
-            her flirting "And when we told them one person had been honest enough to return some, they all felt guilty and returned their extras."
+            her flirt "And when we told them one person had been honest enough to return some, they all felt guilty and returned their extras."
             "I couldn't stop thinking about how such a small action as taking or returning an extra bottle of shampoo had affected our whole colony."
             "Who knows what other small actions could have such an effect?"
             $ community_level += 2
@@ -3784,8 +3802,8 @@ label monthly_event_22:
             her serious "I need some chalk, or cornstarch, or graphite powder, or ashes - some sort of fine powder."
             ilian "I do have some cornstarch..."
             her normal "Good, let's dust the ladder for prints."
-            ilian "Really? Who do you think you are, some crime show detective?"
-            ilian "Besides, won't it just be covered with my prints?"
+            ilian happy "Really? Who do you think you are, some crime show detective?"
+            ilian normal "Besides, won't it just be covered with my prints?"
             her serious "Only if the thief is the same height as you. Pretend to grab the ladder."
             "I marked the spot where he held it."
             her serious "I'll expect mostly your prints in that area, but a shorter or taller person would grab it in a different spot. Looks like their thumb would hit about...here, at varying heights."
@@ -3828,7 +3846,7 @@ label monthly_event_22:
             him laughing "Mmmm, herbed [her_name], my favorite dish..."
             her annoyed "It's supposed to absorb the oils in your hair without having to use shampoo..."
             if (loved > 0):
-                her flirting "But maybe I'll let you have a little taste later."                
+                her flirt "But maybe I'll let you have a little taste later."                
             him normal "Okay, well, tell me if it works."
             hide him with moveoutleft
             show her at center with move
@@ -4087,7 +4105,7 @@ label monthly_event_23:
                 
             her surprised "I never thought of myself as a parent, you know."
             him normal "Doesn't mean we can't do it. Humans are made to be parents, right?"
-            her flirting "At least I have you..."
+            her flirt "At least I have you..."
             "He held me tight, cradling my head in his hand. I relaxed onto his shoulder, and he placed tiny kisses on my neck."
             "We really did need each other..."
             $ loved += 2
@@ -4262,7 +4280,7 @@ label monthly_event_23:
                 $ loved += 2
                 $ relaxed += 2
             "{i}Let's slow it down next time.{/i}" if (loved >= 0):
-                her flirting "As much as I love that you are like a runaway stallion, can you maybe not gallop away quite so fast next time?"
+                her flirt "As much as I love that you are like a runaway stallion, can you maybe not gallop away quite so fast next time?"
                 him surprised "Ummm..."
                 her annoyed "You know, slow down a bit? When we make love?"
                 him surprised "Oh! Yeah. Sorry, I'm still trying to wrap my head around your horse imagery."
@@ -4301,7 +4319,7 @@ label monthly_event_24:
         him annoyed "..."
         her sad "I'm sorry, [his_name]. It's hard not knowing when the baby will come..."
         him happy "Well, this just means you have a few more days of carefree irresponsibility! How do you want to celebrate?!"
-        her flirting "I think we left all the carefree irresponsibility back on Earth."
+        her flirt "I think we left all the carefree irresponsibility back on Earth."
         call set_work_bg
         show her normal at center
         "Work wasn't much better."
@@ -4356,7 +4374,7 @@ label monthly_event_24:
         sara normal "Sorry. I should be more positive."
         her concerned "No, it's good to be able to be honest about how you feel."
         sara sad "..."
-        her flirting "Like, for example, did you know I've been having contractions this whole time?"
+        her flirt "Like, for example, did you know I've been having contractions this whole time?"
         sara normal "What?!"
         her serious "Just small ones. I guess they call them practice contractions. I've been getting them a lot lately whenever I exercise or get tired. That's why I wanted to lie down."
         sara "So, we don't need to radio for help or anything?"
@@ -4601,10 +4619,7 @@ label monthly_event_24:
             $ baby_name = renpy.input("What is her name?", "Terra", length=20)
         else:
             "What is her name?"
-            $ text_group = 1
-            $ input_text = ''
-            $ input_header = 'First Name:'
-            call inputter
+            $ input_text = renpy.call_screen(inputter, "Her Name:")
             $ baby_name = input_text or "Terra"
         
         her normal "I want to call her [baby_name]."

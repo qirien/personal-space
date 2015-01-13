@@ -207,6 +207,7 @@ label relaxation_focus:
 
     $ period = "relaxation_focus"
     $ act = relaxation_focus_act
+    $ wearing_dress = True
     if (act == "act_relax_together"):
         play music "music/Reflections.ogg" fadeout 1.0
     else:
@@ -215,6 +216,7 @@ label relaxation_focus:
     $ normalize_stats()
     
     call events_run_period
+    $ wearing_dress = False
 
 label monthly_event:
     if check_skip_period():

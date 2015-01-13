@@ -272,7 +272,7 @@ label work_appreciation:
     "They just knew that sometime I'd need them as much they needed me."
     show brennan at midleft with moveinleft
     brennan "He's right, you know. We'd all be lost without you."
-    her flirting "That's a total exaggeration."
+    her flirt "That's a total exaggeration."
     if (wants_to_leave or cheated_on_him):
         brennan "You sure you don't want to come with me?"
         her concerned "Yes... sometimes it has seemed hopeless, but I thought about it, and I'm happy right where I am."
@@ -282,7 +282,7 @@ label work_appreciation:
     else:
         brennan "I don't think anyone will be sad to see me go."
         if (brennan_relationship >= 2):
-            her flirting "Of course we'll miss you! But maybe you won't miss Talaam?"
+            her flirt "Of course we'll miss you! But maybe you won't miss Talaam?"
         else:
             her concerned "We'll miss you, Brennan. But I think it'll be good for you to do something else."
         brennan "Yeah, I never did quite fit in here. I'm not too sad about it; I missed having things to do, people to see, places to go..."
@@ -292,7 +292,7 @@ label work_appreciation:
     "I thought about it for a minute. By the time he got back to Earth, another four years would have passed there. What could he do in person that we couldn't do remotely?"
     her serious "Just... could you tell people about how it is here? I mean, you'll probably be kind of a celebrity, right? Not everyone gets to visit another planet and come back."
     brennan normal "I will. It'll be a great way to impress women, don't you think? I can tell them all about how I risked radiation burns to rescue the poor Peróns during the solar flare."
-    her flirting "Only if you leave out the part where you threw up all over me."
+    her flirt "Only if you leave out the part where you threw up all over me."
     brennan happy "Yeah, that'll have to go."
     her serious "..."
     show brennan normal
@@ -352,6 +352,7 @@ label good_ending:
         "His arm was draped over my growing belly, which he rubbed gently. Sometimes the baby would kick him back."
 
     scene bg bedroom with fade
+    $ is_nude = True
     show overlay night        
     show overlay bedroom_covers behind night        
     show her normal at midleft, squatting, behind overlay
@@ -361,7 +362,7 @@ label good_ending:
     him surprised "[her_name]?"
     her surprised "What?"
     him serious "Thank you."
-    her flirting "You're welcome- wait, which of the many wonderful things I've done are you thanking me for?"
+    her flirt "You're welcome- wait, which of the many wonderful things I've done are you thanking me for?"
     him normal "For taking a chance on me, and for trusting me enough to come to Talaam with me. For working so hard at your job and at home. For loving me even when I'm grouchy or make mistakes."
     her normal "[his_name]... You work so hard every day - we literally couldn't survive without you. You have loved me no matter what this whole time - through pests and fires and sicknesses and everything."
     him happy "Yeah...if someone came up to me, right now, and said 'All-expenses paid trip to wherever you want!', do you know what I'd say?"
@@ -369,7 +370,7 @@ label good_ending:
     him flirting "I'd say, \"I want to go to my house, and be in my bed, next to my wife.\""
     her laughing "What a waste! You should pick somewhere exotic!"
     him happy "What could be more exotic than an alien planet? Besides, you make everything seem exotic..."
-    her flirting "I think the word you're looking for is \"erotic\", not \"exotic\"."
+    her flirt "I think the word you're looking for is \"erotic\", not \"exotic\"."
     show him normal at center, squatting
     with move
     "He didn't say anything else, just buried his face in my hair and tightened his grip around my waist. I held on tight to his arms, feeling safety and love and happiness swirling around us."
@@ -380,7 +381,18 @@ label good_ending:
     show her sleeping
     show him sleeping
     with dissolve
-    
-    $ persistent.got_good_ending = True    
+    window hide
+    if (is_pregnant):
+        scene cg with_baby:
+            size (1024, 600) crop (1424, 756, 1452, 848)
+            easeout 10.0 size (1024, 600) crop (0, 0, 5120, 3000)
+    else:
+        scene cg together:
+            size (1024, 600) crop (0, 0, 3273, 1912)
+            ease 5.0 size (1024, 600) crop (0, 1088, 3273, 1912)
+            ease 5.0 size (1024, 600) crop (1116, 1000, 1712, 1000)
+    $ renpy.pause(12.0)
+    $ persistent.got_good_ending = True
     ".:. Best Ending, 3 of 3."
+    $ is_nude = False
     jump show_credits

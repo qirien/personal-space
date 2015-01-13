@@ -23,30 +23,35 @@ label relax_together_0:
             him concerned "Oh, okay. Well, I can probably get someone else to help..."
             her normal "Okay."
             $ relaxed += 3
+            return
         "I can help you tomorrow.":
-            her concerned "Can it wait until tomorrow? I'll have more time to help you then."
-            him "Sure, let's do it tomorrow."
-            "I was tired the next day, too, but I helped him out anyway. I could tell it meant a lot to him."
             $ relaxed += 2
             $ loved += 2
+            her concerned "Can it wait until tomorrow? I'll have more time to help you then."
+            him "Sure, let's do it tomorrow."
+            "I was tired the next day, too, but I helped him out anyway."
+
         "I guess.":
+            $ loved += 5
             her sad "I guess I can help out...."
             him happy "Great! Let's get started!"
             scene bg farm_exterior with fade
             "His enthusiasm was kind of infectious, and once we got started, I could see how important it was to him. It was dark when we finally finished..."
-            scene bg barn with fade
-            show her normal at midleft
-            show him normal at midright
-            with dissolve
-            her happy "This is a nice little barn!"
-            him happy "Yeah, let's see how she likes it!  C'mon Lettie!"
-            show lettie at right behind him, her with moveinright 
-            play bg_sfx "sfx/clipclop.mp3"
-            "He led his horse into one of the stalls. She was nervous at first, but soon she was in a stall chewing hay like normal."
-            play bg_sfx "sfx/whinny.mp3"
-            him normal "Thanks a lot, [her_name]. This is great."
-            her normal "You're welcome."
-            $ loved += 5
+            
+    scene bg barn with fade
+    $ wearing_dress = False    
+    show her normal at midleft
+    show him normal at midright
+    with dissolve
+    her happy "This is a nice little barn!"
+    him happy "Yeah, let's see how she likes it!  C'mon Lettie!"
+    show lettie at right behind him, her with moveinright 
+    play bg_sfx "sfx/clipclop.mp3"
+    "He led his horse into one of the stalls. She was nervous at first, but soon she was in a stall chewing hay like normal."
+    play bg_sfx "sfx/whinny.mp3"
+    him normal "Thanks a lot, [her_name]. This is great."
+    her normal "You're welcome."
+
     return
 
 # Onsen
@@ -60,11 +65,11 @@ label relax_together_1:
     her concerned "I really need a bath."
     him surprised "Really? You smell great to me."
     "I sniffed the air. All I could smell was hay and compost and sweat."
-    her flirting "Ick, you need a bath, too! Let's go tonight."
+    her flirt "Ick, you need a bath, too! Let's go tonight."
     him happy "Sure, after dinner and...dessert."
     her happy "You made dessert?! What kind?"
     him flirting "I was thinking we'd make some dessert...together."
-    her flirting "Ohhh, {b}that{/b} kind of dessert."
+    her flirt "Ohhh, {b}that{/b} kind of dessert."
     him surprised "Yes...though we could have dessert first, you know. Sometimes it's fun to break the rules."
     menu:
         "What should I say?"
@@ -90,8 +95,10 @@ label relax_together_1:
     show him normal at midleft with dissolve
     show her normal at midright with dissolve
     show overlay bathhouse
-    show him at squatting with move
-    show her at squatting with move
+    $ is_nude = True
+    show him nude at squatting
+    show her at squatting
+    with fade
     play bg_sfx "sfx/splash.mp3"
     "We built a fire to heat up one of the tubs of water, and took turns washing off and then soaking in the small tub."
     "It felt so good to soak and relax together."
@@ -100,6 +107,7 @@ label relax_together_1:
         $ relaxed = 0
     else:
         $ relaxed += 5
+    $ is_nude = False
     return
 
 # Skinny dipping!
@@ -124,11 +132,12 @@ label relax_together_2:
     menu:
         "What should I do?"
         "Join him.":
-            her flirting "Watch out, here I come!"
+            her flirt "Watch out, here I come!"
             "I undressed slowly. There was enough moonlight that I knew he could see me."
             him flirting "Whoo! Alright, [her_name]! Come on in!"
+            # TODO: have an overlay here so they can not be wearing clothes?
             show her normal at center with move
-            show her at squatting with move
+            show her at sitting with move
             play bg_sfx "sfx/splash.mp3"        
             "I decided to get back at him by jumping in right next to him with a big splash, but he didn't seem to mind."
             "The water was cold, but somehow that just made everything more exciting."
@@ -186,7 +195,7 @@ label relax_together_3:
             him surprised "What? What don't you like?"
             her normal "Change out of those clothes! You smell like Lettie."
             him concerned "What's wrong with Lettie?!"
-            her flirting "Nothing, but I don't invite Lettie to share my bed."
+            her flirt "Nothing, but I don't invite Lettie to share my bed."
             him normal "I see your point."
             $ loved += 5
             $ made_love += 1
@@ -255,7 +264,7 @@ label relax_together_4:
         show her at midright with move
         if (loved >= 5):
             him normal "Now it's your turn to get massaged."
-            her flirting "Mmmm, really? Are you talking about shoulders, or...?"
+            her flirt "Mmmm, really? Are you talking about shoulders, or...?"
             him flirting "I'll massage anything you like."
             her normal "Why don't you start with the shoulders, and then we'll see what happens?"
             show him normal at center, behind her with move
@@ -319,7 +328,7 @@ label relax_together_5:
             him normal "I like it when you laugh."
             $ loved += 2
         "Should we get started like this?":
-            her flirting "Should we get started like this...?"
+            her flirt "Should we get started like this...?"
             him flirting "Maybe a little bit of this?"
             her serious "It's too bad there's so many rocks here..."
             $ loved += 2
@@ -429,7 +438,7 @@ label relax_together_6:
                     "It mostly looked the same; he just cut off about an inch in the back."
                     her happy "That's great; thank you!"
                     him serious "Good, I was worried you wouldn't like it..."
-                    her flirting "Nope, you did a great job. As always."
+                    her flirt "Nope, you did a great job. As always."
                     him happy "I wouldn't want to start a hair salon, but cutting hair is actually kind of fun..."
                     her laughing "Don't get too used to it!"
                     $ loved += 2
@@ -441,7 +450,7 @@ label relax_together_6:
         "I like it like that.":
             her "Why cut it? I think longer hair looks good on you."
             him flirting "Oh yeah? Should I grow my beard out long, too?"
-            her flirting "Only if you braid it like a dwarf."
+            her flirt "Only if you braid it like a dwarf."
         "I think you better cut it.":
             her concerned "Yeah, maybe you should cut it."
             him concerned "My mom always cut my hair at home..."
@@ -539,13 +548,13 @@ label relax_together_10:
     him surprised "...!"
     her surprised "What is it? Is everything okay?"
     him surprised "...!"
-    her flirting "Why are you staring at me like that?"
+    her flirt "Why are you staring at me like that?"
     him surprised "You're just... so stunning... I'm totally stunned."
     her annoyed "You're stunned."
     him surprised "Yup, can't move. Can only... gaze upon... your radiant beauty..."
-    her flirting "Hmm, what if... I tickle you?!"
+    her flirt "Hmm, what if... I tickle you?!"
     him laughing "Oh! Suddenly I can move again!"
-    her flirting "You're so silly."
+    her flirt "You're so silly."
     if (loved >= 0):
         him serious "I'm being completely serious. You're like, sweeter than a hot fudge sundae, and hotter than a habanero, and brighter than any sun, anywhere!"
         her normal "Awww... I love you, [his_name]."
@@ -553,9 +562,10 @@ label relax_together_10:
         him "And I love you, [her_name]."
     else:
         him serious "I'm being completely serious."
-        her flirting "..."
+        her flirt "..."
     
     $ relaxed += 5
+    $ made_love += 1
     $ loved += 2
     return
     
@@ -589,6 +599,7 @@ label relax_together_12:
 
 # Play games with Ilian and Sara
 label relax_together_a:
+    $ wearing_dress = False
     scene bg farm_exterior with fade
     show him normal at midright
     show her normal at midleft
@@ -615,11 +626,11 @@ label relax_together_a:
     with moveinleft
     her happy "Hey, Sara!"
     sara "Wow, you got [his_name] to come to town? Did you pretend to be sick or something?"
-    her flirting "No, he came on his own, believe it or not."
+    her flirt "No, he came on his own, believe it or not."
     him serious "Hey, I'm working hard on the farm, I don't have time to come to town all the time."
-    ilian "Well, since you're here, why don't you come over and see our house?"
+    ilian happy "Well, since you're here, why don't you come over and see our house?"
     sara "Yeah, because it's SOO different from all the other prefab houses..."
-    ilian "I was trying to be nice..."
+    ilian normal "I was trying to be nice..."
     sara "Our house is totally boring, but maybe we can play a game or something?"
     her happy "Thanks, that'd be fun! Right, [his_name]?"
     him concerned "..."
@@ -632,7 +643,7 @@ label relax_together_a:
         show her normal at quarterleft
         with dissolve
         "The four of us played Machine of Death."
-        ilian "...which is why he never saw it coming when the piano crashed down ten stories onto his head."
+        ilian happy "...which is why he never saw it coming when the piano crashed down ten stories onto his head."
         him happy "Ohhh! You got him! That was awesome."
         sara "That was way better than [her_name]'s poison-in-the-toothpaste attempt."
         her annoyed "That would totally work!"
@@ -710,7 +721,7 @@ label relax_together_f:
 # Midnight lovin'
 label relax_together_g:
     scene bg bedroom with fade
-    show her normal at midright
+    show her normal at midright # TODO: nude?
     with dissolve
 
     "I decided to surprise [his_name] with a few candles lit near our bed and some soft music playing, and I wore the sexiest thing I owned. But it didn't go how I had planned..."
@@ -751,11 +762,11 @@ label relax_together_g:
     menu:
         "What should I do?"
         "Wake up for some action.":
-            her flirting "I just can't say no to you..."
+            her flirt "I just can't say no to you..."
             him flirting "Why would you want to?"
             her surprised "Did you get everything fixed up outside?"
             him sad "Yeah, sorry it took so long; that wind is awful."
-            her flirting "You're awful, to keep me waiting so long."
+            her flirt "You're awful, to keep me waiting so long."
             him flirting "I know, I better be extra good to you."
             her happy "Ohhh, you are good..."
             "[his_name] was definitely worth waking up for."
@@ -804,6 +815,7 @@ label relax_together_h:
 
 # Daisy-chain circlet of wildflowers
 label relax_together_i:
+    $ wearing_dress = False
     scene bg fields with fade
     show her normal at midright
     with dissolve
@@ -815,7 +827,7 @@ label relax_together_i:
             him normal "It looks like you had some fun this afternoon."
             her happy "I made one for you too!"
             him surprised "What am I, king of the faeries?"
-            her flirting "And I'm the queen! All the insects will obey our orders!"
+            her flirt "And I'm the queen! All the insects will obey our orders!"
             him happy "Maybe if those orders include eating everything in sight!"
             $ loved += 2
             
@@ -823,7 +835,7 @@ label relax_together_i:
             him happy "Glad to see those weeds are getting some practical use!"
             her concerned "Well, jewelry isn't exactly practical, but it is fun."
             him flirting "Shall I address you as Queen Mab from now on?"
-            her flirting "Yes. I'll fulfill all your wishes... in your dreams."
+            her flirt "Yes. I'll fulfill all your wishes... in your dreams."
             him flirting "Ooo, harsh. But being with you is like a dream come true, so does that mean you'll fulfill my wishes here?"
             "You get in a tickle fight, and one of your flower bracelets falls off. It was fun while it lasted."
             $ loved += 2
@@ -849,7 +861,7 @@ label relax_together_j:
             her_c "Tell me more about her."
             him_c "Well, she's not conceited at all, that's one thing I like about her, and she's funny and creative, and she's got these lips that just beg to be kissed."
             her_c "So kiss them already!"
-            show her flirting
+            show her flirt
             show him flirting at midright with move
             "He sauntered over with a grin, leaned down, and kissed me like we had never kissed before."
             $ made_love += 1

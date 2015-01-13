@@ -206,9 +206,9 @@ screen main_menu:
             textbutton _("New Game+") action Start()
         else:
             textbutton _("New Game") action Start()
-        if (renpy.newest_slot() != "None"):
+        if (renpy.newest_slot() is not None):
             $ recent_save = renpy.newest_slot("[^_]")
-            if (recent_save != "None"):
+            if (recent_save is not None):
                 $ recent_save_page, recent_save_name = recent_save.split("-")
                 textbutton _("Continue") action FileLoad(recent_save_name, page=recent_save_page) text_size 28
                 textbutton _("Load Game") action ShowMenu("load")

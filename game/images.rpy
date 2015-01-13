@@ -37,11 +37,17 @@ image bg church = "bg/church.jpg"
 image bg city_street = "bg/city-street.jpg"
 image bg bathhouse = "bg/bathhouse.jpg"
 image bg gray_silk = "bg/silk-gray.jpg"
+
+image cg together = "bg/cg-1.png"
+image cg with_baby = "bg/cg-2.png"
+
 image overlay night = "bg/night.png"
 image overlay bathhouse = "bg/bathhouse-overlay.png"
 image overlay bedroom_covers = "bg/bedroom-overlay.png"
 image overlay computer_pad = "bg/computer-pad.png"
 image overlay underwater = "bg/underwater-overlay.png"
+
+image talaam-approach = "bg/talaam-approach.jpg"
 
 # Tutorial screenshots
 image screenshot = "bg/screenshot.jpg"
@@ -66,30 +72,19 @@ image him surprised = "sprites/him-surprised.png"
 image him serious = "sprites/him-annoyed.png"
 image him sleeping = "sprites/him-sleeping.png" #TODO: make color (shirtless?) version?
 
-# Her
-image her normal = "sprites/her.png"
-image her angry = "sprites/her-angry.png"
-image her annoyed = "sprites/her-annoyed.png"
-image her concerned = "sprites/her-concerned.png"
-image her flirting = "sprites/her-flirt.png"
-image her happy = "sprites/her-happy.png"
-image her laughing = "sprites/her-laughing.png"
-image her sad = "sprites/her-sad.png"
-image her surprised = "sprites/her-surprised.png"
-image her serious = "sprites/her-serious.png"
-image her sleeping = "sprites/her-sleeping.png"
-
-# Her Dress
-# TODO: Use dress, pregnant (what about dress & pregnant?!)
+# Her sprites are declared automatically in images-her.rpy
+# TODO: Use determined?
+# TODO: Use nude?
 
 define SMALL_IMAGE_SCALE = 0.55
 define SMALL_IMAGE_CROP = 90
 
-image her sad head = LiveCrop((5, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/her-sad.png", SMALL_IMAGE_SCALE))
-image her concerned head = LiveCrop((5, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/her-concerned.png", SMALL_IMAGE_SCALE))
-image her serious head = LiveCrop((5, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/her-serious.png", SMALL_IMAGE_SCALE))
-image her normal head = LiveCrop((5, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/her.png", SMALL_IMAGE_SCALE))
-image her happy head = LiveCrop((5, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/her-happy.png", SMALL_IMAGE_SCALE))
+# Create the small headshot icons used on the computer screen to show each person's mood
+image her sad head = LiveCrop((5, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/her/sad.png", SMALL_IMAGE_SCALE))
+image her concerned head = LiveCrop((5, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/her/concerned.png", SMALL_IMAGE_SCALE))
+image her serious head = LiveCrop((5, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/her/serious.png", SMALL_IMAGE_SCALE))
+image her normal head = LiveCrop((5, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/her/normal.png", SMALL_IMAGE_SCALE))
+image her happy head = LiveCrop((5, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/her/happy.png", SMALL_IMAGE_SCALE))
 
 image him concerned head = LiveCrop((5, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/him-concerned.png", SMALL_IMAGE_SCALE))
 image him annoyed head = LiveCrop((5, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.FactorScale("sprites/him-annoyed.png", SMALL_IMAGE_SCALE))
@@ -99,14 +94,16 @@ image him happy head = LiveCrop((5, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.F
 
 # Other Characters
 image baby girl = "sprites/baby1.png"
-image baby boy = "sprites/baby2.png"
+image baby boy = "sprites/baby2.png" #TODO: rotate just a bit
 image sara = "sprites/sara.png"
 image sara normal = "sprites/sara.png"
 image sara sad = "sprites/sara-sad.png"
 image pavel = "sprites/pavel.png"
 image pavel normal = "sprites/pavel.png"
 image pavel sad = "sprites/pavel-sad.png"
-image thuc = "sprites/thuc.png" # TODO: Make Thuc "serious"?
+image thuc = "sprites/thuc.png"
+image thuc normal = "sprites/thuc.png"
+image thuc sad = "sprites/thuc-sad.png"
 image natalia = "sprites/natalia.png"
 image julia = "sprites/julia.png"
 image julia normal = "sprites/julia.png"
@@ -129,14 +126,17 @@ image helen = "sprites/helen.png"
 image helen happy = "sprites/helen-happy.png"
 image ilian = "sprites/ilian.png"
 image ilian normal = "sprites/ilian.png"
-image ilian happy = "sprites/ilian-happy.png" #TODO: use this somewhere
+image ilian happy = "sprites/ilian-happy.png"
 image martin = "sprites/martin.png"
 image martin normal = "sprites/martin.png"
-image martin happy = "sprites/martin-happy.png" #TODO: use this
-image martin upset = "sprites/martin-upset.png"
+image martin happy = "sprites/martin-happy.png"
+image martin sad = "sprites/martin-upset.png"
+
+# Kids
 image van = "sprites/van.png"
 image van normal = "sprites/van.png"
 image van wince = "sprites/van-wince.png"
+image raul = "sprites/raul.png"
 image kid = "sprites/vani.png"  #TODO: add in these in more places?
 image kid normal = "sprites/vani.png"
 image kid frown = "sprites/vani-frown.png"

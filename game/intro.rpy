@@ -1,4 +1,125 @@
 # Introduction
+
+label intro:
+    "I thought I knew what love was."
+    "Smiling ridiculously whenever I thought of him."
+    "Counting down the minutes until we could meet again."
+    "My heart beating faster when we kissed."
+    "That feeling of contentment when he held me in his arms."
+    "That's what I thought love was..."
+    "I was so wrong."
+    "But that's why I married him..."
+    show her normal at center with moveinleft
+
+    show him normal at quarterright with moveinright
+    
+    # Get his name
+    # TODO: Add a last name "Ventura"? Kuehn? She gets to pick if she wants his last name?
+    if not renpy.variant('touch'):
+        $ his_name = renpy.input("What is his name?", "Jack", length=20)
+    else:
+        "What is his name?"
+        $ input_text = renpy.call_screen(inputter, "His Name:")
+        $ his_name = input_text or "Jack"
+    
+    "I thought we were in love. That's why I married [his_name]."
+
+    "We had known each other..."
+    menu:
+        "How long had we known each other?"
+        "Since we were kids.":
+            "We had known each other since we were kids. He pulled my hair in first grade; I chased him and tried to kiss him. Then in high school we became best friends. It wasn't until recently that we had begun to think about each other romantically."
+            $ known_each_other = "since we were kids"
+        "For three years.":
+            "We had known each other for three years. We started out as friends, then pretty soon we were hanging out all the time, and lately we had begun to think about each other as more than friends."
+            $ known_each_other = "three years"
+        "For just six months.":
+            "We had known each other for just six months, but we spent almost all our free time together. Though we started out as just friends, lately there was a romantic tension that hadn't been there before."
+            $ known_each_other = "six months"
+
+    scene bg city_street with fade
+    
+    show her normal at midright with dissolve
+    show him normal at quarterleft with moveinleft
+    "After working hard on his parents' farm all day, he'd take a shower and meet me at the cafe near my work. We'd get something to drink, and I'd tell him about work, or the latest book I was reading, or a video game he might like."
+    "He would tell me about what was going on on the farm - I loved how he put his whole soul into everything he did." 
+    "And when he said my name... it was as if he knew everything about me and loved every bit of it."
+    
+    # Get the main character's name
+    if not renpy.variant('touch'):
+        $ her_name = renpy.input("What is your name?", "Kelly", length=20)
+    else:
+        "What is your name?"
+        $ input_text = renpy.call_screen(inputter, "Her Name:")
+        $ her_name = input_text or "Kelly"
+        
+    show him at midleft with move
+    him normal "[her_name]... you're incredible. Being here with you is almost perfect."
+    her flirt "Almost?"
+    him angry "This little town is driving me insane! I've lived here my whole life!"
+    her surprised "You want to move?"
+    him serious "Someday. Think about how much of the world there is out there."
+    him happy "Forget the world, there's so much of the {b}universe{/b} out there!"
+    her normal "Yeah, I'd love to see it..."
+    show him concerned
+    her concerned "Someday."
+    "Neither of us had enough money to seriously consider moving. I was still paying off my school debts, and he said his family was lucky to have enough income from the farm to repair their equipment every year."
+    "But we made sure to see each other, even if we didn't have the money to do anything big and exciting yet."
+    scene bg porch with fade
+    show him normal at midleft with dissolve
+    show her normal at midright with moveinright
+    "Sometimes he'd invite me over for dinner and cook up some fresh vegetables from the farm."
+    her surprised "You grew these?"
+    him happy "Yeah! Well, my family and I did, anyway."
+    him concerned "Do you like them?"
+    her happy "Of course! I didn't even know asparagus could taste this good!"
+    
+    him serious "It's because it's grown with love."
+    her flirt "Oh, you \"love\" your asparagus, do you?"
+    him flirting "Of course I do. How else would I know what it needs?"
+    her annoyed "And does your asparagus love you back?"
+    him happy "It sure does; can't you taste it in every bite? Mmmm..."
+    her flirt "That's the taste of love, huh? Asparagus?"
+    him serious "That's one kind."
+    her happy "There's much better kinds, you know."
+    him serious "Of course. But some of those are dangerous."
+    her surprised "Dangerous?"
+    him concerned "You know, like blackberries and their thorns."
+    her normal "Blackberries are so delicious, they're worth the thorns."
+    him serious "You're right. They're so sweet, and soft...they just melt in your mouth..."
+    show him normal at center with move
+    "He came closer - for a kiss? I couldn't help blurting out a response."
+    her flirt "Don't forget plump, sour, and just a little bit lumpy."
+    show him surprised at midleft with move
+    him surprised "Lumpy! I would never insult a blackberry like that. I love them just the way they are. And--"
+    her surprised "And?"
+    him serious "And I love you, just the way you are."
+    show him normal at center with move
+    "His face neared mine, and I decided this wasn't the time for more jokes."
+    her happy "I love you, [his_name]. You and your silly asparagus and blackberries and everything."
+    
+    scene black with fade
+    jump choose_career
+
+label choose_career:
+
+    "A few days later, [his_name] came to my work."
+
+menu:
+    "Where do I work?"
+    "The hardware store":
+        jump carpenter
+        
+    "The hospital":
+        jump doctor
+
+    "The car repair shop":
+        jump mechanic
+
+    "The elementary school":
+        jump teacher        
+    
+
 # Choose profession, hobby, and some character dynamics.
 
 # CARPENTER; scene at craft store
@@ -6,7 +127,7 @@ label carpenter:
     $ profession = "carpenter"
     scene bg workshop with fade
     show her normal at midleft with dissolve
-    "...the hardware store. He was looking for some wire to fix a fence on his farm."
+    "He came to the hardware store where I work. He was looking for some wire to fix a fence on his farm."
     show him normal at quarterright with moveinright
     him surprised "What gauge do you think I should use?"
     her serious "Well, the larger wire will have a stronger hold, but the thinner wire is easier to work with. What sort of force does it need to hold against?"
@@ -22,7 +143,7 @@ label doctor:
     show her normal at midleft
     show him normal at quarterright
     with dissolve
-    "...the hospital. He thought he had broken his wrist, but when the x-rays came back it turned out it was only sprained. I could feel his eyes on me as I helped him with the sling."
+    "He came to the hospital where I work. He thought he had broken his wrist, but when the x-rays came back it turned out it was only sprained. I could feel his eyes on me as I helped him with the sling."
     her surprised "How did you sprain it, anyway?"
     him happy "You should have seen it; it was heroic. Diving through flames, rescuing small children, wrestling wolves . . ."
     her annoyed "Really? You're lucky it was just your wrist, then."
@@ -37,9 +158,9 @@ label mechanic:
     $ profession = "mechanic"
     scene bg machine_shop with fade
     show her normal at midleft with dissolve
-    "...the car repair shop. His engine wasn't working right, and after I fixed it he wanted me to show him everything I'd done."
+    "He came to my the car repair shop where I work. His engine wasn't working right, and after I fixed it he wanted me to show him everything I'd done."
     show him normal at quarterright with moveinright
-    her angry "You don't think I fixed it right, do you?"
+    her annoyed "You don't think I fixed it right, do you?"
     him surprised "No! It's not that at all! I just spent two days working on it and couldn't figure it out, so I'm really curious what it was. I'm really impressed, actually."
     her normal "Well, it's something that's easy to miss. Just take a look at this connection here..."
     jump first_date
@@ -77,7 +198,7 @@ label first_date:
     note "How I keep thinking about you, even when I'm up to my knees in manure.{size=-6}(was that romantic or what?!){/size}"
     her happy "(Somehow, that is romantic...)"
     note "How I can't imagine how a woman could be more perfect than you."
-    her flirting "(If he thinks I'm perfect, he's delusional)"
+    her flirt "(If he thinks I'm perfect, he's delusional)"
     note "How it's time we said goodbye to this little town and started something new on our own..."
     note "How I love you heart, body, and soul, every minute of every day..."
     note "Anyway, I want to tell you more, in person! So come to my folks' tonight for a barbeque, okay? Right after work.\n\nLove,\n       your [his_name]"
@@ -90,11 +211,10 @@ label first_date:
     with dissolve
     show overlay night
     play music "music/Run.ogg" fadeout 1.0
-    "At the barbeque, I thought there was going to be a lot of people, but it ended up being just him and his parents."
-    "It wasn't too awkward, though - we all pitched in to make dinner and then afterwards when I offered to help with the dishes, his parents told us to go relax outside."
-    "So we sat on the porch swing and talked and watched the stars come out."
-    "It was so relaxing to just talk with him - he was always funny and listened to me. He didn't always have the best advice, but I could tell he wanted to help."
-
+    "At the barbeque, I greeted his parents, and we all pitched in to make dinner. Afterwards, when I offered to help with the dishes, his parents told us to go relax outside."
+    "So we sat on the porch swing and watched the stars come out."
+    him serious "..."
+    her normal "What are you thinking about?"
     him surprised "[her_name]... have you ever thought about what's out there?"
     her surprised "Out... where?"
     show bg stars with fade
@@ -104,7 +224,7 @@ label first_date:
     her normal "That's the garden planet they found, right?"
     him happy "Yes! It's only about four light years away. People could breathe there, grow things, live there!"
 
-# What do you think about the new planet?
+    # What do you think about the new planet?
     menu:
         "I thought,"
         "Why?":
@@ -125,6 +245,7 @@ label marriage_proposal:
     show her normal at midleft
     show him normal at midright
     with dissolve
+    show overlay night
     him serious "I'm going there, [her_name]. To Talaam."
     her laughing "Oh really? I didn't know you were an astronaut, [his_name]."
     him annoyed "..."
@@ -145,16 +266,18 @@ label marriage_proposal:
             him laughing "Sorry, I should have made that part more obvious. [her_name], will you marry me?!"
         "Excited.":
             her happy "Oh [his_name], I can't think of anything that would make me happier!"
-            $ loved += 5
-            $ relaxed += 5
+            him surprised "Really? You want to?"
+            $ loved += 2
+            $ relaxed += 2
         "Worried.":
             her concerned "[his_name], I love you, but are you sure you want to go to an entirely new planet? So many things could go wrong..."
             him normal "I'm sure they will, [her_name], but I know it will be worth it. And when things do go wrong, I want you by my side."
-            $ loved += 5
-            $ relaxed -= 5
+            $ loved += 2
+            $ relaxed -= 2
         "Annoyed.":
             her annoyed "Oh, so you only want me along because I'm such a good [profession]?"
-            him annoyed "Of course not. I want you along because I'm madly in love with you, and I want to show you that every day, forever."
+            him flirting "Of course not. I want you along because I'm madly in love with you, and I want to show you that every day, forever."
+            $ loved -= 2
 
     her happy "[his_name]...I would love to create a new life together, even if it is on a different planet."
     scene bg wedding with fade
@@ -191,13 +314,14 @@ label marriage_proposal:
         "My mom's recipe book.":
             $ favorite_wedding_gift = "my mother's recipe book"
             "My mom's recipe book. She's not that great of a cook, but she put in recipes for all the foods she regularly cooks. Those foods bring back so many childhood memories."
+            "And I knew I'd be cooking a lot, since there are no restaurants on Talaam."
 
     scene bg porch with fade
     show her normal at midleft
     show him normal at midright
     with dissolve
     
-    him "Today's the day, blackberry."
+    him "You all ready to go, blackberry?"
     her surprised "\"Blackberry?\""
     him surprised "Don't you like it? I thought it was cute."
     show her normal with dissolve
@@ -218,10 +342,7 @@ label marriage_proposal:
                 $ her_nickname = renpy.input("He calls me:", "lovebug", length=20)
             else:
                 "He calls me..."
-                $ text_group = 1
-                $ input_text = ''
-                $ input_header = 'Nickname:'
-                call inputter
+                $ input_text = renpy.call_screen(inputter, "Nickname:")
                 $ her_nickname = input_text or "lovebug"
             her "You could call me \"[her_nickname]\"."
 
@@ -240,13 +361,10 @@ label marriage_proposal:
                 $ his_nickname = renpy.input("I call him:", "asparagus", length=20)
             else:
                 "I call him..."
-                $ text_group = 1
-                $ input_text = ''
-                $ input_header = 'Nickname:'
-                call inputter
+                $ input_text = renpy.call_screen(inputter, "Nickname:")
                 $ his_nickname = input_text or "asparagus"
 
-    her flirting "And you're my \"[his_nickname]\"."
+    her flirt "And you're my \"[his_nickname]\"."
     him surprised "You're calling me [his_nickname]?"
     him happy "Well, okay. You can call me whatever you want as long as you come with me on the shuttle today!"
 

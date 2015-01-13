@@ -16,6 +16,7 @@ label relax_alone_0:
 # Can go help Sara or just relax at home.
 label relax_alone_1:
     $ loved -= 2
+    $ wearing_dress = False
     scene bg farm_interior with fade
     "I was all set to spend the evening by myself when Sara sent me a message on my computer."
     play bg_sfx "sfx/message.mp3"
@@ -103,7 +104,7 @@ label relax_alone_2:
     show her at sitting with move
     "I sat out on the porch and gazed at the stars. They were so different from Earth, I had to make my own constellations."
     her serious "Hmm, those kind of look like two lovers... and there's a sort of circle that reminds me of a UFO..."
-    her flirting "And...that looks like one long, crazy dragon."
+    her flirt "And...that looks like one long, crazy dragon."
     "I wondered if eventually humans would live near some of those stars, too."
     "I sat there for a long time, feeling small and far away, but also part of something amazing - humans living on a different planet. We'd never done that before."
     "It sort of made me feel... proud."
@@ -180,14 +181,18 @@ label relax_alone_6:
 # Solo trip to bath house
 label relax_alone_7:
     scene bg bathhouse with fade
-    show overlay bathhouse
     show her serious
     "I went to the bath house by myself. I brought extra wood so I could have a long, hot bath, and I carried up extra water from the river to make it a deep one. All my effort just made me appreciate it all the more."
-    show her serious at squatting behind overlay with move
+    scene bg bathhouse with fade
+    $ is_nude = True
+    show overlay bathhouse
+    show her serious at squatting behind overlay
+    with dissolve
     play bg_sfx "sfx/splash.mp3"
     her normal "Ahhh...."
     $ relaxed += 5
     $ loved -= 2
+    $ is_nude = False
     return
 
 # These probably won't be seen, so make them simple.
@@ -353,7 +358,9 @@ label relax_alone_e:
     return
 
 label relax_alone_f:
+    $ wearing_dress = False
     scene bg path with fade
+    show her serious with dissolve
     "I took a walk near our house and thought about the future."
     "What would the colony look like in ten, twenty, or fifty years?"
     "How many people would live here? Would there be plenty of food?"
@@ -364,6 +371,7 @@ label relax_alone_f:
 
 # Hang out at the library!
 label relax_alone_g:
+    $ wearing_dress = False
     scene bg library with fade
     "I invited Sara to come to the library with me to hang out."
     show pete at quarterright
@@ -487,7 +495,7 @@ label relax_alone_k:
         "It doesn't mean anything.":
             her normal "Well, I might play through all these and see every ending, so this doesn't mean as much as you might think."
             him normal "That's fine, that's fine! I was just curious."
-            her flirting "You know you're the only man for me in real life. I just feel sorry for my character in this game that has to make do with these poor imitations."
+            her flirt "You know you're the only man for me in real life. I just feel sorry for my character in this game that has to make do with these poor imitations."
             him flirting "Yeah, yeah!"
             her happy "Ha ha, I love you, [his_nickname]."
             him happy "I love you, too, [her_nickname]."
@@ -498,7 +506,7 @@ label relax_alone_k:
             her "A little. You're both very [starship_man]."
             him laughing "Ha ha, if you say so, [her_nickname]."
         "Who's {b}your{/b} type?":
-            her flirting "So who's {b}your{/b} type of woman?"
+            her flirt "So who's {b}your{/b} type of woman?"
             him serious "Hmmm, what are my choices?"
             her normal "Crazy and energetic, shy and nerdy, or glamorous and serious."
             him normal "Out of those three...probably crazy."

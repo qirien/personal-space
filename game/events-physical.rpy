@@ -26,7 +26,7 @@ label physical_0:
     "We dug and dug and dug, and finally, the ditch was finished."
     stop bg_sfx fadeout 1.0
     him normal "Thanks for your help, [her_name]. You are actually pretty good at shovelling."
-    her flirting "Me and my hidden talents..."
+    her flirt "Me and my hidden talents..."
     him flirting "Yes, I wonder what else you are hiding?"
     show her at center with move
     her "Come and find out."
@@ -134,7 +134,7 @@ label physical_1:
             him sad "I...do trust you. But, please, be more careful, [her_name]..."
             $ loved -= 5
         "Want to come next time?":
-            her flirting "Want to come with me next time? We can take a picnic."
+            her flirt "Want to come with me next time? We can take a picnic."
             him flirting "Sure, just as long as I don't have to share you with the pond creatures."
             her laughing "Yeah, that would suck."
             him annoyed "Ohhhhhhh."
@@ -154,11 +154,11 @@ label physical_1:
                     her serious "I'll be careful, but you have to accept that bad things might happen. There are no guarantees that we're the heroes of this story and everything will turn out well for us."
                     him serious "No, that's true..."
                 "Come with me, then.":
-                    her flirting "Why don't you come with me next time, then? You can protect me from all the scary monsters out there."
+                    her flirt "Why don't you come with me next time, then? You can protect me from all the scary monsters out there."
                     him concerned "I...sure. That's a good idea. Just, don't go alone, okay?"
                     her serious "All right. But neither should you."
                     him serious "I won't."
-                    her flirting "Do we need to pinkie promise?"
+                    her flirt "Do we need to pinkie promise?"
                     him flirting "I can think of a better way to seal this promise."
                     "The argument melted away into kisses."
                 "Whatever.":
@@ -200,12 +200,12 @@ label physical_2:
             "It was sort of mesmerizing, watching the axe rise with smooth grace and fall with brutal finality. He was quite practiced at chopping wood."
             her normal "You're pretty good at that."
             him flirting "I'm good at a lot of things."
-            her flirting "Mmmm, maybe after dinner you'll show me some more of your...talents."
+            her flirt "Mmmm, maybe after dinner you'll show me some more of your...talents."
             him "Only if you show me yours."
             $ loved += 5
             $ made_love += 1
         "Are you disappointed?":
-            her flirting "I hope you're not disappointed. I could put on an apron and go fuss around in the kitchen instead."
+            her flirt "I hope you're not disappointed. I could put on an apron and go fuss around in the kitchen instead."
             him happy "No, no! Chop away! I'll get dinner ready."
             hide him with moveoutleft
             "Chopping required a surprising amount of concentration. Balance the log at the optimum angle, bring up the axe, aim at the middle of the log, let it down, repeat again."
@@ -218,7 +218,7 @@ label physical_2:
             him happy "That could be good, too."
             her normal "Well, anyway, thanks for cooking."
             him normal "Thanks for chopping. That'll help us stay warm for quite a while."
-            her flirting "You'll keep me warm for quite a while."
+            her flirt "You'll keep me warm for quite a while."
             him flirting "Yeah, for approximately... forever."
             $ loved += 5
         "This is your job.":
@@ -311,7 +311,7 @@ label physical_4:
             her serious "It's good to practice putting your body in different positions."
             him flirting "You don't practice that enough with me?"
             if (relaxed > 0):
-                her flirting "We could practice together."
+                her flirt "We could practice together."
                 scene black with fade
                 play sound "sfx/cloth.mp3"
                 $ made_love += 1
@@ -334,7 +334,7 @@ label physical_4:
                         "I'd prefer to go by myself tonight.":
                             her serious "No need, I can take care of cleaning myself by myself."
                         "Looking forward to it.":
-                            her flirting "Great. We'll have dessert afterwards."
+                            her flirt "Great. We'll have dessert afterwards."
                             him flirting "I'll try to work up a sweat after the flare to make it worth the trip."
                             scene black with fade
                             play sound "sfx/cloth.mp3"
@@ -364,7 +364,7 @@ label physical_5:
             with dissolve
             her "Hey, [his_nickname], I'm going hiking tomorrow; want to come?"
             him "Yeah, I'm all caught up on the farm work here, and that sounds like fun."
-            her flirting "And if I run into any ravenous wild animals, I'll be there to protect you."
+            her flirt "And if I run into any ravenous wild animals, I'll be there to protect you."
             him happy "Ha ha, yeah, something like that."
             scene bg mountains with fade
             "We set off towards the mountains to the west, and climbed and climbed all morning long."
@@ -600,6 +600,7 @@ label physical_7:
               "We won the game!"
          "Ilian.":
               her happy "Ilian! Take it on down!"
+              show ilian happy with dissolve
               "I passed it to Ilian. Victory was not as important as practice and team spirit."
               "The other team won, but I could tell our team felt strong and happy about how we played."
               $ community_level += 1
@@ -625,7 +626,7 @@ label physical_8:
     her normal "Yeah, I know it's not much but rearranging all this food just makes me feel productive."
     him surprised "You're just rearranging it all willy-nilly?"
     if ((skill_domestic >=30) or (skill_knowledge >= 30)):
-        her flirting "No, don't be silly. I put all the most perishible items in the front, so we'll use them first."
+        her flirt "No, don't be silly. I put all the most perishible items in the front, so we'll use them first."
         him happy "Nice."
     else:
         her concerned "No, I've been putting the heavier things on the bottom shelves, where they'll be easier to get."
@@ -636,7 +637,7 @@ label physical_8:
             "Oh, yeah.":
                 her concerned "Yeah, you're right. I'll hurt my back if I do much more of this."
                 him happy "I'm glad you're feeling up to working though! How about that dinner?"
-                her flirting "I'm on it."
+                her flirt "I'm on it."
             "Ugh, being pregnant is such a pain.":
                 her angry "I can't do anything useful when I'm pregnant. What am I supposed to do, sit at home and twiddle my thumbs?"
                 him serious "You can still do useful things. You just can't lift heavy objects."
@@ -656,7 +657,7 @@ label physical_8:
                 him concerned "I just want you to be healthy and happy."
                 her serious "And completely bored."
                 him serious "You can still hunt and play soccer. I think you'll be fine."
-                her flirting "So hunting is better than lifting heavy things?"
+                her flirt "So hunting is better than lifting heavy things?"
                 him normal "As long as I come with you!"
     else:
         him normal "I know the Peróns just built new shelves in their cellar and want to rearrange their storage, but I haven't had time to help them. Could you do that?"

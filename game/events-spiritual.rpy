@@ -465,7 +465,7 @@ label spiritual_master:
     scene black with fade
     "I was a little nervous about speaking about such important things in front of half the colony. I knew they all had different beliefs, too - I didn't want to offend anyone."
     "But I prayed for help, and decided to prepare a sermon on gratitude, using some stories and verses from all the scriptures I had read."
-    
+
     scene bg church with fade
     show her serious at center
     "The congregation was a little surprised to see me up at the stand instead of Sister Naomi, but we sang and prayed together like normal, and then I delivered my sermon."
@@ -480,7 +480,7 @@ label spiritual_master:
     hide her
     "The silence continued. A few people shuffled in their seats."
     show ilian at center with dissolve
-    ilian "I'm thankful for my wife, Sara. She never complains, and is always smiling cheerfully."
+    ilian happy "I'm thankful for my wife, Sara. She never complains, and is always smiling cheerfully."
     hide ilian
     show lily at center with dissolve
     lily happy "I'm thankful for electricity."
@@ -492,7 +492,9 @@ label spiritual_master:
     julia "I'm thankful for the doctor's quick care, so Van didn't choke to death."
     hide julia
     "Even some of the kids chimed in."
+    show raul at center with dissolve
     "Raúl Perón" "No school today!"
+    hide raul
     show kid at center with dissolve
     "Gardenia Nguyen" "We haven't been eaten by wolfslugs!"
     hide kid

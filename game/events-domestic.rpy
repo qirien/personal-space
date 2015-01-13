@@ -144,7 +144,7 @@ label domestic_3:
                     him flirting "Who's going to get the last strawberry."
                     her annoyed "Ohhh! I was saving that for something special!"
                     him serious "I was saving it for something special, too."
-                    her flirting "Like what?"
+                    her flirt "Like what?"
                     him serious "Like you."
         "Let me ask [his_name].":
             her concerned "I don't know... maybe I'll ask [his_name]."
@@ -359,7 +359,7 @@ label domestic_7:
     show her normal at midleft 
     with dissolve
     him "I bet you could make some soap, [her_nickname]."
-    her flirting "I bet I could. But I bet we could make even better soap together."
+    her flirt "I bet I could. But I bet we could make even better soap together."
     if (loved >= 5):
         him flirting "Everything we make together is good."
     else:

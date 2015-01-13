@@ -145,10 +145,10 @@ label social_1:
     hide pavel with moveoutleft
     hide brennan with moveoutright
     show natalia at left behind her, him
-    show martin at quarterleft behind her, him
+    show martin happy at quarterleft behind her, him
     with moveinright
     show sara at quarterright behind her, him
-    show ilian at right behind her, him
+    show ilian happy at right behind her, him
     with move
     natalia "Great idea, [her_name]!"
     sara "Yeah, it feels good to get out of the house!"
@@ -261,7 +261,7 @@ label social_2:
     if (want_kids or is_pregnant):
         her concerned "It will be different, won't it?"
     elif (loved >= 0):
-        her flirting "As long as you and me are in it, it will be just fine."
+        her flirt "As long as you and me are in it, it will be just fine."
     else:
         her surprised "Who knows?"
 
@@ -350,7 +350,7 @@ label social_4:
             pete "We've got lots of Star Wars remakes in the archives, but maybe you didn't know that we have some rarer sci-fi movies here too."
             her surprised "Like what?"
             pete "{i}Time For No Man{/i} was originally a tellanovella, but when set in space, it suddenly became a sleeper cult hit in the 2030s!"
-            her flirting "'No man', huh? Does it have any guys in it?"
+            her flirt "'No man', huh? Does it have any guys in it?"
             pete "I think it has a few. It's not just lesbians if that's what you're asking."
             sara "Is it appropriate for children?"
             pete "Sure. There's some innuendo, but that goes right over their heads."
@@ -377,7 +377,7 @@ label social_4:
                     menu:
                         "What should I say?"
                         "You'd better believe it.":
-                            her flirting "I know you like it like that."
+                            her flirt "I know you like it like that."
                             him "Let's take this indoors!"
                             $ made_love += 1
                         "Ugh, stop it.":
@@ -412,7 +412,7 @@ label social_4:
             with dissolve
             "We had a pretty good turnout, and the kids and adults both found things to laugh at."
             him surprised "So, the part where the sadistic child was killing sheep with bread-encrusted coins was a little hard for me to believe."
-            her flirting "It could have been worse. The sadistic child could have been a werewolf who was eating them."
+            her flirt "It could have been worse. The sadistic child could have been a werewolf who was eating them."
             him happy "Yeah, but making coins out of copper is a waste of metal!"
             her happy "Seriously, they should be making teapots out of them."
             him normal "Or you know, wires."
@@ -457,13 +457,13 @@ label social_4:
                             her annoyed "It's not romantic. We'll be too dead to appreciate how cute our sacrifice is."
                             him normal "Well, I'm happy as long as we're together."
                         "It could be romantic.":
-                            her flirting "If they find our skeletons embracing each other, I guess that could be romantic."
+                            her flirt "If they find our skeletons embracing each other, I guess that could be romantic."
                             him flirting "That's the spirit!"
                             $ loved += 5
                 "Most of the time.":
                     her normal "Most of the time I'm happy to be here. There are lots of things I miss, of course. But it's also exciting to start something new."
                     him happy "We're living off the land! We can make our own futures!"
-                    her flirting "Yeah, as long as that future involves farming of some kind."
+                    her flirt "Yeah, as long as that future involves farming of some kind."
                     him annoyed "Well, you're not farming."
                     her annoyed "True. But it's going to be a big part of our lives for the foreseeable future, is what I meant."
                     him normal "That's the way I like it. There's nothing like farm-fresh food to make you healthy."
@@ -532,7 +532,7 @@ label social_5:
             her normal "It's no trouble. C'mon, it'll be fun! We can hang out every night like it's a weekend!"
             him happy "Yeah, and don't worry; [her_name] doesn't snore too loudly."
             show her annoyed
-            ilian "Thanks; we really appreciate it."
+            ilian happy "Thanks; we really appreciate it."
             show her normal
             sara normal "Yes, honestly, I'd rather stay with you guys than anywhere else."
             scene bg farm_interior with fade
@@ -568,26 +568,27 @@ label social_5:
             scene black with fade
             "When we came back, the mood had definitely changed."            
             scene bg farm_interior with fade
-            show ilian at quarterright with dissolve
+            show ilian happy at quarterright with dissolve
             show him normal at midleft with dissolve
             show sara at midright with moveinleft
             show her normal at quarterleft with moveinleft
             ilian "Did you have a good time?"
             sara "We did, actually."
             ilian "Good."
-            sara "..."
-            ilian "..."
+            sara sad "..."
+            ilian normal "..."
             sara sad "Hey, sorry I got mad at you. I know you don't like stuff like that; I shouldn't try to make you do things you don't like."
             ilian "I could do more, I'm just lazy..."
             show sara normal
             "She came up and hugged him and whispered something in his ear. He laughed and squeezed her close."
-            ilian "I'm not going to let a headache stop me from--"
+            ilian happy "I'm not going to let a headache stop me from--"
             her laughing "Hey! [his_name], come outside, I want to show you something."
             him surprised "Huh? What is it?"
             her happy "Just come outside with me for twenty minutes."
             sara "Thank you, [her_name]!"
-            hide him with moveoutleft
-            hide her with moveoutleft
+            hide him
+            hide her
+            with moveoutleft
             scene bg farm_exterior flip with fade
             "Luckily, they had materials for an extra house on the shuttle, so the whole community worked together one day to put it together for them."
             "The Nguyens donated one of their computer pads for them to share, and everyone pitched in some cookware and tools to replace those that had burned."
@@ -595,11 +596,15 @@ label social_5:
             show him normal at midright
             show her normal at midleft
             him "It wasn't as bad as I thought, having Ilian and Sara stay with us for a week..."
-            her flirting "Yeah. But now that we have the house to ourselves, we can do whatever we want, whenever we want..."
+            her flirt "Yeah. But now that we have the house to ourselves, we can do whatever we want, whenever we want..."
             him flirting "You're right! Now I can finally let out all the gas I've been saving up..."
             her annoyed "Is that the best thing you can think of?!"
-            him flirting "You're the best thing I can think of."
-            her happy "That's more like it!"
+            if (loved <= 0):
+                him flirting "You're the best thing I can think of."
+                her happy "That's more like it!"
+            else:
+                him flirting "Isn't my comfort important to you? It's important to me!"
+                her flirt "I'll show you some comfort..."
             $ community_level += 5
             $ relaxed -= 2
             $ made_love += 1
@@ -808,7 +813,7 @@ label social_8:
     pavel sad "[her_name]! Sorry about that."
     her happy "Not at all! You should be in a talent show or something, that was great."
     pavel normal "Well, it wouldn't be a talent show if I was in it. My skills lie in other areas, I'm afraid."
-    her flirting "Like keeping space colonies running?"
+    her flirt "Like keeping space colonies running?"
     pavel sad "I used to think so, but..."
     her surprised "What's wrong?"
     pavel "There's just been... a really difficult situation, lately. I'm not sure I know what to do."
@@ -848,7 +853,7 @@ label social_8:
             her serious "Well, there are other ways to help them. Maybe this woman could just talk to the person she has a problem with, or not let her kids play over there."
             pavel "That's true..."
             her annoyed "People don't need laws to tell them how to live; people only need laws to stop those that want to harm others. Too many laws just get in the way."
-            her flirting "Besides, do you really want to have to enforce a law like that?"
+            her flirt "Besides, do you really want to have to enforce a law like that?"
             pavel normal "Good point. I'll see if there's a solution to this problem aside from making a new law."
             her normal "I'm sure there is."
         "The colony should vote on it.":
