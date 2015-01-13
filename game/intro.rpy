@@ -15,12 +15,7 @@ label intro:
     
     # Get his name
     # TODO: Add a last name "Ventura"? Kuehn? She gets to pick if she wants his last name?
-    if not renpy.variant('touch'):
-        $ his_name = renpy.input("What is his name?", "Jack", length=20)
-    else:
-        "What is his name?"
-        $ input_text = renpy.call_screen(inputter, "His Name:")
-        $ his_name = input_text or "Jack"
+    $ his_name = renpy.input("What is his name?", "Jack", length=20)
     
     "I thought we were in love. That's why I married [his_name]."
 
@@ -46,12 +41,7 @@ label intro:
     "And when he said my name... it was as if he knew everything about me and loved every bit of it."
     
     # Get the main character's name
-    if not renpy.variant('touch'):
-        $ her_name = renpy.input("What is your name?", "Kelly", length=20)
-    else:
-        "What is your name?"
-        $ input_text = renpy.call_screen(inputter, "Her Name:")
-        $ her_name = input_text or "Kelly"
+    $ her_name = renpy.input("What is your name?", "Kelly", length=20)
         
     show him at midleft with move
     him normal "[her_name]... you're incredible. Being here with you is almost perfect."
@@ -338,12 +328,7 @@ label marriage_proposal:
             $ her_nickname = "sugar"
             her "You could call me \"[her_nickname]\"."
         "Something else.":
-            if not renpy.variant('touch'):
-                $ her_nickname = renpy.input("He calls me:", "lovebug", length=20)
-            else:
-                "He calls me..."
-                $ input_text = renpy.call_screen(inputter, "Nickname:")
-                $ her_nickname = input_text or "lovebug"
+            $ her_nickname = renpy.input("He calls me:", "lovebug", length=20)
             her "You could call me \"[her_nickname]\"."
 
     him flirting "Alright, then, you're my [her_nickname]!"
@@ -357,12 +342,7 @@ label marriage_proposal:
         "Honey.":
             $ his_nickname = "honey"
         "Something else.":
-            if not renpy.variant('touch'):
-                $ his_nickname = renpy.input("I call him:", "asparagus", length=20)
-            else:
-                "I call him..."
-                $ input_text = renpy.call_screen(inputter, "Nickname:")
-                $ his_nickname = input_text or "asparagus"
+            $ his_nickname = renpy.input("I call him:", "asparagus", length=20)
 
     her flirt "And you're my \"[his_nickname]\"."
     him surprised "You're calling me [his_nickname]?"

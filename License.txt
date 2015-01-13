@@ -8,7 +8,7 @@
 
 .License
 ****
-"Our Personal Space" Program, Text & Dialogue © 2014-2015 Andrea Landaker <qirien@icecavern.net>, Rachel Helps <TODO>.
+"Our Personal Space" Program, Text & Dialogue © 2014-2015 Andrea Landaker <qirien@icecavern.net>, Rachel Helps <rmeibos@gmail.com>.
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
@@ -19,6 +19,16 @@ You should have received a copy of the GNU General Public License along with thi
 If not, see <http://www.gnu.org/licenses/>.
 ****
 
+== Fonts
+
+Exo2 and Questrial are licensed under the SIL Open Font License.  See game/fonts/SIL Open Font License.txt
+
+RobotoSlab is licensed under the Apache License, found at game/fonts/Apache License.txt
+
+Daniel is free to use and distribute under its own license, found at game/fonts/Daniel Midgley.txt
+
+Anonymous is freeware, used under the license found at game/fonts/Mark Simonson - Anonymous License.txt
+
 == Graphics
 
 === Character Sprites
@@ -27,7 +37,7 @@ If not, see <http://www.gnu.org/licenses/>.
 
 .License
 ****
-"Our Personal Space" Character Sprites © 2014-2015 Clarissa Helps <TODO>, Andrea Landaker <qirien@icecavern.net>, Rachel Helps <TODO>.
+"Our Personal Space" Character Sprites © 2014-2015 Clarissa Helps, Andrea Landaker <qirien@icecavern.net>, Rachel Helps <rmeibos@gmail.com>.
 
 This artwork is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
@@ -40,7 +50,7 @@ If not, see <http://www.gnu.org/licenses/>.
 
 .License
 ****
-"Our Personal Space" Character Sprites © 2014-2015 Clarissa Helps <TODO>, Andrea Landaker <qirien@icecavern.net>, Rachel Helps <TODO>.
+"Our Personal Space" Character Sprites © 2014-2015 Clarissa Helps, Andrea Landaker <qirien@icecavern.net>, Rachel Helps <rmeibos@gmail.com>.
 
 This artwork is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License <http://creativecommons.org/licenses/by-sa/4.0/>.
 ****

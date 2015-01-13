@@ -206,8 +206,7 @@ label start:
 
 label test_inputter:
     "What is your pet's name?"
-    $ input_header = 'Pet\'s Name:'
-    $ input_text = renpy.call_screen("inputter")
+    $ input_text = renpy.input("Pet's Name:")
     $ pet_name = input_text or "Fido"
     "You picked the name [pet_name]."
     return

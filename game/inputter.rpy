@@ -16,15 +16,21 @@ init python:
 style inputter_text is sans_text:
     color "000000"
     size 30
+
+style inputter_button is button:
+    xpadding 20
+    ypadding 10
+    xmargin 10
     
 style inputter_button_text is sans_text:
     size 30
     
 style inputter_keys:
-    font "fonts/courbd.ttf"
-    size 40    
+    font "fonts/Anonymous.ttf"
+    size 40
 
-screen inputter(input_header="NAME:"):
+screen input(prompt):
+    variant "touch"
     default caps_lock = False
     default input_text = ""
     if initial_caps:
@@ -44,7 +50,7 @@ screen inputter(input_header="NAME:"):
         xminimum 450
 
         vbox:
-            $ display_text = input_header+" "+input_text
+            $ display_text = prompt+"\n"+input_text
             text display_text
             text ""
             hbox:
