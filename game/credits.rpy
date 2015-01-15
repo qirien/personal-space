@@ -16,22 +16,42 @@ label show_credits:
     if (community_ceiling > COMMUNITY_LEVEL_MAX):
         $ community_ceiling = COMMUNITY_LEVEL_MAX
         
-    "You scored [loved_ceiling] out of [LOVED_MAX] relationship points, and [community_ceiling] out of [COMMUNITY_LEVEL_MAX] comunity points."
+    "You scored [loved_ceiling] out of [LOVED_MAX] relationship points, and [community_ceiling] out of [COMMUNITY_LEVEL_MAX] community points."
     
     # TODO: show images from the game during this?  omake?
-    # TODO: Double check EVERYTHING we used is in here!  Check Credits.txt, music, sfx, bg directories
+    # Show family sprites, have him and her last with expressions/movement depending on ending
+    # TODO: Double check EVERYTHING we used is in here!  Check License.txt
     
     # If the user has beat the game before, allow them to skip the credits.
     $ skippable = not persistent.times_beaten
     scene black with fade    
     hide text with fade
     show text "Credits" with fade
+    show natalia at left behind text
+    show martin at midleft behind text
+    with longmoveinbottom
+    hide natalia
+    hide martin
+    with longmoveouttop
     $ renpy.pause(2.0, hard=skippable)
     hide text with fade
     show text "Written, Produced, and Directed by Andrea Landaker" with fade 
+    show pavel at right
+    show naomi at midright
+    with longmoveinbottom
+    hide pavel
+    hide naomi
+    with longmoveouttop
     $ renpy.pause(3.0, hard=skippable)
+    with moveouttop    
     hide text with fade
     show text "Additional Writing and Design by Rachel Helps" with fade 
+    show ilian at left
+    show sara at quarterleft
+    with longmoveinbottom
+    hide ilian
+    hide sara
+    with longmoveouttop
     $ renpy.pause(3.0, hard=skippable)
     hide text with fade
     show text "Character Art by {a=http://clarissahelps.com}Clarissa Helps{/a}" with fade 
@@ -91,7 +111,7 @@ label show_credits:
         $ persistent.got_all_endings = True
         
     "Thanks for playing! If you have feedback, I'd love to hear from you at {a=mailto:qirien@icecavern.net?subject=Our Personal Space}qirien@icecavern.net{/a}"
-    show text "{size=80}{font=fonts/danielbd.ttf}{b}The End{/b}{/font}{/size}" with fade
+    show text "{size=60}{font=fonts/danielbd.ttf}{b}The End{/b}{/font}{/size}" with fade
     stop music fadeout 1.0
     $ renpy.pause(5.0, hard=skippable)
     

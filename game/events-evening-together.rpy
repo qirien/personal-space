@@ -93,27 +93,28 @@ label relax_together_1:
     "Afterwards, we packed up our towels and toiletries and headed down to the bathhouse."            
     scene bg bathhouse with fade
     show him normal at midleft with dissolve
-    show her normal at midright with dissolve
-    show overlay bathhouse
-    $ is_nude = True
+    show her normal at center with dissolve
+    "We built a fire to heat up one of the tubs of water. Then we washed off and got in the hot water."
+    show bathhouse_overlay
     show him nude at squatting
     show her at squatting
     with fade
+    $ is_nude = True
     play bg_sfx "sfx/splash.mp3"
-    "We built a fire to heat up one of the tubs of water, and took turns washing off and then soaking in the small tub."
     "It felt so good to soak and relax together."
     
     if (relaxed < 0):
         $ relaxed = 0
     else:
         $ relaxed += 5
+    scene black with fade
     $ is_nude = False
     return
 
 # Skinny dipping!
 label relax_together_2:
     scene bg pond with fade
-    show overlay night
+    show night
     play music "music/Rain.ogg" fadeout 1.0
     play music "sfx/stream-3.mp3" loop fadein 1.0
     "We went on a moonlight walk to the river. We found a spot where the water was deeper and slower, and sat down. I put my head on his shoulder, breathing in the cool night air."
@@ -135,7 +136,7 @@ label relax_together_2:
             her flirt "Watch out, here I come!"
             "I undressed slowly. There was enough moonlight that I knew he could see me."
             him flirting "Whoo! Alright, [her_name]! Come on in!"
-            # TODO: have an overlay here so they can not be wearing clothes?
+            # TODO: have an here so they can not be wearing clothes?
             show her normal at center with move
             show her at sitting with move
             play bg_sfx "sfx/splash.mp3"        
@@ -571,27 +572,33 @@ label relax_together_10:
     
 label relax_together_11:
     scene bg bedroom with fade
-    show overlay night
-    show overlay bedroom_covers behind night        
-    show him normal at midleft, squatting, behind overlay
-    show her normal at center, squatting, behind overlay
+    $ is_nude = True     
+    show him normal nude at midleft, squatting
+    show her normal at center, squatting
+    show bedroom_covers
+    show night
     with dissolve
     "One night we went to bed early and just started talking. I ended up telling him all about my job. Who was hard to work with, things that seemed impossible, the people I helped..."
     "It felt good to have him know what I had been working on, and know that I had his support."
     $ relaxed += 5
     $ loved += 2
+    scene black with fade
+    $ is_nude = False
     return
 
 label relax_together_12:
     scene bg bedroom with fade
-    show overlay night
-    show overlay bedroom_covers behind night        
-    show him normal at midleft, squatting, behind overlay
-    show her normal at center, squatting, behind overlay
+    $ is_nude = True
+    show night
+    show bedroom_covers behind night        
+    show him normal nude at midleft, squatting, behind bedroom_covers
+    show her normal at center, squatting, behind bedroom_covers
     with dissolve
     "We snuggled together in bed and talked softly together."
     $ relaxed += 5
     $ loved += 2
+    scene black with fade
+    $ is_nude = False
     return
 
 
@@ -721,7 +728,7 @@ label relax_together_f:
 # Midnight lovin'
 label relax_together_g:
     scene bg bedroom with fade
-    show her normal at midright # TODO: nude?
+    show her flirt at midright
     with dissolve
 
     "I decided to surprise [his_name] with a few candles lit near our bed and some soft music playing, and I wore the sexiest thing I owned. But it didn't go how I had planned..."
@@ -736,63 +743,72 @@ label relax_together_g:
     "He left."
     show her concerned
     "I waited."
-    show her annoyed
+    show her annoyed at squatting
+    show bedroom_covers
+    with dissolve
     "And waited."
+    $ is_nude = True
     show her sleeping at squatting
-    show overlay bedroom_covers
+
     "And waited."
     scene black with fade
     "Finally, I just went to sleep."
     scene bg bedroom with fade
     show her sleeping at midright, squatting
-    show overlay bedroom_covers
+    show bedroom_covers
     with dissolve
-    show him normal at center, squatting, behind overlay with moveinleft
-    show overlay night
-    show overlay bedroom_covers behind night
+    show him nude serious at center, squatting, behind bedroom_covers with dissolve
+    show night
+    show bedroom_covers behind night
     play bg_sfx "sfx/cloth.mp3"
     "I half awoke in the middle of the night to [his_name] snuggling up to me and nuzzling my ear."
     her concerned "Wha-huh?"
-    him serious "I'm home..."
+    him nude normal "I'm home..."
     her annoyed "Welcome home...and good night."
-    him flirting "You don't want to stay up for just fifteen more minutes?"
+    him nude flirting "You don't want to stay up for just fifteen more minutes?"
     her annoyed "I'm not up to begin with. I'm still asleep. Zzzzzz..."
     show her sleeping
-    him normal "Mmm, you're so sexy..."
+    him nude normal "Mmm, you're so sexy..."
     menu:
         "What should I do?"
         "Wake up for some action.":
             her flirt "I just can't say no to you..."
-            him flirting "Why would you want to?"
+            him nude flirting "Why would you want to?"
             her surprised "Did you get everything fixed up outside?"
-            him sad "Yeah, sorry it took so long; that wind is awful."
+            him nude sad "Yeah, sorry it took so long; that wind is awful."
             her flirt "You're awful, to keep me waiting so long."
-            him flirting "I know, I better be extra good to you."
-            her happy "Ohhh, you are good..."
+            him nude flirting "I know, I better be extra good to you."
             "[his_name] was definitely worth waking up for."
             $ made_love += 1
             $ loved += 2
             $ relaxed += 5
         "Go back to sleep.":
             her concerned "I'm so sleepy..."
-            him sad "..."
+            him nude sad "..."
             her normal "But I love you."
-            him normal "I love you too, [her_name]."
+            him nude normal "I love you too, [her_name]."
             "He kissed me one last time, and then held me close as I fell back asleep."
             show her sleeping
-            show him sleeping
+            show him nude sleeping
             with dissolve
             $ loved += 1
             $ relaxed -= 2
         "Tell him off.":
             her angry "You had your chance, but you missed it. Sorry, I can't just wait around all day for you to finally decide to show up and get some action."
-            him concerned "C'mon, [her_nickname]..."
+            him nude concerned "C'mon, [her_nickname]..."
             her annoyed "Just leave me alone."
-            show him angry at quarterleft with move
+            show him nude angry at quarterleft with move
             him "Fine."
             "We lay there, both angry, not saying anything, for a long time, before I finally got back to sleep."
+            show him nude sleeping
+            with dissolve
+            show her sleeping
+            with dissolve
             $ loved -= 2
             $ relaxed -= 2
+            
+    scene black with fade
+    $ is_nude = False
     return
 
 # Zombie Dinosaur Movie

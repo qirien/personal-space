@@ -203,13 +203,9 @@ label colony_ship:
 
 label settling_in:         
     # Land on the planet and get settled
-    #scene bg talaam_space with CropMove(1.0, "slideleft")
     scene talaam-approach:
-        #size (1024,600) crop (0,0,1920,1079)
         crop (0,0,1024,600)
         easein 10.0 crop (884, 272, 1024, 600)
-        #easein 5.0 crop (480,240, 1024, 600) 
-        #easein 5.0 crop (776, 452, 386, 226)
         
     play music "music/You.ogg" fadeout 1.0        
     "Finally, we arrived."

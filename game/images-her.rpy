@@ -26,7 +26,7 @@ init python:
     for expression_name in her_expressions:
         renpy.image(("her", expression_name), ConditionSwitch(
             "is_nude", "sprites/her/nude-%s.png" % expression_name, 
-            "is_pregnant", "sprites/her/pregnant-%s.png" % expression_name,
+            "is_pregnant and (month > 19) and (month <= 24)", "sprites/her/pregnant-%s.png" % expression_name,
             "wearing_dress", "sprites/her/dress-%s.png" % expression_name, 
             "True", "sprites/her/%s.png" % expression_name))
     

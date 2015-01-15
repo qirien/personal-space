@@ -277,7 +277,7 @@ label spiritual_6:
     show helen at quarterright with dissolve
     show naomi sad at center
     show her normal at midleft
-    show baby boy at Position(xpos=750, ypos=400)
+    show baby boy at quarterrightbaby
     with  moveinleft
     "We entered their small cabin, not that much different from our own. Helen was sitting on the bed with the baby on her lap doing some knitting. She invited us to sit next to her."
     her surprised "What are you making?"
@@ -351,7 +351,7 @@ label spiritual_6:
     show naomi sad at midleft
     show her normal at midright
     with moveinleft
-    show overlay night
+    show night
     her surprised "But...what did any of that have to do with piety?"
     naomi "You read \"You will not attain piety until you expend of what you love\"."
     her serious "Well...Helen is definitely giving up a lot for her baby, even if I'm not sure all her sacrifices are necessary."

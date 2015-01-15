@@ -33,21 +33,22 @@ image bg mountains = "bg/mountains.jpg"
 image bg stream = "bg/stream.jpg"
 image bg hotspring = "bg/hot-spring.jpg"
 image bg tractor = "bg/tractor.jpg"
-image bg church = "bg/church.jpg"
+image bg church = "bg/church.jpg" #TODO: Use another image with better license.
 image bg city_street = "bg/city-street.jpg"
 image bg bathhouse = "bg/bathhouse.jpg"
 image bg gray_silk = "bg/silk-gray.jpg"
 
 image cg together = "bg/cg-1.png"
 image cg with_baby = "bg/cg-2.png"
+image cg earth = "bg/cg-3.png"
 
-image overlay night = "bg/night.png"
-image overlay bathhouse = "bg/bathhouse-overlay.png"
-image overlay bedroom_covers = "bg/bedroom-overlay.png"
-image overlay computer_pad = "bg/computer-pad.png"
-image overlay underwater = "bg/underwater-overlay.png"
+image night = "bg/night.png"
+image bathhouse_overlay = "bg/bathhouse-overlay.png"
+image bedroom_covers = "bg/bedroom-overlay.png"
+image computer_pad = "bg/computer-pad.png"
+image underwater = "bg/underwater-overlay.png"
 
-image talaam-approach = "bg/talaam-approach.jpg"
+image talaam-approach = "bg/talaam-approach.png"
 
 # Tutorial screenshots
 image screenshot = "bg/screenshot.jpg"
@@ -57,11 +58,10 @@ image screenshot_right = "bg/screenshot-right.jpg"
 
 
 # SPRITES
-# TODO: Make sure bottom of sprites looks good; cut off if needed
 
 # Him
 image him normal = "sprites/him.png"
-image him angry = "sprites/him-angry.png" # TODO: combine with flirt so he has hands on hips while angry?
+image him angry = "sprites/him-angry.png" # TODO: His angry face looks too big?
 image him annoyed = "sprites/him-annoyed.png"
 image him concerned = "sprites/him-concerned.png"
 image him flirting = "sprites/him-flirt.png"
@@ -70,7 +70,20 @@ image him laughing = "sprites/him-happy.png"
 image him sad = "sprites/him-sad.png"
 image him surprised = "sprites/him-surprised.png"
 image him serious = "sprites/him-annoyed.png"
-image him sleeping = "sprites/him-sleeping.png" #TODO: make color (shirtless?) version?
+image him sleeping = "sprites/him-sleeping.png"
+
+# Him nude for swimming, bath, sleeping, etc.
+image him nude = "sprites/him-nude.png"
+image him nude normal = "sprites/him-nude.png"
+image him nude angry = "sprites/him-nude-angry.png"
+image him nude annoyed = "sprites/him-nude-annoyed.png"
+image him nude concerned = "sprites/him-nude-concerned.png"
+image him nude flirting = "sprites/him-nude-flirt.png"
+image him nude happy = "sprites/him-nude-happy.png"
+image him nude sad = "sprites/him-nude-sad.png"
+image him nude surprised = "sprites/him-nude-surprised.png"
+image him nude serious = "sprites/him-nude-annoyed.png"
+image him nude sleeping = "sprites/him-nude-sleeping.png"
 
 # Her sprites are declared automatically in images-her.rpy
 # TODO: Use determined?

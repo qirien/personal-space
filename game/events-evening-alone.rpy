@@ -185,13 +185,14 @@ label relax_alone_7:
     "I went to the bath house by myself. I brought extra wood so I could have a long, hot bath, and I carried up extra water from the river to make it a deep one. All my effort just made me appreciate it all the more."
     scene bg bathhouse with fade
     $ is_nude = True
-    show overlay bathhouse
+    show bathhouse_overlay
     show her serious at squatting behind overlay
     with dissolve
     play bg_sfx "sfx/splash.mp3"
     her normal "Ahhh...."
     $ relaxed += 5
     $ loved -= 2
+    scene black with fade
     $ is_nude = False
     return
 
@@ -262,9 +263,10 @@ label relax_alone_b:
 # go to bed early
 label relax_alone_c:
     scene bg bedroom with fade
-    show overlay night
-    show overlay bedroom_covers behind night        
-    show her serious at midright, squatting, behind overlay
+    $ is_nude = True
+    show night
+    show bedroom_covers behind night        
+    show her serious at midright, squatting, behind bedroom_covers
     with dissolve
 
     "I felt so tired, I decided to just go to bed early."
@@ -310,7 +312,7 @@ label relax_alone_c:
         him annoyed "Well, I can't do anything about that."
         if (relaxed <= 0):
             her angry "You don't have to do anything about it! Can you just listen?!"
-            him serious "What's the point of listening if it doesn't solve anything?"
+            him angry "What's the point of listening if it doesn't solve anything?"
             her annoyed "It might help me feel better."
             him annoyed "That doesn't make any sense."
             her angry "Well, that's how I feel! I don't know why I'm even telling you, since obviously you don't care!"
@@ -322,7 +324,7 @@ label relax_alone_c:
             "I closed my eyes and tried to get to sleep, but I was too upset."
             show her concerned
             "He was supposed to be my husband, my beloved, my best friend; was it so much to ask for him to just listen to how I felt?!"
-            show him serious at midleft, squatting behind overlay with moveinleft
+            show him nude serious at midleft, squatting behind bedroom_covers with dissolve
             show her sleeping
             "Finally, I managed to fall asleep, at about the same time I usually did. I felt like he just wasted my whole evening by being so obstinate."
             show him sleeping
@@ -335,6 +337,7 @@ label relax_alone_c:
             $ loved += 2
     
     scene black with fade
+    $ is_nude = False
     $ relaxed += 5
     $ loved -= 2
     return

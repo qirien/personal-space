@@ -199,7 +199,7 @@ label first_date:
     show her normal at midleft
     show him normal at midright
     with dissolve
-    show overlay night
+    show night
     play music "music/Run.ogg" fadeout 1.0
     "At the barbeque, I greeted his parents, and we all pitched in to make dinner. Afterwards, when I offered to help with the dishes, his parents told us to go relax outside."
     "So we sat on the porch swing and watched the stars come out."
@@ -235,7 +235,7 @@ label marriage_proposal:
     show her normal at midleft
     show him normal at midright
     with dissolve
-    show overlay night
+    show night
     him serious "I'm going there, [her_name]. To Talaam."
     her laughing "Oh really? I didn't know you were an astronaut, [his_name]."
     him annoyed "..."

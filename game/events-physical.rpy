@@ -534,7 +534,7 @@ label physical_5:
 # Go hunting and bring back some meat
 label physical_6:
     scene bg bedroom with fade
-    show overlay bedroom_covers    
+    show bedroom_covers    
     show him sleeping at midleft, squatting, behind overlay
     show her normal at midright, squatting, behind overlay
     with dissolve    

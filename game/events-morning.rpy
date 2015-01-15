@@ -89,7 +89,7 @@ label work_0:
     with moveoutright
     show pete at midright
     show helen at right
-    show baby boy at Position(xpos=950, ypos=450)
+    show baby boy at rightbaby
     with moveinright    
     pavel "Pete is in charge of the library, so if you need to research something or print something out, head over there. He and his wife Helen are also experts on raising cattle, and will be starting a ranch up to the north."
     pavel "And, their baby, who was born on the shuttle, was the first human being to be born in space!"

@@ -249,7 +249,7 @@ label social_2:
     "That's what she said, but she blushed and smiled. I wasn't sure exactly how they had ended up together, but they were clearly just right for each other."
 
     "We talked and talked, until finally, it got dark. One of the moons was shining brightly; the other was dark."
-    show overlay night with dissolve
+    show night with dissolve
     julia "Thanks so much for having us over, [her_name]. I'm glad we got to know you a little better."
     thuc "Yes, the food was delicious!"
     her normal "Thanks for coming, we enjoyed your company."
@@ -362,7 +362,7 @@ label social_4:
             scene bg community_center with fade
             show him normal at sitting, midleft
             show her normal at sitting, midright
-            show overlay night
+            show night
             with dissolve
             him annoyed "This movie is ridiculous."
             her annoyed "Yeah, there's no way a virus would only affect men. It's not like our immune systems are all that different."
@@ -408,7 +408,7 @@ label social_4:
             scene bg community_center with fade
             show her normal at midright
             show him normal at midleft
-            show overlay night
+            show night
             with dissolve
             "We had a pretty good turnout, and the kids and adults both found things to laugh at."
             him surprised "So, the part where the sadistic child was killing sheep with bread-encrusted coins was a little hard for me to believe."
@@ -430,7 +430,7 @@ label social_4:
             scene bg community_center with fade
             show her normal at midright
             show him normal at midleft
-            show overlay night
+            show night
             with dissolve            
             "The kids enjoyed watching the robot's antics, and the trash-filled city reminded me of some of the things we were trying to do differently in our colony."
             her concerned "I'm so glad the green revolution happened before the whole earth turned into a landfill."
@@ -479,8 +479,8 @@ label social_4:
 #
 label social_5:
     scene bg bedroom with fade
-    show overlay night
-    show overlay bedroom_covers behind night        
+    show night
+    show bedroom_covers behind night        
     show him sleeping at midleft, squatting, behind overlay
     show her sleeping at midright, squatting, behind overlay
     with dissolve
@@ -494,7 +494,7 @@ label social_5:
     show her surprised
     him surprised "Let's go!"
     scene bg farm_exterior flip burned with fade
-    show overlay night
+    show night
     show ilian at quarterright
     show sara sad at midright
     with dissolve

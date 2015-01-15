@@ -215,6 +215,7 @@ screen main_menu:
         if (persistent.got_all_endings):
             textbutton _("Omake") action Start("omake")
         # TODO: Image gallery?
+        # TODO: Credits button?
         textbutton _("Config") action ShowMenu("preferences")
         #textbutton _("Help") action Help()
         textbutton _("Quit") action Quit(confirm=False)

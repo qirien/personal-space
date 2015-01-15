@@ -36,6 +36,8 @@ label bad_ending:
     scene bg farm_exterior with fade
     show him serious at midleft
     show her serious at midright
+    if (is_pregnant):
+        show baby girl at midrightbaby
     with dissolve
     "How do you say goodbye to your husband? Ex-husband, now, I guess. The silence stretched on like the gap between us, endless and loveless."
     "I thought of several mean things to say, and didn't say them.  I thought of several false apologies I could make, but I didn't make them."
@@ -58,9 +60,14 @@ label bad_ending:
         him angry "I said, I'll be fine without you. Enjoy Earth. Goodbye!"
     hide him with moveoutleft
     "He turned away and walked home, never looking back. I picked up my bag and boarded the shuttle as we got ready to lift off."
-    hide her with moveoutright
+    hide her
+    hide baby
+    with moveoutright
     scene bg colony_ship_bunk with fade
-    show her serious at center with dissolve
+    show her serious at center
+    if (is_pregnant):
+        show baby girl at centerbaby
+    with dissolve
     "Was our love ever real? I had married him, so at one point I thought so, but once we got here, it... disappeared."
     if (known_each_other == "since we were kids"):
         "I had known him for so long... I knew exactly what he was thinking. But that didn't mean I liked it. I couldn't stay here, with him, on Talaam."
@@ -70,12 +77,15 @@ label bad_ending:
     else:
         "It seemed like just yesterday when we had met and started this crazy adventure. I thought I knew him, but I just couldn't understand him at all. Or, what I did understand, I didn't like."
     if (cheated_on_him):
-        show brennan at midright with moveinright
+        show brennan at midright behind her with moveinright
         "Brennan put his arm around me and pulled me close. He whispered in my ear,"
         brennan "Just pretend it was all a bad dream..."
     "At least I have a chance to start over again... this time on Earth, my favorite planet in the universe."
-    scene bg earth with fade
-    
+    window hide
+    scene cg earth:
+        size (1024, 600) crop (1433,480,1024,600)
+        easein 10.0 size (1024,600) crop (0, 0, 1848, 1080)
+    $ renpy.pause(12.0)
     $ persistent.got_bad_ending = True
     ".:. Separation Ending, 1 of 3."
     jump show_credits
@@ -105,7 +115,10 @@ label mediocre_ending:
 
     scene bg fields with fade
     show him normal at quarterright with moveinright
-    show her normal at center with moveinleft
+    show her normal at center
+    if (is_pregnant):
+        show baby girl at centerbaby
+    with moveinleft
     if (loved >= 0):
         him happy "Hey, [her_nickname]! Welcome home!"
     else:
@@ -115,7 +128,7 @@ label mediocre_ending:
     her normal "Hi, [his_name]. What's for dinner?"
     him serious "Stir-fry. Lots of fresh veggies this month!"
     if (loved >= 0):
-        her serious "Okay, well, I guess we better eat what we have."
+        her normal "Okay, well, I guess we better eat what we have."
     else:
         her concerned "Again?"
         him concerned "Yeah, that's what we have, so that's what we eat."
@@ -124,6 +137,8 @@ label mediocre_ending:
     scene bg farm_interior with fade
     show him serious at midright
     show her serious at midleft
+    if (is_pregnant):
+        show baby girl at midrightbaby
     with dissolve
     "We sat down to dinner."
     call skill_appreciation
@@ -131,23 +146,26 @@ label mediocre_ending:
         "After dinner, he played with the baby while I took a break."
     "He read, and I worked on some projects, and then it was time for bed."
     scene bg bedroom with fade
-    show overlay night        
-    show overlay bedroom_covers behind night        
-    show her normal at midleft, squatting, behind overlay
-    show him normal at quarterright, squatting, behind overlay    
+    $ is_nude = True
+    show her normal at midleft, squatting
+    show him nude normal at quarterright, squatting
+    if (is_pregnant):
+        show baby girl at quarterleftbaby
+    show bedroom_covers
+    show night
     with dissolve 
 
     her serious "[his_name]?"
-    him surprised "Hmmm?"
+    him nude surprised "Hmmm?"
     if (loved > 0):
         her concerned "I'm so glad to be here, with you."
-        show him normal at midright with move
+        show him nude normal at midright with move
         "He scooted closer to me and stroked my hair."
-        him normal "I'm glad to be with you, [her_nickname]!"
+        him nude normal "I'm glad to be with you, [her_nickname]!"
         her normal "What an adventure we've had..."
-        him happy "Hmmm, I think our adventure is just beginning!"
+        him nude happy "Hmmm, I think our adventure is just beginning!"
         her serious "Ha ha, yeah... I wonder what the next year will bring?"
-        him flirting "As long as it's full of you, I'm not worried about it."
+        him nude flirting "As long as it's full of you, I'm not worried about it."
         her serious "Mmm-hmmmm."
         "I wasn't quite as optimistic."
         if (is_pregnant_later):
@@ -155,19 +173,19 @@ label mediocre_ending:
         "But, we'd come this far, hadn't we?"
     else:
         her concerned "I'm sorry."
-        him surprised "For what, now?"
+        him nude surprised "For what, now?"
         her sad "I haven't always been as good to you as you deserve... "
-        him sad "..."
-        him concerned "I'm sorry, too. Sometimes I know I'm hard to deal with."
+        him nude sad "..."
+        him nude concerned "I'm sorry, too. Sometimes I know I'm hard to deal with."
         her normal "Thanks for not giving up on me."
-        him normal "Let's never give up on us."
+        him nude normal "Let's never give up on us."
         her serious "Yeah."
         if (is_pregnant_later):
             "He caressed my belly and added,"
-            him normal "After all, this little baby's depending on us."
+            him nude normal "After all, this little baby's depending on us."
             her serious "Yeah..."
         
-    show him sleeping
+    show him nude sleeping
     show her serious
     with dissolve
     "We kissed good night, but I lay awake for a little while, thinking a lot and worrying a little. I wanted to believe in our colony, to believe in our marriage, but I knew it took more than believing in something to make it come true."
@@ -195,6 +213,19 @@ label mediocre_ending:
         "After all, we'd managed to make Talaam, this strange and unfriendly planet, a real home."
         "If we could do that, we could do anything."
     show her sleeping with dissolve
+    scene black with fade
+    $ is_nude = False
+    window hide
+    if (is_pregnant):
+        scene cg with_baby:
+            size (1024, 600) crop (1424, 756, 1452, 848)
+            easeout 10.0 size (1024, 600) crop (0, 0, 5120, 3000)
+    else:
+        scene cg together:
+            size (1024, 600) crop (0, 0, 3273, 1912)
+            ease 5.0 size (1024, 600) crop (0, 1088, 3273, 1912)
+            ease 5.0 size (1024, 600) crop (1116, 1000, 1712, 1000)
+    $ renpy.pause(12.0)    
     $ persistent.got_mediocre_ending = True    
     ".:. Good Ending, 2 of 3."
     jump show_credits
@@ -240,27 +271,39 @@ label work_appreciation:
         scene bg clinic with fade
         "As the only doctor on the colony, people came to me with all sorts of problems. Mostly medical ones, but sometimes other questions, too."
         "It felt good to know I was the one who helped Mr. Perón overcome his cancer, and helped little Van not die from choking, and took care of everyone's health. They really needed me."
-        show her normal at midright with dissolve
+        show her normal at midright
+        if (is_pregnant):
+            show baby girl at midrightbaby
+        with dissolve            
         show pavel at midleft, behind her with moveinleft
         pavel "[her_name], I don't know what we'd do without you. You've worked so hard to keep everyone on the colony healthy."
     elif (profession == "carpenter"):
         scene bg workshop with fade
         "Every day was a new challenge; something new to build, a new material found, or some new technique to try. And nobody could make things as well as I could."
         "The Perón's chicken coop, barrels for the storehouse, shelves for the school, chairs for Sara and Ilian - you name it, I'd made it for someone this past year."
-        show her normal at midright with dissolve
+        show her normal at midright
+        if (is_pregnant):
+            show baby girl at midrightbaby
+        with dissolve
         show pavel at midleft, behind her with moveinleft
         pavel "[her_name], I don't know what we'd do without you. Everyone has something you've made in their house or on their farm. And you've taught others how to make useful things, too."
     elif (profession == "mechanic"):
         scene bg machine_shop with fade
         "When someone needed a piece of tech fixed, it wasn't just because they wanted it - they really needed it. We all needed everything to be working smoothly for the food to grow and us all to survive."
         "Without our radios, computer pads, tractors, and electricity, we'd be no better off than people were three hundred years ago."
-        show her normal at midright with dissolve
+        show her normal at midright
+        if (is_pregnant):
+            show baby girl at midrightbaby
+        with dissolve
         show pavel at midleft, behind her with moveinleft
         pavel "[her_name], I don't know what we'd do without you. All our machines would be broken and useless if not for your hard work fixing them up all the time."
     elif (profession == "teacher"):
         scene bg classroom with fade
         "Aside from their parents, the kids on the colony didn't have any other teachers. So when they finally figured out multiplication or why history was important or read their first novel, it was because of me."
-        show her normal at midright with dissolve
+        show her normal at midright
+        if (is_pregnant):
+            show baby girl at midrightbaby
+        with dissolve
         show pavel at midleft, behind her with moveinleft
         pavel "[her_name], I don't know what we'd do without you. All the kids love your enthusiasm for learning, and you've worked hard to make sure they know about Earth and learn the things they need to succeed here on Talaam."
 
@@ -322,8 +365,9 @@ label good_ending:
     "I headed home, enjoying the warm sun and a light breeze."
 
     scene bg fields with fade
-    show him normal at quarterright with moveinright
-    show her normal at center with moveinleft
+    show him normal at midright with moveinright
+    show her normal at center
+    with moveinleft
 
     her surprised "There you are! How come you're so late?"
     him serious "Just had to finish up out here."
@@ -341,6 +385,12 @@ label good_ending:
         her normal "I made your favorite dinner..."
         him happy "Wow, really?! Thank you!"
 
+    scene bg farm_interior with fade
+    show him normal at midright
+    if (is_pregnant):
+        show baby girl at midrightbaby
+    show her normal at midleft
+    with dissolve
     "It wasn't much of a dinner, really. We had some beans cooked with salted meat, and some greens with vinegar."
     
     call skill_appreciation
@@ -348,30 +398,32 @@ label good_ending:
         "After dinner, [his_name] joked and held [baby_name] on his lap and tickled her chin, and then we talked and read books and went to bed all snuggled up together."
     else:
         "After dinner, [his_name] joked and we laughed and talked and read books and went to bed curled up next to each other."
-    if (is_pregnant_later):
-        "His arm was draped over my growing belly, which he rubbed gently. Sometimes the baby would kick him back."
 
     scene bg bedroom with fade
     $ is_nude = True
-    show overlay night        
-    show overlay bedroom_covers behind night        
-    show her normal at midleft, squatting, behind overlay
-    show him normal at midright, squatting, behind overlay    
+    show her normal at midleft, squatting
+    show him nude normal at midright, squatting
+    if (is_pregnant):
+        show baby girl at quarterleftbaby
+    show bedroom_covers
+    show night    
     with dissolve    
 
-    him surprised "[her_name]?"
+    if (is_pregnant_later):
+        "His arm was draped over my growing belly, which he rubbed gently. Sometimes the baby would kick him back."
+    him nude surprised "[her_name]?"
     her surprised "What?"
-    him serious "Thank you."
+    him nude serious "Thank you."
     her flirt "You're welcome- wait, which of the many wonderful things I've done are you thanking me for?"
-    him normal "For taking a chance on me, and for trusting me enough to come to Talaam with me. For working so hard at your job and at home. For loving me even when I'm grouchy or make mistakes."
+    him nude normal "For taking a chance on me, and for trusting me enough to come to Talaam with me. For working so hard at your job and at home. For loving me even when I'm grouchy or make mistakes."
     her normal "[his_name]... You work so hard every day - we literally couldn't survive without you. You have loved me no matter what this whole time - through pests and fires and sicknesses and everything."
-    him happy "Yeah...if someone came up to me, right now, and said 'All-expenses paid trip to wherever you want!', do you know what I'd say?"
+    him nude happy "Yeah...if someone came up to me, right now, and said 'All-expenses paid trip to wherever you want!', do you know what I'd say?"
     her surprised "What?"
-    him flirting "I'd say, \"I want to go to my house, and be in my bed, next to my wife.\""
+    him nude flirting "I'd say, \"I want to go to my house, and be in my bed, next to my wife.\""
     her laughing "What a waste! You should pick somewhere exotic!"
-    him happy "What could be more exotic than an alien planet? Besides, you make everything seem exotic..."
+    him nude happy "What could be more exotic than an alien planet? Besides, you make everything seem exotic..."
     her flirt "I think the word you're looking for is \"erotic\", not \"exotic\"."
-    show him normal at center, squatting
+    show him nude normal at center, squatting
     with move
     "He didn't say anything else, just buried his face in my hair and tightened his grip around my waist. I held on tight to his arms, feeling safety and love and happiness swirling around us."
     "I wanted to hold on to this feeling right here that we had worked so hard for. And it was work - it wasn't easy to forgive, or compromise, or stay calm."
@@ -379,8 +431,10 @@ label good_ending:
     "Like a coral reef, or a redwood tree, or a stalactite, it took time, and in many ways it was still fragile."
     "But as long as we kept building, it could only grow."
     show her sleeping
-    show him sleeping
+    show him nude sleeping
     with dissolve
+    scene black with fade
+    $ is_nude = False
     window hide
     if (is_pregnant):
         scene cg with_baby:

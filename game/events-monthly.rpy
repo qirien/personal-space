@@ -660,7 +660,7 @@ label monthly_event_6:
             "I kept in touch with the Peróns, and we made a huge pile of dead insects, which we ground up to extend the food we had for our livestock."
             "We were able to preserve some of our corn until it was ready for harvest, although for most of the corn, it was too late."
             scene bg fields with fade
-            show overlay night
+            show night
             show her normal at quarterright
             show him normal at center
             "We had a big bonfire with the Peróns and burned the infested corn. Their kids danced around the fire, and they brought a chicken for us to roast."
@@ -899,7 +899,7 @@ label monthly_event_8:
             her normal "Yes, we all need to work together to succeed. Plus, I'll get to be with you."
             him happy "All right, let's go!"
             scene bg sunset with fade
-            show overlay night
+            show night
             show her normal at quarterright
             show him normal at midright
             show thuc at quarterleft
@@ -1381,14 +1381,14 @@ label follow_him:
             hide him with moveoutleft
             hide her with moveoutleft
             scene bg farm_exterior with fade
-            show overlay night
+            show night
             "We walked to the small barn where the animals could sleep at night, and where we could keep hay dry."
         "Follow him quietly.":
             hide him with moveoutleft
             "I waited until he left, then I silently lifted the latch and followed him out."
             hide her with moveoutleft            
             scene bg farm_exterior with fade
-            show overlay night
+            show night
             "He headed for our small barn, and I followed him."
         "Let him go.":
             "He'd tell me what was bothering him when he was ready. I decided to settle down with a book and wait until he came back."
@@ -2119,7 +2119,8 @@ label monthly_event_14:
             her sad "Maybe I will..."
             scene bg bedroom with fade
             show her sleeping at center, squatting
-            show overlay bedroom_covers
+            show bedroom_covers
+            $ is_nude = True
             "I fell asleep immediately..."
             
         else:
@@ -2128,12 +2129,14 @@ label monthly_event_14:
             him annoyed "Hey, I'm not telling you what to do, you just seem a little tired, that's all."
             her angry "Tired?! I just said I'm sick!"
             him angry "Fine, do whatever you want!"
-            "I went to lay down and fell asleep immediately..."
             scene bg bedroom with fade
-            show her sleeping at center
-            show overlay bedroom_covers            
+            show her sleeping at center, squatting
+            show bedroom_covers
+            $ is_nude = True
+            "I went to lay down and fell asleep immediately..."            
 
         scene black with fade
+        $ is_nude = False        
         "The next morning I felt less tired, but still a little off. I went to work anyway, and had been standing up all day when I started to feel dizzy and sick to my stomach."
         call set_work_bg
         show her serious at midright
@@ -2588,8 +2591,8 @@ label monthly_event_17:
     scene bg farm_interior with fade
     "One day Sara invited me to hang out with her at the bath house. It was a lot of work to fetch and heat water for a bath, so it was more worth it to share the work and the bath."
     scene bg bathhouse with fade
-    show sara at midright
-    show her normal at midleft
+    show sara at midleft
+    show her normal at midright
     her happy "This was a good idea! I never thought taking a bath would be such a luxury..."
     sara "It's a lot faster with you helping me haul water."
     her surprised "Is the hot water ready yet?"
@@ -2598,9 +2601,9 @@ label monthly_event_17:
     play bg_sfx "sfx/splash.mp3"
     scene bg bathhouse with fade
     $ is_nude = True
-    show her at midright, squatting
-    show sara at midleft, squatting
-    show overlay bathhouse
+    show her at midleft, squatting
+    show sara at midright, squatting
+    show bathhouse_overlay
     with dissolve
     sara "Nice and hot! Not like our house; it's always freezing in there!"
     her surprised "Really? It hasn't been that cold..."
@@ -2722,6 +2725,7 @@ label monthly_event_17:
 
     show her sleeping with dissolve
     "We relaxed for a bit more in the hot bath, and then went home. It was comforting to know I could depend on Sara."
+    scene black with fade
     $ is_nude = False
     $ relaxed += 2
     return
@@ -2756,7 +2760,7 @@ label monthly_event_18:
     "He hooked up the tractor's battery to the cables, and I attached the other end to our house battery."
     her surprised "It's hooked up!"
     him serious "Okay, now turn on the tractor!"
-    show her at center with move
+    show her normal at center with move
     play music "music/NoOneWillKnow.ogg" fadeout 1.0
     play bg_sfx "sfx/fire-2.mp3"
     "He was making sure the clamp was on the battery when I turned the tractor on. But then I heard a strange sound...and was that smoke...?"
@@ -2950,17 +2954,19 @@ label monthly_event_18:
         him surprised "Haven't you missed me, just a little?"
         her flirt "Maybe..."
         scene bg bedroom with fade
-        show overlay night
-        show overlay bedroom_covers behind night        
-        show him serious at midleft, squatting, behind overlay
-        show her serious at center, squatting, behind overlay
+        $ is_nude = True
+        show night
+        show bedroom_covers behind night        
+        show him nude serious at midleft, squatting, behind bedroom_covers
+        show her serious at center, squatting, behind bedroom_covers
         with dissolve
         "That night, he held me gently, his hands caressing my skin as if for the first time. His skin was still rough from the burns, but I didn't care."
-        him serious "Mmmm, the touch of your skin... I've missed {b}you{/b}, [her_nickname]."
+        him nude normal "Mmmm, the touch of your skin... I've missed {b}you{/b}, [her_nickname]."
         her concerned "I missed your touch..."
         $ made_love += 1
         $ relaxed += 2
         scene black with fade
+        $ is_nude = False
     else:
         him annoyed "That's not what I was thinking of, but I did miss Lettie, too. I better go see how she's doing."
         hide him with moveoutleft
@@ -3183,7 +3189,7 @@ label done_party_menu:
     else:
         play music "music/Prelude22.ogg" fadeout 1.0 
     if (party_decorations == "flowers"):
-        show overlay underwater with dissolve
+        show underwater with dissolve
         "The flowers we picked looked nice. Even though they were nothing like Earth flowers, they had their own beauty. And Sara had programmed some of the lights to glow softly blue and green, like an ocean."
     play bg_sfx "sfx/people.mp3" loop
     "As people started to arrive, they seemed to brighten when they saw the community center ready for a party."
@@ -3508,7 +3514,7 @@ label monthly_event_21:
                 "They had some surplus fabric, clothes, blankets, and towels, and they said we could use them as long as we washed them and brought them back afterwards."
             scene bg fields with fade
             "We worked all afternoon covering up the acres of plants."
-            show overlay night
+            show night
             "We were still working when it started getting dark. We worked until about midnight, when we had finally covered up all the plants."
             "We kept the covers on for several nights until the danger of freezing had passed."
         "Build a fire near the quinoa.":
@@ -3521,7 +3527,7 @@ label monthly_event_21:
                 "We got some of our neighbors to help us gather wood and stacked it in piles near the crops."
             else:
                 "We worked all afternoon gathering wood and branches and stacking them near the crops."
-            show overlay night
+            show night
             "Then we stayed up all night tending the fires."
             "We slept all day, and did the same thing the next night, until finally the freezing weather had passed."
             $ relaxed -= 5
@@ -3532,7 +3538,7 @@ label monthly_event_21:
             scene bg fields with fade
             "The fan blew the hot air over the crops, hopefully drying out any dew before it froze on them, and keeping the plants warm enough that their cells wouldn't freeze."
             "But one fan wouldn't be enough... We didn't have time to build more, but I did build a rotating stand so it could rotate and blow across a wider angle of plants."
-            show overlay night
+            show night
             "I got up several times in the night to check on the fan while [his_name] tended the fire, so we were pretty tired the next day."
             "We repeated this every night for a few days, until the danger of freezing had passed."
         "It's not my problem.":
@@ -3545,7 +3551,7 @@ label monthly_event_21:
             $ loved -= 5
             return
             
-    hide overlay
+    hide night
     show him normal at midright
     show her normal at midleft
     with dissolve
@@ -3702,7 +3708,7 @@ label monthly_event_22:
             scene black with fade
             "The mayor sent out an announcement thanking whoever had returned a bottle of shampoo, and asked for more to be returned."
             scene bg storehouse with fade
-            show overlay night
+            show night
             "That night, I watched the camera for a while... but nothing happened. Just as I was about to go to bed, though, I saw someone creep into view."
             show natalia at center with moveinright
             her surprised "Natalia?!"
@@ -3740,7 +3746,7 @@ label monthly_event_22:
             "But I didn't need any."
             "That night, ten bottles of shampoo were returned to the storehouse."
             scene bg storehouse with fade
-            show overlay night
+            show night
             show julia at center with moveinleft
             hide julia with moveoutright
             show pete at center with moveinleft
@@ -3876,89 +3882,92 @@ label monthly_event_23:
         
         # who will take care of the baby during the day?
         scene bg bedroom with fade
-        show overlay night        
-        show overlay bedroom_covers behind night
-        show her normal at midleft, squatting, behind overlay
-        show him normal at midright, squatting, behind overlay    
+        $ is_nude = True
+        show night        
+        show bedroom_covers behind night
+        show her normal at midleft, squatting, behind bedroom_covers
+        show him nude at midright, squatting, behind bedroom_covers
         with dissolve 
 
         her concerned "Do you feel ready?\n...For the baby, I mean?"
-        him serious "Well, we made a little crib, and we have plenty of rags for diapers, and I thought you said you got some clothes from the storehouse..."
+        him nude serious "Well, we made a little crib, and we have plenty of rags for diapers, and I thought you said you got some clothes from the storehouse..."
         her annoyed "No, I mean, ready to be parents. Ready to be responsible for a little helpless person twenty-four hours a day..."
-        him concerned "Ohhh...well, I figured we'll take turns taking care of her, so we can each have a break sometimes. So that's really only more like twelve hours a day, right?"
+        him nude concerned "Ohhh...well, I figured we'll take turns taking care of her, so we can each have a break sometimes. So that's really only more like twelve hours a day, right?"
         her angry "No! Even if someone else is taking care of the baby at the moment, you and I are still responsible - we're the parents! This isn't a job you can just do part-time!"
-        him normal "Well, yeah, of course."
+        him nude normal "Well, yeah, of course."
         "It was clear he was not as worried about it as I was."
         her sad "What if I can't figure out how to nurse her, or the diapers are unsanitary and make us all sick, or I have really bad post-partum depression, or my body never recovers, or--"
-        him concerned "Hey, hey, it'll be okay."
+        him nude concerned "Hey, hey, it'll be okay."
         her angry "It won't be okay just by saying, \"It's okay\"!"
-        him angry "All right, then, let's figure some of these things out."
-        him concerned "Mrs. Nguyen already is helping you with the birth, right?"
+        him nude angry "All right, then, let's figure some of these things out."
+        him nude concerned "Mrs. Nguyen is going to help you with the birth, right?"
         her concerned "Yeah..."
         him "Well, I bet she knows a lot about nursing babies, and could help you out there. But even if something happens and you can't nurse the baby, they have some formula in the storehouse."
         her normal "That's good to know..."
-        him normal "And we have a great doctor here, in case anything goes wrong. I don't think that will happen, but it's good to know."
+        him nude normal "And we have a great doctor here, in case anything goes wrong. I don't think that will happen, but it's good to know."
         if (profession == "doctor"):
             her "Hey, I'm the doctor..."
-            him happy "Yeah, and you're great!"
+            him nude happy "Yeah, and you're great!"
             her concerned "But I can't really perform surgery on myself! What if I need a C-section or something?!"
-            him concerned "I hadn't thought of that..."
+            him nude concerned "I hadn't thought of that..."
             her angry "I'll just have to teach Mrs. Nguyen and Brennan how."
-            him angry "Brennan!"
+            him nude angry "Brennan!"
             her "Do you know of anyone else?!"
-            him concerned "Well...I've done a C-section on a cow before, so I could probably help out."
+            him nude concerned "Well...I've done a C-section on a cow before, so I could probably help out."
             her surprised "A cow? That's not very reassuring."
             her concerned "I can just use local anesthetic, so I can stay conscious and instruct you... but I sure hope we never have to do that."
-            him concerned "We'll do what we have to."
+            him nude concerned "We'll do what we have to."
         
         her surprised "What are we going to do with the baby during the day?"
-        him concerned "Well...I thought she would hang out with you."
+        him nude concerned "Well...I thought she would hang out with you."
         her concerned "Will that really be okay at work?"
         "I tried to imagine going to work with a baby."
         her surprised "I guess she could ride around with me some of the time, and maybe lie in the corner in a little bed sometimes?"
         her angry "But why is it always the woman who takes care of the baby more?"
-        him happy "Because you're the one whose awesome body can squirt out perfect baby food?"
+        him nude happy "Because you're the one whose awesome body can squirt out perfect baby food?"
         menu:
             "What should I say?"
             "That's true, but...":
                 her annoyed "Well, yeah, but..."                
             "Gross!":
                 her angry "I can't believe you just said that."
-                him surprised "What, it's true, isn't it?"
+                him nude surprised "What, it's true, isn't it?"
                 her annoyed "..."
-                him annoyed "Okay, let me rephrase that for you. \"Because your female body is capable of producing optimum infant nourishment for your offspring.\" Is that better?"
+                him nude annoyed "Okay, let me rephrase that for you. \"Because your female body is capable of producing optimum infant nourishment for your offspring.\" Is that better?"
                 her serious "Yes."
             "That's what technology is for.":
                 her annoyed "That's so old-fashioned. That's why we have pumps and formula, so women don't have to be the only ones that the baby is dependent on."
 
-        him serious "Also, it'd be dangerous around all the heavy farm equipment."
-        her annoyed "Not really any more dangerous than my work..."
-        him annoyed "Well, maybe we'll take turns, depending on what's going on at work, if you wanted to pump milk so the baby can still eat."
+        him nude annoyed "Well, maybe we'll take turns, depending on what's going on at work, if you wanted to pump milk so the baby can still eat."
         her concerned "The idea of pumping milk still sounds pretty weird to me, but I guess we should probably save the formula for emergencies, huh?"
-        him surprised "Pumping milk is not any weirder than milking cows, right?"
+        him nude surprised "Pumping milk is not any weirder than milking cows, right?"
         her annoyed "...You did not just compare me to a cow."
-        him annoyed "Sorry, cows are just what I know. I've never been a dad before!"
-        him happy "But people do it all the time, so how hard can it be?"
+        him nude annoyed "Sorry, cows are just what I know. I've never been a dad before!"
+        him nude happy "But people do it all the time, so how hard can it be?"
         if (community_level >= COMMUNITY_LEVEL_OK):
-            her normal "You're right...and our community is so close-knit, I'm sure one of the other moms will help me out if I need it."
+            her normal "Maybe you're right...and our community is so close-knit, I'm sure one of the other moms will help me out if I need it."
         else:
-            her concerned "You're right...I just wish I felt closer to the other moms, so I would feel better asking them if I needed help."
+            her concerned "Maybe you're right...I just wish I felt closer to the other moms, so I would feel better asking them if I needed help."
         
         if (loved >= 0):
-            him serious "I'm right here, with you, and our love is so strong, there's nothing we can't do together."
+            him nude serious "I'm right here, with you, and our love is so strong, there's nothing we can't do together."
             her annoyed "The \"power of love\", huh?"
-            him annoyed "I'm serious! Whatever you, and the baby need, I'll do it! I'll beg from total strangers! I'll cook dinner every night! I'll do laundry!"
-            him sad "...I'd even give up Lettie, if I had to."
+            him nude annoyed "I'm serious! Whatever you, and the baby need, I'll do it! I'll beg from total strangers! I'll cook dinner every night! I'll do laundry!"
+            him nude sad "...I'd even give up Lettie, if I had to."
             her surprised "You would?"
-            him serious "Of course!"
+            him nude serious "Of course!"
             her serious "[his_name]...thank you. We'll both have to make some sacrifices and work hard, but we can do it together, can't we?"
             show her normal at center, squatting with move
             "We held each other tightly, my huge belly between us, and the baby kicked."
-            him laughing "See, she agrees!"
+            him nude happy "See, she agrees!"
             show her laughing
         else:
-            him serious "Well, we'll make it work somehow."
+            him nude serious "Well, we'll make it work somehow."
             her concerned "Thanks, [his_name]."
+        
+        scene black with fade
+        $ is_nude = False
+        return
 
     elif ((want_kids) or (cheated_on_him)):
         $ is_pregnant_later = True
@@ -4015,9 +4024,9 @@ label monthly_event_23:
                         him angry "{size=+2}WHAT?!{/size}"
                         her sad "..."
                         "He just stood there for a moment, shaking his head, trying to figure out what to say. But he didn't meet my eyes."
-                        him serious "I'm... glad you told me."
+                        him concerned "I'm... glad you told me."
                         her "You're...glad?"
-                        him concerned "I mean...I'm also furious and ashamed and humiliated and annoyed, but I'm at least glad I found out from you and not someone else."
+                        him annoyed "I mean...I'm also furious and ashamed and humiliated and annoyed, but I'm at least glad I found out from you and not someone else."
                         her concerned "Do you think you can forgive me?"
                         him sad "..."
                         him serious "I can't. Not right now. Just...give me time."
@@ -4077,22 +4086,24 @@ label monthly_event_23:
                         scene black with fade
                         "Even after I worked things out with Brennan, I could tell [his_name] still hadn't forgiven me..."
                         scene bg bedroom with fade
-                        show overlay night
-                        show overlay bedroom_covers behind night                        
-                        show her serious at quarterleft, squatting, behind overlay
-                        show him concerned at midright, squatting, behind overlay
+                        $ is_nude = True
+                        show night
+                        show bedroom_covers behind night                        
+                        show her serious at quarterleft, squatting behind bedroom_covers
+                        show him nude serious at midright, squatting behind bedroom_covers
                         with dissolve
                         her serious "Good night, [his_nickname]..."
-                        show her at center, squatting with moveinleft
+                        show her serious at center, squatting with moveinleft
                         show him at quarterright with move
-                        him concerned "Good night."
-                        show her at quarterleft with move
+                        him nude concerned "Good night."
+                        show her concerned at quarterleft with move
                         show him sleeping
-                        her sad "..."                
+                        her sad "..."
                         scene black with fade
+                        $ is_nude = False
                         "But finally, after about two weeks of walking on eggshells..."
                         scene bg farm_exterior with fade
-                        show overlay night
+                        show night
                         show her concerned at midleft
                         show him concerned at quarterright
                         her normal "Welcome home, [his_nickname]."
@@ -4220,44 +4231,48 @@ label monthly_event_23:
     # How to talk about sex
     else:
         scene bg bedroom
-        show overlay night
-        show overlay bedroom_covers behind night        
-        show her annoyed at midright, squatting, behind overlay
-        show him sleeping at midleft, squatting, behind overlay
+        $ is_nude = True
+        show her sleeping at midright, squatting
+        show him nude sleeping at midleft, squatting
+        show bedroom_covers
+        show night
         with dissolve
         
         "[his_name] was generally a good lover, but sometimes he was finished before I was."
         "Then he'd fall asleep, just as I was finally getting in the mood."
         "I felt like I should say something, but I also didn't want him to feel bad..."
-        hide overlay night
-        him happy "Mmmm, good morning, my amazing sweet bundle of loveliness."
+        show her annoyed
+        hide night
+        with dissolve
+        him nude happy "Mmmm, good morning, my amazing sweet bundle of loveliness."
         her annoyed "Good morning..."
         if (loved >= 0):
-            him surprised "Oh. Hey. Ummm, did {b}you{/b} have a good time last night?"
+            him nude surprised "Oh. Hey. Ummm, did {b}you{/b} have a good time last night?"
         else:
-            him annoyed "What? What's with the icy glare?"
+            him nude annoyed "What? What's with the icy glare?"
 
         menu:
             "What should I say?"
             "{i}You only think about yourself!{/i}" if (relaxed < 0):
                 her angry "You are a terrible lover. All you think about is your own satisfaction!"
-                him angry "Well, why didn't you say something last night!"
+                him nude angry "Well, why didn't you say something last night!"
                 her angry "You were {b}asleep{/b}!"
-                him angry "You couldn't have been trying very hard, then!"
+                him nude angry "You couldn't have been trying very hard, then!"
                 her sad "..."
-                him sad "...Sorry... Sometimes it feels kind of one-sided, so I thought I'd get it over with so you could get to sleep..."
+                him nude sad "...Sorry... Sometimes it feels kind of one-sided, so I thought I'd get it over with so you could get to sleep..."
                 
                 her annoyed "I'd rather take longer and get more out of it."
-                him annoyed "Well, okay, now I know."
+                him nude annoyed "Well, okay, now I know."
                 if (loved < 0):
                     her angry "If you really loved me, you would have asked me what was wrong last night, instead of just getting what you wanted and then dropping off to sleep!"
-                    him angry "Oh, so if I make one mistake, suddenly I don't love you anymore?"
+                    him nude angry "Oh, so if I make one mistake, suddenly I don't love you anymore?"
                     her angry "This is not the only time this has happened!"
-                    him angry "All right! Let's bring up every imperfect thing the other person has ever done, right now! Do you want to do that?!"
+                    him nude angry "All right! Let's bring up every imperfect thing the other person has ever done, right now! Do you want to do that?!"
                     her sad "No, I just--"
-                    him annoyed "Tch. Forget it."
+                    him nude annoyed "Tch. Forget it."
                     $ loved -= 2
 
+                hide him with dissolve
                 "He left, closing the door behind him slightly harder than was necessary."
                 "I got dressed and fixed myself a cup of tea."
                 "It wasn't selfish to tell him how I felt, was it?"
@@ -4268,36 +4283,41 @@ label monthly_event_23:
                 
             "{i}Last night was not really very good for me.{/i}" if (relaxed >= 0):
                 her annoyed "Well, I didn't really get to enjoy last night very much..."
-                him concerned "Oh, I'm sorry, [her_name]. I fell asleep again, huh?"
+                him nude concerned "Oh, I'm sorry, [her_name]. I fell asleep again, huh?"
                 her concerned "It's okay, I just... it was hard for me to sleep, and then I felt all mad at you, and I don't want to feel mad at you."
-                him sad "That was pretty rotten of me. I'm sorry."
+                him nude sad "That was pretty rotten of me. I'm sorry."
                 her surprised "No, no, it's okay, it's not that big of a deal. I just wanted to tell you how I felt."
-                him normal "Well, I'm glad you did. And I think I know just how to solve this problem."
+                him nude normal "Well, I'm glad you did. And I think I know just how to solve this problem."
                 her surprised "How's that?"
-                him flirting "Lots of practice!"
+                him nude flirting "Lots of practice!"
                 her annoyed "[his_name]..."
+                him normal "And maybe \"ladies first\"? Or is that too old-fashioned?"
+                her flirt "I think that'll work just fine."
                 "He's kind of exasperating, but afterwards I could tell he was really trying to make sure I felt loved and appreciated, too."
                 $ loved += 2
                 $ relaxed += 2
             "{i}Let's slow it down next time.{/i}" if (loved >= 0):
                 her flirt "As much as I love that you are like a runaway stallion, can you maybe not gallop away quite so fast next time?"
-                him surprised "Ummm..."
+                him nude surprised "Ummm..."
                 her annoyed "You know, slow down a bit? When we make love?"
-                him surprised "Oh! Yeah. Sorry, I'm still trying to wrap my head around your horse imagery."
-                her laughing "Don't think about it too hard."
+                him nude normal "Oh! Yeah. Sorry, I'm still trying to wrap my head around your horse imagery."
+                her happy "Don't think about it too hard."
                 $ loved += 2
                 $ relaxed += 2
             "(Lie) Everything's fine.":
                 her concerned "Everything's fine."
-                him serious "Okay, if you say so..."
+                him nude serious "Okay, if you say so..."
                 "I just didn't want to talk about it. Maybe I could communicate to him what I wanted in some other way..."
                 $ relaxed -= 5
             "I don't have time for this.":
                 her annoyed "I have to go to work. I'll see you later."
-                him annoyed "Okay, bye, then."
+                him nude annoyed "Okay, bye, then."
+                "If he really loved me, he'd figure it out on his own."
                 $ loved -= 2
                 $ relaxed -= 5
     
+    scene black with fade
+    $ is_nude = False
     return
 
 # MONTH 24: Birth or leave Talaam
@@ -4409,11 +4429,11 @@ label monthly_event_24:
         
         scene bg clinic with fade
         show her serious at center
-        show sara at midright
+        show sara at quarterright
         with moveinleft
         sara "Here's some water; drink this."
         her concerned "Thank you."
-        show him serious at midleft with moveinleft
+        show him serious at midleft, behind her with moveinleft
         him surprised "Are you in labor?"
         "What was he doing here? Sara must have called him..."
         her serious "I don't know; I'm just having some contractions every now and then."
@@ -4438,7 +4458,7 @@ label monthly_event_24:
                 $ community_level += 1
             "You can stay if you want.":
                 her normal "I don't mind if you want to stay. It might help you when you have a baby someday."
-                julia "I could certainly use your help."
+                julia "I could certainly use your help during labor."
                 sara "Okay, then I'll stay."
                 $ community_level += 1
             "Please leave.":
@@ -4465,18 +4485,20 @@ label monthly_event_24:
         him serious "Hey, it's okay. It's a little disappointing, but the baby has to come eventually, right?"
         her annoyed "It feels like it's taking forever!"
         him annoyed "Sorry, there's not much we can do about it."
-        scene bg bedroom      
-        show overlay night        
-        show overlay bedroom_covers behind night        
-        show her sleeping at midleft, squatting, behind overlay
+        scene black with fade
+        $ is_nude = True
+        scene bg bedroom with fade
+        show night        
+        show bedroom_covers behind night        
+        show her sleeping at midleft, squatting, behind bedroom_covers
         with dissolve
-
         "We had dinner, and I went to bed early."
         "I felt frustrated and tired of waiting and wished I had more control over my own body."
         scene bg bedroom
-        show overlay night
-        show overlay bedroom_covers behind night
-        show him sleeping at midright, squatting, behind overlay with dissolve
+        show night
+        show bedroom_covers behind night
+        show him sleeping at midright, squatting, behind bedroom_covers with dissolve
+        $ is_nude = False
         show her serious at midleft
         
         "I woke up in the early morning to more contractions. I didn't want to wake up [his_name] yet, so I walked around outside as the sun was just starting to come up."
@@ -4530,13 +4552,14 @@ label monthly_event_24:
         show brennan at left with moveinleft
         if (profession == "doctor"):
             brennan happy "[her_name]! Are you our patient today?"
-            her serious "Not feeling very patient, but, yes."
+            her annoyed "Not feeling very patient, but, yes."
         else:
             brennan "[her_name]! You weren't at work- Oh, are you having a baby?!"
-            her serious "I'm working on it."
+            her annoyed "I'm working on it."
         brennan mad "Should I go fetch a bucket of water or something?"
-        her annoyed "A bucket of water?"
+        her angry "A bucket of water?"
         brennan normal "Yeah, isn't that what people are supposed to bring you when you're in labor?"
+        show her annoyed
         him annoyed "..."
         brennan "That's what they do in movies..."
         julia "Yes, by all means, go boil some water. That will be all, Brennan."
@@ -4550,6 +4573,18 @@ label monthly_event_24:
         show her concerned at midright
         show him concerned at midleft
         "Time passed... I just tried to make it through one contraction at a time."
+        scene bg clinic with fade
+        show her annoyed at quarterleft
+        show him serious at center
+        show julia at midright
+        "Hour upon hour ticked slowly by. I couldn't concentrate on anything else, but concentrating on the contractions didn't make them hurt any less."
+        scene bg clinic with fade
+        show her concerned at center
+        show him sad at quarterright
+        "My back ached, my belly ached, everything between my knees and my navel felt like a boulder that I'd been lugging around, and could never set down."
+        show her concerned at right with move
+        "Sitting was uncomfortable, lying down didn't work, standing ached, squatting was hard... I paced restlessly."
+        show her concerned at midleft with move
         scene bg clinic with fade
         show her sad at midleft
         show him serious at midright
@@ -4579,9 +4614,9 @@ label monthly_event_24:
         him serious "Ummm, do you want to lean on me?"
         "I couldn't concentrate on anything except breathing and pushing. Talking was impossible."
         julia mad "Don't use words, just be there."
-        show her at center with move
+        show her serious at center with move
         show him at midleft with move
-        show julia normal at midright with move
+        show julia normal at quarterright with move
         "I pushed five more times. Every muscle in my body felt so tired that I started shaking all over. I felt ready to give up, but that was impossible."
         "I managed to gasp out the one thing that was running through my head."
         her concerned "I guess it's, too late, to, change my mind?"
@@ -4589,16 +4624,18 @@ label monthly_event_24:
         "After three more pushes I felt like I was done. I had nothing left. If it was a race, I would have quit long ago."
         her sad "Is this, even, doing anything?!"
         julia mad "Yes! I can see the top of her head!"
+        show her serious with dissolve
         "Suddenly, I felt centered. I had almost forgotten why I was going through all this pain in the first place. This wasn't about me, or about proving something, or winning, or anything stupid like that. This was about our baby, our tiny creature who needed my help just to exist!"
-        show her angry
+        show her angry with dissolve
         "I took a deep breath, and pushed again, stretching past fire and pain and breathing and my own body. I think I probably screamed. Everything else disappeared, and all that was left was the burning. But it still wasn't enough; somehow I pushed again!"
         him happy "Yeah! There she is!"
+        show her serious with dissolve
         julia normal "One more little push, [her_name], and then you just lie back and relax a bit."
-        show her serious
+        show her sleeping
         "I closed my eyes. I think [his_name] was holding the baby while Julia cut the cord. It was finished. I did it."
         "Something small and floppy was placed on my chest. I opened my eyes."
-        show baby girl at Position(xpos=500, ypos=400)
-        show her normal
+        show baby girl at centerbaby
+        show her serious
         if (loved >= 0):
             him happy "Hey, little one, this here's your momma. She is one awesome woman, but you don't need me to tell you that, right?"
         else:

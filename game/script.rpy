@@ -49,6 +49,11 @@ define loved = 0      # negative = neglected
 define made_love = 0  # Counter of lovemaking, used for pregnancy calculation
 define community_level = 0 # how successful is the colony?
 
+# This definition needs to happen before our transitions are defined    
+init -201 python:
+    define.move_transitions('longmove', 1.5)    
+    
+
 # Variables about skills.  On a scale from 0-100, how skilled is the character?
 # These are now defined in dse.rpy
 
@@ -107,9 +112,14 @@ init -200:
     define farleft = Position(xpos=-0.30, xanchor = 0)
     define farright = Position(xpos=1.0, xanchor = 0)    
     define sitting = Position(ypos=0.5, yanchor=0)
-    define squatting = Position(ypos=0.2, yanchor=0)
+    define squatting = Position(ypos=0.25, yanchor=0)
     
-
+    define rightbaby = Position(xpos=950, ypos=430)
+    define quarterrightbaby = Position(xpos=750, ypos=430)
+    define midrightbaby = Position(xpos=600, ypos=430)    
+    define centerbaby = Position(xpos=520, ypos=430)
+    define quarterleftbaby = Position(xpos=200, ypos=420)
+    
     define sans_font = "fonts/Questrial-Regular.otf"
     define serif_font = "fonts/RobotoSlab-Regular.ttf"
     
@@ -196,7 +206,7 @@ label start:
             $ is_pregnant = True
             $ known_each_other = "six months"
             #scene bg stars
-            #show overlay computer_pad
+            #show computer_pad
 
             #jump monthly_event_25
             #jump test_her_sprites
