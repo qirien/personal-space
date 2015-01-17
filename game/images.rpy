@@ -87,7 +87,6 @@ image him nude sleeping = "sprites/him-nude-sleeping.png"
 
 # Her sprites are declared automatically in images-her.rpy
 # TODO: Use determined?
-# TODO: Use nude?
 
 define SMALL_IMAGE_SCALE = 0.55
 define SMALL_IMAGE_CROP = 90
@@ -107,7 +106,8 @@ image him happy head = LiveCrop((5, 0, SMALL_IMAGE_CROP, SMALL_IMAGE_CROP), im.F
 
 # Other Characters
 image baby girl = "sprites/baby1.png"
-image baby boy = "sprites/baby2.png" #TODO: rotate just a bit
+image baby boy = "sprites/baby2.png"
+image baby black = "sprites/baby7.png"
 image sara = "sprites/sara.png"
 image sara normal = "sprites/sara.png"
 image sara sad = "sprites/sara-sad.png"

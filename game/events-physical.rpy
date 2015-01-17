@@ -287,7 +287,6 @@ label physical_3:
     return
 
 #Yoga
-# TODO: Make it rain more often?
 label physical_4:
     scene bg farm_interior with fade
     show her serious at center

@@ -7,12 +7,7 @@ define mp = MultiPersistent("cuttlefishgames")
 # Declare characters used by this game .
 # TODO: Update colors when sprites are finished
 define narrator = Character(ctc="ctc_blink", ctc_position="nestled")
-# TODO: Instead of image="her", image=LiveComposite(blah blah blah)
-# Needs to run a function that decides what she is wearing (nothing, uniform, dress, pregnant) 
-# (and what expression she has)? sleeping?
-# See http://www.renpy.org/wiki/renpy/doc/cookbook/Blink_And_Lip_Flap
-#  and http://gamedev.stackexchange.com/questions/11431/renpy-get-an-image-depending-on-variables
-#  and http://www.renpy.org/doc/html/displayables.html
+
 define her = DynamicCharacter("her_name", color="#66dd77", image="her", ctc="ctc_blink", ctc_position="nestled") #light mint green
 define him = DynamicCharacter("his_name", color="#d82222", image="him", ctc="ctc_blink", ctc_position="nestled") #red 
 
@@ -51,7 +46,7 @@ define community_level = 0 # how successful is the colony?
 
 # This definition needs to happen before our transitions are defined    
 init -201 python:
-    define.move_transitions('longmove', 1.5)    
+    define.move_transitions('longmove', 1.5)
     
 
 # Variables about skills.  On a scale from 0-100, how skilled is the character?
@@ -109,22 +104,37 @@ init -200:
     define midright = Position(xpos=0.50, xanchor=0)
     define quarterleft = Position(xpos=0.10, xanchor=0)
     define quarterright = Position(xpos=0.65, xanchor=0)
-    define farleft = Position(xpos=-0.30, xanchor = 0)
-    define farright = Position(xpos=1.0, xanchor = 0)    
+    define farleft = Position(xpos=-0.30, xanchor=0)
+    define farright = Position(xpos=1.0, xanchor=0)    
     define sitting = Position(ypos=0.5, yanchor=0)
     define squatting = Position(ypos=0.25, yanchor=0)
     
-    define rightbaby = Position(xpos=950, ypos=430)
-    define quarterrightbaby = Position(xpos=750, ypos=430)
-    define midrightbaby = Position(xpos=600, ypos=430)    
-    define centerbaby = Position(xpos=520, ypos=430)
-    define quarterleftbaby = Position(xpos=200, ypos=420)
+    define rightbaby = Position(xpos=850, ypos=430, yanchor=0.3)
+    define quarterrightbaby = Position(xpos=650, ypos=430, yanchor=0.3)
+    define midrightbaby = Position(xpos=600, ypos=430, yanchor=0.3)    
+    define centerbaby = Position(xpos=520, ypos=430, yanchor=0.3)
+    define midleftbaby = Position(xpos=400, ypos=430, yanchor=0.3)  
+    define quarterleftbaby = Position(xpos=200, ypos=430, yanchor=0.3)
+    define leftbaby = Position(xpos=0, ypos=430, yanchor=0.3)
     
     define sans_font = "fonts/Questrial-Regular.otf"
     define serif_font = "fonts/RobotoSlab-Regular.ttf"
     
     define current_song = " "
     define read_messages = False
+    
+    # TODO: Remove ones we are not using anywhere, fix for credits
+    transform rising:
+        ypos 1.2 yanchor 1.0
+        linear 6.0 ypos 1.0
+        
+    transform babyrising:
+        ypos 1.2 yanchor 1.0 yoffset -160
+        linear 6.0 ypos 1.0
+        
+    transform slowalpha:
+        alpha 0
+        linear 3.0 alpha 0.9
     
 init python:
     # Songs for computer pad

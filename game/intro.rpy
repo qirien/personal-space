@@ -14,7 +14,6 @@ label intro:
     show him normal at quarterright with moveinright
     
     # Get his name
-    # TODO: Add a last name "Ventura"? Kuehn? She gets to pick if she wants his last name?
     $ his_name = renpy.input("What is his name?", "Jack", length=20)
     
     "I thought we were in love. That's why I married [his_name]."

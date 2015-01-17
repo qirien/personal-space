@@ -136,7 +136,7 @@ label relax_together_2:
             her flirt "Watch out, here I come!"
             "I undressed slowly. There was enough moonlight that I knew he could see me."
             him flirting "Whoo! Alright, [her_name]! Come on in!"
-            # TODO: have an here so they can not be wearing clothes?
+            # TODO: have an overlay here so they can not be wearing clothes?
             show her normal at center with move
             show her at sitting with move
             play bg_sfx "sfx/splash.mp3"        

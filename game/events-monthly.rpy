@@ -1,7 +1,5 @@
 # Event content for all the important monthly events
 
-# TODO: Set wearing_dress = True during any night/relaxing events
-
 # You shouldn't ever see this. This is just a fall through in case something happens
 # and there's no event for this month.
 label monthly_event_0:
@@ -94,6 +92,7 @@ label monthly_event_1:
             return
 
     scene black with fade
+    $ wearing_dress = True
     #if nobody did the dishes, pest problems!
     play music "music/Prelude02.ogg" fadeout 1.0
     her "AAAAAAAAAAAAAAAHHHHHH!!!!"
@@ -139,6 +138,8 @@ label monthly_event_1:
     her annoyed "As long as he's an outside pet."
 
     "The dishes were never left undone after that."
+    scene black with fade
+    $ wearing_dress = False
     return
 
 # MONTH 2 - The Cellar
@@ -224,6 +225,7 @@ label monthly_event_3:
     play music "music/Prelude22.ogg" fadeout 1.0
     "Even though we were on a new planet, we still kept track of what day it was on the Earth calendar. The seasons didn't match up or anything, but it helped us feel like we were still a part of things back home."
     scene bg farm_interior with fade
+    $ wearing_dress = True
     show her normal at midleft with dissolve
 
     her "It's his birthday this month!"
@@ -276,6 +278,8 @@ label monthly_event_3:
             return
 
     "I was happy I could show him I cared by remembering his birthday."
+    scene black with fade
+    $ wearing_dress = False
     $ loved += 5
     return
 
@@ -309,11 +313,15 @@ label unappreciated:
             her angry "I said stop it!"
             her sad "I don't want to die..."
             him annoyed "Then you need to choose to live."
+            
+    scene black with fade
+    $ wearing_dress = False
     return
 
 # MONTH 4 - Are Hobbies a Waste of Time?
 label monthly_event_4:
     scene bg farm_interior with fade
+    $ wearing_dress = True
     show her serious at midleft
     show him serious at midright
     with dissolve
@@ -464,6 +472,8 @@ label monthly_event_4:
                 jump unappreciated
 
     "We ended up staying up late, talking about all the things we had been doing. I felt like I understood him a little better after that, and he seemed to appreciate what I was doing more, too."
+    scene black with fade
+    $ wearing_dress = False
     return
 
 # MONTH 5 - What to do with trash
@@ -857,6 +867,7 @@ label monthly_event_8:
     "The library had a huge collection of Earth media that colonists could check out. They only had enough space for the most popular things, but it was still more media than anyone could experience in a lifetime."
     "One day I noticed they had a movie about space colonists called \"Pioneer of the Stars\". I was curious to see how people on Earth saw people like us, so I checked it out."
     scene bg farm_interior with fade
+    $ wearing_dress = True
     show her normal at midleft
     show him normal at midright
     her happy "Hey, [his_nickname], I got a movie for us to watch tonight."
@@ -982,6 +993,7 @@ label monthly_event_8:
                     "We watched the movie the next night. Even though they got a lot of things wrong about space colonization, we really got into the drama and tension. We both cried a little at the end."
                     $ relaxed += 2
                     $ loved += 5
+    $ wearing_dress = False
     return
 
 # Helper function for Month 9 where he tells her what he'd like her to do
@@ -1074,6 +1086,7 @@ label she_can_do_better:
 # MONTH 9 - how could I do better?
 label monthly_event_9:
     scene bg farm_interior with fade
+    $ wearing_dress = True
     show him normal at midright
     with dissolve
     show her normal at midleft
@@ -1137,6 +1150,8 @@ label monthly_event_9:
             $ loved -= 5
             hide him with moveoutright
             her angry "(He is not romantic at all!)"
+            scene black with fade
+            $ wearing_dress = False
             return
         "{i}Nothing.{/i}" if (loved >= 0):
             $ she_wants = "nothing"
@@ -1214,6 +1229,8 @@ label monthly_event_9:
         "Of course he wasn't serious about it. I shouldn't have gotten my hopes up, I guess."
         $ loved -= 5
 
+    scene black with fade
+    $ wearing_dress = False
     return
 
 # MONTH 10 - Anniversary / Lettie is sick!
@@ -1235,6 +1252,7 @@ label monthly_event_10:
     call set_work_bg
     "All day long I looked forward to spending a nice evening together."
     scene bg farm_interior with fade
+    $ wearing_dress = True
     show her normal at center
     play music "music/Prelude02.ogg" fadeout 1.0
     "I got some special ingredients at the storehouse, and made a nice dessert and everything. But [his_name] wasn't home yet."
@@ -1299,6 +1317,7 @@ label monthly_event_10:
 
 label anniversary_next_day:
     scene black with fade
+    $ wearing_dress = False
     play music "music/Amnesia.ogg" fadeout 1.0
     "He didn't come home that night, just stopped in for a quick breakfast early in the morning and then left again. I didn't have a chance to talk to him again until that evening when I got home."
     scene bg farm_interior with fade
@@ -2589,10 +2608,11 @@ label monthly_event_16:
 # uses spiritual, creative
 label monthly_event_17:
     scene bg farm_interior with fade
+    $ wearing_dress = True
     "One day Sara invited me to hang out with her at the bath house. It was a lot of work to fetch and heat water for a bath, so it was more worth it to share the work and the bath."
     scene bg bathhouse with fade
-    show sara at midleft
-    show her normal at midright
+    show sara at midright
+    show her normal at midleft
     her happy "This was a good idea! I never thought taking a bath would be such a luxury..."
     sara "It's a lot faster with you helping me haul water."
     her surprised "Is the hot water ready yet?"
@@ -2600,6 +2620,7 @@ label monthly_event_17:
     her happy "Alright, let's pour it in!"
     play bg_sfx "sfx/splash.mp3"
     scene bg bathhouse with fade
+    $ wearing_dress = False
     $ is_nude = True
     show her at midleft, squatting
     show sara at midright, squatting
@@ -3373,7 +3394,6 @@ label done_party_menu:
                 elif (skill_spiritual >= 70):
                     "Because of my connections in the community, I was able to answer a lot of the questions about the people in the colony."
                 sara "And for the last question, which will determine the winner of the trivia contest:"
-                # TODO: This isn't written anywhere... change to something else?
                 sara "What is Mayor Grayson's favorite song?"
                 menu:
                     "What's the mayor's favorite song?"

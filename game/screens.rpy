@@ -217,6 +217,7 @@ screen main_menu:
         # TODO: Image gallery?
         # TODO: Credits button?
         textbutton _("Config") action ShowMenu("preferences")
+        textbutton _("Credits") action Start("show_credits")
         #textbutton _("Help") action Help()
         textbutton _("Quit") action Quit(confirm=False)
 

@@ -156,7 +156,6 @@ screen colony_messages_button(read_colony_messages):
         action Jump("monthly_messages")                        
 
 # Music Player that shows current track, previous, stop/play, and next buttons
-# TODO: This does not update unless a button is clicked somewhere else
 screen music_player():
     label "Music Player"
     $ current_song = renpy.music.get_playing()
