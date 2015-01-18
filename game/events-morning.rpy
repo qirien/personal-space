@@ -811,6 +811,7 @@ label work_4:
         brennan normal "Today! You're a slave driver, you are."
         her flirt "I have to be to get any work out of you, Your Laziness."
         her serious "Anyway, come see these plans. We'll need to strip the branches of twigs and leaves, and cut them to uniform sizes..."
+        show brennan at center, behind her with move        
         "He stripped the branches while I attached them together. It took a few tries to attach everything so it was sturdy, and it wouldn't hold as much weight as a normal shelf, but in the end, we finished it."
         
         her normal "I might have to have the mayor emphasize to people how much work it is to build this stuff, and maybe they won't ask for so many things."

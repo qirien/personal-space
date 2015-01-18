@@ -910,6 +910,7 @@ label monthly_event_8:
             her normal "Yes, we all need to work together to succeed. Plus, I'll get to be with you."
             him happy "All right, let's go!"
             scene bg sunset with fade
+            $ wearing_dress = False
             show night
             show her normal at quarterright
             show him normal at midright
@@ -929,9 +930,10 @@ label monthly_event_8:
             thuc "Well, you can count on my help anytime, if you need it."
             her happy "Thanks, I'm sure we will."
             hide thuc with moveoutleft
-            show him normal at midleft with move
+            show him normal at midleft
+            show her at center
+            with move
             "We walked home by moonlight.  The two moons cast opposing shadows from the shrubs and trees, making a maze of light for us to follow. [his_name] reached for my hand."
-            show him at center with move
             him normal "Thanks for coming. Everything's better with you."
             her flirt "Even putting up fences is not too bad when we're together."
             $ loved += 5
@@ -4748,7 +4750,7 @@ label monthly_event_24:
                 her concerned "Oh, [his_name], I'll never leave you!."
                 him serious "I need you, [her_name]. You're the reason I work, and the reason I come home."
                 show him sleeping at center with move
-                show her sleeping
+                show her sleeping 
                 "We held each other so tightly, as if we were made of a thousand pieces that would fall apart if the other person didn't hold them all together."
             "{i}I need to leave.{/i}" if ((loved <= 0) and (community_level < COMMUNITY_LEVEL_OK)):
                 her sad "I can't stay here, [his_name]."

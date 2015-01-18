@@ -277,8 +277,10 @@ label domestic_6:
         "What should I say?"
         "That's barbaric.":
             her angry "That's barbaric! What did that poor creature ever to do you?"
-            him annoyed "Ate my plants, that's what. Well, you don't have to have any; I guess I'll just cook it myself."
+            him angry "Ate my plants, that's what. Well, you don't have to have any; I guess I'll just cook it myself."
+            show him annoyed
             her annoyed "Yeah, please get that thing out of here."
+            hide him with moveoutright
             "He roasted it outside over a fire. He didn't tell me how it tasted, which was fine - I didn't want to know, anyway."
             $loved -= 5
             return

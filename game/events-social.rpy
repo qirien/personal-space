@@ -478,11 +478,12 @@ label social_4:
 # Someone's house burns down; will you help?
 #
 label social_5:
-    scene bg bedroom with fade
-    show night
-    show bedroom_covers behind night        
-    show him sleeping at midleft, squatting, behind overlay
-    show her sleeping at midright, squatting, behind overlay
+    scene bg bedroom with fade  
+    $ is_nude = True
+    show him sleeping at midleft, squatting
+    show her sleeping at midright, squatting
+    show bedroom_covers    
+    show night    
     with dissolve
     
     play music "music/NoOneWillKnow.ogg" fadeout 1.0
@@ -492,8 +493,9 @@ label social_5:
     play bg_sfx "sfx/radio.mp3"
     "Sara on the radio" "Is anyone awake? Please, help! Our house is on fire!!!"
     show her surprised
-    him surprised "Let's go!"
+    him nude surprised "Let's go!"
     scene bg farm_exterior flip burned with fade
+    $ is_nude = False
     show night
     show ilian at quarterright
     show sara sad at midright

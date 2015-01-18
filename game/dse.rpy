@@ -152,8 +152,8 @@ label job_focus:
 
     scene black
     # Tell the user what month it is.
-    show text "{color=#ffffff}Month [month] of 25\n\nAt Work{/color}"
-    $ renpy.pause(1.5)
+    show text "{color=#ffffff}{font=fonts/Kristi.ttf}{size=50}Month [month] of 25\n\nAt Work{/size}{/font}{/color}"
+    $ renpy.pause(2.0)
     hide text
     play music "music/Isaiah.ogg" fadeout 1.0
 
@@ -181,8 +181,8 @@ label skill_focus:
 
     # The rest of this is the same as for the job_focus.
     scene black
-    show text "{color=#ffffff}Month [month] out of 25\n\nSkill Focus{/color}"
-    $ renpy.pause(1.5)
+    show text "{color=#ffffff}{font=fonts/Kristi.ttf}{size=50}Month [month] out of 25\n\nSkill Focus{/size}{/font}{/color}"
+    $ renpy.pause(2.0)
     hide text
     play music "music/OceansApart.ogg" fadeout 1.0
 
@@ -201,8 +201,8 @@ label relaxation_focus:
         jump monthly_event
 
     scene black
-    show text "{color=#ffffff}Month [month] out of 25\n\nFree Time{/color}"
-    $ renpy.pause(1.5)
+    show text "{color=#ffffff}{font=fonts/Kristi.ttf}{size=50}Month [month] out of 25\n\nFree Time{/size}{/font}{/color}"
+    $ renpy.pause(2.0)
     hide text
 
     $ period = "relaxation_focus"
@@ -223,8 +223,8 @@ label monthly_event:
         jump end_of_month
     
     scene black
-    show text "{color=#ffffff}Month [month] out of 25\n\nEvent!{/color}"
-    $ renpy.pause(1.5)
+    show text "{color=#ffffff}{font=fonts/Kristi.ttf}{size=50}Month [month] out of 25\n\nEvent!{/size}{/font}{/color}"
+    $ renpy.pause(2.0)
     hide text
     play music "music/RainSea.ogg" fadeout 1.0
 

@@ -5,9 +5,6 @@
 # Consolidate Sans fonts so you only have to change them 1 place
 style sans_text is text:
     font sans_font
-
-#style say_window is window:
-#    xoffset 25
     
 style say_dialogue:
     color "#FFFFFF"
@@ -19,6 +16,30 @@ style button:
     selected_background Frame("GUI/button_selected.png", 15, 15)
     yminimum 40
     activate_sound "sfx/click.ogg"
+    
+style mm_button:
+    background Frame("GUI/blue_button_idle.png", 15, 15)
+    hover_background Frame("GUI/blue_button_selected.png", 15, 15)
+    insensitive_background Frame("GUI/blue_button_insensitive.png", 15, 15)
+    selected_background Frame("GUI/blue_button_selected.png", 15, 15)
+    yminimum 40
+    activate_sound "sfx/click.ogg"
+    size_group "gm_nav"
+    xpadding 20
+    
+style mm_button_text:
+    color "#fff"
+    insensitive_color "#666"
+    xalign 0.5
+    yalign 0.5
+    font "fonts/Kristi.ttf"
+    size 35
+
+style gm_nav_button is mm_button:
+    xpadding 10
+    
+style gm_nav_button_text is mm_button_text:
+    size 25    
 
 style button_text is sans_text:
     color "#fff"

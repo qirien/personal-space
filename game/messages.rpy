@@ -229,7 +229,8 @@ label msg_12:
         lily_c "You are welcome. If I need to go in the future, I may ask you to assist me again."
         brennan_c "You can count on me. Just, don't ask me to do anything with those purple jellies."
         lily_c "You... do not like them?"
-        brennan_c "They made you fall asleep and act a bit loony."
+        nvl clear
+        brennan_c "They made you fall asleep and act a bit barmy."
         lily_c "Yes... I may have to retrieve one for study next time I go."
     else:
         sara_c "If you haven't been to the ocean yet, you should totally go sometime! Just watch out for those purple jellies. :-o"

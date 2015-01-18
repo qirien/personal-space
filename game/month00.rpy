@@ -203,12 +203,13 @@ label colony_ship:
 
 label settling_in:         
     # Land on the planet and get settled
-    scene talaam-approach:
-        crop (0,0,1024,600)
-        easein 10.0 crop (884, 272, 1024, 600)
-        
-    play music "music/You.ogg" fadeout 1.0        
-    "Finally, we arrived."
+    label talaam_approach:
+        scene talaam_approach:
+            crop (0,0,1024,600)
+            easein 10.0 crop (884, 272, 1024, 600)
+        play music "music/You.ogg" fadeout 1.0        
+        "Finally, we arrived."
+        $ renpy.end_replay()
     "The first month on Talaam was really busy. We arrived at the end of winter, so it was cold and rainy. We all worked together to get everyone's houses up right away. The first one took the longest, as we had to figure out how to put all the pieces together."
     "But when I looked at the map of the colony's layout, our farm was at the very edge."
     scene bg talam with fade    

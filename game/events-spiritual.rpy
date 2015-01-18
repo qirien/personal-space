@@ -274,10 +274,11 @@ label spiritual_6:
     "They were the farthest farm for a reason; they seemed to like to be by themselves. I hardly ever saw them, or their baby who was born on the shuttle."
     "When we got there, Sister Naomi knocked on the door and Helen let us in."
     scene bg farm_interior flip
-    show helen at quarterright with dissolve
+    show helen at quarterright
+    show baby boy at quarterrightbaby
+    with dissolve
     show naomi sad at center
     show her normal at midleft
-    show baby boy at quarterrightbaby
     with  moveinleft
     "We entered their small cabin, not that much different from our own. Helen was sitting on the bed with the baby on her lap doing some knitting. She invited us to sit next to her."
     her surprised "What are you making?"

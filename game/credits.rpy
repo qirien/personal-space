@@ -195,7 +195,7 @@ label show_credits:
     # TODO: Also unlock images for an image gallery, if we have CGs...
     if (persistent.got_good_ending and persistent.got_mediocre_ending and persistent.got_bad_ending):
         if (not persistent.got_all_endings):
-            "You have experienced all the endings and unlocked the Omake from the Main Menu!"
+            "You have experienced all the endings and unlocked the Omake from the Extras Menu!"
         $ persistent.got_all_endings = True
         
     "Thanks for playing! If you have feedback, I'd love to hear from you at {a=mailto:qirien@icecavern.net?subject=Our Personal Space}qirien@icecavern.net{/a}"

@@ -109,13 +109,13 @@ init -200:
     define sitting = Position(ypos=0.5, yanchor=0)
     define squatting = Position(ypos=0.25, yanchor=0)
     
-    define rightbaby = Position(xpos=850, ypos=430, yanchor=0.3)
-    define quarterrightbaby = Position(xpos=650, ypos=430, yanchor=0.3)
-    define midrightbaby = Position(xpos=600, ypos=430, yanchor=0.3)    
-    define centerbaby = Position(xpos=520, ypos=430, yanchor=0.3)
-    define midleftbaby = Position(xpos=400, ypos=430, yanchor=0.3)  
-    define quarterleftbaby = Position(xpos=200, ypos=430, yanchor=0.3)
-    define leftbaby = Position(xpos=0, ypos=430, yanchor=0.3)
+    define rightbaby = Position(xpos=930, ypos=430)
+    define quarterrightbaby = Position(xpos=750, ypos=430)
+    define midrightbaby = Position(xpos=600, ypos=430)    
+    define centerbaby = Position(xpos=520, ypos=430)
+    define midleftbaby = Position(xpos=400, ypos=430)  
+    define quarterleftbaby = Position(xpos=200, ypos=430)
+    define leftbaby = Position(xpos=0, ypos=430)
     
     define sans_font = "fonts/Questrial-Regular.otf"
     define serif_font = "fonts/RobotoSlab-Regular.ttf"

@@ -533,9 +533,10 @@ label physical_5:
 # Go hunting and bring back some meat
 label physical_6:
     scene bg bedroom with fade
-    show bedroom_covers    
-    show him sleeping at midleft, squatting, behind overlay
-    show her normal at midright, squatting, behind overlay
+    $ is_nude = True
+    show him nude sleeping at midleft, squatting
+    show her concerned at midright, squatting
+    show bedroom_covers        
     with dissolve    
     
     "I woke up early and couldn't go back to sleep. All I could think of was how hungry I was for meat."
@@ -548,16 +549,17 @@ label physical_6:
         "Wake him up!":
             her normal "Hey, [his_nickname], I've got a craving for meat. Want to come hunting with me?"
             if loved >= 10:
-                him annoyed "It's so early!"
-                him normal "But I'd love a change of pace. Let's go!"
+                him nude annoyed "It's so early!"
+                him nude normal "But I'd love a change of pace. Let's go!"
                 $ he_hunts = True
             else: 
-                him sad "Can I just go back to sleep?"
+                him nude sad "Can I just go back to sleep?"
                 her normal "Yeah, that's fine. Don't worry about me, I'll be careful."
-                show him sleeping with dissolve
+                show him nude sleeping with dissolve
         "Let him sleep.":
             "I left him a message so he wouldn't worry about where I was."
     scene bg stream with fade
+    $ is_nude = False
     if (he_hunts == True):
         "We went exploring into the forest where another villager had seen groups of what we called land-lobsters."
         "We found a group of a few of them engaging in whatever their species does instead of sleeping. [his_name] got behind them so he could try to catch one if I missed and it ran away."

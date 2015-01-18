@@ -195,36 +195,48 @@ screen main_menu:
         style "mm_root"
 
     # The main menu buttons.
-    frame:
+    vbox:
         style_group "mm"
-        xalign .98
+        xalign .85
         yalign .98
 
-        has vbox
-
-        if (persistent.times_beaten):
-            textbutton _("New Game+") action Start()
-        else:
-            textbutton _("New Game") action Start()
         if (renpy.newest_slot() is not None):
             $ recent_save = renpy.newest_slot("[^_]")
             if (recent_save is not None):
                 $ recent_save_page, recent_save_name = recent_save.split("-")
-                textbutton _("Continue") action FileLoad(recent_save_name, page=recent_save_page) text_size 28
-                textbutton _("Load Game") action ShowMenu("load")
+                textbutton _("Continue") action FileLoad(recent_save_name, page=recent_save_page) text_size 42
+                #textbutton _("Load Game") action ShowMenu("load")
+        if (persistent.times_beaten):
+            textbutton _("New Game+") action Start()
+        else:
+            textbutton _("New Game") action Start()
+              
+        textbutton _("Extras") action ShowMenu("extras")
+        #textbutton _("Help") action Help()
+        textbutton _("Config") action ShowMenu("preferences")                  
+        textbutton _("Quit") action Quit(confirm=False)
+        
+        
+##############################################################################
+# Extras Screen
+#
+# Screen to access omake, image gallery, credits, etc.
+#
+screen extras:
+    tag menu
+    
+    window:
+        style "gm_root"
+        
+    vbox:
+        style_group "mm"
+        xalign 0.98
+        yalign 0.98
+        
         if (persistent.got_all_endings):
             textbutton _("Omake") action Start("omake")
-        # TODO: Image gallery?
-        # TODO: Credits button?
-        textbutton _("Config") action ShowMenu("preferences")
+        textbutton _("CG Gallery") action ShowMenu("cg_gallery")
         textbutton _("Credits") action Start("show_credits")
-        #textbutton _("Help") action Help()
-        textbutton _("Quit") action Quit(confirm=False)
-
-init -2 python:
-
-    # Make all the main menu buttons be the same size.
-    style.mm_button.size_group = "mm"
 
 
 ##############################################################################
@@ -240,13 +252,11 @@ screen navigation:
         style "gm_root"
 
     # The various buttons.
-    frame:
+    vbox:
         style_group "gm_nav"
         xalign .98
         yalign .98
         
-        has vbox
-
         textbutton _("Return") action Return()
         textbutton _("Config") action ShowMenu("preferences")
         textbutton _("Save Game") action ShowMenu("save")

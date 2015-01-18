@@ -186,7 +186,7 @@ label relax_alone_7:
     scene bg bathhouse with fade
     $ is_nude = True
     show bathhouse_overlay
-    show her serious at squatting behind overlay
+    show her serious at squatting behind bathhouse_overlay
     with dissolve
     play bg_sfx "sfx/splash.mp3"
     her normal "Ahhh...."

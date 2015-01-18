@@ -242,9 +242,9 @@ screen skill_screen():
                     text ""
             
             textbutton _("Done"):
-                    xalign 1.0
-                    yalign 1.0
-                    action Hide("skill_screen")
+                xalign 1.0
+                yalign 1.0
+                action Hide("skill_screen")
         
             
 screen heart_display():

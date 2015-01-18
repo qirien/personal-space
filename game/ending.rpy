@@ -82,7 +82,7 @@ label bad_ending:
         brennan "Just pretend it was all a bad dream..."
     "At least I have a chance to start over again... this time on Earth, my favorite planet in the universe."
     window hide
-    scene cg earth:
+    scene cg_earth:
         size (1024, 600) crop (1433,480,1024,600)
         easein 10.0 size (1024,600) crop (0, 0, 1848, 1080)
     $ renpy.pause(12.0)
@@ -217,15 +217,18 @@ label mediocre_ending:
     $ is_nude = False
     window hide
     if (is_pregnant):
-        scene cg with_baby:
-            size (1024, 600) crop (1424, 756, 1452, 848)
-            easeout 10.0 size (1024, 600) crop (0, 0, 5120, 3000)
+        label cg_with_baby:
+            scene cg_with_baby:
+                size (1024, 600) crop (1424, 756, 1452, 848)
+                easeout 10.0 size (1024, 600) crop (0, 0, 5120, 3000)
     else:
-        scene cg together:
-            size (1024, 600) crop (0, 0, 3273, 1912)
-            ease 5.0 size (1024, 600) crop (0, 1088, 3273, 1912)
-            ease 5.0 size (1024, 600) crop (1116, 1000, 1712, 1000)
-    $ renpy.pause(12.0)    
+        label cg_together:
+            scene cg_together:
+                size (1024, 600) crop (0, 0, 3273, 1912)
+                ease 5.0 size (1024, 600) crop (0, 1088, 3273, 1912)
+                ease 5.0 size (1024, 600) crop (1116, 1000, 1712, 1000)
+    $ renpy.pause(12.0)
+    $ renpy.end_replay()    
     $ persistent.got_mediocre_ending = True    
     ".:. Good Ending, 2 of 3."
     jump show_credits
@@ -437,11 +440,11 @@ label good_ending:
     $ is_nude = False
     window hide
     if (is_pregnant):
-        scene cg with_baby:
+        scene cg_with_baby:
             size (1024, 600) crop (1424, 756, 1452, 848)
             easeout 10.0 size (1024, 600) crop (0, 0, 5120, 3000)
     else:
-        scene cg together:
+        scene cg_together:
             size (1024, 600) crop (0, 0, 3273, 1912)
             ease 5.0 size (1024, 600) crop (0, 1088, 3273, 1912)
             ease 5.0 size (1024, 600) crop (1116, 1000, 1712, 1000)
