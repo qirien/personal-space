@@ -197,7 +197,7 @@ screen main_menu:
     # The main menu buttons.
     vbox:
         style_group "mm"
-        xalign .85
+        xalign .98
         yalign .98
 
         if (renpy.newest_slot() is not None):

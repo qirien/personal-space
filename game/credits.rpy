@@ -20,8 +20,7 @@ label show_credits:
     if (ending != "none"):   
         "You scored [loved_ceiling] out of [LOVED_MAX] relationship points, and [community_ceiling] out of [COMMUNITY_LEVEL_MAX] community points."
     
-    # TODO: Double check EVERYTHING we used is in here!  Check License.txt
-    
+
     # If the user has beat the game before, allow them to skip the credits.
     $ skippable = not persistent.times_beaten
     scene black with fade    
@@ -77,7 +76,7 @@ label show_credits:
     with dissolve
     hide text with fade
     
-    show text "With music by:\nEhren Starks\nJan Hanford\nChad Lawson\nGiorgio Costantini\nKalabi\nBenji Goodrich\nGianmarco Leona\nFalling You\nRuben van Rompaey\nDa Camera\nWillem Brons\n\nLicensed from {a=http://www.magnatune.com}Magnatune{/a}\nunder the\n {a=http://creativecommons.org/licenses/by-nc-sa/1.0/}BY-NC-SA Creative Commons License{/a}" with fade
+    show text "With music by:\nEhren Starks\nJan Hanford\nChad Lawson\nGiorgio Costantini\nKalabi\nBenji Goodrich\nGianmarco Leona\nFalling You\nAttic Trax\nTrancevision\nRuben van Rompaey\nDa Camera\nWillem Brons\nAnonymph\n\nLicensed from {a=http://www.magnatune.com}Magnatune{/a}\nunder the\n {a=http://creativecommons.org/licenses/by-nc-sa/1.0/}BY-NC-SA Creative Commons License{/a}" with fade
     if ((community_level < COMMUNITY_LEVEL_OK) and (ending != "none")):
         show julia mad at left, rising behind text
         show thuc sad at midleft, rising behind text
@@ -111,7 +110,6 @@ label show_credits:
     hide martin
     hide raul
     with dissolve
-    # TODO: Add sound Credits    
     hide text with fade
     
     show text "Sound Effects by:\nSoundjay.com\nFirearm SFX Library\n\nAnd Freesound.org users:\ndobroide, alienistcog, jackofall29,\nfoxen10, Walter_Odington, powpowrider,\n saint_leibowitz, pushkin, jadend2,\nOhrwurm, UncleSigmund, OwlStorm,\nERH, soundscalpel.com, Timbre"
@@ -128,6 +126,7 @@ label show_credits:
     with dissolve
     hide text with fade
     
+    # TODO: Add more beta testers
     show text "Beta Testing by:\nWes Landaker\nLisa Horner\nCatherine White"
     show lettie_head at right behind text with longmoveinright
     show goat_flip at left behind text with longmoveinleft
@@ -138,7 +137,7 @@ label show_credits:
     with dissolve
     hide text with fade   
     
-    show text "The code for this work is licensed under the {a=http://www.gnu.org/licenses/gpl.html}GPL{/a}, and the text is licensed under a {a=http://creativecommons.org/licenses/by-sa/4.0/}Creative Commons Attribution-ShareAlike 4.0 International License{/a}.\nFor other licenses used, see accompanying License.txt" with fade
+    show text "The code for this work is licensed under the {a=http://www.gnu.org/licenses/gpl.html}GPL{/a}, and the text is licensed under a {a=http://creativecommons.org/licenses/by-sa/4.0/}Creative Commons Attribution-ShareAlike 4.0 International License{/a}.\nFor other licenses used, see accompanying License.html" with fade
     $ renpy.pause(3.0, hard=skippable)
     hide text with fade        
     
@@ -192,7 +191,6 @@ label show_credits:
     else:
         $ persistent.times_beaten += 1
         
-    # TODO: Also unlock images for an image gallery, if we have CGs...
     if (persistent.got_good_ending and persistent.got_mediocre_ending and persistent.got_bad_ending):
         if (not persistent.got_all_endings):
             "You have experienced all the endings and unlocked the Omake from the Extras Menu!"

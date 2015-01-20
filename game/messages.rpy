@@ -39,21 +39,38 @@ screen message_board:
                             text what id what_id
                 
 # NVL mode characters for chat rooms, etc
-# TODO: update colors from script.rpy when sprites are done
-define her_c = DynamicCharacter("her_name", who_prefix = "{image=sprites/her-icon.png} ", color="#66dd77", image="her", kind=nvl, ctc="ctc_blink", ctc_position="nestled")
-define him_c = DynamicCharacter("his_name", who_prefix = "{image=sprites/him-icon.png} ",color="#c80000", image="him", kind=nvl, ctc="ctc_blink", ctc_position="nestled") #red 
-define naomi_c = Character("Naomi Grayson", who_prefix = "{image=sprites/naomi-icon.png} ", color="#ededed", image="naomi", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #light gray
-define pavel_c = Character("Mayor Pavel Grayson", who_prefix = "{image=sprites/pavel-icon.png} ", color="#cccccc", image="pavel_c", kind=nvl, ctc="ctc_blink", ctc_position="nestled")   #dark gray
-define lily_c = Character("Dr. Lily Kealoha", who_prefix = "{image=sprites/lily-icon.png} ", color="#8655bd", image="lily", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #purple
-define sara_c = Character("Sara Andrevski", who_prefix = "{image=sprites/sara-icon.png} ", color="#c64e89", image="sara", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  # dark pink
-define thuc_c = Character("Thuc Nguyen", who_prefix = "{image=sprites/thuc-icon.png} ", color="a9ff22", image="thuc", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #lime green
-define ilian_c = Character("Ilian Andrevski", who_prefix = "{image=sprites/ilian-icon.png} ", color="ffa922", image="ilian", kind=nvl, ctc="ctc_blink", ctc_position="nestled") #tangerine
-define brennan_c = Character("Brennan Callahan", who_prefix = "{image=sprites/brennan-icon.png} ", color="33b533", image="brennan", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #irish green
-define pete_c = Character("Pete Jennings", who_prefix = "{image=sprites/pete-icon.png} ", color="ee7755", image="pete", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #rusty brown
-define natalia_c = Character("Natalia Perón", who_prefix = "{image=sprites/natalia-icon.png} ", color="ffe74a", image="natalia", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #yellow
-define helen_c = Character("Helen Jennings", who_prefix = "{image=sprites/helen-icon.png} ", color="cdcfb2", image="helen", kind=nvl, ctc="ctc_blink", ctc_position="nestled") #tan
-define julia_c = Character("Julia Nguyen", who_prefix = "{image=sprites/julia-icon.png} ", color="#7b84fd", image="julia", kind=nvl, ctc="ctc_blink", ctc_position="nestled") #icy blue
-define martin_c = Character("Martín Perón", who_prefix = "{image=sprites/martin-icon.png} ", color="#990011", image="martin", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #dark red
+define her_c = DynamicCharacter("her_name", who_prefix = "{image=sprites/her-icon.png} ", 
+    color="#84b766", image="her", kind=nvl, ctc="ctc_blink", ctc_position="nestled") # green of her eyes
+define him_c = DynamicCharacter("his_name", who_prefix = "{image=sprites/him-icon.png} ",
+    color="#bc1e0e", image="him", kind=nvl, ctc="ctc_blink", ctc_position="nestled") # red of his eyes
+define naomi_c = Character("Naomi Grayson", who_prefix = "{image=sprites/naomi-icon.png} ", 
+    color="#bf98ff", image="naomi", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #lavender
+define pavel_c = Character("Mayor Pavel Grayson", who_prefix = "{image=sprites/pavel-icon.png} ", 
+    color="#cccccc", image="pavel_c", kind=nvl, ctc="ctc_blink", ctc_position="nestled")   #gray
+define lily_c = Character("Dr. Lily Kealoha", who_prefix = "{image=sprites/lily-icon.png} ", 
+    color="#7580d0", image="lily", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #grayish blue
+define sara_c = Character("Sara Andrevski", who_prefix = "{image=sprites/sara-icon.png} ", 
+    color="#e25057", image="sara", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  # salmon pink
+define thuc_c = Character("Thuc Nguyen", who_prefix = "{image=sprites/thuc-icon.png} ", 
+    color="a9ff22", image="thuc", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #lime green
+define ilian_c = Character("Ilian Andrevski", who_prefix = "{image=sprites/ilian-icon.png} ", 
+    color="d2d099", image="ilian", kind=nvl, ctc="ctc_blink", ctc_position="nestled") #khaki
+define brennan_c = Character("Brennan Callahan", who_prefix = "{image=sprites/brennan-icon.png} ", 
+    color="33b533", image="brennan", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #irish green
+define pete_c = Character("Pete Jennings", who_prefix = "{image=sprites/pete-icon.png} ", 
+    color="ee7755", image="pete", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #rusty brown
+define natalia_c = Character("Natalia Perón", who_prefix = "{image=sprites/natalia-icon.png} ", 
+    color="f3ca14", image="natalia", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #yellow
+define helen_c = Character("Helen Jennings", who_prefix = "{image=sprites/helen-icon.png} ", 
+    color="77b8ef", image="helen", kind=nvl, ctc="ctc_blink", ctc_position="nestled") #sky blue
+define julia_c = Character("Julia Nguyen", who_prefix = "{image=sprites/julia-icon.png} ", 
+    color="#e7b1cb", image="julia", kind=nvl, ctc="ctc_blink", ctc_position="nestled") #icy pink
+define martin_c = Character("Martín Perón", who_prefix = "{image=sprites/martin-icon.png} ", 
+    color="#9b5b1d", image="martin", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #brown
+define tomas_c = Character("Tomás Perón", who_prefix = "{image=sprites/blank-icon.png}  ", 
+    color="#905010", image="martin", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #brown
+define joanna_c = Character("Joanna Nguyen", who_prefix = "{image=sprites/blank-icon.png} ", 
+    color="#eebecf", image="julia", kind=nvl, ctc="ctc_blink", ctc_position="nestled") #icy pink
 
 define computer = Character(None, kind=nvl, ctc="ctc_blink", ctc_position="nestled")
 
@@ -330,7 +347,7 @@ label msg_18:
     julia_c "And then there's no power left for the stove!"
     lily_c "The overcast meteorological conditions of late also reduce the efficiency of the solar chargers."
     nvl clear
-    him_c "Anyone tried using the biofuel system?"
+    him_c "Anyone tips on using the biofuel system?"
     pete_c "Yeah, if you use wood you gotta refill it every hour or so. Not too efficient. If we had some liquid fuel it'd probably last longer."
     ilian_c "That fuel is only for emergencies."
     him_c "Alright, I'll just charge it off the house for now."
@@ -378,7 +395,6 @@ label msg_21:
     return
 
 label msg_22:
-    # Can I have Tomas and Joanna post here w/o making characters for them?
     natalia_c "I have good news - our son Tomás is engaged to Joanna Ngyuen!"
     julia_c "They can't keep their hands off each other, so I suppose it's for the best."
     thuc_c "Now, Julia, is that any way to talk about your daughter and her true love?"
@@ -390,7 +406,9 @@ label msg_22:
     brennan_c "Ahhh, Tomás, you're a lucky man. Though I don't envy you having Julia for a mother-in-law...."
     martin_c "Man?! He's still a boy... Though if he's old enough to get married..."
     julia_c "A man is as a man does. Tomás is more of a man than {b}some{/b} here, at least."
-    brennan_c "I stand by what I said."
+    joanna_c "that's what I was gonna say ;-)"
+    tomas_c "Thanks for the well-wishes, everyone. Any chance we could get our own place?"
+    ilian_c "Come see me and we'll discuss it."
     
     return
     
@@ -476,6 +494,8 @@ label msg_25:
     lily_c "Also, the variation of our genetic pool will decrease."
     brennan_c "You should have said something sooner, maybe we could have contributed to the gene pool together!"
     julia_c "That's enough; sometimes my kids read these messages!"
+    joanna_c "Mom, most of your kids are old enough to contribute to the gene pool on their own."
+    nvl clear
     lily_c "I will continue this conversation with you in private, Brennan."
     sara_c ":-o Ummm, wow, did one of Brennan's pickup lines actually work?!"
     pete_c "It's about time."

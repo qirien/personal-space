@@ -1,6 +1,6 @@
 #################################################################
 # Gallery code
-# from leon on the lemmasoft forums:
+# based off that from leon on the lemmasoft forums:
 # http://lemmasoft.renai.us/forums/viewtopic.php?f=51&t=22465
 #
 init python:
@@ -12,9 +12,10 @@ init python:
     gal_rows = 2
     gal_cols = 2
     #thumbnail size in pixels:
-    thumbnail_x = 267
-    thumbnail_y = 150
+    thumbnail_x = 350
+    thumbnail_y = 205
     #the setting above (267x150) will work well with 16:9 screen ratio. Make sure to adjust it, if your are using 4:3 or something else.
+    renpy.image ("gallocked", im.Scale("GUI/locked.png", thumbnail_x, thumbnail_y))
     #Galleries settings - end
    
     gal_cells = gal_rows * gal_cols   
@@ -27,16 +28,21 @@ init python:
 
    
 init +1 python:
-    #Here we create the thumbnails. We create a grayscale thumbnail image for BGs, but we use a special "locked" image for CGs to prevent spoilers.
+    #Here we create the thumbnails for buttons. Create a grayscale version for the "hover".  Use the universal gallocked for locked items.
     for gal_item in gallery_cg_items:
         renpy.image (gal_item + " thumb", im.Scale(ImageReference(gal_item), thumbnail_x, thumbnail_y))
+        renpy.image (gal_item + " thumb-hover", 
+            im.Grayscale(im.Scale(ImageReference(gal_item), thumbnail_x, thumbnail_y)))
       
 screen cg_gallery:
     tag menu
     use navigation
-    frame background None xpos 0.5 ypos 0.5:
+    frame background None xalign 0.5 yalign 0.5:
+        text "CG Scene Gallery" style "cursive_text" color "#fff" size 80 xalign 0.5        
         grid gal_rows gal_cols:
-            ypos 10
+            spacing 10
+            xalign 0.35
+            yalign 0.75
             $ i = 0
             $ next_cg_page = cg_page + 1           
             if next_cg_page > int(len(gallery_cg_items)/gal_cells):
@@ -44,11 +50,10 @@ screen cg_gallery:
             for gal_item in gallery_cg_items:
                 $ i += 1
                 if i <= (cg_page+1)*gal_cells and i>cg_page*gal_cells:
-                    $ from string import capwords
+                    $ thumb_name = gal_item + " thumb"        
+                    $ from string import capwords        
                     $ button_name = capwords(gal_item.replace("_", " "))
-                    textbutton button_name action Replay(gal_item) xalign 0.5
-                    #imagebutton idle thumb_name action Replay(gal_item)
-                    #add g_cg.make_button(gal_item + " thumb", gal_item + " thumb", im.Scale("bg/gallocked.png", thumbnail_x, thumbnail_y), xalign=0.5, yalign=0.5, idle_border=None, background=None, bottom_margin=24)
+                    imagebutton idle thumb_name hover thumb_name + "-hover" insensitive "gallocked" action Replay(gal_item)
             for j in range(i, (cg_page+1)*gal_cells): #we need this to fully fill the grid
                 null
         frame:

@@ -6,6 +6,9 @@
 style sans_text is text:
     font sans_font
     
+style cursive_text is text:
+    font "fonts/Kristi.ttf"
+    
 style say_dialogue:
     color "#FFFFFF"
     
@@ -18,21 +21,20 @@ style button:
     activate_sound "sfx/click.ogg"
     
 style mm_button:
-    background Frame("GUI/blue_button_idle.png", 15, 15)
-    hover_background Frame("GUI/blue_button_selected.png", 15, 15)
-    insensitive_background Frame("GUI/blue_button_insensitive.png", 15, 15)
-    selected_background Frame("GUI/blue_button_selected.png", 15, 15)
+    background Frame("GUI/redorange_button_idle.png", 15, 15)
+    hover_background Frame("GUI/redorange_button_selected.png", 15, 15)
+    insensitive_background Frame("GUI/redorange_button_insensitive.png", 15, 15)
+    selected_background Frame("GUI/redorange_button_selected.png", 15, 15)
     yminimum 40
     activate_sound "sfx/click.ogg"
     size_group "gm_nav"
     xpadding 20
     
-style mm_button_text:
+style mm_button_text is cursive_text:
     color "#fff"
     insensitive_color "#666"
     xalign 0.5
     yalign 0.5
-    font "fonts/Kristi.ttf"
     size 35
 
 style gm_nav_button is mm_button:
