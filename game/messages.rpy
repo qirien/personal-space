@@ -358,10 +358,11 @@ label msg_19:
     thuc_c "You're not going to pick them with your teeth? You're such a slacker, [his_name]."
     him_c "Yeah, I know."
     thuc_c "I'm just kidding! I'll help you tomorrow night, okay?"
+    naomi_c "I can help pick some tomorrow as well."
+    nvl clear
     sara_c "I'll help, too, as long as I get to eat some. Now I'm craving salsa! Ilian, do we have any chips?"
     ilian_c "No."
-    nvl clear
-    natalia_c "I'll teach you how to make some, if you want."
+    natalia_c "I'll teach you how to make chips, if you want."
     sara_c "Yes! Ohhh, chips and salsa..."
     brennan_c "Sara, have I mentioned lately how beautiful you are? And how generous, and kind to poor hungry souls like myself?"
     sara_c "Yes, actually you have. Make your own chips and salsa, Brennan. :-P"
@@ -381,6 +382,7 @@ label msg_20:
         julia_c "I'll drop something by your house this evening."
         if (is_pregnant or is_pregnant_later):
             julia_c "You especially need the protein, since you're expecting."
+            nvl clear
         her_c "Thanks everyone... I just hope I can repay your kindness."
         
     return

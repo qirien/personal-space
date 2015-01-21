@@ -5,7 +5,6 @@
 define mp = MultiPersistent("cuttlefishgames")
 
 # Declare characters used by this game .
-# TODO: Update colors when sprites are finished
 define narrator = Character(ctc="ctc_blink", ctc_position="nestled")
 
 define her = DynamicCharacter("her_name", color="#84b766", image="her", ctc="ctc_blink", ctc_position="nestled") #light mint green
@@ -89,7 +88,7 @@ init -200:
     define hated_food = "turnips"
     define baby_name = "Terra"
     
-    define COMMUNITY_LEVEL_OK = 30
+    define COMMUNITY_LEVEL_OK = 20
     define COMMUNITY_LEVEL_GOOD = 50
     define COMMUNITY_LEVEL_MAX = 60    
     define LOVED_GOOD = 40
@@ -106,7 +105,7 @@ init -200:
     define quarterright = Position(xpos=0.65, xanchor=0)
     define farleft = Position(xpos=-0.30, xanchor=0)
     define farright = Position(xpos=1.0, xanchor=0)    
-    define sitting = Position(ypos=0.5, yanchor=0)
+    define sitting = Position(ypos=0.45, yanchor=0)
     define squatting = Position(ypos=0.25, yanchor=0)
     
     define rightbaby = Position(xpos=930, ypos=430)
@@ -188,41 +187,43 @@ label start:
         else:
             "To fast-forward through scenes you have already seen, use the \"Skip\" option in the Config menu."
 
-    "Do I want to remember how it all began?"
-    # TODO: Remove this, or change it somehow?
-    menu:
+    if (config.developer):
         "Do I want to remember how it all began?"
-        "Yes.":
-            "Of course."
-            jump intro
-        "No.":
-            $ his_name = "Jack"
-            $ her_name = "Kelly"
-            $ profession = "mechanic"
-            $ want_kids = True
-            $ known_each_other = "six months"
-            jump month01
-        "Skip to Debug Point":
-            $ his_name = "Jack"
-            $ her_name = "Kelly"
-            $ profession = "teacher"
-            $ community_level = 25
-            $ loved = 40
-            $ exposed_brennan = True
-            $ skill_knowledge = 100
-            $ skill_technical = 40
-            $ skill_domestic = 100
-            $ want_kids = True
-            $ is_pregnant = True
-            $ known_each_other = "six months"
-            #scene bg stars
-            #show computer_pad
+        menu:
+            "Do I want to remember how it all began?"
+            "Yes.":
+                "Of course."
+                jump intro
+            "No.":
+                $ his_name = "Jack"
+                $ her_name = "Kelly"
+                $ profession = "mechanic"
+                $ want_kids = True
+                $ known_each_other = "six months"
+                jump month01
+            "Skip to Debug Point":
+                $ his_name = "Jack"
+                $ her_name = "Kelly"
+                $ profession = "teacher"
+                $ community_level = 25
+                $ loved = 40
+                $ exposed_brennan = True
+                $ skill_knowledge = 100
+                $ skill_technical = 40
+                $ skill_domestic = 100
+                $ want_kids = True
+                $ is_pregnant = True
+                $ known_each_other = "six months"
+                #scene bg stars
+                #show computer_pad
 
-            #jump monthly_event_25
-            #jump test_her_sprites
-            #jump test_positions
-            jump test_inputter
-            #jump show_credits
+                #jump monthly_event_25
+                #jump test_her_sprites
+                #jump test_positions
+                jump test_inputter
+                #jump show_credits
+    
+    jump intro
 
 label test_inputter:
     "What is your pet's name?"

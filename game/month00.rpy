@@ -26,7 +26,7 @@ label colony_ship:
             her flirt "You will be a wonderful father, as long as you don't treat the kids the way you treat your horse."
             him surprised "Hey! I'm good to Lettie!"
             her happy "Too good! You'll spoil the kids with treats!"
-            $ loved += 5
+            $ loved += 2
 
         # Not sure about kids
         "I don't know.":
@@ -86,7 +86,7 @@ label colony_ship:
                         "I don't want to share you.":
                             her concerned "I don't want to share you with anyone else just yet."
                             him serious "Yeah...that makes sense. I'm not sure how I feel about sharing you with a baby, either."
-                            $ loved += 5
+                            $ loved += 2
 
                 "That does sound kind of cute...":
                     her normal "(That does sound kind of cute, but...)"

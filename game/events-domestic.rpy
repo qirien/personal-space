@@ -95,7 +95,7 @@ label domestic_3:
             "There were three of them, two males and a female, and I became remarkably attached to them. [his_name] used the manure for fertilizer, and they worked hard eating the strange plants from this planet."
             "They even kept Lettie company - she seemed to like grazing near them."
             $ skill_domestic += 10
-            $ community_level += 5
+            $ community_level += 3
             $ have_goat = True
         "No, thanks.":
             her annoyed "(I don't think I have time to take care of goats right now!)"
@@ -192,7 +192,7 @@ label domestic_4:
     elif (skill_social >= 20):
         her normal "I bet I could trade these with the Perón's for some eggs from their chickens..."
         "Sure enough, Natalia was delighted to have some fresh vegetables, and I made a souffle instead."
-        $ community_level += 5
+        $ community_level += 3
     elif have_goat:
         "I sliced them really thin and spread them with goat cheese and some herbs from the garden."
         her happy "They hardly taste like radishes anymore...much better!"
@@ -253,7 +253,7 @@ label domestic_5:
                 "I wondered what it would be like to have our own child and take them trick-or-treating and celebrate holidays together. What will our kids be like?"
             else:
                 "They were cute, but I was kind of glad when the party was over. I'm not used to being around kids so much."
-            $ community_level += 1
+            $ community_level += 2
         "How annoying.":
             "I thought that sounded loud and annoying. How was I supposed to make candy, anyway?! We just stayed home."
 
@@ -339,10 +339,10 @@ label domestic_6:
             if skill_social >= 90:
                 "We invited the whole town for a giant potluck celebration. People brought salads and fresh bread and rice and spicy beans and there was even a little fruit for everyone."
                 "Our little colony didn't have many celebrations; even though there wasn't really enough meat for everyone to have much, since we all brought something it worked out. We felt like a real community."
-                $ community_level += 10
+                $ community_level += 5
             elif skill_social >=30:
                 "We invited a large group of friends and we ate almost all of it. I think they appreciated that we shared it with them. It felt good to help out our friends."
-                $ community_level += 5
+                $ community_level += 3
             else:
                 "We invited a few friends over and we ate and ate and ate as much as we could. I wondered if we might get sick, but other than feeling full all the next day (and having a little trouble going to the bathroom), nothing bad happened."
                 $ community_level += 2

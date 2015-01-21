@@ -21,7 +21,7 @@ If not, see <http://www.gnu.org/licenses/>.
 
 == Fonts
 
-Exo2 and Questrial are licensed under the SIL Open Font License.  See game/fonts/SIL Open Font License.txt
+Exo2, Kristi, and Questrial are licensed under the SIL Open Font License.  See game/fonts/SIL Open Font License.txt
 
 RobotoSlab is licensed under the Apache License, found at game/fonts/Apache License.txt
 

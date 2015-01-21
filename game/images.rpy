@@ -48,6 +48,8 @@ init -1:
     image bedroom_covers = "bg/bedroom-overlay.png"
     image computer_pad = "bg/computer-pad.png"
     image underwater = "bg/underwater-overlay.png"
+    image pond_overlay = "bg/pond-overlay.png"
+    image hot_spring_overlay = "bg/hot-spring-overlay.png"
 
     image talaam_approach = "bg/talaam-approach.png"
 
@@ -62,7 +64,7 @@ init -1:
 
     # Him
     image him normal = "sprites/him.png"
-    image him angry = "sprites/him-angry.png" # TODO: His angry face looks too big?
+    image him angry = "sprites/him-angry.png"
     image him annoyed = "sprites/him-annoyed.png"
     image him concerned = "sprites/him-concerned.png"
     image him flirting = "sprites/him-flirt.png"

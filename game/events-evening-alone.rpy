@@ -101,7 +101,7 @@ label relax_alone_2:
     hide her with moveoutleft
     scene bg stars with fade
     show her serious at center with dissolve
-    show her at sitting with move
+    show her at squatting with move
     "I sat out on the porch and gazed at the stars. They were so different from Earth, I had to make my own constellations."
     her serious "Hmm, those kind of look like two lovers... and there's a sort of circle that reminds me of a UFO..."
     her flirt "And...that looks like one long, crazy dragon."

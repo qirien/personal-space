@@ -33,7 +33,7 @@ init python:
     # Also have one for no expression given
     renpy.image("her", ConditionSwitch(
         "is_nude", "sprites/her/nude-normal.png",
-        "is_pregnant", "sprites/her/pregnant-normal.png", 
+        "is_pregnant and (month > 19) and (month <= 24)", "sprites/her/pregnant-normal.png", 
         "wearing_dress", "sprites/her/dress-normal.png", 
         "True", "sprites/her/normal.png"))
 

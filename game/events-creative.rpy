@@ -343,4 +343,5 @@ label creative_master:
     "It would be a few years before the transmission would reach Earth, but it was worth the wait for us to be able to share our beautiful new home with those we loved."
 
     $ skill_creative += 10
+    $ community_level += 10
     return

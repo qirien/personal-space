@@ -522,8 +522,8 @@ label work_2:
             him flirting "Oh yeah, I'm always hungry."
             her flirt "Ohh, that I believe!"
 
-            $ loved -= 5
-            $ relaxed -= 5
+            $ loved -= 2
+            $ relaxed -= 2
         "I have to work with someone obnoxious.":
             her annoyed "Ugh, the mayor wants me to work with Brennan Callahan."
             him surprised "Really? What's wrong with him?"
@@ -567,6 +567,7 @@ label work_2:
 # working hard
 label work_3:
     $ times_worked += 1
+    $ relaxed -= 5
     call set_work_bg
     show her serious at midright with dissolve
 
@@ -669,7 +670,10 @@ label work_3:
 # Something bad happens - Brennan helps out.
 label work_4:
     $ times_worked += 1
-    $ relaxed -= 5
+    if (relaxed >= 10):
+        $ relaxed = 5
+    else:
+        $ relaxed -= 5
     $ community_level += 2
     play music "music/NoSilencePlease.ogg" fadeout 1.0
     call set_work_bg
@@ -879,6 +883,7 @@ label work_4:
 # Month 15 - Solar flare while at work
 label work_5:
     $ times_worked += 1
+    $ relaxed -= 5
     call set_work_bg
 
     if (skill_technical >= 30):
@@ -1010,6 +1015,7 @@ label work_5:
 # MONTH 18 - lunch with Brennan
 label work_6:
     $ times_worked += 1
+    $ relaxed -= 2
     call set_work_bg
 
     if (profession == "doctor"):
@@ -1063,6 +1069,7 @@ label work_6:
             menu:
                 "What should I say?"
                 "{i}I sure am.{/i}" if (loved >= 0):
+                    $ loved += 2
                     her normal "I sure am...I don't know what I'd do without him."
                     brennan mad "..."
                     her flirt "But what about you! Aren't there any single women on the colony you could date? Or are you not interested in women?"
@@ -1125,6 +1132,7 @@ label work_6:
                     her concerned "..."
                         
                 "{i}He doesn't love me.{/i}" if (loved <= -5):
+                    $ loved -= 2
                     her sad "I don't think he loves me at all."
                     brennan mad "What?! Why do you say that?"
                     menu:
@@ -1217,6 +1225,7 @@ label work_6:
 # has quantum entanglement communicator for instantaneous communication with Earth
 label work_7:
     $ times_worked += 1
+    $ relaxed -= 5
 
     call set_work_bg
 
@@ -1350,7 +1359,7 @@ label brennan_confess:
     "He looked away and paused for a second before answering."
     brennan mad "I'm to report on any resources this planet has that my...employer might find profitable."
     her "Who is your employer?"
-    brennan mad "Rare Earth Tech. Well, technically I'm an independent contractor for Senator Martínez, who happens to be both on the board of R.E.T. and on the Senate Energy Committee."
+    brennan mad "Rare Earth Tech. Well, I'm technically an independent contractor for Senator Martínez, who happens to be both on the board of R.E.T. and on the Senate Energy Committee."
     her serious "So you're a spy, basically."
     brennan normal "You could look at it that way."
     her annoyed "Since you've kept your employment a secret, I don't see any other way I can look at it."
@@ -1451,10 +1460,11 @@ label brennan_confess:
                     "I didn't think, didn't analyze, didn't worry about [his_name]; I just existed, in that eternal moment of pleasure and mutual acceptance."
                     "Afterwards, we didn't say anything. I just went home, and for a while we pretended nothing had happened..."
                     if (loved < 0):
-                        $ loved -= 5
+                        $ loved -= 10
                     else:
-                        $ loved = -5
+                        $ loved = -10
                     $ cheated_on_him = True
+                    $ relaxed -= 5
                 "You owe me one.":
                     her flirt "Never mind, just... keep in mind that you owe me one."
                     brennan normal "I owe you much more than that. Thank you, [her_name]."
@@ -1464,6 +1474,7 @@ label brennan_confess:
 # Brennan says he's leaving, do you want to come
 label work_8:
     $ times_worked += 1
+    $ relaxed -= 5
 
     call set_work_bg
     show her normal at midright with dissolve
@@ -1614,6 +1625,7 @@ label work_8:
                     brennan normal "There's no better place."
                     show her happy
 
+                # She's giving up on the colony
                 if (community_level >= COMMUNITY_LEVEL_OK):
                     $ community_level = COMMUNITY_LEVEL_OK - 15
                 else:

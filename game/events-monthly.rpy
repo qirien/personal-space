@@ -163,7 +163,7 @@ label monthly_event_2:
             play bg_sfx "sfx/shovel.mp3"
             "We dug and hauled out dirt and dug and hauled until finally we had a small cellar to store food in! We were exhausted, but it felt good to get it done together."
             stop bg_sfx fadeout 1.0
-            $ loved += 5
+            $ loved += 2
 
         "{i}I'll surprise him...{/i}" if (skill_physical >= 10):
             her normal "We have time; don't worry about it yet."
@@ -176,7 +176,7 @@ label monthly_event_2:
             him normal "Why don't we work on it together?"
             "We dug and hauled out dirt and dug and hauled until finally we had a small cellar to store food in! We were exhausted, but it felt good to get it done together."
             stop bg_sfx fadeout 1.0
-            $ loved += 5
+            $ loved += 2
 
         "{i}I'll help with the farm while you dig.{/i}" if (skill_domestic >=10):
             her surprised "Why don't you let me take care of the farm while you dig it?"
@@ -192,7 +192,7 @@ label monthly_event_2:
             play bg_sfx "sfx/clipclop.mp3"
             "I rode Lettie around, scouting the fields for weeds. I had never noticed how big the farm was before -- [his_name] takes care of a lot of plants!"
             "It took longer than I thought, and I ended up helping him haul out a lot of the dirt he dug, but then we had our very own cellar!"
-            $ loved += 5
+            $ loved += 2
 
         "{i}Maybe I could build something to help.{/i}" if (skill_technical >= 10):
             her "Maybe I could build something to help dig the cellar?"
@@ -203,7 +203,7 @@ label monthly_event_2:
             "He dug in the hole, and I moved the dirt from where the machine dumped it to go on top of the roof of the cellar, which effectively made it deeper faster."
             stop bg_sfx fadeout 1.0
             "Even though it took a long time, it was kind of fun to work on it together."
-            $ loved += 5
+            $ loved += 2
 
         "{i}Maybe the Peróns would help us dig it?{/i}" if (skill_social >= 10):
             her surprised "Maybe the Peróns would help us dig ours, and we could help them dig a cellar, too?"
@@ -292,9 +292,9 @@ label unappreciated:
     him angry "Real work provides food, clothing, shelter. The necessities. We don't have extra time for anything else in order for the colony to survive."
     her "If it's just about survival, life isn't worth living."
     him "Well, you don't even get a choice if you don't survive. If something goes wrong, who's going to help us out here? There's no food banks, no Red Cross, no emergency rooms - just us."
-    $ relaxed -= 10
-    $ loved -= 10
-    $ community_level -= 10
+    $ relaxed -= 5
+    $ loved -= 5
+    $ community_level -= 5
     menu:
         "What should I say?"
         "You're freaking me out!":
@@ -542,7 +542,7 @@ label monthly_event_5:
                     him angry "Good riddance! I came here to get away from them."
                     "It took me several trips to get our trash to the designated area. Someone there said they were trying to recycle as much as possible, but I felt bad for not even trying."
                     $ relaxed -= 5
-                    $ loved -= 3
+                    $ loved -= 2
                     $ community_level -= 5
                     return
                 "I don't want to throw it all out.":
@@ -550,7 +550,7 @@ label monthly_event_5:
                     him annoyed "Okay then."
                     "Over the next few days I tried to recycle the items I had, but nothing worked out. I ended up taking most of it to the designated dump. Someone there said they were trying to recycle as much as possible. At least I tried."
                     $ relaxed -= 5
-                    $ loved -= 3
+                    $ loved -= 2
                     $ community_level -= 5
                     return
         "{i}Let's compromise.{/i}" if (relaxed >= 0):
@@ -937,6 +937,7 @@ label monthly_event_8:
             him normal "Thanks for coming. Everything's better with you."
             her flirt "Even putting up fences is not too bad when we're together."
             $ loved += 5
+            $ relaxed -= 5
             $ community_level += 5
             scene black with fade
   
@@ -946,8 +947,8 @@ label monthly_event_8:
             "It was a little lonely, especially since I was really looking forward to watching the movie with him, but I soon was absorbed in a good book and then went to bed."
             scene black with fade
             "We watched the movie the next night. Even though they got a lot of things wrong about space colonization, we really got into the drama and tension. We both cried a little at the end."
-            $ relaxed += 5
-            $ loved += 5
+            $ relaxed += 2
+            $ loved += 2
   
         "{i}You're never here when I need you!{/i}" if (relaxed <= 0):
             $ loved -= 5
@@ -994,7 +995,7 @@ label monthly_event_8:
                     scene black with fade
                     "We watched the movie the next night. Even though they got a lot of things wrong about space colonization, we really got into the drama and tension. We both cried a little at the end."
                     $ relaxed += 2
-                    $ loved += 5
+                    $ loved += 2
     $ wearing_dress = False
     return
 
@@ -1017,6 +1018,7 @@ label she_can_do_better:
                 her normal "We should make love more... it's important, even if we're tired or busy."
                 him happy "Thank you, [her_nickname]."
                 $ loved += 5
+                $ made_love += 1
     elif (loved < 5):
         him normal "I'd like it if we spent more time together."
 
@@ -1099,13 +1101,13 @@ label monthly_event_9:
     him concerned "You know, in our marriage. Do you feel loved, is this working for you?"
     menu:
         "What should I say?"
-        "{i}Honestly, no.{/i}" if (loved <= 0):
+        "{i}Honestly, no.{/i}" if (loved < 0):
             her concerned "Honestly, no, it's not."
-        "{i}(Lie) It's fine.{/i}" if (loved <= 0):
+        "{i}(Lie) It's fine.{/i}" if (loved <= 5):
             her concerned "Yeah, it's okay, I guess."
         "{i}It's fine.{/i}" if (loved >= 0):
             her normal "It's fine; I haven't really had time to think about things like that."
-        "{i}It's wonderful.{/i}" if (loved >= 0):
+        "{i}It's wonderful.{/i}" if (loved > 5):
             her happy "Of course! It's great!"
     if (loved > 0):
         him normal "Is there anything I can do to be a be a better husband to you?"
@@ -1299,7 +1301,7 @@ label monthly_event_10:
                 her normal "What song are we going to sing as we're dancing around town naked?"
             else:
                 her annoyed "Are you even listening to me?!"
-                $ loved -= 5
+                $ loved -= 2
             "He just looked at me for a minute, then shook his head."
             him concerned "Sorry, [her_name], not right now. I've got to check on something."
             jump follow_him
@@ -1382,6 +1384,7 @@ label anniversary_next_day:
                     her happy "It's okay; we don't have much."
                     him happy "But I'm so glad I have you."
                 "At least it's not another cheesy poem.":
+                    $ loved -= 2
                     her laughing "Ha ha, at least it's not a cheesy poem like for my birthday."
                     him annoyed "Hey! I worked hard on that poem! I poured out my heart to you!"
                     her happy "I know, and it was really sweet... but also really cheesy."
@@ -1509,7 +1512,7 @@ label follow_him:
             her flirt "Shall I make a list for you?"
             him flirting "I think I know what you like."
             $ made_love += 1
-    $ loved += 10
+    $ loved += 5
     $ relaxed += 2
     return
 
@@ -2385,7 +2388,7 @@ label monthly_event_15:
                 her angry "I can't believe you told other people without talking to me first!"
                 him angry "What, so you want to decide what I can and can't tell people?"
                 her "No, but it's something important enough that we should have decided on it together!"
-                $ loved -= 3
+                $ loved -= 2
 
         him annoyed "..."
         her annoyed "..."
@@ -2437,7 +2440,7 @@ label monthly_event_15:
                 her annoyed "So you're totally okay with people looking at us thinking, 'I wonder if they got it on last night?'"
                 him serious "I don't think anyone's thinking that. And if they are, you can't stop them."
                 her annoyed "Ugh, whatever, let's just eat breakfast."
-                $ loved -= 5
+                $ loved -= 2
                 $ relaxed -= 5
     else:
         him happy "I made you breakfast."
@@ -2533,7 +2536,7 @@ label monthly_event_16:
             her annoyed "Make your own damn dinner, I'm not hungry!"
             him surprised "Hey, hey! Calm down!"
             her angry "Calm down?! I don't have time to calm down! I need to wash out this vomit and make dinner out of vegetables I hate and try not to die while doing it, because everything on this planet is trying to kill us!!"
-            if (loved >= 0):
+            if (loved > 0):
                 him concerned "Okay, it seems like you could use a little break, so why don't you go lie down?"
                 her concerned "I don't have time to-"
                 him serious "Laundry can wait, I'll make dinner, and nothing's trying to kill us at the moment, so go rest, okay?"
@@ -3043,25 +3046,6 @@ label monthly_event_19:
                 "He handed me an old pair of jeans and a t-shirt. They fit okay right now, but I could tell they wouldn't fit the whole pregnancy."
                 "Well, I'd figure something else out later."
                 $ relaxed -= 2
-            "Try nudity." if (not tried_nudity):
-                "I guess I didn't need to wear clothes around the house - it felt so good not to have that waistband constricting my growing belly!"
-                show her normal at midleft
-                show him normal at midright
-                show her at sitting
-                show him at sitting
-                with dissolve
-                him flirting "Hey, is it no pants day? How come I didn't get the memo?"
-                her normal "It just feels so much more comfortable this way..."
-                him normal "Good idea."
-                play bg_sfx "sfx/cloth.mp3"
-                "Pretty soon [his_name] was walking around free as a bird, too."
-                scene black with fade
-                "That led to some interesting results..."
-                $ made_love += 1
-                scene bg farm_interior with fade
-                "But I was pretty sure I had to wear clothes to work, so I needed to try something else, too."
-                $ relaxed += 2
-                jump maternity_clothing
             "{i}Ask around{/i}" if (skill_social >= 60):
                 "I knew Helen had recently had a baby, so I decided to send her a message and see what she had done."
                 play bg_sfx "sfx/message.mp3"
@@ -3118,7 +3102,7 @@ label monthly_event_20:
     sara "Good idea."
     scene bg community_center with fade
     show pavel at midright with dissolve
-    show her normal at quarterleft
+    show her normal at left
     show sara at midleft
     with moveinleft
     "We asked him about it, and he thought it sounded great."
@@ -4035,7 +4019,7 @@ label monthly_event_23:
                     "He didn't need to know that the baby might be Brennan's, right?"
                     "He doesn't need to know.":
                          "I decided he didn't need to know; I didn't want to ruin what we had."
-                         $ loved -= 5
+                         $ loved -= 10
                     "He should know.":
                         "(He should know, but... can I bring myself to tell him about it?)"
                         her concerned "[his_name], there's something you should know..."
@@ -4133,7 +4117,10 @@ label monthly_event_23:
                         him normal "It's good to be home, [her_nickname]."
                         show her at center with move
                         "When he hugged me, for the first time in way too long, that was when I knew everything would be okay. Things weren't back to normal; I don't know if they ever would be like they had been. But they were okay."
-                        $ loved += 10
+                        if (loved < 0):
+                            $ loved = 5
+                        else:
+                            $ loved += 10
                         return
                 
             her surprised "I never thought of myself as a parent, you know."
@@ -4246,7 +4233,7 @@ label monthly_event_23:
                 "He approached me slowly. Had it been so long that it seemed strange? My heart beat fast like it did when we were first dating."
                 "I hadn't realized how much I missed him. I missed his touch, his laugh, his soft kisses on my back, everything we had ever shared together."
                 "Together, we remembered it all."
-                $ loved += 7
+                $ loved += 10
                 $ made_love += 1
                 
     # Not pregnant, don't want kids, and didn't cheat on him
@@ -4400,8 +4387,8 @@ label monthly_event_24:
         sara "Yeah, I've never seen anyone else here, so I like to come here and relax, sometimes."
         her normal "The sound of the water is so peaceful..."
         her concerned "But I feel a little tired after walking so far. I think I'll just lie down for a minute."
-        show her at sitting
-        show sara at sitting
+        show her at squatting
+        show sara at squatting
         "We sat there for awhile, just enjoying the sounds of the river."
         sara "..."
         her normal "..."
@@ -4752,6 +4739,7 @@ label monthly_event_24:
                 show him sleeping at center with move
                 show her sleeping 
                 "We held each other so tightly, as if we were made of a thousand pieces that would fall apart if the other person didn't hold them all together."
+                $ loved += 2
             "{i}I need to leave.{/i}" if ((loved <= 0) and (community_level < COMMUNITY_LEVEL_OK)):
                 her sad "I can't stay here, [his_name]."
                 $ wants_to_leave = True

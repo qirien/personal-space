@@ -51,7 +51,7 @@ label physical_1:
     show her normal at center with dissolve
     her serious "Whew...I've been hiking for almost two hours now -- time for a break!"
     "I took off my shoes and socks and dipped my feet in the water. The rocks at the bottom were a little slimy with a strange magenta substance that I assumed was algae, but it still felt good."
-    show her normal at sitting with move
+    show her normal at squatting with move
     "I sat down on a rock and took a long drink from the water I brought."
     if (skill_creative >= 20):
         "The pond was so familiar, and yet so distinct from anything I'd seen on Earth, I felt like I had to draw it, so I took out my sketchpad and got to work."
@@ -164,7 +164,7 @@ label physical_1:
                 "Whatever.":
                     her serious "Whatever. It's not that bad."
                     him sad "I guess there's no point in trying to convince you, is there? You're never going to listen."
-                    $ loved -= 15
+                    $ loved -= 10
         "Maybe you're right.":
             her normal "Maybe you're right. Don't worry, I'm not planning on any more blood-donation excursions anytime soon."
             him concerned "Thank you, [her_name]. I...need you."
@@ -297,7 +297,7 @@ label physical_4:
     menu:
         "What should I do?"
         "Meditate in sitting and prone poses.":
-            show her sleeping at sitting with move
+            show her sleeping at squatting with move
             "I spent time sitting and lying down just focusing on my breathing. "
             "I felt both more energized, and more relaxed."
             $ relaxed += 5 
@@ -436,13 +436,16 @@ label physical_5:
                     play music "music/Reflections.ogg" fadeout 1.0
                     her normal "It seems fine; I'll try it out."
                     him normal "I'm game!"
-                    show her at sitting
-                    show him at sitting
-                    with move
+                    scene bg hotspring with dissolve
+                    show him nude normal at midleft, sitting
+                    $ is_nude = True                    
+                    show her at center, sitting
+                    show hot_spring_overlay
+                    with dissolve
                     "We stripped down and got in the warm water. The water felt soft and slippery."
                     "There was a slight breeze whispering through the trees, but everything else was quiet."
                     show her sleeping
-                    show him sleeping
+                    show him nude sleeping
                     with dissolve
                     if (loved >= 0):
                         "I pulled [his_name] close and squeezed his hand. He nuzzled my neck playfully."
@@ -452,6 +455,8 @@ label physical_5:
                         $ relaxed = 0
                     else:
                         $ relaxed += 5
+                    scene black with fade
+                    $ is_nude = False
                 "Look around some more.":
                     her "Let's look around some more."
                     him "Okay."
@@ -464,7 +469,7 @@ label physical_5:
             scene bg mountains with fade
             "I set off west, towards the mountains, until I found a stream meandering down from them."
             scene bg stream with fade
-            show her at center with moveinleft
+            show her normal at center with moveinleft
             play bg_sfx "sfx/stream-2.mp3" loop fadein 1.0
             "I followed the stream up the hill until I came to a rocky area with steam coming out of it. It smelled like rotten eggs."
             play bg_sfx ["sfx/puff.mp3", "sfx/geyser.mp3" ]
@@ -477,12 +482,17 @@ label physical_5:
             her surprised "Ahhh, it's hot!"
             "I stood back to a safe distance and watched the water spray for a few minutes, until it died down."
             her serious "I didn't know they had geysers on this planet! I wonder if there's anything else interesting nearby..."
-            "I hiked a little further and found a warm spring"
+            hide her with moveoutright
+            scene bg hotspring with fade
+            show her normal at center with moveinleft
+            "I hiked a little further and found a warm spring."
             her normal "Feels about the same temperature as a bathtub..."
             menu:
                 "Take a soak?"
                 "Sure, why not?":
-                    show her at sitting with move
+                    show her normal at sitting with move
+                    show hot_spring_overlay
+                    $ is_nude = True
                     "The water felt soft and slippery."
                     "There was a slight breeze whispering through the trees, but everything else was quiet."
                     her happy "Ahhhhhh..."
@@ -490,18 +500,21 @@ label physical_5:
                         $ relaxed = 0
                     else:
                         $ relaxed += 5
+                    scene bg hotspring with fade
+                    $ is_nude = False
+                    show her normal at center with dissolve
                 "It could be dangerous...":
                     her concerned "I better not; it could be dangerous."
 
             stop bg_sfx fadeout 1.0
-            her normal "The hot spring is a neat find; maybe I should tell [his_name]? But then he'll know I went hiking without him... Maybe I'll tell Dr. Lily; she can see if it's safe for us to use."
+            her serious "The hot spring is a neat find; maybe I should tell [his_name]? But then he'll know I went hiking without him... Maybe I'll tell Dr. Lily; she can see if it's safe for us to use."
             menu:
                 "What should I do?"
                 "Tell [his_name].":
                     scene bg farm_interior with fade
                     "When I got back, I told [his_name] all about what I had found."
-                    show him at midright with dissolve
-                    show her at midleft with moveinleft
+                    show him serious at midright with dissolve
+                    show her normal at midleft with moveinleft
                     him concerned "That sounds really cool... but I thought we agreed that we shouldn't go hiking alone here."
                     her annoyed "You just proclaimed that; I never agreed to it!"
                     him annoyed "What if you got burned by that geyser?"
@@ -513,7 +526,7 @@ label physical_5:
                 "Tell Dr. Lily.":
                     scene bg lab with fade
                     show lily at midright with dissolve
-                    show her at midleft with moveinleft
+                    show her normal at midleft with moveinleft
                     "When I got back, told Dr. Lily about the place I found. I asked her to keep it a secret that I was the one who found it."
                     lily happy "This will be very useful! Not only can we harvest minerals from the springs, but the geothermal energy might be useful, too."
                     her surprised "It's not dangerous, right?"

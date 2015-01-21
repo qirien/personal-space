@@ -704,7 +704,7 @@ label social_7:
     "I followed Sara over to the storehouse, where the Mayor was talking to Ilian."
     scene bg storehouse
     show pavel at midright with dissolve
-    show her normal at quarterleft
+    show her normal at left
     show sara at midleft
     with moveinleft
     pavel "Hello, Sara, what can I do for you?"
@@ -729,9 +729,9 @@ label social_7:
             her serious "I mean, if there's any problems, we're all here to help each other..."
             julia "I will ask if we need anything."
             "I could tell something was bothering her, but she didn't want to talk about it with me."
-            julia "Thank you for stopping by, [her_name], but I have a lot to do and shouldn't waste time chit-chatting."
+            julia normal "Thank you for stopping by, [her_name], but I have a lot to do and shouldn't waste time chit-chatting."
             her concerned "I just want to help."
-            julia "Then please, leave us alone!"
+            julia mad "Then please, leave us alone!"
             show her sad
             "All I could do was leave...it was clear something was wrong, but she wouldn't tell me what it was."
             scene black with fade
