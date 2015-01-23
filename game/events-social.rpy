@@ -83,7 +83,7 @@ label social_0:
     
     "Later, Natalia sent me a message."
     play music "music/OceansApart.ogg" fadeout 1.0
-    natalia_c "I'm sorry I was so rude; Pete just make me so mad sometimes!"
+    natalia_c "I'm sorry I was so rude; Pete just really gets under my skin!"
     her_c "Oh, I understand. I think everyone's a little frustrated."
     natalia_c "Why don't you come over and we can chat in person? I found a fruit you might want to try..."
     her_c "Sure, I'll be right over."
@@ -144,8 +144,8 @@ label social_1:
     "The little kids seemed to playing some kind of spying game, as they would peek around a corner at us and then run away giggling whenever they were spotted."
     hide pavel with moveoutleft
     hide brennan with moveoutright
-    show natalia at left behind her, him
-    show martin happy at quarterleft behind her, him
+    show martin happy at left behind her, him
+    show natalia at quarterleft behind her, him
     with moveinright
     show sara at quarterright behind her, him
     show ilian happy at right behind her, him

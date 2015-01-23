@@ -92,14 +92,17 @@ label relax_together_1:
             
     "Afterwards, we packed up our towels and toiletries and headed down to the bathhouse."            
     scene bg bathhouse with fade
-    show him normal at midleft with dissolve
-    show her normal at center with dissolve
+    show him normal at midleft
+    show her normal at center
+    with dissolve
     "We built a fire to heat up one of the tubs of water. Then we washed off and got in the hot water."
-    show bathhouse_overlay
-    show him nude at squatting
-    show her at squatting
-    with fade
-    $ is_nude = True
+    scene bg bathhouse with fade
+    $ is_nude = True    
+    show him nude at midleft, squatting
+    show her at center, squatting
+    show bathhouse_overlay    
+    with dissolve
+
     play bg_sfx "sfx/splash.mp3"
     "It felt so good to soak and relax together."
     
@@ -152,16 +155,16 @@ label relax_together_2:
             her normal "I don't really want to get wet; I'll just watch you."
             him nude flirting "Oh yeah? I better give you a good show, then."
             "He flexed his muscles and then tried to do a handstand on the bottom of the river."
-            hide him with moveoutdown
+            hide him with moveoutbottom
             her laughing "Ha ha, not bad!"
-            show him nude at quarterright, squatting with moveinbottom
+            show him nude at quarterright, squatting behind pond_overlay with moveinbottom
             stop music fadeout 1.0
             "Soon he got tired of swimming and we headed home together."
             $ loved += 5
         "Leave.":
             stop music fadeout 1.0
             her angry "Ugh, now I'm all wet and cold!"
-            him flirting "I'll warm you up, [her_nickname]!"
+            him nude flirting "I'll warm you up, [her_nickname]!"
             her "No thanks, I'm going home."
             stop music fadeout 1.0
             hide her with moveoutleft
@@ -729,7 +732,7 @@ label relax_together_e:
     him happy "I know, it just hits them right when they first come in-"
     her happy "...and slows them down so they get hit by my fireballs. Perfect!"
     him flirting "One more level?"
-    her serious "I'll probably regret it tomorrow but... bring it on!"
+    her normal "I'll probably regret it tomorrow but... bring it on!"
     $ relaxed += 3
     $ loved += 2
     return

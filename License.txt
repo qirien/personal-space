@@ -260,8 +260,6 @@ Scissors <scissors.mp3>, by jadend2 <http://www.freesound.org/people/jadend2/sou
 
 Shovel <shovel.mp3>, by Ohrwurm <http://www.freesound.org/people/Ohrwurm/sounds/64416/>
 
-Siren <siren.mp3>, by UncleSigmund <http://www.freesound.org/people/UncleSigmund/sounds/117118/>
-
 .License
 ****
 These sounds are in the public domain.

@@ -63,6 +63,7 @@ init -1:
     # SPRITES
 
     # Him
+    image him = "sprites/him.png"
     image him normal = "sprites/him.png"
     image him angry = "sprites/him-angry.png"
     image him annoyed = "sprites/him-annoyed.png"
@@ -89,7 +90,6 @@ init -1:
     image him nude sleeping = "sprites/him-nude-sleeping.png"
 
     # Her sprites are declared automatically in images-her.rpy
-    # TODO: Use determined?
 
     define SMALL_IMAGE_SCALE = 0.55
     define SMALL_IMAGE_CROP = 90

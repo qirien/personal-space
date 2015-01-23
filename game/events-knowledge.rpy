@@ -45,11 +45,11 @@ label knowledge_1:
     "I went to a workshop at the laboratory about how to use a spectrometer to determine whether or not a food is edible." 
     show lily at quarterright 
     show pete at left
-    show brennan at quarterleft
+    show brennan at midleft
     show her normal at center
     with dissolve
     lily "And in some cases, you'll just have to test a little on an Earth creature. If you spectrize something and can't tell if it's safe, bring it into the lab."
-    her "Do you have a list of plants you've already tested?" 
+    her surprised "Do you have a list of plants you've already tested?" 
     lily "Yes. Of course there's the ones you're planting, but in addition to those we've discovered a few that contain relevant nutrients. I'll have my assistant send out a guide." 
     "I was excited to try out some of the edible plants here."
     $ skill_knowledge  += 10 

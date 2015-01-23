@@ -563,7 +563,7 @@ label monthly_event_5:
             $relaxed -= 2
             return
             
-    "We ended up throwing some of the waste items away, but I felt good about the effort I put it."
+    "We ended up throwing some of the waste items away, but I felt good about the effort I put in."
     $relaxed += 5
 
     return
@@ -1304,6 +1304,7 @@ label monthly_event_10:
                 $ loved -= 2
             "He just looked at me for a minute, then shook his head."
             him concerned "Sorry, [her_name], not right now. I've got to check on something."
+            show her concerned
             jump follow_him
 
         "{i}What's bothering you?{/i}" if ((skill_spiritual >= 40) or (skill_knowledge >= 40)):
@@ -1326,7 +1327,7 @@ label anniversary_next_day:
     "He didn't come home that night, just stopped in for a quick breakfast early in the morning and then left again. I didn't have a chance to talk to him again until that evening when I got home."
     scene bg farm_interior with fade
     show him normal at midright with dissolve
-    show her serious at midleft with moveinleft
+    show her determined at midleft with moveinleft
     him normal "Hey, [her_nickname]."
     show her annoyed
     "(He's just saying hi like nothing happened!)"
@@ -1473,8 +1474,8 @@ label follow_him:
             him normal "Okay."
             "We walked around with Lettie for a while, and then we let her rest and have plenty of water to drink. She still didn't seem to feel better, but she wasn't getting worse, either."
             "[his_name] sat down in some clean hay. It was a little scratchy, but I sat down next to him."
-            show him sleeping
-            show her sleeping
+            show him sleeping at squatting with move
+            show her sleeping at squatting with move
             with dissolve
             "I must have fallen asleep, because I woke up and it was morning. We had spent all night in the barn..."
             $ loved += 2
@@ -1498,6 +1499,7 @@ label follow_him:
     her normal "Well, I have to get to work, but I'll see you this evening."
     him serious "Hey, thanks for staying with us, and helping out. It was a lot better not having to wait alone."
     her normal "You're welcome. I'm glad we could help her."
+    show him at center with move
     "He turned to me and wrapped his arms tight around me. His voice was a little hoarse as he whispered,"
     him serious "Everything's so fragile...\nI love you, [her_name]."
     show her concerned
@@ -1524,7 +1526,7 @@ label goto_ocean:
     scene bg ocean with fade
     play bg_sfx "sfx/ocean-waves.mp3" fadein 3.0
     play music "music/NoSilencePlease.ogg" fadeout 1.0
-    "Arriving at the ocean was magnificent. The air was moist, and my eyes could rest on a flat plane of blue waves extending to the horizon."
+    "Arriving at the ocean was magnificent. The air was moist, and a flat plane of shimmering blue extended to the horizon."
     show lily at left
     show her normal at midright
     with dissolve
@@ -1539,7 +1541,7 @@ label goto_ocean:
         brennan happy "More's the pity."
     if (ocean_character == "Sara"):
         show sara at right with dissolve
-        sara "It's not the kind of beach I'd want to swim in, and I'm glad I brought a sweater, but this is such a sight for sore eyes!"
+        sara "It's not the kind of beach I'd want to swim in, and the breeze is a little chilly, but this is such a sight for sore eyes!"
         her happy "It's an amazing view." 
 
     lily happy "Yes, this is the ocean. After you get the ocean water boiling, please take samples of this crusty white substance and any other organic material you can find."
@@ -1649,14 +1651,14 @@ label monthly_event_11:
     him annoyed "Can we get some more?"
     her concerned "I asked at the storehouse, but they're rationing what we have, and I already used our amount up for this month."
     him annoyed "Well, we live near an ocean, don't we? Isn't it a saltwater ocean?"
-    her serious "Yes, it is! But I don't want to just run out there by myself!"
+    her determined "Yes, it is! But I don't want to just run out there by myself!"
     him sad "I'd go with you, but I can't leave these crops."
     her angry "Really? They would die if you left them just one day?"
     him annoyed "Well, it's more like some of the food might get eaten by something else since it's harvest time again."
     her serious "Okay. I'll try to find someone else."
     scene black with fade
     her_c "I want to go to the ocean to collect some more salt (we're all out!). Anyone want to come help?"
-    lily_c "I'd love to gather samples at the ocean. Come visit me in the lab tomorrow and I'll tell you my plan."
+    lily_c "I will come with you to gather samples at the ocean. Come visit me in the lab tomorrow and I'll tell you my plan."
     helen_c "Wait, are we out of salt?! Isn't that pretty urgent?!"
     pavel_c "There's plenty left in the storehouse, but we want to make sure it lasts."
     ilian_c "Each family receives enough salt to satisfy dietary requirements."
@@ -1814,7 +1816,7 @@ label monthly_event_12:
                 "We put on some energetic music and scrubbed together. It was still hard work, but soon we weren't mad at each other anymore."
                 $ loved += 5
                 
-                her serious "Now, do you want to talk about what's really bothering you?"
+                her determined "Now, do you want to talk about what's really bothering you?"
 
             else:
                 him annoyed "I don't want to clean the kitchen. I have too much other work to do."
@@ -1828,7 +1830,7 @@ label monthly_event_12:
             him concerned "We're both pretty stressed out, aren't we?"
             if (relaxed < 0):
                 her concerned "Yeah, I know I am. There's so much to do, and so much going wrong..."
-                her serious "But we need to help each other! How can I help you?"
+                her determined "But we need to help each other! How can I help you?"
             else:
                 her flirt "Well, the only thing I'm stressed out about right now is the fact that you seem stressed out! How can I help?"
                 
@@ -1854,10 +1856,10 @@ label monthly_event_12:
     him concerned "It's just...a lot of things went wrong today..."
     her surprised "Like what?"
     him serious "The tractor broke down today, and it took me a few hours to figure out what was wrong and fix it."
-    him serious "That meant I didn't have time to get to clearing out the old radish and spinach field, which means I'm behind on planting the next things..."
+    him concerned "That meant I didn't have time to get to clearing out the old radish and spinach field, which means I'm behind on planting the next things..."
     him annoyed "Then the mayor wants a report on how all the crops are coming, and it's going to take a while to prepare it, when I really should be working on actually growing food!"
     her surprised "You do have a lot going on. Is there someone who can help you?"
-    him serious "I can do it all, I just need--"
+    him concerned "I can do it all, I just need--"
     her surprised "What do you need?"
     him serious "I just need you."
     if (relaxed >= 0):
@@ -1868,6 +1870,7 @@ label monthly_event_12:
         her serious "Yeah, I'm here for you."
         "That's what I said, but inside I just felt annoyed. I had enough problems of my own without worrying about his."
         him concerned "Okay, thanks."
+        $ loved -= 2
     
     return
 
@@ -1983,16 +1986,18 @@ label funeral:
         "I'm sorry for your loss.":
             her concerned "I'm so sorry for your loss, Natalia."
             natalia "Thank you, [her_name]. It means a lot to me that you're all here supporting us."
+            "That's what she said, but behind her polite words I sensed a gaping hole of hurt and loss. Nothing I could say would heal that."            
         "Josephina was a bright girl.":
             her concerned "Josphina was such a bright, joyous little person... I'll miss her."
             natalia "Yes, she was. And still is, up in heaven where she is now. Thank you, [her_name]."
+            "That's what she said, but behind her armor of faith I sensed a gaping hole of hurt and loss. Nothing I could say would heal that."
         "(Just give her a hug)":
             show her serious at midright with move
             "I didn't know what to say, so I just gave her a hug. I tried to communicate to her all that I felt, how I felt sad for her, and missed Josephina, and wanted her to feel better, and would always remember her daughter."
-            "She smiled at me in thanks, and I could see how much she was hurting, but also beginning to heal."
+            "She smiled at me in thanks, but I could see how much she was hurting inside. There wasn't much more I could do."
         "(Walk away)":
             show her at midleft with move
-            "I couldn't do it. There was nothing I could say, nothing I could do that would make it better."
+            "I couldn't do it. There was nothing I could say, nothing I could do that would make it better. So why pretend?"
             $ community_level -= 2
             
     "The wake would continue on for several hours, but [his_name] and I decided to go home."
@@ -2001,6 +2006,7 @@ label funeral:
     "Whatever, or whoever, had killed her was still out there."
     "[his_name] started barring our door at night."
     "The mayor brought it up at our next community meeting."
+    # TODO: Change song here?
     scene bg community_center with fade
     show pavel sad at center, behind natalia, martin with dissolve
     pavel "I know everyone is worried, and scared, but this fear is tearing our community apart."
@@ -2060,7 +2066,7 @@ label funeral:
     thuc "Or maybe he was trying to cover up something else he did to her."
     show her serious
     lily upset "That is pure speculation. Pete has not shown any other behavior that would be cause for concern."
-    ilian "Except for being a jack-ass."
+    ilian "Except for being a jackass."
     her surprised "That doesn't mean he attacked her!"
     thuc "But it's possible that it was not an accident. We cannot show too much mercy, or people will think they can get away with anything."
     ilian "Right, because all of us are just dying to run people over, and the only thing stopping us is the knowledge that we might get punished."
@@ -2071,18 +2077,18 @@ label funeral:
     menu:
         "What will you argue for?"
         "Work for Peróns":
-            her serious "I agree with Lily; he should have to work for the Peróns. It can't make up for the loss of a child, but it will require some sacrifice and will help him show his remorse."
+            her determined "I agree with Lily; he should have to work for the Peróns. It can't make up for the loss of a child, but it will require some sacrifice and will help him show his remorse."
             thuc "He should be their slave for a year!"
-            her concerned "Well, we don't want his work on his own farm to suffer..."
-            ilian "There's always community service."
-            her serious "Yes, but instead of the community it will be for the Peróns. Let's say eight hours a week for a year."
+            lily upset "We don't want his work on his own farm to suffer..."
+            her serious "Maybe, spread it out? How about eight hours a week for a year."
+            thuc "Maybe that would work..."
             ilian "And now we know the price of a four-year-old girl: 400 work hours."
             her annoyed "It's not like that. Of course there's no way to bring her back or make it up to them. But he needs to do something for reparations."
 
             "The jury decided that was fair, and the Mayor, Pete, and the Peróns all accepted our proposal. Helen didn't seem to happy about it, though. She'd probably have to do extra work on their farm to make up for his absence."
 
         "Banishment":
-            her serious "I agree with Thuc; we need to show that our community won't allow such behavior."
+            her determined "I agree with Thuc; we need to show that our community won't allow such behavior."
             lily upset "It would be more humane to simply shoot him in the head; it would be impossible to survive for a year alone out there."
             her concerned "I agree. Also, we can't afford to lose our storehouse manager for that long."
             her serious "So I propose that he live outside the community boundaries, but close enough that we can trade with him. He can hunt or gather useful things and trade them for food or other community resources."
@@ -2113,7 +2119,7 @@ label funeral:
             her concerned "He still should provide some reparations, though. I think he should work for the Peróns one day a week for a year."
             lily "I agree."
             ilian "Now we know the price of a four-year-old girl: 400 man-hours."
-            her annoyed "It's not like that. Of course there's no way to bring her back or make it up to them. But he needs to do something for reparations."
+            her determined "It's not like that. Of course there's no way to bring her back or make it up to them. But he needs to do something for reparations."
             "We all agreed on the sentencing, and the Mayor, Pete, and the Peróns seemed satisfied with our verdict also."
 
     scene black with fade
@@ -2138,6 +2144,7 @@ label monthly_event_14:
         him annoyed "No, not at all!"
         "I felt like crying. One part of my brain knew it was not a big deal, but the other part just felt so lonely and afraid all of a sudden."
         if (loved >= 0):
+            show him normal at center with move 
             "He came over and wrapped his arms around me in a hug."
             him serious "It'll be okay, [her_nickname]. Why don't you get some rest?"
             her sad "Maybe I will..."
@@ -2368,7 +2375,7 @@ label monthly_event_15:
         him surprised "Yeah, why not?"
         her concerned "I don't know if I'm ready for people to know, yet."
         him concerned "Oh... well, when I told Mrs. Perón, she posted a message about it on the colony message board..."
-        her serious "So everyone knows?"
+        her determined "So everyone knows?"
         him serious "Yeah, pretty much."
         her annoyed "I haven't even told my parents yet!"
         him surprised "What's stopping you?"
@@ -2418,7 +2425,7 @@ label monthly_event_15:
                 her annoyed "That's really annoying. I don't want people to be asking me all the time if I'm pregnant yet, or giving well-meaning but idiotic advice, or looking at me like I'm a time bomb or something."
                 him serious "I'm not sure you can prevent that, anyway. I mean, they're going to know sooner or later, right?"
                 if (relaxed >= 0):
-                    her serious "Yes, but I wanted it to be on my terms."
+                    her determined "Yes, but I wanted it to be on my terms."
                     him concerned "I see. I'm sorry, [her_name], I didn't even think about it."
                     her normal "It's all right; we'll deal with it. Come on and eat breakfast with me, okay?"
                     him happy "No problem."
@@ -2429,7 +2436,7 @@ label monthly_event_15:
                     him angry "I thought we had already decided."
                     her annoyed "Well, we didn't decide to tell people about it, that's for sure."
                     him annoyed "Look, I'm sorry. I just wanted to tell somebody, and Thuc's probably the best friend I have here, except for you."
-                    her serious "Well, we can't change it now. Just come eat some breakfast."
+                    her determined "Well, we can't change it now. Just come eat some breakfast."
                     $ loved -= 2
                 $ relaxed -= 2
             "I'm mortified!":
@@ -2651,7 +2658,7 @@ label monthly_event_17:
         "He's just trying to be efficient.":
             her concerned "He's probably just trying to be efficient with the food. It is a limited resource."
             sara "I know... but he doesn't seem to get how much I hate those foods!"
-        "{i}That's hard...Could you get food somewhere else?{/i}" if (skill_creative >= 50):
+        "{i}Could you get food somewhere else?{/i}" if (skill_creative >= 50):
             her concerned "That's hard... do you think you could get food somewhere else?"
             sara "Where?"
             her normal "Maybe some of the other farmers? I mean, they bring their extra food to the storehouse, usually, but maybe you could ask them to let you have some first?"
@@ -2856,7 +2863,7 @@ label monthly_event_18:
     her angry "Your hands are all blistered!"
     "He looked at his hands, but didn't appear to notice how hurt they were."
     him sad "I sh-sh-sh-should just go h-h-home."
-    her serious "Just come in here, everything will be fine."
+    her determined "Just come in here, everything will be fine."
     if (profession == "doctor"):
         "I cleaned his burned skin carefully, treated his burns with ointment, and wrapped them up gently."
         "He gradually calmed down and stopped shaking, too."
@@ -2871,6 +2878,7 @@ label monthly_event_18:
     show her serious at midright
     show him serious at midleft
     with dissolve
+    #TODO: change music here
     "After a few days of reading and resting, he started pacing the house."
     show him annoyed at left with move
     him "I should be doing something useful! I've been so lazy..."
@@ -2884,7 +2892,7 @@ label monthly_event_18:
         "What should I say?"
         "No way!":
             her annoyed "There's no way I'm letting you out of the house. You'll just make your hands worse and it will take longer to heal."
-            him annoyed "What, you're my pavel now?"
+            him annoyed "What, you're my boss now?"
             her serious "No, just someone who wants what's best for you."
             him surprised "You don't think I know what's best for me?"
             her annoyed "Maybe not, if you're going to use your hands before they've healed."
@@ -2998,6 +3006,7 @@ label monthly_event_18:
         hide him with moveoutleft
         play bg_sfx "sfx/whinny.mp3"
         her annoyed "..."
+        $ relaxed -= 2
     
     "I was glad [his_name] was back to normal again, though he still had to be careful with his hands for a while."
     return
@@ -3008,7 +3017,7 @@ label monthly_event_18:
 label monthly_event_19:
     scene bg farm_interior with fade
     "Fashion was one thing we never had to worry about."
-    "We mainly had our colony-issue shirts and pants, made of special durable, breathable, material, and whatever extra clothes we managed to fit in our one allotted suitcase."
+    "We mainly had our colony-issue shirts and pants, made of special durable, breathable material, and whatever extra clothes we managed to fit in our one allotted suitcase."
     "Since we did laundry by hand, we only did it once a week, so we ended up wearing the same clothes for several days in a row."
     "I did get a little tired of wearing the same thing all the time, but everyone else on the colony was in the same situation, so it wasn't something I worried about."
     if (is_pregnant):
@@ -3023,7 +3032,7 @@ label monthly_event_19:
                 show her normal at midleft with moveinleft
                 her surprised "Hey, Ilian, do we have any extra clothes here?"
                 ilian "A few..."
-                "I found a large men's shirt that wasn't very flattering, but would fit."
+                "I found a large men's shirt that wasn't very flattering, but would fit. Maybe I could put a belt on it and wear it like a dress?"
                 "They had a pair of larger pants, but they were very baggy and also too long. Well, I'd just have to roll them or hem them or something."
                 "How did they expect people to grow the colony by having kids if they didn't even have maternity clothes?!"
             "{i}Modify your pants{/i}" if ((skill_domestic >= 60) or (skill_creative >= 60)):
@@ -3031,7 +3040,7 @@ label monthly_event_19:
                 "After all, I wasn't going to be pregnant forever, so I didn't want to ruin my nice space uniform."
                 "So I took a pair of low-rise jeans and added a strip of stretchy material."
                 "But what about the shirt?"
-                "I found some scrap material and added some panels. I couldn't decide if it looked really good, or like I'd escaped from the circus, but either way, it would fit for the rest of my pregnancy."
+                "I found some scrap material and added some panels, turning it into a dress. I couldn't decide if it looked really good, or like I'd escaped from the circus, but either way, it would fit for the rest of my pregnancy."
                 "It was kind of tedious sewing by hand, but I got it done."
                 $ relaxed += 2
             "Borrow [his_name]'s clothes.":
@@ -3055,7 +3064,7 @@ label monthly_event_19:
                 helen_c "I think mine would fit you if you want it... I don't need it anymore."
                 her_c "Really? That would be great, thank you!"
                 "About a week later Pete dropped the dress off at work for me."
-                "Sure enough, it looked kind of terrible. But it fit, and was comfy, so I wore it a lot."
+                "It wasn't as durable or fitted as my usual clothes. But it fit, and was comfy, so I wore it a lot."
                 $ relaxed += 2
 
     else:
@@ -3578,7 +3587,7 @@ label monthly_event_22:
     "We had to trust each other all the time. We didn't have police or lawyers, so when something went wrong, we had to work together to solve problems."
     "That was harder to do when the shampoo was found missing from the storehouse..."
     scene bg community_center with fade
-    show pavel at center with dissolve
+    show pavel sad at center with dissolve
     pavel sad "...and so if anyone has extra shampoo at their house, we ask that you please return it to the storehouse. We want to make sure what we have left is distributed fairly."
     hide pavel with dissolve
     show her surprised at midright
@@ -4377,8 +4386,9 @@ label monthly_event_24:
         sara "Ha ha, yeah, if this was a movie that'd totally be what would happen."
         her normal "You know what? Let's go. I feel fine; we'll bring a radio; and I could certainly use the exercise."
         sara "Okay, if you're sure!"
-        scene bg pond with fade
+        scene bg stream with fade
         play music "music/Will.ogg" fadeout 1.0
+        play bg_sfx "sfx/stream-2.mp3" loop fadein 1.0
         "After work we hiked for twenty minutes until we got to the riverside spot she mentioned. The sun shone down on us fiercely, but it was a little cooler when we finally got to the shade by the river."
         show her normal at midright
         show sara at midleft
@@ -4408,6 +4418,7 @@ label monthly_event_24:
         her serious "Just small ones. I guess they call them practice contractions. I've been getting them a lot lately whenever I exercise or get tired. That's why I wanted to lie down."
         sara "So, we don't need to radio for help or anything?"
         her normal "No. But we should probably head back."
+        stop bg_sfx fadeout 1.0
         scene bg mountains with fade
         show sara at quarterright
         show her normal at right
@@ -4506,7 +4517,7 @@ label monthly_event_24:
         scene bg bedroom
         show night
         show bedroom_covers behind night
-        show him sleeping at midright, squatting, behind bedroom_covers with dissolve
+        show him nude sleeping at midright, squatting, behind bedroom_covers with dissolve
         $ is_nude = False
         show her serious at midleft
         
@@ -4658,7 +4669,7 @@ label monthly_event_24:
         "One of my own... that was still so strange."
         him surprised "What should we call her?"
         her surprised "You don't want to choose?"
-        him concerned "Well, I've always liked the name \"Terra\"... but it's up to you."
+        him concerned "Well, we talked about the name \"Terra\"... but it's up to you."
         
         # Get baby's name
         if not renpy.variant('touch'):

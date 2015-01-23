@@ -60,10 +60,10 @@ label technical_2:
     show her normal at midright
     show him normal at midleft
     with dissolve
-    play bg_sfx "sfx/siren.mp3" loop
+    play bg_sfx "sfx/radio.mp3" loop
     show him serious with dissolve
-    her serious "There goes the siren again. I guess there's another flare."
-    him serious "There goes all my chance to get anything done this morning! If I had known there was going to be a flare today, I would have worked harder yesterday and slept in this morning!"
+    her serious "Did you hear there's probably going to be another flare today? Guess we're stuck at home..."
+    him angry "There goes all my chance to get anything done this morning! If I had known there was going to be a flare today, I would have worked harder yesterday and slept in this morning!"
     her surprised "I wonder if there's a way to get more advanced notice of the flares?"
     him happy "If there is, I bet you'll find it!"
     scene black with fade

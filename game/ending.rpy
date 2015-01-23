@@ -1,3 +1,5 @@
+# TODO: It's anticlimactic to have all these after giving birth. Shouldn't you get a break, anyway?
+# BUT, I want people to see month 25 messages... perhaps we could have this be a morning_event instead?
 label monthly_event_25:
     play music "music/Rain.ogg" fadeout 1.0
     "It had been two years since we first arrived on Talaam. In a way, it felt like we had been here forever. But sometimes I still expected to find myself back on Earth, waking up from a long, long dream."
@@ -214,20 +216,7 @@ label mediocre_ending:
     show her sleeping with dissolve
     scene black with fade
     $ is_nude = False
-    window hide
-    if (is_pregnant):
-        label cg_with_baby:
-            scene cg_with_baby:
-                size (1024, 600) crop (1424, 756, 1452, 848)
-                easeout 10.0 size (1024, 600) crop (0, 0, 5120, 3000)
-    else:
-        label cg_together:
-            scene cg_together:
-                size (1024, 600) crop (0, 0, 3273, 1912)
-                ease 5.0 size (1024, 600) crop (0, 1088, 3273, 1912)
-                ease 5.0 size (1024, 600) crop (1116, 1000, 1712, 1000)
-    $ renpy.pause(12.0)
-    $ renpy.end_replay()    
+    call show_ending_cg
     $ persistent.got_mediocre_ending = True    
     ".:. Good Ending, 2 of 3."
     jump show_credits
@@ -437,18 +426,26 @@ label good_ending:
     with dissolve
     scene black with fade
     $ is_nude = False
-    window hide
-    if (is_pregnant):
-        scene cg_with_baby:
-            size (1024, 600) crop (1424, 756, 1452, 848)
-            easeout 10.0 size (1024, 600) crop (0, 0, 5120, 3000)
-    else:
-        scene cg_together:
-            size (1024, 600) crop (0, 0, 3273, 1912)
-            ease 5.0 size (1024, 600) crop (0, 1088, 3273, 1912)
-            ease 5.0 size (1024, 600) crop (1116, 1000, 1712, 1000)
-    $ renpy.pause(12.0)
+    call show_ending_cg
     $ persistent.got_good_ending = True
     ".:. Best Ending, 3 of 3."
     $ is_nude = False
     jump show_credits
+
+# Choose ending CG depending on whether they have a baby or not.
+label show_ending_cg:
+    window hide
+    if (is_pregnant):
+        label cg_with_baby:
+            scene cg_with_baby:
+                size (1024, 600) crop (1424, 756, 1452, 848)
+                easeout 10.0 size (1024, 600) crop (0, 0, 5120, 3000)
+    else:
+        label cg_together:
+            scene cg_together:
+                size (1024, 600) crop (0, 0, 3273, 1912)
+                ease 5.0 size (1024, 600) crop (0, 1088, 3273, 1912)
+                ease 5.0 size (1024, 600) crop (1116, 1000, 1712, 1000)
+    $ renpy.pause(12.0)
+    $ renpy.end_replay()
+    return

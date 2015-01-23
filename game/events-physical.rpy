@@ -29,7 +29,7 @@ label physical_0:
     her flirt "Me and my hidden talents..."
     him flirting "Yes, I wonder what else you are hiding?"
     show her at center with move
-    her "Come and find out."
+    her flirt "Come and find out."
     $ loved += 2
     $ made_love += 1
 
@@ -69,6 +69,7 @@ label physical_1:
         "I thought I would bring one back for the scientists to analyze, so after removing it I stuck it in my now-empty water bottle."
     "There must have been twenty or thirty on my legs, and by the time I had removed them all, the sun was setting. When I tried to stand up, my legs wobbled and I splashed back in the pond."
     show her concerned with vpunch
+    show night with dissolve 
     her "My legs are too numb to walk..."
     "Luckily, I had brought my radio with me, so I decided to try and call for help."
     play bg_sfx "sfx/radio.mp3"
@@ -97,18 +98,19 @@ label physical_1:
     stop bg_sfx fadeout 1.0
     scene bg talam with fade
     show her serious at quarterleft
+    show night
     him "[her_name]! [her_name]!"
     her surprised "I'm here!"
     him "Keep talking to me, I'm coming!"
     her concerned "I can't move very well."
     him "It's okay, I'll get you home."
     play music "music/You.ogg" fadeout 1.0
-    show him serious at midright
-    show lettie at right behind him, her
+    show him serious at midright behind night
+    show lettie at right behind night, him, her
     with moveinright    
     "I saw [his_name] appear on the top of the ridge. He was riding Lettie, his eyes scanning the landscape fiercely, until he finally saw me."
     show him at midleft with move
-    "Before I could even explain what had happened, he had picked me up and was holding me close. I could barely breathe!"
+    "Before I could even explain what had happened, he had picked me up. He held me so tight I could barely breathe."
     him serious "You're safe..."
     her normal "Thanks for coming for me. I was worried some vicious alien animal was going to come gobble me up, and I've already been nibbled on one too many times this evening."
     him flirting "Don't worry, [her_name], I'm the only one that will be gobbling you up now."
@@ -218,8 +220,9 @@ label physical_2:
             him happy "That could be good, too."
             her normal "Well, anyway, thanks for cooking."
             him normal "Thanks for chopping. That'll help us stay warm for quite a while."
-            her flirt "You'll keep me warm for quite a while."
-            him flirting "Yeah, for approximately... forever."
+            if (loved > 0):
+                her flirt "You'll keep me warm for quite a while."
+                him flirting "Yeah, for approximately... forever."
             $ loved += 5
         "This is your job.":
             her annoyed "Well, {b}somebody{/b} had to chop wood for the stove, or we'll be having a cold dinner tonight."
@@ -378,7 +381,7 @@ label physical_5:
             hide him with moveoutright
             hide her with moveoutright
             scene bg stream with fade
-            play bg_sfx "sfx/stream-3.mp3" loop
+            play bg_sfx "sfx/stream-2.mp3" loop
             "Soon we came to a rocky area by a stream. We saw steam wafting off of a pool of water."
             show her normal at midleft
             show him normal at center
@@ -484,6 +487,7 @@ label physical_5:
             her serious "I didn't know they had geysers on this planet! I wonder if there's anything else interesting nearby..."
             hide her with moveoutright
             scene bg hotspring with fade
+            play bg_sfx "sfx/stream-3.mp3" loop fadein 1.0
             show her normal at center with moveinleft
             "I hiked a little further and found a warm spring."
             her normal "Feels about the same temperature as a bathtub..."
@@ -506,8 +510,8 @@ label physical_5:
                 "It could be dangerous...":
                     her concerned "I better not; it could be dangerous."
 
-            stop bg_sfx fadeout 1.0
             her serious "The hot spring is a neat find; maybe I should tell [his_name]? But then he'll know I went hiking without him... Maybe I'll tell Dr. Lily; she can see if it's safe for us to use."
+            stop bg_sfx fadeout 1.0            
             menu:
                 "What should I do?"
                 "Tell [his_name].":

@@ -226,7 +226,7 @@ label monthly_event:
     show text "{color=#ffffff}{font=fonts/Kristi.ttf}{size=50}Month [month] out of 25\n\nEvent!{/size}{/font}{/color}"
     $ renpy.pause(2.0)
     hide text
-    play music "music/RainSea.ogg" fadeout 1.0
+    play music "music/RainSea.ogg" fadeout 1.0 #TODO: this music gets kind of repetitive; use another song?
 
     $ period = "monthly_event"
     $ act = monthly_event_act

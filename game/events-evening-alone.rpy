@@ -152,6 +152,7 @@ label relax_alone_5:
     show him normal at midleft
     show her normal at midright
     with dissolve
+    with dissolve
 
     him surprised "You want to watch a movie or something?"
     her serious "Nah, I think I want to do something by myself tonight."
@@ -162,6 +163,7 @@ label relax_alone_5:
     him normal "Heh, yeah, I feel kind of the opposite. I'm usually alone all day, so at night I'd rather do something with someone..."
     her surprised "Maybe you could hang out with someone else sometimes?"
     him normal "Yeah, maybe I'll see if Thuc wants to do something."
+    "The two of them ended up surveying some land for a future field, while I took care of some things on the computer."
     "I felt better knowing I wasn't [his_name]'s only friend..."
 
     $ relaxed += 5
@@ -177,91 +179,9 @@ label relax_alone_6:
     $ relaxed += 5
     $ loved -= 2
     return
-
-# Solo trip to bath house
-label relax_alone_7:
-    scene bg bathhouse with fade
-    show her serious
-    "I went to the bath house by myself. I brought extra wood so I could have a long, hot bath, and I carried up extra water from the river to make it a deep one. All my effort just made me appreciate it all the more."
-    scene bg bathhouse with fade
-    $ is_nude = True
-    show bathhouse_overlay
-    show her serious at squatting behind bathhouse_overlay
-    with dissolve
-    play bg_sfx "sfx/splash.mp3"
-    her normal "Ahhh...."
-    $ relaxed += 5
-    $ loved -= 2
-    scene black with fade
-    $ is_nude = False
-    return
-
-# These probably won't be seen, so make them simple.
-label relax_alone_8:
-    scene bg bedroom with fade
-    play music "music/Shanghai_20_00.ogg" fadeout 1.0
-    "I listened to some music - I didn't do anything else while listening, just lay back and really listened."
-    "It made me think of summer vacation when I was a teenager back home, just lying back and reading books in the shade, playing video games, going swimming, and drinking lemonade."
-    "What would our kids' summers be like?"
-    $ relaxed += 5
-    $ loved -= 2
-    return
-
-label relax_alone_9:
-    scene bg farm_interior with fade
-    "I set some grains cooking overnight, so they would be nice and soft for our breakfast in the morning."
-    "That way things wouldn't be rushed in the morning."
-    $ relaxed += 5
-    $ loved -= 2
-
-    return
-
-label relax_alone_10:
-    scene bg farm_interior with fade
-    "I listened to some of my favorite songs and reminisced."
-    $ relaxed += 5
-    $ loved -= 2
-    return
-
-label relax_alone_11:
-    scene bg bedroom with fade
-    "I curled up with a good book."
-
-    $ relaxed += 5
-    $ loved -= 2
-    return
-
-label relax_alone_12:
-    scene bg farm_interior with fade
-    "I played a video game that I enjoyed."
-
-    $ relaxed += 5
-    $ loved -= 2
-    return
-
-# Events that can happen in any order
-
-# Re-read childhood book
-label relax_alone_a:
-    scene bg bedroom with fade
-    "I didn't mean to read the whole thing, but when I started reading one of my favorite books from my childhood I just had to finish it."
-    "It wasn't as exciting and unpredictable as I remembered, but I still loved the characters, and the writing swept me in as I read through the whole thing."
-    $ relaxed += 5
-    $ loved -= 2
-    return
-
-# browsing wikipedia
-label relax_alone_b:
-    scene bg farm_interior with fade
-    "I was curious about horses, so I started reading about them in the encyclopedia."
-    "Reading about domestication led to Mycenaean script, and that led to morphology, and before I knew it I was reading a fascinating page about Austronesian languages."
-    "I'm not sure I will ever use that knowledge, but it was still interesting to read about."
-    $ relaxed += 5
-    $ loved -= 2
-    return
-
+    
 # go to bed early
-label relax_alone_c:
+label relax_alone_7:
     scene bg bedroom with fade
     $ is_nude = True
     show night
@@ -340,6 +260,88 @@ label relax_alone_c:
     $ is_nude = False
     $ relaxed += 5
     $ loved -= 2
+    return
+
+# These probably won't be seen, so make them simple.
+label relax_alone_8:
+    scene bg bedroom with fade
+    play music "music/Shanghai_20_00.ogg" fadeout 1.0
+    "I listened to some music - I didn't do anything else while listening, just lay back and really listened."
+    "It made me think of summer vacation when I was a teenager back home, just lying back and reading books in the shade, playing video games, going swimming, and drinking lemonade."
+    "What would our kids' summers be like?"
+    $ relaxed += 5
+    $ loved -= 2
+    return
+
+label relax_alone_9:
+    scene bg farm_interior with fade
+    "I set some grains cooking overnight, so they would be nice and soft for our breakfast in the morning."
+    "That way things wouldn't be rushed in the morning."
+    $ relaxed += 5
+    $ loved -= 2
+
+    return
+
+label relax_alone_10:
+    scene bg farm_interior with fade
+    "I listened to some of my favorite songs and reminisced."
+    $ relaxed += 5
+    $ loved -= 2
+    return
+
+label relax_alone_11:
+    scene bg bedroom with fade
+    "I curled up with a good book."
+
+    $ relaxed += 5
+    $ loved -= 2
+    return
+
+label relax_alone_12:
+    scene bg farm_interior with fade
+    "I played a video game that I enjoyed."
+
+    $ relaxed += 5
+    $ loved -= 2
+    return
+
+# Events that can happen in any order
+
+# Re-read childhood book
+label relax_alone_a:
+    scene bg bedroom with fade
+    "I didn't mean to read the whole thing, but when I started reading one of my favorite books from my childhood I just had to finish it."
+    "It wasn't as exciting and unpredictable as I remembered, but I still loved the characters, and the writing swept me in as I read through the whole thing."
+    $ relaxed += 5
+    $ loved -= 2
+    return
+
+# browsing wikipedia
+label relax_alone_b:
+    scene bg farm_interior with fade
+    "I was curious about horses, so I started reading about them in the encyclopedia."
+    "Reading about domestication led to Mycenaean script, and that led to morphology, and before I knew it I was reading a fascinating page about Austronesian languages."
+    "I'm not sure I will ever use that knowledge, but it was still interesting to read about."
+    $ relaxed += 5
+    $ loved -= 2
+    return
+
+# Solo trip to bath house
+label relax_alone_c:
+    scene bg bathhouse with fade
+    show her serious
+    "I went to the bath house by myself. I brought extra wood so I could have a long, hot bath, and I carried up extra water from the river to make it a deep one. All my effort just made me appreciate it all the more."
+    scene bg bathhouse with fade
+    $ is_nude = True
+    show bathhouse_overlay
+    show her serious at squatting behind bathhouse_overlay
+    with dissolve
+    play bg_sfx "sfx/splash.mp3"
+    her normal "Ahhh...."
+    $ relaxed += 5
+    $ loved -= 2
+    scene black with fade
+    $ is_nude = False
     return
 
 label relax_alone_d:

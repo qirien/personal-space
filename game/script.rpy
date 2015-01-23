@@ -46,6 +46,7 @@ define community_level = 0 # how successful is the colony?
 # This definition needs to happen before our transitions are defined    
 init -201 python:
     define.move_transitions('longmove', 1.5)
+    define.move_transitions('move', 0.5) # TODO: test this; moves were way too short before, but we don't want them too long.
     
 
 # Variables about skills.  On a scale from 0-100, how skilled is the character?
@@ -88,11 +89,11 @@ init -200:
     define hated_food = "turnips"
     define baby_name = "Terra"
     
-    define COMMUNITY_LEVEL_OK = 20
-    define COMMUNITY_LEVEL_GOOD = 50
-    define COMMUNITY_LEVEL_MAX = 60    
+    define COMMUNITY_LEVEL_OK = 40
+    define COMMUNITY_LEVEL_GOOD = 55
+    define COMMUNITY_LEVEL_MAX = 70
     define LOVED_GOOD = 40
-    define LOVED_MAX = 60
+    define LOVED_MAX = 70
     define SKILL_SAVED_MAX = 60
     define ending = "none"
 
@@ -108,7 +109,7 @@ init -200:
     define sitting = Position(ypos=0.45, yanchor=0)
     define squatting = Position(ypos=0.25, yanchor=0)
     
-    define rightbaby = Position(xpos=930, ypos=430)
+    define rightbaby = Position(xpos=830, ypos=430)
     define quarterrightbaby = Position(xpos=750, ypos=430)
     define midrightbaby = Position(xpos=600, ypos=430)    
     define centerbaby = Position(xpos=520, ypos=430)

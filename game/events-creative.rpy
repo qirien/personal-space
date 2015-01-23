@@ -45,7 +45,7 @@ label creative_1:
     her normal "We'll make it shaped like something they are scared of, then! Like those wolfslugs that hunt near the river."
     him normal "Do you think you could do that?"
     scene bg fields with fade
-    "He placed some different scents near some of the plants, while I got to work on our 'scarecrow'."
+    "He placed some different herbs and spices near some of the plants, to try to keep them away with scent, while I got to work on our 'scarecrow'."
     "I started with bunches of sticks for the body and legs, held together with twine.  Then I covered them with algae from a pond to give it that slimy look."
     "I rummaged through our trash pile and found some bottlecaps for eyes, and stuck in some old bones for teeth."
     show her concerned at midleft
@@ -107,8 +107,8 @@ label creative_3:
             "I looked in the village trash heap, and I found a few nails in things people had thrown away. They didn't hold the wood together as tightly as I would have liked, but it was sturdy enough to hold some lightweight vegetables, anyway."
             $ community_level += 2
         "Ask [his_name] for help.":
-            show him at midright with dissolve
-            show her at midleft with moveinleft
+            show him normal at midright with dissolve
+            show her serious at midleft with moveinleft
             her surprised "Hey, [his_nickname], do you have any ideas for how to make a crate out of these pieces of wood? We don't have any nails..."
             him serious "Any screws?"
             her serious "Nope. No nuts and bolts, either."
@@ -150,6 +150,7 @@ label creative_4:
         if (loved > 0):
             her flirt "Only if you want one."
             $ loved += 2
+            $ made_love += 1
         else:
             her annoyed "Don't be silly."
     else:
@@ -298,9 +299,9 @@ label creative_8:
     "We spent the evening winding grasses into rope."
     scene bg pond with fade
     "The next day I walked along the river bank. I was hoping to find the narrowest place to build my bridge. I also had to find a place where a suspension bridge would fit in with the geography."
-    "I found the perfect spot just as I was about to give up and go home. Near the Jennings's, the river split a large knoll into two. Water had worn away the dirt into smooth mounds on either side of the river."
+    "I found the perfect spot just as I was about to give up and go home. Near the Jennings', the river split a large knoll into two. Water had worn away the dirt into smooth mounds on either side of the river."
     if (skill_social >= 30) or (skill_knowledge >= 30):
-        "I talked to the Jenningss about building the bridge and they were excited to help. Helen thought it would be useful to have some more rope for the cows, and Pete said he'd try to spin rope during downtime at the library."
+        "I talked to the Jennings about building the bridge and they were excited to help. Helen thought it would be useful to have some more rope for the cows, and Pete said he'd try to spin rope during downtime at the library."
         "After a few days we had enough rope to start making stronger rope."
     else:     
         if (loved >= 20):
@@ -322,7 +323,7 @@ label creative_master:
     scene bg sunset with fade
     "One day, as I was taking pictures of a flock of crabirds, I suddenly realized that no one on Earth had any idea what Talaam was like. They had never seen a wolfslug, or the shimmering rocks by the hot springs, or the rise of twin moons at twilight."
     "I had sent a few pictures, but they alone couldn't communicate enough."
-    "I couldn't bear it - I had to share the wild, alien beauty of this planet with everyone I had left behind back home."
+    "I couldn't bear it - I had to share the wild, alien beauty of this planet with everyone I had left behind back home. While I couldn't communicate the smells, or the lightness of the air, I could at least take some video footage."
     "I wrote down all the things I wanted to show everyone, and then sorted them and connected the ideas."
     "I made a list of footage to shoot, and wrote a script for the narrator."
     
@@ -341,7 +342,7 @@ label creative_master:
     "They watched quietly, and laughed at the fumbling baby crab spiders, and cried at the photos of infested crops, and shouted out when they saw someone from the colony they knew."
     "They all applauded at the end. I felt relieved, and also satisfied - I had been able to express something we had all felt."
     "It would be a few years before the transmission would reach Earth, but it was worth the wait for us to be able to share our beautiful new home with those we loved."
-
+    # TODO: Should we have a congrats message about mastering a skill?
     $ skill_creative += 10
     $ community_level += 10
     return

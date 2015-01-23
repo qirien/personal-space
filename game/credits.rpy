@@ -67,7 +67,7 @@ label show_credits:
     else:
         show pete happy at right, rising behind text
         show helen happy at quarterright, rising behind text
-    show baby boy at quarterrightbaby, babyrising behind text
+    show baby boy at rightbaby, babyrising behind text
     with dissolve
     $ renpy.pause(3.0, hard=skippable)
     hide pete
@@ -112,7 +112,7 @@ label show_credits:
     with dissolve
     hide text with fade
     
-    show text "Sound Effects by:\nSoundjay.com\nFirearm SFX Library\n\nAnd Freesound.org users:\ndobroide, alienistcog, jackofall29,\nfoxen10, Walter_Odington, powpowrider,\n saint_leibowitz, pushkin, jadend2,\nOhrwurm, UncleSigmund, OwlStorm,\nERH, soundscalpel.com, Timbre"
+    show text "Sound Effects by:\nSoundjay.com\nFirearm SFX Library\n\nAnd Freesound.org users:\ndobroide, alienistcog, jackofall29,\nfoxen10, Walter_Odington, powpowrider,\n saint_leibowitz, pushkin, jadend2,\nOhrwurm, OwlStorm, ERH,\n soundscalpel.com, Timbre"
     if ((community_level < COMMUNITY_LEVEL_OK) and (ending != "none")):    
         show brennan mad at right, rising behind text
         show lily upset at quarterleft, rising behind text
@@ -145,24 +145,28 @@ label show_credits:
     if (ending == "bad"):
         show him concerned at farleft, rising behind text
         show her concerned at farright, rising behind text
+        if (is_pregnant or is_pregnant_later):
+            show baby girl at rightbaby, babyrising behind text
     elif (ending == "mediocre"):
         show him normal at right, rising behind text
         show her normal at quarterright, rising behind text
         if (is_pregnant or is_pregnant_later):
-            show baby girl at quarterrightbaby, rising behind text
+            show baby girl at quarterrightbaby, babyrising behind text 
     else:
         show him happy at right, rising behind text
         show her flirt at quarterright, rising behind text
         if (is_pregnant or is_pregnant_later):
-            show baby girl at quarterrightbaby, rising behind text         
+            show baby girl at quarterrightbaby, babyrising behind text
     with dissolve
     $ renpy.pause(6.0, hard=skippable)
     if (ending == "bad"):
         hide him with moveoutleft
-        hide him with moveoutright
+        hide her with moveoutright
+        hide baby with moveoutright
     else:
         hide him
         hide her
+        hide baby girl
         with dissolve    
     hide text with fade
 
@@ -197,7 +201,7 @@ label show_credits:
         $ persistent.got_all_endings = True
         
     "Thanks for playing! If you have feedback, I'd love to hear from you at {a=mailto:qirien@icecavern.net?subject=Our Personal Space}qirien@icecavern.net{/a}"
-    show text "{size=60}{font=fonts/danielbd.ttf}{b}The End{/b}{/font}{/size}" with fade
+    show text "{size=100}{font=fonts/Kristi.ttf}The End{/font}{/size}" with fade #TODO: check font
     stop music fadeout 1.0
     $ renpy.pause(5.0, hard=skippable)
     

@@ -210,7 +210,7 @@ label work_0:
         her serious "Even though it seems far away, it's still our home, isn't it?"
 
     "I worked hard getting things set up, and even though the job seemed pretty big, I thought I would probably do okay."
-    $ relaxed -= 3
+    $ relaxed -= 5
 
     # Meet friend Sara
     scene bg community_center with fade
@@ -501,6 +501,8 @@ label work_2:
     "I walked home, trying not to think about Brennan. When I got there, [his_name] greeted me with a kiss."    
     show him normal at midright with dissolve
     show her normal at midleft with moveinleft
+    show him at center with move
+    show him at midright with move
     him "How was work today?"
     menu:
         "What should I say?"
@@ -514,6 +516,7 @@ label work_2:
             her surprised "You think he's a spy or something?"
             him serious "I'm not saying that. I'm just saying that there's unanswered questions here."
             her flirt "Interesting. Well, I'll keep an eye out, and if I see him sending coded messages to the aliens, I will let you know."
+            scene black with fade
             "The next time Brennan helped out at work, he was as friendly as ever, but I didn't feel as uncomfortable as before. I treated him politely, but coolly, and we got a lot of work done."
         "Nothing special.":
             her serious "Just the usual. How about you?"
@@ -813,12 +816,13 @@ label work_4:
         brennan mad "I hope this is enough for you."
         her normal "That'll do... for today."
         brennan normal "Today! You're a slave driver, you are."
-        her flirt "I have to be to get any work out of you, Your Laziness."
+        if (brennan_relationship >= 1):
+            her flirt "I have to be to get any work out of you, Your Laziness."
         her serious "Anyway, come see these plans. We'll need to strip the branches of twigs and leaves, and cut them to uniform sizes..."
         show brennan at center, behind her with move        
         "He stripped the branches while I attached them together. It took a few tries to attach everything so it was sturdy, and it wouldn't hold as much weight as a normal shelf, but in the end, we finished it."
         
-        her normal "I might have to have the mayor emphasize to people how much work it is to build this stuff, and maybe they won't ask for so many things."
+        her concerned "I might have to have the mayor emphasize to people how much work it is to build this stuff, and maybe they won't ask for so many things."
         brennan "Or you could have them bring you the wood anytime they want you to make something."
 
         "I was going to have to do more research on ways to build with the wood we had here on Talaam."
@@ -932,12 +936,13 @@ label work_5:
     "Mr. Perón was getting more and more distraught. I was worried he was going to try and leave, and I wasn't sure I could stop him."
     show brennan at midright
     show her serious at right
+    with move
     brennan mad "Calm down, please! Everything will be just fine."
     martin "You don't understand; you can't understand! If you had any family, you'd know that I have to be there!"
     "Brennan just looked at Mr. Perón, a curious expression on his face. Finally, he nodded."
     brennan normal "I'll go make sure everything's all right with your family."
     her surprised "You can't do that! The radiation is too strong!"
-    brennan mad "But he's right. I don't have a family; I don't have as much to lose."
+    brennan mad "But he's right. I don't have a family; I don't have special skills. I'm replaceable."
     if (is_pregnant):
         brennan "And you've got to protect your baby, so you can't go."
        
@@ -1015,7 +1020,7 @@ label work_5:
 # MONTH 18 - lunch with Brennan
 label work_6:
     $ times_worked += 1
-    $ relaxed -= 2
+    $ relaxed -= 5
     call set_work_bg
 
     if (profession == "doctor"):
@@ -1024,7 +1029,7 @@ label work_6:
         "But soon it was lunch time."
     elif (profession == "carpenter"):
         "We had the kids collect supple branches from the local trees, and we made wicker crates, baskets, and chairs out of them."
-        "I went to the school and taught some of the kids the weaving techniques I had learned."
+        "Brennan and I went to the school and taught some of the kids the weaving techniques we had learned."
         "Soon it was lunchtime, and the kids went home to eat."
     elif (profession == "mechanic"):
         "Inspired by the idea of replacing complicated parts with more simple ones, I set about looking at our inventory and cataloguing how parts we had a lot of could be used to substitute for parts we were running out of."
@@ -1069,6 +1074,7 @@ label work_6:
             menu:
                 "What should I say?"
                 "{i}I sure am.{/i}" if (loved >= 0):
+                    $ relaxed += 2
                     $ loved += 2
                     her normal "I sure am...I don't know what I'd do without him."
                     brennan mad "..."
@@ -1217,6 +1223,7 @@ label work_6:
             her surprised "Oh! It's been almost an hour; we have to get back to work!"
             sara "Thanks for lunch, Brennan. We should do this again sometime."
             brennan happy "It was my pleasure to entertain you."
+            $ brennan_relationship += 1
     return
 
 # MONTH 21
@@ -1664,7 +1671,7 @@ label work_8:
 
         her serious "Well, that's too bad. You've helped me a lot."
 
-    brennan "I'm sure I'm easily replaceable. There will be new colonists coming on the shuttle, after all."
+    brennan normal "I'm sure I'm easily replaceable. There will be new colonists coming on the shuttle, after all."
     her normal "That's true. But I'm sure none of them will be as...unique as you."
     brennan happy "You mean none of them will be as handsome and dashing?"
     her flirt "I meant exactly what I said."

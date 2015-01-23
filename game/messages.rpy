@@ -376,6 +376,7 @@ label msg_20:
         thuc_c "No."
         ilian_c "The storehouse still has some protein powder."
         her_c "I was hoping to avoid that, but I guess that'll have to do."
+        nvl clear
     else:
         natalia_c "You want some eggs? Bring some of those bell peppers and tomatoes and we'll trade!"
         pete_c "We've got milk or cheese we could trade for quinoa. I found a way to cook it so it almost tastes like grits."
@@ -384,6 +385,10 @@ label msg_20:
             julia_c "You especially need the protein, since you're expecting."
             nvl clear
         her_c "Thanks everyone... I just hope I can repay your kindness."
+    if (is_pregnant):
+        sara_c "Oh hey, [her_name] I found you a maternity dress! It was in with the baby stuff, not in with clothes like I thought."
+        her_c "Wow, really? That'd be awesome!"
+        sara_c "I'll bring it to you later."
         
     return
 

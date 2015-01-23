@@ -233,6 +233,7 @@ screen extras:
         xalign 0.98
         yalign 0.98
         
+        textbutton _("Return") action Return()
         if (persistent.got_all_endings):
             textbutton _("Omake") action Start("omake")
         textbutton _("CG Gallery") action ShowMenu("cg_gallery")
@@ -537,6 +538,7 @@ init -2 python:
 #
 # A screen that's included by the default say screen, and adds quick access to
 # several useful functions.
+# TODO: add auto?
 screen quick_menu:
     zorder -1
     # Add an in-game quick menu.

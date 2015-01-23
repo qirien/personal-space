@@ -20,6 +20,8 @@ init python:
     #define_characters("sprites/her", 1)               
 
 # Define images for her (nude, pregnant, dress, normal)
+# TODO: Missing undershirt for happy, normal, surprised, concerned, others?  Flirting has it.
+# TODO: Weird moving nose for nude and pregnant
 init python:
     her_expressions = ["angry", "annoyed", "concerned", "flirt", "happy", "laughing", "normal", "sad", "serious", "sleeping", "surprised"]
     # For each expression, add a nude, pregnant, dress, and normal version
@@ -36,6 +38,8 @@ init python:
         "is_pregnant and (month > 19) and (month <= 24)", "sprites/her/pregnant-normal.png", 
         "wearing_dress", "sprites/her/dress-normal.png", 
         "True", "sprites/her/normal.png"))
+    
+    renpy.image(("her", "determined"), "sprites/her/determined.png")
 
 label test_her_sprites:
     scene bg fields with fade
