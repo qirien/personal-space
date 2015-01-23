@@ -181,7 +181,7 @@ screen music_player():
         text "Stopped" size 14 ypos 30 xalign 0.5
     imagebutton auto "gui/previous_%s.png" xalign 0.3 yalign 1.0 action [
         pop_songs.Previous(),
-        renpy.restart_interaction
+        renpy.restart_interaction # This makes the screen refresh after we switch songs.
         ]
     if (renpy.music.is_playing()):
         imagebutton auto "gui/pause_%s.png" xalign 0.5 yalign 1.0 action [
@@ -262,7 +262,7 @@ screen heart_display():
         # Add a heart whose size depicts their relationship status
         if (loved > LOVED_MAX):
             add "GUI/heart-full.png"
-        elif (loved >= (LOVED_MAX/1.5)):
+        elif (loved >= (LOVED_MAX/1.3)):
             add "GUI/heart-largest.png"
         elif (loved >= LOVED_GOOD):
             add "GUI/heart-larger.png"

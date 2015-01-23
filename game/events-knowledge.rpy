@@ -48,6 +48,7 @@ label knowledge_1:
     show brennan at midleft
     show her normal at center
     with dissolve
+    with dissolve
     lily "And in some cases, you'll just have to test a little on an Earth creature. If you spectrize something and can't tell if it's safe, bring it into the lab."
     her surprised "Do you have a list of plants you've already tested?" 
     lily "Yes. Of course there's the ones you're planting, but in addition to those we've discovered a few that contain relevant nutrients. I'll have my assistant send out a guide." 
@@ -97,7 +98,7 @@ label knowledge_4:
     show pete at midright
     show brennan at left
     show julia at quarterleft
-    show her normal at midleft
+    show her normal at center
     with dissolve
     "Lily, our resident xenobiologist, organized a nature hike to tell us more about the local plants, and I went along."
     lily "As far as I can tell, this plant, which I call Bulbosa, isn't edible. But its bright orange flowers make a good dye."
@@ -106,15 +107,19 @@ label knowledge_4:
     menu:
         lily "What can you tell me about it?"
         "Is it poisonous?":
+            her surprised "Is it poisonous?"
             lily "It's poisonous to certain kinds of seeds. Its roots make the soil around it very acidic, so new flowers won't germinate near it. But it is dangerous in another way."
         "Is it carnivorous?":
+            her surprised "Is it carnivorous?"
             lily happy "Yes!"
         "Is it very old?":
+            her surprised "Is it very old?"
             lily "I don't think it's much older than the other plants here. But it's actually carnivorous!"
     lily normal "The tongue-like projection both attracts and detains nearby flying insects. While the insect is stuck on its tongue, the plant sucks out its innards, much like an Earth spider. If you look closely at the tongue-like area, it has multiple spikey projections for this purpose."
     lily "On Earth, the secretions from carnivorous plants had antifungal properties. I'm in the process of testing this plant's goo to see if I can find a good use for it."
     her concerned "Hopefully athlete's foot didn't make it onto the shuttle."
-    lily "A good example. There are also a lot of plants around here that release spores, and if they make us sick, I want to have a medicine to give out. That reminds me, while we don't have any mushrooms here, we do have these cute edible plants I call ringlets..."
+    lily upset "A good example. There are also a lot of plants around here that release spores, and if they make us sick, I want to have a medicine to give out."
+    lily normal "That reminds me, while we don't have any mushrooms here, we do have these cute edible plants I call ringlets..."
     "The other hikers and I learned more about nearby plants."
     $ skill_knowledge += 10
     return

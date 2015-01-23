@@ -88,6 +88,7 @@ init -200:
     define wants_to_leave = False
     define hated_food = "turnips"
     define baby_name = "Terra"
+    define notified_stat_max = False
     
     define COMMUNITY_LEVEL_OK = 40
     define COMMUNITY_LEVEL_GOOD = 55
@@ -123,7 +124,6 @@ init -200:
     define current_song = " "
     define read_messages = False
     
-    # TODO: Remove ones we are not using anywhere, fix for credits
     transform rising:
         ypos 1.2 yanchor 1.0
         linear 6.0 ypos 1.0
@@ -131,10 +131,6 @@ init -200:
     transform babyrising:
         ypos 1.2 yanchor 1.0 yoffset -160
         linear 6.0 ypos 1.0
-        
-    transform slowalpha:
-        alpha 0
-        linear 3.0 alpha 0.9
     
 init python:
     # Songs for computer pad

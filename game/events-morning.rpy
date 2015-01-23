@@ -88,8 +88,8 @@ label work_0:
     hide sara
     with moveoutright
     show pete at midright
-    show helen at right
-    show baby boy at rightbaby
+    show helen at quarterright
+    show baby boy at quarterrightbaby
     with moveinright    
     pavel "Pete is in charge of the library, so if you need to research something or print something out, head over there. He and his wife Helen are also experts on raising cattle, and will be starting a ranch up to the north."
     pavel "And, their baby, who was born on the shuttle, was the first human being to be born in space!"
@@ -409,8 +409,8 @@ label work_1:
                 $ loved -= 2
         
         hide him
+        show her determined with dissolve
         show pavel at midleft, behind her with moveinleft
-        show her serious
         pavel "Everything all right in here?"
         her concerned "Yes, it's just a busy day."
         pavel "Are those all the things that need to be repaired?"

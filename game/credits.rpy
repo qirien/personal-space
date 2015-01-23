@@ -201,7 +201,7 @@ label show_credits:
         $ persistent.got_all_endings = True
         
     "Thanks for playing! If you have feedback, I'd love to hear from you at {a=mailto:qirien@icecavern.net?subject=Our Personal Space}qirien@icecavern.net{/a}"
-    show text "{size=100}{font=fonts/Kristi.ttf}The End{/font}{/size}" with fade #TODO: check font
+    show text "{size=100}{font=fonts/Kristi.ttf}The End{/font}{/size}" with fade
     stop music fadeout 1.0
     $ renpy.pause(5.0, hard=skippable)
     

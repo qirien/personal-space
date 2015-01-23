@@ -234,10 +234,10 @@ label monthly_event_3:
         "{i}Have a party.{/i}" if (skill_social >= 20):
             show sara at right
             show ilian happy at quarterright
-            show thuc at quarterleft
+            show thuc at midleft
             show julia at left
             show him normal at midright
-            show her normal at midleft
+            show her normal at center
             with dissolve
             "I invited some friends over and we ate dinner together and played games together until late. We sang Happy Birthday to [his_name]."
             him happy "Thanks, [her_name] - what a great birthday!"
@@ -313,6 +313,10 @@ label unappreciated:
             her angry "I said stop it!"
             her sad "I don't want to die..."
             him annoyed "Then you need to choose to live."
+            
+    "What [his_name] said really bothered me. What was the point of a life where all you thought about was staying alive? I didn't come here to do that!"
+    "But, if we didn't take this life seriously, there wasn't much point in that, either."
+    "I didn't want to even think about it."
             
     scene black with fade
     $ wearing_dress = False
@@ -1992,11 +1996,11 @@ label funeral:
             natalia "Yes, she was. And still is, up in heaven where she is now. Thank you, [her_name]."
             "That's what she said, but behind her armor of faith I sensed a gaping hole of hurt and loss. Nothing I could say would heal that."
         "(Just give her a hug)":
-            show her serious at midright with move
+            show her concerned at midright with move
             "I didn't know what to say, so I just gave her a hug. I tried to communicate to her all that I felt, how I felt sad for her, and missed Josephina, and wanted her to feel better, and would always remember her daughter."
             "She smiled at me in thanks, but I could see how much she was hurting inside. There wasn't much more I could do."
         "(Walk away)":
-            show her at midleft with move
+            show her sad at midleft with move
             "I couldn't do it. There was nothing I could say, nothing I could do that would make it better. So why pretend?"
             $ community_level -= 2
             
@@ -2006,7 +2010,7 @@ label funeral:
     "Whatever, or whoever, had killed her was still out there."
     "[his_name] started barring our door at night."
     "The mayor brought it up at our next community meeting."
-    # TODO: Change song here?
+    play music "music/Rain.ogg" fadeout 1.0
     scene bg community_center with fade
     show pavel sad at center, behind natalia, martin with dissolve
     pavel "I know everyone is worried, and scared, but this fear is tearing our community apart."
@@ -2878,7 +2882,7 @@ label monthly_event_18:
     show her serious at midright
     show him serious at midleft
     with dissolve
-    #TODO: change music here
+    play music "music/You.ogg" fadeout 1.0    
     "After a few days of reading and resting, he started pacing the house."
     show him annoyed at left with move
     him "I should be doing something useful! I've been so lazy..."
@@ -3097,8 +3101,8 @@ label monthly_event_19:
 
 # MONTH 20 - Community Party!
 label monthly_event_20:
+    play music "music/Sojourn.ogg" fadeout 1.0
     scene bg path with fade
-
     "One day Sara and I took a walk together."
     show her normal at midright
     show sara at midleft
@@ -3583,6 +3587,7 @@ label monthly_event_21:
 # one person is a thief and has stolen lots of it, but it's really just a lot of people
 # taking a little bit extra.
 label monthly_event_22:
+    play music "music/Sojourn.ogg" fadeout 1.0    
     scene bg farm_interior with fade
     "We had to trust each other all the time. We didn't have police or lawyers, so when something went wrong, we had to work together to solve problems."
     "That was harder to do when the shampoo was found missing from the storehouse..."
@@ -3887,7 +3892,7 @@ label monthly_event_22:
 
 # MONTH 23: Climax - epic conflict leading to either "We'll always be together" or "I just want to get away from you!"  Conflict: Worried about new baby, pregnant if made_love a lot or affair with Brennan, otherwise, discussion about quality of sex
 label monthly_event_23:
-    play music "music/You.ogg" fadeout 1.0
+    play music "music/LinesBuildWalls.ogg" fadeout 1.0
 
     if (is_pregnant):
         scene bg farm_interior with fade
@@ -4652,6 +4657,7 @@ label monthly_event_24:
         show her serious with dissolve
         julia normal "One more little push, [her_name], and then you just lie back and relax a bit."
         show her sleeping
+        play music "music/Reflections.ogg" fadeout 1.0
         "I closed my eyes. I think [his_name] was holding the baby while Julia cut the cord. It was finished. I did it."
         "Something small and floppy was placed on my chest. I opened my eyes."
         show baby girl at centerbaby

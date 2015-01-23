@@ -226,7 +226,7 @@ label monthly_event:
     show text "{color=#ffffff}{font=fonts/Kristi.ttf}{size=50}Month [month] out of 25\n\nEvent!{/size}{/font}{/color}"
     $ renpy.pause(2.0)
     hide text
-    play music "music/RainSea.ogg" fadeout 1.0 #TODO: this music gets kind of repetitive; use another song?
+    play music "music/RainSea.ogg" fadeout 1.0
 
     $ period = "monthly_event"
     $ act = monthly_event_act
@@ -245,6 +245,12 @@ label end_of_month:
     #show text "{color=#ffffff}End of the Month{/color}"
 
     "We made it through another month on Talaam..."
+    
+    $ highest_skill = highest_stat()
+    $ highest_skill_value = eval("skill_" + highest_skill.lower())
+    if ((highest_skill_value == 100) and (not notified_stat_max)):
+        "You have maxed out your [highest_skill] skill and greatly helped your community! You can no longer choose this skill to focus on."
+        $ notified_stat_max = True
 
     # We call events_end_day to let it know that the day is done.
     call events_end_day

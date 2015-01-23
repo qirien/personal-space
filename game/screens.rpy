@@ -430,11 +430,7 @@ screen preferences:
                 label _("Skip")
                 textbutton _("Seen Messages") action Preference("skip", "seen")
                 textbutton _("All Messages") action Preference("skip", "all")
-
-            frame:
-                style_group "pref"
-                has vbox
-
+                
                 textbutton _("Begin Skipping") action Skip()
 
             frame:
@@ -444,14 +440,16 @@ screen preferences:
                 label _("After Choices")
                 textbutton _("Stop Skipping") action Preference("after choices", "stop")
                 textbutton _("Keep Skipping") action Preference("after choices", "skip")
-
+                
             frame:
                 style_group "pref"
                 has vbox
+                label _("Auto Mode")
+                textbutton _("Enabled") action Preference("auto-forward", "enable")
+                textbutton _("Disabled") action Preference("auto-forward", "disable")
 
                 label _("Auto-Forward Time")
                 bar value Preference("auto-forward time")
-
         vbox:
             frame:
                 style_group "pref"
@@ -538,7 +536,6 @@ init -2 python:
 #
 # A screen that's included by the default say screen, and adds quick access to
 # several useful functions.
-# TODO: add auto?
 screen quick_menu:
     zorder -1
     # Add an in-game quick menu.

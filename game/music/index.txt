@@ -14,10 +14,14 @@ Romance/Relax Together - Reflections
 Monthly Event Default - RainSea
 Skill Event Default - OceansApart
 Work/Brennan's Theme - Isaiah
-Computer Pad - Dandelion
-Ending Theme - Rain
+Computer Pad - Dandelion, Alpha, Shanghai 20 00
+Introspective, Bittersweet Theme - Rain
 Exciting Event - NoSilencePlease
 
+Dance Party - Rising or CarolanConcerto
+ArtGallery - RondoAMinor
+
+Ending Theme - Blessed, YouUndone
 
 ~~~~~~~~~~~~~~~
 ~MUSIC CATALOG~

@@ -342,7 +342,6 @@ label creative_master:
     "They watched quietly, and laughed at the fumbling baby crab spiders, and cried at the photos of infested crops, and shouted out when they saw someone from the colony they knew."
     "They all applauded at the end. I felt relieved, and also satisfied - I had been able to express something we had all felt."
     "It would be a few years before the transmission would reach Earth, but it was worth the wait for us to be able to share our beautiful new home with those we loved."
-    # TODO: Should we have a congrats message about mastering a skill?
     $ skill_creative += 10
     $ community_level += 10
     return
