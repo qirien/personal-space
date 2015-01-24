@@ -291,7 +291,7 @@ label social_3:
             her normal "Yeah, we should see if we can get a lunch group going! Lots of people are on break now; let's ask around."
             "We found a few other people who seemed interested in gathering at the community center for lunch every Friday."
         "I'm not worried.":
-            her serious "I feel pretty socially healthy now. I see you, my pavel, and my husband pretty regularly."
+            her serious "I feel pretty socially healthy now. I see you, my boss, and my husband pretty regularly."
             sara "But we're going to be here the rest of our lives! Shouldn't we get to know everyone?"
             menu:
                 "I don't want to meet everyone.":
