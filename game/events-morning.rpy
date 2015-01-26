@@ -1460,7 +1460,6 @@ label brennan_confess:
                     her serious "Kiss me. Now."
                     "What was I saying? What was I doing? I thought he was going to laugh, and I could pretend it was a joke, but then he stepped closer."
                     show brennan normal at center with move                    
-                    show her concerned at midright with move
                     "My heart raced and my mind shut down as there were no more words, just flesh melting into flesh with all the passion we had been holding back."
                     scene black with fade
                     play bg_sfx "sfx/cloth.mp3"
@@ -1548,14 +1547,14 @@ label work_8:
         her surprised "What happened to it?"
         natalia "I think Raúl left it out during one of the solar flares..."
         her annoyed "(Again?! This is the fifth time she's brought Raúl's computer pad in for repairs!)"
-        her normal "OK, I'll take a look at it."
+        her serious "OK, I'll take a look at it."
         hide natalia with moveoutleft
         "I opened it up and got out my multimeter. Some of the circuits were completely fried."
         show brennan normal at midleft with moveinleft
         brennan "That doesn't look good."
-        her serious "No, it's totally fried."
+        her concerned "No, it's totally fried."
         brennan normal "You can't fix it?"
-        her concerned "These are specialized electronics components; I can't just get a new piece of the shelf and solder it in."
+        her annoyed "These are specialized electronics components; I can't just get a new piece off the shelf and solder it in."
         brennan "Perhaps this'll teach that naughty little tyke to take better care of things."
         her sad "Yeah..."
         brennan mad "Hey, don't blame yourself! It was bound to happen eventually."

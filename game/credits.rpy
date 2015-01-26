@@ -114,10 +114,10 @@ label show_credits:
     
     show text "Sound Effects by:\nSoundjay.com\nFirearm SFX Library\n\nAnd Freesound.org users:\ndobroide, alienistcog, jackofall29,\nfoxen10, Walter_Odington, powpowrider,\n saint_leibowitz, pushkin, jadend2,\nOhrwurm, OwlStorm, ERH,\n soundscalpel.com, Timbre"
     if ((community_level < COMMUNITY_LEVEL_OK) and (ending != "none")):    
-        show brennan mad at right, rising behind text
+        show brennan normal at right, rising behind text
         show lily upset at quarterleft, rising behind text
     else:
-        show brennan at right, rising behind text
+        show brennan mad at right, rising behind text
         show lily at quarterleft, rising behind text        
     with dissolve
     $ renpy.pause(6.0, hard=skippable)
@@ -137,14 +137,16 @@ label show_credits:
     with dissolve
     hide text with fade   
     
-    show text "The code for this work is licensed under the {a=http://www.gnu.org/licenses/gpl.html}GPL{/a}, and the text is licensed under a {a=http://creativecommons.org/licenses/by-sa/4.0/}Creative Commons Attribution-ShareAlike 4.0 International License{/a}.\nFor other licenses used, see accompanying License.html" with fade
+    show text "\"Our Personal Space\" Program, Text & Dialogue are licensed under the {a=http://www.gnu.org/copyleft/gpl.html}GNU GPLv3{/a}.\nFor other licenses used, see accompanying License.html" with fade
     $ renpy.pause(3.0, hard=skippable)
     hide text with fade        
     
     show text "Made with Ren'Py" with fade 
     if (ending == "bad"):
-        show him concerned at farleft, rising behind text
-        show her concerned at farright, rising behind text
+        show him concerned at left, rising behind text
+        if (cheated_on_him):
+            show brennan happy at right, rising behind text
+        show her concerned at quarterright, rising behind text
         if (is_pregnant or is_pregnant_later):
             show baby girl at rightbaby, babyrising behind text
     elif (ending == "mediocre"):
@@ -161,8 +163,10 @@ label show_credits:
     $ renpy.pause(6.0, hard=skippable)
     if (ending == "bad"):
         hide him with moveoutleft
-        hide her with moveoutright
-        hide baby with moveoutright
+        hide her
+        hide brennan
+        hide baby
+        with moveoutright
     else:
         hide him
         hide her
@@ -201,8 +205,8 @@ label show_credits:
         $ persistent.got_all_endings = True
         
     "Thanks for playing! If you have feedback, I'd love to hear from you at {a=mailto:qirien@icecavern.net?subject=Our Personal Space}qirien@icecavern.net{/a}"
-    show text "{size=100}{font=fonts/Kristi.ttf}The End{/font}{/size}" with fade
-    stop music fadeout 1.0
+    show text "{size=140}{font=fonts/Kristi.ttf}The End{/font}{/size}" with fade
+    stop music fadeout 5.0
     $ renpy.pause(5.0, hard=skippable)
     
     $ renpy.full_restart()

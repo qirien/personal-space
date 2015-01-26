@@ -506,8 +506,8 @@ label social_5:
     play bg_sfx "sfx/fire-2.mp3" fadein 1.0
     "We brought buckets of water, but by the time we got there, the whole house had already burned to the ground."
     sara "Oh, [her_name], I'm so glad you came! It's... awful."
-    show her at center with move
-    show him at midleft with move
+    show her serious at center with move
+    show him serious at midleft with move
     menu:
         "What should I say?"
         "At least you and Ilian are okay.":

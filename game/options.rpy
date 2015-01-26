@@ -248,7 +248,6 @@ init -1 python hide:
     ## is run, so the persisten information can be found by the init code.)
 python early:
     config.save_directory = "PersonalSpace-1347408413"
-    #TODO: I cannot delete these saved games?!
 
 init -1 python hide:
     #########################################

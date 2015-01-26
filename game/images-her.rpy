@@ -20,8 +20,6 @@ init python:
     #define_characters("sprites/her", 1)               
 
 # Define images for her (nude, pregnant, dress, normal)
-# TODO: Missing undershirt for happy, normal, surprised, concerned, others?  Flirting has it.
-# TODO: Weird moving nose for nude and pregnant
 init python:
     her_expressions = ["angry", "annoyed", "concerned", "flirt", "happy", "laughing", "normal", "sad", "serious", "sleeping", "surprised"]
     # For each expression, add a nude, pregnant, dress, and normal version

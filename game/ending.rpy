@@ -51,7 +51,7 @@ label bad_ending:
         her angry "What would you know about trust?!"
         him serious "Hey, at least I never cheated on you."
         him annoyed "Any man who would sleep with another man's wife can't be trusted not to do it again."
-        her angry "You don't know anything about Brennan. Or me, either, apparently."
+        her annoyed "You don't know anything about Brennan. Or me, either, apparently."
         him annoyed "I guess not."
     else:
         him concerned "You don't have to go. We could... start over, try again."
@@ -82,11 +82,13 @@ label bad_ending:
         "Brennan put his arm around me and pulled me close. He whispered in my ear,"
         brennan "Just pretend it was all a bad dream..."
     "At least I have a chance to start over again... this time on Earth, my favorite planet in the universe."
-    window hide
-    scene cg_earth:
-        size (1024, 600) crop (1433,480,1024,600)
-        easein 10.0 size (1024,600) crop (0, 0, 1848, 1080)
-    $ renpy.pause(12.0)
+    label cg_earth:
+        window hide
+        scene cg_earth:
+            size (1024, 600) crop (1433,480,1024,600)
+            easein 10.0 size (1024,600) crop (0, 0, 1848, 1080)
+        $ renpy.pause(12.0)
+        $ renpy.end_replay()
     $ persistent.got_bad_ending = True
     ".:. Separation Ending, 1 of 3."
     jump show_credits

@@ -104,7 +104,7 @@ Bedroom <bedroom.jpg>, Mountains <mountains.jpg>, Ocean <ocean.jpg>, Talaam <tal
 
 Community Center <community-center.jpg>, Farm Porch <farm-porch.jpg>, Fields <fields.jpg>, Laundry <laundry.jpg>, Path <path.jpg>, Pond <pond.jpg>, Storehouse <storehouse.jpg>, Tractor <tractor.jpg>, and Wedding <wedding.jpg> by Andrea Landaker
 
-Hot Spring <hot-spring.jpg>, Stream <stream.jpg> by Andrea Landaker, derived from images by Wesley J. Landaker.
+Church <church.jpg>, Hot Spring <hot-spring.jpg>, Stream <stream.jpg> by Andrea Landaker, derived from images by Wesley J. Landaker.
 
 Any other images not listed in other sections by Andrea Landaker.
 

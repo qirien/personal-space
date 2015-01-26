@@ -288,6 +288,7 @@ label relax_together_4:
 
 # go "out" to eat on a picnic
 label relax_together_5:
+    $ wearing_dress = False
     scene bg farm_interior with fade
     show her normal at midright
     show him normal at midleft

@@ -34,7 +34,7 @@ init -1:
     image bg stream = "bg/stream.jpg"
     image bg hotspring = "bg/hot-spring.jpg"
     image bg tractor = "bg/tractor.jpg"
-    image bg church = "bg/church.jpg" #TODO: Use another image with better license.
+    image bg church = "bg/church.jpg" 
     image bg city_street = "bg/city-street.jpg"
     image bg bathhouse = "bg/bathhouse.jpg"
     image bg gray_silk = "bg/silk-gray.jpg"
