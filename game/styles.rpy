@@ -12,6 +12,23 @@ style cursive_text is text:
 style say_dialogue:
     color "#FFFFFF"
     
+style fixed_text is text:
+    font "fonts/Exo2.otf"
+    
+style no_border:
+    activate_sound "sfx/click.ogg"
+    
+style no_border_text is fixed_text:
+    color "#FFFFFF"
+    hover_color "#b3b3b3"
+    bold True
+    size 17
+    
+style gallery_caption_text is cursive_text:
+    color "#FFFFFF"
+    xalign 0.5
+    size 35
+    
 style button:
     background Frame("GUI/button_idle.png", 15, 15)
     hover_background Frame("GUI/button_selected.png", 15, 15)

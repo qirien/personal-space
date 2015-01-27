@@ -248,6 +248,13 @@ label domestic_5:
             else:
                 "I made some cookies using smashed fruit as a sweetener.  They weren't very sweet, but I added some spices and nuts so they had lots of interesting flavors."
             scene bg community_center
+            show him happy at right
+            show her happy at quarterright
+            with moveinright
+            show van at midright
+            show raul at midleft
+            show kid at center
+            with moveinleft
             "The kids made costumes out of scraps and household items, and they went around trick-or-treating to all the farms and houses."
             if (want_kids):
                 "I wondered what it would be like to have our own child and take them trick-or-treating and celebrate holidays together. What will our kids be like?"

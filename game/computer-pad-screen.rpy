@@ -27,6 +27,8 @@ screen computer_pad(periods):
     add "bg/computer-pad.png"
             
     text "{font=fonts/Exo2.otf}User {color=#888}[her_name]{/color} has logged on.{/font}" size 12 xalign 0.1 ypos 20 color "FFFFFF"
+    textbutton "?" xpos 877 ypos 18 style "no_border" action Jump("tutorial")
+
     frame:
         style_group "cp"
         background None

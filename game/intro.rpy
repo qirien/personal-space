@@ -284,7 +284,7 @@ label marriage_proposal:
         "Just grinned.":
             $ father_attitude = "grinning"
             "...just grinned. I felt good knowing he was so happy for me."
-            $ relaxed += 5
+            $ relaxed += 2
     
     "My mind was so full of thoughts of the future, I almost didn't notice when it was my turn to say \"I do.\" It felt like a dream..."
     "You could tell from the wedding presents that people were thinking about how we'd never see Earth again. We got a lot of survival gear, but we couldn't bring most of it and stay under the baggage quota for the colony ship."

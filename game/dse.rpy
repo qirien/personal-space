@@ -18,7 +18,7 @@ init python:
     dp_choice("Focus on Work", "act_work")
     
     #You can't skip work on work event months
-    dp_choice("Take it Easy", "act_skip_work", enable="(month>1) and (month<25) and (not ((month % 3) == 0))")
+    dp_choice("Take it Easy", "act_skip_work", enable="(month>1) and (not ((month % 3) == 0))")
 
     dp_period("Skills", "skill_focus_act")
     dp_choice("Domestic", "act_domestic", enable="skill_domestic < 100")
@@ -130,7 +130,7 @@ label day:
         menu:
             "Would you like to see the Tutorial?"
             "Yes":
-                call tutorial
+                call tutorial(False)
             "No":
                 $pass
         

@@ -1,6 +1,7 @@
 # File containing the tutorial, played at month 1
 
-label tutorial:
+label tutorial(from_computer_screen=True):
+    scene screenshot
     tutorial "This screen shows [her_name]'s computer pad."
     
     scene screenshot_left with dissolve
@@ -24,4 +25,7 @@ label tutorial:
     tutorial "You have 25 months to maintain their relationship and help the colony survive."
     tutorial "Good luck!"
     
+    if (from_computer_screen):
+        call screen computer_pad(["Work", "Skills", "Free Time"])
+        
     return

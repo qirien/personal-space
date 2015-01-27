@@ -106,7 +106,7 @@ label relax_together_1:
     play bg_sfx "sfx/splash.mp3"
     "It felt so good to soak and relax together."
     
-    if (relaxed < 0):
+    if (relaxed < -5):
         $ relaxed = 0
     else:
         $ relaxed += 5
@@ -209,7 +209,7 @@ label relax_together_3:
             him normal "I see your point."
             $ loved += 5
             $ made_love += 1
-            $ relaxed += 2
+            $ relaxed += 5
 
         "That bothers me.":
             her sad "That bothers me. Why didn't you tell me that was one of the factors?"
@@ -221,6 +221,7 @@ label relax_together_3:
             her sad "I love you, too, [his_nickname]. But... never mind."
 
             $ loved += 2
+            $ relaxed += 3
 
         "That's deceitful.":
             her annoyed "That's deceitful. I feel used."
@@ -239,7 +240,6 @@ label relax_together_3:
             him angry "I'm sorry, okay?! What more can I say?!"
             her sad "Nothing. Just- don't say anything more right now."
             $ loved -= 5
-            $ relaxed -= 2
         
     return
 
@@ -280,8 +280,7 @@ label relax_together_4:
             show him normal at center, behind her with move
             "He copied what I had done earlier, and gave me quite the massage, too. It was so relaxing to just sit and do nothing while he took care of all my tense muscles. He takes such good care of me..."
             $ made_love += 1
-            $ relaxed += 5
-
+        $ relaxed += 5
         $ loved += 5
 
     return
@@ -812,7 +811,7 @@ label relax_together_g:
             show him nude sleeping
             with dissolve
             $ loved += 2
-            $ relaxed += 2
+            $ relaxed += 3
         "Tell him off.":
             her angry "You had your chance, but you missed it. Sorry, I can't just wait around all day for you to finally decide to show up and get some action."
             him nude concerned "C'mon, [her_nickname]..."
@@ -858,24 +857,51 @@ label relax_together_i:
     show him normal at midleft with moveinleft
     menu:
         "What should I do?"
-        "Make one for [his_name] too.":
-            him normal "It looks like you had some fun this afternoon."
-            her happy "I made one for you too!"
-            him surprised "What am I, king of the faeries?"
-            her flirt "And I'm the queen! All the insects will obey our orders!"
-            him happy "Maybe if those orders include eating everything in sight!"
-            $ loved += 2
+        "Do a little dance":
+            show her happy at right with move
+            show her flirt at squatting with move
+            show her normal at midright, standing with move
+            him happy "Wow, you're like a woodland nymph."
+            her flirt "Think you can catch me?"
+            show her laughing at right with move
+            "I darted away, throwing a teasing smile over my shoulder at [his_name]."
+            show him happy at quarterright with move
+            show her happy at left with move
+            "He ran after me as I hopped over fences and twirled around trees."
+            show him laughing at midleft with move
+            if (skill_physical >= 60):
+                "He was slowing down. I decided it would be more fun to let him catch me."
+            show him normal at quarterleft, sitting
+            show her flirt at left, sitting
+            with move
+            "He finally caught up to me and tackled me playfully."
+            him flirting "Hmmm, now that I've captured you, what'll you give me?"
+            "I draped the flower circlet over his head."
+            her flirt "How about that?"
+            him serious "How about this?"
+            "He kissed me softly on the forehead, then on the cheeks, then finally I grabbed his head and brought our lips together."
             
-        "Make matching flower bracelets.":
-            him happy "Glad to see those weeds are getting some practical use!"
-            her concerned "Well, jewelry isn't exactly practical, but it is fun."
+        "Make matching flower circlets.":
+            him surprised "What am I, king of the faeries?"
+            her happy "And I'm the queen! All the insects will obey our orders!"
             him flirting "Shall I address you as Queen Mab from now on?"
             her flirt "Yes. I'll fulfill all your wishes... in your dreams."
-            him flirting "Ooo, harsh. But being with you is like a dream come true, so does that mean you'll fulfill my wishes here?"
+            him serious "Ooo, harsh. But being with you is like a dream come true, so does that mean you'll fulfill my wishes here?"
             "You get in a tickle fight, and one of your flower bracelets falls off. It was fun while it lasted."
-            $ loved += 2
             $ made_love += 1
+            
+        "Apologize":
+            her concerned "Sorry, this is kind of a waste of time, isn't it?"
+            if (loved < 0):
+                him concerned "Yeah... we really need to get rid of those weeds."
+                her sad "Okay."
+                him normal "Here, I'll help you."
+                her normal "Oh, thanks!"
+            else:
+                him happy "If it makes you happy, it's not a complete waste of time. Here, I'll help you finish pulling the weeds."
+            "We finished pulling the weeds together while we talked."
                 
+    $ loved += 2
     $ relaxed += 3
     return
 
@@ -886,6 +912,7 @@ label relax_together_j:
     show him normal at left
     with dissolve
     "I was sitting at the table, reading on my computer pad, when I got a message from [his_name]."
+    show her surprised
     play bg_sfx "sfx/message.mp3"
     "(Why is he sending me a message? He's right there...)"
     him_c "Right now I am sitting five feet away from the hottest chick in the universe."
@@ -911,6 +938,10 @@ label relax_together_j:
             show her laughing
             "He looked over at me with what I'm sure he thought was a melting gaze, but instead it just made me laugh."
             show him laughing
+            show her flirt at midright
+            show him flirting at midleft
+            with move
+            
             "Soon he was laughing, too, and we were kissing, and everything seemed just about perfect."
             $ loved += 2
         "Nothing.":

@@ -430,7 +430,7 @@ label monthly_event_4:
                 him "I've also been researching ideal conditions for the strains of plants they gave us, so hopefully they'll grow."
                 her concerned "Okay, well, that sounds very... necessary."
                 her normal "I'm not just \"hanging out\", you know. I'm building relationships in the community that we're going to need if we're going to survive. We can't make it alone here."
-                him normal "You're right; I wish I didn't need anyone else, but I can't do everything."
+                him concerned "You're right; I wish I didn't need anyone else, but I can't do everything."
             "I can't believe you don't appreciate me!":
                 jump unappreciated
 
@@ -1206,6 +1206,11 @@ label monthly_event_9:
             "He brought me some wild fruits he had found. He even checked with Dr. Lily to make sure they were edible first."
             her happy "Thank you!"
             him happy "They're just for you."
+            her surprised "Don't you want any?"
+            him flirting "No, I just want to watch you enjoy them."
+            her flirt "Mmmmmm..."
+            her normal "These are really good! You have to try one.."
+            him happy "Well, okay!"
         if (she_wants == "saynicestuff"):
             him normal "Your laugh is like a supernova that blasts away my stress and makes the whole world seem like a garden."
             her laughing "Ha ha ha, ha ha, really?"
@@ -3335,6 +3340,7 @@ label done_party_menu:
                 with moveinleft
                 sara "Line up, everyone! Now, the goal is to see who can chop the most wood in one minute! Ready, set...GO!"
                 hide sara with moveoutleft
+                show her serious with dissolve
                 play bg_sfx [ "sfx/wood-logs-2.mp3", "sfx/wood-logs-1.mp3" ]
                 play voice [ "sfx/wood-logs-2.mp3", "sfx/wood-logs-2.mp3", "sfx/wood-logs-2.mp3" ]
                 "I raised the axe and let it fall to split the wood, barely taking time to aim. I was concentrating so hard, I didn't even notice what anyone else was doing."
@@ -3354,13 +3360,17 @@ label done_party_menu:
             "Space Ship Construction.":
                 "I decided to enter the Space Ship Construction contest."
                 sara "This is a game for teams of two, so find a partner!"
-                show sara at quarterleft with move
                 show him normal at right
                 show her normal at quarterright
-                with moveinright
+                with moveinright                
+                show brennan at left
+                show lily at quarterleft
+                with moveinleft
                 him serious "Let's do it."
                 her flirt "Yeah, you and me, right now."
                 sara "I have a box of materials for each team. Your goal is to build the sturdiest and coolest-looking cardboard spaceship you can in five minutes! Then we will launch them from the roof and see whose has the best landing."
+                brennan mad "We can't let them beat us, Lily."
+                lily upset "I am not an aeronautics engineer... but as our craft need not be spaceworthy, it should not be too difficult."                
                 sara "Ready, set...GO!"
                 "[his_name] and I rummaged through the box. Sara had gathered trash from everyone and cleaned it off so we could use it on our creation."
                 him serious "Let's make the box the body of the spaceship."
@@ -3378,12 +3388,20 @@ label done_party_menu:
                         "Ours didn't have the best landing, but it looked so artistic and sleek that they gave it the best score anyway. We won the contest!"
                     elif (skill_technical >= 70):
                         "Ours didn't look the best, but it actually kind flew off the roof and glided for a bit before landing gracefully on the ground. We won the contest!"
+                    else:
+                        "You could tell it was supposed to be a spaceship... but it wasn't as good as Brennan and Lily's. They even had tiny model people sitting inside."
+                        sara "Congratulations, Brennan and Dr. Lily!"
+                        lily happy "Thank you."
+                        brennan happy "Dr. Lily did all the work, she's brilliant."
                 else:
                     "Ours was kind of a disaster. We felt relieved when the contest was over."
+                    sara "Congratulations, Brennan and Dr. Lily!"
+                    lily happy "Thank you."
+                    brennan happy "Dr. Lily did all the work, she's brilliant."                    
             "Colony Trivia.":
                 show sara at center
-                show her normal at midright
-                show naomi at midleft
+                show her normal at quarterright
+                show helen at midleft
                 show ilian at left
                 show lily at right
                 with dissolve
@@ -3421,7 +3439,7 @@ label done_party_menu:
             "Adamantium Chef.":
                 "I decided to enter the Adamantium Chef contest."
                 show sara at center
-                show her normal at midright
+                show her normal at quarterright
                 show natalia at left
                 show julia mad at right
                 show brennan at midleft
@@ -3684,7 +3702,7 @@ label monthly_event_22:
             call set_work_bg
             show brennan at midright with dissolve
             show her normal at midleft with moveinleft
-            brennan "[her_name]! Your hair looks lovely."
+            brennan "Hello, [her_name]! My, your hair looks lovely today."
             "That gave me an idea."
             her concerned "Not for long, with all the shampoo missing from the storehouse."
             brennan "You don't have any?"
@@ -4538,7 +4556,7 @@ label monthly_event_24:
             her happy "(But even 'false labor' is helping the baby get closer to being born, right?)"
             $ relaxed += 2
 
-        show him normal at midleft with moveinleft
+        show him normal at midleft behind her with moveinleft
         him flirting "Good morning, [her_nickname]! How're you feeling?"
         her serious "More contractions...who knows if it's really labor or not, though?"
         him serious "Want me to time them?"
@@ -4604,12 +4622,12 @@ label monthly_event_24:
         show julia at midright
         "Hour upon hour ticked slowly by. I couldn't concentrate on anything else, but concentrating on the contractions didn't make them hurt any less."
         scene bg clinic with fade
-        show her concerned at center
-        show him sad at quarterright
+        show her concerned at midleft
+        show him sad at midright
         "My back ached, my belly ached, everything between my knees and my navel felt like a boulder that I'd been lugging around, and could never set down."
         show her concerned at right with move
         "Sitting was uncomfortable, lying down didn't work, standing ached, squatting was hard... I paced restlessly."
-        show her concerned at midleft with move
+        show her concerned at quarterleft with move
         scene bg clinic with fade
         show her sad at midleft
         show him serious at midright

@@ -40,7 +40,9 @@ init -1:
     image bg gray_silk = "bg/silk-gray.jpg"
 
     image cg_together = "bg/cg-1.png"
+    image cg_mediocre = "bg/mediocre-ending.jpg"
     image cg_with_baby = "bg/cg-2.png"
+    image cg_good = "bg/good-ending.jpg"
     image cg_earth = "bg/cg-3.png"
 
     image night = "bg/night.png"
@@ -153,7 +155,7 @@ init -1:
     image van normal = "sprites/van.png"
     image van wince = "sprites/van-wince.png"
     image raul = "sprites/raul.png"
-    image kid = "sprites/vani.png"  #TODO: add in these in more places?
+    image kid = "sprites/vani.png"
     image kid normal = "sprites/vani.png"
     image kid frown = "sprites/vani-frown.png"
 

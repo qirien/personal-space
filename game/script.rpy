@@ -46,7 +46,7 @@ define community_level = 0 # how successful is the colony?
 # This definition needs to happen before our transitions are defined    
 init -201 python:
     define.move_transitions('longmove', 1.5)
-    define.move_transitions('move', 0.5) # TODO: test this; moves were way too short before, but we don't want them too long.
+    define.move_transitions('move', 0.5)
     
 
 # Variables about skills.  On a scale from 0-100, how skilled is the character?
@@ -92,16 +92,16 @@ init -200:
     
     define COMMUNITY_LEVEL_OK = 40
     define COMMUNITY_LEVEL_GOOD = 55
-    define COMMUNITY_LEVEL_MAX = 70
-    define LOVED_GOOD = 40
-    define LOVED_MAX = 70
+    define COMMUNITY_LEVEL_MAX = 75
+    define LOVED_GOOD = 35
+    define LOVED_MAX = 75
     define SKILL_SAVED_MAX = 60
     define ending = "none"
 
     #Technical variables used to control how the game displays
     # Custom transitions, positions, etc.
     define fade = Fade(0.2, 0.2, 0.2)
-    define midleft = Position(xpos=0.20, xanchor=0)        
+    define midleft = Position(xpos=0.25, xanchor=0)        
     define midright = Position(xpos=0.50, xanchor=0)
     define quarterleft = Position(xpos=0.10, xanchor=0)
     define quarterright = Position(xpos=0.65, xanchor=0)
@@ -109,6 +109,7 @@ init -200:
     define farright = Position(xpos=1.0, xanchor=0)    
     define sitting = Position(ypos=0.45, yanchor=0)
     define squatting = Position(ypos=0.25, yanchor=0)
+    define standing = Position(ypos= 1.0, yanchor = 1.0)
     
     define rightbaby = Position(xpos=830, ypos=430)
     define quarterrightbaby = Position(xpos=750, ypos=430)

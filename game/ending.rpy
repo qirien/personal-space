@@ -1,5 +1,4 @@
-# TODO: It's anticlimactic to have all these after giving birth. Shouldn't you get a break, anyway?
-# BUT, I want people to see month 25 messages... perhaps we could have this be a morning_event instead?
+# For MONTH 25, decide which ending to display.
 label monthly_event_25:
     play music "music/Rain.ogg" fadeout 1.0
     "It had been two years since we first arrived on Talaam. In a way, it felt like we had been here forever. But sometimes I still expected to find myself back on Earth, waking up from a long, long dream."
@@ -97,7 +96,7 @@ label bad_ending:
 # OR - Community failing, marriage succeeding
 # OR - both mediocre
 label mediocre_ending:
-    "Things were rough on Talaam. I wasn't sure they would ever get better."
+    "Things were rough on Talaam. I wasn't sure they would ever get easier."
     if (community_level >= COMMUNITY_LEVEL_OK):
         "But at least I had my friends and neighbors; we all helped each other out."
     else:
@@ -113,7 +112,7 @@ label mediocre_ending:
         "Like my job."
 
     if (community_level >= COMMUNITY_LEVEL_OK):
-        "I felt needed and appreciated at work, even if I didn't always feel that way at home."
+        "I loved my work; everything I did there was really important."
         call work_appreciation
 
     scene bg fields with fade
@@ -128,7 +127,7 @@ label mediocre_ending:
         him normal "Hi, [her_name]."
 
     show him at midright with move
-    her normal "Hi, [his_name]. What's for dinner?"
+    her happy "Hi, [his_name]. What's for dinner?"
     him serious "Stir-fry. Lots of fresh veggies this month!"
     if (loved >= 0):
         her normal "Okay, well, I guess we better eat what we have."
@@ -188,36 +187,48 @@ label mediocre_ending:
             him nude normal "After all, this little baby's depending on us."
             her serious "Yeah..."
         
-    show him nude sleeping
-    show her serious
-    with dissolve
-    "We kissed good night, but I lay awake for a little while, thinking a lot and worrying a little. I wanted to believe in our colony, to believe in our marriage, but I knew it took more than believing in something to make it come true."
-    "Sometimes it seemed like [his_name] wasn't even the same person I'd married before we came here."
-    "I guess I wasn't the same person, either."
-    "We didn't sit around gazing into each other's eyes anymore, and we didn't rush home from work just to see one another."
-    "Was it love binding us together, or just habit?"
-    if (loved > 0):
-        show her normal
-        "It was love, of course, just a different kind."
-        "The kind of love that works together towards hopes and dreams..."
-        "The kind of love that trusts and endures..."
-        "The kind of love that forgives..."
-        "The kind of love that was worth sacrificing for."
-        "Even if the colony failed, our love bound us together. It couldn't fail, because it wasn't some outside force beyond my control - I would not let my love fail."
-        "I couldn't control [his_name], of course. But he had shown me that he would do the same."
-        "I held onto that thought and let my worries slip away."
-        "If we had each other, we could do anything."
-    else:
-        "Sometimes we felt more like coworkers than a couple..."
-        "If we were back on Earth, would we even be together?"
-        "..."
-        "It was pointless to think about such things. We were here, we had a job to do, and we would do it together."
-        "We'd do whatever we had to to make this colony a success."
-        "After all, we'd managed to make Talaam, this strange and unfriendly planet, a real home."
-        "If we could do that, we could do anything."
-    show her sleeping with dissolve
-    scene black with fade
-    $ is_nude = False
+    label cg_mediocre:        
+        scene bg bedroom
+        $ is_nude = True        
+        show him nude sleeping at quarterright, squatting
+        show her concerned at midleft, squatting
+
+        if (is_pregnant):
+            show baby girl at quarterleftbaby
+        show bedroom_covers
+        show night
+        with dissolve
+        "We kissed good night, but I lay awake for a little while, thinking a lot and worrying a little. I wanted to believe in our colony, to believe in our marriage, but I knew it took more than believing in something to make it come true."
+        "Sometimes it seemed like [his_name] wasn't even the same person I'd married before we came here."
+        "I guess I wasn't the same person, either."
+        "We didn't sit around gazing into each other's eyes anymore, and we didn't rush home from work just to see one another."
+        "Was it love binding us together, or just habit?"
+        if (loved >= LOVED_GOOD):
+            show her normal
+            "It was love, of course, just a different kind."
+            "The kind of love that works together towards hopes and dreams..."
+            "The kind of love that trusts and endures..."
+            "The kind of love that forgives..."
+            "The kind of love that was worth sacrificing for."
+            "Even if the colony failed, our love bound us together. It couldn't fail, because it wasn't some outside force beyond my control - I would not let my love fail."
+            "I couldn't control [his_name], of course. But he had shown me that he would do the same."
+            "I held onto that thought and let my worries slip away."
+            "If we had each other, we could do anything."
+        else:
+            "Sometimes we felt more like coworkers than a couple..."
+            "If we were back on Earth, would we even be together?"
+            show her sad
+            "..."
+            show her serious            
+            "It was pointless to think about such things. We were here, we had a job to do, and we would do it together."
+            "We'd do whatever we had to to make this colony a success."
+            show her normal
+            "After all, we'd managed to make Talaam, this strange and unfriendly planet, a real home."
+            "If we could do that, we could do anything."
+        show her sleeping with dissolve
+        scene black with fade
+        $ is_nude = False
+        $ renpy.end_replay()
     call show_ending_cg
     $ persistent.got_mediocre_ending = True    
     ".:. Good Ending, 2 of 3."
@@ -242,7 +253,7 @@ label skill_appreciation:
         him surprised "Oh yeah? How'd it go?"
         her serious "Pretty good. Though sometimes I wish people would just work out their own problems."
         him normal "Like what?"
-        her serious "Oh, like \"Someone's goat is getting onto my property! Do something!\" when really they should just go tell Thuc, \"Hey, your goat came in my fields, can I help you fix your fence?\""
+        her flirt "Oh, like \"Someone's goat is getting onto my property! Do something!\" when really they should just go tell Thuc, \"Hey, your goat came in my fields, can I help you fix your fence?\""
         him normal "Ha ha, I know exactly what you're talking about."
         her serious "I just have to remember that we can't make everyone be happy, and they're not going to come tell us all the good things that are going on."
         him normal "Sounds like you've got a good perspective."
@@ -338,7 +349,7 @@ label work_appreciation:
         if (cheated_on_him):
             "I held onto him tightly, then lifted my face for a farewell kiss. He did not disappoint."
         else:
-            "I let go, but he was still holding me. Finally, he let go, a wry smile on his face."
+            "I let go, but he was still holding me. Finally, he stepped away, a wry smile on his face."
         show brennan at midleft with move
         
     brennan "Anyway, goodbye, [her_name]."
@@ -416,18 +427,28 @@ label good_ending:
     her laughing "What a waste! You should pick somewhere exotic!"
     him nude happy "What could be more exotic than an alien planet? Besides, you make everything seem exotic..."
     her flirt "I think the word you're looking for is \"erotic\", not \"exotic\"."
-    show him nude normal at center, squatting
-    with move
-    "He didn't say anything else, just buried his face in my hair and tightened his grip around my waist. I held on tight to his arms, feeling safety and love and happiness swirling around us."
-    "I wanted to hold on to this feeling right here that we had worked so hard for. And it was work - it wasn't easy to forgive, or compromise, or stay calm."
-    "But those moments when we made the choice to listen instead of judge, to help instead of sit back, or to be honest instead of hide an ugly truth - those were the moments that built our love, little by little."
-    "Like a coral reef, or a redwood tree, or a stalactite, it took time, and in many ways it was still fragile."
-    "But as long as we kept building, it could only grow."
-    show her sleeping
-    show him nude sleeping
-    with dissolve
-    scene black with fade
-    $ is_nude = False
+    label cg_good:
+        scene bg bedroom        
+        $ is_nude = True
+        # we re-show these in case we are in the middle of a gallery replay
+        show her normal at midleft, squatting        
+        show him nude normal at center, squatting
+        if (is_pregnant):
+                show baby girl at quarterleftbaby        
+        show bedroom_covers
+        show night          
+        with move
+        "He didn't say anything else, just buried his face in my hair and tightened his grip around my waist. I held on tight to his arms, feeling safety and love and happiness swirling around us."
+        "I wanted to hold on to this feeling right here that we had worked so hard for. And it was work - it wasn't easy to forgive, or compromise, or stay calm."
+        "But those moments when we made the choice to listen instead of judge, to help instead of sit back, or to be honest instead of hide an ugly truth - those were the moments that built our love, little by little."
+        "Like a coral reef, or a redwood tree, or a stalactite, it took time, and in many ways it was still fragile."
+        "But as long as we kept building, it could only grow."
+        show her sleeping
+        show him nude sleeping
+        with dissolve
+        scene black with fade
+        $ is_nude = False
+        $ renpy.end_replay()        
     call show_ending_cg
     $ persistent.got_good_ending = True
     ".:. Best Ending, 3 of 3."

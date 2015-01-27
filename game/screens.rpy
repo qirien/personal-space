@@ -236,7 +236,7 @@ screen extras:
         textbutton _("Return") action Return()
         if (persistent.got_all_endings):
             textbutton _("Omake") action Start("omake")
-        textbutton _("CG Gallery") action ShowMenu("cg_gallery")
+        textbutton _("Gallery") action ShowMenu("cg_gallery")
         textbutton _("Credits") action Start("show_credits")
 
 

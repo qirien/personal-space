@@ -147,7 +147,8 @@ label msg_6:
         natalia_c "Yes, it even kept Martín awake!"
     elif (highest_skill == "Social"):
         her_c "Free advice: never play Pictionary against Helen! She draws like da Vinci on speed..."
-        him_c "I thought we did pretty good!"
+        helen_c "Heh, thanks, [her_name]."
+        him_c "Hey, I thought we did pretty good!"
         her_c "You draw more like Picasso..."
         him_c "Well, he's a pretty good artist, right?"
         her_c "Not for Pictionary!"

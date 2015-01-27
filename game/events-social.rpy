@@ -5,6 +5,7 @@
 label social_def:
     "I met up with my friend Sara and we talked together. She is a great listener and understands me so well."
     $ skill_social += 10
+    return
 
 #
 # SOCIAL 0
@@ -617,6 +618,7 @@ label social_5:
             "Luckily, there were extra materials for building another house on the shuttle, but it took Ilian and Sara a few weeks to build it by themselves."
             "We didn't have time to help out; we were all too busy."
             "I hoped that something like that would never happen to us."
+            $ skill_social += 10
             return
         "You could stay at the clinic." if (profession == "doctor"):
             her "You could stay at the clinic; there's extra beds we're not using."
@@ -643,10 +645,11 @@ label social_6:
     call set_work_bg
     show her normal at quarterright with dissolve
     "As the colony's [profession], I knew a lot more than most about my job. I decided to hold a class to teach anyone who was interested in learning more.  It wasn't smart for me to be the only [profession] around."
-    show natalia at center
-    show thuc at left
     show brennan at quarterleft
-    show naomi at midleft
+    show natalia at center
+    show naomi at left      
+    show thuc at midleft
+
     with moveinleft
     if (profession == "doctor"):
         "I taught about basic first aid and health, and when to come into the clinic."
@@ -670,12 +673,13 @@ label social_6:
     elif (profession == "teacher"):
         "I held an open house for all the parents to come and see their kids' work. I also talked a little bit about my teaching philosophy, and how we handled having kids of all different ages in one classroom."
         natalia "Yes, that's very well, but could you please not give the older kids so much homework? We need them to have time to work on the farm, too."
-        thuc "That kind of training is vital to the success of our farms."
+        thuc sad "That kind of training is vital to the success of our farms."
         her concerned "I try to give all the kids time to complete their assignments at school. So if they are bringing work home, it is because they have not completed what they were supposed to at school."
         her normal "Sometimes they are more interested in each other than the material."
+        show thuc normal
         natalia "Well, then maybe they ought to do their work at home some days! They'd probably get more done without their friends to distract them!"
         her concerned "We could try that if you like, though I think their coming to school and mentoring the younger students has greatly benefited them, both in academic and social areas."
-        natalia "Hmmm. Well, we'll think about it."
+        natalia "Hmmm. Well, I'll think about it."
         show her normal
         "I think I helped the parents to understand a little bit better how our school system worked."
 
@@ -745,7 +749,7 @@ label social_7:
             her serious "No, but it just looks empty, so I wondered-"
             julia mad "You wondered?! If you have time to waste with wondering, then perhaps you should put it to better use than bothering people who are trying to get some work done!"
             her concerned "I'm sure you have a good reason--"
-            julia "Yes, but I see no reason to share our troubles with you. Thank you for stopping by, but I don't have any more time to share with you."
+            julia "Yes, but I see no reason to share our troubles with you. Thank you for stopping by, but I don't have any more time to waste today."
             "She pinned clothes furiously, and I thought I'd better leave."
             scene black with fade
             "I sent her an apology message later that day, and she wrote me back."
@@ -808,7 +812,7 @@ label social_8:
     show her normal at quarterleft with moveinleft
     "But to my surprise, the only one inside was the Mayor. He was facing away from me, dancing, and...singing?"
     show pavel at midright with move    
-    pavel "\"It's the end of the world, as we know it\nIt's the end of the world as we know it\nAnd I feel fine."
+    pavel "\"It's the end of the world, as we know it\nIt's the end of the world as we know it\nAnd I feel fine!\""
     show pavel at right with move
     "Either I giggled, or he sensed my presence, because he turned around looking sheepish."
     show pavel at center with move

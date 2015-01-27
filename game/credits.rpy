@@ -117,7 +117,7 @@ label show_credits:
         show brennan normal at right, rising behind text
         show lily upset at quarterleft, rising behind text
     else:
-        show brennan mad at right, rising behind text
+        show brennan normal at right, rising behind text
         show lily at quarterleft, rising behind text        
     with dissolve
     $ renpy.pause(6.0, hard=skippable)

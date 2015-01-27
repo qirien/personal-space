@@ -5,9 +5,9 @@
 label act_work:
     call set_work_bg
 
-    if (relaxed <= -10):
+    if (relaxed <= -8):
         "I worked hard at work. I was starting to feel burned out, though."
-    elif (relaxed >= 10):
+    elif (relaxed >= 8):
         "I breezed through work. Everything seemed easy."
     else:
         "I worked hard at work as usual."
@@ -19,7 +19,13 @@ label act_work:
 label act_skip_work:
     call set_work_bg
     play music "music/You.ogg" fadeout 1.0
-                
+    
+    # it doesn't count if you take time off right after giving birth
+    if (is_pregnant and (month == 25)):
+        "Brennan was taking care of everything he could at work so I could rest after giving birth to [baby_name]."
+        $ relaxed += 5
+        return
+         
     if (slacked_off == 3):
         "The mayor called me in to meet with him after work."
         show pavel at midright,behind her
@@ -47,7 +53,6 @@ label act_skip_work:
         pavel normal "I understand, but this can't happen all the time. We need you here."
         her serious "All right, thanks for understanding."
         $ slacked_off = 0
-        $ relaxed -= 2  #it's stressful to get caught slacking off
     else:
         "I took a little time off work and didn't push myself this month."
         $ relaxed += 5
@@ -255,10 +260,10 @@ label work_0:
 # the mayor offering to find her some help.
 label work_1:
     $ times_worked += 1
-    if (relaxed > 10):
+    if (relaxed > 5):
         $ relaxed = 0
     else:
-        $ relaxed -= 10
+        $ relaxed -= 5
     $ community_level += 2
 
     call set_work_bg
@@ -423,6 +428,8 @@ label work_1:
     # TEACHER
     elif (profession == "teacher"):
         show her normal at center with dissolve
+        show raul at midleft
+        show kid at midright
         play bg_sfx "sfx/kids.mp3"
         "Normally twenty-three students would be a nice size for a classroom. But my students are all different ages and skill levels. We have some good technology to help us out, but sometimes it's not enough..."
         her serious "On your computer pad you will see that I have sent each of you some reading about ancient Rome, appropriate for your skill level. Please read the selection, and then answer the questions at the end."
@@ -430,14 +437,21 @@ label work_1:
         her normal "We're going to make some different shapes out of paper, and see which ones will fly the best."
         "They all liked that idea, but the kids that were still reading didn't want to miss out on paper airplanes, so they ended up building those instead of doing their history work."
 
+        scene bg path with fade
+        show her serious at center
+        show kid frown at quarterright        
+        show van wince at midright
+        with dissolve
         "At recess, one of the kids fell and got a bloody nose. While I was helping him, two of the teenage boys started arguing on the other side of the field."
         "One of them punched the other. Soon they were wrestling and rolling on the ground yelling. I ran to try to stop them."
         her angry "Stop! Stop it, now!"
         "They kept fighting. The kid with the bloody nose was crying, some of the kids were screaming and some were chanting and jeering, and I was trying to pull them apart."
         play bg_sfx "sfx/punch.mp3"
         "One of the punches missed the kid and hit me in the head. I must have blacked out for a minute, because when I woke up the fight was over and all the kids were looking down at me worriedly."
+        scene black with fade
         stop bg_sfx fadeout 1.0
         "I separated the two fighters, and somehow I managed to make it through the rest of that day. Just as the children were all leaving, the mayor came by."
+        call set_work_bg
         show her concerned at midright with dissolve
         show pavel at midleft, behind her with moveinleft
         pavel sad "[her_name], are you all right?"
@@ -474,10 +488,10 @@ label work_2:
     menu:
         "What should I say?"
         "Nice to meet you.":
-            her "Nice to meet you, Brennan. It will be good to have some help sometimes."
+            her happy "Nice to meet you, Brennan. It will be good to have some help sometimes."
             brennan happy "You're quite welcome."
         "I remember you, too.":
-            her "Yes, I remember you too, Brennan. Thanks for agreeing to help out."
+            her happy "Yes, I remember you too, Brennan. Thanks for agreeing to help out."
             brennan happy "You're quite welcome."
         "I'm more than just a pretty face.":
             her flirt "I'm more than just a pretty face, I hope."
@@ -553,8 +567,8 @@ label work_2:
                     brennan "I'm sorry; I didn't mean to make you uncomfortable. Quite the opposite, actually."
                     her serious "Right. Now we've got work to do."
                     "Things went more smoothly after that, and we got a lot of work done."
-                "Just talk to him.":
-                    her concerned "By 'talk' you mean 'speak words with' not 'punch in the face', right?"
+                "Just \"talk\" to him.":
+                    her concerned "By \"talk\" you mean \"speak words with\" not \"punch in the face\", right?"
                     him annoyed "Of course, what kind of barbarian do you think I am?"
                     her annoyed "I don't know, I was just making sure!"
                     "I didn't hear anything else about it, but the next time Brennan came to help, he acted much more professionally. That sure made things easier at work."
@@ -570,7 +584,7 @@ label work_2:
 # working hard
 label work_3:
     $ times_worked += 1
-    $ relaxed -= 5
+    $ relaxed -= 2
     call set_work_bg
     show her serious at midright with dissolve
 
@@ -608,14 +622,23 @@ label work_3:
 
     # TEACHER
     elif (profession == "teacher"):
+        show kid frown at center
+        show raul at midleft
+        show van at right
+        with dissolve
+        
         "I worked hard all month. We had to be a lot more flexible than at a regular school, as sometimes kids were absent if they were needed at home on the farm. I wrote up an entirely new curriculum customized for teaching all ages at once, so that all the kids could be studying the same topic but at their own level."
         "Some of my lessons were not as interesting to the kids as I hoped they'd be, but usually they went over pretty well. I felt like the kids were learning a lot."
         "The best part was really being able to concentrate on the students. I didn't have to administer any standardized tests or fill out long forms or go to staff meetings."
         "And I could teach what they really needed to learn and wanted to learn, not just what some committee thought they should learn."
          
-        show brennan at quarterleft with dissolve
+        show brennan at quarterleft with moveinleft
         "Brennan worked hard, too - he didn't have any experience with teaching, but he was good with kids and helped keep them on task."
         "There were times when just having another adult around was so important."
+        hide kid
+        hide raul
+        hide van
+        with moveoutleft
     show her normal
     her normal "Good work today, Brennan."
     brennan "Thanks, [her_name]. It's a pleasure working with you."
@@ -673,7 +696,7 @@ label work_3:
 # Something bad happens - Brennan helps out.
 label work_4:
     $ times_worked += 1
-    if (relaxed >= 10):
+    if (relaxed > 10):
         $ relaxed = 5
     else:
         $ relaxed -= 5
@@ -1035,13 +1058,21 @@ label work_6:
         "Inspired by the idea of replacing complicated parts with more simple ones, I set about looking at our inventory and cataloguing how parts we had a lot of could be used to substitute for parts we were running out of."
         "Soon it was lunch time."
     elif (profession == "teacher"):
-        show her normal at center with dissolve
+        show her normal at midright
+        show brennan at left        
+        show kid frown at center
+        show raul at midleft
+        show van at right
+        with dissolve
         her serious "Class, after you read your assigned section on nomads of the Great Steppe, please write about ways our colony is similar to and different from the nomad culture."
         her normal "Once you've done that, you can come over here and we will learn some wood carving techniques that they used to make and decorate their furnishings."
-        hide her with dissolve
         "I tried to include a hands-on component to all our learning, even if sometimes it wasn't completely related."
         "Of course, most of the kids just dashed off a few sentences before coming to watch Brennan teach woodcarving, so I had to make some of them go back and work on it some more."
         "Soon it was lunchtime, and the kids went home to eat."
+        hide kid
+        hide raul
+        hide van
+        with moveoutleft
 
     show her normal at midright
     show brennan at midleft
@@ -1220,7 +1251,8 @@ label work_6:
             show brennan at midleft
             with moveinleft
             "We all went over to the Grayson's house where Brennan lived. He fried up some potatoes and cabbage and eggs for us, and we talked and laughed all together."
-            her surprised "Oh! It's been almost an hour; we have to get back to work!"
+            her surprised "Oh! It's been almost an hour; we should get back to work!"
+            show her happy with dissolve            
             sara "Thanks for lunch, Brennan. We should do this again sometime."
             brennan happy "It was my pleasure to entertain you."
             $ brennan_relationship += 1
@@ -1324,10 +1356,10 @@ label work_7:
                     "It looked a little bit like a computer, with a metal case and some LEDs lighting up every now and then. But there was no writing or labels on the case at all. It made a low humming noise."
                     her surprised "What is that?"
                     show brennan mad at left with moveinleft
-                    "Suddenly, I heard footsteps and I jumped. Brennan was in the doorway, watching me. He seemed amused."
+                    "Suddenly, I heard footsteps and I jumped. Brennan was in the doorway, watching me."
                     her concerned "I was just, ah, well..."
                     "He entered the room, closing the door behind him."
-                    show brennan at midleft with move
+                    show brennan mad at midleft with move
                     jump brennan_confess
                     
                 "Give him the batteries." if has_batteries:
@@ -1338,7 +1370,7 @@ label work_7:
 
                     "I brought the batteries back to Brennan."
                     brennan happy "Thank you so much, [her_name]. I'm completely in your debt."
-                    her normal "You're welcome..."
+                    her concerned "You're welcome..."
                     return
 
         "No, sorry.":
@@ -1373,7 +1405,7 @@ label brennan_confess:
     her angry "How could you hide this technology? People could have been using this to talk to their families back on Earth!"
     brennan "That's just it - there's not enough bandwidth for that. I can only send small bits of text at a time - like a telegraph. And besides, when I first came here we weren't even sure it would work."
     her surprised "So why did you need the extra batteries?"
-    brennan "If it ever turns off, even for a second, the connection will be broken and I'll completely lose contact."
+    brennan mad "If it ever turns off, even for a second, the connection will be broken and I'll completely lose contact."
     if (brennan_relationship >= 1):
         her sad "What else are you hiding? Were you ever even a salesman, like you said?"
         brennan normal "I never lied to you, [her_name]. But I hope you'll understand why I never told you about this."
@@ -1401,7 +1433,7 @@ label brennan_confess:
             her annoyed "..."
             brennan normal "...Do you think they'll forgive me?"
             her serious "We'll see."
-            "Brennan and I worked out a proposed system where he would send one message a month under a certain length for each family. Then we told the colony about the device."
+            "Brennan and I worked out a proposed system where colonists could take turns giving him a short message to send. Then we told the colony about the device."
             scene bg community_center with fade
             show brennan mad at midleft
             show him angry at midright
@@ -1428,7 +1460,7 @@ label brennan_confess:
             her serious "We can send messages to Earth instantaneously! No more waiting four years for your families to get your messages, and another four years for them to write back!"
             hide julia
             show sara at center with dissolve
-            sara "My family is going through a lot right now... at least, they were four years ago. Being able to write back and forth to them will help me so much."
+            sara sad "My family is going through a lot right now... at least, they were four years ago. Being able to write back and forth to them will help me so much."
             show pete at left with dissolve
             pete "..."
             him concerned "..."
@@ -1476,11 +1508,11 @@ label brennan_confess:
                     brennan normal "I owe you much more than that. Thank you, [her_name]."
     return
 
-# MONTH 24 Resolve things at work? Someone you've helped says thank you?
+# MONTH 24 Someone at work you can't help.
 # Brennan says he's leaving, do you want to come
 label work_8:
     $ times_worked += 1
-    $ relaxed -= 5
+    $ relaxed -= 2
 
     call set_work_bg
     show her normal at midright with dissolve
