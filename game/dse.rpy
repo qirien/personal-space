@@ -150,11 +150,9 @@ label day:
     # We process each of the three periods of the day, in turn.
 label job_focus:
 
-    scene black
     # Tell the user what month it is.
-    show text "{color=#ffffff}{font=fonts/Kristi.ttf}{size=50}Month [month] of 25\n\nAt Work{/size}{/font}{/color}"
-    $ renpy.pause(2.0)
-    hide text
+    call inter_scene_text("At Work")
+
     play music "music/Isaiah.ogg" fadeout 1.0
 
     # Set these variables to appropriate values, so they can be
@@ -180,10 +178,7 @@ label skill_focus:
         jump relaxation_focus
 
     # The rest of this is the same as for the job_focus.
-    scene black
-    show text "{color=#ffffff}{font=fonts/Kristi.ttf}{size=50}Month [month] out of 25\n\nSkill Focus{/size}{/font}{/color}"
-    $ renpy.pause(2.0)
-    hide text
+    call inter_scene_text("Skill Focus")
     play music "music/OceansApart.ogg" fadeout 1.0
 
     $ period = "skill_focus"
@@ -200,10 +195,7 @@ label relaxation_focus:
     if check_skip_period():
         jump monthly_event
 
-    scene black
-    show text "{color=#ffffff}{font=fonts/Kristi.ttf}{size=50}Month [month] out of 25\n\nFree Time{/size}{/font}{/color}"
-    $ renpy.pause(2.0)
-    hide text
+    call inter_scene_text("Free Time")
 
     $ period = "relaxation_focus"
     $ act = relaxation_focus_act
@@ -221,11 +213,8 @@ label relaxation_focus:
 label monthly_event:
     if check_skip_period():
         jump end_of_month
-    
-    scene black
-    show text "{color=#ffffff}{font=fonts/Kristi.ttf}{size=50}Month [month] out of 25\n\nEvent!{/size}{/font}{/color}"
-    $ renpy.pause(2.0)
-    hide text
+
+    call inter_scene_text("Event!")
     play music "music/RainSea.ogg" fadeout 1.0
 
     $ period = "monthly_event"
@@ -269,4 +258,15 @@ label dp_callback:
     #$ narrator("What should I focus on this month?", interact=False)
     $ display_stats()
 
+    return
+
+label inter_scene_text(type=None):
+    scene orange_glow with fade
+    show text "{color=#ffffff}{font=fonts/Kristi.ttf}{size=150}Month [month] of 25{/size}{/font}{/color}" with irisin
+    $ renpy.pause(2.0)
+    
+    if (type is not None):
+        show text "{color=#ffffff}{font=fonts/Kristi.ttf}{size=150}[type]{/size}{/font}{/color}" with irisout
+        $ renpy.pause(2.0)
+    hide text
     return

@@ -226,7 +226,7 @@ screen extras:
     tag menu
     
     window:
-        style "gm_root"
+        style "mm_root"
         
     vbox:
         style_group "mm"

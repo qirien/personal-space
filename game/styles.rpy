@@ -143,7 +143,7 @@ style pref_slider:
 style soundtest_button:
     xalign 1.0
     
-style prefs_label_text is cp_header_text
+style prefs_label_text is gallery_caption_text
 
 style prefs_label is label:
     xalign 0.5

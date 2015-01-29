@@ -208,6 +208,7 @@ label settling_in:
             crop (0,0,1024,600)
             easein 10.0 crop (884, 272, 1024, 600)
         play music "music/You.ogg" fadeout 1.0        
+        $ renpy.pause(12.0)
         "Finally, we arrived."
         $ renpy.end_replay()
     "The first month on Talaam was really busy. We arrived at the end of winter, so it was cold and rainy. We all worked together to get everyone's houses up right away. The first one took the longest, as we had to figure out how to put all the pieces together."

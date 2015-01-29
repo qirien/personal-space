@@ -38,6 +38,7 @@ init -1:
     image bg city_street = "bg/city-street.jpg"
     image bg bathhouse = "bg/bathhouse.jpg"
     image bg gray_silk = "bg/silk-gray.jpg"
+    image orange_glow = "bg/orange-glow.jpg"
 
     image cg_together = "bg/cg-1.png"
     image cg_mediocre = "bg/mediocre-ending.jpg"
