@@ -120,17 +120,30 @@ style pref_frame:
     xmargin 5
     top_margin 5
     
+style pref_label is label:
+    xalign 0.5
+    
+style pref_label_text is sans_text:
+    bold True
+    color "#000"
+    
 style pref_vbox:
-    xfill True
+    #xfill True
+    xalign 0.5
+    ypadding 20
     
 style pref_button:
     size_group "pref"
-    xalign 1.0
+    xalign 0.5
     
 style pref_slider:
     xmaximum 192
-    xalign 1.0
+    xalign 0.5
     
 style soundtest_button:
     xalign 1.0
     
+style prefs_label_text is cp_header_text
+
+style prefs_label is label:
+    xalign 0.5

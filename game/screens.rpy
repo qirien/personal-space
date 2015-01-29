@@ -288,7 +288,8 @@ screen file_picker:
         style "file_picker_frame"
         xalign 0.1
         yalign 0.1
-        xmaximum 835
+        xmaximum 875
+        xpadding 15
 
         has vbox
 
@@ -307,7 +308,7 @@ screen file_picker:
             #textbutton _("Quick"):
             #    action FilePage("quick")
 
-            for i in range(1, 10):
+            for i in range(1, 5):
                 textbutton str(i):
                     action FilePage(i)
                     
@@ -317,12 +318,13 @@ screen file_picker:
         $ columns = 2
         $ rows = 2
                 
+        label _("")
         # Display a grid of file slots.
         grid columns rows:
             transpose True
             xfill True
             style_group "file_picker"
-            spacing 5
+            spacing 10
             
             # Display ten file slots, numbered 1 - 10.
             for i in range(1, columns * rows + 1):
@@ -337,7 +339,7 @@ screen file_picker:
                     # Add the screenshot.
                     add FileScreenshot(i)
                     # Format the description, and add it as text.
-                    $ description = "% 2s. %s\n%s" % (
+                    $ description = "% 2s. %s\n{b}%s{/b}" % (
                         FileSlotName(i, columns * rows),
                         FileTime(i, empty=_("Empty Slot.")),
                         FileSaveName(i))
@@ -385,102 +387,105 @@ screen preferences:
 
     # Include the navigation.
     use navigation
+    frame:
+        background None
+        xalign 0.1
+        yalign 0.1
+        
+#        top_padding 40
+#        bottom_padding 20
+#        left_padding 50
+#        right_padding 55
 
-    # Put the navigation columns in a three-wide grid.
-    grid 3 1:
-        style_group "prefs"
-        xfill True
+        # Put the navigation columns in a three-wide grid.
+        grid 3 1:
+            style_group "prefs"
+            xfill True
+            spacing 15
+            
 
-        # The left column.
-        vbox:
-            frame:
-                style_group "pref"
-                has vbox
-
-                label _("Display")
-                textbutton _("Window") action Preference("display", "window")
-                textbutton _("Fullscreen") action Preference("display", "fullscreen")
-
-            frame:
-                style_group "pref"
-                has vbox
-
-                label _("Transitions")
-                textbutton _("All") action Preference("transitions", "all")
-                textbutton _("None") action Preference("transitions", "none")
-
-            frame:
-                style_group "pref"
-                has vbox
-
-                label _("Text Speed")
-                bar value Preference("text speed")
-
-            frame:
-                style_group "pref"
-                has vbox
-
-                textbutton _("Joystick...") action Preference("joystick")
-
-        vbox:
-            frame:
-                style_group "pref"
-                has vbox
-
-                label _("Skip")
-                textbutton _("Seen Messages") action Preference("skip", "seen")
-                textbutton _("All Messages") action Preference("skip", "all")
+            # The left column.
+            vbox:
+                spacing 15
+                label "Display Options" text_style
                 
-                textbutton _("Begin Skipping") action Skip()
+                frame:
+                    style_group "pref"
+                    has vbox
+                    label _("Size")
+                    hbox:
+                        textbutton _("Window") action Preference("display", "window")
+                        textbutton _("Fullscreen") action Preference("display", "fullscreen")
 
-            frame:
-                style_group "pref"
-                has vbox
+                    label _("")
+                    label _("Transitions")
+                    hbox:
+                        textbutton _("All") action Preference("transitions", "all")
+                        textbutton _("None") action Preference("transitions", "none")
 
-                label _("After Choices")
-                textbutton _("Stop Skipping") action Preference("after choices", "stop")
-                textbutton _("Keep Skipping") action Preference("after choices", "skip")
-                
-            frame:
-                style_group "pref"
-                has vbox
-                label _("Auto Mode")
-                textbutton _("Enabled") action Preference("auto-forward", "enable")
-                textbutton _("Disabled") action Preference("auto-forward", "disable")
+                    label _("")
+                    label _("Text Speed")
+                    bar value Preference("text speed")
 
-                label _("Auto-Forward Time")
-                bar value Preference("auto-forward time")
-        vbox:
-            frame:
-                style_group "pref"
-                has vbox
+                frame:
+                    style_group "pref"
+                    has vbox
 
-                label _("Music Volume")
-                bar value Preference("music volume")
+                    textbutton _("Joystick...") action Preference("joystick")
 
-            frame:
-                style_group "pref"
-                has vbox
+            vbox:
+                spacing 15
+                label "Skipping Options"
+                frame:
+                    style_group "pref"
+                    has vbox
 
-                label _("Sound Volume")
-                bar value Preference("sound volume")
+                    label _("Skip")
+                    hbox:
+                        textbutton _("Seen Messages") action Preference("skip", "seen")
+                        textbutton _("All Messages") action Preference("skip", "all")
+                    
+                    textbutton _("Begin Skipping") action Skip()
 
-                if config.sample_sound:
-                    textbutton "Test":
-                        action Play("sound", config.sample_sound)
-                        style "soundtest_button"
+                    label _("")
+                    label _("After Choices")
+                    hbox:
+                        textbutton _("Stop Skipping") action Preference("after choices", "stop")
+                        textbutton _("Keep Skipping") action Preference("after choices", "skip")
+                    
+                    label _("")
+                    label _("Auto Mode")
+                    hbox:
+                        textbutton _("Enabled") action Preference("auto-forward", "enable")
+                        textbutton _("Disabled") action Preference("auto-forward", "disable")
 
-            frame:
-                style_group "pref"
-                has vbox
+                    label _("")
+                    label _("Auto-Forward Time")
+                    bar value Preference("auto-forward time")
+            
+            vbox:
+                spacing 15
+                label "Audio Options"
+                frame:
+                    style_group "pref"
+                    has vbox
 
-                label _("Voice Volume")
-                bar value Preference("voice volume")
+                    label _("Music Volume")
+                    bar value Preference("music volume")
 
-                if config.sample_voice:
-                    textbutton "Test":
-                        action Play("voice", config.sample_voice)
-                        style "soundtest_button"
+                    label _("")
+                    label _("Sound Volume")
+                    bar value Preference("sound volume")
+
+                    if config.sample_sound:
+                        textbutton "Test":
+                            action Play("sound", config.sample_sound)
+                            style "soundtest_button"
+
+                    if config.sample_voice:
+                        textbutton "Test":
+                            action Play("voice", config.sample_voice)
+                            style "soundtest_button"
 
 
 

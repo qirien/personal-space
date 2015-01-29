@@ -219,35 +219,30 @@ screen skill_screen():
         yalign 0.5
         xalign 0.5
         has vbox
-        frame:
-            #xpadding 45
-            #ypadding 20
-            xalign 0.5
-            has vbox
-            label "Skills"
-            grid 2 4:
-                spacing 20
-                $ v = 0
-                for s in dse_stats:
-                    frame:
-                        vbox:
-                            xmaximum 250
-                            xalign 0.5
-                            $ v = getattr(store, s.var)
-                            hbox:
-                                xfill True
-                                text s.name xalign 0.0
-                                text "%d/%d" % (v, s.max) xalign 1.0
-                            bar value v range s.max
-                            
-                vbox:
-                    text ""
-            
-            textbutton _("Done"):
-                xalign 1.0
-                yalign 1.0
-                action Hide("skill_screen")
+        label "Skills"
+        grid 2 4:
+            spacing 20
+            $ v = 0
+            for s in dse_stats:
+                frame:
+                    vbox:
+                        xmaximum 250
+                        xalign 0.5
+                        $ v = getattr(store, s.var)
+                        hbox:
+                            xfill True
+                            text s.name xalign 0.0
+                            text "%d/%d" % (v, s.max) xalign 1.0
+                        bar value v range s.max
+                        
+            vbox:
+                text ""
         
+        textbutton _("Done"):
+            xalign 1.0
+            yalign 1.0
+            action Hide("skill_screen")
+    
             
 screen heart_display():
     hbox:

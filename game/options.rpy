@@ -13,7 +13,7 @@ init -1 python hide:
     ## set to False before the game is released, so the user can't
     ## cheat using developer tools.
 
-    config.developer = False
+    config.developer = True
 
     ## These control the width and height of the screen.
 
@@ -71,7 +71,7 @@ init -1 python hide:
         ## The background of the game menu. This can be a color
         ## beginning with '#', or an image filename. The latter
         ## should take up the full height and width of the screen.
-        gm_root = "bg/starscape.jpg",
+        gm_root = "bg/silk-gray.jpg",
 
         ## The fonts used by this theme. The default fonts may not be
         ## suitable for non-English languages.
