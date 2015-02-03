@@ -218,9 +218,9 @@ label settling_in:
     show him normal at midleft
     with dissolve
     her annoyed "Why is our house so far from everyone else?"
-    him serious "I picked this spot on purpose. It's close enough that you can walk to work easily, but far enough away that we have plenty of room."
-    her surprised "Room for what?"
-    him normal "Room to grow! Room to breathe! Room to do whatever we want! We can yodel, or have loud parties, or make love in the backyard, or do anything we want! No nosy neighbors!"
+    him serious "I picked this spot on purpose. It's close enough that you can walk to work easily, but far enough away that we have plenty of space."
+    her surprised "Space for what?"
+    him normal "Space to grow! Space to breathe! Space to do whatever we want! We can yodel, or have loud parties, or make love in the backyard, or do anything we want! No nosy neighbors!"
     her annoyed "Yeah, but you're not the one who has to walk two kilometers to work every day..."
     him normal "I think you'll like it. There's no room for a big farm in town, anyway."
     her concerned "I guess you're right."

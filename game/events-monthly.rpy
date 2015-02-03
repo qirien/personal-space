@@ -290,7 +290,7 @@ label unappreciated:
     him annoyed "Well, it just seems kind of like a waste of time when there's so much real work to be done."
     her angry "Real work?! You don't think I do real work?!"
     him angry "Real work provides food, clothing, shelter. The necessities. We don't have extra time for anything else in order for the colony to survive."
-    her "If it's just about survival, life isn't worth living."
+    her annoyed "If it's just about survival, life isn't worth living."
     him "Well, you don't even get a choice if you don't survive. If something goes wrong, who's going to help us out here? There's no food banks, no Red Cross, no emergency rooms - just us."
     $ relaxed -= 5
     $ loved -= 5
@@ -1122,8 +1122,8 @@ label monthly_event_9:
         "What should I say?"
         "Give me stuff.":
             her normal "I'd like if you gave me gifts - nothing big, obviously, but just something little to show you were thinking about me."
-            him "Really? You like that sort of thing?"
-            her "Yes, it would mean a lot to me."
+            him surprised "Really? You like that sort of thing?"
+            her serious "Yes, it would mean a lot to me."
             $ she_wants = "stuff"
         "Tell me how much you love me.":
             her normal "I'd love it if you told me how much you love me."
@@ -1135,12 +1135,12 @@ label monthly_event_9:
         "Do more things together.":
             her normal "I want to do things with you more often."
             him surprised "What kinds of things?"
-            her "Anything - go on walks, make dinner together, play games together."
+            her normal "Anything - go on walks, make dinner together, play games together."
             $ she_wants = "dostuff"
         "Do things for me.":
             her normal "I'd like you to do little things for me sometimes."
             him surprised "Like what?"
-            her "Like, washing the dishes when it's my turn, or picking something up from the storehouse, or things like that."
+            her concerned "Like, washing the dishes when it's my turn, or picking something up from the storehouse, or things like that."
             $ she_wants = "service"
         "Show more affection.":
             her normal "I'd like to hold hands more, hug more, just be close to each other more."
@@ -1150,8 +1150,8 @@ label monthly_event_9:
         "I want you to know what I want.":
             her normal "I don't want to have to tell you what I want; you should figure it out on your own."
             him annoyed "With what, telepathy? I thought that's what communication was for."
-            her annoyed "Well, it's not romantic if I have to tell you 'Hey, don't forget to say 'I love you'."
-            him "Okay, so you want me to say 'I love you' more often?"
+            her annoyed "Well, it's not romantic if I have to tell you \"Hey, don't forget to say 'I love you'.\""
+            him "Okay, so you want me to say \"I love you\" more often?"
             her "No! I mean, that's fine, but I want you to do romantic things because you feel romantic, not because you feel like you're supposed to."
             him angry "Tch, I give up. You obviously don't want to tell me what you want, and I'm not going to waste time guessing."
             $ she_wants = "nothing"
@@ -1212,7 +1212,7 @@ label monthly_event_9:
             her normal "These are really good! You have to try one.."
             him happy "Well, okay!"
         if (she_wants == "saynicestuff"):
-            him normal "Your laugh is like a supernova that blasts away my stress and makes the whole world seem like a garden."
+            him normal "Your laugh is like a supernova that blasts away my stress and makes the whole world seem like a cosmic garden of possibilities."
             her laughing "Ha ha ha, ha ha, really?"
             him happy "Yes, and I love how you're such a good [profession]. Not only do you know what you're doing, but you're nice to people about it, too."
             her happy "Thank you, [his_nickname]."
@@ -2069,10 +2069,9 @@ label funeral:
 
     lily normal "He shows great remorse. I doubt he will be so careless as to repeat his mistakes."
     ilian "It could have been any of us..."
-    thuc "But would one of us have dumped her body in the river and covered it up? That behavior is suspicious. He says it was an accident, but who can tell for certain?"
+    thuc "But would one of us have dumped her body in the river and covered it up? He says it was an accident, but who can tell for certain?"
     her surprised "But why would anyone kill Josephina?"
-    thuc "Why does any criminal do what they do? They want to, and they don't care about other people."
-    thuc "Or maybe he was trying to cover up something else he did to her."
+    thuc "Maybe he was trying to cover up something else he did to her."
     show her serious
     lily upset "That is pure speculation. Pete has not shown any other behavior that would be cause for concern."
     ilian "Except for being a jackass."
@@ -2964,9 +2963,9 @@ label monthly_event_18:
             him surprised "Really? I know you have plenty of your own things to do..."
             her flirt "It's not that hard to pick tomatoes and peppers."
             him happy "Okay, awesome! If there's anything you need done that doesn't involve hands, maybe I can do that?"
-            her concerned "Ummm... yeah, maybe you can dictate some e-mails for me?"
+            her concerned "Ummm... yeah, maybe you can sing to me?"
             him serious "Sure..."
-            "(I will probably have to type them over again, anyway, but he needs something useful to do!)"
+            "(He's not that great of a singer, but he needs something to do!)"
             "It was exhausting going to work and then coming home and harvesting vegetables, but at least we got them all picked."
         "{i}The kids at school can help out!{/i}" if (profession == "teacher"):
             her happy "Picking tomatoes and peppers is not that hard; why don't I have my students help out?"
@@ -4744,7 +4743,7 @@ label monthly_event_24:
                 him annoyed "But I guess you wouldn't understand that."
                 her surprised "What do you mean?"
                 him angry "You're so lazy! You just do the bare minimum you need and that's all. Things will never get better if you don't work at them!"
-                her angry "I work plenty hard! But there's other things that are important, too!"
+                her angry "I work plenty hard! But other things are important, too!"
                 him angry "Really? Like what! What's more important than surviving, than building up our community?!"
                 her annoyed "How about my sanity?! Have you ever considered that? No! Because you don't think about how anyone else feels! You just think everyone else must feel like you do!"
                 him annoyed "I know how you feel; you're just wrong."

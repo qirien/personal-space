@@ -237,6 +237,7 @@ screen extras:
         if (persistent.got_all_endings):
             textbutton _("Omake") action Start("omake")
         textbutton _("Gallery") action ShowMenu("cg_gallery")
+        textbutton _("Trailer") action Start("trailer")
         textbutton _("Credits") action Start("show_credits")
 
 
