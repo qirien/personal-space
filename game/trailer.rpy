@@ -5,19 +5,28 @@ image title = "bg/title-screen.png"
 
 label trailer:
     play music "music/Rain.ogg" fadein 1.0
+    scene black with fade
+    $ renpy.pause(3.0)
+    scene cuttlefish with fade
+    $ renpy.pause(3.0)
     scene title with fade
     $ renpy.pause(3.0)
-    scene bg city_street with fade
-    show her happy at midleft 
-    with moveinleft
-    "I thought I knew what love was."
-    show him happy at midright
-    with moveinright    
-    "Smiling ridiculously whenever I thought of him."
-    "Counting down the minutes until we could meet again."
-    show him sleeping at center with move
-    show her sleeping with dissolve    
-    "My heart beating faster when we kissed."
+    
+    scene black with fade
+    show text "{size=80}{font=fonts/Kristi.ttf}a sci-fi relationship simulation\nvisual novel{/font}{/size}"
+    $ renpy.pause(2.0)
+    
+#    scene bg city_street with fade
+#    "I thought I knew what love was."    
+#    show her happy at midleft 
+#    with moveinleft
+#    "Smiling ridiculously whenever I thought of him."
+#    show him happy at midright
+#    with moveinright        
+#    "Counting down the minutes until we could meet again."
+#    show him sleeping at center with move
+#    show her sleeping with dissolve    
+#    "My heart beating faster when we kissed."
     
     scene bg porch with fade
     show her surprised at midleft
@@ -102,7 +111,7 @@ label trailer:
             scene black with fade
             $ wearing_dress = False
         
-    show her normal at center, squatting with move
+    show her happy at center, squatting with move
 #    "And then he pulled me close and whispered into my hair."
 #    him nude serious "I love you so much... I need to make this work. I'll do what it takes."
 #    show her concerned with dissolve
@@ -139,14 +148,14 @@ label trailer:
     show text "{size=80}{font=fonts/Kristi.ttf}Explore Different Skills{/font}{/size}"
     $ renpy.pause(2.0)
     
-    scene bg hotspring with fade
-    show her normal at center
-    show him normal at midleft
-    with moveinleft    
-    "We followed the stream up the mountain further, until we found a hot spring!"
+#    scene bg hotspring with fade
+#    show him normal at midleft
+#    show her normal at center    
+#    with moveinleft    
+#    "We followed the stream up the mountain until we found a hot spring!"
     
     scene bg sunset with fade
-    "I hadn't done any photography in a long time, but the way the light was coming through the clouds really inspired me."
+    "I hadn't done any photography in a long time, but the way the light drifted across the empty plain really inspired me."
     
     scene bg laundry with fade
     show her serious at center with dissolve
@@ -158,7 +167,7 @@ label trailer:
     
     scene bg colony_ship_bunk with fade
     show him normal at midright
-    show her normal at midleft
+    show her surprised at midleft
     with dissolve
     him surprised "So, what do you think about having kids?"
     
@@ -191,7 +200,7 @@ label trailer:
     show him serious at midleft 
     him normal "I'm glad you came with me to build this fence; everything's better with you."
     her flirt "Tough manual labor is not so bad when we're together."
-    him concerned "You'll stay with me... won't you?"
+    him concerned "We will stay together, won't we? Forever?"
     show her surprised with dissolve
     $ renpy.pause(1.0)
             
