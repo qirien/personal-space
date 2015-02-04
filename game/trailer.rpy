@@ -13,7 +13,7 @@ label trailer:
     $ renpy.pause(3.0)
     
     scene black with fade
-    show text "{size=80}{font=fonts/Kristi.ttf}a sci-fi relationship simulation\nvisual novel{/font}{/size}"
+    show text "{size=60}{font=fonts/Exo2.otf}a sci-fi relationship simulation\nvisual novel{/font}{/size}"
     $ renpy.pause(2.0)
     
 #    scene bg city_street with fade
@@ -101,15 +101,10 @@ label trailer:
             her normal "I don't want to have to tell you what I want; you should figure it out on your own."
             him nude annoyed "With what, telepathy? I thought that's what communication was for."
             her annoyed "Well, it's not romantic if I have to tell you 'Hey, don't forget to say 'I love you'."
-            him nude "Okay, so you want me to say 'I love you' more often?"
-            her "No! I mean, that's fine, but I want you to do romantic things because you feel romantic, not because you feel like you're supposed to."
-            him nude angry "Tch, I give up. You obviously don't want to tell me what you want, and I'm not going to waste time guessing."
-            $ she_wants = "nothing"
-            $ loved -= 5
-            hide him with moveoutright
-            her angry "(He is not romantic at all!)"
-            scene black with fade
-            $ wearing_dress = False
+            him nude surprised "Okay, so you want me to say 'I love you' more often?"
+            her concerned "No! I mean, that's fine, but I want you to do romantic things because you feel romantic, not because you feel like you're supposed to."
+            him nude annoyed "Oooookay. I guess I'll try that, then."
+            her flirt "It's not that hard; you can do it."
         
     show her happy at center, squatting with move
 #    "And then he pulled me close and whispered into my hair."
@@ -118,7 +113,7 @@ label trailer:
 
     scene black with fade
     $ is_nude = False
-    show text "{size=80}{font=fonts/Kristi.ttf}{size=80}{font=fonts/Kristi.ttf}Solve Problems at Work{/font}{/size}"
+    show text "{size=60}{font=fonts/Exo2.otf}{size=60}{font=fonts/Exo2.otf}Solve Problems at Work{/font}{/size}"
     $ renpy.pause(2.0)    
     
     scene bg machine_shop with fade
@@ -129,7 +124,7 @@ label trailer:
 #    her serious "Well, there's nothing we can do, unless..."
     
     scene black with fade
-    show text "{size=80}{font=fonts/Kristi.ttf}Strengthen the Community{/font}{/size}"
+    show text "{size=60}{font=fonts/Exo2.otf}Strengthen the Community{/font}{/size}"
     $ renpy.pause(2.0)   
     
     scene bg community_center with fade
@@ -145,7 +140,7 @@ label trailer:
     show her concerned with dissolve
     
     scene black with fade
-    show text "{size=80}{font=fonts/Kristi.ttf}Explore Different Skills{/font}{/size}"
+    show text "{size=60}{font=fonts/Exo2.otf}Explore Different Skills{/font}{/size}"
     $ renpy.pause(2.0)
     
 #    scene bg hotspring with fade
@@ -162,7 +157,7 @@ label trailer:
     her concerned "It looks like it'll take at least a month to make soap from scratch..."
     
     scene black with fade
-    show text "{size=80}{font=fonts/Kristi.ttf}Decide the Future of their Family{/font}{/size}"
+    show text "{size=60}{font=fonts/Exo2.otf}Decide the Future of their Family{/font}{/size}"
     $ renpy.pause(2.0)
     
     scene bg colony_ship_bunk with fade
@@ -172,14 +167,14 @@ label trailer:
     him surprised "So, what do you think about having kids?"
     
     scene black with fade
-    show text "{size=80}{font=fonts/Kristi.ttf}Choose Your Own Fate{/font}{/size}"
+    show text "{size=60}{font=fonts/Exo2.otf}Choose Your Own Fate{/font}{/size}"
     $ renpy.pause(2.0)
     
     scene screenshot with fade
     "Time to decide what to do this month..."
     
     scene black with fade
-    show text "{size=80}{font=fonts/Kristi.ttf}Will their trials break their love...{/font}{/size}"
+    show text "{size=60}{font=fonts/Exo2.otf}Will their trials break their love...{/font}{/size}"
     $ renpy.pause(2.0)
     
     $ wearing_dress = True
@@ -192,7 +187,7 @@ label trailer:
     
     scene black with fade
     $ wearing_dress = False
-    show text "{size=80}{font=fonts/Kristi.ttf}...or refine it into something stronger?{/font}{/size}"
+    show text "{size=60}{font=fonts/Exo2.otf}...or refine it into something stronger?{/font}{/size}"
     $ renpy.pause(2.0)
     
     scene bg sunset with fade
