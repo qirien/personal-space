@@ -4,13 +4,13 @@
 image title = "bg/title-screen.png"
 
 label trailer:
-    play music "music/Rain.ogg" fadein 1.0
+    play music "music/LinesBuildWalls.ogg" fadein 1.0
     scene black with fade
-    $ renpy.pause(3.0)
-    scene cuttlefish with fade
-    $ renpy.pause(3.0)
+    $ renpy.pause(1.0)
     scene title with fade
-    $ renpy.pause(3.0)
+    $ renpy.pause(2.5)
+    scene cuttlefish with fade
+    $ renpy.pause(2.0)    
     
     scene black with fade
     show text "{size=60}{font=fonts/Exo2.otf}a sci-fi relationship simulation\nvisual novel{/font}{/size}"
@@ -34,7 +34,7 @@ label trailer:
     with dissolve
     him serious "I want you to come with me to the new colony. As my wife."
     her concerned "On a new planet? So many things could go wrong..."
-    him normal "And when they do, I want you by my side."
+#    him normal "And when they do, I want you by my side."
 #    her happy "We'll create a new life together, on a new world..."
     
 #    scene talaam_approach:
@@ -47,9 +47,9 @@ label trailer:
     show her normal at midright
     show him normal at midleft
     with moveinright
-    her annoyed "Why is our house so far from everyone else?"
+#    her annoyed "Why is our house so far from everyone else?"
     him happy "Look at all this space! Space to grow! Space to breathe! Space to do whatever we want!"
-    her flirt "Our own personal space..."
+    her flirt "Our own \"personal space\"...?"
 #    scene bg farm_exterior with fade
 #    show her normal at midright
 #    show him normal at midleft
@@ -59,16 +59,16 @@ label trailer:
     
     scene black with fade
     scene bg farm_interior with fade
-    show him serious at midleft
-    show her serious at midright    
+    show him angry at midleft
+    show her annoyed at midright    
     with dissolve
-    her annoyed "It's none of your business what I do in my spare time."
+#    her annoyed "It's none of your business what I do in my spare time."
     him angry "We need to think about food, clothing, shelter. We don't have time for anything else in order for the colony to survive."
 #    her angry "If it's just about survival, life isn't worth living."
 #    him annoyed "Well, you don't even get a choice if you don't survive. If something goes wrong, who's going to help us out here? There's no food banks, no Red Cross, no emergency rooms."
-    her sad "I can't live that way..."
-    show him concerned with dissolve
-    
+#    her sad "I can't live that way..."
+#    show him concerned with dissolve
+
     scene black with fade
     $ is_nude = True
     scene bg bedroom with fade
@@ -78,7 +78,11 @@ label trailer:
     show night
     with dissolve
     
-    him nude concerned "I want this to work. How can I be a better husband to you?"
+    him nude concerned "I want this to work. How can I be a better husband to you?"   
+    $ time = 2
+    $ timer_range = 2
+    $ timer_jump = "after_trailer_menu"        
+    show screen countdown
     menu:
         "What should I say?"
         "Tell me how much you love me.":
@@ -111,37 +115,42 @@ label trailer:
 #    him nude serious "I love you so much... I need to make this work. I'll do what it takes."
 #    show her concerned with dissolve
 
+label after_trailer_menu:
+    hide screen countdown
     scene black with fade
     $ is_nude = False
     show text "{size=60}{font=fonts/Exo2.otf}{size=60}{font=fonts/Exo2.otf}Solve Problems at Work{/font}{/size}"
-    $ renpy.pause(2.0)    
+    $ renpy.pause(1.0)    
     
-    scene bg machine_shop with fade
-    show her normal at midright with dissolve
-    show brennan at midleft with dissolve
-    her annoyed "This is the third one of these radios that has broken so far! It's probably the variable resistor again..."
+    scene bg clinic with fade
+    show her serious at midright
+    show brennan mad at midleft
+    show kid frown at quarterright
+    with dissolve
+    her concerned "We need to quarantine the clinic until we can get this infection under control."
 #    brennan mad "I know; you'd think it might have occurred to them that we can't order new parts on a whim."
 #    her serious "Well, there's nothing we can do, unless..."
     
     scene black with fade
     show text "{size=60}{font=fonts/Exo2.otf}Strengthen the Community{/font}{/size}"
-    $ renpy.pause(2.0)   
+    $ renpy.pause(1.0)   
     
     scene bg community_center with fade
-    show lily at quarterleft
-    show ilian at midleft
-    show thuc sad at right
-    show her serious at midright
+    show underwater   
+    show ilian happy at quarterleft
+    show sara at midleft
+    show lily happy at left
+    show martin at quarterright
+    show natalia at right
+    show her happy at center
+    show raul at midright
     with dissolve
 
-    lily normal "He shows great remorse over the girl's death."
-    thuc "But he dumped her body in the river!"
-    ilian "What do you think?"
-    show her concerned with dissolve
+    "As people started to arrive at the party, their faces brightened and their shoulders lifted."
     
     scene black with fade
     show text "{size=60}{font=fonts/Exo2.otf}Explore Different Skills{/font}{/size}"
-    $ renpy.pause(2.0)
+    $ renpy.pause(1.0)
     
 #    scene bg hotspring with fade
 #    show him normal at midleft
@@ -150,7 +159,7 @@ label trailer:
 #    "We followed the stream up the mountain until we found a hot spring!"
     
     scene bg sunset with fade
-    "I hadn't done any photography in a long time, but the way the light drifted across the empty plain really inspired me."
+    "The way the light drifted across the barren plain inspired me to take a series of photographs."
     
     scene bg laundry with fade
     show her serious at center with dissolve
@@ -158,29 +167,47 @@ label trailer:
     
     scene black with fade
     show text "{size=60}{font=fonts/Exo2.otf}Decide the Future of their Family{/font}{/size}"
-    $ renpy.pause(2.0)
+    $ renpy.pause(1.0)
     
     scene bg colony_ship_bunk with fade
     show him normal at midright
     show her surprised at midleft
     with dissolve
     him surprised "So, what do you think about having kids?"
-    
+    $ time = 2
+    $ timer_range = 2
+    $ timer_jump = "after_kids_menu"         
+    show screen countdown
+    menu:
+        "What should I say?"
+
+        # Want to have kids
+        "I think we're ready.":
+            her happy "I think we're ready."
+        # Not sure about kids
+        "I don't know.":
+            her concerned "I don't know..."
+        # Definitely no kids
+        "That's really crazy.":
+            her annoyed "That's really crazy."
+            
+label after_kids_menu:   
+    hide screen countdown
     scene black with fade
     show text "{size=60}{font=fonts/Exo2.otf}Choose Your Own Fate{/font}{/size}"
-    $ renpy.pause(2.0)
+    $ renpy.pause(1.0)
     
     scene screenshot with fade
     "Time to decide what to do this month..."
     
     scene black with fade
     show text "{size=60}{font=fonts/Exo2.otf}Will their trials break their love...{/font}{/size}"
-    $ renpy.pause(2.0)
+    $ renpy.pause(1.0)
     
     $ wearing_dress = True
     scene bg farm_interior with fade
     show her annoyed at midleft
-    show him annoyed at midright
+    show him angry at midright
     with dissolve
     him angry "You can't just let the food go to waste. I worked hard growing those tomatoes!"
     her angry "Well, I don't have time to pick them!"
@@ -188,15 +215,16 @@ label trailer:
     scene black with fade
     $ wearing_dress = False
     show text "{size=60}{font=fonts/Exo2.otf}...or refine it into something stronger?{/font}{/size}"
-    $ renpy.pause(2.0)
+    $ renpy.pause(1.5)
     
-    scene bg sunset with fade
-    show her concerned at midright
-    show him serious at midleft 
-    him normal "I'm glad you came with me to build this fence; everything's better with you."
-    her flirt "Tough manual labor is not so bad when we're together."
-    him concerned "We will stay together, won't we? Forever?"
-    show her surprised with dissolve
+    scene bg farm_interior with fade
+    show him normal at midright
+    show her normal at midleft
+    with dissolve
+    her happy "You've brought me love, joy, and laughter. You've even brought me to new worlds, literally!"
+#    her surprised "Out where?"
+#    him normal "It's a surprise!"
+    show him happy with dissolve
     $ renpy.pause(1.0)
             
 #    scene bg bedroom with fade
@@ -220,3 +248,11 @@ label trailer:
     scene title with fade
     $ is_nude = False
     $ renpy.pause(10.0)
+    
+    scene black with fade
+    $ renpy.pause(1.0)
+    return
+
+screen countdown:
+    timer 0.01 repeat True action If(time > 0, true=SetVariable('time', time - 0.02), false=[Hide('countdown'), Jump(timer_jump)])
+    #bar value time range timer_range xalign 0.5 yalign 0.9 xmaximum 300 #at alpha_dissolve # This is the timer bar.    

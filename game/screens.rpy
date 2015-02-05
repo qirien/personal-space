@@ -433,6 +433,13 @@ screen preferences:
                     has vbox
 
                     textbutton _("Joystick...") action Preference("joystick")
+                    
+                # Too technical to be helpful to user                    
+#                frame:
+#                    style_group "pref"
+#                    has vbox
+                    
+#                    textbutton _("Keybindings") action Show("keyboard_shortcuts")
 
             vbox:
                 spacing 15
@@ -461,8 +468,8 @@ screen preferences:
                         textbutton _("Disabled") action Preference("auto-forward", "disable")
 
                     label _("")
-                    label _("Auto-Forward Time")
-                    bar value Preference("auto-forward time")
+                    label _("Auto-Forward Speed")
+                    bar value Preference("auto-forward time") bar_invert True
             
             vbox:
                 spacing 15
@@ -564,3 +571,29 @@ screen quick_menu:
             action Quit(confirm=True)
             hovered tt.Action("Quit")
     text tt.value ypos 420 xpos 55 outlines [(1, "#111", 1, 1)]
+    
+# Screen to show all currently defined shortcuts
+screen keyboard_shortcuts:
+    frame:
+        xsize 700
+        ysize 500
+        xalign 0.5
+        yalign 0.5
+        style_group "pref"        
+        hbox:
+            xsize 600
+            label "Keybindings"
+            textbutton "Done" action Hide("keyboard_shortcuts") xalign 1.0
+        side "c r":
+            area (40, 40, 600, 400)
+
+            viewport id "vp":
+                draggable True
+                vbox:
+                    for action_name in config.keymap:
+                        hbox:
+                            text action_name + ": "
+                            for shortcut in config.keymap[action_name]:
+                                text shortcut + " "
+                                    
+            vbar value YScrollValue("vp")

@@ -132,6 +132,9 @@ style pref_vbox:
     xalign 0.5
     ypadding 20
     
+style pref_text:
+    color "#000"
+    
 style pref_button:
     size_group "pref"
     xalign 0.5
