@@ -60,7 +60,7 @@ screen computer_pad(periods):
                     has vbox
                     
                     label "Relationship"
-                    use heart_display
+                    use heart_display(month, loved, relaxed)
                 
                 frame:
                     xfill True
@@ -83,25 +83,7 @@ screen computer_pad(periods):
                     vbox:
                         xfill True
                         
-                        
-                        # Display health stats based on month, pregnancy, stress, etc.
-                        label "Health"
-                        if ((is_pregnant or is_pregnant_later) and (trimester != "third")):
-                            text "Blood Pressure... {color=EA0000}Low{/color}"
-                            text "Pulse Rate...{color=EA0000}Fast{/color}"
-                        elif (relaxed <= -5):
-                            text "Blood Pressure... {color=EA0000}High{/color}"
-                            text "Pulse Rate...{color=EA0000}Fast{/color}"
-                        else:
-                            text "Blood Pressure... {color=00AA00}OK{/color}"
-                            text "Pulse Rate...{color=00AA00}OK{/color}"
-                        if ((month == 14) or (month == 24)):
-                            text "Temperature... {color=EA0000}High{/color}"
-                        else:
-                            text "Temperature... {color=00AA00}OK{/color}"
-                        
-                        if ((is_pregnant or is_pregnant_later) and (trimester != "done")):
-                            text "Pregnancy... [trimester] trimester"
+                        use health_stats(month, is_pregnant, is_pregnant_later, trimester, relaxed)
                 
             # Middle column
             vbox:
@@ -244,7 +226,7 @@ screen skill_screen():
             action Hide("skill_screen")
     
             
-screen heart_display():
+screen heart_display(month, loved, relaxed):
     hbox:
         # Add a small headshot of her depending on how relaxed/stressed she is
         if (relaxed >= 10):
@@ -306,3 +288,23 @@ screen heart_display():
                 add "him concerned head"
             else:
                 add "him annoyed head"
+
+screen health_stats(month, is_pregnant, is_pregnant_later, trimester, relaxed):
+    # Display health stats based on month, pregnancy, stress, etc.
+    label "Health"
+    if ((is_pregnant or is_pregnant_later) and (trimester != "third")):
+        text "Blood Pressure... {color=EA0000}Low{/color}"
+        text "Pulse Rate...{color=EA0000}Fast{/color}"
+    elif (relaxed <= -5):
+        text "Blood Pressure... {color=EA0000}High{/color}"
+        text "Pulse Rate...{color=EA0000}Fast{/color}"
+    else:
+        text "Blood Pressure... {color=00AA00}OK{/color}"
+        text "Pulse Rate...{color=00AA00}OK{/color}"
+    if ((month == 14) or (month == 24)):
+        text "Temperature... {color=EA0000}High{/color}"
+    else:
+        text "Temperature... {color=00AA00}OK{/color}"
+    
+    if ((is_pregnant or is_pregnant_later) and (trimester != "done")):
+        text "Pregnancy... [trimester] trimester"

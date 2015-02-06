@@ -132,8 +132,10 @@ label monthly_event_1:
             her surprised "Oh...my. That is...gigantic."
             him concerned "No kidding. Hold on, I'll get him out of here."
     "He put on his work gloves and picked up the mess kit by the handle. I opened the door so he could take it outside."
-    him "C'mon, George, time to take a hike."
+    him normal "C'mon, George, time to take a hike."
+    hide him with moveoutright
     her surprised "George?! You're giving this thing a name?"
+    show him normal at midright with moveinright    
     him happy "Doesn't he look like a George to you? Besides, I accidentally invited him in with my mess, so I guess he's my pet."
     her annoyed "As long as he's an outside pet."
 
