@@ -60,7 +60,7 @@ label show_credits:
     with dissolve    
     hide text with fade
     
-    show text "Character Art by\n{a=http://clarissahelps.com}Clarissa Helps{/a}" with fade 
+    show text "Character Art by\n{a=http://clarissahelps.tumblr.com/}Clarissa Helps{/a}" with fade 
     if ((community_level < COMMUNITY_LEVEL_OK) and (ending != "none")):
         show pete at right, rising behind text
         show helen at quarterright, rising behind text
@@ -137,11 +137,11 @@ label show_credits:
     with dissolve
     hide text with fade   
     
-    show text "\"Our Personal Space\" Program, Text & Dialogue are licensed under the {a=http://www.gnu.org/copyleft/gpl.html}GNU GPLv3{/a}.\nFor other licenses used, see accompanying License.html" with fade
+    show text "\"Our Personal Space\" Program, Text & Dialogue are licensed under the {a=http://www.gnu.org/copyleft/gpl.html}GNU GPLv3{/a}.\nFor other licenses used, see accompanying {a=http://qirien.icecavern.net/CuttlefishGames/OPS-License.html}License.html{/a}" with fade
     $ renpy.pause(3.0, hard=skippable)
     hide text with fade        
     
-    show text "Made with Ren'Py" with fade 
+    show text "Made with {a=http://www.renpy.org}Ren'Py{/a}" with fade 
     if (ending == "bad"):
         show him concerned at left, rising behind text
         if (cheated_on_him):
@@ -204,9 +204,9 @@ label show_credits:
             "You have experienced all the endings and unlocked the Omake from the Extras Menu!"
         $ persistent.got_all_endings = True
         
-    "Thanks for playing! If you have feedback, I'd love to hear from you at {a=mailto:qirien@icecavern.net?subject=Our Personal Space}qirien@icecavern.net{/a}"
+    "If you have feedback, I'd love to hear from you at {a=mailto:qirien@icecavern.net?subject=Our Personal Space}qirien@icecavern.net{/a}."
     show text "{size=140}{font=fonts/Kristi.ttf}The End{/font}{/size}" with fade
-    stop music fadeout 5.0
-    $ renpy.pause(5.0, hard=skippable)
+    stop music fadeout 3.0
+    $ renpy.pause(3.0, hard=skippable)
     
     $ renpy.full_restart()

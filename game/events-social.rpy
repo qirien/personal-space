@@ -324,7 +324,7 @@ label social_4:
     play music "music/Sojourn.ogg" fadeout 1.0
     play bg_sfx "sfx/people.mp3" loop
     "One week at Friday lunch group, we were all complaining about our lack of excitement."
-    show lily at quarterright
+    show lily at rightright
     show pete at left
     show sara at midleft
     show her normal at midright

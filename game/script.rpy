@@ -90,7 +90,7 @@ init -200:
     define notified_stat_max = False
     
     define COMMUNITY_LEVEL_OK = 40
-    define COMMUNITY_LEVEL_GOOD = 55
+    define COMMUNITY_LEVEL_GOOD = 60
     define COMMUNITY_LEVEL_MAX = 75
     define LOVED_GOOD = 35
     define LOVED_MAX = 75
@@ -180,9 +180,9 @@ label start:
                 "OK, we will not use New Game+ data."
          
         if not renpy.variant('touch'):
-            "To fast-forward through scenes you have already seen, hold down \"Ctrl\" or use the \"Skip\" option in the Config screen."
+            "To fast-forward through scenes you have already seen, hold down \"Ctrl\" or use the \"Skip\" button on the far right."
         else:
-            "To fast-forward through scenes you have already seen, use the \"Skip\" option in the Config menu."
+            "To fast-forward through scenes you have already seen, use the new \"Skip\" button to the right."
 
 #    if (config.developer):
 #        "Do I want to remember how it all began?"

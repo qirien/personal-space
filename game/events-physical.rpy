@@ -127,13 +127,13 @@ label physical_1:
     menu:
         "What should I say?"
         "Don't tell me what to do.":
-            her annoyed "Don't tell me what to do."
+            her angry "Don't tell me what to do."
             him surprised "I'm just saying, who knows what's out there? We don't even know half the creatures on this planet. It's too dangerous."
-            her concerned "That's not for you to decide."
+            her annoyed "That's not for you to decide."
             him annoyed "Promise me you won't go off by yourself again."
             her angry "I'm not promising anything!"
             him angry "Dammit, [her_name], I need you! I need you alive, here with me, not as a carcass torn apart by some alien beast!"
-            her yelling "And I need you to trust me to make my own decisions."
+            her yelling "And I need you to trust me to make my own decisions!"
             him sad "I...do trust you. But, please, be more careful, [her_name]..."
             $ loved -= 5
         "Want to come next time?":

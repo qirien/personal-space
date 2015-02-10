@@ -1436,7 +1436,7 @@ label follow_him:
     scene bg barn with fade
     show lettie at right, squatting behind him,her with dissolve    
     show him serious at midright
-    show her serious at midleft
+    show her serious at quarterleft
     with moveinleft
     "Lettie was inside, twitching and breathing hard."
     her surprised "What's wrong with her?"
@@ -1477,7 +1477,7 @@ label follow_him:
     scene bg barn with fade
     show lettie at right, squatting behind him,her with dissolve        
     show him serious at quarterright
-    show her serious at midleft with moveinleft
+    show her serious at quarterleft with moveinleft
     "He had me hold Lettie still while he measured it out and administered it to her. I was amazed how much Lettie trusted him."
     "She didn't seem to feel any better right away, but I knew this kind of medicine takes awhile to work."
     him serious "I'm going to take her for a little walk - why don't you get some rest?"
@@ -1488,6 +1488,7 @@ label follow_him:
             him normal "Okay."
             "We walked around with Lettie for a while, and then we let her rest and have plenty of water to drink. She still didn't seem to feel better, but she wasn't getting worse, either."
             "[his_name] sat down in some clean hay. It was a little scratchy, but I sat down next to him."
+            show him serious at midleft with move
             show him sleeping at squatting with move
             show her sleeping at squatting with move
             with dissolve
@@ -1504,7 +1505,7 @@ label follow_him:
     scene bg barn with fade
     show lettie at right behind him,her    
     show him normal at midright
-    show her normal at midleft
+    show her normal at quarterleft
     with dissolve
     "[his_name] was already up, talking to Lettie in a soft voice and petting her nose. She wasn't shaking any more, and her breathing seemed more regular."
     play bg_sfx "sfx/whinny.mp3"
@@ -3147,7 +3148,7 @@ label monthly_event_20:
     menu party_menu:
         "What does the party still need?"
         "Music" if (party_music == ""):
-            her serious "We need some music."
+            her concerned "We need some music."
             sara "Yeah...should we use recorded music, or see if we can get someone to play live?"
             menu:
                 "What kind of music?"
@@ -3170,7 +3171,7 @@ label monthly_event_20:
             jump party_menu
                                     
         "Entertainment" if (party_entertainment == ""):
-            her serious "We should have some kind of entertainment."
+            her normal "We should have some kind of entertainment."
             sara "Yeah, something everyone would like..."
             menu:
                 "How about:"                
@@ -3193,7 +3194,7 @@ label monthly_event_20:
             jump party_menu
 
         "Decorations" if (party_decorations == ""):
-            her serious "Some kind of decorations would be fun..."
+            her concerned "Some kind of decorations would be fun..."
             sara "Yeah, it's not like we can just go to the party store and get some balloons or something, though."
             her surprised "How about wildflowers?"
             sara "Oh, yeah, we could just have a vase of wildflowers on each table."
@@ -3378,7 +3379,7 @@ label done_party_menu:
                 sara "Ready, set...GO!"
                 "[his_name] and I rummaged through the box. Sara had gathered trash from everyone and cleaned it off so we could use it on our creation."
                 him serious "Let's make the box the body of the spaceship."
-                her serious "OK, we'll also need some wings..."
+                her concerned "OK, we'll also need some wings..."
                 if (loved <= 0):
                     him surprised "Why are you putting that tin foil there?"
                     her annoyed "It's reflective, like a solar panel."
@@ -3389,8 +3390,14 @@ label done_party_menu:
                 "We finished just as the time was up."
                 if (loved > 0):
                     if (skill_creative >= 70):
+                        show her happy
+                        show him happy 
+                        with dissolve
                         "Ours didn't have the best landing, but it looked so artistic and sleek that they gave it the best score anyway. We won the contest!"
                     elif (skill_technical >= 70):
+                        show her happy
+                        show him happy 
+                        with dissolve                        
                         "Ours didn't look the best, but it actually kind flew off the roof and glided for a bit before landing gracefully on the ground. We won the contest!"
                     else:
                         "You could tell it was supposed to be a spaceship... but it wasn't as good as Brennan and Lily's. They even had tiny model people sitting inside."
@@ -3500,9 +3507,9 @@ label done_party_menu:
         "Everyone milled around, chatting and enjoying the chance to relax."
 
     scene bg community_center
+    show pavel at midleft    
     show sara at quarterright
     show her normal at right
-    show pavel at midleft
     with dissolve
     stop music fadeout 1.0
     sara sad "Well, the party's almost over, guess it's time to clean up."
@@ -3789,16 +3796,16 @@ label monthly_event_22:
             "That night, ten bottles of shampoo were returned to the storehouse."
             scene bg storehouse with fade
             show night
-            show julia at center with moveinleft
-            hide julia with moveoutright
-            show pete at center with moveinleft
-            hide pete with moveoutright
-            show sara at center with moveinleft
-            hide sara with moveoutright
-            show brennan at center with moveinleft
-            hide brennan with moveoutright
-            show lily upset at center with moveinleft
-            hide lily with moveoutright
+            show julia at center behind night with longmoveinleft
+            hide julia with longmoveoutright
+            show pete at center behind night with longmoveinleft
+            hide pete with longmoveoutright
+            show sara at center behind night with longmoveinleft
+            hide sara with longmoveoutright
+            show brennan at center behind night with longmoveinleft
+            hide brennan with longmoveoutright
+            show lily upset at center behind night with longmoveinleft
+            hide lily with longmoveoutright
             "When I looked at the camera footage, it showed several people from the colony arrive at different times and each return a bottle or two of shampoo."
             scene bg community_center with fade
             show pavel at midright, behind her

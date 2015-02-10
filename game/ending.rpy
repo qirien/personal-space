@@ -1,6 +1,7 @@
 # For MONTH 25, decide which ending to display.
 label monthly_event_25:
     play music "music/Rain.ogg" fadeout 1.0
+    scene black with fade
     "It had been two years since we first arrived on Talaam. In a way, it felt like we had been here forever. But sometimes I still expected to find myself back on Earth, waking up from a long, long dream."
     if (((community_level < COMMUNITY_LEVEL_OK) and (loved < 0)) or wants_to_leave):
         $ ending = "bad"

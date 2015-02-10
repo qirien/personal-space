@@ -149,7 +149,7 @@ label day:
     
     # We process each of the three periods of the day, in turn.
 label job_focus:
-
+    stop bg_sfx
     # Tell the user what month it is.
     call inter_scene_text("At Work")
 
@@ -170,7 +170,7 @@ label job_focus:
     # skill_focus.
 
 label skill_focus:
-
+    stop bg_sfx
     # It's possible that we will be skipping the skill_focus, if one
     # of the events in the job_focus jumped to skip_next_period. If
     # so, we should skip the skill_focus.
@@ -190,7 +190,7 @@ label skill_focus:
 
 
 label relaxation_focus:
-    
+    stop bg_sfx
     # The relaxation_focus is the same as the skill_focus.
     if check_skip_period():
         jump monthly_event
@@ -211,6 +211,7 @@ label relaxation_focus:
     $ wearing_dress = False
 
 label monthly_event:
+    stop bg_sfx
     if check_skip_period():
         jump end_of_month
 

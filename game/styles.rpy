@@ -118,7 +118,7 @@ style nvl_window:
 style pref_frame:
     xfill True
     xmargin 5
-    top_margin 5
+    top_margin 0
     
 style pref_label is label:
     xalign 0.5
@@ -140,7 +140,7 @@ style pref_button:
     xalign 0.5
     
 style pref_slider:
-    xmaximum 192
+    xmaximum 200
     xalign 0.5
     
 style soundtest_button:

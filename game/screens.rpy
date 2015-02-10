@@ -56,6 +56,9 @@ screen say:
         add side_image
     else:
         add SideImage() xalign 0.0 yalign 1.0
+        
+    if (persistent.times_beaten):
+        use quick_menu_right
 
 
 ##############################################################################
@@ -264,7 +267,7 @@ screen navigation:
         textbutton _("Save Game") action ShowMenu("save")
         textbutton _("Load Game") action ShowMenu("load")
         textbutton _("Main Menu") action MainMenu()
-        #textbutton _("Help") action Help()
+        textbutton _("Help") action Help()
         textbutton _("Quit") action Quit()
 
 init -2 python:
@@ -391,7 +394,7 @@ screen preferences:
     frame:
         background None
         xalign 0.1
-        yalign 0.1
+        yalign 0.0
         
 #        top_padding 40
 #        bottom_padding 20
@@ -402,7 +405,7 @@ screen preferences:
         grid 3 1:
             style_group "prefs"
             xfill True
-            spacing 15
+            spacing 10
             
 
             # The left column.
@@ -434,12 +437,11 @@ screen preferences:
 
                     textbutton _("Joystick...") action Preference("joystick")
                     
-                # Too technical to be helpful to user                    
 #                frame:
 #                    style_group "pref"
 #                    has vbox
                     
-#                    textbutton _("Keybindings") action Show("keyboard_shortcuts")
+#                    textbutton _("Help") action Help() #Show("keyboard_shortcuts")  # Too technical to be helpful to user     
 
             vbox:
                 spacing 15
@@ -461,7 +463,10 @@ screen preferences:
                         textbutton _("Stop Skipping") action Preference("after choices", "stop")
                         textbutton _("Keep Skipping") action Preference("after choices", "skip")
                     
-                    label _("")
+                frame:
+                    style_group "pref"
+                    has vbox
+                    
                     label _("Auto Mode")
                     hbox:
                         textbutton _("Enabled") action Preference("auto-forward", "enable")
@@ -481,7 +486,6 @@ screen preferences:
                     label _("Music Volume")
                     bar value Preference("music volume")
 
-                    label _("")
                     label _("Sound Volume")
                     bar value Preference("sound volume")
 
@@ -571,6 +575,20 @@ screen quick_menu:
             action Quit(confirm=True)
             hovered tt.Action("Quit")
     text tt.value ypos 420 xpos 55 outlines [(1, "#111", 1, 1)]
+    
+screen quick_menu_right:
+    zorder -1
+    vbox:
+        style_group "quick"
+        xpos 940
+        ypos 460
+        spacing 12
+        imagebutton:
+            auto "gui/skip_%s.png"
+            action Skip()
+            hovered tt.Action("Skip Read Text")
+        
+        #text tt.value ypos 420 xpos 940 outlines [(1, "#111", 1, 1)]
     
 # Screen to show all currently defined shortcuts
 screen keyboard_shortcuts:
