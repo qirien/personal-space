@@ -106,7 +106,7 @@ label relax_alone_2:
     hide her with moveoutleft
     scene bg stars with fade
     show her serious at center with dissolve
-    show her at squatting with move
+    show her serious at squatting with move
     "I sat out on the porch and gazed at the stars. They were so different from Earth's, I had to make my own constellations."
     her serious "Hmm, those kind of look like two lovers... and there's a sort of circle that reminds me of a UFO..."
     her flirt "And...that looks like one long, crazy dragon."
@@ -216,7 +216,7 @@ label relax_alone_7:
 
     else:
         "I'd had trouble sleeping lately; my back hurt whenever I lay in one place for too long. The beds from the shuttle were sturdy, but they weren't the most ergonomic designs."
-        her annoyed "Oww..."
+        her angry "Oww..."
         him surprised "You okay?"
         her annoyed "Yeah, my back's been hurting; makes it hard to sleep."
         if (profession == "doctor"):
@@ -237,13 +237,13 @@ label relax_alone_7:
     else:
         him annoyed "Well, I can't do anything about that."
         if (relaxed <= 0):
-            her angry "You don't have to do anything about it! Can you just listen?!"
+            her yelling "You don't have to do anything about it! Can you just listen?!"
             him angry "What's the point of listening if it doesn't solve anything?"
             her annoyed "It might help me feel better."
             him annoyed "That doesn't make any sense."
-            her angry "Well, that's how I feel! I don't know why I'm even telling you, since obviously you don't care!"
+            her yelling "Well, that's how I feel! I don't know why I'm even telling you, since obviously you don't care!"
             him angry "I care, I just don't understand you!"
-            her annoyed "Well, you could try listening."
+            her angry "Well, you could try listening."
             him annoyed "Hmph."
             hide him with moveoutleft
             show her sleeping
@@ -429,12 +429,12 @@ label relax_alone_h:
         him serious "What a waste of time."
         her annoyed "It's just a game."
         him angry "We don't have time to mess around with stupid games. There's real work to be done!"
-        her angry "Then why don't you go do it instead of spying on me!"
+        her yelling "Then why don't you go do it instead of spying on me!"
         him serious "You know, someday if things go all wrong, you're going to think \"There wasn't anything I could have done to stop it\". You'll think back to this night where you were playing video games about a pretend farm instead of doing real work and realize that you could have done something, but you chose not to."
-        her annoyed "I'll worry about that when I have to."
+        her angry "I'll worry about that when I have to."
         him annoyed "No, that day will never come because people like me are doing actual work saving lazy people like you."
         hide him with moveoutleft
-        show her angry
+        show her yelling
         "How dare he?! I couldn't work twenty-four hours a day!"
         show her sad
         "But... maybe I should be doing more."
@@ -533,9 +533,9 @@ label relax_alone_k:
             him happy "All right!"
             $ loved += 2
         "Stop spying on me!":
-            her annoyed "Can't I do something on the computer without you spying on me?"
+            her angry "Can't I do something on the computer without you spying on me?"
             him annoyed "Sorry, I just saw it while I was walking by."
-            her angry "Well, it's really rude to look at someone else's screen without asking."
+            her annoyed "Well, it's really rude to look at someone else's screen without asking."
             him sad "...okay, whatever."
             $ loved -= 2
             

@@ -300,7 +300,7 @@ label work_1:
         show her serious at center with move
         her "Do you know how to do the Heimlich?"
         "Sara on the radio" "Yes! I mean, I've never done it before, but..."
-        her angry "Do it! Put your fist right above his belly button, support it with your other hand, and push in and up forcefully."
+        her yelling "Do it! Put your fist right above his belly button, support it with your other hand, and push in and up forcefully."
         show her serious at right with move
         "Sara on the radio" "She's doing what you said; it's not working!!"
         her serious "Keep trying! Then use your finger to sweep through his mouth to see if you can dislodge anything."
@@ -414,7 +414,7 @@ label work_1:
                 $ loved -= 2
         
         hide him
-        show her determined with dissolve
+        show her annoyed with dissolve
         show pavel at midleft, behind her with moveinleft
         pavel "Everything all right in here?"
         her concerned "Yes, it's just a busy day."
@@ -444,7 +444,7 @@ label work_1:
         with dissolve
         "At recess, one of the kids fell and got a bloody nose. While I was helping him, two of the teenage boys started arguing on the other side of the field."
         "One of them punched the other. Soon they were wrestling and rolling on the ground yelling. I ran to try to stop them."
-        her angry "Stop! Stop it, now!"
+        her yelling "Stop! Stop it, now!"
         "They kept fighting. The kid with the bloody nose was crying, some of the kids were screaming and some were chanting and jeering, and I was trying to pull them apart."
         play bg_sfx "sfx/punch.mp3"
         "One of the punches missed the kid and hit me in the head. I must have blacked out for a minute, because when I woke up the fight was over and all the kids were looking down at me worriedly."
@@ -680,7 +680,7 @@ label work_3:
             her normal "Well, maybe we could go for lunch together sometime."
             brennan "I'd like that, [her_name]. Thank you, for being a friend."
         "(Give him a hug.)":
-            show her at center with move
+            show her serious at center with move
             her concerned "I'm sorry you're so alone..."
             "He didn't seem at all surprised when I reached out my arms to give him a hug. I didn't want him to feel left out...hopefully he could sense that."
             her concerned "(This is probably the first hug he's had in months... poor guy.)"
@@ -884,7 +884,7 @@ label work_4:
         pavel "That's good, that's good... Well, what I came to talk to you about, is that one of the parents came to me with a concern."
         her surprised "Oh?"
         pavel sad "They said that their child came up with red marks on their hands, and the child said you hit their hands with a ruler."
-        her angry "They said WHAT?!"
+        her yelling "They said WHAT?!"
         brennan mad "[her_name]'ll be stern when the kids need it, but she's never hit anyone."
         pavel "This is news to you, then."
         her surprised "Of course it is! I would never do that. Which kid is it?"
@@ -898,7 +898,7 @@ label work_4:
         pavel "I'll tell them that, too. Good-bye, then."
         her "Good-bye."
         hide pavel with moveoutleft
-        show her at midleft
+        show her serious at midleft
         show brennan normal at midright
         with move
         her serious "Thanks for sticking up for me."
@@ -974,7 +974,7 @@ label work_5:
     menu:
         "What should I do?"
         "Try and stop him.":
-            her angry "It's not worth sacrificing yourself over!"
+            her yelling "It's not worth sacrificing yourself over!"
             brennan normal "I'll be fine. And if I'm not, well, at least I'll have done some good here."
         "Let him go.":
             her serious "If you really want to go, I won't stop you."
@@ -1013,7 +1013,7 @@ label work_5:
         her annoyed "Stop joking and lie down. We need to see how bad it is."
         brennan mad "Hold on, I think I might--"
         "He vomited. At least most of it went on the floor..."
-        her angry "That's exactly what I'm talking about. Now lie down!"
+        her yelling "That's exactly what I'm talking about. Now lie down!"
         "The amount he was exposed to was more than is usually used in chemotherapy, but if he didn't get more exposure his body would probably heal it just fine."
         show her serious
         "I treated his burns and gave him some medicine, and warned him to be especially careful to avoid any radiation for the next few weeks while his body healed."
@@ -1136,8 +1136,8 @@ label work_6:
                             brennan normal "Sure. Just like that."
                         "No, you should date Dr. Lily.":
                             her normal "No, I was just kidding. Actually, I think you should reconsider Dr. Lily."
-                            brennan "Really? You don't think twenty years age difference is too much?"
-                            her serious "No way! I mean, she's young enough to still be good-looking, right?"
+                            brennan "Really? You don't think twenty years' age difference is too much?"
+                            her serious "No way! I mean, she's attractive, right?"
                             brennan "Yeah, I suppose she does have a sort of sexy scientist sort of beauty..."
                             her flirt "And, you're not the type to be intimidated by a smart woman, right?"
                             brennan happy "You know I'm not."
@@ -1428,7 +1428,7 @@ label brennan_confess:
             brennan "Oh? What's that?"
             jump wants_from_brennan
         "They have a right to know.":
-            her annoyed "The colony has a right to know, and a right to be able to use the device."
+            her angry "The colony has a right to know, and a right to be able to use the device."
             her serious "Like you said, we'll need some kind of priority system and limits on messages, etc, but it's not fair for only one person to be able to communicate with Earth like that."
             brennan mad "I suppose I can't stop you."
             her annoyed "..."

@@ -108,7 +108,7 @@ label domestic_3:
             with dissolve
             play music "music/Prelude02.ogg" fadeout 1.0
             him "Free goats? Why did you turn him down?!"
-            her angry "I don't know anything about goats! I have enough to do as it is!"
+            her yelling "I don't know anything about goats! I have enough to do as it is!"
             her annoyed "Besides, goat milk tastes gross."
             him annoyed "You should have asked me about it first."
             menu:
@@ -125,7 +125,7 @@ label domestic_3:
                             her serious "I know you work hard every day, too. I don't want to ask you to do any more than you already do."
                             "We didn't need to say anything more."
                         "I have to get out of here.":
-                            her angry "I'm going out."
+                            her yelling "I'm going out."
                             "I went on a walk until I had cooled off. When I came back, we didn't talk about it anymore, and eventually we were back to normal."
                         "(Give him a hug.)":
                             "I hugged him. It took a few seconds for him to hug me back, but then I knew that everything would be all right."
@@ -135,7 +135,7 @@ label domestic_3:
                     him serious "The point is that we're a team. We need to make big decisions like this as a team."
                     her serious "I didn't think it was even worth considering."
                     him annoyed "Well, I do. I guess now you know for next time."
-                    her annoyed "(Yeah, next time I won't even tell you about it.)"
+                    her angry "(Yeah, next time I won't even tell you about it.)"
                     $ loved -= 10
                 "Forget it.":
                     her concerned "It's not worth fighting over; let's just forget about it."
@@ -283,7 +283,7 @@ label domestic_6:
     menu:
         "What should I say?"
         "That's barbaric.":
-            her angry "That's barbaric! What did that poor creature ever to do you?"
+            her yelling "That's barbaric! What did that poor creature ever to do you?"
             him angry "Ate my plants, that's what. Well, you don't have to have any; I guess I'll just cook it myself."
             show him annoyed
             her annoyed "Yeah, please get that thing out of here."

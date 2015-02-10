@@ -106,7 +106,7 @@ label monthly_event_1:
     menu:
         "What should I do?"
         "Yell.":
-            her angry "THAT is why you don't leave dirty dishes out overnight!!!"
+            her yelling "THAT is why you don't leave dirty dishes out overnight!!!"
             him angry "Okay! How was I supposed to know this planet had giant leftover-eating millipedes?"
             her "It's pretty obvious! Every planet has its scavengers!"
             him annoyed "Calm down, [her_name]. I'll take care of it."
@@ -290,7 +290,7 @@ label unappreciated:
     play music "music/Prelude02.ogg" fadeout 1.0
     her annoyed "It's none of your business what I do in my spare time."
     him annoyed "Well, it just seems kind of like a waste of time when there's so much real work to be done."
-    her angry "Real work?! You don't think I do real work?!"
+    her yelling "Real work?! You don't think I do real work?!"
     him angry "Real work provides food, clothing, shelter. The necessities. We don't have extra time for anything else in order for the colony to survive."
     her annoyed "If it's just about survival, life isn't worth living."
     him "Well, you don't even get a choice if you don't survive. If something goes wrong, who's going to help us out here? There's no food banks, no Red Cross, no emergency rooms - just us."
@@ -312,7 +312,7 @@ label unappreciated:
         "I can't talk about this anymore.":
             her sad "Stop it, I can't talk about this anymore."
             him annoyed "Well, just think about what I said. Are we going to live or die?"
-            her angry "I said stop it!"
+            her yelling "I said stop it!"
             her sad "I don't want to die..."
             him annoyed "Then you need to choose to live."
             
@@ -798,7 +798,7 @@ label monthly_event_7:
                         $ relaxed -= 5
         "Leave it on the table and tell him when he gets home.":
             "I left it on the table so I would remember to tell him about it when he got home."
-            show her at quarterright
+            show her serious at quarterright
             show him normal at quarterleft with moveinleft
             him happy "Hey there, [her_nickname]."
             her concerned "Hi, [his_nickname]."
@@ -962,12 +962,12 @@ label monthly_event_8:
         "{i}You're never here when I need you!{/i}" if (relaxed <= 0):
             $ loved -= 5
             if (father_attitude == "apathetic"):
-                her angry "You're just like my father - you're never around when I need you!"
+                her yelling "You're just like my father - you're never around when I need you!"
             else:
                 her sad "You're never here when I need you!"
             him annoyed "What are you talking about? I'm home almost every night."
-            her "But you're always reading; I wanted to do something together tonight."
-            him "Well, I can't. I promised Thuc I'd come tonight."
+            her concerned "But you're always reading; I wanted to do something together tonight."
+            him concerned "Well, I can't. I promised Thuc I'd come tonight."
             her annoyed "I'm not really important to you, am I?"
             him annoyed "What?! Of course you are!"
             her angry "Then stay home with me!"
@@ -1278,7 +1278,7 @@ label monthly_event_10:
     "I tried calling him on the radio, and messaging him on the computer, but he didn't answer."
     "Finally, just when I was about to give up and eat without him, he stepped in."
     show him serious at midleft with moveinleft
-    show her at midright with move
+    show her surprised at midright with move
     menu:
         "He's so late...what should I say?"
         "{i}Is everything okay?{/i}" if (relaxed >= 0):
@@ -1341,9 +1341,9 @@ label anniversary_next_day:
     "He didn't come home that night, just stopped in for a quick breakfast early in the morning and then left again. I didn't have a chance to talk to him again until that evening when I got home."
     scene bg farm_interior with fade
     show him normal at midright with dissolve
-    show her determined at midleft with moveinleft
+    show her annoyed at midleft with moveinleft
     him normal "Hey, [her_nickname]."
-    show her annoyed
+    show her angry
     "(He's just saying hi like nothing happened!)"
     menu:
         "What should I do?"
@@ -1354,7 +1354,7 @@ label anniversary_next_day:
             menu:
                 "What should I say?"
                 "Yes!":
-                    her angry "Yes, I'm mad! We were supposed to have a nice dinner for our anniversary, but you just left without saying anything!"
+                    her yelling "Yes, I'm mad! We were supposed to have a nice dinner for our anniversary, but you just left without saying anything!"
                     him angry "Lettie was sick! Really sick!"
                     her "And you couldn't have said something like, 'Sorry, Lettie's sick, gotta go.'?"
                     him annoyed "I'm sorry; I was too worried."
@@ -1370,7 +1370,7 @@ label anniversary_next_day:
                 "(Lie) No.":
                     her annoyed "No, why would I be mad? Where I come from it's totally normal to ignore your wife on your anniversary."
                     him normal "Lettie was-"
-                    her angry "Lettie?! You were thinking about your HORSE?!"
+                    her yelling "Lettie?! You were thinking about your HORSE?!"
                     him angry "Tch, forget it! You are obviously more interested in your own righteous anger than in knowing what actually happened. Here."
                     "He slammed a water bottle with some wildflowers in it on the table. Water sloshed onto the table and a few of the flowers fell out."
                     him "Happy Anniversary."
@@ -1600,14 +1600,14 @@ label goto_ocean:
     if (skill_physical >= 40):
         show her at midleft with move
         "Lily had a strange look on her face, so I carried her further inland so she could sit down."
-        show her at center
+        show her serious at center
         show lily at midleft
         with move
         "She wasn't blinking, so I pinched her a few times."
         lily normal "Please stop that. What happened? Did I fall asleep?"
     elif (skill_knowledge >= 40):
         "Lily appeared to be temporarily paralyzed, so I motioned to [ocean_character] to help me carry her further inland."
-        show her at right with move
+        show her serious at right with move
         if (ocean_character == "Pete"):
             show pete at midleft with move
         elif (ocean_character == "Brennan"):
@@ -1618,7 +1618,7 @@ label goto_ocean:
         lily normal "W-what happened? Did I fall asleep?"
     else:
         "I had no idea what to do next. I just stood there, scared."
-        show her at right with move
+        show her serious at right with move
         if (ocean_character == "Pete"):
             show pete at midleft with move
         elif (ocean_character == "Brennan"):
@@ -1665,7 +1665,7 @@ label monthly_event_11:
     him annoyed "Can we get some more?"
     her concerned "I asked at the storehouse, but they're rationing what we have, and I already used our amount up for this month."
     him annoyed "Well, we live near an ocean, don't we? Isn't it a saltwater ocean?"
-    her determined "Yes, it is! But I don't want to just run out there by myself!"
+    her annoyed "Yes, it is! But I don't want to just run out there by myself!"
     him sad "I'd go with you, but I can't leave these crops."
     her angry "Really? They would die if you left them just one day?"
     him annoyed "Well, it's more like some of the food might get eaten by something else since it's harvest time again."
@@ -1830,7 +1830,7 @@ label monthly_event_12:
                 "We put on some energetic music and scrubbed together. It was still hard work, but soon we weren't mad at each other anymore."
                 $ loved += 5
                 
-                her determined "Now, do you want to talk about what's really bothering you?"
+                her annoyed "Now, do you want to talk about what's really bothering you?"
 
             else:
                 him annoyed "I don't want to clean the kitchen. I have too much other work to do."
@@ -1844,7 +1844,7 @@ label monthly_event_12:
             him concerned "We're both pretty stressed out, aren't we?"
             if (relaxed < 0):
                 her concerned "Yeah, I know I am. There's so much to do, and so much going wrong..."
-                her determined "But we need to help each other! How can I help you?"
+                her sad "But we need to help each other! How can I help you?"
             else:
                 her flirt "Well, the only thing I'm stressed out about right now is the fact that you seem stressed out! How can I help?"
                 
@@ -2090,10 +2090,10 @@ label funeral:
     menu:
         "What will you argue for?"
         "Work for Peróns":
-            her determined "I agree with Lily; he should have to work for the Peróns. It can't make up for the loss of a child, but it will require some sacrifice and will help him show his remorse."
+            her serious "I agree with Lily; he should have to work for the Peróns. It can't make up for the loss of a child, but it will require some sacrifice and will help him show his remorse."
             thuc "He should be their slave for a year!"
             lily upset "We don't want his work on his own farm to suffer..."
-            her serious "Maybe, spread it out? How about eight hours a week for a year."
+            her concerned "Maybe, spread it out? How about eight hours a week for a year."
             thuc "Maybe that would work..."
             ilian "And now we know the price of a four-year-old girl: 400 work hours."
             her annoyed "It's not like that. Of course there's no way to bring her back or make it up to them. But he needs to do something for reparations."
@@ -2101,7 +2101,7 @@ label funeral:
             "The jury decided that was fair, and the Mayor, Pete, and the Peróns all accepted our proposal. Helen didn't seem to happy about it, though. She'd probably have to do extra work on their farm to make up for his absence."
 
         "Banishment":
-            her determined "I agree with Thuc; we need to show that our community won't allow such behavior."
+            her serious "I agree with Thuc; we need to show that our community won't allow such behavior."
             lily upset "It would be more humane to simply shoot him in the head; it would be impossible to survive for a year alone out there."
             her concerned "I agree. Also, we can't afford to lose our storehouse manager for that long."
             her serious "So I propose that he live outside the community boundaries, but close enough that we can trade with him. He can hunt or gather useful things and trade them for food or other community resources."
@@ -2115,7 +2115,7 @@ label funeral:
             "Still, it was only for a month."
             
         "{i}Compromise{/i}" if (skill_spiritual >= 40):
-            her normal "Those both sound like good ideas. Perhaps some of both might be appropriate?"
+            her serious "Those both sound like good ideas. Perhaps some of both might be appropriate?"
             ilian "What's your idea?"
             her concerned "Having him work for the Peróns is a good idea, but it is too soon. They would feel angry, and then he would feel like his apology was not accepted."
             her serious "But a year is too long to send anyone to live outside the community. I propose Pete leave the community for a week. When he returns, he will have to work for the Peróns one day of every week for the next half year."
@@ -2126,13 +2126,13 @@ label funeral:
         "{i}He's innocent{/i}" if ((skill_technical >= 40) or (skill_knowledge >= 40)):
             her serious "He should provide some reparations, but I know he didn't kill her on purpose."
             thuc "How do you know that?"
-            her "Her injuries are consistent with being hit by a car and then floating down the river. She doesn't have any injuries that would come from being assaulted."
+            her concerned "Her injuries are consistent with being hit by a car and then floating down the river. She doesn't have any injuries that would come from being assaulted."
             ilian "Yes, that's right."
             thuc "That's true... I guess he is still innocent of any further crimes unless proven guilty..."
-            her concerned "He still should provide some reparations, though. I think he should work for the Peróns one day a week for a year."
+            her serious "He still should provide some reparations, though. I think he should work for the Peróns one day a week for a year."
             lily "I agree."
             ilian "Now we know the price of a four-year-old girl: 400 man-hours."
-            her determined "It's not like that. Of course there's no way to bring her back or make it up to them. But he needs to do something for reparations."
+            her annoyed "It's not like that. Of course there's no way to bring her back or make it up to them. But he needs to do something for reparations."
             "We all agreed on the sentencing, and the Mayor, Pete, and the Peróns seemed satisfied with our verdict also."
 
     scene black with fade
@@ -2153,7 +2153,7 @@ label monthly_event_14:
         him serious "I haven't heard of anything going around. That's one of the good things about being so far from Earth - we don't get their germs."
         her annoyed "Well, I've got something. It's not like I'd make it up!"
         him surprised "What? No, of course not."
-        her angry "Do you think I'd make that sort of thing up?!"
+        her yelling "Do you think I'd make that sort of thing up?!"
         him annoyed "No, not at all!"
         "I felt like crying. One part of my brain knew it was not a big deal, but the other part just felt so lonely and afraid all of a sudden."
         if (loved >= 0):
@@ -2171,7 +2171,7 @@ label monthly_event_14:
             him serious "You should get some rest."
             her annoyed "Oh, suddenly you know exactly what I should do? You think I don't know how to take care of myself?!"
             him annoyed "Hey, I'm not telling you what to do, you just seem a little tired, that's all."
-            her angry "Tired?! I just said I'm sick!"
+            her yelling "Tired?! I just said I'm sick!"
             him angry "Fine, do whatever you want!"
             scene bg bedroom with fade
             show her sleeping at center, squatting
@@ -2298,7 +2298,7 @@ label monthly_event_14:
                     him annoyed "Is that why you haven't wanted sex lately?"
                     her surprised "No! That's not it at all! I'm just trying to see the bright side of things."
                     him angry "The only bright side is that there's no kids to be hurt by our unstable relationship."
-                    her angry "Unstable?!"
+                    her yelling "Unstable?!"
                     him annoyed "People who are married don't act this way. We never do things together; we never make love. And when I try and do things for you, it's like I can never do anything right."
                     her sad "Is that really how you see us?"
                     him sad "It's true, isn't it? We have to turn things around if we want this to work, and especially if we want to bring kids into this family."
@@ -2327,9 +2327,9 @@ label monthly_event_14:
         menu:
             "What should I say?"
             "{i}No way!{/i}" if (relaxed <= 0):
-                her angry "No way! We can barely take care of our farm and a horse; how can we take care of a baby?!"
+                her annoyed "No way! We can barely take care of our farm and a horse; how can we take care of a baby?!"
                 him concerned "I think we're doing pretty good."
-                her annoyed "It just feels like one more thing to worry about; I'm already stressed out about food, work, and this whole crazy planet."
+                her concerned "It just feels like one more thing to worry about; I'm already stressed out about food, work, and this whole crazy planet."
                 him normal "Don't worry; we'll figure something out. We can always... get creative."
                 her flirt "I like it when you get creative."
             "Maybe...":
@@ -2388,15 +2388,15 @@ label monthly_event_15:
         him surprised "Yeah, why not?"
         her concerned "I don't know if I'm ready for people to know, yet."
         him concerned "Oh... well, when I told Mrs. Perón, she posted a message about it on the colony message board..."
-        her determined "So everyone knows?"
+        her annoyed "So everyone knows?"
         him serious "Yeah, pretty much."
-        her annoyed "I haven't even told my parents yet!"
+        her angry "I haven't even told my parents yet!"
         him surprised "What's stopping you?"
         her concerned "I guess... I wanted to tell them in person, or at least call, but that's just not possible, is it?"
         him serious "No... but we can send them a message."
         her sad "But what if something goes wrong, like a miscarriage?"
         him angry "Don't say that!"
-        her angry "Well, it's a possibility, isn't it?!"
+        her yelling "Well, it's a possibility, isn't it?!"
         him serious "Yeah, but... Whatever happens, I want to face it with friends and family knowing everything."
         menu:
             "How do I feel?"
@@ -2405,9 +2405,9 @@ label monthly_event_15:
             "I guess you're right.":
                 her serious "Yeah, that makes sense. Hopefully nothing bad will happen."
             "I can't believe you did that!":
-                her angry "I can't believe you told other people without talking to me first!"
+                her yelling "I can't believe you told other people without talking to me first!"
                 him angry "What, so you want to decide what I can and can't tell people?"
-                her "No, but it's something important enough that we should have decided on it together!"
+                her annoyed "No, but it's something important enough that we should have decided on it together!"
                 $ loved -= 2
 
         him annoyed "..."
@@ -2431,25 +2431,25 @@ label monthly_event_15:
         menu:
             "What should I say?"
             "It's not a big deal.":
-                her annoyed "I guess not. It's just kind of weird. As long as they don't start serenading us with fertility songs or anything it doesn't really matter."
+                her concerned "I guess not. It's just kind of weird. As long as they don't start serenading us with fertility songs or anything it doesn't really matter."
                 him flirting "Okay, I'll post that to the message board. 'Thanks for the well-wishes, but no fertility rites, please.'"
                 her flirt "Shut up and try some of this."
             "It's annoying.":
                 her annoyed "That's really annoying. I don't want people to be asking me all the time if I'm pregnant yet, or giving well-meaning but idiotic advice, or looking at me like I'm a time bomb or something."
                 him serious "I'm not sure you can prevent that, anyway. I mean, they're going to know sooner or later, right?"
                 if (relaxed >= 0):
-                    her determined "Yes, but I wanted it to be on my terms."
+                    her serious "Yes, but I wanted it to be on my terms."
                     him concerned "I see. I'm sorry, [her_name], I didn't even think about it."
                     her normal "It's all right; we'll deal with it. Come on and eat breakfast with me, okay?"
                     him happy "No problem."
                 else:
                     her angry "Yes, but I wanted to decide that! It's my body, you know!"
                     him annoyed "It's {b}our{/b} child."
-                    her angry "It doesn't even exist yet! What if I change my mind, or something goes wrong?"
+                    her yelling "It doesn't even exist yet! What if I change my mind, or something goes wrong?"
                     him angry "I thought we had already decided."
                     her annoyed "Well, we didn't decide to tell people about it, that's for sure."
                     him annoyed "Look, I'm sorry. I just wanted to tell somebody, and Thuc's probably the best friend I have here, except for you."
-                    her determined "Well, we can't change it now. Just come eat some breakfast."
+                    her serious "Well, we can't change it now. Just come eat some breakfast."
                     $ loved -= 2
                 $ relaxed -= 2
             "I'm mortified!":
@@ -2553,16 +2553,16 @@ label monthly_event_16:
                 him serious "OK, I'll trade you nights, since you're not feeling good."
             $ loved += 2
         "Make your own dinner!" if (relaxed <= 0):
-            her annoyed "Make your own damn dinner, I'm not hungry!"
+            her angry "Make your own damn dinner, I'm not hungry!"
             him surprised "Hey, hey! Calm down!"
-            her angry "Calm down?! I don't have time to calm down! I need to wash out this vomit and make dinner out of vegetables I hate and try not to die while doing it, because everything on this planet is trying to kill us!!"
+            her yelling "Calm down?! I don't have time to calm down! I need to wash out this vomit and make dinner out of vegetables I hate and try not to die while doing it, because everything on this planet is trying to kill us!!"
             if (loved > 0):
                 him concerned "Okay, it seems like you could use a little break, so why don't you go lie down?"
                 her concerned "I don't have time to-"
                 him serious "Laundry can wait, I'll make dinner, and nothing's trying to kill us at the moment, so go rest, okay?"
             else:
                 him annoyed "Quit overreacting. You're just making excuses."
-                her angry "I hate this place! I hate this food! I hate not having anything when we need it! I hate the animals, I hate the plants, I hate the moons that can't make up their mind whose turn it is to be in the sky!"
+                her yelling "I hate this place! I hate this food! I hate not having anything when we need it! I hate the animals, I hate the plants, I hate the moons that can't make up their mind whose turn it is to be in the sky!"
                 him annoyed "Anything else?"
                 menu hate_stuff:
                     "I hate the sun.":
@@ -2718,7 +2718,7 @@ label monthly_event_17:
         her surprised "Oh! She's kicking right now, you can probably see her little foot poking through my skin..."
         "Sara put her hand on my belly, and after a minute the baby gave her a little kick."
         sara "Wow! There is really a baby in there!"
-        her annoyed "I hope so!"
+        her flirt "I hope so!"
         sara "Awwww...."
         her happy "..."
         sara "So, is anything else going on?"
@@ -2873,10 +2873,10 @@ label monthly_event_18:
     with moveinleft
     "Finally, we arrived at the clinic. [his_name] was shaking and breathing hard."
     him concerned "I don't n-n-n-need a doc-c-c-tor."
-    her angry "Your hands are all blistered!"
+    her yelling "Your hands are all blistered!"
     "He looked at his hands, but didn't appear to notice how hurt they were."
     him sad "I sh-sh-sh-should just go h-h-home."
-    her determined "Just come in here, everything will be fine."
+    her annoyed "Just come in here, everything will be fine."
     if (profession == "doctor"):
         "I cleaned his burned skin carefully, treated his burns with ointment, and wrapped them up gently."
         "He gradually calmed down and stopped shaking, too."
@@ -2906,15 +2906,15 @@ label monthly_event_18:
         "No way!":
             her annoyed "There's no way I'm letting you out of the house. You'll just make your hands worse and it will take longer to heal."
             him annoyed "What, you're my boss now?"
-            her serious "No, just someone who wants what's best for you."
+            her concerned "No, just someone who wants what's best for you."
             him surprised "You don't think I know what's best for me?"
-            her annoyed "Maybe not, if you're going to use your hands before they've healed."
+            her angry "Maybe not, if you're going to use your hands before they've healed."
             him serious "I'm just going to look around. I need some fresh air."
             her concerned "But-"
             him angry "Get out of the way!"
-            show her with hpunch
+            show her concerned with hpunch
             hide him with moveoutleft
-            show her at midright with move
+            show her sad at midright with move
             "He pushed past me and stormed out of the house."
             her annoyed "(What's his problem?!)"
             "When he came back later, we were both much calmer."
@@ -2982,9 +2982,9 @@ label monthly_event_18:
             "The little kids got tired quickly, but with everyone helping, we were able to pick all the ripe ones."
             "It was cute to watch [his_name] explain things to the kids... they really listened to him."
         "The farm can wait.":
-            her annoyed "The farm can wait. Your health is more important."
+            her angry "The farm can wait. Your health is more important."
             him angry "You can't just let the food go to waste! I worked hard growing those!"
-            her concerned "Well, I don't have time to pick them."
+            her annoyed "Well, I don't have time to pick them."
             him angry "Someone needs to!"
             "In the end, [his_name] found a friend to help him pick some of the vegetables."
             "I helped a little, but the farm was his thing, not mine."
@@ -3383,7 +3383,7 @@ label done_party_menu:
                     him surprised "Why are you putting that tin foil there?"
                     her annoyed "It's reflective, like a solar panel."
                     him annoyed "Solar panels aren't reflective."
-                    her angry "We don't have a lot of time! I'm just doing the best I can!"
+                    her yelling "We don't have a lot of time! I'm just doing the best I can!"
                 else:
                     "We worked together fluidly, like dancers, attaching a piece here and wrapping a piece there, not needing to talk much."
                 "We finished just as the time was up."
@@ -3765,7 +3765,7 @@ label monthly_event_22:
             her concerned "Yeah... Natalia snuck in last night and took the fake bottle."
             pavel sad "Really? That's strange... well, I'll ask her to come talk to us."
             show natalia at midleft with moveinleft
-            show her at quarterleft with move
+            show her serious at quarterleft with move
             natalia "What is it, Mayor?"
             pavel sad "Please return the shampoo, Natalia."
             natalia "What are you talking about?! I'm not hoarding a bunch of shampoo!"
@@ -3886,18 +3886,18 @@ label monthly_event_22:
             "I did some research. I found methods for making shampoo out of bar soap, liquid soap, honey, or coconut milk, but those were all things we didn't have much of. I finally decided to make sort of a dry rinse out of baking soda that would absorb oil."
             "I decided to test out the baking soda recipe. I mixed it with some corn flour and dried flowers, and sprinkled it on my own dry hair."
             show him normal at midleft with moveinleft
-            show her at midright with move
+            show her serious at midright with move
             "[his_name] caught me before I had brushed it out."
             him surprised "What's that stuff in your hair?"
             her annoyed "I'm trying a new type of shampoo."
             him surprised "It looks more like herbs and spices..."
             him laughing "Mmmm, herbed [her_name], my favorite dish..."
-            her annoyed "It's supposed to absorb the oils in your hair without having to use shampoo..."
+            her concerned "It's supposed to absorb the oils in your hair without having to use shampoo..."
             if (loved > 0):
                 her flirt "But maybe I'll let you have a little taste later."                
             him normal "Okay, well, tell me if it works."
             hide him with moveoutleft
-            show her at center with move
+            show her serious at center with move
             "I brushed all the powder out and took a look at my hair. It definitely looked less oily, but it didn't really feel clean...but maybe I could get used to it?"
             her concerned "It's better than nothing, anyway."
             "We never did find out who was stealing the shampoo, but we made what we had last much longer by using the dry shampoo in between."
@@ -3953,9 +3953,9 @@ label monthly_event_23:
             him nude happy "Yeah, and you're great!"
             her concerned "But I can't really perform surgery on myself! What if I need a C-section or something?!"
             him nude concerned "I hadn't thought of that..."
-            her annoyed "I'll just have to teach Mrs. Nguyen and Brennan how."
+            her angry "I'll just have to teach Mrs. Nguyen and Brennan how."
             him nude angry "Brennan!"
-            her "Do you know of anyone else?!"
+            her annoyed "Do you know of anyone else?!"
             him nude concerned "Well...I've done a C-section on a cow before, so I could probably help out."
             her surprised "A cow? That's not very reassuring."
             her concerned "I can just use local anesthetic, so I can stay conscious and instruct you... but I sure hope we never have to do that."
@@ -4111,9 +4111,9 @@ label monthly_event_23:
                         brennan mad "Ah. Did [his_name] forbid you from being friends with me?"
                         her surprised "What? No, {b}I{/b} decided that we should be more distant, because I don't want to make that mistake again."
                         brennan "Oh, I see, I'm a mistake."
-                        her annoyed "Don't make this harder than it is!"
+                        her angry "Don't make this harder than it is!"
                         brennan "I don't like how he treats you."
-                        her angry "What are you talking about?! He's trying to forgive me, even though I totally betrayed him and our marriage!"
+                        her yelling "What are you talking about?! He's trying to forgive me, even though I totally betrayed him and our marriage!"
                         brennan "Don't you have any freedom? He's just being selfish, and not letting you follow your heart. You can't tell me I mean nothing to you..."
                         her annoyed "Is that what it will take for you to believe me?"
                         brennan normal "You won't say it."
@@ -4171,9 +4171,9 @@ label monthly_event_23:
         # loved < -5
         else:
             him annoyed "Oh, great, that's just what this marriage needs."
-            her annoyed "What?!"
+            her angry "What?!"
             him angry "I mean, you and I can barely get along as it is, and the last thing we need is something else to argue about."
-            her angry "I thought you wanted kids! It's not like I got pregnant by myself; you're half responsible, too!"
+            her yelling "I thought you wanted kids! It's not like I got pregnant by myself; you're half responsible, too!"
             him concerned "Yeah, probably."
             her surprised "What's that supposed to mean?!"
             if (cheated_on_him):
@@ -4196,21 +4196,21 @@ label monthly_event_23:
                         her sad "I mean, it was just that one time, but..."
                         him concerned "When did you- Never mind, I don't want to know."
                         him angry "I can't believe this..."
-                        her annoyed "I'd say I'm sorry, but it's clear he loves me more than you ever will."
+                        her angry "I'd say I'm sorry, but it's clear he loves me more than you ever will."
                         him annoyed "It's clear, huh? He's that good?"
-                        her angry "It's not just about the sex!"
+                        her yelling "It's not just about the sex!"
                         him serious "Sure it's not."
-                        her serious "I mean, not just that. He listens to me! He has time for me."
+                        her sad "I mean, not just that. He listens to me! He has time for me."
                         him angry "Yeah, because he's a useless prick! He doesn't even know how to do anything useful, so they had you babysitting him! Guess that's like having the sheep babysit the wolf..."
-                        her angry "Look, I was going to say I was sorry, but what's the point?! Clearly, you are done with this relationship."
+                        her yelling "Look, I was going to say I was sorry, but what's the point?! Clearly, you are done with this relationship."
                         him angry "Clearly, there was never much of a relationship here to begin with. I'm sorry for not seeing it sooner."
                         "We didn't talk much after that. We both knew it was over, but we kept pretending nothing had happened..."
                         $ loved -= 10
 
                     "What about you?":
-                        her concerned "Are {b}you{/b} having an affair with Thuc?"
+                        her annoyed "Are {b}you{/b} having an affair with Thuc?"
                         him surprised "What? Of course not."
-                        her angry "Well, that's how ridiculous your suggestion is. So drop it."
+                        her yelling "Well, that's how ridiculous your suggestion is. So drop it."
                         him annoyed "...Okay."
                         "I wasn't sure if he believed me or not. But he started acting more distant, and I felt he didn't trust me."
                         $ loved -= 5
@@ -4312,7 +4312,7 @@ label monthly_event_23:
                 if (loved < 0):
                     her angry "If you really loved me, you would have asked me what was wrong last night, instead of just getting what you wanted and then dropping off to sleep!"
                     him nude angry "Oh, so if I make one mistake, suddenly I don't love you anymore?"
-                    her angry "This is not the only time this has happened!"
+                    her yelling "This is not the only time this has happened!"
                     him nude angry "All right! Let's bring up every imperfect thing the other person has ever done, right now! Do you want to do that?!"
                     her sad "No, I just--"
                     him nude annoyed "Tch. Forget it."
@@ -4390,7 +4390,7 @@ label monthly_event_24:
         show her normal at center
         "Work wasn't much better."
         "Everyone treated me like a ticking time bomb."
-        show her at midright with move
+        show her serious at midright with move
         show brennan at midleft with moveinleft
         brennan "No baby yet, eh?"
         her annoyed "No. I'm sure everyone will know when the baby arrives."
@@ -4402,7 +4402,7 @@ label monthly_event_24:
         show her normal at midleft
         with dissolve
         sara "So, how've you been feeling? You're due date's this week, isn't it?"
-        her angry "YES! Yes, I am nine months pregnant now, and any minute, without warning, a strange creature could come bursting out between my legs!"
+        her yelling "YES! Yes, I am nine months pregnant now, and any minute, without warning, a strange creature could come bursting out between my legs!"
         sara "Whoa, feeling a little sensitive?"
         her sad "Sorry... it's just that it's all anyone ever talks to me about anymore."
         sara sad "I'm sorry; do you want to talk about something else?"
@@ -4427,6 +4427,7 @@ label monthly_event_24:
         her concerned "But I feel a little tired after walking so far. I think I'll just lie down for a minute."
         show her at squatting
         show sara at squatting
+        with move
         "We sat there for awhile, just enjoying the sounds of the river."
         sara "..."
         her normal "..."
@@ -4565,9 +4566,9 @@ label monthly_event_24:
             $ relaxed += 2
 
         show him normal at midleft behind her with moveinleft
-        show her at midright with move
+        show her serious at midright with move
         him flirting "Good morning, [her_nickname]! How're you feeling?"
-        her serious "More contractions...who knows if it's really labor or not, though?"
+        her annoyed "More contractions...who knows if it's really labor or not, though?"
         him serious "Want me to time them?"
         her normal "Sure."
         "As he timed them, they got stronger and more uncomfortable."
@@ -4642,7 +4643,7 @@ label monthly_event_24:
         show him serious at midright
         show julia at right
         him surprised "Is it supposed to take this long?"
-        her angry "I'm working as hard as I can!!!"
+        her yelling "I'm working as hard as I can!!!"
         julia "It may not seem like it, but she's progressing well. The body needs to gradually stretch to avoid tearing."
         her sad "It just seems like nothing's happening..."
         julia "You're close. You've come so far. This baby is coming out soon!"
@@ -4658,7 +4659,7 @@ label monthly_event_24:
     
         her serious "Ohhhh, here comes another one-"
         her sad "Hooooooo. Hmmmmmm. Ahhhhh! AHHHHH!"
-        her angry "I feel like... I should... push!"
+        her yelling "I feel like... I should... push!"
         julia "Okay, everything's ready, go ahead!"
         "I yelled and pushed through most of the next contraction. It was hurting a lot, but it felt so good to finally be getting somewhere!"
         show her sleeping
@@ -4680,7 +4681,7 @@ label monthly_event_24:
         julia mad "Yes! I can see the top of her head!"
         show her serious with dissolve
         "Suddenly, I felt centered. I had almost forgotten why I was going through all this pain in the first place. This wasn't about me, or about proving something, or winning, or anything stupid like that. This was about our baby, our tiny creature who needed my help just to exist!"
-        show her angry with dissolve
+        show her yelling with dissolve
         "I took a deep breath, and pushed again, stretching past fire and pain and breathing and my own body. I think I probably screamed. Everything else disappeared, and all that was left was the burning. But it still wasn't enough; somehow I pushed again!"
         him happy "Yeah! There she is!"
         show her concerned with dissolve
@@ -4754,11 +4755,11 @@ label monthly_event_24:
                 him annoyed "But I guess you wouldn't understand that."
                 her surprised "What do you mean?"
                 him angry "You're so lazy! You just do the bare minimum you need and that's all. Things will never get better if you don't work at them!"
-                her angry "I work plenty hard! But other things are important, too!"
+                her yelling "I work plenty hard! But other things are important, too!"
                 him angry "Really? Like what! What's more important than surviving, than building up our community?!"
-                her annoyed "How about my sanity?! Have you ever considered that? No! Because you don't think about how anyone else feels! You just think everyone else must feel like you do!"
+                her angry "How about my sanity?! Have you ever considered that? No! Because you don't think about how anyone else feels! You just think everyone else must feel like you do!"
                 him annoyed "I know how you feel; you're just wrong."
-                her angry "That's exactly what I'm talking about! You don't give my feelings any weight at all if they don't agree with yours!"
+                her yelling "That's exactly what I'm talking about! You don't give my feelings any weight at all if they don't agree with yours!"
             him concerned "..."
             her concerned "..."
         else:
@@ -4770,7 +4771,7 @@ label monthly_event_24:
                 him concerned "But, you know, you need to work at it, too."
                 her annoyed "What's that supposed to mean?!"
                 him concerned "If we want things to be better here, it's up to us to make it happen. We can't just do the bare minimum and hope for the best."
-                her angry "The bare minimum?! Is that what you think I've been doing?!"
+                her yelling "The bare minimum?! Is that what you think I've been doing?!"
 
                 him concerned "Anyway, no matter what, I'm staying here. I love Talaam. I love the challenge and the adventure. But if you really need to leave... I, I won't-"
         

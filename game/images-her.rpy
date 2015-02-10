@@ -21,7 +21,7 @@ init python:
 
 # Define images for her (nude, pregnant, dress, normal)
 init python:
-    her_expressions = ["angry", "annoyed", "concerned", "flirt", "happy", "laughing", "normal", "sad", "serious", "sleeping", "surprised"]
+    her_expressions = ["angry", "annoyed", "concerned", "flirt", "happy", "laughing", "normal", "sad", "serious", "sleeping", "surprised", "yelling"]
     # For each expression, add a nude, pregnant, dress, and normal version
     for expression_name in her_expressions:
         renpy.image(("her", expression_name), ConditionSwitch(
@@ -36,15 +36,13 @@ init python:
         "is_pregnant and (month > 19) and (month <= 24)", "sprites/her/pregnant-normal.png", 
         "wearing_dress", "sprites/her/dress-normal.png", 
         "True", "sprites/her/normal.png"))
-    
-    renpy.image(("her", "determined"), "sprites/her/determined.png")
 
 label test_her_sprites:
     scene bg fields with fade
     show her pregnant at left
     "Pregnant Expressions"
     $ is_pregnant = True
-    show her angry at right with fade
+    show her yelling at right with fade
     show her concerned at quarterright with fade
     show her flirt at midright with fade
     show her happy at center with fade
@@ -56,7 +54,7 @@ label test_her_sprites:
     "Dress Expressions"
     $ is_pregnant = False
     $ wearing_dress = True
-    show her angry at right with fade
+    show her yelling at right with fade
     show her concerned at quarterright with fade
     show her flirt at midright with fade
     show her happy at center with fade

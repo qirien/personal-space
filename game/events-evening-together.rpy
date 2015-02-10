@@ -99,8 +99,8 @@ label relax_together_1:
     "We built a fire to heat up one of the tubs of water. Then we washed off and got in the hot water."
     scene bg bathhouse with fade
     $ is_nude = True    
-    show him nude at midleft, squatting
-    show her at center, squatting
+    show him nude sleeping at midleft, squatting
+    show her sleeping at center, squatting
     show bathhouse_overlay    
     with dissolve
 
@@ -167,7 +167,7 @@ label relax_together_2:
             stop music fadeout 1.0
             her angry "Ugh, now I'm all wet and cold!"
             him nude flirting "I'll warm you up, [her_nickname]!"
-            her "No thanks, I'm going home."
+            her annoyed "No thanks, I'm going home."
             stop music fadeout 1.0
             hide her with moveoutleft
             scene black with fade
@@ -227,13 +227,13 @@ label relax_together_3:
         "That's deceitful.":
             her annoyed "That's deceitful. I feel used."
             him surprised "Why? It's not like I only married you so I could come be a colonist."
-            her annoyed "Really? Because that's exactly what it feels like."
+            her angry "Really? Because that's exactly what it feels like."
             if (not want_kids):
                 her annoyed "Also, we're not ready for kids, and who knows when we will be? You didn't promise them we'd have kids, did you?"
                 him serious "No! I mean, it's sort of expected, but-"
-                her angry "And you didn't think that was something I should know?!"
+                her yelling "And you didn't think that was something I should know?!"
                 him angry "I thought it was obvious! And, anyway, who cares what they think?!"
-                her "I do! Now I feel like, if we don't have kids soon, we're not keeping up our side of the agreement. Even though it was an agreement I knew nothing about!"
+                her concerned "I do! Now I feel like, if we don't have kids soon, we're not keeping up our side of the agreement. Even though it was an agreement I knew nothing about!"
                 him annoyed "Sorry, I guess I just assumed we'd have kids eventually and it wouldn't really be a big deal."
                 her annoyed "..."
             him annoyed "I don't know what you want me to say. I just told you that I love you and everything you've brought into my life, and somehow you've turned it into a big argument."
@@ -380,9 +380,9 @@ label relax_together_5:
             him serious "I love you, [her_name]."
             $ made_love += 1
         "That's presumptuous!":
-            her annoyed "That's pretty presumptuous. You think that just because you setup a fancy dinner that you're automatically going to get some?"
+            her angry "That's pretty presumptuous. You think that just because you setup a fancy dinner that you're automatically going to get some?"
             him annoyed "No! I mean, I was thinking it would be a nice end to the evening, but we don't have to. I just thought it might be romantic."
-            her serious "Well, it's not. You can't just assume things like that."
+            her annoyed "Well, it's not. You can't just assume things like that."
             him angry "Sorry for assuming my own wife would want to make love to me."
             "I tried to storm off, but I didn't know which way was home."
             her annoyed "Which way back home?"
@@ -424,20 +424,25 @@ label relax_together_6:
             him surprised "Yeah? Do you think it'd turn out okay?"
             her annoyed "It's not that hard to just cut your hair shorter."
             him happy "Well, I guess if it's awful I could just shave my head."
-            her annoyed "It'll look fine! Now sit outside while I get some scissors."
+            her happy "It'll look fine! Now sit down while I get some scissors."
+            hide her with moveoutleft
+            show her at center behind him with moveinleft
+            show him normal at squatting with move
             "We didn't have haircutting scissors, so I just used regular scissors and a comb."
             play bg_sfx "sfx/scissors.mp3"
             if (skill_creative >= 40):
                 "I gave him a haircut kind of like what he had before. It was easier than I thought."
                 her happy "Well, what do you think?"
                 him surprised "Hey, that looks good!"
-                her annoyed "Of course it does."
+                her flirt "Of course it does."
             else:
                 "I tried to give him a haircut kind of like what he had before. It was hard to get the sides even. I'd cut it shorter on one side, and then I'd have to cut the other side to match, but I'd cut a little too much..."
                 "Finally, I got it balanced, but his hair was a lot shorter than I'd ever seen it."
                 her concerned "Well, what do you think?"
                 him surprised "Hey, not bad!"
                 her happy "Oh good, I'm glad you like it."
+            show him at standing
+            with move
             him happy "Ahhh, that feels good."
             him serious "Now it's your turn."
             her surprised "For what?"
@@ -454,15 +459,15 @@ label relax_together_6:
                     her surprised "You know, the ends could definitely use a trim; just don't cut off too much!"
                     him normal "No problem; just leave it to me."
                     "I was a little nervous as I handed him the scissors and sat down."
-                    show him at center
-                    show her at midright
-                    with dissolve
+                    show him normal at center behind her
+                    show her serious at midright, squatting
+                    with move
                     play bg_sfx "sfx/scissors.mp3"
                     him serious "..."
                     her concerned "..."
-                    show him at midleft
-                    show her at midright
-                    with dissolve
+                    show him serious at midleft
+                    show her concerned at midright, standing
+                    with move
                     him concerned "Okay, that should do it."
                     "I went over to look in the mirror."
                     "It mostly looked the same; he just cut off about an inch in the back."
@@ -771,18 +776,19 @@ label relax_together_g:
     him sad "...but I'm kind of in a hurry, I gotta go fix something before the wind totally breaks it apart."
     her concerned "You don't have fifteen minutes for me?"
     him normal "Well, yeah, if you can wait until I get this done. You don't mind, do you?"
-    her angry "Yes I mind! I've been sitting here waiting for you for hour!"
+    her yelling "Yes I mind! I've been sitting here waiting for you for hour!"
     him angry "Look, I just can't right now! I'll be back in after I fix this!"
-    hide him
+    hide him with moveoutleft
+    show her concerned with dissolve
     "He left."
-    show her concerned
+    show her annoyed with dissolve
     "I waited."
-    show her annoyed at squatting
+    show her angry at squatting
     show bedroom_covers
     with dissolve
     "And waited."
     $ is_nude = True
-    show her sleeping at squatting
+    show her sleeping at squatting with dissolve
 
     "And waited."
     scene black with fade
@@ -828,9 +834,9 @@ label relax_together_g:
             $ loved += 2
             $ relaxed += 3
         "Tell him off.":
-            her annoyed "You had your chance, but you missed it. Sorry, I can't just wait around all day for you to finally decide to show up and get some action."
+            her angry "You had your chance, but you missed it. Sorry, I can't just wait around all day for you to finally decide to show up and get some action."
             him nude concerned "C'mon, [her_nickname]..."
-            her concerned "Just leave me alone."
+            her annoyed "Just leave me alone."
             show him nude angry at quarterleft with move
             him "Fine."
             "We lay there, both angry, not saying anything, for a long time, before I finally got back to sleep."
@@ -984,8 +990,9 @@ label relax_together_k:
     her angry "No! It just sounds dumb!"
     him annoyed "Well, not as dumb as Benedict. 'Hello, my name is Benedict, I'm a tap-dancing pansy who can't even button his own waistcoat."
     her happy "It's refined and intelligent! And there's nothing wrong with tap dancing, is there?"
-    him normal "No, but do you really think a kid of ours is going to be a tap dancer?"
+    him concerned "No, but do you really think a kid of ours is going to be a tap dancer?"
     her concerned "Probably not."
+    show him serious with dissolve
     her normal "Anyway, we'll just keep looking, I bet we can find a name we both like."
 
     $ relaxed += 3
@@ -1000,7 +1007,7 @@ label relax_together_l:
     "...plus I think he liked to see me jump at all the scary parts."
     show her surprised at midright
     show him normal at midleft
-    her surprised "AHHHHHHH!"
+    her yelling "AHHHHHHH!"
     him surprised "You didn't know that was going to happen?"
     her annoyed "Well, I knew {b}something{/b} was going to happen, but no! Clowns don't usually have fangs!"
     him happy "Hehe, it's okay, we'll beat him. If we can figure out what to type on the typewriter..."

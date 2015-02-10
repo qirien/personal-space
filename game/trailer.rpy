@@ -64,7 +64,7 @@ label trailer:
     with dissolve
 #    her annoyed "It's none of your business what I do in my spare time."
     him angry "We need to think about food, clothing, shelter. We don't have time for anything else in order for the colony to survive."
-#    her angry "If it's just about survival, life isn't worth living."
+#    her yelling "If it's just about survival, life isn't worth living."
 #    him annoyed "Well, you don't even get a choice if you don't survive. If something goes wrong, who's going to help us out here? There's no food banks, no Red Cross, no emergency rooms."
 #    her sad "I can't live that way..."
 #    show him concerned with dissolve
@@ -210,7 +210,7 @@ label after_kids_menu:
     show him angry at midright
     with dissolve
     him angry "You can't just let the food go to waste. I worked hard growing those tomatoes!"
-    her angry "Well, I don't have time to pick them!"
+    her yelling "Well, I don't have time to pick them!"
     
     scene black with fade
     $ wearing_dress = False

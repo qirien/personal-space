@@ -47,7 +47,7 @@ label bad_ending:
     her serious "..."
     if (cheated_on_him):
         him annoyed "You can't trust Brennan, you know."
-        her angry "What would you know about trust?!"
+        her yelling "What would you know about trust?!"
         him serious "Hey, at least I never cheated on you."
         him annoyed "Any man who would sleep with another man's wife can't be trusted not to do it again."
         her annoyed "You don't know anything about Brennan. Or me, either, apparently."

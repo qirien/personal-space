@@ -277,14 +277,14 @@ label settling_in:
                     him annoyed "Yeah, well, it's important to me. How come you don't have a picture to hang up?"
                     her annoyed "I guess I only made room for the most important things."
                     him angry "What could be more important than your family?!"
-                    her angry "Hey, family's important to me, too!"
+                    her yelling "Hey, family's important to me, too!"
                     him concerned "We'll see."
                     menu:
                         "That wasn't fair."
                         "(Slap him.)":
                             "That was just too much; I slapped him on the face, harder than I meant to."
                             him surprised "Hey!"
-                            her angry "Don't you dare question my commitment to family! I just gave up my world, literally my ACTUAL WORLD, and flew across the universe to be with you! You're my family now!"
+                            her yelling "Don't you dare question my commitment to family! I just gave up my world, literally my ACTUAL WORLD, and flew across the universe to be with you! You're my family now!"
                             him angry "And is this how you treat your family? No wonder you didn't bring any pictures of them."
                             "I didn't have an answer to that, so I just left the house and slammed the door. I couldn't decide whether to cry or scream."
                             $ loved -= 5
@@ -302,7 +302,7 @@ label settling_in:
                             $ loved += 2
                             $ relaxed -= 2
                         "Why did you even marry me?":
-                            her angry "Do you really think that? Why would you have married me if you thought that?"
+                            her yelling "Do you really think that? Why would you have married me if you thought that?"
                             him annoyed "No, I don't really think that, I just- sometimes it seems like other things are more important to you."
                             her annoyed "Well, they're not. You're my family now."
                             him normal "Okay, well, you're my family, but they still are, too, even if I never see them again."

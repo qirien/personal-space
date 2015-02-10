@@ -368,7 +368,7 @@ label social_4:
             menu:
                 "What should I say?"
                 "Take you to the doctor.":
-                    her normal "I would take you in to have your head examined."
+                    her serious "I would take you in to have your head examined."
                     him happy "Because the only way I would be mean to you is if I had brain damage, right?"
                     her annoyed "And if you were mean to me you might get brain damage, if you know what I mean."
                     him flirting "Oh, you're so feisty."

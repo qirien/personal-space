@@ -87,7 +87,7 @@ label physical_1:
         "An adrenaline rush might help counteract the leeches' natural anesthetic..."
         "I don't have any medications with me, but I might be able to get my body to release adrenaline on its own."
         "I imagined all the scariest creatures that had been documented to live on this planet, all converging on the water hole for an evening drink, and I, unable to move, helpless...I breathed quickly to try to bring on my body's natural fight-or-flight response."
-        show her angry at center with move
+        show her yelling at center with move
         show her with vpunch
         her "HRRRRGH!"
         show her serious
@@ -131,9 +131,9 @@ label physical_1:
             him surprised "I'm just saying, who knows what's out there? We don't even know half the creatures on this planet. It's too dangerous."
             her concerned "That's not for you to decide."
             him annoyed "Promise me you won't go off by yourself again."
-            her annoyed "I'm not promising anything!"
+            her angry "I'm not promising anything!"
             him angry "Dammit, [her_name], I need you! I need you alive, here with me, not as a carcass torn apart by some alien beast!"
-            her angry "And I need you to trust me to make my own decisions."
+            her yelling "And I need you to trust me to make my own decisions."
             him sad "I...do trust you. But, please, be more careful, [her_name]..."
             $ loved -= 5
         "Want to come next time?":
@@ -190,11 +190,11 @@ label physical_2:
         "Lucky you.":
             her normal "Lucky thing for you, huh? Now you don't have to chop the wood."
             him flirting "Nope, instead I just get to watch you work that beautiful body and get all hot and sweaty."
-            her annoyed "Hmm, maybe you should chop the wood next time."
+            her flirt "Hmm, maybe you should chop the wood next time."
             him happy "No chance! I could sit here and watch you all day."
             her annoyed "No, I'm done! Your turn!"
             "He took the axe from me and setup a log. Even though it was getting cold, he took his shirt off and threw it at me."
-            her angry "Ew! I don't want your sweaty shirt!"
+            her yelling "Ew! I don't want your sweaty shirt!"
             show him flirting
             "He flexed his muscles exaggeratedly before setting up a log. I laughed."
             show her laughing
@@ -237,14 +237,14 @@ label physical_2:
             menu:
                 "What should I say?"
                 "You're asking {b}me{/b}?!" if (relaxed <= 0):
-                    her angry "I hadn't gotten to that yet because I had to chop up all this stupid wood!"
+                    her yelling "I hadn't gotten to that yet because I had to chop up all this stupid wood!"
                     stop bg_sfx
                     play bg_sfx "sfx/ice-block-drop-01.mp3"
                     "I threw the axe on the ground in a way that probably wasn't good for the axe or the ground, but it felt good."
                     him annoyed "I just asked a question, you don't have to throw things around."
-                    her annoyed "You implied that I should have already started on dinner."
-                    him "Well, maybe if you had chopped this wood earlier, you could have."
-                    her angry "Or if {b}you{/b} had done it earlier!"
+                    her angry "You implied that I should have already started on dinner."
+                    him angry "Well, maybe if you had chopped this wood earlier, you could have."
+                    her yelling "Or if {b}you{/b} had done it earlier!"
                     him angry "You know what? Never mind; I'll just make my own dinner."
                     "We ate separately, and didn't talk much that evening. By the next day, though, we had both mostly forgotten about it."
                     $ loved -= 5
@@ -309,7 +309,7 @@ label physical_4:
             return
         "Practice balancing with long standing poses.":
             "I tried to balance on one leg with my upper body in various poses."
-            show her at midright with move
+            show her serious at midright with move
             show him normal at midleft with moveinleft
             him surprised "I didn't know you knew yoga."
             her serious "It's good to practice putting your body in different positions."
@@ -324,7 +324,7 @@ label physical_4:
                 him annoyed "Yeah, I know."
         "Do sun salutations.":
             "I switched rapidly between several poses until I worked up a sweat."
-            show her at midright with move
+            show her serious at midright with move
             show him normal at midleft with moveinleft
 
             him "Ohhh, sweaty [her_nickname], my favorite."
@@ -438,7 +438,7 @@ label physical_5:
                     "I put some of the water into an old water bottle and we brought it back with us."
                     scene bg lab with fade
                     show lily at midright with dissolve
-                    show her at midleft with moveinleft
+                    show her surprised at midleft with moveinleft
                     her surprised "Dr. Lily, I found a hot spring up in the mountains; would you mind testing the water for us?"
                     lily happy "Fascinating. Let me get my pH strips and put some under the microscope..."
                     lily normal "The water is slightly alkaline, and it has several kinds of minerals in it. I do see some bacteria, but they are not a kind we know about, so I don't know if they are dangerous or not."
@@ -453,7 +453,7 @@ label physical_5:
                     scene bg hotspring with dissolve
                     show him nude normal at midleft, sitting
                     $ is_nude = True                    
-                    show her at center, sitting
+                    show her serious at center, sitting
                     show hot_spring_overlay
                     with dissolve
                     "We stripped down and got in the warm water. The water felt soft and slippery."
@@ -535,7 +535,7 @@ label physical_5:
                     him concerned "That sounds really cool... but I thought we agreed that we shouldn't go hiking alone."
                     her annoyed "You just proclaimed that; I never agreed to it!"
                     him annoyed "What if you got burned by that geyser?"
-                    her angry "I left a note!"
+                    her yelling "I left a note!"
                     him angry "A note isn't going to chase away wild animals or help you if you get hurt!"
                     her annoyed "Well, I guess we just disagree on this."
                     him annoyed "No, you're just wrong."
@@ -671,15 +671,15 @@ label physical_8:
                 him happy "I'm glad you're feeling up to working though! How about I help you with dinner?"
                 her happy "Sounds great."
             "Ugh, being pregnant is such a pain.":
-                her angry "I can't do anything useful when I'm pregnant. What am I supposed to do, sit at home and twiddle my thumbs?"
+                her yelling "I can't do anything useful when I'm pregnant. What am I supposed to do, sit at home and twiddle my thumbs?"
                 him serious "You can still do useful things. You just can't lift heavy objects."
                 her annoyed "And I can't have raw anything anymore."
                 him happy "Well, you can still go for walks and cook and clean, right?"
-                her annoyed "That doesn't sound fun at all!"
+                her angry "That doesn't sound fun at all!"
                 him concerned "I'm sure there's something fun you can do."
                 her normal "I guess I can still watch movies and tell jokes."
                 him happy "And you can still beat me at chess!"
-                her happy "You bet I can!"
+                her flirt "You bet I can!"
             "I'm not worried.":
                 her concerned "I read that when you're pregnant you can still exercise a little as long as you were in shape before you got pregnant."
                 him concerned "I don't think that includes heavy lifting."

@@ -115,8 +115,8 @@ label technical_3:
     her happy "Yes! I'll need a few parts from the storehouse - wait, I should draw out the design first, so I'll know all the parts ahead of time. Some rollers, a crank, several gears..."
     hide her with moveoutright
     show her normal with moveinleft
-    her annoyed "Why won't these two parts fit together?!"
-    her surprised "Ohhh, one is imperial and one is metric! Stupid nonstandard parts!"
+    her surprised "Why won't these two parts fit together?!"
+    her annoyed "Ohhh, one is imperial and one is metric! Stupid nonstandard parts!"
     play bg_sfx "sfx/gears.mp3" loop
     "Finally, it was finished. It squeaked and rattled and if I had to do it again I would make some changes to the design, but it works."
     stop bg_sfx fadeout 1.0
@@ -190,7 +190,7 @@ label technical_4:
         "I'll die if I don't get what I need.":
             her concerned "It's for something really important. Can I please get two sheets of metal and some pipes?"
             ilian "What exactly is it for?"
-            her angry "I don't have time for your questions! This is a matter of life and death!"
+            her yelling "I don't have time for your questions! This is a matter of life and death!"
             ilian "Alright, alright, here you go."
             "After some careful welding, I made a tank for water with many metal arms sticking out of it to help passively heat the water."
             "I was able to put a pipe from the tank to our house, complete with a stopper that kind of leaked."
@@ -370,7 +370,7 @@ label technical_8:
     ilian "No."
     her surprised "What?"
     ilian "I'm not giving you anything else until you help me with something. I'm always giving you materials; now it's time for you to pay up."
-    her annoyed "I help out! I'm a [profession]; what do you think I do all day?!"
+    her angry "I help out! I'm a [profession]; what do you think I do all day?!"
     ilian "Here's what I need. We have this database software to manage our inventory, but I have to click through four screens to find out how much we have of something, and to update quantities."
     her surprised "Oh, so you want an easier interface?"
     ilian "Yes, I do. Then I will be able to help distribute things more fairly and not rely on memory."
