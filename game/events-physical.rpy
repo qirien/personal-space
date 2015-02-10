@@ -41,7 +41,7 @@ label physical_0:
 label physical_1:
     scene bg talam with fade
     "I decided to do some exploring. Here I was, living on a completely new planet, and all I had ever seen was the town and my own little farm. There was a ridge to the south, so I decided to hike over the top and see what was there."
-    "The ridge was steeper than it looked, but I was able to scramble up to the top. From the top of the ridge I could see all the way to town to the north, and to the south was a vast expanse of wild rolling hills with sparse shrubs, a few of the taller plants we called trees, and over all the ground the blue-green lichen that seemed to live everywhere on Talaam."
+    "The ridge was steeper than it looked, but I was able to scramble up to the top. From the top of the ridge I could see all the way to town to the north. To the south was a vast expanse of wild rolling hills with sparse shrubs and trees."
     "And, as the ridge descended before me, at its base I could see a grove of trees that looked out-of-place."
     show her normal at center with dissolve
     her surprised "There must be water there!"
@@ -56,7 +56,7 @@ label physical_1:
     if (skill_creative >= 20):
         "The pond was so familiar, and yet so distinct from anything I'd seen on Earth, I felt like I had to draw it, so I took out my sketchpad and got to work."
     if ((skill_domestic >= 30) or (skill_knowledge >= 30)):
-        "I decided to bring some of the sweet-smelling herbs back to the house and see if the scientists had tested their edibility."
+        "I decided to bring some of the sweet-smelling herbs back to the house and see if they were edible."
     
     show her serious
     "When I had rested long enough, I started to bring my legs out of the water. However, they were completely numb! They weren't just cold; and they weren't tingly like they had fallen asleep - it felt more like some kind of anaesthesia."
@@ -74,7 +74,7 @@ label physical_1:
     "Luckily, I had brought my radio with me, so I decided to try and call for help."
     play bg_sfx "sfx/radio.mp3"
     her serious "Can anyone hear me? I'm at the south ridge, and I can't walk... please help!"
-    her sad "...I repeat, this is [her_name], I'm stuck past the south ridge and need assistance, can anyone hear me?!"
+    her sad "...I repeat, this is [her_name], I'm stuck past the south ridge, can anyone hear me?!"
     if (skill_technical >= 20):
         her serious "(The hill must be in the way... but maybe if I angle the antenna a different way... I could also touch this tree to try and send the signal through there!)"
         her "I need help over the south ridge, can anyone hear me?"
@@ -96,12 +96,13 @@ label physical_1:
         her concerned "(I guess no one can hear my radio transmission...)"
         "I kept trying to move my legs, and I finally managed a slow sort of crawl away from the pond. It was impossible for me to enjoy the glowing sunset; all I could think of was getting out of there."
     stop bg_sfx fadeout 1.0
-    scene bg talam with fade
+    scene bg sunset with fade
     show her serious at quarterleft
     show night
     him "[her_name]! [her_name]!"
     her surprised "I'm here!"
     him "Keep talking to me, I'm coming!"
+    "I couldn't see him, but I could hear his voice. He sounded like he was on the other side of the ridge."
     her concerned "I can't move very well."
     him "It's okay, I'll get you home."
     play music "music/You.ogg" fadeout 1.0
@@ -110,11 +111,11 @@ label physical_1:
     with moveinright    
     "I saw [his_name] appear on the top of the ridge. He was riding Lettie, his eyes scanning the landscape fiercely, until he finally saw me."
     show him at midleft with move
-    "Before I could even explain what had happened, he had picked me up. He held me so tight I could barely breathe."
+    "Before I could even explain what had happened, he hopped off and ran to me. He held me so tight I could barely breathe."
     him serious "You're safe..."
     her normal "Thanks for coming for me. I was worried some vicious alien animal was going to come gobble me up, and I've already been nibbled on one too many times this evening."
     him flirting "Don't worry, [her_name], I'm the only one that will be gobbling you up now."
-    "He nibbled on my ear playfully, and set me on Lettie. He held my hand all the way home."
+    "He nibbled on my ear playfully, and set me on Lettie. I told him all about the leeches."
 
     scene bg farm_interior with fade
     play music "music/Amnesia.ogg" fadeout 1.0
@@ -153,7 +154,7 @@ label physical_1:
                     him serious "You're not indestructible, like some action hero. If you die out there, you can't just load your game and try again."
                     her serious "You're right; it's not a game. We can't just follow some mini-map to the next plot point; there could be something we need just minutes away from our house that we didn't find because we were too afraid to look."
                     him concerned "I'm not against exploring; I just think we should do it more carefully."
-                    her serious "I'll be careful, but you have to accept that bad things might happen. There are no guarantees that we're the heroes of this story and everything will turn out well for us."
+                    her serious "I'll be careful, but you have to accept that bad things might happen. There are no guarantees that everything will turn out well for us."
                     him serious "No, that's true..."
                 "Come with me, then.":
                     her flirt "Why don't you come with me next time, then? You can protect me from all the scary monsters out there."
@@ -163,9 +164,10 @@ label physical_1:
                     her flirt "Do we need to pinkie promise?"
                     him flirting "I can think of a better way to seal this promise."
                     "The argument melted away into kisses."
+                    $ made_love += 1
                 "Whatever.":
                     her serious "Whatever. It's not that bad."
-                    him sad "I guess there's no point in trying to convince you, is there? You're never going to listen."
+                    him sad "I guess there's no point in trying to convince you, is there? You don't even want to listen to what I have to say."
                     $ loved -= 10
         "Maybe you're right.":
             her normal "Maybe you're right. Don't worry, I'm not planning on any more blood-donation excursions anytime soon."
@@ -185,7 +187,7 @@ label physical_2:
     show her at midright with move
     him happy "Wow, I didn't know I married a lumberjack."
     menu:
-        "You're lucky.":
+        "Lucky you.":
             her normal "Lucky thing for you, huh? Now you don't have to chop the wood."
             him flirting "Nope, instead I just get to watch you work that beautiful body and get all hot and sweaty."
             her annoyed "Hmm, maybe you should chop the wood next time."
@@ -210,7 +212,7 @@ label physical_2:
             her flirt "I hope you're not disappointed. I could put on an apron and go fuss around in the kitchen instead."
             him happy "No, no! Chop away! I'll get dinner ready."
             hide him with moveoutleft
-            "Chopping required a surprising amount of concentration. Balance the log at the optimum angle, bring up the axe, aim at the middle of the log, let it down, repeat again."
+            "Chopping required a surprising amount of concentration. Balance the log at the optimum angle, bring up the axe, aim at the middle of the log, let it down with force, repeat again."
             play bg_sfx [ "sfx/wood-logs-2.mp3", "sfx/wood-logs-1.mp3" ]
             "I chopped and chopped until I felt that someone was watching me."
             show him normal at midleft with moveinleft
@@ -223,6 +225,7 @@ label physical_2:
             if (loved > 0):
                 her flirt "You'll keep me warm for quite a while."
                 him flirting "Yeah, for approximately... forever."
+                $ made_love += 1
             $ loved += 5
         "This is your job.":
             her annoyed "Well, {b}somebody{/b} had to chop wood for the stove, or we'll be having a cold dinner tonight."
@@ -247,7 +250,7 @@ label physical_2:
                     $ loved -= 5
                 "You tell me.":
                     her annoyed "Why don't you tell me?"
-                    him normal "Well, I picked some chard and thought maybe we could add a little salt pork, if that's not too much trouble for you."
+                    him normal "Well, I picked some chard and thought maybe we could add a little salt pork and vinegar"
                     her normal "Oh, [his_name], that sounds great, actually.  Thank you."
                 "Sorry, I don't know." if (relaxed >= 5):
                     her concerned "I'm sorry, [his_name], I was going to make it earlier, but then I found out we needed more wood, and now it's getting late..."
@@ -280,11 +283,11 @@ label physical_3:
     show lettie_head at right behind him, her with moveinright
     him serious "Now, you can't just jump on Lettie and start riding. Approach her from the left side, and let her get to know you a bit. Try talking to her."
     her surprised "What should I say?"
-    him normal "Just like, 'Hey there, good girl' or something. The words don't matter as much as the intent behind them."
+    him normal "Just like, \"Hey there, good girl\" or something. The words don't matter as much as the intent behind them."
     her serious "Why don't the words matter?"
     him serious "Horses are smart, but they don't know words. They can only sense your emotions. So if you are calm and in charge, Lettie will be calm, too."
     "I didn't even get on Lettie the first lesson. He taught me to saddle and bridle her, and when to brush her and feed her, and what would scare her or annoy her."
-    "It was cute to see how much he loved that horse - he knew just what she liked."
+    "It was cute to see how much he loved that horse -- he knew just what she liked."
 
     $ skill_physical += 10
     return
@@ -293,8 +296,7 @@ label physical_3:
 label physical_4:
     scene bg farm_interior with fade
     show her serious at center
-    play bg_sfx "sfx/rain-02.ogg" loop
-    "On mornings when we had a solar flare warning, or if it was raining, I had to stay indoors."
+    "On mornings when we had a solar flare warning, everyone had to stay indoors."
     "I know yoga is so 21st century, but my grandma taught me some of the poses when I was young."
     "After warming up I had to decide what to do next."
     menu:
@@ -315,7 +317,7 @@ label physical_4:
             if (relaxed > 0):
                 her flirt "We could practice together."
                 scene black with fade
-                play sound "sfx/cloth.mp3"
+                play bg_sfx "sfx/cloth.mp3"
                 $ made_love += 1
             else:
                 her annoyed "Yoga is different."
@@ -339,13 +341,13 @@ label physical_4:
                             her flirt "Great. We'll have dessert afterwards."
                             him flirting "I'll try to work up a sweat after the flare to make it worth the trip."
                             scene black with fade
-                            play sound "sfx/cloth.mp3"
+                            play bg_sfx "sfx/cloth.mp3"
                             $ made_love += 1
                 "Oh yeah?":
                     her surprised "You find me sexy like this?"
-                    him flirting "Oh yeah. We're stuck inside; we might as well make the most of it."
+                    him flirting "You're always sexy to me! We're stuck inside; we might as well make the most of it."
                     scene black with fade
-                    play sound "sfx/cloth.mp3"                    
+                    play bg_sfx "sfx/cloth.mp3"                    
                     $ made_love += 1
     
     "It felt good to not just sit around while it was raining."
@@ -367,7 +369,7 @@ label physical_5:
             her "Hey, [his_nickname], I'm going hiking tomorrow; want to come?"
             him "Yeah, I'm all caught up on the farm work here, and that sounds like fun."
             her flirt "And if I run into any ravenous wild animals, I'll be there to protect you."
-            him happy "Ha ha, yeah, something like that."
+            him happy "Ha ha, yeah, we can protect each other."
             scene bg mountains with fade
             "We set off towards the mountains to the west, and climbed and climbed all morning long."
             show him normal at quarterleft
@@ -394,12 +396,18 @@ label physical_5:
             play bg_sfx [ "sfx/puff.mp3", "sfx/geyser.mp3" ]
             if (skill_knowledge >= 50):
                 her surprised "It's a geyser; get out of the way!"
+                show her concerned at right
+                show him surprised at midright
+                with move
                 "I dragged [his_name] backwards with me as a fountain of steaming hot water shot up into the air from the middle of the pool."
             else:
                 her surprised "What's that sound?"
+                show her sad at right
+                show him annoyed at midright
+                with move
                 "Steaming hot water shot upwards into the air from the middle of the pool. We started running away, but some of it landed on our backs."
                 her concerned "Ow ow ow!"
-                him surprised "Tch, that burns!"
+                him angry "Tch, that burns!"
                 "Luckily, we weren't burned too badly."
             
             her serious "I didn't know there were geysers here."
@@ -410,6 +418,9 @@ label physical_5:
             stop bg_sfx fadeout 1.0
             her "Let's look around some more."
             him serious "Sure, but be careful - there might be others."
+            hide him
+            hide her
+            with moveoutright
 
             scene bg hotspring with fade
             play bg_sfx "sfx/stream-3.mp3" loop fadein 1.0
@@ -429,8 +440,8 @@ label physical_5:
                     show lily at midright with dissolve
                     show her at midleft with moveinleft
                     her surprised "Dr. Lily, I found a hot spring up in the mountains; would you mind testing the water for us?"
-                    lily happy "Not a problem. Let me get my pH strips and put some under the microscope..."
-                    lily normal "The water is slightly alkaline, and it has several kinds of minerals in it. I do see some bacteria, however, but they are not a kind we know about, so I don't know if they are dangerous or not."
+                    lily happy "Fascinating. Let me get my pH strips and put some under the microscope..."
+                    lily normal "The water is slightly alkaline, and it has several kinds of minerals in it. I do see some bacteria, but they are not a kind we know about, so I don't know if they are dangerous or not."
                     her "Okay, thanks."
                     lily "Thanks for reporting this; our initial scans showed geothermal activity in that area, but you've confirmed it. We may eventually use the springs for energy."
                     $ community_level += 3
@@ -446,7 +457,7 @@ label physical_5:
                     show hot_spring_overlay
                     with dissolve
                     "We stripped down and got in the warm water. The water felt soft and slippery."
-                    "There was a slight breeze whispering through the trees, but everything else was quiet."
+                    "There was a slight breeze whispering through the trees, but everything else was quiet.\nSo quiet...."
                     show her sleeping
                     show him nude sleeping
                     with dissolve
@@ -479,10 +490,12 @@ label physical_5:
             if (skill_knowledge >= 50):
                 her "Looks like there's geothermal activity in this area; I should be careful."
                 "Sure enough, as I was looking around, I heard a gurgling sound and steam billowed out of the center of the water."
+                "I backed off quickly as a geyser erupted a few meters away!"
+                "Even the mist that drifted towards me was still very hot."
             else:
                 "I heard a gurgling sound and steam billowed out of the center of the water."
-            "A geyser erupted into the air as tall as a house. Some of the water sprayed on me."
-            her surprised "Ahhh, it's hot!"
+                "A geyser erupted into the air as tall as a house. Some of the water sprayed on me."
+                her surprised "Ahhh, it's hot!"
             "I stood back to a safe distance and watched the water spray for a few minutes, until it died down."
             her serious "I didn't know they had geysers on this planet! I wonder if there's anything else interesting nearby..."
             hide her with moveoutright
@@ -498,7 +511,7 @@ label physical_5:
                     show hot_spring_overlay
                     $ is_nude = True
                     "The water felt soft and slippery."
-                    "There was a slight breeze whispering through the trees, but everything else was quiet."
+                    "There was a slight breeze whispering through the trees, but everything else was quiet. So quiet..."
                     her happy "Ahhhhhh..."
                     if (relaxed < 0):
                         $ relaxed = 0
@@ -519,7 +532,7 @@ label physical_5:
                     "When I got back, I told [his_name] all about what I had found."
                     show him serious at midright with dissolve
                     show her normal at midleft with moveinleft
-                    him concerned "That sounds really cool... but I thought we agreed that we shouldn't go hiking alone here."
+                    him concerned "That sounds really cool... but I thought we agreed that we shouldn't go hiking alone."
                     her annoyed "You just proclaimed that; I never agreed to it!"
                     him annoyed "What if you got burned by that geyser?"
                     her angry "I left a note!"
@@ -559,7 +572,7 @@ label physical_6:
     "I woke up early and couldn't go back to sleep. All I could think of was how hungry I was for meat."
     "I felt like stealing one of my neighbor's chickens and roasting it, but I knew we needed them more for their eggs."
     "I'd seen plenty of animals by the river. They didn't look like the tastiest creatures, but at that point I didn't care."
-    "I went to the storehouse and borrowed a large net. I'd done lots of virtual practice on the way over, and I wanted to test my skills."
+    "I went to the storehouse and borrowed a large net. I'd done some simulation practice on the shuttle trip, but I wanted to test my skills in real life."
     "Maybe I should wake up [his_name] and ask him to come with me..."
     menu:
         "What should I do?"
@@ -593,21 +606,22 @@ label physical_6:
 # Participate in community soccer team
 label physical_7:
     play music "music/Prelude22.ogg" fadeout 1.0
-    "Some of the colonists had taken to playing soccer on Saturday mornings. I decided to join them and see if I liked playing."
+    "Some of the colonists had taken to playing soccer on Saturday mornings, and I decided to join them."
     scene bg path with fade
-    show kid at right
     show brennan at center
     show ilian at quarterright
     show sara at midright
+    show kid at right
+    show van wince at midleft
     with dissolve
-    show her normal at midleft with moveinleft
+    show her normal at quarterleft with moveinleft
     sara "Look out, here comes [her_name]!"
     brennan happy "You going to join us today?"
     her normal "Yeah, if you don't mind."
     brennan normal "Sure. Now we can have seven to a side."
     "The teams were very mixed, but they seemed pretty fair, with each side having some kids, and some men and women of varying ages." 
     "The rules were pretty standard, except they had a rule that at least three different people had to touch the ball before making a goal, to encourage teamwork."
-    "I hadn't played a lot of soccer, but since I was in pretty good shape I was able to do OK. Still, running up and down the field made me really tired."
+    "I hadn't played a lot of soccer, but since I was in pretty good shape I was able to do okay. Still, running up and down the field made me really tired."
     "It was the last quarter of the game and our teams were tied. Brennan passed me the ball, and so I was taking it down towards the goal. I had to pass it to someone, but who?"
     "Sara was really good at making goals, but Ilian hadn't had the ball much, and I was trying to help him get extra practice. They were both open."
     menu:
@@ -627,7 +641,7 @@ label physical_7:
               $ community_level -= 1
          
     brennan "Good game, [her_name]."
-    "Not only was soccer good exercise, but I feel like it's good for our sense of community, too."
+    "Not only was soccer good exercise, but it helped our sense of community, too."
     $ skill_physical += 10
     $ community_level += 2
     return
@@ -654,8 +668,8 @@ label physical_8:
         menu:
             "Oh, yeah.":
                 her concerned "Yeah, you're right. I'll hurt my back if I do much more of this."
-                him happy "I'm glad you're feeling up to working though! How about that dinner?"
-                her flirt "I'm on it."
+                him happy "I'm glad you're feeling up to working though! How about I help you with dinner?"
+                her happy "Sounds great."
             "Ugh, being pregnant is such a pain.":
                 her angry "I can't do anything useful when I'm pregnant. What am I supposed to do, sit at home and twiddle my thumbs?"
                 him serious "You can still do useful things. You just can't lift heavy objects."
@@ -664,14 +678,14 @@ label physical_8:
                 her annoyed "That doesn't sound fun at all!"
                 him concerned "I'm sure there's something fun you can do."
                 her normal "I guess I can still watch movies and tell jokes."
-                him happy "And you can still beat me at space chess!"
+                him happy "And you can still beat me at chess!"
                 her happy "You bet I can!"
             "I'm not worried.":
                 her concerned "I read that when you're pregnant you can still exercise a little as long as you were in shape before you got pregnant."
                 him concerned "I don't think that includes heavy lifting."
                 her annoyed "If I'm wrong, I'll strain something and have to take it easy for a few days, so what's the big deal?"
                 him sad "You could miscarry if you're too stressed."
-                her annoyed "Yeah, and if we keep arguing about it I will be stressed."
+                her annoyed "Yeah, and if we keep arguing about it then I really will be stressed."
                 him concerned "I just want you to be healthy and happy."
                 her serious "And completely bored."
                 him serious "You can still hunt and play soccer. I think you'll be fine."

@@ -4,27 +4,27 @@
 # Default Event
 label creative_def:
     scene bg farm_interior with fade
-    "I worked on a quilt for our bedroom using scraps of fabric we didn't need. It was pretty tedious cutting out tiny squares of exactly the right size and sewing them together by hand, so I just worked on it a little at a time."
+    "I worked on a quilt for our bedroom using scraps of fabric we didn't need. It was pretty tedious cutting out tiny squares of exactly the right size and sewing them together by hand, but it was definitely easier than weaving new fabric from scratch."
     $ skill_creative += 10
 
 # Intro Event
 label creative_0:
     scene bg farm_interior with fade
-    "Looking around our tiny, bare house, we had only the barest necessities. A towel, sturdy blankets and clothing, a plate, spork and knife for each of us, and a rough table and two convertible seats from the shuttle that also doubled as our bed."
+    "Looking around our tiny, bare house, we had only the barest necessities. A towel, sturdy blankets and clothing, a plate, utensils for each of us, a rough table, and two convertible seats from the shuttle that also doubled as our bed."
     "It was enough to survive on, but I wanted to do more than just survive."
     "But if we wanted more, we would have to make things ourselves."
 
     "I wanted to do something to make our one room pre-fab house seem unique."
     show her serious at right with dissolve
     "So I took a knife and carved our names in calligraphy above the door."
-    "I had so much fun that I started carving designs on the wall posts near the ceiling. [his_name] came in and watched me for a while."
+    "I was worried [his_name] wouldn't like it, but he didn't say anything, just watched me."
+    "I had so much fun that I started carving designs on the wall posts near the ceiling."
     show him normal at center with moveinleft
     him serious "Hmm, this is a nice house, here. Hand-carved moldings, even! I wonder who it belongs to?"
     him happy "Oh, look, it's written right here above the door, [his_name] and [her_name]. One of them must be very creative."
     her flirt "I hear the other one's hard-working and handsome."
     him flirting "Really? We should go meet them sometime."
 
-    "I was a little worried he wouldn't like it, but I guess he doesn't mind."
     "Now it felt like {b}our{/b} house."
 
     $ skill_creative += 10
@@ -39,17 +39,19 @@ label creative_1:
     with dissolve
     him angry "Those flying crab things are eating all the squash!"
     her annoyed "Ohhh, I hate those! I've never been pinched, but, still - something that flies should not be allowed to have claws."
-    him annoyed "I've got to do something about them. I shoo them away when I'm there, but I can't be out there all the time."
+    him annoyed "I've got to do something about them. I shoo them away when I'm there, but I can't be out there all the time. I knew I should have brought a dog..."
     her surprised "Hmmm, how about a scarecrow?"
-    him surprised "A scarecrow? I don't think they're instinctively scared of people; we just barely got here."
+    him surprised "A scarecrow? They're not instinctively scared of people; we just barely got here."
     her normal "We'll make it shaped like something they are scared of, then! Like those wolfslugs that hunt near the river."
-    him normal "Do you think you could do that?"
+    him normal "Hmmm, okay, Do you think you could do that?"
+    her normal "Sure!"
+    him serious "In the meantime, I'm going to experiment with different scents to repel them."
     scene bg fields with fade
-    "He placed some different herbs and spices near some of the plants, to try to keep them away with scent, while I got to work on our 'scarecrow'."
+    show her concerned at midleft
+    with dissolve
     "I started with bunches of sticks for the body and legs, held together with twine.  Then I covered them with algae from a pond to give it that slimy look."
     "I rummaged through our trash pile and found some bottlecaps for eyes, and stuck in some old bones for teeth."
-    show her concerned at midleft
-    show him serious at midright
+    show him serious at midright with moveinright
     her "What do you think?"
     him normal "I'm scared of that thing. The crabirds definitely will be."
     her surprised "Oh, is that their name?"
@@ -58,7 +60,7 @@ label creative_1:
     hide her
     with dissolve
     "We put the fake wolf slug near one section of squash plants - he had sprayed strong smells near some of the others."
-    "The scarecrow seemed to work pretty well for a while, but then they figured out that it was fake and started nibbling on the squash again. We had to move it around every few days to try and fool them, so it was kind of a pain, but it was worth it when we finally got to eat the squash."
+    "The scarecrow seemed to work pretty well for a while, but then they figured out that it was fake and started nibbling on the squash again. We had to move it around every day to try and fool them, so it was kind of a pain, but it was worth it when we finally got to eat the squash."
 
     $ skill_creative += 10
 
@@ -67,17 +69,20 @@ label creative_1:
 # Crochet something new using goat's hair?
 label creative_2:
     scene bg farm_interior with fade
-    "One of the villagers was able to spin yarn out of goat hair. I took a skein and promised I'd try to make something with it."
-    "Luckily, I was able to borrow a crochet needle from the library. I looked up how to crochet on my computer pad, and started making a simple potholder."
+    julia_c "I have some extra goat hair yarn if anyone else would care to make something with it."
+    her_c "I'll give it a try!"
+    nvl clear
+    
+    "I was able to borrow a crochet needle from the library. I looked up how to crochet on my computer pad, and started making a simple potholder."
     show her surprised at midright
     her "Oh no! Each row is just getting more and more narrow."
-    "Luckily I figured out that I needed to add an extra stitch at the end of each row before I finished, but I ended up with an hourglass-shaped potholder."
+    "I finally figured out that I needed to add an extra stitch at the end of each row before I finished, but I ended up with an hourglass-shaped potholder."
     show him normal at midleft
     him flirting "Wow, you made an abnormally-shaped potholder on your first try crocheting? I would have just stuck with something boring like a square. You're really ambitious!"
     her annoyed "Yes, I did that on purpose. It's so it won't flop around in your hand as much when you go to pick something up."
     him normal "It'll work just fine, [her_nickname]."
     show her normal
-    "My next attempt turned out much more even. But I kept that first one around anyway - for some reason I liked it."
+    "My next attempt turned out much more even. But I kept that first one around anyway - a reminder that we couldn't waste anything here."
     $ skill_creative += 10
     return
 
@@ -91,21 +96,26 @@ label creative_3:
         "What should I do?"
         "Notch the planks log-cabin style.":
             "I tried notching the planks to help them stay in place as I stacked them into a box shape. There were some wide gaps between planks, but luckily they weren't wide enough for the vegetables to fall out."
-            $ community_level += 2
+            $ community_level += 1
         "{i}Ask around for ideas.{/i}" if (skill_social > 10):
             scene bg storehouse with fade
-            "I asked the storehouse manager, Ilian, if he had any ideas."
-            "He told me about how he had been making pegs out of wood to help hold furniture together. Before I left, he gave me some pegs and we drilled holes in the right spots while I had access to the drill."
-            "It was tricky to make it so I didn't pull up on the pegs when I lifted the crate, but with the Ilian's help, I made something that would keep a few vegetables separate from the rest."
-            $ community_level += 5
+            show ilian at midright with dissolve
+            show her normal at midleft with moveinleft
+            her surprised "Hey, Ilian, do you have any ideas for making crates without nails?"
+            ilian "I have been making pegs out of wood for some simple furniture. You can look at them."
+            her serious "Oh, I see. What size drill bit do you use?"
+            ilian "I still have it here; bring your wood and you can use it."
+            "He gave me some pegs and we drilled holes in the right spots."
+            "It was tricky to make it so I didn't pull up on the pegs when I lifted the crate, but with Ilian's help, I made something that would keep a few vegetables separate from the rest."
+            $ community_level += 2
         "{i} Learn from a woodworking manual.{/i}" if skill_technical > 20:
             "I read up on carpentry techniques that didn't use metal. I found out that I could use wood pegs in the place of nails, or that I could cut the wood to fit together like a tight jigsaw puzzle."
             "I was up for a challenge. I made a design that would use pegs to hold planks together, but the puzzle-piece technique on the corners."
             "After I designed the crate, I took my plans to the workshop to use their equipment. Ilian was pretty impressed at my finished crate."   
-            $ community_level += 5
+            $ community_level += 2
         "Forage nails from trash.":
             "I looked in the village trash heap, and I found a few nails in things people had thrown away. They didn't hold the wood together as tightly as I would have liked, but it was sturdy enough to hold some lightweight vegetables, anyway."
-            $ community_level += 2
+            $ community_level += 1
         "Ask [his_name] for help.":
             show him normal at midright with dissolve
             show her serious at midleft with moveinleft
@@ -116,7 +126,7 @@ label creative_3:
             her normal "Well, I have that yarn I was using to practice crocheting with. Maybe that would work?"
             him normal "Sure, let's try it."
             "We worked together to lash the slats together and made some serviceable crates. They wouldn't hold up well to transporting vegetables, but that was okay, since they were just going to sit in our cellar."
-            $ community_level += 2
+            $ community_level += 1
             $ loved += 2
 
     $ skill_creative += 10
@@ -132,11 +142,11 @@ label creative_4:
     show her normal at midleft
     with moveinleft
     her surprised "Do you have any rope?"
-    ilian "It looks like they didn't send much along with us. I guess they thought we'd be making our own by now."
-    her normal "So you have some?"
-    ilian "Yes, but it's only for approved projects."
+    ilian "Yes."
+    her flirt "So can I have some?"
+    ilian "It's only for approved projects."
     her annoyed "(I don't want to go through that red tape unless I have to!)"
-    her concerned "I guess I'll figure something else out..."
+    her concerned "Maybe I can figure something else out..."
 
     scene bg farm_interior with fade
     if (has_grass == True):
@@ -160,16 +170,19 @@ label creative_4:
         with dissolve
         him surprised "Oh, you made rope with horsehair? I think I've heard of that before. It won't be strong enough for a ladder, but we can make some reins out of it."
         her concerned "Well, I'm glad we can use it for something."
+        him serious "What about that yarn you had before? Could we make rope out of that?"
+        her surprised "I... can't believe I didn't think of that."
+        "We used a drill to quickly twist a bunch of strands of yarn into a thick rope, and then tied the ends off."
 
     $ skill_creative += 10
     return
 
 # Re-cover space shuttle seats to make a couch?
 label creative_5:
-#month 5 is what to do with trash, so I'm assuming this will have to come after it (though it may be several months after it)
+#month 5 is what to do with trash, so this will have to come after it (though it may be several months after it)
     scene bg storehouse with fade
     "Ever since the push to recycle or compost all our trash, I had been trying to think of other uses for shuttle parts."
-    "I went down to the storehouse to ask about how the shuttle parts were being distrubuted. I thought maybe I could make a sofa out of them."
+    "I went down to the storehouse to ask about how the shuttle parts were being distributed. I thought maybe I could make a sofa out of them."
     show ilian at midright with dissolve
     show her normal at midleft with moveinleft
     ilian "We already gave you your seat for your bed... I don't have that many extras!"
@@ -195,6 +208,7 @@ label creative_5:
             her serious "Maybe you could post a message asking who wants them, and have a lottery to distribute them? Some people probably don't even want them cluttering up their house."
             ilian "All right, I'll do that."
             "There ended up being enough for everyone that wanted one."
+            $ community_level += 1
 
     scene bg farm_interior with fade
     show her normal at midright
@@ -225,12 +239,8 @@ label creative_5:
             him normal "You have a point. Plus it would be nice for reading on."
 
     her happy "Then let's go!"
+    "A sofa was just a little thing, but it made our little cabin seem so much more homey."
     scene black with fade
-    "[his_name] brought the seats back with Lettie and our wagon. The next day, I set to work on making a loveseat."
-    "I wanted to upholster it with some fabric. I ended up weaving together long grasses into patches, which I sewed together with some goat-hair yarn. "
-    "I used more grass as extra padding between the seats. It ended up being a bit scratchy, but better than nothing."
-    "A sofa was a little thing, but it made our little cabin seem so much more homey."
-
     $ skill_creative += 10
     return
 
@@ -239,14 +249,14 @@ label creative_6:
     scene bg sunset with fade
     "I hadn't done any photography in a long time, but the way the light was coming through the clouds really inspired me."
     "As I set up shots- some simple landscapes, others focusing on an alien plant or insect with the clouds in the background- I felt awed. Here was this entire planet full of wonders, and only the few of us who lived here got to experience it."
-    "I decided to send some of my pictures to magazines on Earth; maybe they would be interested in doing an article on Talaam and would want to use them. I just wanted to show everyone on Earth what a beautiful planet we had."
+    "I decided to send some of my pictures to magazines on Earth; maybe they would be interested in doing an article on Talaam and would want to use them. I wanted to show everyone back on Earth what a beautiful planet we had."
     scene bg community_center with fade
     show pavel at midright, behind her with dissolve
     show her normal at midleft with moveinleft
     pavel "So, you want special permission to exceed your allotted Earth-upload bandwidth to send photographs?"
     her "Yes, they need to be large so that they will look good in print. Is that okay?"
     pavel "I think that is a worthy use of our resources. The pictures look great, [her_name], I hope people on Earth get to see them."
-    "It would take years for the photos to reach Earth, and even more years before I heard anything back, but I felt like it was worth it, anyway. I felt like an ancient explorer like Magellan, writing in his journal, not knowing if anyone from the homeland would ever read it..."
+    "It would take years for the photos to reach Earth, and even more years before I heard anything back, but I felt like it was worth it, anyway. I felt like an ancient explorer like Magellan, writing in a journal, not knowing if anyone from the homeland would ever read it..."
     $ skill_creative += 10
     return
 
@@ -284,15 +294,15 @@ label creative_7:
 label creative_8:
     scene bg pond with fade
     "It was a nice day out and I went for a walk. I wanted to cross the river and continue walking, but I didn't want to get wet."
-    "I know a few other people said they would like to get more familiar with the land past the river, but they didn't want to go to the trouble of getting their boats out just for a walk."
-    "Since I already had some experience making rope, I thought I could give it a try."
+    "We had a boat, but it'd be a pain to borrow it just to cross the river. What we needed was a bridge."
+    "Since I already had some experience making rope, I thought I could try making a simple rope bridge."
     "I found some dry grasses near the mountain and took some home with me, where I started twisting them into rope."
     scene bg farm_interior with fade
     "I tried to find the part in the documentary that showed how they incoporated new strands of grass, but they didn't show it very closely. I had to kind of twist them in on my own."
     show her normal at midright
     show him normal at midleft
     with dissolve
-    him surprised "Have you finally found a way to make rope?"
+    him surprised "Have you found another way to make rope?"
     her normal "I hope so. I'd like to make a bridge over the river that anyone can access in any weather."
     him normal "Can you spare some rope for me?"
     her happy "Let me teach you how; it's not too hard."
@@ -303,8 +313,9 @@ label creative_8:
     if (skill_social >= 30) or (skill_knowledge >= 30):
         "I talked to the Jennings about building the bridge and they were excited to help. Helen thought it would be useful to have some more rope for the cows, and Pete said he'd try to spin rope during downtime at the library."
         "After a few days we had enough rope to start making stronger rope."
+        $ community_level += 1
     else:     
-        if (loved >= 20):
+        if (loved >= 10):
             "[his_name] helped me twist tons of rope every evening."
             "After a few days I had enough rope to start making stronger rope."
         else:
@@ -321,8 +332,7 @@ label creative_8:
 # Make a documentary about the colony and send it to Earth
 label creative_master:
     scene bg sunset with fade
-    "One day, as I was taking pictures of a flock of crabirds, I suddenly realized that no one on Earth had any idea what Talaam was like. They had never seen a wolfslug, or the shimmering rocks by the hot springs, or the rise of twin moons at twilight."
-    "I had sent a few pictures, but they alone couldn't communicate enough."
+    "One day, as I was taking pictures of a flock of crabirds, I was struck by their alien beauty. Though I had taken pictures before, they couldn't really capture the way their bristle-like feathers rippled in the air, or the opposing movements of the twin moons at twilight."
     "I couldn't bear it - I had to share the wild, alien beauty of this planet with everyone I had left behind back home. While I couldn't communicate the smells, or the lightness of the air, I could at least take some video footage."
     "I wrote down all the things I wanted to show everyone, and then sorted them and connected the ideas."
     "I made a list of footage to shoot, and wrote a script for the narrator."

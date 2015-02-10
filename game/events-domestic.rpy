@@ -12,12 +12,12 @@ label domestic_def:
 label domestic_0:
     scene bg farm_interior with fade
     show her serious at center with dissolve
-    her "There's a lot of work to do be done around the house... should I plan it, or just dive in?"
+    her "There's a lot of work to do around the house... should I plan it, or just dive in?"
     menu:
         "What should I do?"
         "Make a cleaning schedule.":
             "I setup a system for cleaning the house, with different tasks for each day of the week."
-            "Mondays I would plan meals for the week based on what food we had; Tuesdays I would do laundry; Wednesdays I would dust and wipe down the walls and furniture; Thursdays I would clean the outhouse; and Fridays I reserved for special projects."
+            "Mondays I would plan meals for the week based on what food we had; Tuesdays I would do laundry; Wednesdays I would dust and wipe down the walls and furniture; Thursdays I would clean the outbuildings; and Fridays I reserved for special projects."
             "Chores like sweeping and dishes would be done every day."
             "Having a system made it easier, because I didn't have to decide each day what I should do (though I didn't follow it every day)."
             $ community_level += 2
@@ -42,7 +42,7 @@ label domestic_1:
     menu:
         "What should I do?"
         "Leave the clothes soaking while you finish doing the dishes.":
-            her "Maybe I just need to let the soap do my work for me."
+            her "Maybe I just need to let time do my work for me."
             "Twenty minutes later..."
             her "That helped a bit! I should leave clothes soaking more often."
             $ relaxed +=2
@@ -77,7 +77,7 @@ label domestic_3:
     show her normal at midright with dissolve
     show thuc at midleft with moveinleft
     thuc "Hello? [his_name]?"
-    her normal "Thuc! Good to see you! [his_name] is out in the fields, working, if you want to go find him."
+    her normal "Thuc! Good to see you! [his_name] is out in the northwest field, if you want to go find him."
     thuc "Maybe I'll just ask you, then. You heard about the baby goats born at our farm, right?"
     her surprised "Yeah, how are they doing? Are they hard to take care of?"
     thuc "Not at all! They can eat almost any plants, and are pretty hardy. Are you interested in taking care of some goats?"
@@ -86,7 +86,7 @@ label domestic_3:
         "Yes!":
             her normal "I would love to! But I've never taken care of goats before, so would you help me if I run into trouble?"
             thuc "Of course! Why don't you let me know when you have a spot fenced off for them? They are able to eat the native vegetation here, so you could even use them to help clear space for fields."
-            "[his_name] and I talked it over, and we decided to fence in a part of the wild area not too far from the house for the goats."
+            "[his_name] and I talked it over, and we decided to fence in a part of the wild area close to the house for the goats."
             scene bg fields with fade
             show lettie at right with dissolve            
             show goat_flip at left
@@ -180,7 +180,7 @@ label domestic_4:
     scene bg farm_interior with fade
     show her normal at midright with dissolve
     show him normal at midleft with moveinleft
-    him "Here's some more radishes from the fields, love."
+    him "Here's some more radishes from the fields, [her_nickname]."
     her happy "Thanks, they look great!"
     hide him
     show her concerned at center with move
@@ -220,7 +220,7 @@ label domestic_5:
             him normal "Yeah, they grew bumps to protect themselves from the critters here."
         "They look useless.":
             her annoyed "Pumpkins? What am I supposed to do with those?"
-            him annoyed "I don't know; make pumpkin pie?"
+            him annoyed "I don't know; make pumpkin pie? It's food; you eat it."
             $ loved -= 2
      
     hide him
@@ -231,7 +231,7 @@ label domestic_5:
         "Make pumpkin pie.":
             "I made pumpkin pie. I didn't have much sugar to put in it, but it tasted pretty good, anyway."
         "Make pumpkin goulash.":
-            "I made a pumpkin goulash with other vegetables and baked it inside the pumpkin. It tasted pretty good!"
+            "I made a pumpkin goulash with pumpkin and other vegetables and baked it inside a large pumpkin. It tasted pretty good!"
         "Make jack-o-lanterns.":
             "I made some jack-o-lanterns and put candles in them. They grinned saucily at us at night, until they started rotting and I had to throw them away."
 
@@ -255,7 +255,7 @@ label domestic_5:
             show raul at midleft
             show kid at center
             with moveinleft
-            "The kids made costumes out of scraps and household items, and they went around trick-or-treating to all the farms and houses."
+            "The kids made costumes out of scraps and household items, and they went around trick-or-treating to all the families."
             if (want_kids):
                 "I wondered what it would be like to have our own child and take them trick-or-treating and celebrate holidays together. What will our kids be like?"
             else:
@@ -289,11 +289,12 @@ label domestic_6:
             her annoyed "Yeah, please get that thing out of here."
             hide him with moveoutright
             "He roasted it outside over a fire. He didn't tell me how it tasted, which was fine - I didn't want to know, anyway."
-            $loved -= 5
+            $ loved -= 5
+            $ skill_domestic += 10            
             return
         "That's awesome.":
             her happy "That's awesome! You're like my very own mountain man."
-            $loved += 5
+            $ loved += 5
         "That's weird!":
             her concerned "That's...not something I'm used to. Can you really eat it?"
             him serious "The scientists here haven't detected anything toxic or unusual in the animal life here - I think as long as we cook it well and don't eat the organs it should be fine."
@@ -310,15 +311,15 @@ label domestic_6:
                 her "I'll ask around."
                 "I got on the radio and asked around town -- turns out a lot of people felt like [his_name] and thought some fresh meat would be delicious, even if it was alien meat."
                 "It felt good to share with our neighbors."
-                $ community_level += 5
+                $ community_level += 2
             elif skill_social >= 20:
                 her normal "I know just who would want some."
                 "The Nguyen family had ten kids and I knew some of their crops hadn't made it. There were plenty of rations in the storehouse, so they weren't starving or anything, but I thought they'd like some real food."
                 "When I took it to them, they didn't care that it came from an alien monster; they just thanked me and gave me some butter from their goats to take home with me."
-                $ community_level += 5
+                $ community_level += 2
             else:
                 "I wanted to share, but I didn't really know who to ask. I gave some to the Mayor, and some to Sara, but there was still a fair amount left over."
-                $ community_level += 2
+                $ community_level += 1
         "Let's dry it.":
             her normal "We could dehydrate it and make jerky."
             him surprised "Do you know how to do that?"
@@ -334,8 +335,8 @@ label domestic_6:
         "Let's compost it.":
             her concerned "Should we just compost what we can't eat?"
             him concerned "I guess..."
-            "We cooked and ate quite a bit, but we didn't have a way to freeze or refrigerate so we just tossed the leftovers into the compost pile. Probably some scavenging animals will enjoy a nice feast..."
-            $ community_level -= 5
+            "We cooked and ate quite a bit, but we didn't have a way to freeze or refrigerate anything so we just tossed the leftovers into the compost pile. Probably some scavenging animals will enjoy a nice feast..."
+            $ community_level -= 2
 
         "Let's have a meat party.":
             her normal "Let's cook it all up, invite our friends over, and have a meat party!"
@@ -346,13 +347,13 @@ label domestic_6:
             if skill_social >= 90:
                 "We invited the whole town for a giant potluck celebration. People brought salads and fresh bread and rice and spicy beans and there was even a little fruit for everyone."
                 "Our little colony didn't have many celebrations; even though there wasn't really enough meat for everyone to have much, since we all brought something it worked out. We felt like a real community."
-                $ community_level += 5
+                $ community_level += 3
             elif skill_social >=30:
                 "We invited a large group of friends and we ate almost all of it. I think they appreciated that we shared it with them. It felt good to help out our friends."
-                $ community_level += 3
+                $ community_level += 2
             else:
                 "We invited a few friends over and we ate and ate and ate as much as we could. I wondered if we might get sick, but other than feeling full all the next day (and having a little trouble going to the bathroom), nothing bad happened."
-                $ community_level += 2
+                $ community_level += 1
             
     $ skill_domestic += 10
     return
@@ -379,7 +380,7 @@ label domestic_7:
     scene bg laundry with fade
     show her serious at center with dissolve
     her "It looks like it will take at least a month to make the soap...better start on it now!"
-    "First, I put on gloves and goggles. We needed to make lye, which is very caustic. I got some ashes from our stove and added boiling water, and let it sit overnight."
+    "We needed to make lye, so I got some ashes from our stove and added boiling water, and let it sit overnight."
     "Meanwhile, I needed to get some fat."
     if (loved >= 5):
         scene bg farm_interior with fade
@@ -412,7 +413,6 @@ label domestic_7:
         show him normal at midleft with moveinleft
         her "Would you stir that for me, please?"
         him "No problem."
-        "It helped to have him stirring while I added the lye and grease."
     else:
         "I stirred it and stirred it."
     "I tried to balance the amount of lye and grease to make a soap that was not too greasy and not too caustic. Then I let it cool."
@@ -482,12 +482,12 @@ label domestic_8:
 # Start a 'No Space Like Home' blog about domestic life!
 label domestic_master:
     scene bg farm_interior with fade
-    "I had learned so much about how to keep things clean and comfortable around our house."
+    "I had learned so much about how to cook native foods and keep things clean and comfortable around our house."
     "So many people had asked me for advice that I decided to write a blog with entries relevant to domestic life on Talaam."
-    "I was surprised at the huge response. It seemed everyone in the colony was reading my 'No Space like Home' blog."
+    "I was surprised at the huge response. It seemed everyone in the colony was reading my \"No Space like Home\" blog."
     pete_c "[her_name], your jerky recipe's the best thing I ever tasted."
     ilian_c "It has a long shelf life, too, if properly sealed."
-    naomi_c "Will you hold another canning class anytime soon? I'm afraid I had to miss the last one."
+    helen_c "Will you hold another canning class anytime soon? I'm afraid I had to miss the last one."
     her_c "Sure, let me see who else is interested and I can teach another class."
     nvl clear
     

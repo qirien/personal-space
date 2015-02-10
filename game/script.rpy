@@ -74,7 +74,6 @@ init -200:
     define is_nude = False
     define slacked_off = 0  #number of times slacked off at work
     define has_grass = False
-    define met_Lily = False
     define times_worked = 1
     define he_hunts = False
     define brennan_relationship = 0
@@ -185,41 +184,41 @@ label start:
         else:
             "To fast-forward through scenes you have already seen, use the \"Skip\" option in the Config menu."
 
-    if (config.developer):
-        "Do I want to remember how it all began?"
-        menu:
-            "Do I want to remember how it all began?"
-            "Yes.":
-                "Of course."
-                jump intro
-            "No.":
-                $ his_name = "Jack"
-                $ her_name = "Kelly"
-                $ profession = "mechanic"
-                $ want_kids = True
-                $ known_each_other = "six months"
-                jump month01
-            "Skip to Debug Point":
-                $ his_name = "Jack"
-                $ her_name = "Kelly"
-                $ profession = "teacher"
-                $ community_level = 25
-                $ loved = 40
-                $ exposed_brennan = True
-                $ skill_knowledge = 100
-                $ skill_technical = 40
-                $ skill_domestic = 100
-                $ want_kids = True
-                $ is_pregnant = True
-                $ known_each_other = "six months"
-                #scene bg stars
-                #show computer_pad
+#    if (config.developer):
+#        "Do I want to remember how it all began?"
+#        menu:
+#            "Do I want to remember how it all began?"
+#            "Yes.":
+#                "Of course."
+#                jump intro
+#            "No.":
+#                $ his_name = "Jack"
+#                $ her_name = "Kelly"
+#                $ profession = "mechanic"
+#                $ want_kids = True
+#                $ known_each_other = "six months"
+#                jump month01
+#            "Skip to Debug Point":
+#                $ his_name = "Jack"
+#                $ her_name = "Kelly"
+#                $ profession = "teacher"
+#                $ community_level = 25
+#                $ loved = 40
+#                $ exposed_brennan = True
+#                $ skill_knowledge = 100
+#                $ skill_technical = 40
+#                $ skill_domestic = 100
+#                $ want_kids = True
+#                $ is_pregnant = True
+#                $ known_each_other = "six months"
+#                #scene bg stars
+#                #show computer_pad
 
-                #jump monthly_event_25
-                #jump test_her_sprites
-                #jump test_positions
-                jump test_inputter
-                #jump show_credits
+#                #jump monthly_event_25
+#                #jump test_her_sprites
+#                #jump test_positions
+#                jump test_inputter
+#                #jump show_credits
     
     jump intro
 

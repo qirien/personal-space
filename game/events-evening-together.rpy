@@ -11,7 +11,7 @@ label relax_together_0:
     with dissolve
     
     "Everything here seemed to take ten times as much time and effort. It took twenty minutes just to boil water, because of the increased atmospheric pressure compared to Earth."
-    show her serious
+    show her concerned
     "So, after finally finishing up the dinner dishes, I was exhausted. I just wanted to snuggle on the couch and watch a movie or something."
     him "Hey, want to help me setup the barn? I got the walls from the shuttle yesterday."
     her surprised "Now?!"
@@ -45,7 +45,8 @@ label relax_together_0:
     with dissolve
     her happy "This is a nice little barn!"
     him happy "Yeah, let's see how she likes it!  C'mon Lettie!"
-    show lettie at right behind him, her with moveinright 
+    show lettie at right behind him, her with moveinright
+    show her at quarterleft with move
     play bg_sfx "sfx/clipclop.mp3"
     "He led his horse into one of the stalls. She was nervous at first, but soon she was in a stall chewing hay like normal."
     play bg_sfx "sfx/whinny.mp3"
@@ -61,7 +62,7 @@ label relax_together_1:
     show him normal at midleft
     with dissolve
         
-    "One of the things I missed most about Earth was having my own shower and bath. While we washed up well enough with water from the well, we still enjoyed going to the community bath once a week or so to really get clean."
+    "One of the things I missed most about Earth was having my own shower and bath. While we washed up daily with water from the well, we still enjoyed going to the community bath once a week or so to really get clean."
     her concerned "I really need a bath."
     him surprised "Really? You smell great to me."
     "I sniffed the air. All I could smell was hay and compost and sweat."
@@ -124,8 +125,9 @@ label relax_together_2:
     show her normal at midleft
     show him normal at center
     her normal "This is so relaxing..."
-    him normal "Yeah..."
-    him laughing "Want to go for a swim?"
+    him normal "Yeah... "
+    show him laughing with dissolve
+    extend "Want to go for a swim?"
     her surprised "Are you nuts?!"
     him happy "Yes!"
     show him normal at quarterright with move
@@ -171,7 +173,6 @@ label relax_together_2:
             scene black with fade
             "Why did he have to ruin such a nice evening?!"
             $ loved -= 5
-            return
     $ relaxed += 3
     scene black with fade
     $ is_nude = False
@@ -214,7 +215,7 @@ label relax_together_3:
         "That bothers me.":
             her sad "That bothers me. Why didn't you tell me that was one of the factors?"
             him annoyed "Because it's not romantic? It doesn't really sound good to say, 'Hey, I want to be a colonist, and I have to be married, and you're the person I like the most, so want to get married?'."
-            her angry "Wow, it sounds even worse when you put it like that."
+            her annoyed "Wow, it sounds even worse when you put it like that."
             him serious "Exactly! I wanted to get married either way; the whole colony thing just made me quit stalling and ask you."
             her concerned "I still wish you had told me about that earlier."
             him concerned "I'm sorry, [her_nickname]. But I do love you, no matter what."
@@ -226,7 +227,7 @@ label relax_together_3:
         "That's deceitful.":
             her annoyed "That's deceitful. I feel used."
             him surprised "Why? It's not like I only married you so I could come be a colonist."
-            her angry "Really? It kind of feels like that."
+            her annoyed "Really? Because that's exactly what it feels like."
             if (not want_kids):
                 her annoyed "Also, we're not ready for kids, and who knows when we will be? You didn't promise them we'd have kids, did you?"
                 him serious "No! I mean, it's sort of expected, but-"
@@ -246,10 +247,10 @@ label relax_together_3:
 # Massage time!
 label relax_together_4:
     scene bg farm_interior with fade
-    "One day after dinner I noticed [his_name] rubbing his shoulders and grimacing."
-    show him normal at midleft
+    show him serious at midleft
     show her normal at midright
     with dissolve
+    "One day after dinner I noticed [his_name] rubbing his shoulders and grimacing."
     her surprised "Are you okay?"
     him concerned "Yeah, I'm just really sore from all the digging I've been doing lately."
     if (relaxed < 0):
@@ -259,9 +260,12 @@ label relax_together_4:
     else:
         her happy "Want me to rub your shoulders?"
         him happy "I would love that!"
-        show her normal at center, behind him with move
+        show her normal at center, behind him
+        show him at squatting
+        with move
         "I started off gently. His muscles were so tight, I was amazed he could move at all. I gradually kneaded harder, trying to tell what sorts of massage he liked."
         him serious "Ohhh, that feels so good."
+        show him sleeping with dissolve
         "Sometimes he would make sort of painful grunt that let me know he didn't like what I was doing. But he would also sigh with content when I hit a particularly tense spot."
         "I noticed his smell, too - there was a hint of horse (ew), but mostly he smelled like fresh dirt and hard work."
         if (relaxed >= 5 and skill_physical >= 10):
@@ -271,14 +275,20 @@ label relax_together_4:
                 "My hands were starting to get a little tired, but I didn't want to stop yet, so I rubbed his legs and feet, too."
 
         "To finish off I massaged his neck and head. I could tell he really enjoyed it."
-        show her at midright with move
+        show her at midright
+        show him at standing
+        with move
         if (loved >= 5):
             him normal "Now it's your turn to get massaged."
             her flirt "Mmmm, really? Are you talking about shoulders, or...?"
             him flirting "I'll massage anything you like."
             her normal "Why don't you start with the shoulders, and then we'll see what happens?"
-            show him normal at center, behind her with move
-            "He copied what I had done earlier, and gave me quite the massage, too. It was so relaxing to just sit and do nothing while he took care of all my tense muscles. He takes such good care of me..."
+            show him normal at center, behind her
+            show her sleeping at squatting
+            with move
+            "He copied what I had done earlier, and gave me quite the massage, too. It was so relaxing to just sit and do nothing while he took care of all my tense muscles."
+            her sleeping "You take such good care of me..."
+            him happy "We take good care of each other."
             $ made_love += 1
         $ relaxed += 5
         $ loved += 5
@@ -324,16 +334,16 @@ label relax_together_5:
         "Looks like a lot of trouble.":
             her concerned "Wow, you went to a lot of trouble to set this all up. I feel bad..."
             him happy "Don't feel bad; just enjoy it!"
-            $ loved -= 2
+            $ relaxed -= 2
         "What a waste.":
             her concerned "This is really pretty, but isn't it kind of a waste?"
             him flirting "My time is never wasted when it's spent on you."
             $ loved -= 2
     "We ate our candlelight dinner and watched the sun setting over the hills. I couldn't even see our house or the town or anything."
     her serious "It's like we're the only two people in the whole universe."
-    him flirting "Then we have quite a job ahead of us, don't we?"
+    him serious "Then we have quite a job ahead of us, don't we?"
     her surprised "A job?"
-    him serious "Repopulating the entire universe. We better get started now, don't you think?"
+    him flirting "Repopulating the entire universe. We better get started now, don't you think?"
     menu:
         "What should I say?"
         "You always make me laugh.":
@@ -343,12 +353,12 @@ label relax_together_5:
         "Should we get started like this?":
             her flirt "Should we get started like this...?"
             him flirting "Maybe a little bit of this?"
-            her serious "It's too bad there's so many rocks here..."
+            her concerned "It's too bad there's so many rocks here..."
             $ loved += 2
         "Is everything about sex to you?!":
             her annoyed "Is everything about sex to you?!"
             him laughing "Ha ha, I'm just kidding. And, anyway, sometimes it's hard to think of anything else when you're right here, looking beautiful..."
-            her "..."
+            her serious "..."
             $ loved -= 2
 
     "The food wasn't anything special, but somehow it tasted better combined with a beautiful sunset. Afterwards he gathered up the dishes and walked a little ways away."
@@ -474,7 +484,7 @@ label relax_together_6:
         "I think you better cut it.":
             her concerned "Yeah, maybe you should cut it."
             him concerned "My mom always cut my hair at home..."
-            him serious "But we're not at home anymore, are we? Guess I'll have to man up and cut my own hair."
+            him serious "But we're not at home anymore, are we? Guess I'll give it a try... if I totally botch it, I can just shave it all off."
             show her surprised
             hide him with moveoutright
             show him serious with moveinright
@@ -545,8 +555,15 @@ label relax_together_8 :
     $ loved += 1
     return
 
-# People probably won't even see these last ones unless they always choose "Do something with [his_name]", so don't put a ton of effort into them.
 label relax_together_9:
+    scene bg farm_interior with fade
+    "We made a nice dinner together, and talked while we ate slowly, watching the sun go down."
+    $ relaxed += 5
+    $ loved += 2
+    return    
+
+# People probably won't even see these last ones unless they always choose "Do something with [his_name]", so don't put a ton of effort into them.
+label relax_together_10:
     scene bg farm_interior with fade
     "We did the dishes together, and then sat together and talked while we worked on little projects."
     show her normal at midright
@@ -558,37 +575,7 @@ label relax_together_9:
     $ loved += 2
     return
 
-# She's "stunning"
-label relax_together_10:
-    scene bg farm_interior with fade
-    show her normal at midright
-    show him normal at midleft
-    with dissolve
-    
-    him surprised "...!"
-    her surprised "What is it? Is everything okay?"
-    him surprised "...!"
-    her flirt "Why are you staring at me like that?"
-    him surprised "You're just... so stunning... I'm totally stunned."
-    her annoyed "You're stunned."
-    him surprised "Yup, can't move. Can only... gaze upon... your radiant beauty..."
-    her flirt "Hmm, what if... I tickle you?!"
-    him laughing "Oh! Suddenly I can move again!"
-    her flirt "You're so silly."
-    if (loved >= 0):
-        him serious "I'm being completely serious. You're like, sweeter than a hot fudge sundae, and hotter than a habanero, and brighter than any sun, anywhere!"
-        her normal "Awww... I love you, [his_name]."
-        "He picked me up and spun us around before covering my face in kisses."
-        him "And I love you, [her_name]."
-    else:
-        him serious "I'm being completely serious."
-        her flirt "..."
-    
-    $ relaxed += 5
-    $ made_love += 1
-    $ loved += 2
-    return
-    
+
 label relax_together_11:
     scene bg bedroom with fade
     $ is_nude = True     
@@ -654,7 +641,7 @@ label relax_together_a:
     sara "Wow, you got [his_name] to come to town? Did you pretend to be sick or something?"
     her flirt "No, he came on his own, believe it or not."
     him serious "Hey, I'm working hard on the farm, I don't have time to come to town all the time."
-    ilian happy "Well, since you're here, why don't you come over and see our house?"
+    ilian happy "Well, since you're here, would you like to come over and see our house?"
     sara "Yeah, because it's SOO different from all the other prefab houses..."
     ilian normal "I was trying to be nice..."
     sara "Our house is totally boring, but maybe we can play a game or something?"
@@ -674,7 +661,7 @@ label relax_together_a:
         sara "That was way better than [her_name]'s poison-in-the-toothpaste attempt."
         her annoyed "That would totally work!"
         scene black with fade
-        "I think it was good for [his_name] to socialize with some friends... and I definitely had fun, too."
+        "I think it was good for [his_name]... and I definitely had fun, too."
         $ relaxed += 5
         $ loved += 2
         $ community_level += 2
@@ -716,10 +703,13 @@ label relax_together_c:
 
 label relax_together_d:
     scene bg farm_interior with fade
-    "We were both reading on our computer pads, sitting near each other. We didn't talk much, but everyone once in a while we would look up and smile at each other."
+    play bg_sfx "sfx/rain-02.ogg" loop
+    "It was a rainy evening, and we were both reading on our computer pads, sitting near each other."
+    "We didn't talk much, but everyone once in a while we would look up and smile at each other."
     "It was nice that we didn't always have to be doing the same thing to spend time together."
     $ relaxed += 3
     $ loved += 2
+    stop bg_sfx
     return
 
 label relax_together_e:
@@ -737,12 +727,37 @@ label relax_together_e:
     $ loved += 2
     return
 
+# She's "stunning"
 label relax_together_f:
     scene bg farm_interior with fade
-    "We made a nice dinner together, and talked while we ate slowly, watching the sun go down."
+    show her normal at midright
+    show him normal at midleft
+    with dissolve
+    
+    him surprised "...!"
+    her surprised "What is it? Is everything okay?"
+    him surprised "...!"
+    her flirt "Why are you staring at me like that?"
+    him surprised "You're just... so stunning... I'm totally stunned."
+    her annoyed "You're stunned."
+    him surprised "Yup, can't move. Can only... gaze upon... your radiant beauty..."
+    her flirt "Hmm, what if... I tickle you?!"
+    him laughing "Oh! Suddenly I can move again!"
+    her flirt "You're so silly."
+    if (loved >= 0):
+        him serious "I'm being completely serious. You're like, sweeter than a hot fudge sundae, and hotter than a habanero, and brighter than any sun, anywhere!"
+        her normal "Awww... I love you, [his_name]."
+        "He picked me up and spun us around before covering my face in kisses."
+        him "And I love you, [her_name]."
+    else:
+        him serious "I'm being completely serious."
+        her annoyed "..."
+    
     $ relaxed += 5
+    $ made_love += 1
     $ loved += 2
     return
+
 
 # Midnight lovin'
 label relax_together_g:
@@ -799,7 +814,7 @@ label relax_together_g:
             him nude flirting "I know, I better be extra good to you."
             "[his_name] was definitely worth waking up for."
             $ made_love += 1
-            $ loved += 2
+            $ loved += 3
             $ relaxed += 5
         "Go back to sleep.":
             her concerned "I'm so sleepy..."
@@ -813,9 +828,9 @@ label relax_together_g:
             $ loved += 2
             $ relaxed += 3
         "Tell him off.":
-            her angry "You had your chance, but you missed it. Sorry, I can't just wait around all day for you to finally decide to show up and get some action."
+            her annoyed "You had your chance, but you missed it. Sorry, I can't just wait around all day for you to finally decide to show up and get some action."
             him nude concerned "C'mon, [her_nickname]..."
-            her annoyed "Just leave me alone."
+            her concerned "Just leave me alone."
             show him nude angry at quarterleft with move
             him "Fine."
             "We lay there, both angry, not saying anything, for a long time, before I finally got back to sleep."
@@ -968,8 +983,8 @@ label relax_together_k:
     him happy "Or a totally awesome musician?"
     her angry "No! It just sounds dumb!"
     him annoyed "Well, not as dumb as Benedict. 'Hello, my name is Benedict, I'm a tap-dancing pansy who can't even button his own waistcoat."
-    her happy "It's refined and elegant! And there's nothing wrong with tap dancing, is there?"
-    him serious "No, but do you really think a kid of ours is going to be a tap dancer?"
+    her happy "It's refined and intelligent! And there's nothing wrong with tap dancing, is there?"
+    him normal "No, but do you really think a kid of ours is going to be a tap dancer?"
     her concerned "Probably not."
     her normal "Anyway, we'll just keep looking, I bet we can find a name we both like."
 
@@ -979,6 +994,7 @@ label relax_together_k:
 
 # Horror puzzle game
 label relax_together_l:
+    play bg_sfx "sfx/rain-02.ogg" loop
     scene bg farm_interior with fade
     "We played a horror puzzle game together. We were both good at different kinds of puzzles, so we made a good team."
     "...plus I think he liked to see me jump at all the scary parts."
@@ -986,12 +1002,12 @@ label relax_together_l:
     show him normal at midleft
     her surprised "AHHHHHHH!"
     him surprised "You didn't know that was going to happen?"
-    her angry "Well, I knew {b}something{/b} was going to happen, but no! Clowns don't usually have fangs!"
+    her annoyed "Well, I knew {b}something{/b} was going to happen, but no! Clowns don't usually have fangs!"
     him happy "Hehe, it's okay, we'll beat him. If we can figure out what to type on the typewriter..."
     her surprised "Oh, try the first letter of each word in the clue!"
     him happy "Yeah!"
     "The game was fun, but I don't think I would have played it on my own. The best part was being with [his_name]."
-
+    stop bg_sfx
     $ relaxed += 3
     $ loved += 2
     return

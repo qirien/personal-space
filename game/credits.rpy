@@ -127,7 +127,7 @@ label show_credits:
     hide text with fade
     
     # TODO: Add more beta testers
-    show text "Beta Testing by:\nWes Landaker\nLisa Horner\nCatherine White"
+    show text "Beta Testing by:\nWes Landaker\nLisa Horner\nCatherine White\nLance Meibos\nMary Tueller Whipple"
     show lettie_head at right behind text with longmoveinright
     show goat_flip at left behind text with longmoveinleft
     with dissolve

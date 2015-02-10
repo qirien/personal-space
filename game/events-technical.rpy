@@ -15,9 +15,9 @@ label technical_0:
     "I downloaded the schematics and spent some time studying them."
     
     scene bg farm_exterior with fade
-    "I also installed an antenna on the roof so that we can communicate with the town better."
+    "I also installed an antenna on the roof so that we could communicate with the town better."
     play bg_sfx "sfx/radio.mp3"
-    "It took some trial and error to figure out the exact alignment and height, since this planet's atmosphere and shape are different from Earth's, but it's working with the radios pretty well."
+    "It took some trial and error to figure out the exact alignment and height, since Talaam's atmosphere and shape are different from Earth's, but I finally got a consistent clear signal."
     "Maybe this way we wouldn't be completely cut off during a solar flare, but could still have some communication with town."
     $ skill_technical += 10
     return
@@ -25,8 +25,8 @@ label technical_0:
 # Build a water pump
 label technical_1:
     scene bg farm_exterior with fade
-    "Even though we have a solar panel to run our pad computers, the lights, and a few other things, we do most work the old-fashioned way, without electricity."
-    "And did I mention there's no running water? We have a well and a pump, but we're always fetching water with buckets...Well, mostly I fetch water with buckets, since [his_name] has a bunch of pipes and canals setup for watering the farm."
+    "Even though we had a solar panel to run our pad computers, the lights, and a few other things, we did most work the old-fashioned way, without electricity."
+    "With no running water, we're always fetching water from the pump with buckets...Well, mostly I fetch water with buckets, since [his_name] has a bunch of pipes and canals setup for watering the farm."
     scene bg farm_interior with fade
     show her annoyed at midright
     show him serious at midleft
@@ -63,7 +63,7 @@ label technical_2:
     play bg_sfx "sfx/radio.mp3" loop
     show him serious with dissolve
     her serious "Did you hear there's probably going to be another flare today? Guess we're stuck at home..."
-    him angry "There goes all my chance to get anything done this morning! If I had known there was going to be a flare today, I would have worked harder yesterday and slept in this morning!"
+    him angry "There goes all my chance to get anything done this morning! If I had known there was going to be a flare today, I would have worked harder yesterday and slept in this morning."
     her surprised "I wonder if there's a way to get more advanced notice of the flares?"
     him happy "If there is, I bet you'll find it!"
     scene black with fade
@@ -76,12 +76,13 @@ label technical_2:
     show lily at midright with dissolve
     show her normal at midleft with moveinleft
     her concerned "Do you have any radioactive materials I could use?"
-    lily "Yes, we have a small stockpile for use with--"
-    her surprised "What?"
+    lily "Yes, we have a small stockpile for use with--."
+    show lily upset with dissolve
+    "She stopped in midsentence and glared at me."
     lily upset "Why do you want it?"
     her normal "I want to build a solar flare predictor instead of just a detector."
-    lily normal "Ah, yes, because gamma-radiation rates change slightly when exposed to solar neutrinos. Winston, one of the scientists who used to work with me was working on a similar project."
-    her surprised "Oh, I've never met him. Where is he now?"
+    lily normal "Ah, yes, because gamma-radiation rates change slightly when exposed to solar neutrinos. Winston was working on a similar project."
+    her surprised "Oh, is he one of the scientists? I've never met him."
     lily upset "He died."
     her sad "Oh, I'm sorry..."
     lily "He failed to adequately shield himself from solar and radioactive radiation. It eventually caught up with him."
@@ -131,11 +132,17 @@ label technical_3:
     show him normal at midleft
     with moveinleft
     play bg_sfx "sfx/gears.mp3" loop
-    him happy "You made this?! This is so awesome!\n...\n What is it?"
+    him happy "You made this?! This is so awesome! "
+    show him surprised
+    extend "What is it?"
     her flirt "It's a clothes wringer! What kind of farm boy are you, anyway?"
     him serious "The kind that always had electricity."
     her surprised "Oh, good idea! I could hook it up to the solar and it could crank itself on sunny days...if we could get enough torque..."
-    him normal "Whatever you want to do, my lovely inventor."
+    if (loved >= 0):
+        him normal "Whatever you want to do, my lovely inventor."
+    else:
+        him annoyed "I don't think that's worth the effort."
+        her annoyed "Okay, okay, you're probably right."
     stop bg_sfx fadeout 1.0
     $ skill_technical += 10
     return
@@ -149,8 +156,10 @@ label technical_4:
     show him normal at midleft
     with dissolve
     her surprised "I wonder if we could make our own hot water heater."
-    him serious "Well, we don't exactly have a ton of gas or electricity to spare. But you might be able to use the sun to heat it up and then store it somewhere insulated so it doesn't take as long to heat up."
-    her normal "I'll look into it."
+    him serious "Well, we don't exactly have a ton of gas or electricity to spare."
+    her serious "Maybe I could use the sun to heat it up and then store it somewhere insulated? "
+    show her normal 
+    extend "I'll look into it."
     "Most water-heating designs assumed I would have access to more solar panels. I didn't, but I felt like I could at least stick a container of water in the sun to heat it. If I could make something out of metal or another material that transferred heat easily, I could get something to work."
     "I took a trip to the storeroom to see what they had."
     scene bg storehouse with fade
@@ -166,18 +175,18 @@ label technical_4:
             her serious "I just wanted to build a hot water heater for my house. Do you have any ideas about what kind of material I could use that would conduct heat easily?"
             ilian "Hmm. Well, I know we're always finding new uses for these animal skeleton things."
             her flirt "And by \"always finding\" you mean no one has thought of anything to do with them?"
-            ilian happy "They're looking pretty good in my junk pile, if I do say so myself."
+            ilian happy "The one in our front yard has kept the little kids from bugging us."
             her serious "I'll take a few. There has to be some way I could use them."
             "The exoskeletons varied in texture. Some parts were brittle while others were as hard as a seashell. I felt like there was no way I could make anything useful out of them."
             "I put them aside and wondered if I could make a tank out of wood."
             scene bg farm_exterior with fade
             show him normal at midright with dissolve
             show her normal at midleft with moveinleft
-            her normal "[his_name], could you cut down a tree for me so I can make a water tank for our house?"
+            her normal "[his_name], could you help me cut down a tree so I can make a water tank for our house?"
             him "Well, I'm not sure, but I can try. How about you come with me to help pick out a tree?"
-            "We found a tree that was about the width I needed. [his_name] cut it down, and we brought it home on our wagon in pieces."
+            "We found a tree that was about the width I needed. [his_name] and I cut it down, and we brought it home on our wagon in pieces."
             "After the wood dried out, I hollowed it out using tools at the storehouse."
-            "In the end, it just ended up being lukewarm storage for more water."
+            "In the end, it just ended up being lukewarm storage for more water. It heated up slightly more quickly than the cold water from the well, though."
         "I'll die if I don't get what I need.":
             her concerned "It's for something really important. Can I please get two sheets of metal and some pipes?"
             ilian "What exactly is it for?"
@@ -242,7 +251,7 @@ label technical_5:
     "I even added a dial connected to some resistors that let you control the speed of the blender. The container wasn't transparent (I wasn't sure if the metal we used was even technically food-safe), but it fit on the blades okay."
     play bg_sfx "sfx/blender.mp3"
     "When I tried it out, it leaked -- a lot. I sealed the leaks up and played around with the speeds to get a speed that would mix and blend without foaming or stalling."
-    "Finally, I had a blender. It used so much electricity that it wouldn't run at the same time as anything else, so we had to turn off the lights when we needed to use it."
+    "Finally, I had something that was kind of like a blender. It used so much electricity that it wouldn't run at the same time as anything else, so we had to turn off the lights when we needed to use it."
     "I didn't mind, though. I just sat back and enjoyed my smoothie full of [hated_food]."
     stop bg_sfx
     $ skill_technical += 10
@@ -264,7 +273,7 @@ label technical_6:
     ilian happy "That sounds great. Can you hook it up to the storehouse?"
     her concerned "No, it's just for our house..."
     ilian normal "Maybe we should all be on the same power grid..."
-    her serious "Maybe so, but we're not right now. Besides, if we were, we'd have the same problems we do now on cloudy days, just everyone will blame their neighbors for using all the electricity."
+    her annoyed "Maybe so, but we're not right now. Besides, if we were, we'd have the same problems we do now on cloudy days, just everyone will blame their neighbors for using all the electricity."
     ilian "True. Well, if you find something you can use, go ahead - you're the only one who's shown much of an interest so far."
     her normal "Thanks, I will."
     
@@ -278,16 +287,14 @@ label technical_6:
             "Magnets were also in short supply, so I had to 'borrow' some from the store house."
             "Finally, the water turned the wheel that turned a generator. It didn't generate a ton of current, but it was steady, which is more than I could say for the solar panels."
             "It wouldn't charge the battery fast enough to keep up with the stove, but it would let it run a little longer."
-            $ community_level -= 1
 
         "Publish the plans and let someone else build it":
             "I didn't have time to waste on that. But I put my plans on the colony website, in case anyone ever did want to build one."
-            $ community_level += 1
 
         "{i}Spearhead a community effort to build it{/i}" if (skill_social >= 30):
             "With some help, it wouldn't be too hard to build the water wheel. I asked around, and found several people willing to help make a community water wheel that fed into the community power grid."
             "It didn't help me personally that much, but I guess if it helped the store house and clinic have more reliable electricity, that would help us all."
-            $ community_level += 5
+            $ community_level += 3
     
     $ skill_technical += 10
     return
@@ -299,7 +306,7 @@ label technical_7:
     show her normal at midleft with dissolve
     her happy "Hey, is there anything you need around the farm?"
     him surprised "Like what?"
-    her normal "Like an invention or something to help automate some of the tasks you do all the time."
+    her normal "Like an invention to help automate some of the tasks you do all the time."
     him serious "I'm sure there is, but I can't think of anything right now."
     her normal "Okay, let me know when you think of something."
     scene black with fade
@@ -311,7 +318,7 @@ label technical_7:
     him serious "Well, I'm always mixing different amounts of different kinds of fertilizer and other substances for different fields."
     her concerned "Okay..."
     him normal "I was wondering if you could set something up where I just enter in the proportions I need and it would measure and mix it for me?"
-    her serious "Or you could keep track of what you've planted, and it could cross-reference it with the Ag database and make suggestions for you?"
+    her serious "Or you could keep track of what you've planted, and it could cross-reference it with the AG database and make suggestions for you?"
     him happy "Yeah, even better! But there should be a manual option, too, in case I need something out of the ordinary."
     her happy "Alright, I'll do it!"
     scene bg tractor with fade
@@ -345,9 +352,10 @@ label technical_7:
     him serious "Okay, let me try it."
     him happy "Wow, this is really cool!"
     her surprised "Don't you already keep track of all this stuff somewhere?"
-    him normal "Yeah, but it'll be better to have it all in one place. Thank you, [her_name]."
+    him normal "Yeah, but this is way better. Thank you, [her_name]."
     her happy "You're welcome."
     "I wasn't a farmer, but I felt satisfied that I could help out in my own way."
+    $ loved += 2
     
     $ skill_technical += 10
     return
@@ -363,7 +371,7 @@ label technical_8:
     her surprised "What?"
     ilian "I'm not giving you anything else until you help me with something. I'm always giving you materials; now it's time for you to pay up."
     her annoyed "I help out! I'm a [profession]; what do you think I do all day?!"
-    ilian "Here's what I need. We have this database software to manage our inventory, but it takes forever to find out how much we have of something, and to change how much we have."
+    ilian "Here's what I need. We have this database software to manage our inventory, but I have to click through four screens to find out how much we have of something, and to update quantities."
     her surprised "Oh, so you want an easier interface?"
     ilian "Yes, I do. Then I will be able to help distribute things more fairly and not rely on memory."
     her normal "That sounds fun! Let me take a look at what you currently have..."
@@ -426,7 +434,7 @@ label technical_master:
     with dissolve
     "Sometimes, I felt like we had time-traveled to the 1800s. We were so dependent on our plants and animals, and so removed from Earth."
     "Luckily, though, we had a few things they didn't."
-    "We had a few hundred year's worth of science and engineering progress, reference materials, computers, and other electronic resources."
+    "We had a few hundred years' worth of science and engineering progress, reference materials, computers, and other electronic resources."
     "Other people wanted to do things the old-fashioned way. But I felt it would be a waste of all this technology if we didn't put it to good use!"
     him concerned "Guess I'll check on the north fields again. Something keeps breaking through the fence there and messing everything up."
     her surprised "You're going to ride out there and look at it?"
@@ -474,7 +482,7 @@ label technical_master:
             show him normal at midleft with dissolve
             "We walked around the farm, and I showed him all the cameras and how I had anchored them in place."
             him serious "You're amazing, you know that? I could never have built something like that."
-            her flirt "Well, I'm hopeless at growing food, so it all works out."
+            her flirt "Well, I'm hopeless at growing food, so it's good we have each other."
             $ loved += 2
         "No, thanks.":
             her annoyed "No, thanks. That's why I made this whole thing, so we wouldn't have to walk around the whole farm every night."

@@ -4,23 +4,23 @@
 # Default
 label knowledge_def:
     scene bg library with fade
-    "I read up on the latest science research."
+    "I read up on the latest science research. Dr. Lily had posted some articles about Talaam's geology and biology."
     $ skill_knowledge += 10
 
 # Intro Event
 label knowledge_0:
     scene bg library with fade
     show pete at midright with dissolve
-    "I knew there was a library here, so I decided to check it out. I sent Pete a message and he agreed to meet me there and show me around. When I arrived, he was lounging in a chair reading on his computer pad."
+    "I knew there was a library here, so I decided to check it out. I sent Pete a message and he agreed to meet me there and show me around. When I arrived, he was lounging in a chair reading on his computer pad. He stood up to greet me."
     show her normal at midleft with moveinleft
     if (profession == "doctor"):
         pete happy "Howdy, Doc! What can I help you with?"
     else:
         pete happy "Howdy! [her_name], right? Well, what can I help you with?"
-    her normal "Well, I had a few minutes and I thought I'd see what sort of stuff you have here in the library."
+    her normal "I had a few minutes and I thought I'd see what sort of stuff you have here in the library."
     pete normal "Well, most books you can just borrow from our online library, but we do have some high-res maps of the planet and a few printed reference books.  We've also got some tools and equipment people can borrow, like if you want to build something."
     her serious "Okay, that makes sense. We didn't have room to bring drills and wrenches for everyone, huh?"
-    pete happy "Yup. This is also where you can get new data from the extranet connection to Earth, though we've got limited bandwidth and it'll take a couple of years to get here."
+    pete happy "Yup. This is also where you can get new data from the extranet connection to Earth, though  it'll take a couple of years to arrive."
     her surprised "What are those machines over there?"
     pete normal "Those are our printers. You can print on paper, of course, and we have a 3D printer if you need to print something out of metal or plastic. But we don't have a ton of either material, so you can't just print anything, and recycling's real important."
     her normal "That makes sense. Thanks for the tour, Pete."
@@ -30,10 +30,10 @@ label knowledge_0:
     her normal "What's it about?"
     pete happy "It's sort of a historical book about some settlers in Australia. New place, unfamiliar terrain, crazy people - sort of like us."
     her serious "Hopefully without the crazy people part."
-    pete normal "Well, most folks are alright, but that Julia... man, she's a witch. Don't know how she passed the psych test to come up here."
+    pete normal "Well, most folks are alright, but that Julia... man, she's tough as a wolfslug and twice as mean. Don't know how she passed the psych test to come up here."
     her flirt "Same way you passed it, probably."
-    pete happy "Charm and good looks? I don't think so. She probably just fixed 'em with that glare of hers and they didn't dare tell her no."
-    her normal "Maybe so.  See you around, Pete."
+    pete happy "By havin' more guts than you could hang on a fence? I guess we do have that in common."
+    her normal "Maybe so. See you around, Pete."
     pete "Bye."
     $ skill_knowledge += 10
 
@@ -49,12 +49,11 @@ label knowledge_1:
     show her normal at center
     with dissolve
     with dissolve
-    lily "And in some cases, you'll just have to test a little on an Earth creature. If you spectrize something and can't tell if it's safe, bring it into the lab."
+    lily "And in some cases, you'll just have to test a little on an Earth creature. If you spectrize something new and want to make sure it's safe, bring it into the lab and I will have one of our rats try it."
     her surprised "Do you have a list of plants you've already tested?" 
     lily "Yes. Of course there's the ones you're planting, but in addition to those we've discovered a few that contain relevant nutrients. I'll have my assistant send out a guide." 
     "I was excited to try out some of the edible plants here."
     $ skill_knowledge  += 10 
-    $ met_Lily = True
     return 
 
 # Volunteering to do research at library
@@ -87,7 +86,7 @@ label knowledge_3:
     "I told her it grew near our riverbed, and she promised to update the useful plants list."
     define has_grass = True
     $ skill_knowledge += 10
-    $ community_level += 5
+    $ community_level += 2
     
     return
 
@@ -127,11 +126,10 @@ label knowledge_4:
 # Research geology, geography of planet
 label knowledge_5:
     scene bg library with fade
-    "I wanted to know why Talaam's climate was the way it was, and why they chose to settle here on this spot, out of the whole planet."
+    "I wanted to know why Talaam's climate was the way it was, and why they chose to settle here on this particular spot."
     "I read a few research papers from astronomers and looked at maps of the planet. I could see that it was colder near the poles; we were closer to the equator, which made for milder temperatures and made year-round agriculture possible."
-    "Obviously the river was very useful to our settlement for irrigation, and I also noticed some mountains further to the west. I had seen them in the distance."
-    "There was much more precipitation on this side of the mountain than on the other side, which also made this area ideal for colonization."
-    "I wondered why they didn't put us near the ocean, but then I read that hurricanes were very common here. Those same mountains acted as a hurricane barrier as well."
+    "Obviously the river was very useful to our settlement for irrigation, and I also noticed that the mountains I had seen to the west made a barrier between our fertile colony and a desert."
+    "I wondered why they didn't put us near the ocean, but then I read that hurricanes were very common close to shore."
     "There were plans to mine the mountains later for valuable metals and minerals, but for now they mainly wanted to see if it was even possible for us to live here. Apparently they were not as confident in our chances for survival as [his_name] was."
     "Last, I learned that the mountains were also a region of previous volcanic activity, and there might be hot springs in the area."
     if (skill_physical >= 60):
@@ -148,26 +146,26 @@ label knowledge_6:
     scene bg library with fade
     show her normal at midright with dissolve
     show lily at midleft with moveinleft
-    lily "[her_name]. I want to talk to you. I am writing an article about the edible, native plants we've found for an Earth science journal, but I am sure I have missed something. Will you co-author it with me?"
+    lily "[her_name]. I want to talk to you. I am writing an article about the edible, native plants we've found for an Earth science journal. Will you co-author it with me?"
     menu:
         "What should I say?"
         "Sounds fun.":
             her normal "Sure, that sounds like a good way to get our knowledge out to the scientific community."
             lily happy "Good. I'll send you what I have so far, and we can discuss it in the lab tomorrow."
             show lily normal
-            "Lily's paper was very technical, getting down to how the enzymes in these plants could still be broken down by human digestion, even though they were slightly different than earth's."
+            "Lily's paper was very technical, getting down to how the enzymes in these plants could still be broken down by human digestion, even though they were slightly different than Earth's."
             "She also wrote about how humans wouldn't be able to live off of Talaam's plants alone, since they were missing vital nutrients."
             "I felt a little out of my league when I went in to talk to Lily."
             her concerned "I'm not much of a chemist, so I can't really help with checking most of your paper. I found a few typos, but you can easily fix those. Why did you want my help?"
-            lily "Oh, I have a hard time seeing the big picture with plants. I know a lot of scientists are interested in their classification, but I think my knowledge of Earth plants might be tainting how I attempt to classify them. I'm interested in a more plebian perspective."
-            her annoyed "Well, I'm not COMPLETELY ignorant of biology, but I see what you're getting at and I'll give it shot."
+            lily "I have a hard time seeing the big picture with plants. I know a lot of scientists are interested in their classification, but I think my knowledge of Earth plants might be tainting how I attempt to classify them. I'm interested in a more plebian perspective."
+            her annoyed "Well, I'm not completely ignorant of biology, but I see what you're getting at and I'll give it shot."
             "I spent some time gathering the edible plants Lily talked about in her paper. At first, I tried to sort them into categories based on their venation, but there were only two plants where that made a difference."
             "I decided to write down all the ways the plants were different, and then I ranked them by order of usefulness. The flowers were the easiest to tell apart, but were only present for part of the time."
             "I realized that Talaam's plants' leaves didn't vary in size within a species. Leaf size ranged from tiny to umbrella-sized. Since I was halfway to making an identification key, I made one."
-            lily happy "This is excellent. Whenever I tried to categorize these plants, I could only think of things like leaf shape and number of petals."
+            lily happy "This is excellent. I had overlooked leaf size in my previous categorization attempts."
             her "I'm glad I could help. Maybe we can distribute the key to the colonists too."
-            lily "That's a wonderful idea. You can use the photos I already have if that will help."
-            "Lily sent the paper off to Earth and I sent out an updated edible plant guide to the colonists, with guidelines on which earth plants were essential for supplementing a Talaam-based diet."
+            lily "Yes, that would be helpful. You can use the photos I already have."
+            "Lily sent the paper off to Earth and I sent out an updated edible plant guide to the colonists, with guidelines on which earth foods were essential for supplementing a Talaam-based diet."
             $ community_level += 1
             
         "I want to write my own paper to publish here on Talaam.":
@@ -197,7 +195,6 @@ label knowledge_6:
             her serious "Well, if it's that important to you, I can tell you what I know."
             "I spent the afternoon with Lily in the lab, discussing which plants were most useful to eat. She told me that she was fascinated by how a human could almost live off of Talaam's plants alone, except for a few missing nutrients."
             "We both learned a lot, and I didn't have to spend any time writing aimlessly."
-            $ community_level -= 1
 
     $ skill_knowledge += 10
     return
@@ -223,10 +220,6 @@ label knowledge_7:
     "Soon, the museum night arrived."
     scene bg community_center with fade
     play music "music/RondoAMinor.ogg" fadeout 1.0
-    image greatwave = "sprites/art-greatwave.png"
-    image pearlearring = "sprites/art-girlpearlearring.png"
-    image starrynight = "sprites/art-starrynight.png"
-    image viewfromkremlin = "sprites/art-viewfromkremlin.png"
 
     show greatwave at Position(xpos=170,ypos=250)
     show pearlearring at Position(xpos=900,ypos=300)
@@ -241,8 +234,8 @@ label knowledge_7:
     show him normal at midleft with moveinleft
     him annoyed "All right, so, tell me about this painting."
     her surprised "Which one?"
-    him serious "The one with the wave. I've seen it before, but what's the big deal about it?"
-    her normal "Well, it's a pretty famous woodblock print from Japan around 1830."
+    him serious "The one with the wave. I've seen it before, but why's it so famous?"
+    her normal "Well, it's a woodblock print from Japan around 1830."
     him surprised "What's a woodblock print?"
     her normal "Basically they would take a painting with simple colors and make stamps out of it, so they could just stamp each color onto a new piece of paper to make copies."
     him serious "Okay, why did you choose this one?"
@@ -252,6 +245,7 @@ label knowledge_7:
     show her happy
     "It felt good to share some of what I loved with [his_name], and the colony."
     $ skill_knowledge += 10
+    $ community_level += 1
     return
 
 # Find bacteria that produce plastic
@@ -261,7 +255,7 @@ label knowledge_8:
     "We were trying to build a food web based on what the animals here ate, but we knew it was woefully incomplete."
     scene bg pond with fade
     "I decided to spend the day observing animals near the pond to see if I could discover any new species or record new behavior."
-    "I was able to find some new predators, as well as several migratory species that sometimes visited the pond. Later in the afternoon, though, a sheen on the far side of the pond caught my eye."
+    "I was able to find two new predators, as well as several migratory species that sometimes visited the pond. Later in the afternoon, though, a sheen on the far side of the pond caught my eye."
     show her normal at center with dissolve
     her surprised "What could that be?"
     "I hiked over to the other side of the pond, and found a smooth, glossy crust forming on one part of the pond."
@@ -273,11 +267,11 @@ label knowledge_8:
     show her normal at midleft with moveinleft
     lily "It is plastic."
     her surprised "How is that possible?! This doesn't look like anything we brought from Earth..."
-    lily "That's because it is not from Earth. This is a naturally-formed plastic."
+    lily "That's because it is not from Earth. This is a naturally formed plastic."
     her serious "Naturally formed?"
-    lily "On the sample you gave me were some local bacteria. These bacteria eat organic material in the pond and excrete a chemical used to make plastic."
+    lily upset "On the sample you gave me were some local bacteria. These bacteria eat organic material in the pond and excrete a chemical used to make plastic."
     her surprised "But how did the plastic form?"
-    lily "There must be some sort of chemical reaction... We should study it more. Will you show me where you found it?"
+    lily normal "There must be some sort of chemical reaction... We should study it more. Will you show me where you found it?"
     scene bg pond with fade
     show lily at center
     "I showed her the spot at the pond."
@@ -293,7 +287,7 @@ label knowledge_8:
     her surprised "It looks like it's working!"
     lily normal "Yes, I believe I have managed to replicate the necessary conditions."
     her happy "Great! If we can produce our own plastic, we can 3D print more things that we need."
-    lily "That's true; It would normally be at least 25 years before we could have our own plastic manufacturing facilities."
+    lily "It will require recalibration due to the higher melting point of this plastic, but, yes."
     "How cool is that?! We could now make our own plastic with bacteria..."
     $ community_level += 2
 
@@ -307,9 +301,9 @@ label knowledge_master:
     show her normal at midleft
     with dissolve
     
-    lily "[her_name], we've learned so much about this planet, but I'm worried that all our research will be for naught if it is not shared properly."
+    lily normal "[her_name], we've learned so much about this planet, but I'm worried that all our research will be for naught if it is not shared properly."
     her normal "Well, we did work on that information on edible plants..."
-    lily "Yes, but that is not enough. What about the bacteria you found, and the creatures we found at the ocean, and the maps we've made? There's not one place to find all those things."
+    lily normal "Yes, but that is not enough. What about the bacteria you found, and the creatures we found at the ocean, and the maps we've made? There's not one place to find all those things."
     her flirt "We could just ask you."
     lily upset "I will not live forever. And neither will you. Our knowledge needs to outlive us."
     her concerned "I see what you mean..."
@@ -347,8 +341,8 @@ label knowledge_master:
         "I talked about how to preserve the meat of different animals and native plants."
     if (profession == "doctor"):
         "I wrote about what we knew about local bacteria that were dangerous to humans, and other medical issues specific to this planet."
-    if (profession == "carpenter"):
-        "I wrote about what plants were useful for making furniture and how to treat them to last longer."
+    if ((profession == "carpenter") or (skill_creative >= 50)):
+        "I wrote about what plants were useful for making rope and furniture and how to treat them to last longer."
         
     "Then I sent a message out asking for everyone to help fill in the blank sections of the encyclopedia."
     "I waited for a few days... but the only person who had posted anything was Pete, who had written one article about what plants were good for cattle to graze on and which could be dangerous."
@@ -363,8 +357,6 @@ label knowledge_master:
             "I asked [his_name] to write about soil properties and how they affected the plants he had tried to grow."
             scene bg storehouse with fade
             "I asked Ilian to write about what things from Earth were in short supply, and what future colony ships could do better."
-            scene bg lab with fade
-            "I talked to some other experts in the colony, and finally I talked to Lily."
             
         "Write a passionate plea for help.":
             scene black with fade

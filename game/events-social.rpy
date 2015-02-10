@@ -38,7 +38,7 @@ label social_0:
     pete_c "Speak for yourself, we're doin' just fine up here."
     natalia_c "I'll remember that the next time Helen asks me for some eggs!"
     helen_c "Hey, hey, don't drag me into this!"
-    pete_c "Yeah, well, see how you like going without milk for your kids. They're runty enough as it is."
+    pete_c "Yeah, well, see how you like going without milk for your kids. They're already so runty it takes two of 'em to make a shadow."
     show her concerned
     "Uh-oh. Things were getting personal. Was there anything I could do?"
     nvl clear
@@ -125,7 +125,7 @@ label social_1:
     her normal "Good, that's what I wanted to know..."
     hide pavel
     hide her
-    "I sent out a message inviting everyone to come to a once-a-week party. People could bring snacks to share, and just chat and be together."
+    "I sent out a message inviting everyone to come to a once-a-week get-together. People could bring snacks to share, and play games or just chat."
     "I wasn't sure anyone would show up..."
     "But [his_name] agreed to come, and Sara and Ilian and the mayor were coming, so we could at least hang out."
     play bg_sfx "sfx/people.mp3" loop
@@ -176,7 +176,6 @@ label social_2:
     him serious "Okay, that will be interesting...where are we all going to sit?"
     her serious "I thought we'd just sit outside. I guess I should make some food that kids like, too."
     him normal "Maybe some fruit?"
-    her normal "Yeah, we'll figure it out, don't worry."
     "I worked hard on the food, and spread out some blankets to sit on, even though it meant I'd have more laundry to do to get all the dust out."
     scene bg farm_exterior with fade
     show him normal at quarterright
@@ -229,25 +228,26 @@ label social_2:
         
     him surprised "So, I'm curious, how did you two meet?"
     thuc "Well, we were both-"
-    julia "Oh no, don't let him tell it, he'll get everything wrong."
+    julia mad "Oh no, don't let him tell it, he'll get everything wrong."
     show him normal
     her happy "Well, why don't you tell it and then we'll ask for Thuc's version afterwards?"
-    julia "Hmph. Well, we were both serving in the Peace Corps in Cambodia. I was working as a sanitation educator, and he was working on a sustainable farming project."
+    julia normal "Hmph. Well, we were both serving in the Peace Corps in Cambodia. I was working as a sanitation educator, and he was working on a sustainable farming project."
     him surprised "You're not Cambodian, are you Thuc?"
     thuc "No, my great-grandparents immigrated from Vietnam. My grandpa thought it was crazy that I knew how to speak Khmer but not Vietnamese."
-    julia "Eventually we worked together on a bio-gas system to transform sewage into fertilizer. I didn't think anything of it at the time, but later it turned out he had specifically requested this opportunity so that he could see me more often."
+    julia "Eventually we worked together on a bio-gas system to transform sewage into fertilizer. It's similar to what we use here on Talaam."
+    julia "I didn't think anything of it at the time, but later it turned out he had specifically requested this opportunity so that he could see me more often."
     thuc "That wasn't the only reason!"
     julia "And soon every night he's hanging around my host family's house after dinner, and wants my opinion on every little detail of the project."
     thuc "That was just for work!"
     julia "Well, anyway, we got to be good friends. After we returned from our service, he looked me up and we started dating."
     thuc "No, no, no. She's the one who looked me up! Any time I'd post something online, she'd comment on it. She practically stalked me."
-    julia "I was just tring to keep up our friendship! You were the one who wanted to meet in person!"
+    julia mad "I was just tring to keep up our friendship! You were the one who wanted to meet in person!"
     thuc "She's the one that proposed to me, just so you know."
     him happy "Did she really?"
     julia "It was a joke!"
     thuc "I think our ten kids prove otherwise, {i}oun somlanh{/i}."
-    julia "Well, that's not to say it didn't turn out to be a good idea after all."
-    "That's what she said, but she blushed and smiled. I wasn't sure exactly how they had ended up together, but they were clearly just right for each other."
+    julia normal "Well, that's not to say it didn't turn out to be a good idea after all."
+    "That's what she said, but she blushed and smiled. I wasn't sure exactly how they had ended up together, but they seemed just right for each other."
 
     "We talked and talked, until finally, it got dark. One of the moons was shining brightly; the other was dark."
     show night with dissolve
@@ -259,7 +259,7 @@ label social_2:
     hide thuc
     with moveoutleft
     him "I wonder what our family will look like in a few years?"
-    if (want_kids or is_pregnant):
+    if (want_kids or is_pregnant or is_pregnant_later):
         her concerned "It will be different, won't it?"
     elif (loved >= 0):
         her flirt "As long as you and me are in it, it will be just fine."
@@ -299,19 +299,16 @@ label social_3:
                     her concerned "Sometimes I feel like it's easier to like people when I don't know them."
                     sara "True. And if everyone knew each other we'd be more likely to gossip and get all drama-y."
                     her normal "Maybe I could stand to meet a few new people though."
-                    sara "Look, there's someone else on her lunch break, let's introduce ourselves."
+                    sara "Look, there's Dr. Lily, let's talk with her."
                     show lily at quarterright with dissolve
                     show her normal at center
                     show sara at quarterleft
                     with move
-                    if (not met_Lily):
-                        "We met Lily, one of the workers in the science lab. She invited us to come visit her to learn more about alien botany."
-                    elif (met_Lily):
-                        "I had already met Lily, but I introduced her to Sara and we had an enjoyable lunch together."
+                    "Dr. Lily didn't seem to like small talk, but when we asked about alien botany she told us about several interesting plants she had found and invited us to come visit her at the science lab to learn more."
                 "I guess.":
                     her serious "Well, if I'm going to meet them all eventually I might as well get to know them sooner rather than later."
                     sara "Exactly. Look, some other people are taking their breaks now too, let's ask them if they want to have lunch with us."
-                    "We interrupted a few conversations, but luckily everyone was in a good mood and seemed happy to meet us. We decided to meet every Friday for lunch in the community center."
+                    "We interrupted a few conversations, but everyone was in a good mood and seemed happy to meet us. We decided to meet every Friday for lunch in the community center."
             
     stop bg_sfx
     $ skill_social += 10
@@ -350,7 +347,7 @@ label social_4:
             her happy "I think everyone enjoys watching good-looking people do stupid things. Plus I already know we have it in the archives!"
             pete "We've got lots of Star Wars remakes in the archives, but maybe you didn't know that we have some rarer sci-fi movies here too."
             her surprised "Like what?"
-            pete "{i}Time For No Man{/i} was originally a tellanovella, but when set in space, it suddenly became a sleeper cult hit in the 2030s!"
+            pete "{i}Time For No Man{/i}. Not the original, the space one that was a big hit in the 30's!"
             her flirt "'No man', huh? Does it have any guys in it?"
             pete "I think it has a few. It's not just lesbians if that's what you're asking."
             sara "Is it appropriate for children?"
@@ -359,7 +356,7 @@ label social_4:
             scene black with fade
             "We decided to watch {i}Time For No Man{/i} the next day in the evening. I sent out a message to the colony message board, and tried to remind everyone I saw to come."
             "The movie was kind of ridiculous. At one point two cousins realized they were actually sisters, and that their evil uncle was actually their father. Then it turned out he wasn't evil at all, but had been infected with an alien virus that caused him brain damage that made him act rudely."
-            "A feminist organization let the cousins/sisters travel the galaxy at light speed to administer vaccines to the rest of civilization, but by the time they got anywhere, everyone else had been infected by the virus which made them act rudely."
+            "A feminist organization let the cousins/sisters travel the galaxy at light speed to administer vaccines to the rest of civilization, but by the time they got anywhere, everyone else had been infected by the virus which made them act like jerks."
             scene bg community_center with fade
             show him normal at sitting, midleft
             show her normal at sitting, midright
@@ -400,7 +397,7 @@ label social_4:
             sara "The plot of a Sherlock Holmes mystery is also difficult to understand, so it might not hold their interest."
             pete "Well, I can think of a historical film with plenty of mystery that kids and adults might like."
             her normal "Tell us about it."
-            pete "It's a mini-series called {i}The Adventures of Emily Thompson{/i}, about a young girl living in a small town in England during the 1900s. She solves various mysteries like finding missing shoes and pets, and she ends up finding the culprit of a livestock theft."
+            pete "It's {i}The Adventures of Emily Thompson{/i}, about a gal living in England during the 1900s. She solves mysteries like finding missin' shoes and pets, and she ends up catching a cattle rustler."
             her surprised "Well, that does sound a little more child-friendly than murder mysteries."
             sara "Let's do it."
             stop bg_sfx fadeout 1.0
@@ -444,7 +441,7 @@ label social_4:
                     her normal "Of course I miss my family, but I love our community and working with you to make a place for ourselves."
                     him laughing "Good, because we're stuck here!"
                 "{i}I don't really like it here.{/i}" if (loved < 0): 
-                    her sad "I think about going home all the time. I wish I hadn't come."
+                    her sad "I think about going home all the time. Somtimes I wish I hadn't come."
                     him surprised "Really? I thought you were getting used to it."
                     her annoyed "No, I'm not."
                     him concerned "Maybe you just need time."
@@ -469,9 +466,12 @@ label social_4:
                     her annoyed "True. But it's going to be a big part of our lives for the foreseeable future, is what I meant."
                     him normal "That's the way I like it. There's nothing like farm-fresh food to make you healthy."
         
+    show her normal
+    show him normal
+    with dissolve
     "The families went home as we talked. Pete and Sara and Lily and I congratulated each other for a movie well-watched, and I went home feeling like I helped everyone feel a little closer."
     $ skill_social += 10
-    $ community_level += 2
+    $ community_level += 1
     return
 
 #
@@ -561,12 +561,12 @@ label social_5:
             show her serious at midleft
             show sara sad at midright
             with moveinright
-            sara "Sorry you had to hear that."
+            sara "...Sorry you had to hear that."
             her serious "No, it's okay, everyone has disagreements."
             sara "I just feel so trapped sometimes! I hate staying at home in the evenings and doing nothing!"
             her surprised "I guess that's Ilian's favorite thing to do?"
             sara "Yeah..."
-            her normal "Well, why don't I go with you to Helen's after dinner, and we can have a girl's night? We haven't done that for a while..."
+            her normal "Well, why don't I go with you to Helen's after dinner, and we can have a girls' night? We haven't done that for a while..."
             sara normal "Okay...thanks, [her_name]."
             scene black with fade
             "When we came back, the mood had definitely changed."            
@@ -602,7 +602,7 @@ label social_5:
             her flirt "Yeah. But now that we have the house to ourselves, we can do whatever we want, whenever we want..."
             him flirting "You're right! Now I can finally let out all the gas I've been saving up..."
             her annoyed "Is that the best thing you can think of?!"
-            if (loved <= 0):
+            if (loved >= 0):
                 him flirting "You're the best thing I can think of."
                 her happy "That's more like it!"
             else:
@@ -614,6 +614,7 @@ label social_5:
         "You can stay at the community center.":
             her serious "You should be able to stay at the community center; there's some comfortable sleeping areas from the shuttle, and a little kitchen."
             sara "Yeah, I guess that will work."
+            scene bg community_center with fade
             "They settled in on the floor of the community center."
             "Luckily, there were extra materials for building another house on the shuttle, but it took Ilian and Sara a few weeks to build it by themselves."
             "We didn't have time to help out; we were all too busy."
@@ -623,16 +624,20 @@ label social_5:
         "You could stay at the clinic." if (profession == "doctor"):
             her "You could stay at the clinic; there's extra beds we're not using."
             sara "That could work..."
+            scene bg clinic with fade
             "It was a little awkward, coming to work at the clinic when they were using it for a house. But it was good in some ways, too."
             "Sara started watching me work and I was able to teach her more about health and medicine."
             "Even so, we were happy to find out that there were extra materials for building another house, and we got right to work helping Ilian and Sara build it."
             $ community_level += 2
         "I hope you find a place to stay.":
             her serious "Yeah, I hope you can work something out."
+            scene black with fade
             "They settled in on the floor of the community center."
             "Luckily, there were extra materials for building another house on the shuttle, but it took Ilian and Sara a few weeks to build it by themselves."
             "We didn't have time to help out; we were all too busy."
             "I hoped that something like that would never happen to us."
+            $ skill_social += 10
+            return
     "The fire was a tragedy, but it also drew us closer together."
     $ skill_social += 10
     return
@@ -654,15 +659,16 @@ label social_6:
     if (profession == "doctor"):
         "I taught about basic first aid and health, and when to come into the clinic."
         her normal "...and that's how to recognize a stroke. Can anyone review the symptoms for us?"
-        naomi "You mentioned sudden headache, numbness, trouble speaking, trouble walking, and vision problems, sometimes just on one side."
+        naomi "You mentioned sudden headache, numbness, trouble speaking..."
+        thuc "Also trouble walking, and vision problems?"
         her serious "Yes, thank you. If you see any of these, please bring the person to the clinic right away, or radio me if it's after hours. There are some treatments that must be applied immediately to be effective."
         "They were little things, really, but they could make a big difference in saving someone's life."
     elif (profession == "carpenter"):
         "I taught everyone how to make a simple basket out of one of the local plants that had long, flexible branches."
         her normal "So, you weave the horizontal branches in and out of the skeleton you've already made..."
-        brennan "Like this?"
+        natalia "Like this?"
         her concerned "Yes, your first row is good, but the second row needs to alternate which ones it goes over and under."
-        brennan "Ah, I see."
+        natalia "Ah, I see."
         show her normal
         "Maybe if I taught them how to make some of the easier things, they wouldn't come to me with every little thing they wanted."
     elif (profession == "mechanic"):
@@ -677,7 +683,7 @@ label social_6:
         her concerned "I try to give all the kids time to complete their assignments at school. So if they are bringing work home, it is because they have not completed what they were supposed to at school."
         her normal "Sometimes they are more interested in each other than the material."
         show thuc normal
-        natalia "Well, then maybe they ought to do their work at home some days! They'd probably get more done without their friends to distract them!"
+        natalia "Well, then maybe they ought to do their work at home some days! They'd probably get more done without their friends to distract them."
         her concerned "We could try that if you like, though I think their coming to school and mentoring the younger students has greatly benefited them, both in academic and social areas."
         natalia "Hmmm. Well, I'll think about it."
         show her normal
@@ -765,7 +771,7 @@ label social_7:
             her normal "Your laundry looks so clean; how are you getting all the stains out? We don't have very good soap here..."
             julia "Ah, you noticed! The trick is fermented urine."
             her surprised "Really?"
-            julia "Yes, it has ammonia in it. They used to use in ancient Rome."
+            julia "Yes, it has ammonia in it. They used to use it in ancient Rome."
             her surprised "You might want to post that on the community message board; I bet everyone would like to know about it."
             julia "Oh, I usually don't have time to go on there."
             her normal "Well, if you don't mind, then, maybe you could help me write up some instructions and I will post it from both of us."
@@ -778,8 +784,8 @@ label social_7:
             julia "We have our vegetable garden, of course, but one day the goats got out and ate most of our plants..."
             her sad "That's awful!"
             julia "We wanted to plant rice, but we are still working on a system to flood and irrigate the fields properly. Well, Thuc {b}was{/b} working on it, but after the corn..."
-            her serious "It seems fruitless, doesn't it?"
-            julia "Yes! What's the point of digging and planning and planting, if some alien creature is just going to come destroy everything we've done?!"
+            her serious "It seems pointless, doesn't it?"
+            julia "Yes! Why dig and plan and plant, if some alien creature is just going to come destroy everything we've done?!"
             her concerned "I know what you mean. I felt the same way, too, after the corn."
             julia "Thuc's not one to complain about his troubles, but I can see he's taken this hard. I suppose I haven't been very encouraging, either."
             her serious "It is hard... but maybe if you had some help, it'd be easier to get started?"
@@ -789,7 +795,7 @@ label social_7:
                 her "Your family has been so kind to us, giving us one of your goats, and Thuc is a good friend to [his_name]. Of course we will help you."
             else:
                 her "Thuc is a good friend to [his_name], so I'm sure he at least would be willing to help!"
-            julia normal "Oh, thank you. I've fretted about this long enough, it's time we did something about it!"
+            julia normal "Well...\nThank you, [her_name]. I've fretted about this long enough, it's time we did something about it!"
             
     scene black with fade
     "I told the mayor what I had found out, and he agreed to find some people to help Thuc get his flooding system setup before the start of the next planting season."
@@ -818,11 +824,11 @@ label social_8:
     show pavel at center with move
     pavel sad "[her_name]! Sorry about that."
     her happy "Not at all! You should be in a talent show or something, that was great."
-    pavel normal "Well, it wouldn't be a talent show if I was in it. My skills lie in other areas, I'm afraid."
+    pavel normal "You're too kind. My skills lie in other areas, I'm afraid."
     her flirt "Like keeping space colonies running?"
     pavel sad "I used to think so, but..."
     her surprised "What's wrong?"
-    pavel "There's just been... a really difficult situation, lately. I'm not sure I know what to do."
+    pavel "There's just been... a really difficult situation, lately. I've been thinking about what to do."
     her serious "Do you want to talk about it?"
     pavel "I probably shouldn't, but..."
     her concerned "I'll keep it confidential."
@@ -836,7 +842,7 @@ label social_8:
     her surprised "Like caffeine?"
     pavel normal "Yes, but more powerful. Some of the colonists say they can get a lot more done and have more energy when they use it."
     her serious "Is it dangerous?"
-    pavel "We haven't studied it enough yet to know what long term effects it may have. It does seem to make the user more tired afterwards, but that's the only reported side effect."
+    pavel "We haven't studied it enough yet to know what long term effects it may have. It does seem to make people more tired afterwards, but that's the only reported side effect."
     her surprised "Has someone been abusing it?"
     pavel sad "One woman wants to make smoking fire grass illegal. Apparently her kids play at the house of someone who smokes it, and she says the secondhand smoke makes them jittery and cranky."
     menu:
@@ -854,7 +860,7 @@ label social_8:
             pavel "The law is not a set of dos and don'ts to control people's lives. The law is a way to resolve conflicts in a way that's fair for everyone."
             her serious "I hadn't thought about it like that before..."
         "You should not make it illegal.":
-            her annoyed "That's too bad, but I think our community will function better without too many  laws."
+            her annoyed "That's too bad, but I think our community will function better without too many laws."
             pavel "Really? I'm worried about the smoke's effects on the children..."
             her serious "Well, there are other ways to help them. Maybe this woman could just talk to the person she has a problem with, or not let her kids play over there."
             pavel "That's true..."
@@ -873,7 +879,7 @@ label social_8:
             pavel "But if their smoking is so discreet that it doesn't bother anyone else, then I don't think there's a problem."
             her serious "Maybe so..."
             
-    pavel "Anyway, I appreciate your insight into this dilemma, [her_name]. It helps to be able to talk to someone that I trust."
+    pavel "I appreciate your insight into this dilemma, [her_name]. It helps to be able to talk to someone that I trust."
     her normal "Anytime, Mayor."
     
     $ skill_social += 10
@@ -899,9 +905,7 @@ label social_master:
         "What do I propose?"
         "Form a committee.":
             her normal "Why not have a committee? One person could be in charge of the store house, one person could be in charge of the land, one person in charge of the services like the school and library, and one person in charge of laws and safety."
-            pavel "Hmmm..."
-            her "Of course, you would be welcome on the committees."
-            pavel "Will you serve as one of the committee members?"
+            pavel "Hmmm...\n Will you serve as one of the committee members?"
             her serious "If you like, though I think it would be better if they were elected."
             pavel "Very well. I am sure you will be voted to be in charge of something."
             "Sure enough, they voted me to be in charge of services."

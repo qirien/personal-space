@@ -44,7 +44,7 @@ label colony_ship:
                         $ want_kids = True
                         her serious "Maybe when we've got things figured out on Talaam. Who knows what it will be like there?"
                         him serious "Yeah... but what if we never get everything figured out?"
-                        her annoyed "Not everything! Just food, clothing, shelter - I want to make sure we can provide for a kid."
+                        her concerned "Not everything! Just food, clothing, shelter - I want to make sure we can provide for a kid."
                         him serious "Yeah, that makes sense."
                     "Maybe never.":
                         her serious "Maybe never. I'm not sure if I want kids at all."

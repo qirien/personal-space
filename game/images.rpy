@@ -168,6 +168,11 @@ init -1:
     image goat_small = im.FactorScale("sprites/goat.png", 0.85)
     image seastar = "sprites/seastar.png"
 
+    # Paintings
+    image greatwave = "sprites/art-greatwave.png"
+    image pearlearring = "sprites/art-girlpearlearring.png"
+    image starrynight = "sprites/art-starrynight.png"
+    image viewfromkremlin = "sprites/art-viewfromkremlin.png"    
 
     # GUI
     image ctc_blink:

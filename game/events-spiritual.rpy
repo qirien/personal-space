@@ -14,7 +14,7 @@ label spiritual_0:
     # attending church and praying
     scene bg church with fade
     "Coming to a new planet and leaving behind my old job, friends, and family felt pretty lonely sometimes."
-    "I mean, of course I had [his_name], and I was making some friends here, but I yearned to feel more included, a part of something bigger than myself."
+    "I mean, of course I had [his_name], and I was making some friends here, but I yearned to feel more included, a part of something bigger than myself, bigger than just our colony."
     "I decided to check out the worship services that Sister Naomi led."
     show naomi at center with dissolve    
     naomi "...we are all invited to come and partake of goodness and peace. Do you think it matters what planet we are on?  Of course it doesn't. We all have the same access to divine inspiration and guidance, no matter where we are."
@@ -25,22 +25,25 @@ label spiritual_0:
         "Didn't know what to say.":
             "I didn't know what to say, so I just kind of sat there. I guess it was peaceful."
         "Poured out my heart to God.":
-            "I poured out my heart to God. I talked about everything that was bothering me, everything that made me happy, and asked for help. Praying about all that helped me feel at peace."
+            "I poured out my heart to God. I talked about everything that was bothering me, everything that made me happy, and asked for help."
+            "I prayed that we would be protected, that we would make good decisions, that we would know what to do."
+            "Praying about all that helped me feel at peace."
         "Prayed for peace and understanding.":
-            "I wished for an increase in love, peace, and understanding in the  people of Talaam -- and Earth. I also prayed for peace in my own heart, and began to feel it even as the services ended."
+            "I wished for an increase in love, peace, and understanding in the people of Talaam -- and of Earth. I also prayed for peace in my own heart, and that I might understand people better instead of judging them."
+            "Praying about all that helped me feel at peace."
 
     "Every week she had different things to say, but she always ended with about ten minutes of just quiet, where people could pray or meditate or just think. I didn't always make time for quiet moments in my everyday life, so I enjoyed this bit of peace."
     $ relaxed += 5
     $ community_level += 1
 
-    "Afterwards, I went up to her to talk. I'd been thinking a lot about what makes us human, and what there may be that we cannot see."
+    "Afterwards, I went up to her to talk. I'd been thinking a lot about what makes us human, and eternity, and divinity."
     scene bg church with fade
     show naomi at midright with dissolve
     show her serious at midleft with moveinleft
     "Naomi Grayson" "Welcome, [her_name]. How can I help you?"
     her surprised "Hi...uh, What should I call you, anyway? Pastor? Reverend?"
     naomi "Why don't you call me \"Sister Naomi\"? While I'm not a nun of any religion, I like to emphasize that we are all like children when it comes to matters of the spirit, and all part of the same human family."
-    her normal "OK, Sister Naomi...what exactly do you do here?"
+    her normal "Okay, Sister Naomi...what exactly do you do here?"
     naomi "When people have questions about what they should do, or what to believe, sometimes it is helpful for them to have a guide. Since there are people of many different faiths here on Talaam, I try and guide them in a way that is helpful for their religious background."
     her serious "But what do you believe?"
     naomi "Is that really the question you should be asking?"
@@ -53,7 +56,7 @@ label spiritual_0:
             her concerned "I don't really know what I believe. My parents didn't talk about spiritual things much."
             her normal "That's why I'm coming to you; I want to learn more."
         "I have strong beliefs.":
-            her normal "I've thought a lot about religion and spirituality, and I have my own reasons for my beliefs, but I still want to learn from others and their experiences."
+            her happy "I've thought a lot about religion and spirituality, and I have my own reasons for my beliefs, but I still want to learn from others and their experiences."
         "I don't think it matters.":
             her annoyed "What does it matter what I believe? I'm only interested in what's true."
 
@@ -87,7 +90,9 @@ label spiritual_2:
     "One of the books Naomi loaned me was the Dhammapada, a collection of sayings of the Buddha. There were a lot of good teachings, but I was struck by one part in particular..."
     her serious "\"For hatred does not cease by hatred at any time: hatred ceases by love, this is an eternal rule.\""
     her concerned "..."
-    her serious "I don't really {b}hate{/b} anyone, but I think the same thing could be said for disagreements, or times when I feel mad. You don't stop arguing by arguing; you stop arguing with love and seeing the other person's point of view."
+    her serious "I don't really {b}hate{/b} anyone, but I certainly don't always love everyone either."
+    her surprised "Can you even love someone when you're mad?"
+    her concerned "You don't stop arguing by arguing; you stop arguing with love and seeing the other person's point of view. If you still disagree after that, at least you'll understand each other and maybe won't need to argue as much?"
     her surprised "Now can I actually {b}do{/b} that?"
 
     $ skill_spiritual += 10
@@ -150,7 +155,7 @@ label spiritual_3:
     naomi "Once there was a merchant travelling to a far-off land. He carried fruits and other foods. While he was travelling, one of the fruits fell out of his pack and rolled down the hill to a gardener's house."
     naomi sad "No fruit trees grew in this area; everyone thought it was too dry and rocky."
     naomi normal "But this fruit landed in some soft earth that had been cleared by a man who lived nearby. Wild animals came and ate away the fruit, but the seeds nestled into the soft dirt."
-    naomi sad "When they sprouted, the man who lived nearby didn't know what they were. He thought about pulling them up so they wouldn't bother his garden. But he decided to wait and see what they were."
+    naomi sad "When they sprouted, the man who lived there didn't know what they were. He thought about pulling them up so they wouldn't bother his garden. But he decided to wait and see what would grow."
     naomi normal "He waited for years and years, until a great tree grew there, and every summer it gave bushels and bushels of delicious fruit to the man, who shared it with his friends and neighbors with a heart of thanksgiving, and humility."
     "Sister Naomi was quiet for a minute, letting us think about what she said. I wondered if we were supposed to be the merchant, or the gardener, or maybe the seeds?"
     "She told a few more stories, but I kept thinking about those seeds."
@@ -176,7 +181,7 @@ label spiritual_3:
         "I walked home slowly by myself, thinking about everything she had said."
         "Was I doing everything to have the life I wanted? Was my attitude one of humility and thanksgiving, or ingratitude and selfishness?"
         "What would help me to improve my relationships and my situation?"
-        "What seeds could I plant now, what things could I do to later have the blessings I sought?"
+        "What seeds could I plant now, what things could I do to later have the life I wanted?"
     $ skill_spiritual += 10
     return
 
@@ -224,7 +229,7 @@ label spiritual_4:
     her concerned "That must be hard not to see them... Didn't any of them want to come with you to Talaam?"
     naomi "No, they are all very much involved in their own areas. We miss them, but they are getting along just fine without us."
     her happy "Well, we're lucky they were able to part with you, because you and Pavel really bind this community together."
-    naomi "Thank you, [her_name], we try."
+    naomi "Thank you, [her_name], we are all working towards that, I hope."
     
     $ skill_spiritual += 10
     return
@@ -258,7 +263,7 @@ label spiritual_6:
     show her normal at center
     "In the Koran I read:"
     her serious "\"You will not attain piety until you expend of what you love; and whatever thing you expend, God knows of it.\""
-    her surprised "What is piety, anyway? Maybe I'll ask Sister Naomi..."
+    her surprised "What is \"piety\", anyway? Maybe I'll ask Sister Naomi..."
     scene bg church with fade
     show naomi at midright with dissolve
     show her serious at midleft with moveinleft
@@ -329,7 +334,7 @@ label spiritual_6:
     her annoyed "Will it be safer when he's two? Six? Ten?"
     helen "Probably not..."
     her normal "There's risks everywhere; that's why he has you. To help him learn how to handle the dangers, not to shield him from any possibility of danger."
-    helen "It's just... every time I think about taking him anywhere, all I can think about is all the things that could go wrong. A solar flare giving him skin cancer, or alien bugs landing on him and biting him, or someone will hurt him..."
+    helen "It's just... every time I think about taking him anywhere, all I can think about is all the things that could go wrong. A solar flare giving him skin cancer, or alien bugs landing on him and biting him, or someone hurting him..."
     
     menu:
         "What should I say?"
@@ -341,7 +346,7 @@ label spiritual_6:
             her serious "Helen... you sound really anxious."
     helen "Yeah... Sister Naomi has been helping me with some therapy, but I still don't feel ready to leave the house yet."
     if (profession == "doctor"):
-        her concerned "Well, if you'd like to make an appointment to meet with me sometime, as your doctor, we could consider some other options. Sister Naomi is a great therapist, but if therapy is not working for you, we should consider medication."
+        her concerned "If you'd like to make an appointment to meet with me sometime, as your doctor, we could consider some other options. Sister Naomi is a great therapist, but if therapy is not working for you, medication is an option."
     else:
         her concerned "Would it help if I came with you?  We could just go on a short trip together, maybe to visit Pete or something, and I can help you with anything you need."
     
@@ -405,7 +410,7 @@ label spiritual_8:
     
     "They were just little things, but I could tell they meant a lot to the people I helped."
 
-    $ community_level +=3
+    $ community_level += 3
     $ skill_spiritual += 10
     return
 
@@ -474,7 +479,7 @@ label spiritual_master:
     "I told about Moses parting the Red Sea, and how the Israelites praised God for protection and gave thanks."
     "I counseled everyone to not just appreciate things, but also people. I challenged them to think of three people they could say thank you to this week."
     show her concerned
-    "It wasn't too bad, but it was way too short! I was supposed to talk for another fifteen minutes!"
+    "It wasn't too bad, but it was way too short! The service wasn't supposed to end for another fifteen minutes!"
     "I started to panic, but then a wave of calm swept it away. I had an idea."
     her normal "Let's not wait until later to be grateful. Let's give thanks right now. If you would like, please take turns sharing with us one thing you are grateful for."
     "I sat down. Would anyone volunteer?"
@@ -517,19 +522,19 @@ label spiritual_master:
     her concerned "Can I ask you a question?"
     naomi normal "Of course."
     her surprised "What do you believe? And why?"
-    naomi sad "[her_name], that is a question with a very long answer."
+    naomi sad "[her_name], that is a question with a very long answer. An answer that is still changing and growing even as I am still learning."
     her serious "I know..."
     naomi "But I will share with you one thing, today. When I was a child, my parents both had very different religious beliefs. My mother was a Christian who also practiced many of the traditions of the Acoma Pueblo where she grew up."
     naomi "My father had grown up with Hindu beliefs, and while he wasn't particularly devout, his mother taught me many of the stories and teachings."
     naomi "My parents were always very respectful of each other, and so I grew up thinking there was nothing strange about believing in Jesus and Vishnu and harmony with nature."
-    naomi sad "And when I was fourteen, my twin sister died at the hands of a violent stranger."
+    naomi sad "I believed in them with the simple faith of a child.  Until I was fourteen, and my twin sister died at the hands of a violent stranger."
     her surprised "Oh no!"
     naomi sad "It was no longer obvious to me that a loving and caring deity was in charge, or that all souls deserved an afterlife, or that humanity was any good at all. I questioned everything."
     naomi "People said that her death must have been part of God's plan, but I refused to accept that. My mother said I needed to be more humble, that God knew way more than I did and I should submit to His will."
     naomi normal "But I decided that if God was really all-powerful, He could help me to understand why He would allow such a thing to happen."
     naomi sad "And so I prayed. I studied. I read scriptures, philosophy, logic, history. I felt like Jacob wrestling with an angel, or like Hanuman chasing the Sun. How was it possible that the death of an innocent girl could be God's plan?"
     her concerned "What did you find?"
-    naomi normal "I did not search in vain. One night I had a dream. My sister was in it, laughing. \"How can you laugh when you died so horribly?\" I asked her."
+    naomi normal "For awhile, nothing but empty platitudes. But one night, I had a dream. My sister was in it, laughing. \"How can you laugh when you died so horribly?\" I asked her."
     naomi "\"That was ages ago!\" she said. \"Death is not the worst thing that can happen.\" And so I asked her, \"What is the worst thing that can happen?\""
     naomi "She just shook her head at me and disappeared."
     naomi sad "Since then, I have thought of many more worse things than death. And I had to ask why God would allow those, too. But, I have come to realize that the purpose of life is not to avoid bad things happening."
@@ -547,7 +552,7 @@ label spiritual_master:
             her happy "I know what you mean. I have seen it, a little, as I've studied and tried to help people."
             naomi "Good! But we must never stop searching, for \"It is impossible for a man to learn that which he already thinks he knows.\""
         "I will think about that.":
-            her serious "Hmmm, I understand. I'll have to think about that some more."
+            her serious "Hmmm, I'll have to think about that some more."
             naomi "Please do. You'll never stop learning unless you stop thinking. After all, \"He who asks a question is a fool for five minutes; he who does not ask a question remains a fool forever.\""
         "That's not an answer!":
             her annoyed "That's not really an answer."
@@ -555,8 +560,8 @@ label spiritual_master:
             naomi "Why do you think there are so many scriptures? They are trying to describe, with limited human words, that which is far greater than any words can convey."
             naomi "But I hope that showing you where I have found answers may have helped you, a little."
             
-    her normal "Yes, that's true. I'll keep searching and learning."
-    her serious "But, what about you? How are you really feeling?"
+    her serious "Yes, that's true. I'll keep searching and learning."
+    her concerned "But, what about you? How are you really feeling?"
     
     naomi "Well, I've been doing a lot of praying lately."
     her surprised "More than usual?"
@@ -564,7 +569,7 @@ label spiritual_master:
     her concerned "Why was that so hard?"
     naomi "I had to face my fear of old age."
     her surprised "You're scared of getting old? No offense, but aren't you already... um, I mean--"
-    naomi normal "Yes, I've been getting old for quite some time. But I've never been helpless, never had my body betray me quite like that."
+    naomi normal "Yes, I've been getting old for my whole life, really. But I've never been helpless, never had my body betray me quite like that."
     her serious "Are you scared of dying?"
     naomi sad "No, dying will be quite interesting. What bothers me is the slow process of decay of the body, and worst of all, the mind."
     her surprised "Has your stroke affected your mind, too?"

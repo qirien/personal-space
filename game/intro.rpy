@@ -66,7 +66,7 @@ label intro:
     him serious "It's because it's grown with love."
     her flirt "Oh, you \"love\" your asparagus, do you?"
     him flirting "Of course I do. How else would I know what it needs?"
-    her annoyed "And does your asparagus love you back?"
+    her surprised "And does your asparagus love you back?"
     him happy "It sure does; can't you taste it in every bite? Mmmm..."
     her flirt "That's the taste of love, huh? Asparagus?"
     him serious "That's one kind."
@@ -135,10 +135,10 @@ label doctor:
     "He came to the hospital where I work. He thought he had broken his wrist, but when the x-rays came back it turned out it was only sprained. I could feel his eyes on me as I helped him with the sling."
     her surprised "How did you sprain it, anyway?"
     him happy "You should have seen it; it was heroic. Diving through flames, rescuing small children, wrestling wolves . . ."
-    her annoyed "Really? You're lucky it was just your wrist, then."
+    her flirt "Really? You're lucky it was just your wrist, then."
 
     him normal "No, I actually just fell off my horse.  A snake spooked her."
-    her normal "Is your horse okay?"
+    her surprised "Is your horse okay?"
     him happy "Oh yeah, Lettie's fine. She seemed like she was almost laughing at me."
     jump first_date
 

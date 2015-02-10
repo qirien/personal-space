@@ -18,19 +18,20 @@ label relax_alone_1:
     $ loved -= 2
     $ wearing_dress = False
     scene bg farm_interior with fade
-    "I was all set to spend the evening by myself when Sara sent me a message on my computer."
-    play bg_sfx "sfx/message.mp3"
-    sara_c "Are you still up? Can you please come over, [her_name]?"
+    play bg_sfx "sfx/rain-02.ogg" loop
+    "I was all set to spend a rainy evening by myself when Sara sent me a message on my computer."
+    play sound "sfx/message.mp3"
+    sara_c "Are you still up? Can you come over, [her_name]?"
     menu:
         "Should I go?"
         "I'll be right over.":
             her_c "Sure, I'll be right there."
-            "I walked to Sara's house in the dusky evening light, wondering what it was she wanted to talk about. When I got there, I could tell she'd been crying."
+            "I walked to Sara's house in the dusky evening drizzle, wondering what it was she wanted to talk about. When I got there, I could tell she'd been crying."
             scene bg farm_interior flip
             show her serious at midleft
             show sara sad at midright
             with dissolve
-            sara "I got a message from Earth today...My mom died."
+            sara "I got a message from Earth today... My mom died."
             $ community_level += 2
         "Can it wait?":
             her_c "Can it wait? I was just about to get in bed..."
@@ -45,6 +46,7 @@ label relax_alone_1:
             her_c "Sorry, Sara, I can't tonight. Can we meet tomorrow at lunch?"
             sara_c "Yeah, I guess."
             $ relaxed += 2
+            stop bg_sfx
             scene bg farm_interior flip
             show her serious at midleft
             show sara sad at midright
@@ -82,9 +84,12 @@ label relax_alone_1:
             sara "[her_name]! You should appreciate what you still have!"
             her serious "None of us have anything. The only difference is some of us realize that."
             $ community_level -= 2
+            $ relaxed += 3
+            stop bg_sfx
             return
 
     "We talked for a long time; Sara has a lot of sad days ahead, but I think I was able to help her feel a little better."
+    stop bg_sfx
     $ relaxed += 5
     return
 
@@ -102,9 +107,10 @@ label relax_alone_2:
     scene bg stars with fade
     show her serious at center with dissolve
     show her at squatting with move
-    "I sat out on the porch and gazed at the stars. They were so different from Earth, I had to make my own constellations."
+    "I sat out on the porch and gazed at the stars. They were so different from Earth's, I had to make my own constellations."
     her serious "Hmm, those kind of look like two lovers... and there's a sort of circle that reminds me of a UFO..."
     her flirt "And...that looks like one long, crazy dragon."
+    show her serious with dissolve
     "I wondered if eventually humans would live near some of those stars, too."
     "I sat there for a long time, feeling small and far away, but also part of something amazing - humans living on a different planet. We'd never done that before."
     "It sort of made me feel... proud."
@@ -118,7 +124,7 @@ label relax_alone_3:
     scene bg farm_interior with fade
     play bg_sfx "sfx/message.mp3"
     "I got a message from my mother."
-    "It was one she sent several years ago, but she told me all about my siblings, and how the neighbors were doing, and I better take good care of [his_name] and is he taking care of me, that sort of thing."
+    "It was one she sent several years ago, but she told me all about my siblings, and how the neighbors were doing.  She said I better take good care of [his_name], and asked if we were going to have kids anytime soon."
     "Even though I knew it would take four years for my letter to cross the vast space between our planets, I wrote back. I told her all about the farm and [his_name] and the town and my job. I wonder how much she could understand; our life was so different here..."
     "Still, it felt good to be connected to Earth."
     if (relaxed < -5):
@@ -156,7 +162,7 @@ label relax_alone_5:
 
     him surprised "You want to watch a movie or something?"
     her serious "Nah, I think I want to do something by myself tonight."
-    him normal "Okay, I've got some things I want to work on, too."
+    him serious "Okay, I guess I have some things I should work on, too."
     her surprised "You don't mind, do you?"
     him concerned "No, not really. But I do like when we can do things together."
     her concerned "I do, too, but after being around people all day, sometimes I just need to be alone."
@@ -246,7 +252,7 @@ label relax_alone_7:
             "He was supposed to be my husband, my beloved, my best friend; was it so much to ask for him to just listen to how I felt?!"
             show him nude serious at midleft, squatting behind bedroom_covers with dissolve
             show her sleeping
-            "Finally, I managed to fall asleep, at about the same time I usually did. I felt like he just wasted my whole evening by being so obstinate."
+            "Finally, I managed to fall asleep, at about the same time I usually did. I felt like he just wasted my whole evening by being so heartless."
             show him sleeping
             $ relaxed -= 5
             $ loved -= 2
@@ -275,7 +281,7 @@ label relax_alone_8:
 
 label relax_alone_9:
     scene bg farm_interior with fade
-    "I set some grains cooking overnight, so they would be nice and soft for our breakfast in the morning."
+    "I set some grains cooking overnight, so they would be nice and soft for our breakfast the next day."
     "That way things wouldn't be rushed in the morning."
     $ relaxed += 5
     $ loved -= 2
@@ -429,7 +435,7 @@ label relax_alone_h:
         him annoyed "No, that day will never come because people like me are doing actual work saving lazy people like you."
         hide him with moveoutleft
         show her angry
-        "How dare he?! I couldn't work twenty-four hours a day! Even he didn't do that!"
+        "How dare he?! I couldn't work twenty-four hours a day!"
         show her sad
         "But... maybe I should be doing more."
         "I closed my game. It wasn't fun anymore. But I couldn't bring myself to do any work, either."
@@ -477,7 +483,7 @@ label relax_alone_k:
     scene bg farm_interior with fade
     show her normal at midleft with dissolve
     "I downloaded a visual novel I found online. It looked pretty cheesy, but at least it wasn't in high school - it was about romance on a star ship."
-    "Your character was an ensign on the ship as it explored the galaxies, and you could romance one of four characters."
+    "Your character was captain of the ship as it explored the galaxies, and you could romance one of four characters."
     $ starship_man = "None"
     menu:
         "Which guy should I pick?"
@@ -523,7 +529,7 @@ label relax_alone_k:
             him happy "And, of course, none of those clichés compares to a real woman like you."
             her normal "Of course not!"
             him surprised "Was that the right answer?"
-            her happy "Ding! Your relationship with \"[her_name]\" went up by ten points!"
+            her happy "Ding! Your relationship with \"[her_name]\" went up by two points!"
             him happy "All right!"
             $ loved += 2
         "Stop spying on me!":
@@ -558,7 +564,7 @@ label relax_alone_l:
     helen_c "Hey, want to come over for lunch tomorrow? Pete's meeting with the mayor, so it'll just be me and the baby."
     her_c "Sure, thanks!"
     nvl clear
-    "She was a newlywed like me and we had a lot in common, so it was fun to chat together."
+    "There weren't that many people here, so I thought it was worth taking the time to build relationships with them."
     $ relaxed += 5
     $ loved -= 2
     return

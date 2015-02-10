@@ -484,6 +484,7 @@ label work_2:
     show pavel at left, behind brennan
     show brennan at midleft
     with move
+    # TODO: add bit o' slang in here.  CV? Or maybe we don't need it...
     brennan "Call me Brennan. And I know we've met already; I'd never forget a pretty face like yours."
     menu:
         "What should I say?"
@@ -498,7 +499,7 @@ label work_2:
             brennan happy "Of course! I just meant that I remembered you. But I could understand how you might not remember me."
         "Are you going to be helpful?":
             her annoyed "Do you have any talents besides flattery?"
-            brennan happy "A few, to be sure! Don't worry, I'll try not to distract you too much."
+            brennan happy "A few, to be sure! But don't worry; I'll try not to distract you too much."
     show her surprised
     "He winked at me playfully. Was he...flirting with me? I didn't have time to think about it; there was too much work to do."
     show her normal

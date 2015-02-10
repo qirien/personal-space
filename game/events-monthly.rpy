@@ -343,7 +343,7 @@ label monthly_event_4:
                 her annoyed "Well, have you noticed those clean clothes you're wearing?"
                 him surprised "Oh, yeah, you washed those, huh?"
                 her normal "And I've planted an herb garden out front to add flavor to our meals, and for herbal teas and things."
-                him normal "Okay, that sounds good. Sorry, I didn't meant to accuse, I just really was curious what projects you've been working on."
+                him normal "Okay, that sounds good. Sorry, I didn't mean to accuse, I just really was curious what projects you've been working on."
             "{b}You{/b} spend a lot of time reading.":
                 her surprised "What have {b}you{/b} been doing lately? You've been reading a lot."
                 him normal "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field."
@@ -362,7 +362,7 @@ label monthly_event_4:
                 her normal "I think it's important to know how to make things with what we have on this new planet."
                 him "Like what kinds of things?"
                 her "I made those placemats that keep our table clean, and I'm learning how to crochet. When our warm clothes from Earth wear out, we'll need to know how to make new ones with the resources we have."
-                him normal "That's true...we can't just go to the store and buy stuff anymore, can we? Sorry, I didn't meant to accuse, I just really was curious what projects you've been working on."
+                him normal "That's true...we can't just go to the store and buy stuff anymore, can we? Sorry, I didn't mean to accuse, I just really was curious what projects you've been working on."
             "{b}You{/b} spend a lot of time reading.":
                 her surprised "What about you? You've been reading a lot lately."
                 him normal "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field."
@@ -380,7 +380,7 @@ label monthly_event_4:
                 her annoyed "When things break, we can't just take them to a repair shop. I try and keep everything in good condition so it won't break."
                 him surprised "Like what?"
                 her normal "Well, I installed the antenna that lets us communicate with the town, and the screw that brings water into the house."
-                him normal "Yeah, I'm really glad to have those. Sorry, I didn't meant to accuse, I just really was curious what projects you've been working on."
+                him normal "Yeah, I'm really glad to have those. Sorry, I didn't mean to accuse, I just really was curious what projects you've been working on."
             "{b}You{/b} spend a lot of time reading.":
                 her annoyed "What have {b}you{/b} been doing lately? You've been reading a lot."
                 him normal "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field."
@@ -401,7 +401,7 @@ label monthly_event_4:
                 her flirt "Well, from my studies I've learned how important it is to answer someone with love, even if they are being insensitive or unappreciative."
                 him flirting "...You probably have a lot of opportunities to practice that, don't you?"
                 her happy "Well...yes. I think studying these principles helps me to get along better with others and work unselfishly."
-                him normal "That is important. Sorry, I didn't meant to accuse, I just really was curious what you've been learning."
+                him normal "That is important. Sorry, I didn't mean to accuse, I just really was curious what you've been learning."
             "{b}You{/b} spend a lot of time reading.":
                 her surprised "What have {b}you{/b} been doing lately? You've been reading a lot."
                 him normal "Yeah, I've been reading up on all the plants we're growing and scheduling out what needs to be done each week for preparing, planting, tending, and harvesting each field."
@@ -544,7 +544,7 @@ label monthly_event_5:
             menu:
                 "What should I say?"
                 "Fine.":
-                    her angry "Fine. Then it'll be partly your fault if our colony is making too much waste for more colonists to come."
+                    her annoyed "Fine. Then it'll be partly your fault if our colony is making too much waste for more colonists to come."
                     him angry "Good riddance! I came here to get away from them."
                     "It took me several trips to get our trash to the designated area. Someone there said they were trying to recycle as much as possible, but I felt bad for not even trying."
                     $ relaxed -= 5
@@ -756,7 +756,10 @@ label monthly_event_7:
                 him normal "Well, I guess I'll take it in to the repair shop tomorrow if it's still not working. Do you mind if I use yours to check my messages?"
                 her normal "Sure, go ahead."
                 "Hopefully they would be able to fix it... "
+                show her concerned with dissolve
                 "I felt kind of bad for lying to him, but I didn't want him to be mad at me or think I was incompetent...it's not like I was lying about something important, right?"
+                show him serious
+                with dissolve
                 "The next day at dinner, it looked like his computer was working."
                 her surprised "Oh, you got your computer working?"
                 him annoyed "Yeah...I opened it up, and it was wet inside. Like someone had dropped it in some water."
@@ -765,16 +768,16 @@ label monthly_event_7:
                         her concerned "I dropped it in the sink the other day...that's why it's wet. It was an accident; I'm sorry."
                         him annoyed "So, you lied to me."
                         her concerned "Yes, I'm sorry."
-                        him annoyed "Wow, I can't believe you didn't just tell me about it."
+                        him surprised "Wow, I can't believe you didn't just tell me about it."
                         if (relaxed >= 0):
                             her serious "Yeah, I don't know what I was thinking."
                             him serious "Well, I'm glad you told me about it now, anyway."
                         else:
                             her annoyed "What's the big deal? It works now, doesn't it?"
-                            him angry "This isn't about the computer! If you lie about something small like that, who knows what else you might lie about?"
-                            her angry "Hey, I told you about it eventually."
+                            him angry "This isn't about the computer! If you lie about something small like that, who knows what else you might lie about?!"
+                            her angry "Hey, I told you about it eventually!"
                             him "Only when you got caught in your lie!"
-                            her "I said I was sorry, okay?!"
+                            her sad "I said I was sorry!"
                             him annoyed "...Okay."
                             $ loved -= 2
                         $ relaxed -= 2
@@ -972,7 +975,7 @@ label monthly_event_8:
             menu:
                 "He's leaving... what should I say?"
                 "Fine, just leave me here.":
-                    her angry "Fine, just leave me here."
+                    her concerned "Fine, just leave me here."
                     "He didn't say anything, just shook his head. I watched him leave, feeling hurt and lonely."
                     hide him with moveoutright
                     show her sad at center with move
@@ -1159,7 +1162,7 @@ label monthly_event_9:
             $ she_wants = "nothing"
             $ loved -= 5
             hide him with moveoutright
-            her angry "(He is not romantic at all!)"
+            her annoyed "(He is not romantic at all!)"
             scene black with fade
             $ wearing_dress = False
             return
@@ -1520,7 +1523,7 @@ label follow_him:
             her serious "I love you too..."
         "You owe me big time.":
             "I pulled away enough to poke at his chest sternly."
-            her angry "You owe me, [his_nickname]. Last night was our anniversary dinner - I don't think you even noticed because you were so distracted - but you owe me a fabulous night tonight."
+            her annoyed "You owe me, [his_nickname]. Last night was our anniversary dinner - I don't think you even noticed because you were so distracted - but you owe me a fabulous night tonight."
             him surprised "Our anniversary! I'm so sorry - but I will make it up to you tonight."
             her flirt "Shall I make a list for you?"
             him flirting "I think I know what you like."
@@ -3582,7 +3585,7 @@ label monthly_event_21:
         "It's not my problem.":
             her concerned "That's too bad, but it's not really my problem."
             him angry "What, you don't want to have food to eat?"
-            her angry "That's your job."
+            her annoyed "That's your job."
             him angry "You're no help at all."
             "I felt a little bad, but what could I do? I was no farmer..."
             "Anyway, he and Thuc figured something out, I guess, because he was gone all night and I saw the plants a little later and they looked fine."
@@ -3930,15 +3933,16 @@ label monthly_event_23:
 
         her concerned "Do you feel ready?\n...For the baby, I mean?"
         him nude serious "Well, we made a little crib, and we have plenty of rags for diapers, and I thought you said you got some clothes from the storehouse..."
-        her annoyed "No, I mean, ready to be parents. Ready to be responsible for a little helpless person twenty-four hours a day..."
+        her sad "No, I mean, ready to be parents. Ready to be responsible for a little helpless person twenty-four hours a day..."
         him nude concerned "Ohhh...well, I figured we'll take turns taking care of her, so we can each have a break sometimes. So that's really only more like twelve hours a day, right?"
-        her angry "No! Even if someone else is taking care of the baby at the moment, you and I are still responsible - we're the parents! This isn't a job you can just do part-time!"
+        her annoyed "No! Even if someone else is taking care of the baby at the moment, you and I are still responsible - we're the parents! This isn't a job you can just do part-time!"
         him nude normal "Well, yeah, of course."
         "It was clear he was not as worried about it as I was."
         her sad "What if I can't figure out how to nurse her, or the diapers are unsanitary and make us all sick, or I have really bad post-partum depression, or my body never recovers, or--"
         him nude concerned "Hey, hey, it'll be okay."
         her angry "It won't be okay just by saying, \"It's okay\"!"
         him nude angry "All right, then, let's figure some of these things out."
+        show her sad with dissolve
         him nude concerned "Mrs. Nguyen is going to help you with the birth, right?"
         her concerned "Yeah..."
         him "Well, I bet she knows a lot about nursing babies, and could help you out there. But even if something happens and you can't nurse the baby, they have some formula in the storehouse."
@@ -3949,7 +3953,7 @@ label monthly_event_23:
             him nude happy "Yeah, and you're great!"
             her concerned "But I can't really perform surgery on myself! What if I need a C-section or something?!"
             him nude concerned "I hadn't thought of that..."
-            her angry "I'll just have to teach Mrs. Nguyen and Brennan how."
+            her annoyed "I'll just have to teach Mrs. Nguyen and Brennan how."
             him nude angry "Brennan!"
             her "Do you know of anyone else?!"
             him nude concerned "Well...I've done a C-section on a cow before, so I could probably help out."
@@ -3962,14 +3966,14 @@ label monthly_event_23:
         her concerned "Will that really be okay at work?"
         "I tried to imagine going to work with a baby."
         her surprised "I guess she could ride around with me some of the time, and maybe lie in the corner in a little bed sometimes?"
-        her angry "But why is it always the woman who takes care of the baby more?"
+        her annoyed "But why is it always the woman who takes care of the baby more?"
         him nude happy "Because you're the one whose awesome body can squirt out perfect baby food?"
         menu:
             "What should I say?"
             "That's true, but...":
                 her annoyed "Well, yeah, but..."                
             "Gross!":
-                her angry "I can't believe you just said that."
+                her annoyed "I can't believe you just said that."
                 him nude surprised "What, it's true, isn't it?"
                 her annoyed "..."
                 him nude annoyed "Okay, let me rephrase that for you. \"Because your female body is capable of producing optimum infant nourishment for your offspring.\" Is that better?"
@@ -4296,7 +4300,7 @@ label monthly_event_23:
         menu:
             "What should I say?"
             "{i}You only think about yourself!{/i}" if (relaxed < 0):
-                her angry "You are a terrible lover. All you think about is your own satisfaction!"
+                her annoyed "You are a terrible lover. All you think about is your own satisfaction!"
                 him nude angry "Well, why didn't you say something last night!"
                 her angry "You were {b}asleep{/b}!"
                 him nude angry "You couldn't have been trying very hard, then!"
@@ -4343,7 +4347,7 @@ label monthly_event_23:
                 him nude surprised "Ummm..."
                 her annoyed "You know, slow down a bit? When we make love?"
                 him nude normal "Oh! Yeah. Sorry, I'm still trying to wrap my head around your horse imagery."
-                her happy "Don't think about it too hard."
+                her flirt "Don't think about it too hard."
                 $ loved += 2
                 $ relaxed += 2
             "(Lie) Everything's fine.":
@@ -4373,9 +4377,9 @@ label monthly_event_24:
         show her normal at midright with dissolve
         show him normal at midleft with moveinleft
         him surprised "How are you feeling today?"
-        her annoyed "The same, I guess."
+        her serious "The same, I guess."
         him "Any contractions?"
-        her angry "No."
+        her annoyed "No."
         him concerned "Okay. Well, I'll have my radio with me, just in case."
         her annoyed "Right."
         him annoyed "..."
@@ -4402,7 +4406,7 @@ label monthly_event_24:
         sara "Whoa, feeling a little sensitive?"
         her sad "Sorry... it's just that it's all anyone ever talks to me about anymore."
         sara sad "I'm sorry; do you want to talk about something else?"
-        her normal "Yes, please! Tell me you've read a good book, or found a cool new place, or something!"
+        her concerned "Yes, please! Tell me you've read a good book, or found a cool new place, or something!"
         sara normal "Yeah, there's this spot by the river where it's kind of like a little beach. It's great for wading and sunbathing."
         her happy "That sounds great! Will you show me sometime?"
         sara "Of course! It's not too late; do you want to go right now?"
@@ -4441,7 +4445,7 @@ label monthly_event_24:
         sara normal "What?!"
         her serious "Just small ones. I guess they call them practice contractions. I've been getting them a lot lately whenever I exercise or get tired. That's why I wanted to lie down."
         sara "So, we don't need to radio for help or anything?"
-        her normal "No. But we should probably head back."
+        her happy "No. But we should probably head back."
         stop bg_sfx fadeout 1.0
         scene bg mountains with fade
         show sara at quarterright
@@ -4449,14 +4453,14 @@ label monthly_event_24:
         with moveinright
         play music "music/Prelude02.ogg"
         "We started walking back. The sun felt hotter than ever, and I started feeling really thirsty."
-        show her at midright
+        show her serious at midright
         show sara at center
         with move
         her serious "You don't have any water, do you?"
         sara sad "No, sorry. Hey, are you okay?"
         her concerned "Yeah, let's just get back."
         "The contractions started to get stronger. I could still walk, but I had to concentrate more on just walking and breathing. I realized Sara was saying something."
-        show her at midleft
+        show her serious at midleft
         show sara at left
         with move
         sara "-really shouldn't have said that. Don't you think?"
@@ -4510,6 +4514,7 @@ label monthly_event_24:
                 sara "Okay, I'll come check on you later!"
                 hide sara with moveoutright
 
+        show her serious with dissolve
         "Julia put on a sterile glove and felt my cervix."
         julia "Good. Hmmm. Well, the baby's head is engaged, and she's started working her way down... You're dilated to about three and half centimeters..."
         him surprised "That's a lot, right?"
@@ -4538,12 +4543,14 @@ label monthly_event_24:
         with dissolve
         "We had dinner, and I went to bed early."
         "I felt frustrated and tired of waiting and wished I had more control over my own body."
-        scene bg bedroom
+        scene black with fade
+        $ is_nude = False        
+        scene bg bedroom with fade
         show night
         show bedroom_covers behind night
-        show him nude sleeping at midright, squatting, behind bedroom_covers with dissolve
-        $ is_nude = False
+        show him nude sleeping at midright, squatting, behind bedroom_covers
         show her serious at midleft
+        with dissolve
         
         "I woke up in the early morning to more contractions. I didn't want to wake up [his_name] yet, so I walked around outside as the sun was just starting to come up."
         hide her with moveoutleft
@@ -4558,6 +4565,7 @@ label monthly_event_24:
             $ relaxed += 2
 
         show him normal at midleft behind her with moveinleft
+        show her at midright with move
         him flirting "Good morning, [her_nickname]! How're you feeling?"
         her serious "More contractions...who knows if it's really labor or not, though?"
         him serious "Want me to time them?"
@@ -4601,7 +4609,7 @@ label monthly_event_24:
             brennan "[her_name]! You weren't at work- Oh, are you having a baby?!"
             her annoyed "I'm working on it."
         brennan mad "Should I go fetch a bucket of water or something?"
-        her angry "A bucket of water?"
+        her surprised "A bucket of water?"
         brennan normal "Yeah, isn't that what people are supposed to bring you when you're in labor?"
         show her annoyed
         him annoyed "..."
@@ -4653,6 +4661,8 @@ label monthly_event_24:
         her angry "I feel like... I should... push!"
         julia "Okay, everything's ready, go ahead!"
         "I yelled and pushed through most of the next contraction. It was hurting a lot, but it felt so good to finally be getting somewhere!"
+        show her sleeping
+        "I closed my eyes to gather my strength."
         him surprised "What should I do?"
         julia "See if she wants to lean on you."
         him serious "Ummm, do you want to lean on me?"
@@ -4673,7 +4683,7 @@ label monthly_event_24:
         show her angry with dissolve
         "I took a deep breath, and pushed again, stretching past fire and pain and breathing and my own body. I think I probably screamed. Everything else disappeared, and all that was left was the burning. But it still wasn't enough; somehow I pushed again!"
         him happy "Yeah! There she is!"
-        show her serious with dissolve
+        show her concerned with dissolve
         julia normal "One more little push, [her_name], and then you just lie back and relax a bit."
         show her sleeping
         play music "music/Reflections.ogg" fadeout 1.0
@@ -4688,8 +4698,7 @@ label monthly_event_24:
         
         "I looked down at the tiny face in my arms. I couldn't even fathom that this was the same being that I had nourished for these last nine months. I guess I was supposed to feel intense love? I don't know; mostly I was just tired and in awe."
         julia "I think she looks like you, [her_name]."
-        him surprised "Really?"
-        her serious "I think she looks more like...a baby, than either one of us. Babies all look alike to me..."
+        her concerned"I think she looks more like...a baby, than either one of us. Babies all look alike to me..."
         julia "Well, they won't so much now that you have one of your own."
         "One of my own... that was still so strange."
         him surprised "What should we call her?"
