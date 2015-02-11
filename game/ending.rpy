@@ -90,7 +90,7 @@ label bad_ending:
         $ renpy.pause(12.0)
         $ renpy.end_replay()
     $ persistent.got_bad_ending = True
-    ".:. Separation Ending, 1 of 3."
+    ".:. Separation\nEnding 1 of 3."
     jump show_credits
 
 # ENDING 2 - Community succeeding, marriage failing
@@ -232,7 +232,7 @@ label mediocre_ending:
         $ renpy.end_replay()
     call show_ending_cg
     $ persistent.got_mediocre_ending = True    
-    ".:. Good Ending, 2 of 3."
+    ".:. Making it Work\nEnding 2 of 3."
     jump show_credits
 
 # Helper function for endings 2 & 3 to emphasize skills the player mastered
@@ -452,7 +452,7 @@ label good_ending:
         $ renpy.end_replay()        
     call show_ending_cg
     $ persistent.got_good_ending = True
-    ".:. Best Ending, 3 of 3."
+    ".:. Love Grows\nEnding 3 of 3."
     $ is_nude = False
     jump show_credits
 

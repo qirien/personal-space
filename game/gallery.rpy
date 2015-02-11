@@ -7,7 +7,7 @@ init python:
     #Galleries settings - start
     #list the CG gallery images here:
     gallery_cg_items = ["talaam_approach","cg_earth", "cg_mediocre", "cg_together", "cg_good", "cg_with_baby"]
-    gallery_cg_titles = ["Arriving on Talaam", "Return to Earth", "We're Going to Make It", "Just the Two of Us", "Love Grows", "The Face of the Future"]
+    gallery_cg_titles = ["Arriving on Talaam", "Return to Earth", "Making it Work", "Just the Two of Us", "Love Grows", "The Face of the Future"]
     
     #how many rows and columns in the gallery screens?
     gal_rows = 2

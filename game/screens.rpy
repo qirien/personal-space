@@ -286,13 +286,10 @@ init -2 python:
 # from simple load and save screens.     
     
 screen file_picker:
-    tag menu
+    #tag menu
 
     frame:
         style "file_picker_frame"
-        xalign 0.1
-        yalign 0.1
-        xmaximum 875
         xpadding 15
 
         has vbox
@@ -358,15 +355,25 @@ screen save:
     # This ensures that any other menu screen is replaced.
     tag menu
     use navigation
-    use file_picker
+    vbox:
+        xmaximum 875
+        xalign 0.15
+        yalign 0.15
+        text "Save" style "gm_header"
+        use file_picker
+    
 
 screen load:
 
     # This ensures that any other menu screen is replaced.
     tag menu
-
     use navigation
-    use file_picker
+    vbox:
+        xmaximum 875
+        xalign 0.15
+        yalign 0.15
+        text "Load" style "gm_header"
+        use file_picker
 
 init -2 python:
     style.file_picker_frame = Style(style.menu_frame)
@@ -411,7 +418,7 @@ screen preferences:
             # The left column.
             vbox:
                 spacing 15
-                label "Display Options" text_style
+                label "Display Options"
                 
                 frame:
                     style_group "pref"

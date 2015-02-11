@@ -3,8 +3,9 @@
 label omake:
     scene black with fade
     "In Japan, \"omake\" are extra or deleted scenes for a show or game."
-    "So here are some omake from {i}Our Personal Space{/i}."
+    "So here is an omake from {i}Our Personal Space{/i}."
     call brennan_omake
+    return
     
 label brennan_omake:
     scene bg path with fade

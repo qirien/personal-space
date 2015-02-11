@@ -136,7 +136,7 @@ label creative_3:
 # Make rope
 label creative_4:
     scene bg farm_interior with fade
-    "[his_name] asked me if we had any rope to make a rope to get up into the loft of our barn and pull carts around. I told him I'd look at the supply center next time I went into town."
+    "[his_name] asked me if we had any rope to put up into the loft of our barn and pull carts around. I told him I'd look at the supply center next time I went into town."
     scene bg storehouse with fade
     show ilian at midright with dissolve
     show her normal at midleft

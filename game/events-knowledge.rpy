@@ -102,7 +102,7 @@ label knowledge_4:
     "Lily, our resident xenobiologist, organized a nature hike to tell us more about the local plants, and I went along."
     lily "As far as I can tell, this plant, which I call Bulbosa, isn't edible. But its bright orange flowers make a good dye."
     lily "Scrutinize this next plant and its surroundings. What can you tell me about it?"
-    "Lily pointed to a tall flower with what looked like a tongue sticking out of its flower. Its leaves looked furry like ferns, but were hairier than an Earth fern. There no other plants around it, besides a few trees."
+    "Lily pointed to a tall flower with what looked like a tongue sticking out of its flower. Its leaves looked furry like ferns, but were hairier than an Earth fern. There were no other plants around it, besides a few trees."
     menu:
         lily "What can you tell me about it?"
         "Is it poisonous?":

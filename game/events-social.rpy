@@ -765,7 +765,10 @@ label social_7:
         "Chat for a while.":
             her normal "I just came by to say hi. We don't get to see each other very often, do we?"
             julia "No, we don't! How are things going at your farm?"
-            her serious "Pretty well, though we lost a lot of corn a while back to some nasty bugs here. There's so many things you can't control on a farm, aren't there?"
+            if (month >= 7):
+                her serious "Pretty well, though we lost a lot of corn a while back to some nasty bugs here. There's so many things you can't control on a farm, aren't there?"
+            else:
+                her serious "Pretty well, though [his_name] is always working so hard to grow everything."
             julia "Yes, that's true."
             "She paused for a minute. It looked like she was trying to decide whether to tell me something."
             her normal "Your laundry looks so clean; how are you getting all the stains out? We don't have very good soap here..."
@@ -779,8 +782,11 @@ label social_7:
             her serious "Yes, we all need to help each other, don't you think?"
             julia "Yes... I suppose you're right."
             her concerned "..."
-            julia "You know, we lost a lot of our corn to those bugs, too. All of it, in fact."
-            her surprised "Oh, no! Did you have any other crops?"
+            if (month >= 7):
+                julia "You know, we lost a lot of our corn to those bugs, too. All of it, in fact."
+            else:
+                julia "You know, our crops haven't been doing so well. All the corn Thuc planted is gone."
+            her surprised "Oh, no! Do you have any other crops?"                
             julia "We have our vegetable garden, of course, but one day the goats got out and ate most of our plants..."
             her sad "That's awful!"
             julia "We wanted to plant rice, but we are still working on a system to flood and irrigate the fields properly. Well, Thuc {b}was{/b} working on it, but after the corn..."

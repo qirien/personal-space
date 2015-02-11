@@ -282,13 +282,16 @@ label spiritual_6:
     show helen at quarterright
     show baby boy at quarterrightbaby
     with dissolve
-    show naomi sad at center
+    show naomi sad at center behind baby
     show her normal at midleft
     with  moveinleft
     "We entered their small cabin, not that much different from our own. Helen was sitting on the bed with the baby on her lap doing some knitting. She invited us to sit next to her."
     her surprised "What are you making?"
-    helen "It's supposed to be a baby hat, but it isn't turning out very well. I don't think any baby's head is shaped like this!"
-    "She held up her misshapen knitting and laughed, but it was a forced laugh. Naomi didn't say anything, though - she just patted Helen's shoulder and looked at me. What was I supposed to say?"
+    helen "It's supposed to be a baby hat, but it isn't turning out very well. I don't think any baby's head is shaped like this."
+    show her laughing with dissolve
+    "She held up her misshapen knitting. It looked more like a hat for a dragon than a baby. I laughed without thinking, but Helen didn't laugh with me."
+    show her sad with dissolve
+    "Naomi didn't say anything - she just patted Helen's shoulder and looked at me. I felt so awkward; what was I supposed to say?!"
     menu:
         "What should I say?"
         "I think the hat looks fine.":
@@ -317,7 +320,7 @@ label spiritual_6:
             helen "We weren't really anticipating becoming parents so soon..."
             her normal "Well, I think you're doing great. It's cool that you're making something for the baby."
 
-    show naomi sad at quarterleft
+    show naomi sad at quarterleft behind baby
     show baby boy at quarterleft, Position(ypos=400)
     with move
     show her serious at center with move
@@ -333,7 +336,7 @@ label spiritual_6:
     helen "What?"
     her annoyed "Will it be safer when he's two? Six? Ten?"
     helen "Probably not..."
-    her normal "There's risks everywhere; that's why he has you. To help him learn how to handle the dangers, not to shield him from any possibility of danger."
+    her concerned "There's risks everywhere; that's why he has you. To help him learn how to handle the dangers, not to shield him from any possibility of danger."
     helen "It's just... every time I think about taking him anywhere, all I can think about is all the things that could go wrong. A solar flare giving him skin cancer, or alien bugs landing on him and biting him, or someone hurting him..."
     
     menu:
@@ -351,7 +354,7 @@ label spiritual_6:
         her concerned "Would it help if I came with you?  We could just go on a short trip together, maybe to visit Pete or something, and I can help you with anything you need."
     
     helen happy "Thanks, [her_name]. I'll... I'll think about that."
-    
+    show helen normal with dissolve
     "We talked some more about other things, and Naomi left a book that she had brought, and then it was time for us to go. It was getting late, and it would take me a while to walk all the way home from Helen's house, but I felt that it was worth it."
     scene bg path with fade
     show naomi sad at midleft
@@ -380,7 +383,7 @@ label spiritual_7:
     her serious "That's kind of like turning the other cheek, isn't it?"
     "There were a lot of teachings that seemed to be in common across different religions, even if their theology and cultures were widely different."
     her concerned "Some of these scriptures are so old... people sacrificed a lot to make sure they were passed down to future generations... What wisdom will I pass on to future generations?"
-    "I thought about that for a long time."
+    "I thought about that for a long time. I decided to keep a journal, where I could write down the things I had learned."
 
     $ skill_spiritual += 10
     return

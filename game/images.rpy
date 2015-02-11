@@ -142,6 +142,7 @@ init -1:
     image pete normal = "sprites/pete.png"
     image pete happy = "sprites/pete-happy.png"
     image helen = "sprites/helen.png"
+    image helen normal = "sprites/helen.png"    
     image helen happy = "sprites/helen-happy.png"
     image ilian = "sprites/ilian.png"
     image ilian normal = "sprites/ilian.png"

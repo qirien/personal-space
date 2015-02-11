@@ -456,21 +456,24 @@ label msg_24:
         him_c "No, I'll be sure and let you all know when she arrives!"
         
     return
-    
+
+label msg_baby_announce:
+    julia_c "Congratulations to [his_name] and [her_name] on the birth of their new baby, [baby_name]!"
+    sara_c "She's adorable! Yay! :-D"
+    martin_c "Congratulations!"
+    natalia_c "You'll be wonderful parents! I'd be happy to watch her for you if you need to get some things done. I miss babies..."
+    thuc_c "She looks just like you, [his_name]!"
+    him_c "I hope not!"
+    nvl clear
+    helen_c "I think she looks more like [her_name]."
+    lily_c "Congratulations on successfully breeding. The community population is now 202."
+    ilian_c "I can bring some things by from the storehouse, so you don't have to leave the house for a bit, if you want."
+    her_c "Thanks, everyone!! We're just taking it easy for a week or two, but I'll be bringing her to work with me as soon as I can manage it."
+    return
+
 label msg_25:
-    if (is_pregnant):
-        julia_c "Congratulations to [his_name] and [her_name] on the birth of their new baby, [baby_name]!"
-        sara_c "She's adorable! Yay! :-D"
-        martin_c "Congratulations!"
-        natalia_c "You'll be wonderful parents! I'd be happy to watch her for you if you need to get some things done. I miss babies..."
-        thuc_c "She looks just like you, [his_name]!"
-        him_c "I hope not!"
-        nvl clear
-        helen_c "I think she looks more like [her_name]."
-        lily_c "Congratulations on successfully breeding. The community population is now 202."
-        ilian_c "I can bring some things by from the storehouse, so you don't have to leave the house for a bit, if you want."
-        her_c "Thanks, everyone!! We're just taking it easy for a week or two, but I'll be bringing her to work with me as soon as I can manage it."
-    elif (is_pregnant_later):
+    
+    if (is_pregnant_later):
         call msgs_pregnant
     else:
         sara_c "Great news everyone!! We're going to have a baby!! :-)"
@@ -481,7 +484,7 @@ label msg_25:
         nvl clear
         julia_c "Congratulations. I can serve as midwife when the time comes, if you would like."
         sara_c "Thanks, everyone! I'm sure Ilian appreciates your well-wishes, too... :-/"
-        ilian_c "Yeah, thanks."
+        ilian_c "Thanks."
         
     nvl clear
     if (((community_level < COMMUNITY_LEVEL_OK) and (loved < 0)) or wants_to_leave):

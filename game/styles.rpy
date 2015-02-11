@@ -59,6 +59,12 @@ style gm_nav_button is mm_button:
     
 style gm_nav_button_text is mm_button_text:
     size 25    
+    
+style gm_header is cursive_text:
+    xalign 0.5
+    yalign 0.0    
+    color "#fff"
+    size 80
 
 style button_text is sans_text:
     color "#fff"

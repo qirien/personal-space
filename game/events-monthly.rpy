@@ -1531,6 +1531,8 @@ label follow_him:
             $ made_love += 1
     $ loved += 5
     $ relaxed += 2
+    scene black with fade
+    $ wearing_dress = False
     return
 
 # Helper function for month 11
@@ -4326,7 +4328,7 @@ label monthly_event_23:
                     $ loved -= 2
 
                 hide him with dissolve
-                "He left, closing the door behind him slightly harder than was necessary."
+                "He grabbed some clothes and left the house, closing the door behind him slightly harder than was necessary."
                 "I got dressed and fixed myself a cup of tea."
                 "It wasn't selfish to tell him how I felt, was it?"
                 "Maybe if I wasn't so stressed out about everything else, I could have communicated better..."
@@ -4723,6 +4725,18 @@ label monthly_event_24:
         
         her normal "I want to call her [baby_name]."
         him happy "Our little [baby_name]..."
+        
+        scene black with fade
+        "After we brought her home, I sent out baby announcements to everyone I knew."
+        if exposed_brennan:
+            "Thanks to the QEC, my family would find out in days rather than years."
+        else:
+            "My family wouldn't get the message for years, but I was determined to keep that connection to Earth."
+        "The colony message boards were busy that month..."
+        call msg_baby_announce
+        nvl clear
+        "It seemed like almost everyone in the colony stopped by during that first week, bringing gifts and saying hello to the newest little colonist. Julia had knitted a hat with matching booties out of goat wool; Pete and Helen made ice cream; and Sara brought a brightly colored baby wrap she had dyed herself."
+        "Brennan took care of everything at work for a few weeks so I could rest."
         
     else:
         scene bg farm_interior with fade
