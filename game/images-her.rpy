@@ -39,28 +39,54 @@ init python:
 
 label test_her_sprites:
     scene bg fields with fade
-    show her pregnant at left
+    
+    "Normal Expressions"
+    show her yelling at center with dissolve
+    show her concerned with dissolve
+    show her flirt with dissolve
+    show her happy with dissolve
+    show her laughing with dissolve
+    show her sad with dissolve
+    show her serious with dissolve
+    show her surprised with dissolve
+    
+    "Nude Expressions"
+    scene bg bedroom with fade
+    $ is_nude = True
+    show her yelling at center with dissolve
+    show her concerned with dissolve
+    show her flirt with dissolve
+    show her happy with dissolve
+    show her laughing with dissolve
+    show her sad with dissolve
+    show her serious with dissolve
+    show her surprised with dissolve
+    
     "Pregnant Expressions"
+    scene bg farm_interior with fade    
+    $ is_nude = False
     $ is_pregnant = True
-    show her yelling at right with fade
-    show her concerned at quarterright with fade
-    show her flirt at midright with fade
-    show her happy at center with fade
-    show her laughing at midleft with fade
-    show her sad at quarterleft with fade
-    show her serious at left with fade
-    show her surprised at center with fade
+    $ month = 23
+    show her yelling at center with dissolve
+    show her concerned with dissolve
+    show her flirt with dissolve
+    show her happy with dissolve
+    show her laughing with dissolve
+    show her sad with dissolve
+    show her serious with dissolve
+    show her surprised with dissolve
     
     "Dress Expressions"
+    scene bg farm_exterior with fade    
     $ is_pregnant = False
     $ wearing_dress = True
-    show her yelling at right with fade
-    show her concerned at quarterright with fade
-    show her flirt at midright with fade
-    show her happy at center with fade
-    show her laughing at midleft with fade
-    show her sad at quarterleft with fade
-    show her serious at left with fade
-    show her surprised at center with fade
+    show her yelling at center with dissolve
+    show her concerned with dissolve
+    show her flirt with dissolve
+    show her happy with dissolve
+    show her laughing with dissolve
+    show her sad with dissolve
+    show her serious with dissolve
+    show her surprised with dissolve
 
     "To Be Continued..."

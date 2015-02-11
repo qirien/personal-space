@@ -95,6 +95,7 @@ label monthly_event_1:
     $ wearing_dress = True
     #if nobody did the dishes, pest problems!
     play music "music/Prelude02.ogg" fadeout 1.0
+    play bg_sfx "sfx/alien-crickets.mp3" loop 
     her "AAAAAAAAAAAAAAAHHHHHH!!!!"
     scene bg farm_interior with fade
     show her surprised at midleft
@@ -134,6 +135,7 @@ label monthly_event_1:
     "He put on his work gloves and picked up the mess kit by the handle. I opened the door so he could take it outside."
     him normal "C'mon, George, time to take a hike."
     hide him with moveoutright
+    stop bg_sfx fadeout 1.0
     her surprised "George?! You're giving this thing a name?"
     show him normal at midright with moveinright    
     him happy "Doesn't he look like a George to you? Besides, I accidentally invited him in with my mess, so I guess he's my pet."
@@ -664,8 +666,10 @@ label monthly_event_6:
             her surprised "Yeah... how do we get rid of the plants that are already there?"
             him normal "Well, I could burn them all, and then the ashes can fertilize the next crop."
             her concerned "Sounds better than nothing."
+            play bg_sfx "sfx/alien-crickets.mp3" loop 
             "We piled all the corn plants into a huge bonfire. It burned into the night and made a big plume of smoke."
             "Our neighbors the Peróns came by the see the fire, and we ate roasted insects as we watched the egg-infested crops turn to ash."
+            stop bg_sfx fadeout 1.0
             
         "{i}Ask if anyone else is having the same problem.{/i}" if (skill_spiritual >= 30 or skill_social >= 30):
             her normal "Let's ask around and see if anyone else has had problems with these pests."
@@ -679,6 +683,7 @@ label monthly_event_6:
             show night
             show her normal at quarterright
             show him normal at center
+            play bg_sfx "sfx/alien-crickets.mp3" loop 
             "We had a big bonfire with the Peróns and burned the infested corn. Their kids danced around the fire, and they brought a chicken for us to roast."
             natalia "All that work..."
             him sad "I know."
@@ -709,6 +714,7 @@ label monthly_event_6:
             $ community_level -= 5
             return
             
+    stop bg_sfx fadeout 1.0
     $ community_level += 5
     return
 
@@ -925,7 +931,8 @@ label monthly_event_8:
             show him normal at midright
             show thuc at quarterleft
             "Thuc had already cut some logs and branches for us to tie up, but we still had to dig holes for posts."
-            play bg_sfx "sfx/shovel.mp3"
+            play bg_sfx "sfx/alien-crickets.mp3" loop 
+            play sound "sfx/shovel.mp3"
             if (skill_physical >= 20):
                 "It was a good thing I came, because there was a lot of hard work to do."
             elif (skill_technical >= 20):
@@ -933,7 +940,7 @@ label monthly_event_8:
             else:
                 "I'm not sure I was much help, but I worked hard and did my best."
             "We worked hard in the gathering darkness, until the moons rose and gave us their wan light. We worked on and on, until finally it was done."
-            stop bg_sfx
+            stop sound fadeout 1.0
             thuc "Thank you so much, both of you."
             him "Glad we could help. I hope this fence holds up for you."
             thuc "Well, you can count on my help anytime, if you need it."
@@ -948,6 +955,7 @@ label monthly_event_8:
             $ loved += 5
             $ relaxed -= 5
             $ community_level += 5
+            stop bg_sfx fadeout 1.0
             scene black with fade
   
         "Want to watch it another night?":
@@ -3578,8 +3586,12 @@ label monthly_event_21:
             else:
                 "We worked all afternoon gathering wood and branches and stacking them near the crops."
             show night
+            play bg_sfx "sfx/alien-crickets.mp3" loop 
+            play sound "sfx/fire-2.mp3"
             "Then we stayed up all night tending the fires."
             "We slept all day, and did the same thing the next night, until finally the freezing weather had passed."
+            stop sound fadeout 1.0
+            stop bg_sfx fadeout 1.0
             $ relaxed -= 5
         "{i}Make a crop heater{/i}." if (skill_technical >= 60):
             her normal "I bet I could make something that would help the crops stay warm..."
@@ -3589,7 +3601,9 @@ label monthly_event_21:
             "The fan blew the hot air over the crops, hopefully drying out any dew before it froze on them, and keeping the plants warm enough that their cells wouldn't freeze."
             "But one fan wouldn't be enough... We didn't have time to build more, but I did build a rotating stand so it could rotate and blow across a wider angle of plants."
             show night
+            play bg_sfx "sfx/alien-crickets.mp3" loop 
             "I got up several times in the night to check on the fan while [his_name] tended the fire, so we were pretty tired the next day."
+            stop bg_sfx fadeout 1.0
             "We repeated this every night for a few days, until the danger of freezing had passed."
         "It's not my problem.":
             her concerned "That's too bad, but it's not really my problem."

@@ -119,8 +119,8 @@ label relax_together_1:
 label relax_together_2:
     scene bg pond with fade
     show night
-    play music "music/Rain.ogg" fadeout 1.0
-    play music "sfx/stream-3.mp3" loop fadein 1.0
+    stop music fadeout 1.0
+    play bg_sfx "sfx/stream-3.mp3" loop fadein 1.0
     "We went on a moonlight walk to the river. We found a spot where the water was deeper and slower, and sat down. I put my head on his shoulder, breathing in the cool night air."
     show her normal at midleft
     show him normal at center
@@ -135,7 +135,7 @@ label relax_together_2:
     show him at squatting with move
     show pond_overlay behind her
     show him nude happy behind pond_overlay
-    play bg_sfx "sfx/splash.mp3"
+    play sound "sfx/splash.mp3"
     her annoyed "Hey! That's cold!"
     menu:
         "What should I do?"
@@ -174,6 +174,7 @@ label relax_together_2:
             "Why did he have to ruin such a nice evening?!"
             $ loved -= 5
     $ relaxed += 3
+    stop bg_sfx fadeout 1.0
     scene black with fade
     $ is_nude = False
     return
@@ -747,6 +748,7 @@ label relax_together_f:
     her annoyed "You're stunned."
     him surprised "Yup, can't move. Can only... gaze upon... your radiant beauty..."
     her flirt "Hmm, what if... I tickle you?!"
+    show her happy at center with move
     him laughing "Oh! Suddenly I can move again!"
     her flirt "You're so silly."
     if (loved >= 0):

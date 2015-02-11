@@ -28,6 +28,7 @@ screen computer_pad(periods):
             
     text "{font=fonts/Exo2.otf}User {color=#888}[her_name]{/color} has logged on.{/font}" size 12 xalign 0.1 ypos 20 color "FFFFFF"
     textbutton "?" xpos 877 ypos 18 style "no_border" action Jump("tutorial")
+    textbutton "           " xpos 885 ypos 18 style "no_border" action ShowMenu("preferences")
 
     frame:
         style_group "cp"

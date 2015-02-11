@@ -105,8 +105,10 @@ label relax_alone_2:
     hide him with moveoutright
     hide her with moveoutleft
     scene bg stars with fade
+    play bg_sfx "sfx/alien-crickets.mp3" loop 
     show her serious at center with dissolve
     show her serious at squatting with move
+    
     "I sat out on the porch and gazed at the stars. They were so different from Earth's, I had to make my own constellations."
     her serious "Hmm, those kind of look like two lovers... and there's a sort of circle that reminds me of a UFO..."
     her flirt "And...that looks like one long, crazy dragon."
@@ -114,7 +116,8 @@ label relax_alone_2:
     "I wondered if eventually humans would live near some of those stars, too."
     "I sat there for a long time, feeling small and far away, but also part of something amazing - humans living on a different planet. We'd never done that before."
     "It sort of made me feel... proud."
-
+    stop bg_sfx fadeout 1.0
+    
     $ relaxed += 5
     $ loved -= 2
     return
@@ -479,6 +482,7 @@ label relax_alone_j:
     $ loved -= 2
     return
 
+# Space visual novel!
 label relax_alone_k:
     scene bg farm_interior with fade
     show her normal at midleft with dissolve
