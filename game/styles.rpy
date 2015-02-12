@@ -145,7 +145,7 @@ style pref_button:
     size_group "pref"
     xalign 0.5
     
-style pref_slider:
+style pref_slider is bar:
     xmaximum 200
     xalign 0.5
     

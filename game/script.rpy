@@ -2,7 +2,7 @@
 # MAIN
 # Declare global variables, images, characters, etc.
 
-define mp = MultiPersistent("cuttlefishgames")
+define mp = MultiPersistent("MetasepiaGames")
 
 # Declare characters used by this game .
 define narrator = Character(ctc="ctc_blink", ctc_position="nestled")
@@ -100,10 +100,10 @@ init -200:
     #Technical variables used to control how the game displays
     # Custom transitions, positions, etc.
     define fade = Fade(0.2, 0.2, 0.2)
-    define midleft = Position(xpos=0.25, xanchor=0)        
-    define midright = Position(xpos=0.50, xanchor=0)
-    define quarterleft = Position(xpos=0.10, xanchor=0)
-    define quarterright = Position(xpos=0.65, xanchor=0)
+    define midleft = Position(xpos=0.35, xanchor=0.5)        
+    define midright = Position(xpos=0.65, xanchor=0.5)
+    define quarterleft = Position(xpos=0.22, xanchor=0.5)
+    define quarterright = Position(xpos=0.78, xanchor=0.5)
     define farleft = Position(xpos=-0.30, xanchor=0)
     define farright = Position(xpos=1.0, xanchor=0)    
     define sitting = Position(ypos=0.45, yanchor=0)
@@ -131,6 +131,12 @@ init -200:
     transform babyrising:
         ypos 1.2 yanchor 1.0 yoffset -160
         linear 6.0 ypos 1.0
+        
+    define SKILL_MUSIC = "music/OceansApart.ogg"
+    define WORK_MUSIC = "music/Isaiah.ogg"
+    define RELAX_ALONE_MUSIC = "music/Will.ogg"
+    define RELAX_TOGETHER_MUSIC = "music/Reflections.ogg"
+    define EVENT_MUSIC = "music/RainSea.ogg"
     
 init python:
     # Songs for computer pad
@@ -183,42 +189,6 @@ label start:
             "To fast-forward through scenes you have already seen, hold down \"Ctrl\" or use the \"Skip\" button on the far right."
         else:
             "To fast-forward through scenes you have already seen, use the new \"Skip\" button to the right."
-
-#    if (config.developer):
-#        "Do I want to remember how it all began?"
-#        menu:
-#            "Do I want to remember how it all began?"
-#            "Yes.":
-#                "Of course."
-#                jump intro
-#            "No.":
-#                $ his_name = "Jack"
-#                $ her_name = "Kelly"
-#                $ profession = "mechanic"
-#                $ want_kids = True
-#                $ known_each_other = "six months"
-#                jump month01
-#            "Skip to Debug Point":
-#                $ his_name = "Jack"
-#                $ her_name = "Kelly"
-#                $ profession = "teacher"
-#                $ community_level = 25
-#                $ loved = 40
-#                $ exposed_brennan = True
-#                $ skill_knowledge = 100
-#                $ skill_technical = 40
-#                $ skill_domestic = 100
-#                $ want_kids = True
-#                $ is_pregnant = True
-#                $ known_each_other = "six months"
-#                #scene bg stars
-#                #show computer_pad
-
-#                #jump monthly_event_25
-#                #jump test_her_sprites
-#                #jump test_positions
-#                jump test_inputter
-#                #jump show_credits
     
     jump intro
 
@@ -241,9 +211,9 @@ label test_positions:
     "midright"
     show lily at midright
     "quarterright"
-    show him at quarterright
+    show brennan at quarterright
     "right"
-    show her at right
+    show natalia at right
     "end test positions"
     return
     

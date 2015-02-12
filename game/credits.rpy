@@ -127,7 +127,7 @@ label show_credits:
     hide text with fade
     
     # TODO: Add more beta testers
-    show text "Beta Testing by:\nWes Landaker\nLisa Horner\nCatherine White\nLance Meibos\nMary Tueller Whipple"
+    show text "Beta Testing by:\nWes Landaker\nLisa Horner\nCatherine White\nLance Meibos\nMary Tueller Whipple\nSterling Whipple\nCavan Helps\nBrooke Shiffler"
     show lettie_head at right behind text with longmoveinright
     show goat_flip at left behind text with longmoveinleft
     with dissolve
@@ -137,7 +137,7 @@ label show_credits:
     with dissolve
     hide text with fade   
     
-    show text "\"Our Personal Space\" Program, Text & Dialogue are licensed under the {a=http://www.gnu.org/copyleft/gpl.html}GNU GPLv3{/a}.\nFor other licenses used, see accompanying {a=http://qirien.icecavern.net/CuttlefishGames/OPS-License.html}License.html{/a}" with fade
+    show text "\"Our Personal Space\" Program, Text & Dialogue are licensed under the {a=http://www.gnu.org/copyleft/gpl.html}GNU GPLv3{/a}.\nFor other licenses used, see accompanying {a=http://qirien.icecavern.net/MetasepiaGames/OPS-License.html}License.html{/a}" with fade
     $ renpy.pause(3.0, hard=skippable)
     hide text with fade        
     

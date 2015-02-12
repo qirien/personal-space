@@ -67,10 +67,6 @@ define julia_c = Character("Julia Nguyen", who_prefix = "{image=sprites/julia-ic
     color="#e7b1cb", image="julia", kind=nvl, ctc="ctc_blink", ctc_position="nestled") #icy pink
 define martin_c = Character("Martín Perón", who_prefix = "{image=sprites/martin-icon.png} ", 
     color="#9b5b1d", image="martin", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #brown
-define tomas_c = Character("Tomás Perón", who_prefix = "{image=sprites/blank-icon.png}  ", 
-    color="#905010", image="martin", kind=nvl, ctc="ctc_blink", ctc_position="nestled")  #brown
-define joanna_c = Character("Joanna Nguyen", who_prefix = "{image=sprites/blank-icon.png} ", 
-    color="#eebecf", image="julia", kind=nvl, ctc="ctc_blink", ctc_position="nestled") #icy pink
 
 define computer = Character(None, kind=nvl, ctc="ctc_blink", ctc_position="nestled")
 
@@ -355,7 +351,7 @@ label msg_18:
     return
     
 label msg_19:
-    him_c "Hey, is there someone that wants some tomatoes and peppers? I'm not allowed to use my burned hands for another week..."
+    him_c "Hey, is there someone that wants some tomatoes and peppers? I'm not supposed to use my burned hands for another week..."
     thuc_c "You're not going to pick them with your teeth? You're such a slacker, [his_name]."
     him_c "Yeah, I know."
     thuc_c "I'm just kidding! I'll help you tomorrow night, okay?"
@@ -414,10 +410,7 @@ label msg_22:
     brennan_c "Ahhh, Tomás, you're a lucky man. Though I don't envy you having Julia for a mother-in-law...."
     martin_c "Man?! He's still a boy... Though if he's old enough to get married..."
     julia_c "A man is as a man does. Tomás is more of a man than {b}some{/b} here, at least."
-    joanna_c "that's what I was gonna say ;-)"
-    tomas_c "Thanks for the well-wishes, everyone. Any chance we could get our own place?"
-    ilian_c "Come see me and we'll discuss it."
-    
+
     return
     
 label msg_23:
@@ -505,8 +498,6 @@ label msg_25:
     lily_c "Also, the variation of our genetic pool will decrease."
     brennan_c "You should have said something sooner, maybe we could have contributed to the gene pool together!"
     julia_c "That's enough; sometimes my kids read these messages!"
-    joanna_c "Mom, most of your kids are old enough to contribute to the gene pool on their own."
-    nvl clear
     lily_c "I will continue this conversation with you in private, Brennan."
     sara_c ":-o Ummm, wow, did one of Brennan's pickup lines actually work?!"
     pete_c "It's about time."

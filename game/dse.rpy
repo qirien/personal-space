@@ -90,7 +90,7 @@ label day:
         $ weather = "mild and breezy"
     if ((local_month == 6) or (local_month == 7)):
         $ season = "winter"
-        $ weather = "cold and rainy"
+        $ weather = "cool and rainy"
 
     # calculate pregnancy progress
     $ pregnant_months = 0
@@ -114,8 +114,6 @@ label day:
         scene bg gray_silk
         call msg_25
         jump monthly_event_25
-        
-    "Time to decide what to do this month..."
 
     # Here, we want to set up some of the default values for the
     # day planner. In a more complicated game, we would probably
@@ -130,13 +128,18 @@ label day:
 
     if (month == 1):
         scene screenshot with fade
-        menu:
-            "Would you like to see the Tutorial?"
-            "Yes":
-                call tutorial(False)
-            "No":
-                $pass
+        if (not persistent.times_beaten):
+            menu:
+                "Would you like to see the Tutorial?"
+                "Yes":
+                    call tutorial(False)
+                "No":
+                    $pass
+        else:
+            call tutorial(False)
         
+    "Time to decide what to do this month..."
+    
     # Autosave
     $ renpy.force_autosave(take_screenshot=True)
     $ renpy.choice_for_skipping()
@@ -153,10 +156,9 @@ label day:
     # We process each of the three periods of the day, in turn.
 label job_focus:
     stop bg_sfx
+    stop music fadeout 4.0
     # Tell the user what month it is.
     call inter_scene_text("At Work")
-
-    play music "music/Isaiah.ogg" fadeout 1.0
 
     # Set these variables to appropriate values, so they can be
     # picked up by the expression in the various events defined below. 
@@ -174,6 +176,7 @@ label job_focus:
 
 label skill_focus:
     stop bg_sfx
+    stop music fadeout 4.0
     # It's possible that we will be skipping the skill_focus, if one
     # of the events in the job_focus jumped to skip_next_period. If
     # so, we should skip the skill_focus.
@@ -182,7 +185,6 @@ label skill_focus:
 
     # The rest of this is the same as for the job_focus.
     call inter_scene_text("Skill Focus")
-    play music "music/OceansApart.ogg" fadeout 1.0
 
     $ period = "skill_focus"
     $ act = skill_focus_act
@@ -194,6 +196,7 @@ label skill_focus:
 
 label relaxation_focus:
     stop bg_sfx
+    stop music fadeout 4.0
     # The relaxation_focus is the same as the skill_focus.
     if check_skip_period():
         jump monthly_event
@@ -203,23 +206,20 @@ label relaxation_focus:
     $ period = "relaxation_focus"
     $ act = relaxation_focus_act
     $ wearing_dress = True
-    if (act == "act_relax_together"):
-        play music "music/Reflections.ogg" fadeout 1.0
-    else:
-        play music "music/Will.ogg" fadeout 1.0
 
     $ normalize_stats()
     
     call events_run_period
+    scene black with fade
     $ wearing_dress = False
 
 label monthly_event:
     stop bg_sfx
+    stop music fadeout 4.0
     if check_skip_period():
         jump end_of_month
 
     call inter_scene_text("Event!")
-    play music "music/RainSea.ogg" fadeout 1.0
 
     $ period = "monthly_event"
     $ act = monthly_event_act
@@ -267,10 +267,32 @@ label dp_callback:
 label inter_scene_text(type=None):
     scene orange_glow with fade
     show text "{color=#ffffff}{font=fonts/Kristi.ttf}{size=150}Month [month] of 25{/size}{/font}{/color}" with irisin
-    $ renpy.pause(2.0)
+    $ renpy.pause(1.6)
     
     if (type is not None):
         show text "{color=#ffffff}{font=fonts/Kristi.ttf}{size=150}[type]{/size}{/font}{/color}" with irisout
-        $ renpy.pause(2.0)
+        $ renpy.pause(1.6)
     hide text
+    scene black with fade
+    return
+    
+label play_scene_music(song=None):
+    $ song_to_play = None
+    if (song is not None):
+        $ song_to_play = song
+    else:
+        if (period == "job_focus"):
+            $ song_to_play = WORK_MUSIC
+        elif (period == "skill_focus"):
+            $ song_to_play = SKILL_MUSIC
+        elif (period == "relaxation_focus"):
+            if (act == "act_relax_together"):
+                $ song_to_play = RELAX_TOGETHER_MUSIC
+            else:
+                $ song_to_play = RELAX_ALONE_MUSIC
+                             
+        elif (period == "monthly_event"):
+            $ song_to_play = EVENT_MUSIC
+            
+    play music song_to_play fadeout 1.0
     return

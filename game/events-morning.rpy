@@ -4,7 +4,8 @@
 # Default work event if there's no special event
 label act_work:
     call set_work_bg
-
+    call play_scene_music
+    
     if (relaxed <= -8):
         "I worked hard at work. I was starting to feel burned out, though."
     elif (relaxed >= 8):
@@ -18,7 +19,7 @@ label act_work:
 
 label act_skip_work:
     call set_work_bg
-    play music "music/You.ogg" fadeout 1.0
+    call play_scene_music("music/You.ogg")
     
     # it doesn't count if you take time off right after giving birth
     if (is_pregnant and (month == 25)):
@@ -65,11 +66,11 @@ label work_0:
     $ times_worked += 1
 
     scene bg community_center
+    call play_scene_music("music/Sojourn.ogg")
     play bg_sfx "sfx/people.mp3" fadein 1.0
-    play music "music/Sojourn.ogg" fadeout 1.0
     "My boss was also the leader of our little community. I guess you could call him the mayor?"
     "Right after we landed, he called a meeting for everyone where he gave a speech."
-    show pavel at center
+    show pavel at center 
     pavel "We made it this far! Now, as you know, we've arrived right at the beginning of this planet's spring, so it's time to get seeds in the ground! We would like for our colony to become self-sufficient as far as necessities are concerned."
     stop bg_sfx fadeout 1.0
     pavel "In two years, another colony ship will come with supplies and more colonists. So, until then, we're on our own."
@@ -87,7 +88,7 @@ label work_0:
     show sara at quarterright
     with moveinright
     pavel "Ilian Andrevski is in charge of the storehouse here on the colony. That's where we keep all our extra supplies and food. His wife, Sara will be helping all of us stay organized."
-    ilian "I want to distribute things frugally and fairly. And, if you have extra goods you cannot use, please give them to the storehouse so others can use them."
+    ilian "I will distribute our resources frugally and fairly."
     sara "If you want an appointment with the mayor, it's best to ask me, since I'm handling his schedule."
     hide ilian
     hide sara
@@ -115,12 +116,12 @@ label work_0:
     hide thuc
     with moveoutright
     show natalia at midright
-    show martin at right
+    show martin at quarterright
     with moveinright
     pavel "The Peróns will be growing beans and corn, and are raising chickens and turkeys."
     martin "And also five children."
     natalia "Tomás is the oldest, and then there's Isabella, Raúl, Josephina, and Mateo."
-    martin happy "Don't feel like you have to remember them all; that's my job!"
+    martin happy "Don't feel like you have to keep track of them all; that's my job!"
     hide natalia
     hide martin
     with moveoutright
@@ -267,7 +268,7 @@ label work_1:
     $ community_level += 2
 
     call set_work_bg
-    play music "music/NoSilencePlease.ogg" fadeout 1.0
+    call play_scene_music("music/NoSilencePlease.ogg")
 
     # DOCTOR
     if (profession == "doctor"):
@@ -476,10 +477,11 @@ label work_2:
     $ times_worked += 1
     $ relaxed -= 5
     call set_work_bg
+    call play_scene_music
     show her normal at midright with dissolve
     "I was ready for another busy day at work when the mayor walked in with someone new. I remembered seeing him on the shuttle; he had an infectious smile and just the hint of an accent."
     show brennan at quarterleft with moveinleft
-    show pavel at midleft with moveinleft
+    show pavel at midleft behind her with moveinleft #TODO test this
     pavel "[her_name], I'd like you to meet Mr. Callahan. He's sort of a jack-of-all-trades here, helping out wherever we need it. He can help you out some of the time."
     show pavel at left, behind brennan
     show brennan at midleft
@@ -532,7 +534,7 @@ label work_2:
             him serious "I'm not saying that. I'm just saying that there's unanswered questions here."
             her flirt "Interesting. Well, I'll keep an eye out, and if I see him sending coded messages to the aliens, I will let you know."
             scene black with fade
-            "The next time Brennan helped out at work, he was as friendly as ever, but I didn't feel as uncomfortable as before. I treated him politely, but coolly, and we got a lot of work done."
+            "The next time Brennan helped out at work, he was as friendly as ever, but I didn't feel as uncomfortable as before. I treated him politely, but cooly, and we got a lot of work done."
         "Nothing special.":
             her serious "Just the usual. How about you?"
             him serious "Had to dig out some big boulders in the new field I'm working on."
@@ -577,7 +579,7 @@ label work_2:
                     her normal "No, it's not the big of a deal. He's probably just a friendly kind of guy."
                     him annoyed "Friendly to women, you mean."
                     her flirt "Maybe, but, whatever. I'm not interested. I've got you!"
-                    "The next time Brennan helped me out, he was friendly as ever, but I didn't feel as uncomfortable as before. I treated him politely but coolly, and work went well."
+                    "The next time Brennan helped me out, he was friendly as ever, but I didn't feel as uncomfortable as before. I treated him politely but cooly, and work went well."
 
     return
 
@@ -587,6 +589,7 @@ label work_3:
     $ times_worked += 1
     $ relaxed -= 2
     call set_work_bg
+    call play_scene_music
     show her serious at midright with dissolve
 
     # DOCTOR 
@@ -640,7 +643,7 @@ label work_3:
         hide raul
         hide van
         with moveoutleft
-    show her normal
+    show her normal with dissolve
     her normal "Good work today, Brennan."
     brennan "Thanks, [her_name]. It's a pleasure working with you."
     menu:
@@ -650,7 +653,6 @@ label work_3:
             brennan "I'm glad there's something useful I can do."
             her surprised "You weren't doing anything useful before?"
         "Tell me about yourself.":
-            her normal "Thank you."
             her surprised "Hey, I've been wondering, what brings you to the colony, anyway?"
         "Gotta go, bye.":
             her concerned "Thanks. Um, I gotta go."
@@ -658,7 +660,7 @@ label work_3:
             return
 
     $ brennan_relationship += 1
-    brennan "Well, my skills aren't exactly in high demand here..."
+    brennan "It's true my skills aren't exactly in high demand here..."
     her surprised "What skills are those? What did you do back on Earth?"
     brennan "I was a salesman. Not a bad one, either."
     her normal "So why are you here?"
@@ -702,7 +704,7 @@ label work_4:
     else:
         $ relaxed -= 5
     $ community_level += 2
-    play music "music/NoSilencePlease.ogg" fadeout 1.0
+    call play_scene_music("music/NoSilencePlease.ogg")
     call set_work_bg
 
     # Doctor - problems with new local bacteria (no viruses, though)
@@ -913,6 +915,7 @@ label work_5:
     $ times_worked += 1
     $ relaxed -= 5
     call set_work_bg
+    call play_scene_music
 
     if (skill_technical >= 30):
         "There were some days when we just had to stay inside because of strong solar flares. The prediction system I improved usually let us know a day or two ahead of time, so we could be prepared."
@@ -1046,6 +1049,7 @@ label work_6:
     $ times_worked += 1
     $ relaxed -= 5
     call set_work_bg
+    call play_scene_music
 
     if (profession == "doctor"):
         "The clinic wasn't very busy this month, so I'd been working on writing a paper about how the nutrition of crops planted here differed from the nutrition of crops grown in Earth soil, based on comparing my own blood samples."
@@ -1268,6 +1272,7 @@ label work_7:
     $ relaxed -= 5
 
     call set_work_bg
+    call play_scene_music
 
     $ has_batteries = False
     $ questioned_brennan = False
@@ -1441,7 +1446,7 @@ label brennan_confess:
             with dissolve
             him angry "I knew we couldn't trust him!"
             hide him
-            show julia at right with dissolve
+            show julia mad at right with dissolve
             julia mad "How could such a dishonest spy care about our colony?"
             hide julia
             show martin sad at midright with dissolve
@@ -1517,7 +1522,7 @@ label work_8:
 
     call set_work_bg
     show her normal at midright with dissolve
-    play music "music/You.ogg" fadeout 1.0
+    call play_scene_music("music/You.ogg")
 
     "Most days I was able to help everyone with what they needed."
     "But not every day was a success."

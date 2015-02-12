@@ -1,6 +1,7 @@
 # Introduction
 
 label intro:
+    $ wearing_dress = True
     "I thought I knew what love was."
     "Smiling ridiculously whenever I thought of him."
     "Counting down the minutes until we could meet again."

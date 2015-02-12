@@ -3,4 +3,4 @@ For support, comments, questions, etc, email qirien@icecavern.net
 For license information for all materials used, see License.txt or License.html
 
 For more information, see
-http://qirien.icecavern.net/CuttlefishGames
+http://qirien.icecavern.net/MetasepiaGames

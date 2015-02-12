@@ -2,7 +2,7 @@
 
 # After they get married, they board the colony ship
 label colony_ship:
-
+    $ wearing_dress = False
     scene bg colony_ship_bunk with fade
     play music "music/Amnesia.ogg" fadeout 1.0
     "What a honeymoon -- on board a cramped space shuttle with two hundred other people for a month. Of course, back on Earth four years had passed, since we were travelling so close to light speed."
@@ -46,6 +46,12 @@ label colony_ship:
                         him serious "Yeah... but what if we never get everything figured out?"
                         her concerned "Not everything! Just food, clothing, shelter - I want to make sure we can provide for a kid."
                         him serious "Yeah, that makes sense."
+                    "Maybe in a few years.":
+                        $ want_kids = False
+                        her serious "Maybe in a few years... we just got married, after all."
+                        him concerned "Yeah..."
+                        her flirt "Besides, I want you to myself for now."
+                        him normal "There'll be plenty of time for kids later."
                     "Maybe never.":
                         her serious "Maybe never. I'm not sure if I want kids at all."
                         him surprised "Really? I always thought you wanted a family."
@@ -318,7 +324,7 @@ label settling_in:
             him sad "A bit."
 
     him normal "This was taken at my parents' farm a few years ago. My sister and her husband and their kids drove for two days to come and visit, and my little brother flew in from overseas."
-    him concerned "Good thing, too, because it was the last time we'd all be together."
+    him concerned "We won't be getting together like that again..."
     her surprised "Have you heard from them lately? I know they wrote you a lot on the shuttle..."
     him normal "They write me all the time, but the messages took longer and longer to reach us, so I haven't heard from them for a few months."
     her sad "How's your mom? I know she was sick..."
@@ -339,6 +345,6 @@ label end_settling_in:
     "There were plenty of things I could choose to do in my free time, but I usually chose just one or two to focus on. I didn't have to be good at everything; I wanted to get really good at a few things."
     "But maybe if I had made different choices... \nWould things be different?"
     "Did all those little decisions really matter? At least some of them did..."
-        
+
     jump month01
     return

@@ -293,7 +293,7 @@ screen file_picker:
         xpadding 15
 
         has vbox
-
+        #label "Page" xalign 0.5
         # The buttons at the top allow the user to pick a
         # page of files.
         hbox:
@@ -301,6 +301,7 @@ screen file_picker:
             xalign 0.5
             
             textbutton _("Previous"):
+                xpos -50
                 action FilePagePrevious()
 
             textbutton _("Auto"):
@@ -308,12 +309,11 @@ screen file_picker:
 
             #textbutton _("Quick"):
             #    action FilePage("quick")
-
-            for i in range(1, 5):
+            for i in range(1, 6):
                 textbutton str(i):
                     action FilePage(i)
-                    
             textbutton _("Next"):
+                xpos 50
                 action FilePageNext()
 
         $ columns = 2
@@ -403,10 +403,6 @@ screen preferences:
         xalign 0.1
         yalign 0.0
         
-#        top_padding 40
-#        bottom_padding 20
-#        left_padding 50
-#        right_padding 55
 
         # Put the navigation columns in a three-wide grid.
         grid 3 1:

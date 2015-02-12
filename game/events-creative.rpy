@@ -3,12 +3,14 @@
 
 # Default Event
 label creative_def:
+    call play_scene_music
     scene bg farm_interior with fade
     "I worked on a quilt for our bedroom using scraps of fabric we didn't need. It was pretty tedious cutting out tiny squares of exactly the right size and sewing them together by hand, but it was definitely easier than weaving new fabric from scratch."
     $ skill_creative += 10
 
 # Intro Event
 label creative_0:
+    call play_scene_music
     scene bg farm_interior with fade
     "Looking around our tiny, bare house, we had only the barest necessities. A towel, sturdy blankets and clothing, a plate, utensils for each of us, a rough table, and two convertible seats from the shuttle that also doubled as our bed."
     "It was enough to survive on, but I wanted to do more than just survive."
@@ -33,6 +35,7 @@ label creative_0:
 
 # Scarecrow
 label creative_1:
+    call play_scene_music
     scene bg farm_interior with fade
     show him normal at midright
     show her normal at midleft
@@ -68,6 +71,7 @@ label creative_1:
 
 # Crochet something new using goat's hair?
 label creative_2:
+    call play_scene_music
     scene bg farm_interior with fade
     julia_c "I have some extra goat hair yarn if anyone else would care to make something with it."
     her_c "I'll give it a try!"
@@ -88,6 +92,7 @@ label creative_2:
 
 # Woodworking - make vegetable crate/barrel or clothes drying rack out of local wood 
 label creative_3:
+    call play_scene_music
     scene bg farm_interior with fade
     "Our harvests were staying fairly fresh in the cellar, but I needed a way to organize which vegetables were the oldest."
     "I wanted to make some crates out of wood, but I wasn't sure how I'd manage without nails."
@@ -135,6 +140,7 @@ label creative_3:
 
 # Make rope
 label creative_4:
+    call play_scene_music
     scene bg farm_interior with fade
     "[his_name] asked me if we had any rope to put up into the loft of our barn and pull carts around. I told him I'd look at the supply center next time I went into town."
     scene bg storehouse with fade
@@ -179,7 +185,8 @@ label creative_4:
 
 # Re-cover space shuttle seats to make a couch?
 label creative_5:
-#month 5 is what to do with trash, so this will have to come after it (though it may be several months after it)
+    call play_scene_music
+    #month 5 is what to do with trash, so this will have to come after it (though it may be several months after it)
     scene bg storehouse with fade
     "Ever since the push to recycle or compost all our trash, I had been trying to think of other uses for shuttle parts."
     "I went down to the storehouse to ask about how the shuttle parts were being distributed. I thought maybe I could make a sofa out of them."
@@ -246,6 +253,7 @@ label creative_5:
 
 # Photography
 label creative_6:
+    call play_scene_music
     scene bg sunset with fade
     "I hadn't done any photography in a long time, but the way the light was coming through the clouds really inspired me."
     "As I set up shots- some simple landscapes, others focusing on an alien plant or insect with the clouds in the background- I felt awed. Here was this entire planet full of wonders, and only the few of us who lived here got to experience it."
@@ -262,6 +270,7 @@ label creative_6:
 
 # Make some dishes out of local clay, fire them
 label creative_7:
+    call play_scene_music
     scene bg pond with fade
     "A rainy night made the banks of the river swell. When I was checking to make sure our plants were okay, I noticed that some of the upturned soil had a clay-like texture."
     "I did a little digging on the other side of the river, where I found some clay."
@@ -292,13 +301,14 @@ label creative_7:
 
 #build a bridge out of braided grass rope
 label creative_8:
+    call play_scene_music
     scene bg pond with fade
     "It was a nice day out and I went for a walk. I wanted to cross the river and continue walking, but I didn't want to get wet."
     "We had a boat, but it'd be a pain to borrow it just to cross the river. What we needed was a bridge."
     "Since I already had some experience making rope, I thought I could try making a simple rope bridge."
     "I found some dry grasses near the mountain and took some home with me, where I started twisting them into rope."
     scene bg farm_interior with fade
-    "I tried to find the part in the documentary that showed how they incoporated new strands of grass, but they didn't show it very closely. I had to kind of twist them in on my own."
+    "I tried to find the part in the documentary that showed how they incorporated new strands of grass, but they didn't show it very closely. I had to kind of twist them in on my own."
     show her normal at midright
     show him normal at midleft
     with dissolve
@@ -331,6 +341,7 @@ label creative_8:
 
 # Make a documentary about the colony and send it to Earth
 label creative_master:
+    call play_scene_music
     scene bg sunset with fade
     "One day, as I was taking pictures of a flock of crabirds, I was struck by their alien beauty. Though I had taken pictures before, they couldn't really capture the way their bristle-like feathers rippled in the air, or the opposing movements of the twin moons at twilight."
     "I couldn't bear it - I had to share the wild, alien beauty of this planet with everyone I had left behind back home. While I couldn't communicate the smells, or the lightness of the air, I could at least take some video footage."

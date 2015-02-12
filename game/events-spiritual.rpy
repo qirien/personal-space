@@ -3,6 +3,7 @@
 
 # the default
 label spiritual_def:
+    call play_scene_music
     scene bg path with fade
     "I took a walk and spent some time just thinking."
     $ skill_spiritual += 10
@@ -11,6 +12,7 @@ label spiritual_def:
 
 # Intro Event
 label spiritual_0:
+    call play_scene_music
     # attending church and praying
     scene bg church with fade
     "Coming to a new planet and leaving behind my old job, friends, and family felt pretty lonely sometimes."
@@ -68,6 +70,7 @@ label spiritual_0:
 
 # Reading a little each day
 label spiritual_1:
+    call play_scene_music
     scene bg farm_interior with fade
     show her serious at center with dissolve
     "I downloaded some of the books Naomi sent me and took a look at them."
@@ -85,6 +88,7 @@ label spiritual_1:
 
 # Reading the Dhammapada
 label spiritual_2:
+    call play_scene_music
     scene bg farm_interior with fade
     show her serious at center with dissolve
     "One of the books Naomi loaned me was the Dhammapada, a collection of sayings of the Buddha. There were a lot of good teachings, but I was struck by one part in particular..."
@@ -101,6 +105,7 @@ label spiritual_2:
 
 # See if he wants to come to church
 label spiritual_3:
+    call play_scene_music
     scene bg farm_interior with fade
     show him normal at midleft
     show her normal at midright
@@ -187,6 +192,7 @@ label spiritual_3:
 
 # Reading the Upanishads
 label spiritual_4:
+    call play_scene_music
     scene bg farm_interior with fade
     show her normal at center
 
@@ -236,6 +242,7 @@ label spiritual_4:
 
 # Pondering, praying, meditating
 label spiritual_5:
+    call play_scene_music
     scene bg path with fade
     "I decided to take a break from reading for a while...I wanted to experience some of the things I read about for myself."
     menu:
@@ -259,6 +266,7 @@ label spiritual_5:
 
 # Reading the Koran; helping Helen Jennings
 label spiritual_6:
+    call play_scene_music
     scene bg farm_interior with fade
     show her normal at center
     "In the Koran I read:"
@@ -373,6 +381,7 @@ label spiritual_6:
 
 # Reading the Tao Te Ching
 label spiritual_7:
+    call play_scene_music
     scene bg farm_interior with fade
     show her normal at center with dissolve
     "Naomi sure sent me a lot of books to read...but I think I'm getting something out of them."
@@ -390,6 +399,7 @@ label spiritual_7:
 
 # Reading the Tattvartha Sutra
 label spiritual_8:
+    call play_scene_music
     scene bg farm_interior with fade
     show her normal at center with dissolve
 
@@ -417,8 +427,9 @@ label spiritual_8:
     $ skill_spiritual += 10
     return
 
-# Reading the Bible
+# Reading the Bible; helping Naomi
 label spiritual_master:
+    call play_scene_music
     scene bg farm_interior with fade
     show her normal at center
 

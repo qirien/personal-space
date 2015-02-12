@@ -3,6 +3,7 @@
 
 # Default Event
 label domestic_def:
+    call play_scene_music
     scene bg farm_interior with fade
     "I did some deep cleaning and organizing, and put in some extra work for a great dinner."
     $ skill_domestic += 10
@@ -10,6 +11,7 @@ label domestic_def:
 
 # Intro Event
 label domestic_0:
+    call play_scene_music
     scene bg farm_interior with fade
     show her serious at center with dissolve
     her "There's a lot of work to do around the house... should I plan it, or just dive in?"
@@ -33,6 +35,7 @@ label domestic_0:
 
 # Laundry by hand is tough?
 label domestic_1:
+    call play_scene_music
     scene bg laundry with fade
     show her normal
     her "Time for laundry!"
@@ -56,6 +59,7 @@ label domestic_1:
 
 # fence to keep out herb garden pests
 label domestic_2:
+    call play_scene_music
     scene bg fields with fade
     show her normal at center
     "I planted an herb garden when we first arrived, and the plants are just starting to get big enough for me to use. I think I'll make some tea..."
@@ -73,6 +77,7 @@ label domestic_2:
 
 # Who wants a goat?
 label domestic_3:
+    call play_scene_music
     scene bg farm_exterior with fade
     show her normal at midright with dissolve
     show thuc at midleft with moveinleft
@@ -177,6 +182,7 @@ label domestic_3:
 
 # Too many radishes!
 label domestic_4:
+    call play_scene_music
     scene bg farm_interior with fade
     show her normal at midright with dissolve
     show him normal at midleft with moveinleft
@@ -191,7 +197,7 @@ label domestic_4:
         "They had plenty of vinegar and salt at the storehouse, and I used some of the herbs and spices from the garden to make a few batches of pickled radishes."
     elif (skill_social >= 20):
         her normal "I bet I could trade these with the Perón's for some eggs from their chickens..."
-        "Sure enough, Natalia was delighted to have some fresh vegetables, and I made a souffle instead."
+        "Sure enough, Natalia was delighted to have some fresh vegetables, and I made a soufflé instead."
         $ community_level += 3
     elif have_goat:
         "I sliced them really thin and spread them with goat cheese and some herbs from the garden."
@@ -204,6 +210,7 @@ label domestic_4:
 
 # Pumpkins and Halloween!
 label domestic_5:
+    call play_scene_music
     scene bg farm_interior with fade
     show her normal at midright with dissolve
     "One day, [his_name] brought home some pumpkins he had planted."
@@ -236,12 +243,12 @@ label domestic_5:
             "I made some jack-o-lanterns and put candles in them. They grinned saucily at us at night, until they started rotting and I had to throw them away."
 
     hide her
-    play music "music/Prelude22.ogg" fadeout 1.0
     "Even though it wasn't anywhere near Halloween going by the Earth calendar, the colonists all thought that if we had pumpkins, we should have a harvest festival!"
     "They announced that there would be a costume party at the community center, and everyone could bring sweets to give out to the kids."
     menu:
         "I thought:"
         "How fun!":
+            play music "music/Prelude22.ogg" fadeout 1.0            
             "We didn't have any candy, of course, but I decided to try to make some. The main problem was that we didn't have any sugar left."
             if (skill_knowledge >= 40):
                 "In my studies with Lily, we had found a plant whose sap had a high sugar content. I boiled it, and then dipped sticks into it. After two days, small crystals started to form on the sticks, and after a week, each stick had a nice cluster of rock candy crystals on it."
@@ -269,6 +276,7 @@ label domestic_5:
 
 # what to do with local meat
 label domestic_6:
+    call play_scene_music
     scene bg farm_interior with fade
     "One day, I came home from work to find a dead monster on the kitchen table."
     show her surprised at midleft with moveinleft
@@ -360,6 +368,7 @@ label domestic_6:
 
 # running out of soap; must make own soap with ash, fat, etc
 label domestic_7:
+    call play_scene_music
     scene bg community_center with fade
     show pavel at center with dissolve
     pavel "One last item of business for the community meeting-"
@@ -451,6 +460,7 @@ label domestic_7:
 
 # Canning
 label domestic_8:
+    call play_scene_music
     scene bg farm_interior with fade
     "[his_name] was harvesting a lot of vegetables and fruits, and while the cellar kept some things cool and dry, other produce didn't last very long."
     "We had so many tomatoes and zucchinis there was no way we could possibly eat them all before they went bad. We took a bunch to the storehouse, but they told us that everyone else had all they could eat, too."
@@ -461,14 +471,14 @@ label domestic_8:
             if (skill_technical >= 60):
                 "I used the blender I had made to puree a bunch of vegetables in a nice sauce."
             else:
-                "I chopped up the tomatoes and zuchinis."
+                "I chopped up the tomatoes and zucchinis."
             "Then I cooked the sauce and ladled it into clean glass jars. I let the jars sit in boiling water to kill any bacteria."
             "It took all day, but looking at the rows of jars full of food we had grown and made ourselves was very satisfying."
         "Make salsa.":
             if (skill_technical >= 60):
                 "I used the blender I had made to puree a bunch of vegetables in a nice salsa."
             else:
-                "I chopped up the tomatoes and zuchinis and onions and peppers."
+                "I chopped up the tomatoes and zucchinis and onions and peppers."
             "I ladled the salsa into clean glass jars. I let the jars sit in boiling water to kill any bacteria."
             "It took all day, but looking at the rows of jars full of food we had grown and made ourselves was very satisfying."
         "Dehydrate them.":
@@ -481,6 +491,7 @@ label domestic_8:
 
 # Start a 'No Space Like Home' blog about domestic life!
 label domestic_master:
+    call play_scene_music
     scene bg farm_interior with fade
     "I had learned so much about how to cook native foods and keep things clean and comfortable around our house."
     "So many people had asked me for advice that I decided to write a blog with entries relevant to domestic life on Talaam."

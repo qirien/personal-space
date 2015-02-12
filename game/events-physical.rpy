@@ -3,12 +3,14 @@
 
 # Default
 label physical_def:
+    call play_scene_music
     scene bg path with fade
     "I went for a run around the farm."
     $ skill_physical += 10
     
 # Intro Event
 label physical_0:
+    call play_scene_music
     scene bg farm_exterior with fade
     "We lived a little farther away from the town, so that we had plenty of farmland around us. The other farms were arranged in sort of a circle around the town, too. But it meant that we were a little more isolated than the people who lived in the town."
     "We didn't have a car; [his_name] had his horse, but he rode her around the farm most days. We wanted to save the tractor fuel for farming, so if I wanted to get to town I had to walk -- or run."
@@ -39,6 +41,7 @@ label physical_0:
 
 # hike to pond with leeches
 label physical_1:
+    call play_scene_music
     scene bg talam with fade
     "I decided to do some exploring. Here I was, living on a completely new planet, and all I had ever seen was the town and my own little farm. There was a ridge to the south, so I decided to hike over the top and see what was there."
     "The ridge was steeper than it looked, but I was able to scramble up to the top. From the top of the ridge I could see all the way to town to the north. To the south was a vast expanse of wild rolling hills with sparse shrubs and trees."
@@ -179,12 +182,12 @@ label physical_1:
 
 # chopping wood
 label physical_2:
+    call play_scene_music
     scene bg fields with fade
-    show her serious at center with dissolve
+    show her serious at midright with dissolve
     "We needed firewood to burn for cooking and heating. I got an axe and split logs to build up a huge supply for later."
     play bg_sfx [ "sfx/wood-logs-1.mp3", "sfx/wood-logs-2.mp3" ]
     show him normal at midleft with moveinleft
-    show her at midright with move
     him happy "Wow, I didn't know I married a lumberjack."
     menu:
         "Lucky you.":
@@ -194,18 +197,19 @@ label physical_2:
             him happy "No chance! I could sit here and watch you all day."
             her annoyed "No, I'm done! Your turn!"
             "He took the axe from me and setup a log. Even though it was getting cold, he took his shirt off and threw it at me."
+            show him nude happy with dissolve
             her yelling "Ew! I don't want your sweaty shirt!"
-            show him flirting
+            show him nude flirting
             "He flexed his muscles exaggeratedly before setting up a log. I laughed."
             show her laughing
             her happy "Putting on quite the show, aren't you?"
-            him serious "You're my only audience."
+            him nude serious "You're my only audience."
             play bg_sfx [ "sfx/wood-logs-1.mp3", "sfx/wood-logs-2.mp3" ]
             "It was sort of mesmerizing, watching the axe rise with smooth grace and fall with brutal finality. He was quite practiced at chopping wood."
             her normal "You're pretty good at that."
-            him flirting "I'm good at a lot of things."
+            him nude flirting "I'm good at a lot of things."
             her flirt "Mmmm, maybe after dinner you'll show me some more of your...talents."
-            him "Only if you show me yours."
+            him nude "Only if you show me yours."
             $ loved += 5
             $ made_love += 1
         "Are you disappointed?":
@@ -271,6 +275,7 @@ label physical_2:
 
 #Learn how to ride a horse
 label physical_3:
+    call play_scene_music
     scene bg barn with fade
     show her normal at midright
     show him normal at midleft
@@ -294,6 +299,7 @@ label physical_3:
 
 #Yoga
 label physical_4:
+    call play_scene_music
     scene bg farm_interior with fade
     show her serious at center
     "On mornings when we had a solar flare warning, everyone had to stay indoors."
@@ -357,6 +363,7 @@ label physical_4:
 
 # Go hiking again. Find a hot spring. If you bring him, you both enjoy a long soak and feel invigorated. If you don't bring him, you have to decide if you will tell him about it (even though you sort of promised not to hike alone)
 label physical_5:
+    call play_scene_music
     scene bg farm_interior with fade
     "I wanted to go hiking again. I just knew there were all sorts of interesting and useful places out there, if only we could find them."
     "Should I tell [his_name] about it? He might want to come, too."
@@ -562,6 +569,7 @@ label physical_5:
 
 # Go hunting and bring back some meat
 label physical_6:
+    call play_scene_music
     scene bg bedroom with fade
     $ is_nude = True
     show him nude sleeping at midleft, squatting
@@ -605,7 +613,7 @@ label physical_6:
 
 # Participate in community soccer team
 label physical_7:
-    play music "music/Prelude22.ogg" fadeout 1.0
+    call play_scene_music("music/Prelude22.ogg")
     "Some of the colonists had taken to playing soccer on Saturday mornings, and I decided to join them."
     scene bg path with fade
     show brennan at center
@@ -648,6 +656,7 @@ label physical_7:
 
 # Lift heavy ?
 label physical_8:
+    call play_scene_music
     scene bg barn with fade
     show her normal at midright with dissolve
     "I was rearranging the cellar storage again when [his_name] walked in."
@@ -703,7 +712,7 @@ label physical_8:
 # Lead a group hunt
 label physical_master:
     scene bg talam with fade
-    play music "music/NoSilencePlease.ogg" fadeout 1.0
+    call play_scene_music("music/NoSilencePlease.ogg")
     
     "One week a huge herd of six-legged grazing animals crossed the river near our colony into some wooded scrubland."
     "They were good to eat, partly because they dried into jerky well."
@@ -713,7 +722,7 @@ label physical_master:
     pavel "[her_name], you mentioned you had an announcement."
     show her normal at midleft with moveinleft
     her serious "I want to teach a hunting class. I know some people have been able to scare and shoot the grass crabs, but this is not good hunting practice."
-    her concerned "This shooting may hit a lot of animals, but most of them get injured instead of killed."
+    her concerned "This type of shooting may hit a lot of animals, but most of them get injured instead of killed."
     her serious "Not only does that harm the animal for no reason and waste ammunition, but it may also teach the herd to avoid this place in the future."
     her normal "If we want there to always be plenty of these animals to hunt, and we want them to keep coming back to this spot, we should make sure to hunt responsibly."
     pavel "[her_name] has done a lot of research on this subject, so please attend her class if you are interested in hunting the grass crabs."

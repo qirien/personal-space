@@ -28,7 +28,7 @@ init -1 python hide:
     # These control the name and version of the game, that are reported
     # with tracebacks and other debugging logs.
     config.name = "Our Personal Space"
-    config.version = "1.5"
+    config.version = "1.6"
     
     config.window_icon = "GUI/window-icon.png"
     config.windows_icon = "GUI/windows-icon.png"
@@ -282,7 +282,7 @@ init python:
     ## The name that's used for directories and archive files. For example, if
     ## this is 'mygame-1.0', the windows distribution will be in the
     ## directory 'mygame-1.0-win', in the 'mygame-1.0-win.zip' file.
-    build.directory_name = "OurPersonalSpace-1.5"
+    build.directory_name = "OurPersonalSpace-1.6"
     
     ## The name that's uses for executables - the program that users will run
     ## to start the game. For example, if this is 'mygame', then on Windows,
@@ -339,3 +339,5 @@ init python:
     build.documentation('*.html')
     build.documentation('*.txt')
     
+    #build.google_play_key =   #TODO: fill this in
+    build.google_play_salt = (2, 1, 2, 3, 14, 5, 6, 120, 8, 92, 110, 121, 2, -3, 65, 75, 26, 37, -18, -119)

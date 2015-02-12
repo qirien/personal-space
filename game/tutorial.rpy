@@ -1,5 +1,13 @@
 # File containing the tutorial, played at month 1
 
+label tutorial_ask:
+    menu:
+        "Would you like to see the tutorial again?"
+        "Show Tutorial":
+            jump tutorial
+        "Return":
+            call screen computer_pad(["Work", "Skills", "Free Time"])
+
 label tutorial(from_computer_screen=True):
     scene screenshot
     tutorial "This screen shows [her_name]'s computer pad."
@@ -12,7 +20,7 @@ label tutorial(from_computer_screen=True):
 
     scene screenshot_center with dissolve
     tutorial "In the middle is the Colony Status."
-    tutorial "You can see what the weather is, and what messages are on the colony message board."
+    tutorial "You can see what the weather is, and what messages are on the colony message board. There's new messages to read every month!"
     
     scene screenshot_right with dissolve
     tutorial "On the right, you choose [her_name]'s focus for this month."

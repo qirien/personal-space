@@ -3,6 +3,7 @@
 
 # Default Event
 label social_def:
+    call play_scene_music
     "I met up with my friend Sara and we talked together. She is a great listener and understands me so well."
     $ skill_social += 10
     return
@@ -16,7 +17,7 @@ label social_0:
     
     scene bg farm_interior with fade
     show her normal at center with dissolve
-    play music "music/Prelude02.ogg" fadeout 1.0
+    call play_scene_music("music/Prelude02.ogg")
     nvl clear
     
     "We had a community message board online where we could talk to anyone else in the colony easily."
@@ -112,6 +113,7 @@ label social_0:
 # Start a weekly game night at the community center
 #
 label social_1:
+    call play_scene_music
     scene bg community_center with fade
     "Soon after we arrived, the main shuttle bay was converted into a community center. It was the only building large enough for everyone to gather in at once."
     "But other than official colony meetings, it wasn't used very much."
@@ -165,6 +167,7 @@ label social_1:
 # Invite Nguyens over for dinner
 #
 label social_2:
+    call play_scene_music
     scene bg farm_interior with fade
     "Even though we had all lived together for months, there were some people in the community we didn't know very well."
     show her normal at midright
@@ -241,7 +244,7 @@ label social_2:
     thuc "That was just for work!"
     julia "Well, anyway, we got to be good friends. After we returned from our service, he looked me up and we started dating."
     thuc "No, no, no. She's the one who looked me up! Any time I'd post something online, she'd comment on it. She practically stalked me."
-    julia mad "I was just tring to keep up our friendship! You were the one who wanted to meet in person!"
+    julia mad "I was just trying to keep up our friendship! You were the one who wanted to meet in person!"
     thuc "She's the one that proposed to me, just so you know."
     him happy "Did she really?"
     julia "It was a joke!"
@@ -275,7 +278,7 @@ label social_2:
 # organize lunch group
 #
 label social_3:
-    play music "music/Sojourn.ogg" fadeout 1.0
+    call play_scene_music("music/Sojourn.ogg")
     play bg_sfx "sfx/people.mp3" loop
     "Sara and I met for lunch every week to chat and take a break."
     scene bg community_center with fade
@@ -321,10 +324,10 @@ label social_3:
 #
 label social_4:
     scene bg community_center with fade
-    play music "music/Sojourn.ogg" fadeout 1.0
+    call play_scene_music("music/Sojourn.ogg")
     play bg_sfx "sfx/people.mp3" loop
     "One week at Friday lunch group, we were all complaining about our lack of excitement."
-    show lily at rightright
+    show lily at right
     show pete at left
     show sara at midleft
     show her normal at midright
@@ -441,7 +444,7 @@ label social_4:
                     her normal "Of course I miss my family, but I love our community and working with you to make a place for ourselves."
                     him laughing "Good, because we're stuck here!"
                 "{i}I don't really like it here.{/i}" if (loved < 0): 
-                    her sad "I think about going home all the time. Somtimes I wish I hadn't come."
+                    her sad "I think about going home all the time. Sometimes I wish I hadn't come."
                     him surprised "Really? I thought you were getting used to it."
                     her annoyed "No, I'm not."
                     him concerned "Maybe you just need time."
@@ -487,7 +490,7 @@ label social_5:
     show night    
     with dissolve
     
-    play music "music/NoOneWillKnow.ogg" fadeout 1.0
+    call play_scene_music("music/NoOneWillKnow.ogg")
     "One good thing about being such a small community was that we all helped out when someone needed it."
     "Like when Sara's house burned down..."
     "It was the middle of the night when the radio crackled on."
@@ -647,6 +650,7 @@ label social_5:
 # Teach 'enrichment' class on [profession]
 #
 label social_6:
+    call play_scene_music
     call set_work_bg
     show her normal at quarterright with dissolve
     "As the colony's [profession], I knew a lot more than most about my job. I decided to hold a class to teach anyone who was interested in learning more.  It wasn't smart for me to be the only [profession] around."
@@ -698,6 +702,7 @@ label social_6:
 # mayor asks [her_name] to see if she can determine what to do
 #
 label social_7:
+    call play_scene_music
     "I didn't see the other colonists much during the day, but I assumed they were working hard like we were."
     "But not everyone thought that..."
     scene bg community_center with fade
@@ -815,6 +820,7 @@ label social_7:
 # Help the Mayor - how much role should government play?
 #
 label social_8:
+    call play_scene_music
     scene bg path with fade
     "One day I was walking through town when I heard loud music from inside the community center."
     her surprised "I wonder if some kids are playing with the sound system?"
@@ -894,6 +900,7 @@ label social_8:
 
 # Propose and fill seat on Community Council
 label social_master:
+    call play_scene_music
     scene bg community_center with fade
     show pavel at midright, behind her with dissolve
     show her normal at midleft with moveinleft

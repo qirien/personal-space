@@ -5,6 +5,7 @@
 
 # Put together a barn
 label relax_together_0:
+    call play_scene_music
     scene bg farm_interior with fade
     show him normal at midright
     show her normal at midleft
@@ -57,6 +58,7 @@ label relax_together_0:
 
 # Onsen
 label relax_together_1:
+    call play_scene_music
     scene bg farm_interior with fade
     show her normal at midright
     show him normal at midleft
@@ -117,11 +119,12 @@ label relax_together_1:
 
 # Skinny dipping!
 label relax_together_2:
+    call play_scene_music    
     scene bg pond with fade
     show night
     stop music fadeout 1.0
     play bg_sfx "sfx/stream-3.mp3" loop fadein 1.0
-    "We went on a moonlight walk to the river. We found a spot where the water was deeper and slower, and sat down. I put my head on his shoulder, breathing in the cool night air."
+    "We went on a moonlight walk to the river. We sat down where the water was deep, slow, and clear. I put my head on his shoulder, breathing in the cool night air."
     show her normal at midleft
     show him normal at center
     her normal "This is so relaxing..."
@@ -130,9 +133,9 @@ label relax_together_2:
     extend "Want to go for a swim?"
     her surprised "Are you nuts?!"
     him happy "Yes!"
-    show him normal at quarterright with move
+    show him nude normal at quarterright with move
     "He took off his clothes - all of them - and cannonballed in, splashing me."
-    show him at squatting with move
+    show him nude at squatting with move
     show pond_overlay behind her
     show him nude happy behind pond_overlay
     play sound "sfx/splash.mp3"
@@ -146,7 +149,7 @@ label relax_together_2:
             show her normal at center with move
             show her normal at sitting behind pond_overlay with move 
             $ is_nude = True
-            play bg_sfx "sfx/splash.mp3"        
+            play sound "sfx/splash.mp3"        
             "I decided to get back at him by jumping in right next to him with a big splash, but he didn't seem to mind."
             "The water was cold, but somehow that just made everything more exciting."
             stop music fadeout 1.0
@@ -183,7 +186,7 @@ label relax_together_2:
 label relax_together_3:
     scene bg farm_interior with fade
     show her normal at midright with dissolve
-    play music "music/You.ogg" fadeout 1.0
+    call play_scene_music("music/You.ogg")
     "One day [his_name] came in from the fields with a big smile on his face."
     show him normal at midleft with moveinleft
     him happy "Ah, [her_nickname], you're such a great part of my life. You've brought me love, joy, and laughter."
@@ -247,6 +250,7 @@ label relax_together_3:
 
 # Massage time!
 label relax_together_4:
+    call play_scene_music
     scene bg farm_interior with fade
     show him serious at midleft
     show her normal at midright
@@ -303,7 +307,7 @@ label relax_together_5:
     show her normal at midright
     show him normal at midleft
     with dissolve
-    play music "music/Rain.ogg" fadeout 1.0
+    call play_scene_music("music/Rain.ogg")
     him happy "Put on your fancy clothes, [her_nickname], because we are going OUT tonight!"
     her surprised "Out where? And I don't have any fancy clothes..."
     him normal "Any clothes look fancy on you! But I can't tell you where we're going; it's a surprise."
@@ -317,8 +321,9 @@ label relax_together_5:
     him happy "I'm totally serious!"
     scene black with fade
     play bg_sfx "sfx/alien-crickets.mp3" loop 
-    "I let him blindfold me and we left the house.  He spun me around so I couldn't tell which direction we were going, and then we hiked for about twenty minutes or so. He held my hand so I didn't trip."
-    "It's a good thing I didn't actually put on fancy shoes for scrambling over these rocks."
+    "I let him blindfold me and we left the house.  He spun me around so I couldn't tell which direction we were going, and then we hiked for about twenty minutes or so, holding hands."
+    "With the blindfold on, the sounds of Talaam's strange night critters sounded even louder and stranger."
+    "He guided me up and over some large rocks as we climbed and climbed."
     him "We're almost there."
     "Finally, he took off the blindfold."
     scene bg sunset with fade
@@ -411,6 +416,7 @@ label relax_together_5:
 
 # Haircuts!
 label relax_together_6:
+    call play_scene_music
     scene bg farm_interior with fade
     show him normal at midright
     show her normal at midleft
@@ -531,7 +537,7 @@ label relax_together_7:
     show her normal at midleft
     show him normal at midright
     with dissolve
-    play music "music/Will.ogg" fadeout 1.0
+    call play_scene_music("music/Will.ogg")
     play bg_sfx "sfx/alien-crickets.mp3" loop
     "We went for a walk together under the stars. I brought my computer pad so we could find which one was our old Sun. I didn't see any constellations I recognized, so it was hard to find any reference points, but we finally found which one we thought it was."
     her concerned "It looks so small..."
@@ -548,6 +554,7 @@ label relax_together_7:
 
 # walk around the farm together looking at what you've created together.
 label relax_together_8 :
+    call play_scene_music
     scene bg fields with fade
     "We walked around the farm together. [his_name] showed me where all the different crops were, and told me about what kind of soil they liked and what the weeds were like."
     show her normal at midright
@@ -562,6 +569,7 @@ label relax_together_8 :
     return
 
 label relax_together_9:
+    call play_scene_music
     scene bg farm_interior with fade
     "We made a nice dinner together, and talked while we ate slowly, watching the sun go down."
     $ relaxed += 5
@@ -570,6 +578,7 @@ label relax_together_9:
 
 # People probably won't even see these last ones unless they always choose "Do something with [his_name]", so don't put a ton of effort into them.
 label relax_together_10:
+    call play_scene_music
     scene bg farm_interior with fade
     "We did the dishes together, and then sat together and talked while we worked on little projects."
     show her normal at midright
@@ -583,6 +592,7 @@ label relax_together_10:
 
 
 label relax_together_11:
+    call play_scene_music
     scene bg bedroom with fade
     $ is_nude = True     
     show him normal nude at midleft, squatting
@@ -599,6 +609,7 @@ label relax_together_11:
     return
 
 label relax_together_12:
+    call play_scene_music
     scene bg bedroom with fade
     $ is_nude = True
     show night
@@ -618,6 +629,7 @@ label relax_together_12:
 
 # Play games with Ilian and Sara
 label relax_together_a:
+    call play_scene_music
     $ wearing_dress = False
     scene bg farm_exterior with fade
     show him normal at midright
@@ -693,6 +705,7 @@ label relax_together_a:
     return
     
 label relax_together_b:
+    call play_scene_music
     scene bg farm_interior with fade
     "We watched a sports game together. It was hard to get too excited about it, since it happened on Earth four years ago, and I didn't feel as loyal to any of the teams now that I wasn't even on the same planet as them."
     "But it was still fun to see their skill and see how they played so hard."
@@ -701,6 +714,7 @@ label relax_together_b:
     return
 
 label relax_together_c:
+    call play_scene_music
     scene bg farm_interior with fade
     "We played card games and flirted shamelessly. Sometimes I even let him win."
     $ relaxed += 3
@@ -708,6 +722,7 @@ label relax_together_c:
     return
 
 label relax_together_d:
+    call play_scene_music
     scene bg farm_interior with fade
     play bg_sfx "sfx/rain-02.ogg" loop
     "It was a rainy evening, and we were both reading on our computer pads, sitting near each other."
@@ -719,6 +734,7 @@ label relax_together_d:
     return
 
 label relax_together_e:
+    call play_scene_music
     scene bg farm_interior with fade
     show her normal at midright
     show him normal at midleft
@@ -735,6 +751,7 @@ label relax_together_e:
 
 # She's "stunning"
 label relax_together_f:
+    call play_scene_music
     scene bg farm_interior with fade
     show her normal at midright
     show him normal at midleft
@@ -768,6 +785,7 @@ label relax_together_f:
 
 # Midnight lovin'
 label relax_together_g:
+    call play_scene_music
     scene bg bedroom with fade
     show her flirt at midright
     with dissolve
@@ -854,6 +872,7 @@ label relax_together_g:
 
 # Zombie Dinosaur Movie
 label relax_together_h:
+    call play_scene_music
     scene bg farm_interior with fade
     "We watched a movie together. It was pretty good, but the ending was terrible."
     show her normal at midright
@@ -872,6 +891,7 @@ label relax_together_h:
 
 # Daisy-chain circlet of wildflowers
 label relax_together_i:
+    call play_scene_music
     $ wearing_dress = False
     scene bg fields with fade
     show her normal at midright
@@ -930,6 +950,7 @@ label relax_together_i:
 
 # Messages on the computer
 label relax_together_j:
+    call play_scene_music
     scene bg farm_interior with fade
     show her normal at right
     show him normal at left
@@ -977,6 +998,7 @@ label relax_together_j:
 
 # Baby names
 label relax_together_k:
+    call play_scene_music
     scene bg farm_interior with fade
     show her normal at midright
     show him normal at midleft
@@ -1003,6 +1025,7 @@ label relax_together_k:
 
 # Horror puzzle game
 label relax_together_l:
+    call play_scene_music
     play bg_sfx "sfx/rain-02.ogg" loop
     scene bg farm_interior with fade
     "We played a horror puzzle game together. We were both good at different kinds of puzzles, so we made a good team."
