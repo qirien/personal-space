@@ -122,6 +122,7 @@ init -200:
     define serif_font = "fonts/RobotoSlab-Regular.ttf"
     
     define current_song = " "
+    define song_to_play = None
     define read_messages = False
     
     transform rising:

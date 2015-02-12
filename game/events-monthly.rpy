@@ -1255,6 +1255,7 @@ label monthly_event_9:
             note "{font=fonts/danielbd.ttf}you are the sweetest thing\n not like honey or sugar{/font}"
             note "{font=fonts/danielbd.ttf}but like the nectar of a bright flower\n you sustain even the clumsy bumblebee.{/font}"
             note "{font=fonts/danielbd.ttf}love forever, [his_name]{/font}"
+            nvl clear
             her happy "That was so sweet..."
             him happy "Nowhere near as sweet as you."
             
@@ -1503,7 +1504,7 @@ label follow_him:
             him normal "Okay."
             "We walked around with Lettie for a while, and then we let her rest and have plenty of water to drink. She still didn't seem to feel better, but she wasn't getting worse, either."
             "[his_name] sat down in some clean hay. It was a little scratchy, but I sat down next to him."
-            show him serious at midleft with move
+            show her serious at midright with move
             show him sleeping at squatting with move
             show her sleeping at squatting with move
             with dissolve
