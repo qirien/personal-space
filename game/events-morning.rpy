@@ -291,7 +291,7 @@ label work_1:
         her serious "It's a comminuted fracture; it will take quite a while to heal."
         "I was just about to put him under so I could put in some pins when the radio crackled and I heard Sara."
         play bg_sfx "sfx/radio.mp3"
-        "Sara on the radio" "Doctor! You've gotta come right away; one of the kids stopped breathing - I think he swallowed something."
+        "Sara on the radio" "Doctor! You've gotta come right away; one of the kids stopped breathing - I think he's choking!"
         "I started out the door while I talked to her on the radio. I hated to leave Pete alone, but this was urgent."
         hide her with moveoutleft
         scene bg path with fade
@@ -304,7 +304,7 @@ label work_1:
         her yelling "Do it! Put your fist right above his belly button, support it with your other hand, and push in and up forcefully."
         show her serious at right with move
         "Sara on the radio" "She's doing what you said; it's not working!!"
-        her serious "Keep trying! Then use your finger to sweep through his mouth to see if you can dislodge anything."
+        her serious "Hit him on the back between the shoulder blades! Don't give up!"
         hide her with moveoutright
         "Sara on the radio" "Hurry, [her_name], he's starting to turn blue!"
 
@@ -315,11 +315,10 @@ label work_1:
         show her serious at midleft with moveinleft
         if (skill_physical < 20):
             "By the time I got there, the little boy was unconscious."
-            "I moved quickly. I was able to get the peanut out of his throat, and performed CPR. Mrs. Nguyen watched me grimly."
-            "I was tired from running all the way over there, but I did the best I could."
+            "I moved quickly. I could see something in the back of his mouth and was able to sweep it out with my finger. Mrs. Nguyen watched me grimly."
         else:
             "When I got there, he was blue but still conscious."
-            "I moved quickly. I was able to get the peanut out of his throat, and performed CPR. Mrs. Nguyen watched me hopefully."
+            "I moved quickly. I could see something in the back of his mouth and was able to sweep it out with my finger. Mrs. Nguyen watched me hopefully."
             
         play bg_sfx "sfx/cough.mp3"
         "Finally, he coughed and started to breathe."

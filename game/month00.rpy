@@ -2,8 +2,8 @@
 
 # After they get married, they board the colony ship
 label colony_ship:
-    $ wearing_dress = False
     scene bg colony_ship_bunk with fade
+    $ wearing_dress = False    
     play music "music/Amnesia.ogg" fadeout 1.0
     "What a honeymoon -- on board a cramped space shuttle with two hundred other people for a month. Of course, back on Earth four years had passed, since we were travelling so close to light speed."
     "We spent a lot of it talking about the future..."
@@ -38,7 +38,7 @@ label colony_ship:
                     "What should I say?"
                     "When we get to Talaam.":
                         $ want_kids = True
-                        her normal "I at least want to be on a planet, not hurtling through the air. I mean, have they done studies on the effects of near-light speed travel on fetuses?"
+                        her normal "I at least want to be on a planet, not hurtling through the starry void of space. I mean, have they done studies on the effects of near-light speed travel on fetuses?"
                         him surprised "Probably not. I hadn't thought of that. Though Pete and Helen just had their baby, and he seems fine."
                     "When everything's settled.":
                         $ want_kids = True

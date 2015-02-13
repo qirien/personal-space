@@ -1974,7 +1974,7 @@ label monthly_event_13:
     
 label funeral:
     show naomi sad at center with dissolve
-    "At the funeral, Sister Naomi explained how her family believed they would be live again and be together after this life, and how blessed we were to have known such a joyous spirit."
+    "At the funeral, Sister Naomi explained how her family believed they would live again and be together after this life, and how blessed we were to have known such a joyous spirit."
     if (skill_spiritual >= 40):
         "I was touched by their faith as several members of the family told of how they looked forward to seeing her again."
     "We sang a hymn, and then we all trudged out behind the chapel to the graveyard."
@@ -2146,7 +2146,7 @@ label funeral:
         "{i}He's innocent{/i}" if ((skill_technical >= 40) or (skill_knowledge >= 40)):
             her serious "He should provide some reparations, but I know he didn't kill her on purpose."
             thuc "How do you know that?"
-            her concerned "Her injuries are consistent with being hit by a car and then floating down the river. She doesn't have any injuries that would come from being assaulted."
+            her concerned "Her injuries are consistent with being hit by a vehicle and then floating down the river. She doesn't have any injuries that would come from being assaulted."
             ilian "Yes, that's right."
             thuc "That's true... I guess he is still innocent of any further crimes unless proven guilty..."
             her serious "He still should provide some reparations, though. I think he should work for the Peróns one day a week for a year."
@@ -2524,10 +2524,10 @@ label monthly_event_16:
     "I tried to eat breakfast, but I didn't really feel like eating. [his_name] had already cooked it, though, so I didn't want to waste it..."
     menu:
         "What should I do?"
-        "Throw it away":
+        "Throw it away.":
             "I tossed it onto the garbage heap. Some animals would probably eat it."
             $ community_level -= 2
-        "{i}Trick yourself.{/i}" if (skill_creative >= 50):
+        "{i}Eat it anyway.{/i}" if (skill_creative >= 50):
             "I decided to pretend I was a starving waif who had just been taken in by a rich kind stranger and this was my first real meal in months. It sort of worked; I was able to get most of it down."
         "{i}Use acupressure.{/i}" if ((skill_knowledge >= 50) and (is_pregnant)):
             "I looked up on my computer pad and found that acupressure sometimes can help morning sickness."
@@ -3533,7 +3533,7 @@ label done_party_menu:
 
     scene bg community_center
     show pavel at midleft    
-    show sara at quarterright
+    show sara at midright
     show her normal at right
     with dissolve
     stop music fadeout 1.0
@@ -4066,7 +4066,7 @@ label monthly_event_23:
 
         scene bg clinic
         "I went to the doctor. I had to know for sure."
-        her annoyed "(They didn't have enough room to bring a long a few more condoms, but there's plenty of pregnancy tests...)"
+        her annoyed "(They didn't have enough room to bring along a few more condoms, but there's plenty of pregnancy tests...)"
         "Sure enough, the test read positive."
         her surprised "(I can't believe this...!)"
 
@@ -4376,7 +4376,7 @@ label monthly_event_23:
                 her surprised "How's that?"
                 him nude flirting "Lots of practice!"
                 her annoyed "[his_name]..."
-                him normal "And maybe \"ladies first\"? Or is that too old-fashioned?"
+                him nude normal "And maybe \"ladies first\"? Or is that too old-fashioned?"
                 her flirt "I think that'll work just fine."
                 "He's kind of exasperating, but afterwards I could tell he was really trying to make sure I felt loved and appreciated, too."
                 $ loved += 2

@@ -426,7 +426,7 @@ label relax_together_6:
     him happy "Yeah, I guess I'm going for the Shaggy look..."
     menu:
         "What should I say?"
-        "I could cut it for you." if (skill_creative >= 10):
+        "I could cut it for you." if ((skill_creative >= 10) or (skill_domestic >= 10)):
             her normal "I could cut it for you."
             him surprised "Yeah? Do you think it'd turn out okay?"
             her annoyed "It's not that hard to just cut your hair shorter."

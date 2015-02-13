@@ -191,20 +191,23 @@ label physical_2:
     him happy "Wow, I didn't know I married a lumberjack."
     menu:
         "Lucky you.":
-            her normal "Lucky thing for you, huh? Now you don't have to chop the wood."
+            her flirt "Lucky thing for you, huh? Now you don't have to chop the wood."
             him flirting "Nope, instead I just get to watch you work that beautiful body and get all hot and sweaty."
-            her flirt "Hmm, maybe you should chop the wood next time."
+            her annoyed "Hmm, maybe you should chop the wood next time."
             him happy "No chance! I could sit here and watch you all day."
-            her annoyed "No, I'm done! Your turn!"
+            her flirt "No, I'm done! Your turn!"
+            show her flirt at midleft
+            show him happy at midright
+            with move
             "He took the axe from me and setup a log. Even though it was getting cold, he took his shirt off and threw it at me."
             show him nude happy with dissolve
             her yelling "Ew! I don't want your sweaty shirt!"
             show him nude flirting
             "He flexed his muscles exaggeratedly before setting up a log. I laughed."
+            play bg_sfx [ "sfx/wood-logs-1.mp3", "sfx/wood-logs-2.mp3" ]            
             show her laughing
             her happy "Putting on quite the show, aren't you?"
             him nude serious "You're my only audience."
-            play bg_sfx [ "sfx/wood-logs-1.mp3", "sfx/wood-logs-2.mp3" ]
             "It was sort of mesmerizing, watching the axe rise with smooth grace and fall with brutal finality. He was quite practiced at chopping wood."
             her normal "You're pretty good at that."
             him nude flirting "I'm good at a lot of things."

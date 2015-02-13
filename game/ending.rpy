@@ -56,9 +56,9 @@ label bad_ending:
     else:
         him concerned "You don't have to go. We could... start over, try again."
         her sad "Sorry, [his_name]. I can't live here... and I can't live with you."
-        him sad "{size=6}I don't know if I can live without you...{/size}"
-        her surprised "What was that?"
-        him angry "I said, I'll be fine without you. Enjoy Earth. Goodbye!"
+        him sad "I..."
+        her surprised "What?"
+        him angry "I'll be fine without you. Enjoy Earth. Goodbye!"
     hide him with moveoutleft
     "He turned away and walked home, never looking back. I picked up my bag and boarded the shuttle as we got ready to lift off."
     hide her

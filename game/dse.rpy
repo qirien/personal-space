@@ -54,7 +54,7 @@ label month01:
 # This is the label that is jumped to at the start of a day
 # Or, in our case, month.
 label day:
-
+    
     # Increment the month it is.
     $ month += 1
     $ save_name = "Month %d" % month
@@ -128,7 +128,7 @@ label day:
 
     if (month == 1):
         scene screenshot with fade
-        if (not persistent.times_beaten):
+        if (persistent.times_beaten):
             menu:
                 "Would you like to see the Tutorial?"
                 "Yes":
@@ -155,6 +155,9 @@ label day:
     
     # We process each of the three periods of the day, in turn.
 label job_focus:
+    # Once you've made your monthly choice, you cannot change it without loading a game
+    # This is to prevent the user from rolling back and then rolling forward without selecting anything.
+    $ renpy.block_rollback()    
     stop bg_sfx
     stop music fadeout 4.0
     # Tell the user what month it is.

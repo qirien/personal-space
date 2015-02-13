@@ -445,7 +445,7 @@ screen preferences:
 #                    has vbox
                     
 #                    textbutton _("Help") action Help() #Show("keyboard_shortcuts")  # Too technical to be helpful to user     
-
+            # Middle Column
             vbox:
                 spacing 15
                 label "Skipping Options"
@@ -478,7 +478,7 @@ screen preferences:
                     label _("")
                     label _("Auto-Forward Speed")
                     bar value Preference("auto-forward time") bar_invert True
-            
+            # Right Column
             vbox:
                 spacing 15
                 label "Audio Options"
@@ -495,12 +495,12 @@ screen preferences:
                     if config.sample_sound:
                         textbutton "Test":
                             action Play("sound", config.sample_sound)
-                            style "soundtest_button"
+                            #style "soundtest_button"   #setting this as a different style than the other buttons makes them change sizes weirdly
 
                     if config.sample_voice:
                         textbutton "Test":
                             action Play("voice", config.sample_voice)
-                            style "soundtest_button"
+                            #style "soundtest_button"
 
 
 

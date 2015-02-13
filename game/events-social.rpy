@@ -135,7 +135,7 @@ label social_1:
     show him normal at midleft
     show her normal at center
     with dissolve
-    show brennan at quarterright behind her, him
+    show brennan at midright behind her, him
     show pavel at right behind her, him
     with moveinleft
     show ilian at quarterleft behind her, him
@@ -337,7 +337,7 @@ label social_4:
     pete "That's true, but don't you get tired of sitting at home all the time? I get up early to milk the cows, and I'm in the library all day, so the last thing I want to do when I get home is sit around by myself some more."
     her normal "I'm pretty busy, but I agree that it'd be fun to do something together as a community."
     lily normal "I was just reading on how we could use a magnifying glass with our tablets to make a projector. Perhaps we could have a movie night?"
-    pete "Yeah, a movie is low-key enough that even if you're all tuckered out from farming you should be able to sit through it."
+    pete "Yeah, even if you're all tuckered out from farming, you should be able to enjoy a good flick."
     sara "And kids like to watch movies too, so we could include everyone."
     her happy "I know the perfect movie!"
     menu:
@@ -361,8 +361,8 @@ label social_4:
             "The movie was kind of ridiculous. At one point two cousins realized they were actually sisters, and that their evil uncle was actually their father. Then it turned out he wasn't evil at all, but had been infected with an alien virus that caused him brain damage that made him act rudely."
             "A feminist organization let the cousins/sisters travel the galaxy at light speed to administer vaccines to the rest of civilization, but by the time they got anywhere, everyone else had been infected by the virus which made them act like jerks."
             scene bg community_center with fade
-            show him normal at sitting, midleft
-            show her normal at sitting, midright
+            show him normal at midleft
+            show her normal at midright
             show night
             with dissolve
             him annoyed "This movie is ridiculous."

@@ -1,6 +1,7 @@
 # File containing the tutorial, played at month 1
 
 label tutorial_ask:
+    scene screenshot
     menu:
         "Would you like to see the tutorial again?"
         "Show Tutorial":

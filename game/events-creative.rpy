@@ -62,7 +62,7 @@ label creative_1:
     hide him
     hide her
     with dissolve
-    "We put the fake wolf slug near one section of squash plants - he had sprayed strong smells near some of the others."
+    "We put the fake wolfslug near one section of squash plants - he had sprayed strong smells near some of the others."
     "The scarecrow seemed to work pretty well for a while, but then they figured out that it was fake and started nibbling on the squash again. We had to move it around every day to try and fool them, so it was kind of a pain, but it was worth it when we finally got to eat the squash."
 
     $ skill_creative += 10
