@@ -1080,7 +1080,7 @@ label work_6:
 
     show her normal at midright
     show brennan at midleft
-    with dissolve
+    with move
     her concerned "Oh no, I forgot my lunch."
     brennan "I was just going to go home for lunch; do you want to join me?"
     her serious "No, it's okay, I can just walk home and get something."

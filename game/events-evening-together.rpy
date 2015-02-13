@@ -642,7 +642,7 @@ label relax_together_a:
 
     scene bg path with fade
     show him normal at midright
-    show her normal at midleft
+    show her normal at center
     show lettie at right behind him, her
     with dissolve
     play bg_sfx "sfx/clipclop.mp3"
