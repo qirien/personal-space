@@ -13,7 +13,7 @@ init -1 python hide:
     ## set to False before the game is released, so the user can't
     ## cheat using developer tools.
 
-    config.developer = True
+    config.developer = False
 
     ## These control the width and height of the screen.
 
@@ -28,7 +28,7 @@ init -1 python hide:
     # These control the name and version of the game, that are reported
     # with tracebacks and other debugging logs.
     config.name = "Our Personal Space"
-    config.version = "1.7"
+    config.version = "1.8"
     
     config.window_icon = "GUI/window-icon.png"
     config.windows_icon = "GUI/windows-icon.png"
@@ -247,7 +247,7 @@ init -1 python hide:
     ## stored. (It needs to be set early, before any other init code
     ## is run, so the persisten information can be found by the init code.)
 python early:
-    config.save_directory = "PersonalSpace-1347408413"
+    config.save_directory = "OurPersonalSpace-1347408413"
 
 init -1 python hide:
     #########################################
@@ -282,7 +282,7 @@ init python:
     ## The name that's used for directories and archive files. For example, if
     ## this is 'mygame-1.0', the windows distribution will be in the
     ## directory 'mygame-1.0-win', in the 'mygame-1.0-win.zip' file.
-    build.directory_name = "OurPersonalSpace-1.7"
+    build.directory_name = "OurPersonalSpace-1.8"
     
     ## The name that's uses for executables - the program that users will run
     ## to start the game. For example, if this is 'mygame', then on Windows,
