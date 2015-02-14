@@ -61,8 +61,8 @@ screen cg_gallery:
                         $ gallery_counter += 1
             for j in range(i, (cg_page+1)*gal_cells): #we need this to fully fill the grid
                 null
-        frame:
-            yalign 0.97
-            vbox:
-                if len(gallery_cg_items)>gal_cells:
-                    textbutton _("Next Page") action [SetVariable('cg_page', next_cg_page), ShowMenu("cg_gallery")]
+#        frame:
+#            yalign 0.97
+#            vbox:
+#                if len(gallery_cg_items)>gal_cells:
+#                    textbutton _("Next Page") action [SetVariable('cg_page', next_cg_page), ShowMenu("cg_gallery")]

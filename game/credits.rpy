@@ -30,7 +30,7 @@ label show_credits:
     $ renpy.pause(2.0, hard=skippable)
     hide text with fade
     
-    show text "Written, Produced, and Directed by\nAndrea Landaker" with fade 
+    show text "Written, Produced, and Directed by\n{a=http://qirien.icecavern.net}Andrea Landaker{/a}" with fade 
     if ((community_level < COMMUNITY_LEVEL_OK) and (ending != "none")):
         show pavel sad at quarterright, rising behind text
         show naomi sad at right, rising behind text
@@ -44,7 +44,7 @@ label show_credits:
     with dissolve    
     hide text with fade
     
-    show text "Additional Writing and Design by\nRachel Helps" with fade
+    show text "Additional Writing and Design by\n{a=http://thepretentiousgamer.blogspot.com/}Rachel Helps{/a}" with fade
     if ((community_level < COMMUNITY_LEVEL_OK) and (ending != "none")):
         show ilian at quarterleft, rising behind text
         show sara sad at left, rising behind text
@@ -112,7 +112,7 @@ label show_credits:
     with dissolve
     hide text with fade
     
-    show text "Sound Effects by:\nSoundjay.com\nFirearm SFX Library\n\nAnd Freesound.org users:\ndobroide, alienistcog, jackofall29,\nfoxen10, Walter_Odington, powpowrider,\n saint_leibowitz, pushkin, jadend2,\nOhrwurm, OwlStorm, ERH,\n soundscalpel.com, Timbre"
+    show text "Sound Effects by:\n{a=http://www.soundjay.com}Soundjay.com{/a}\n{a=http://freefirearmsfx.com/}Firearm SFX Library{/a}\n\nAnd {a=http://www.freesound.org}Freesound.org{/a} users:\ndobroide, alienistcog, jackofall29,\nfoxen10, Walter_Odington, powpowrider,\n saint_leibowitz, pushkin, jadend2,\nOhrwurm, OwlStorm, ERH,\n soundscalpel.com, Timbre"
     if ((community_level < COMMUNITY_LEVEL_OK) and (ending != "none")):    
         show brennan normal at right, rising behind text
         show lily upset at quarterleft, rising behind text
@@ -127,7 +127,7 @@ label show_credits:
     hide text with fade
     
     # TODO: Add more beta testers
-    show text "Beta Testing by:\nWes Landaker\nLisa Horner\nCatherine White\nLance Meibos\nMary Tueller Whipple\nSterling Whipple\nCavan Helps\nBrooke Shiffler"
+    show text "Beta Testing by:\n\nWes Landaker\nLisa Horner\nCatherine White\n\nLance Meibos\nMary Tueller Whipple\nSterling Whipple\nCavan Helps\nBrooke Shiffler\nJennifer Blaine"
     show lettie_head at right behind text with longmoveinright
     show goat_flip at left behind text with longmoveinleft
     with dissolve

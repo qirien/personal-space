@@ -37,8 +37,26 @@ init python:
         "wearing_dress", "sprites/her/dress-normal.png", 
         "True", "sprites/her/normal.png"))
 
+# Define images where she's wearing shirt and pants but no logo
+init python:
+    for expression_name in her_expressions:
+        renpy.image(("work_her", expression_name), LiveComposite(
+            (245, 550),
+            (0,0), "sprites/her/%s.png" % expression_name,
+            (120, 199), "sprites/her/blue-rectangle.png"
+            ))
+    
 label test_her_sprites:
     scene bg fields with fade
+    "Work Expressions"
+    show work_her yelling at center with dissolve
+    show work_her concerned with dissolve
+    show work_her flirt with dissolve
+    show work_her happy with dissolve
+    show work_her laughing with dissolve
+    show work_her sad with dissolve
+    show work_her serious with dissolve
+    show work_her surprised with dissolve
     
     "Normal Expressions"
     show her yelling at center with dissolve

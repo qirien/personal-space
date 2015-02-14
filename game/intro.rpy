@@ -116,13 +116,14 @@ menu:
 label carpenter:
     $ profession = "carpenter"
     scene bg workshop with fade
-    show her normal at midleft with dissolve
+    show work_her normal at midleft with dissolve
     "He came to the hardware store where I work. He was looking for some wire to fix a fence on his farm."
     show him normal at quarterright with moveinright
     him surprised "What gauge do you think I should use?"
-    her serious "Well, the larger wire will have a stronger hold, but the thinner wire is easier to work with. What sort of force does it need to hold against?"
+    show work_her serious with dissolve
+    her "Well, the larger wire will have a stronger hold, but the thinner wire is easier to work with. What sort of force does it need to hold against?"
     him serious "Well, I had a gate, but it came off..."
-    her serious "You might just need a new fitting. Take a look over here..."
+    her "You might just need a new fitting. Take a look over here..."
 
     jump first_date
 
@@ -130,16 +131,19 @@ label carpenter:
 label doctor:
     $ profession = "doctor"
     scene bg clinic with fade
-    show her normal at midleft
+    show work_her normal at midleft
     show him normal at quarterright
     with dissolve
     "He came to the hospital where I work. He thought he had broken his wrist, but when the x-rays came back it turned out it was only sprained. I could feel his eyes on me as I helped him with the sling."
-    her surprised "How did you sprain it, anyway?"
+    show work_her surprised with dissolve
+    her "How did you sprain it, anyway?"
     him happy "You should have seen it; it was heroic. Diving through flames, rescuing small children, wrestling wolves . . ."
-    her flirt "Really? You're lucky it was just your wrist, then."
+    show work_her flirt with dissolve
+    her "Really? You're lucky it was just your wrist, then."
 
     him normal "No, I actually just fell off my horse.  A snake spooked her."
-    her surprised "Is your horse okay?"
+    show work_her surprised with dissolve
+    her "Is your horse okay?"
     him happy "Oh yeah, Lettie's fine. She seemed like she was almost laughing at me."
     jump first_date
 
@@ -147,19 +151,21 @@ label doctor:
 label mechanic:
     $ profession = "mechanic"
     scene bg machine_shop with fade
-    show her normal at midleft with dissolve
+    show work_her normal at midleft with dissolve
     "He came to my the car repair shop where I work. His engine wasn't working right, and after I fixed it he wanted me to show him everything I'd done."
     show him normal at quarterright with moveinright
-    her annoyed "You don't think I fixed it right, do you?"
+    show work_her concerned with dissolve
+    her "You don't think I fixed it right, do you?"
     him surprised "No! It's not that at all! I just spent two days working on it and couldn't figure it out, so I'm really curious what it was. I'm really impressed, actually."
-    her normal "Well, it's something that's easy to miss. Just take a look at this connection here..."
+    show work_her happy with dissolve
+    her "Well, it's something that's easy to miss. Just take a look at this connection here..."
     jump first_date
 
 # Teacher; scene at school
 label teacher:
     $ profession = "teacher"
     scene bg classroom with fade
-    show her normal at quarterleft
+    show work_her normal at quarterleft
     show him normal at center
     with dissolve
     "...the elementary school. He had come to tell all the kindergartners about life on a farm."
@@ -170,9 +176,9 @@ label teacher:
     kid frown "But where do the chickens get the eggs?"
     him serious "They make them! Underneath those cute fluffy feathers, these birds are hard-working egg-making machines!"
     kid normal "Really? Like a robot?!"
-    show her happy with dissolve
+    show work_her happy with dissolve
     him happy "Yes! A robot made of meat!"
-    show her normal
+    show work_her normal
     hide kid with moveoutright
     jump first_date
 
@@ -181,27 +187,30 @@ label teacher:
 
 label first_date:
     hide him with moveoutright
-    show her at center with move
+    show work_her at center with move
     "As he was leaving, he slipped me a note."
     note "Hey there, my [her_name]!\n\nI've been thinking a lot about us lately..."
     note "How I want to be with you all the time."
     note "How I keep thinking about you, even when I'm up to my knees in manure.{size=-6}(was that romantic or what?!){/size}"
-    her happy "(Somehow, that is romantic...)"
+    show work_her happy with dissolve
+    her "(Somehow, that is romantic...)"
     note "How I can't imagine how a woman could be more perfect than you."
+    show work_her flirt with dissolve
     her flirt "(If he thinks I'm perfect, he's delusional)"
     note "How it's time we said goodbye to this little town and started something new on our own..."
     note "How I love you heart, body, and soul, every minute of every day..."
     note "Anyway, I want to tell you more, in person! So come to my folks' tonight for a barbeque, okay? Right after work.\n\nLove,\n       your [his_name]"
 
     nvl clear
-    her surprised "(I wonder what's up, he sounds so serious!)"
+    show work_her surprised
+    her "(I wonder what's up, he sounds so serious!)"
     scene bg porch with fade
     show her normal at midleft
     show him normal at midright
     with dissolve
     show night
     play music "music/Run.ogg" fadeout 1.0
-    "At the barbeque, I greeted his parents, and we all pitched in to make dinner. Afterwards, when I offered to help with the dishes, his parents told us to go relax outside."
+    "After work, I changed and went to the barbeque at his parents' house. We all pitched in to make dinner. Afterwards, when I offered to help with the dishes, his parents told us to go relax outside."
     "So we sat on the porch swing and watched the stars come out."
     him serious "..."
     her normal "What are you thinking about?"

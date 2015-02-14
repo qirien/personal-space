@@ -97,7 +97,7 @@ label bad_ending:
 # OR - Community failing, marriage succeeding
 # OR - both mediocre
 label mediocre_ending:
-    "Things were rough on Talaam. I wasn't sure they would ever get easier."
+    "Things were tough on Talaam. I wasn't sure they would ever get easier."
     if (community_level >= COMMUNITY_LEVEL_OK):
         "But at least I had my friends and neighbors; we all helped each other out."
     else:
@@ -108,7 +108,7 @@ label mediocre_ending:
     if (loved >= 0):
         "Like [his_name] - I wanted to be where he was. Even though he loved this place and this rustic life way more than I did, I loved him enough that I could deal with anything else."
         if (cheated_on_him):
-            "Even after I cheated on him, he has always been there for me."
+            "Even after I cheated on him, he stuck with me and gave me a second chance."
     else:
         "Like my job."
 
