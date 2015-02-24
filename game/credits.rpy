@@ -126,7 +126,6 @@ label show_credits:
     with dissolve
     hide text with fade
     
-    # TODO: Add more beta testers
     show text "Beta Testing by:\n\nWes Landaker\nLisa Horner\nCatherine White\n\nLance Meibos\nMary Tueller Whipple\nSterling Whipple\nCavan Helps\nBrooke Shiffler\nJennifer Blaine"
     show lettie_head at right behind text with longmoveinright
     show goat_flip at left behind text with longmoveinleft
@@ -148,7 +147,7 @@ label show_credits:
             show brennan happy at right, rising behind text
         show her concerned at quarterright, rising behind text
         if (is_pregnant or is_pregnant_later):
-            show baby girl at rightbaby, babyrising behind text
+            show baby girl at quarterrightbaby, babyrising behind text
     elif (ending == "mediocre"):
         show him normal at right, rising behind text
         show her normal at quarterright, rising behind text
@@ -180,10 +179,12 @@ label show_credits:
     "You have now unlocked New Game+! If you play again, you can keep your progress in your skills up to level [SKILL_SAVED_MAX], to make mastering skills easier and to be able to see more of the events."
     
     # in case a future game wants to use this information, we'll save it here
-    $ mp.jack_name = his_name
-    $ mp.kelly_name = her_name
-    $ mp.baby_name = baby_name
-    $ mp.save()
+    # Multi-Persistent variables don't work on Android
+    if renpy.variant('pc'):
+        $ mp.jack_name = his_name
+        $ mp.kelly_name = her_name
+        $ mp.baby_name = baby_name
+        $ mp.save()
     
     # New Game+ saving of skills here
     $ persistent.skill_domestic = save_skill(persistent.skill_domestic, skill_domestic)

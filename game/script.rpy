@@ -187,7 +187,7 @@ label start:
                 "OK, we will not use New Game+ data."
          
         if not renpy.variant('touch'):
-            "To fast-forward through scenes you have already seen, hold down \"Ctrl\" or use the \"Skip\" button on the far right."
+            "To fast-forward through scenes you have already seen, hold down \"Ctrl\" or use the new \"Skip\" button on the far right."
         else:
             "To fast-forward through scenes you have already seen, use the new \"Skip\" button to the right."
     

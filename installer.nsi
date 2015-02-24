@@ -14,11 +14,11 @@
 
 ;;; The exe containing the installer. This will be created in the directory
 ;;; above the root directory containing your game. 
-!define INSTALLER_EXE "OurPersonalSpace-installer.exe"
+!define INSTALLER_EXE "OurPersonalSpace-1.8-installer.exe"
 
 ;;; The name and version.
 !define PRODUCT_NAME "Our Personal Space"
-!define PRODUCT_VERSION "1.50beta"
+!define PRODUCT_VERSION "1.8"
 
 ;;; Uncomment this if you want to use 3 lines for the game name. 
 ;; !define MUI_WELCOMEPAGE_TITLE_3LINES
@@ -28,8 +28,8 @@
 ;;; The following settings are only shown to the user in Add/Remove programs
 ;;; but you'll still want to use them.
 
-!define PRODUCT_WEB_SITE "http://qirien.icecavern.net/CuttlefishGames"
-!define PRODUCT_PUBLISHER "Cuttlefish Games"
+!define PRODUCT_WEB_SITE "http://metasepia.icecavern.net"
+!define PRODUCT_PUBLISHER "Metasepia Games"
 
 ;;; Ignore this next block of stuff. It's mostly boilerplate.
 !include "MUI.nsh"

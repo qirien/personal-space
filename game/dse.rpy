@@ -46,6 +46,8 @@ label month01:
 
     if renpy.variant('touch'):
         "To access the menu and save your game, use the icons to the left."
+    elif renpy.variant('tv'):
+        "To access the menu and save your game, use the icons to the left. You can also press the Menu button."
     else:
         "To access the menu and save your game, use the icons to the left. You can also right-click or press \"Esc\"."
 

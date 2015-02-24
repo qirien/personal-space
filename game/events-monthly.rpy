@@ -4747,12 +4747,7 @@ label monthly_event_24:
         him concerned "Well, we talked about the name \"Terra\"... but it's up to you."
         
         # Get baby's name
-        if not renpy.variant('touch'):
-            $ baby_name = renpy.input("What is her name?", "Terra", length=20)
-        else:
-            "What is her name?"
-            $ input_text = renpy.call_screen(inputter, "Her Name:")
-            $ baby_name = input_text or "Terra"
+        $ baby_name = renpy.input("What is her name?", "Terra", length=20)
         
         her normal "I want to call her [baby_name]."
         him happy "Our little [baby_name]..."

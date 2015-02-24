@@ -480,7 +480,7 @@ label work_2:
     show her normal at midright with dissolve
     "I was ready for another busy day at work when the mayor walked in with someone new. I remembered seeing him on the shuttle; he had an infectious smile and just the hint of an accent."
     show brennan at quarterleft with moveinleft
-    show pavel at midleft behind her with moveinleft #TODO test this
+    show pavel at midleft behind her with moveinleft
     pavel "[her_name], I'd like you to meet Mr. Callahan. He's sort of a jack-of-all-trades here, helping out wherever we need it. He can help you out some of the time."
     show pavel at left, behind brennan
     show brennan at midleft

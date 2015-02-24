@@ -58,7 +58,6 @@ label technical_1:
     return
 
 # Improve alarm system for solar flares.
-# TODO: test sound/music here
 label technical_2:
     call play_scene_music
     scene bg farm_interior with fade

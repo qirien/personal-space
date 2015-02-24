@@ -28,7 +28,7 @@ init -1 python hide:
     # These control the name and version of the game, that are reported
     # with tracebacks and other debugging logs.
     config.name = "Our Personal Space"
-    config.version = "1.8"
+    config.version = "1.10"
     
     config.window_icon = "GUI/window-icon.png"
     config.windows_icon = "GUI/windows-icon.png"
@@ -282,7 +282,7 @@ init python:
     ## The name that's used for directories and archive files. For example, if
     ## this is 'mygame-1.0', the windows distribution will be in the
     ## directory 'mygame-1.0-win', in the 'mygame-1.0-win.zip' file.
-    build.directory_name = "OurPersonalSpace-1.8"
+    build.directory_name = "OurPersonalSpace-1.10"
     
     ## The name that's uses for executables - the program that users will run
     ## to start the game. For example, if this is 'mygame', then on Windows,
@@ -327,6 +327,8 @@ init python:
     build.classify('**/#**', None)
     build.classify('**/thumbs.db', None)
     build.classify('art/**', None)
+    build.classify('game/saves/**', None)
+    build.classify('game/google-play.rpy', None) #This is a private, secret file that should not be distributed!
     
     ## To archive files, classify them as 'archive'.
     
@@ -338,6 +340,3 @@ init python:
 
     build.documentation('*.html')
     build.documentation('*.txt')
-    
-    #build.google_play_key =   #TODO: fill this in
-    build.google_play_salt = (2, 1, 2, 3, 14, 5, 6, 120, 8, 92, 110, 121, 2, -3, 65, 75, 26, 37, -18, -119)
