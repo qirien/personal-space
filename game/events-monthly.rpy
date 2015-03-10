@@ -383,9 +383,9 @@ label monthly_event_4:
         menu:
             "Do I?"
             "{i}It's important.{/i}" if (relaxed >= 0):
-                her annoyed "When things break, we can't just take them to a repair shop. I try and keep everything in good condition so it won't break."
+                her annoyed "I try and keep everything in good condition so it won't break. We don't have unlimited spare parts here."
                 him surprised "Like what?"
-                her normal "Well, I installed the antenna that lets us communicate with the town, and the screw that brings water into the house."
+                her normal "Well, I've been reading up on the tractor schematics, so I understand how to maintain that better, and I installed the antenna that lets us communicate with the town."
                 him normal "Yeah, I'm really glad to have those. Sorry, I didn't mean to accuse, I just really was curious what projects you've been working on."
             "{b}You{/b} spend a lot of time reading.":
                 her annoyed "What have {b}you{/b} been doing lately? You've been reading a lot."

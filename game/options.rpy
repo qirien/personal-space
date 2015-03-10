@@ -327,7 +327,7 @@ init python:
     build.classify('**/#**', None)
     build.classify('**/thumbs.db', None)
     build.classify('art/**', None)
-    build.classify('game/saves/**', None)
+    build.classify('game/saves/**', None) #don't distribute saved games
     build.classify('game/google-play.rpy', None) #This is a private, secret file that should not be distributed!
     
     ## To archive files, classify them as 'archive'.
