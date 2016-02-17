@@ -4271,9 +4271,8 @@ label monthly_event_23:
                     brennan normal "...What?"
                     her sad "It all happened so fast, we weren't careful- [his_name] was always very careful- I mean, the timing fits, and--"
                     brennan mad "Have you told [his_name]?"
-                    her concerned "I've told him I'm pregnant, but he doesn't know about- about us."
-                    brennan normal "Oh? Is there an 'us' now?"
-                    her concerned "I wish we could be together..."
+                    
+                    her concerned "I've told him I'm pregnant, but, he's just so, impossible. I wish we could be together..."
                     brennan happy "Well then, let's do it!"
                     her surprised "What?"
                     brennan normal "Get a divorce! This isn't the dark ages, where people torture themselves with unhappy marriages."

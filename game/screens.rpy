@@ -156,7 +156,7 @@ screen nvl:
     #                    if who is not None:
     #                        text who id who_id
 
-                        text what id what_id style "nvl_note" color "#000" font "fonts/danielbd.ttf"
+                        text what id what_id style "nvl_note" color "#000" font "fonts/danielbd.ttf" 
 
                 # Display a menu, if given.
                 if items:
