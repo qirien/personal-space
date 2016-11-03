@@ -2516,7 +2516,7 @@ label monthly_event_16:
     if (is_pregnant):
         "Being pregnant wasn't as much of a change as I thought it would be; mostly I was just more tired (and maybe a little cranky). Sometimes I even forgot about the tiny baby growing inside me; it didn't seem real."
     else:
-        "Once nice thing about living on the colony was that we didn't usually get sick. Most of the microorganisms here seemed to ignore our strange biochemistry, and they worked hard to keep germs from Earth off the shuttle."
+        "One nice thing about living on the colony was that we didn't usually get sick. Most of the microorganisms here seemed to ignore our strange biochemistry, and they worked hard to keep germs from Earth off the shuttle."
     "But today I just felt awful."
     show her serious at midright
     show him normal at midleft
