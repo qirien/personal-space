@@ -140,6 +140,8 @@ label relax_together_2:
     show him nude happy behind pond_overlay
     play sound "sfx/splash.mp3"
     her annoyed "Hey! That's cold!"
+    if (skill_physical >= 20):
+        "I was a little wary of getting in the water ever since I encountered those pond leeches, but we had never seen any in the fast-moving river water."
     menu:
         "What should I do?"
         "Join him.":
