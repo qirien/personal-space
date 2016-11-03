@@ -1343,7 +1343,9 @@ label work_7:
                             ilian "Gahhh..."
                         "Leave.":
                             "I left with the batteries."
-                                                        
+                    call set_work_bg
+                    show her normal at midright with dissolve
+                    show brennan at midleft with moveinleft
                     jump investigate_brennan
                 "Search Brennan's room" if (not searched_room):
                     $ searched_room = True
