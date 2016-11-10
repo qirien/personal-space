@@ -498,7 +498,7 @@ label relax_alone_j:
     call play_scene_music
     scene bg farm_interior with fade
     show her normal at center
-    "I tried to mostly get all my work done at work, but sometimes there was things I needed to do at home."
+    "I tried to mostly get all my work done at work, but sometimes there were things I needed to do at home."
     "I spent the evening catching up on the latest research in my field and planning out the month at work."
     $ relaxed += 5
     $ loved -= 2
