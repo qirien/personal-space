@@ -4774,7 +4774,7 @@ label monthly_event_24:
         him surprised "The shuttle's not staying, like ours did?"
         her serious "No, they're loading it up with samples and returning it to Earth."
         him surprised "Who's going back?"
-        her concerned "The Matthew's, and Brennan..."
+        her concerned "The Matthews, and Brennan..."
         him annoyed "Don't know the Matthews very well. As for Brennan- well, good riddance."
         her surprised "[his_name]!"
         $ brennan_action = "flirt"
