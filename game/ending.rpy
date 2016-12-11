@@ -29,7 +29,7 @@ label bad_ending:
         "[his_name] said he would stay, no matter what. But I didn't have to do what he wanted. I needed to do what was best for me."
     "I talked with the Mayor about my situation, and he agreed that the circumstances made it possible for me to divorce [his_name] and cancel my contract as a colonist and return to Earth."
     if (is_pregnant):
-        "I was taking [baby_name] with me; I could tell Jack already loved her a lot, but we decided I should have full custody."
+        "I was taking [baby_name] with me; I could tell [his_name] already loved her a lot, but we decided I should have full custody."
         "He would never see her again."
     if (is_pregnant_later):
         "Even though I might end up giving birth on the shuttle on the way back to Earth, somehow I was not as worried about that as I had been about the idea of giving birth at Talaam's little clinic."
