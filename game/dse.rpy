@@ -114,7 +114,7 @@ label day:
     if (month == 25):
         "The shuttle should be coming some time this month!"
         scene bg gray_silk
-        call msg_25
+        call msg_25 from _call_msg_25
         jump monthly_event_25
 
     # Here, we want to set up some of the default values for the
@@ -134,11 +134,11 @@ label day:
             menu:
                 "Would you like to see the Tutorial?"
                 "Yes":
-                    call tutorial(False)
+                    call tutorial(False) from _call_tutorial
                 "No":
                     $pass
         else:
-            call tutorial(False)
+            call tutorial(False) from _call_tutorial_1
         
     "Time to decide what to do this month..."
     
@@ -163,7 +163,7 @@ label job_focus:
     stop bg_sfx
     stop music fadeout 4.0
     # Tell the user what month it is.
-    call inter_scene_text("At Work")
+    call inter_scene_text("At Work") from _call_inter_scene_text
 
     # Set these variables to appropriate values, so they can be
     # picked up by the expression in the various events defined below. 
@@ -174,7 +174,7 @@ label job_focus:
     $ normalize_stats()
     
     # Execute the events for the job_focus.
-    call events_run_period
+    call events_run_period from _call_events_run_period
 
     # That's it for the job_focus, so we fall through to the
     # skill_focus.
@@ -189,14 +189,14 @@ label skill_focus:
         jump relaxation_focus
 
     # The rest of this is the same as for the job_focus.
-    call inter_scene_text("Skill Focus")
+    call inter_scene_text("Skill Focus") from _call_inter_scene_text_1
 
     $ period = "skill_focus"
     $ act = skill_focus_act
 
     $ normalize_stats()
     
-    call events_run_period
+    call events_run_period from _call_events_run_period_1
 
 
 label relaxation_focus:
@@ -206,7 +206,7 @@ label relaxation_focus:
     if check_skip_period():
         jump monthly_event
 
-    call inter_scene_text("Free Time")
+    call inter_scene_text("Free Time") from _call_inter_scene_text_2
 
     $ period = "relaxation_focus"
     $ act = relaxation_focus_act
@@ -214,7 +214,7 @@ label relaxation_focus:
 
     $ normalize_stats()
     
-    call events_run_period
+    call events_run_period from _call_events_run_period_2
     scene black with fade
     $ wearing_dress = False
 
@@ -224,14 +224,14 @@ label monthly_event:
     if check_skip_period():
         jump end_of_month
 
-    call inter_scene_text("Event!")
+    call inter_scene_text("Event!") from _call_inter_scene_text_3
 
     $ period = "monthly_event"
     $ act = monthly_event_act
     
     $ normalize_stats()
 
-    call events_run_period
+    call events_run_period from _call_events_run_period_3
 
 label end_of_month:
 
@@ -251,7 +251,7 @@ label end_of_month:
         $ notified_stat_max = True
 
     # We call events_end_day to let it know that the day is done.
-    call events_end_day
+    call events_end_day from _call_events_end_day
 
     # And we jump back to day to start the next day. This goes
     # on forever, until an event ends the game.

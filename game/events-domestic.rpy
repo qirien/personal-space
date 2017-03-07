@@ -3,7 +3,7 @@
 
 # Default Event
 label domestic_def:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_120
     scene bg farm_interior with fade
     "I did some deep cleaning and organizing, and put in some extra work for a great dinner."
     $ skill_domestic += 10
@@ -11,7 +11,7 @@ label domestic_def:
 
 # Intro Event
 label domestic_0:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_121
     scene bg farm_interior with fade
     show her serious at center with dissolve
     her "There's a lot of work to do around the house... should I plan it, or just dive in?"
@@ -35,7 +35,7 @@ label domestic_0:
 
 # Laundry by hand is tough?
 label domestic_1:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_122
     scene bg laundry with fade
     show her normal
     her "Time for laundry!"
@@ -59,7 +59,7 @@ label domestic_1:
 
 # fence to keep out herb garden pests
 label domestic_2:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_123
     scene bg fields with fade
     show her normal at center
     "I planted an herb garden when we first arrived, and the plants are just starting to get big enough for me to use. I think I'll make some tea..."
@@ -77,7 +77,7 @@ label domestic_2:
 
 # Who wants a goat?
 label domestic_3:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_124
     scene bg farm_exterior with fade
     show her normal at midright with dissolve
     show thuc at midleft with moveinleft
@@ -182,7 +182,7 @@ label domestic_3:
 
 # Too many radishes!
 label domestic_4:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_125
     scene bg farm_interior with fade
     show her normal at midright with dissolve
     show him normal at midleft with moveinleft
@@ -210,7 +210,7 @@ label domestic_4:
 
 # Pumpkins and Halloween!
 label domestic_5:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_126
     scene bg farm_interior with fade
     show her normal at midright with dissolve
     "One day, [his_name] brought home some pumpkins he had planted."
@@ -276,7 +276,7 @@ label domestic_5:
 
 # what to do with local meat
 label domestic_6:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_127
     scene bg farm_interior with fade
     "One day, I came home from work to find a dead monster on the kitchen table."
     show her surprised at midleft with moveinleft
@@ -368,7 +368,7 @@ label domestic_6:
 
 # running out of soap; must make own soap with ash, fat, etc
 label domestic_7:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_128
     scene bg community_center with fade
     show pavel at center with dissolve
     pavel "One last item of business for the community meeting-"
@@ -460,7 +460,7 @@ label domestic_7:
 
 # Canning
 label domestic_8:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_129
     scene bg farm_interior with fade
     "[his_name] was harvesting a lot of vegetables and fruits, and while the cellar kept some things cool and dry, other produce didn't last very long."
     "We had so many tomatoes and zucchinis there was no way we could possibly eat them all before they went bad. We took a bunch to the storehouse, but they told us that everyone else had all they could eat, too."
@@ -491,7 +491,7 @@ label domestic_8:
 
 # Start a 'No Space Like Home' blog about domestic life!
 label domestic_master:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_130
     scene bg farm_interior with fade
     "I had learned so much about how to cook native foods and keep things clean and comfortable around our house."
     "So many people had asked me for advice that I decided to write a blog with entries relevant to domestic life on Talaam."

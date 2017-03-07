@@ -114,7 +114,7 @@ label mediocre_ending:
 
     if (community_level >= COMMUNITY_LEVEL_OK):
         "I loved my work; everything I did there was really important."
-        call work_appreciation
+        call work_appreciation from _call_work_appreciation
 
     scene bg fields with fade
     show him normal at quarterright with moveinright
@@ -144,7 +144,7 @@ label mediocre_ending:
         show baby girl at midrightbaby
     with dissolve
     "We sat down to dinner."
-    call skill_appreciation
+    call skill_appreciation from _call_skill_appreciation
     if (is_pregnant):
         "After dinner, he played with the baby while I took a break."
     "He read, and I worked on some projects, and then it was time for bed."
@@ -230,7 +230,7 @@ label mediocre_ending:
         scene black with fade
         $ is_nude = False
         $ renpy.end_replay()
-    call show_ending_cg
+    call show_ending_cg from _call_show_ending_cg
     $ persistent.got_mediocre_ending = True    
     ".:. Making it Work\nEnding 2 of 3."
     jump show_credits
@@ -366,7 +366,7 @@ label work_appreciation:
 # ENDING 3 - Community and Marriage Thriving
 label good_ending:
     "I was finishing up at work, thinking about how much I enjoyed my job."
-    call work_appreciation
+    call work_appreciation from _call_work_appreciation_1
     "I headed home, enjoying the warm sun and a light breeze."
 
     scene bg fields with fade
@@ -398,7 +398,7 @@ label good_ending:
     with dissolve
     "It wasn't much of a dinner, really. We had some beans cooked with salted meat, and some greens with vinegar."
     
-    call skill_appreciation
+    call skill_appreciation from _call_skill_appreciation_1
     if (is_pregnant):
         "After dinner, [his_name] joked and held [baby_name] on his lap and tickled her chin, and then we talked and read books and went to bed all snuggled up together."
     else:
@@ -450,7 +450,7 @@ label good_ending:
         scene black with fade
         $ is_nude = False
         $ renpy.end_replay()        
-    call show_ending_cg
+    call show_ending_cg from _call_show_ending_cg_1
     $ persistent.got_good_ending = True
     ".:. Love Grows\nEnding 3 of 3."
     $ is_nude = False

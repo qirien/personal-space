@@ -5,7 +5,7 @@
 
 # Put together a barn
 label relax_together_0:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_37
     scene bg farm_interior with fade
     show him normal at midright
     show her normal at midleft
@@ -58,7 +58,7 @@ label relax_together_0:
 
 # Onsen
 label relax_together_1:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_38
     scene bg farm_interior with fade
     show her normal at midright
     show him normal at midleft
@@ -119,7 +119,7 @@ label relax_together_1:
 
 # Skinny dipping!
 label relax_together_2:
-    call play_scene_music    
+    call play_scene_music from _call_play_scene_music_39    
     scene bg pond with fade
     show night
     stop music fadeout 1.0
@@ -188,7 +188,7 @@ label relax_together_2:
 label relax_together_3:
     scene bg farm_interior with fade
     show her normal at midright with dissolve
-    call play_scene_music("music/You.ogg")
+    call play_scene_music("music/You.ogg") from _call_play_scene_music_40
     "One day [his_name] came in from the fields with a big smile on his face."
     show him normal at midleft with moveinleft
     him happy "Ah, [her_nickname], you're such a great part of my life. You've brought me love, joy, and laughter."
@@ -252,7 +252,7 @@ label relax_together_3:
 
 # Massage time!
 label relax_together_4:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_41
     scene bg farm_interior with fade
     show him serious at midleft
     show her normal at midright
@@ -309,7 +309,7 @@ label relax_together_5:
     show her normal at midright
     show him normal at midleft
     with dissolve
-    call play_scene_music("music/Rain.ogg")
+    call play_scene_music("music/Rain.ogg") from _call_play_scene_music_42
     him happy "Put on your fancy clothes, [her_nickname], because we are going OUT tonight!"
     her surprised "Out where? And I don't have any fancy clothes..."
     him normal "Any clothes look fancy on you! But I can't tell you where we're going; it's a surprise."
@@ -418,7 +418,7 @@ label relax_together_5:
 
 # Haircuts!
 label relax_together_6:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_43
     scene bg farm_interior with fade
     show him normal at midright
     show her normal at midleft
@@ -539,7 +539,7 @@ label relax_together_7:
     show her normal at midleft
     show him normal at midright
     with dissolve
-    call play_scene_music("music/Will.ogg")
+    call play_scene_music("music/Will.ogg") from _call_play_scene_music_44
     play bg_sfx "sfx/alien-crickets.mp3" loop
     "We went for a walk together under the stars. I brought my computer pad so we could find which one was our old Sun. I didn't see any constellations I recognized, so it was hard to find any reference points, but we finally found which one we thought it was."
     her concerned "It looks so small..."
@@ -556,7 +556,7 @@ label relax_together_7:
 
 # walk around the farm together looking at what you've created together.
 label relax_together_8 :
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_45
     scene bg fields with fade
     "We walked around the farm together. [his_name] showed me where all the different crops were, and told me about what kind of soil they liked and what the weeds were like."
     show her normal at midright
@@ -571,7 +571,7 @@ label relax_together_8 :
     return
 
 label relax_together_9:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_46
     scene bg farm_interior with fade
     "We made a nice dinner together, and talked while we ate slowly, watching the sun go down."
     $ relaxed += 5
@@ -580,7 +580,7 @@ label relax_together_9:
 
 # People probably won't even see these last ones unless they always choose "Do something with [his_name]", so don't put a ton of effort into them.
 label relax_together_10:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_47
     scene bg farm_interior with fade
     "We did the dishes together, and then sat together and talked while we worked on little projects."
     show her normal at midright
@@ -594,7 +594,7 @@ label relax_together_10:
 
 
 label relax_together_11:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_48
     scene bg bedroom with fade
     $ is_nude = True     
     show him normal nude at midleft, squatting
@@ -611,7 +611,7 @@ label relax_together_11:
     return
 
 label relax_together_12:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_49
     scene bg bedroom with fade
     $ is_nude = True
     show night
@@ -631,7 +631,7 @@ label relax_together_12:
 
 # Play games with Ilian and Sara
 label relax_together_a:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_50
     $ wearing_dress = False
     scene bg farm_exterior with fade
     show him normal at midright
@@ -707,7 +707,7 @@ label relax_together_a:
     return
     
 label relax_together_b:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_51
     scene bg farm_interior with fade
     "We watched a sports game together. It was hard to get too excited about it, since it happened on Earth four years ago, and I didn't feel as loyal to any of the teams now that I wasn't even on the same planet as them."
     "But it was still fun to see their skill and see how they played so hard."
@@ -716,7 +716,7 @@ label relax_together_b:
     return
 
 label relax_together_c:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_52
     scene bg farm_interior with fade
     "We played card games and flirted shamelessly. Sometimes I even let him win."
     $ relaxed += 3
@@ -724,7 +724,7 @@ label relax_together_c:
     return
 
 label relax_together_d:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_53
     scene bg farm_interior with fade
     play bg_sfx "sfx/rain-02.ogg" loop
     "It was a rainy evening, and we were both reading on our computer pads, sitting near each other."
@@ -736,7 +736,7 @@ label relax_together_d:
     return
 
 label relax_together_e:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_54
     scene bg farm_interior with fade
     show her normal at midright
     show him normal at midleft
@@ -753,7 +753,7 @@ label relax_together_e:
 
 # She's "stunning"
 label relax_together_f:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_55
     scene bg farm_interior with fade
     show her normal at midright
     show him normal at midleft
@@ -787,7 +787,7 @@ label relax_together_f:
 
 # Midnight lovin'
 label relax_together_g:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_56
     scene bg bedroom with fade
     show her flirt at midright
     with dissolve
@@ -874,7 +874,7 @@ label relax_together_g:
 
 # Zombie Dinosaur Movie
 label relax_together_h:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_57
     scene bg farm_interior with fade
     "We watched a movie together. It was pretty good, but the ending was terrible."
     show her normal at midright
@@ -893,7 +893,7 @@ label relax_together_h:
 
 # Daisy-chain circlet of wildflowers
 label relax_together_i:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_58
     $ wearing_dress = False
     scene bg fields with fade
     show her normal at midright
@@ -952,7 +952,7 @@ label relax_together_i:
 
 # Messages on the computer
 label relax_together_j:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_59
     scene bg farm_interior with fade
     show her normal at right
     show him normal at left
@@ -1000,7 +1000,7 @@ label relax_together_j:
 
 # Baby names
 label relax_together_k:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_60
     scene bg farm_interior with fade
     show her normal at midright
     show him normal at midleft
@@ -1027,7 +1027,7 @@ label relax_together_k:
 
 # Horror puzzle game
 label relax_together_l:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_61
     play bg_sfx "sfx/rain-02.ogg" loop
     scene bg farm_interior with fade
     "We played a horror puzzle game together. We were both good at different kinds of puzzles, so we made a good team."

@@ -3,14 +3,14 @@
 
 # Default Event
 label technical_def:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music
     scene bg tractor with fade
     "I tuned up some of the farm equipment."
     $ skill_technical += 10
 
 # Intro Event
 label technical_0:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_1
     scene bg tractor with fade
     "I decided to familiarize myself with all the farm equipment so that if something broke, I would be able to understand the problem quicker."
     "The tractors were an interesting biofuel/solar hybrid and were built in a very modular way so that pieces could easily be taken out and replaced, and it had a hitch on the back for attachments like plows, cutters, loaders, etc."
@@ -26,7 +26,7 @@ label technical_0:
 
 # Build a water pump
 label technical_1:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_2
     scene bg farm_exterior with fade
     "Even though we had a solar panel to run our pad computers, the lights, and a few other things, we did most work the old-fashioned way, without electricity."
     "With no running water, we're always fetching water from the pump with buckets...Well, mostly I fetch water with buckets, since [his_name] has a bunch of pipes and canals setup for watering the farm."
@@ -59,7 +59,7 @@ label technical_1:
 
 # Improve alarm system for solar flares.
 label technical_2:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_3
     scene bg farm_interior with fade
     show her normal at midright
     show him normal at midleft
@@ -112,7 +112,7 @@ label technical_2:
 
 # Make laundry wringer
 label technical_3:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_4
     scene bg laundry with fade
     show her annoyed at center
     her "These clothes still aren't dry?! It's so humid here, it takes forever..."
@@ -155,7 +155,7 @@ label technical_3:
 # Hot water heater
 # put in hot water connected to solar
 label technical_4:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_5
     scene bg farm_interior with fade
     "One of the things I missed from Earth life was having hot water available whenever I wanted it. Of the few luxuries we enjoyed, hot water seemed like one I could improve on."
     show her normal at midright
@@ -212,7 +212,7 @@ label technical_4:
 
 # scavenge electronics, etc from shuttle to make blender
 label technical_5:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_6
     scene bg farm_interior with fade
     show him normal at midright
     show her normal at midleft
@@ -266,7 +266,7 @@ label technical_5:
 
 # build a water wheel to augment power grid
 label technical_6:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_7
     scene bg farm_exterior with fade
     "Our solar panels worked well most of the time, but sometimes it was cloudy for days and our batteries ran out. Then we had to use candles and burn wood for cooking, which made a big mess and felt wasteful."
     "I wondered if we could use the nearby river to augment our electricity sources."
@@ -309,7 +309,7 @@ label technical_6:
 
 # 8 - programmable substance mixer, farming app
 label technical_7:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_8
     scene bg farm_interior with fade
     show him normal at midright
     show her normal at midleft with dissolve
@@ -372,7 +372,7 @@ label technical_7:
 
 # 9 - Help Ilian with the inventory software - build good queries, or streamline interface, etc.
 label technical_8:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_9
     scene bg storehouse with fade
     show ilian at midright with dissolve
     show her normal at midleft with moveinleft
@@ -437,7 +437,7 @@ label technical_8:
 
 # Setup webcams around the farm to monitor fields/(goat)
 label technical_master:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_10
     scene bg farm_interior with fade
     show her normal at midright
     show him normal at midleft
@@ -514,7 +514,7 @@ label technical_master:
             $ loved += 1
 
     "The surveillance equipment made it easier to see the farm at a glance. I decided to put instructions for them online in case anyone else wanted to make some."
-    call set_work_bg
+    call set_work_bg from _call_set_work_bg
     show her normal at midright with dissolve
     "The next day at work, the mayor came to see me."
     show pavel at midleft, behind her with moveinleft

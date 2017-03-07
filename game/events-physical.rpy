@@ -3,14 +3,14 @@
 
 # Default
 label physical_def:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_153
     scene bg path with fade
     "I went for a run around the farm."
     $ skill_physical += 10
     
 # Intro Event
 label physical_0:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_154
     scene bg farm_exterior with fade
     "We lived a little farther away from the town, so that we had plenty of farmland around us. The other farms were arranged in sort of a circle around the town, too. But it meant that we were a little more isolated than the people who lived in the town."
     "We didn't have a car; [his_name] had his horse, but he rode her around the farm most days. We wanted to save the tractor fuel for farming, so if I wanted to get to town I had to walk -- or run."
@@ -41,7 +41,7 @@ label physical_0:
 
 # hike to pond with leeches
 label physical_1:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_155
     scene bg talam with fade
     "I decided to do some exploring. Here I was, living on a completely new planet, and all I had ever seen was the town and my own little farm. There was a ridge to the south, so I decided to hike over the top and see what was there."
     "The ridge was steeper than it looked, but I was able to scramble up to the top. From the top of the ridge I could see all the way to town to the north. To the south was a vast expanse of wild rolling hills with sparse shrubs and trees."
@@ -182,7 +182,7 @@ label physical_1:
 
 # chopping wood
 label physical_2:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_156
     scene bg fields with fade
     show her serious at midright with dissolve
     "We needed firewood to burn for cooking and heating. I got an axe and split logs to build up a huge supply for later."
@@ -278,7 +278,7 @@ label physical_2:
 
 #Learn how to ride a horse
 label physical_3:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_157
     scene bg barn with fade
     show her normal at midright
     show him normal at midleft
@@ -302,7 +302,7 @@ label physical_3:
 
 #Yoga
 label physical_4:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_158
     scene bg farm_interior with fade
     show her serious at center
     "On mornings when we had a solar flare warning, everyone had to stay indoors."
@@ -366,7 +366,7 @@ label physical_4:
 
 # Go hiking again. Find a hot spring. If you bring him, you both enjoy a long soak and feel invigorated. If you don't bring him, you have to decide if you will tell him about it (even though you sort of promised not to hike alone)
 label physical_5:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_159
     scene bg farm_interior with fade
     "I wanted to go hiking again. I just knew there were all sorts of interesting and useful places out there, if only we could find them."
     "Should I tell [his_name] about it? He might want to come, too."
@@ -572,7 +572,7 @@ label physical_5:
 
 # Go hunting and bring back some meat
 label physical_6:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_160
     scene bg bedroom with fade
     $ is_nude = True
     show him nude sleeping at midleft, squatting
@@ -616,7 +616,7 @@ label physical_6:
 
 # Participate in community soccer team
 label physical_7:
-    call play_scene_music("music/Prelude22.ogg")
+    call play_scene_music("music/Prelude22.ogg") from _call_play_scene_music_161
     "Some of the colonists had taken to playing soccer on Saturday mornings, and I decided to join them."
     scene bg path with fade
     show brennan at center
@@ -659,7 +659,7 @@ label physical_7:
 
 # Lift heavy ?
 label physical_8:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_162
     scene bg barn with fade
     show her normal at midright with dissolve
     "I was rearranging the cellar storage again when [his_name] walked in."
@@ -715,7 +715,7 @@ label physical_8:
 # Lead a group hunt
 label physical_master:
     scene bg talam with fade
-    call play_scene_music("music/NoSilencePlease.ogg")
+    call play_scene_music("music/NoSilencePlease.ogg") from _call_play_scene_music_163
     
     "One week a huge herd of six-legged grazing animals crossed the river near our colony into some wooded scrubland."
     "They were good to eat, partly because they dried into jerky well."
