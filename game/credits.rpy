@@ -205,9 +205,9 @@ label show_credits:
             "You have experienced all the endings and unlocked the Omake from the Extras Menu!"
         $ persistent.got_all_endings = True
         
-    "If you have feedback, I'd love to hear from you at {a=mailto:qirien@icecavern.net?subject=Our Personal Space}qirien@icecavern.net{/a}."
     show text "{size=140}{font=fonts/Kristi.ttf}The End{/font}{/size}" with fade
     stop music fadeout 3.0
     $ renpy.pause(3.0, hard=skippable)
+    "Thank you for playing!  If you're interested in giving us feedback or joining our mailing list, please fill out our {a=http://goo.gl/oh6zFZ}short online survey{/a} \nSurvey URL: goo.gl/oh6zFZ."
     
     $ renpy.full_restart()

@@ -3813,7 +3813,7 @@ label monthly_event_22:
             pavel "Never mind that, we just need you to return it."
             natalia "Fine, yes, I took it, but only because I knew that the thief would never give back what they stole! Since we had run out, I thought it only fair that we should get the bottle that was returned!"
             pavel "So, you won't mind showing us your house?"
-            natalia "Search my house all you want. All you'll find it my kids' mess and the one bottle I took last night."
+            natalia "Search my house all you want. All you'll find is my kids' mess and the one bottle I took last night."
             scene bg farm_exterior flip
             "Sure enough, we didn't find any secret shampoo cache."
             scene bg community_center with fade

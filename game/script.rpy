@@ -2,53 +2,53 @@
 # MAIN
 # Declare global variables, images, characters, etc.
 
-define mp = MultiPersistent("MetasepiaGames")
-
-# Declare characters used by this game .
-define narrator = Character(ctc="ctc_blink", ctc_position="nestled")
-
-define her = DynamicCharacter("her_name", color="#84b766", image="her", ctc="ctc_blink", ctc_position="nestled") #light mint green
-define him = DynamicCharacter("his_name", color="#bc1e0e", image="him", ctc="ctc_blink", ctc_position="nestled") #red 
-
-define naomi = Character("Sister Naomi Grayson", color="#bf98ff", image="naomi", ctc="ctc_blink", ctc_position="nestled")  #light gray
-define pavel = Character("Mayor Pavel Grayson", color="#cccccc", image="pavel", ctc="ctc_blink", ctc_position="nestled")   #dark gray
-define lily = Character("Dr. Lily Kealoha", color="#6763b5", image="lily", ctc="ctc_blink", ctc_position="nestled")  #purple
-define sara = Character("Sara Hill-Andrevski", color="#e25057", image="sara", ctc="ctc_blink", ctc_position="nestled")  # salmon pink
-define thuc = Character("Thuc Nguyen", color="#a9ff22", image="thuc", ctc="ctc_blink", ctc_position="nestled")  #lime green
-define ilian = Character("Ilian Andrevski", color="#d2d099", image="ilian", ctc="ctc_blink", ctc_position="nestled") #tangerine
-define brennan = Character("Brennan Callahan", color="#33b533", image="brennan", ctc="ctc_blink", ctc_position="nestled")  #irish green
-define pete = Character("Pete Jennings", color="#ee7755", image="pete", ctc="ctc_blink", ctc_position="nestled")  #rusty brown
-define natalia = Character("Natalia Perón", color="#f3ca14", image="natalia", ctc="ctc_blink", ctc_position="nestled")  #yellow
-define helen = Character("Helen Jennings", color="#77b8ef", image="helen", ctc="ctc_blink", ctc_position="nestled") #icy gray
-define julia = Character("Julia Nguyen", color="#e7b1cb", image="julia", ctc="ctc_blink", ctc_position="nestled") #icy blue
-define martin = Character("Martín Perón", color="#9b5b1d", image="martin", ctc="ctc_blink", ctc_position="nestled")  #dark red
-
-define van = Character("Van Nguyen", color="#7788fc", image="van", ctc="ctc_blink", ctc_position="nestled")
-define kid = Character("Kid", color="#7788fc", image="kid", ctc="ctc_blink", ctc_position="nestled")
-
-
-define tutorial = Character("Tutorial", color="#ededed", ctc="ctc_blink", ctc_position="nestled")  #light gray
-define note = Character("note", kind=nvl, ctc="ctc_blink", ctc_position="nestled")
-
-# defaults used for debugging purposes
-define his_name = "Jack"
-define her_name = "Kelly"
-define his_nickname = "dear"
-define her_nickname = "lover"
-
-
-# Variables about emotional state.  -100 is minimum, 100 is maximum
-define relaxed = 0    # negative = stressed
-define loved = 0      # negative = neglected
-define made_love = 0  # Counter of lovemaking, used for pregnancy calculation
-define community_level = 0 # how successful is the colony?
+init:
+    define mp = MultiPersistent("MetasepiaGames")
+    
+    # Declare characters used by this game .
+    define narrator = Character(ctc="ctc_blink", ctc_position="nestled")
+    
+    define her = DynamicCharacter("her_name", color="#84b766", image="her", ctc="ctc_blink", ctc_position="nestled") #light mint green
+    define him = DynamicCharacter("his_name", color="#bc1e0e", image="him", ctc="ctc_blink", ctc_position="nestled") #red 
+    
+    define naomi = Character("Sister Naomi Grayson", color="#bf98ff", image="naomi", ctc="ctc_blink", ctc_position="nestled")  #light gray
+    define pavel = Character("Mayor Pavel Grayson", color="#cccccc", image="pavel", ctc="ctc_blink", ctc_position="nestled")   #dark gray
+    define lily = Character("Dr. Lily Kealoha", color="#6763b5", image="lily", ctc="ctc_blink", ctc_position="nestled")  #purple
+    define sara = Character("Sara Hill-Andrevski", color="#e25057", image="sara", ctc="ctc_blink", ctc_position="nestled")  # salmon pink
+    define thuc = Character("Thuc Nguyen", color="#a9ff22", image="thuc", ctc="ctc_blink", ctc_position="nestled")  #lime green
+    define ilian = Character("Ilian Andrevski", color="#d2d099", image="ilian", ctc="ctc_blink", ctc_position="nestled") #tangerine
+    define brennan = Character("Brennan Callahan", color="#33b533", image="brennan", ctc="ctc_blink", ctc_position="nestled")  #irish green
+    define pete = Character("Pete Jennings", color="#ee7755", image="pete", ctc="ctc_blink", ctc_position="nestled")  #rusty brown
+    define natalia = Character("Natalia Perón", color="#f3ca14", image="natalia", ctc="ctc_blink", ctc_position="nestled")  #yellow
+    define helen = Character("Helen Jennings", color="#77b8ef", image="helen", ctc="ctc_blink", ctc_position="nestled") #icy gray
+    define julia = Character("Julia Nguyen", color="#e7b1cb", image="julia", ctc="ctc_blink", ctc_position="nestled") #icy blue
+    define martin = Character("Martín Perón", color="#9b5b1d", image="martin", ctc="ctc_blink", ctc_position="nestled")  #dark red
+    
+    define van = Character("Van Nguyen", color="#7788fc", image="van", ctc="ctc_blink", ctc_position="nestled")
+    define kid = Character("Kid", color="#7788fc", image="kid", ctc="ctc_blink", ctc_position="nestled")
+    
+    
+    define tutorial = Character("Tutorial", color="#ededed", ctc="ctc_blink", ctc_position="nestled")  #light gray
+    define note = Character("note", kind=nvl, ctc="ctc_blink", ctc_position="nestled")
+    
+    # defaults used for debugging purposes
+    define his_name = "Jack"
+    define her_name = "Kelly"
+    define his_nickname = "dear"
+    define her_nickname = "lover"
+    
+    
+    # Variables about emotional state.  -100 is minimum, 100 is maximum
+    define relaxed = 0    # negative = stressed
+    define loved = 0      # negative = neglected
+    define made_love = 0  # Counter of lovemaking, used for pregnancy calculation
+    define community_level = 0 # how successful is the colony?
 
 # This definition needs to happen before our transitions are defined    
 init -201 python:
     define.move_transitions('longmove', 1.5)
     define.move_transitions('move', 0.5)
     
-
 # Variables about skills.  On a scale from 0-100, how skilled is the character?
 # These are now defined in dse.rpy
 
@@ -201,6 +201,8 @@ label test_inputter:
     return
 
 label test_positions:
+    scene bg farm_interior
+    with fade
     "left"
     show her normal at left
     "quarterleft"
@@ -215,7 +217,18 @@ label test_positions:
     show brennan at quarterright
     "right"
     show natalia at right
-    "end test positions"
+    "end test positions 1"
+    
+    scene bg farm_exterior
+    with fade
+    show him normal at quarterright
+    show her normal at quarterleft
+    with dissolve
+    her surprised "Why am I in the center of the screen?"
+    him flirting "You probably just want to be near me."
+    "end test positions 2"
+    "OK? Test positions forever!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    "Takes forever"
     return
     
     
