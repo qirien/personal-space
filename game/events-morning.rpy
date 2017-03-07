@@ -3,8 +3,8 @@
 
 # Default work event if there's no special event
 label act_work:
-    call set_work_bg
-    call play_scene_music
+    call set_work_bg from _call_set_work_bg_11
+    call play_scene_music from _call_play_scene_music_73
     
     if (relaxed <= -8):
         "I worked hard at work. I was starting to feel burned out, though."
@@ -18,8 +18,8 @@ label act_work:
     return
 
 label act_skip_work:
-    call set_work_bg
-    call play_scene_music("music/You.ogg")
+    call set_work_bg from _call_set_work_bg_12
+    call play_scene_music("music/You.ogg") from _call_play_scene_music_74
     
     # it doesn't count if you take time off right after giving birth
     if (is_pregnant and (month == 25)):
@@ -66,7 +66,7 @@ label work_0:
     $ times_worked += 1
 
     scene bg community_center
-    call play_scene_music("music/Sojourn.ogg")
+    call play_scene_music("music/Sojourn.ogg") from _call_play_scene_music_75
     play bg_sfx "sfx/people.mp3" fadein 1.0
     "My boss was also the leader of our little community. I guess you could call him the mayor?"
     "Right after we landed, he called a meeting for everyone where he gave a speech."
@@ -179,7 +179,7 @@ label work_0:
         "No questions.":
             "After the meeting, the mayor met with me to show me around where I'd work."
 
-    call set_work_bg
+    call set_work_bg from _call_set_work_bg_13
     show pavel at quarterleft with moveinleft
     show her normal at midright with moveinleft
     play music "music/Isaiah.ogg" fadeout 1.0
@@ -267,8 +267,8 @@ label work_1:
         $ relaxed -= 5
     $ community_level += 2
 
-    call set_work_bg
-    call play_scene_music("music/NoSilencePlease.ogg")
+    call set_work_bg from _call_set_work_bg_14
+    call play_scene_music("music/NoSilencePlease.ogg") from _call_play_scene_music_76
 
     # DOCTOR
     if (profession == "doctor"):
@@ -451,7 +451,7 @@ label work_1:
         scene black with fade
         stop bg_sfx fadeout 1.0
         "I separated the two fighters, and somehow I managed to make it through the rest of that day. Just as the children were all leaving, the mayor came by."
-        call set_work_bg
+        call set_work_bg from _call_set_work_bg_15
         show her concerned at midright with dissolve
         show pavel at midleft, behind her with moveinleft
         pavel sad "[her_name], are you all right?"
@@ -475,8 +475,8 @@ label work_1:
 label work_2:
     $ times_worked += 1
     $ relaxed -= 5
-    call set_work_bg
-    call play_scene_music
+    call set_work_bg from _call_set_work_bg_16
+    call play_scene_music from _call_play_scene_music_77
     show her normal at midright with dissolve
     "I was ready for another busy day at work when the mayor walked in with someone new. I remembered seeing him on the shuttle; he had an infectious smile and just the hint of an accent."
     show brennan at quarterleft with moveinleft
@@ -562,7 +562,7 @@ label work_2:
                     her annoyed "You know that's not what I meant! You're the only man I want to handle, silly."
                     him serious "I know, it's okay, I don't really want to have that conversation with him, anyway. But let me know if you do want me to help you out later, okay?"
                     her normal "Thanks, [his_nickname]."
-                    call set_work_bg
+                    call set_work_bg from _call_set_work_bg_17
                     show her normal at midright with dissolve
                     show brennan at midleft with dissolve
                     "The next time I saw Brennan, I thanked him for his help and mentioned that I expected everyone working there to maintain a professional attitude."
@@ -587,8 +587,8 @@ label work_2:
 label work_3:
     $ times_worked += 1
     $ relaxed -= 2
-    call set_work_bg
-    call play_scene_music
+    call set_work_bg from _call_set_work_bg_18
+    call play_scene_music from _call_play_scene_music_78
     show her serious at midright with dissolve
 
     # DOCTOR 
@@ -703,8 +703,8 @@ label work_4:
     else:
         $ relaxed -= 5
     $ community_level += 2
-    call play_scene_music("music/NoSilencePlease.ogg")
-    call set_work_bg
+    call play_scene_music("music/NoSilencePlease.ogg") from _call_play_scene_music_79
+    call set_work_bg from _call_set_work_bg_19
 
     # Doctor - problems with new local bacteria (no viruses, though)
     if (profession == "doctor"):
@@ -762,7 +762,7 @@ label work_4:
                 lily "Look at the algae culture; there's hardly any bacteria left."
                 her concerned "Hopefully the algae itself wouldn't be harmful to people..."
                 lily upset "I can't say for sure."
-                call set_work_bg
+                call set_work_bg from _call_set_work_bg_20
                 show her serious at midright
                 show brennan at midleft
                 with dissolve
@@ -913,8 +913,8 @@ label work_4:
 label work_5:
     $ times_worked += 1
     $ relaxed -= 5
-    call set_work_bg
-    call play_scene_music
+    call set_work_bg from _call_set_work_bg_21
+    call play_scene_music from _call_play_scene_music_80
 
     if (skill_technical >= 30):
         "There were some days when we just had to stay inside because of strong solar flares. The prediction system I improved usually let us know a day or two ahead of time, so we could be prepared."
@@ -1047,8 +1047,8 @@ label work_5:
 label work_6:
     $ times_worked += 1
     $ relaxed -= 5
-    call set_work_bg
-    call play_scene_music
+    call set_work_bg from _call_set_work_bg_22
+    call play_scene_music from _call_play_scene_music_81
 
     if (profession == "doctor"):
         "The clinic wasn't very busy this month, so I'd been working on writing a paper about how the nutrition of crops planted here differed from the nutrition of crops grown in Earth soil, based on comparing my own blood samples."
@@ -1270,8 +1270,8 @@ label work_7:
     $ times_worked += 1
     $ relaxed -= 5
 
-    call set_work_bg
-    call play_scene_music
+    call set_work_bg from _call_set_work_bg_23
+    call play_scene_music from _call_play_scene_music_82
 
     $ has_batteries = False
     $ questioned_brennan = False
@@ -1296,7 +1296,7 @@ label work_7:
                 "What should I do?"
                 "Question Brennan further." if (not questioned_brennan):
                     if (has_batteries):
-                        call set_work_bg
+                        call set_work_bg from _call_set_work_bg_24
                         show her normal at midright
                         show brennan normal at midleft
                         with dissolve
@@ -1343,7 +1343,7 @@ label work_7:
                             ilian "Gahhh..."
                         "Leave.":
                             "I left with the batteries."
-                    call set_work_bg
+                    call set_work_bg from _call_set_work_bg_25
                     show her normal at midright with dissolve
                     show brennan at midleft with moveinleft
                     jump investigate_brennan
@@ -1370,7 +1370,7 @@ label work_7:
                     jump brennan_confess
                     
                 "Give him the batteries." if has_batteries:
-                    call set_work_bg
+                    call set_work_bg from _call_set_work_bg_26
                     show her normal at midright
                     show brennan at midleft
                     with dissolve
@@ -1521,9 +1521,9 @@ label work_8:
     $ times_worked += 1
     $ relaxed -= 2
 
-    call set_work_bg
+    call set_work_bg from _call_set_work_bg_27
     show her normal at midright with dissolve
-    call play_scene_music("music/You.ogg")
+    call play_scene_music("music/You.ogg") from _call_play_scene_music_83
 
     "Most days I was able to help everyone with what they needed."
     "But not every day was a success."

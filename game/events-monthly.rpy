@@ -3,13 +3,13 @@
 # You shouldn't ever see this. This is just a fall through in case something happens
 # and there's no event for this month.
 label monthly_event_0:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_11
     "Nothing exciting happened this month."
     return
 
 # MONTH 1 - Chore allocation
 label monthly_event_1:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_12
     scene bg farm_interior with fade
     show her normal at midleft
     show him normal at midright
@@ -150,7 +150,7 @@ label monthly_event_1:
 
 # MONTH 2 - The Cellar
 label monthly_event_2:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_13
     scene bg farm_exterior with fade
     show him normal at midright
     show her normal at midleft
@@ -229,7 +229,7 @@ label monthly_event_2:
 
 # MONTH 3 - His Birthday
 label monthly_event_3:
-    call play_scene_music("music/Prelude22.ogg")
+    call play_scene_music("music/Prelude22.ogg") from _call_play_scene_music_14
     "Even though we were on a new planet, we still kept track of what day it was on the Earth calendar. The seasons didn't match up or anything, but it helped us feel like we were still a part of things back home."
     scene bg farm_interior with fade
     $ wearing_dress = True
@@ -292,7 +292,7 @@ label monthly_event_3:
 
 #helper function for month 4 for a commonly used conversation tree
 label unappreciated:
-    call play_scene_music("music/Prelude02.ogg")
+    call play_scene_music("music/Prelude02.ogg") from _call_play_scene_music_15
     her annoyed "It's none of your business what I do in my spare time."
     him annoyed "Well, it just seems kind of like a waste of time when there's so much real work to be done."
     her yelling "Real work?! You don't think I do real work?!"
@@ -331,7 +331,7 @@ label unappreciated:
 
 # MONTH 4 - Are Hobbies a Waste of Time?
 label monthly_event_4:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_16
     scene bg farm_interior with fade
     $ wearing_dress = True
     show her serious at midleft
@@ -490,7 +490,7 @@ label monthly_event_4:
 
 # MONTH 5 - What to do with trash
 label monthly_event_5:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_17
     scene bg farm_interior with fade
 
     "The village council asked us to do a waste assessment to see how much and what kind of materials we needed to permanently dispose of. If the amount of waste was too high, they told us that future colonists would be limited."
@@ -584,7 +584,7 @@ label monthly_event_5:
 # MONTH 6 - Alien Pests
 label monthly_event_6:
     scene bg fields with fade
-    call play_scene_music("music/NoOneWillKnow.ogg")
+    call play_scene_music("music/NoOneWillKnow.ogg") from _call_play_scene_music_18
     "Our crops were starting to give an abundant harvest, but unfortunately, with the rainy season starting, the corn was being attacked by alien insects."
     "A small segmented insect like a sow bug but with thicker legs was our main culprit." 
     show her normal at midleft
@@ -725,7 +725,7 @@ label monthly_event_6:
 
 # MONTH 7 - Broken computer - honesty?
 label monthly_event_7:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_19
     scene bg farm_interior with fade
     show her normal at center
     "One day I was doing the dishes at breakfast. [his_name] had already started working in the fields, so I was alone. I noticed he had left his computer pad next to the wash basin."
@@ -884,7 +884,7 @@ label monthly_event_7:
 
 # MONTH 8 Want to watch a movie, he is busy helping neighbor
 label monthly_event_8:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_20
     scene bg library with fade
     "The library had a huge collection of Earth media that colonists could check out. They only had enough space for the most popular things, but it was still more media than anyone could experience in a lifetime."
     "One day I noticed they had a movie about space colonists called \"Pioneer of the Stars\". I was curious to see how people on Earth saw people like us, so I checked it out."
@@ -1119,7 +1119,7 @@ label monthly_event_9:
     with dissolve
     show her normal at midleft
     with moveinleft
-    call play_scene_music("music/You.ogg")
+    call play_scene_music("music/You.ogg") from _call_play_scene_music_21
     him "I was just thinking about you. How do you think we're doing?"
     her surprised "At what?"
     him concerned "You know, in our marriage. Do you feel loved, is this working for you?"
@@ -1195,7 +1195,7 @@ label monthly_event_9:
             if (loved <=0):
                 him concerned "..."
                 her surprised "What could I do better?"
-                call she_can_do_better
+                call she_can_do_better from _call_she_can_do_better
             elif ((loved >= 5) and (skill_domestic >= 10) and (made_love >= 2)):
                 him surprised "What are you talking about?! You are the perfect wife!"
                 her surprised "Really?"
@@ -1205,11 +1205,11 @@ label monthly_event_9:
             else:
                 him normal "I think you do a pretty good job."
                 her flirt "I'm sure there's something you'd like me to do differently. What is it?"
-                call she_can_do_better
+                call she_can_do_better from _call_she_can_do_better_1
         "How about you?":
             her concerned "What about you? Is there something you'd like to see more of from me?"
             him concerned "Well..."
-            call she_can_do_better
+            call she_can_do_better from _call_she_can_do_better_2
 
     scene black with fade
     if (she_wants == "nothing"):
@@ -1273,7 +1273,7 @@ label monthly_event_10:
     show him normal at midright
     show her normal at midleft
     with dissolve
-    call play_scene_music("music/Run.ogg")
+    call play_scene_music("music/Run.ogg") from _call_play_scene_music_22
     "It was our anniversary, according to the Earth calendar.  I think we had missed a few while we were on the shuttle? Anyway, it felt like we had been married about a year."
     her happy "Happy Anniversary!"
     him surprised "Really? Today?"
@@ -1283,7 +1283,7 @@ label monthly_event_10:
     him normal "Okay, I'll bring home a surprise for you."
     her surprised "Really?"
     him normal "Yeah! I mean, don't expect too much, but I've got an idea."
-    call set_work_bg
+    call set_work_bg from _call_set_work_bg_1
     "All day long I looked forward to spending a nice evening together."
     scene bg farm_interior with fade
     $ wearing_dress = True
@@ -1675,7 +1675,7 @@ label goto_ocean:
 #
 # No salt! Head to the ocean with Dr. Lily to get some
 label monthly_event_11:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_23
     scene bg farm_interior with fade
     show him normal at midleft
     show her normal at midright
@@ -1740,7 +1740,7 @@ label monthly_event_11:
         "Brennan, my co-worker":
             $ ocean_character = "Brennan"
 
-            call set_work_bg
+            call set_work_bg from _call_set_work_bg_2
             show brennan normal at midright
             show her normal at midleft
             with dissolve
@@ -1770,7 +1770,7 @@ label monthly_event_11:
             her concerned "Usually you're so worried about trying anything new, I'm kind of surprised that you're so excited about this."
             sara "Yeah, I guess it could be dangerous. But I used to live by an ocean, so I kind of miss it."
 
-    call goto_ocean
+    call goto_ocean from _call_goto_ocean
     
     scene bg lab with fade
     show lily normal at midright
@@ -1794,7 +1794,7 @@ label monthly_event_11:
 # uses domestic, social, spiritual
 label monthly_event_12:
     scene bg farm_interior with fade
-    call play_scene_music("music/Prelude02.ogg")
+    call play_scene_music("music/Prelude02.ogg") from _call_play_scene_music_24
     "[his_name] was usually pretty optimistic, but lately he had seemed more quiet and withdrawn. I figured he just had a lot on his mind."
     show him serious at midright
     show her normal at midleft
@@ -1914,7 +1914,7 @@ label monthly_event_12:
 # uses spiritual, technical
 label monthly_event_13:
     scene bg talam with fade
-    call play_scene_music("music/NoOneWillKnow.ogg")
+    call play_scene_music("music/NoOneWillKnow.ogg") from _call_play_scene_music_25
     "I hadn't thought about it much before, but we didn't have a lot of laws here on Talaam. Some things just didn't apply (like taxes, food regulations, etc), but I remember signing something about agreeing to abide by a set of laws that sounded very reasonable."
     "It had never seemed like something I would have to worry about.  Until I had to be on the jury for a manslaughter trial, that is..."
     "We hadn't had any crime our whole first year (though we certainly had our share of arguments, accidents, and disagreements)."
@@ -1944,7 +1944,7 @@ label monthly_event_13:
     scene black with fade
     
     "Exactly how she died was a mystery. But the Peróns didn't wait for it to be solved before holding a funeral."
-    call set_work_bg    
+    call set_work_bg from _call_set_work_bg_3    
     if (profession == "doctor"):
         show her serious at right
         show naomi sad at midright
@@ -2067,7 +2067,7 @@ label funeral:
     scene black with fade
     "The mayor took Pete to stay at his house until the next day, when the trial started."
 
-    call set_work_bg
+    call set_work_bg from _call_set_work_bg_4
     show pavel sad at midleft, behind her
     show her serious at midright
     with dissolve
@@ -2163,7 +2163,7 @@ label funeral:
 
 # MONTH 14 - Pregnancy or rediscussion of having kids
 label monthly_event_14:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_26
     scene bg farm_interior with fade
     show her normal at midleft
     show him normal at midright
@@ -2203,7 +2203,7 @@ label monthly_event_14:
         scene black with fade
         $ is_nude = False        
         "The next morning I felt less tired, but still a little off. I went to work anyway, and had been standing up all day when I started to feel dizzy and sick to my stomach."
-        call set_work_bg
+        call set_work_bg from _call_set_work_bg_5
         show her serious at midright
         show brennan at midleft
         with dissolve
@@ -2395,7 +2395,7 @@ label monthly_event_14:
 
 # MONTH 15 Fertility and Food and Community
 label monthly_event_15:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_27
     scene bg farm_interior with fade
     show her normal at midright
     show him normal at midleft
@@ -2511,7 +2511,7 @@ label monthly_event_15:
 
 # MONTH 16 - Morning sickness/Illness
 label monthly_event_16:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_28
     scene bg farm_interior with fade
     if (is_pregnant):
         "Being pregnant wasn't as much of a change as I thought it would be; mostly I was just more tired (and maybe a little cranky). Sometimes I even forgot about the tiny baby growing inside me; it didn't seem real."
@@ -2655,7 +2655,7 @@ label monthly_event_16:
 # MONTH 17 - bath house with Sara, discuss relationships
 # uses spiritual, creative
 label monthly_event_17:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_29
     scene bg farm_interior with fade
     $ wearing_dress = True
     "One day Sara invited me to hang out with her at the bath house. It was a lot of work to fetch and heat water for a bath, so it was more worth it to share the work and the bath."
@@ -2804,7 +2804,7 @@ label monthly_event_17:
 # MONTH 18 - he burns his hand in a tractor fire
 # uses domestic, knowledge, social, technical, physical
 label monthly_event_18:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_30
     scene bg farm_exterior with fade
     show him normal at midleft
     show her normal at midright
@@ -3053,7 +3053,7 @@ label monthly_event_18:
 # clothes don't fit anymore (bras, etc); air drying makes they stiff and uncomfy, what to do?
 # use domestic, social, creative
 label monthly_event_19:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_31
     scene bg farm_interior with fade
     "Fashion was one thing we never had to worry about."
     "We mainly had our colony-issue shirts and pants, made of special durable, breathable material, and whatever extra clothes we managed to fit in our one allotted suitcase."
@@ -3136,7 +3136,7 @@ label monthly_event_19:
 
 # MONTH 20 - Community Party!
 label monthly_event_20:
-    call play_scene_music("music/Sojourn.ogg")
+    call play_scene_music("music/Sojourn.ogg") from _call_play_scene_music_32
     scene bg path with fade
     "One day Sara and I took a walk together."
     show her normal at midright
@@ -3555,7 +3555,7 @@ label done_party_menu:
 # MONTH 21 Early frost kills lots of crops
 # uses knowledge, technical, social
 label monthly_event_21:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_33
     scene bg farm_interior with fade
     "The weather was usually fairly mild on Talaam. It didn't snow in the winter, and the summer was hot but not unbearable. It was much colder near the poles, of course, but we were near the equator and the ocean."
     "But one week was a lot colder than usual."
@@ -3648,7 +3648,7 @@ label monthly_event_21:
 # one person is a thief and has stolen lots of it, but it's really just a lot of people
 # taking a little bit extra.
 label monthly_event_22:
-    call play_scene_music("music/Sojourn.ogg")
+    call play_scene_music("music/Sojourn.ogg") from _call_play_scene_music_34
     scene bg farm_interior with fade
     "We had to trust each other all the time. We didn't have police or lawyers, so when something went wrong, we had to work together to solve problems."
     "That was harder to do when the shampoo was found missing from the storehouse..."
@@ -3675,7 +3675,7 @@ label monthly_event_22:
     pavel "Let's wait and see if any is returned before we make any accusations."
     scene black with fade
     "But nobody returned any shampoo. There were fifteen bottles unaccounted for."
-    call set_work_bg
+    call set_work_bg from _call_set_work_bg_6
     show her normal at midright with dissolve
     show pavel at midleft, behind her with moveinleft
     pavel "Do you have a minute, [her_name]?"
@@ -3742,7 +3742,7 @@ label monthly_event_22:
             her concerned "I wonder... Well, thanks for the information, Thuc."
             thuc "No problem. Good luck in your investigation."
             "I had to go to work, but I resolved to ask more questions later."
-            call set_work_bg
+            call set_work_bg from _call_set_work_bg_7
             show brennan at midright with dissolve
             show her normal at midleft with moveinleft
             brennan "Hello, [her_name]! My, your hair looks lovely today."
@@ -3953,7 +3953,7 @@ label monthly_event_22:
 
 # MONTH 23: Climax - epic conflict leading to either "We'll always be together" or "I just want to get away from you!"  Conflict: Worried about new baby, pregnant if made_love a lot or affair with Brennan, otherwise, discussion about quality of sex
 label monthly_event_23:
-    call play_scene_music("music/LinesBuildWalls.ogg")
+    call play_scene_music("music/LinesBuildWalls.ogg") from _call_play_scene_music_35
 
     if (is_pregnant):
         scene bg farm_interior with fade
@@ -4136,7 +4136,7 @@ label monthly_event_23:
                         # Workplace Scene
                         scene black with fade
                         "I thought I should talk to Brennan, too."
-                        call set_work_bg
+                        call set_work_bg from _call_set_work_bg_8
 
                         show her serious at midleft
                         show brennan normal at midright
@@ -4260,7 +4260,7 @@ label monthly_event_23:
 
                     scene black with fade
                     "I needed to feel like someone was on my side..."
-                    call set_work_bg
+                    call set_work_bg from _call_set_work_bg_9
                     show her serious at quarterleft
                     show brennan at midright
                     with dissolve
@@ -4406,7 +4406,7 @@ label monthly_event_23:
 
 # MONTH 24: Birth or leave Talaam
 label monthly_event_24:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_36
     if (is_pregnant):
         scene bg farm_interior with fade
         "I felt like a whale. No, that's not big enough. I felt like a brontosaurus."
@@ -4425,7 +4425,7 @@ label monthly_event_24:
         her sad "I'm sorry, [his_name]. It's hard not knowing when the baby will come..."
         him happy "Well, this just means you have a few more days of carefree irresponsibility! How do you want to celebrate?!"
         her flirt "I think we left all the carefree irresponsibility back on Earth."
-        call set_work_bg
+        call set_work_bg from _call_set_work_bg_10
         show her normal at center
         "Work wasn't much better."
         "Everyone treated me like a ticking time bomb."
@@ -4758,7 +4758,7 @@ label monthly_event_24:
         else:
             "My family wouldn't get the message for years, but I was determined to keep that connection to Earth."
         "The colony message boards were busy that month..."
-        call msg_baby_announce
+        call msg_baby_announce from _call_msg_baby_announce
         nvl clear
         "It seemed like almost everyone in the colony stopped by during that first week, bringing gifts and saying hello to the newest little colonist. Julia had knitted a hat with matching booties out of goat wool; Pete and Helen made ice cream; and Sara brought a brightly colored baby wrap she had dyed herself."
         "Brennan took care of everything at work for a few weeks so I could rest."

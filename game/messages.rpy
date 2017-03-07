@@ -313,7 +313,7 @@ label msg_15:
     
 label msg_16:
     if (is_pregnant):
-        call msgs_pregnant
+        call msgs_pregnant from _call_msgs_pregnant
     helen_c "Has anyone seen Pete?! He didn't come home last night!"
     natalia_c "Hopefully he hasn't killed anyone with his tractor again."
     sara_c "Natalia! That was an accident!"
@@ -467,7 +467,7 @@ label msg_baby_announce:
 label msg_25:
     
     if (is_pregnant_later):
-        call msgs_pregnant
+        call msgs_pregnant from _call_msgs_pregnant_1
     else:
         sara_c "Great news everyone!! We're going to have a baby!! :-)"
         her_c "Way to go! That's great!"

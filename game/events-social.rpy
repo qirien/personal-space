@@ -3,7 +3,7 @@
 
 # Default Event
 label social_def:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_84
     "I met up with my friend Sara and we talked together. She is a great listener and understands me so well."
     $ skill_social += 10
     return
@@ -17,7 +17,7 @@ label social_0:
     
     scene bg farm_interior with fade
     show her normal at center with dissolve
-    call play_scene_music("music/Prelude02.ogg")
+    call play_scene_music("music/Prelude02.ogg") from _call_play_scene_music_85
     nvl clear
     
     "We had a community message board online where we could talk to anyone else in the colony easily."
@@ -113,7 +113,7 @@ label social_0:
 # Start a weekly game night at the community center
 #
 label social_1:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_86
     scene bg community_center with fade
     "Soon after we arrived, the main shuttle bay was converted into a community center. It was the only building large enough for everyone to gather in at once."
     "But other than official colony meetings, it wasn't used very much."
@@ -167,7 +167,7 @@ label social_1:
 # Invite Nguyens over for dinner
 #
 label social_2:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_87
     scene bg farm_interior with fade
     "Even though we had all lived together for months, there were some people in the community we didn't know very well."
     show her normal at midright
@@ -278,7 +278,7 @@ label social_2:
 # organize lunch group
 #
 label social_3:
-    call play_scene_music("music/Sojourn.ogg")
+    call play_scene_music("music/Sojourn.ogg") from _call_play_scene_music_88
     play bg_sfx "sfx/people.mp3" loop
     "Sara and I met for lunch every week to chat and take a break."
     scene bg community_center with fade
@@ -324,7 +324,7 @@ label social_3:
 #
 label social_4:
     scene bg community_center with fade
-    call play_scene_music("music/Sojourn.ogg")
+    call play_scene_music("music/Sojourn.ogg") from _call_play_scene_music_89
     play bg_sfx "sfx/people.mp3" loop
     "One week at Friday lunch group, we were all complaining about our lack of excitement."
     show lily at right
@@ -490,7 +490,7 @@ label social_5:
     show night    
     with dissolve
     
-    call play_scene_music("music/NoOneWillKnow.ogg")
+    call play_scene_music("music/NoOneWillKnow.ogg") from _call_play_scene_music_90
     "One good thing about being such a small community was that we all helped out when someone needed it."
     "Like when Sara's house burned down..."
     "It was the middle of the night when the radio crackled on."
@@ -650,8 +650,8 @@ label social_5:
 # Teach 'enrichment' class on [profession]
 #
 label social_6:
-    call play_scene_music
-    call set_work_bg
+    call play_scene_music from _call_play_scene_music_91
+    call set_work_bg from _call_set_work_bg_28
     show her normal at quarterright with dissolve
     "As the colony's [profession], I knew a lot more than most about my job. I decided to hold a class to teach anyone who was interested in learning more.  It wasn't smart for me to be the only [profession] around."
     show brennan at quarterleft
@@ -702,7 +702,7 @@ label social_6:
 # mayor asks [her_name] to see if she can determine what to do
 #
 label social_7:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_92
     "I didn't see the other colonists much during the day, but I assumed they were working hard like we were."
     "But not everyone thought that..."
     scene bg community_center with fade
@@ -820,7 +820,7 @@ label social_7:
 # Help the Mayor - how much role should government play?
 #
 label social_8:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_93
     scene bg path with fade
     "One day I was walking through town when I heard loud music from inside the community center."
     her surprised "I wonder if some kids are playing with the sound system?"
@@ -900,7 +900,7 @@ label social_8:
 
 # Propose and fill seat on Community Council
 label social_master:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_94
     scene bg community_center with fade
     show pavel at midright, behind her with dissolve
     show her normal at midleft with moveinleft

@@ -3,14 +3,14 @@
 
 # Default
 label knowledge_def:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_62
     scene bg library with fade
     "I read up on the latest science research. Dr. Lily had posted some articles about Talaam's geology and biology."
     $ skill_knowledge += 10
 
 # Intro Event
 label knowledge_0:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_63
     scene bg library with fade
     show pete at midright with dissolve
     "I knew there was a library here, so I decided to check it out. I sent Pete a message and he agreed to meet me there and show me around. When I arrived, he was lounging in a chair reading on his computer pad. He stood up to greet me."
@@ -43,7 +43,7 @@ label knowledge_0:
 
 # Learning about edible plants
 label knowledge_1:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_64
     scene bg lab with fade
     "I went to a workshop at the laboratory about how to use a spectrometer to determine whether or not a food is edible." 
     show lily at quarterright 
@@ -61,7 +61,7 @@ label knowledge_1:
 
 # Volunteering to do research at library
 label knowledge_2:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_65
     scene bg library with fade
     "I went to town and helped out at the library."
     "They didn't need me to shelve books or anything, but sometimes people put in data requests for librarians to research or print out."
@@ -73,7 +73,7 @@ label knowledge_2:
 
 # Finding fiber crops
 label knowledge_3:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_66
     scene bg path with fade
     "I studied the guide to edible plants the scientists sent out. It included information about other uses for plants. Some plants, called fiber crops, have the potential to be made into cloth or paper."
     show her normal at midright
@@ -97,7 +97,7 @@ label knowledge_3:
 
 # Nature hike for edible plants
 label knowledge_4:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_67
     scene bg path with fade
     show lily at right
     show pete at midright
@@ -131,7 +131,7 @@ label knowledge_4:
 
 # Research geology, geography of planet
 label knowledge_5:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_68
     scene bg library with fade
     "I wanted to know why Talaam's climate was the way it was, and why they chose to settle here on this particular spot."
     "I read a few research papers from astronomers and looked at maps of the planet. I could see that it was colder near the poles; we were closer to the equator, which made for milder temperatures and made year-round agriculture possible."
@@ -150,7 +150,7 @@ label knowledge_5:
 # Research nutrition theories for colonization, write article about nutritional value of native plants
 #I wasn't sure what the nutrition theory was, so feel free to add that in.
 label knowledge_6:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_69
     scene bg library with fade
     show her normal at midright with dissolve
     show lily at midleft with moveinleft
@@ -209,7 +209,7 @@ label knowledge_6:
 
 # Turn the community center into an art museum!
 label knowledge_7:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_70
     scene black with fade
     "One of the things I missed about Earth was all the cultural events and places. We didn't have any museums or galleries or concerts here."
     "But we did have digital copies of lots of famous paintings and music...."
@@ -259,7 +259,7 @@ label knowledge_7:
 
 # Find bacteria that produce plastic
 label knowledge_8:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_71
     scene black with fade
     "I had been working with Dr. Lily on a lot of things - not just the edible plants, but also cataloging animal species and their behavior."
     "We were trying to build a food web based on what the animals here ate, but we knew it was woefully incomplete."
@@ -306,7 +306,7 @@ label knowledge_8:
 
 # Write a book about Talaam? Collect essays from everyone?
 label knowledge_master:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_72
     scene bg lab with fade
     show lily at midright
     show her normal at midleft

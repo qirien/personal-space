@@ -5,7 +5,7 @@
 
 # Relax with humor
 label relax_alone_0:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_95
     scene bg bedroom with fade
     "I read a funny book my friend Sara recommended. Sometimes it was so funny I laughed out loud."
     "Laughing felt good. Sometimes I worried about if we would make it, but I forgot all about it when I could laugh."
@@ -16,7 +16,7 @@ label relax_alone_0:
 
 # Can go help Sara or just relax at home.
 label relax_alone_1:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_96
     $ wearing_dress = False    
     $ loved -= 2
     scene bg farm_interior with fade
@@ -97,7 +97,7 @@ label relax_alone_1:
 
 # Stargazing alone
 label relax_alone_2:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_97
     scene bg farm_interior with fade
     show her normal at midleft
     show him normal at midright
@@ -127,7 +127,7 @@ label relax_alone_2:
 
 # Emails from Home
 label relax_alone_3:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_98
     scene bg farm_interior with fade
     play bg_sfx "sfx/message.mp3"
     "I got a message from my mother."
@@ -142,7 +142,7 @@ label relax_alone_3:
 
 # Watch a movie alone
 label relax_alone_4:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_99
     scene bg bedroom with fade
     "There are some movies that I love that [his_name] just doesn't like. That's fine; we don't have to do things together all the time. So one night, I watched..."
     menu:
@@ -162,7 +162,7 @@ label relax_alone_4:
 
 # He does things by himself sometimes, too.
 label relax_alone_5:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_100
     scene bg farm_interior with fade
     show him normal at midleft
     show her normal at midright
@@ -186,7 +186,7 @@ label relax_alone_5:
 
 # Family photos
 label relax_alone_6:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_101
     scene bg farm_interior with fade
     "I looked through some old photos of my family. The places, the people - they all felt so unreal. I'd probably never see them again."
     "I picked up my [favorite_wedding_gift] and fingered it gently. It was one of the few things I had from Earth."
@@ -198,7 +198,7 @@ label relax_alone_6:
     
 # go to bed early
 label relax_alone_7:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_102
     scene bg bedroom with fade
     $ is_nude = True
     show night
@@ -282,7 +282,7 @@ label relax_alone_7:
 # These probably won't be seen, so make them simple.
 label relax_alone_8:
     scene bg bedroom with fade
-    call play_scene_music("music/Shanghai_20_00.ogg")
+    call play_scene_music("music/Shanghai_20_00.ogg") from _call_play_scene_music_103
     "I listened to some music - I didn't do anything else while listening, just lay back and really listened."
     "It made me think of summer vacation when I was a teenager back home, just lying back and reading books in the shade, playing video games, going swimming, and drinking lemonade."
     "What would our kids' summers be like?"
@@ -291,7 +291,7 @@ label relax_alone_8:
     return
 
 label relax_alone_9:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_104
     scene bg farm_interior with fade
     "I set some grains cooking overnight, so they would be nice and soft for our breakfast the next day."
     "That way things wouldn't be rushed in the morning."
@@ -301,7 +301,7 @@ label relax_alone_9:
     return
 
 label relax_alone_10:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_105
     scene bg farm_interior with fade
     "I listened to some of my favorite songs and reminisced."
     $ relaxed += 5
@@ -309,7 +309,7 @@ label relax_alone_10:
     return
 
 label relax_alone_11:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_106
     scene bg bedroom with fade
     "I curled up with a good book."
 
@@ -318,7 +318,7 @@ label relax_alone_11:
     return
 
 label relax_alone_12:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_107
     scene bg farm_interior with fade
     "I played a video game that I enjoyed."
 
@@ -330,7 +330,7 @@ label relax_alone_12:
 
 # Re-read childhood book
 label relax_alone_a:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_108
     scene bg bedroom with fade
     "I didn't mean to read the whole thing, but when I started reading one of my favorite books from my childhood I just had to finish it."
     "It wasn't as exciting and unpredictable as I remembered, but I still loved the characters, and the writing swept me in as I read through the whole thing."
@@ -340,7 +340,7 @@ label relax_alone_a:
 
 # browsing wikipedia
 label relax_alone_b:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_109
     scene bg farm_interior with fade
     "I was curious about horses, so I started reading about them in the encyclopedia."
     "Reading about domestication led to Mycenaean script, and that led to morphology, and before I knew it I was reading a fascinating page about Austronesian languages."
@@ -351,7 +351,7 @@ label relax_alone_b:
 
 # Solo trip to bath house
 label relax_alone_c:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_110
     scene bg bathhouse with fade
     show her serious
     "I went to the bath house by myself. I brought extra wood so I could have a long, hot bath, and I carried up extra water from the river to make it a deep one. All my effort just made me appreciate it all the more."
@@ -372,7 +372,7 @@ label relax_alone_c:
     return
 
 label relax_alone_d:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_111
     scene bg farm_interior with fade
     "I wrote a letter to my family, telling them all about what happened this month."
     "I knew they wouldn't get it for years, but it still helped me feel connected to them, just a little."
@@ -380,7 +380,7 @@ label relax_alone_d:
     return
 
 label relax_alone_e:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_112
     scene bg farm_interior with fade
     "I read some online newspapers and magazines from Earth..."
     "It was hard to care about what the politicians or movie stars on Earth were saying and doing. Battles and natural disasters were at least four years past already. There was no point in reading about fashion or trends - we didn't have the resources to follow them even if we had wanted to."
@@ -392,7 +392,7 @@ label relax_alone_e:
     return
 
 label relax_alone_f:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_113
     $ wearing_dress = False
     scene bg path with fade
     show her serious with dissolve
@@ -406,7 +406,7 @@ label relax_alone_f:
 
 # Hang out at the library!
 label relax_alone_g:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_114
     $ wearing_dress = False
     scene bg library with fade
     "I invited Sara to come to the library with me to hang out."
@@ -436,7 +436,7 @@ label relax_alone_g:
 
 #play a farm game
 label relax_alone_h:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_115
     scene bg farm_interior with fade
     show her normal at quarterright with dissolve
     "I found this video game about trying to get a farm up and running... It was way more fun than a real farm."
@@ -481,7 +481,7 @@ label relax_alone_h:
 
 # cat videos on youtube!
 label relax_alone_i:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_116
     scene bg farm_interior with fade
     show her concerned at center
     "I was too tired to do much of anything. I didn't feel motivated to read, or play a game, or even watch a movie."
@@ -495,7 +495,7 @@ label relax_alone_i:
 
 # work at home
 label relax_alone_j:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_117
     scene bg farm_interior with fade
     show her normal at center
     "I tried to mostly get all my work done at work, but sometimes there were things I needed to do at home."
@@ -506,7 +506,7 @@ label relax_alone_j:
 
 # Space visual novel!
 label relax_alone_k:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_118
     scene bg farm_interior with fade
     show her normal at midleft with dissolve
     "I downloaded a visual novel I found online. It looked pretty cheesy, but at least it wasn't in high school - it was about romance on a star ship."
@@ -570,7 +570,7 @@ label relax_alone_k:
     return
 
 label relax_alone_l:
-    call play_scene_music
+    call play_scene_music from _call_play_scene_music_119
     scene bg farm_interior with fade
     "I chatted with Helen Jennings over the network - she lived on the other side of the colony and didn't leave the house much, so we didn't get to see each other very often."
     her_c "Hey, how are your cows doing?"

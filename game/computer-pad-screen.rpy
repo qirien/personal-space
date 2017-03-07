@@ -188,7 +188,7 @@ label monthly_messages:
     $ message = "msg_" + `month`
     $ read_messages = True
     nvl clear
-    call expression message
+    call expression message from _call_expression
     computer "\n(End of messages)"
     nvl clear
     call screen computer_pad(["Work", "Skills", "Free Time"])
