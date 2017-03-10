@@ -6,6 +6,7 @@
 # Temporary files
 *~
 *.bak
+*.swp
 tmp/*
 
 # Local-only files
@@ -15,3 +16,4 @@ traceback.txt
 game/saves
 game/google-play.rpy
 art/
+*.json

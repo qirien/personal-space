@@ -4809,16 +4809,16 @@ label monthly_event_24:
             him concerned "..."
             her concerned "..."
         else:
-            him sad "You miss it that much? I thought we were doing pretty good here..."
+            him surprised "You miss it that much? I thought we were doing pretty good here..."
             her sad "Well... yeah, sometimes."
             him sad "I've tried to work hard and give you everything you need..."
-            her concerned "I know you have. It's not your fault."
+            her concerned "I know you have. It's not your fault things are hard."
+            him concerned "If you really need to leave... I won't-"
             if (community_level <= COMMUNITY_LEVEL_OK):
                 him concerned "But, you know, you need to work at it, too."
                 her annoyed "What's that supposed to mean?!"
                 him concerned "If we want things to be better here, it's up to us to make it happen. We can't just do the bare minimum and hope for the best."
                 her yelling "The bare minimum?! Is that what you think I've been doing?!"
-
                 him concerned "Anyway, no matter what, I'm staying here. I love Talaam. I love the challenge and the adventure. But if you really need to leave... I, I won't-"
         
         him sad "I won't try to stop you."
@@ -4826,7 +4826,7 @@ label monthly_event_24:
             "What should I say?"
             "{i}I'll never leave you.{/i}" if (loved >= 0):
                 "He looked almost ready to cry; he really thought I might leave him. But, even so, he still wanted what was best for me."
-                her concerned "Oh, [his_name], I'll never leave you!."
+                her sad "Oh, [his_name], I'll never leave you!."
                 him serious "I need you, [her_name]. You're the reason I work, and the reason I come home."
                 show him sleeping at center with move
                 show her sleeping 
@@ -4845,5 +4845,7 @@ label monthly_event_24:
                 her serious "I'll think about it..."
                 "He squeezed my hand gingerly, as if worried that if he reached for more I'd run away."
                 "I squeezed back, but I was still thinking. I couldn't just do what was best for him. I had to think about myself, too."
+                if (is_pregnant_later):
+                    "...And the baby."
 
     return

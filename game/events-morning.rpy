@@ -1647,12 +1647,15 @@ label work_8:
             "What should I say?"
             "{i}They need me here.{/i}" if (community_level >= COMMUNITY_LEVEL_OK):
                 her concerned "They need me here. There's no one else that is as good of a [profession] as I am."
+                $ wants_to_leave = False
                 $ community_level += 5
             "{i}I love the people here.{/i}" if (skill_social >= 50):
                 her normal "I love the people here. They feel like family."
+                $ wants_to_leave = False
                 $ community_level += 5
             "{i}I love [his_name].{/i}" if (loved >= 0):
                 her concerned "I love [his_name] too much to leave him behind."
+                $ wants_to_leave = False
                 $ loved += 2
             "Actually, I don't want to stay.":
                 $ wants_to_leave = True

@@ -52,43 +52,8 @@ init -201 python:
 # Variables about skills.  On a scale from 0-100, how skilled is the character?
 # These are now defined in dse.rpy
 
-# Variables about our characters and their relationship
-# Variables that need to be initialized before anything else
+# Constant variables
 init -200:
-    define month = 0
-    define local_month = 0
-    define year = 1
-    define earth_year = 1
-    define earth_month = 0
-    define save_name = "Intro" #name for the saved game
-
-    define known_each_other = ""
-    define profession = ""
-    define father_attitude = ""
-    define favorite_wedding_gift = ""
-    define want_kids = False
-    define have_goat = False
-    define is_pregnant = False
-    define is_pregnant_later = False
-    define wearing_dress = False
-    define is_nude = False
-    define slacked_off = 0  #number of times slacked off at work
-    define has_grass = False
-    define times_worked = 1
-    define he_hunts = False
-    define brennan_relationship = 0
-    define trimester = "None"
-    define season = "spring"
-    define weather = "calm and cool"
-    define cheated_on_him = False
-    define exposed_brennan = False
-    define discovered_qec = False
-    define ocean_character = ""
-    define wants_to_leave = False
-    define hated_food = "turnips"
-    define baby_name = "Terra"
-    define notified_stat_max = False
-    
     define COMMUNITY_LEVEL_OK = 40
     define COMMUNITY_LEVEL_GOOD = 60
     define COMMUNITY_LEVEL_MAX = 75
@@ -163,9 +128,47 @@ label splashscreen:
     return
     
 
-# The game starts here.
+#    
+# START
+#
 label start:  
+    # Initializing Variables
+    # Variables about our characters and their relationship
+    define month = 0
+    define local_month = 0
+    define year = 1
+    define earth_year = 1
+    define earth_month = 0
+    define save_name = "Intro" #name for the saved game
 
+    define known_each_other = ""
+    define profession = ""
+    define father_attitude = ""
+    define favorite_wedding_gift = ""
+    define want_kids = False
+    define have_goat = False
+    define is_pregnant = False
+    define is_pregnant_later = False
+    define wearing_dress = False
+    define is_nude = False
+    define slacked_off = 0  #number of times slacked off at work
+    define has_grass = False
+    define times_worked = 1
+    define he_hunts = False
+    define brennan_relationship = 0
+    define trimester = "None"
+    define season = "spring"
+    define weather = "calm and cool"
+    define cheated_on_him = False
+    define exposed_brennan = False
+    define discovered_qec = False
+    define ocean_character = ""
+    define wants_to_leave = False
+    define hated_food = "turnips"
+    define baby_name = "Terra"
+    define notified_stat_max = False    
+    
+    
     scene bg stars with fade
 
     if (persistent.times_beaten):
