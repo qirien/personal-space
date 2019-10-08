@@ -1014,7 +1014,7 @@ label relax_together_k:
     her annoyed "No! It sounds like a circus master, or a cowboy, or..."
     him happy "Or a totally awesome musician?"
     her angry "No! It just sounds dumb!"
-    him annoyed "Well, not as dumb as Benedict. 'Hello, my name is Benedict, I'm a tap-dancing pansy who can't even button his own waistcoat."
+    him annoyed "Well, not as dumb as Benedict. 'Hello, my name is Benedict, I'm a tap-dancing fop who can't even button his own waistcoat."
     her happy "It's refined and intelligent! And there's nothing wrong with tap dancing, is there?"
     him concerned "No, but do you really think a kid of ours is going to be a tap dancer?"
     her concerned "Probably not."
