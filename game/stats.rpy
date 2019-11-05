@@ -1,109 +1,109 @@
 # stats.rpy
 # Keeps track of and displays the stats for the DSE.
 #
-# To change styles, add a style block for the element you want
-# preceded by "dse_stats_" down below
+# To change styles, look for the dse_stats_* blocks in styles.rpy
+
 
 init -100 python:
 
-    dse_stats = [ ]
+    __dse_stats = [ ]
 
     class __Stat(object):
 
-        def __init__(self, name, var, default, max):
+        def __init__(self, name, var, default, max, hidden=False):
             self.name = name
             self.var = var
             self.default = default
             self.max = max
+            self.hidden = hidden
 
     def __init_stats():
-        for s in dse_stats:
+        for s in __dse_stats:
             setattr(store, s.var, s.default)
 
     config.start_callbacks.append(__init_stats)
-    
-    def register_stat(name, var, default, max):
-        dse_stats.append(__Stat(name, var, default, max))
+
+    # Call this function to add a stat to keep track of.
+    # Arguments:
+    # Name: name of stat. Will be displayed in the Stats screen
+    # var: name of variable to use to keep track of stat.
+    # default: starting value for the stat
+    # max: maximum value for the stat
+    # hidden: Is this stat hidden from the user? Hidden stats will not be displayed in the stats screen.
+    def register_stat(name, var, default=0, max=100, hidden=False):
+        __dse_stats.append(__Stat(name, var, default, max, hidden))
 
     def normalize_stats():
-        for s in dse_stats:
+        for s in __dse_stats:
+            if hasattr(store, s.var):
+                v = getattr(store, s.var)
 
-            v = getattr(store, s.var)
+                if v > s.max:
+                    v = s.max
+                if v < 0:
+                    v = 0
 
-            if v > s.max:
-                v = s.max
-            if v < 0:
-                v = 0
-
-            setattr(store, s.var, v)
+                setattr(store, s.var, v)
 
     # Whenever a python statement is executed, we will ensure our stats
     # stay within range.
     config.python_callbacks.append(normalize_stats)
-                  
-                  
-    # Function to save skills for New Game +, up to SKILL_SAVED_MAX,
-    # if they are greater than what has already been saved.
-    def save_skill(current_saved_value, new_skill_value):
-        if (new_skill_value <= SKILL_SAVED_MAX):
-            if (not current_saved_value):
-                return new_skill_value
-            else:
-                if (current_saved_value < new_skill_value):
-                    return new_skill_value
-                else:
-                    return current_saved_value
-        else:
-            return SKILL_SAVED_MAX
-        
-    def highest_stat():
-        normalize_stats()
-        
-        highest_stat = 0
-        highest_stat_name = ""
 
-        for curr_stat in dse_stats:
-            stat_value = getattr(store, curr_stat.var)
-            if (stat_value > highest_stat):
-                highest_stat_name = curr_stat.name
-                highest_stat = stat_value
-        return highest_stat_name
-
-
-# Here you can change the style of any elements in the Stats screen you want.
-# As an example, here is a style defined for the label text to make sure it is not bold.
-style dse_stats_label_text:
-    bold False
-
+# Display the stats in a frame.
+# name -  display the stat's name
+# bar -   display a bar indicating the value of the stat
+# value - display the numerical value of the stat
+# max -   display the maximum value of the stat
 screen display_stats(name=True, bar=True, value=True, max=True):
-    $ dse_stat_length = len(dse_stats)
+    $ dse_stat_length = len(__dse_stats)
+
+    #The number of rows is the number of stats that are not hidden
+    for s in __dse_stats:
+        if s.hidden:
+            $ dse_stat_length -= 1
+
     frame:
-        style_group "dse_stats"        
+        style_group "dse_stats"
         yalign 0.0
         xalign 0.5
+
 
         vbox:
             yalign 0.0
             xalign 0.5
             label "Statistics" xalign 0.5
 
-            grid 3 dse_stat_length:
+            # Depending on what the user chooses to display, calculate how many columns we need
+            $ num_columns = 0
+            if name:
+                $ num_columns+=1
+            if bar:
+                $ num_columns+=1
+            if value or max:
+                $ num_columns+=1
+
+            # Make a grid with up to 3 columns and as many rows as there are stats.
+            grid num_columns dse_stat_length:
                 xalign 0.5
                 yalign 0.5
                 spacing 5
-                
-                for s in dse_stats:
-                    $ v = getattr(store, s.var)
 
-                    if name:
-                        label s.name
-                    
-                    if bar:
-                        bar value v range s.max xmaximum 150 xalign 0.0
-                        
-                    if value and max:
-                        label ("%d/%d" % (v, s.max)) xalign 1.0
-                    elif value:
-                        label ("%d" % (v,)) xalign 1.0
-                    elif max:
-                        label ("%d" % (max,)) xalign 1.0
+                for s in __dse_stats:
+                    #Skip if the stat is a hidden stat
+                    if (not s.hidden):
+                        $ v = getattr(store, s.var)
+
+
+                        if name:
+                            label s.name
+
+                        if bar:
+                            bar value v range s.max xmaximum 150 xalign 0.0
+
+                        if value and max:
+                            label ("%d/%d" % (v, s.max)) xalign 1.0
+                        elif value:
+                            label ("%d" % (v,)) xalign 1.0
+                        elif max:
+                            label ("%d" % (s.max,)) xalign 1.0
+                            
