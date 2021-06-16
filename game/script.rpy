@@ -32,17 +32,17 @@ init:
     define note = Character("note", kind=nvl, ctc="ctc_blink", ctc_position="nestled")
     
     # defaults used for debugging purposes
-    define his_name = "Jack"
-    define her_name = "Kelly"
-    define his_nickname = "dear"
-    define her_nickname = "lover"
+    default his_name = "Jack"
+    default her_name = "Kelly"
+    default his_nickname = "dear"
+    default her_nickname = "lover"
     
     
     # Variables about emotional state.  -100 is minimum, 100 is maximum
-    define relaxed = 0    # negative = stressed
-    define loved = 0      # negative = neglected
-    define made_love = 0  # Counter of lovemaking, used for pregnancy calculation
-    define community_level = 0 # how successful is the colony?
+    default relaxed = 0    # negative = stressed
+    default loved = 0      # negative = neglected
+    default made_love = 0  # Counter of lovemaking, used for pregnancy calculation
+    default community_level = 0 # how successful is the colony?
 
 # This definition needs to happen before our transitions are defined    
 init -201 python:
@@ -134,39 +134,47 @@ label splashscreen:
 label start:  
     # Initializing Variables
     # Variables about our characters and their relationship
-    define month = 0
-    define local_month = 0
-    define year = 1
-    define earth_year = 1
-    define earth_month = 0
-    define save_name = "Intro" #name for the saved game
+    default month = 0
+    default local_month = 0
+    default year = 1
+    default earth_year = 1
+    default earth_month = 0
+    default save_name = "Intro" #name for the saved game
 
-    define known_each_other = ""
-    define profession = ""
-    define father_attitude = ""
-    define favorite_wedding_gift = ""
-    define want_kids = False
-    define have_goat = False
-    define is_pregnant = False
-    define is_pregnant_later = False
-    define wearing_dress = False
-    define is_nude = False
-    define slacked_off = 0  #number of times slacked off at work
-    define has_grass = False
-    define times_worked = 1
-    define he_hunts = False
-    define brennan_relationship = 0
-    define trimester = "None"
-    define season = "spring"
-    define weather = "calm and cool"
-    define cheated_on_him = False
-    define exposed_brennan = False
-    define discovered_qec = False
-    define ocean_character = ""
-    define wants_to_leave = False
-    define hated_food = "turnips"
-    define baby_name = "Terra"
-    define notified_stat_max = False    
+    default known_each_other = ""
+    default profession = ""
+    default father_attitude = ""
+    default favorite_wedding_gift = ""
+    default want_kids = False
+    default have_goat = False
+    default is_pregnant = False
+    default is_pregnant_later = False
+    default wearing_dress = False
+    default is_nude = False
+    default slacked_off = 0  #number of times slacked off at work
+    default has_grass = False
+    default times_worked = 1
+    default he_hunts = False
+    default brennan_relationship = 0
+    default trimester = "None"
+    default season = "spring"
+    default weather = "calm and cool"
+    default cheated_on_him = False
+    default exposed_brennan = False
+    default discovered_qec = False
+    default ocean_character = ""
+    default wants_to_leave = False
+    default hated_food = "turnips"
+    default baby_name = "Terra"
+    default notified_stat_max = False    
+
+    default skill_domestic = 0
+    default skill_creative = 0
+    default skill_technical = 0
+    default skill_spiritual = 0
+    default skill_social = 0
+    default skill_knowledge = 0
+    default skill_physical = 0
     
     
     scene bg stars with fade

@@ -28,7 +28,7 @@ init -1 python hide:
     # These control the name and version of the game, that are reported
     # with tracebacks and other debugging logs.
     config.name = "Our Personal Space"
-    config.version = "1.21"
+    config.version = "1.22"
     
     config.window_icon = "GUI/window-icon.png"
     config.windows_icon = "GUI/windows-icon.png"
@@ -239,7 +239,7 @@ init -1 python hide:
     config.nvl_adv_transition = zoomout
 
     # add a default dissolve transition between each say if no other transition is speficied
-    config.say_attribute_transition = dissolve
+    config.say_attribute_transition = { "master" : Dissolve(0.5, alpha=True) }
 
 
     #########################################
@@ -282,7 +282,7 @@ init python:
     ## The name that's used for directories and archive files. For example, if
     ## this is 'mygame-1.0', the windows distribution will be in the
     ## directory 'mygame-1.0-win', in the 'mygame-1.0-win.zip' file.
-    build.directory_name = "OurPersonalSpace-1.21"
+    build.directory_name = "OurPersonalSpace-1.22"
     
     ## The name that's uses for executables - the program that users will run
     ## to start the game. For example, if this is 'mygame', then on Windows,
