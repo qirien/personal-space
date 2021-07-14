@@ -107,9 +107,9 @@ label brennan_omake:
     play bg_sfx "sfx/whinny.mp3"
     brennan happy "Did I ever tell you what a good-looking horse you are?"
     play bg_sfx "sfx/horse-snort.mp3"
-    brennan normal "I haven't? Well, just look at those long, straight legs! And that wavy mane! And, if I may be so bold, a marvelous tail."
+    brennan normal "I haven't? Well, just look at those long, straight legs! And that wavy mane! A man could get lost in those soulful eyes..."
     play bg_sfx "sfx/whinny.mp3"
-    brennan "At least {b}you{/b} understand."
+    brennan "Sounds like {b}you{/b} understand."
     
     scene black with fade
     
