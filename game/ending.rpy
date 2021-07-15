@@ -454,7 +454,7 @@ label good_ending:
     $ persistent.got_good_ending = True
     ".:. Love Grows\nEnding 3 of 3."
     $ is_nude = False
-    jump show_credits
+    jump show_credits    
 
 # Choose ending CG depending on whether they have a baby or not.
 label show_ending_cg:

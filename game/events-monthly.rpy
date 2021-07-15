@@ -688,6 +688,7 @@ label monthly_event_6:
             show night
             show her normal at quarterright
             show him normal at center
+            show natalia at quarterleft
             play bg_sfx "sfx/alien-crickets.mp3" loop 
             "We had a big bonfire with the Peróns and burned the infested corn. Their kids danced around the fire, and they brought a chicken for us to roast."
             natalia "All that work..."
@@ -3966,8 +3967,8 @@ label monthly_event_23:
         $ is_nude = True
         show night        
         show bedroom_covers behind night
-        show her normal at midleft, squatting, behind bedroom_covers
         show him nude at midright, squatting, behind bedroom_covers
+        show her concerned at midleft, squatting, behind bedroom_covers        
         with dissolve 
 
         her concerned "Do you feel ready?\n...For the baby, I mean?"
@@ -3981,7 +3982,7 @@ label monthly_event_23:
         him nude concerned "Hey, hey, it'll be okay."
         her angry "It won't be okay just by saying, \"It's okay\"!"
         him nude angry "All right, then, let's figure some of these things out."
-        show her sad with dissolve
+        show her sad at midleft, squatting with dissolve
         him nude concerned "Mrs. Nguyen is going to help you with the birth, right?"
         her concerned "Yeah..."
         him "Well, I bet she knows a lot about nursing babies, and could help you out there. But even if something happens and you can't nurse the baby, they have some formula in the storehouse."
@@ -4170,9 +4171,9 @@ label monthly_event_23:
                         scene bg bedroom with fade
                         $ is_nude = True
                         show night
-                        show bedroom_covers behind night                        
+                        show bedroom_covers behind night  
+                        show him nude serious at midright, squatting behind bedroom_covers                                          
                         show her serious at quarterleft, squatting behind bedroom_covers
-                        show him nude serious at midright, squatting behind bedroom_covers
                         with dissolve
                         her serious "Good night, [his_nickname]..."
                         show her serious at center, squatting with moveinleft
@@ -4316,8 +4317,8 @@ label monthly_event_23:
     else:
         scene bg bedroom
         $ is_nude = True
-        show her sleeping at midright, squatting
         show him nude sleeping at midleft, squatting
+        show her sleeping at midright, squatting        
         show bedroom_covers
         show night
         with dissolve

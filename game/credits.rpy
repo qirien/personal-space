@@ -30,7 +30,7 @@ label show_credits:
     $ renpy.pause(2.0, hard=skippable)
     hide text with fade
     
-    show text "Written, Produced, and Directed by\n{a=http://qirien.icecavern.net}Andrea Landaker{/a}" with fade 
+    show text "Written, Produced, and Directed by\nAndrea Landaker" with fade 
     if ((community_level < COMMUNITY_LEVEL_OK) and (ending != "none")):
         show pavel sad at quarterright, rising behind text
         show naomi sad at right, rising behind text
@@ -44,7 +44,7 @@ label show_credits:
     with dissolve    
     hide text with fade
     
-    show text "Additional Writing and Design by\n{a=http://thepretentiousgamer.blogspot.com/}Rachel Helps{/a}" with fade
+    show text "Additional Writing and Design by\nRachel Helps" with fade
     if ((community_level < COMMUNITY_LEVEL_OK) and (ending != "none")):
         show ilian at quarterleft, rising behind text
         show sara sad at left, rising behind text
@@ -60,7 +60,7 @@ label show_credits:
     with dissolve    
     hide text with fade
     
-    show text "Character Art by\n{a=http://clarissahelps.tumblr.com/}Clarissa Helps{/a}" with fade 
+    show text "Character Art by\nClarissa Helps" with fade 
     if ((community_level < COMMUNITY_LEVEL_OK) and (ending != "none")):
         show pete at right, rising behind text
         show helen at quarterright, rising behind text
@@ -208,6 +208,6 @@ label show_credits:
     show text "{size=140}{font=fonts/Kristi.ttf}The End{/font}{/size}" with fade
     stop music fadeout 3.0
     $ renpy.pause(3.0, hard=skippable)
-    "Thank you for playing!  If you're interested in giving us feedback or joining our mailing list, please fill out our {a=http://goo.gl/oh6zFZ}short online survey{/a} \nSurvey URL: goo.gl/oh6zFZ."
+    "Thank you for playing!  If you enjoyed Our Personal Space, check out the sequel, {a=https://www.metasepiagames.com/SpaceToGrow/}Space to Grow{/a}, where the story continues from Jack's perspective."
     
     $ renpy.full_restart()

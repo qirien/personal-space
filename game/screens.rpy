@@ -196,28 +196,39 @@ screen main_menu:
     # The background of the main menu.
     window:
         style "mm_root"
+        
 
-    # The main menu buttons.
-    vbox:
-        style_group "mm"
-        xalign .98
-        yalign .98
+        imagebutton idle "sprites/baby_stg.png" xpos 670 ypos 485 action OpenURL("https://www.metasepiagames.com/SpaceToGrow/index.html")       
+        textbutton "Sequel:   \"Space to Grow\"!":
+             background Frame("GUI/redorange_button_idle.png", 15, 15)
+             hover_background Frame("GUI/redorange_button_selected.png", 15, 15) yalign 0.98
+             xalign 0.5
+             text_size 25
+             text_color "#f5e17d"
+             xpadding 25
+             ypadding 15
+             action OpenURL("https://www.metasepiagames.com/SpaceToGrow/index.html")
+        # The main menu buttons.
+        vbox:
+            style_group "mm"
+            xalign .98
+            yalign .98
 
-        if (renpy.newest_slot() is not None):
-            $ recent_save = renpy.newest_slot("[^_]")
-            if (recent_save is not None):
-                $ recent_save_page, recent_save_name = recent_save.split("-")
-                textbutton _("Continue") action FileLoad(recent_save_name, page=recent_save_page) text_size 42
-                #textbutton _("Load Game") action ShowMenu("load")
-        if (persistent.times_beaten):
-            textbutton _("New Game+") action Start()
-        else:
-            textbutton _("New Game") action Start()
-              
-        textbutton _("Extras") action ShowMenu("extras")
-        #textbutton _("Help") action Help()
-        textbutton _("Config") action ShowMenu("preferences")                  
-        textbutton _("Quit") action Quit(confirm=False)
+            if (renpy.newest_slot() is not None):
+                $ recent_save = renpy.newest_slot("[^_]")
+                if (recent_save is not None):
+                    $ recent_save_page, recent_save_name = recent_save.split("-")
+                    textbutton _("Continue") action FileLoad(recent_save_name, page=recent_save_page) text_size 42
+                    #textbutton _("Load Game") action ShowMenu("load")
+            if (persistent.times_beaten):
+                textbutton _("New Game+") action Start()
+            else:
+                textbutton _("New Game") action Start()
+                
+            textbutton _("Extras") action ShowMenu("extras")
+            #textbutton _("Help") action Help()
+            textbutton _("Config") action ShowMenu("preferences")                  
+            textbutton _("Quit") action Quit(confirm=False)
         
         
 ##############################################################################

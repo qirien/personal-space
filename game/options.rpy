@@ -13,7 +13,7 @@ init -1 python hide:
     ## set to False before the game is released, so the user can't
     ## cheat using developer tools.
 
-    config.developer = False
+    config.developer = True#False
 
     ## These control the width and height of the screen.
 
@@ -28,10 +28,12 @@ init -1 python hide:
     # These control the name and version of the game, that are reported
     # with tracebacks and other debugging logs.
     config.name = "Our Personal Space"
-    config.version = "1.22"
+    config.version = "1.23"
     
     config.window_icon = "GUI/window-icon.png"
     config.windows_icon = "GUI/windows-icon.png"
+
+    config.load_failed_label = "day" #If it can't find where to return to, just replay the current month
 
     #########################################
     # Themes
