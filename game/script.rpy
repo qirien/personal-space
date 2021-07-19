@@ -30,6 +30,9 @@ init:
     
     define tutorial = Character("Tutorial", color="#ededed", ctc="ctc_blink", ctc_position="nestled")  #light gray
     define note = Character("note", kind=nvl, ctc="ctc_blink", ctc_position="nestled")
+
+    # TODO: Add this once we know what it is
+    # define config.steam_appid = 
     
     # defaults used for debugging purposes
     default his_name = "Jack"
@@ -117,13 +120,13 @@ init python:
 # Splashscreen before the main menu
 label splashscreen:
     scene black
-    with Pause(1)
+    with Pause(0.5)
 
     show cuttlefish with dissolve
-    with Pause(2)
+    with Pause(1)
     
     scene black
-    with Pause(1)
+    with Pause(0.5)
 
     return
     
@@ -175,11 +178,24 @@ label start:
     default skill_social = 0
     default skill_knowledge = 0
     default skill_physical = 0
+
+    $ achievement.register("Separation")
+    $ achievement.register("Making it Work")
+    $ achievement.register("Love Grows")    
+    $ achievement.register("Oh Baby")
     
     
     scene bg stars with fade
 
     if (persistent.times_beaten):
+        # Check for achievements someone should have received previously and grant them.
+        if (persistent.got_bad_ending):
+            $ achievement.grant("Separation")
+        if (persistent.got_mediocre_ending):
+            $ achievement.grant("Making it Work")
+        if (persistent.got_good_ending):
+            $ achievement.grant("Love Grows")
+        $ achievement.sync()
         menu:
             "New Game+ data found. Do you want to use New Game+ data to start skills at the highest achieved levels?"
             "Yes.":

@@ -90,6 +90,7 @@ label bad_ending:
         $ renpy.pause(12.0)
         $ renpy.end_replay()
     $ persistent.got_bad_ending = True
+    $ achievement.grant("Separation")
     ".:. Separation\nEnding 1 of 3."
     jump show_credits
 
@@ -232,6 +233,7 @@ label mediocre_ending:
         $ renpy.end_replay()
     call show_ending_cg from _call_show_ending_cg
     $ persistent.got_mediocre_ending = True    
+    $ achievement.grant("Making it Work")
     ".:. Making it Work\nEnding 2 of 3."
     jump show_credits
 
@@ -452,6 +454,7 @@ label good_ending:
         $ renpy.end_replay()        
     call show_ending_cg from _call_show_ending_cg_1
     $ persistent.got_good_ending = True
+    $ achievement.grant("Love Grows")
     ".:. Love Grows\nEnding 3 of 3."
     $ is_nude = False
     jump show_credits    

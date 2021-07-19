@@ -176,6 +176,7 @@ label show_credits:
     if (ending == "none"):
         return
     scene bg stars with fade
+    $ achievement.sync()
     "You have now unlocked New Game+! If you play again, you can keep your progress in your skills up to level [SKILL_SAVED_MAX], to make mastering skills easier and to be able to see more of the events."
     
     # in case a future game wants to use this information, we'll save it here
@@ -204,6 +205,8 @@ label show_credits:
         if (not persistent.got_all_endings):
             "You have experienced all the endings and unlocked the Omake from the Extras Menu!"
         $ persistent.got_all_endings = True
+
+    $ renpy.save_persistent()
         
     show text "{size=140}{font=fonts/Kristi.ttf}The End{/font}{/size}" with fade
     stop music fadeout 3.0

@@ -4751,6 +4751,7 @@ label monthly_event_24:
         
         her normal "I want to call her [baby_name]."
         him happy "Our little [baby_name]..."
+        $ achievement.grant("Oh Baby")
         
         scene black with fade
         "After we brought her home, I sent out baby announcements to everyone I knew."
