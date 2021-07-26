@@ -183,6 +183,7 @@ label start:
     $ achievement.register("Making it Work")
     $ achievement.register("Love Grows")    
     $ achievement.register("Oh Baby")
+    $ achievement.sync()
     
     
     scene bg stars with fade

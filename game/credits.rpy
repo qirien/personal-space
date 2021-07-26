@@ -1,5 +1,6 @@
 # Credits
 label show_credits:
+    $ achievement.sync()
     scene black with fade
     if (ending == "good"):
         play music "music/Blessed.ogg" fadeout 1.0
@@ -176,7 +177,6 @@ label show_credits:
     if (ending == "none"):
         return
     scene bg stars with fade
-    $ achievement.sync()
     "You have now unlocked New Game+! If you play again, you can keep your progress in your skills up to level [SKILL_SAVED_MAX], to make mastering skills easier and to be able to see more of the events."
     
     # in case a future game wants to use this information, we'll save it here
