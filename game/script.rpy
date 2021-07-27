@@ -32,7 +32,7 @@ init:
     define note = Character("note", kind=nvl, ctc="ctc_blink", ctc_position="nestled")
 
     # TODO: Add this once we know what it is
-    # define config.steam_appid = 
+    define config.steam_appid = 1703600
     
     # defaults used for debugging purposes
     default his_name = "Jack"
