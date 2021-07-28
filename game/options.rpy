@@ -9,12 +9,6 @@
 
 init -1 python hide:
 
-    ## Should we enable the use of developer tools? This should be
-    ## set to False before the game is released, so the user can't
-    ## cheat using developer tools.
-
-    config.developer = False    
-
     ## These control the width and height of the screen.
 
     config.screen_width = 1024
@@ -28,7 +22,7 @@ init -1 python hide:
     # These control the name and version of the game, that are reported
     # with tracebacks and other debugging logs.
     config.name = "Our Personal Space"
-    config.version = "1.23"
+    config.version = "1.4"
     
     config.window_icon = "GUI/window-icon.png"
     config.windows_icon = "GUI/windows-icon.png"

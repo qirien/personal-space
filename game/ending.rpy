@@ -151,18 +151,20 @@ label mediocre_ending:
     "He read, and I worked on some projects, and then it was time for bed."
     scene bg bedroom with fade
     $ is_nude = True
-    show her normal at midleft, squatting
     show him nude normal at quarterright, squatting
+    show her normal at squatting    
     if (is_pregnant):
         show baby girl at quarterleftbaby
     show bedroom_covers
     show night
     with dissolve 
 
+    him nude sleeping "Good night..."
     her serious "[his_name]?"
     him nude surprised "Hmmm?"
     if (loved > 0):
         her concerned "I'm so glad to be here, with you."
+        show her at center, squatting with move
         show him nude normal at midright with move
         "He scooted closer to me and stroked my hair."
         him nude normal "I'm glad to be with you, [her_nickname]!"
