@@ -88,7 +88,7 @@ screen display_planner(periods):
                     has vbox
                     for p in periods:
                         vbox:
-                            label p
+                            label p alt p + ": Choose One"
                             if (p == "Skills"):
                                 textbutton " Current Skill Progression " xalign 0.5 text_bold True:
                                     action Show("skill_screen")                            
@@ -109,9 +109,9 @@ screen display_planner(periods):
                             
                                     if show_this:
                                         if enable:
-                                            textbutton name action SetField(store, this_period.var, curr_val)
+                                            textbutton name action SetField(store, this_period.var, curr_val) alt p + ": " +  name
                                         else:
-                                            textbutton name
+                                            textbutton name 
                                     #if we're not showing this, leave a blank space in the grid
                                     else: 
                                         text ""

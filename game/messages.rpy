@@ -16,7 +16,6 @@ screen message_board:
         has vbox:
             style "nvl_vbox"
         $ num_messages = len(dialogue)
-        text "{b}Messages{/b}"
         vbox:
             # Display dialogue.
             for who, what, who_id, what_id, window_id in dialogue:

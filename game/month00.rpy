@@ -213,8 +213,9 @@ label settling_in:
         scene talaam_approach:
             crop (0,0,1024,600)
             easein 10.0 crop (884, 272, 1024, 600)
+        alt "Image: Traveling through the stars, an Earth-like planet with two moons comes into view."
         play music "music/You.ogg" fadeout 1.0        
-        $ renpy.pause(12.0)
+        $ renpy.pause(10.0)
         "Finally, we arrived."
         $ renpy.end_replay()
     "The first month on Talaam was really busy. We arrived at the end of winter, so it was cold and rainy. We all worked together to get everyone's houses up right away. The first one took the longest, as we had to figure out how to put all the pieces together."

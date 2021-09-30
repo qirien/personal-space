@@ -580,14 +580,14 @@ screen quick_menu:
             auto "gui/save_%s.png"
             action ShowMenu('save')
             hovered tt.Action("Save")
+            alt "Save Game"
+            keyboard_focus False
         imagebutton:
             auto "gui/config_%s.png"
             action ShowMenu('preferences')
             hovered tt.Action("Config")
-        imagebutton:
-            auto "gui/quit_%s.png"
-            action Quit(confirm=True)
-            hovered tt.Action("Quit")
+            alt "Config Menu"
+            keyboard_focus False
     text tt.value ypos 420 xpos 55 outlines [(1, "#111", 1, 1)]
     
 screen quick_menu_right:
@@ -601,6 +601,8 @@ screen quick_menu_right:
             auto "gui/skip_%s.png"
             action Skip()
             hovered tt.Action("Skip Read Text")
+            alt "Start Skipping"
+            keyboard_focus False
         
         #text tt.value ypos 420 xpos 940 outlines [(1, "#111", 1, 1)]
     

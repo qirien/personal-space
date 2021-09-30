@@ -26,9 +26,9 @@ screen computer_pad(periods):
     add "bg/silk-gray.jpg"
     add "bg/computer-pad.png"
             
-    text "{font=fonts/Exo2.otf}User {color=#888}[her_name]{/color} has logged on.{/font}" size 12 xalign 0.1 ypos 20 color "FFFFFF"
-    textbutton "?" xpos 877 ypos 18 style "no_border" action Jump("tutorial_ask")
-    textbutton "             " xpos 885 ypos 18 style "no_border" action ShowMenu("preferences")
+    text "{font=fonts/Exo2.otf}User {color=#888}[her_name]{/color} has logged on.{/font}" size 12 xalign 0.1 ypos 20 color "FFFFFF" alt ""
+    textbutton "?" xpos 877 ypos 18 style "no_border" action Jump("tutorial_ask") alt "Tutorial"
+    textbutton "             " xpos 885 ypos 18 style "no_border" action ShowMenu("preferences") keyboard_focus False
 
     frame:
         style_group "cp"
@@ -133,7 +133,7 @@ screen computer_pad(periods):
 # This is a separate screen so that we can make it update with the read_colony_messages variable
 screen colony_messages_button(read_colony_messages):
     if (not read_colony_messages):
-        text "{color=#FF0}{b}NEW!{/b}{/color} " ypos 30 xalign 0.0 outlines [(1, "#000", 1, 1)]
+        text "{color=#FF0}{b}NEW!{/b}{/color} " ypos 30 xalign 0.0 outlines [(1, "#000", 1, 1)] alt "New Messages"
     else:
         text "" ypos 30 xalign 0.0 # We have to have this here or it messes up all the positions
     
@@ -163,25 +163,25 @@ screen music_player():
     if (current_song):
         text "{i}[song_title]{/i} by [artist]" size 14 ypos 30 xalign 0.5
     else:
-        text "Stopped" size 14 ypos 30 xalign 0.5
-    imagebutton auto "gui/previous_%s.png" xalign 0.3 yalign 1.0 action [
+        text "Stopped" size 14 ypos 30 xalign 0.5 alt "Music Stopped"
+    imagebutton auto "gui/previous_%s.png" xalign 0.3 yalign 1.0 alt "Previous Song" action [
         pop_songs.Previous(),
         renpy.restart_interaction # This makes the screen refresh after we switch songs.
         ]
     if (renpy.music.is_playing()):
-        imagebutton auto "gui/pause_%s.png" xalign 0.5 yalign 1.0 action [
+        imagebutton auto "gui/pause_%s.png" xalign 0.5 yalign 1.0 alt "Pause Music" action [
             pop_songs.Stop(),
             renpy.restart_interaction
-            ]
+            ]           
     else:
-        imagebutton auto "gui/play_%s.png" xalign 0.5 yalign 1.0 action [
+        imagebutton auto "gui/play_%s.png" xalign 0.5 yalign 1.0 alt "Play Music" action [
             pop_songs.Play(),
             renpy.restart_interaction
-            ]
-    imagebutton auto "gui/next_%s.png" xalign 0.7 yalign 1.0 action [
+            ]           
+    imagebutton auto "gui/next_%s.png" xalign 0.7 yalign 1.0 alt "Next Song" action [
         pop_songs.Next(),
         renpy.restart_interaction
-        ]
+        ]        
     
                 
 label monthly_messages:
@@ -232,63 +232,89 @@ screen heart_display(month, loved, relaxed):
         # Add a small headshot of her depending on how relaxed/stressed she is
         if (relaxed >= 10):
             add "her happy head"
+            text "" alt "her mood: happy"
         elif (relaxed >= 0):
             add "her normal head"
+            text "" alt "her mood: content"
         elif (relaxed >= -5):
             add "her concerned head"
+            text "" alt "her mood: concerned"
         else:
             add "her sad head"
+            text "" alt "her mood: stressed"
 
         # Add a heart whose size depicts their relationship status
         if (loved > LOVED_MAX):
             add "GUI/heart-full.png"
+            text "" alt "love: maximum"
         elif (loved >= (LOVED_MAX/1.3)):
             add "GUI/heart-largest.png"
+            text "" alt "love: very high"
         elif (loved >= LOVED_GOOD):
             add "GUI/heart-larger.png"
+            text "" alt "love: high"
         elif (loved >= (LOVED_MAX/3)):
             add "GUI/heart-large.png"
+            text "" alt "love: medium high"
         elif (loved >= (LOVED_MAX/6)):
             add "GUI/heart-normal.png"
+            text "" alt "love: medium"
         elif (loved >= 0):
             add "GUI/heart-small.png"
+            text "" alt "love: low"
         elif (loved >= -(LOVED_MAX/6)):
             add "GUI/heart-smaller.png"
+            text "" alt "love: very low"
         else:
             add "GUI/heart-smallest.png"
+            text "" alt "love: none"
         
         # Add a small headshot of him depending on his mood.
         if (month < 4):
             add "him happy head"
+            text "" alt "his mood: happy"
         elif (month == 5):
             add "him normal head"
+            text "" alt "his mood: content"
         elif (month == 6):
             add "him concerned head"
+            text "" alt "his mood: worried"
         elif (month == 10):
             add "him concerned head"
+            text "" alt "his mood: worried"
         elif (month == 12):
-            add "him annoyed head"            
+            add "him annoyed head"
+            text "" alt "his mood: annoyed"            
         elif (month == 13):
             add "him concerned head"
+            text "" alt "his mood: worried"
         elif (month == 15):
             add "him happy head"
+            text "" alt "his mood: happy"
         elif (month == 19):
             add "him annoyed head"
+            text "" alt "his mood: annoyed"
         elif (month == 20):
             add "him normal head"
+            text "" alt "his mood: content"
         elif (month == 21):
             add "him concerned head"
+            text "" alt "his mood: worried"
             
         # If no special event, then his mood based on love stat
         else:
             if (loved >= 5):
                 add "him happy head"
+                text "" alt "his mood: happy"
             elif (loved >= 0):
                 add "him normal head"
+                text "" alt "his mood: content"
             elif (loved >= -5):
                 add "him concerned head"
+                text "" alt "his mood: worried"
             else:
                 add "him annoyed head"
+                text "" alt "his mood: annoyed"
 
 screen health_stats(month, is_pregnant, is_pregnant_later, trimester, relaxed):
     # Display health stats based on month, pregnancy, stress, etc.
