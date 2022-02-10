@@ -15,5 +15,6 @@ log.txt
 traceback.txt
 game/saves
 game/google-play.rpy
-art/
+game/cache
+art
 *.json

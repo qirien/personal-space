@@ -197,17 +197,29 @@ screen main_menu:
     window:
         style "mm_root"
         
+        if (renpy.android):
+            imagebutton idle "sprites/baby_stg.png" xpos 670 ypos 485 action OpenURL("https://play.google.com/store/apps/details?id=net.icecavern.metasepia.spacetogrow")       
+            textbutton "Part 2: \"Space to Grow\"!":
+                background Frame("GUI/redorange_button_idle.png", 15, 15)
+                hover_background Frame("GUI/redorange_button_selected.png", 15, 15) yalign 0.98
+                xalign 0.5
+                text_size 25
+                text_color "#ffffff"
+                xpadding 25
+                ypadding 15
+                action OpenURL("https://play.google.com/store/apps/details?id=net.icecavern.metasepia.spacetogrow")
+        else:
+            imagebutton idle "sprites/baby_stg.png" xpos 670 ypos 485 action OpenURL("https://www.metasepiagames.com/SpaceToGrow/index.html")       
+            textbutton "Part 2: \"Space to Grow\"!":
+                background Frame("GUI/redorange_button_idle.png", 15, 15)
+                hover_background Frame("GUI/redorange_button_selected.png", 15, 15) yalign 0.98
+                xalign 0.5
+                text_size 25
+                text_color "#ffffff"
+                xpadding 25
+                ypadding 15
+                action OpenURL("https://www.metasepiagames.com/SpaceToGrow/index.html")
 
-        imagebutton idle "sprites/baby_stg.png" xpos 670 ypos 485 action OpenURL("https://www.metasepiagames.com/SpaceToGrow/index.html")       
-        textbutton "Sequel:   \"Space to Grow\"!":
-             background Frame("GUI/redorange_button_idle.png", 15, 15)
-             hover_background Frame("GUI/redorange_button_selected.png", 15, 15) yalign 0.98
-             xalign 0.5
-             text_size 25
-             text_color "#f5e17d"
-             xpadding 25
-             ypadding 15
-             action OpenURL("https://www.metasepiagames.com/SpaceToGrow/index.html")
         # The main menu buttons.
         vbox:
             style_group "mm"
@@ -229,6 +241,7 @@ screen main_menu:
             #textbutton _("Help") action Help()
             textbutton _("Config") action ShowMenu("preferences")                  
             textbutton _("Quit") action Quit(confirm=False)
+    text "v" + config.version xalign 0.02 yalign 0.98 alt "" size 12
         
         
 ##############################################################################
@@ -278,7 +291,7 @@ screen navigation:
         textbutton _("Save Game") action ShowMenu("save")
         textbutton _("Load Game") action ShowMenu("load")
         textbutton _("Main Menu") action MainMenu()
-        textbutton _("Help") action Help()
+        #textbutton _("Help") action Help()
         textbutton _("Quit") action Quit()
 
 init -2 python:
