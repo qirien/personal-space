@@ -3971,7 +3971,7 @@ label monthly_event_23:
         show her concerned at midleft, squatting, behind bedroom_covers        
         with dissolve 
 
-        him nude normal "Good night, [her_nickname]"
+        him nude normal "Good night, [her_nickname]."
         her concerned "Do you feel ready?\n...For the baby, I mean?"
         him nude serious "Well, we made a little crib, and we have plenty of rags for diapers, and I thought you said you got some clothes from the storehouse..."
         her sad "No, I mean, ready to be parents. Ready to be responsible for a little helpless person twenty-four hours a day..."

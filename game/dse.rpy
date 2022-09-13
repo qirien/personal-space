@@ -271,12 +271,12 @@ label dp_callback:
 
 label inter_scene_text(type=None):
     scene orange_glow with fade
-    show text "{color=#ffffff}{font=fonts/Kristi.ttf}{size=150}Month [month] of 25{/size}{/font}{/color}" with irisin
-    $ renpy.pause(1.6)
-    
+    $ show_text = "{color=#ffffff}{font=fonts/Kristi.ttf}{size=150}Month [month] of 25{/size}{/font}{/color}"
     if (type is not None):
-        show text "{color=#ffffff}{font=fonts/Kristi.ttf}{size=150}[type]{/size}{/font}{/color}" with irisout
-        $ renpy.pause(1.6)
+        $ show_text += "\n{color=#ffffff}{font=fonts/Kristi.ttf}{size=150}[type]{/size}{/font}{/color}"
+    
+    show text show_text with irisin
+    $ renpy.pause(1.0)    
     hide text
     scene black with fade
     return

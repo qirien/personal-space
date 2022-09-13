@@ -20,10 +20,10 @@ init python:
     
     # Other special work events
     for i in range(1,9):
-        event("work_" + `i`,
-              "act == 'act_work' and month >= " + `i*3`,
+        event("work_" + repr(i),
+              "act == 'act_work' and month >= " + repr(i*3),
               event.once(),
-              event.happened("work_" + `i-1`))
+              event.happened("work_" + repr(i-1)))
 
     # SKILL FOCUS EVENTS
     # For each type of skill, we have 10 special events that happen when your skill
@@ -37,8 +37,8 @@ init python:
         # skill level in that skill type.
         for i in range(0,9):
             # event(skill_type_i, "act == 'act_skill_type' and skill_skill_type == i*10", event.once(), priority=10)
-            event(skill_type + "_" + `i`,
-                  "act == 'act_" + skill_type + "' and skill_" + skill_type + " == " + `i*10`,
+            event(skill_type + "_" + repr(i),
+                  "act == 'act_" + skill_type + "' and skill_" + skill_type + " == " + repr(i*10),
                   event.once(),
                   priority=10)
 
@@ -57,25 +57,25 @@ init python:
 
     # One-time Relaxation events; choose next one in sequence every odd month
     for i in range(1,12):
-        event ("relax_together_" + `i`, 
+        event ("relax_together_" + repr(i), 
                "act == 'act_relax_together'", 
                event.once(), 
-               event.happened("relax_together_" + `i-1`),
+               event.happened("relax_together_" + repr(i-1)),
                event.is_month_odd()) # odd months only
-        event ("relax_alone_" + `i`, 
+        event ("relax_alone_" + repr(i), 
                "act == 'act_relax_alone'", 
                event.once(), 
-               event.happened("relax_alone_" + `i-1`),
+               event.happened("relax_alone_" + repr(i-1)),
                event.is_month_odd()) #odd months only
 
     # Default relaxation events; choose one of these randomly every even month
     for letter in range(ord('a'),ord('l')+1):
-        event ("relax_together_" + unichr(letter),
+        event ("relax_together_" + chr(letter),
                "act == 'act_relax_together'",
                event.choose_one("relax_together_random"),
                event.once(),
                event.is_month_even()) #even months only
-        event ("relax_alone_" + unichr(letter),
+        event ("relax_alone_" + chr(letter),
                "act == 'act_relax_alone'",
                event.choose_one("relax_alone_random"),
                event.once(),
@@ -89,7 +89,7 @@ init python:
     # Scripted Events that happen once
     event("monthly_event_1", "period == 'monthly_event'", event.once())
     for i in range(2,26):
-        event ("monthly_event_" + `i`,  
+        event ("monthly_event_" + repr(i),  
                "period == 'monthly_event'", 
                event.once(), 
-               event.happened("monthly_event_" + `i-1`))
+               event.happened("monthly_event_" + repr(i-1)))

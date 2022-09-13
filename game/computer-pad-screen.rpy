@@ -185,7 +185,7 @@ screen music_player():
     
                 
 label monthly_messages:
-    $ message = "msg_" + `month`
+    $ message = "msg_" + repr(month)
     $ read_messages = True
     nvl clear
     call expression message from _call_expression
