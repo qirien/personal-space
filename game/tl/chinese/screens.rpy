@@ -166,3 +166,11 @@ translate chinese strings:
     old "No"
     new ""
 
+# TODO: Translation updated at 2023-03-30 10:29
+
+translate chinese strings:
+
+    # game/screens.rpy:470
+    old "Language"
+    new "Language"
+

@@ -11,14 +11,14 @@ screen say:
     default side_image = None
     default two_window = False
     default tt = Tooltip("")
-    
+
     # Use the quick menu.
     use quick_menu
 
     # Decide if we want to use the one-window or two-window varaint.
     if not two_window:
 
-        # The one window variant.        
+        # The one window variant.
         window:
             id "window"
 
@@ -36,13 +36,13 @@ screen say:
         vbox:
             style "say_two_window_vbox"
 
-            if who:            
+            if who:
                 window:
                     style "say_who_window"
 
                     text who:
                         id "who"
-                        
+
             window:
                 id "window"
 
@@ -50,13 +50,13 @@ screen say:
                     style "say_vbox"
 
                 text what id "what"
-              
+
     # If there's a side image, display it above the text.
     if side_image:
         add side_image
     else:
         add SideImage() xalign 0.0 yalign 1.0
-        
+
     if (persistent.times_beaten):
         use quick_menu_right
 
@@ -69,31 +69,31 @@ screen say:
 
 screen choice:
 
-    window: 
-        style "menu_window"        
+    window:
+        style "menu_window"
         xalign 0.5
         yalign 0.5
-        
+
         vbox:
             style "menu"
             spacing 2
-            
+
             for caption, action, chosen in items:
-                
-                if action:  
-                    
+
+                if action:
+
                     button:
                         action action
-                        style "menu_choice_button"                        
+                        style "menu_choice_button"
 
                         text caption style "menu_choice"
-                    
+
                 else:
                     text caption style "menu_caption"
 
 init -2 python:
     config.narrator_menu = True
-    
+
     style.menu_window.set_parent(style.default)
     style.menu_choice.set_parent(style.button_text)
     style.menu_choice.clear()
@@ -116,21 +116,21 @@ screen input:
         text prompt
         input id "input"
 
-        
-     
+
+
 ##############################################################################
 # Nvl
 #
 # Screen used for nvl-mode dialogue and menus.
 # http://www.renpy.org/doc/html/screen_special.html#nvl
 screen nvl:
-    
+
     # I guess sometimes this is called with no dialogue, so I put in this check.
     if (dialogue):
-        # use our message board screen unless it's a note        
+        # use our message board screen unless it's a note
         if (dialogue[0][0] != "note"):
             use message_board
-            
+
         # it's a handwritten note
         else:
             add "bg/paper.jpg"
@@ -156,7 +156,7 @@ screen nvl:
     #                    if who is not None:
     #                        text who id who_id
 
-                        text what id what_id style "nvl_note" color "#000" font "fonts/danielbd.ttf" 
+                        text what id what_id style "nvl_note" color "#000" font "fonts/danielbd.ttf"
 
                 # Display a menu, if given.
                 if items:
@@ -179,11 +179,11 @@ screen nvl:
                                 text caption style "nvl_dialogue" color "#000" font "fonts/danielbd.ttf"
 
             add SideImage() xalign 0.0 yalign 1.0
-        
+
         #use quick_menu
-        
+
 ##############################################################################
-# Main Menu 
+# Main Menu
 #
 # Screen that's used to display the main menu, when Ren'Py first starts
 # http://www.renpy.org/doc/html/screen_special.html#main-menu
@@ -196,9 +196,9 @@ screen main_menu:
     # The background of the main menu.
     window:
         style "mm_root"
-        
+
         if (renpy.android):
-            imagebutton idle "sprites/baby_stg.png" xpos 670 ypos 485 action OpenURL("https://play.google.com/store/apps/details?id=net.icecavern.metasepia.spacetogrow")       
+            imagebutton idle "sprites/baby_stg.png" xpos 670 ypos 485 action OpenURL("https://play.google.com/store/apps/details?id=net.icecavern.metasepia.spacetogrow")
             textbutton "Part 2: \"Space to Grow\"!":
                 background Frame("GUI/redorange_button_idle.png", 15, 15)
                 hover_background Frame("GUI/redorange_button_selected.png", 15, 15) yalign 0.98
@@ -209,7 +209,7 @@ screen main_menu:
                 ypadding 15
                 action OpenURL("https://play.google.com/store/apps/details?id=net.icecavern.metasepia.spacetogrow")
         else:
-            imagebutton idle "sprites/baby_stg.png" xpos 670 ypos 485 action OpenURL("https://www.metasepiagames.com/SpaceToGrow/index.html")       
+            imagebutton idle "sprites/baby_stg.png" xpos 670 ypos 485 action OpenURL("https://www.metasepiagames.com/SpaceToGrow/index.html")
             textbutton "Part 2: \"Space to Grow\"!":
                 background Frame("GUI/redorange_button_idle.png", 15, 15)
                 hover_background Frame("GUI/redorange_button_selected.png", 15, 15) yalign 0.98
@@ -236,14 +236,14 @@ screen main_menu:
                 textbutton _("New Game+") action Start()
             else:
                 textbutton _("New Game") action Start()
-                
+
             textbutton _("Extras") action ShowMenu("extras")
             #textbutton _("Help") action Help()
-            textbutton _("Config") action ShowMenu("preferences")                  
+            textbutton _("Config") action ShowMenu("preferences")
             textbutton _("Quit") action Quit(confirm=False)
     text "v" + config.version xalign 0.02 yalign 0.98 alt "" size 12
-        
-        
+
+
 ##############################################################################
 # Extras Screen
 #
@@ -251,15 +251,15 @@ screen main_menu:
 #
 screen extras:
     tag menu
-    
+
     window:
         style "mm_root"
-        
+
     vbox:
         style_group "mm"
         xalign 0.98
         yalign 0.98
-        
+
         textbutton _("Return") action Return()
         if (persistent.got_all_endings):
             textbutton _("Omake") action Start("omake")
@@ -285,7 +285,7 @@ screen navigation:
         style_group "gm_nav"
         xalign .98
         yalign .98
-        
+
         textbutton _("Return") action Return()
         textbutton _("Config") action ShowMenu("preferences")
         textbutton _("Save Game") action ShowMenu("save")
@@ -296,7 +296,7 @@ screen navigation:
 
 init -2 python:
     style.gm_nav_button.size_group = "gm_nav"
-    
+
 
 ##############################################################################
 # Save, Load
@@ -307,8 +307,8 @@ init -2 python:
 
 # Since saving and loading are so similar, we combine them into
 # a single screen, file_picker. We then use the file_picker screen
-# from simple load and save screens.     
-    
+# from simple load and save screens.
+
 screen file_picker:
     #tag menu
 
@@ -323,7 +323,7 @@ screen file_picker:
         hbox:
             style_group "file_picker_nav"
             xalign 0.5
-            
+
             textbutton _("Previous"):
                 xpos -50
                 action FilePagePrevious()
@@ -342,7 +342,7 @@ screen file_picker:
 
         $ columns = 2
         $ rows = 2
-                
+
         label _("")
         # Display a grid of file slots.
         grid columns rows:
@@ -350,7 +350,7 @@ screen file_picker:
             xfill True
             style_group "file_picker"
             spacing 10
-            
+
             # Display ten file slots, numbered 1 - 10.
             for i in range(1, columns * rows + 1):
 
@@ -372,8 +372,8 @@ screen file_picker:
                     text description
 
                     key "save_delete" action FileDelete(i)
-                    
-                    
+
+
 screen save:
 
     # This ensures that any other menu screen is replaced.
@@ -385,7 +385,7 @@ screen save:
         yalign 0.15
         text "Save" style "gm_header"
         use file_picker
-    
+
 
 screen load:
 
@@ -408,14 +408,14 @@ init -2 python:
     style.file_picker_button = Style(style.large_button)
     style.file_picker_text = Style(style.large_button_text)
 
-    
+
 
 ##############################################################################
 # Preferences
 #
 # Screen that allows the user to change the preferences.
 # http://www.renpy.org/doc/html/screen_special.html#prefereces
-    
+
 screen preferences:
 
     tag menu
@@ -426,20 +426,20 @@ screen preferences:
         background None
         xalign 0.1
         yalign 0.0
-        
+
 
         # Put the navigation columns in a three-wide grid.
         grid 3 1:
             style_group "prefs"
             xfill True
             spacing 10
-            
+
 
             # The left column.
             vbox:
                 spacing 15
                 label "Display Options"
-                
+
                 frame:
                     style_group "pref"
                     has vbox
@@ -463,12 +463,18 @@ screen preferences:
                     has vbox
 
                     textbutton _("Joystick...") action Preference("joystick")
-                    
+
+                frame:
+                    style_group "pref"
+                    has vbox
+                    label _("Language")
+                    textbutton "English" action Language(None)
+                    textbutton "{font=fonts/NotoSansSC-Regular.otf}简化字{/font}" action Language("chinese")
 #                frame:
 #                    style_group "pref"
 #                    has vbox
-                    
-#                    textbutton _("Help") action Help() #Show("keyboard_shortcuts")  # Too technical to be helpful to user     
+
+#                    textbutton _("Help") action Help() #Show("keyboard_shortcuts")  # Too technical to be helpful to user
             # Middle Column
             vbox:
                 spacing 15
@@ -481,7 +487,7 @@ screen preferences:
                     hbox:
                         textbutton _("Seen Messages") action Preference("skip", "seen")
                         textbutton _("All Messages") action Preference("skip", "all")
-                    
+
                     textbutton _("Begin Skipping") action Skip()
 
                     label _("")
@@ -489,11 +495,11 @@ screen preferences:
                     hbox:
                         textbutton _("Stop Skipping") action Preference("after choices", "stop")
                         textbutton _("Keep Skipping") action Preference("after choices", "skip")
-                    
+
                 frame:
                     style_group "pref"
                     has vbox
-                    
+
                     label _("Auto Mode")
                     hbox:
                         textbutton _("Enabled") action Preference("auto-forward", "enable")
@@ -533,7 +539,7 @@ screen preferences:
 #
 # Screen that asks the user a yes or no question.
 # http://www.renpy.org/doc/html/screen_special.html#yesno-prompt
-    
+
 screen yesno_prompt:
 
     modal True
@@ -548,27 +554,27 @@ screen yesno_prompt:
         ypos .1
         yanchor 0
         ypadding .05
-        
+
         has vbox:
             xalign .5
             yalign .5
             spacing 30
-            
+
         label _(message):
             xalign 0.5
 
         hbox:
             xalign 0.5
             spacing 100
-            
+
             textbutton _("Yes") action yes_action
             textbutton _("No") action no_action
 
 
-init -2 python:    
+init -2 python:
     style.yesno_button.size_group = "yesno"
     style.yesno_label_text.text_align = 0.5
-        
+
     # Set a default value for the auto-forward time, and note that AFM is
     # turned off by default.
     config.default_afm_time = 10
@@ -583,7 +589,7 @@ init -2 python:
 screen quick_menu:
     zorder -1
     # Add an in-game quick menu.
-    
+
     vbox:
         style_group "quick"
         xpos 55
@@ -602,7 +608,7 @@ screen quick_menu:
             alt "Config Menu"
             keyboard_focus False
     text tt.value ypos 420 xpos 55 outlines [(1, "#111", 1, 1)]
-    
+
 screen quick_menu_right:
     zorder -1
     vbox:
@@ -616,9 +622,9 @@ screen quick_menu_right:
             hovered tt.Action("Skip Read Text")
             alt "Start Skipping"
             keyboard_focus False
-        
+
         #text tt.value ypos 420 xpos 940 outlines [(1, "#111", 1, 1)]
-    
+
 # Screen to show all currently defined shortcuts
 screen keyboard_shortcuts:
     frame:
@@ -626,7 +632,7 @@ screen keyboard_shortcuts:
         ysize 500
         xalign 0.5
         yalign 0.5
-        style_group "pref"        
+        style_group "pref"
         hbox:
             xsize 600
             label "Keybindings"
@@ -642,5 +648,5 @@ screen keyboard_shortcuts:
                             text action_name + ": "
                             for shortcut in config.keymap[action_name]:
                                 text shortcut + " "
-                                    
+
             vbar value YScrollValue("vp")

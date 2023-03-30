@@ -22,8 +22,8 @@ init -1 python hide:
     # These control the name and version of the game, that are reported
     # with tracebacks and other debugging logs.
     config.name = "Our Personal Space"
-    config.version = "1.6"
-    
+    config.version = "2.0"
+
     config.window_icon = "GUI/window-icon.png"
     config.windows_icon = "GUI/windows-icon.png"
 
@@ -31,7 +31,7 @@ init -1 python hide:
 
     #########################################
     # Themes
-    
+
     ## We then want to call a theme function. themes.roundrect is
     ## a theme that features the use of rounded rectangles. It's
     ## the only theme we currently support.
@@ -58,7 +58,7 @@ init -1 python hide:
 
         ## The color of a frame containing widgets.
         frame = "#555544",
-        
+
         ## The background of the main menu. This can be a color
         ## beginning with '#', or an image filename. The latter
         ## should take up the full height and width of the screen.
@@ -89,7 +89,7 @@ init -1 python hide:
     ## respectively.
 
     # style.window.background = Frame("frame.png", 12, 12)
-    style.window.background = Frame("GUI/textbox-frame.png", 80, 80)    
+    style.window.background = Frame("GUI/textbox-frame.png", 80, 80)
 
     ## Margin is space surrounding the window, where the background
     ## is not drawn.
@@ -193,7 +193,7 @@ init -1 python hide:
     ##   show help to the user.
     ## - A file name relative to the base directory, which is opened in a
     ##   web browser.
-    ## - None, to disable help.   
+    ## - None, to disable help.
     config.help = "Renpy-help.html"
 
 
@@ -229,7 +229,7 @@ init -1 python hide:
 
     ## Used when the window is hidden.
     config.window_hide_transition = dissolve
-    
+
     ## Used when going from ADV to NVL, and vice versa
     config.adv_nvl_transition = zoomin
     config.nvl_adv_transition = zoomout
@@ -263,43 +263,43 @@ init -1 python hide:
 
     #########################################
     ## More customizations can go here.
-    
+
     config.thumbnail_width = 280
     config.thumbnail_height = 164
-    
+
     # We only autosave monthly, on quit, or every 500 interactions
     config.autosave_on_choice = False
     config.autosave_frequency = 500
-                       
-## This section contains information about how to build your project into 
+
+## This section contains information about how to build your project into
 ## distribution files.
 init python:
-    
+
     ## The name that's used for directories and archive files. For example, if
     ## this is 'mygame-1.0', the windows distribution will be in the
     ## directory 'mygame-1.0-win', in the 'mygame-1.0-win.zip' file.
-    build.directory_name = "OurPersonalSpace-1.6"
-    
+    build.directory_name = "OurPersonalSpace-2.0"
+
     ## The name that's uses for executables - the program that users will run
     ## to start the game. For example, if this is 'mygame', then on Windows,
     ## users can click 'mygame.exe' to start the game.
     build.executable_name = "OurPersonalSpace"
-    
+
     ## If True, Ren'Py will include update information into packages. This
     ## allows the updater to run.
     build.include_update = False
-    
+
     ## File patterns:
-    ## 
+    ##
     ## The following functions take file patterns. File patterns are case-
     ## insensitive, and matched against the path relative to the base
     ## directory, with and without a leading /. If multiple patterns match,
     ## the first is used.
-    ##    
+    ##
     ##
     ## In a pattern:
     ##
-    ## / 
+    ## /
     ##     Is the directory separator.
     ## *
     ##     Matches all characters, except the directory separator.
@@ -325,9 +325,9 @@ init python:
     build.classify('art/**', None)
     build.classify('game/saves/**', None) #don't distribute saved games
     build.classify('game/google-play.rpy', None) #This is a private, secret file that should not be distributed!
-    
+
     ## To archive files, classify them as 'archive'.
-    
+
     # build.classify('game/**.png', 'archive')
     # build.classify('game/**.jpg', 'archive')
 

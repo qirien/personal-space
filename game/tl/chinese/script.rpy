@@ -134,3 +134,11 @@ translate chinese strings:
     old "No."
     new ""
 
+# TODO: Translation updated at 2023-03-30 10:29
+
+# game/script.rpy:126
+translate chinese splashscreen_550b30c4:
+
+    # alt "Metasepia Games presents: Our Personal Space"
+    alt "Metasepia Games presents: Our Personal Space"
+

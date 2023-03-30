@@ -4,13 +4,13 @@
 
 init:
     define mp = MultiPersistent("MetasepiaGames")
-    
+
     # Declare characters used by this game .
     define narrator = Character(ctc="ctc_blink", ctc_position="nestled")
-    
+
     define her = DynamicCharacter("her_name", color="#84b766", image="her", ctc="ctc_blink", ctc_position="nestled") #light mint green
-    define him = DynamicCharacter("his_name", color="#bc1e0e", image="him", ctc="ctc_blink", ctc_position="nestled") #red 
-    
+    define him = DynamicCharacter("his_name", color="#bc1e0e", image="him", ctc="ctc_blink", ctc_position="nestled") #red
+
     define naomi = Character("Sister Naomi Grayson", color="#bf98ff", image="naomi", ctc="ctc_blink", ctc_position="nestled")  #light gray
     define pavel = Character("Mayor Pavel Grayson", color="#cccccc", image="pavel", ctc="ctc_blink", ctc_position="nestled")   #dark gray
     define lily = Character("Dr. Lily Kealoha", color="#6763b5", image="lily", ctc="ctc_blink", ctc_position="nestled")  #purple
@@ -23,35 +23,35 @@ init:
     define helen = Character("Helen Jennings", color="#77b8ef", image="helen", ctc="ctc_blink", ctc_position="nestled") #icy gray
     define julia = Character("Julia Nguyen", color="#e7b1cb", image="julia", ctc="ctc_blink", ctc_position="nestled") #icy blue
     define martin = Character("Martín Perón", color="#9b5b1d", image="martin", ctc="ctc_blink", ctc_position="nestled")  #dark red
-    
+
     define van = Character("Van Nguyen", color="#7788fc", image="van", ctc="ctc_blink", ctc_position="nestled")
     define kid = Character("Kid", color="#7788fc", image="kid", ctc="ctc_blink", ctc_position="nestled")
-    
-    
+
+
     define tutorial = Character("Tutorial", color="#ededed", ctc="ctc_blink", ctc_position="nestled")  #light gray
     define note = Character("note", kind=nvl, ctc="ctc_blink", ctc_position="nestled")
 
     # TODO: Add this once we know what it is
     define config.steam_appid = 1703600
-    
+
     # defaults used for debugging purposes
     default his_name = "Jack"
     default her_name = "Kelly"
     default his_nickname = "dear"
     default her_nickname = "lover"
-    
-    
+
+
     # Variables about emotional state.  -100 is minimum, 100 is maximum
     default relaxed = 0    # negative = stressed
     default loved = 0      # negative = neglected
     default made_love = 0  # Counter of lovemaking, used for pregnancy calculation
     default community_level = 0 # how successful is the colony?
 
-# This definition needs to happen before our transitions are defined    
+# This definition needs to happen before our transitions are defined
 init -201 python:
     define.move_transitions('longmove', 1.5)
     define.move_transitions('move', 0.5)
-    
+
 # Variables about skills.  On a scale from 0-100, how skilled is the character?
 # These are now defined in dse.rpy
 
@@ -68,45 +68,45 @@ init -200:
     #Technical variables used to control how the game displays
     # Custom transitions, positions, etc.
     define fade = Fade(0.2, 0.2, 0.2)
-    define midleft = Position(xpos=0.35, xanchor=0.5)        
+    define midleft = Position(xpos=0.35, xanchor=0.5)
     define midright = Position(xpos=0.65, xanchor=0.5)
     define quarterleft = Position(xpos=0.22, xanchor=0.5)
     define quarterright = Position(xpos=0.78, xanchor=0.5)
     define farleft = Position(xpos=-0.30, xanchor=0)
-    define farright = Position(xpos=1.0, xanchor=0)    
+    define farright = Position(xpos=1.0, xanchor=0)
     define sitting = Position(ypos=0.45, yanchor=0)
     define squatting = Position(ypos=0.25, yanchor=0)
     define standing = Position(ypos= 1.0, yanchor = 1.0)
-    
+
     define rightbaby = Position(xpos=1.0, xanchor=1.0, ypos=430)
     define quarterrightbaby = Position(xpos=0.78, xanchor=0.5, ypos=430)
-    define midrightbaby = Position(xpos=0.65, xanchor=0.5, ypos=430)    
+    define midrightbaby = Position(xpos=0.65, xanchor=0.5, ypos=430)
     define centerbaby = Position(xpos=0.5, xanchor=0.5, ypos=430)
-    define midleftbaby = Position(xpos=0.35, xanchor=0.5, ypos=430)  
+    define midleftbaby = Position(xpos=0.35, xanchor=0.5, ypos=430)
     define quarterleftbaby = Position(xpos=0.22, xanchor=0.5, ypos=430)
     define leftbaby = Position(xpos=0, xanchor=0.0, ypos=430)
-    
+
     define sans_font = "fonts/Questrial-Regular.otf"
     define serif_font = "fonts/RobotoSlab-Regular.ttf"
-    
+
     define current_song = " "
     define song_to_play = None
     define read_messages = False
-    
+
     transform rising:
         ypos 1.2 yanchor 1.0
         linear 6.0 ypos 1.0
-        
+
     transform babyrising:
         ypos 1.2 yanchor 1.0 yoffset -160
         linear 6.0 ypos 1.0
-        
+
     define SKILL_MUSIC = "music/OceansApart.ogg"
     define WORK_MUSIC = "music/Isaiah.ogg"
     define RELAX_ALONE_MUSIC = "music/Will.ogg"
     define RELAX_TOGETHER_MUSIC = "music/Reflections.ogg"
     define EVENT_MUSIC = "music/RainSea.ogg"
-    
+
 init python:
     # Songs for computer pad
     pop_songs = MusicRoom(fadeout=0)
@@ -123,18 +123,19 @@ label splashscreen:
     with Pause(0.5)
 
     show cuttlefish with dissolve
+    alt "Metasepia Games presents: Our Personal Space"
     with Pause(1)
-    
+
     scene black
     with Pause(0.5)
 
     return
-    
 
-#    
+
+#
 # START
 #
-label start:  
+label start:
     # Initializing Variables
     # Variables about our characters and their relationship
     default month = 0
@@ -169,7 +170,7 @@ label start:
     default wants_to_leave = False
     default hated_food = "turnips"
     default baby_name = "Terra"
-    default notified_stat_max = False    
+    default notified_stat_max = False
 
     default skill_domestic = 0
     default skill_creative = 0
@@ -181,11 +182,11 @@ label start:
 
     $ achievement.register("Separation")
     $ achievement.register("Making it Work")
-    $ achievement.register("Love Grows")    
+    $ achievement.register("Love Grows")
     $ achievement.register("Oh Baby")
     $ achievement.sync()
-    
-    
+
+
     scene bg stars with fade
 
     if (persistent.times_beaten):
@@ -207,18 +208,18 @@ label start:
                 $ skill_spiritual = persistent.skill_spiritual
                 $ skill_social = persistent.skill_social
                 $ skill_knowledge = persistent.skill_knowledge
-                $ skill_physical = persistent.skill_physical                
+                $ skill_physical = persistent.skill_physical
                 show screen skill_screen()
                 "Initialized."
                 hide screen skill_screen
             "No.":
                 "OK, we will not use New Game+ data."
-         
+
         if not renpy.variant('touch'):
             "To fast-forward through scenes you have already seen, hold down \"Ctrl\" or use the new \"Skip\" button on the far right."
         else:
             "To fast-forward through scenes you have already seen, use the new \"Skip\" button to the right."
-    
+
     jump intro
 
 label test_inputter:
@@ -246,7 +247,7 @@ label test_positions:
     "right"
     show natalia at right
     "end test positions 1"
-    
+
     scene bg farm_exterior
     with fade
     show him normal at quarterright
@@ -258,5 +259,3 @@ label test_positions:
     "OK? Test positions forever!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
     "Takes forever"
     return
-    
-    
