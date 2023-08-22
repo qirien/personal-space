@@ -18,3 +18,4 @@ game/google-play.rpy
 game/cache
 art
 *.json
+*.keystore
